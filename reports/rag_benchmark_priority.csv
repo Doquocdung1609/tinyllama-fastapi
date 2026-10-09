@@ -1,0 +1,17 @@
+﻿question_id,top_k,threshold,top_similarity_score,retrieved_pages,retrieval_pass,answer_generated,answer,correctness_score,refusal_pass,latency_seconds,status
+RAG-Q01,5,0.55,1.0,"155,106,151,156,156",True,True,"Ba loại đổi mới tài chính căn cứ theo loại hình là:  1. Đổi mới sản phẩm: Tạo ra các công cụ tài chính, hợp đồng, kỹ thuật và thị trường mới. 2. Đổi mới chuyển đổi rủi ro: Việc tách các đặc điểm và rủi ro riêng biệt của các công cụ riêng lẻ (chẳng hạn như rủi ro tín dụng và rủi ro lãi suất) và tập hợp lại chúng thành các kết hợp khác nhau. 3. Đổi mới quy trình: Cải tiến quy trình được điển hình hóa bằng các phương tiện mới, chẳng hạn như phân phối chứng khoán, xử lý giao dịch hoặc giao dịch định giá.  (Tài liệu không cung cấp đủ thông tin về câu hỏi 1 và 2 trong phần CÂU HỎI CHƯƠNG 4)",,,73.885,PASS
+RAG-Q02,5,0.55,0.8876,"156,119,108,232,156",True,False,,,,7.492,PASS
+RAG-Q03,5,0.55,0.8747,"156,31,200,217,208",True,False,,,,4.999,PASS
+RAG-Q04,5,0.55,0.9499,"171,210,158,129,186",True,False,,,,2.897,PASS
+RAG-Q05,5,0.55,0.8814,"160,167,156,157,206",True,False,,,,2.946,PASS
+RAG-Q06,5,0.55,0.9147,"163,166,241,97,164",True,False,,,,3.667,PASS
+RAG-Q07,5,0.55,0.9463,"11,168,170,168,169",True,False,,,,2.631,PASS
+RAG-Q08,5,0.55,0.8864,"190,181,189,207,188",True,False,,,,3.104,PASS
+RAG-Q09,5,0.55,1.0,"248,214,215,214,204",True,True,"Ngân hàng mở và API có mối liên hệ với nhau vì API là công cụ phần mềm cho phép các hệ thống máy tính khác nhau giao tiếp với nhau, giúp các tổ chức cung cấp dữ liệu cho bất kỳ ai truy vấn API của họ. Theo cách này, API thực sự là một hợp đồng chi phối sự tương tác giữa người gửi và người nhận trong Ngân hàng mở.",,,64.772,PASS
+RAG-Q10,5,0.55,1.0,"248,227,225,226,8",True,False,,,,25.504,PASS
+RAG-Q11,5,0.55,0.9511,"234,233,233,233,13",True,False,,,,3.431,PASS
+RAG-Q12,5,0.55,0.8852,"237,237,237,237,240",True,True,69% (p(x|y) = 18/(18+8) = 69%),,,39.822,PASS
+RAG-Q13,5,0.55,0.9138,"248,120,223,157,87",True,False,,,,4.345,PASS
+RAG-Q14,5,0.55,0.7609,"204,199,182,214,221",True,False,,,,3.242,PASS
+RAG-Q15,5,0.55,,,True,True,Tài liệu không cung cấp đủ thông tin để trả lời câu hỏi này.,,True,3.096,PASS
+RAG-Q16,5,0.55,,,True,True,Tài liệu không cung cấp đủ thông tin để trả lời câu hỏi này.,,True,5.727,PASS

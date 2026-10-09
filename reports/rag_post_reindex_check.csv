@@ -1,0 +1,3 @@
+﻿question_id,top_k,threshold,top_similarity_score,retrieved_pages,retrieval_pass,answer_generated,answer,correctness_score,refusal_pass,latency_seconds,status
+RAG-Q01,5,0.55,1.0,"155,106,151,156,156",True,False,,,,2.344,PASS
+RAG-Q15,5,0.55,,,True,False,,,,2.324,PASS

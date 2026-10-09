@@ -1,0 +1,21 @@
+INFO:     Started server process [2468]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-10-10 00:57:30,834 WARNING pypdf._text_extraction._layout_mode._fixed_width_page Rotated text discovered. Output will be incomplete.
+2026-10-10 01:02:36,054 INFO app.services.rag_service indexed document id=aedb60bc088e4242970a43da1e897bde chunks=971
+2026-10-10 01:03:25,659 INFO app.services.rag_service rag retrieval complete top_k=5 matches=5 threshold=0.550
+2026-10-10 01:03:27,988 INFO app.services.rag_service rag retrieval complete top_k=5 matches=0 threshold=0.550
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]An error occurred while trying to fetch ./models/tiny-sd\unet: Error no file named diffusion_pytorch_model.safetensors found in directory ./models/tiny-sd\unet.
+Defaulting to unsafe serialization. Pass `allow_pickle=False` to raise an error instead.
+Loading pipeline components...:  20%|##        | 1/5 [00:04<00:16,  4.17s/it]Loading pipeline components...:  40%|####      | 2/5 [00:04<00:05,  1.82s/it]
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights:   1%|1         | 2/196 [00:00<00:45,  4.23it/s][A
+Loading weights:  89%|########8 | 174/196 [00:00<00:00, 401.94it/s][ALoading weights: 100%|##########| 196/196 [00:00<00:00, 289.02it/s]
+Loading pipeline components...:  80%|########  | 4/5 [00:05<00:01,  1.10s/it]An error occurred while trying to fetch ./models/tiny-sd\vae: Error no file named diffusion_pytorch_model.safetensors found in directory ./models/tiny-sd\vae.
+Defaulting to unsafe serialization. Pass `allow_pickle=False` to raise an error instead.
+Loading pipeline components...: 100%|##########| 5/5 [00:06<00:00,  1.15s/it]Loading pipeline components...: 100%|##########| 5/5 [00:06<00:00,  1.39s/it]
+  0%|          | 0/18 [00:00<?, ?it/s]  6%|5         | 1/18 [00:01<00:19,  1.13s/it] 11%|#1        | 2/18 [00:01<00:09,  1.73it/s] 17%|#6        | 3/18 [00:01<00:08,  1.85it/s] 22%|##2       | 4/18 [00:02<00:07,  1.93it/s] 28%|##7       | 5/18 [00:02<00:06,  1.97it/s] 33%|###3      | 6/18 [00:03<00:05,  2.00it/s] 39%|###8      | 7/18 [00:03<00:05,  2.00it/s] 44%|####4     | 8/18 [00:04<00:04,  2.02it/s] 50%|#####     | 9/18 [00:04<00:04,  2.03it/s] 56%|#####5    | 10/18 [00:05<00:03,  2.03it/s] 61%|######1   | 11/18 [00:05<00:03,  2.03it/s] 67%|######6   | 12/18 [00:06<00:02,  2.04it/s] 72%|#######2  | 13/18 [00:06<00:02,  2.03it/s] 78%|#######7  | 14/18 [00:07<00:01,  2.04it/s] 83%|########3 | 15/18 [00:07<00:01,  2.04it/s] 89%|########8 | 16/18 [00:08<00:00,  2.03it/s] 94%|#########4| 17/18 [00:08<00:00,  2.04it/s]100%|##########| 18/18 [00:09<00:00,  2.03it/s]100%|##########| 18/18 [00:09<00:00,  1.96it/s]
+2026-10-10 01:08:27,837 INFO app.services.image_service image generated path=image_20261010_010827.png seconds=37.76
+  0%|          | 0/18 [00:00<?, ?it/s]  6%|5         | 1/18 [00:00<00:10,  1.56it/s] 11%|#1        | 2/18 [00:00<00:06,  2.66it/s] 17%|#6        | 3/18 [00:01<00:06,  2.36it/s] 22%|##2       | 4/18 [00:01<00:06,  2.23it/s] 28%|##7       | 5/18 [00:02<00:06,  2.16it/s] 33%|###3      | 6/18 [00:02<00:05,  2.13it/s] 39%|###8      | 7/18 [00:03<00:05,  2.10it/s] 44%|####4     | 8/18 [00:03<00:04,  2.09it/s] 50%|#####     | 9/18 [00:04<00:04,  2.08it/s] 56%|#####5    | 10/18 [00:04<00:03,  2.08it/s] 61%|######1   | 11/18 [00:05<00:03,  2.06it/s] 67%|######6   | 12/18 [00:05<00:02,  2.05it/s] 72%|#######2  | 13/18 [00:06<00:02,  2.06it/s] 78%|#######7  | 14/18 [00:06<00:01,  2.06it/s] 83%|########3 | 15/18 [00:07<00:01,  2.06it/s] 89%|########8 | 16/18 [00:07<00:00,  2.04it/s] 94%|#########4| 17/18 [00:08<00:00,  2.05it/s]100%|##########| 18/18 [00:08<00:00,  2.06it/s]100%|##########| 18/18 [00:08<00:00,  2.09it/s]
+2026-10-10 01:10:16,873 INFO app.services.image_service image generated path=image_20261010_011016.png seconds=12.87

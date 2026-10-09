@@ -1,0 +1,3 @@
+# Optional local Hugging Face / Jina embedding provider.
+-r requirements.txt
+sentence-transformers

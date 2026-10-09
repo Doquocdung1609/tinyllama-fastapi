@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+qdrant_data/
+uploads/
+processed/
+images/
+videos/
+audio/script_*.wav
+audio/script_*.mp3

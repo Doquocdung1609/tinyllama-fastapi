@@ -1,0 +1,8 @@
+# Optional. Install only on a compatible GPU machine; PyTorch can be a very large download.
+-r requirements.txt
+torch
+diffusers
+transformers
+accelerate
+safetensors
+pillow

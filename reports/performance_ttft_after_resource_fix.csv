@@ -1,0 +1,2 @@
+﻿timestamp_utc,workload,status,wall_seconds,peak_ram_used_mb,peak_vram_used_mb,peak_gpu_percent,peak_cpu_percent,detail
+2026-10-09T17:51:36.936241+00:00,chat_stream_ttft,PASS,158.221,7960,2827.0,93.0,100.0,"{'time_to_first_byte_seconds': 150.747, 'response_bytes': 204}"

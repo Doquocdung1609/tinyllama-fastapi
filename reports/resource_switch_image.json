@@ -1,0 +1,11 @@
+{
+  "image_url": "/images/image_20261010_004854.png",
+  "seed": 2468,
+  "generation_seconds": 21.42,
+  "model": "./models/tiny-sd",
+  "width": 256,
+  "height": 256,
+  "steps": 1,
+  "strategy": "direct",
+  "precision": "float32"
+}

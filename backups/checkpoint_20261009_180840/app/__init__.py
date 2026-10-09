@@ -1,0 +1,1 @@
+"""Educational GenAI application backend."""
