@@ -1,0 +1,5 @@
+﻿fixture,page,kind,expected_label_value_pairs,extracted_pairs,value_source,pixel_estimation,qa_case,qa_assessment
+D_bar_line_charts.pdf,1,bar,3,3,native PDF labels,False,T05,PASS
+D_bar_line_charts.pdf,2,line,6,6,native PDF labels,False,"T06,T13,T14",1 PASS / 2 FAIL
+E_pie_chart.pdf,1,pie,3,3,native PDF labels,False,T07,PARTIAL
+F_process_diagram.pdf,1,process diagram,4,4,native PDF labels only,False,"T08,T18",PASS

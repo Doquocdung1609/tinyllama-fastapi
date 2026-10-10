@@ -12,7 +12,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_TABS = ["Dashboard", "Chat với Llama 3", "Talk to Documents / RAG", "Chunk Explorer",
+EXPECTED_TABS = ["Dashboard", "Chat với Ollama", "Talk to Documents / RAG", "Chunk Explorer",
                  "English Script → Audio", "Text → Image", "Image → Video", "System / GPU"]
 
 

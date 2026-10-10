@@ -39,7 +39,17 @@ try {
     if (-not (Test-HttpEndpoint "http://127.0.0.1:11434/api/tags" 3)) { throw "Ollama không khởi động được." }
 
     $models = (& ollama list 2>$null | Out-String)
-    foreach ($required in @("llama3", "nomic-embed-text")) {
+    $envValues = @{}
+    if (Test-Path -LiteralPath ".env") {
+        Get-Content -LiteralPath ".env" | ForEach-Object {
+            if ($_ -match '^([A-Za-z_][A-Za-z0-9_]*)=(.*)$') { $envValues[$matches[1]] = $matches[2].Trim() }
+        }
+    }
+    $requiredModels = @(
+        $(if ($envValues["OLLAMA_MODEL"]) { $envValues["OLLAMA_MODEL"] } else { "qwen2.5:3b" }),
+        $(if ($envValues["EMBEDDING_MODEL"]) { $envValues["EMBEDDING_MODEL"] } else { "nomic-embed-text" })
+    )
+    foreach ($required in $requiredModels) {
         if ($models -notmatch [regex]::Escape($required)) { throw "Thiếu Ollama model '$required'. Chạy: ollama pull $required" }
     }
 

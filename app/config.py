@@ -14,7 +14,7 @@ except ImportError:
 
 class Settings:
     ollama_base_url: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
-    ollama_model: str = os.getenv("OLLAMA_MODEL", "llama3:latest")
+    ollama_model: str = os.getenv("OLLAMA_MODEL", "qwen2.5:3b")
     embedding_provider: str = os.getenv("EMBEDDING_PROVIDER", "ollama").lower()
     embedding_model: str = os.getenv("EMBEDDING_MODEL", "nomic-embed-text")
     jina_model: str = os.getenv("JINA_MODEL", "jinaai/jina-embeddings-v2-base-en")

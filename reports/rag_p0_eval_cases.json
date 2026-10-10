@@ -1,0 +1,34 @@
+[
+  {
+    "id": "P0-AMBIGUOUS",
+    "question": "đổi mới tài chính có mấy loại",
+    "expected_elements": ["3 loại", "loại hình", "8 loại", "chức năng"],
+    "pages": [155, 156],
+    "refusal": false,
+    "category": "multiple classification schemes"
+  },
+  {
+    "id": "RAG-Q01",
+    "question": "Ba loại đổi mới tài chính căn cứ theo loại hình là gì? Trả lời ngắn gọn và trích trang tài liệu.",
+    "expected_elements": ["đổi mới sản phẩm", "đổi mới chuyển đổi rủi ro", "đổi mới quy trình"],
+    "pages": [155],
+    "refusal": false,
+    "category": "three-item enumeration"
+  },
+  {
+    "id": "RAG-Q15",
+    "question": "Tài liệu dự báo giá Bitcoin vào ngày 31/12/2026 là bao nhiêu?",
+    "expected_elements": [],
+    "pages": [],
+    "refusal": true,
+    "category": "numeric refusal"
+  },
+  {
+    "id": "RAG-Q16",
+    "question": "Theo tài liệu, ai là Tổng thống Việt Nam năm 2026?",
+    "expected_elements": [],
+    "pages": [],
+    "refusal": true,
+    "category": "out-of-document refusal"
+  }
+]

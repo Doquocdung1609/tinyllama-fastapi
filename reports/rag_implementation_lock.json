@@ -1,0 +1,13 @@
+{
+  "locked_at": "2026-10-10T09:36:49.195132+00:00",
+  "policy": "No application/retrieval tuning after this point; holdout results are audit-only.",
+  "files": {
+    "app/services/rag_service.py": "1dbbd79457dc005d7e54e2420b62329f9daea41ca5c3f53090bba71d2a34d19a",
+    "app/services/pdf_service.py": "e7e7afa9d4c2df9b92a83730ac17dd82a97f93cfefd54d4df9c65838e0d4b38d",
+    "app/services/chunk_service.py": "b0e7e5c66815b5a43f1f19f9ddc3983fadcae328e78efb1d27247557ddabaf05",
+    "app/services/qdrant_service.py": "b0d3de1bcb4d13b49fc28dd37f26c878bcc93bc5d2634f10f8d421ecff906f99",
+    "app/services/calculation_service.py": "a084c89c98e756ae85f7c1190ac99d144797aaf03dfcf93ddb9469da7618fd91",
+    "app/api/documents.py": "bda1d6f923e8be2965c58fd596c2feeaa0065e2d19410109989a35d8113c09c2",
+    "client.py": "fcc9875a6b1d2b943b89be12a80848b532f3dbc9b783ff5677d10e59c00863be"
+  }
+}

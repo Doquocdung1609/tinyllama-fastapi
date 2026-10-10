@@ -12,6 +12,6 @@ def rag_query(request: RAGRequest):
     settings = get_settings()
     try:
         return query(request.question, request.top_k, request.score_threshold,
-                     request.document_id, request.generate_answer)
+                     request.document_id, request.generate_answer, request.model)
     except Exception as exc:
         raise HTTPException(503, f"RAG chưa sẵn sàng: {exc}") from exc

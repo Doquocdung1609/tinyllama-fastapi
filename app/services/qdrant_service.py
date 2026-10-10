@@ -41,7 +41,8 @@ def upsert_chunks(chunks: list[dict], vectors: list[list[float]]) -> None:
         chunk["embedding_status"] = "ready"
         points.append(PointStruct(id=point_id, vector=vector, payload={k: chunk.get(k) for k in
             ("document_id", "filename", "page", "chunk_id", "chunk_index", "text", "original_text", "cleaned_text",
-             "start", "end", "overlap", "token_estimate", "metadata")}))
+             "start", "end", "overlap", "token_estimate", "modality", "source_id", "bbox",
+             "extraction_method", "structured_data", "confidence", "metadata")}))
     client = get_client()
     collection = get_settings().qdrant_collection
     client.upsert(collection_name=collection, points=points)

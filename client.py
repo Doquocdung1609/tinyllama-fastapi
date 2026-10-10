@@ -18,7 +18,7 @@ st.markdown("""
 div[data-testid="stMetric"]{background:white;border:1px solid #dce4ef;padding:12px 14px;border-radius:12px}
 </style>""", unsafe_allow_html=True)
 
-PAGES = ["Dashboard", "Chat với Llama 3", "Talk to Documents / RAG", "Chunk Explorer", "English Script → Audio", "Text → Image", "Image → Video", "System / GPU"]
+PAGES = ["Dashboard", "Chat với Ollama", "Talk to Documents / RAG", "Chunk Explorer", "English Script → Audio", "Text → Image", "Image → Video", "System / GPU"]
 st.sidebar.markdown("## ◈ GenAI Studio")
 st.sidebar.caption("FastAPI · Ollama · Qdrant")
 if os.getenv("GENAI_DEMO_MODE") == "1":
@@ -76,14 +76,14 @@ if "selected_doc" not in st.session_state:
     st.session_state.selected_doc = None
 
 if page == "Dashboard":
-    page_header("GenAI Learning Studio", "Một dịch vụ GenAI đa năng · RAG là lõi học tập, Llama 3 chạy cục bộ qua Ollama.")
+    page_header("GenAI Learning Studio", "Một dịch vụ GenAI đa năng · RAG là lõi học tập, LLM chạy cục bộ qua Ollama.")
     status = api("GET", "/system/status", timeout=10) or {}
     stats = api("GET", "/stats", timeout=10) or {}
     ollama = status.get("ollama", {}); qdrant = status.get("qdrant", {})
     a,b,c,d,e = st.columns(5)
     a.metric("FastAPI", "Online" if status else "Offline")
     b.metric("Ollama", "Online" if ollama.get("online") else "Offline")
-    c.metric("Model LLM", status.get("model", "llama3:latest"))
+    c.metric("Model LLM", status.get("model", "—"))
     d.metric("Tài liệu / Chunks", f"{stats.get('documents',0)} / {stats.get('chunks',0)}")
     e.metric("Qdrant vectors", qdrant.get("vectors", 0))
     a,b,c,d = st.columns(4)
@@ -98,20 +98,23 @@ if page == "Dashboard":
     c.metric("RAM khả dụng", f"{ram.get('available_gb')} GB" if ram.get("available_gb") is not None else "—")
     d.metric("Ổ đĩa trống", f"{disk.get('free_gb')} GB" if disk.get("free_gb") is not None else "—")
     st.subheader("Pipeline Talk to Documents")
-    st.markdown('<div class="card pipeline">PDF　→　Extract　→　Clean　→　Chunk　→　Embedding　→　Qdrant　→　Retrieve　→　Llama 3　→　Answer</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="card pipeline">PDF　→　Extract　→　Clean　→　Chunk　→　Embedding　→　Qdrant　→　Rank Fusion　→　{status.get("model","Ollama")}　→　Answer</div>', unsafe_allow_html=True)
     st.write("")
-    status_dot("Ollama", ollama.get("online",False), status.get("model","llama3:latest"))
+    status_dot("Ollama", ollama.get("online",False), status.get("model","—"))
     status_dot("Qdrant", qdrant.get("online",False), f"{qdrant.get('collection','knowledgebase')} · {qdrant.get('distance','Cosine')}")
     if status.get("embedding",{}).get("error"):
         st.warning(f"Embedding chưa sẵn sàng: {status['embedding']['error']}")
         st.code("ollama pull nomic-embed-text")
     if not ollama.get("online") or not ollama.get("model_available"):
-        st.info("Khởi động Ollama và kiểm tra: `ollama list`, `ollama run llama3:latest`.")
+        st.info(f"Khởi động Ollama và kiểm tra: `ollama list`, `ollama run {status.get('model','<model>')}`.")
 
-elif page == "Chat với Llama 3":
-    page_header("Chat với Llama 3", "Hỏi đáp thông thường bằng mô hình Ollama trên máy của bạn.")
+elif page == "Chat với Ollama":
+    page_header("Chat với Ollama", "Hỏi đáp thông thường bằng mô hình Ollama trên máy của bạn.")
     status = api("GET", "/system/status", timeout=8) or {}
-    status_dot("Ollama", status.get("ollama",{}).get("online",False), status.get("model","llama3:latest"))
+    installed_models=status.get("ollama",{}).get("models",[]) or [status.get("model","qwen2.5:3b")]
+    default_model=status.get("model",installed_models[0])
+    chat_model=st.selectbox("Mô hình chat",installed_models,index=installed_models.index(default_model) if default_model in installed_models else 0)
+    status_dot("Ollama", status.get("ollama",{}).get("online",False), chat_model)
     temperature = st.sidebar.slider("Temperature", 0.0, 1.5, .7, .1)
     max_tokens = st.sidebar.slider("Max tokens", 64, 2048, 512, 64)
     for item in st.session_state.chat_history:
@@ -121,7 +124,7 @@ elif page == "Chat với Llama 3":
         st.session_state.chat_history.append({"role":"user","content":prompt})
         with st.chat_message("user"): st.markdown(prompt)
         with st.chat_message("assistant"):
-            payload={"message":prompt,"temperature":temperature,"max_tokens":max_tokens,"history":st.session_state.chat_history[:-1]}
+            payload={"message":prompt,"temperature":temperature,"max_tokens":max_tokens,"history":st.session_state.chat_history[:-1],"model":chat_model}
             answer=st.write_stream(stream_chat(payload))
             if answer:
                 st.session_state.chat_history.append({"role":"assistant","content":answer})
@@ -161,26 +164,82 @@ elif page == "Talk to Documents / RAG":
         st.progress(progress,
                     text=f"Pipeline: {doc.get('status','UNKNOWN')} · {doc.get('pages',0)} trang · {doc.get('chunks',0)} chunks")
         if doc.get("error"): st.error(doc["error"])
+        with st.expander("Document Inspector · preflight và evidence theo trang"):
+            summary=doc.get("modality_summary") or {}
+            if summary:
+                a,b,c,d,e=st.columns(5)
+                a.metric("Text pages",summary.get("text_pages",0)); b.metric("Table pages",summary.get("table_pages",0))
+                c.metric("Chart pages",summary.get("chart_pages",0)); d.metric("Figure pages",summary.get("figure_pages",0))
+                e.metric("Scanned pages",summary.get("scanned_pages",0))
+                st.caption(f"Schema v{summary.get('schema_version')} · mixed {summary.get('mixed_pages',0)} · multi-column {summary.get('multi_column_pages',0)} · rotated {summary.get('rotated_pages',0)}")
+                if summary.get("warnings"): st.warning(" · ".join(summary["warnings"]))
+                caps=summary.get("capabilities",{})
+                st.caption(f"Native tables: {caps.get('native_tables')} · OCR: {caps.get('ocr')} · Vision: {caps.get('vision')}")
+            else:
+                st.info("Tài liệu index schema cũ chưa có preflight đa phương thức; dữ liệu cũ vẫn dùng text RAG bình thường.")
+            if doc.get("pages",0):
+                inspect_page=st.number_input("Trang cần kiểm tra",1,int(doc.get("pages",1)),1,1,key=f"inspect_{doc_id}")
+                page_data=api("GET",f"/documents/{doc_id}/pages/{int(inspect_page)}",timeout=30)
+                if page_data:
+                    try:
+                        preview=requests.get(f"{API_URL.rstrip('/')}/documents/{doc_id}/pages/{int(inspect_page)}/preview",timeout=45)
+                        if preview.ok: st.image(preview.content,caption=f"Trang {int(inspect_page)}",width="stretch")
+                    except requests.RequestException as exc:
+                        st.warning(f"Không tải được preview: {exc}")
+                    st.json(page_data.get("diagnostics",{}))
+                    st.text_area("Extracted text",page_data.get("text","") or "[Không có text layer]",height=180,key=f"text_{doc_id}_{inspect_page}")
+                    for table_item in page_data.get("tables",[]):
+                        st.markdown(f"**Table `{table_item.get('table_id')}` · {table_item.get('status')}**")
+                        st.code(table_item.get("markdown","") or "[Không trích xuất được cấu trúc]")
+                        st.caption(f"bbox {table_item.get('bbox')} · {table_item.get('extraction_method')}")
+                    for chart_item in page_data.get("charts",[]):
+                        st.markdown(f"**Chart `{chart_item.get('chart_id')}` · {chart_item.get('confidence')}**")
+                        st.json(chart_item)
+                    for figure_item in page_data.get("figures",[]):
+                        st.markdown(f"**Figure `{figure_item.get('figure_id')}` · {figure_item.get('confidence')}**")
+                        st.json(figure_item)
+                    with st.expander("Chunk/evidence mapping của trang"):
+                        st.json(page_data.get("chunks",[]))
         if st.button("Re-index tài liệu", disabled=(doc.get("status") in {"UPLOADED","EXTRACTING","CLEANING","CHUNKING","EMBEDDING","INDEXING"}), key=f"reindex_{doc_id}"):
             if api("POST",f"/documents/{doc_id}/process",timeout=15): st.info("Đã đưa tài liệu vào hàng xử lý lại.")
-        top_k=st.slider("Top-k",1,10,5); threshold=st.slider("Hybrid relevance threshold",0.0,1.0,0.55,.05)
+        runtime=api("GET","/system/status",timeout=10) or {}
+        rag_models=runtime.get("ollama",{}).get("models",[]) or [runtime.get("model","qwen2.5:3b")]
+        active_model=runtime.get("model",rag_models[0])
+        rag_model=st.selectbox("Mô hình tạo câu trả lời",rag_models,index=rag_models.index(active_model) if active_model in rag_models else 0)
+        top_k=st.slider("Top-k",1,10,5); threshold=st.slider("Ngưỡng điểm rank fusion tương đối",0.0,1.0,0.55,.05)
         question=st.text_input("Câu hỏi theo tài liệu",placeholder="Ví dụ: Chính sách nghỉ phép quy định thế nào?")
         debug=st.checkbox("RAG Debug Mode",value=True)
         if st.button("Tìm kiếm và trả lời",type="primary",disabled=(doc.get("status")!="READY" or not question)):
-            with st.spinner("Embedding câu hỏi → Qdrant retrieval → Llama 3…"):
+            with st.spinner(f"Embedding → Qdrant → rank fusion → {rag_model}…"):
                 result=api("POST","/rag/query",json={"question":question,"top_k":top_k,
-                           "score_threshold":threshold,"document_id":doc_id},timeout=300)
+                           "score_threshold":threshold,"document_id":doc_id,"model":rag_model},timeout=300)
             if result:
                 st.subheader("Câu trả lời"); st.markdown(result["answer"])
                 st.subheader("Nguồn")
                 for index,source in enumerate(result["sources"],1):
-                    st.write(f"#{index} · {source['filename']} · trang {source['page']} · hybrid {source['score']:.3f} · semantic {source.get('semantic_score',0):.3f} · lexical {source.get('lexical_score',0):.3f} · `{source['chunk_id']}`")
+                    semantic=source.get('semantic_score')
+                    st.write(f"#{index} · {source['filename']} · trang {source['page']} · fusion {source['score']:.3f} · semantic {semantic:.3f}" if semantic is not None else f"#{index} · {source['filename']} · trang {source['page']} · fusion {source['score']:.3f} · semantic chưa vào top dense")
+                    st.caption(f"semantic rank {source.get('semantic_rank') or '—'} · lexical rank {source.get('lexical_rank') or '—'} · lexical {source.get('lexical_score',0):.3f} · `{source['chunk_id']}`")
+                    st.caption(f"modality {source.get('modality','text')} · source {source.get('source_id') or 'legacy-text'} · bbox {source.get('bbox')}")
                 timings=result.get("timings",{})
                 if timings:
                     st.caption(" · ".join(f"{name}: {value:.0f} ms" for name,value in timings.items()))
                 for index,chunk in enumerate(result["retrieved_chunks"],1):
                     with st.expander(f"Chunk #{index} · {chunk.get('filename')} · trang {chunk.get('page')} · score {chunk['score']:.3f}"): st.write(chunk.get("text"))
                 if debug:
+                    with st.expander("1 · Retrieved candidates (dense)"): st.json(result.get("retrieved_candidates",[]))
+                    with st.expander("2 · Reranked candidates (weighted RRF)"): st.json(result.get("reranked_candidates",[]))
+                    with st.expander("3 · Eligible evidence pool"): st.json(result.get("evidence_candidate_pool",[]))
+                    with st.expander("4 · Selected direct evidence"): st.json(result.get("selected_evidence",[]))
+                    with st.expander("5 · Adjacent context"): st.json(result.get("adjacent_context",[]))
+                    with st.expander("6 · Included prompt context (E-ID exact)"): st.json(result.get("included_prompt_context",[]))
+                    with st.expander("7 · Excluded chunks and machine-readable reasons"): st.json(result.get("excluded_chunks",[]))
+                    with st.expander("Context budget allocation"): st.json(result.get("evidence_selection",{}))
+                    with st.expander("Citation validation"): st.json(result.get("citation_validation",{}))
+                    with st.expander("Generation validation"): st.json(result.get("generation_validation",{}))
+                    with st.expander("Claim-level grounding"): st.json(result.get("claim_grounding",{}))
+                    with st.expander("Deterministic calculation"): st.json(result.get("calculation_validation"))
+                    with st.expander("Lexical diagnostics"): st.json(result.get("lexical_diagnostics",{}))
                     with st.expander("Retrieved Context"): st.code(result["context"] or "Không có context")
                     with st.expander("Final Prompt"): st.code(result["final_prompt"])
     else: st.info("Thư viện đang trống. Tải PDF lên để bắt đầu.")
@@ -203,7 +262,7 @@ elif page == "Chunk Explorer":
             with st.expander("Hiển thị raw extracted text"): st.text_area("Raw text",raw,height=200)
             with st.expander("Hiển thị cleaned text"): st.text_area("Cleaned text",cleaned,height=200)
             table=[{"Chunk ID":x["chunk_id"],"Page":x["page"],"Length":len(x["text"]),"Preview":x["text"][:100],"Vector":x.get("vector_id") or "Chưa index"} for x in chunks]
-            st.dataframe(table,use_container_width=True,hide_index=True)
+            st.dataframe(table,width="stretch",hide_index=True)
             page_size=st.select_slider("Số chunk hiển thị",options=[10,20,50,100],value=20)
             total_pages=max(1,(len(chunks)+page_size-1)//page_size)
             display_page=st.number_input("Trang chunk",min_value=1,max_value=total_pages,value=1,step=1)
@@ -215,12 +274,12 @@ elif page == "Chunk Explorer":
                     st.json(x["metadata"])
 
 elif page == "English Script → Audio":
-    page_header("English Script → Audio", "Llama 3 chuẩn hóa lời thoại; local TTS tạo file âm thanh có thể tải về.")
-    explain("Llama 3 chuẩn bị câu chữ; Windows SAPI/pyttsx3 tổng hợp giọng nói cục bộ, không yêu cầu API trả phí.")
+    page_header("English Script → Audio", "Ollama chuẩn hóa lời thoại; local TTS tạo file âm thanh có thể tải về.")
+    explain("LLM Ollama đang chọn chuẩn bị câu chữ; Windows SAPI/pyttsx3 tổng hợp giọng nói cục bộ, không yêu cầu API trả phí.")
     script=st.text_area("English script",height=220,placeholder="Hello everyone. Today I am going to introduce our project…")
     voice_data=api("GET","/tts/voices",timeout=10) or {"voices":[]}
     voice_options=["Windows SAPI default"]+voice_data.get("voices",[])
-    a,b,c,d=st.columns(4); rate=a.slider("Speech rate",80,300,175); volume=b.slider("Volume",0.0,1.0,1.0,.05); normalize=c.toggle("Chuẩn hóa bằng Llama 3",True); voice=d.selectbox("Voice",voice_options)
+    a,b,c,d=st.columns(4); rate=a.slider("Speech rate",80,300,175); volume=b.slider("Volume",0.0,1.0,1.0,.05); normalize=c.toggle("Chuẩn hóa bằng Ollama",True); voice=d.selectbox("Voice",voice_options)
     if st.button("Tạo audio",type="primary",disabled=not script.strip()):
         with st.spinner("Đang chuẩn bị script và tạo giọng nói…"):
             data=api("POST","/tts/generate",json={"script":script,"normalize":normalize,"rate":rate,"volume":volume,"voice":None if voice=="Windows SAPI default" else voice},timeout=300)
@@ -244,22 +303,42 @@ elif page == "Text → Image":
     st.caption("Tab vẫn hoạt động khi dependency/model ảnh chưa cài; API trả lời rõ lý do. Ảnh không bị giả lập.")
 
 elif page == "Image → Video":
-    page_header("Image → Video", "Tab thử nghiệm Stable Video Diffusion: ảnh đầu vào → frame → MP4.")
+    page_header("Image → Video", "Ảnh đầu vào có thể điều kiện hóa video diffusion hoặc tạo motion demo FFmpeg.")
     video_ready=(api("GET","/system/status",timeout=15) or {}).get("video",{})
-    st.info(f"Video diffusion: {video_ready.get('status','UNKNOWN')} · motion demo FFmpeg: {'READY' if video_ready.get('demo_mode') else 'BLOCKED'}")
-    source=st.file_uploader("Ảnh đầu vào",type=["png","jpg","jpeg"]); a,b=st.columns(2); frames=a.slider("Số frames diffusion",2,25,14); fps=b.slider("FPS",1,30,7)
+    blockers=", ".join(video_ready.get("blockers",[])) or "—"
+    st.info(f"SVD diffusion: {video_ready.get('status','UNKNOWN')} · blockers: {blockers} · motion demo FFmpeg: {'READY' if video_ready.get('demo_mode') else 'BLOCKED'}")
+    st.caption("SVD nhận ảnh làm điều kiện thị giác và dự đoán chuyển động đã học trong latent video. Backend này không nhận text prompt; motion_bucket_id và noise_aug_strength là các điều khiển thật.")
+    source=st.file_uploader("1 · Ảnh đầu vào",type=["png","jpg","jpeg","webp"])
+    if source: st.image(source,caption=f"{source.name} · {len(source.getvalue()):,} bytes",width=420)
+    available_modes=["Genuine image-conditioned diffusion", "FFmpeg motion demo — không sinh frame bằng AI"]
+    mode=st.radio("2 · Chế độ tạo video",available_modes)
+    if mode.startswith("Genuine"):
+        st.warning("SVD không hỗ trợ hướng dẫn chuyển động bằng văn bản. Trường prompt không được hiển thị để tránh tạo cảm giác hệ thống sẽ sử dụng nó.")
+        a,b,c=st.columns(3)
+        frames=a.slider("Số frames SVD",2,25,14)
+        fps=b.slider("FPS điều kiện và MP4",1,30,7)
+        seed=c.number_input("Seed",min_value=0,max_value=2**32-1,value=42)
+        a,b,c=st.columns(3)
+        motion_bucket=a.slider("Motion bucket ID",1,255,127,help="Giá trị cao thường tăng mức chuyển động.")
+        noise_aug=b.slider("Noise augmentation",0.0,1.0,.02,.01,help="Cao hơn tăng chuyển động nhưng giảm độ giống ảnh đầu vào.")
+        decode_chunk=c.slider("Decode chunk size",1,8,2,help="Nhỏ hơn dùng ít VRAM hơn nhưng có thể chậm và nhấp nháy hơn.")
+    else:
+        a,b=st.columns(2); frames=a.slider("Số frames motion demo",14,300,70); fps=b.slider("FPS motion demo",5,30,14)
     make_diffusion=False; make_demo=False
     if source:
-        x,y=st.columns(2)
-        make_diffusion=x.button("Tạo video diffusion",type="primary",disabled=not video_ready.get("ready",False))
-        make_demo=y.button("Tạo motion demo (không phải diffusion)")
+        if mode.startswith("Genuine"):
+            make_diffusion=st.button("Tạo video diffusion thật",type="primary",disabled=not video_ready.get("ready",False))
+            if not video_ready.get("ready",False): st.error(video_ready.get("detail","Backend diffusion chưa sẵn sàng."))
+        else: make_demo=st.button("Tạo motion demo FFmpeg",type="primary",disabled=not video_ready.get("demo_mode",False))
     if source and make_diffusion:
-        st.image(source,width=350)
         with st.spinner("Đang tạo frames và mã hóa video…"):
-            result=api("POST","/video/generate",files={"file":(source.name,source.getvalue(),source.type)},data={"num_frames":frames,"fps":fps},timeout=1800)
+            result=api("POST","/video/generate",files={"file":(source.name,source.getvalue(),source.type)},
+                       data={"num_frames":frames,"fps":fps,"seed":int(seed),"motion_bucket_id":motion_bucket,
+                             "noise_aug_strength":noise_aug,"decode_chunk_size":decode_chunk},timeout=1800)
         if result:
             video=requests.get(f"{API_URL.rstrip('/')}{result['video_url']}",timeout=60).content
-            st.video(video); st.caption(f"{result['frames']} frames · {result['fps']} FPS · {result['generation_seconds']} giây · {result['size_bytes']:,} bytes")
+            st.video(video); st.caption(f"GENUINE DIFFUSION · {result['model']} · {result['frames']} frames · {result['fps']} FPS · seed {result['seed']} · {result['generation_seconds']} giây · peak VRAM {result.get('peak_vram_mb','—')} MB")
+            st.download_button("Tải MP4 diffusion",video,file_name=Path(result["video_url"]).name,mime="video/mp4")
     if source and make_demo:
         with st.spinner("FFmpeg đang tạo motion demo…"):
             demo=api("POST","/video/demo",files={"file":(source.name,source.getvalue(),source.type)},
@@ -268,7 +347,7 @@ elif page == "Image → Video":
             video=requests.get(f"{API_URL.rstrip('/')}{demo['video_url']}",timeout=60).content
             st.video(video); st.warning(demo["disclaimer"])
             st.download_button("Tải motion demo",video,file_name=Path(demo["video_url"]).name,mime="video/mp4")
-    st.info("Video diffusion thường cần GPU có VRAM lớn; thiếu mô hình/GPU sẽ trả lỗi thân thiện và các tab khác vẫn dùng được.")
+    st.info("Pipeline SVD: ảnh → image encoder → latent không gian-thời gian → khử nhiễu có điều kiện → giải mã frame → MP4. FFmpeg chỉ phóng/lia ảnh có sẵn và luôn được ghi nhãn riêng.")
 
 else:
     page_header("System / Models / GPU", "Thông tin runtime thực tế của FastAPI, Ollama, embedding, Qdrant và phần cứng.")
@@ -279,7 +358,7 @@ else:
         with st.expander("Document library"):
             docs=api("GET","/documents",timeout=10) or []
             if docs:
-                st.dataframe([{k:d.get(k) for k in ("filename","status","pages","chunks","indexed_at","error")} for d in docs],use_container_width=True,hide_index=True)
+                st.dataframe([{k:d.get(k) for k in ("filename","status","pages","chunks","indexed_at","error")} for d in docs],width="stretch",hide_index=True)
                 choice=st.selectbox("Chọn tài liệu để xóa",[d["document_id"] for d in docs],format_func=lambda v:next(d["filename"] for d in docs if d["document_id"]==v))
                 if st.button("Xóa tài liệu và vectors",type="secondary") and api("DELETE",f"/documents/{choice}"): st.success("Đã xóa."); st.rerun()
             else: st.caption("Chưa có tài liệu.")

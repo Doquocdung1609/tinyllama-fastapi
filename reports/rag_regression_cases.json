@@ -1,0 +1,7 @@
+[
+  {"id":"R01","question":"Vì sao CDS có thể giúp ngân hàng chuyển giao rủi ro tín dụng nhưng vẫn tạo ra rủi ro đối với hệ thống tài chính?","expected_elements":["CDS","chuyển giao rủi ro tín dụng","tài liệu chưa cung cấp bằng chứng"],"pages":[156,157],"refusal":false,"support_status":"partial","category":"claim grounding"},
+  {"id":"R02","question":"Phân tích động cơ của bốn hình thức đổi mới tài chính theo Llewellyn và nêu sự khác nhau giữa chúng.","expected_elements":["phòng thủ","chủ động","đáp ứng","bảo vệ"],"pages":[158],"refusal":false,"support_status":"full","category":"enumeration"},
+  {"id":"R03","question":"Phân biệt đổi mới sản phẩm và đổi mới quy trình trong tài chính.","expected_elements":["công cụ tài chính","quy trình","phân phối chứng khoán|xử lý giao dịch"],"pages":[155],"refusal":false,"support_status":"full","category":"comparison"},
+  {"id":"R04","question":"Đổi mới tài chính có mấy loại?","expected_elements":["3 loại","8 loại"],"pages":[155,156],"refusal":false,"support_status":"full","category":"ambiguous classification"},
+  {"id":"R05","question":"Ba loại đổi mới tài chính căn cứ theo loại hình là gì?","expected_elements":["đổi mới sản phẩm","đổi mới chuyển đổi rủi ro","đổi mới quy trình"],"pages":[155],"refusal":false,"support_status":"full","category":"exact classification"}
+]

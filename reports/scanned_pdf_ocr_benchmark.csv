@@ -1,0 +1,2 @@
+﻿fixture,page,scan_detected,ocr_engine_available,ocr_status,ocr_chunks,answer_behavior,qa_case,status
+G_scanned_document.pdf,1,True,False,BLOCKED_ENGINE_UNAVAILABLE,0,explicit limitation/refusal,T11,BLOCKED

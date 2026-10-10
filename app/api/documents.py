@@ -4,6 +4,7 @@ from uuid import uuid4
 import logging
 import aiofiles
 from fastapi import APIRouter, BackgroundTasks, File, HTTPException, UploadFile
+from fastapi.responses import FileResponse
 from app.config import get_settings
 from app.services import rag_service
 
@@ -76,6 +77,27 @@ def preview_document_chunks(document_id: str, chunk_size: int = 800, chunk_overl
         return {"pages": pages, "chunks": chunks}
     except Exception as exc:
         raise HTTPException(400, str(exc)) from exc
+
+
+@router.get("/{document_id}/pages/{page_number}")
+def inspect_document_page(document_id: str, page_number: int):
+    if not rag_service.get_document(document_id):
+        raise HTTPException(404, "Không tìm thấy tài liệu.")
+    result = rag_service.page_inspection(document_id, page_number)
+    if result is None:
+        raise HTTPException(404, "Không tìm thấy dữ liệu trang đã xử lý.")
+    return result
+
+
+@router.get("/{document_id}/pages/{page_number}/preview")
+def preview_document_page(document_id: str, page_number: int):
+    try:
+        path = rag_service.page_preview(document_id, page_number)
+    except ValueError as exc:
+        raise HTTPException(404, str(exc)) from exc
+    if path is None:
+        raise HTTPException(404, "Không tìm thấy tài liệu.")
+    return FileResponse(path, media_type="image/png", filename=path.name)
 
 
 @router.delete("/{document_id}")

@@ -29,7 +29,7 @@ async def lifespan(_app):
     yield
 
 
-app = FastAPI(title="GenAI Learning Studio", description="Talk to Documents (RAG) với FastAPI, Qdrant và Ollama Llama 3", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="GenAI Learning Studio", description="Talk to Documents (RAG) với FastAPI, Qdrant và Ollama", version="1.1.0", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 app.include_router(documents_router)
 app.include_router(rag_router)
@@ -57,7 +57,8 @@ def system_status():
 @app.post("/chat")
 def chat_endpoint(request: ChatRequest):
     try:
-        return {"answer": chat(request.message, request.temperature, request.max_tokens, request.history), "model": settings.ollama_model}
+        model = request.model or settings.ollama_model
+        return {"answer": chat(request.message, request.temperature, request.max_tokens, request.history, model), "model": model}
     except Exception as exc:
         raise HTTPException(503, f"Không thể gọi Ollama. Hãy chạy Ollama và kiểm tra `ollama list`: {exc}") from exc
 
@@ -65,7 +66,7 @@ def chat_endpoint(request: ChatRequest):
 @app.post("/chat/stream")
 def chat_stream_endpoint(request: ChatRequest):
     return StreamingResponse(chat_stream(request.message, request.temperature, request.max_tokens,
-                                         request.history), media_type="text/plain; charset=utf-8")
+                                         request.history, request.model), media_type="text/plain; charset=utf-8")
 
 
 @app.post("/tts/normalize")
@@ -121,12 +122,16 @@ def generate_image(request: ImageGenerationRequest):
 
 
 @app.post("/video/generate")
-async def generate_video(file: UploadFile = File(...), num_frames: int = Form(14), fps: int = Form(7)):
+async def generate_video(file: UploadFile = File(...), num_frames: int = Form(14), fps: int = Form(7),
+                         seed: int = Form(42), motion_bucket_id: int = Form(127),
+                         noise_aug_strength: float = Form(.02), decode_chunk_size: int = Form(2)):
     allowed_images = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp"}
     suffix = Path(file.filename or "").suffix.lower()
     if suffix not in allowed_images or file.content_type != allowed_images[suffix]:
-        raise HTTPException(415, "Tệp đầu vào phải là PNG hoặc JPEG.")
-    if not 2 <= num_frames <= 25 or not 1 <= fps <= 30:
+        raise HTTPException(415, "Tệp đầu vào phải là PNG, JPEG hoặc WebP.")
+    if (not 2 <= num_frames <= 25 or not 1 <= fps <= 30 or not 0 <= seed <= 2**32 - 1
+            or not 1 <= motion_bucket_id <= 255 or not 0 <= noise_aug_strength <= 1
+            or not 1 <= decode_chunk_size <= 8):
         raise HTTPException(422, "Số frame hoặc FPS không hợp lệ.")
     input_path = settings.upload_dir / f"video_input_{uuid4().hex}{suffix}"
     try:
@@ -138,7 +143,8 @@ async def generate_video(file: UploadFile = File(...), num_frames: int = Form(14
                 if size > min(settings.max_upload_mb, 20) * 1024 * 1024:
                     raise HTTPException(413, "Ảnh đầu vào vượt giới hạn 20 MB.")
                 await output.write(block)
-        result = video_service.generate_video(str(input_path), num_frames, fps)
+        result = video_service.generate_video(str(input_path), num_frames, fps, seed,
+                                              motion_bucket_id, noise_aug_strength, decode_chunk_size)
         return {**result, "video_url": f"/videos/{Path(result['path']).name}", "size_bytes": Path(result["path"]).stat().st_size}
     except Exception as exc:
         if isinstance(exc, HTTPException):
@@ -147,6 +153,12 @@ async def generate_video(file: UploadFile = File(...), num_frames: int = Form(14
     finally:
         input_path.unlink(missing_ok=True)
         await file.close()
+
+
+@app.get("/video/capabilities")
+def video_capabilities():
+    """Expose the real backend, controls and blockers used by the conditional UI."""
+    return video_service.readiness()
 
 
 @app.post("/video/demo")

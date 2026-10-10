@@ -1,0 +1,275 @@
+[
+  {
+    "id": "D01",
+    "question": "Năng lực hấp thụ của doanh nghiệp là gì và nó ảnh hưởng thế nào đến khả năng khai thác đổi mới?",
+    "expected_elements": [
+      "năng lực tiếp nhận",
+      "tri thức",
+      "khai thác"
+    ],
+    "pages": [
+      72,
+      73,
+      74,
+      75
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "D02",
+    "question": "Vì sao một doanh nghiệp có công nghệ tốt vẫn có thể thất bại trong quá trình thương mại hóa đổi mới?",
+    "expected_elements": [
+      "tài sản bổ sung",
+      "năng lực công nghệ"
+    ],
+    "pages": [
+      15,
+      32,
+      33
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D03",
+    "question": "Đổi mới tuần tự khác đổi mới đột phá ở những điểm nào?",
+    "expected_elements": [
+      "tri thức hiện tại",
+      "tri thức hoàn toàn khác|triệt tiêu",
+      "năng lực"
+    ],
+    "pages": [
+      16,
+      17,
+      31
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D04",
+    "question": "Những nhân tố nào ảnh hưởng đến hiệu quả chuyển giao công nghệ giữa các tổ chức?",
+    "expected_elements": [
+      "năng lực tiếp nhận",
+      "năng lực chuyển giao",
+      "khác biệt văn hóa",
+      "bản chất của đổi mới",
+      "thời điểm"
+    ],
+    "pages": [
+      72,
+      73,
+      74,
+      75
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D05",
+    "question": "Tại sao các doanh nghiệp đôi khi chủ động chia sẻ công nghệ cho đối thủ hoặc đối tác?",
+    "expected_elements": [
+      "hợp tác",
+      "quy mô lợi nhuận|tiêu chuẩn",
+      "năng lực bổ sung|tài sản bổ sung"
+    ],
+    "pages": [
+      135,
+      136,
+      137,
+      138,
+      149,
+      150,
+      151
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "D06",
+    "question": "Phân biệt đổi mới dựa trên tri thức và đổi mới chế biến khối.",
+    "expected_elements": [
+      "tri thức hàm ẩn",
+      "chế biến khối",
+      "tài sản bổ sung"
+    ],
+    "pages": [
+      26,
+      27,
+      32,
+      105,
+      106
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D07",
+    "question": "Chứng khoán hóa có thể cải thiện khả năng thanh khoản của ngân hàng bằng cơ chế nào?",
+    "expected_elements": [
+      "khoản vay",
+      "chứng khoán",
+      "thanh khoản",
+      "bán"
+    ],
+    "pages": [
+      156,
+      159,
+      160
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D08",
+    "question": "CDS và chứng khoán hóa giống và khác nhau thế nào về chuyển giao rủi ro?",
+    "expected_elements": [
+      "CDS",
+      "chứng khoán hóa",
+      "rủi ro tín dụng",
+      "thanh khoản"
+    ],
+    "pages": [
+      156,
+      157,
+      159,
+      160,
+      161
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "D09",
+    "question": "Đổi mới tài chính có thể mang lại lợi ích gì cho khách hàng và tổ chức trung gian tài chính?",
+    "expected_elements": [
+      "chi phí",
+      "rủi ro",
+      "sản phẩm",
+      "phân bổ vốn"
+    ],
+    "pages": [
+      159,
+      160,
+      161,
+      162
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D10",
+    "question": "Vì sao mức độ bất ổn của môi trường có thể ảnh hưởng đến khả năng nhận ra cơ hội đổi mới?",
+    "expected_elements": [
+      "thu thập",
+      "xử lý thông tin",
+      "bất ổn",
+      "nhận ra tiềm năng"
+    ],
+    "pages": [
+      84,
+      93,
+      94,
+      105
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D11",
+    "question": "Điều gì khiến một ý tưởng mới khó được một tổ chức chấp nhận dù ý tưởng đó có giá trị?",
+    "expected_elements": [
+      "văn hóa",
+      "NIH|not invented here",
+      "chống đối"
+    ],
+    "pages": [
+      76,
+      93,
+      94,
+      102
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D12",
+    "question": "Hiệu ứng khóa chặt khách hàng ảnh hưởng thế nào đến việc thay đổi công nghệ?",
+    "expected_elements": [
+      "khóa",
+      "sức ì",
+      "khách hàng"
+    ],
+    "pages": [
+      21,
+      22,
+      23,
+      188
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "D13",
+    "question": "Những chiến lược chủ yếu để doanh nghiệp thu lợi nhuận từ đổi mới được giáo trình đề cập là gì?",
+    "expected_elements": [
+      "ngăn chặn",
+      "tăng tốc",
+      "hợp tác"
+    ],
+    "pages": [
+      142,
+      143,
+      144,
+      147,
+      149,
+      151
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D14",
+    "question": "Đổi mới tài chính tác động đến rủi ro như thế nào? Phân biệt các cơ chế nếu tài liệu đề cập.",
+    "expected_elements": [
+      "chuyển giao rủi ro",
+      "phân tán rủi ro",
+      "quản lý rủi ro",
+      "định giá rủi ro"
+    ],
+    "pages": [
+      155,
+      156,
+      157,
+      159,
+      160,
+      161
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "D15",
+    "question": "Theo giáo trình, cổ phiếu của ngân hàng ACB sẽ đạt giá bao nhiêu vào ngày 31/12/2030?",
+    "expected_elements": [],
+    "pages": [],
+    "refusal": true,
+    "support_status": "unsupported",
+    "category": "master-prompt-unsupported"
+  }
+]

@@ -1,0 +1,368 @@
+[
+  {
+    "id": "H01",
+    "question": "Vì sao tri thức ngầm thường khó chuyển giao hơn tri thức được thể hiện rõ bằng văn bản?",
+    "expected_elements": [
+      "tri thức ẩn|tri thức ngầm",
+      "khó xác định",
+      "khó chuyển"
+    ],
+    "pages": [
+      28,
+      54,
+      73,
+      74,
+      75
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "H02",
+    "question": "Các mối quan hệ với nhà cung cấp có thể hỗ trợ hoặc cản trở đổi mới ra sao?",
+    "expected_elements": [
+      "nhà cung cấp",
+      "năng lực",
+      "mối quan hệ"
+    ],
+    "pages": [
+      23,
+      24,
+      78,
+      142,
+      143
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "H03",
+    "question": "Đổi mới kiến trúc khác đổi mới thành phần như thế nào?",
+    "expected_elements": [
+      "kiến trúc",
+      "thành phần",
+      "liên kết"
+    ],
+    "pages": [
+      20,
+      21,
+      31
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H04",
+    "question": "Tại sao một thiết kế chủ đạo có thể làm thay đổi chiến lược cạnh tranh của doanh nghiệp?",
+    "expected_elements": [
+      "thiết kế chủ đạo",
+      "tiêu chuẩn",
+      "hợp tác|cạnh tranh"
+    ],
+    "pages": [
+      34,
+      111,
+      114,
+      149,
+      151
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "H05",
+    "question": "Vì sao công ty lớn không phải lúc nào cũng khai thác đổi mới đột phá tốt hơn doanh nghiệp mới?",
+    "expected_elements": [
+      "tri thức",
+      "năng lực hiện tại",
+      "tài sản bổ sung",
+      "doanh nghiệp mới|start-up"
+    ],
+    "pages": [
+      15,
+      17,
+      18,
+      31,
+      32,
+      139,
+      140
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H06",
+    "question": "Năng lực tiếp nhận và năng lực chuyển giao công nghệ có vai trò gì trong hợp tác đổi mới?",
+    "expected_elements": [
+      "năng lực tiếp nhận",
+      "năng lực chuyển giao",
+      "tri thức"
+    ],
+    "pages": [
+      72,
+      73,
+      74,
+      75
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H07",
+    "question": "Những yếu tố nào giúp một doanh nghiệp nhận ra tiềm năng của một đổi mới trước đối thủ?",
+    "expected_elements": [
+      "thu thập",
+      "xử lý thông tin",
+      "chiến lược",
+      "cơ cấu",
+      "con người"
+    ],
+    "pages": [
+      84,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H08",
+    "question": "Đổi mới công nghệ ảnh hưởng như thế nào đến cấu trúc ngành và khả năng cạnh tranh?",
+    "expected_elements": [
+      "cấu trúc ngành",
+      "cạnh tranh",
+      "gia nhập",
+      "sản phẩm thay thế"
+    ],
+    "pages": [
+      17,
+      30,
+      31,
+      108,
+      109,
+      110,
+      111
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H09",
+    "question": "Vì sao nhà đổi mới phụ có thể đóng vai trò quan trọng đối với thành công của sản phẩm mới?",
+    "expected_elements": [
+      "nhà đổi mới phụ",
+      "năng lực",
+      "chuỗi giá trị"
+    ],
+    "pages": [
+      21,
+      23,
+      24,
+      62,
+      63,
+      74,
+      78
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "H10",
+    "question": "Thời điểm đưa công nghệ ra thị trường ảnh hưởng thế nào đến khả năng thu lợi nhuận từ đổi mới?",
+    "expected_elements": [
+      "thời điểm",
+      "lợi thế",
+      "tài sản bổ sung|năng lực"
+    ],
+    "pages": [
+      32,
+      33,
+      111,
+      120
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "H11",
+    "question": "Vai trò của quản lý rủi ro trong sự phát triển của các công cụ tài chính mới là gì?",
+    "expected_elements": [
+      "quản lý rủi ro",
+      "chuyển giao",
+      "phân tán",
+      "công cụ tài chính"
+    ],
+    "pages": [
+      155,
+      156,
+      159,
+      160,
+      161
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H12",
+    "question": "Giải thích vì sao các tổ chức tài chính có động cơ phát triển sản phẩm ngay cả khi sản phẩm hiện tại vẫn hoạt động tốt.",
+    "expected_elements": [
+      "cạnh tranh",
+      "nhu cầu khách hàng",
+      "công nghệ mới",
+      "chủ động"
+    ],
+    "pages": [
+      158,
+      162,
+      220
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "H13",
+    "question": "Chuyển giao rủi ro tín dụng có thể tác động như thế nào đến khả năng cho vay của ngân hàng?",
+    "expected_elements": [
+      "hạn chế vốn",
+      "cho vay",
+      "chuyển rủi ro tín dụng"
+    ],
+    "pages": [
+      160,
+      161
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H14",
+    "question": "Vì sao sự phát triển của ngân hàng số có thể làm giảm lợi thế của mạng lưới chi nhánh truyền thống?",
+    "expected_elements": [
+      "không cần đến chi nhánh",
+      "chuyển đổi nhà cung cấp",
+      "bất tiện"
+    ],
+    "pages": [
+      213
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H15",
+    "question": "Dữ liệu giao dịch khách hàng tạo ra lợi thế cạnh tranh gì cho ngân hàng truyền thống?",
+    "expected_elements": [
+      "dữ liệu giao dịch",
+      "phát triển sản phẩm",
+      "bán kèm",
+      "quản lý rủi ro tín dụng"
+    ],
+    "pages": [
+      213
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H16",
+    "question": "Đổi mới sản phẩm và đổi mới quy trình có thể tác động khác nhau đến chi phí và chất lượng dịch vụ như thế nào?",
+    "expected_elements": [
+      "đổi mới sản phẩm",
+      "đổi mới quy trình",
+      "cắt giảm chi phí",
+      "chất lượng|khác biệt"
+    ],
+    "pages": [
+      15,
+      34,
+      66,
+      161,
+      162
+    ],
+    "refusal": false,
+    "support_status": "partial",
+    "category": "master-prompt-partial"
+  },
+  {
+    "id": "H17",
+    "question": "Cơ quan quản lý có thể ảnh hưởng đến đổi mới tài chính theo những hướng nào?",
+    "expected_elements": [
+      "thụ động",
+      "chủ động",
+      "tiêu chuẩn",
+      "quy định"
+    ],
+    "pages": [
+      158,
+      205,
+      206,
+      207,
+      208
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H18",
+    "question": "Hãy phân biệt vai trò của công nghệ, nhu cầu khách hàng và cạnh tranh trong việc thúc đẩy đổi mới.",
+    "expected_elements": [
+      "công nghệ mới",
+      "nhu cầu khách hàng",
+      "cạnh tranh"
+    ],
+    "pages": [
+      158,
+      162,
+      185,
+      247
+    ],
+    "refusal": false,
+    "support_status": "full",
+    "category": "master-prompt-full"
+  },
+  {
+    "id": "H19",
+    "question": "Giá Bitcoin chính xác vào ngày 31/12/2030 là bao nhiêu theo tài liệu?",
+    "expected_elements": [],
+    "pages": [],
+    "refusal": true,
+    "support_status": "unsupported",
+    "category": "master-prompt-unsupported"
+  },
+  {
+    "id": "H20",
+    "question": "Giáo trình chứng minh thuật toán Qdrant HNSW của dự án có độ chính xác tìm kiếm tuyệt đối 100% như thế nào?",
+    "expected_elements": [],
+    "pages": [],
+    "refusal": true,
+    "support_status": "unsupported",
+    "category": "master-prompt-unsupported"
+  }
+]

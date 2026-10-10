@@ -1,0 +1,6 @@
+﻿fixture,page,table_id,expected_columns,actual_columns,expected_data_rows,actual_data_rows,units_preserved,negative_parentheses_preserved,continuation_link,status
+B_mixed_text_table.pdf,1,p1:t1,3,3,2,2,True,n/a,n/a,PASS
+C_financial_statement.pdf,1,p1:t1,4,4,7,7,True,True,n/a,PASS
+I_multipage_table.pdf,1,p1:t1,3,3,15,15,True,n/a,continued_by:p2:t1,PASS
+I_multipage_table.pdf,2,p2:t1,3,3,15,15,True,n/a,continued_from:p1:t1,PASS
+J_mixed_vi_en.pdf,1,p1:t1,4,4,2,2,True,n/a,n/a,PASS

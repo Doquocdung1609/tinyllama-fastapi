@@ -29,15 +29,17 @@ def ollama_status() -> dict:
         return {"online": False, "model": settings.ollama_model, "model_available": False, "error": str(exc)}
 
 
-def generate(prompt: str, temperature: float = 0.2, max_tokens: int = 1024) -> str:
+def generate(prompt: str, temperature: float = 0.2, max_tokens: int = 1024,
+             model_name: str | None = None) -> str:
     from app.services.inference_manager import heavy_inference, mark_stage, release_diffusion_gpu
     settings = get_settings()
-    logger.info("ollama generation started model=%s prompt_chars=%d", settings.ollama_model, len(prompt))
+    model = model_name or settings.ollama_model
+    logger.info("ollama generation started model=%s prompt_chars=%d", model, len(prompt))
     with heavy_inference("ollama_generation"):
         release_diffusion_gpu()
         mark_stage("RUNNING")
         response = requests.post(f"{settings.ollama_base_url}/api/generate", json={
-            "model": settings.ollama_model, "prompt": prompt, "stream": False,
+            "model": model, "prompt": prompt, "stream": False,
             "keep_alive": "5m", "options": {"temperature": temperature, "num_predict": max_tokens,
                                               "num_ctx": 4096},
         }, timeout=300)
@@ -45,7 +47,7 @@ def generate(prompt: str, temperature: float = 0.2, max_tokens: int = 1024) -> s
         answer = response.json().get("response", "").strip()
     if not answer:
         raise RuntimeError("Ollama returned an empty response")
-    logger.info("ollama generation completed model=%s response_chars=%d", settings.ollama_model, len(answer))
+    logger.info("ollama generation completed model=%s response_chars=%d", model, len(answer))
     return answer
 
 
@@ -68,14 +70,16 @@ def _chat_prompt(message: str, history: list[dict[str, str]] | None = None,
             "When the user writes Vietnamese, answer in Vietnamese.\n\n" + "\n".join(turns))
 
 
-def generate_stream(prompt: str, temperature: float = 0.7, max_tokens: int = 512):
+def generate_stream(prompt: str, temperature: float = 0.7, max_tokens: int = 512,
+                    model_name: str | None = None):
     from app.services.inference_manager import heavy_inference, mark_stage, release_diffusion_gpu
     settings = get_settings()
+    model = model_name or settings.ollama_model
     with heavy_inference("ollama_stream"):
         release_diffusion_gpu()
         mark_stage("RUNNING")
         with requests.post(f"{settings.ollama_base_url}/api/generate", json={
-            "model": settings.ollama_model, "prompt": prompt, "stream": True, "keep_alive": "5m",
+            "model": model, "prompt": prompt, "stream": True, "keep_alive": "5m",
             "options": {"temperature": temperature, "num_predict": max_tokens, "num_ctx": 4096},
         }, timeout=(10, 300), stream=True) as response:
             response.raise_for_status()
@@ -88,13 +92,13 @@ def generate_stream(prompt: str, temperature: float = 0.7, max_tokens: int = 512
 
 
 def chat(message: str, temperature: float = 0.7, max_tokens: int = 512,
-         history: list[dict[str, str]] | None = None) -> str:
-    return generate(_chat_prompt(message, history), temperature, max_tokens)
+         history: list[dict[str, str]] | None = None, model_name: str | None = None) -> str:
+    return generate(_chat_prompt(message, history), temperature, max_tokens, model_name)
 
 
 def chat_stream(message: str, temperature: float = 0.7, max_tokens: int = 512,
-                history: list[dict[str, str]] | None = None):
-    yield from generate_stream(_chat_prompt(message, history), temperature, max_tokens)
+                history: list[dict[str, str]] | None = None, model_name: str | None = None):
+    yield from generate_stream(_chat_prompt(message, history), temperature, max_tokens, model_name)
 
 
 def unload_model(model_name: str) -> bool:

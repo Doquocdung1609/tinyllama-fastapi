@@ -1,0 +1,405 @@
+[
+  {
+    "pdf": "A_text_only_vi.pdf",
+    "elapsed_ms": 735.9,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 0,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 1,
+    "modalities": {
+      "text": 1,
+      "table": 0,
+      "chart": 0,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "B_mixed_text_table.pdf",
+    "elapsed_ms": 76.2,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 1,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 1,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 1,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 2,
+    "modalities": {
+      "text": 1,
+      "table": 1,
+      "chart": 0,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "C_financial_statement.pdf",
+    "elapsed_ms": 89.0,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 1,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 1,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 1,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 2,
+    "modalities": {
+      "text": 1,
+      "table": 1,
+      "chart": 0,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "D_bar_line_charts.pdf",
+    "elapsed_ms": 106.1,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 2,
+      "text_pages": 2,
+      "table_pages": 0,
+      "chart_pages": 2,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 2,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 2,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 4,
+    "modalities": {
+      "text": 2,
+      "table": 0,
+      "chart": 2,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "E_pie_chart.pdf",
+    "elapsed_ms": 96.3,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 1,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 1,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 1,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 2,
+    "modalities": {
+      "text": 1,
+      "table": 0,
+      "chart": 1,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "F_process_diagram.pdf",
+    "elapsed_ms": 86.7,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 1,
+      "scanned_pages": 0,
+      "mixed_pages": 1,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 1,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 2,
+    "modalities": {
+      "text": 1,
+      "table": 0,
+      "chart": 0,
+      "figure": 1,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "G_scanned_document.pdf",
+    "elapsed_ms": 55.8,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 0,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 1,
+      "mixed_pages": 0,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [
+        "OCR_ENGINE_UNAVAILABLE",
+        "SCANNED_PAGE_REQUIRES_OCR"
+      ],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 0,
+    "modalities": {
+      "text": 0,
+      "table": 0,
+      "chart": 0,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "H_multi_column.pdf",
+    "elapsed_ms": 78.5,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 0,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 1,
+    "modalities": {
+      "text": 1,
+      "table": 0,
+      "chart": 0,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "I_multipage_table.pdf",
+    "elapsed_ms": 94.8,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 2,
+      "text_pages": 2,
+      "table_pages": 2,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 2,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 2,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 6,
+    "modalities": {
+      "text": 2,
+      "table": 4,
+      "chart": 0,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  },
+  {
+    "pdf": "J_mixed_vi_en.pdf",
+    "elapsed_ms": 79.7,
+    "summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 1,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 1,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 1,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": false,
+        "ocr_engine": null,
+        "ocr_languages": [],
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "chunks": 2,
+    "modalities": {
+      "text": 1,
+      "table": 1,
+      "chart": 0,
+      "figure": 0,
+      "ocr_text": 0
+    }
+  }
+]

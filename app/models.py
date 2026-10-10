@@ -9,6 +9,7 @@ class ChatRequest(BaseModel):
     temperature: float = Field(default=0.7, ge=0, le=2)
     max_tokens: int = Field(default=512, ge=1, le=8192)
     history: list[dict[str, str]] = Field(default_factory=list)
+    model: str | None = None
 
 
 class ChatResponse(BaseModel):
@@ -53,6 +54,7 @@ class RAGRequest(BaseModel):
     score_threshold: float = Field(default_factory=lambda: get_settings().score_threshold, ge=0, le=1)
     document_id: str | None = None
     generate_answer: bool = True
+    model: str | None = None
 
 
 class ChunkMetadata(BaseModel):

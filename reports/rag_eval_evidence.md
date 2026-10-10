@@ -1,0 +1,351 @@
+# RAG evaluation evidence appendix
+
+Nguồn: dữ liệu PDF đã xử lý `processed/aedb60bc088e4242970a43da1e897bde.json`. Các đoạn dưới đây được chọn theo ground truth đã xác minh; câu trả lời của mô hình không được dùng làm ground truth.
+
+## RAG-Q01
+
+**Câu hỏi:** Ba loại đổi mới tài chính căn cứ theo loại hình là gì? Trả lời ngắn gọn và trích trang tài liệu.
+
+**Trang nguồn:** 155
+
+- Trang 155 · chunk `aedb60bc088e4242970a43da1e897bde-00578` · index 578
+  > ủa vấn đề ngoại bảng trong hoạt động kinh doanh của các ngân hàng. Cùng với đó là sự phát triển của các thị trường mới. Căn cứ vào loại hình đổi mới trong tài chính, có thể phân chia ba loại hình đổi mới tài chính: - Đổi mới sản phẩm: Tạo ra các công cụ tài chính, hợp đồng, kỹ thuật và thị trường mới. - Đổi mới chuyển đổi rủi ro: Việc tách các đặc điểm và rủi ro riêng biệt của các công cụ riêng lẻ (chẳng hạn như rủi ro tín dụng và rủi ro lãi suất) và tập hợp lại chúng thành các kết hợp khác nhau (Llewellyn, 1992) . - Đổi mới quy trình: Cải tiến quy trình được điển hình hóa bằng các phương tiện mới, chẳng hạn như phân phối chứng khoán, xử lý giao dịch hoặc giao dịch định giá. Đặc điểm trung tâm của đổi mới tài chính là việc tách rời các đặc điểm của các
+
+## RAG-Q02
+
+**Câu hỏi:** Phân biệt đổi mới công cụ và đổi mới hậu hợp đồng. Cho ví dụ.
+
+**Trang nguồn:** 156
+
+- Trang 156 · chunk `aedb60bc088e4242970a43da1e897bde-00581` · index 581
+  > innovation) và đổi mới 'hậu hợp đồng' (post-contract innovation). Trong trường hợp đổi mới công cụ, một công cụ mới được tạo ra với một tập hợp các đặc tính cụ thể. Trong trường hợp đổi mới hậu hợp đồng, hiệu quả tương tự đạt được bằng nhiều kỹ thuật khác nhau cho phép thay đổi đặc điểm của tài sản hoặc nợ phải trả. Chẳng hạn, hợp đồng hoán đổi nợ xấu, theo đó người cho vay có thể nắm giữ tài sản trong khi chuyển rủi ro tín dụng sang đối tác. Bằng cách này, nhiều công cụ phái sinh và các đổi mới tài chính khác cho phép các tổ chức khác nhau khai thác lợi thế so sánh của họ ở các thị trường khác nhau và bán lợi thế đó cho các tổ chức khác. Căn cứ vào chức năng đối với hệ thống tài chính, đổi mới tài chính có thể phân chia thành 8 loại
+
+## RAG-Q03
+
+**Câu hỏi:** Theo cách tiếp cận chức năng, đổi mới tài chính được chia thành tám loại nào?
+
+**Trang nguồn:** 156, 157, 158
+
+- Trang 156 · chunk `aedb60bc088e4242970a43da1e897bde-00583` · index 583
+  > 3. Tăng cường thanh khoản (ví dụ, chứng khoán hóa có tác dụng làm cho các khoản vay ngân hàng trở nên thanh khoản hơn). 4. Tăng cường tạo tín dụng (ví dụ: CDS, CDO). 5. Tạo vốn chủ sở hữu (ví dụ: hoán đổi nợ-vốn chủ sở hữu). 6. Bảo hiểm (ví dụ: CDS). 7. Quản lý tài sản và nợ (ví dụ: chứng khoán hóa, CDS, CDO). 8. Tài trợ cho các tổ chức tài chính (ví dụ, chứng khoán hóa). Chuyển giao rủi ro làm giảm rủi ro vốn có của một công cụ tài chính cụ thể hoặc cho phép chủ sở hữu được bảo vệ trước một rủi ro nhất định. Ví dụ, trong khi một nhà đầu tư có thể nắm giữ một tài sản hoặc quyền sở hữu có giá trị tương lai không chắc chắn, hợp đồng CDS song song (trong khi không làm giảm xác suất xảy ra rủi ro) sẽ mang lại sự bảo vệ trong trường hợp rủi ro xảy ra.
+
+- Trang 157 · chunk `aedb60bc088e4242970a43da1e897bde-00588` · index 588
+  > ro tín dụng, một ví dụ rõ ràng là CDS trong đó người mua bảo vệ trả cho người bán một khoản thanh toán phí bảo hiểm để đổi lại người bán bảo vệ cam kết bồi thường cho người mua trong trường hợp xảy ra một sự kiện cụ thể. Quản lý tài sản và nợ phải trả : bằng cách này hay cách khác, hầu như tất cả các công cụ đều mở rộng phạm vi cho ngân hàng quản lý tài sản và nợ phải trả bằng cách đưa ra phạm vi quản lý rủi ro, mở rộng cơ hội cho vay hoặc thay đổi thành phần hoặc cấu trúc rủi ro trong số dư của ngân hàng tờ giấy. Nguồn tài trợ của các tổ chức tài chính : một số công cụ có tác dụng mở rộng nguồn vốn tài trợ của ngân hàng. Ví dụ, chứng khoán hóa cho phép ngân hàng đa dạng 157
+
+- Trang 158 · chunk `aedb60bc088e4242970a43da1e897bde-00592` · index 592
+  > và nhà đầu tư tìm kiếm lợi nhuận cao hơn bằng nhiều cách khác nhau; và (vi) tăng cơ hội kinh doanh chênh lệch giá liên quan đến yêu cầu về vốn pháp định. Căn cứu vào động cơ của đổi mới tài chính, Llewellyn (1992) xác định bốn đổi mới tài chính: (i) phòng thủ (để đáp ứng với những thay đổi về chính sách và quy định); (ii) chủ động (các tổ chức tài chính tạo ra các công cụ hoặc sản phẩm mới mà họ tin rằng có thể tiếp thị thành công); (iii) đáp ứng (khi một công cụ hoặc dịch vụ được phát triển nhằm đáp ứng sự thay đổi về yêu cầu danh mục đầu tư của khách hàng); và (iv) bảo vệ (khi các tổ chức áp dụng các kỹ thuật do những hạn chế về danh mục đầu tư của chính họ). Đổi mới tài chính không phải là một quá trình ngẫu nhiên hoặc tùy ý mà có thể
+
+## RAG-Q04
+
+**Câu hỏi:** Hai yếu tố thúc đẩy đổi mới tài chính theo tài liệu là gì?
+
+**Trang nguồn:** 158
+
+- Trang 158 · chunk `aedb60bc088e4242970a43da1e897bde-00589` · index 589
+  > hóa nguồn vốn của mình tới nhiều nhà đầu tư hơn và những người có thể sẵn sàng đầu tư vào một loại tài sản ngân hàng cụ thể (ví dụ, các khoản thế chấp) chứ không phải vào bản thân ngân hàng. 7.1.3 Động lực của đổi mới tài chính Anderloni và Bongini (2009) cho rằng Động lực chủ yếu của đổi mới với các ngành sản xuất và dịch vụ gồm: (i) sự sẵn có của công nghệ mới; (ii) sự cạnh tranh; (iii) nhu cầu phát triển của khách hàng. Đối với lĩnh vực tài chính, đổi mới tài chính được thúc đẩy bới 02 yếu tố: (i) mức độ biến động của lãi suất, tỷ giá hối đoái và sự không chắc chắn của thị trường một mặt tạo ra nhu cầu mới của khách hàng và mặt khác là các giải pháp quản lý mới được các trung gian tài chính áp dụng và (ii) 'biện
+
+## RAG-Q05
+
+**Câu hỏi:** Đổi mới tài chính giúp phân bổ vốn và quản lý rủi ro như thế nào?
+
+**Trang nguồn:** 160
+
+- Trang 160 · chunk `aedb60bc088e4242970a43da1e897bde-00599` · index 599
+  > i tạo điều kiện thuận lợi cho hoạt động chênh lệch giá giữa các thị trường ở các quốc gia khác nhau, về nguyên tắc, làm giảm sự bất thường về giá và giảm sự không hoàn hảo của thị trường thông qua sự hội nhập sâu hơn của các thị trường. Chuyển giao và quản lý rủi ro: Đổi mới tài chính cho phép quản lý và chuyển giao các loại rủi ro khác nhau một cách tối ưu cho những người có khả năng và/hoặc sẵn sàng chấp nhận rủi ro cao hơn. Phạm vi rộng hơn của các công cụ tài chính hiện có đã trở thành một phần không thể thiếu trong quản lý rủi ro cho cả nhà cung cấp dịch vụ tài chính và khách hàng của họ, đồng thời đổi mới tài chính cũng mở rộng phạm vi các công cụ sẵn có để quản lý rủi ro. Rủi ro được phân tán nhiều hơn: Một trong những đặc tính của một số công cụ
+
+## RAG-Q06
+
+**Câu hỏi:** Cho vay theo nhóm trong tài chính vi mô hoạt động dựa trên cơ chế nào và phù hợp trong môi trường nào?
+
+**Trang nguồn:** 163
+
+- Trang 163 · chunk `aedb60bc088e4242970a43da1e897bde-00614` · index 614
+  > ác sử dụng, chẳng hạn ACCION để cho những người đi vay với các khu ổ chuột ở các thành phố lớn ở Mỹ Latinh vay, tuy vậy kết quả không được khả quan. Về nguyên tắc, cho vay theo nhóm phù hợp để khắc phục các vấn đề khi cho người nghèo vay như mô tả ở trên và dường như nó hoạt động tốt trong một số môi trường nhất định có đặc điểm là sự gắn kết xã hội mạnh mẽ và khả năng di chuyển hạn chế. Trong một thời gian, nó thậm chí còn được ủng hộ mạnh mẽ đến mức người ta có thể tin rằng cho vay theo nhóm là công nghệ tín dụng vi mô khả thi duy nhất đối với những người đi vay thực sự nghèo, và trong mọi trường hợp, cho vay theo nhóm là cách tiếp cận chủ đạo đối với cho vay vi mô cho đến giữa những năm 1990. 163
+
+## RAG-Q07
+
+**Câu hỏi:** Việc thay thế chi nhánh bằng ATM ảnh hưởng đến chi phí vận hành ra sao?
+
+**Trang nguồn:** 169, 170
+
+- Trang 169 · chunk `aedb60bc088e4242970a43da1e897bde-00638` · index 638
+  > Quốc gia Chi phí vận hành OC/TA máy ATM Chi nhánh (2004, triệu Euro PPP)* Pháp 66.694 0,02 280 1.4 Đức 62.184 - 40 601 14 Vương quốc Anh 51.497 - 52 160 - 25 Ý 40.414 - 29 809 133 Hà Lan 27.496 - 33 1.593 - 50 Tây ban nha 25.857 - 50 858 22 Bỉ 9,716 - 23 802 - 48 Thụy Điển 4.538 - 38 70 - 33 Đan mạch 3.311 - 39 522 - 38 Phần Lan 2.240 - 59 11 - 46 Na Uy 1.739 - 60 70 - 38 Tất cả các nước - 34 434 9,8 Lưu ý : *Triệu euro năm 2004, sức mua tương đương (PPP) ($1 = 0,805). (Nguồn : Bolt và Humphrey, 2008). Năm 1987, 11 nước châu Âu nêu trong Bảng 7.1 có 154.279 chi nhánh ngân hàng và 45.244 máy ATM. Đến năm 2004, số lượng chi nhánh đã mở rộng 9,8% lên 169.362 văn phòng trong khi máy ATM mở rộng 434% lên 241.611. Điều này thể hiện
+
+- Trang 170 · chunk `aedb60bc088e4242970a43da1e897bde-00641` · index 641
+  > Việc giảm chi phí vận hành đơn vị khác nhau giữa các quốc gia do sự khác biệt trong mức độ thay thế máy ATM cho các chi nhánh. Tại 7 trong số 11 quốc gia trong Bảng 7.1, số lượng văn phòng chi nhánh giảm đáng kể trong khi ở Pháp con số này về căn bản không thay đổi. Các chi nhánh mở rộng ở Đức do thống nhất đất nước trong khi ở Ý và Tây Ban Nha, số chi nhánh tăng lên do các hạn chế trước đây về chi nhánh đã được dỡ bỏ và các ngân hàng nhân cơ hội này để mở rộng sang các thị trường bị cấm trong quá trình chuyển đổi. 7.2.3 Đổi mới trong ngân hàng điện tử Ngân hàng trực tuyến đã thu hút sự chú ý ngày càng tăng kể từ những năm 1990. Một phần được thúc đẩy bởi tiến bộ công nghệ, các ngân hàng bắt đầu sử dụng internet như một phương thức thanh toán sáng tạo và như một cách để giảm chi phí,
+
+## RAG-Q08
+
+**Câu hỏi:** Chương 8 mô tả các dòng sản phẩm fintech phổ biến nào?
+
+**Trang nguồn:** 181, 190, 191
+
+- Trang 181 · chunk `aedb60bc088e4242970a43da1e897bde-00686` · index 686
+  > CHƯƠNG 8. CÔNG NGHỆ TÀI CHÍNH GIỚI THIỆU CHƯƠNG 8 Các đổi mới gần đây nhất trong lĩnh vực tài chính đều liên quan tới công nghệ tài chính. Chương 8 trước tiên trình bày lịch sử hình thành và các yếu tố quan trọng đóng góp vào sự ra đời của công nghệ tài chính. Tiếp đến nội dung hệ sinh thái công nghệ tài chính giúp người đọc hình dung được các chủ thể tương tác và quan hệ hữu cơ để tạo sự phát triển của công nghệ tài chính. Phần cuối của chương 8 trình bày các dòng sản phẩm quan trọng và phổ biến nhất của công nghệ tài chính hiện nay gồm thanh toán, huy động vốn đám đông, đầu tư và bảo hiểm. Các sản phẩm này dẫn tới sự thay đổi quan trọng lĩnh vực tài chính hiện nay. 8.1 Sự ra đời của công nghệ tài chính 8.1.1 Xu hướng phát triển ngành tài chính
+
+- Trang 190 · chunk `aedb60bc088e4242970a43da1e897bde-00730` · index 730
+  > hiện các giao dịch sản phẩm, mua bán. Chuyển khoản tài chính có thể thực hiện các hình thức thanh toán từ người tiêu dùng đến công ty, người tiêu dùng đến người tiêu dùng, công ty này sang công ty khác và chuyển khoản quốc tế không yêu cầu thông qua các cơ quan thanh toán bù trừ. Bằng cách cung cấp tính bảo mật trong giao dịch và quyền riêng tư của dữ liệu, các công ty Fintech đã biến thanh toán thành sản phẩm phổ biến nhất trong toàn bộ dòng sản phẩm Fintech và giúp thu hút khách hàng rất hiệu quả. Mô hình doanh thu dựa trên mức hoa hồng thấp cho một giao dịch tài chính thành công. 8.3.2 Huy động vốn đám đông Các sản phẩm cho vay cộng đồng đề cập đến thực tế là không chỉ các tổ chức tài chính truyền thống mới có thể cho vay tiền mà hệ sinh thái Fintech đã cho phép
+
+- Trang 191 · chunk `aedb60bc088e4242970a43da1e897bde-00736` · index 736
+  > mới có thể thay đổi đáng kể tùy theo thói quen lái xe của khách hàng. Đề xuất giá trị này liên quan đến khía cạnh thuận tiện và giảm giá cho người tiêu dùng vì nó trở thành một chương trình trả tiền cho mỗi lần sử dụng. Những sản phẩm thường thu hút người tiêu dùng tài chính, những người chấp nhận sớm sẽ thay đổi động lực thu nhập của công ty Fintech, vì thay vì một khoản phí cố định, thu nhập sẽ trở nên thay đổi. CÂU HỎI CHƯƠNG 8 1. Trình bày các yếu tố dẫn tới sự ra đời của công nghệ tài chính. 2. Trình bày khái niệm và các thành tố cấu thành hệ sinh thái công nghệ tài chính. 3. Trình bày sản phẩm thanh toán điện tử của công nghệ tài chính. 4. Trình bày công cụ huy động vốn đám đông. 5. Trình bày sản phẩm công nghệ tài chính trong lĩnh vực đầu tư tài chính.
+
+## RAG-Q09
+
+**Câu hỏi:** Ngân hàng mở và API liên hệ với nhau như thế nào?
+
+**Trang nguồn:** 213, 214, 215, 216
+
+- Trang 213 · chunk `aedb60bc088e4242970a43da1e897bde-00821` · index 821
+  > CHƯƠNG 10. MỘT SỐ ĐIỂN HÌNH ĐỔI MỚI CÔNG NGHỆ TÀI CHÍNH GIỚI THIỆU CHƯƠNG Chương này một số điển hình đổi mới trong Công nghệ tài chính (Fintech). Đầu tiên, chúng ta sẽ tìm hiểu xem công nghệ đang phân cấp tài chính như thế nào thông qua Mạng, API và những công nghệ nền tảng trong ngân hàng. Chúng ta sẽ thấy được số hóa đang biến đổi tài chính như thế nào, tại sao các công ty khởi nghiệp fintech đang thâm nhập vào lĩnh vực ngân hàng, từ đó, các mô hình kinh doanh khả thi có thể xuất hiện. Tiếp theo đó chúng ta thấy được vai trò và những ứng dụng Công nghệ tài chính của Điện toán đám mây trong đổi mới tài chính. Và cuối cùng, là những ứng dụng của công nghệ tiến tiến nhất hiện nay - Trí tuệ nhân tạo và sự tự động hóa trong
+
+- Trang 214 · chunk `aedb60bc088e4242970a43da1e897bde-00829` · index 829
+  > p fintech truy cập dữ liệu khách hàng được lưu trữ trong hệ thống ngân hàng, từ đó cho phép phát triển các ứng dụng tài chính của bên thứ ba. Tại Anh, API Ngân hàng Mở được quản lý bởi Open Banking 214
+
+- Trang 215 · chunk `aedb60bc088e4242970a43da1e897bde-00832` · index 832
+  > dựa trên API trong dịch vụ tài chính Theo thời gian, tính minh bạch và cạnh tranh cao hơn do những thay đổi về pháp lý và thay đổi công nghệ mang lại có thể sẽ thay đổi đáng kể ngành tài chính bằng cách chuyển đổi các mô hình kinh doanh cấu thành của nó. Hơn nữa, các tổ chức khác nhau có khả năng thích ứng với những thay đổi này theo những cách khác nhau: một số ngân hàng có thể tập trung vào việc tạo ra các sản phẩm tài chính và phân phối chúng thông qua bên thứ ba trung gian; trong khi đó, những người khác có thể chọn trở thành những người trung gian này và tập trung vào việc phân phối các sản phẩm tài chính của bên thứ ba thông qua giao diện người dùng của họ. Những thay đổi mà ngành ngân hàng phải đối mặt ở mức độ lớn hơn đã xảy ra
+
+- Trang 216 · chunk `aedb60bc088e4242970a43da1e897bde-00836` · index 836
+  > nghiệm người dùng hấp dẫn – cho dù vật lý, kỹ thuật số hoặc cả hai – để tránh trở thành một trang web so sánh giá khác. Vì các mô hình kinh doanh nêu trên đều có những điểm mạnh và điểm yếu cố hữu nên có khả năng một số ngân hàng sẽ theo đuổi sự kết hợp giữa các mô hình này, có lẽ tập trung vào một trong các phương thức; quả thực, những chiến lược này không loại trừ lẫn nhau. Trong mọi trường hợp, có vẻ như các ngân hàng lớn hơn sẽ theo đuổi mô hình kết hợp vì quy mô và phạm vi hoạt động của họ – và tốc độ thay đổi chậm chạp trong đó – khiến các con đường khác trở nên khó khăn. Do đó, các ngân hàng lớn đang trên đường trở thành nền tảng cung cấp cho khách hàng sự kết hợp toàn diện giữa các giải pháp tài chính nội bộ và bên thứ ba; với sự trợ giúp của các API, các ngân hàng
+
+## RAG-Q10
+
+**Câu hỏi:** Điện toán đám mây thay đổi mô hình dịch vụ ngân hàng như thế nào?
+
+**Trang nguồn:** 224, 225, 226, 227
+
+- Trang 224 · chunk `aedb60bc088e4242970a43da1e897bde-00871` · index 871
+  > rling là một ví dụ điển hình cho điều này. Các tổ chức vận hành trung tâm dữ liệu hậu trường của riêng họ đang phải đối mặt với vấn đề phân bổ nguồn lực: do hoạt động của người dùng thay đổi trong ngày nên rất khó để tối ưu hóa chi tiêu cho cơ sở hạ tầng. Một mặt, phải có đủ sức mạnh tính toán vào thời điểm cao điểm; mặt khác, chạy cùng một phần cứng máy tính 24/7 vừa lãng phí vừa tốn kém. Trên thực tế, hầu hết các tổ chức không phải lúc nào cũng sử dụng trung tâm dữ liệu hậu trường của họ. Do đó, việc tập hợp các tài nguyên này thông qua giải pháp đám mây là điều hợp lý. Thay vì lưu trữ nền tảng nội bộ, các tổ chức có thể chạy chúng từ máy chủ của nhà cung cấp đám mây. Trong khi đó, người dùng cuối, những người tương tác với ứng dụng hướng tới khách hàng, cũng không khôn ngoan hơn vì
+
+- Trang 225 · chunk `aedb60bc088e4242970a43da1e897bde-00876` · index 876
+  > có thể chuyển đổi từ sản phẩm sang dịch vụ vì phần mềm là vô hình, cho phép nó được sử dụng kỹ thuật số. Vì các dịch vụ tài chính cũng vô hình tương tự, nên về mặt lý thuyết, có thể định hướng lại ngành tài chính theo hướng mô hình cung cấp dựa trên dịch vụ. Cụ thể như sau:  Ngân hàng là cơ sở hạ tầng Cơ sở hạ tầng CNTT rẻ hơn và dễ tiếp cận hơn đang đẩy nhanh quá trình phi trung gian hóa tài chính. Điều này cùng với Ngân hàng mở sẽ buộc các ngân hàng phải hình dung lại mô hình hoạt động của mình. Trong khi một số sẽ theo đuổi mô hình nền tảng, một số khác có thể trở nên giống các công ty tiện ích hơn bằng cách quản lý cơ sở hạ tầng nền tảng của hệ thống tài chính: điều này có thể liên quan đến việc cung cấp các dịch vụ hậu trường như xử lý thanh toán và những kiểm tra chống rửa tiền. 225
+
+- Trang 226 · chunk `aedb60bc088e4242970a43da1e897bde-00880` · index 880
+  > ép cơ sở hạ tầng CNTT được sử dụng như một dịch vụ, công nghệ đang giúp các dịch vụ ngân hàng có thể truy cập được theo yêu cầu. Mô hình này được gọi là Dịch vụ ngân hàng (BaaS). Nó có thể được xem như là sự kết hợp giữa hoạt động ngân hàng dựa trên tiện ích, như được mô tả ở trên và cách tiếp cận Ngân hàng như một nền tảng (BaaP). Theo cách này, mô hình BaaS tương tự như điện toán đám mây. Giải pháp đám mây bao gồm ba lớp cơ bản: cơ sở hạ tầng, nền tảng và phần mềm. Theo mô hình BaaS, các ngân hàng lớn sẽ cung cấp một lớp cơ sở hạ tầng nền tảng để hỗ trợ nền tảng tài chính của chính họ – hoặc thực tế là của bên thứ ba. Các nhà cung cấp công nghệ tài chính cá nhân sẽ đứng đầu nhóm này và tương tự như các ứng dụng hướng tới khách hàng trong một giải pháp đám mây. 226
+
+- Trang 227 · chunk `aedb60bc088e4242970a43da1e897bde-00883` · index 883
+  > . Thay vào đó, ở các mức độ khác nhau, các tổ chức tài chính lớn vẫn là sự kết hợp giữa các nhà cung cấp cơ sở hạ tầng, nền tảng và giải pháp tài chính. Thật vậy, BaaS có thể khả thi hơn dưới dạng mô hình hai lớp. Với việc các công ty khởi nghiệp fintech trở thành ngân hàng theo quyền riêng của họ, có thể không cần các tổ chức tài chính lâu đời cung cấp cơ sở hạ tầng ngân hàng cơ bản. Khi các ngân hàng hoạt động trên nền tảng công nghệ tài chính kết hợp với các nhà cung cấp giải pháp bên thứ ba thông qua nền tảng của họ, cơ sở hạ tầng và các lớp nền tảng có thể hợp nhất thành một. Điều này khiến các ngân hàng rơi vào tình thế khó khăn: thứ nhất, các ngân hàng thấy mình bị tấn công từ mọi phía bởi các nhà cung cấp giải pháp chuyên nghiệp,
+
+## RAG-Q11
+
+**Câu hỏi:** Quy trình huấn luyện một mô hình học máy gồm những bước chính nào?
+
+**Trang nguồn:** 233, 234
+
+- Trang 233 · chunk `aedb60bc088e4242970a43da1e897bde-00907` · index 907
+  > một dự án Học máy, do đó trong nhiều trường hợp, chúng ta có thể sử dụng sẵn các bộ dữ liệu mở miễn phí trên Internet. Bước 2: Tiền xử lý dữ liệu – Data preprocessing Bước này giúp chúng ta chuẩn hoá bộ dữ liệu đã thu thập được, loại bỏ các thuộc tính không cần thiết, loại bỏ các yếu tố thiếu hoặc nhiễu. Đồng thời, thực hiện gán nhãn dữ liệu, mã hóa một số đặc trưng, trích xuất các đặc trưng, rút gọn dữ liệu để chúng có thể được sử dụng một cách hiệu quả trong quá trình xây dựng mô hình Học máy. Đây là bước tốn nhiều thời gian nhất, bước 1 và bước 2 chiếm đến khoảng 80% thời gian của cả quy trình. Do đó, bước này rất quan trọng vì nó quyết định đến sự thành công và tính hiệu quả của cả quy trình. Bước 3: Huấn luyện mô hình – Model training
+
+- Trang 234 · chunk `aedb60bc088e4242970a43da1e897bde-00909` · index 909
+  > được sử dụng để hiệu chỉnh các tham số của mô hình và tập kiểm thử được dùng để đánh giá hiệu quả của mô hình trên dữ liệu chưa được quan sát. Lựa chọn mô hình là việc chúng ta chọn các thuật toán Học máy sao cho phù hợp cho bài toán của chúng ta. Sau khi đã lựa chọn mô hình, chúng ta có thể thực hiện chạy thử nó trên bộ dữ liệu huấn luyện nhằm tìm ra lựa chọn tối ưu nhất (đáp ứng các ràng buộc về độ đo hiệu quả). Hiệu chỉnh mô hình (fine-tune model) là quá trình cho phép tìm ra các tham số tối ưu nhất cho mô hình, và lựa chọn đánh giá mô hình hiệu quả nhất trên bộ dữ liệu kiểm chứng (validation data). Quá trình này được thực hiện sau khi chúng ta đã lựa chọn được một lớp mô hình phù hợp cho bài toán và mục tiêu của quá trình này là
+
+## RAG-Q12
+
+**Câu hỏi:** Trong ví dụ Bayes, nếu 20% dân số mắc bệnh và xét nghiệm chính xác 90%, xác suất thực sự mắc bệnh khi dương tính là bao nhiêu?
+
+**Trang nguồn:** 237
+
+- Trang 237 · chunk `aedb60bc088e4242970a43da1e897bde-00920` · index 920
+  > Ngay cả khi xét nghiệm có độ chính xác 90%, điều này không có nghĩa là bạn có 90% khả năng thực sự mắc bệnh. Chìa khóa để hiểu lý do tại sao lại như vậy nằm ở việc xem xét mức độ phổ biến của bệnh trong dân số nói chung và khả năng kết quả xét nghiệm của bạn là dương tính giả. Nói cách khác, đừng đánh mất bức tranh toàn cảnh hơn. Giả sử 20% dân số nói chung mắc phải căn bệnh này; cho rằng xét nghiệm có độ chính xác 90%, điều này có nghĩa là cứ 100 người được xét nghiệm thì có 18 (20% × 90%) kết quả dương tính thực sự. Tuy nhiên, điều này cũng có nghĩa là, trong số những người khỏe mạnh, nó sẽ tạo ra 8 kết quả dương tính giả (80% × 10%). Do đó, xác suất mắc bệnh thực sự của bạn sau khi thấy kết quả xét nghiệm dương tính sẽ là: p(x|y) = 18/(18+8) = 69%
+
+## RAG-Q13
+
+**Câu hỏi:** Những rủi ro thực tiễn nào cần cân nhắc khi áp dụng AI trong tài chính?
+
+**Trang nguồn:** 245, 246, 247
+
+- Trang 245 · chunk `aedb60bc088e4242970a43da1e897bde-00955` · index 955
+  > bắt nguồn từ việc những người vô tình áp dụng sai thuật toán, những người không hiểu cách thức hoạt động của các thuật toán cơ bản. Giống như các công cụ ra quyết định định lượng khác, AI dễ bị ảnh hưởng bởi thành kiến trong quản lý: chính trị tổ chức và tâm lý con người khiến những người ra quyết định thiên về dữ liệu mang lại kết quả mà họ cần, cho dù họ có nhận ra điều đó hay không. Đây là vấn đề ở tất cả các cấp trong tổ chức, không chỉ ở cấp quản lý cấp trên. Do đó, sự thiên vị cần phải được xem xét ở tất cả các giai đoạn của chu trình phát triển AI trong các tổ chức. Điều này bắt đầu với các thủ tục quản lý dữ liệu mạnh mẽ. Bởi vì các thuật toán chỉ tốt khi có các tập dữ liệu cơ bản nên chúng phải chính xác, kịp thời và phù hợp. Do đó,
+
+- Trang 246 · chunk `aedb60bc088e4242970a43da1e897bde-00958` · index 958
+  > ận này cũng nhấn mạnh việc kiểm thử phần mềm tự động theo các yêu cầu hiệu suất nhất định được xác định trước. Điều này tương tự như kiểm tra cấp độ của thuật toán. hiệu quả định cỡ: điều này có thể đạt được bằng cách cung cấp dữ liệu mô phỏng thuật toán để chắc chắn rằng nó hoạt động như mong đợi. Ngoài ra, các tổ chức triển khai AI phải đối mặt với vấn đề sai lệch khái niệm, trong đó mối quan hệ giữa dữ liệu đầu vào và mục tiêu phân loại thay đổi theo thời gian. Do đó, độ chính xác của thuật toán giảm xuống do các quy tắc ra quyết định của nó không còn áp dụng cho mục tiêu quần thể. Ví dụ, một thuật toán có thể 'biết' rằng việc mua hàng bổ sung vitamin trực tuyến có liên quan đến việc mua hàng loạt giấy vệ
+
+- Trang 247 · chunk `aedb60bc088e4242970a43da1e897bde-00962` · index 962
+  > để làm gì; nó chỉ phân loại các trường hợp dựa trên các mẫu đã xác định trong dữ liệu huấn luyện. Người ta có thể giải quyết vấn đề sai lệch thuật toán bằng cách đảm bảo rằng dữ liệu trong mẫu huấn luyện phản ánh chính xác đối tượng mục tiêu của thuật toán. Tuy nhiên, các vấn đề cũng có thể xuất phát từ việc thiếu quan điểm đa dạng, điều này có thể dẫn đến tư duy nhóm. Những vấn đề này có thể được giải quyết bằng cách làm cho các nhóm AI trở nên đa dạng hơn; điều này vượt xa những đặc điểm bề ngoài và có thể bao gồm sự đa dạng về các loại tính cách, tập hợp dữ liệu và kỹ thuật mô hình hóa. Ngoài sự thiên vị về mặt thuật toán, còn có những nguyên nhân tiềm ẩn khác gây ra sự bất công trong nền kinh tế dựa trên AI. Một trong số đó là sự độc quyền của các tập
+
+## RAG-Q14
+
+**Câu hỏi:** Tổng hợp mối liên hệ giữa open banking, cloud và AI trong đổi mới dịch vụ ngân hàng.
+
+**Trang nguồn:** 213, 214, 224, 225, 226, 227, 228, 233
+
+- Trang 213 · chunk `aedb60bc088e4242970a43da1e897bde-00821` · index 821
+  > CHƯƠNG 10. MỘT SỐ ĐIỂN HÌNH ĐỔI MỚI CÔNG NGHỆ TÀI CHÍNH GIỚI THIỆU CHƯƠNG Chương này một số điển hình đổi mới trong Công nghệ tài chính (Fintech). Đầu tiên, chúng ta sẽ tìm hiểu xem công nghệ đang phân cấp tài chính như thế nào thông qua Mạng, API và những công nghệ nền tảng trong ngân hàng. Chúng ta sẽ thấy được số hóa đang biến đổi tài chính như thế nào, tại sao các công ty khởi nghiệp fintech đang thâm nhập vào lĩnh vực ngân hàng, từ đó, các mô hình kinh doanh khả thi có thể xuất hiện. Tiếp theo đó chúng ta thấy được vai trò và những ứng dụng Công nghệ tài chính của Điện toán đám mây trong đổi mới tài chính. Và cuối cùng, là những ứng dụng của công nghệ tiến tiến nhất hiện nay - Trí tuệ nhân tạo và sự tự động hóa trong
+
+- Trang 214 · chunk `aedb60bc088e4242970a43da1e897bde-00827` · index 827
+  > hà hàng là một phép ẩn dụ hay cho một API. Điều này là do họ phục vụ như một giao tiếp giữa khách hàng và nhân viên nhà bếp. Các thực khách và đầu bếp không giao tiếp trực tiếp; đúng hơn, người phục vụ nhận đơn đặt hàng từ bàn và chuyển chúng vào bếp. Để đáp lại, đầu bếp chuẩn bị thức ăn và gửi món này cho thực khách thông qua người phục vụ. Bằng cách này, người phục vụ cho phép hai bên giao tiếp gián tiếp, giống như API đóng vai trò là đường dẫn thông tin giữa các hệ thống máy tính khác nhau. Phép ẩn dụ bồi bàn đặc biệt phù hợp vì nó mô tả một tình huống trong đó hai bên giao tiếp không biết nhau; thực khách nhà hàng thường không vào bếp. Tương tự, một hệ thống máy tính cung cấp dữ liệu qua API là bất khả tri đối với người nhận. Điều này cho phép các tổ chức cung cấp dữ liệu
+
+- Trang 224 · chunk `aedb60bc088e4242970a43da1e897bde-00872` · index 872
+  > y. Trong khi đó, người dùng cuối, những người tương tác với ứng dụng hướng tới khách hàng, cũng không khôn ngoan hơn vì giao diện phần mềm vẫn giữ nguyên. Bằng cách này, điện toán đám mây có thể so sánh với giải pháp chia sẻ thời gian cho các trung tâm dữ liệu. Đây là nơi những gã khổng lồ công nghệ như Microsoft, Amazon và IBM tham gia. Với Tính kinh tế nhờ quy mô to lớn, các công ty này có thể giảm đáng kể chi phí vận hành trung tâm dữ liệu. Để đạt được những khoản tiết kiệm này, các nhà cung cấp đám mây xây dựng trung tâm dữ liệu của họ ở những địa điểm xa, thường ở vùng khí hậu lạnh hơn, để tiết kiệm tiền thuê nhà và điện. 224
+
+- Trang 225 · chunk `aedb60bc088e4242970a43da1e897bde-00874` · index 874
+  > nội bộ có thể cực kỳ tốn kém thì việc thuê sức mạnh tính toán tương đương trong vài giờ thì không. Bằng cách này, điện toán đám mây cho phép các tổ chức nhỏ hơn – chẳng hạn như các công ty khởi nghiệp fintech – truy cập các tài nguyên điện toán mạnh mẽ. Do đó, chi phí trả trước lớn để thiết lập một trung tâm dữ liệu không còn là rào cản để gia nhập các lĩnh vực sử dụng nhiều dữ liệu như tài chính. Bằng cách ảo hóa tài nguyên vật lý, điện toán đám mây đã biến phần cứng máy tính thành thứ có thể sử dụng theo yêu cầu; bằng cách này, nó đã biến cơ sở hạ tầng CNTT thành một dịch vụ. Mô hình này không phải chỉ có ở phần cứng máy tính: trong khi điện toán đám mây là một ví dụ về cơ sở hạ tầng dưới dạng dịch vụ thì Adobe
+
+- Trang 226 · chunk `aedb60bc088e4242970a43da1e897bde-00880` · index 880
+  > ép cơ sở hạ tầng CNTT được sử dụng như một dịch vụ, công nghệ đang giúp các dịch vụ ngân hàng có thể truy cập được theo yêu cầu. Mô hình này được gọi là Dịch vụ ngân hàng (BaaS). Nó có thể được xem như là sự kết hợp giữa hoạt động ngân hàng dựa trên tiện ích, như được mô tả ở trên và cách tiếp cận Ngân hàng như một nền tảng (BaaP). Theo cách này, mô hình BaaS tương tự như điện toán đám mây. Giải pháp đám mây bao gồm ba lớp cơ bản: cơ sở hạ tầng, nền tảng và phần mềm. Theo mô hình BaaS, các ngân hàng lớn sẽ cung cấp một lớp cơ sở hạ tầng nền tảng để hỗ trợ nền tảng tài chính của chính họ – hoặc thực tế là của bên thứ ba. Các nhà cung cấp công nghệ tài chính cá nhân sẽ đứng đầu nhóm này và tương tự như các ứng dụng hướng tới khách hàng trong một giải pháp đám mây. 226
+
+- Trang 227 · chunk `aedb60bc088e4242970a43da1e897bde-00881` · index 881
+  > Giao diện lập trình ứng dụng (API) sẽ đóng một vai trò quan trọng trong giải pháp BaaS. Cũng như trong điện toán đám mây, khả năng tự phục vụ và tự động hóa là cốt lõi của mô hình BaaS. Để đạt được mục tiêu này, API sẽ cho phép các nhà đổi mới liên kết các giải pháp của họ với cơ sở hạ tầng tài chính cơ bản. Bằng cách này, quy mô và quy định phức tạp của các ngân hàng lớn sẽ có thể tiếp cận được đối với các công ty khởi nghiệp fintech, gần như liền mạch như khi sử dụng nhà cung cấp đám mây. Về lý thuyết, điều này sẽ cho phép các công ty fintech tạo ra các giải pháp mới bằng cách sử dụng dịch vụ của các tổ chức lớn hơn và có uy tín hơn làm nền tảng. Trong thực tế, sự khác biệt giữa cơ sở hạ tầng, nền tảng và nhà cung cấp giải pháp
+
+- Trang 228 · chunk `aedb60bc088e4242970a43da1e897bde-00885` · index 885
+  > 10.3. TRÍ TUỆ NHÂN TẠO VÀ TỰ ĐỘNG HÓA TRONG CÔNG NGHỆ TÀI CHÍNH 10.3.1. Định nghĩa Trí tuệ nhân tạo Nguồn gốc của AI như một lĩnh vực học thuật có thể bắt nguồn từ năm 1950 khi Alan Turing xuất bản bài báo chuyên đề Máy tính và trí thông minh của mình. Ở đây, Turing đặt ra một khuôn khổ để đánh giá liệu máy móc có thể hiện hành vi thông minh hay không: nếu một cỗ máy tạo ra hành vi không thể phân biệt được với hành vi thông minh của con người thì bản thân máy đó có thể được coi là thông minh. Điều này được gọi là Thử nghiệm Turing, phép thử này có thể coi là một định nghĩa về trí tuệ nhân tạo. Bài kiểm tra Turing có cái nhìn hạn hẹp về trí tuệ nhân tạo: trong khi một máy tính có thể được lập trình để giao dịch tiền tệ một cách tự động - điều này có thể đáp
+
+- Trang 233 · chunk `aedb60bc088e4242970a43da1e897bde-00905` · index 905
+  > thực, các thuật toán ML được triển khai để dự đoán kết quả trong các tập dữ liệu chưa biết kết quả, từ đó cho phép đưa ra quyết định mang tính dự đoán. Do chu trình làm việc này, các thuật toán ML yêu cầu lượng dữ liệu khổng lồ để cung cấp thông tin cho các quy tắc ra quyết định của chúng. Nhìn chung, quy trình huấn luyện một thuật toán Học máy thường trải qua các bước cơ bản sau (Hình 10.1): Bước 1: Thu thập dữ liệu – Gathering data/Data collection Chất lượng của các mô hình Học máy phụ thuộc rất lớn vào số lượng và chất lượng của dữ liệu thu thập được, do vậy quá trình thu thập dữ liệu có thể coi là một trong số những bước quan trọng nhất trong quá trình xây dựng ứng dụng Học máy. Để tiến hành thu thập dữ liệu, chúng ta cần xác định được nguồn dữ liệu được thu thập và
+
+## RAG-Q15
+
+**Câu hỏi:** Tài liệu dự báo giá Bitcoin vào ngày 31/12/2026 là bao nhiêu?
+
+**Kỳ vọng:** từ chối vì không có bằng chứng trong tài liệu.
+
+## RAG-Q16
+
+**Câu hỏi:** Theo tài liệu, ai là Tổng thống Việt Nam năm 2026?
+
+**Kỳ vọng:** từ chối vì không có bằng chứng trong tài liệu.
+
+## RAG-Q17
+
+**Câu hỏi:** Theo chương 1, đổi mới là gì và gồm hai thành tố cốt lõi nào?
+
+**Trang nguồn:** 14, 15
+
+- Trang 14 · chunk `aedb60bc088e4242970a43da1e897bde-00045` · index 45
+  > nh này để đưa ra một khuôn khổ giúp xác định công ty nào có khả năng tìm ra và khai thác đổi mới. 1.1 Khái niệm đổi mới Đổi mới là việc sử dụng tri thức mới để tạo ra một dịch vụ hoặc sản phẩm mới mà khách hàng mong muốn. Đó là phát minh và thương mại hóa. Theo Porter (1990) thì đó là “một cách mới để thực hiện công việc” (một số tác giả gọi là phát minh (invention)) được thương mại hóa (commercialiation). Quy trình đổi mới không thể tách rời khỏi bối cảnh cạnh tranh và chiến lược của một công ty. Tri thức mới (new knowledge) có thể về công nghệ hoặc về thị trường liên quan. Tri thức công nghệ là tri thức về các bộ phận, mối liên kết giữa các bộ phận, các phương pháp, quy trình và kỹ thuật tạo thành sản phẩm hoặc dịch vụ. Tri
+
+- Trang 15 · chunk `aedb60bc088e4242970a43da1e897bde-00048` · index 48
+  > mới, một ý tưởng phải được chuyển thành sản phẩm hoặc dịch vụ mà khách hàng mong muốn. Nghĩ ra ý tưởng hoặc tìm ra phát minh – là một việc. Bảo vệ được ý tưởng, nuôi dưỡng và biến ý tưởng đó thành dịch vụ hoặc sản phẩm mà khách hàng mong muốn lại là một việc khác. Đổi mới yêu cầu cần có cả phát minh và thương mại hóa. Giữa đổi mới kỹ thuật và đổi mới quản lý có sự khác biệt. Đổi mới kỹ thuật là những sản phẩm, dịch vụ hoặc các quy trình được cải thiện hoặc được làm mới hoàn toàn. Ngược lại, đổi mới quản lý liên quan đến cơ cấu tổ chức và các quy trình quản trị và có thể hoặc không ảnh hưởng đến đổi mới kỹ thuật. Đổi mới kỹ thuật có thể hoặc không đòi hỏi phải đổi mới quản trị. Một đổi mới kỹ thuật có thể là một sản phẩm
+
+## RAG-Q18
+
+**Câu hỏi:** Theo Damanpour, đổi mới sản phẩm khác đổi mới quy trình như thế nào?
+
+**Trang nguồn:** 15
+
+- Trang 15 · chunk `aedb60bc088e4242970a43da1e897bde-00049` · index 49
+  > kỹ thuật. Đổi mới kỹ thuật có thể hoặc không đòi hỏi phải đổi mới quản trị. Một đổi mới kỹ thuật có thể là một sản phẩm (product) hoặc một quy trình (process). Theo Damanpour (1991), các đổi mới sản phẩm “là sản phẩm hoặc dịch vụ mới được đưa ra để đáp ứng một nhu cầu thị trường”, ngược lại, các đổi mới quy trình là “các nhân tố mới được đưa vào trong hoạt động sản xuất hoặc quy trình vận hành dịch vụ của một tổ chức – nguyên liệu đầu vào, chi tiết kỹ thuật, cơ chế phân luồng thông tin và công việc, và các thiết bị được sử dụng để tạo ra sản phẩm hoặc cung ứng dịch vụ mới.” 1.2 Các chủ thể đổi mới Tranh luận về việc chủ thể nào có khả năng tiến hành đổi mới nhất bắt nguồn từ Schumpeter (1988). Đầu tiên, ông cho rằng các công ty mới có quy mô nhỏ là nguồn
+
+## RAG-Q19
+
+**Câu hỏi:** Theo quan điểm tổ chức, đổi mới đột phá và đổi mới tuần tự khác nhau ở nền tảng tri thức ra sao?
+
+**Trang nguồn:** 16, 31
+
+- Trang 16 · chunk `aedb60bc088e4242970a43da1e897bde-00053` · index 53
+  > ến cho tri thức hiện tại trở nên lỗi thời. Những đổi mới như thế được gọi là đổi mới mang tính triệt tiêu năng lực hoạt động (competence destroying innovation). Tủ lạnh là một đổi mới mang tính đột phá vì để tạo ra tủ lạnh đòi hỏi công ty phải kết hợp các tri thức về nhiệt động lực học, chất tải lạnh, động cơ điện, những tri thức này rất khác so với tri thức về việc thu gom và vận chuyển nước đá. Một dạng đổi mới nữa là đổi mới mang tính tuần tự. Theo đó, tri thức làm nền tảng để tạo ra sản phẩm mới là dựa trên tri thức hiện tại. Theo Tushman và Anderson, đổi mới đó mang tính củng cố năng lực hoạt động (competence enhancing innovation). Ví dụ, “sự co lại” của chip Intel Pentium để hoạt động ở 200 MHz là một đổi mới tuần tự trong công ty vì tri thức cần để thực hiện đổi mới này dựa
+
+- Trang 31 · chunk `aedb60bc088e4242970a43da1e897bde-00105` · index 105
+  > g ty lớn trong tiêu khả năng cạnh tranh của sản phẩm ngành có khả năng khai thác hiện tại. các đổi mới tuần tự tốt hơn, Theo quan điểm về năng lực tổ chức: trong khi các công ty mới Một đổi mới mang tính tuần tự nếu các vào ngành lại khai thác đổi nguồn lực tổng hợp cần có để khai thác mới đột phá hiệu quả hơn. đổi mới đó được xây dựng dựa trên những nguồn lực hiện tại; mang tính đột phá nếu các nguồn lực tổng hợp cần có rất khác so với các nguồn lực hiện tại. Tập trung phân tích các cấu thành công nghệ của một đổi mới; gói gọn tri thức công nghệ vào tri thức thị trường; tri thức cấu trúc vào tri thức thành phần Abernathy Tách biệt giữa tri thức thị thường và tri Lý giải tại sao các công ty – Clark thức công nghệ. lớn có thể thực hiện hiệu quả
+
+## RAG-Q20
+
+**Câu hỏi:** Theo quan điểm kinh tế, khi nào một đổi mới là đột phá và khi nào là tuần tự?
+
+**Trang nguồn:** 16, 17
+
+- Trang 16 · chunk `aedb60bc088e4242970a43da1e897bde-00054` · index 54
+  > Intel Pentium để hoạt động ở 200 MHz là một đổi mới tuần tự trong công ty vì tri thức cần để thực hiện đổi mới này dựa trên nền tảng tri thức về sự phát triển bộ vi xử lý. Hầu hết các đổi mới đều mang tính tuần tự. Hình 0-1. Đổi mới về mặt kinh tế và tổ chức (Nguồn: Afuah, 2012) Hai là, vì đổi mới tạo ra các sản phẩm cao cấp hơn (chi phí thấp hơn, có tính năng mới hoặc tính năng tốt hơn), đổi mới có thể được phân loại theo mức độ ảnh hưởng đến các sản phẩm cũ, làm mất tính cạnh tranh của sản phẩm cũ. Đây cũng được gọi là một quan điểm kinh tế (tính cạnh tranh). 16
+
+- Trang 17 · chunk `aedb60bc088e4242970a43da1e897bde-00055` · index 55
+  > Theo quan điểm này, một đổi mới được cho là mang tính đột phá (quyết liệt) nếu đổi mới đó tạo ra một sản phẩm cao cấp hơn (chi phí thấp hơn, thuộc tính mới hoặc thuộc tính tốt hơn) làm mất tính cạnh tranh của sản phẩm hiện tại. Ví dụ, máy tính tiền cơ học không thể cạnh tranh với hệ thống máy tính tiền điện tử (EPOSs). Do đó EPOSs là một đổi mới đột phá theo quan điểm kinh tế. Tuy nhiên, thường thì đổi mới vẫn cho phép các sản phẩm hiện tại duy trì khả năng cạnh tranh. Cả soda dành cho người ăn kiêng và soda không chứa caffeine đều là đổi mới tuần tự theo quan điểm kinh tế vì việc đưa các sản phẩm đó ra thị trường vẫn cho phép soda truyền thống duy trì được khả năng cạnh tranh. Những định nghĩa về mặt cạnh tranh và mặt tổ chức của đổi mới đột phá và đổi
+
+## RAG-Q21
+
+**Câu hỏi:** Schumpeter I và Schumpeter II khác nhau thế nào về chủ thể có khả năng đổi mới nhất?
+
+**Trang nguồn:** 15, 31
+
+- Trang 15 · chunk `aedb60bc088e4242970a43da1e897bde-00050` · index 50
+  > ng tiến hành đổi mới nhất bắt nguồn từ Schumpeter (1988). Đầu tiên, ông cho rằng các công ty mới có quy mô nhỏ là nguồn gốc của hầu hết các đổi mới. Sau đó, ông thay đổi quan điểm của mình và cho rằng, vì một số lý do, các công ty lớn có độc quyền nhất định trên thị trường có nhiều khả năng là nguồn gốc của đổi mới công nghệ. Ông cho rằng các công ty lớn có cơ sở sản xuất và các tài sản bổ sungkhác cần thiết để thương mại hóa một đổi mới; có quy mô để khai thác lợi thế nhờ quy mô đang phổ biến trong R&D; đa ngành nghề hơn và do đó sẵn sàng chấp nhận loại rủ ro tồn tại cố hữu trong các dự án R&D; có khả năng tiếp cận nguồn vốn tốt hơn các công ty nhỏ; và, vì là những công ty độc quyền, không có đối thủ cạnh tranh nào sẵn sàng sao chép những đổi mới của họ và do đó họ có nhiều
+
+- Trang 31 · chunk `aedb60bc088e4242970a43da1e897bde-00104` · index 104
+  > Bảng 0-2. Mối quan hệ giữa các mô hình tĩnh Mô hình Các đặc điểm chính Giá trị gia tăng Schumpeter Schumpeter I: Các công ty nhỏ mới vào Cố gắng trả lời các câu hỏi: ngành có nhiều khả năng đổi mới nhất. Công ty nào có khả năng đổi Schumpeter II: Các công ty lớn với sức mới mạnh độc quyền nhất định có khả năng nhất? Loại hình công ty đổi mới nhất. chính là yếu tố cần xem xét. Đổi mới Theo quan điểm động cơ chiến lược để Hình thức của đổi mới quyết tuần tự và đầu tư: Một đổi mới mang tính tuần tự định loại hình công ty sẽ đổi mới đột nếu sản phẩm hiện tại vẫn còn khả năng thực hiện đổi mới đó. phá cạnh tranh; mang tính đột phá nếu nó triệt Những công ty lớn trong tiêu khả năng cạnh tranh của sản phẩm ngành có khả năng khai thác hiện tại. các đổi mới tuần tự tốt hơn,
+
+## RAG-Q22
+
+**Câu hỏi:** Nguồn gốc đổi mới theo chức năng và theo hoàn cảnh trả lời hai câu hỏi khác nhau nào?
+
+**Trang nguồn:** 65
+
+- Trang 65 · chunk `aedb60bc088e4242970a43da1e897bde-00237` · index 237
+  > nguồn gốc của đổi mới: chức năng và hoàn cảnh. Nguồn gốc chức năng trả lời câu hỏi: Đổi mới bắt nguồn từ đâu? Chúng bắt nguồn từ bên trong hay bên ngoài công ty? Chính xác từ bộ phận nào trong công ty? Nguồn gốc hoàn cảnh trả lời câu hỏi: Khi nào hoặc trong hoàn cảnh nào thì xuất hiện các đổi mới? 3.1.1 Nguồn gốc đổi mới theo chức năng Bất cứ bộ phận chức năng nào trong chuỗi giá trị của công ty đều có thể là nguồn gốc của đổi mới. Ví dụ, một ý tưởng có thể được đưa ra và phát triển trong bộ phận R&D, sau đó bản thiết kế được chuyển tới bộ phận sản xuất để tiến hành sản xuất, định giá, xúc tiến thương mại, và định vị trên thị trường. Những ý tưởng này có thể về loại thành phần và số lượng các thành phần được sử dụng trong thiết kế; về các
+
+## RAG-Q23
+
+**Câu hỏi:** Bốn nhân tố quyết định hiệu quả chuyển giao đổi mới giữa các bộ phận hoặc tổ chức là gì?
+
+**Trang nguồn:** 72, 75
+
+- Trang 72 · chunk `aedb60bc088e4242970a43da1e897bde-00265` · index 265
+  > g tiếp nhận của tổ chức tiếp nhận và khả năng chuyển giao của tổ chức chuyển giao, sự khác biệt về văn hóa giữa tổ chức tiếp nhận và tổ chức chuyển giao, dạng đổi mới và thời điểm chuyển giao (Hình 3.2) Hình 0-2. Các nhân tố quyết định hiệu quả chuyển giao một đổi mới (Nguồn: Afuah, 2012) Năng lực tiếp nhận và năng lực chuyển giao Vì để tiếp thu một tri thức mới cần phải có các tri thức liên quan, hiệu quả chuyển giao một công nghệ từ chủ thể này tới chủ thể khác phụ thuộc vào mức độ tri thức liên quan mà chủ thể tiếp nhận có để cho phép chủ thể này tiếp nhận tri thức được chuyển giao. Hãy xem xét quá trình chuyển giao một thiết kế từ bộ phận R&D tới bộ phận sản xuất. Nhóm sản xuất có tham gia tư vấn và đóng góp vào quá trình thiết kế
+
+- Trang 75 · chunk `aedb60bc088e4242970a43da1e897bde-00277` · index 277
+  > giao đổi mới thường diễn ra giữa các quốc gia. Hiệu quả chuyển giao vẫn phụ thuộc vào bốn nhân tố, mà ảnh hưởng đến sự chuyển giao giữa các bộ phận chức năng hoặc giữa các tổ chức, là sự khác nhau về văn hóa của hai chủ thể, khả năng truyền đạt của chủ thể truyền đạt và khả năng tiếp nhận của chủ thể tiếp nhận, thời điểm của quy trình chuyển giao và bản chất của công nghệ. Tuy nhiên, những khác biệt nhất định giữa các quốc gia cũng có thể gây khó khăn đặc biệt cho việc chuyển giao. Tiếp theo, chúng ta sẽ tập trung phân tích vấn đề này. Một nhân tố thứ năm xuất hiện, cũng có vai trò quan trọng trong quá trình chuyển giao giữa các quốc gia (Hình 3.3): Các đối tác/đối thủ – nhà cung cấp, khách hàng, đối thủ cạnh
+
+## RAG-Q24
+
+**Câu hỏi:** Sự kiện bất ngờ nào đã khiến minoxidil được tiếp thị dưới tên Rogaine?
+
+**Trang nguồn:** 71
+
+- Trang 71 · chunk `aedb60bc088e4242970a43da1e897bde-00260` · index 260
+  > 3.1.2.2 Các sự kiện bất ngờ Trong quá trình tiến hành các hoạt động được lên kế hoạch, các sự kiện bất ngờ, như một thất bại, có thể là nguồn gốc lý tưởng của đổi mới. Ví dụ, trong khi thử nghiệm hiệu quả điều trị bệnh huyết áp cao của thuốc minoxidil, Upjohn, chuyên gia đã phát triển ra loại thuốc này, đã phát hiện ra hiệu ứng phụ của thuốc là làm mọc tóc. Công ty liền nắm bắt cơ hội do sự kiện bất ngờ này đem lại và hiện đang tiếp thị minoxidil ra thị trường dưới cái tên thuốc Rogaine để chữa bệnh hói. Vào những năm 1930, IBM đã phát triển máy kế toán hiện đại đầu tiên dành riêng cho ngành ngân hàng. Nhưng các ngân hàng lại không mua thiết bị mới đó. IBM liền chuyển hướng sang Thư Viện Công cộng New York, thư viện này, tại thời điểm đó, có ngân sách dư
+
+## RAG-Q25
+
+**Câu hỏi:** Roger (1995) định nghĩa đổi mới như thế nào?
+
+**Trang nguồn:** 154
+
+- Trang 154 · chunk `aedb60bc088e4242970a43da1e897bde-00574` · index 574
+  > tài chính 7.1.1 Khái niệm đổi mới tài chính Thuật ngữ “đổi mới tài chính” có rất nhiều định nghĩa ngầm định và rõ ràng. Roger (1995) định nghĩa đổi mới là một ý tưởng, thực tiễn hoặc đối tượng được một cá nhân hoặc đơn vị khác chấp nhận là mới. Đối với hành vi của con người, điều quan trọng là liệu một ý tưởng có mới về mặt khách quan hay không. Đối với mỗi cá nhân, sự mới mẻ được cảm nhận về ý tưởng sẽ quyết định phản ứng của họ đối với ý tưởng đó. Nếu ý tưởng đó có vẻ mới mẻ đối với cá nhân thì đó là một sự đổi mới. Frame và White (2004) coi đổi mới tài chính là đại diện cho đặc điểm giúp giảm chi phí, giảm rủi ro hoặc cung cấp một sản phẩm/dịch vụ/công cụ được cải tiến để đáp ứng tốt hơn nhu cầu của người tham gia. Trên cơ sở này, đổi mới có thể được
+
+## RAG-Q26
+
+**Câu hỏi:** Tài chính vi mô được định nghĩa là gì và ban đầu phục vụ nhóm nào?
+
+**Trang nguồn:** 162
+
+- Trang 162 · chunk `aedb60bc088e4242970a43da1e897bde-00608` · index 608
+  > n tắc, đổi mới - như một phát minh về 'giải pháp tài chính' hữu hiệu và hiệu quả cho nhu cầu không ngừng phát triển của khách hàng - là một hiện tượng và là yếu tố của sự tiến bộ, góp phần làm cho thị trường tài chính hiệu quả hơn trong trung và dài hạn. 7.2 Lịch sử đổi mới trong lĩnh vực tài chính 7.2.1 Tài chính vi mô, đổi mới và thương mại hóa Khái niệm tài chính vi mô 'Tài chính vi mô' (Micro finance- MF) là tên gọi chung cho tất cả các hoạt động được thực hiện với mục đích cải thiện khả năng tiếp cận các dịch vụ tài chính của người nghèo. Hai thập kỷ trước, việc xác định tài chính vi mô dễ dàng hơn ngày nay. Vào thời điểm đó, chỉ có một số ít các tổ chức chuyên biệt cung cấp các khoản vay nhỏ và rất nhỏ cho những người vay nghèo mà các ngân hàng coi là không thể cho vay
+
+## RAG-Q27
+
+**Câu hỏi:** Năm lực lượng cạnh tranh làm xói mòn lợi nhuận dài hạn của ngành gồm những gì?
+
+**Trang nguồn:** 108
+
+- Trang 108 · chunk `aedb60bc088e4242970a43da1e897bde-00405` · index 405
+  > c, công ty nên định vị mình ở đâu trong chuỗi giá trị gia tăng của đổi mới ? Điểm lợi nhuận tốt nhất cho công ty là gì? Thành công của một công ty phụ thuộc vào cơ cấu của ngành mà công ty đang hoạt động và vị trí thị trường mà công ty chọn để giới thiệu sản phẩm. Cạnh tranh thay đổi từ ngành này sang ngành khác, các cơ hội tạo ra lợi nhuận bền vững cũng vậy. Với từng ngành, năm lực lượng cạnh tranh kết hợp lại để làm xói mòn khả năng tạo ra lợi nhuận dài hạn của bất kỳ ngành nào hoặc của bất kỳ phân khúc nào trong ngành: Mối đe dọa của những công ty mới vào ngành, mối đe dọa của sản phẩm hoặc dịch vụ thay thế, quyền mặc cả của nhà cung cấp, quyền mặc cả của khách hàng và mức độ cạnh tranh của các đối thủ hiện tại. Trong một ngành, các lực lượng này càng mạnh, khả
+
+## RAG-Q28
+
+**Câu hỏi:** API là gì theo phép ẩn dụ người phục vụ nhà hàng trong tài liệu?
+
+**Trang nguồn:** 214
+
+- Trang 214 · chunk `aedb60bc088e4242970a43da1e897bde-00826` · index 826
+  > một cách nào đó, điều này tương tự như việc người mua hàng liên kết tài khoản ngân hàng của họ với bộ xử lý thanh toán trực tuyến. Tuy nhiên, Ngân hàng mở tiến thêm một bước nữa ở chỗ các ứng dụng của bên thứ ba không giữ tiền của khách hàng; thay vào đó, họ thực hiện thanh toán thay mặt cho người dùng bằng cách truy cập vào tài khoản ngân hàng của người dùng. API là một công cụ phần mềm cho phép các hệ thống máy tính khác nhau giao tiếp với nhau. Giống như giao thức ngoại giao quy định cách thức các nguyên thủ quốc gia khác nhau giao tiếp, API cung cấp một khuôn khổ để truyền thông tin giữa các hệ thống máy tính khác nhau. Người phục vụ nhà hàng là một phép ẩn dụ hay cho một API. Điều này là do họ phục vụ như một giao tiếp giữa khách hàng và nhân viên nhà
+
+## RAG-Q29
+
+**Câu hỏi:** Nền tảng ngân hàng là thị trường hai mặt như thế nào?
+
+**Trang nguồn:** 216, 217, 218
+
+- Trang 216 · chunk `aedb60bc088e4242970a43da1e897bde-00837` · index 837
+  > hàng sự kết hợp toàn diện giữa các giải pháp tài chính nội bộ và bên thứ ba; với sự trợ giúp của các API, các ngân hàng này có thể bắt đầu giống với các cửa hàng ứng dụng tài chính: mô hình này đôi khi được gọi là Ngân hàng như một Nền tảng (BaaP).Chúng ta khám phá thêm về BaaP trong nghiên cứu điển hình về Ngân hàng Starling bên dưới. 10.1.3. Nền tảng ngân hàng trong nền kinh tế Nền tảng ngân hàng là trung tâm của cái mà các nhà kinh tế gọi là thị trường hai mặt: đây là những thị trường mà một bên trung gian (tức là một nền tảng) có hai nhóm “khách hàng” riêng biệt, trong đó hành động của bên trung gian đối với một trong hai nhóm sẽ ảnh hưởng đến nhóm kia. Như một kết quả là nền tảng phải xem xét nhu cầu của cả hai bên như một phần của chiến lược kinh doanh của mình. 216
+
+- Trang 217 · chunk `aedb60bc088e4242970a43da1e897bde-00839` · index 839
+  > a là người đi vay vừa là người gửi tiền, trường hợp này thường xảy ra đồng thời. Kết quả là, sự khác biệt giữa hai nhóm khách hàng này có thể không rõ ràng. Tuy nhiên, theo mô hình BaaP, sự khác biệt này không xảy ra: một phía của thị trường là người tiêu dùng; mặt khác là các nhà cung cấp giải pháp tài chính. Bản thân ngân hàng nằm ở giữa thị trường và với tư cách là chủ sở hữu của nền tảng, ngân hàng phải tìm cách kiếm tiền từ vị trí trung gian của mình. Điều này bắt đầu với sự hiểu biết về những gì cả hai nhóm muốn. Trong khi những người tiêu dùng hiểu biết về kỹ thuật số mong muốn có một bộ giải pháp tài chính tiện lợi và được cá nhân hóa thì các nhà cung cấp giải pháp tài chính lại muốn tiếp cận cơ sở người dùng của
+
+- Trang 218 · chunk `aedb60bc088e4242970a43da1e897bde-00844` · index 844
+  > tảng cần thu hút cả hai phía của thị trường. Một mặt, nền tảng ngân hàng cần tuyển chọn một bộ giải pháp tài chính hấp dẫn đối với cơ sở khách hàng của mình; mặt khác, nó cần cung cấp cho các nhà cung cấp giải pháp tài chính một cơ sở người dùng sinh lời. Vì vậy, số lượng và chất lượng người dùng càng cao thì sẽ thu hút được nhiều nhà cung cấp giải pháp tài chính và ngược lại. Kết quả là, một nền tảng càng hấp dẫn đối với một bên thị trường thì nó càng có giá trị đối với bên kia. Các nền tảng tài chính thường cố gắng thu hút sự chú ý bằng cách đưa ra các điều khoản hào phóng cho người dùng mới để thu hút các nhà cung cấp giải pháp. Ví dụ: Ngân hàng Starling không tính phí khách hàng thực hiện thanh toán bằng thẻ ghi nợ
+
+## RAG-Q30
+
+**Câu hỏi:** AI hẹp khác AI rộng hơn như thế nào theo tài liệu?
+
+**Trang nguồn:** 229
+
+- Trang 229 · chunk `aedb60bc088e4242970a43da1e897bde-00891` · index 891
+  > m khác biệt quan trọng, giữa AI hẹp và AI rộng hơn: AI thu hẹp khi nó thực hiện một nhiệm vụ duy nhất. Ví dụ: một thuật toán giao dịch tiền tệ là một ví dụ về AI hẹp vì nó chỉ làm như vậy. một điều. Trí tuệ nhân tạo càng trở nên rộng hơn khi nó thực hiện nhiều nhiệm vụ một cách tự chủ và quan trọng hơn là càng có nhiều lĩnh vực hoạt động. Do đó, một máy bán hàng tự động nhận dạng khách hàng dựa trên đặc điểm khuôn mặt của họ là một AI rộng hơn so với một máy bán hàng tự động không làm như vậy. Tương tự, một chiếc ô tô không người lái, phải chọn tăng tốc, phanh hay giảm tốc độ, bên cạnh vô số nhiệm vụ khác, là một AI thậm chí còn rộng hơn. Nếu hệ thống âm thanh của chiếc ô tô này cung cấp cho người dùng các lựa

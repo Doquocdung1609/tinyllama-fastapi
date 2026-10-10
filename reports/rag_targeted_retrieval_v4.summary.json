@@ -1,0 +1,12 @@
+{
+  "cases": 5,
+  "recall_at_k": 0.8,
+  "mrr": 0.8,
+  "evidence_precision": 0.41334,
+  "evidence_in_prompt_coverage": 0.8,
+  "answer_correctness": 0.0,
+  "citation_accuracy_supported": 0.0,
+  "refusal_recall": 0.0,
+  "refusal_precision": 0.0,
+  "avg_total_ms": 2710.66
+}

@@ -4,6 +4,7 @@ from functools import lru_cache
 from time import monotonic
 import logging
 import importlib.util
+import shutil
 import subprocess
 from app.config import get_settings
 from app.services.inference_manager import (heavy_inference, mark_stage, release_cuda_cache,
@@ -15,7 +16,11 @@ logger = logging.getLogger(__name__)
 def _pipeline(model_id: str):
     import torch
     from diffusers import StableVideoDiffusionPipeline
-    return StableVideoDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16, variant="fp16", local_files_only=True).to("cuda")
+    pipe = StableVideoDiffusionPipeline.from_pretrained(
+        model_id, torch_dtype=torch.float16, variant="fp16", local_files_only=True)
+    pipe.enable_model_cpu_offload()
+    pipe.unet.enable_forward_chunking()
+    return pipe
 
 
 def unload_pipeline() -> None:
@@ -29,27 +34,52 @@ def readiness() -> dict:
                if importlib.util.find_spec(name) is None]
     if missing:
         return {"status": "DEPENDENCY_MISSING", "ready": False, "missing": missing,
-                "model": settings.video_model, "demo_mode": ffmpeg_available()}
+                "model": settings.video_model, "demo_mode": ffmpeg_available(), **_capabilities()}
     import torch
     if not torch.cuda.is_available():
         return {"status": "CUDA_UNAVAILABLE", "ready": False, "model": settings.video_model,
-                "demo_mode": ffmpeg_available()}
+                "demo_mode": ffmpeg_available(), **_capabilities()}
     total_mb = round(torch.cuda.get_device_properties(0).total_memory / 1024**2)
-    if total_mb < 8192:
-        return {"status": "INSUFFICIENT_VRAM", "ready": False, "model": settings.video_model,
-                "vram_total_mb": total_mb, "required_vram_mb": 8192,
-                "detail": "Stable Video Diffusion không an toàn trên GPU 4 GB.",
-                "demo_mode": ffmpeg_available()}
+    try:
+        import psutil
+        ram_total_gb = round(psutil.virtual_memory().total / 1024**3, 1)
+        ram_available_gb = round(psutil.virtual_memory().available / 1024**3, 1)
+    except ImportError:
+        ram_total_gb = ram_available_gb = None
+    disk_free_gb = round(shutil.disk_usage(get_settings().video_dir).free / 1024**3, 1)
     try:
         from huggingface_hub import try_to_load_from_cache
         cached = try_to_load_from_cache(settings.video_model, "model_index.json")
     except Exception:
         cached = None
-    if not cached and not __import__("pathlib").Path(settings.video_model).exists():
-        return {"status": "MODEL_MISSING", "ready": False, "model": settings.video_model,
-                "vram_total_mb": total_mb, "demo_mode": ffmpeg_available()}
+    model_installed = bool(cached or __import__("pathlib").Path(settings.video_model).exists())
+    blockers = []
+    if total_mb < 8192:
+        blockers.append("HARDWARE_VRAM")
+    if ram_total_gb is not None and ram_total_gb < 16:
+        blockers.append("HARDWARE_RAM")
+    if not model_installed:
+        blockers.append("MODEL_NOT_AVAILABLE")
+    if blockers:
+        return {"status": "BLOCKED", "ready": False, "blockers": blockers,
+                "model": settings.video_model, "model_installed": model_installed,
+                "vram_total_mb": total_mb, "recommended_vram_mb": 8192,
+                "ram_total_gb": ram_total_gb, "ram_available_gb": ram_available_gb,
+                "recommended_ram_gb": 16, "disk_free_gb": disk_free_gb,
+                "detail": "SVD-XT chưa an toàn trên cấu hình 4 GB VRAM / 8 GB RAM; không tải checkpoint hoặc thử OOM.",
+                "demo_mode": ffmpeg_available(), **_capabilities()}
     return {"status": "READY", "ready": True, "model": settings.video_model,
-            "vram_total_mb": total_mb, "demo_mode": ffmpeg_available()}
+            "model_installed": True, "vram_total_mb": total_mb, "ram_total_gb": ram_total_gb,
+            "disk_free_gb": disk_free_gb, "demo_mode": ffmpeg_available(), **_capabilities()}
+
+
+def _capabilities() -> dict:
+    return {"backend": "StableVideoDiffusionPipeline", "genuine_diffusion": True,
+            "conditioning": "input_image", "text_prompt_supported": False,
+            "native_resolution": "1024x576", "trained_frames": 25,
+            "supported_controls": ["seed", "num_frames", "fps", "motion_bucket_id",
+                                   "noise_aug_strength", "decode_chunk_size"],
+            "motion_demo_backend": "ffmpeg_ken_burns", "motion_demo_generative": False}
 
 
 def ffmpeg_available() -> bool:
@@ -60,7 +90,9 @@ def ffmpeg_available() -> bool:
         return False
 
 
-def generate_video(image_path: str, num_frames: int, fps: int) -> dict:
+def generate_video(image_path: str, num_frames: int, fps: int, seed: int = 42,
+                   motion_bucket_id: int = 127, noise_aug_strength: float = .02,
+                   decode_chunk_size: int = 2) -> dict:
     started = monotonic()
     try:
         import torch
@@ -85,7 +117,15 @@ def generate_video(image_path: str, num_frames: int, fps: int) -> dict:
             mark_stage("LOADING_MODEL")
             pipe = _pipeline(model_id)
             mark_stage("RUNNING")
-            frames = pipe(Image.open(image_path).convert("RGB"), num_frames=num_frames).frames[0]
+            image = Image.open(image_path).convert("RGB").resize((1024, 576))
+            torch.cuda.reset_peak_memory_stats()
+            generator = torch.manual_seed(seed)
+            frames = pipe(image, num_frames=num_frames, fps=fps,
+                          motion_bucket_id=motion_bucket_id,
+                          noise_aug_strength=noise_aug_strength,
+                          decode_chunk_size=decode_chunk_size,
+                          generator=generator).frames[0]
+            peak_vram_mb = round(torch.cuda.max_memory_allocated() / 1024**2)
         except RuntimeError as exc:
             unload_pipeline()
             if "out of memory" in str(exc).lower():
@@ -97,7 +137,11 @@ def generate_video(image_path: str, num_frames: int, fps: int) -> dict:
         export_to_video(frames, str(path), fps=fps)
     logger.info("video generated path=%s frames=%d fps=%d seconds=%.2f", path.name, len(frames), fps, monotonic() - started)
     return {"path": str(path), "frames": len(frames), "fps": fps, "model": model_id,
-            "mode": "stable_video_diffusion", "generation_seconds": round(monotonic() - started, 2)}
+            "mode": "stable_video_diffusion_genuine", "generation_seconds": round(monotonic() - started, 2),
+            "seed": seed, "motion_bucket_id": motion_bucket_id,
+            "noise_aug_strength": noise_aug_strength, "decode_chunk_size": decode_chunk_size,
+            "input_resolution": "1024x576", "peak_vram_mb": peak_vram_mb,
+            "text_prompt_used": False}
 
 
 def create_motion_demo(image_path: str, num_frames: int, fps: int) -> dict:

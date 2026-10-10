@@ -1,0 +1,17 @@
+﻿question_id,top_k,threshold,top_similarity_score,retrieved_pages,retrieval_pass,answer_generated,answer,correctness_score,refusal_pass,latency_seconds,status
+RAG-Q01,5,0.55,1.0,"155,156",True,False,,,,2.436,PASS
+RAG-Q02,5,0.55,1.0,"95,224,95,159,241",False,False,,,,2.439,FAIL
+RAG-Q03,5,0.55,1.0,"159,156",True,False,,,,2.517,PASS
+RAG-Q04,5,0.55,1.0,"210,158,171",True,False,,,,2.302,PASS
+RAG-Q05,5,0.55,1.0,"161,160,160,160",True,False,,,,2.486,PASS
+RAG-Q06,5,0.55,1.0,"163,166,163,166",True,False,,,,2.391,PASS
+RAG-Q07,5,0.55,1.0,"168,170,168",True,False,,,,2.32,PASS
+RAG-Q08,5,0.55,1.0,"190,181",True,False,,,,2.484,PASS
+RAG-Q09,5,0.55,1.0,"248,214,215,214",True,False,,,,2.347,PASS
+RAG-Q10,5,0.55,1.0,"168,226,226,213",True,False,,,,2.451,PASS
+RAG-Q11,5,0.55,1.0,"108,234,233",True,False,,,,2.33,PASS
+RAG-Q12,5,0.55,1.0,"237,237,237,237",True,False,,,,2.445,PASS
+RAG-Q13,5,0.55,1.0,"166,248",True,False,,,,2.305,PASS
+RAG-Q14,5,0.55,1.0,"204,214,248,215",True,False,,,,2.342,PASS
+RAG-Q15,5,0.55,,,True,False,,,,2.401,PASS
+RAG-Q16,5,0.55,,,True,False,,,,2.303,PASS

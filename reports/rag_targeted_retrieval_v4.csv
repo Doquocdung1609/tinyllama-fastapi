@@ -1,0 +1,6 @@
+﻿question_id,category,model,top_k,threshold,expected_pages,retrieved_pages,prompt_pages,retrieval_hit,reciprocal_rank,evidence_precision,evidence_in_prompt,matched_elements,element_recall,answer_correct,expected_refusal,refused,cited_pages,citation_correct,embedding_ms,retrieval_ms,prompt_ms,generation_ms,total_ms,cold_or_warm,answer
+RAG-Q04,two-item enumeration,qwen2.5:3b,5,0.55,158,"158,210,171,129,186","158,210,171,129,186,157",True,1.0,0.2,1.0,,0.0,False,False,False,,False,2293.9,1547.3,0.3,0.0,3846.7,warm,
+RAG-Q13,risk enumeration,qwen2.5:3b,5,0.55,"246,247","245,166,206,154,245","245,166,206,154,245,244",True,1.0,0.4,1.0,,0.0,False,False,False,,False,2344.8,210.0,0.5,0.0,2586.2,warm,
+RAG-Q14,cross-page synthesis,qwen2.5:3b,5,0.55,"213,214,224,225,228,233","227,226,226,227,204","227,226,226,227,204,226",True,1.0,0.8,1.0,,0.0,False,False,False,,False,2184.5,152.1,0.2,0.0,2353.4,warm,
+RAG-Q17,definition,qwen2.5:3b,5,0.55,"14,15","20,40,34","20,40,34,20,20,40,33",False,0,0.0,0.0,,0.0,False,False,False,,False,2316.9,107.8,0.3,0.0,2438.7,warm,
+RAG-Q26,definition,qwen2.5:3b,5,0.55,162,"162,167,162","162,167,162,162,166,167",True,1.0,0.6667,1.0,,0.0,False,False,False,,False,2185.9,140.2,0.2,0.0,2328.3,warm,
