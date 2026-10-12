@@ -5,6 +5,7 @@ from reportlab.pdfgen import canvas
 
 from app.services.calculation_service import calculate_from_tables, parse_financial_number, verify_financial_claim
 from app.services.pdf_service import _caption_near_bbox, extract_pdf
+from app.services.rag_service import _ground_draft_answer, _numeric_anchors
 
 
 def _finance_table(status="OK"):
@@ -145,3 +146,36 @@ def test_claim_verification_does_not_cross_company_or_accept_uncertain_ocr():
     uncertain = _finance_table("NEEDS_REVIEW")
     result = verify_financial_claim("Lợi nhuận năm 2024 là 150 triệu đồng đúng không?", [uncertain])
     assert result["verification_status"] == "INSUFFICIENT_EVIDENCE"
+
+
+def test_statistical_roa_questions_are_not_misrouted_to_ratio_calculation():
+    table = _finance_table()
+    assert calculate_from_tables("Biến ROA có bao nhiêu quan sát?", [table]) is None
+    assert calculate_from_tables("Giá trị trung bình của ROA là bao nhiêu?", [table]) is None
+    assert calculate_from_tables("Tính ROA năm 2024", [table])["verified"] is True
+
+
+def test_bilingual_grounding_keeps_exact_numeric_claim_and_normalizes_locale():
+    included = [{"text": "Total orders: 0. Average order value: 0.00 USD."}]
+    answer, audit = _ground_draft_answer(
+        "Tổng số đơn hàng là 0. [E1]\nGiá trị đơn hàng trung bình là 0,00 USD. [E1]",
+        included,
+        "Tổng số đơn hàng và giá trị đơn hàng trung bình là bao nhiêu?",
+    )
+    assert audit["kept_claims"] == 2
+    assert "Tổng số đơn hàng" in answer and "Giá trị đơn hàng trung bình" in answer
+    assert _numeric_anchors("0,00 USD") == _numeric_anchors("0.00 USD") == {"0"}
+
+
+def test_ocr_text_lookup_preserves_year_order_sign_and_review_flag():
+    evidence = [
+        {"modality": "text", "text": "Năm 2025    Năm 2024\nVND VND"},
+        {"modality": "text", "text": (
+            "200 X. LỢI NHUẬN KẾ TOÁN SAU THUẾ TNDN "
+            "1343.177.484.141 - 1.015.614.429.067")},
+    ]
+    current = calculate_from_tables("Lợi nhuận kế toán sau thuế TNDN năm 2025 là bao nhiêu?", evidence)
+    prior = calculate_from_tables("Lợi nhuận kế toán sau thuế TNDN năm 2024 là bao nhiêu?", evidence)
+    assert current["result"] == 1343177484141 and current["evidence_ids"] == ["E2"]
+    assert prior["result"] == -1015614429067
+    assert current["verified"] is False and current["requires_source_review"] is True

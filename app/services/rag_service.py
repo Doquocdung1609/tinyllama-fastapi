@@ -54,6 +54,12 @@ _QUERY_ALIASES = {
     "năng lực hấp thụ": "năng lực tiếp nhận",
     "thu lợi nhuận": "duy trì lợi nhuận",
     "chia sẻ công nghệ": "cho đi công nghệ hợp tác công nghệ",
+    "doanh thu": "revenue net sales",
+    "số đơn hàng": "total orders order count",
+    "đơn hàng": "orders order",
+    "giá trị đơn hàng trung bình": "average order value",
+    "giá trị trung bình": "average mean",
+    "số quan sát": "observations observation count",
 }
 
 _FACET_ALIASES = (
@@ -68,6 +74,54 @@ def _terms(text: str) -> list[str]:
     normalized = unicodedata.normalize("NFKC", text).casefold()
     return [token for token in re.findall(r"[^\W_]+", normalized, flags=re.UNICODE)
             if token not in _STOP_WORDS and (len(token) > 1 or token.isdigit())]
+
+
+_SUPPORT_CONCEPT_PATTERNS = {
+    "revenue": (r"\bdoanh thu\b", r"\brevenue\b", r"\bnet sales?\b"),
+    "orders": (r"\bdon hang\b", r"\border(?:s)?\b"),
+    "average": (r"\btrung binh\b", r"\baverage\b", r"\bmean\b"),
+    "observations": (r"\bquan sat\b", r"\bobservations?\b", r"\bobs\.?\b"),
+    "profit": (r"\bloi nhuan\b", r"\bprofits?\b", r"\bnet income\b"),
+    "cash_equivalents": (r"\btien va cac khoan tuong duong tien\b",
+                         r"\bcash and cash equivalents?\b"),
+    "assets": (r"\btai san\b", r"\bassets?\b"),
+    "liabilities": (r"\bno phai tra\b", r"\bliabilit(?:y|ies)\b"),
+    "equity": (r"\bvon chu so huu\b", r"\bequity\b"),
+    "growth": (r"\btang truong\b", r"\bgrowth\b"),
+    "ratio": (r"\bty le\b", r"\bhe so\b", r"\bratio\b"),
+    "year": (r"\bnam\b", r"\byear\b"),
+}
+
+
+def _accentless(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", unicodedata.normalize("NFKC", text).casefold())
+    return "".join(char for char in normalized if not unicodedata.combining(char)).replace("đ", "d")
+
+
+def _support_concepts(text: str) -> set[str]:
+    """Map common bilingual finance wording to language-neutral concepts."""
+    normalized = _accentless(text)
+    concepts = {name for name, patterns in _SUPPORT_CONCEPT_PATTERNS.items()
+                if any(re.search(pattern, normalized) for pattern in patterns)}
+    for acronym in ("roa", "roe", "fcf"):
+        if re.search(rf"\b{acronym}\b", normalized):
+            concepts.add(acronym)
+    return concepts
+
+
+def _support_ratio(claim: str, evidence: str, numbers_supported: bool) -> float:
+    claim_terms = set(_terms(claim))
+    evidence_terms = set(_terms(evidence))
+    lexical = len(claim_terms & evidence_terms) / max(1, len(claim_terms))
+    claim_concepts = _support_concepts(claim)
+    evidence_concepts = _support_concepts(evidence)
+    if not claim_concepts:
+        return lexical
+    concept_coverage = len(claim_concepts & evidence_concepts) / len(claim_concepts)
+    semantic = .55 * concept_coverage
+    if numbers_supported and _numeric_anchors(claim):
+        semantic += .15
+    return max(lexical, semantic)
 
 
 def _content_question(question: str) -> str:
@@ -271,7 +325,25 @@ def _evidence_ids(answer: str) -> list[int]:
 def _numeric_anchors(text: str) -> set[str]:
     """Normalize explicit digits and Vietnamese count words used with list nouns."""
     normalized = unicodedata.normalize("NFKC", text).casefold()
-    anchors = set(re.findall(r"(?<!\w)\d+(?:[.,]\d+)?%?", normalized))
+    raw_anchors = re.findall(r"(?<!\w)\d+(?:[.,]\d+)*%?", normalized)
+    anchors = set()
+    for raw in raw_anchors:
+        percent = raw.endswith("%")
+        value = raw.rstrip("%")
+        separators = re.findall(r"[.,]", value)
+        parts = re.split(r"[.,]", value)
+        if len(parts) > 2 or (len(parts) == 2 and len(parts[-1]) == 3 and parts[0] != "0"):
+            canonical = "".join(parts)
+        elif separators:
+            canonical = parts[0] + "." + parts[1]
+        else:
+            canonical = value
+        try:
+            number = float(canonical)
+            canonical = str(int(number)) if number.is_integer() else format(number, ".15g")
+        except ValueError:
+            pass
+        anchors.add(canonical + ("%" if percent else ""))
     words = {"một": "1", "hai": "2", "ba": "3", "bốn": "4", "năm": "5",
              "sáu": "6", "bảy": "7", "tám": "8", "chín": "9", "mười": "10"}
     count_nouns = r"(?:loại(?:\s+hình)?|hình\s+thức|nhóm|mục|bước|đổi\s+mới|chiến\s+lược)"
@@ -310,12 +382,10 @@ def _claim_citation_audit(answer: str, included: list[dict]) -> dict:
             continue
         valid_ids = [value for value in ids if value in by_position]
         evidence = " ".join(by_position[value].get("text", "") for value in valid_ids)
-        claim_terms = set(_terms(text))
-        evidence_terms = set(_terms(evidence))
-        overlap = len(claim_terms & evidence_terms) / max(1, len(claim_terms))
-        claim_numbers = set(re.findall(r"(?<!\w)\d+(?:[.,]\d+)?%?", text))
-        evidence_numbers = set(re.findall(r"(?<!\w)\d+(?:[.,]\d+)?%?", evidence))
+        claim_numbers = _numeric_anchors(text)
+        evidence_numbers = _numeric_anchors(evidence)
         numbers_supported = claim_numbers <= evidence_numbers
+        overlap = _support_ratio(text, evidence, numbers_supported)
         normalized_claim = unicodedata.normalize("NFKC", text).casefold()
         limitation = any(phrase in normalized_claim for phrase in (
             "tài liệu không", "tài liệu chưa", "bằng chứng không", "nguồn không",
@@ -431,10 +501,9 @@ def _ground_draft_answer(answer: str, included: list[dict], question: str = "") 
         for position in positions:
             item = included[position - 1]
             evidence = item.get("text", "")
-            evidence_terms = set(_terms(evidence))
-            score = len(claim_terms & evidence_terms) / max(1, len(claim_terms))
             evidence_numbers = _numeric_anchors(evidence)
             numeric_supported = claim_numbers <= evidence_numbers
+            score = _support_ratio(plain, evidence, numeric_supported)
             if numeric_supported and score > best_score:
                 best_position, best_score, number_ok = position, score, True
         analytical = bool(re.search(
@@ -447,8 +516,8 @@ def _ground_draft_answer(answer: str, included: list[dict], question: str = "") 
         if cited_positions and claim_numbers and not number_ok:
             for position, item in enumerate(included, 1):
                 evidence = item.get("text", "")
-                score = len(claim_terms & set(_terms(evidence))) / max(1, len(claim_terms))
                 numeric_supported = claim_numbers <= _numeric_anchors(evidence)
+                score = _support_ratio(plain, evidence, numeric_supported)
                 if numeric_supported and score > best_score:
                     best_position, best_score, number_ok = position, score, True
         if best_position and number_ok and best_score >= threshold:

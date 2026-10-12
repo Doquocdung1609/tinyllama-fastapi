@@ -120,6 +120,61 @@ def _best_row(question: str, rows: list[list[str]]) -> list[str] | None:
     return scored[0][1] if scored and scored[0][0] > 0 else (rows[0] if len(rows) == 1 else None)
 
 
+def _ocr_text_cell_lookup(question: str, included: list[dict]) -> dict | None:
+    """Recover a clearly aligned financial row when OCR grid reconstruction drops it.
+
+    The value and year order must both appear in included evidence.  Because the
+    structure came from OCR prose rather than a verified table cell, the result
+    is explicitly marked for source-image review.
+    """
+    year_match = re.search(r"\b(?:19|20)\d{2}\b", question)
+    normalized = _norm(question)
+    if not year_match or not any(term in normalized for term in ("bao nhieu", "gia tri", "the con")):
+        return None
+    requested_year = year_match.group(0)
+    header_years: list[str] = []
+    for item in included:
+        for line in str(item.get("text") or "").splitlines():
+            years = list(dict.fromkeys(re.findall(r"\b(?:19|20)\d{2}\b", line)))
+            if requested_year in years and len(years) >= 2 and len(years) > len(header_years):
+                header_years = years
+    if not header_years:
+        return None
+
+    ignored = {"bao", "nhieu", "gia", "tri", "nam", "la", "cua", "the", "con", requested_year}
+    query_tokens = set(re.findall(r"[a-z0-9]+", normalized)) - ignored
+    amount_pattern = re.compile(r"(?<![\d.,])[-−]?\s*\d+(?:[.,]\d{3})+(?![\d.,])")
+    candidates = []
+    for position, item in enumerate(included, 1):
+        for line in str(item.get("text") or "").splitlines():
+            amounts = [value.strip().replace("−", "-") for value in amount_pattern.findall(line)]
+            if len(amounts) < len(header_years):
+                continue
+            label = amount_pattern.sub(" ", line)
+            label_tokens = set(re.findall(r"[a-z0-9]+", _norm(label)))
+            overlap = len(query_tokens & label_tokens) / max(1, len(query_tokens))
+            if overlap >= .45:
+                candidates.append((overlap, position, item, line, amounts[-len(header_years):]))
+    if not candidates:
+        return None
+    _, position, item, line, amounts = max(candidates, key=lambda value: value[0])
+    column_index = header_years.index(requested_year)
+    raw_value = amounts[column_index]
+    parsed = parse_financial_number(raw_value)
+    if not parsed:
+        return None
+    unit = "VND" if re.search(r"\bVND\b", " ".join(str(value.get("text") or "") for value in included),
+                              re.IGNORECASE) else parsed[1]
+    label = amount_pattern.sub(" ", line)
+    label = re.sub(r"^\s*\d+(?:[.]\d+)?\s+", "", label).strip(" -–—|:")
+    return {"operation": "ocr_text_cell_lookup", "inputs": {"row": label, "column": requested_year},
+            "result": parsed[0], "result_unit": unit, "verified": False,
+            "requires_source_review": True, "evidence_ids": [f"E{position}"],
+            "answer": (f"Theo dòng OCR, {label.lower()} năm {requested_year} là {raw_value}"
+                       f"{(' ' + unit) if unit else ''}. [E{position}] "
+                       "Giá trị này được đọc từ ảnh scan và cần đối chiếu ảnh gốc trước khi sử dụng chính thức.")}
+
+
 def _format_number(value: float) -> str:
     return f"{value:,.2f}".rstrip("0").rstrip(".").replace(",", " ")
 
@@ -308,7 +363,7 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
     normalized = _norm(question)
     tables = _table_candidates(included)
     if not tables:
-        return None
+        return _ocr_text_cell_lookup(question, included)
     wants_growth = ("tang truong" in normalized or "percentage change" in normalized or
                     "tang bao nhieu phan tram" in normalized or "giam bao nhieu phan tram" in normalized)
     wants_highest = any(term in normalized for term in ("cao nhat", "lon nhat", "highest", "largest"))
@@ -317,8 +372,14 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
     wants_quick_ratio = any(term in normalized for term in
                             ("ty le thanh toan nhanh", "he so thanh toan nhanh", "quick ratio"))
     wants_debt_ratio = any(term in normalized for term in ("ty le no", "debt ratio"))
-    wants_roa = bool(re.search(r"\broa\b", normalized)) or "loi nhuan tren tong tai san" in normalized
-    wants_roe = bool(re.search(r"\broe\b", normalized)) or "loi nhuan tren von chu so huu" in normalized
+    statistic_lookup = any(term in normalized for term in (
+        "bao nhieu quan sat", "so quan sat", "observation", "trung binh", "mean",
+        "do lech chuan", "standard deviation", "gia tri nho nhat", "minimum",
+        "gia tri lon nhat", "maximum"))
+    wants_roa = ((bool(re.search(r"\broa\b", normalized)) or
+                  "loi nhuan tren tong tai san" in normalized) and not statistic_lookup)
+    wants_roe = ((bool(re.search(r"\broe\b", normalized)) or
+                  "loi nhuan tren von chu so huu" in normalized) and not statistic_lookup)
     wants_gross_margin = any(term in normalized for term in ("bien loi nhuan gop", "gross margin"))
     wants_net_margin = any(term in normalized for term in ("bien loi nhuan rong", "net margin"))
     wants_margin = (any(term in normalized for term in ("bien loi nhuan", "profit margin")) and
