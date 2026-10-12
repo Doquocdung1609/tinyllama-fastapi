@@ -1,0 +1,2 @@
+﻿question_id,category,model,top_k,threshold,expected_pages,retrieved_pages,prompt_pages,retrieval_hit,reciprocal_rank,evidence_precision,evidence_in_prompt,matched_elements,element_recall,answer_correct,expected_refusal,refused,cited_pages,citation_correct,embedding_ms,retrieval_ms,prompt_ms,generation_ms,total_ms,cold_or_warm,answer
+RAG-Q16,out-of-document refusal,qwen2.5:3b,8,0.45,,,,True,0,1.0,1.0,,1.0,True,True,True,,True,2656.6,189.9,0.4,0.0,2902.6,warm,Tài liệu không cung cấp đủ thông tin để trả lời câu hỏi này.

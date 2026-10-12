@@ -1,0 +1,10 @@
+﻿id,fixture,question,status_code,answer,citation_valid,calculation_verified,total_ms,pages,modalities
+T02,B_mixed_text_table.pdf,Tính tốc độ tăng trưởng doanh thu từ năm 2023 đến năm 2024 trong bảng.,200,"Doanh thu (triệu đồng) 2023: 100 triệu đồng; 2024: 125 triệu đồng. Tăng trưởng = (125 - 100) / 100 × 100 = 25%. [B_mixed_text_table.pdf, trang 1]",True,True,2328.8,1,table
+T06,D_bar_line_charts.pdf,Nhận xét sự khác biệt giữa Chuỗi A và Chuỗi B trên biểu đồ đường.,200,"Chuỗi A tăng từ 60 (2022) đến 120 (2024); trong khi Chuỗi B giảm từ 100 (2022) đến 85 (2024). [D_bar_line_charts.pdf, trang 2]",True,True,2228.4,2,chart
+T07,E_pie_chart.pdf,Nhóm nào chiếm tỷ trọng cao nhất trong biểu đồ tròn?,200,"Cá nhân chiếm tỷ trọng cao nhất: 50%. [E_pie_chart.pdf, trang 1]",True,True,2360.8,1,chart
+T14,D_bar_line_charts.pdf,Đối chiếu nhãn số doanh thu năm 2024 với biểu đồ cột cùng trang.,200,"Nhãn số trên biểu đồ ghi 2024: 125 triệu đồng. [D_bar_line_charts.pdf, trang 1]",True,True,2213.4,1,chart
+T15,C_financial_statement.pdf,Vốn chủ sở hữu năm 2024 là bao nhiêu?,200,Tài liệu chưa cung cấp bằng chứng trực tiếp cho các phần giải thích còn lại của câu hỏi.,False,,20718.0,,
+OCR01,G_scanned_document.pdf,Doanh thu năm 2024 là bao nhiêu?,200,"Doanh thu năm 2024 là 250 triệu đồng. [G_scanned_document.pdf, trang 1]",True,,6064.7,1,ocr_text
+OCR02,K_scanned_financial_table.pdf,Tính tốc độ tăng trưởng doanh thu từ 2023 đến 2024 trong bảng tiếng Việt.,200,Tài liệu chưa cung cấp bằng chứng trực tiếp cho các phần giải thích còn lại của câu hỏi.,False,,9191.2,,
+OCR03,M_image_only_chart.pdf,Nhãn số năm 2024 trên biểu đồ là bao nhiêu?,200,"Nhãn số trên biểu đồ ghi 2024: 125 ty dong. [M_image_only_chart.pdf, trang 1]",True,True,2216.3,1,chart
+MIX01,L_mixed_text_table_chart.pdf,Đối chiếu doanh thu năm 2024 trong bảng và biểu đồ cùng trang.,200,"Nhãn số trên biểu đồ ghi 2024: 125 tỷ đồng. [L_mixed_text_table_chart.pdf, trang 1]",True,True,2324.1,1,chart

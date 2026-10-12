@@ -1,0 +1,4 @@
+﻿case_id,group,kind,status,question,answer,pages,evidence_ids,calculation_verified,citation_valid,latency_ms
+OCR01,ocr,scanned Vietnamese text,PASS,Doanh thu năm 2024 là bao nhiêu?,"Doanh thu năm 2024 là 250 triệu đồng. [G_scanned_document.pdf, trang 1]",1,E1,False,True,30131.2
+OCR02,ocr,scanned financial table,PASS,Tính tốc độ tăng trưởng doanh thu từ 2023 đến 2024.,"Tốc độ tăng trưởng Doanh thu từ 2023 đến 2024: (180 - 100) / 100 × 100 = 80%. [K_scanned_financial_table.pdf, trang 1]",1,E2,True,True,2298.3
+OCR03,ocr,image-only chart,PASS,Giá trị năm 2024 trên biểu đồ là bao nhiêu?,"Nhãn số trên biểu đồ ghi 2024: 125 ty dong. [M_image_only_chart.pdf, trang 1]",1,E1,True,True,2362.1

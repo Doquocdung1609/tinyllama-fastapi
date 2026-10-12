@@ -105,7 +105,7 @@ def chunk_pages(pages: list[dict[str, Any]], document_id: str, filename: str,
                     ])
                 first_row = (group_index - 1) * max_rows + 1
                 last_row = first_row + len(group) - 1
-                content = (f"TABLE {table.get('table_id')}\nCaption: {caption}\n"
+                content = (f"TABLE {table.get('table_id')}\nSource: {table.get('source_id')}\nCaption: {caption}\n"
                            f"Rows: {first_row}-{max(first_row, last_row)}\n{markdown}")
                 structured = {**table, "rows": group, "row_range": [first_row, max(first_row, last_row)]}
                 append_chunk(page, content, modality="table", source_id=table.get("source_id"),

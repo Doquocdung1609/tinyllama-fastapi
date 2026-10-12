@@ -131,118 +131,173 @@ elif page == "Chat với Ollama":
     if st.button("Xóa hội thoại"): st.session_state.chat_history=[]; st.rerun()
 
 elif page == "Talk to Documents / RAG":
-    page_header("Talk to Documents", "Tải PDF, quan sát trạng thái xử lý và đặt câu hỏi có căn cứ theo tài liệu.")
-    explain("Extraction lấy text theo trang; các bước tiếp theo được xử lý nền và lưu vector cùng metadata.")
-    uploaded = st.file_uploader("Chọn một hoặc nhiều PDF", type=["pdf"], accept_multiple_files=True, key="rag_pdf")
-    if uploaded and st.button("Tải lên và lập chỉ mục", type="primary"):
-        for pdf_file in uploaded:
-            with st.spinner(f"Đang gửi {pdf_file.name}…"):
-                result = api("POST", "/documents/upload", files={"file":(pdf_file.name,pdf_file.getvalue(),"application/pdf")}, timeout=180)
-            if result:
-                st.session_state.selected_doc=result["document_id"]
-                st.success(f"Đã nhận {pdf_file.name}; xử lý nền bắt đầu.")
-                with st.status(f"Đang xử lý {pdf_file.name}…", expanded=True) as processing:
-                    progress_bar=st.progress(0.08,text="UPLOADED")
-                    current=result
-                    for _ in range(180):
-                        current=api("GET",f"/documents/{result['document_id']}",timeout=30) or current
-                        stage=current.get("status","UPLOADED")
-                        progress={"UPLOADED":.08,"PROCESSING":.12,"EXTRACTING":.25,"CLEANING":.35,"CHUNKING":.48,"EMBEDDING":.68,"INDEXING":.92,"READY":1.0,"ERROR":0.0}.get(stage,.05)
-                        emb=current.get("embedding_progress",{}); emb_text=(f" · embedding {emb.get('completed',0)}/{emb.get('total',0)}" if stage=="EMBEDDING" else "")
-                        progress_bar.progress(progress,text=f"{stage} · {current.get('pages',0)} trang · {current.get('chunks',0)} chunks{emb_text}")
-                        if stage in {"READY","ERROR"}: break
-                        time.sleep(1)
-                    processing.update(label=f"{current.get('status','UNKNOWN')}: {pdf_file.name}",state="complete" if current.get("status")=="READY" else "error")
-                    if current.get("error"): st.error(current["error"])
+    page_header("Talk to Documents", "Hội thoại PDF nhiều lượt, lưu cục bộ và luôn truy xuất lại bằng chứng gốc.")
     docs = api("GET", "/documents", timeout=10) or []
-    if docs:
-        doc_options = {f"{d['filename']} · {d['status']} · {d.get('chunks',0)} chunks":d["document_id"] for d in docs}
-        selected = st.selectbox("Thư viện tài liệu", list(doc_options), index=next((i for i,v in enumerate(doc_options.values()) if v==st.session_state.selected_doc),0))
-        doc_id=doc_options[selected]; st.session_state.selected_doc=doc_id
-        doc=api("GET",f"/documents/{doc_id}",timeout=10) or {}
-        progress={"UPLOADED":.08,"PROCESSING":.12,"EXTRACTING":.25,"CLEANING":.35,"CHUNKING":.48,"EMBEDDING":.68,"INDEXING":.86,"READY":1.0,"ERROR":0.0}.get(doc.get("status"),0.05)
-        st.progress(progress,
-                    text=f"Pipeline: {doc.get('status','UNKNOWN')} · {doc.get('pages',0)} trang · {doc.get('chunks',0)} chunks")
-        if doc.get("error"): st.error(doc["error"])
-        with st.expander("Document Inspector · preflight và evidence theo trang"):
-            summary=doc.get("modality_summary") or {}
-            if summary:
-                a,b,c,d,e=st.columns(5)
-                a.metric("Text pages",summary.get("text_pages",0)); b.metric("Table pages",summary.get("table_pages",0))
-                c.metric("Chart pages",summary.get("chart_pages",0)); d.metric("Figure pages",summary.get("figure_pages",0))
-                e.metric("Scanned pages",summary.get("scanned_pages",0))
-                st.caption(f"Schema v{summary.get('schema_version')} · mixed {summary.get('mixed_pages',0)} · multi-column {summary.get('multi_column_pages',0)} · rotated {summary.get('rotated_pages',0)}")
-                if summary.get("warnings"): st.warning(" · ".join(summary["warnings"]))
-                caps=summary.get("capabilities",{})
-                st.caption(f"Native tables: {caps.get('native_tables')} · OCR: {caps.get('ocr')} · Vision: {caps.get('vision')}")
+    ready_docs = [item for item in docs if item.get("status") in {"READY", "PARTIAL"}]
+    docs_by_id = {item["document_id"]: item for item in docs}
+
+    with st.expander("Tải lên và theo dõi xử lý PDF", expanded=not docs):
+        uploaded = st.file_uploader("Chọn một hoặc nhiều PDF", type=["pdf"], accept_multiple_files=True, key="rag_pdf")
+        if uploaded and st.button("Tải lên và lập chỉ mục", type="primary"):
+            for pdf_file in uploaded:
+                result = api("POST", "/documents/upload",
+                    files={"file": (pdf_file.name, pdf_file.getvalue(), "application/pdf")}, timeout=180)
+                if not result:
+                    continue
+                with st.status(f"Pipeline thật · {pdf_file.name}", expanded=True) as processing:
+                    current = result
+                    previous_stage = None
+                    for _ in range(300):
+                        current = api("GET", f"/documents/{result['document_id']}", timeout=30) or current
+                        stage = current.get("status", "UPLOADED")
+                        if stage != previous_stage:
+                            st.write(f"**{stage}** · {current.get('pages', 0)} trang · {current.get('chunks', 0)} chunks")
+                            previous_stage = stage
+                        embedding = current.get("embedding_progress", {})
+                        if stage == "EMBEDDING" and embedding.get("total"):
+                            completed, total = embedding.get("completed", 0), embedding["total"]
+                            st.progress(completed / total, text=f"Embedding thật: {completed}/{total}")
+                        if stage in {"READY", "PARTIAL", "FAILED", "ERROR", "BLOCKED"}:
+                            break
+                        time.sleep(1)
+                    ok = current.get("status") in {"READY", "PARTIAL"}
+                    processing.update(label=f"{current.get('status', 'UNKNOWN')} · {pdf_file.name}",
+                                      state="complete" if ok else "error")
+                    if current.get("error"):
+                        st.error(current["error"])
+            st.rerun()
+
+    if not docs:
+        st.info("Thư viện đang trống. Tải PDF lên để bắt đầu hội thoại.")
+    else:
+        left, main_panel = st.columns([0.3, 0.7], gap="large")
+        with left:
+            st.markdown("### Cuộc hội thoại")
+            conversations = api("GET", "/conversations", timeout=15) or []
+            query_conversation = st.query_params.get("conversation")
+            if "active_rag_conversation" not in st.session_state:
+                st.session_state.active_rag_conversation = query_conversation
+            conversation_labels = {f"{item['title']} · {item['updated_at'][:16]}": item["conversation_id"]
+                                   for item in conversations}
+            if conversation_labels:
+                values = list(conversation_labels.values())
+                current_id = st.session_state.active_rag_conversation
+                active_index = values.index(current_id) if current_id in values else 0
+                chosen_label = st.selectbox("Lịch sử", list(conversation_labels), index=active_index,
+                                            label_visibility="collapsed")
+                chosen_id = conversation_labels[chosen_label]
+                if chosen_id != st.session_state.active_rag_conversation:
+                    st.session_state.active_rag_conversation = chosen_id
+                    st.query_params["conversation"] = chosen_id
+                    st.rerun()
+
+            ready_options = {f"{item['filename']} · {item.get('chunks', 0)} chunks": item["document_id"]
+                             for item in ready_docs}
+            selected_labels = st.multiselect("Phạm vi tài liệu", list(ready_options),
+                default=[next(iter(ready_options))] if ready_options else [])
+            selected_scope = [ready_options[label] for label in selected_labels]
+            if st.button("＋ Hội thoại mới", use_container_width=True, disabled=not selected_scope):
+                created = api("POST", "/conversations", json={"active_document_ids": selected_scope}, timeout=20)
+                if created:
+                    st.session_state.active_rag_conversation = created["conversation_id"]
+                    st.query_params["conversation"] = created["conversation_id"]
+                    st.rerun()
+
+            active_id = st.session_state.get("active_rag_conversation")
+            active_conversation = api("GET", f"/conversations/{active_id}", timeout=20) if active_id else None
+            if active_conversation:
+                active_scope = active_conversation.get("active_document_ids", [])
+                missing = [item for item in active_scope if item not in docs_by_id]
+                if missing:
+                    st.error("Cuộc hội thoại tham chiếu tài liệu đã bị xóa. Hãy cập nhật phạm vi.")
+                scope_labels = [label for label, value in ready_options.items() if value in active_scope]
+                updated_labels = st.multiselect("Tài liệu của chat đang mở", list(ready_options),
+                                                default=scope_labels, key=f"scope_{active_id}")
+                updated_scope = [ready_options[label] for label in updated_labels]
+                if updated_scope and updated_scope != active_scope and st.button("Cập nhật phạm vi", use_container_width=True):
+                    if api("PATCH", f"/conversations/{active_id}", json={"active_document_ids": updated_scope}, timeout=20):
+                        st.rerun()
+                if st.button("Xóa cuộc hội thoại", use_container_width=True):
+                    api("DELETE", f"/conversations/{active_id}", timeout=20)
+                    st.session_state.active_rag_conversation = None
+                    st.query_params.pop("conversation", None)
+                    st.rerun()
+
+            st.markdown("### Thư viện tài liệu")
+            for item in docs:
+                symbol = "🟢" if item.get("status") == "READY" else "🟡" if item.get("status") == "PARTIAL" else "⚪"
+                st.caption(f"{symbol} {item['filename']} · {item.get('status')} · {item.get('pages', 0)} trang")
+
+            runtime = api("GET", "/system/status", timeout=10) or {}
+            rag_models = runtime.get("ollama", {}).get("models", []) or [runtime.get("model", "qwen2.5:3b")]
+            active_model = runtime.get("model", rag_models[0])
+            rag_model = st.selectbox("Mô hình", rag_models,
+                index=rag_models.index(active_model) if active_model in rag_models else 0)
+            top_k = st.slider("Top-k", 1, 10, 5)
+            threshold = st.slider("Ngưỡng rank fusion", 0.0, 1.0, 0.55, .05)
+            debug = st.toggle("RAG Debug Mode", value=False)
+
+        with main_panel:
+            if not active_conversation:
+                st.info("Chọn tài liệu và tạo một cuộc hội thoại mới.")
             else:
-                st.info("Tài liệu index schema cũ chưa có preflight đa phương thức; dữ liệu cũ vẫn dùng text RAG bình thường.")
-            if doc.get("pages",0):
-                inspect_page=st.number_input("Trang cần kiểm tra",1,int(doc.get("pages",1)),1,1,key=f"inspect_{doc_id}")
-                page_data=api("GET",f"/documents/{doc_id}/pages/{int(inspect_page)}",timeout=30)
-                if page_data:
-                    try:
-                        preview=requests.get(f"{API_URL.rstrip('/')}/documents/{doc_id}/pages/{int(inspect_page)}/preview",timeout=45)
-                        if preview.ok: st.image(preview.content,caption=f"Trang {int(inspect_page)}",width="stretch")
-                    except requests.RequestException as exc:
-                        st.warning(f"Không tải được preview: {exc}")
-                    st.json(page_data.get("diagnostics",{}))
-                    st.text_area("Extracted text",page_data.get("text","") or "[Không có text layer]",height=180,key=f"text_{doc_id}_{inspect_page}")
-                    for table_item in page_data.get("tables",[]):
-                        st.markdown(f"**Table `{table_item.get('table_id')}` · {table_item.get('status')}**")
-                        st.code(table_item.get("markdown","") or "[Không trích xuất được cấu trúc]")
-                        st.caption(f"bbox {table_item.get('bbox')} · {table_item.get('extraction_method')}")
-                    for chart_item in page_data.get("charts",[]):
-                        st.markdown(f"**Chart `{chart_item.get('chart_id')}` · {chart_item.get('confidence')}**")
-                        st.json(chart_item)
-                    for figure_item in page_data.get("figures",[]):
-                        st.markdown(f"**Figure `{figure_item.get('figure_id')}` · {figure_item.get('confidence')}**")
-                        st.json(figure_item)
-                    with st.expander("Chunk/evidence mapping của trang"):
-                        st.json(page_data.get("chunks",[]))
-        if st.button("Re-index tài liệu", disabled=(doc.get("status") in {"UPLOADED","EXTRACTING","CLEANING","CHUNKING","EMBEDDING","INDEXING"}), key=f"reindex_{doc_id}"):
-            if api("POST",f"/documents/{doc_id}/process",timeout=15): st.info("Đã đưa tài liệu vào hàng xử lý lại.")
-        runtime=api("GET","/system/status",timeout=10) or {}
-        rag_models=runtime.get("ollama",{}).get("models",[]) or [runtime.get("model","qwen2.5:3b")]
-        active_model=runtime.get("model",rag_models[0])
-        rag_model=st.selectbox("Mô hình tạo câu trả lời",rag_models,index=rag_models.index(active_model) if active_model in rag_models else 0)
-        top_k=st.slider("Top-k",1,10,5); threshold=st.slider("Ngưỡng điểm rank fusion tương đối",0.0,1.0,0.55,.05)
-        question=st.text_input("Câu hỏi theo tài liệu",placeholder="Ví dụ: Chính sách nghỉ phép quy định thế nào?")
-        debug=st.checkbox("RAG Debug Mode",value=True)
-        if st.button("Tìm kiếm và trả lời",type="primary",disabled=(doc.get("status")!="READY" or not question)):
-            with st.spinner(f"Embedding → Qdrant → rank fusion → {rag_model}…"):
-                result=api("POST","/rag/query",json={"question":question,"top_k":top_k,
-                           "score_threshold":threshold,"document_id":doc_id,"model":rag_model},timeout=300)
-            if result:
-                st.subheader("Câu trả lời"); st.markdown(result["answer"])
-                st.subheader("Nguồn")
-                for index,source in enumerate(result["sources"],1):
-                    semantic=source.get('semantic_score')
-                    st.write(f"#{index} · {source['filename']} · trang {source['page']} · fusion {source['score']:.3f} · semantic {semantic:.3f}" if semantic is not None else f"#{index} · {source['filename']} · trang {source['page']} · fusion {source['score']:.3f} · semantic chưa vào top dense")
-                    st.caption(f"semantic rank {source.get('semantic_rank') or '—'} · lexical rank {source.get('lexical_rank') or '—'} · lexical {source.get('lexical_score',0):.3f} · `{source['chunk_id']}`")
-                    st.caption(f"modality {source.get('modality','text')} · source {source.get('source_id') or 'legacy-text'} · bbox {source.get('bbox')}")
-                timings=result.get("timings",{})
-                if timings:
-                    st.caption(" · ".join(f"{name}: {value:.0f} ms" for name,value in timings.items()))
-                for index,chunk in enumerate(result["retrieved_chunks"],1):
-                    with st.expander(f"Chunk #{index} · {chunk.get('filename')} · trang {chunk.get('page')} · score {chunk['score']:.3f}"): st.write(chunk.get("text"))
-                if debug:
-                    with st.expander("1 · Retrieved candidates (dense)"): st.json(result.get("retrieved_candidates",[]))
-                    with st.expander("2 · Reranked candidates (weighted RRF)"): st.json(result.get("reranked_candidates",[]))
-                    with st.expander("3 · Eligible evidence pool"): st.json(result.get("evidence_candidate_pool",[]))
-                    with st.expander("4 · Selected direct evidence"): st.json(result.get("selected_evidence",[]))
-                    with st.expander("5 · Adjacent context"): st.json(result.get("adjacent_context",[]))
-                    with st.expander("6 · Included prompt context (E-ID exact)"): st.json(result.get("included_prompt_context",[]))
-                    with st.expander("7 · Excluded chunks and machine-readable reasons"): st.json(result.get("excluded_chunks",[]))
-                    with st.expander("Context budget allocation"): st.json(result.get("evidence_selection",{}))
-                    with st.expander("Citation validation"): st.json(result.get("citation_validation",{}))
-                    with st.expander("Generation validation"): st.json(result.get("generation_validation",{}))
-                    with st.expander("Claim-level grounding"): st.json(result.get("claim_grounding",{}))
-                    with st.expander("Deterministic calculation"): st.json(result.get("calculation_validation"))
-                    with st.expander("Lexical diagnostics"): st.json(result.get("lexical_diagnostics",{}))
-                    with st.expander("Retrieved Context"): st.code(result["context"] or "Không có context")
-                    with st.expander("Final Prompt"): st.code(result["final_prompt"])
-    else: st.info("Thư viện đang trống. Tải PDF lên để bắt đầu.")
+                st.markdown(f"### {active_conversation['title']}")
+                st.caption("Nguồn: " + " · ".join(docs_by_id[item]["filename"] for item in active_conversation["active_document_ids"] if item in docs_by_id))
+                for message in active_conversation.get("messages", []):
+                    with st.chat_message(message["role"]):
+                        st.markdown(message["content"])
+                        if message["role"] == "assistant":
+                            citations = message.get("citations") or []
+                            if citations:
+                                st.caption("Nguồn bằng chứng")
+                                source_columns = st.columns(min(3, len(citations)))
+                                for index, citation in enumerate(citations):
+                                    label = f"{citation.get('filename')} · trang {citation.get('page')}"
+                                    with source_columns[index % len(source_columns)]:
+                                        if st.button(label, key=f"source_{message['message_id']}_{index}", use_container_width=True):
+                                            st.session_state.rag_source_preview = (citation.get("document_id"), int(citation.get("page")), citation.get("bbox"))
+                                            st.rerun()
+                            calculations = message.get("referenced_calculations") or []
+                            if calculations:
+                                with st.expander("Chi tiết phép tính"):
+                                    st.json(calculations[0])
+                            with st.expander("Sao chép câu trả lời"):
+                                st.code(message["content"], language=None)
+                            if debug:
+                                with st.expander("Resolved question và retrieval metadata"):
+                                    st.write(message.get("resolved_question"))
+                                    st.json(message.get("retrieval_metadata", {}))
+
+                preview_target = st.session_state.get("rag_source_preview")
+                if preview_target and preview_target[0] in active_conversation["active_document_ids"]:
+                    preview_doc, preview_page, preview_bbox = preview_target
+                    with st.expander(f"Nguồn gốc · {docs_by_id.get(preview_doc, {}).get('filename')} · trang {preview_page}", expanded=True):
+                        try:
+                            preview = requests.get(f"{API_URL.rstrip('/')}/documents/{preview_doc}/pages/{preview_page}/preview", timeout=45)
+                            if preview.ok:
+                                st.image(preview.content, caption=f"Trang {preview_page} · bbox {preview_bbox or 'toàn trang'}", width="stretch")
+                        except requests.RequestException as exc:
+                            st.warning(f"Không tải được preview: {exc}")
+                        page_data = api("GET", f"/documents/{preview_doc}/pages/{preview_page}", timeout=30)
+                        if page_data:
+                            for table_item in page_data.get("tables", []):
+                                st.markdown(f"**Bảng `{table_item.get('table_id')}`**")
+                                st.code(table_item.get("markdown", ""), language=None)
+                            if debug:
+                                st.json(page_data)
+
+                prompt = st.chat_input("Hỏi tiếp về tài liệu đang chọn…", disabled=bool(missing))
+                if prompt:
+                    with st.spinner("Đang phân giải ngữ cảnh → truy xuất evidence → kiểm chứng câu trả lời…"):
+                        response = api("POST", f"/conversations/{active_id}/messages",
+                            json={"content": prompt, "top_k": top_k, "score_threshold": threshold,
+                                  "model": rag_model}, timeout=360)
+                    if response:
+                        st.session_state.last_rag_debug = response.get("rag")
+                        st.rerun()
+                if debug and st.session_state.get("last_rag_debug"):
+                    with st.expander("RAG diagnostics của lượt vừa chạy"):
+                        st.json(st.session_state.last_rag_debug)
 
 elif page == "Chunk Explorer":
     page_header("Chunk Explorer", "Xem từng bước từ PDF đến các chunk, chỉnh kích thước và overlap trực tiếp.")

@@ -53,8 +53,30 @@ class RAGRequest(BaseModel):
     top_k: int = Field(default_factory=lambda: get_settings().top_k, ge=1, le=20)
     score_threshold: float = Field(default_factory=lambda: get_settings().score_threshold, ge=0, le=1)
     document_id: str | None = None
+    document_ids: list[str] = Field(default_factory=list, max_length=20)
     generate_answer: bool = True
     model: str | None = None
+
+
+class ConversationCreate(BaseModel):
+    title: str | None = Field(default=None, max_length=160)
+    active_document_ids: list[str] = Field(min_length=1, max_length=20)
+    settings: dict[str, Any] = Field(default_factory=dict)
+
+
+class ConversationUpdate(BaseModel):
+    title: str | None = Field(default=None, max_length=160)
+    active_document_ids: list[str] | None = Field(default=None, min_length=1, max_length=20)
+    status: str | None = Field(default=None, pattern="^(ACTIVE|ARCHIVED)$")
+    settings: dict[str, Any] | None = None
+
+
+class ConversationMessageCreate(BaseModel):
+    content: str = Field(min_length=1, max_length=8000)
+    top_k: int = Field(default=5, ge=1, le=20)
+    score_threshold: float = Field(default=0.55, ge=0, le=1)
+    model: str | None = None
+    generate_answer: bool = True
 
 
 class ChunkMetadata(BaseModel):

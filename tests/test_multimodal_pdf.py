@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from app.services.calculation_service import calculate_from_tables, parse_financial_number
+from app.services.calculation_service import analyze_charts, calculate_from_tables, parse_financial_number
 from app.services.chunk_service import chunk_pages
 from app.services.pdf_service import extract_pdf, render_page_preview, summarize_extraction
 
@@ -46,9 +46,14 @@ def test_pie_figure_scan_columns_and_multipage_table_detection(tmp_path):
 
     assert pie_summary["charts"] == 1 and pie_pages[0]["charts"][0]["chart_type"] == "pie"
     assert figure_summary["figures"] == 1 and "phê duyệt" in figure_pages[0]["figures"][0]["visible_text"].casefold()
-    assert scan_summary["scanned_pages"] == 1 and scan_chunks == []
-    assert "OCR_ENGINE_UNAVAILABLE" in scan_summary["warnings"]
-    assert scan_pages[0]["diagnostics"]["ocr_status"] == "BLOCKED_ENGINE_UNAVAILABLE"
+    assert scan_summary["scanned_pages"] == 1
+    if scan_summary["capabilities"]["ocr"]:
+        assert scan_summary["ocr_pages_processed"] == 1
+        assert scan_pages[0]["diagnostics"]["ocr_status"] == "COMPLETED"
+        assert any(chunk["modality"] == "ocr_text" for chunk in scan_chunks)
+    else:
+        assert scan_chunks == []
+        assert "OCR_ENGINE_UNAVAILABLE" in scan_summary["warnings"]
     assert column_summary["multi_column_pages"] == 1
     assert multi_summary["table_pages"] == 2
     first, second = multi_pages[0]["tables"][0], multi_pages[1]["tables"][0]
@@ -88,3 +93,49 @@ def test_deterministic_financial_calculations_use_structured_table_evidence():
                                "unit": "triệu đồng"}
     assert parse_financial_number("(25) triệu đồng") == (-25.0, "triệu đồng")
     assert parse_financial_number("1.250") == (1250.0, "")
+
+
+def test_year_rows_growth_and_chart_completeness_are_deterministic():
+    _, _, table_chunks = extracted("B_mixed_text_table.pdf")
+    table = next(chunk for chunk in table_chunks if chunk["modality"] == "table")
+    table["prompt_position"] = 1
+    growth = calculate_from_tables("Tính tốc độ tăng trưởng doanh thu từ năm 2023 đến năm 2024 trong bảng.", [table])
+    assert growth and growth["result"] == 25.0
+    assert growth["source_cells"][0]["row"] == "2023"
+
+    _, _, line_chunks = extracted("D_bar_line_charts.pdf")
+    line = next(chunk for chunk in line_chunks if chunk["page"] == 2 and chunk["modality"] == "chart")
+    line["prompt_position"] = 1
+    comparison = analyze_charts("Nhận xét sự khác biệt giữa Chuỗi A và Chuỗi B.", [line])
+    assert comparison and comparison["series_coverage"] == ["Chuỗi A", "Chuỗi B"]
+    assert "Chuỗi A tăng" in comparison["answer"] and "Chuỗi B giảm" in comparison["answer"]
+
+    _, _, pie_chunks = extracted("E_pie_chart.pdf")
+    pie = next(chunk for chunk in pie_chunks if chunk["modality"] == "chart")
+    pie["prompt_position"] = 1
+    maximum = analyze_charts("Nhóm nào chiếm tỷ trọng cao nhất?", [pie])
+    assert maximum and maximum["result"] == 50.0 and "50%" in maximum["answer"]
+
+
+def test_real_local_ocr_preserves_clean_text_and_numeric_cells():
+    pages, summary, chunks = extracted("K_scanned_financial_table.pdf")
+    if not summary["capabilities"]["ocr"]:
+        import pytest
+        pytest.skip("Tesseract is not installed")
+    assert summary["ocr_pages_processed"] == 2
+    assert {page["diagnostics"]["ocr_language"] for page in pages} == {"vie+eng"}
+    assert all(page["ocr"]["average_confidence"] > 75 for page in pages)
+    assert [page["tables"][0]["rows"][0][1:3] for page in pages] == [["100", "180"], ["100", "180"]]
+    assert all(any(chunk["modality"] == "table" and chunk["page"] == page for chunk in chunks) for page in (1, 2))
+
+
+def test_multi_page_record_comparison_uses_both_source_rows():
+    _, _, chunks = extracted("I_multipage_table.pdf")
+    tables = [chunk for chunk in chunks if chunk["modality"] == "table"]
+    for position, table in enumerate(tables, start=1):
+        table["prompt_position"] = position
+    result = calculate_from_tables("So sánh giá trị của mã A15 và A16 trong bảng nhiều trang.", tables)
+    assert result and result["operation"] == "record_comparison"
+    assert "A15" in result["answer"] and "150" in result["answer"]
+    assert "A16" in result["answer"] and "160" in result["answer"]
+    assert len(result["evidence_ids"]) == 2

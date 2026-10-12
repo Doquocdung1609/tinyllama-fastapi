@@ -1,0 +1,89 @@
+{
+  "before": {
+    "online": true,
+    "collection": "final_product_test",
+    "vectors": 36,
+    "dimension": 768,
+    "distance": "Cosine"
+  },
+  "upload": {
+    "document_id": "376b7d23cb4d1ce4d79e586af77f01c3",
+    "filename": "K_scanned_financial_table.pdf",
+    "path": "tmp\\final_product\\uploads\\376b7d23cb4d1ce4d79e586af77f01c3_K_scanned_financial_table.pdf",
+    "status": "READY",
+    "pages": 2,
+    "chunks": 4,
+    "indexed_at": "2026-10-12T02:33:31.024186+00:00",
+    "error": null,
+    "embedding_progress": {
+      "completed": 4,
+      "total": 4
+    },
+    "content_hash": "376b7d23cb4d1ce4d79e586af77f01c3bca5e1e4792a62a4052de8c01bf6564f",
+    "status_updated_at": "2026-10-12T02:33:05.808239+00:00",
+    "page_progress": {
+      "completed": 2,
+      "total": 2
+    },
+    "processing_timings": {
+      "extraction_seconds": 4.778,
+      "cleaning_seconds": 0.003,
+      "chunking_seconds": 0.0,
+      "embedding_seconds": 23.223,
+      "indexing_seconds": 0.085,
+      "total_seconds": 28.089
+    },
+    "index_version": 3,
+    "extraction_mode": "multimodal_native",
+    "modality_summary": {
+      "schema_version": 3,
+      "total_pages": 2,
+      "text_pages": 2,
+      "table_pages": 2,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 2,
+      "mixed_pages": 2,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 2,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 2,
+      "ocr_pages_failed": 0,
+      "ocr_average_confidence": 87.09,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": true,
+        "ocr_engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+        "ocr_version": "5.4.0.20240606",
+        "ocr_languages": [
+          "eng",
+          "osd",
+          "vie"
+        ],
+        "ocr_tessdata_dir": "C:\\Users\\Admin\\Desktop\\AI_thay_Hieu\\tinyllama-fastapi\\tools\\tessdata",
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "extraction_warnings": [],
+    "size_bytes": 117061,
+    "duplicate": true,
+    "message": "PDF trùng nội dung; dùng lại index hiện có."
+  },
+  "after": {
+    "online": true,
+    "collection": "final_product_test",
+    "vectors": 36,
+    "dimension": 768,
+    "distance": "Cosine"
+  },
+  "same_document_id": true,
+  "duplicate": true,
+  "vector_count_unchanged": true
+}

@@ -1,0 +1,4 @@
+﻿case_id,type,page,expected_numeric_cells,observed_numeric_cells,exact_cells,total_cells,accuracy_percent,status
+K-VI,scanned table,1,100|180|12|16|300|360,100|180|12|16|300|360,6,6,100,PASS
+K-EN,scanned table,2,100|180|12|16|300|360,100|180|12|16|300|360,6,6,100,PASS
+I-MULTIPAGE,multi-page native table,"1,2",A15=150|A16=160,A15=150|A16=160,2,2,100,PASS

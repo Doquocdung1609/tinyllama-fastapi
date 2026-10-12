@@ -12,6 +12,7 @@ from app.models import ChatRequest, NormalizeRequest, ScriptRequest, ScriptRespo
 from app.api.documents import router as documents_router
 from app.api.rag import router as rag_router
 from app.api.qdrant import router as qdrant_router
+from app.api.conversations import router as conversations_router
 from app.services.ollama_service import chat, chat_stream, ollama_status, process_script
 from app.services import qdrant_service, rag_service, embedding_service, tts_service, image_service, video_service
 from app.services.system_service import status as runtime_status
@@ -26,6 +27,8 @@ settings.prepare_dirs()
 @asynccontextmanager
 async def lifespan(_app):
     rag_service.load_saved_documents()
+    from app.services.conversation_service import init_database
+    init_database()
     yield
 
 
@@ -34,6 +37,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 app.include_router(documents_router)
 app.include_router(rag_router)
 app.include_router(qdrant_router)
+app.include_router(conversations_router)
 app.mount("/audio", StaticFiles(directory=str(settings.audio_dir)), name="audio")
 app.mount("/images", StaticFiles(directory=str(settings.image_dir)), name="images")
 app.mount("/videos", StaticFiles(directory=str(settings.video_dir)), name="videos")

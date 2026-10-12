@@ -7,9 +7,11 @@ import re
 from time import perf_counter
 import unicodedata
 from pathlib import Path
+from hashlib import sha256
+from threading import Lock
 from app.config import get_settings
 from app.services.chunk_service import chunk_pages, clean_text
-from app.services.calculation_service import calculate_from_tables
+from app.services.calculation_service import analyze_charts, calculate_from_tables
 from app.services.embedding_service import get_embedding_provider
 from app.services.ollama_service import generate
 from app.services.pdf_service import extract_pdf, render_page_preview, summarize_extraction
@@ -19,6 +21,8 @@ logger = logging.getLogger(__name__)
 _documents: dict[str, dict] = {}
 _chunks: dict[str, list[dict]] = {}
 INDEX_VERSION = 3
+_processing_documents: set[str] = set()
+_processing_lock = Lock()
 
 _STOP_WORDS = {
     "bao", "bằng", "bị", "các", "cho", "có", "của", "đã", "đang", "đâu",
@@ -162,14 +166,21 @@ def _lexical_candidates(question: str, chunks: list[dict], limit: int | None = N
 
 def _numeric_anchor_supported(question: str, chunks: list[dict]) -> bool:
     """Require explicit numeric evidence for questions containing dates or values."""
-    required = set(re.findall(r"\d+(?:[.,]\d+)?", unicodedata.normalize("NFKC", question)))
+    normalized = unicodedata.normalize("NFKC", question)
+    # Digits inside identifiers such as A15 are lexical identifiers, not
+    # numeric claims. Treating 15 and 16 as one required numeric tuple blocked
+    # valid cross-page comparisons of A15 and A16.
+    required = set(re.findall(r"(?<![\w])\d+(?:[.,]\d+)?(?![\w])", normalized))
     if not required:
         return True
+    full_dates = re.findall(r"\b\d{1,2}/\d{1,2}/\d{4}\b", normalized)
+    if full_dates and not any(all(date in chunk.get("text", "") for date in full_dates) for chunk in chunks):
+        return False
+    available_union: set[str] = set()
     for chunk in chunks:
         available = set(re.findall(r"\d+(?:[.,]\d+)?", unicodedata.normalize("NFKC", chunk.get("text", ""))))
-        if required.issubset(available):
-            return True
-    return False
+        available_union.update(available)
+    return required.issubset(available_union)
 
 
 def _chapter_range(question: str, chunks: list[dict]) -> tuple[int, int] | None:
@@ -224,7 +235,7 @@ def _requested_modalities(question: str) -> set[str]:
     requested: set[str] = set()
     if re.search(r"\b(?:bảng|table|cột|hàng|báo\s+cáo\s+tài\s+chính|bảng\s+cân\s+đối)\b", normalized):
         requested.add("table")
-    if re.search(r"\b(?:biểu\s*đồ|chart|đồ\s+thị|đường\s+dữ\s+liệu|xu\s+hướng)\b", normalized):
+    if re.search(r"\b(?:biểu\s*đồ|chart|đồ\s+thị|đường\s+dữ\s+liệu|xu\s+hướng|chuỗi|series)\b", normalized):
         requested.add("chart")
     if re.search(r"\b(?:sơ\s*đồ|diagram|hình|figure|quy\s+trình)\b", normalized):
         requested.add("figure")
@@ -751,6 +762,12 @@ def load_saved_documents() -> None:
             doc = saved.get("document")
             if doc and Path(doc.get("path", "")).exists():
                 doc.setdefault("index_version", int(saved.get("index_version", 1)))
+                if not doc.get("content_hash"):
+                    digest = sha256()
+                    with Path(doc["path"]).open("rb") as stream:
+                        for block in iter(lambda: stream.read(1024 * 1024), b""):
+                            digest.update(block)
+                    doc["content_hash"] = digest.hexdigest()
                 _documents[doc["document_id"]] = doc
                 _chunks[doc["document_id"]] = saved.get("chunks", [])
         except (OSError, ValueError, KeyError) as exc:
@@ -765,7 +782,15 @@ def get_document(document_id: str) -> dict | None:
     return _documents.get(document_id)
 
 
-def chunks_for(document_id: str | None = None) -> list[dict]:
+def find_document_by_hash(content_hash: str) -> dict | None:
+    return next((item for item in _documents.values() if item.get("content_hash") == content_hash
+                 and Path(item.get("path", "")).exists()), None)
+
+
+def chunks_for(document_id: str | list[str] | None = None) -> list[dict]:
+    if isinstance(document_id, list):
+        allowed = set(document_id)
+        return [chunk for key, group in _chunks.items() if key in allowed for chunk in group]
     if document_id:
         return list(_chunks.get(document_id, []))
     return [chunk for group in _chunks.values() for chunk in group]
@@ -776,15 +801,24 @@ def process_document(document_id: str) -> None:
     if not doc:
         return
     settings = get_settings()
+    with _processing_lock:
+        if document_id in _processing_documents:
+            return
+        _processing_documents.add(document_id)
     processing_started = perf_counter()
     timings: dict[str, float] = {}
     try:
-        doc["status"] = "EXTRACTING"
+        doc["status"] = "PREFLIGHT"
+        doc["status_updated_at"] = datetime.now(timezone.utc).isoformat()
         stage_started = perf_counter()
-        pages = extract_pdf(doc["path"], document_id, doc["filename"])
+        def extraction_progress(stage: str, page: int, total: int) -> None:
+            doc.update({"status": stage, "page_progress": {"completed": page, "total": total},
+                        "status_updated_at": datetime.now(timezone.utc).isoformat()})
+        doc["status"] = "EXTRACTING"
+        pages = extract_pdf(doc["path"], document_id, doc["filename"], extraction_progress)
         preflight = summarize_extraction(pages)
         timings["extraction_seconds"] = round(perf_counter() - stage_started, 3)
-        doc["status"] = "CLEANING"
+        doc["status"] = "NORMALIZING"
         stage_started = perf_counter()
         text = "\n\n".join(page["text"] for page in pages)
         (settings.processed_dir / f"{document_id}.txt").write_text(text, encoding="utf-8")
@@ -815,7 +849,9 @@ def process_document(document_id: str) -> None:
             qdrant_service.upsert_chunks(made, vectors)
         timings["indexing_seconds"] = round(perf_counter() - stage_started, 3)
         timings["total_seconds"] = round(perf_counter() - processing_started, 3)
-        doc.update({"status": "READY", "indexed_at": datetime.now(timezone.utc).isoformat(),
+        incomplete = preflight.get("ocr_pages_failed", 0) > 0 or "OCR_ENGINE_UNAVAILABLE" in preflight.get("warnings", [])
+        final_status = "PARTIAL" if incomplete else "READY"
+        doc.update({"status": final_status, "indexed_at": datetime.now(timezone.utc).isoformat(),
                     "error": None, "index_version": INDEX_VERSION,
                     "extraction_mode": "multimodal_native", "modality_summary": preflight,
                     "extraction_warnings": preflight.get("warnings", []),
@@ -827,14 +863,18 @@ def process_document(document_id: str) -> None:
         logger.info("indexed document id=%s chunks=%d", document_id, len(made))
     except Exception as exc:
         timings["total_seconds"] = round(perf_counter() - processing_started, 3)
-        doc.update({"status": "ERROR", "error": str(exc), "processing_timings": timings})
+        doc.update({"status": "FAILED", "error": str(exc), "processing_timings": timings})
         logger.exception("document processing failed id=%s", document_id)
+    finally:
+        with _processing_lock:
+            _processing_documents.discard(document_id)
 
 
-def register_document(document_id: str, filename: str, path: str) -> dict:
+def register_document(document_id: str, filename: str, path: str, content_hash: str | None = None) -> dict:
     doc = {"document_id": document_id, "filename": filename, "path": path,
            "status": "UPLOADED", "pages": 0, "chunks": 0, "indexed_at": None, "error": None,
-           "embedding_progress": {"completed": 0, "total": 0}}
+           "embedding_progress": {"completed": 0, "total": 0}, "content_hash": content_hash,
+           "status_updated_at": datetime.now(timezone.utc).isoformat()}
     _documents[document_id] = doc
     return doc
 
@@ -893,7 +933,7 @@ def page_preview(document_id: str, page_number: int) -> Path | None:
 
 
 def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
-          document_id: str | None = None, generate_answer: bool = True,
+          document_id: str | list[str] | None = None, generate_answer: bool = True,
           model_name: str | None = None) -> dict:
     total_started = perf_counter()
     provider = get_embedding_provider()
@@ -1049,7 +1089,8 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
     claim_grounding = {"claims": [], "uncited_claims": 0,
                        "unsupported_numeric_claims": 0, "review_needed_claims": 0,
                        "all_citation_ids_valid": True, "has_valid_citation": False}
-    calculation_validation = calculate_from_tables(question, context_items) if results else None
+    calculation_validation = ((calculate_from_tables(question, context_items) or
+                               analyze_charts(question, context_items)) if results else None)
     generation_started = perf_counter()
     if calculation_validation and generate_answer:
         answer = calculation_validation["answer"]
@@ -1141,7 +1182,9 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
                            "bbox": context_items[position - 1].get("bbox"),
                            "evidence_id": f"E{position}"}
                           for position in referenced_positions if 1 <= position <= len(context_items)]
+    active_document_ids = document_id if isinstance(document_id, list) else ([document_id] if document_id else [])
     return {"answer": answer, "model": model_name or get_settings().ollama_model,
+            "active_document_ids": active_document_ids,
             "sources": sources, "supporting_sources": supporting_sources,
             "retrieved_candidates": semantic_candidates[:20],
             "reranked_candidates": reranked[:max(10, top_k * 2)],

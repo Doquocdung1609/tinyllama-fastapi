@@ -1,0 +1,7 @@
+{
+  "online": true,
+  "collection": "knowledgebase",
+  "vectors": 1947,
+  "dimension": 768,
+  "distance": "Cosine"
+}

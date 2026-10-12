@@ -6,6 +6,9 @@
 
 - LLM local qua Ollama; mặc định `qwen2.5:3b`, có thể chọn `llama3:latest` trong Chat/RAG.
 - Embedding `nomic-embed-text`, Qdrant local, hybrid dense + lexical rank fusion.
+- Hội thoại PDF nhiều lượt được lưu bằng SQLite; mỗi chat có phạm vi tài liệu riêng và được phục hồi sau reload.
+- OCR CPU cục bộ bằng Tesseract `vie+eng`, kèm tọa độ từ, confidence và tái tạo bảng scan có kiểm tra số.
+- Phép tính tài chính dùng công thức xác định, giữ đầu vào, đơn vị, nguồn và kết quả kiểm chứng.
 - RAG debug hiển thị từng giai đoạn từ candidate đến evidence thực sự vào prompt.
 - TTS local bằng Windows SAPI/pyttsx3.
 - Text-to-image bằng `./models/tiny-sd`.
@@ -32,6 +35,48 @@ Sau khi sẵn sàng:
 - Video capabilities: http://127.0.0.1:8000/video/capabilities
 
 `start_genai.ps1` đọc model bắt buộc từ `.env`, kiểm Ollama, FastAPI và Streamlit trước khi báo READY.
+
+## Thiết lập OCR local
+
+Tesseract phải có `vie`, `eng` và `osd`. Cấu hình mẫu trong `.env.example`:
+
+```dotenv
+TESSERACT_CMD=C:\Program Files\Tesseract-OCR\tesseract.exe
+TESSDATA_DIR=.\tools\tessdata
+```
+
+Kiểm tra capability tại `GET /system/status` hoặc xem trạng thái xử lý của tài liệu. Trang native-text không chạy OCR; trang ảnh/ít chữ mới được render 300 DPI và OCR trên CPU.
+
+## Talk to Documents
+
+1. Mở tab **Talk to Documents** và upload một hoặc nhiều PDF.
+2. Chờ trạng thái `READY` hoặc `PARTIAL`; tiến độ hiển thị các bước extraction, OCR, chunking, embedding và indexing thực tế.
+3. Chọn tài liệu, tạo cuộc hội thoại, rồi hỏi bằng `st.chat_input`.
+4. Nhấn nguồn dưới câu trả lời để xem đúng trang PDF và vùng bằng chứng.
+5. Chuyển chat hoặc reload trình duyệt; query parameter `conversation` và lịch sử SQLite khôi phục phiên.
+
+API hội thoại chính:
+
+```text
+POST   /conversations
+GET    /conversations
+GET    /conversations/{conversation_id}
+PATCH  /conversations/{conversation_id}
+DELETE /conversations/{conversation_id}
+POST   /conversations/{conversation_id}/messages
+GET    /conversations/{conversation_id}/messages
+```
+
+Ví dụ tạo chat và gửi follow-up:
+
+```powershell
+$chat = Invoke-RestMethod -Method Post http://127.0.0.1:8000/conversations `
+  -ContentType application/json -Body '{"active_document_ids":["<document-id>"]}'
+Invoke-RestMethod -Method Post "http://127.0.0.1:8000/conversations/$($chat.conversation_id)/messages" `
+  -ContentType application/json -Body '{"content":"Doanh thu năm 2024 là bao nhiêu?"}'
+Invoke-RestMethod -Method Post "http://127.0.0.1:8000/conversations/$($chat.conversation_id)/messages" `
+  -ContentType application/json -Body '{"content":"So với năm trước tăng bao nhiêu phần trăm?"}'
+```
 
 ## RAG đáng tin cậy
 
@@ -96,9 +141,15 @@ So sánh generation Qwen và Llama bằng cùng prompt:
   --document-id aedb60bc088e4242970a43da1e897bde
 ```
 
-Kết quả cuối hiện tại: Recall@5 100%, answer correctness 96.67%, citation accuracy 100%, refusal precision/recall 100%. Xem `reports/rag_root_cause.md`.
+Kết quả xác nhận hiện tại:
 
-Hồi quy P0 cho câu hỏi đa nghĩa về số loại đổi mới tài chính đạt 4/4 case, gồm Q01 và hai câu ngoài tài liệu. Xem `reports/rag_p0_context_repair.md` và `reports/rag_p0_regression.csv`.
+- Multi-turn thật qua FastAPI: 12/12 PASS.
+- P0 production: 4/4 PASS, Recall@8 100%, citation supported 100%, refusal recall 100%.
+- Regression production: 5/5 câu đúng; citation theo page-window evaluator 4/5.
+- OCR/financial/chart quan trọng: 8/8 PASS; clean Vietnamese CER 0,98%, clean English CER 1,07%, numeric scan 12/12 ô chính xác.
+- Toàn bộ pytest: 55 passed, 3 skipped.
+
+Xem `reports/final_product_acceptance.md`. Quyết định tổng thể là `PARTIAL` vì chưa có final holdout do bên ngoài niêm phong và chart ảnh tùy ý vẫn phụ thuộc nhãn OCR đọc được.
 
 ## Video
 
@@ -112,6 +163,9 @@ Xem `reports/video_feasibility.md` và `reports/video_pipeline_explained.md`.
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
+$env:TESSERACT_CMD="C:\Program Files\Tesseract-OCR\tesseract.exe"
+.\.venv\Scripts\python.exe scripts\conversation_api_benchmark.py --api http://127.0.0.1:8000
+.\.venv\Scripts\python.exe scripts\final_product_validation.py --api http://127.0.0.1:8000
 $env:RUN_REAL_MEDIA_TESTS="1"
 .\.venv\Scripts\python.exe -m pytest tests\test_media_integration.py -q
 .\.venv\Scripts\python.exe scripts\smoke_test.py

@@ -1,6 +1,7 @@
 """PDF upload and document library endpoints."""
 from pathlib import Path
 from uuid import uuid4
+from hashlib import sha256
 import logging
 import aiofiles
 from fastapi import APIRouter, BackgroundTasks, File, HTTPException, UploadFile
@@ -18,10 +19,11 @@ async def upload_pdf(background_tasks: BackgroundTasks, file: UploadFile = File(
     if file.content_type != "application/pdf" or Path(file.filename or "").suffix.lower() != ".pdf":
         raise HTTPException(415, "Tệp phải có định dạng PDF và phần mở rộng .pdf.")
     settings.prepare_dirs()
-    doc_id = uuid4().hex
     safe_name = Path(file.filename or "document.pdf").name
-    target = settings.upload_dir / f"{doc_id}_{safe_name}"
+    temporary_id = uuid4().hex
+    target = settings.upload_dir / f".{temporary_id}.uploading"
     size = 0
+    digest = sha256()
     try:
         async with aiofiles.open(target, "wb") as destination:
             while block := await file.read(1024 * 1024):
@@ -30,9 +32,29 @@ async def upload_pdf(background_tasks: BackgroundTasks, file: UploadFile = File(
                     target.unlink(missing_ok=True)
                     raise HTTPException(413, f"Dung lượng PDF vượt quá {settings.max_upload_mb} MB.")
                 await destination.write(block)
+                digest.update(block)
     finally:
         await file.close()
-    doc = rag_service.register_document(doc_id, safe_name, str(target))
+    content_hash = digest.hexdigest()
+    duplicate = rag_service.find_document_by_hash(content_hash)
+    if duplicate:
+        existing_path = Path(duplicate.get("path") or "")
+        if duplicate.get("status") == "FAILED":
+            if existing_path and not existing_path.exists():
+                existing_path.parent.mkdir(parents=True, exist_ok=True)
+                target.replace(existing_path)
+            else:
+                target.unlink(missing_ok=True)
+            background_tasks.add_task(rag_service.process_document, duplicate["document_id"])
+            return {**duplicate, "size_bytes": size, "duplicate": True, "status": "PROCESSING",
+                    "message": "PDF trùng nội dung; đang thử xử lý lại bản ghi đã lỗi."}
+        target.unlink(missing_ok=True)
+        return {**duplicate, "size_bytes": size, "duplicate": True,
+                "message": "PDF trùng nội dung; dùng lại index hiện có."}
+    doc_id = content_hash[:32]
+    final_target = settings.upload_dir / f"{doc_id}_{safe_name}"
+    target.replace(final_target)
+    doc = rag_service.register_document(doc_id, safe_name, str(final_target), content_hash)
     logger.info("pdf upload accepted document_id=%s filename=%s size_bytes=%d", doc_id, safe_name, size)
     background_tasks.add_task(rag_service.process_document, doc_id)
     return {**doc, "size_bytes": size, "status": "UPLOADED", "message": "Đã nhận PDF; xử lý bắt đầu ở nền."}

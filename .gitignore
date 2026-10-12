@@ -9,3 +9,7 @@ images/
 videos/
 audio/script_*.wav
 audio/script_*.mp3
+data/*.sqlite3
+data/*.sqlite3-*
+tmp/final_product/
+tools/downloads/

@@ -1,0 +1,9 @@
+﻿case_id,group,kind,status,question,answer,pages,evidence_ids,calculation_verified,citation_valid,latency_ms
+OCR01,ocr,scanned Vietnamese text,PASS,Doanh thu năm 2024 là bao nhiêu?,"Doanh thu năm 2024 là 250 triệu đồng. [G_scanned_document.pdf, trang 1]",1,E1,False,True,30131.2
+OCR02,ocr,scanned financial table,PASS,Tính tốc độ tăng trưởng doanh thu từ 2023 đến 2024.,"Tốc độ tăng trưởng Doanh thu từ 2023 đến 2024: (180 - 100) / 100 × 100 = 80%. [K_scanned_financial_table.pdf, trang 1]",1,E2,True,True,2298.3
+OCR03,ocr,image-only chart,PASS,Giá trị năm 2024 trên biểu đồ là bao nhiêu?,"Nhãn số trên biểu đồ ghi 2024: 125 ty dong. [M_image_only_chart.pdf, trang 1]",1,E1,True,True,2362.1
+T02,financial,growth,PASS,Tính tốc độ tăng trưởng doanh thu từ 2023 đến 2024.,"Doanh thu (triệu đồng) 2023: 100 triệu đồng; 2024: 125 triệu đồng. Tăng trưởng = (125 - 100) / 100 × 100 = 25%. [B_mixed_text_table.pdf, trang 1]",1,E2,True,True,2346.7
+T06,chart,multi-series,PASS,So sánh đầy đủ chuỗi A và chuỗi B trên biểu đồ.,"Chuỗi A tăng từ 60 (2022) đến 120 (2024); trong khi Chuỗi B giảm từ 100 (2022) đến 85 (2024). [D_bar_line_charts.pdf, trang 2]",2,E3,True,True,2276.0
+T07,chart,pie maximum,PASS,Thành phần nào có tỷ trọng cao nhất và bằng bao nhiêu?,"Cá nhân chiếm tỷ trọng cao nhất: 50%. [E_pie_chart.pdf, trang 1]",1,E2,True,True,2335.9
+T14,chart,chart-table,PASS,Đối chiếu nhãn số năm 2024 trên biểu đồ với bảng.,"Nhãn số trên biểu đồ ghi 2024: 125 tỷ đồng. [L_mixed_text_table_chart.pdf, trang 1]",1,E1,True,True,2460.2
+T15,refusal,out-of-document,PASS,Tài liệu có nêu tỷ giá EUR/VND năm 2030 không?,Tài liệu không cung cấp đủ thông tin để trả lời câu hỏi này.,,,False,False,2233.3

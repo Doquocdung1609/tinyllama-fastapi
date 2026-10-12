@@ -72,6 +72,12 @@ def test_missing_numeric_anchor_rejects_high_semantic_match(monkeypatch):
     assert "không cung cấp đủ thông tin" in result["answer"]
 
 
+def test_alphanumeric_record_ids_do_not_trigger_numeric_guard():
+    chunks = [{"text": "A15 Q3 150"}, {"text": "A16 Q4 160"}]
+    assert rag_service._numeric_anchor_supported("So sánh mã A15 và A16", chunks) is True
+    assert rag_service._numeric_anchor_supported("Giá ngày 31/12/2030 là bao nhiêu?", chunks) is False
+
+
 def test_context_expands_adjacent_chunks_without_changing_retrieval_scores():
     chunks = [
         {"chunk_id": "a", "chunk_index": 10, "document_id": "doc", "text": "items one to three"},

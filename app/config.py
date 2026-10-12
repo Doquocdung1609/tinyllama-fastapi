@@ -26,6 +26,9 @@ class Settings:
     audio_dir: Path = Path(os.getenv("TTS_OUTPUT_DIR", str(ROOT_DIR / "audio")))
     image_dir: Path = Path(os.getenv("IMAGE_OUTPUT_DIR", str(ROOT_DIR / "images")))
     video_dir: Path = Path(os.getenv("VIDEO_OUTPUT_DIR", str(ROOT_DIR / "videos")))
+    conversation_db: Path = Path(os.getenv("CONVERSATION_DB", str(ROOT_DIR / "data" / "conversations.sqlite3")))
+    tesseract_cmd: str = os.getenv("TESSERACT_CMD", "").strip()
+    tessdata_dir: Path = Path(os.getenv("TESSDATA_DIR", str(ROOT_DIR / "tools" / "tessdata")))
     image_model: str = os.getenv("IMAGE_MODEL", "./models/tiny-sd")
     video_model: str = os.getenv("VIDEO_MODEL", "stabilityai/stable-video-diffusion-img2vid-xt")
     max_upload_mb: int = int(os.getenv("MAX_UPLOAD_MB", "50"))
@@ -37,6 +40,7 @@ class Settings:
     def prepare_dirs(self) -> None:
         for path in (self.upload_dir, self.processed_dir, self.audio_dir, self.image_dir, self.video_dir):
             path.mkdir(parents=True, exist_ok=True)
+        self.conversation_db.parent.mkdir(parents=True, exist_ok=True)
 
 
 @lru_cache(maxsize=1)

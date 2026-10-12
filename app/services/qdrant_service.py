@@ -1,20 +1,38 @@
 """Lazy Qdrant client with local persistent mode by default."""
-from functools import lru_cache
+from threading import Lock
 from uuid import uuid5, NAMESPACE_URL
 from app.config import get_settings
 
 
-@lru_cache(maxsize=1)
+_client = None
+_client_lock = Lock()
+
+
 def get_client():
-    try:
-        from qdrant_client import QdrantClient
-    except ImportError as exc:
-        raise RuntimeError("qdrant-client is missing. Install requirements.txt.") from exc
-    settings = get_settings()
-    if settings.qdrant_url:
-        return QdrantClient(url=settings.qdrant_url)
-    settings.qdrant_path.mkdir(parents=True, exist_ok=True)
-    return QdrantClient(path=str(settings.qdrant_path))
+    """Return one process-wide client, including under concurrent first calls.
+
+    ``functools.lru_cache`` can execute a cache miss more than once when two
+    request threads arrive together. Local Qdrant exclusively locks its data
+    directory, so the Dashboard's parallel status requests could race and
+    leave RAG offline. The explicit lock covers construction and publication.
+    """
+    global _client
+    if _client is not None:
+        return _client
+    with _client_lock:
+        if _client is not None:
+            return _client
+        try:
+            from qdrant_client import QdrantClient
+        except ImportError as exc:
+            raise RuntimeError("qdrant-client is missing. Install requirements.txt.") from exc
+        settings = get_settings()
+        if settings.qdrant_url:
+            _client = QdrantClient(url=settings.qdrant_url)
+        else:
+            settings.qdrant_path.mkdir(parents=True, exist_ok=True)
+            _client = QdrantClient(path=str(settings.qdrant_path))
+        return _client
 
 
 def ensure_collection(dimension: int) -> None:
@@ -73,13 +91,17 @@ def upsert_chunks(chunks: list[dict], vectors: list[list[float]]) -> None:
             client.delete(collection_name=collection, points_selector=PointIdsList(points=stale_ids))
 
 
-def search(vector: list[float], limit: int, document_id: str | None = None):
-    from qdrant_client.http.models import FieldCondition, Filter, MatchValue
+def search(vector: list[float], limit: int, document_id: str | list[str] | None = None):
+    from qdrant_client.http.models import FieldCondition, Filter, MatchAny, MatchValue
     client, collection = get_client(), get_settings().qdrant_collection
     if not client.collection_exists(collection):
         return []
     query_filter = None
-    if document_id:
+    if isinstance(document_id, list):
+        if not document_id:
+            return []
+        query_filter = Filter(must=[FieldCondition(key="document_id", match=MatchAny(any=document_id))])
+    elif document_id:
         query_filter = Filter(must=[FieldCondition(key="document_id", match=MatchValue(value=document_id))])
     return client.query_points(collection_name=collection, query=vector, query_filter=query_filter,
                                limit=limit, with_payload=True).points

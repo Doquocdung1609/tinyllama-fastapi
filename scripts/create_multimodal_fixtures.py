@@ -180,10 +180,112 @@ def make_mixed_language():
     doc(OUT/"J_mixed_vi_en.pdf",story)
 
 
+def make_scanned_financial_table():
+    image = Image.new("RGB", (1800, 1200), "white")
+    draw = ImageDraw.Draw(image)
+    title = ImageFont.truetype(str(ARIAL_BOLD), 54)
+    font = ImageFont.truetype(str(ARIAL), 42)
+    bold = ImageFont.truetype(str(ARIAL_BOLD), 42)
+    draw.text((100, 70), "BÁO CÁO TÀI CHÍNH QUÉT", font=title, fill="black")
+    x_positions = [100, 900, 1250, 1580]
+    y_positions = [210, 330, 450, 570, 690]
+    rows = [
+        ["Chỉ tiêu", "2023", "2024", "Đơn vị"],
+        ["Doanh thu", "100", "180", "tỷ đồng"],
+        ["Lợi nhuận", "12", "16", "tỷ đồng"],
+        ["Tổng tài sản", "300", "360", "tỷ đồng"],
+    ]
+    # Whitespace-aligned scan: still a table, while avoiding artificial grid
+    # lines that can merge with digits during OCR.
+    for row_index, row in enumerate(rows):
+        for column_index, value in enumerate(row):
+            row_font = bold if row_index == 0 or column_index in {1, 2} else font
+            draw.text((x_positions[column_index], y_positions[row_index] + 28), value, font=row_font, fill="black")
+    draw.text((100, 820), "Ghi chú: số liệu tổng hợp dùng cho kiểm thử OCR cục bộ.", font=font, fill="black")
+    png = OUT / "_scan_table_source.png"
+    image.save(png)
+    c = canvas.Canvas(str(OUT / "K_scanned_financial_table.pdf"), pagesize=A4)
+    c.drawImage(ImageReader(str(png)), 0, 0, width=A4[0], height=A4[1])
+    c.showPage()
+    english = Image.new("RGB", (1800, 1200), "white")
+    english_draw = ImageDraw.Draw(english)
+    english_draw.text((100, 70), "SCANNED FINANCIAL STATEMENT", font=title, fill="black")
+    english_rows = [
+        ["Metric", "2023", "2024", "Unit"],
+        ["Revenue", "100", "180", "USD million"],
+        ["Profit", "12", "16", "USD million"],
+        ["Total assets", "300", "360", "USD million"],
+    ]
+    for row_index, row in enumerate(english_rows):
+        for column_index, value in enumerate(row):
+            row_font = bold if row_index == 0 or column_index in {1, 2} else font
+            english_draw.text((x_positions[column_index], y_positions[row_index] + 28), value,
+                              font=row_font, fill="black")
+    english_draw.text((100, 820), "Note: synthetic figures for local OCR verification.", font=font, fill="black")
+    english_png = OUT / "_scan_table_english_source.png"
+    english.save(english_png)
+    c.drawImage(ImageReader(str(english_png)), 0, 0, width=A4[0], height=A4[1])
+    c.save()
+    png.unlink()
+    english_png.unlink()
+
+
+def make_mixed_all_modalities():
+    path = OUT / "L_mixed_text_table_chart.pdf"
+    c = canvas.Canvas(str(path), pagesize=A4)
+    width, height = A4
+    c.setFont("FixtureSansBold", 17)
+    c.drawString(42, height - 48, "BÁO CÁO TỔNG HỢP: VĂN BẢN, BẢNG VÀ BIỂU ĐỒ")
+    c.setFont("FixtureSans", 10)
+    c.drawString(42, height - 70, "Doanh thu tăng cùng với lợi nhuận trong dữ liệu kiểm thử.")
+    data = [["Chỉ tiêu", "2023", "2024", "Đơn vị"],
+            ["Doanh thu", "100", "125", "tỷ đồng"],
+            ["Lợi nhuận", "12", "16", "tỷ đồng"]]
+    table = styled_table(data, [55*mm, 25*mm, 25*mm, 35*mm])
+    table.wrapOn(c, width, height)
+    table.drawOn(c, 42, height - 205)
+    cash_data = [["Dòng tiền", "2023", "2024"], ["Kinh doanh", "20", "28"]]
+    cash_table = styled_table(cash_data, [55*mm, 30*mm, 30*mm])
+    cash_table.wrapOn(c, width, height)
+    cash_table.drawOn(c, 42, height - 285)
+    c.setFont("FixtureSansBold", 13)
+    c.drawString(42, 440, "BIỂU ĐỒ CỘT DOANH THU")
+    for index, (year, value) in enumerate((("2023", 100), ("2024", 125))):
+        x = 100 + index * 150
+        c.setFillColor(colors.HexColor("#4F81BD"))
+        c.rect(x, 170, 70, value * 1.5, fill=1)
+        c.setFillColor(colors.black)
+        c.setFont("FixtureSans", 10)
+        c.drawString(x, 152, year)
+        c.drawString(390, 390 - index * 22, f"{year}: {value} tỷ đồng")
+    c.save()
+
+
+def make_image_only_chart():
+    image = Image.new("RGB", (1600, 1100), "white")
+    draw = ImageDraw.Draw(image)
+    title = ImageFont.truetype(str(ARIAL_BOLD), 52)
+    font = ImageFont.truetype(str(ARIAL), 40)
+    draw.text((100, 60), "BIỂU ĐỒ CỘT DOANH THU QUÉT", font=title, fill="black")
+    values = [("2022", 80), ("2023", 100), ("2024", 125)]
+    for index, (year, value) in enumerate(values):
+        x = 180 + index * 310
+        draw.rectangle((x, 800 - value * 4, x + 130, 800), fill="#4F81BD", outline="black", width=3)
+        draw.text((x, 830), year, font=font, fill="black")
+        draw.text((1120, 300 + index * 90), f"{year}: {value} tỷ đồng", font=font, fill="black")
+    png = OUT / "_scan_chart_source.png"
+    image.save(png)
+    c = canvas.Canvas(str(OUT / "M_image_only_chart.pdf"), pagesize=A4)
+    c.drawImage(ImageReader(str(png)), 0, 0, width=A4[0], height=A4[1])
+    c.save()
+    png.unlink()
+
+
 def main():
     make_text_vi(); make_mixed_table(); make_financial_statement(); make_bar_line_charts()
     make_pie_chart(); make_process_diagram(); make_scanned(); make_multi_column()
     make_multipage_table(); make_mixed_language()
+    make_scanned_financial_table(); make_mixed_all_modalities(); make_image_only_chart()
     for path in sorted(OUT.glob("*.pdf")):
         print(path.name, path.stat().st_size)
 

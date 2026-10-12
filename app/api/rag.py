@@ -11,7 +11,8 @@ router = APIRouter(prefix="/rag", tags=["rag"])
 def rag_query(request: RAGRequest):
     settings = get_settings()
     try:
+        scope = request.document_ids or request.document_id
         return query(request.question, request.top_k, request.score_threshold,
-                     request.document_id, request.generate_answer, request.model)
+                     scope, request.generate_answer, request.model)
     except Exception as exc:
         raise HTTPException(503, f"RAG chưa sẵn sàng: {exc}") from exc

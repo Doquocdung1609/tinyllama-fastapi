@@ -1,0 +1,59 @@
+{
+  "api": [
+    {
+      "attempt": 1,
+      "status": 200,
+      "body": "{\"status\":\"ok\"}"
+    },
+    {
+      "attempt": 2,
+      "status": 200,
+      "body": "{\"status\":\"ok\"}"
+    },
+    {
+      "attempt": 3,
+      "status": 200,
+      "body": "{\"status\":\"ok\"}"
+    }
+  ],
+  "streamlit": [
+    {
+      "attempt": 1,
+      "health_status": 200,
+      "health": "ok",
+      "root_status": 200,
+      "html_bytes": 6463,
+      "has_streamlit": true
+    },
+    {
+      "attempt": 2,
+      "health_status": 200,
+      "health": "ok",
+      "root_status": 200,
+      "html_bytes": 6463,
+      "has_streamlit": true
+    },
+    {
+      "attempt": 3,
+      "health_status": 200,
+      "health": "ok",
+      "root_status": 200,
+      "html_bytes": 6463,
+      "has_streamlit": true
+    }
+  ],
+  "qdrant": {
+    "online": true,
+    "collection": "knowledgebase",
+    "vectors": 1947,
+    "dimension": 768,
+    "distance": "Cosine"
+  },
+  "conversations_endpoint": 200,
+  "parallel_status_requests": {
+    "requests": 10,
+    "http_200": 10,
+    "qdrant_online_after": true,
+    "vectors_after": 1947
+  }
+}
