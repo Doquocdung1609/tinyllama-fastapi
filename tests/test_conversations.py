@@ -114,7 +114,7 @@ def test_explicit_year_switch_updates_followup_context(conversation_env, monkeyp
     assert "2024" not in followup["resolution"]["resolved_question"]
 
 
-def test_prior_year_followup_carries_metric_and_correction_removes_user_guess(conversation_env, monkeypatch):
+def test_prior_year_followup_carries_metric_and_correction_preserves_claim_for_verification(conversation_env, monkeypatch):
     monkeypatch.setattr(rag_service, "query", _rag_result)
     conversation = conversation_service.create_conversation([DOC_A])
     conversation_service.post_message(conversation["conversation_id"], "Doanh thu năm 2025 là bao nhiêu?")
@@ -124,8 +124,8 @@ def test_prior_year_followup_carries_metric_and_correction_removes_user_guess(co
     conversation_service.post_message(conversation["conversation_id"], "Lợi nhuận năm 2024 là 15 triệu đồng đúng không?")
     correction = conversation_service.post_message(conversation["conversation_id"], "Hãy sửa câu trả lời trước.")
     resolved = correction["resolution"]["resolved_question"]
-    assert "15" not in resolved
-    assert "Lợi nhuận năm 2024 là bao nhiêu" in resolved
+    assert "15 triệu đồng" in resolved
+    assert "nguyên khẳng định trước" in resolved
 
 
 def test_explicit_page_survives_uncited_answer_for_ordinal_table_followup(conversation_env, monkeypatch):

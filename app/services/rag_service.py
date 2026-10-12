@@ -11,7 +11,12 @@ from hashlib import sha256
 from threading import Lock
 from app.config import get_settings
 from app.services.chunk_service import chunk_pages, clean_text
-from app.services.calculation_service import analyze_charts, calculate_from_tables
+from app.services.calculation_service import (
+    analyze_charts,
+    calculate_from_tables,
+    verification_retrieval_question,
+    verify_financial_claim,
+)
 from app.services.embedding_service import get_embedding_provider
 from app.services.ollama_service import generate
 from app.services.pdf_service import extract_pdf, render_page_preview, summarize_extraction
@@ -932,13 +937,173 @@ def page_preview(document_id: str, page_number: int) -> Path | None:
     return target
 
 
+def _fold_text(value: str) -> str:
+    value = unicodedata.normalize("NFKD", value.casefold().replace("đ", "d"))
+    return "".join(char for char in value if not unicodedata.combining(char))
+
+
+def _structural_document_answer(question: str, document_id: str | list[str] | None,
+                                model_name: str | None) -> dict | None:
+    """Answer page inventory and ordinal-table questions from stored metadata."""
+    folded = _fold_text(question)
+    inventory = (any(cue in folded for cue in ("co cac bang", "co nhung bang", "bao nhieu bang",
+                                                "liet ke", "bang va bieu do", "bang hay bieu do")) and
+                 any(kind in folded for kind in ("bang", "bieu do", "so do", "hinh")))
+    table_explanation = "giai thich bang" in folded or "bang can tim co source id" in folded
+    if not inventory and not table_explanation:
+        return None
+    scope = document_id if isinstance(document_id, list) else ([document_id] if document_id else [])
+    if len(scope) != 1:
+        return None
+    page_match = re.search(r"(?:trang|table:p)(?:\s*|)(\d+)", folded)
+    if not page_match:
+        return None
+    page_number = int(page_match.group(1))
+    page = page_inspection(scope[0], page_number)
+    if not page:
+        return None
+    filename = page.get("filename") or get_document(scope[0]).get("filename", "Tài liệu")
+    tables = page.get("tables") or []
+    charts = page.get("charts") or []
+    figures = page.get("figures") or []
+    page_chunks = page.get("chunks") or []
+
+    if table_explanation:
+        source_match = re.search(r"table:p\d+:t(\d+)", folded)
+        ordinal_map = {"bang thu nhat": 1, "bang dau tien": 1, "bang thu hai": 2,
+                       "bang thu ba": 3, "bang thu tu": 4}
+        table_number = int(source_match.group(1)) if source_match else next(
+            (number for cue, number in ordinal_map.items() if cue in folded), 1)
+        if table_number < 1 or table_number > len(tables):
+            answer = (f"Trang {page_number} không có bảng thứ {table_number}; metadata chỉ ghi nhận "
+                      f"{len(tables)} bảng.")
+            return {"answer": answer, "model": "deterministic-structure", "active_document_ids": scope,
+                    "sources": [], "supporting_sources": [], "retrieved_candidates": [],
+                    "reranked_candidates": [], "retrieved_chunks": [], "selected_evidence": [],
+                    "included_prompt_context": [], "excluded_chunks": [], "context_chunks": [],
+                    "context": "", "initial_prompt": "", "final_prompt": "",
+                    "structural_validation": {"operation": "table_explanation", "status": "INSUFFICIENT_EVIDENCE",
+                                              "requested_table": table_number, "available_tables": len(tables),
+                                              "required_facets": ["table_identity"], "covered_facets": []},
+                    "citation_validation": {"citation_valid": True, "citation_missing": True,
+                                            "resolved_citations": []},
+                    "claim_grounding": {"claims": [], "has_valid_citation": False},
+                    "calculation_validation": None, "generation_validation": {},
+                    "evidence_selection": {"evidence_in_prompt": False},
+                    "timings": {"total_ms": 0.0}}
+        table = tables[table_number - 1]
+        source_id = table.get("source_id") or f"table:p{page_number}:t{table_number}"
+        chunk = next((item for item in page_chunks if item.get("source_id") == source_id), None) or {
+            "document_id": scope[0], "filename": filename, "page": page_number,
+            "chunk_id": table.get("table_id"), "source_id": source_id, "modality": "table",
+            "bbox": table.get("bbox"), "text": table.get("markdown", ""), "structured_data": table,
+        }
+        columns = [str(value) for value in table.get("columns") or []]
+        rows = [[str(value) for value in row] for row in table.get("rows") or []]
+        subject = columns[0] if columns else (table.get("caption") or f"Bảng {table_number}")
+        periods = [value for value in columns if re.fullmatch(r"(?:19|20)\d{2}", value.strip())]
+        units = sorted({row[index].strip() for row in rows for index, column in enumerate(columns)
+                        if index < len(row) and any(cue in _fold_text(column) for cue in ("don vi", "unit"))
+                        and row[index].strip()})
+        row_details = []
+        for row in rows[:8]:
+            cells = [f"{columns[index]}: {row[index]}" for index in range(1, min(len(columns), len(row)))]
+            row_details.append(f"{row[0]} — " + ", ".join(cells))
+        confidence = table.get("confidence") or "UNKNOWN"
+        status = table.get("status") or "UNKNOWN"
+        citation = f"[{filename}, trang {page_number}]"
+        answer_parts = [f"Bảng {table_number} trình bày **{subject}**."]
+        if periods:
+            answer_parts.append("Kỳ báo cáo: " + ", ".join(periods) + ".")
+        answer_parts.append("Các cột: " + ", ".join(columns) + ".")
+        if row_details:
+            answer_parts.append("Dữ liệu chính: " + "; ".join(row_details) + ".")
+        answer_parts.append("Đơn vị: " + (", ".join(units) if units else "bảng không ghi rõ đơn vị") + ".")
+        if status != "OK" or confidence not in {"HIGH", "MEDIUM"}:
+            answer_parts.append(f"Độ tin cậy trích xuất: {confidence}; trạng thái {status}, cần kiểm tra ảnh gốc.")
+        answer = " ".join(answer_parts) + f" {citation}"
+        evidence = {**chunk, "evidence_id": "E1"}
+        source = {key: evidence.get(key) for key in
+                  ("filename", "page", "chunk_id", "document_id", "modality", "source_id", "bbox", "evidence_id")}
+        required = ["table_identity", "subject", "headers", "periods", "key_values", "units", "citation"]
+        covered = ["table_identity", "subject", "headers", "key_values", "units", "citation"]
+        if periods:
+            covered.append("periods")
+        return {"answer": answer, "model": "deterministic-structure", "active_document_ids": scope,
+                "sources": [source], "supporting_sources": [source], "retrieved_candidates": [chunk],
+                "reranked_candidates": [chunk], "retrieved_chunks": [chunk], "selected_evidence": [chunk],
+                "included_prompt_context": [chunk], "excluded_chunks": [], "context_chunks": [chunk],
+                "context": table.get("markdown", ""), "initial_prompt": "", "final_prompt": "",
+                "structural_validation": {"operation": "table_explanation", "status": "FULL",
+                                          "requested_table": table_number, "source_id": source_id,
+                                          "required_facets": required, "covered_facets": covered,
+                                          "extraction_status": status, "confidence": confidence},
+                "citation_validation": {"citation_valid": True, "citation_missing": False,
+                                        "resolved_citations": [source]},
+                "claim_grounding": {"claims": [{"claim": answer, "evidence_ids": ["E1"],
+                                                  "status": "SUPPORTED"}], "has_valid_citation": True},
+                "calculation_validation": None, "generation_validation": {},
+                "evidence_selection": {"evidence_in_prompt": True, "context_token_estimate": len(answer) // 4},
+                "timings": {"embedding_ms": 0.0, "semantic_search_ms": 0.0, "lexical_search_ms": 0.0,
+                            "prompt_preparation_ms": 0.0, "generation_ms": 0.0, "total_ms": 0.0}}
+
+    items = []
+    for index, table in enumerate(tables, 1):
+        subject = (table.get("columns") or [table.get("caption") or "không rõ chủ đề"])[0]
+        items.append((f"Bảng {index}: {subject}", table.get("source_id"), "table", table))
+    for index, chart in enumerate(charts, 1):
+        items.append((f"Biểu đồ {index}: {chart.get('title') or chart.get('chart_type') or 'không rõ tiêu đề'}",
+                      chart.get("source_id"), "chart", chart))
+    for index, figure in enumerate(figures, 1):
+        items.append((f"Hình/sơ đồ {index}: {figure.get('caption') or 'không rõ chú thích'}",
+                      figure.get("source_id"), "figure", figure))
+    answer = f"Trang {page_number} có {len(tables)} bảng, {len(charts)} biểu đồ và {len(figures)} hình/sơ đồ."
+    evidence, citations = [], []
+    for position, (label, source_id, modality, data) in enumerate(items, 1):
+        answer += f"\n- {label}. [{filename}, trang {page_number}]"
+        chunk = next((item for item in page_chunks if item.get("source_id") == source_id), None) or {
+            "document_id": scope[0], "filename": filename, "page": page_number,
+            "chunk_id": data.get("table_id") or data.get("chart_id") or data.get("figure_id"),
+            "source_id": source_id, "modality": modality, "bbox": data.get("bbox"),
+            "text": data.get("markdown") or data.get("visible_text") or data.get("caption") or label,
+            "structured_data": data,
+        }
+        evidence.append(chunk)
+        citations.append({**{key: chunk.get(key) for key in
+                             ("filename", "page", "chunk_id", "document_id", "modality", "source_id", "bbox")},
+                          "evidence_id": f"E{position}"})
+    return {"answer": answer, "model": "deterministic-structure", "active_document_ids": scope,
+            "sources": citations, "supporting_sources": citations, "retrieved_candidates": evidence,
+            "reranked_candidates": evidence, "retrieved_chunks": evidence, "selected_evidence": evidence,
+            "included_prompt_context": evidence, "excluded_chunks": [], "context_chunks": evidence,
+            "context": "\n\n".join(item.get("text", "") for item in evidence),
+            "initial_prompt": "", "final_prompt": "",
+            "structural_validation": {"operation": "page_inventory", "status": "FULL",
+                                      "tables": len(tables), "charts": len(charts), "figures": len(figures),
+                                      "required_facets": ["counts", "identities", "citation"],
+                                      "covered_facets": ["counts", "identities", "citation"]},
+            "citation_validation": {"citation_valid": True, "citation_missing": not bool(citations),
+                                    "resolved_citations": citations},
+            "claim_grounding": {"claims": [], "has_valid_citation": bool(citations)},
+            "calculation_validation": None, "generation_validation": {},
+            "evidence_selection": {"evidence_in_prompt": bool(evidence),
+                                   "context_token_estimate": sum(len(item.get("text", "")) for item in evidence) // 4},
+            "timings": {"embedding_ms": 0.0, "semantic_search_ms": 0.0, "lexical_search_ms": 0.0,
+                        "prompt_preparation_ms": 0.0, "generation_ms": 0.0, "total_ms": 0.0}}
+
+
 def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
           document_id: str | list[str] | None = None, generate_answer: bool = True,
           model_name: str | None = None) -> dict:
     total_started = perf_counter()
+    structural = _structural_document_answer(question, document_id, model_name)
+    if structural is not None:
+        structural["timings"]["total_ms"] = round((perf_counter() - total_started) * 1000, 1)
+        return structural
+    retrieval_question = verification_retrieval_question(question)
     provider = get_embedding_provider()
     stage_started = perf_counter()
-    query_vector = provider.embed([question])[0]
+    query_vector = provider.embed([retrieval_question])[0]
     embedding_ms = round((perf_counter() - stage_started) * 1000, 1)
 
     candidate_limit = min(120, max(40, top_k * 8))
@@ -959,7 +1124,7 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
 
     stage_started = perf_counter()
     eligible_chunks = chunks_for(document_id)
-    lexical_all = _lexical_candidates(question, eligible_chunks)
+    lexical_all = _lexical_candidates(retrieval_question, eligible_chunks)
     lexical_by_id = {item.get("chunk_id"): item for item in lexical_all}
     # Record a real lexical value for semantic candidates even if they fall below
     # the bounded lexical candidate window.
@@ -980,7 +1145,7 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
         else:
             candidates[chunk_id] = {**item, "semantic_score": None, "semantic_rank": None}
     facet_diagnostics = []
-    for facet_name, facet_query in _query_facets(question):
+    for facet_name, facet_query in _query_facets(retrieval_question):
         facet_ranked = _lexical_candidates(facet_query, eligible_chunks, 20)
         usable = [item for item in facet_ranked if _answer_likelihood(item, question) >= .8]
         for facet_rank, item in enumerate(usable[:1], 1):
@@ -999,7 +1164,7 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
     fusion_k = 60
     semantic_weight = .02
     lexical_weight = 1.50
-    requested_chapter_range = _chapter_range(question, eligible_chunks)
+    requested_chapter_range = _chapter_range(retrieval_question, eligible_chunks)
     reranked = []
     for item in candidates.values():
         semantic_rank = item.get("semantic_rank")
@@ -1014,8 +1179,8 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
         item["fusion_semantic_contribution"] = round(semantic_part, 8)
         item["fusion_lexical_contribution"] = round(lexical_part, 8)
         item["fusion_facet_contribution"] = round(facet_part, 8)
-        item["count_classification_match"] = _classification_count_match(item, question)
-        item["structure_weight"] = _answer_likelihood(item, question, requested_chapter_range)
+        item["count_classification_match"] = _classification_count_match(item, retrieval_question)
+        item["structure_weight"] = _answer_likelihood(item, retrieval_question, requested_chapter_range)
         item["fusion_raw"] = (semantic_part + lexical_part + facet_part) * item["structure_weight"]
         reranked.append(item)
     reranked.sort(key=lambda item: (item["fusion_raw"], item.get("lexical_score", 0.0)), reverse=True)
@@ -1027,7 +1192,7 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
     diagnostic_limit = max(10, top_k * 2)
     diagnostic_candidates = reranked[:diagnostic_limit]
     results = [item for item in reranked if item["score"] >= score_threshold][:top_k]
-    numeric_supported = _numeric_anchor_supported(question, eligible_chunks)
+    numeric_supported = _numeric_anchor_supported(retrieval_question, eligible_chunks)
     preselection_excluded: list[dict] = []
     if not numeric_supported:
         # Dense embeddings often assign high similarity to an unrelated future
@@ -1049,7 +1214,7 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
                      [:diagnostic_limit] if numeric_supported else [])
     logger.info("rag retrieval complete top_k=%d matches=%d threshold=%.3f", top_k, len(results), score_threshold)
     prompt_started = perf_counter()
-    selection = _select_prompt_context(evidence_pool, eligible_chunks, question=question)
+    selection = _select_prompt_context(evidence_pool, eligible_chunks, question=retrieval_question)
     context_items = selection["included_prompt_context"]
     context = "\n\n".join(
         f"[E{position} | {'Nguồn liền kề' if item.get('context_role') == 'adjacent' else 'Bằng chứng trực tiếp'}"
@@ -1089,7 +1254,8 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
     claim_grounding = {"claims": [], "uncited_claims": 0,
                        "unsupported_numeric_claims": 0, "review_needed_claims": 0,
                        "all_citation_ids_valid": True, "has_valid_citation": False}
-    calculation_validation = ((calculate_from_tables(question, context_items) or
+    calculation_validation = ((verify_financial_claim(question, context_items) or
+                               calculate_from_tables(question, context_items) or
                                analyze_charts(question, context_items)) if results else None)
     generation_started = perf_counter()
     if calculation_validation and generate_answer:
@@ -1198,8 +1364,8 @@ def query(question: str, top_k: int = 3, score_threshold: float = 0.0,
             "question_vector_dimension": len(query_vector),
             "retrieval_method": "weighted_rrf_semantic_lexical",
             "score_semantics": "query-relative weighted reciprocal-rank-fusion score",
-            "lexical_diagnostics": {"content_question": _content_question(question),
-                "query_terms": sorted(set(_terms(_content_question(question)))),
+            "lexical_diagnostics": {"content_question": _content_question(retrieval_question),
+                "query_terms": sorted(set(_terms(_content_question(retrieval_question)))),
                 "evaluated_chunks": len(eligible_chunks), "matching_chunks": len(lexical_all),
                 "max_lexical_score": max_lexical,
                 "top_candidates": [{k: item.get(k) for k in ("chunk_id", "page", "lexical_rank",

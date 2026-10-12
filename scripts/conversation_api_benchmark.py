@@ -37,14 +37,41 @@ def main() -> int:
                             "status_code": response.status_code, "elapsed_ms": elapsed, "response": data})
         return response, data, elapsed
 
-    def record(case_id, description, passed, data, elapsed, note=""):
+    code_commit = __import__("subprocess").run(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=True
+    ).stdout.strip()
+
+    def record(case_id, description, passed, data, elapsed, note="", *, expected_claims="",
+               expected_numeric_values="", answer_correct=None, answer_complete=None,
+               numerical_correct=None, citation_correct=None, refusal_correct=None,
+               context_resolution_correct=None, extraction_correct=None, failure_category=""):
         assistant = data.get("assistant_message", {}) if isinstance(data, dict) else {}
-        rows.append({"case_id": case_id, "description": description, "status": "PASS" if passed else "FAIL",
+        rag = data.get("rag", {}) if isinstance(data, dict) else {}
+        dimensions = {
+            "answer_correct": bool(passed if answer_correct is None else answer_correct),
+            "answer_complete": bool(passed if answer_complete is None else answer_complete),
+            "numerical_correct": bool(passed if numerical_correct is None else numerical_correct),
+            "citation_correct": bool(passed if citation_correct is None else citation_correct),
+            "refusal_correct": bool(passed if refusal_correct is None else refusal_correct),
+            "context_resolution_correct": bool(passed if context_resolution_correct is None else context_resolution_correct),
+            "extraction_correct": bool(passed if extraction_correct is None else extraction_correct),
+        }
+        strict_pass = bool(passed) and all(dimensions.values())
+        rows.append({"test_id": case_id, "description": description,
+                     "document_id": ",".join((assistant.get("retrieval_metadata") or {}).get("active_document_ids", [])),
+                     "document_hash": "", "conversation_id": assistant.get("conversation_id", ""),
+                     "source_pages": ",".join(str(item.get("page")) for item in assistant.get("citations", [])),
+                     "expected_claims": expected_claims, "expected_numeric_values": expected_numeric_values,
+                     "actual_answer": assistant.get("content", data.get("detail", "") if isinstance(data, dict) else ""),
+                     "selected_evidence": json.dumps((assistant.get("retrieval_metadata") or {}).get("selected_evidence", []), ensure_ascii=False),
+                     "included_prompt_evidence": json.dumps([
+                         {"evidence_id": item.get("evidence_id"), "source_id": item.get("source_id"), "page": item.get("page")}
+                         for item in rag.get("included_prompt_context", [])], ensure_ascii=False),
+                     **dimensions, "strict_status": "PASS" if strict_pass else "FAIL",
+                     "failure_category": "" if strict_pass else (failure_category or "ASSERTION_FAILURE"),
+                     "explanation": note,
                      "resolved_question": assistant.get("resolved_question", ""),
-                     "answer": assistant.get("content", data.get("detail", "") if isinstance(data, dict) else ""),
-                     "citation_pages": ",".join(str(item.get("page")) for item in assistant.get("citations", [])),
-                     "document_ids": ",".join((assistant.get("retrieval_metadata") or {}).get("active_document_ids", [])),
-                     "latency_ms": elapsed, "note": note})
+                     "latency_ms": elapsed, "model": assistant.get("model", ""), "code_commit": code_commit})
 
     # C01: carry metric/year into a deterministic follow-up calculation.
     c = create([did("B_mixed_text_table.pdf")], "C01 revenue growth")
@@ -81,8 +108,21 @@ def main() -> int:
     c = create([did("L_mixed_text_table_chart.pdf")], "C05 second table")
     ask(c["conversation_id"], "Trang 1 có các bảng và biểu đồ nào?")
     _, result, elapsed = ask(c["conversation_id"], "Giải thích bảng thứ hai trên trang đó.")
-    selected = (result.get("assistant_message", {}).get("retrieval_metadata") or {}).get("selected_evidence", [])
-    record("C05", "second table on cited page", any(item.get("source_id") == "table:p1:t2" for item in selected), result, elapsed)
+    assistant = result.get("assistant_message", {})
+    answer = assistant.get("content", "")
+    selected = (assistant.get("retrieval_metadata") or {}).get("selected_evidence", [])
+    citations = assistant.get("citations", [])
+    structural = result.get("rag", {}).get("structural_validation", {})
+    source_ok = any(item.get("source_id") == "table:p1:t2" for item in selected)
+    citation_ok = any(item.get("source_id") == "table:p1:t2" for item in citations)
+    content_ok = all(term in answer for term in ("Dòng tiền", "2023", "2024", "20", "28"))
+    complete = structural.get("status") == "FULL" and set(structural.get("required_facets", [])) <= set(structural.get("covered_facets", []))
+    record("C05", "second table on cited page", source_ok and citation_ok and content_ok and complete, result, elapsed,
+           expected_claims="table:p1:t2; Dòng tiền; Kinh doanh; periods 2023/2024; unit status",
+           expected_numeric_values="20;28", answer_correct=content_ok, answer_complete=complete,
+           numerical_correct=("20" in answer and "28" in answer), citation_correct=citation_ok,
+           context_resolution_correct=("table:p1:t2" in result.get("resolution", {}).get("resolved_question", "")),
+           extraction_correct=source_ok, refusal_correct=True, failure_category="TABLE_COMPLETENESS")
 
     # C06: explicit year switch becomes the active period.
     c = create([did("B_mixed_text_table.pdf")], "C06 year switch")
@@ -111,8 +151,25 @@ def main() -> int:
     ask(c["conversation_id"], "Lợi nhuận năm 2024 là 15 triệu đồng đúng không?")
     _, result, elapsed = ask(c["conversation_id"], "Hãy sửa câu trả lời trước và kiểm tra lại nguồn.")
     resolved = result.get("resolution", {}).get("resolved_question", "")
-    citations = result.get("assistant_message", {}).get("citations", [])
-    record("C09", "evidence-based correction", "kiểm tra lại câu hỏi trước" in resolved.casefold() and bool(citations), result, elapsed)
+    assistant = result.get("assistant_message", {})
+    answer = assistant.get("content", "")
+    citations = assistant.get("citations", [])
+    calculations = assistant.get("referenced_calculations", [])
+    verification = next((item for item in calculations if item.get("operation") == "claim_verification"), {})
+    status_ok = verification.get("verification_status") == "CONTRADICTED"
+    answer_ok = "Không đúng" in answer and "16" in answer and "15" in answer
+    citation_ok = any(item.get("source_id") == "table:p1:t1" for item in citations)
+    context_ok = "kiểm tra lại" in resolved.casefold() and "15" in resolved
+    record("C09", "evidence-based correction", status_ok and answer_ok and citation_ok and context_ok, result, elapsed,
+           expected_claims="claimed 15 is contradicted; source profit 2024 is 16",
+           expected_numeric_values="claim=15;source=16", answer_correct=answer_ok,
+           answer_complete=status_ok and answer_ok, numerical_correct=verification.get("source_value") == 16,
+           citation_correct=citation_ok, refusal_correct=True, context_resolution_correct=context_ok,
+           extraction_correct=bool(verification.get("source_cells")) and
+               verification["source_cells"][0].get("row", "").casefold().startswith("lợi nhuận") and
+               verification["source_cells"][0].get("column") == "2024" and
+               verification["source_cells"][0].get("value") == "16",
+           failure_category="CLAIM_VERIFICATION")
 
     # C10: deleted source produces a conflict, never stale evidence reuse.
     fixture = ROOT / "tests" / "fixtures" / "pdfs" / "A_text_only_vi.pdf"
@@ -157,8 +214,8 @@ def main() -> int:
                   f"**Resolved:** {response.get('resolution', {}).get('resolved_question', '')}", "",
                   f"**Assistant:** {response.get('assistant_message', {}).get('content', response.get('detail', ''))}", ""]
     (reports / "multiturn_transcripts.md").write_text("\n".join(lines), encoding="utf-8")
-    print(json.dumps({"total": len(rows), "pass": sum(row["status"] == "PASS" for row in rows),
-                      "failures": [row["case_id"] for row in rows if row["status"] != "PASS"]}, indent=2))
+    print(json.dumps({"total": len(rows), "pass": sum(row["strict_status"] == "PASS" for row in rows),
+                      "failures": [row["test_id"] for row in rows if row["strict_status"] != "PASS"]}, indent=2))
     return 0
 
 

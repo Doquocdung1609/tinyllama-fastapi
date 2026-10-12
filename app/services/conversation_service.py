@@ -272,14 +272,9 @@ def resolve_question(original: str, conversation: dict, history: list[dict]) -> 
         previous = next((item.get("original_question") for item in reversed(history)
                          if item.get("role") == "user" and item.get("original_question")), None)
         if previous:
-            # User-proposed numbers are hypotheses. Remove non-year numeric
-            # assertions so the retrieval guard can find the documentary value.
-            sanitized = re.sub(r"(?<![\w])\d+(?:[.,]\d+)?(?![\w])",
-                               lambda match: match.group(0) if re.fullmatch(r"(?:19|20)\d{2}", match.group(0)) else "[giá trị cần kiểm tra]",
-                               previous)
-            sanitized = re.sub(r"\[giá trị cần kiểm tra\]\s*(?:triệu|tỷ)?\s*đồng\s*đúng không\??",
-                               "bao nhiêu?", sanitized, flags=re.IGNORECASE)
-            additions.append(f"Hãy kiểm tra lại câu hỏi trước từ tài liệu gốc: {sanitized}")
+            # Preserve the hypothesis for deterministic comparison. Retrieval
+            # removes untrusted non-year values only from its search query.
+            additions.append(f"Hãy kiểm tra lại nguyên khẳng định trước từ tài liệu gốc: {previous}")
     resolved = question + (("\n" + " ".join(additions)) if additions else "")
     return {"original_question": question, "resolved_question": resolved,
             "question_type": _question_type(question), "resolution_context": context,

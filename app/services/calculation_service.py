@@ -93,6 +93,140 @@ def _row_unit(columns: list[str], row: list[str]) -> str:
     return ""
 
 
+_VERIFICATION_CUES = (
+    "dung khong", "phai khong", "dung chua", "chinh xac khong", "co dung", "co chinh xac",
+    "kiem tra", "xac minh", "doi chieu", "toi nghi", "so nay", "claim verification",
+)
+
+
+def is_verification_question(question: str) -> bool:
+    """Detect a request to verify a user-provided factual or numeric claim."""
+    normalized = _norm(question)
+    return any(cue in normalized for cue in _VERIFICATION_CUES)
+
+
+def verification_retrieval_question(question: str) -> str:
+    """Remove untrusted claimed numbers from retrieval without changing years.
+
+    A false value is the hypothesis being checked, so requiring it to occur in
+    source evidence guarantees a false refusal. The original question remains
+    available to the verifier and is never overwritten in message storage.
+    """
+    if not is_verification_question(question):
+        return question
+    return re.sub(
+        r"(?<![\w])[-+]?\d+(?:[.,]\d+)?(?![\w])",
+        lambda match: match.group(0) if re.fullmatch(r"(?:19|20)\d{2}", match.group(0)) else " ",
+        question,
+    )
+
+
+def _claimed_numbers(question: str) -> list[tuple[float, str, str]]:
+    claims = []
+    for match in re.finditer(
+            r"(?<![\w])([-+]?\d+(?:[.,]\d+)?)\s*(%|triệu\s+đồng|tỷ\s+đồng|VND|USD|lần)?(?![\w])",
+            question, flags=re.IGNORECASE):
+        raw = match.group(0).strip()
+        if re.fullmatch(r"(?:19|20)\d{2}", match.group(1)):
+            continue
+        parsed = parse_financial_number(raw)
+        if parsed:
+            claims.append((parsed[0], (match.group(2) or parsed[1] or "").strip(), raw))
+    return claims
+
+
+def verify_financial_claim(question: str, included: list[dict]) -> dict | None:
+    """Compare a user's financial claim with structured source cells.
+
+    The return value is deterministic and exposes a four-way verification
+    status. It never promotes a number in the question to source evidence.
+    """
+    if not is_verification_question(question):
+        return None
+    normalized = _norm(question)
+    tables = _table_candidates(included)
+    claims = _claimed_numbers(question)
+    years = re.findall(r"\b(?:19|20)\d{2}\b", question)
+    if not claims:
+        return {"operation": "claim_verification", "verification_status": "INSUFFICIENT_EVIDENCE",
+                "verified": False, "evidence_ids": [],
+                "answer": "Chưa có giá trị cụ thể trong câu hỏi để đối chiếu. Vui lòng nêu số liệu hoặc phép tính cần kiểm tra."}
+    if not tables:
+        return {"operation": "claim_verification", "verification_status": "INSUFFICIENT_EVIDENCE",
+                "verified": False, "evidence_ids": [],
+                "answer": "Không có bảng dữ liệu đủ cấu trúc để kiểm tra khẳng định này."}
+
+    matches = []
+    for table in tables:
+        columns, rows = table["columns"], table["rows"]
+        year = years[-1] if years else None
+        row = _best_row(question, rows)
+        index = None
+        label = row[0] if row else ""
+        # Layout A: metrics in rows and periods in columns.
+        if row and year and year in columns:
+            index = columns.index(year)
+        elif row and len([column for column in columns if re.fullmatch(r"(?:19|20)\d{2}", column.strip())]) == 1:
+            index = next(i for i, column in enumerate(columns) if re.fullmatch(r"(?:19|20)\d{2}", column.strip()))
+            year = columns[index].strip()
+        # Layout B: periods in rows and metrics in columns.
+        elif year and any(str(candidate[0]).strip() == year for candidate in rows if candidate):
+            row = next(candidate for candidate in rows if candidate and str(candidate[0]).strip() == year)
+            query_tokens = set(re.findall(r"[a-z0-9]+", normalized))
+            scored_columns = []
+            for candidate_index, column in enumerate(columns[1:], 1):
+                tokens = set(re.findall(r"[a-z0-9]+", _norm(column)))
+                scored_columns.append((len(tokens & query_tokens) / max(1, len(tokens)), candidate_index, column))
+            scored_columns.sort(reverse=True)
+            if scored_columns and scored_columns[0][0] > 0:
+                _, index, label = scored_columns[0]
+        if not row or index is None or index >= len(row):
+            continue
+        source = parse_financial_number(row[index])
+        if not source:
+            continue
+        unit = source[1] or _row_unit(columns, row) or _column_unit(columns[index])
+        row_tokens = set(re.findall(r"[a-z0-9]+", _norm(label)))
+        query_tokens = set(re.findall(r"[a-z0-9]+", normalized))
+        score = len(row_tokens & query_tokens) / max(1, len(row_tokens))
+        matches.append({"score": score, "row": row, "label": label, "year": year, "source": source[0],
+                        "cell_value": row[index], "source_column": columns[index],
+                        "unit": unit, "evidence_id": f"E{table['position']}", "table": table})
+    matches.sort(key=lambda item: item["score"], reverse=True)
+    if not matches or matches[0]["score"] <= 0:
+        return {"operation": "claim_verification", "verification_status": "AMBIGUOUS",
+                "verified": False, "evidence_ids": [],
+                "answer": "Chưa xác định được duy nhất chỉ tiêu và kỳ báo cáo cần kiểm tra. Vui lòng nêu rõ chỉ tiêu và năm."}
+    if len(matches) > 1 and matches[0]["score"] == matches[1]["score"] and (
+            matches[0]["label"] != matches[1]["label"] or matches[0]["source"] != matches[1]["source"]):
+        return {"operation": "claim_verification", "verification_status": "AMBIGUOUS",
+                "verified": False, "evidence_ids": [],
+                "answer": "Có nhiều ô dữ liệu phù hợp nhưng cho kết quả khác nhau. Vui lòng chỉ rõ bảng hoặc đơn vị cần kiểm tra."}
+
+    match = matches[0]
+    claim_value, claim_unit, claim_raw = claims[-1]
+    source_value = match["source"]
+    unit_compatible = not claim_unit or not match["unit"] or _norm(claim_unit) == _norm(match["unit"])
+    equal = unit_compatible and abs(claim_value - source_value) <= max(1e-9, abs(source_value) * 1e-9)
+    label, year, unit, evidence_id = match["label"], match["year"], match["unit"], match["evidence_id"]
+    unit_text = f" {unit}" if unit else ""
+    if equal:
+        status = "CONFIRMED"
+        answer = (f"Đúng. Theo bảng, {label.lower()} năm {year} là "
+                  f"{_format_number(source_value)}{unit_text}. [{evidence_id}]")
+    else:
+        status = "CONTRADICTED"
+        reason = "khác đơn vị" if not unit_compatible else "khác giá trị"
+        answer = (f"Không đúng. Khẳng định {claim_raw} {reason} với nguồn. Theo bảng, "
+                  f"{label.lower()} năm {year} là {_format_number(source_value)}{unit_text}. [{evidence_id}]")
+    return {"operation": "claim_verification", "verification_status": status,
+            "claim": {"value": claim_value, "unit": claim_unit, "raw": claim_raw,
+                      "metric": label, "year": year},
+            "source_value": source_value, "source_unit": unit, "verified": True,
+            "evidence_ids": [evidence_id], "answer": answer,
+            "source_cells": [{"row": label, "column": year, "value": match["cell_value"]}]}
+
+
 def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
     """Return a sourced deterministic answer for supported table operations."""
     normalized = _norm(question)
@@ -312,6 +446,14 @@ def analyze_charts(question: str, included: list[dict]) -> dict | None:
             continue
         data = item.get("structured_data") or {}
         pairs = data.get("label_value_pairs") or []
+        evidence_id = f"E{position}"
+        chart_type = _norm(str(data.get("chart_type") or "unknown")).replace(" ", "_")
+        is_diagram = chart_type in {"flowchart", "diagram", "organizational_graph", "network_diagram"}
+        if is_diagram:
+            return {"operation": "chart_capability_limit", "verified": False,
+                    "evidence_ids": [evidence_id], "chart_type": chart_type,
+                    "answer": "Nguồn này là sơ đồ, không phải biểu đồ số. Tôi chỉ có thể mô tả các nhãn đọc được, không suy diễn giá trị số. "
+                              f"[{evidence_id}]"}
         parsed = []
         for pair in pairs:
             number = parse_financial_number(pair.get("value", ""))
@@ -319,8 +461,18 @@ def analyze_charts(question: str, included: list[dict]) -> dict | None:
                 parsed.append({"label": str(pair.get("label", "")), "raw": str(pair.get("value", "")),
                                "number": number[0], "unit": number[1]})
         if not parsed:
-            continue
-        evidence_id = f"E{position}"
+            return {"operation": "chart_capability_limit", "verified": False,
+                    "evidence_ids": [evidence_id], "chart_type": chart_type,
+                    "answer": "Biểu đồ không có nhãn giá trị máy đọc được đủ tin cậy; không thể xác nhận giá trị số chính xác. "
+                              f"[{evidence_id}]"}
+        units = {_norm(entry["unit"]) for entry in parsed if entry["unit"]}
+        dual_axis = bool(data.get("dual_axis") or len(data.get("axes") or []) > 1 or "dual_axis" in chart_type)
+        if dual_axis and len(units) > 1 and any(term in normalized for term in ("so sanh", "khac biet", "cao hon", "thap hon")):
+            return {"operation": "chart_axis_mismatch", "verified": False,
+                    "evidence_ids": [evidence_id], "chart_type": chart_type,
+                    "units": sorted(units),
+                    "answer": "Các chuỗi dùng trục hoặc đơn vị khác nhau nên không thể so sánh trực tiếp độ cao hay giá trị giữa chúng. "
+                              f"[{evidence_id}]"}
         if any(term in normalized for term in ("cao nhat", "lon nhat", "ty trong cao nhat")):
             highest = max(parsed, key=lambda entry: entry["number"])
             return {"operation": "chart_maximum", "inputs": parsed, "result": highest["number"],
@@ -343,6 +495,22 @@ def analyze_charts(question: str, included: list[dict]) -> dict | None:
                 series_name = label[:year_match.start()].strip() if year_match else label
                 series.setdefault(series_name or "Chuỗi", []).append({**entry, "year": year_match.group(0) if year_match else ""})
             if len(series) >= 2:
+                requested = {name for name in series if _norm(name) in normalized}
+                explicit = set(re.findall(r"(?:chuoi|series)\s+(?!thu\b)[a-z0-9]+", normalized))
+                if explicit and len(requested) < len(explicit):
+                    return {"operation": "chart_series_incomplete", "verified": False,
+                            "evidence_ids": [evidence_id], "series_coverage": sorted(series),
+                            "answer": "Không đọc được đầy đủ mọi chuỗi được yêu cầu từ biểu đồ; cần nhãn hoặc dữ liệu nguồn rõ hơn để so sánh. "
+                                      f"[{evidence_id}]"}
+                series_units = {name: {_norm(v["unit"]) for v in values if v["unit"]}
+                                for name, values in series.items()}
+                nonempty_units = {unit for values in series_units.values() for unit in values}
+                if len(nonempty_units) > 1:
+                    return {"operation": "chart_unit_mismatch", "verified": False,
+                            "evidence_ids": [evidence_id], "series_coverage": sorted(series),
+                            "units": sorted(nonempty_units),
+                            "answer": "Các chuỗi có đơn vị khác nhau nên không thể so sánh trực tiếp giá trị giữa chúng. "
+                                      f"[{evidence_id}]"}
                 statements = []
                 coverage = []
                 for name, values in series.items():
