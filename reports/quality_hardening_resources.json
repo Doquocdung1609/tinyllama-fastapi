@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-12T16:56:23.6696404+07:00",
+  "ram_total_gb": 7.84,
+  "ram_free_gb": 0.74,
+  "disk_free_gb": 8.55,
+  "gpu_snapshot": "NVIDIA GeForce GTX 1650 Ti, 4096, 2525, 0",
+  "qdrant": {
+    "online": true,
+    "collection": "knowledgebase",
+    "vectors": 1947,
+    "dimension": 768,
+    "distance": "Cosine"
+  },
+  "api_health": {
+    "status": "ok"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "fastapi": true,
+  "fastapi_ms": 18.3,
+  "fastapi_code": 200,
+  "streamlit": true,
+  "streamlit_ms": 6.7,
+  "streamlit_code": 200,
+  "eight_tabs": true,
+  "tabs": [
+    "Dashboard",
+    "Chat với Ollama",
+    "Talk to Documents / RAG",
+    "Chunk Explorer",
+    "English Script → Audio",
+    "Text → Image",
+    "Image → Video",
+    "System / GPU"
+  ],
+  "ollama": true,
+  "qdrant": true,
+  "embedding": true,
+  "image_status": "READY",
+  "video_status": "BLOCKED",
+  "passed": true
+}

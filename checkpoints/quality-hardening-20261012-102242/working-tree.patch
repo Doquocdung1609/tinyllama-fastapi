@@ -1,0 +1,13 @@
+diff --git a/reports/fastapi.stdout.log b/reports/fastapi.stdout.log
+index 688b6c9..ec22e77 100644
+--- a/reports/fastapi.stdout.log
++++ b/reports/fastapi.stdout.log
+@@ -16,3 +16,8 @@ INFO:     127.0.0.1:61964 - "GET /system/status HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:61967 - "GET /system/status HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:61969 - "GET /system/status HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:61978 - "GET /qdrant/status HTTP/1.1" 200 OK
++INFO:     127.0.0.1:63611 - "GET /health HTTP/1.1" 200 OK
++INFO:     127.0.0.1:63612 - "GET /system/status HTTP/1.1" 200 OK
++INFO:     127.0.0.1:53560 - "GET /qdrant/status HTTP/1.1" 200 OK
++INFO:     127.0.0.1:53561 - "GET /documents HTTP/1.1" 200 OK
++INFO:     127.0.0.1:53563 - "GET /conversations HTTP/1.1" 200 OK

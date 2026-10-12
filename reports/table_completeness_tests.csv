@@ -1,0 +1,7 @@
+﻿test_id,question,required_facets,covered_facets,expected_claims,actual_answer,expected_source_ids,actual_source_ids,identity_correct,answer_complete,units_reported,citation_correct,strict_status,latency_ms,extraction_status,confidence
+TC01,Trang 1 có các bảng và biểu đồ nào?,counts;identities;citation,counts;identities;citation,2 bảng;1 biểu đồ,"Trang 1 có 2 bảng, 1 biểu đồ và 0 hình/sơ đồ.
+- Bảng 1: Chỉ tiêu. [L_mixed_text_table_chart.pdf, trang 1]
+- Bảng 2: Dòng tiền. [L_mixed_text_table_chart.pdf, trang 1]
+- Biểu đồ 1: BÁO CÁO TỔNG HỢP: VĂN BẢN, BẢNG VÀ BIỂU ĐỒ. [L_mixed_text_table_chart.pdf, trang 1]",table:p1:t1;table:p1:t2;chart:p1:c1,table:p1:t1;table:p1:t2;chart:p1:c1,True,True,True,True,PASS,137.7,,
+TC02,Giải thích bảng thứ hai trên trang 1.,table_identity;subject;headers;periods;key_values;units;citation,table_identity;subject;headers;key_values;units;citation;periods,Dòng tiền;2023;2024;20;28;không ghi rõ đơn vị,"Bảng 2 trình bày **Dòng tiền**. Kỳ báo cáo: 2023, 2024. Các cột: Dòng tiền, 2023, 2024. Dữ liệu chính: Kinh doanh — 2023: 20, 2024: 28. Đơn vị: bảng không ghi rõ đơn vị. [L_mixed_text_table_chart.pdf, trang 1]",table:p1:t2,table:p1:t2,True,True,True,True,PASS,135.2,OK,HIGH
+TC03,Giải thích bảng thứ ba trên trang 1.,table_identity,,không có bảng thứ 3,Trang 1 không có bảng thứ 3; metadata chỉ ghi nhận 2 bảng.,,,True,True,True,True,PASS,101.9,,

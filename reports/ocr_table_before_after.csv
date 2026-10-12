@@ -1,0 +1,8 @@
+﻿sample,metric,before_method,before,after_method,after
+Vietnamese scanned financial table,cer_percent,A_original,15.85,A_original,15.85
+Vietnamese scanned financial table,wer_percent,A_original,58.14,A_original,58.14
+Vietnamese scanned financial table,header_exact_tokens,A_original,4/4,A_original,4/4
+Vietnamese scanned financial table,numeric_cell_exact,A_original,6/6,A_original,6/6
+Vietnamese scanned financial table,table_row_alignment,A_original,3/3,A_original,3/3
+Vietnamese scanned financial table,execution_ms,A_original,693.7,A_original,693.7
+Vietnamese scanned financial table,ocr_text,A_original,BAO CAO TÀI CHÍNH QUET Chi tiêu 2023 2024 Don vi Doanh thu 100 180 ty dong Loi nhuan 12 16 ty dong Tong tai san 300 360 ty dong Ghi chu: số liu tong họp ding cho kiem thử OCR cuc bộ,A_original,BAO CAO TÀI CHÍNH QUET Chi tiêu 2023 2024 Don vi Doanh thu 100 180 ty dong Loi nhuan 12 16 ty dong Tong tai san 300 360 ty dong Ghi chu: số liu tong họp ding cho kiem thử OCR cuc bộ

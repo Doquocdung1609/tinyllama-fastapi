@@ -1,0 +1,258 @@
+{
+  "H1_borderless_bilingual.pdf": {
+    "document_id": "8a6e66c955e84c51994da831313fa41c",
+    "filename": "H1_borderless_bilingual.pdf",
+    "path": "tmp\\final_product\\uploads\\8a6e66c955e84c51994da831313fa41c_H1_borderless_bilingual.pdf",
+    "status": "READY",
+    "pages": 1,
+    "chunks": 1,
+    "indexed_at": "2026-10-12T09:49:57.332030+00:00",
+    "error": null,
+    "embedding_progress": {
+      "completed": 1,
+      "total": 1
+    },
+    "content_hash": "8a6e66c955e84c51994da831313fa41c278cb2a940d94830df2bfe8ba8cb6559",
+    "status_updated_at": "2026-10-12T09:49:52.423031+00:00",
+    "processing_timings": {
+      "extraction_seconds": 0.034,
+      "cleaning_seconds": 0.001,
+      "chunking_seconds": 0.0,
+      "embedding_seconds": 4.769,
+      "indexing_seconds": 0.104,
+      "total_seconds": 4.909
+    },
+    "index_version": 3,
+    "extraction_mode": "multimodal_native",
+    "modality_summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 0,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "ocr_pages_failed": 0,
+      "ocr_average_confidence": 0.0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": true,
+        "ocr_engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+        "ocr_version": "5.4.0.20240606",
+        "ocr_languages": [
+          "eng",
+          "osd",
+          "vie"
+        ],
+        "ocr_tessdata_dir": "C:\\Users\\Admin\\Desktop\\AI_thay_Hieu\\tinyllama-fastapi\\tools\\tessdata",
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "extraction_warnings": []
+  },
+  "H2_multi_company.pdf": {
+    "document_id": "0cfe42047ab8cda514e7f6f09b2058b3",
+    "filename": "H2_multi_company.pdf",
+    "path": "tmp\\final_product\\uploads\\0cfe42047ab8cda514e7f6f09b2058b3_H2_multi_company.pdf",
+    "status": "READY",
+    "pages": 1,
+    "chunks": 1,
+    "indexed_at": "2026-10-12T09:50:02.281412+00:00",
+    "error": null,
+    "embedding_progress": {
+      "completed": 1,
+      "total": 1
+    },
+    "content_hash": "0cfe42047ab8cda514e7f6f09b2058b3c00557062abf0b05f96b48d62eb1d861",
+    "status_updated_at": "2026-10-12T09:49:57.641045+00:00",
+    "processing_timings": {
+      "extraction_seconds": 0.026,
+      "cleaning_seconds": 0.017,
+      "chunking_seconds": 0.0,
+      "embedding_seconds": 4.587,
+      "indexing_seconds": 0.01,
+      "total_seconds": 4.64
+    },
+    "index_version": 3,
+    "extraction_mode": "multimodal_native",
+    "modality_summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 0,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "ocr_pages_failed": 0,
+      "ocr_average_confidence": 0.0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": true,
+        "ocr_engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+        "ocr_version": "5.4.0.20240606",
+        "ocr_languages": [
+          "eng",
+          "osd",
+          "vie"
+        ],
+        "ocr_tessdata_dir": "C:\\Users\\Admin\\Desktop\\AI_thay_Hieu\\tinyllama-fastapi\\tools\\tessdata",
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "extraction_warnings": []
+  },
+  "H3_mixed_table_chart.pdf": {
+    "document_id": "8838e324bd444b1e48db96c2bc593de8",
+    "filename": "H3_mixed_table_chart.pdf",
+    "path": "tmp\\final_product\\uploads\\8838e324bd444b1e48db96c2bc593de8_H3_mixed_table_chart.pdf",
+    "status": "READY",
+    "pages": 1,
+    "chunks": 1,
+    "indexed_at": "2026-10-12T09:50:07.116989+00:00",
+    "error": null,
+    "embedding_progress": {
+      "completed": 1,
+      "total": 1
+    },
+    "content_hash": "8838e324bd444b1e48db96c2bc593de8cade01d1d7003564cb50c584f41da745",
+    "status_updated_at": "2026-10-12T09:50:02.330915+00:00",
+    "processing_timings": {
+      "extraction_seconds": 0.021,
+      "cleaning_seconds": 0.001,
+      "chunking_seconds": 0.0,
+      "embedding_seconds": 4.678,
+      "indexing_seconds": 0.085,
+      "total_seconds": 4.786
+    },
+    "index_version": 3,
+    "extraction_mode": "multimodal_native",
+    "modality_summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 0,
+      "mixed_pages": 0,
+      "multi_column_pages": 1,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 0,
+      "ocr_pages_failed": 0,
+      "ocr_average_confidence": 0.0,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": true,
+        "ocr_engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+        "ocr_version": "5.4.0.20240606",
+        "ocr_languages": [
+          "eng",
+          "osd",
+          "vie"
+        ],
+        "ocr_tessdata_dir": "C:\\Users\\Admin\\Desktop\\AI_thay_Hieu\\tinyllama-fastapi\\tools\\tessdata",
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "extraction_warnings": []
+  },
+  "H4_rotated_low_contrast_scan.pdf": {
+    "document_id": "0d86e2a7b1fb95fa20f2b11f9d8156d3",
+    "filename": "H4_rotated_low_contrast_scan.pdf",
+    "path": "tmp\\final_product\\uploads\\0d86e2a7b1fb95fa20f2b11f9d8156d3_H4_rotated_low_contrast_scan.pdf",
+    "status": "READY",
+    "pages": 1,
+    "chunks": 1,
+    "indexed_at": "2026-10-12T09:50:13.325254+00:00",
+    "error": null,
+    "embedding_progress": {
+      "completed": 1,
+      "total": 1
+    },
+    "content_hash": "0d86e2a7b1fb95fa20f2b11f9d8156d35f7354b3a36b29664270cfe6f534e7f6",
+    "status_updated_at": "2026-10-12T09:50:07.564111+00:00",
+    "page_progress": {
+      "completed": 1,
+      "total": 1
+    },
+    "processing_timings": {
+      "extraction_seconds": 1.006,
+      "cleaning_seconds": 0.001,
+      "chunking_seconds": 0.0,
+      "embedding_seconds": 4.672,
+      "indexing_seconds": 0.087,
+      "total_seconds": 5.767
+    },
+    "index_version": 3,
+    "extraction_mode": "multimodal_native",
+    "modality_summary": {
+      "schema_version": 3,
+      "total_pages": 1,
+      "text_pages": 1,
+      "table_pages": 0,
+      "chart_pages": 0,
+      "figure_pages": 0,
+      "scanned_pages": 1,
+      "mixed_pages": 1,
+      "multi_column_pages": 0,
+      "rotated_pages": 0,
+      "tables": 0,
+      "charts": 0,
+      "figures": 0,
+      "ocr_pages_processed": 1,
+      "ocr_pages_failed": 0,
+      "ocr_average_confidence": 85.97,
+      "warnings": [],
+      "capabilities": {
+        "pymupdf": true,
+        "pdfplumber": true,
+        "native_text": true,
+        "native_tables": true,
+        "ocr": true,
+        "ocr_engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+        "ocr_version": "5.4.0.20240606",
+        "ocr_languages": [
+          "eng",
+          "osd",
+          "vie"
+        ],
+        "ocr_tessdata_dir": "C:\\Users\\Admin\\Desktop\\AI_thay_Hieu\\tinyllama-fastapi\\tools\\tessdata",
+        "vision": false,
+        "vision_detail": "Không cài model Vision; chart chỉ dùng dữ liệu/nhãn hiện hữu trong PDF."
+      }
+    },
+    "extraction_warnings": []
+  }
+}

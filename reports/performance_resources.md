@@ -1,12 +1,23 @@
-# Performance and resources
+# Performance and resource measurements
 
-- Multi-turn real API latency (11 generated turns): mean 4169.3 ms; P95 18929.8 ms.
-- OCR/financial/chart real API latency (n=8): mean 5805.5 ms; P95 30131.2 ms. OCR01 includes a cold model load.
-- Production regression mean: 29536.4 ms (n=5).
-- P0 mean: 7018.2 ms (n=4).
-- Measured API process peak working sets: 567.7 MB (production) and 535.1 MB (isolated test).
-- GPU snapshot after inference: 2,513 / 4,096 MiB. Ollama serial concurrency is 1.
-- C: free disk snapshot: 10.32 GB.
-- Processing the two-page bilingual scanned table: 28.089 s total, including 23.223 s embeddings.
+Measured 2026-10-12 on Windows with Ollama `qwen2.5:3b`, `nomic-embed-text`, local Tesseract and local Qdrant.
 
-These are local snapshots, not laboratory maxima. The design avoids a vision model and uses CPU OCR to stay within the 4 GB GPU limit.
+| Workload | n | Mean | P95 / notable |
+|---|---:|---:|---:|
+| Strict conversational API rows with nonzero latency | 15 | 2,816.3 ms | 19,377.2 ms |
+| Structural table/page operations | 3 | 124.9 ms | 137.7 ms |
+| New real PDF questions | 4 | 11,345.1 ms | 25,556.8 ms |
+| Internal holdout questions | 4 | 8,091.0 ms | 13,214.3 ms |
+| OCR preprocessing configurations | 9 | — | 449.2–2,865.4 ms/page |
+
+A measured generative request took 15,038.7 ms inside RAG: embedding 2,303.6 ms, retrieval 3.7 ms, prompt preparation 0.1 ms, Qwen generation 12,730.9 ms. During this request GPU memory reached 2,285 MiB; a later loaded-model snapshot was 2,525/4,096 MiB.
+
+Resource snapshot after both APIs, Streamlit, Ollama and Qdrant were live:
+
+- Physical RAM: 7.84 GB; free 0.74 GB.
+- C: free disk: 8.55 GB.
+- Production Qdrant: online, 1,947 vectors, dimension 768.
+- Isolated API process working set observed: about 546 MB.
+- Streamlit/FastAPI smoke: 200 responses; all eight navigation tabs detected.
+
+These are local point measurements, not laboratory maxima. RAM and disk headroom are limited. No heavyweight OCR or vision model was added.

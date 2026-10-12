@@ -1,0 +1,77 @@
+[
+  {
+    "document_id": "17be69dfe9e84f9bb2a34fb5d9f89671",
+    "filename": "Bài giảng Đổi mới sáng tạo Tài chính 2023 (18.12).pdf",
+    "path": "uploads\\17be69dfe9e84f9bb2a34fb5d9f89671_Bài giảng Đổi mới sáng tạo Tài chính 2023 (18.12).pdf",
+    "status": "READY",
+    "pages": 249,
+    "chunks": 971,
+    "indexed_at": "2026-10-10T10:22:14.753849+07:00",
+    "error": null,
+    "embedding_progress": {
+      "completed": 971,
+      "total": 971
+    },
+    "processing_timings": {
+      "extraction_seconds": 107.464,
+      "cleaning_seconds": 0.008,
+      "chunking_seconds": 0.058,
+      "embedding_seconds": 283.034,
+      "indexing_seconds": 36.448,
+      "total_seconds": 427.024
+    },
+    "index_version": 2,
+    "extraction_mode": "layout",
+    "content_hash": "568b24d8063d5c580cd3c3515b982cddc2adc53085ad58da6dab37a105aa7810"
+  },
+  {
+    "document_id": "aedb60bc088e4242970a43da1e897bde",
+    "filename": "Bài giảng Đổi mới sáng tạo Tài chính 2023 (18.12).pdf",
+    "path": "uploads\\aedb60bc088e4242970a43da1e897bde_Bài giảng Đổi mới sáng tạo Tài chính 2023 (18.12).pdf",
+    "status": "READY",
+    "pages": 249,
+    "chunks": 971,
+    "indexed_at": "2026-10-10T01:02:35.927413+07:00",
+    "error": null,
+    "index_version": 2,
+    "extraction_mode": "layout",
+    "embedding_progress": {
+      "completed": 971,
+      "total": 971
+    },
+    "processing_timings": {
+      "extraction_seconds": 101.498,
+      "cleaning_seconds": 0.04,
+      "chunking_seconds": 0.057,
+      "embedding_seconds": 283.585,
+      "indexing_seconds": 12.413,
+      "total_seconds": 397.597
+    },
+    "content_hash": "568b24d8063d5c580cd3c3515b982cddc2adc53085ad58da6dab37a105aa7810"
+  },
+  {
+    "document_id": "b7d5be30d6014424bf81f54011e0cdb1",
+    "filename": "CV_Do_Quoc_Dung_TTS_QHKH_LPS.pdf",
+    "path": "uploads\\b7d5be30d6014424bf81f54011e0cdb1_CV_Do_Quoc_Dung_TTS_QHKH_LPS.pdf",
+    "status": "READY",
+    "pages": 1,
+    "chunks": 5,
+    "indexed_at": "2026-10-10T10:51:56.693624+07:00",
+    "error": null,
+    "embedding_progress": {
+      "completed": 5,
+      "total": 5
+    },
+    "processing_timings": {
+      "extraction_seconds": 0.37,
+      "cleaning_seconds": 0.02,
+      "chunking_seconds": 0.002,
+      "embedding_seconds": 6.7,
+      "indexing_seconds": 0.882,
+      "total_seconds": 7.973
+    },
+    "index_version": 2,
+    "extraction_mode": "layout",
+    "content_hash": "badbbe6d2798dc26062cd0277f3f2f52dc7a3b024fcfce134af517aaf21840f4"
+  }
+]
