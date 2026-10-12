@@ -227,6 +227,9 @@ elif page == "Talk to Documents / RAG":
             for item in docs:
                 symbol = "🟢" if item.get("status") == "READY" else "🟡" if item.get("status") == "PARTIAL" else "⚪"
                 st.caption(f"{symbol} {item['filename']} · {item.get('status')} · {item.get('pages', 0)} trang")
+                warnings = item.get("extraction_warnings") or []
+                if warnings:
+                    st.warning(f"{item['filename']}: " + ", ".join(warnings), icon="⚠️")
 
             runtime = api("GET", "/system/status", timeout=10) or {}
             rag_models = runtime.get("ollama", {}).get("models", []) or [runtime.get("model", "qwen2.5:3b")]
@@ -281,7 +284,10 @@ elif page == "Talk to Documents / RAG":
                         page_data = api("GET", f"/documents/{preview_doc}/pages/{preview_page}", timeout=30)
                         if page_data:
                             for table_item in page_data.get("tables", []):
-                                st.markdown(f"**Bảng `{table_item.get('table_id')}`**")
+                                caption = table_item.get("caption") or "Không xác minh được chú thích"
+                                st.markdown(f"**Bảng `{table_item.get('table_id')}` · {caption}**")
+                                if table_item.get("caption_status") == "UNKNOWN_CAPTION":
+                                    st.warning("Không tìm thấy caption đáng tin cậy theo tọa độ; không dùng hàng tiêu đề để bịa caption.")
                                 st.code(table_item.get("markdown", ""), language=None)
                             if debug:
                                 st.json(page_data)

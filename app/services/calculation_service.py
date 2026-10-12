@@ -16,8 +16,12 @@ def parse_financial_number(value: Any) -> tuple[float, str] | None:
     if not original or not re.search(r"\d", original):
         return None
     negative = bool(re.search(r"\(\s*[\d.,\s]+\s*\)", original))
-    unit_match = re.search(r"(%|triệu\s+đồng|tỷ\s+đồng|VND|USD)", original, re.IGNORECASE)
-    unit = unit_match.group(1) if unit_match else ""
+    unit_match = re.search(
+        r"(%|phần\s*trăm|percent|nghìn\s*(?:đồng|vnd)?|nghin\s*(?:dong|vnd)?|thousand\s*(?:vnd|usd)?|"
+        r"triệu\s*(?:đồng|vnd)?|trieu\s*(?:dong|vnd)?|million\s*(?:vnd|usd)?|tỷ\s*(?:đồng|vnd)?|ty\s*(?:dong|vnd)?|"
+        r"billion\s*(?:vnd|usd)?|nghìn\s*tỷ\s*(?:đồng|vnd)?|trillion\s*(?:vnd|usd)?|"
+        r"VND|VNĐ|USD|EUR|lần|times)", original, re.IGNORECASE)
+    unit = re.sub(r"\s+", " ", unit_match.group(1)).strip() if unit_match else ""
     cleaned = re.sub(r"[^\d,.-]", "", original).strip(".")
     if not cleaned:
         return None
@@ -42,8 +46,45 @@ def parse_financial_number(value: Any) -> tuple[float, str] | None:
     return number, unit
 
 
+def _unit_signature(unit: str) -> tuple[str, float]:
+    """Map a displayed financial unit to currency/dimension and magnitude."""
+    value = _norm(unit).strip()
+    currency = ""
+    if any(token in value for token in ("usd", "$")):
+        currency = "USD"
+    elif "eur" in value:
+        currency = "EUR"
+    elif any(token in value for token in ("dong", "vnd", "vnđ")):
+        currency = "VND"
+    if any(token in value for token in ("nghin ty", "trillion")):
+        scale = 1_000_000_000_000.0
+    elif any(token in value for token in ("ty", "billion")):
+        scale = 1_000_000_000.0
+    elif any(token in value for token in ("trieu", "million")):
+        scale = 1_000_000.0
+    elif any(token in value for token in ("nghin", "thousand")):
+        scale = 1_000.0
+    else:
+        scale = 1.0
+    if value in {"%", "phan tram", "percent"}:
+        return "%", .01
+    if value in {"lan", "times"}:
+        return "ratio", 1.0
+    return currency, scale
+
+
+def _same_dimension(left: tuple[float, str], right: tuple[float, str]) -> bool:
+    left_kind, _ = _unit_signature(left[1])
+    right_kind, _ = _unit_signature(right[1])
+    return not left_kind or not right_kind or left_kind == right_kind
+
+
+def _base_value(value: tuple[float, str]) -> float:
+    return value[0] * _unit_signature(value[1])[1]
+
+
 def _table_candidates(included: list[dict]) -> list[dict]:
-    candidates = []
+    grouped: dict[tuple, dict] = {}
     for position, item in enumerate(included, 1):
         if (item.get("modality") or "text") != "table":
             continue
@@ -51,10 +92,20 @@ def _table_candidates(included: list[dict]) -> list[dict]:
         columns, rows = data.get("columns") or [], data.get("rows") or []
         if data.get("status") != "OK" or not columns or not rows:
             continue
-        candidates.append({"position": position, "item": item, "data": data,
-                           "columns": [str(value) for value in columns],
-                           "rows": [[str(value) for value in row] for row in rows]})
-    return candidates
+        key = (item.get("document_id"), item.get("page"),
+               data.get("table_id") or item.get("source_id") or item.get("chunk_id"))
+        candidate = grouped.setdefault(key, {
+            "position": position, "positions": [], "item": item, "items": [], "data": data,
+            "columns": [str(value) for value in columns], "rows": [], "row_positions": [],
+        })
+        candidate["positions"].append(position)
+        candidate["items"].append(item)
+        for row in rows:
+            normalized = [str(value) for value in row]
+            if normalized not in candidate["rows"]:
+                candidate["rows"].append(normalized)
+                candidate["row_positions"].append(position)
+    return list(grouped.values())
 
 
 def _best_row(question: str, rows: list[list[str]]) -> list[str] | None:
@@ -83,6 +134,17 @@ def _find_named_row(rows: list[list[str]], aliases: tuple[str, ...]) -> list[str
         label = _norm(row[0] if row else "")
         if any(alias in label for alias in aliases):
             return row
+    return None
+
+
+def _value_at_period(columns: list[str], row: list[str], requested_year: str | None) -> tuple[int, tuple[float, str]] | None:
+    if requested_year and requested_year in columns:
+        index = columns.index(requested_year)
+        if index < len(row) and (parsed := parse_financial_number(row[index])):
+            return index, parsed
+    for index in range(1, min(len(columns), len(row))):
+        if parsed := parse_financial_number(row[index]):
+            return index, parsed
     return None
 
 
@@ -135,6 +197,12 @@ def _claimed_numbers(question: str) -> list[tuple[float, str, str]]:
     return claims
 
 
+def _explicit_company(question: str) -> str | None:
+    match = re.search(r"\b(?:công\s+ty|company)\s+([A-ZÀ-Ỹ][\wÀ-ỹ.&-]*)", question,
+                      flags=re.IGNORECASE)
+    return _norm(match.group(1)) if match else None
+
+
 def verify_financial_claim(question: str, included: list[dict]) -> dict | None:
     """Compare a user's financial claim with structured source cells.
 
@@ -147,6 +215,7 @@ def verify_financial_claim(question: str, included: list[dict]) -> dict | None:
     tables = _table_candidates(included)
     claims = _claimed_numbers(question)
     years = re.findall(r"\b(?:19|20)\d{2}\b", question)
+    company = _explicit_company(question)
     if not claims:
         return {"operation": "claim_verification", "verification_status": "INSUFFICIENT_EVIDENCE",
                 "verified": False, "evidence_ids": [],
@@ -159,6 +228,10 @@ def verify_financial_claim(question: str, included: list[dict]) -> dict | None:
     matches = []
     for table in tables:
         columns, rows = table["columns"], table["rows"]
+        table_context = _norm(" ".join(str(value) for value in (
+            table["data"].get("caption"), table["item"].get("filename")) if value))
+        if company and company not in table_context:
+            continue
         year = years[-1] if years else None
         row = _best_row(question, rows)
         index = None
@@ -188,10 +261,13 @@ def verify_financial_claim(question: str, included: list[dict]) -> dict | None:
         unit = source[1] or _row_unit(columns, row) or _column_unit(columns[index])
         row_tokens = set(re.findall(r"[a-z0-9]+", _norm(label)))
         query_tokens = set(re.findall(r"[a-z0-9]+", normalized))
-        score = len(row_tokens & query_tokens) / max(1, len(row_tokens))
+        context_tokens = set(re.findall(r"[a-z0-9]+", table_context))
+        score = (len(row_tokens & query_tokens) / max(1, len(row_tokens)) +
+                 .1 * len(context_tokens & query_tokens) / max(1, len(context_tokens)))
+        row_position = table["row_positions"][table["rows"].index(row)] if row in table["rows"] else table["position"]
         matches.append({"score": score, "row": row, "label": label, "year": year, "source": source[0],
                         "cell_value": row[index], "source_column": columns[index],
-                        "unit": unit, "evidence_id": f"E{table['position']}", "table": table})
+                        "unit": unit, "evidence_id": f"E{row_position}", "table": table})
     matches.sort(key=lambda item: item["score"], reverse=True)
     if not matches or matches[0]["score"] <= 0:
         return {"operation": "claim_verification", "verification_status": "AMBIGUOUS",
@@ -238,15 +314,32 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
     wants_highest = any(term in normalized for term in ("cao nhat", "lon nhat", "highest", "largest"))
     wants_current_ratio = any(term in normalized for term in
                               ("ty le thanh toan hien hanh", "current ratio"))
+    wants_quick_ratio = any(term in normalized for term in
+                            ("ty le thanh toan nhanh", "he so thanh toan nhanh", "quick ratio"))
     wants_debt_ratio = any(term in normalized for term in ("ty le no", "debt ratio"))
-    wants_margin = any(term in normalized for term in ("bien loi nhuan", "profit margin"))
+    wants_roa = bool(re.search(r"\broa\b", normalized)) or "loi nhuan tren tong tai san" in normalized
+    wants_roe = bool(re.search(r"\broe\b", normalized)) or "loi nhuan tren von chu so huu" in normalized
+    wants_gross_margin = any(term in normalized for term in ("bien loi nhuan gop", "gross margin"))
+    wants_net_margin = any(term in normalized for term in ("bien loi nhuan rong", "net margin"))
+    wants_margin = (any(term in normalized for term in ("bien loi nhuan", "profit margin")) and
+                    not wants_gross_margin)
+    wants_ocf_ratio = any(term in normalized for term in
+                          ("ty le dong tien hoat dong", "operating cash flow ratio"))
+    wants_free_cash_flow = any(term in normalized for term in
+                               ("dong tien tu do", "free cash flow", "fcf"))
+    wants_absolute_change = any(term in normalized for term in
+                                ("chenh lech", "thay doi tuyet doi", "absolute change", "tang bao nhieu ")) and not wants_growth
     record_ids = list(dict.fromkeys(re.findall(r"\b[A-Za-z]+\d+\b", question, re.IGNORECASE)))
     wants_record_comparison = len(record_ids) >= 2 and any(term in normalized for term in ("so sanh", "doi chieu"))
     wants_lookup = (bool(re.search(r"\b(?:19|20)\d{2}\b", question)) and
                     any(term in normalized for term in ("bao nhieu", "gia tri", "the con", "chi tieu dang noi den")) and
                     not any(term in normalized for term in ("tai sao", "vi sao")) and
-                    not any((wants_current_ratio, wants_debt_ratio, wants_margin)))
+                    not any((wants_current_ratio, wants_quick_ratio, wants_debt_ratio, wants_margin,
+                             wants_gross_margin, wants_net_margin, wants_roa, wants_roe,
+                             wants_ocf_ratio, wants_free_cash_flow, wants_absolute_change)))
     if not any((wants_growth, wants_highest, wants_current_ratio, wants_debt_ratio, wants_margin,
+                wants_quick_ratio, wants_gross_margin, wants_net_margin, wants_roa, wants_roe,
+                wants_ocf_ratio, wants_free_cash_flow, wants_absolute_change,
                 wants_record_comparison, wants_lookup)):
         return None
 
@@ -273,7 +366,34 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
     for table in tables:
         columns, rows, position = table["columns"], table["rows"], table["position"]
         evidence_id = f"E{position}"
+        evidence_ids = [f"E{value}" for value in table.get("positions", [position])]
+        citation_text = " ".join(f"[{value}]" for value in evidence_ids)
         years = re.findall(r"\b(?:19|20)\d{2}\b", question)
+        if wants_absolute_change:
+            row = _best_row(question, rows)
+            year_columns = [(idx, value) for idx, value in enumerate(columns)
+                            if re.fullmatch(r"(?:19|20)\d{2}", value.strip())]
+            requested = [(idx, year) for idx, year in year_columns if not years or year in years]
+            if row and len(requested) >= 2:
+                old_idx, old_year = requested[0]
+                new_idx, new_year = requested[-1]
+                if max(old_idx, new_idx) < len(row):
+                    old, new = parse_financial_number(row[old_idx]), parse_financial_number(row[new_idx])
+                    if old and new and _same_dimension(old, new):
+                        old_base, new_base = _base_value(old), _base_value(new)
+                        result_base = new_base - old_base
+                        display_scale = _unit_signature(new[1] or old[1])[1]
+                        result = result_base / display_scale
+                        unit = new[1] or old[1] or _row_unit(columns, row)
+                        return {"operation": "absolute_change", "formula": "new-old",
+                                "inputs": {old_year: old[0], new_year: new[0], "unit": unit},
+                                "result": result, "result_unit": unit, "verified": True,
+                                "evidence_ids": evidence_ids,
+                                "source_cells": [{"row": row[0], "column": old_year, "value": row[old_idx]},
+                                                 {"row": row[0], "column": new_year, "value": row[new_idx]}],
+                                "answer": f"Mức thay đổi tuyệt đối {row[0]} từ {old_year} đến {new_year} = "
+                                          f"{_format_number(new[0])} - {_format_number(old[0])} = "
+                                          f"{_format_number(result)} {unit}. {citation_text}"}
         if wants_growth:
             row = _best_row(question, rows)
             year_columns = [(idx, value) for idx, value in enumerate(columns)
@@ -294,17 +414,17 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
                     old_row, new_row = year_rows[old_year], year_rows[new_year]
                     if target_index < len(old_row) and target_index < len(new_row):
                         old, new = parse_financial_number(old_row[target_index]), parse_financial_number(new_row[target_index])
-                        if old and new and old[0] != 0:
+                        if old and new and _base_value(old) != 0 and _same_dimension(old, new):
                             unit = old[1] or new[1] or _column_unit(columns[target_index])
-                            rate = (new[0] - old[0]) / abs(old[0]) * 100
+                            rate = (_base_value(new) - _base_value(old)) / abs(_base_value(old)) * 100
                             answer = (f"{columns[target_index]} {old_year}: {_format_number(old[0])} {unit}; "
                                       f"{new_year}: {_format_number(new[0])} {unit}. Tăng trưởng = "
                                       f"({_format_number(new[0])} - {_format_number(old[0])}) / "
-                                      f"{_format_number(abs(old[0]))} × 100 = {_format_number(rate)}%. [{evidence_id}]")
+                                      f"{_format_number(abs(old[0]))} × 100 = {_format_number(rate)}%. {citation_text}")
                             return {"operation": "growth_rate", "formula": "(new-old)/abs(old)*100",
                                     "inputs": {old_year: old[0], new_year: new[0], "unit": unit},
                                     "result": rate, "result_unit": "%", "answer": answer,
-                                    "evidence_ids": [evidence_id], "verified": True,
+                                    "evidence_ids": evidence_ids, "verified": True,
                                     "source_cells": [{"row": old_year, "column": columns[target_index], "value": old_row[target_index]},
                                                      {"row": new_year, "column": columns[target_index], "value": new_row[target_index]}]}
                 continue
@@ -319,17 +439,17 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
             if max(old_idx, new_idx) >= len(row):
                 continue
             old, new = parse_financial_number(row[old_idx]), parse_financial_number(row[new_idx])
-            if not old or not new or old[0] == 0 or old[1] != new[1]:
+            if not old or not new or _base_value(old) == 0 or not _same_dimension(old, new):
                 continue
             unit = old[1] or _row_unit(columns, row)
-            rate = (new[0] - old[0]) / abs(old[0]) * 100
+            rate = (_base_value(new) - _base_value(old)) / abs(_base_value(old)) * 100
             answer = (f"Tốc độ tăng trưởng {row[0]} từ {old_year} đến {new_year}: "
                       f"({_format_number(new[0])} - {_format_number(old[0])}) / "
-                      f"{_format_number(abs(old[0]))} × 100 = {_format_number(rate)}%. [{evidence_id}]")
+                      f"{_format_number(abs(old[0]))} × 100 = {_format_number(rate)}%. {citation_text}")
             return {"operation": "growth_rate", "formula": "(new-old)/abs(old)*100",
                     "inputs": {old_year: old[0], new_year: new[0], "unit": unit},
                     "result": rate, "result_unit": "%", "answer": answer,
-                    "evidence_ids": [evidence_id], "verified": True}
+                    "evidence_ids": evidence_ids, "verified": True}
 
         if wants_highest:
             row = _best_row(question, rows)
@@ -342,10 +462,10 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
                 if values:
                     value, unit, label, original = max(values, key=lambda item: item[0])
                     answer = (f"Giá trị cao nhất của {row[0]} là {original} tại {label}. "
-                              f"[{evidence_id}]")
+                              f"{citation_text}")
                     return {"operation": "maximum", "inputs": values, "result": value,
                             "result_unit": unit, "answer": answer,
-                            "evidence_ids": [evidence_id], "verified": True}
+                            "evidence_ids": evidence_ids, "verified": True}
             flat = []
             for row_item in rows:
                 for index, cell in enumerate(row_item[1:], start=1):
@@ -356,10 +476,10 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
             if flat:
                 value, unit, row_label, column_label, original = max(flat, key=lambda item: item[0])
                 answer = (f"Chỉ tiêu có giá trị lớn nhất là {row_label}: {original} "
-                          f"({column_label}). [{evidence_id}]")
+                          f"({column_label}). {citation_text}")
                 return {"operation": "maximum", "inputs": flat, "result": value,
                         "result_unit": unit, "answer": answer,
-                        "evidence_ids": [evidence_id], "verified": True}
+                        "evidence_ids": evidence_ids, "verified": True}
 
         if wants_lookup:
             requested_year = years[-1] if years else None
@@ -374,8 +494,8 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
                         unit = parsed[1] or _row_unit(columns, row)
                         return {"operation": "table_cell_lookup", "inputs": {"row": row[0], "column": requested_year},
                                 "result": parsed[0], "result_unit": unit, "verified": True,
-                                "evidence_ids": [evidence_id],
-                                "answer": f"{row[0]} năm {requested_year} là {row[column_index]} {unit}. [{evidence_id}]"}
+                                "evidence_ids": evidence_ids,
+                                "answer": f"{row[0]} năm {requested_year} là {row[column_index]} {unit}. {citation_text}"}
             # Year rows, metric columns.
             year_row = next((item for item in rows if item and item[0].strip() == requested_year), None)
             metric_index = next((index for index, column in enumerate(columns[1:], start=1)
@@ -386,8 +506,49 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
                     unit = parsed[1] or _column_unit(columns[metric_index])
                     return {"operation": "table_cell_lookup", "inputs": {"row": requested_year, "column": columns[metric_index]},
                             "result": parsed[0], "result_unit": unit, "verified": True,
-                            "evidence_ids": [evidence_id],
-                            "answer": f"{columns[metric_index]} năm {requested_year} là {year_row[metric_index]} {unit}. [{evidence_id}]"}
+                            "evidence_ids": evidence_ids,
+                            "answer": f"{columns[metric_index]} năm {requested_year} là {year_row[metric_index]} {unit}. {citation_text}"}
+
+        if wants_free_cash_flow:
+            operating = _find_named_row(rows, ("luu chuyen tien thuan tu hoat dong kinh doanh",
+                                                "dong tien tu hoat dong kinh doanh", "operating cash flow"))
+            capex = _find_named_row(rows, ("chi mua sam tai san co dinh", "chi tieu von", "capital expenditure", "capex"))
+            if operating and capex:
+                year = years[-1] if years else None
+                op_value, capex_value = _value_at_period(columns, operating, year), _value_at_period(columns, capex, year)
+                if op_value and capex_value and op_value[0] == capex_value[0] and _same_dimension(op_value[1], capex_value[1]):
+                    op_base, capex_base = _base_value(op_value[1]), abs(_base_value(capex_value[1]))
+                    scale = _unit_signature(op_value[1][1] or capex_value[1][1])[1]
+                    result = (op_base - capex_base) / scale
+                    unit = op_value[1][1] or capex_value[1][1] or _row_unit(columns, operating)
+                    period = columns[op_value[0]]
+                    return {"operation": "free_cash_flow", "formula": "operating_cash_flow-capex",
+                            "inputs": {operating[0]: op_value[1][0], capex[0]: capex_value[1][0], "unit": unit},
+                            "result": result, "result_unit": unit, "verified": True,
+                            "evidence_ids": evidence_ids,
+                            "answer": f"Dòng tiền tự do {period} = {_format_number(op_value[1][0])} - "
+                                      f"{_format_number(abs(capex_value[1][0]))} = {_format_number(result)} {unit}. {citation_text}"}
+
+        if wants_quick_ratio:
+            current_assets = _find_named_row(rows, ("tai san ngan han", "current assets"))
+            inventory = _find_named_row(rows, ("hang ton kho", "inventory"))
+            liabilities = _find_named_row(rows, ("no ngan han", "current liabilities"))
+            year = years[-1] if years else None
+            if current_assets and inventory and liabilities:
+                values = [_value_at_period(columns, row, year) for row in (current_assets, inventory, liabilities)]
+                if all(values) and len({value[0] for value in values}) == 1 and all(
+                        _same_dimension(values[0][1], value[1]) for value in values[1:]):
+                    asset, stock, debt = (_base_value(value[1]) for value in values)
+                    if debt:
+                        result = (asset - stock) / debt
+                        period = columns[values[0][0]]
+                        return {"operation": "financial_ratio", "formula": "(current_assets-inventory)/current_liabilities",
+                                "inputs": {current_assets[0]: values[0][1][0], inventory[0]: values[1][1][0],
+                                           liabilities[0]: values[2][1][0]}, "result": result,
+                                "result_unit": "lần", "verified": True, "evidence_ids": evidence_ids,
+                                "answer": f"Tỷ lệ thanh toán nhanh {period} = ({_format_number(values[0][1][0])} - "
+                                          f"{_format_number(values[1][1][0])}) / {_format_number(values[2][1][0])} = "
+                                          f"{_format_number(result)} lần. {citation_text}"}
 
         ratio_spec = None
         if wants_current_ratio:
@@ -397,6 +558,21 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
         elif wants_debt_ratio:
             ratio_spec = (("tong no", "no phai tra", "total liabilities"),
                           ("tong tai san", "total assets"), True, "Tỷ lệ nợ")
+        elif wants_gross_margin:
+            ratio_spec = (("loi nhuan gop", "gross profit"), ("doanh thu thuan", "doanh thu", "revenue"), True,
+                          "Biên lợi nhuận gộp")
+        elif wants_net_margin:
+            ratio_spec = (("loi nhuan sau thue", "loi nhuan rong", "net income", "net profit"),
+                          ("doanh thu thuan", "doanh thu", "revenue"), True, "Biên lợi nhuận ròng")
+        elif wants_roa:
+            ratio_spec = (("loi nhuan sau thue", "loi nhuan rong", "net income"),
+                          ("tong tai san binh quan", "average total assets"), True, "ROA")
+        elif wants_roe:
+            ratio_spec = (("loi nhuan sau thue", "loi nhuan rong", "net income"),
+                          ("von chu so huu binh quan", "average equity"), True, "ROE")
+        elif wants_ocf_ratio:
+            ratio_spec = (("luu chuyen tien thuan tu hoat dong kinh doanh", "dong tien tu hoat dong kinh doanh", "operating cash flow"),
+                          ("no ngan han", "current liabilities"), False, "Tỷ lệ dòng tiền hoạt động")
         elif wants_margin:
             ratio_spec = (("loi nhuan", "profit"), ("doanh thu", "revenue"), True,
                           "Biên lợi nhuận")
@@ -418,23 +594,33 @@ def calculate_from_tables(question: str, included: list[dict]) -> dict | None:
                     continue
                 top = parse_financial_number(numerator[column_index])
                 bottom = parse_financial_number(denominator[column_index])
-                if not top or not bottom or bottom[0] == 0 or top[1] != bottom[1]:
+                if not top or not bottom or bottom[0] == 0 or not _same_dimension(top, bottom):
                     continue
                 unit = top[1] or _row_unit(columns, numerator)
                 denominator_unit = bottom[1] or _row_unit(columns, denominator)
-                if unit != denominator_unit:
-                    continue
                 multiplier = 100 if ratio_spec[2] else 1
-                result = top[0] / bottom[0] * multiplier
+                result = _base_value(top) / _base_value(bottom) * multiplier
                 suffix = "%" if multiplier == 100 else " lần"
                 answer = (f"{ratio_spec[3]} = {numerator[0]} / {denominator[0]} = "
-                          f"{_format_number(top[0])} / {_format_number(bottom[0])} = "
-                          f"{_format_number(result)}{suffix}. [{evidence_id}]")
+                          f"{_format_number(top[0])}{(' ' + top[1]) if top[1] else ''} / "
+                          f"{_format_number(bottom[0])}{(' ' + bottom[1]) if bottom[1] else ''} = "
+                          f"{_format_number(result)}{suffix}. {citation_text}")
                 return {"operation": "financial_ratio", "formula": "numerator/denominator",
                         "inputs": {numerator[0]: top[0], denominator[0]: bottom[0],
                                    "unit": unit}, "result": result,
+                        "input_units": {numerator[0]: top[1] or unit,
+                                        denominator[0]: bottom[1] or denominator_unit},
                         "result_unit": suffix.strip(), "answer": answer,
-                        "evidence_ids": [evidence_id], "verified": True}
+                        "evidence_ids": evidence_ids, "verified": True}
+    if any((wants_current_ratio, wants_quick_ratio, wants_debt_ratio, wants_margin,
+            wants_gross_margin, wants_net_margin, wants_roa, wants_roe,
+            wants_ocf_ratio, wants_free_cash_flow, wants_absolute_change, wants_growth)):
+        detail = ("ROA/ROE yêu cầu số dư bình quân của kỳ; số dư cuối kỳ không được tự động thay thế."
+                  if wants_roa or wants_roe else
+                  "Thiếu một hoặc nhiều ô dữ liệu cùng kỳ và cùng đơn vị cần cho công thức.")
+        return {"operation": "insufficient_calculation_inputs", "verified": False,
+                "evidence_ids": [], "result": None,
+                "answer": f"Không đủ dữ liệu đã kiểm chứng để tính chỉ tiêu này. {detail}"}
     return None
 
 

@@ -33,7 +33,13 @@ async def lifespan(_app):
 
 
 app = FastAPI(title="GenAI Learning Studio", description="Talk to Documents (RAG) với FastAPI, Qdrant và Ollama", version="1.1.0", lifespan=lifespan)
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=list(settings.cors_origins),
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
+    allow_headers=["Accept", "Authorization", "Content-Type"],
+)
 app.include_router(documents_router)
 app.include_router(rag_router)
 app.include_router(qdrant_router)

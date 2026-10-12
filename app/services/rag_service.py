@@ -533,6 +533,10 @@ def _resolve_evidence_citations(answer: str, included: list[dict]) -> tuple[str,
     resolved = re.sub(
         r"(\[[^\]\n]+,\s*trang\s+(\d+)\])\s*,?\s*trang\s*:\s*\2\b\.?",
         r"\1.", resolved, flags=re.IGNORECASE)
+    # Several evidence IDs can represent different row slices from the same
+    # source table. Keep every ID in diagnostics but render one page citation.
+    resolved = re.sub(r"(\[[^\]\n]+,\s*trang\s+\d+\])(?:\s+\1)+", r"\1", resolved,
+                      flags=re.IGNORECASE)
     # Never attach the top-ranked source to an uncited answer. Missing citation
     # stays visible as a validation failure and can trigger a grounded rewrite.
     fallback = False
@@ -766,6 +770,10 @@ def load_saved_documents() -> None:
             saved = json.loads(metadata_path.read_text(encoding="utf-8"))
             doc = saved.get("document")
             if doc and Path(doc.get("path", "")).exists():
+                if doc.get("status") in {"PREFLIGHT", "EXTRACTING", "OCR_PROCESSING", "NORMALIZING",
+                                         "CHUNKING", "EMBEDDING", "INDEXING", "PROCESSING", "UPLOADED"}:
+                    doc["status"] = "INTERRUPTED"
+                    doc["error"] = "Lần xử lý trước bị gián đoạn; có thể chạy xử lý lại an toàn."
                 doc.setdefault("index_version", int(saved.get("index_version", 1)))
                 if not doc.get("content_hash"):
                     digest = sha256()
@@ -862,13 +870,12 @@ def process_document(document_id: str) -> None:
                     "extraction_warnings": preflight.get("warnings", []),
                     "embedding_progress": {"completed": len(made), "total": len(made)},
                     "processing_timings": timings})
-        (settings.processed_dir / f"{document_id}.json").write_text(json.dumps(
-            {"index_version": INDEX_VERSION, "document": doc, "pages": pages, "chunks": made},
-            ensure_ascii=False, indent=2), encoding="utf-8")
+        _persist_document(doc, pages, made)
         logger.info("indexed document id=%s chunks=%d", document_id, len(made))
     except Exception as exc:
         timings["total_seconds"] = round(perf_counter() - processing_started, 3)
         doc.update({"status": "FAILED", "error": str(exc), "processing_timings": timings})
+        _persist_document(doc, [], _chunks.get(document_id, []))
         logger.exception("document processing failed id=%s", document_id)
     finally:
         with _processing_lock:
@@ -881,7 +888,19 @@ def register_document(document_id: str, filename: str, path: str, content_hash: 
            "embedding_progress": {"completed": 0, "total": 0}, "content_hash": content_hash,
            "status_updated_at": datetime.now(timezone.utc).isoformat()}
     _documents[document_id] = doc
+    _persist_document(doc, [], [])
     return doc
+
+
+def _persist_document(doc: dict, pages: list[dict], chunks: list[dict]) -> None:
+    """Atomically persist recoverable metadata without touching vector data."""
+    target = get_settings().processed_dir / f"{doc['document_id']}.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temporary = target.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps({"index_version": INDEX_VERSION, "document": doc,
+                                     "pages": pages, "chunks": chunks},
+                                    ensure_ascii=False, indent=2), encoding="utf-8")
+    temporary.replace(target)
 
 
 def remove_document(document_id: str) -> bool:
@@ -942,6 +961,15 @@ def _fold_text(value: str) -> str:
     return "".join(char for char in value if not unicodedata.combining(char))
 
 
+def _caption_subject(caption: str | None) -> str | None:
+    if not caption:
+        return None
+    subject = re.sub(
+        r"^\s*(?:bảng|table)\s*(?:[A-Z]?\d+(?:[.\-]\d+)*)?\s*[.:\-)–—]?\s*",
+        "", caption, flags=re.IGNORECASE).strip()
+    return subject or caption.strip()
+
+
 def _structural_document_answer(question: str, document_id: str | list[str] | None,
                                 model_name: str | None) -> dict | None:
     """Answer page inventory and ordinal-table questions from stored metadata."""
@@ -1000,7 +1028,7 @@ def _structural_document_answer(question: str, document_id: str | list[str] | No
         }
         columns = [str(value) for value in table.get("columns") or []]
         rows = [[str(value) for value in row] for row in table.get("rows") or []]
-        subject = columns[0] if columns else (table.get("caption") or f"Bảng {table_number}")
+        subject = _caption_subject(table.get("caption")) or (columns[0] if columns else f"Bảng {table_number}")
         periods = [value for value in columns if re.fullmatch(r"(?:19|20)\d{2}", value.strip())]
         units = sorted({row[index].strip() for row in rows for index, column in enumerate(columns)
                         if index < len(row) and any(cue in _fold_text(column) for cue in ("don vi", "unit"))
@@ -1049,7 +1077,7 @@ def _structural_document_answer(question: str, document_id: str | list[str] | No
 
     items = []
     for index, table in enumerate(tables, 1):
-        subject = (table.get("columns") or [table.get("caption") or "không rõ chủ đề"])[0]
+        subject = _caption_subject(table.get("caption")) or "không rõ chú thích"
         items.append((f"Bảng {index}: {subject}", table.get("source_id"), "table", table))
     for index, chart in enumerate(charts, 1):
         items.append((f"Biểu đồ {index}: {chart.get('title') or chart.get('chart_type') or 'không rõ tiêu đề'}",

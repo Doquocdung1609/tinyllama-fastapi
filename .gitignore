@@ -12,4 +12,6 @@ audio/script_*.mp3
 data/*.sqlite3
 data/*.sqlite3-*
 tmp/final_product/
+tmp/phase1_*/
+checkpoints/
 tools/downloads/

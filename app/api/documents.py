@@ -3,6 +3,7 @@ from pathlib import Path
 from uuid import uuid4
 from hashlib import sha256
 import logging
+import shutil
 import aiofiles
 from fastapi import APIRouter, BackgroundTasks, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse
@@ -19,27 +20,39 @@ async def upload_pdf(background_tasks: BackgroundTasks, file: UploadFile = File(
     if file.content_type != "application/pdf" or Path(file.filename or "").suffix.lower() != ".pdf":
         raise HTTPException(415, "Tệp phải có định dạng PDF và phần mở rộng .pdf.")
     settings.prepare_dirs()
+    required_free = (settings.min_free_disk_mb + settings.max_upload_mb) * 1024 * 1024
+    if shutil.disk_usage(settings.upload_dir).free < required_free:
+        raise HTTPException(507, "Không đủ dung lượng trống an toàn để nhận và xử lý PDF.")
     safe_name = Path(file.filename or "document.pdf").name
     temporary_id = uuid4().hex
     target = settings.upload_dir / f".{temporary_id}.uploading"
     size = 0
     digest = sha256()
+    signature = b""
     try:
         async with aiofiles.open(target, "wb") as destination:
             while block := await file.read(1024 * 1024):
+                if not signature:
+                    signature = block[:8]
+                    if not signature.startswith(b"%PDF-"):
+                        raise HTTPException(415, "Nội dung tệp không có chữ ký PDF hợp lệ.")
                 size += len(block)
                 if size > settings.max_upload_mb * 1024 * 1024:
-                    target.unlink(missing_ok=True)
                     raise HTTPException(413, f"Dung lượng PDF vượt quá {settings.max_upload_mb} MB.")
                 await destination.write(block)
                 digest.update(block)
+        if size == 0:
+            raise HTTPException(422, "Tệp PDF rỗng.")
+    except Exception:
+        target.unlink(missing_ok=True)
+        raise
     finally:
         await file.close()
     content_hash = digest.hexdigest()
     duplicate = rag_service.find_document_by_hash(content_hash)
     if duplicate:
         existing_path = Path(duplicate.get("path") or "")
-        if duplicate.get("status") == "FAILED":
+        if duplicate.get("status") in {"FAILED", "INTERRUPTED"}:
             if existing_path and not existing_path.exists():
                 existing_path.parent.mkdir(parents=True, exist_ok=True)
                 target.replace(existing_path)

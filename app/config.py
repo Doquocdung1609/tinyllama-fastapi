@@ -32,10 +32,16 @@ class Settings:
     image_model: str = os.getenv("IMAGE_MODEL", "./models/tiny-sd")
     video_model: str = os.getenv("VIDEO_MODEL", "stabilityai/stable-video-diffusion-img2vid-xt")
     max_upload_mb: int = int(os.getenv("MAX_UPLOAD_MB", "50"))
+    min_free_disk_mb: int = int(os.getenv("MIN_FREE_DISK_MB", "256"))
     chunk_size: int = int(os.getenv("CHUNK_SIZE", "800"))
     chunk_overlap: int = int(os.getenv("CHUNK_OVERLAP", "120"))
     top_k: int = int(os.getenv("TOP_K", "3"))
     score_threshold: float = float(os.getenv("SCORE_THRESHOLD", "0.7"))
+    cors_origins: tuple[str, ...] = tuple(
+        item.strip() for item in os.getenv(
+            "CORS_ORIGINS", "http://127.0.0.1:8501,http://localhost:8501"
+        ).split(",") if item.strip()
+    )
 
     def prepare_dirs(self) -> None:
         for path in (self.upload_dir, self.processed_dir, self.audio_dir, self.image_dir, self.video_dir):

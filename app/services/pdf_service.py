@@ -34,10 +34,120 @@ def _table_markdown(rows: list[list[str]]) -> str:
     ])
 
 
+_CAPTION_PATTERNS = {
+    "table": re.compile(r"^\s*(?:bảng|table)\s*(?:[A-Z]?\d+(?:[.\-]\d+)*)?\s*[.:\-)–—]?\s*\S+", re.IGNORECASE),
+    "chart": re.compile(r"^\s*(?:biểu\s*đồ|chart)\s*(?:[A-Z]?\d+(?:[.\-]\d+)*)?\s*[.:\-)–—]?\s*\S+", re.IGNORECASE),
+    "figure": re.compile(r"^\s*(?:hình|figure|sơ\s*đồ|diagram)\s*(?:[A-Z]?\d+(?:[.\-]\d+)*)?\s*[.:\-)–—]?\s*\S+", re.IGNORECASE),
+}
+
+
 def _nearest_caption(text: str, kind: str) -> str | None:
-    cue = r"(?:bảng|table)" if kind == "table" else r"(?:biểu\s*đồ|chart)"
+    """Return only a caption-shaped line, never a narrative keyword match."""
+    pattern = _CAPTION_PATTERNS[kind]
     lines = [re.sub(r"\s+", " ", line).strip() for line in text.splitlines() if line.strip()]
-    return next((line for line in lines if re.search(rf"\b{cue}\b", line, re.IGNORECASE)), None)
+    return next((line for line in lines if pattern.match(line)), None)
+
+
+def _native_text_lines(page) -> list[dict]:
+    """Extract visible native lines with top-left PDF coordinates."""
+    result: list[dict] = []
+    for block in (page.get_text("dict", sort=True) or {}).get("blocks", []):
+        if block.get("type") != 0:
+            continue
+        for line in block.get("lines", []):
+            spans = line.get("spans", [])
+            text = _clean_cell("".join(str(span.get("text", "")) for span in spans))
+            bbox = line.get("bbox")
+            if text and bbox:
+                first = spans[0] if spans else {}
+                result.append({"text": text, "bbox": [float(value) for value in bbox],
+                               "font": first.get("font"), "font_size": round(float(first.get("size", 0)), 2),
+                               "font_flags": int(first.get("flags", 0))})
+    return result
+
+
+def _horizontal_overlap(left: list[float], right: list[float]) -> float:
+    overlap = max(0.0, min(left[2], right[2]) - max(left[0], right[0]))
+    return overlap / max(1.0, min(left[2] - left[0], right[2] - right[0]))
+
+
+def _caption_near_bbox(lines: list[dict], bbox: list[float], kind: str,
+                       page_height: float) -> tuple[str | None, dict]:
+    """Choose a caption by syntax, spatial proximity and reading direction."""
+    pattern = _CAPTION_PATTERNS[kind]
+    candidates = []
+    for line in lines:
+        if not pattern.match(line["text"]):
+            continue
+        line_box = line["bbox"]
+        overlap = _horizontal_overlap(line_box, bbox)
+        above_gap = bbox[1] - line_box[3]
+        below_gap = line_box[1] - bbox[3]
+        max_above = min(90.0, page_height * .13) if kind == "table" else page_height * .60
+        max_below = min(54.0, page_height * .08) if kind == "table" else page_height * .20
+        if -2 <= above_gap <= max_above and overlap >= .15:
+            candidates.append((above_gap, 0, line))
+        elif -2 <= below_gap <= max_below and overlap >= .15:
+            candidates.append((below_gap, 1, line))
+    if not candidates:
+        return None, {"status": "UNKNOWN_CAPTION", "method": "spatial_caption_v1"}
+    gap, direction, selected = min(candidates, key=lambda item: (item[1], item[0]))
+    caption_parts = [selected["text"]]
+    if direction == 0:
+        ordered = sorted(lines, key=lambda item: (item["bbox"][1], item["bbox"][0]))
+        try:
+            selected_index = ordered.index(selected)
+        except ValueError:
+            selected_index = -1
+        previous = selected
+        for following in ordered[selected_index + 1:selected_index + 3]:
+            line_gap = following["bbox"][1] - previous["bbox"][3]
+            same_style = (not selected.get("font") or not following.get("font") or
+                          (selected.get("font") == following.get("font") and
+                           abs(selected.get("font_size", 0) - following.get("font_size", 0)) <= .2))
+            if (0 <= line_gap <= 4.0 and following["bbox"][3] <= bbox[1] + 1 and same_style and
+                    _horizontal_overlap(following["bbox"], selected["bbox"]) >= .15 and
+                    not any(pattern.match(following["text"]) for pattern in _CAPTION_PATTERNS.values()) and
+                    not re.match(r"^\s*(?:nguồn|source|ghi\s*chú|note)\s*:", following["text"], re.IGNORECASE)):
+                caption_parts.append(following["text"])
+                previous = following
+            else:
+                break
+    caption = " ".join(caption_parts)
+    return caption, {
+        "status": "VERIFIED_CAPTION", "method": "spatial_caption_v1",
+        "position": "above" if direction == 0 else "below", "distance": round(gap, 2),
+        "caption_bbox": [round(value, 2) for value in selected["bbox"]],
+        "line_count": len(caption_parts),
+    }
+
+
+def _standalone_graphic_bbox(drawings: list[dict], image_boxes: list[list[float]],
+                             table_bboxes: list[list[float]], width: float,
+                             height: float) -> list[float] | None:
+    """Return a non-table graphic region; table rules and fills are excluded."""
+    regions: list[list[float]] = []
+    for drawing in drawings:
+        rect = drawing.get("rect")
+        if rect is None:
+            continue
+        box = [float(rect.x0), float(rect.y0), float(rect.x1), float(rect.y1)]
+        area = max(0.0, box[2] - box[0]) * max(0.0, box[3] - box[1])
+        if area < 100.0:
+            continue
+        if any(_horizontal_overlap(box, table) > .8 and
+               max(0.0, min(box[3], table[3]) - max(box[1], table[1])) >=
+               .8 * max(1.0, box[3] - box[1]) for table in table_bboxes):
+            continue
+        regions.append(box)
+    regions.extend([list(map(float, box)) for box in image_boxes if len(box) == 4])
+    if not regions:
+        return None
+    union = [min(box[0] for box in regions), min(box[1] for box in regions),
+             max(box[2] for box in regions), max(box[3] for box in regions)]
+    if (union[2] - union[0]) * (union[3] - union[1]) < width * height * .01:
+        return None
+    return union
 
 
 def _table_family(caption: str | None) -> str | None:
@@ -45,7 +155,9 @@ def _table_family(caption: str | None) -> str | None:
         return None
     normalized = unicodedata.normalize("NFKD", caption.casefold().replace("đ", "d"))
     normalized = "".join(char for char in normalized if not unicodedata.combining(char))
-    match = re.search(r"\b(?:bang|table)\s*([a-z0-9]+)", normalized)
+    # Continuations need an explicit stable identifier. Generic OCR labels such
+    # as "Bảng nhận dạng" must never link unrelated tables across pages.
+    match = re.search(r"\b(?:bang|table)\s*([a-z]?\d+(?:[.\-]\d+)*)\b", normalized)
     return match.group(1) if match else None
 
 
@@ -93,6 +205,26 @@ def _visible_label_values(text: str) -> list[dict]:
                 if pair not in pairs:
                     pairs.append(pair)
     return pairs[:100]
+
+
+_OCR_FINANCIAL_CANONICAL = {
+    "chi tieu": "Chỉ tiêu", "don vi": "Đơn vị", "doanh thu": "Doanh thu",
+    "doanh thu thuan": "Doanh thu thuần", "loi nhuan": "Lợi nhuận",
+    "loi nhuan gop": "Lợi nhuận gộp", "loi nhuan sau thue": "Lợi nhuận sau thuế",
+    "tong tai san": "Tổng tài sản", "tai san ngan han": "Tài sản ngắn hạn",
+    "hang ton kho": "Hàng tồn kho", "no ngan han": "Nợ ngắn hạn",
+    "tong no": "Tổng nợ", "von chu so huu": "Vốn chủ sở hữu",
+    "ty dong": "tỷ đồng", "trieu dong": "triệu đồng", "nghin dong": "nghìn đồng",
+}
+
+
+def _normalize_ocr_financial_cell(value: str) -> tuple[str, bool]:
+    """Conservatively normalize exact known OCR labels while preserving raw cells."""
+    folded = unicodedata.normalize("NFKD", value.casefold().replace("đ", "d"))
+    folded = "".join(char for char in folded if not unicodedata.combining(char))
+    folded = re.sub(r"\s+", " ", folded).strip()
+    canonical = _OCR_FINANCIAL_CANONICAL.get(folded)
+    return (canonical, True) if canonical else (value, False)
 
 
 @lru_cache(maxsize=1)
@@ -180,6 +312,18 @@ def _ocr_table(words: list[dict], document_id: str, filename: str, page_number: 
     if width < 3 or len(aligned) < 3 or numeric_rows < 2:
         return []
     all_rows = [row for _, row, _ in aligned]
+    normalized_rows: list[list[str]] = []
+    normalization_events: list[dict] = []
+    for row_index, row in enumerate(all_rows):
+        normalized_row = []
+        for column_index, cell in enumerate(row):
+            normalized, changed = _normalize_ocr_financial_cell(cell)
+            normalized_row.append(normalized)
+            if changed and normalized != cell:
+                normalization_events.append({"row": row_index, "column": column_index,
+                                             "raw": cell, "normalized": normalized,
+                                             "method": "exact_financial_dictionary_v1"})
+        normalized_rows.append(normalized_row)
     all_words = [word for _, _, line_words in aligned for word in line_words]
     numeric_confidences = [word["confidence"] for word in all_words if re.search(r"\d", word["text"])]
     status = "OK" if numeric_confidences and min(numeric_confidences) >= 60 else "NEEDS_REVIEW"
@@ -191,6 +335,8 @@ def _ocr_table(words: list[dict], document_id: str, filename: str, page_number: 
         "source_id": f"ocr-table:p{page_number}:t1", "caption": "Bảng nhận dạng từ trang scan",
         "bbox": [round(value, 2) for value in bbox], "extraction_method": "tesseract_ocr_grid",
         "columns": all_rows[0], "rows": all_rows[1:], "all_rows": all_rows,
+        "normalized_columns": normalized_rows[0], "normalized_rows": normalized_rows[1:],
+        "normalization_events": normalization_events,
         "markdown": _table_markdown(all_rows), "status": status,
         "confidence": "MEDIUM" if status == "OK" else "LOW", "ocr_derived": True,
         "numeric_confidence_min": min(numeric_confidences) if numeric_confidences else None,
@@ -289,6 +435,9 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
 
     pdf_path = str(path)
     document = fitz.open(pdf_path)
+    if document.needs_pass:
+        document.close()
+        raise RuntimeError("PDF được bảo vệ bằng mật khẩu; hãy cung cấp bản đã mở khóa để xử lý.")
     plumber = None
     if capabilities["pdfplumber"]:
         import pdfplumber
@@ -300,6 +449,9 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
             text = page.get_text("text", sort=True) or ""
             blocks = page.get_text("blocks", sort=True) or []
             images = page.get_images(full=True) or []
+            native_lines = _native_text_lines(page)
+            image_boxes = [list(map(float, block[:4])) for block in blocks
+                           if len(block) >= 7 and block[6] == 1]
             try:
                 drawings = page.get_drawings() or []
             except Exception:
@@ -307,22 +459,29 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
             width, height = float(page.rect.width), float(page.rect.height)
             usable_chars = len(re.sub(r"\s+", "", text))
             scanned = usable_chars < 40 and bool(images)
+            hybrid_image_ocr = bool(images) and 40 <= usable_chars < 800
             missing_text = usable_chars < 20
             warnings: list[str] = []
             if scanned:
                 warnings.append("SCANNED_PAGE_REQUIRES_OCR")
                 if not capabilities["ocr"]:
                     warnings.append("OCR_ENGINE_UNAVAILABLE")
+            elif hybrid_image_ocr:
+                warnings.append("IMAGE_REGION_REQUIRES_OCR")
             ocr_result = None
-            if scanned and capabilities["ocr"]:
+            if (scanned or hybrid_image_ocr) and capabilities["ocr"]:
                 if progress_callback:
                     progress_callback("OCR_PROCESSING", index, len(document))
                 try:
                     ocr_result = _ocr_page(page, document_id, filename, index, width, height, capabilities)
-                    if ocr_result["text"]:
+                    if ocr_result["text"] and scanned:
                         text = ocr_result["text"]
                         usable_chars = len(re.sub(r"\s+", "", text))
                         warnings = [item for item in warnings if item != "SCANNED_PAGE_REQUIRES_OCR"]
+                    elif ocr_result["text"]:
+                        text = text.rstrip() + "\n\n[OCR image region]\n" + ocr_result["text"]
+                        usable_chars = len(re.sub(r"\s+", "", text))
+                        warnings = [item for item in warnings if item != "IMAGE_REGION_REQUIRES_OCR"]
                 except Exception as exc:
                     warnings.append(f"OCR_PROCESSING_ERROR:{type(exc).__name__}")
             if missing_text and not images:
@@ -338,13 +497,18 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
                         rows = [row for row in rows if any(row)]
                         columns = max((len(row) for row in rows), default=0)
                         status = "OK" if len(rows) >= 2 and columns >= 2 else "NEEDS_REVIEW"
+                        table_bbox = [round(float(value), 2) for value in found_table.bbox]
+                        caption, caption_provenance = _caption_near_bbox(
+                            native_lines, table_bbox, "table", height)
                         tables.append({
                             "modality": "table", "document_id": document_id,
                             "filename": filename, "page": index,
                             "table_id": f"{document_id}-p{index:04d}-t{table_number:02d}",
                             "source_id": f"table:p{index}:t{table_number}",
-                            "caption": _nearest_caption(text, "table"),
-                            "bbox": [round(float(value), 2) for value in found_table.bbox],
+                            "caption": caption,
+                            "caption_status": caption_provenance["status"],
+                            "caption_provenance": caption_provenance,
+                            "bbox": table_bbox,
                             "extraction_method": "pdfplumber_native_table",
                             "columns": rows[0] if rows else [],
                             "rows": rows[1:] if len(rows) > 1 else [],
@@ -357,20 +521,28 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
             if not tables and ocr_result:
                 tables = ocr_result.get("tables", [])
 
+            table_bboxes = [table["bbox"] for table in tables]
+            graphic_bbox = _standalone_graphic_bbox(drawings, image_boxes, table_bboxes, width, height)
             folded_text = unicodedata.normalize("NFKD", text.casefold().replace("đ", "d"))
             folded_text = "".join(char for char in folded_text if not unicodedata.combining(char))
             chart_cue = bool(re.search(r"\b(?:bieu.{0,15}(?:cot|duong|tron)|chart)\b", folded_text, re.IGNORECASE))
             charts: list[dict] = []
-            if chart_cue and (len(drawings) >= 2 or images):
+            chart_title = None
+            chart_provenance = {"status": "UNKNOWN_CAPTION", "method": "spatial_caption_v1"}
+            if graphic_bbox:
+                chart_title, chart_provenance = _caption_near_bbox(native_lines, graphic_bbox, "chart", height)
+            if chart_cue and graphic_bbox and chart_title:
                 visible_pairs = _visible_label_values(text)
                 charts.append({
                     "modality": "chart", "document_id": document_id,
                     "filename": filename, "page": index,
                     "chart_id": f"{document_id}-p{index:04d}-c01",
                     "source_id": f"chart:p{index}:c1",
-                    "title": _nearest_caption(text, "chart"),
+                    "title": chart_title,
+                    "caption_status": chart_provenance["status"],
+                    "caption_provenance": chart_provenance,
                     "chart_type": _chart_type(text),
-                    "bbox": [0.0, 0.0, round(width, 2), round(height, 2)],
+                    "bbox": [round(value, 2) for value in graphic_bbox],
                     "visible_text": text.strip(),
                     "label_value_pairs": visible_pairs,
                     "numerical_series": visible_pairs,
@@ -381,17 +553,20 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
                 })
 
             figures: list[dict] = []
-            figure_lines = [line.strip() for line in text.splitlines()
-                            if re.search(r"\b(?:hình|figure|sơ\s*đồ|diagram|quy\s*trình)\b",
-                                         line, re.IGNORECASE)]
-            if figure_lines and (drawings or images):
+            figure_caption = None
+            figure_provenance = {"status": "UNKNOWN_CAPTION", "method": "spatial_caption_v1"}
+            if graphic_bbox:
+                figure_caption, figure_provenance = _caption_near_bbox(native_lines, graphic_bbox, "figure", height)
+            if figure_caption and graphic_bbox:
                 figures.append({
                     "modality": "figure", "document_id": document_id,
                     "filename": filename, "page": index,
                     "figure_id": f"{document_id}-p{index:04d}-f01",
                     "source_id": f"figure:p{index}:f1",
-                    "caption": _clean_cell(figure_lines[0]),
-                    "bbox": [0.0, 0.0, round(width, 2), round(height, 2)],
+                    "caption": figure_caption,
+                    "caption_status": figure_provenance["status"],
+                    "caption_provenance": figure_provenance,
+                    "bbox": [round(value, 2) for value in graphic_bbox],
                     "visible_text": text.strip(),
                     "extraction_method": "native_caption_and_labels",
                     "confidence": "LABELS_ONLY",
@@ -407,12 +582,15 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
                 page_types.append("figure")
             if scanned:
                 page_types.append("scanned")
+            if hybrid_image_ocr and ocr_result:
+                page_types.append("image_ocr")
             if len(set(page_types)) > 1:
                 page_types.append("mixed")
             quality = "HIGH" if usable_chars >= 100 else "MEDIUM" if usable_chars >= 40 else "LOW"
             pages.append({
                 "document_id": document_id, "filename": filename, "page": index,
-                "text": text, "extraction_mode": "ocr" if ocr_result and text.strip() else
+                "text": text, "extraction_mode": "ocr" if scanned and ocr_result and text.strip() else
+                        "hybrid_native_ocr" if hybrid_image_ocr and ocr_result else
                         "pymupdf_native" if text.strip() else "none",
                 "page_types": sorted(set(page_types)), "tables": tables,
                 "charts": charts, "figures": figures, "ocr": ocr_result,
@@ -426,8 +604,8 @@ def extract_pdf(path: str | Path, document_id: str, filename: str, progress_call
                     "figure_count": len(figures), "scanned": scanned,
                     "needs_ocr": scanned or missing_text,
                     "ocr_status": "COMPLETED" if ocr_result and ocr_result.get("text") else
-                                  "FAILED" if scanned and capabilities["ocr"] else
-                                  "BLOCKED_ENGINE_UNAVAILABLE" if scanned else "NOT_REQUIRED",
+                                  "FAILED" if (scanned or hybrid_image_ocr) and capabilities["ocr"] else
+                                  "BLOCKED_ENGINE_UNAVAILABLE" if (scanned or hybrid_image_ocr) else "NOT_REQUIRED",
                     "ocr_language": ocr_result.get("language") if ocr_result else None,
                     "ocr_average_confidence": ocr_result.get("average_confidence") if ocr_result else None,
                     "uncertain_numeric_tokens": len(ocr_result.get("uncertain_numeric_tokens", [])) if ocr_result else 0,
