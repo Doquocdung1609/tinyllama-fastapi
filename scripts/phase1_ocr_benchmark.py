@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import re
+import subprocess
 import threading
 import time
 from pathlib import Path
@@ -83,6 +84,7 @@ def _mixed(lines: list[str]) -> tuple[Path, str]:
 
 
 def main() -> None:
+    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     OUT.mkdir(parents=True, exist_ok=True)
     vi_table = ["BÁO CÁO TÀI CHÍNH", "Chỉ tiêu          2023       2024       Đơn vị",
                 "Doanh thu         100        180        tỷ đồng",
@@ -178,7 +180,7 @@ def main() -> None:
             "row_alignment": ";".join(str(len(table.get("rows", []))) for table in tables),
             "ocr_language": ";".join(sorted({str(page.get('ocr', {}).get('language')) for page in pages if page.get('ocr')})),
             "runtime_ms": round(elapsed, 1), "peak_ram_delta_mb": round((peak - before) / 1024**2, 2),
-            "status": status, "error": error,
+            "status": status, "error": error, "code_commit": commit,
         })
         print(case_id, status, cer, wer, rows[-1]["critical_numeric_exact"], len(tables))
     with REPORT.open("w", newline="", encoding="utf-8-sig") as handle:

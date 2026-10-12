@@ -39,6 +39,7 @@ def query(question: str, document_id: str, threshold=.35) -> tuple[float, dict]:
 
 
 def main() -> None:
+    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     server_pid = next((item.pid for item in psutil.net_connections(kind="inet")
                        if item.laddr and item.laddr.port == 8002 and item.status == "LISTEN"), None)
     server = psutil.Process(server_pid) if server_pid else None
@@ -93,7 +94,7 @@ def main() -> None:
         aggregate.append({"category": category, "sample_size": len(group),
                           "cold_ms": group[0], "warm_p50_ms": round(statistics.median(warm or group), 1),
                           "warm_p95_ms": round(percentile(warm or group, .95), 1),
-                          "min_ms": min(group), "max_ms": max(group)})
+                          "min_ms": min(group), "max_ms": max(group), "code_commit": commit})
     target = ROOT / "reports" / "phase1_latency_benchmark.csv"
     with target.open("w", newline="", encoding="utf-8-sig") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(aggregate[0])); writer.writeheader(); writer.writerows(aggregate)
@@ -105,7 +106,7 @@ def main() -> None:
                           "--format=csv,noheader,nounits"], capture_output=True, text=True, check=False).stdout.strip()
     status = requests.get(API + "/system/status", timeout=15).json()
     docs = requests.get(API + "/documents", timeout=15).json()
-    resource = ["# Phase 1 resource profile", "",
+    resource = ["# Phase 1 resource profile", "", f"- Tested commit: `{commit}`",
                 f"- API PID: {server_pid}", f"- System RAM total: {vm.total/1024**3:.2f} GB",
                 f"- System RAM available after benchmark: {vm.available/1024**3:.2f} GB",
                 f"- Minimum available RAM sampled: {min(x['system_available_mb'] for x in samples)/1024:.2f} GB",

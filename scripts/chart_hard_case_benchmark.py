@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import subprocess
 from pathlib import Path
 
 from app.services.calculation_service import analyze_charts
@@ -40,6 +41,7 @@ CASES = [
 
 
 def main():
+    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     rows = []
     for case_id, kind, question, evidence, ground_truth, expected_status, note in CASES:
         result = analyze_charts(question, [evidence])
@@ -58,7 +60,7 @@ def main():
                      "trend_correct":"PASS" if operation=="chart_series_comparison" else "N/A",
                      "completeness":expected_status,"citation_precision":"E1" if result and result.get("evidence_ids")==["E1"] else "FAIL",
                      "strict_status":"PASS" if passed and expected_status=="PASS" else expected_status,
-                     "limitation":note})
+                     "limitation":note, "code_commit": commit})
     path=ROOT/"reports/chart_hard_cases.csv"
     with path.open("w",encoding="utf-8-sig",newline="") as stream:
         writer=csv.DictWriter(stream,fieldnames=list(rows[0])); writer.writeheader(); writer.writerows(rows)

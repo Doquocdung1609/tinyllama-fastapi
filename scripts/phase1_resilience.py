@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import concurrent.futures
 import json
+import subprocess
 import time
 from pathlib import Path
 from unittest.mock import patch
@@ -36,6 +37,7 @@ def wait_document(document_id: str, timeout=120) -> dict:
 
 
 def main() -> None:
+    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     TMP.mkdir(parents=True, exist_ok=True)
     rows: list[tuple[str, str, str]] = []
     def record(case: str, passed: bool, evidence: str) -> None:
@@ -139,7 +141,7 @@ def main() -> None:
         ("Interrupted processing recovery", "PASS",
          "Atomic UPLOADED metadata is persisted; startup maps active stages to INTERRUPTED and duplicate upload can safely retry."),
     ])
-    lines = ["# Phase 1 failure resilience", "",
+    lines = ["# Phase 1 failure resilience", "", f"Tested commit: `{commit}`", "",
              "Command: `PYTHONPATH=. python scripts/phase1_resilience.py`", "",
              "| Case | Status | Actual evidence |", "|---|---:|---|"]
     lines += [f"| {case} | {status} | {evidence.replace('|', '/')[:1000]} |" for case, status, evidence in rows]
