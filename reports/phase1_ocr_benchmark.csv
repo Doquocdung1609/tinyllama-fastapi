@@ -1,0 +1,50 @@
+﻿test_id,source_pdf,ground_truth,actual_raw_ocr,cer_percent,wer_percent,critical_numeric_exact,unit_exact,table_count,header_exact_raw,metric_exact_raw,header_exact_normalized,metric_exact_normalized,normalization_events,table_statuses,row_alignment,ocr_language,runtime_ms,peak_ram_delta_mb,status,error,code_commit
+OCR-CLEAN-VI,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\clean_vi.pdf,TÀI LIỆU QUÉT Doanh thu năm 2024 là 250 triệu đồng. Lợi nhuận năm 2024 là 40 triệu đồng.,"TÀI LIỆU QUÉT
+Doanh thu năm 2024 là 250 triệu đồng.
+Lợi nhuận năm 2024 là 40 triệu đồng.",0.0,0.0,0/0,0/0,0,0/0,0/0,0/0,0/0,0,,,vie+eng,1632.4,196.5,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-TABLE-VI,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\table_vi.pdf,BÁO CÁO TÀI CHÍNH Chỉ tiêu          2023       2024       Đơn vị Doanh thu         100        180        tỷ đồng Lợi nhuận          12         16        tỷ đồng Tổng tài sản      300        360        tỷ đồng,"BÁO CÁO TÀI CHÍNH
+_Chỉ tiêu 2023.2024. Đơnvị
+_ Doanh thu 100 180 tỷ đồng
+_ Lợi nhuận 12 16 tỷ đồng
+| Téngtaisan 300 360 tỷ đồng",12.3,31.03,6/6,1/1,0,1/2,2/3,0/2,0/3,0,,,vie+eng,908.5,127.38,PARTIAL,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-TABLE-EN,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\table_en.pdf,FINANCIAL STATEMENT Metric             2023       2024       Unit Revenue            100        180        USD million Profit              12         16        USD million Total assets       300        360        USD million,"FINANCIAL STATEMENT
+| Metric 2023.2024 Unit
+| Revenue 100 180 USD million
+| Profit 12 16 USD million
+| Totalassets 300 360 USD million",7.87,31.82,6/6,1/1,1,2/2,2/3,0/2,2/3,0,OK,2,vie+eng,918.7,127.57,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-BILINGUAL,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\bilingual.pdf,BÁO CÁO / REPORT Chỉ tiêu / Metric  2023       2024       Đơn vị / Unit Doanh thu / Revenue 100       180        tỷ đồng Lợi nhuận / Profit  12        16         tỷ đồng,"BÁO CÁO / REPORT
+| Chỉ tiêu / Metric 2023 2024 Đơn vị / Unit
+Doanhthu/Revenue100 180 tỷ đồng
+Lợinhuận/Profit 12 16 tỷ đồng",7.09,33.33,3/4,1/1,0,0/0,0/0,0/0,0/0,0,,,vie+eng,892.2,127.51,PARTIAL,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-BORDERLESS,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\borderless.pdf,BÁO CÁO TÀI CHÍNH Chỉ tiêu          2023       2024       Đơn vị Doanh thu         100        180        tỷ đồng Lợi nhuận          12         16        tỷ đồng Tổng tài sản      300        360        tỷ đồng,"BÁO CÁO TÀI CHÍNH
+Chỉ tiêu 2023.2024. Đơnvị
+Doanh thu 100 180 tỷ đồng
+Lợi nhuận 12 16 tỷ đồng
+Téngtaisan 300 360 tỷ đồng",6.56,24.14,6/6,1/1,0,1/2,2/3,0/2,0/3,0,,,vie+eng,988.7,127.62,PARTIAL,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-ROTATED,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\rotated.pdf,BÁO CÁO TÀI CHÍNH Chỉ tiêu          2023       2024       Đơn vị Doanh thu         100        180        tỷ đồng Lợi nhuận          12         16        tỷ đồng Tổng tài sản      300        360        tỷ đồng,"BÁO CÁO TÀI CHÍNH
+Chỉ tiêu 2023.2024... Đơnvi
+Doanh thu 490 +180 ¥Y đồng
+Lợi nhuận 12 16 tỷ đồng
+Tổngtàisản - 300 360 tỷ đồng",12.3,34.48,5/6,1/1,0,1/2,2/3,0/2,0/3,0,,,vie+eng,901.0,127.3,PARTIAL,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-LOW-CONTRAST,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\low_contrast.pdf,BÁO CÁO TÀI CHÍNH Chỉ tiêu          2023       2024       Đơn vị Doanh thu         100        180        tỷ đồng Lợi nhuận          12         16        tỷ đồng Tổng tài sản      300        360        tỷ đồng,"BÁO CÁO TÀI CHÍNH
+_Chỉ tiêu 2023.2024. Đơnvị
+_ Doanh thu 100 180 tỷ đồng
+_ Lợi nhuận 12 16 tỷđồng
+| Téngtaisan 300 360 tỷ đồng",13.11,37.93,6/6,1/1,0,1/2,2/3,0/2,0/3,0,,,vie+eng,888.9,127.57,PARTIAL,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-MIXED,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\mixed_native_image.pdf,Audited financial appendix native text heading Chỉ tiêu          2023       2024       Đơn vị Doanh thu         100        180        tỷ đồng Lợi nhuận          12         16        tỷ đồng Tổng tài sản      300        360        tỷ đồng,"Audited financial appendix - native text heading
+Chi tiéu 2023 2024 #Donvi
+Doanh thu 100 180 tỷ đồng
+Lợi nhuận 12 16 tỷ đồng
+Téngtaisan 300 360 tỷ đồng",9.27,25.81,6/6,1/1,1,0/2,2/3,1/2,2/3,1,OK,2,vie+eng,884.0,118.78,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-K-VI-FINANCE,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\known_k_vi.pdf,BÁO CÁO TÀI CHÍNH QUÉT Chỉ tiêu 2023 2024 Đơn vị Doanh thu 100 180 tỷ đồng Lợi nhuận 12 16 tỷ đồng Tổng tài sản 300 360 tỷ đồng Ghi chú: số liệu tổng hợp dùng cho kiểm thử OCR cục bộ.,"BAO CAO TÀI CHÍNH QUET
+Chi tiêu 2023 2024 Don vi
+Doanh thu 100 180 ty dong
+Loi nhuan 12 16 ty dong
+Tong tai san 300 360 ty dong
+Ghi chu: số liu tong họp ding cho kiem thử OCR cuc bộ",15.85,58.14,6/6,0/1,1,0/2,1/3,2/2,3/3,7,OK,3,vie+eng,780.1,122.15,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+OCR-K-EN-FINANCE,C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\tmp\phase1_ocr\known_k_en.pdf,SCANNED FINANCIAL STATEMENT Metric 2023 2024 Unit Revenue 100 180 USD million Profit 12 16 USD million Total assets 300 360 USD million Note: synthetic figures for local OCR verification.,"SCANNED FINANCIAL STATEMENT
+Metric 2023 2024 Unit
+Revenue 100 180 USD million
+Profit 12 16 USD million
+Total assets 300 360 USD million
+Note: synthetic figures for local OCR vertication.",1.07,3.33,6/6,1/1,1,2/2,3/3,2/2,3/3,0,OK,3,vie+eng,723.7,122.66,PASS,,fe0462bbd777740138dd50488572dde2950d090a

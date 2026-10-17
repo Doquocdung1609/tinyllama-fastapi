@@ -1,0 +1,530 @@
+{
+  "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+  "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+  "page": 3,
+  "text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+  "extraction_mode": "pymupdf_native",
+  "page_types": [
+    "mixed",
+    "table",
+    "text"
+  ],
+  "tables": [
+    {
+      "modality": "table",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "table_id": "a148b440d6ae7d19cc8b78c462322fc5-p0003-t01",
+      "source_id": "table:p3:t1",
+      "caption": "Bảng 1. Cấu trúc mẫu theo nhóm thu nhập",
+      "caption_status": "VERIFIED_CAPTION",
+      "caption_provenance": {
+        "status": "VERIFIED_CAPTION",
+        "method": "spatial_caption_v1",
+        "position": "above",
+        "distance": 2.84,
+        "caption_bbox": [
+          49.05,
+          583.93,
+          213.79,
+          593.89
+        ]
+      },
+      "bbox": [
+        49.0,
+        596.73,
+        562.97,
+        681.35
+      ],
+      "extraction_method": "pdfplumber_native_table",
+      "columns": [
+        "Nhóm",
+        "Quốc gia",
+        "Số quốc gia",
+        "Số quan sát"
+      ],
+      "rows": [
+        [
+          "Thu nhập cao",
+          "Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ",
+          "5",
+          "115"
+        ],
+        [
+          "Trung bình cao",
+          "Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan",
+          "5",
+          "115"
+        ],
+        [
+          "Trung bình thấp",
+          "Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam",
+          "5",
+          "115"
+        ],
+        [
+          "Thu nhập thấp",
+          "Ethiopia; Nepal; Tanzania; Uganda",
+          "4",
+          "92"
+        ]
+      ],
+      "all_rows": [
+        [
+          "Nhóm",
+          "Quốc gia",
+          "Số quốc gia",
+          "Số quan sát"
+        ],
+        [
+          "Thu nhập cao",
+          "Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ",
+          "5",
+          "115"
+        ],
+        [
+          "Trung bình cao",
+          "Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan",
+          "5",
+          "115"
+        ],
+        [
+          "Trung bình thấp",
+          "Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam",
+          "5",
+          "115"
+        ],
+        [
+          "Thu nhập thấp",
+          "Ethiopia; Nepal; Tanzania; Uganda",
+          "4",
+          "92"
+        ]
+      ],
+      "markdown": "| Nhóm | Quốc gia | Số quốc gia | Số quan sát |\n| --- | --- | --- | --- |\n| Thu nhập cao | Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ | 5 | 115 |\n| Trung bình cao | Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan | 5 | 115 |\n| Trung bình thấp | Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam | 5 | 115 |\n| Thu nhập thấp | Ethiopia; Nepal; Tanzania; Uganda | 4 | 92 |",
+      "status": "OK",
+      "confidence": "HIGH",
+      "continuation_group": "table-family:1"
+    }
+  ],
+  "charts": [],
+  "figures": [],
+  "ocr": null,
+  "diagnostics": {
+    "width": 612.0,
+    "height": 792.0,
+    "rotation": 0,
+    "text_chars": 5138,
+    "usable_text_chars": 3313,
+    "text_blocks": 24,
+    "image_count": 0,
+    "drawing_count": 19,
+    "column_count": 1,
+    "table_count": 1,
+    "chart_count": 0,
+    "figure_count": 0,
+    "scanned": false,
+    "needs_ocr": false,
+    "ocr_status": "NOT_REQUIRED",
+    "ocr_language": null,
+    "ocr_average_confidence": null,
+    "uncertain_numeric_tokens": 0,
+    "extraction_quality": "HIGH",
+    "warnings": [],
+    "processing_ms": 322.1,
+    "document_extraction_ms": 4411.1
+  },
+  "chunks": [
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00018",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 18,
+      "text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb",
+      "original_text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+      "cleaned_text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "start": 0,
+      "end": 752,
+      "overlap": 0,
+      "token_estimate": 188,
+      "embedding_status": "ready",
+      "vector_id": "1585c261-aa83-5f84-b46f-63f948ad5523",
+      "modality": "text",
+      "source_id": "text:p3:chars0-752",
+      "bbox": null,
+      "extraction_method": "pymupdf_native",
+      "structured_data": null,
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 18,
+        "start": 0,
+        "end": 752,
+        "modality": "text",
+        "source_id": "text:p3:chars0-752",
+        "bbox": null,
+        "extraction_method": "pymupdf_native",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00019",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 19,
+      "text": "ràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI",
+      "original_text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+      "cleaned_text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "start": 632,
+      "end": 1360,
+      "overlap": 120,
+      "token_estimate": 182,
+      "embedding_status": "ready",
+      "vector_id": "fe774261-3c20-50c0-ab40-bf33005e9794",
+      "modality": "text",
+      "source_id": "text:p3:chars632-1360",
+      "bbox": null,
+      "extraction_method": "pymupdf_native",
+      "structured_data": null,
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 19,
+        "start": 632,
+        "end": 1360,
+        "modality": "text",
+        "source_id": "text:p3:chars632-1360",
+        "bbox": null,
+        "extraction_method": "pymupdf_native",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00020",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 20,
+      "text": "Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu",
+      "original_text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+      "cleaned_text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "start": 1240,
+      "end": 2022,
+      "overlap": 120,
+      "token_estimate": 195,
+      "embedding_status": "ready",
+      "vector_id": "0b088f44-e455-5853-83b3-cd6ce76f6ace",
+      "modality": "text",
+      "source_id": "text:p3:chars1240-2022",
+      "bbox": null,
+      "extraction_method": "pymupdf_native",
+      "structured_data": null,
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 20,
+        "start": 1240,
+        "end": 2022,
+        "modality": "text",
+        "source_id": "text:p3:chars1240-2022",
+        "bbox": null,
+        "extraction_method": "pymupdf_native",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00021",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 21,
+      "text": "xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.",
+      "original_text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+      "cleaned_text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "start": 1902,
+      "end": 2633,
+      "overlap": 120,
+      "token_estimate": 182,
+      "embedding_status": "ready",
+      "vector_id": "605fef1b-a61a-5837-bace-bfaa5d07e511",
+      "modality": "text",
+      "source_id": "text:p3:chars1902-2633",
+      "bbox": null,
+      "extraction_method": "pymupdf_native",
+      "structured_data": null,
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 21,
+        "start": 1902,
+        "end": 2633,
+        "modality": "text",
+        "source_id": "text:p3:chars1902-2633",
+        "bbox": null,
+        "extraction_method": "pymupdf_native",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00022",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 22,
+      "text": "ủa doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu",
+      "original_text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+      "cleaned_text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "start": 2513,
+      "end": 3207,
+      "overlap": 120,
+      "token_estimate": 173,
+      "embedding_status": "ready",
+      "vector_id": "042a3e4d-3092-5b40-865f-0685f6120cc7",
+      "modality": "text",
+      "source_id": "text:p3:chars2513-3207",
+      "bbox": null,
+      "extraction_method": "pymupdf_native",
+      "structured_data": null,
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 22,
+        "start": 2513,
+        "end": 3207,
+        "modality": "text",
+        "source_id": "text:p3:chars2513-3207",
+        "bbox": null,
+        "extraction_method": "pymupdf_native",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00023",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 23,
+      "text": "ỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92",
+      "original_text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+      "cleaned_text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "start": 3087,
+      "end": 3880,
+      "overlap": 120,
+      "token_estimate": 198,
+      "embedding_status": "ready",
+      "vector_id": "6a265361-39ca-551d-bf00-50ac02c0b20f",
+      "modality": "text",
+      "source_id": "text:p3:chars3087-3880",
+      "bbox": null,
+      "extraction_method": "pymupdf_native",
+      "structured_data": null,
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 23,
+        "start": 3087,
+        "end": 3880,
+        "modality": "text",
+        "source_id": "text:p3:chars3087-3880",
+        "bbox": null,
+        "extraction_method": "pymupdf_native",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00024",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 24,
+      "text": "esh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "original_text": "   Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\n   Bên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\n   Tổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\n   Từ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\n    Trình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\n   Độ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\n   Đô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\n   Tỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\n   Dữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\n\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\n\n            Nhóm                           Quốc gia                           Số quốc gia                          Số quan sát\n\n                                       Đức; Nhật Bản; Hàn Quốc; Vương quốc\n Thu nhập cao                                                                                5                                   115\n                                                  Anh; Hoa Kỳ\n\n                                                  Brazil; Trung Quốc; Malaysia; Mexico;\n Trung bình cao                                                                              5                                   115\n                                                        Thái Lan\n\n                                          Bangladesh; Ấn Độ; Indonesia; Philippines;\n Trung bình thấp                                                                              5                                   115\n                                                            Việt Nam\n\n Thu nhập thấp                                   Ethiopia; Nepal; Tanzania; Uganda                      4                                   92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\n\n\n\n\n\n                                                                Trang 3",
+      "cleaned_text": "Điểm đáng lưu ý là nhiều nghiên cứu PHH sử dụng thước đo trực tiếp hơn về quy định môi trường, thuế ô nhiễm hoặc mức\nđộ cưỡng chế, trong khi nghiên cứu này sử dụng CO₂ bình quân đầu người. Vì vậy, mối liên hệ dương giữa CO₂ và FDI chỉ có\nthể được mô tả là phù hợp với một số cơ chế của PHH, không phải bằng chứng trực tiếp rằng doanh nghiệp lựa chọn địa điểm vì\nquy định môi trường yếu. Đây là giới hạn đo lường quan trọng cần được giữ xuyên suốt phần kết quả và kết luận.\n2.5. Các điều kiện địa điểm khác của FDI\nBên cạnh môi trường, độ mở thương mại, đô thị hóa và cơ cấu năng lượng là các yếu tố địa điểm có cơ sở thực nghiệm rõ\nràng. Asiedu (2002) cho thấy mở cửa thương mại có liên hệ tích cực với FDI tại các nước đang phát triển. Azam và Haseeb\n(2021), trên nhóm BRICS, ghi nhận vai trò của cả năng lượng tái tạo, năng lượng không tái tạo và độ mở thương mại đối với\nFDI. Bhattacharya và cộng sự (2023), với 58 nền kinh tế đang phát triển, tìm thấy quan hệ bổ trợ giữa đô thị hóa và FDI. Những\nbằng chứng này là cơ sở để TRADE, URBAN và RENEW được xem là các biến nghiên cứu trọng tâm, trong khi tăng trưởng\nGDP, tiêu thụ năng lượng, đầu tư và lạm phát được dùng để kiểm soát điều kiện vĩ mô.\n3. KHOẢNG TRỐNG NGHIÊN CỨU VÀ GIẢ THUYẾT\nTổng quan cho thấy ba khoảng trống có liên quan trực tiếp tới nghiên cứu. Thứ nhất, tài liệu phong phú hơn ở chiều FDI\nđến môi trường, trong khi chiều CO₂ hoặc suy thoái môi trường đến FDI có quy mô nhỏ hơn. Thứ hai, các nghiên cứu trực tiếp\nvề môi trường đến FDI cho kết quả phụ thuộc mạnh vào thước đo môi trường và bối cảnh phát triển. Thứ ba, nhiều nghiên cứu\nsử dụng một hệ số chung cho toàn mẫu, trong khi bằng chứng theo ngành và theo nhóm phát triển cho thấy phản ứng của FDI\nđối với điều kiện môi trường có thể không đồng nhất.\nTừ PHH và các bằng chứng trái chiều, kỳ vọng đối với CO₂ được đặt theo hai phía. Nếu cơ chế chi phí tuân thủ và lợi thế\nsản xuất thâm dụng carbon chiếm ưu thế, hệ số CO₂ có thể dương. Nếu rủi ro carbon, chất lượng thể chế môi trường và yêu cầu\nchuỗi cung ứng xanh chiếm ưu thế, hệ số có thể âm.\nH1: Phát thải CO₂ bình quân đầu người có mối liên hệ có ý nghĩa thống kê với FDI/GDP.\nTrình độ phát triển làm thay đổi cơ cấu ngành, mức độ thực thi quy định, công nghệ và ưu tiên môi trường. Do đó, một hệ\nsố CO₂ chung có thể không đại diện cho mọi nhóm quốc gia.\nH2: Mối liên hệ giữa CO₂ và FDI/GDP khác nhau giữa các nhóm thu nhập.\nĐộ mở thương mại làm giảm chi phí tiếp cận thị trường và hỗ trợ chiến lược sản xuất định hướng xuất khẩu của doanh\nnghiệp đa quốc gia (Asiedu, 2002; Azam & Haseeb, 2021).\nH3: Độ mở thương mại có mối liên hệ dương với FDI/GDP.\nĐô thị hóa phản ánh sự tập trung của thị trường, lao động, hạ tầng và dịch vụ hỗ trợ doanh nghiệp, do đó có thể làm tăng\nsức hấp dẫn của quốc gia tiếp nhận (Bhattacharya et al., 2023).\nH4: Tỷ lệ đô thị hóa có mối liên hệ dương với FDI/GDP.\nTỷ trọng điện tái tạo có thể phản ánh hạ tầng năng lượng sạch và khả năng đáp ứng mục tiêu carbon của nhà đầu tư, nhưng\ntác động có thể thay đổi theo cơ cấu ngành và trình độ phát triển (Azam & Haseeb, 2021).\nH5: Tỷ trọng điện tái tạo có mối liên hệ dương với FDI/GDP.\n4. PHƯƠNG PHÁP NGHIÊN CỨU\n4.1. Dữ liệu, phạm vi và phân nhóm mẫu\nDữ liệu được lấy từ World Development Indicators của World Bank và tổ chức theo cấu trúc quốc gia-năm. Mẫu gồm 19\nquốc gia trong giai đoạn 2000-2022, tương ứng 437 quan sát. Mỗi quốc gia có đủ 23 năm dữ liệu, khóa quốc gia-năm là duy\nnhất và các biến sử dụng trong mô hình không có giá trị thiếu. Do đó, bộ dữ liệu là bảng cân bằng.\nBảng 1. Cấu trúc mẫu theo nhóm thu nhập\nNhóm Quốc gia Số quốc gia Số quan sát\nĐức; Nhật Bản; Hàn Quốc; Vương quốc\nThu nhập cao 5 115\nAnh; Hoa Kỳ\nBrazil; Trung Quốc; Malaysia; Mexico;\nTrung bình cao 5 115\nThái Lan\nBangladesh; Ấn Độ; Indonesia; Philippines;\nTrung bình thấp 5 115\nViệt Nam\nThu nhập thấp Ethiopia; Nepal; Tanzania; Uganda 4 92\nNguồn: Nhóm tác giả tổng hợp từ mã nhóm trong bộ dữ liệu nghiên cứu. Phân nhóm được giữ cố định trong toàn giai đoạn để ước lượng tính không đồng nhất. Do World\nBank cập nhật phân loại thu nhập hằng năm, các nhóm ở đây nên được hiểu là các tầng phân tích cố định của bộ dữ liệu, không phải phân loại World Bank cho từng năm\nquan sát.\nTrang 3",
+      "start": 3760,
+      "end": 4221,
+      "overlap": 120,
+      "token_estimate": 115,
+      "embedding_status": "ready",
+      "vector_id": "0b33a9ee-fbe6-52b3-a493-dc0f7d1ba5c2",
+      "modality": "text",
+      "source_id": "text:p3:chars3760-4221",
+      "bbox": null,
+      "extraction_method": "pymupdf_native",
+      "structured_data": null,
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 24,
+        "start": 3760,
+        "end": 4221,
+        "modality": "text",
+        "source_id": "text:p3:chars3760-4221",
+        "bbox": null,
+        "extraction_method": "pymupdf_native",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "chunk_id": "a148b440d6ae7d19cc8b78c462322fc5-00025",
+      "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+      "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+      "page": 3,
+      "chunk_index": 25,
+      "text": "TABLE a148b440d6ae7d19cc8b78c462322fc5-p0003-t01\nSource: table:p3:t1\nCaption: Bảng 1. Cấu trúc mẫu theo nhóm thu nhập\nRows: 1-4\n| Nhóm | Quốc gia | Số quốc gia | Số quan sát |\n| --- | --- | --- | --- |\n| Thu nhập cao | Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ | 5 | 115 |\n| Trung bình cao | Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan | 5 | 115 |\n| Trung bình thấp | Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam | 5 | 115 |\n| Thu nhập thấp | Ethiopia; Nepal; Tanzania; Uganda | 4 | 92 |",
+      "original_text": "TABLE a148b440d6ae7d19cc8b78c462322fc5-p0003-t01\nSource: table:p3:t1\nCaption: Bảng 1. Cấu trúc mẫu theo nhóm thu nhập\nRows: 1-4\n| Nhóm | Quốc gia | Số quốc gia | Số quan sát |\n| --- | --- | --- | --- |\n| Thu nhập cao | Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ | 5 | 115 |\n| Trung bình cao | Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan | 5 | 115 |\n| Trung bình thấp | Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam | 5 | 115 |\n| Thu nhập thấp | Ethiopia; Nepal; Tanzania; Uganda | 4 | 92 |",
+      "cleaned_text": "TABLE a148b440d6ae7d19cc8b78c462322fc5-p0003-t01\nSource: table:p3:t1\nCaption: Bảng 1. Cấu trúc mẫu theo nhóm thu nhập\nRows: 1-4\n| Nhóm | Quốc gia | Số quốc gia | Số quan sát |\n| --- | --- | --- | --- |\n| Thu nhập cao | Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ | 5 | 115 |\n| Trung bình cao | Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan | 5 | 115 |\n| Trung bình thấp | Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam | 5 | 115 |\n| Thu nhập thấp | Ethiopia; Nepal; Tanzania; Uganda | 4 | 92 |",
+      "start": 0,
+      "end": 503,
+      "overlap": 0,
+      "token_estimate": 126,
+      "embedding_status": "ready",
+      "vector_id": "3c38fe88-e634-55b9-9111-8837d0466225",
+      "modality": "table",
+      "source_id": "table:p3:t1",
+      "bbox": [
+        49.0,
+        596.73,
+        562.97,
+        681.35
+      ],
+      "extraction_method": "pdfplumber_native_table",
+      "structured_data": {
+        "modality": "table",
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "table_id": "a148b440d6ae7d19cc8b78c462322fc5-p0003-t01",
+        "source_id": "table:p3:t1",
+        "caption": "Bảng 1. Cấu trúc mẫu theo nhóm thu nhập",
+        "caption_status": "VERIFIED_CAPTION",
+        "caption_provenance": {
+          "status": "VERIFIED_CAPTION",
+          "method": "spatial_caption_v1",
+          "position": "above",
+          "distance": 2.84,
+          "caption_bbox": [
+            49.05,
+            583.93,
+            213.79,
+            593.89
+          ]
+        },
+        "bbox": [
+          49.0,
+          596.73,
+          562.97,
+          681.35
+        ],
+        "extraction_method": "pdfplumber_native_table",
+        "columns": [
+          "Nhóm",
+          "Quốc gia",
+          "Số quốc gia",
+          "Số quan sát"
+        ],
+        "rows": [
+          [
+            "Thu nhập cao",
+            "Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ",
+            "5",
+            "115"
+          ],
+          [
+            "Trung bình cao",
+            "Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan",
+            "5",
+            "115"
+          ],
+          [
+            "Trung bình thấp",
+            "Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam",
+            "5",
+            "115"
+          ],
+          [
+            "Thu nhập thấp",
+            "Ethiopia; Nepal; Tanzania; Uganda",
+            "4",
+            "92"
+          ]
+        ],
+        "all_rows": [
+          [
+            "Nhóm",
+            "Quốc gia",
+            "Số quốc gia",
+            "Số quan sát"
+          ],
+          [
+            "Thu nhập cao",
+            "Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ",
+            "5",
+            "115"
+          ],
+          [
+            "Trung bình cao",
+            "Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan",
+            "5",
+            "115"
+          ],
+          [
+            "Trung bình thấp",
+            "Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam",
+            "5",
+            "115"
+          ],
+          [
+            "Thu nhập thấp",
+            "Ethiopia; Nepal; Tanzania; Uganda",
+            "4",
+            "92"
+          ]
+        ],
+        "markdown": "| Nhóm | Quốc gia | Số quốc gia | Số quan sát |\n| --- | --- | --- | --- |\n| Thu nhập cao | Đức; Nhật Bản; Hàn Quốc; Vương quốc Anh; Hoa Kỳ | 5 | 115 |\n| Trung bình cao | Brazil; Trung Quốc; Malaysia; Mexico; Thái Lan | 5 | 115 |\n| Trung bình thấp | Bangladesh; Ấn Độ; Indonesia; Philippines; Việt Nam | 5 | 115 |\n| Thu nhập thấp | Ethiopia; Nepal; Tanzania; Uganda | 4 | 92 |",
+        "status": "OK",
+        "confidence": "HIGH",
+        "continuation_group": "table-family:1",
+        "row_range": [
+          1,
+          4
+        ]
+      },
+      "confidence": "HIGH",
+      "metadata": {
+        "document_id": "a148b440d6ae7d19cc8b78c462322fc5",
+        "filename": "CO2_FDI_FINAL_PUBLICATION_READY.pdf",
+        "page": 3,
+        "chunk_index": 25,
+        "start": 0,
+        "end": 503,
+        "modality": "table",
+        "source_id": "table:p3:t1",
+        "bbox": [
+          49.0,
+          596.73,
+          562.97,
+          681.35
+        ],
+        "extraction_method": "pdfplumber_native_table",
+        "confidence": "HIGH"
+      }
+    }
+  ]
+}

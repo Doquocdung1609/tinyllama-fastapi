@@ -1,0 +1,13 @@
+﻿test_id,concept,document_id,question,formula,expected_value,expected_unit,actual_value,actual_unit,citation_source_ids,latency_ms,status,failure_reason,code_commit
+FIN01,Revenue growth,8c592e276ebe6debb11484609836a0cc,Tính tăng trưởng doanh thu từ 2023 đến 2024,(new-old)/abs(old)*100,25.0,%,25.0,%,table:p1:t1;table:p1:t1,2203.3,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN02,Profit growth,8c592e276ebe6debb11484609836a0cc,Tính tăng trưởng lợi nhuận sau thuế từ 2023 đến 2024,(new-old)/abs(old)*100,50.0,%,50.0,%,table:p1:t1;table:p1:t1,2362.1,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN03,Gross margin,8c592e276ebe6debb11484609836a0cc,Tính biên lợi nhuận gộp năm 2024,numerator/denominator,40.0,%,40.0,%,table:p1:t1;table:p1:t1,2154.0,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN04,Net margin,8c592e276ebe6debb11484609836a0cc,Tính biên lợi nhuận ròng năm 2024,numerator/denominator,12.0,%,12.0,%,table:p1:t1;table:p1:t1,2188.8,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN05,Current ratio,8c592e276ebe6debb11484609836a0cc,Tính tỷ lệ thanh toán hiện hành năm 2024,numerator/denominator,2.0,lần,2.0,lần,table:p1:t1;table:p1:t1,2270.6,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN06,Quick ratio,8c592e276ebe6debb11484609836a0cc,Tính tỷ lệ thanh toán nhanh năm 2024,(current_assets-inventory)/current_liabilities,1.6,lần,1.6,lần,table:p1:t1;table:p1:t1,2126.4,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN07,Debt/assets,8c592e276ebe6debb11484609836a0cc,Tính tỷ lệ nợ trên tổng tài sản năm 2024,numerator/denominator,50.0,%,50.0,%,table:p1:t1;table:p1:t1,2198.7,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN08,ROA average assets,8c592e276ebe6debb11484609836a0cc,Tính ROA năm 2024,numerator/denominator,7.894736842105263,%,7.894736842105263,%,table:p1:t1;table:p1:t1,2226.7,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN09,ROE average equity,8c592e276ebe6debb11484609836a0cc,Tính ROE năm 2024,numerator/denominator,15.789473684210526,%,15.789473684210526,%,table:p1:t1;table:p1:t1,2191.3,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN10,Operating cash flow ratio,8c592e276ebe6debb11484609836a0cc,Tính tỷ lệ dòng tiền hoạt động năm 2024,numerator/denominator,0.64,lần,0.64,lần,table:p1:t1;table:p1:t1,2169.6,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN11,Free cash flow,8c592e276ebe6debb11484609836a0cc,Tính dòng tiền tự do năm 2024,operating_cash_flow-capex,160.0,triệu đồng,160.0,triệu đồng,table:p1:t1;table:p1:t1,2202.9,PASS,,fe0462bbd777740138dd50488572dde2950d090a
+FIN12,Absolute difference,8c592e276ebe6debb11484609836a0cc,Chênh lệch tuyệt đối doanh thu từ 2023 đến 2024,new-old,0.25,tỷ đồng,0.25,tỷ đồng,table:p1:t1;table:p1:t1,2309.7,PASS,,fe0462bbd777740138dd50488572dde2950d090a
