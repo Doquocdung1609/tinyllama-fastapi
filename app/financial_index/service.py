@@ -34,15 +34,22 @@ class OllamaVectors:
         if match is None:
             raise ValueError("Configured embedding model is not installed; no automatic model download")
         return {"model": name, "digest": match["digest"], "dimension": self.dimension,
-                "input_policy": "first-6000-characters;ollama-truncate=true"}
+                "input_policy": ("nomic-search_document/search_query-prefixes;"
+                                 "first-6000-content-characters;ollama-truncate=true")}
 
-    def embed(self, texts):
+    def _embed(self, texts):
         settings = get_settings()
         response = requests.post(settings.ollama_base_url + "/api/embed", json={
-            "model": settings.embedding_model, "input": [text[:6000] for text in texts],
+            "model": settings.embedding_model, "input": texts,
             "truncate": True, "keep_alive": "5m"}, timeout=300)
         response.raise_for_status()
         return response.json()["embeddings"]
+
+    def embed_documents(self, texts):
+        return self._embed(["search_document: " + text[:6000] for text in texts])
+
+    def embed_query(self, text):
+        return self._embed(["search_query: " + text])[0]
 
 
 def valid_vectors(vectors, count, dimension):
@@ -103,7 +110,7 @@ class FinancialIndex:
                 else:
                     missing[text_hash] = text
         if missing:
-            produced = self.provider.embed(list(missing.values()))
+            produced = self.provider.embed_documents(list(missing.values()))
             valid_vectors(produced, len(missing), identity["dimension"])
             with closing(self.lexical.connect()) as c, c:
                 for text_hash, vector in zip(missing, produced):
@@ -116,8 +123,9 @@ class FinancialIndex:
     def build(self, dataset: str, generation: str, *, batch_size: int = 8, fail_after_batches: int | None = None):
         if not 1 <= batch_size <= 32:
             raise ValueError("Use embedding batches of 1-32 chunks")
-        if not self._build_lock.acquire(blocking=False):
-            raise RuntimeError("BUILD_ALREADY_RUNNING")
+        # API builds are accepted as background work. Serialize them here so a
+        # second accepted request is not silently abandoned in BUILDING state.
+        self._build_lock.acquire()
         started = perf_counter()
         try:
             record = self.lexical.generation(dataset, generation)
@@ -277,8 +285,8 @@ class FinancialIndex:
                 before = perf_counter()
                 if self.provider.identity() != metadata["embedding"]:
                     raise ValueError("EMBEDDING_IDENTITY_MISMATCH")
-                vectors = self.provider.embed([query])
-                valid_vectors(vectors, 1, metadata["embedding"]["dimension"])
+                vector = self.provider.embed_query(query)
+                valid_vectors([vector], 1, metadata["embedding"]["dimension"])
                 embedding_ms = (perf_counter() - before) * 1000
                 from qdrant_client.http.models import Filter, FieldCondition, MatchValue, MatchAny
                 conditions = [FieldCondition(key="generation", match=MatchValue(value=record["generation"]))]
@@ -289,7 +297,7 @@ class FinancialIndex:
                         conditions.append(FieldCondition(key=key, match=MatchValue(value=value.upper() if isinstance(value, str) else value)))
                 before = perf_counter()
                 with self._dense_lock:
-                    points = self.dense.query_points(metadata["collection"], query=vectors[0],
+                    points = self.dense.query_points(metadata["collection"], query=vector,
                         query_filter=Filter(must=conditions), limit=min(record["n"], candidate_limit * 4), with_payload=True).points
                 for point in points:
                     if point.payload.get("generation") != record["generation"]:

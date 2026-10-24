@@ -2,6 +2,7 @@ from collections import Counter
 from contextlib import closing
 import json
 from pathlib import Path
+from threading import Thread
 
 import pytest
 from fastapi import FastAPI
@@ -23,10 +24,13 @@ class FakeVectors:
     def identity(self):
         return {"model": "fixture", "digest": self.digest, "dimension": 3, "input_policy": "fixture"}
 
-    def embed(self, texts):
+    def embed_documents(self, texts):
         self.calls += len(texts)
         return [[1., float(text.lower().count("revenue") + 1), float(text.lower().count("cash") + 1)]
                 if not self.bad_dimension else [1., 2.] for text in texts]
+
+    def embed_query(self, text):
+        return self.embed_documents([text])[0]
 
 
 def source(tmp_path, *, amendment=False):
@@ -61,6 +65,30 @@ def test_financial_aliases_preserve_sign_percent_period_and_display_distinctions
     assert "quarter:q3" in financial_tokens("Q3 2025")
     assert "form:10-k/a" in financial_tokens("10-K/A")
     assert "acc:0000123456-24-000001" in financial_tokens("0000123456-24-000001")
+
+
+def test_nomic_embedding_inputs_use_required_asymmetric_retrieval_prefixes(monkeypatch):
+    from app.financial_index import service
+
+    calls = []
+
+    class Response:
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return {"embeddings": [[1., 2., 3.] for _ in calls[-1]["input"]]}
+
+    def post(_url, json, timeout):
+        calls.append(json)
+        return Response()
+
+    monkeypatch.setattr(service.requests, "post", post)
+    provider = service.OllamaVectors()
+    assert provider.embed_documents(["row text"])[0] == [1., 2., 3.]
+    assert calls[-1]["input"] == ["search_document: row text"]
+    assert provider.embed_query("what is revenue?") == [1., 2., 3.]
+    assert calls[-1]["input"] == ["search_query: what is revenue?"]
 
 
 def test_restart_stable_results_idempotent_build_and_no_query_retokenization(tmp_path, monkeypatch):
@@ -120,6 +148,35 @@ def test_partial_build_preserves_active_and_can_resume_incrementally(tmp_path):
     assert engine.lexical.generation("test")["generation"] == first
     assert engine.search("test", "Revenue", "hybrid", generation=second)["results"]
     engine.close()
+
+
+def test_concurrent_accepted_build_waits_instead_of_stranding_generation(tmp_path):
+    engine, _, first, _, specs, _ = built(tmp_path)
+    second = engine.plan("test", specs, force_rebuild=True)
+    errors = []
+
+    engine._build_lock.acquire()
+    worker = Thread(target=lambda: _capture_build(engine, second, errors), daemon=True)
+    worker.start()
+    worker.join(timeout=.2)
+    queued = worker.is_alive()
+    engine._build_lock.release()
+    worker.join(timeout=10)
+
+    assert queued, "an accepted concurrent build must wait for the current build"
+    assert not worker.is_alive()
+    assert errors == []
+    assert engine.lexical.generation("test", second)["state"] == "READY"
+    assert engine.lexical.generation("test")["generation"] == second
+    assert engine.lexical.generation("test", first)["state"] == "READY"
+    engine.close()
+
+
+def _capture_build(engine, generation, errors):
+    try:
+        engine.build("test", generation)
+    except Exception as exc:  # surfaced through the test thread
+        errors.append(exc)
 
 
 def test_new_python_process_reads_persistent_lexical_results(tmp_path):

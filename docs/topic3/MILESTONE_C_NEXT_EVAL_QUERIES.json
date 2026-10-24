@@ -1,0 +1,197 @@
+{
+  "version": "milestone-c-independent-v1",
+  "status": "FROZEN_UNEVALUATED",
+  "frozen_before_any_ranking_change": true,
+  "legacy_development_set": "MILESTONE_C_QUERIES.json",
+  "corpus": {
+    "chunks": 822,
+    "content_membership_sha256": "e36ea2a734c22879fed01cd3ae65ee8dc13e4c53e46ff550b665386f5a525201",
+    "raw_sha256": {
+      "sec:0000320193:0000320193-26-000020": "d2fa42061d517dc6fd528f32a09197553f0d70214405f6fc09497829c95e8b8c",
+      "sec:0001318605:0001628280-26-003952": "78bd6ce48d15320a703cedfd0b4603999b69746d63abd013ed83923b59069ed4",
+      "sec:0001318605:0001104659-26-053166": "04085826be0cf868dab0db23a6529a62c089e1ad1b0b95188ccaa7acf8fa0888"
+    }
+  },
+  "annotation": {
+    "method": "Manual inspection of SEC source rows and paragraphs; exact chunk IDs and physical source locators were recorded before any proposed retrieval change.",
+    "llm_answers_used_as_ground_truth": false,
+    "unjudged_semantically_related_chunks": "Do not treat as nonrelevant until pooled judging is complete. Report both strict-qrel and pooled metrics."
+  },
+  "cases": [
+    {
+      "id": "dev_exact_aapl_rd",
+      "split": "development",
+      "categories": ["exact_financial_line_item", "filing_period_distinction"],
+      "query": "Apple research and development expense for the three and nine months ended June 27 2026",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q"},
+      "relevant_chunk_ids": ["fin_96654bc8a8f7d41f35a618e08bda3395"],
+      "expected_facts": ["11,729 million for three months", "34,035 million for nine months"],
+      "source_evidence": [{"row_label": "Research and development", "section": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited)", "row_index": 15, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}]
+    },
+    {
+      "id": "dev_paraphrase_aapl_buybacks",
+      "split": "development",
+      "categories": ["paraphrased_financial_question", "negative_value"],
+      "query": "How much cash did Apple spend buying back its own shares during the first nine months of fiscal 2026?",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q"},
+      "relevant_chunk_ids": ["fin_20f19f5bbc6544d982357a9ece8b9f7f"],
+      "expected_facts": ["repurchases of common stock", "(62,094) million"],
+      "source_evidence": [{"row_label": "Repurchases of common stock", "section": "CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (Unaudited)", "row_index": 32, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}]
+    },
+    {
+      "id": "dev_term_aapl_contract_liability",
+      "split": "development",
+      "categories": ["financial_terminology", "cross_section_retrieval"],
+      "query": "Find Apple's current contract liability balance and the note explaining total deferred revenue at June 27 2026",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q"},
+      "relevant_chunk_ids": ["fin_9f1dcb63750d37b855bbddc3e5f0312c", "fin_15708d4a236fafefd47e2760f2bd447f"],
+      "expected_facts": ["current deferred revenue 9,538 million", "total deferred revenue 14.9 billion"],
+      "source_evidence": [
+        {"row_label": "Deferred revenue", "section": "CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited)", "row_index": 24, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"},
+        {"row_label": null, "section": "Note 2 – Revenue", "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[2]/div[2]", "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}
+      ]
+    },
+    {
+      "id": "dev_table_aapl_iphone_period",
+      "split": "development",
+      "categories": ["table_context_question", "percentage_value", "filing_period_distinction"],
+      "query": "Compare Apple iPhone net sales for the three-month and nine-month periods ended June 27 2026, including the reported growth rate",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q"},
+      "relevant_chunk_ids": ["fin_093b2b72085206dbbed2ea7063cbb957"],
+      "expected_facts": ["54,252 million for three months", "196,515 million for nine months", "22% growth"],
+      "source_evidence": [{"row_label": "iPhone", "section": "Products and Services Performance", "row_index": 3, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}]
+    },
+    {
+      "id": "dev_cross_tsla_inventory",
+      "split": "development",
+      "categories": ["cross_section_retrieval", "financial_terminology"],
+      "query": "Retrieve Tesla's finished-goods inventory balance and the policy paragraph describing inventory write-downs for 2025",
+      "filters": {"ticker": "TSLA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_d604c0fee9ff28c0334f63cc0b557cf4", "fin_9a09c54b0817a3084f2d8b92e8a69307"],
+      "expected_facts": ["finished goods 4,849 million", "2025 write-downs 310 million"],
+      "source_evidence": [
+        {"row_label": "Finished goods (1)", "section": "Note 5 – Inventory", "row_index": 4, "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"},
+        {"row_label": null, "section": "Note 5 – Inventory", "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[20]/div[1]", "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"}
+      ]
+    },
+    {
+      "id": "dev_period_aapl_tax_provision",
+      "split": "development",
+      "categories": ["filing_period_distinction", "table_context_question"],
+      "query": "Apple provision for income taxes: distinguish the three-month from nine-month values ended June 27 2026",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q", "fiscal_period": "Q3"},
+      "relevant_chunk_ids": ["fin_36c2139a98e8ac9cf4be2676ad1aec8e"],
+      "expected_facts": ["6,478 million for three months", "21,638 million for nine months"],
+      "source_evidence": [{"row_label": "Provision for income taxes", "section": "Provision for Income Taxes", "row_index": 3, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}]
+    },
+    {
+      "id": "dev_amend_tsla_equity_plans",
+      "split": "development",
+      "categories": ["original_versus_amended_filing", "table_context_question"],
+      "query": "In Tesla's 2025 10-K amendment, locate the row for equity compensation plans not approved by security holders",
+      "filters": {"ticker": "TSLA", "form_type": "10-K/A"},
+      "relevant_chunk_ids": ["fin_8b61e0f9fd26504664fbf542cc48fe47"],
+      "expected_facts": ["row occurs in accession 0001104659-26-053166", "reported row value includes 150"],
+      "source_evidence": [{"row_label": "Equity compensation plans not approved by security holders", "section": null, "row_index": 10, "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm"}]
+    },
+    {
+      "id": "dev_negative_tsla_tax_benefit",
+      "split": "development",
+      "categories": ["negative_value", "financial_terminology", "filing_period_distinction"],
+      "query": "Which Tesla income-tax period reports a benefit rather than a provision, and what negative amount is stated?",
+      "filters": {"ticker": "TSLA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_9a58a72d4ed72510f1e9ea1d68d5e61b"],
+      "expected_facts": ["2023", "$(5.00) billion benefit"],
+      "source_evidence": [{"row_label": null, "section": "Note 12 – Income Taxes", "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[38]/div[1]", "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"}]
+    },
+    {
+      "id": "heldout_exact_tsla_lease_liabilities",
+      "split": "held_out",
+      "categories": ["exact_financial_line_item", "filing_period_distinction"],
+      "query": "Tesla total operating lease liabilities at December 31 2025 and 2024",
+      "filters": {"ticker": "TSLA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_c9af3afd4a2cb4d5ccb3718fac83c26c"],
+      "expected_facts": ["6,343 million in 2025", "5,410 million in 2024"],
+      "source_evidence": [{"row_label": "Total operating lease liabilities", "section": "Note 10 – Leases", "row_index": 7, "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"}]
+    },
+    {
+      "id": "heldout_paraphrase_tsla_cash_taxes",
+      "split": "held_out",
+      "categories": ["paraphrased_financial_question", "financial_terminology"],
+      "query": "How much income tax cash did Tesla actually pay after refunds in 2025?",
+      "filters": {"ticker": "TSLA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_a40b1b7f85025e590da3b1e084dfb81f"],
+      "expected_facts": ["1,232 million"],
+      "source_evidence": [{"row_label": "Total cash paid for income taxes, net of refunds", "section": "Note 12 – Income Taxes", "row_index": 10, "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"}]
+    },
+    {
+      "id": "heldout_term_aapl_tax_rates",
+      "split": "held_out",
+      "categories": ["financial_terminology", "percentage_value", "cross_section_retrieval"],
+      "query": "Compare Apple's effective tax rate with its statutory federal rate for the quarter ended June 27 2026",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q"},
+      "relevant_chunk_ids": ["fin_656e1ef57c1504e4a380b36596dc1716", "fin_5b2212c8858d46167a32144f4f5eb85f"],
+      "expected_facts": ["17.9% effective rate", "21% statutory federal rate"],
+      "source_evidence": [
+        {"row_label": "Effective tax rate", "section": "Provision for Income Taxes", "row_index": 4, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"},
+        {"row_label": "Statutory federal income tax rate", "section": "Provision for Income Taxes", "row_index": 5, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}
+      ]
+    },
+    {
+      "id": "heldout_table_tsla_energy_cost",
+      "split": "held_out",
+      "categories": ["table_context_question", "filing_period_distinction"],
+      "query": "Tesla energy generation and storage segment cost of revenues for 2025, 2024 and 2023",
+      "filters": {"ticker": "TSLA", "form_type": "10-K", "fiscal_year": 2025},
+      "relevant_chunk_ids": ["fin_c606cf83a6aa5bd766e10b83c2c406da"],
+      "expected_facts": ["8,969 million in 2025", "7,446 million in 2024", "4,894 million in 2023"],
+      "source_evidence": [{"row_label": "Cost of revenues (2)", "section": "Note 16 – Segment Reporting and Information about Geographic Areas", "row_index": 9, "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"}]
+    },
+    {
+      "id": "heldout_cross_aapl_rd_explanation",
+      "split": "held_out",
+      "categories": ["cross_section_retrieval", "paraphrased_financial_question"],
+      "query": "Retrieve both Apple's R&D expense row and management's explanation for why R&D increased in 2026",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q"},
+      "relevant_chunk_ids": ["fin_96654bc8a8f7d41f35a618e08bda3395", "fin_27e4788aa028bfd9fdb3ba0a70d528a1"],
+      "expected_facts": ["34,035 million for nine months", "higher infrastructure/AI and headcount costs"],
+      "source_evidence": [
+        {"row_label": "Research and development", "section": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited)", "row_index": 15, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"},
+        {"row_label": null, "section": "Operating Expenses", "structural_path": "/document[1]/html[1]/body[1]/div[223]", "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}
+      ]
+    },
+    {
+      "id": "heldout_period_aapl_inventory",
+      "split": "held_out",
+      "categories": ["filing_period_distinction", "cross_section_retrieval"],
+      "query": "Find both Apple inventory disclosures comparing June 27 2026 with September 27 2025",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q"},
+      "relevant_chunk_ids": ["fin_5795e4ebc3e57777cfbb176e86f43c7a", "fin_993df7394858f4e53f3937070b6d67a9"],
+      "expected_facts": ["11,092 million at June 27 2026", "5,718 million at September 27 2025"],
+      "source_evidence": [
+        {"row_label": "Total inventories", "section": "Inventories", "row_index": 4, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"},
+        {"row_label": "Inventories", "section": "CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited)", "row_index": 8, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}
+      ]
+    },
+    {
+      "id": "heldout_amend_tsla_director_comp",
+      "split": "held_out",
+      "categories": ["original_versus_amended_filing", "financial_terminology"],
+      "query": "Which Tesla filing contains the 2025 Director Compensation Table?",
+      "filters": {"ticker": "TSLA", "form_type": "10-K/A"},
+      "relevant_chunk_ids": ["fin_69291cfeb3d4453a3d0930b0088ff7cd"],
+      "expected_facts": ["10-K/A accession 0001104659-26-053166"],
+      "source_evidence": [{"row_label": null, "section": null, "structural_path": "/document[1]/html[1]/body[1]/p[480]", "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm"}]
+    },
+    {
+      "id": "heldout_negative_aapl_fx_translation",
+      "split": "held_out",
+      "categories": ["negative_value", "filing_period_distinction"],
+      "query": "Apple change in foreign currency translation net of tax: identify the negative three-month and nine-month 2026 amounts",
+      "filters": {"ticker": "AAPL", "form_type": "10-Q", "fiscal_year": 2026},
+      "relevant_chunk_ids": ["fin_279366ba6e2be385750e7721604e5c5f"],
+      "expected_facts": ["(24) million for three months", "(116) million for nine months"],
+      "source_evidence": [{"row_label": "Change in foreign currency translation, net of tax", "section": "CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (Unaudited)", "row_index": 5, "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"}]
+    }
+  ]
+}
