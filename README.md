@@ -176,12 +176,12 @@ Real media tests tạo PNG Tiny-SD, WAV SAPI và MP4 FFmpeg. Chúng không coi m
 
 ## Topic 3 — Financial Intelligence Search (development)
 
-The new **retrieval-only** \`POST /financial/search\` endpoint adds four methods on the existing indexed PDF chunks: \`bm25\` (real Okapi BM25), \`dense\` (Ollama embeddings + Qdrant), \`hybrid\` (RRF rank fusion), and \`hybrid_rerank\` (optional local CPU Cross-Encoder). It is separate from the original \`/rag/query\` learning assistant. Every search requires an explicit \`document_ids\` list and returns source/page/text, channel ranks, raw scores and timings.
+The new **retrieval-only** `POST /financial/search` endpoint adds four methods on the existing indexed PDF chunks: `bm25` (real Okapi BM25), `dense` (Ollama embeddings + Qdrant), `hybrid` (RRF rank fusion), and `hybrid_rerank` (optional local CPU Cross-Encoder). It is separate from the original `/rag/query` learning assistant. Every search requires an explicit `document_ids` list and returns source/page/text, channel ranks, raw scores and timings.
 
 Example request, using an **actual document ID returned by an uploaded report**:
 
-\`\`\`json
+```json
 {"query":"What changed in operating cash flow in 2024?","document_ids":["<YOUR_DOCUMENT_ID>"],"method":"hybrid","top_k":5}
-\`\`\`
+```
 
-Setup, benchmark command, metadata caveats and remaining work for a genuine finance deployment are documented in [Financial Search Topic 3](docs/FINANCIAL_SEARCH_TOPIC3.md). The optional Cross-Encoder is isolated in \`requirements-financial-rerank.txt\` and uses a locally installed model set by \`FINANCIAL_RERANKER_PATH\`; it is not available by default. **This is a development/research feature, not a production-ready financial data service.**
+Setup, benchmark command, metadata caveats and remaining work for a genuine finance deployment are documented in [Financial Search Topic 3](docs/FINANCIAL_SEARCH_TOPIC3.md). The optional Cross-Encoder is isolated in `requirements-financial-rerank.txt` and uses a locally installed model set by `FINANCIAL_RERANKER_PATH`; it is not available by default. **This is a development/research feature, not a production-ready financial data service.**
