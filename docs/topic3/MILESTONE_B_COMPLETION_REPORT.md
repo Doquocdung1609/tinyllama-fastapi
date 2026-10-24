@@ -8,10 +8,12 @@
 
 - Branch: `codex/topic3-milestone-b-sec-corpus`.
 - Base: `47dc39439eaa5e174c2d08113e9e6d759cf2fdd9`.
+- Milestone B implementation commit: `4f41bcf0364e7d5485b409d2143383cc99554f78`.
 - Milestone A actual implementation: `87360aafb024632824c12a2f0e66be6600ad573f`.
 - SHA được nêu trong work order `87360aa9b612...` không tồn tại local.
 - PR #1 remote head vẫn `76336f4...`, draft/open, chưa merge.
 - Milestone A commits sau PR head chỉ có local tại thời điểm audit.
+- `git ls-remote` xác nhận branch/PR remote vẫn ở `76336f4...`; branch Milestone B chưa push và chưa có PR.
 - `reports/streamlit.stderr.log` là thay đổi có sẵn của người dùng, không thuộc commit.
 
 ## Trạng thái chức năng
@@ -71,7 +73,7 @@ Fixture 1.205 bytes: 4 structured elements, 1 table, 13 cells, 4 rows, 8 chunks 
 
 ## Git delivery
 
-Implementation commit SHA sẽ được ghi ở report-sealing commit sau khi code và test evidence được commit. Không push, không tạo/merge/close PR nếu không có explicit remote authorization trong bước này.
+Implementation commit: `4f41bcf0364e7d5485b409d2143383cc99554f78`. Report này được cập nhật ở một report-sealing commit kế tiếp. Không push, không tạo/merge/close PR vì work order không yêu cầu thay đổi remote và PR #1 phải giữ nguyên.
 
 ## Vấn đề còn lại
 
