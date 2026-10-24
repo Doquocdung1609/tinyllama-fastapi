@@ -24,7 +24,8 @@ from scripts.topic3_bm25_scaling import make_corpus
 def statistics(values):
     ordered = sorted(values)
     return {"p50_ms": median(ordered), "p95_ms": ordered[max(0, (95 * len(ordered) + 99) // 100 - 1)],
-            "sequential_qps": len(ordered) * 1000 / max(sum(ordered), .001), "samples": len(ordered)}
+            "sequential_qps": len(ordered) * 1000 / sum(ordered) if sum(ordered) > 0 else None,
+            "samples": len(ordered)}
 
 
 def matched_baseline(query, chunks, limit=40):

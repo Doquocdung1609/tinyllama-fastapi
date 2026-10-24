@@ -185,3 +185,17 @@ Example request, using an **actual document ID returned by an uploaded report**:
 ```
 
 Setup, benchmark command, metadata caveats and remaining work for a genuine finance deployment are documented in [Financial Search Topic 3](docs/FINANCIAL_SEARCH_TOPIC3.md). The optional Cross-Encoder is isolated in `requirements-financial-rerank.txt` and uses a locally installed model set by `FINANCIAL_RERANKER_PATH`; it is not available by default. **This is a development/research feature, not a production-ready financial data service.**
+
+### Milestone C — tìm bằng chứng SEC đã lập chỉ mục
+
+Trang **Tìm kiếm tài chính** dùng `GET /financial-index/datasets` và `POST /financial-index/search` để tìm theo từ khóa, ngữ nghĩa hoặc kết hợp. Kết quả hiển thị bảng/đoạn nguồn, kỳ báo cáo, công bố SEC và trạng thái đối chiếu. Tờ khai trích xuất một phần luôn có cảnh báo. Đây là truy xuất bằng chứng, chưa phải hệ thống chứng nhận câu trả lời tài chính.
+
+Chỉ mục nằm riêng tại `FINANCIAL_INDEX_PATH` (mặc định `./financial_search_data`). Cần có corpus B đúng manifest và mô hình Ollama `nomic-embed-text` đã cài; ứng dụng không tự tải mô hình. Dừng tiến trình API đang sở hữu thư mục chỉ mục trước khi dùng CLI xây dựng chỉ mục:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/financial_index.py build --dataset sec-pilot-c --sources docs/topic3/MILESTONE_C_SOURCES.json
+.\.venv\Scripts\python.exe scripts/financial_index.py status
+# Sau khi CLI hoàn tất, khởi động API và Streamlit như bình thường.
+```
+
+Corpus và cơ sở dữ liệu cục bộ không nằm trong Git. [Báo cáo hoàn thành](docs/topic3/MILESTONE_C_COMPLETION_REPORT.md), [đo hiệu năng](docs/topic3/MILESTONE_C_BENCHMARK.md), [đánh giá truy xuất](docs/topic3/MILESTONE_C_RETRIEVAL_QUALITY.md) và [giới hạn](docs/topic3/MILESTONE_C_LIMITATIONS.md) ghi rõ phạm vi 822 đoạn và hướng dẫn tái lập.

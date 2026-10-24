@@ -329,7 +329,7 @@ elif page == "Tìm kiếm tài chính":
         with st.form("financial_evidence_search"):
             question = st.text_input("Nội dung cần tìm", placeholder="Apple total net sales June 2026")
             methods = {"Từ khóa": "bm25", "Ngữ nghĩa": "dense", "Kết hợp": "hybrid"}
-            mode = st.selectbox("Cách tìm", list(methods), index=2)
+            mode = st.selectbox("Cách tìm", list(methods), index=0)
             left, right = st.columns(2)
             ticker = left.text_input("Mã cổ phiếu (tùy chọn)", placeholder="AAPL")
             form = right.selectbox("Loại tờ khai", ["Tất cả", "10-K", "10-Q", "10-K/A", "10-Q/A"])
@@ -356,7 +356,7 @@ elif page == "Tìm kiếm tài chính":
                     if item["kind"] == "table" and cells:
                         labels = m.get("column_labels") or []
                         st.dataframe([{"Cột": labels[cell['column']] if cell['column'] < len(labels) and labels[cell['column']] else ('Nhãn hàng' if cell['column'] == 0 else 'Cột chưa xác định'),
-                                       "Nội dung nguồn": cell['text']} for cell in cells if cell['text']], hide_index=True, use_container_width=True)
+                                       "Nội dung nguồn": cell['text']} for cell in cells if cell['text']], hide_index=True, width="stretch")
                         if m.get("unit_context"):
                             st.caption("Đơn vị: " + m["unit_context"])
                         for footnote in m.get("footnotes", []):

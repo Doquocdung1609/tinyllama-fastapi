@@ -28,6 +28,8 @@ Query a named dataset and optional explicit generation, with company/filing/form
 
 Rollback selects a retained READY generation after integrity checks; no destructive replacement or cleanup of historical vectors. Source PARTIAL status remains visible. Building an index does not certify financial completeness or financial-answer accuracy.
 
+Query-time provenance reparses each returned filing against hash-pinned artifacts. This preserves source validation across restarts without an unchecked long-lived cache, but adds end-to-end latency. Benchmarks separate that cost from embedding and retrieval. API instances share one lazily opened local Qdrant client behind locks and close it at shutdown. Unsupported tokenizer/index versions fail closed rather than being served with current scoring semantics.
+
 ## Benchmark plan
 
 Compare original per-query lexical baseline, formula-matched persistent lexical, dense and RRF hybrid on identical source-grounded query sets and snapshots. Financial-token aliases are evaluated separately from the unchanged legacy tokenizer. Use full Apple 566 chunks plus a deterministic, query-independent bounded Tesla original/amendment subset if full dense indexing is too expensive. Record exact manifests and selected IDs. Separate build/embedding/incremental/restart/cold/warm/retrieval/provenance times, p50/p95, throughput, peak RSS and disk. Judge a small auditable query set against original source locators, not LLM answers. Report limited statistical power and NOT_MEASURED where appropriate; no performance claims precede measurements.
