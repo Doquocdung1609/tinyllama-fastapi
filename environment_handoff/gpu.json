@@ -1,0 +1,10 @@
+﻿[
+    {
+        "Name":  "NVIDIA GeForce GTX 1650 Ti",
+        "DriverVersion":  "32.0.15.5597"
+    },
+    {
+        "Name":  "Intel(R) UHD Graphics",
+        "DriverVersion":  "26.20.100.7985"
+    }
+]
