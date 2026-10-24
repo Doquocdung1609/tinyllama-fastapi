@@ -29,9 +29,11 @@ Date: 2026-10-24. Scope: local persistent SEC evidence retrieval pilot, not prod
 | C12 recovery | VERIFIED | Controlled interrupted build, close/new engine/resume, previous-active preservation, Qdrant failure and retained-generation rollback tests; power-loss NOT_TESTED |
 | C13 regression | VERIFIED | Final 182 PASS / 0 FAIL / 0 SKIP / 2 warnings, 32.07 s with real OCR/media enabled (earlier 47.40 s); final targeted 25 PASS |
 | C14 reproducibility | VERIFIED | Architecture, implementation, measured benchmark/quality, limitations, source/query manifests, CLI/API/UI verification commands |
-| C15 Draft PR | NOT_TESTED | Delivery pending; do not merge C |
+| C15 Draft PR | VERIFIED | [Draft PR #8](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/8), targeting `codex/topic3-milestone-b-sec-corpus`; C remains unmerged |
 
-Final recommendation is pending Draft PR delivery. The repository owner retains final acceptance authority. All limitations in MILESTONE_C_LIMITATIONS.md remain applicable; successful retrieval/source verification does not establish financial-answer correctness.
+**Recommendation: VERIFIED for the scoped local Milestone C implementation/pilot.** All C1–C15 gates have scoped evidence. This does not verify hybrid superiority, complete financial extraction, general financial answers, unavailable owner data or production readiness. No critical implementation blocker remains in the tested scope. The repository owner retains final acceptance authority. All limitations in MILESTONE_C_LIMITATIONS.md remain applicable; successful retrieval/source verification does not establish financial-answer correctness. Draft PR #8 must not be merged by this executor.
+
+Documentation/measurement commit: `3f828a2`. Subsequent acceptance bookkeeping changes only this report. The exact final delivery HEAD is available on Draft PR #8; this avoids a self-referential commit hash in the committed report.
 
 ## Reproduction
 
