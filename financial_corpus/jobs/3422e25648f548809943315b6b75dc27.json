@@ -1,0 +1,17 @@
+{
+  "completed": [
+    "sec:0000320193:0000320193-26-000020"
+  ],
+  "created_at": "2026-10-24T13:22:46.581616+00:00",
+  "dataset_id": "sec-live-smoke",
+  "dry_run": false,
+  "error": null,
+  "failed": {},
+  "filing_ids": [
+    "sec:0000320193:0000320193-26-000020"
+  ],
+  "job_id": "3422e25648f548809943315b6b75dc27",
+  "next_index": 1,
+  "status": "COMPLETED",
+  "updated_at": "2026-10-24T13:22:48.590786+00:00"
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "PR1-INTEGRATION-01",
+    "query": "đổi mới tài chính có mấy loại",
+    "document_ids": ["aedb60bc088e4242970a43da1e897bde"],
+    "relevant_chunk_ids": ["aedb60bc088e4242970a43da1e897bde-00578"]
+  }
+]
