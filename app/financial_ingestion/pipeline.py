@@ -372,3 +372,37 @@ class FinancialCorpusPipeline:
                 "original_disclosure": disclosure,
             },
         }
+
+    def extraction_quality(self, filing_id: str) -> dict:
+        """Read-only diagnostics; structural success never implies financial completeness."""
+        row = self.registry.get_filing(filing_id)
+        if row is None:
+            raise LookupError("Financial filing not found")
+        path = Path(row["structured_path"] or "")
+        if not path.is_file():
+            raise FileNotFoundError("Structured snapshot is unavailable")
+        filing = StructuredFiling.model_validate_json(path.read_text(encoding="utf-8"))
+        tables = [{
+            "table_id": table.table_id,
+            "source_location": table.source_location.model_dump(exclude_none=True),
+            "extraction_status": table.extraction_status,
+            "warnings": table.extraction_warnings,
+            "numeric_fact_count": sum(len(cell.numeric_facts) for cell in table.cells),
+            "context_present": {
+                "column_labels": any(table.columns),
+                "reporting_periods": bool(table.reporting_periods),
+                "unit_context": bool(table.unit_context),
+                "statement_title": bool(table.statement_title),
+            },
+        } for table in filing.tables]
+        return {
+            "filing_id": filing_id,
+            "document_status": row["status"],
+            "registered_raw_hash": row["raw_hash"],
+            "financial_completeness": "NOT_ASSESSED",
+            "assessment_reason": "Table context flags do not classify purpose or prove financial completeness; independent source review is required.",
+            "source_provenance_verification": "NOT_PERFORMED_BY_THIS_DIAGNOSTIC",
+            "table_count": len(tables),
+            "unresolved_table_count": sum(table["extraction_status"] != "OK" for table in tables),
+            "tables": tables,
+        }

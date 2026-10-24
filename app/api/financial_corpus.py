@@ -160,3 +160,15 @@ def source_evidence(chunk_id: str):
     if result["status"] != "VERIFIED":
         raise HTTPException(409, detail={"code": result["status"], "result": result})
     return result
+
+
+@router.get("/quality/{filing_id:path}")
+def extraction_quality(filing_id: str):
+    try:
+        return local_pipeline().extraction_quality(filing_id)
+    except LookupError as exc:
+        raise HTTPException(404, detail={"code": "DOCUMENT_NOT_FOUND"}) from exc
+    except FileNotFoundError as exc:
+        raise HTTPException(410, detail={"code": "STRUCTURED_SOURCE_UNAVAILABLE"}) from exc
+    except ValueError as exc:
+        raise HTTPException(409, detail={"code": "INVALID_STRUCTURED_SNAPSHOT"}) from exc
