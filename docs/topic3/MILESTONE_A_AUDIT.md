@@ -20,6 +20,7 @@ No merge or close action was taken on PR #1. Milestones B–G were not started.
 | Remote main at audit start | `ceaa8acfcfaea8056e45b859a0fc44d6381fb22a` | VERIFIED |
 | Local pre-audit main | `d59a9a9f2a75a9c7f37766916010f83b50608ca0` | VERIFIED |
 | Working branch | `codex/topic3-milestone-a-pr1` | VERIFIED |
+| Verified Milestone A implementation/report commit | `87360aa9b612899438832c41d19bc69adf839863` | VERIFIED |
 | PR #1 | Draft, open, not merged; 11 files, 12 commits | VERIFIED |
 | PR #1 head | `76336f4b36ee398a354de52abd74c6a4347eedb0` | VERIFIED |
 | PR #1 base | `main` at `ceaa8acfcfaea8056e45b859a0fc44d6381fb22a` | VERIFIED |

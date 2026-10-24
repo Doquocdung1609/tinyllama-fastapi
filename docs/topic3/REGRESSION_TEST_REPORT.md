@@ -7,7 +7,8 @@
 - Local Ollama embedding model: `nomic-embed-text`.
 - No Cross-Encoder checkpoint installed or downloaded.
 - Test target before audit fixes: PR #1 head `76336f4...`.
-- Test target after fixes: working branch `codex/topic3-milestone-a-pr1`.
+- Test target after fixes: `87360aa9b612899438832c41d19bc69adf839863`
+  on `codex/topic3-milestone-a-pr1`.
 
 ## Automated tests
 
