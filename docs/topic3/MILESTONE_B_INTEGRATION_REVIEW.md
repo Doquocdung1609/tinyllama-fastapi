@@ -31,3 +31,7 @@ Preflight found PR mergeable/CLEAN and no configured CI checks. `gh pr diff 7 --
 ## Recommendation
 
 The identified P1 input-validation defect is repaired on the existing PR branch. Integrate only after the final GitHub candidate tree, real source/provenance and compatibility gates pass. Accept only the agreed financial-corpus pilot with documented limitations. Exact tested candidate SHA, merge result and post-merge regression are recorded in `MILESTONE_B_PILOT_ACCEPTANCE.md`; Milestone C remains blocked until that record is complete.
+
+## Gate completion
+
+Candidate `22563b6cbdb5e1adeefbb72613118056c4fd8e04` and fetched integration `bde80f6d672f1744b54ec669300a86844139c54f` each passed the full suite: 169 PASS / 0 FAIL / 0 SKIP / 2 warnings. Their trees match. PR #7 is merged into its authorized B target; the pilot-acceptance record is complete. The initial stale GitHub synthetic merge ref was not treated as a tested candidate.
