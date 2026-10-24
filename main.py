@@ -12,6 +12,7 @@ from app.models import ChatRequest, NormalizeRequest, ScriptRequest, ScriptRespo
 from app.api.documents import router as documents_router
 from app.api.rag import router as rag_router
 from app.api.financial import router as financial_router
+from app.api.financial_index import router as financial_index_router
 from app.api.financial_corpus import router as financial_corpus_router, initialize_financial_registry
 from app.api.qdrant import router as qdrant_router
 from app.api.conversations import router as conversations_router
@@ -46,6 +47,7 @@ app.add_middleware(
 app.include_router(documents_router)
 app.include_router(rag_router)
 app.include_router(financial_router)
+app.include_router(financial_index_router)
 app.include_router(financial_corpus_router)
 app.include_router(qdrant_router)
 app.include_router(conversations_router)

@@ -31,6 +31,7 @@ class Settings:
     financial_registry_db: Path = Path(os.getenv(
         "FINANCIAL_REGISTRY_DB", str(ROOT_DIR / "financial_corpus" / "registry.sqlite3")))
     financial_staging_collection: str = os.getenv("FINANCIAL_STAGING_COLLECTION", "financial_staging")
+    financial_index_path: Path = Path(os.getenv("FINANCIAL_INDEX_PATH", str(ROOT_DIR / "financial_search_data")))
     sec_user_agent: str = os.getenv("SEC_USER_AGENT", "").strip()
     sec_requests_per_second: float = float(os.getenv("SEC_REQUESTS_PER_SECOND", "6"))
     sec_timeout_seconds: float = float(os.getenv("SEC_TIMEOUT_SECONDS", "30"))
