@@ -52,3 +52,8 @@ Chọn 6 text chunks và 6 table chunks trải đều theo thứ tự corpus. C�
 Tests offline cũng sửa raw giả lập để chứng minh INVALID_RAW_HASH; chunk IDs khác khi raw version khác. Chưa thử thay đổi nguồn SEC thật, không sửa dữ liệu chủ dự án. Locator bảng hiện row_index theo bảng rows đã tách header; chưa chứng minh semantic period trong chunk. VERIFIED provenance không đồng nghĩa bảng đủ ý nghĩa hoặc retrieval chính xác.
 
 Giới hạn migration: root mới dùng parser/chunker v2. Chưa force reprocess root v1 vì derived paths theo raw hash có thể thay thế structured/chunk files cùng raw; cần quản lý phiên bản derived artifacts trước khi chạy trên corpus lịch sử.
+
+
+## Final gap audit, 24/10/2026
+
+Recommendation VERIFIED_WITH_DOCUMENTED_LIMITATIONS for the agreed pilot scope; owner decides acceptance. See MILESTONE_B_FINAL_GAP_AUDIT.md for the four-table classification matrix, real Tesla amendment, historical preservation/interface distinction, reproducible Chat failure and 147/0/0/2 regression. No change to the conservative PARTIAL document status or prior evidence.

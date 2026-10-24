@@ -66,3 +66,8 @@ Giữ được text số âm và phần trăm theo từng ô (đối chiếu to�
 Sửa hẹp: đánh dấu bảng có dữ liệu nhưng columns trống là PARTIAL_EXTRACTION, lan ra chunk và trạng thái filing. Không tự đoán headers/units và không đánh dấu tài liệu READY khi thiếu bằng chứng. Chưa mở rộng thiết kế trích xuất đa tầng trong phiên này.
 
 Công cụ tái lập: `scripts/verify_milestone_b.py` và lệnh tại MILESTONE_B_LIVE_SEC_EVIDENCE.md. Kết quả chi tiết cục bộ `tmp/milestone_b_verification/audit-final.json` chứa example rows, table IDs, locators, units và kỳ còn thiếu.
+
+
+## Final gap audit, 24/10/2026
+
+Recommendation VERIFIED_WITH_DOCUMENTED_LIMITATIONS for the agreed pilot scope; owner decides acceptance. See MILESTONE_B_FINAL_GAP_AUDIT.md for the four-table classification matrix, real Tesla amendment, historical preservation/interface distinction, reproducible Chat failure and 147/0/0/2 regression. No change to the conservative PARTIAL document status or prior evidence.

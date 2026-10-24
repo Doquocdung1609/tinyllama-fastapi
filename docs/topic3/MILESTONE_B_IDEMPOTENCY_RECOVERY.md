@@ -41,3 +41,8 @@ Test mới `test_checkpoint_resumes_in_new_pipeline_and_registry_instances`: t�
 10-K/A có accession riêng, filing_id riêng và amendment_of trỏ base; raw snapshots cũ giữ nguyên khi source bytes đổi. Amendment thật và consistency staging/vector dưới lỗi thực tế NOT_TESTED.
 
 Chạy `python -m pytest tests/test_financial_ingestion.py -q` trong .venv; chi tiết lệnh full và số PASS tại báo cáo tổng. Không can thiệp corpus/Qdrant chủ dự án.
+
+
+## Final gap audit, 24/10/2026
+
+Recommendation VERIFIED_WITH_DOCUMENTED_LIMITATIONS for the agreed pilot scope; owner decides acceptance. See MILESTONE_B_FINAL_GAP_AUDIT.md for the four-table classification matrix, real Tesla amendment, historical preservation/interface distinction, reproducible Chat failure and 147/0/0/2 regression. No change to the conservative PARTIAL document status or prior evidence.

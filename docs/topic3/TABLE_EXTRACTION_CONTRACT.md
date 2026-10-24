@@ -27,3 +27,10 @@ Mỗi data row tạo một chunk với table ID, section, caption, columns, row 
 Trên `filing_sample.htm` (1.205 bytes): 1 bảng, 13 cells, 4 data rows, header 2023/2022, periods 2022/2023, units `USDm` và `millions`; 4 table chunks; không warning. Giá trị `1,250`, `(300)`, `12.5%` và footnote được giữ nguyên. Đây là fixture synthetic, không phải chứng nhận độ chính xác trên mọi SEC filing.
 
 Thời gian một lần đo trên máy hiện tại: parse 3,203 ms và chunk 1,689 ms. Con số này chỉ mô tả fixture nhỏ, không suy rộng thành throughput production.
+
+
+## Final-gap status semantics and quality diagnostic
+
+READY is pipeline completion without parser warnings, not a financial-completeness certificate. PARTIAL_EXTRACTION and manifest partial-document membership remain conservative across all table purposes. No automatic purpose classifier was added.
+
+GET /financial-corpus/quality/{filing_id} is a read-only diagnostic: existing document_status, per-table warnings/context flags and numeric-fact counts, plus financial_completeness=NOT_ASSESSED. It neither verifies provenance nor changes filing/manifest/derived artifacts. Financial scope must be supported by independent source review. Manual, raw-hash-bound findings for the four Apple tables are in MILESTONE_B_TABLE_GAP_CLASSIFICATION.json; full evidence is in MILESTONE_B_FINAL_GAP_AUDIT.md.

@@ -1,3 +1,5 @@
+> Current evidence update: live Apple and Tesla original/amendment tests now exist; see MILESTONE_B_FINAL_GAP_AUDIT.md. Earlier blocked-live statements below describe the pre-handoff stage. Active-only derived-revision lookup remains a documented limitation.
+
 # Kiến trúc Financial Corpus — Milestone B
 
 ## Phạm vi và trạng thái

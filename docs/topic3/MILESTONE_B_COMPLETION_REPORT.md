@@ -99,3 +99,8 @@ Kết luận mới: **PARTIAL**. Báo cáo trước được giữ như bằng c
 ### GitHub delivery
 
 Đã push contributor branch, Draft PR #7 OPEN: https://github.com/Doquocdung1609/tinyllama-fastapi/pull/7 . Target codex/topic3-milestone-b-sec-corpus; code ae7cc77, evidence report e8454f5. Local/remote đồng bộ; không merge. B14 VERIFIED, overall PARTIAL với giới hạn đã nêu.
+
+
+## Final gap audit, 24/10/2026
+
+Recommendation VERIFIED_WITH_DOCUMENTED_LIMITATIONS for the agreed pilot scope; owner decides acceptance. See MILESTONE_B_FINAL_GAP_AUDIT.md for the four-table classification matrix, real Tesla amendment, historical preservation/interface distinction, reproducible Chat failure and 147/0/0/2 regression. No change to the conservative PARTIAL document status or prior evidence.

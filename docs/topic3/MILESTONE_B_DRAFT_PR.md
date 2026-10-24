@@ -1,28 +1,39 @@
-SEC row chunks lost statement titles, multi-row reporting periods and units; reprocessing could reuse stale derived versions. Preserve source-backed table/row context, iXBRL sign/scale, footnote locators, nested/continuation links and versioned artifacts. Verify complete chunk context and keep final status consistent.
+Financial row chunks now retain statement titles, multi-row period headers, units/scale, source-backed continuation context and footnote locators. Inline text order and redirects are handled safely; derived snapshots are versioned and provenance verifies complete chunk context. The final gap audit adds a read-only quality diagnostic while preserving conservative document status. This audit does not change parser/chunker output or manifest schema and introduces no retrieval architecture.
 
-Evidence: real Apple 10-Q HTTP 200, raw hash matches handoff; 40 tables / 4,762 cells match independent DOM; 28 value/period/unit cases PASS; 566 chunks with stable IDs/manifest; 12 provenance samples VERIFIED. Real Ollama Chat, 768-dimensional embeddings and isolated Qdrant/RAG citations pass. Full regression with real OCR, Tiny-SD, SAPI and FFmpeg: **142 passed, 0 failed, 0 skipped, 2 warnings**.
+**Recommendation: VERIFIED_WITH_DOCUMENTED_LIMITATIONS, subject to owner acceptance.** Whole Apple filing remains PARTIAL_EXTRACTION; financial completeness is not inferred automatically.
 
-Acceptance **PARTIAL**: four layout tables retain ambiguous headers, amendments are fixture-only and historical lookup remains limited to active registry revision. Prior OCR failure with tessdata_fast resolved by choosing official tessdata_best and rerunning full regression; no failing tests removed or skipped. Environment differences documented.
-
-Depends on unmerged A/B work in codex/topic3-milestone-b-sec-corpus; target that branch to isolate collaborator fixes. Previous commits preserved. No Milestone C, no production data/collection deletion, no secrets/models/local data included. **Draft for owner review; do not merge automatically.**
-
-See docs/topic3/MILESTONE_B_INDEPENDENT_VERIFICATION.md for B1–B14 matrix and reproduction commands; COLLABORATOR_ENVIRONMENT_REPORT.md for environment differences.
-
-## Verification gates
-
-| Gate | Status | Bằng chứng / giới hạn |
+| Apple table (zero-based) | Classification | Effect |
 |---|---|---|
-| B1 Correct Git baseline | VERIFIED | Auth/fetch thành công; remote B de01cbd; hai commit cũ giữ nguyên, không divergence |
-| B2 Environment | VERIFIED | pip check, CUDA/OCR/FFmpeg, 3 model digest đúng; phiên bản khác owner được ghi rõ |
-| B3 Ollama LLM | VERIFIED | Direct generate có nghĩa, /chat sinh thật; không phải kiểm chứng mọi câu tài chính |
-| B4 Embedding | VERIFIED | Vector số 768 chiều, Qdrant dimension 768 |
-| B5 API/UI | VERIFIED | Health/docs/Streamlit health HTTP 200, startup READY; chưa kiểm mọi tương tác trình duyệt |
-| B6 Qdrant/RAG | VERIFIED | PDF fixture qua upload/embedding/Qdrant riêng, RAG đúng ý và file/trang 1 |
-| B7 Real SEC | VERIFIED | HTTP 200, hash gốc trùng owner; 10 checks metadata từ submissions/iXBRL |
-| B8 Financial tables | PARTIAL | 28 giá trị/kỳ/scale PASS; 4 layout tables thiếu header; cả filing PARTIAL_EXTRACTION |
-| B9 Provenance | VERIFIED | 12 mẫu + API VERIFIED; test raw/normalized/context tamper |
-| B10 Idempotency | VERIFIED | 1 filing, 1 raw, 566 IDs và manifest giữ nguyên |
-| B11 Recovery | VERIFIED | Checkpoint/retry/new registry instances; fixture kiểm soát, không kill production |
-| B12 Amendments | PARTIAL | Cả 10-K/A và 10-Q/A fixture đạt; live amendment NOT_TESTED |
-| B13 Regression | VERIFIED | 142 PASS, 0 FAIL, 0 SKIP, 2 warnings, bật real media và OCR |
-| B14 Draft PR | VERIFIED | Draft PR #7 OPEN, target nhánh B; đã push, không merge |
+| 5 | LEGAL_OR_ADMINISTRATIVE | State/tax ID/address; no financial amount lost; typed fields not normalized |
+| 9 | LEGAL_OR_ADMINISTRATIVE | Filer checkbox declarations; raw/cell labels preserved |
+| 11 | DOCUMENT_LAYOUT | Contents/navigation page references, not monetary values |
+| 38 | LEGAL_OR_ADMINISTRATIVE | Exhibit/certification index; headers recoverable in source |
+
+Manual decisions are pinned to exact raw hash and locators; no automatic reclassification or READY override. Existing Apple evidence remains: 40 tables / 4,762 cells, 28 financial-context cases, 566 stable chunks and 12 VERIFIED provenance samples.
+
+Real Tesla 10-K/A `0001104659-26-053166` is linked to original 10-K `0001628280-26-003952`. SEC explanatory note explicitly confirms the original. Separate raw snapshots/filings, original manifest preservation, two-document manifest and repeated ingestion checks pass. 10-Q/A remains fixture-only.
+
+Historical files and manifest paths persist; active registry/evidence API does not resolve arbitrary old derived chunk IDs. This is documented interface scope, with a controlled preservation/404 test. General-chat financial confusion is reproducible only with the application wrapper in the two-prompt comparison; no retrieval/source context is involved. No advisory-accuracy claim or prompt expansion.
+
+Regression: **147 passed, 0 failed, 0 skipped, 2 warnings**, with real OCR/Tiny-SD/SAPI/FFmpeg. Targeted: 31 passed / 1 warning. Live legacy Chat/RAG: 5 checks pass. Quality API, health/docs and Streamlit health return 200.
+
+See docs/topic3/MILESTONE_B_FINAL_GAP_AUDIT.md for exact source locators, hashes, failure analysis, commands and limits. Existing commits/evidence preserved. Target remains unmerged Milestone B branch to avoid mixing A/B into main. **Draft; do not merge. No Milestone C.**
+
+## Updated verification gates
+
+| Gate | Audit finding | Evidence / limitation |
+|---|---|---|
+| B1 Baseline/PR | VERIFIED | 058b33e verified before work; same contributor branch and Draft PR #7 |
+| B2 Environment | VERIFIED | Existing working environment, pip check clean; versions remain documented |
+| B3 LLM function | VERIFIED_WITH_DOCUMENTED_LIMITATIONS | Real generation works; ungrounded financial Chat error reproduced |
+| B4 Embeddings | VERIFIED | Real 768-dimensional embedding / isolated Qdrant compatibility retained |
+| B5 API/Streamlit | VERIFIED | HTTP 200 health/docs/UI; new read-only quality endpoint tested |
+| B6 Legacy RAG | VERIFIED | Real PDF→embedding→Qdrant→answer with correct file/page, 5 checks pass |
+| B7 SEC | VERIFIED | Fresh Apple HTTP 200/hash match; Tesla original+amendment HTTP 200 |
+| B8 Financial table context | VERIFIED_WITH_DOCUMENTED_LIMITATIONS | 28 source value/period/unit cases pass; 4 unresolved tables manually shown outside quantitative financial-table scope; whole filing remains PARTIAL |
+| B9 Provenance | VERIFIED | 12 Apple samples rechecked; raw/normalized/context tamper regression passes |
+| B10 Idempotency | VERIFIED | Apple 566 IDs/manifest unchanged; both Tesla filings reused without duplicates |
+| B11 Recovery | VERIFIED | Controlled checkpoint/retry/restart fixtures; not an OS power-loss test |
+| B12 Amendments | VERIFIED_WITH_DOCUMENTED_LIMITATIONS | Real Tesla 10-K/A pair with explanatory-note proof; 10-Q/A remains fixture-only |
+| B13 Regression | VERIFIED | 147 PASS / 0 FAIL / 0 SKIP / 2 warnings, real media/OCR enabled |
+| B14 Git delivery | VERIFIED | Existing Draft PR #7 updated on the same branch; no merge |

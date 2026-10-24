@@ -1,3 +1,5 @@
+> Latest gap-audit recommendation (24/10/2026): **VERIFIED_WITH_DOCUMENTED_LIMITATIONS**, subject to owner acceptance. See [Final Gap Audit](MILESTONE_B_FINAL_GAP_AUDIT.md). Four tables were reviewed manually; real Tesla 10-K/A was validated; regression is now 147 PASS / 0 FAIL / 0 SKIP / 2 warnings. Whole-document PARTIAL and historical-interface/general-chat limitations remain explicit. The report below is preserved historical evidence.
+
 # Milestone B — Finalization độc lập, 24/10/2026
 
 **Kiến nghị: PARTIAL.** Đã sửa ngữ cảnh bảng chính, chạy Chat/RAG, OCR và media thật, kiểm chứng SEC độc lập. Còn các layout tables chưa phân loại chắc chắn, live amendment chưa chạy và API historical revision chưa đầy đủ. Owner quyết định nghiệm thu; không triển khai C.
