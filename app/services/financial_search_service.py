@@ -209,7 +209,15 @@ def search(question: str, document_ids: list[str], method: str = "hybrid",
               if chunk.get("chunk_id") and chunk.get("document_id") in scope]
     if not corpus:
         raise ValueError("No indexed chunks found in the selected document scope")
-    eligible = [chunk for chunk in corpus if _matches_metadata(chunk, filters or {})]
+    requested_filters = filters or {}
+    unavailable_fields = sorted(
+        key for key, expected in requested_filters.items()
+        if expected is not None and not any(
+            _metadata(chunk).get(key, chunk.get(key)) is not None for chunk in corpus))
+    if unavailable_fields:
+        raise ValueError("Metadata unavailable for selected document scope: " +
+                         ",".join(unavailable_fields))
+    eligible = [chunk for chunk in corpus if _matches_metadata(chunk, requested_filters)]
     by_id = {chunk["chunk_id"]: chunk for chunk in eligible}
     snapshot = corpus_snapshot(eligible)
     corpus_prepare_ms = round((perf_counter() - corpus_started) * 1000, 2)
@@ -227,7 +235,7 @@ def search(question: str, document_ids: list[str], method: str = "hybrid",
         # Qdrant performs both document scoping and metadata prefiltering.  The
         # local ID guard remains a fail-closed consistency check.
         points = qdrant_service.search(vector, min(candidate_limit * 4, 400), scope,
-                                        _dense_prefilter_values(eligible, filters or {}) or None)
+                                        _dense_prefilter_values(eligible, requested_filters) or None)
         for point in points:
             cid = (point.payload or {}).get("chunk_id")
             if cid in by_id:

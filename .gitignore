@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .env
 qdrant_data/
+financial_corpus/
 uploads/
 processed/
 images/

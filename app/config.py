@@ -27,6 +27,15 @@ class Settings:
     image_dir: Path = Path(os.getenv("IMAGE_OUTPUT_DIR", str(ROOT_DIR / "images")))
     video_dir: Path = Path(os.getenv("VIDEO_OUTPUT_DIR", str(ROOT_DIR / "videos")))
     conversation_db: Path = Path(os.getenv("CONVERSATION_DB", str(ROOT_DIR / "data" / "conversations.sqlite3")))
+    financial_corpus_dir: Path = Path(os.getenv("FINANCIAL_CORPUS_DIR", str(ROOT_DIR / "financial_corpus")))
+    financial_registry_db: Path = Path(os.getenv(
+        "FINANCIAL_REGISTRY_DB", str(ROOT_DIR / "financial_corpus" / "registry.sqlite3")))
+    financial_staging_collection: str = os.getenv("FINANCIAL_STAGING_COLLECTION", "financial_staging")
+    sec_user_agent: str = os.getenv("SEC_USER_AGENT", "").strip()
+    sec_requests_per_second: float = float(os.getenv("SEC_REQUESTS_PER_SECOND", "6"))
+    sec_timeout_seconds: float = float(os.getenv("SEC_TIMEOUT_SECONDS", "30"))
+    sec_max_retries: int = int(os.getenv("SEC_MAX_RETRIES", "3"))
+    sec_max_filing_mb: int = int(os.getenv("SEC_MAX_FILING_MB", "100"))
     tesseract_cmd: str = os.getenv("TESSERACT_CMD", "").strip()
     tessdata_dir: Path = Path(os.getenv("TESSDATA_DIR", str(ROOT_DIR / "tools" / "tessdata")))
     image_model: str = os.getenv("IMAGE_MODEL", "./models/tiny-sd")
@@ -47,6 +56,9 @@ class Settings:
         for path in (self.upload_dir, self.processed_dir, self.audio_dir, self.image_dir, self.video_dir):
             path.mkdir(parents=True, exist_ok=True)
         self.conversation_db.parent.mkdir(parents=True, exist_ok=True)
+        for name in ("raw", "structured", "chunks", "manifests", "jobs", "staging_index"):
+            (self.financial_corpus_dir / name).mkdir(parents=True, exist_ok=True)
+        self.financial_registry_db.parent.mkdir(parents=True, exist_ok=True)
 
 
 @lru_cache(maxsize=1)

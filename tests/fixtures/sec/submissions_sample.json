@@ -1,0 +1,17 @@
+{
+  "cik": "0000123456",
+  "entityType": "operating",
+  "name": "Example Financial Corporation",
+  "tickers": ["EXM"],
+  "exchanges": ["NYSE"],
+  "filings": {
+    "recent": {
+      "accessionNumber": ["0000123456-24-000002", "0000123456-24-000001", "0000123456-24-000003"],
+      "filingDate": ["2024-03-15", "2024-03-01", "2024-05-01"],
+      "reportDate": ["2023-12-31", "2023-12-31", "2024-03-31"],
+      "form": ["10-K/A", "10-K", "8-K"],
+      "primaryDocument": ["example-20231231x10ka.htm", "example-20231231x10k.htm", "example-8k.htm"]
+    },
+    "files": []
+  }
+}

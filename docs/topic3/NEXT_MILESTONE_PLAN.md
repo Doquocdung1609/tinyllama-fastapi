@@ -1,76 +1,39 @@
-# Topic 3 — Exact proposal for Milestone B
+# Đề xuất Milestone C — chưa được ủy quyền
 
-Milestone B must build the reproducible financial corpus and metadata layer. It
-must not prematurely add reranking, multi-agent QA, or tune retrieval on the
-future holdout.
+Milestone B dừng ở normalized chunks + staging index. Không có hạng mục dưới đây được triển khai trong branch hiện tại.
 
-## Proposed scope
+## Điều kiện vào Milestone C
 
-1. Define a filing identity model:
-   - issuer legal name and ticker,
-   - CIK,
-   - form type (`10-K`, `10-Q`, amendment),
-   - fiscal year and fiscal period,
-   - filed/accepted timestamps,
-   - accession number,
-   - canonical SEC source URL,
-   - raw-byte SHA-256, normalized-content SHA-256 and pipeline version.
-2. Implement a local SEC EDGAR client:
-   - required descriptive User-Agent from configuration,
-   - bounded request rate and retry/backoff,
-   - conditional/idempotent downloads,
-   - acquisition log with status, source URL, timestamp and error,
-   - no paid API and no automated large model download.
-3. Preserve immutable raw source artifacts and a versioned manifest.
-4. Parse a deliberately small English pilot corpus of real 10-K/10-Q filings.
-5. Link every text/table chunk to filing identity and source location available
-   from HTML/XBRL/PDF; never invent page/bbox values when absent.
-6. Detect exact duplicates, amendments, and revised filings without merging
-   materially different versions.
-7. Add idempotent resume/restart behavior and dry-run deletion/repair reports.
-8. Produce corpus statistics and error logs, but no retrieval winner claim.
+1. Cấu hình `SEC_USER_AGENT` với tên ứng dụng và contact email thật.
+2. Chạy bounded live smoke (1 filing), xác minh accession, hashes, table và evidence.
+3. Nếu smoke đạt, freeze một pilot manifest; nếu không, sửa B và tạo snapshot mới.
+4. Chốt schema dataset membership và migration/rollback plan trước Qdrant.
+5. Có explicit authorization của người dùng.
 
-## Suggested pilot design
+## Phạm vi đề xuất
 
-- Select several issuers from different sectors and at least two periods per
-  issuer so metadata filters and cross-period questions are possible.
-- Include 10-K and 10-Q, plus at least one amendment if legally/reliably
-  obtainable.
-- Freeze a development snapshot manifest before Milestone C.
-- Reserve different issuers/filings for the later holdout; do not inspect their
-  questions while tuning.
+- Persistent lexical index đồng bộ `index_generation` với financial vector namespace.
+- Controlled Qdrant staging collection riêng; không dùng/xóa `knowledgebase`.
+- BM25-only, dense-only, RRF và optional local reranker trên cùng snapshot.
+- Metadata prefilter theo CIK/form/fiscal period trước candidate generation.
+- Table-aware indexing, stable result IDs và full search provenance.
+- Transaction/outbox hoặc generation switch để tránh lexical/vector lệch phiên bản.
+- Indexing time/size, query P50/P95, throughput và resource measurements.
+- Rollback và orphan-generation cleanup ở chế độ dry-run trước.
 
-The exact issuer list and acquisition dates should be recorded at execution
-time because EDGAR availability is time-dependent.
+## Không thuộc Milestone C ban đầu
 
-## Automated tests required
+- Không tạo benchmark winner claim trước independent benchmark (Milestone D).
+- Không bật reranker mặc định khi chưa đo lợi ích/chi phí.
+- Không thêm multi-agent QA, model lớn, cloud trả phí hoặc UI phức tạp.
+- Không di chuyển/xóa 1.947 vectors production.
 
-- SEC request headers, throttling, retries and backoff using a local fake server.
-- Accession/CIK/form/period parsing from saved real response fixtures.
-- Raw and normalized hash stability.
-- Same file, renamed file, metadata-only PDF change and genuine revision.
-- Interrupted download and interrupted parse recovery.
-- Idempotent rerun producing no duplicate document/chunk/vector identities.
-- Provenance round trip from result chunk to raw source URL/location.
-- Malformed filing, missing table, unavailable source and partial parse logging.
+## Rủi ro cần giải quyết
 
-## Deliverables proposed
+- Corpus version membership và amendment query policy.
+- Exact synchronization giữa SQLite manifest, lexical generation và vector generation.
+- Partial extraction visibility trong retrieval.
+- Backfill metadata cho tài liệu cũ và zero cross-scope leakage.
+- Windows 8 GB RAM/4 GB VRAM resource ceiling.
 
-- `docs/topic3/DATASET_AND_PROVENANCE.md`
-- Versioned corpus manifest schema and example generated manifest.
-- SEC acquisition/ingestion modules with configuration and tests.
-- Corpus build report with actual counts, bytes, timings, failures and hashes.
-- Development/holdout partition manifest without answer labels in runtime code.
-
-## Milestone B exit gates
-
-- Every indexed filing has a stable accession-based identity and raw hash.
-- Re-running ingestion is idempotent.
-- Every chunk can be traced to a filing and source location.
-- Metadata fields required by retrieval filters are present and validated.
-- Download behavior complies with configured SEC fair-access controls.
-- Failures are recoverable and reported without silent data loss.
-- No production data is destructively migrated without a reviewed dry run.
-
-Milestone C should start only after these gates pass and the corpus snapshot is
-frozen. Explicit user authorization is required before beginning Milestone B.
+Milestone C chỉ bắt đầu sau khi Milestone B live gate được xử lý hoặc blocker được người dùng chấp nhận rõ ràng.
