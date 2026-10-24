@@ -1,11 +1,9 @@
-# Nội dung Draft PR đã chuẩn bị — chưa gửi GitHub
+SEC row chunks lost statement titles, multi-row reporting periods and units; reprocessing could reuse stale derived versions. Preserve source-backed table/row context, iXBRL sign/scale, footnote locators, nested/continuation links and versioned artifacts. Verify complete chunk context and keep final status consistent.
 
-Target đề xuất: `codex/topic3-milestone-b-sec-corpus` sau khi xác minh remote và người đóng góp. Branch nguồn: `codex/topic3-milestone-b-independent-verification-20261024`.
+Evidence: real Apple 10-Q HTTP 200, raw hash matches handoff; 40 tables / 4,762 cells match independent DOM; 28 value/period/unit cases PASS; 566 chunks with stable IDs/manifest; 12 provenance samples VERIFIED. Real Ollama Chat, 768-dimensional embeddings and isolated Qdrant/RAG citations pass. Full regression with real OCR, Tiny-SD, SAPI and FFmpeg: **142 passed, 0 failed, 0 skipped, 2 warnings**.
 
-Title: fix(sec): preserve source text order and report incomplete financial tables
+Acceptance **PARTIAL**: four layout tables retain ambiguous headers, amendments are fixture-only and historical lookup remains limited to active registry revision. Prior OCR failure with tessdata_fast resolved by choosing official tessdata_best and rerunning full regression; no failing tests removed or skipped. Environment differences documented.
 
-HTML có inline tags có thể bị đảo thứ tự nhãn/số âm; redirect ngoài SEC được kiểm sau khi request đã xảy ra. Bản sửa giữ thứ tự DOM, kiểm đích HTTPS trước từng redirect và giới hạn redirect hops. Bảng có nội dung nhưng headers trống được đánh dấu PARTIAL_EXTRACTION thay vì OK. Parser/chunker nâng v2; dùng corpus kiểm tra riêng.
+Depends on unmerged A/B work in codex/topic3-milestone-b-sec-corpus; target that branch to isolate collaborator fixes. Previous commits preserved. No Milestone C, no production data/collection deletion, no secrets/models/local data included. **Draft for owner review; do not merge automatically.**
 
-Bằng chứng: một Apple 10-Q tải trực tiếp, HTTP 200, raw hash khớp bàn giao, 40 bảng/4.762 cells đối chiếu độc lập, 12 provenance samples VERIFIED và idempotency 620 IDs. 123 tests passed, 4 skipped, 1 warning; compileall và pip check đạt.
-
-Nghiệm thu PARTIAL vì semantic headers/periods/scale/footnotes chưa đủ và real model/OCR/media/amendment chưa được kiểm. Không triển khai Milestone C. Phụ thuộc Milestone A/B chưa merge trong baseline; không merge vào main hoặc gộp phạm vi ngoài ý muốn. Không merge PR này tự động.
+See docs/topic3/MILESTONE_B_INDEPENDENT_VERIFICATION.md for B1–B14 matrix and reproduction commands; COLLABORATOR_ENVIRONMENT_REPORT.md for environment differences.

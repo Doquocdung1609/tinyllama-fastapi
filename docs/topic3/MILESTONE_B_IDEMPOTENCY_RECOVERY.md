@@ -1,3 +1,18 @@
+# Idempotency/recovery/amendments — v5
+
+Dataset collaborator-v5-final. Trước/sau ingest_one: **1 filing → 1; 1 raw → 1; 566 chunks → 566; 566 IDs giữ nguyên**. Snapshot v1-84fb27e8d817077c và manifest `f192ac227f38c9fb18f707b8ecc2ba87546db81beae7c33a1a24b78959b32bd0` giữ nguyên. Không cleanup để giả lập thành công; reuse phải khớp raw/parser/chunker.
+
+Version upgrade test giữ byte-for-byte raw/structured/chunks cũ, tạo derived paths/IDs/manifests mới. Final status thống nhất registry/structured/chunks.
+
+Controlled fixture recovery: stop_after checkpoint, retry lỗi mạng một lần, recover_interrupted, registry/pipeline instance mới từ SQLite. Chỉ tải filing chưa xong, giữ raw và IDs đã hoàn tất. Không kill production hoặc tuyên bố thử mất điện.
+
+Amendments fixtures cho **10-K/A và 10-Q/A** đều có accession/filing riêng, amendment_of đúng, không overwrite original. Live amendment NOT_TESTED. Financial staging chỉ metadata/chunks JSON; 566 SEC chunks không có nghĩa 566 dense vectors. Real RAG vectors thuộc PDF fixture collection riêng.
+
+
+---
+
+# Bằng chứng lịch sử của lượt trước (không thay thế kết quả mới)
+
 # Idempotency, recovery và amendments
 
 ## Live corpus, lặp không phá dữ liệu

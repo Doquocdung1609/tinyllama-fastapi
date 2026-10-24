@@ -1,3 +1,31 @@
+# Provenance v5
+
+Dataset collaborator-v5-final, snapshot v1-84fb27e8d817077c. Raw `d2fa42061d517dc6fd528f32a09197553f0d70214405f6fc09497829c95e8b8c`, normalized `94d101e71b2dd31d69f324a20a49459c3f733070041736950ffc40e6c3460e7e`, manifest `f192ac227f38c9fb18f707b8ecc2ba87546db81beae7c33a1a24b78959b32bd0`.
+
+12 samples VERIFIED bằng reparse raw + normalized hash + physical locator + dựng lại toàn chunk/context. API process v5 cũng VERIFIED. Test sửa reporting_periods mà giữ row hash trả INVALID_CHUNK_CONTEXT; raw tamper trả INVALID_RAW_HASH.
+
+| Kind | Chunk ID | Path / physical row |
+|---|---|---|
+| text | `fin_a48e56e2e90c8e8a8b3b13ee6e5ab0ae` | `/document[1]/html[1]/body[1]/div[1]` / None |
+| text | `fin_0b8c20eae7017ad7d70f095be5da203f` | `/document[1]/html[1]/body[1]/div[67]` / None |
+| text | `fin_2dd505d936e51b637cbce9bc762148bd` | `/document[1]/html[1]/body[1]/div[117]/div[1]/div[1]` / None |
+| text | `fin_148ad37d08572ecc2fc5c4531fa98dd1` | `/document[1]/html[1]/body[1]/div[146]` / None |
+| text | `fin_8c1a17956e8d9387e0f20c899c0f8110` | `/document[1]/html[1]/body[1]/div[231]` / None |
+| text | `fin_455275ec484595ef8352b11ae1b856dd` | `/document[1]/html[1]/body[1]/div[290]` / None |
+| table | `fin_0da7badf4aa29e6690f0fe2f62a13eee` | `/document[1]/html[1]/body[1]/div[23]/table[1]` / 1 |
+| table | `fin_8f63f688b4a89a3421c0cbd42c638f32` | `/document[1]/html[1]/body[1]/div[71]/table[1]` / 9 |
+| table | `fin_20f31d048518d2677daffa256d0f4e68` | `/document[1]/html[1]/body[1]/div[89]/table[1]` / 12 |
+| table | `fin_819085550a75a8911e87a51e6c77e3c9` | `/document[1]/html[1]/body[1]/ix:continuation[2]/ix:nonnumeric[1]/div[2]/table[1]` / 6 |
+| table | `fin_0205608666e7fc5b4ba936a105302e83` | `/document[1]/html[1]/body[1]/ix:continuation[6]/ix:nonnumeric[2]/div[2]/table[1]` / 2 |
+| table | `fin_168c157de7fce84962b661fcb566902e` | `/document[1]/html[1]/body[1]/ix:nonnumeric[3]/ix:continuation[1]/div[3]/table[1]` / 12 |
+
+Chunk identity có raw/parser/chunker version. v5 row_index là hàng vật lý source grid. Titles/footnotes giữ source paths. Derived artifacts và manifests khác version không overwrite. Registry hiện chỉ tra active revision; historical files còn nhưng API chưa dispatch parser lịch sử hoặc tra mọi old chunk. Không gán VERIFIED mới cho snapshot cũ chưa replay bằng parser tương ứng. Đây không phải retrieval relevance evaluation.
+
+
+---
+
+# Bằng chứng lịch sử của lượt trước (không thay thế kết quả mới)
+
 # Audit provenance — bằng chứng mẫu độc lập
 
 Dataset `independent-20261024-final`, accession `0000320193-26-000020`, snapshot `v1-4fdd48e73cfb3930`.

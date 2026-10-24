@@ -89,3 +89,8 @@ STOP: Không bắt đầu Milestone C trong thay đổi này.
 ## Cập nhật độc lập 24/10/2026
 
 Kết luận mới: **PARTIAL**. Báo cáo trước được giữ như bằng chứng lịch sử. Live SEC HTTP 200, 620 chunks; raw hash khớp owner, normalized hash thay đổi theo parser v2. Full suite 123 PASS / 0 FAIL / 4 SKIP / 1 warning. Bảng quan trọng giữ số nhưng thiếu tiêu đề/kỳ sau chunking; đã gắn PARTIAL_EXTRACTION. GitHub chưa xác thực nên chưa push/PR. Xem [báo cáo độc lập](MILESTONE_B_INDEPENDENT_VERIFICATION.md) và các báo cáo evidence kèm theo. Không xem kết quả lịch sử là đã được xác minh lại toàn bộ.
+
+
+## Finalization 24/10/2026 — code ae7cc77
+
+142 PASS / 0 FAIL / 0 SKIP / 2 warnings khi bật real media và OCR best. Chat/embedding/Qdrant/RAG thật hoạt động. Apple v5: 566 chunks, raw hash khớp owner, 28 value/period/unit cases PASS. Còn 4 layout tables ambiguity; whole filing PARTIAL_EXTRACTION. Kiến nghị PARTIAL; báo cáo độc lập mới nằm đầu MILESTONE_B_INDEPENDENT_VERIFICATION.md. Không triển khai C hoặc merge.

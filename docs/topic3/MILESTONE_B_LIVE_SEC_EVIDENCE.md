@@ -1,3 +1,32 @@
+# Live SEC — v5 finalization 24/10/2026
+
+Code `ae7cc77dc21883519c2be11843f8016c635c8315`; source https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm.
+
+| Field | Đo độc lập |
+|---|---|
+| CIK / ticker / form | 0000320193 / AAPL / 10-Q |
+| Accession | 0000320193-26-000020 |
+| Filing / report date | 2026-07-31 / 2026-06-27 |
+| Fiscal year / period | 2026 / Q3 explicit iXBRL |
+| Retrieved UTC | 2026-10-24T14:56:54.544431+00:00 |
+| HTTP / bytes | 200 / 1.018.317 |
+| Dataset / snapshot | collaborator-v5-final / v1-84fb27e8d817077c |
+| Status / chunks | PARTIAL_EXTRACTION / 566 |
+| Raw SHA256 | `d2fa42061d517dc6fd528f32a09197553f0d70214405f6fc09497829c95e8b8c` |
+| Normalized SHA256 | `94d101e71b2dd31d69f324a20a49459c3f733070041736950ffc40e6c3460e7e` |
+| Manifest SHA256 | `f192ac227f38c9fb18f707b8ecc2ba87546db81beae7c33a1a24b78959b32bd0` |
+
+10 checks company/cik/ticker/form/accession/filing date/report date/primary document/fiscal year/fiscal period đều đúng. Metadata đối chiếu https://data.sec.gov/submissions/CIK0000320193.json ; fiscal facts kiểm trên raw qua BeautifulSoup. Owner raw hash khớp phép đo; corpus/manifest gốc không có để audit trực tiếp. Snapshot mới không phải snapshot owner v1-e401859d6d43580b.
+
+Mỗi smoke chỉ một filing, roots v3/v4/v5 tách biệt để giữ evidence. Không mass downloads. SEC policy tham chiếu https://www.sec.gov/about/developer-resources : tổng không quá 10 req/s/user; default 6, metadata cuối dùng 1. Không ghi contact, không bypass access restrictions.
+
+Lệnh tại báo cáo chính; live-v5-final.txt/audit-v5-final.json giữ local ignored. Không coi chunk count là vector count hay production accuracy.
+
+
+---
+
+# Bằng chứng lịch sử của lượt trước (không thay thế kết quả mới)
+
 # Bằng chứng live SEC độc lập — 24/10/2026
 
 Baseline: `de01cbd4157fcbfdcac3201aed7e2f89ba3b3044`; mã kiểm thử: `7a6bbd9593f229cbb14ba9e49b6a24aa0c1083f4`.
