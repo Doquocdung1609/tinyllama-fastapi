@@ -84,3 +84,8 @@ Implementation commit: `4f41bcf0364e7d5485b409d2143383cc99554f78`. Report này �
 4. Không được gọi staging là searchable corpus trước Milestone C.
 
 STOP: Không bắt đầu Milestone C trong thay đổi này.
+
+
+## Cập nhật độc lập 24/10/2026
+
+Kết luận mới: **PARTIAL**. Báo cáo trước được giữ như bằng chứng lịch sử. Live SEC HTTP 200, 620 chunks; raw hash khớp owner, normalized hash thay đổi theo parser v2. Full suite 123 PASS / 0 FAIL / 4 SKIP / 1 warning. Bảng quan trọng giữ số nhưng thiếu tiêu đề/kỳ sau chunking; đã gắn PARTIAL_EXTRACTION. GitHub chưa xác thực nên chưa push/PR. Xem [báo cáo độc lập](MILESTONE_B_INDEPENDENT_VERIFICATION.md) và các báo cáo evidence kèm theo. Không xem kết quả lịch sử là đã được xác minh lại toàn bộ.

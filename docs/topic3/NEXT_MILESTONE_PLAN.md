@@ -37,3 +37,8 @@ Milestone B dừng ở normalized chunks + staging index. Không có hạng mụ
 - Windows 8 GB RAM/4 GB VRAM resource ceiling.
 
 Milestone C chỉ bắt đầu sau khi Milestone B live gate được xử lý hoặc blocker được người dùng chấp nhận rõ ràng.
+
+
+## Cập nhật độc lập 24/10/2026
+
+Chưa sẵn sàng nghiệm thu B: cần giữ headers đa tầng, kỳ/scale/footnotes, versioned derived artifacts và bổ sung live legacy/amendment evidence. Chưa triển khai C. Đề xuất BM25 persistent lưu corpus statistics, incremental updates và generation/snapshot chung; metadata prefilter CIK/form/period/version; hybrid dense+BM25 và RRF; staging Qdrant riêng, table-aware representation; đo P50/P95, throughput, CPU/RAM trên SEC thật với manifest cố định; crash recovery và rollback theo generation. Không dùng 0,926 queries/s synthetic như kết quả SEC, không nêu cải thiện hiệu năng chưa đo. Chỉ bắt đầu sau nghiệm thu B và ủy quyền mới.
