@@ -1,0 +1,57 @@
+{
+  "review_kind": "MANUAL_SOURCE_REVIEW_NOT_AN_AUTOMATIC_CLASSIFIER",
+  "indices_are_zero_based": true,
+  "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+  "source_raw_sha256": "d2fa42061d517dc6fd528f32a09197553f0d70214405f6fc09497829c95e8b8c",
+  "parser_version": "sec-html-v5",
+  "tables": [
+    {
+      "index": 5,
+      "table_id": "table_e8223f402df1d87c223d961e",
+      "classification": "LEGAL_OR_ADMINISTRATIVE",
+      "purpose": "Cover-page incorporation state, employer tax identifier and principal office address.",
+      "source_locator": "/document[1]/html[1]/body[1]/div[23]/table[1]",
+      "contains_quantitative_financial_values": false,
+      "evidence": "California; 94-2404110; One Apple Park Way; Cupertino; 95014. Source labels identify state, employer identification number, address and postal code.",
+      "missing_header_effect": "Generic grid column labels are absent; source labels below values and original cell relationships remain. Identifiers must not be interpreted as monetary values.",
+      "source_context_recoverable": true,
+      "scope_effect": "No missing financial statement value in this table. Typed administrative-field normalization remains unsupported."
+    },
+    {
+      "index": 9,
+      "table_id": "table_9ec38cac80a4844632a4b4b1",
+      "classification": "LEGAL_OR_ADMINISTRATIVE",
+      "purpose": "Cover-page regulatory filer category and checkbox declarations.",
+      "source_locator": "/document[1]/html[1]/body[1]/div[35]/table[1]",
+      "contains_quantitative_financial_values": false,
+      "evidence": "Large accelerated filer checked; accelerated/non-accelerated filer, smaller reporting company and emerging growth company unchecked.",
+      "missing_header_effect": "This is a labelled checkbox form rather than a period/value financial table. Labels and checkbox marks survive in cells/raw text; typed regulatory flags are not normalized.",
+      "source_context_recoverable": true,
+      "scope_effect": "Regulatory information is relevant to the issuer but is not a balance, cash flow, performance or numerical financial measure."
+    },
+    {
+      "index": 11,
+      "table_id": "table_21ab125fbc4b00c23e96d980",
+      "classification": "DOCUMENT_LAYOUT",
+      "purpose": "Table of contents with section labels, internal anchors and printed filing-page references.",
+      "source_locator": "/document[1]/html[1]/body[1]/div[50]/table[1]",
+      "contains_quantitative_financial_values": false,
+      "evidence": "The source heading is TABLE OF CONTENTS, with Page, Part I/II and Item references. Numbers 1, 13, 19, 20, 21, 24 and 25 are navigation references.",
+      "missing_header_effect": "Page is present in source but not normalized into the generic column array. Navigation text survives; these values must not be treated as financial amounts or fabricated PDF page metadata.",
+      "source_context_recoverable": true,
+      "scope_effect": "Navigation normalization is incomplete; financial disclosure tables are elsewhere at the referenced source anchors."
+    },
+    {
+      "index": 38,
+      "table_id": "table_5054ebe830bcaf8c37685853",
+      "classification": "LEGAL_OR_ADMINISTRATIVE",
+      "purpose": "Item 6 exhibit index for executive certifications and Inline XBRL document sets.",
+      "source_locator": "/document[1]/html[1]/body[1]/div[338]/table[1]",
+      "contains_quantitative_financial_values": false,
+      "evidence": "Actual headers include Exhibit Number, Exhibit Description, Form, Exhibit and Filing Date/Period End Date. Entries 31.1, 31.2, 32.1, 101 and 104 are exhibit identifiers, not amounts.",
+      "missing_header_effect": "Headers remain as source/grid rows after a merged Incorporated by Reference group. Typed exhibit/link normalization is incomplete; raw references are recoverable. References to financial statements are not financial statement values.",
+      "source_context_recoverable": true,
+      "scope_effect": "The primary filing retains this legal index. Downloading/normalizing all linked exhibits is outside this bounded primary-disclosure pilot."
+    }
+  ]
+}

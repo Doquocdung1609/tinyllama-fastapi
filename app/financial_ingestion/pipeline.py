@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 import json
 import logging
+import re
 from pathlib import Path
 from uuid import uuid4
 
@@ -33,6 +34,10 @@ def file_sha256(path: Path) -> str:
 
 
 def validate_metadata_identity(metadata: FilingMetadata) -> None:
+    if not re.fullmatch(r"[0-9]{10}", metadata.cik):
+        raise ValueError("Metadata CIK must be exactly 10 canonical ASCII digits")
+    if not re.fullmatch(r"[0-9]{10}-[0-9]{2}-[0-9]{6}", metadata.accession_number):
+        raise ValueError("Metadata accession must use the canonical SEC format")
     expected_id = f"sec:{metadata.cik}:{metadata.accession_number}"
     if metadata.filing_id != expected_id:
         raise ValueError(f"filing_id must equal {expected_id}")
@@ -45,6 +50,11 @@ def validate_metadata_identity(metadata: FilingMetadata) -> None:
 
 
 class FinancialCorpusPipeline:
+    @staticmethod
+    def validate_dataset_id(dataset_id: str) -> None:
+        if not re.fullmatch(r"[A-Za-z0-9_-]{1,80}", dataset_id):
+            raise ValueError("dataset_id must use 1-80 letters, digits, '-' or '_'")
+
     def __init__(self, *, root: Path | None = None,
                  registry: FinancialRegistry | None = None,
                  client: SECClient | None = None):
@@ -77,16 +87,20 @@ class FinancialCorpusPipeline:
 
     def structured_path(self, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
-        return self.root / "structured" / key / f"{metadata.raw_content_hash}.json"
+        return self.root / "structured" / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.json"
 
     def chunks_path(self, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
-        return self.root / "chunks" / key / f"{metadata.raw_content_hash}.jsonl"
+        return self.root / "chunks" / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.jsonl"
+
+    @staticmethod
+    def _derived_version(metadata: FilingMetadata) -> str:
+        return sha256(f"{metadata.parser_version}|{CHUNKER_VERSION}|{metadata.ingestion_version}".encode()).hexdigest()[:24]
 
     def stage_path(self, dataset_id: str, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
         return (self.root / "staging_index" / dataset_id / key /
-                f"{metadata.raw_content_hash}.json")
+                metadata.raw_content_hash / f"{self._derived_version(metadata)}.json")
 
     def _mark(self, dataset_id: str, metadata: FilingMetadata, status: DocumentStatus,
               *, error: str | None = None, **paths) -> None:
@@ -109,15 +123,21 @@ class FinancialCorpusPipeline:
 
     def ingest_one(self, dataset_id: str, metadata: FilingMetadata,
                    *, force: bool = False) -> dict:
+        self.validate_dataset_id(dataset_id)
         validate_metadata_identity(metadata)
         existing = self.registry.get_filing(metadata.filing_id)
         if existing and not force and existing["status"] in {"READY", "PARTIAL_EXTRACTION"}:
+            prior = FilingMetadata.model_validate_json(existing["metadata_json"])
             path = Path(existing["raw_path"] or "")
-            if path.is_file() and existing["raw_hash"] == file_sha256(path):
+            if (prior.parser_version == PARSER_VERSION and prior.chunker_version == CHUNKER_VERSION
+                    and path.is_file() and existing["raw_hash"] == file_sha256(path)):
                 return {"filing_id": metadata.filing_id, "status": existing["status"],
                         "idempotent_reuse": True, "chunk_count": existing["chunk_count"]}
         if self.client is None:
             raise RuntimeError("SEC client is required for live ingestion")
+        metadata.parser_version = PARSER_VERSION
+        metadata.chunker_version = CHUNKER_VERSION
+        metadata.ingestion_version = INGESTION_VERSION
         prior_raw_path = Path(existing["raw_path"]) if existing and existing["raw_path"] else None
         download_path = self.incoming_path(metadata)
         prior_response = {}
@@ -162,7 +182,9 @@ class FinancialCorpusPipeline:
         structured = parse_sec_html(raw, metadata)
         normalized = normalized_filing_text(structured)
         metadata.normalized_content_hash = sha256(normalized.encode("utf-8")).hexdigest()
-        structured.metadata = metadata
+        final_status = (DocumentStatus.PARTIAL_EXTRACTION if structured.parser_warnings
+                        else DocumentStatus.READY)
+        structured.metadata = metadata.model_copy(deep=True, update={"document_status": final_status})
         structured_path = self.structured_path(metadata)
         atomic_write_json(structured_path, structured.model_dump(mode="json"))
 
@@ -182,7 +204,8 @@ class FinancialCorpusPipeline:
         atomic_write_json(self.stage_path(dataset_id, metadata), {
             "dataset_id": dataset_id,
             "filing_id": metadata.filing_id,
-            "document_version": f"{metadata.filing_id}@{metadata.raw_content_hash}",
+            "document_version": (f"{metadata.filing_id}@{metadata.raw_content_hash}"
+                                 f":{metadata.parser_version}:{CHUNKER_VERSION}"),
             "index_generation": index_generation,
             "chunk_ids": [chunk.chunk_id for chunk in chunks],
             "chunks_path": str(chunks_path),
@@ -204,8 +227,7 @@ class FinancialCorpusPipeline:
 
     def create_job(self, dataset_id: str, filings: list[FilingMetadata], *,
                    dry_run: bool = False) -> IngestionJob:
-        if not dataset_id or any(char not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_" for char in dataset_id):
-            raise ValueError("dataset_id must use letters, digits, '-' or '_'")
+        self.validate_dataset_id(dataset_id)
         for metadata in filings:
             validate_metadata_identity(metadata)
         if len({item.filing_id for item in filings}) != len(filings):
@@ -268,6 +290,7 @@ class FinancialCorpusPipeline:
         return job
 
     def create_manifest(self, dataset_id: str) -> DatasetManifest:
+        self.validate_dataset_id(dataset_id)
         rows = self.registry.list_filings(dataset_id)
         if not rows:
             raise ValueError("Dataset has no registered filings")
@@ -275,6 +298,7 @@ class FinancialCorpusPipeline:
         index_seed = "\n".join(
             f"{meta.filing_id}|{row['raw_hash']}|{row['normalized_hash']}|{row['chunk_count']}|{row['status']}"
             for row, meta in sorted(parsed, key=lambda item: item[1].filing_id))
+        index_seed += f"\n{PARSER_VERSION}|{CHUNKER_VERSION}|{INGESTION_VERSION}"
         index_generation = sha256(index_seed.encode()).hexdigest()
         snapshot_version = f"v1-{index_generation[:16]}"
         existing_path = self.root / "manifests" / dataset_id / f"{snapshot_version}.json"
@@ -318,6 +342,11 @@ class FinancialCorpusPipeline:
         if file_sha256(raw_path) != metadata.raw_content_hash:
             return {"status": "INVALID_RAW_HASH", "chunk": chunk.model_dump(mode="json")}
         filing = parse_sec_html(raw_path.read_bytes(), metadata)
+        normalized_hash = sha256(normalized_filing_text(filing).encode("utf-8")).hexdigest()
+        if normalized_hash != metadata.normalized_content_hash:
+            return {"status": "INVALID_NORMALIZED_HASH", "chunk": chunk.model_dump(mode="json")}
+        expected_chunk = next((item for item in chunk_filing(filing) if item.chunk_id == chunk_id), None)
+        context_verified = expected_chunk is not None and expected_chunk.model_dump() == chunk.model_dump()
         disclosure = None
         if chunk.kind == "text":
             element = next((item for item in filing.elements
@@ -329,12 +358,17 @@ class FinancialCorpusPipeline:
         else:
             table = next((item for item in filing.tables if item.table_id == chunk.source_location.table_id), None)
             row_index = chunk.source_location.row_index
-            if table and row_index is not None and 1 <= row_index <= len(table.rows):
-                disclosure = " | ".join(table.rows[row_index - 1])
-        verified = disclosure is not None and sha256(disclosure.encode("utf-8")).hexdigest() == chunk.source_text_hash
+            if table and row_index is not None:
+                indices = table.row_indices or list(range(1, len(table.rows) + 1))
+                if row_index in indices:
+                    disclosure = " | ".join(table.rows[indices.index(row_index)])
+        source_verified = disclosure is not None and sha256(disclosure.encode("utf-8")).hexdigest() == chunk.source_text_hash
+        verified = source_verified and context_verified
         return {
-            "status": "VERIFIED" if verified else "INVALID_SOURCE_LOCATOR",
+            "status": ("VERIFIED" if verified else
+                       "INVALID_CHUNK_CONTEXT" if source_verified else "INVALID_SOURCE_LOCATOR"),
             "verified": verified,
+            "context_verified": context_verified,
             "chunk": chunk.model_dump(mode="json"),
             "source_chain": {
                 "chunk_id": chunk.chunk_id,
@@ -348,4 +382,38 @@ class FinancialCorpusPipeline:
                 "raw_content_hash": metadata.raw_content_hash,
                 "original_disclosure": disclosure,
             },
+        }
+
+    def extraction_quality(self, filing_id: str) -> dict:
+        """Read-only diagnostics; structural success never implies financial completeness."""
+        row = self.registry.get_filing(filing_id)
+        if row is None:
+            raise LookupError("Financial filing not found")
+        path = Path(row["structured_path"] or "")
+        if not path.is_file():
+            raise FileNotFoundError("Structured snapshot is unavailable")
+        filing = StructuredFiling.model_validate_json(path.read_text(encoding="utf-8"))
+        tables = [{
+            "table_id": table.table_id,
+            "source_location": table.source_location.model_dump(exclude_none=True),
+            "extraction_status": table.extraction_status,
+            "warnings": table.extraction_warnings,
+            "numeric_fact_count": sum(len(cell.numeric_facts) for cell in table.cells),
+            "context_present": {
+                "column_labels": any(table.columns),
+                "reporting_periods": bool(table.reporting_periods),
+                "unit_context": bool(table.unit_context),
+                "statement_title": bool(table.statement_title),
+            },
+        } for table in filing.tables]
+        return {
+            "filing_id": filing_id,
+            "document_status": row["status"],
+            "registered_raw_hash": row["raw_hash"],
+            "financial_completeness": "NOT_ASSESSED",
+            "assessment_reason": "Table context flags do not classify purpose or prove financial completeness; independent source review is required.",
+            "source_provenance_verification": "NOT_PERFORMED_BY_THIS_DIAGNOSTIC",
+            "table_count": len(tables),
+            "unresolved_table_count": sum(table["extraction_status"] != "OK" for table in tables),
+            "tables": tables,
         }

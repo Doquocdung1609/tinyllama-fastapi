@@ -12,7 +12,7 @@ import re
 from threading import Lock
 import time
 from typing import Any, Iterable
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 
@@ -63,8 +63,10 @@ def validate_user_agent(value: str) -> str:
 def filing_source_url(cik: str, accession_number: str, primary_document: str) -> str:
     cik_number = str(int(normalize_cik(cik)))
     accession_digits = normalize_accession(accession_number).replace("-", "")
-    document = primary_document.strip().lstrip("/")
-    if not document or "/" in document or "\\" in document:
+    document = primary_document
+    if (not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", document)
+            or document.endswith(".")
+            or re.fullmatch(r"(?i)(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?", document)):
         raise ValueError("primary_document must be a single SEC archive filename")
     return f"{SEC_ARCHIVE_BASE}/{cik_number}/{accession_digits}/{document}"
 
@@ -140,10 +142,27 @@ class SECClient:
         headers = {**self.headers, **(conditional or {})}
         last_error: Exception | None = None
         for attempt in range(self.max_retries + 1):
-            self.rate_limiter.wait()
             try:
-                response = self.session.get(url, headers=headers, timeout=self.timeout_seconds,
-                                            stream=stream, allow_redirects=True)
+                request_url = url
+                for redirect_count in range(6):
+                    self.rate_limiter.wait()
+                    response = self.session.get(
+                        request_url, headers=headers, timeout=self.timeout_seconds,
+                        stream=stream, allow_redirects=False)
+                    if response.status_code not in {301, 302, 303, 307, 308}:
+                        break
+                    location = response.headers.get("Location")
+                    close = getattr(response, "close", None)
+                    if close:
+                        close()
+                    if not location or redirect_count == 5:
+                        raise SECRequestError("SEC redirect missing Location or exceeds limit")
+                    next_url = urljoin(request_url, location)
+                    try:
+                        validate_sec_url(next_url)
+                    except ValueError as exc:
+                        raise SECRequestError("SEC redirect outside approved HTTPS hosts") from exc
+                    request_url = next_url
             except requests.RequestException as exc:
                 last_error = exc
                 retryable = True

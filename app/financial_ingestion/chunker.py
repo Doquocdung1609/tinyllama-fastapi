@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from hashlib import sha256
+import json
 
 from app.financial_ingestion import CHUNKER_VERSION
 from app.financial_ingestion.schemas import FinancialChunk, SourceLocation, StructuredFiling
@@ -30,6 +31,7 @@ def _metadata(filing: StructuredFiling) -> dict:
         "raw_content_hash": item.raw_content_hash,
         "normalized_content_hash": item.normalized_content_hash,
         "parser_version": item.parser_version,
+        "chunker_version": CHUNKER_VERSION,
         "ingestion_version": item.ingestion_version,
         "document_status": item.document_status.value,
         "amendment_of": item.amendment_of,
@@ -42,7 +44,8 @@ def chunk_filing(filing: StructuredFiling, *, max_chars: int = 1200,
         raise ValueError("max_chars must be >= 200 and overlap smaller than max_chars")
     chunks = []
     base_metadata = _metadata(filing)
-    document_version = f"{filing.metadata.filing_id}@{filing.metadata.raw_content_hash}"
+    document_version = (f"{filing.metadata.filing_id}@{filing.metadata.raw_content_hash}"
+                        f":{filing.metadata.parser_version}:{CHUNKER_VERSION}")
     for element in filing.elements:
         start = 0
         while start < len(element.text):
@@ -69,18 +72,33 @@ def chunk_filing(filing: StructuredFiling, *, max_chars: int = 1200,
 
     for table in filing.tables:
         header = " | ".join(table.columns)
-        rows = table.rows or [[]]
-        for row_index, row in enumerate(rows, start=1):
+        rows = table.rows
+        for offset, row in enumerate(rows):
+            if not any(row):
+                continue
+            row_index = table.row_indices[offset] if offset < len(table.row_indices) else offset + 1
             location = table.source_location.model_copy(update={"row_index": row_index})
             row_text = " | ".join(row)
+            numeric_attributes = [{"column": cell.column, **fact} for cell in table.cells
+                                  if cell.row == row_index for fact in cell.numeric_facts]
             content = (
                 f"TABLE {table.table_id}\n"
+                f"Company: {filing.metadata.company_name}\n"
+                f"CIK: {filing.metadata.cik}; Accession: {filing.metadata.accession_number}; Form: {filing.metadata.form_type}\n"
+                f"Statement: {table.statement_title or 'UNKNOWN'}\n"
                 f"Section: {table.section or 'UNKNOWN'}\n"
                 f"Caption: {table.caption or 'UNKNOWN'}\n"
                 f"Columns: {header}\n"
                 f"Row {row_index}: {row_text}\n"
+                f"Row period/group: {table.row_context.get(row_index, 'NONE')}\n"
                 f"Units: {', '.join(table.units) or 'UNKNOWN'}\n"
-                f"Reporting periods: {', '.join(table.reporting_periods) or 'UNKNOWN'}"
+                f"Reporting periods: {', '.join(table.reporting_periods) or 'UNKNOWN'}\n"
+                f"Unit context: {table.unit_context or 'UNKNOWN'}\n"
+                f"Numeric attributes: {json.dumps(numeric_attributes, ensure_ascii=False)}\n"
+                f"Footnotes: {'; '.join(table.footnotes) or 'NONE_ASSOCIATED'}\n"
+                f"Continuation of: {table.continuation_of or 'NONE'}\n"
+                f"Source: {filing.metadata.source_url}\n"
+                f"Locator: {location.structural_path}; source row {row_index}"
             )
             chunks.append(FinancialChunk(
                 chunk_id=_chunk_id(document_version, "table", location),
@@ -89,7 +107,18 @@ def chunk_filing(filing: StructuredFiling, *, max_chars: int = 1200,
                 source_text_hash=sha256(row_text.encode("utf-8")).hexdigest(),
                 metadata={**base_metadata, "table_id": table.table_id,
                           "section": table.section, "row_index": row_index,
-                          "units": table.units, "reporting_periods": table.reporting_periods},
+                          "units": table.units, "reporting_periods": table.reporting_periods,
+                          "statement_title": table.statement_title, "table_title": table.caption,
+                          "column_labels": table.columns, "header_rows": table.header_rows,
+                          "row_label": next((value for value in row if value), ""),
+                          "row_context": table.row_context.get(row_index),
+                          "unit_context": table.unit_context, "footnotes": table.footnotes,
+                          "footnote_locations": [item.model_dump(exclude_none=True) for item in table.footnote_locations],
+                          "context_locations": [item.model_dump(exclude_none=True) for item in table.context_locations],
+                          "continuation_of": table.continuation_of,
+                          "parent_table_id": table.parent_table_id,
+                          "extraction_warnings": table.extraction_warnings,
+                          "cells": [cell.model_dump(mode="json") for cell in table.cells if cell.row == row_index]},
                 extraction_status=table.extraction_status,
             ))
     seen = set()

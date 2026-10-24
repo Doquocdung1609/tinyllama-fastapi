@@ -84,3 +84,23 @@ Implementation commit: `4f41bcf0364e7d5485b409d2143383cc99554f78`. Report này �
 4. Không được gọi staging là searchable corpus trước Milestone C.
 
 STOP: Không bắt đầu Milestone C trong thay đổi này.
+
+
+## Cập nhật độc lập 24/10/2026
+
+Kết luận mới: **PARTIAL**. Báo cáo trước được giữ như bằng chứng lịch sử. Live SEC HTTP 200, 620 chunks; raw hash khớp owner, normalized hash thay đổi theo parser v2. Full suite 123 PASS / 0 FAIL / 4 SKIP / 1 warning. Bảng quan trọng giữ số nhưng thiếu tiêu đề/kỳ sau chunking; đã gắn PARTIAL_EXTRACTION. GitHub chưa xác thực nên chưa push/PR. Xem [báo cáo độc lập](MILESTONE_B_INDEPENDENT_VERIFICATION.md) và các báo cáo evidence kèm theo. Không xem kết quả lịch sử là đã được xác minh lại toàn bộ.
+
+
+## Finalization 24/10/2026 — code ae7cc77
+
+142 PASS / 0 FAIL / 0 SKIP / 2 warnings khi bật real media và OCR best. Chat/embedding/Qdrant/RAG thật hoạt động. Apple v5: 566 chunks, raw hash khớp owner, 28 value/period/unit cases PASS. Còn 4 layout tables ambiguity; whole filing PARTIAL_EXTRACTION. Kiến nghị PARTIAL; báo cáo độc lập mới nằm đầu MILESTONE_B_INDEPENDENT_VERIFICATION.md. Không triển khai C hoặc merge.
+
+
+### GitHub delivery
+
+Đã push contributor branch, Draft PR #7 OPEN: https://github.com/Doquocdung1609/tinyllama-fastapi/pull/7 . Target codex/topic3-milestone-b-sec-corpus; code ae7cc77, evidence report e8454f5. Local/remote đồng bộ; không merge. B14 VERIFIED, overall PARTIAL với giới hạn đã nêu.
+
+
+## Final gap audit, 24/10/2026
+
+Recommendation VERIFIED_WITH_DOCUMENTED_LIMITATIONS for the agreed pilot scope; owner decides acceptance. See MILESTONE_B_FINAL_GAP_AUDIT.md for the four-table classification matrix, real Tesla amendment, historical preservation/interface distinction, reproducible Chat failure and 147/0/0/2 regression. No change to the conservative PARTIAL document status or prior evidence.

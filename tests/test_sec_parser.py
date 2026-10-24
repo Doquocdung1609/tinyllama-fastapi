@@ -67,3 +67,25 @@ def test_chunk_ids_change_for_a_new_raw_document_version():
     first_ids = {item.chunk_id for item in chunk_filing(first)}
     second_ids = {item.chunk_id for item in chunk_filing(second)}
     assert first_ids.isdisjoint(second_ids)
+
+
+def test_inline_markup_preserves_negative_numbers_and_label_order():
+    raw = b'''<html><body><p>Cash <b>and</b> equivalents.</p>
+    <table><tr><th>Metric</th><th>2024</th></tr>
+    <tr><td>Net <b>income</b> (loss)</td>
+    <td>(<ix:nonFraction unitRef="USD">45</ix:nonFraction>)</td></tr>
+    </table></body></html>'''
+    filing = parse_sec_html(raw, metadata())
+    assert filing.elements[0].text == "Cash and equivalents."
+    assert filing.tables[0].rows == [["Net income (loss)", "( 45 )"]]
+    chunk = next(item for item in chunk_filing(filing) if item.kind == "table")
+    assert "Net income (loss) | ( 45 )" in chunk.text
+
+
+def test_blank_inferred_headers_do_not_claim_complete_table_extraction():
+    raw = b'''<html><body><table><tr><td></td><td></td></tr>
+    <tr><td>Revenue</td><td>109,417</td></tr></table></body></html>'''
+    filing = parse_sec_html(raw, metadata())
+    assert filing.tables[0].extraction_status == "PARTIAL_EXTRACTION"
+    assert all(item.extraction_status == "PARTIAL_EXTRACTION"
+               for item in chunk_filing(filing) if item.kind == "table")
