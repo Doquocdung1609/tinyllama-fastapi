@@ -1,0 +1,14 @@
+INFO:     127.0.0.1:58295 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58297 - "POST /financial/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58298 - "POST /financial/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58305 - "POST /financial/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58312 - "GET /qdrant/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58313 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58315 - "POST /financial/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50683 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50684 - "GET /qdrant/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51591 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51592 - "GET /documents/aedb60bc088e4242970a43da1e897bde/preview?chunk_size=800&chunk_overlap=120 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64319 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59262 - "GET /qdrant/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59263 - "GET /financial-corpus/filings HTTP/1.1" 404 Not Found

@@ -1,0 +1,33 @@
+{
+  "chunk_counts": {
+    "sec:0000320193:0000320193-26-000020": 620
+  },
+  "chunker_version": "financial-structure-v1",
+  "created_at": "2026-10-24T13:22:48.597660+00:00",
+  "dataset_id": "sec-live-smoke",
+  "document_count": 1,
+  "embedding_model": null,
+  "failed_documents": [],
+  "filing_ids": [
+    "sec:0000320193:0000320193-26-000020"
+  ],
+  "index_generation": "e401859d6d43580bba0b6b708530a419ddcd35f084784553aa88ac90d73b615d",
+  "ingestion_version": "topic3-milestone-b-v1",
+  "manifest_hash": "1bbe3dcf6510bc6e742e6047e96014b7ed466a25b7cfce332da7bafc926fb7e7",
+  "normalized_hashes": {
+    "sec:0000320193:0000320193-26-000020": "d6a3a7be7adefc75d2aa92472f7cd709fbb2c1085e8c0e261220027cceb7fb4a"
+  },
+  "parser_version": "sec-html-v1",
+  "partial_documents": [],
+  "raw_hashes": {
+    "sec:0000320193:0000320193-26-000020": "d2fa42061d517dc6fd528f32a09197553f0d70214405f6fc09497829c95e8b8c"
+  },
+  "reproduction_commands": [
+    "python scripts/financial_corpus.py status --dataset-id sec-live-smoke",
+    "python scripts/financial_corpus.py manifest --dataset-id sec-live-smoke"
+  ],
+  "snapshot_version": "v1-e401859d6d43580b",
+  "sources": [
+    "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
+  ]
+}

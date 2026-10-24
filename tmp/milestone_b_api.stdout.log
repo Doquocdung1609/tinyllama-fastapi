@@ -1,0 +1,6 @@
+INFO:     127.0.0.1:59260 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59261 - "POST /financial-corpus/discover HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59262 - "POST /financial-corpus/discover HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:59263 - "GET /qdrant/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54067 - "GET /financial-corpus/filings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49624 - "GET /health HTTP/1.1" 200 OK
