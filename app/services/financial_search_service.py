@@ -5,6 +5,8 @@ Retrieval only. Never send benchmark answer keys or oracle labels to this servic
 from __future__ import annotations
 from collections import Counter
 from functools import lru_cache
+from hashlib import sha256
+import json
 from math import log
 import os
 from pathlib import Path
@@ -14,11 +16,40 @@ from typing import Any
 import unicodedata
 
 from app.services import qdrant_service, rag_service
+from app.config import get_settings
 from app.services.embedding_service import get_embedding_provider
 
 
+def _numeric_tokens(value: str) -> list[str]:
+    """Return locale-tolerant aliases without guessing a financial value."""
+    aliases = []
+    if "," in value and "." in value:
+        canonical = (value.replace(",", "") if value.rfind(".") > value.rfind(",")
+                     else value.replace(".", "").replace(",", "."))
+    elif "," in value:
+        parts = value.split(",")
+        canonical = ("".join(parts) if len(parts) > 1 and
+                     all(len(part) == 3 for part in parts[1:])
+                     else value.replace(",", "."))
+    elif "." in value:
+        parts = value.split(".")
+        canonical = ("".join(parts) if len(parts) > 2 and
+                     all(len(part) == 3 for part in parts[1:]) else value)
+        # A single three-digit dot is ambiguous (decimal vs thousands), so
+        # retain both representations instead of silently changing the value.
+        if len(parts) == 2 and len(parts[1]) == 3:
+            aliases.append("".join(parts))
+    else:
+        canonical = value
+    return list(dict.fromkeys([canonical, *aliases]))
+
+
 def tokenize(text: str) -> list[str]:
-    return re.findall(r"(?u)\b\w+\b", unicodedata.normalize("NFKC", text).casefold())
+    normalized = unicodedata.normalize("NFKC", text).casefold()
+    tokens = []
+    for value in re.findall(r"(?u)\d+(?:[.,]\d+)*|[^\W\d_]+|_+", normalized):
+        tokens.extend(_numeric_tokens(value) if value[0].isdigit() else [value])
+    return tokens
 
 
 def bm25_rank(query: str, chunks: list[dict], top_n: int, k1: float = 1.5,
@@ -50,10 +81,16 @@ def bm25_rank(query: str, chunks: list[dict], top_n: int, k1: float = 1.5,
 def reciprocal_rank_fusion(bm25_hits: list[dict], dense_hits: list[dict],
                            k: int = 60) -> list[dict]:
     """Combine positions, not incomparable raw BM25 and cosine similarities."""
+    if k < 1:
+        raise ValueError("RRF k must be positive")
     merged = {}
     for channel, hits in (("bm25", bm25_hits), ("dense", dense_hits)):
+        seen = set()
         for rank, hit in enumerate(hits, 1):
             cid = hit["chunk_id"]
+            if cid in seen:
+                continue
+            seen.add(cid)
             row = merged.setdefault(cid, {"chunk_id": cid, "bm25_score": None,
                                           "dense_score": None, "bm25_rank": None,
                                           "dense_rank": None, "rrf_score": 0.})
@@ -76,6 +113,37 @@ def _matches_metadata(chunk: dict, filters: dict[str, Any]) -> bool:
         if value is None or str(value).casefold() != str(expected).casefold():
             return False
     return True
+
+
+def _dense_prefilter_values(chunks: list[dict], filters: dict[str, Any]) -> dict[str, Any]:
+    """Map case-insensitive API filters back to exact values stored in Qdrant."""
+    result = {}
+    for key, expected in filters.items():
+        values = []
+        for chunk in chunks:
+            value = _metadata(chunk).get(key, chunk.get(key))
+            if value is not None and str(value).casefold() == str(expected).casefold() \
+                    and value not in values:
+                values.append(value)
+        if values:
+            result[key] = values[0] if len(values) == 1 else values
+    return result
+
+
+def corpus_snapshot(chunks: list[dict]) -> str:
+    """Hash retrieval-visible content so benchmark methods can prove corpus parity."""
+    digest = sha256()
+    for chunk in sorted(chunks, key=lambda item: item["chunk_id"]):
+        record = {
+            "chunk_id": chunk["chunk_id"],
+            "document_id": chunk.get("document_id"),
+            "text": chunk.get("text", ""),
+            "metadata": _metadata(chunk),
+        }
+        digest.update(json.dumps(record, ensure_ascii=False, sort_keys=True,
+                                 separators=(",", ":")).encode("utf-8"))
+        digest.update(b"\n")
+    return digest.hexdigest()
 
 
 @lru_cache(maxsize=1)
@@ -121,39 +189,52 @@ def search(question: str, document_ids: list[str], method: str = "hybrid",
     """Explicit document scope only. Never accepts labels or ground-truth answers."""
     if method not in {"bm25", "dense", "hybrid", "hybrid_rerank"}:
         raise ValueError("Unknown method")
+    question = question.strip()
+    if not question:
+        raise ValueError("Query must contain non-whitespace text")
     if not document_ids:
         raise ValueError("Explicit document_ids are required; no global search")
     if not 1 <= top_k <= candidate_limit <= 100:
         raise ValueError("Require 1 <= top_k <= candidate_limit <= 100")
-    encoder = _cross_encoder() if method == "hybrid_rerank" else None
     started = perf_counter()
-    scope = sorted(set(document_ids))
+    reranker_load_started = perf_counter()
+    encoder = _cross_encoder() if method == "hybrid_rerank" else None
+    reranker_load_ms = round((perf_counter() - reranker_load_started) * 1000, 2)
+    corpus_started = perf_counter()
+    if any(not isinstance(document_id, str) or not document_id.strip()
+           for document_id in document_ids):
+        raise ValueError("Every document_id must contain non-whitespace text")
+    scope = sorted({document_id.strip() for document_id in document_ids})
     corpus = [chunk for chunk in rag_service.chunks_for(scope)
               if chunk.get("chunk_id") and chunk.get("document_id") in scope]
     if not corpus:
         raise ValueError("No indexed chunks found in the selected document scope")
     eligible = [chunk for chunk in corpus if _matches_metadata(chunk, filters or {})]
     by_id = {chunk["chunk_id"]: chunk for chunk in eligible}
+    snapshot = corpus_snapshot(eligible)
+    corpus_prepare_ms = round((perf_counter() - corpus_started) * 1000, 2)
     lex_started = perf_counter()
     lexical = bm25_rank(question, eligible, candidate_limit) if method != "dense" else []
     lexical_ms = round((perf_counter() - lex_started) * 1000, 2)
-    dense_started = perf_counter()
     dense = []
     embedding_ms = 0.
+    dense_ms = 0.
     if method != "bm25" and eligible:
         embed_started = perf_counter()
         vector = get_embedding_provider().embed([question])[0]
         embedding_ms = round((perf_counter() - embed_started) * 1000, 2)
-        # Qdrant performs explicit document scoping, with a second local ID guard.
-        # Post-filtered company metadata may miss candidates: surfaced in caveats.
-        points = qdrant_service.search(vector, min(candidate_limit * 4, 400), scope)
+        dense_started = perf_counter()
+        # Qdrant performs both document scoping and metadata prefiltering.  The
+        # local ID guard remains a fail-closed consistency check.
+        points = qdrant_service.search(vector, min(candidate_limit * 4, 400), scope,
+                                        _dense_prefilter_values(eligible, filters or {}) or None)
         for point in points:
             cid = (point.payload or {}).get("chunk_id")
             if cid in by_id:
                 dense.append({"chunk_id": cid, "dense_score": float(point.score)})
                 if len(dense) >= candidate_limit:
                     break
-    dense_ms = round((perf_counter() - dense_started) * 1000, 2)
+        dense_ms = round((perf_counter() - dense_started) * 1000, 2)
     fuse_started = perf_counter()
     if method == "bm25":
         ranks = [{**h, "dense_score": None, "dense_rank": None, "rrf_score": None}
@@ -170,13 +251,29 @@ def search(question: str, document_ids: list[str], method: str = "hybrid",
     if method == "hybrid_rerank":
         candidates = cross_encoder_rerank(question, candidates[:candidate_limit], encoder)
     rerank_ms = round((perf_counter() - rerank_started) * 1000, 2)
+    settings = get_settings()
     return {"method": method, "query": question, "scope_document_ids": scope,
             "filters": filters or {}, "corpus_size": len(corpus),
             "eligible_chunks": len(eligible), "candidate_count": len(candidates),
+            "corpus_snapshot_sha256": snapshot,
             "results": [_present(hit, rank) for rank, hit in enumerate(candidates[:top_k], 1)],
-            "timings_ms": {"lexical": lexical_ms, "embedding": embedding_ms,
+            "timings_ms": {"corpus_prepare": corpus_prepare_ms,
+                           "lexical": lexical_ms, "embedding": embedding_ms,
                            "dense": dense_ms, "fusion": fusion_ms,
+                           "reranker_load": reranker_load_ms,
                            "cross_encoder": rerank_ms,
                            "total": round((perf_counter() - started) * 1000, 2)},
-            "caveats": ["Metadata filters applied after dense retrieval; may reduce recall."]
-                       if filters and method != "bm25" else []}
+            "provenance": {
+                "lexical": {"algorithm": "okapi_bm25", "k1": 1.5, "b": .75,
+                            "persistent": False, "build": "per_request"},
+                "dense": {"collection": settings.qdrant_collection,
+                          "embedding_provider": settings.embedding_provider,
+                          "embedding_model": settings.embedding_model,
+                          "metadata_prefilter": True},
+                "fusion": {"algorithm": "rrf", "k": 60} if method.startswith("hybrid") else None,
+                "reranker": {"enabled": method == "hybrid_rerank",
+                             "path": os.getenv("FINANCIAL_RERANKER_PATH", "") or None,
+                             "device": "cpu" if method == "hybrid_rerank" else None},
+            },
+            "caveats": (["Lexical BM25 is rebuilt per request; persistent lexical indexing is not implemented."]
+                        if method != "dense" else [])}

@@ -91,18 +91,25 @@ def upsert_chunks(chunks: list[dict], vectors: list[list[float]]) -> None:
             client.delete(collection_name=collection, points_selector=PointIdsList(points=stale_ids))
 
 
-def search(vector: list[float], limit: int, document_id: str | list[str] | None = None):
+def search(vector: list[float], limit: int, document_id: str | list[str] | None = None,
+           metadata_filters: dict | None = None):
     from qdrant_client.http.models import FieldCondition, Filter, MatchAny, MatchValue
     client, collection = get_client(), get_settings().qdrant_collection
     if not client.collection_exists(collection):
         return []
-    query_filter = None
+    conditions = []
     if isinstance(document_id, list):
         if not document_id:
             return []
-        query_filter = Filter(must=[FieldCondition(key="document_id", match=MatchAny(any=document_id))])
+        conditions.append(FieldCondition(key="document_id", match=MatchAny(any=document_id)))
     elif document_id:
-        query_filter = Filter(must=[FieldCondition(key="document_id", match=MatchValue(value=document_id))])
+        conditions.append(FieldCondition(key="document_id", match=MatchValue(value=document_id)))
+    for key, value in sorted((metadata_filters or {}).items()):
+        if not key or not all(part.replace("_", "").isalnum() for part in key.split(".")):
+            raise ValueError(f"Invalid metadata filter key: {key!r}")
+        match = MatchAny(any=value) if isinstance(value, list) else MatchValue(value=value)
+        conditions.append(FieldCondition(key=f"metadata.{key}", match=match))
+    query_filter = Filter(must=conditions) if conditions else None
     return client.query_points(collection_name=collection, query=vector, query_filter=query_filter,
                                limit=limit, with_payload=True).points
 

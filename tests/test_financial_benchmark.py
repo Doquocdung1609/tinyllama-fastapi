@@ -5,6 +5,7 @@ import pytest
 def test_retrieval_metrics_are_hand_checkable():
     score = evaluate(["bad", "a", "b", "bad2"], {"a", "b"}, 4)
     assert score["recall"] == 1
+    assert score["precision"] == .5
     assert score["mrr"] == .5
     assert 0 < score["ndcg"] < 1
 

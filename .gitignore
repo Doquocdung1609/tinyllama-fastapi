@@ -13,6 +13,7 @@ data/*.sqlite3
 data/*.sqlite3-*
 tmp/final_product/
 tmp/phase1_*/
+tmp/topic3_*
 tmp/holdout_previews/
 tmp/pdfs/
 tmp/production.*.log

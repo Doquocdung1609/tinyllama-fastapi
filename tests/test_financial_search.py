@@ -23,6 +23,14 @@ def test_bm25_exact_and_unmatched():
     assert fs.bm25_rank("unfindable", CHUNKS, 5) == []
 
 
+def test_financial_number_tokenization_is_locale_tolerant():
+    assert "1496.5" in fs.tokenize("$1,496.5")
+    assert "1496.5" in fs.tokenize("1.496,5 USD")
+    assert "15.85" in fs.tokenize("15,85%")
+    assert "15" not in fs.tokenize("1.5")
+    assert {"1.000", "1000"}.issubset(fs.tokenize("1.000"))
+
+
 def test_rrf_uses_ranks_not_raw_cosine():
     results = fs.reciprocal_rank_fusion(
         [{"chunk_id": "a", "bm25_score": 500.}, {"chunk_id": "b", "bm25_score": 5.}],
@@ -53,6 +61,44 @@ def test_metadata_filters_never_guess(monkeypatch):
     assert fs.search("Revenue", ["sec1"], "bm25", filters={"ticker": "XYZ"})["results"] == []
     assert len(fs.search("Revenue", ["sec1"], "bm25",
                          filters={"ticker": "ABC"})["results"]) == 1
+
+
+def test_dense_sends_metadata_prefilter_to_qdrant(monkeypatch):
+    monkeypatch.setattr(fs.rag_service, "chunks_for", lambda scope: CHUNKS)
+    class Encoder:
+        def embed(self, texts):
+            return [[.1, .2]]
+    captured = {}
+    monkeypatch.setattr(fs, "get_embedding_provider", lambda: Encoder())
+    def fake_search(vector, limit, scope, metadata_filters):
+        captured.update({"scope": scope, "filters": metadata_filters})
+        return []
+    monkeypatch.setattr(fs.qdrant_service, "search", fake_search)
+    result = fs.search("Revenue", ["sec1"], "dense", filters={"ticker": "abc"})
+    assert captured == {"scope": ["sec1"], "filters": {"ticker": "ABC"}}
+    assert result["provenance"]["dense"]["metadata_prefilter"] is True
+
+
+def test_rrf_deduplicates_repeated_channel_hits():
+    ranked = fs.reciprocal_rank_fusion(
+        [{"chunk_id": "a", "bm25_score": 2.}, {"chunk_id": "a", "bm25_score": 1.}],
+        [{"chunk_id": "b", "dense_score": .9}])
+    a = next(row for row in ranked if row["chunk_id"] == "a")
+    assert a["rrf_score"] == pytest.approx(1 / 61)
+
+
+def test_snapshot_detects_reindexed_content():
+    before = fs.corpus_snapshot(CHUNKS)
+    changed = [{**chunk, "text": chunk["text"] + " amended"}
+               if chunk["chunk_id"] == "a" else chunk for chunk in CHUNKS]
+    assert fs.corpus_snapshot(changed) != before
+
+
+def test_direct_search_rejects_blank_inputs():
+    with pytest.raises(ValueError, match="non-whitespace"):
+        fs.search("  ", ["sec1"], "bm25")
+    with pytest.raises(ValueError, match="document_id"):
+        fs.search("revenue", ["  "], "bm25")
 
 
 def test_explicit_scope_and_no_oracle():

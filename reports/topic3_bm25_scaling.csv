@@ -1,0 +1,4 @@
+corpus_chunks,repeats,cold_ms,warm_p50_ms,warm_p95_ms,queries_per_second_from_p50,peak_tracemalloc_mb,returned_hits,index_strategy
+100,7,47.49,30.498,35.621,32.789,0.17,10,query_time_rebuild
+1000,7,243.606,261.552,312.418,3.823,1.579,10,query_time_rebuild
+5000,7,1209.679,1079.902,1208.678,0.926,7.845,10,query_time_rebuild

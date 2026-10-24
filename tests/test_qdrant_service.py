@@ -24,3 +24,44 @@ def test_concurrent_first_access_constructs_one_local_client(monkeypatch, tmp_pa
 
     assert len(calls) == 1
     assert all(client is clients[0] for client in clients)
+
+
+def test_search_builds_document_and_metadata_prefilter(monkeypatch):
+    captured = {}
+
+    class FakeClient:
+        def collection_exists(self, name):
+            return True
+
+        def query_points(self, **kwargs):
+            captured.update(kwargs)
+            return SimpleNamespace(points=[])
+
+    monkeypatch.setattr(qdrant_service, "get_client", lambda: FakeClient())
+    qdrant_service.search([.1, .2], 10, ["doc-a", "doc-b"],
+                           {"ticker": "ABC", "fiscal_year": 2024})
+
+    conditions = captured["query_filter"].must
+    assert {condition.key for condition in conditions} == {
+        "document_id", "metadata.ticker", "metadata.fiscal_year"}
+    values = {condition.key: condition.match.value for condition in conditions
+              if condition.key.startswith("metadata.")}
+    assert values == {"metadata.ticker": "ABC", "metadata.fiscal_year": 2024}
+
+
+def test_search_supports_multiple_exact_metadata_spellings(monkeypatch):
+    captured = {}
+
+    class FakeClient:
+        def collection_exists(self, name):
+            return True
+
+        def query_points(self, **kwargs):
+            captured.update(kwargs)
+            return SimpleNamespace(points=[])
+
+    monkeypatch.setattr(qdrant_service, "get_client", lambda: FakeClient())
+    qdrant_service.search([.1], 5, ["doc-a"], {"form_type": ["10-K", "10-k"]})
+    condition = next(item for item in captured["query_filter"].must
+                     if item.key == "metadata.form_type")
+    assert condition.match.any == ["10-K", "10-k"]

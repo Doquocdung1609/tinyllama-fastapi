@@ -33,15 +33,15 @@ Create a frozen, independently annotated held-out file using **real indexed chun
 The block above is a *template*, not a completed evaluation dataset. No oracle answers or qrels are sent to the search endpoint.
 
 ~~~bash
-python scripts/financial_retrieval_benchmark.py --cases /path/to/heldout.json --methods bm25 dense hybrid --k 5
+python scripts/financial_retrieval_benchmark.py --cases /path/to/heldout.json --methods bm25 dense hybrid --ks 1 3 5 10
 ~~~
 
-Only include hybrid_rerank when its model is installed. Benchmark writes per-case CSV and summary JSON, with Recall@k, MRR@k, nDCG@k, median and p95 end-to-end latency. Compare against the **same corpus, qrels, embedding model and top-k**; tune on dev only, never the locked test set.
+Only include hybrid_rerank when its model is installed. Benchmark writes per-case CSV and summary JSON, with Recall@k, Precision@k, MRR@k, nDCG@k, median and p95 end-to-end latency. It rejects comparisons when methods report different corpus snapshot hashes. Compare against the **same corpus, qrels, embedding model and cutoffs**; tune on dev only, never the locked test set.
 
 ## Production gaps (do not call this deployed finance production)
 
 - Proper SEC EDGAR / XBRL ingestion with issuer, form, accession number, filing timestamps, source URLs, fiscal periods, restatements and change tracking, subject to SEC fair-access requirements.
-- Metadata prefiltering in the Qdrant ANN call. Current metadata post-filter is safe for result scoping but can miss eligible dense matches; the API reports this caveat.
+- Filing metadata production. Qdrant now receives an ANN prefilter when indexed ticker/year/form metadata exists, but the legacy PDF ingestion path does not consistently create those fields.
 - A persistent/scalable lexical inverted index. Current in-process BM25 scans all selected indexed chunks per query: correct baseline, not yet a big-data scaling solution.
 - User-level ACL/authentication, audit logs, rate limiting, data ownership, retention, backups, resilience and load tests. A document ID is **not** a security boundary.
 - Human-verified filing-level annotations, held-out corpus, QA of source extraction, table/number integrity, evaluation at several corpus sizes, statistical uncertainty.
@@ -50,3 +50,7 @@ Only include hybrid_rerank when its model is installed. Benchmark writes per-cas
 ## Original RAG scoring distinction
 
 Legacy rag_service._lexical_candidates is a custom lexical **heuristic**, not BM25; its lexical=1.50, semantic=.02 fusion weights are not an unbiased BM25 vs semantic baseline. The new endpoint is a separate evaluation path, not a stealth modification to existing users' answers.
+
+Milestone A audit evidence and the merge recommendation are in
+[`docs/topic3/MILESTONE_A_AUDIT.md`](topic3/MILESTONE_A_AUDIT.md) and
+[`docs/topic3/PR1_REVIEW.md`](topic3/PR1_REVIEW.md).

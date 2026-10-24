@@ -20,6 +20,10 @@ class FinancialSearchRequest(BaseModel):
 
 @router.post("/search")
 def financial_search(request: FinancialSearchRequest):
+    if not request.query.strip():
+        raise HTTPException(status_code=422, detail="query must contain non-whitespace text")
+    if any(not document_id.strip() for document_id in request.document_ids):
+        raise HTTPException(status_code=422, detail="document_ids must contain non-whitespace text")
     if request.top_k > request.candidate_limit:
         raise HTTPException(status_code=422, detail="top_k must not exceed candidate_limit")
     filters = {key: value for key, value in {

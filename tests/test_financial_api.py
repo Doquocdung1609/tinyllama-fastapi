@@ -32,3 +32,11 @@ def test_api_rejects_inconsistent_top_k():
     response = TestClient(app).post("/financial/search", json={
         "query": "revenue 2024", "document_ids": ["a1"], "top_k": 5, "candidate_limit": 2})
     assert response.status_code == 422
+
+
+def test_api_rejects_whitespace_query_and_scope():
+    client = TestClient(app)
+    assert client.post("/financial/search", json={
+        "query": "  ", "document_ids": ["a1"]}).status_code == 422
+    assert client.post("/financial/search", json={
+        "query": "revenue", "document_ids": ["  "]}).status_code == 422
