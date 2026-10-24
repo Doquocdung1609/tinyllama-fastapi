@@ -70,7 +70,7 @@ Raw SHA256 `d2fa42061d517dc6fd528f32a09197553f0d70214405f6fc09497829c95e8b8c`. N
 | B11 Recovery | VERIFIED | Checkpoint/retry/new registry instances; fixture kiểm soát, không kill production |
 | B12 Amendments | PARTIAL | Cả 10-K/A và 10-Q/A fixture đạt; live amendment NOT_TESTED |
 | B13 Regression | VERIFIED | 142 PASS, 0 FAIL, 0 SKIP, 2 warnings, bật real media và OCR |
-| B14 Draft PR | PENDING_DELIVERY | Cập nhật URL sau push; không merge |
+| B14 Draft PR | VERIFIED | Draft PR #7 OPEN, target nhánh B; đã push, không merge |
 
 ## 6. Regression
 
@@ -84,7 +84,7 @@ Live integration là script riêng với 5 checks, không cộng vào 142 pytest
 
 ## 7. Giao GitHub
 
-Minh-1512 tự login device flow; gh setup-git dùng credential store, không token trong remote. Target là codex/topic3-milestone-b-sec-corpus để không trộn lại A/B vào main. Các commit cũ giữ nguyên. PR URL/SHAs cuối bổ sung ở mục Delivery sau push. Không force-push, không merge.
+Minh-1512 tự login device flow; gh setup-git dùng credential store, không token trong remote. Đã push nhánh `codex/topic3-milestone-b-independent-verification-20261024` và tạo [Draft PR #7](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/7), trạng thái OPEN / isDraft=true. Target `codex/topic3-milestone-b-sec-corpus` để không trộn lại A/B vào main. Commit mã `ae7cc77dc21883519c2be11843f8016c635c8315`, báo cáo `e8454f5aab24f892510aa43ce8016aeff3dfcb85`; commit cập nhật đường dẫn giao Git xem `git log -1`. Hai commit trước còn nguyên. Remote/local đồng bộ ở lần kiểm tra giao. Không force-push, không merge.
 
 ## 8. Nghiệm thu
 
