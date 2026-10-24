@@ -53,6 +53,7 @@ class TableCell(BaseModel):
     colspan: int = 1
     unit_ref: str | None = None
     context_ref: str | None = None
+    numeric_facts: list[dict[str, str]] = Field(default_factory=list)
     source_location: SourceLocation
 
 
@@ -62,12 +63,23 @@ class FinancialTable(BaseModel):
     table_id: str
     section: str | None = None
     caption: str | None = None
+    statement_title: str | None = None
+    header_rows: list[list[str]] = Field(default_factory=list)
+    row_indices: list[int] = Field(default_factory=list)
+    row_context: dict[int, str] = Field(default_factory=dict)
+    context_text: list[str] = Field(default_factory=list)
+    context_locations: list[SourceLocation] = Field(default_factory=list)
+    unit_context: str | None = None
+    continuation_of: str | None = None
+    parent_table_id: str | None = None
+    extraction_warnings: list[str] = Field(default_factory=list)
     columns: list[str] = Field(default_factory=list)
     rows: list[list[str]] = Field(default_factory=list)
     cells: list[TableCell] = Field(default_factory=list)
     units: list[str] = Field(default_factory=list)
     reporting_periods: list[str] = Field(default_factory=list)
     footnotes: list[str] = Field(default_factory=list)
+    footnote_locations: list[SourceLocation] = Field(default_factory=list)
     source_location: SourceLocation
     extraction_status: Literal["OK", "PARTIAL_EXTRACTION"] = "OK"
     raw_text: str
@@ -104,6 +116,7 @@ class FilingMetadata(BaseModel):
     raw_content_hash: str | None = None
     normalized_content_hash: str | None = None
     parser_version: str
+    chunker_version: str | None = None
     ingestion_version: str
     document_status: DocumentStatus = DocumentStatus.DISCOVERED
     amendment_of: str | None = None

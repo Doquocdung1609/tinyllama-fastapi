@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 from hashlib import sha256
 from pathlib import Path
+import pytest
 
 from app.financial_ingestion import INGESTION_VERSION, PARSER_VERSION
 from app.financial_ingestion.pipeline import FinancialCorpusPipeline
@@ -98,10 +99,11 @@ def test_end_to_end_fixture_ingestion_idempotency_manifest_and_lineage(tmp_path)
     assert manifest_a.document_count == 1
 
 
-def test_amendment_is_separate_version_and_links_to_base(tmp_path):
+@pytest.mark.parametrize("base_form", ["10-K", "10-Q"])
+def test_amendment_is_separate_version_and_links_to_base(tmp_path, base_form):
     service, _ = pipeline(tmp_path)
-    base = filing()
-    amendment = filing("0000123456-24-000002", "10-K/A", "example-20231231x10ka.htm")
+    base = filing(form=base_form)
+    amendment = filing("0000123456-24-000002", base_form + "/A", "example-amendment.htm")
     service.ingest_one("dataset-a", base)
     service.ingest_one("dataset-a", amendment)
     row = service.registry.get_filing(amendment.filing_id)
@@ -109,6 +111,45 @@ def test_amendment_is_separate_version_and_links_to_base(tmp_path):
     assert saved.amendment_of == base.filing_id
     assert saved.filing_id != base.filing_id
     assert len(service.registry.list_filings("dataset-a")) == 2
+
+
+def test_parser_upgrade_keeps_prior_derived_files_and_manifest_immutable(tmp_path, monkeypatch):
+    service, client = pipeline(tmp_path)
+    item = filing()
+    service.ingest_one("versioned-a", item)
+    row = service.registry.get_filing(item.filing_id)
+    before_paths = [Path(row[key]) for key in ("raw_path", "structured_path", "chunks_path")]
+    before = [path.read_bytes() for path in before_paths]
+    old_manifest = service.create_manifest("versioned-a")
+    old_ids = {row[0] for row in service.registry.connect().execute("SELECT chunk_id FROM chunks")}
+    monkeypatch.setattr("app.financial_ingestion.pipeline.PARSER_VERSION", "sec-html-test-next")
+    result = service.ingest_one("versioned-a", filing())
+    assert result["idempotent_reuse"] is False
+    assert client.download_calls == 2
+    for path, content in zip(before_paths, before):
+        assert path.read_bytes() == content
+    new_row = service.registry.get_filing(item.filing_id)
+    assert Path(new_row["structured_path"]) != before_paths[1]
+    assert Path(new_row["chunks_path"]) != before_paths[2]
+    new_manifest = service.create_manifest("versioned-a")
+    assert new_manifest.snapshot_version != old_manifest.snapshot_version
+    new_ids = {row[0] for row in service.registry.connect().execute("SELECT chunk_id FROM chunks")}
+    assert old_ids.isdisjoint(new_ids)
+    for saved in (old_manifest, new_manifest):
+        path = service.root / "manifests" / "versioned-a" / f"{saved.snapshot_version}.json"
+        assert path.is_file()
+
+
+def test_final_status_is_consistent_in_registry_structured_and_chunk_metadata(tmp_path):
+    service, _ = pipeline(tmp_path)
+    item = filing()
+    result = service.ingest_one("status-a", item)
+    row = service.registry.get_filing(item.filing_id)
+    from app.financial_ingestion.schemas import StructuredFiling
+    parsed = StructuredFiling.model_validate_json(Path(row["structured_path"]).read_text("utf-8"))
+    assert parsed.metadata.document_status.value == result["status"] == row["status"]
+    chunks = [service.registry.get_chunk(row[0]) for row in service.registry.connect().execute("SELECT chunk_id FROM chunks")]
+    assert all(chunk.metadata["document_status"] == result["status"] for chunk in chunks)
 
 
 def test_job_checkpoint_resume_and_recovery(tmp_path):
@@ -164,6 +205,18 @@ def test_tampered_raw_source_invalidates_lineage(tmp_path):
     row = service.registry.get_filing(metadata.filing_id)
     Path(row["raw_path"]).write_bytes(b"<html><body>tampered</body></html>")
     assert service.evidence(chunk_id)["status"] == "INVALID_RAW_HASH"
+
+
+def test_tampered_table_context_is_not_verified_from_row_hash_alone(tmp_path):
+    service, _ = pipeline(tmp_path)
+    item = filing()
+    service.ingest_one("tamper-context", item)
+    chunks = [service.registry.get_chunk(row[0]) for row in service.registry.connect().execute("SELECT chunk_id FROM chunks")]
+    chunk = next(chunk for chunk in chunks if chunk.kind == "table")
+    chunk.metadata["reporting_periods"] = ["2099"]
+    with service.registry.connect() as connection:
+        connection.execute("UPDATE chunks SET chunk_json=? WHERE chunk_id=?", (chunk.model_dump_json(), chunk.chunk_id))
+    assert service.evidence(chunk.chunk_id)["status"] == "INVALID_CHUNK_CONTEXT"
 
 
 def test_failed_job_item_is_retried_without_duplicate_rows(tmp_path):

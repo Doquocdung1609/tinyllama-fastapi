@@ -10,6 +10,7 @@ images/
 videos/
 audio/script_*.wav
 audio/script_*.mp3
+audio/milestone-b-verification/
 data/*.sqlite3
 data/*.sqlite3-*
 tmp/final_product/

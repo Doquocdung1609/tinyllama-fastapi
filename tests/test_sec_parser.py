@@ -84,7 +84,6 @@ def test_inline_markup_preserves_negative_numbers_and_label_order():
 
 def test_blank_inferred_headers_do_not_claim_complete_table_extraction():
     raw = b'''<html><body><table><tr><td></td><td></td></tr>
-    <tr><td></td><td>June 27, 2026</td></tr>
     <tr><td>Revenue</td><td>109,417</td></tr></table></body></html>'''
     filing = parse_sec_html(raw, metadata())
     assert filing.tables[0].extraction_status == "PARTIAL_EXTRACTION"

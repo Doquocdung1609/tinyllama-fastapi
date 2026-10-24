@@ -77,16 +77,20 @@ class FinancialCorpusPipeline:
 
     def structured_path(self, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
-        return self.root / "structured" / key / f"{metadata.raw_content_hash}.json"
+        return self.root / "structured" / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.json"
 
     def chunks_path(self, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
-        return self.root / "chunks" / key / f"{metadata.raw_content_hash}.jsonl"
+        return self.root / "chunks" / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.jsonl"
+
+    @staticmethod
+    def _derived_version(metadata: FilingMetadata) -> str:
+        return sha256(f"{metadata.parser_version}|{CHUNKER_VERSION}|{metadata.ingestion_version}".encode()).hexdigest()[:24]
 
     def stage_path(self, dataset_id: str, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
         return (self.root / "staging_index" / dataset_id / key /
-                f"{metadata.raw_content_hash}.json")
+                metadata.raw_content_hash / f"{self._derived_version(metadata)}.json")
 
     def _mark(self, dataset_id: str, metadata: FilingMetadata, status: DocumentStatus,
               *, error: str | None = None, **paths) -> None:
@@ -112,12 +116,17 @@ class FinancialCorpusPipeline:
         validate_metadata_identity(metadata)
         existing = self.registry.get_filing(metadata.filing_id)
         if existing and not force and existing["status"] in {"READY", "PARTIAL_EXTRACTION"}:
+            prior = FilingMetadata.model_validate_json(existing["metadata_json"])
             path = Path(existing["raw_path"] or "")
-            if path.is_file() and existing["raw_hash"] == file_sha256(path):
+            if (prior.parser_version == PARSER_VERSION and prior.chunker_version == CHUNKER_VERSION
+                    and path.is_file() and existing["raw_hash"] == file_sha256(path)):
                 return {"filing_id": metadata.filing_id, "status": existing["status"],
                         "idempotent_reuse": True, "chunk_count": existing["chunk_count"]}
         if self.client is None:
             raise RuntimeError("SEC client is required for live ingestion")
+        metadata.parser_version = PARSER_VERSION
+        metadata.chunker_version = CHUNKER_VERSION
+        metadata.ingestion_version = INGESTION_VERSION
         prior_raw_path = Path(existing["raw_path"]) if existing and existing["raw_path"] else None
         download_path = self.incoming_path(metadata)
         prior_response = {}
@@ -162,7 +171,9 @@ class FinancialCorpusPipeline:
         structured = parse_sec_html(raw, metadata)
         normalized = normalized_filing_text(structured)
         metadata.normalized_content_hash = sha256(normalized.encode("utf-8")).hexdigest()
-        structured.metadata = metadata
+        final_status = (DocumentStatus.PARTIAL_EXTRACTION if structured.parser_warnings
+                        else DocumentStatus.READY)
+        structured.metadata = metadata.model_copy(deep=True, update={"document_status": final_status})
         structured_path = self.structured_path(metadata)
         atomic_write_json(structured_path, structured.model_dump(mode="json"))
 
@@ -182,7 +193,8 @@ class FinancialCorpusPipeline:
         atomic_write_json(self.stage_path(dataset_id, metadata), {
             "dataset_id": dataset_id,
             "filing_id": metadata.filing_id,
-            "document_version": f"{metadata.filing_id}@{metadata.raw_content_hash}",
+            "document_version": (f"{metadata.filing_id}@{metadata.raw_content_hash}"
+                                 f":{metadata.parser_version}:{CHUNKER_VERSION}"),
             "index_generation": index_generation,
             "chunk_ids": [chunk.chunk_id for chunk in chunks],
             "chunks_path": str(chunks_path),
@@ -275,6 +287,7 @@ class FinancialCorpusPipeline:
         index_seed = "\n".join(
             f"{meta.filing_id}|{row['raw_hash']}|{row['normalized_hash']}|{row['chunk_count']}|{row['status']}"
             for row, meta in sorted(parsed, key=lambda item: item[1].filing_id))
+        index_seed += f"\n{PARSER_VERSION}|{CHUNKER_VERSION}|{INGESTION_VERSION}"
         index_generation = sha256(index_seed.encode()).hexdigest()
         snapshot_version = f"v1-{index_generation[:16]}"
         existing_path = self.root / "manifests" / dataset_id / f"{snapshot_version}.json"
@@ -318,6 +331,11 @@ class FinancialCorpusPipeline:
         if file_sha256(raw_path) != metadata.raw_content_hash:
             return {"status": "INVALID_RAW_HASH", "chunk": chunk.model_dump(mode="json")}
         filing = parse_sec_html(raw_path.read_bytes(), metadata)
+        normalized_hash = sha256(normalized_filing_text(filing).encode("utf-8")).hexdigest()
+        if normalized_hash != metadata.normalized_content_hash:
+            return {"status": "INVALID_NORMALIZED_HASH", "chunk": chunk.model_dump(mode="json")}
+        expected_chunk = next((item for item in chunk_filing(filing) if item.chunk_id == chunk_id), None)
+        context_verified = expected_chunk is not None and expected_chunk.model_dump() == chunk.model_dump()
         disclosure = None
         if chunk.kind == "text":
             element = next((item for item in filing.elements
@@ -329,12 +347,17 @@ class FinancialCorpusPipeline:
         else:
             table = next((item for item in filing.tables if item.table_id == chunk.source_location.table_id), None)
             row_index = chunk.source_location.row_index
-            if table and row_index is not None and 1 <= row_index <= len(table.rows):
-                disclosure = " | ".join(table.rows[row_index - 1])
-        verified = disclosure is not None and sha256(disclosure.encode("utf-8")).hexdigest() == chunk.source_text_hash
+            if table and row_index is not None:
+                indices = table.row_indices or list(range(1, len(table.rows) + 1))
+                if row_index in indices:
+                    disclosure = " | ".join(table.rows[indices.index(row_index)])
+        source_verified = disclosure is not None and sha256(disclosure.encode("utf-8")).hexdigest() == chunk.source_text_hash
+        verified = source_verified and context_verified
         return {
-            "status": "VERIFIED" if verified else "INVALID_SOURCE_LOCATOR",
+            "status": ("VERIFIED" if verified else
+                       "INVALID_CHUNK_CONTEXT" if source_verified else "INVALID_SOURCE_LOCATOR"),
             "verified": verified,
+            "context_verified": context_verified,
             "chunk": chunk.model_dump(mode="json"),
             "source_chain": {
                 "chunk_id": chunk.chunk_id,
