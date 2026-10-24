@@ -68,7 +68,8 @@ Fixture 1.205 bytes: 4 structured elements, 1 table, 13 cells, 4 rows, 8 chunks 
 - Targeted: 38 passed, 1 dependency deprecation warning.
 - Full `.venv`: 115 passed, 3 skipped, 1 dependency deprecation warning.
 - Live source: BLOCKED_EXTERNAL_SOURCE.
-- FastAPI/Streamlit health: healthy.
+- Real FastAPI dry-run endpoint: 200; live mode thiếu SEC identity: 503 trước network.
+- FastAPI/Streamlit health sau backend restart: healthy.
 - Qdrant knowledgebase: 1.947 vectors preserved.
 
 ## Git delivery
@@ -80,7 +81,6 @@ Implementation commit: `4f41bcf0364e7d5485b409d2143383cc99554f78`. Report này �
 1. Cần người dùng cung cấp `SEC_USER_AGENT` có email liên hệ thật, sau đó chạy live smoke tối đa một filing và ghi accession/hash/source evidence.
 2. Parser cần corpus filing thật đa dạng để đánh giá nested/inline tables và footnotes.
 3. Registry cần membership table nếu một filing phải thuộc nhiều snapshot active.
-4. Backend hiện chạy cần restart để nạp router mới.
-5. Không được gọi staging là searchable corpus trước Milestone C.
+4. Không được gọi staging là searchable corpus trước Milestone C.
 
 STOP: Không bắt đầu Milestone C trong thay đổi này.

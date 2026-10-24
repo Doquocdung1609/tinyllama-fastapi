@@ -11,6 +11,7 @@ Ngày chạy: 2026-10-24. Hệ điều hành Windows, Python dự án từ `.ven
 | System Python | `python -m pytest -q` | collection blocked: thiếu reportlab | environment failure, không phải code pass/fail |
 | CLI dry-run | `python scripts/financial_corpus.py discover --cik 320193 --forms 10-K --limit 1 --dry-run` | DRY_RUN, 0 network requests | real CLI |
 | Live SEC | `python scripts/sec_live_smoke.py --cik 320193 --limit 1` | BLOCKED_EXTERNAL_SOURCE, 0 requests | live integration blocked |
+| Real FastAPI | `POST /financial-corpus/discover` sau restart backend | dry-run 200; live 503 `SEC_USER_AGENT_REQUIRED` | real local HTTP |
 
 Ba test bị skip là các skip hiện hữu; không được chuyển thành PASS. Warning là Starlette deprecation từ TestClient/httpx compatibility.
 
@@ -30,14 +31,14 @@ Ba test bị skip là các skip hiện hữu; không được chuyển thành PA
 
 ## Health và bảo toàn dữ liệu
 
-Read-only health check thực tế:
+Backend được restart bằng cùng `.venv` để nạp router mới; Streamlit giữ nguyên. Read-only health check thực tế sau restart:
 
 - `http://127.0.0.1:8000/health`: `ok`.
 - `http://127.0.0.1:8501/_stcore/health`: `ok`.
 - `/qdrant/status`: collection `knowledgebase`, 1.947 vectors, dimension 768, Cosine.
 - Qdrant port 6333 không listen riêng; ứng dụng dùng local/embedded service.
 
-Không có delete/upsert nào được gửi đến production Qdrant. Endpoint corpus mới chưa có trên process backend cũ đang chạy; cần restart backend để nạp code mới.
+Không có delete/upsert nào được gửi đến production Qdrant. `GET /financial-corpus/filings` trả danh sách rỗng hợp lệ vì chưa ingest live source; `POST /financial-corpus/discover` dry-run trả 200 và live request bị chặn trước mạng với 503.
 
 ## Điều chưa được chứng minh
 

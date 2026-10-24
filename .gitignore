@@ -18,5 +18,6 @@ tmp/topic3_*
 tmp/holdout_previews/
 tmp/pdfs/
 tmp/production.*.log
+tmp/milestone_b_*.log
 checkpoints/
 tools/downloads/
