@@ -23,14 +23,16 @@ class Node:
     attrs: dict[str, str]
     parent: "Node | None" = None
     children: list["Node"] = field(default_factory=list)
-    text_parts: list[str] = field(default_factory=list)
+    content: list["Node | str"] = field(default_factory=list)
     path: str = ""
 
     def text(self) -> str:
-        values = list(self.text_parts)
-        for child in self.children:
-            if child.tag not in {"script", "style"}:
-                values.append(child.text())
+        values = []
+        for item in self.content:
+            if isinstance(item, str):
+                values.append(item)
+            elif item.tag not in {"script", "style"}:
+                values.append(item.text())
         return normalize_text(" ".join(values))
 
     def descendants(self, tags: set[str]) -> Iterable["Node"]:
@@ -55,6 +57,7 @@ class TreeParser(HTMLParser):
         node = Node(tag, {str(key).casefold(): str(value or "") for key, value in attrs},
                     parent=parent, path=f"{parent.path}/{tag}[{same_tag}]")
         parent.children.append(node)
+        parent.content.append(node)
         if tag not in self.VOID:
             self.stack.append(node)
 
@@ -72,7 +75,7 @@ class TreeParser(HTMLParser):
 
     def handle_data(self, data: str):
         if self.stack[-1].tag not in {"script", "style"}:
-            self.stack[-1].text_parts.append(data)
+            self.stack[-1].content.append(data)
 
 
 def _anchor(node: Node) -> str | None:
@@ -167,6 +170,8 @@ def _extract_table(table: Node, filing_id: str, section: str | None) -> Financia
     header_end = max(header_rows) if header_rows else 0
     columns = grid[header_end] if grid else []
     rows = grid[header_end + 1:] if grid else []
+    if not any(columns) and any(cell.text for cell in cells):
+        partial = True
     raw_text = table.text()
     units = sorted({cell.unit_ref for cell in cells if cell.unit_ref})
     units.extend(value for value in re.findall(

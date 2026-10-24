@@ -19,5 +19,6 @@ tmp/holdout_previews/
 tmp/pdfs/
 tmp/production.*.log
 tmp/milestone_b_*.log
+tmp/milestone_b_verification/
 checkpoints/
 tools/downloads/

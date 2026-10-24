@@ -5,7 +5,7 @@ import pytest
 import requests
 
 from app.financial_ingestion.sec_client import (
-    SECClient, SECConfigurationError, filing_source_url, normalize_accession,
+    SECClient, SECConfigurationError, SECRequestError, filing_source_url, normalize_accession,
     normalize_cik, validate_sec_url, validate_user_agent,
 )
 
@@ -136,3 +136,43 @@ def test_connector_reuses_cached_raw_on_304(monkeypatch, tmp_path):
     assert result.not_modified is True
     assert result.path == cached
     assert result.path.read_bytes() == b"<html>cached</html>"
+
+
+@pytest.mark.parametrize("location", ["https://example.com/private", "http://www.sec.gov/unsafe"])
+def test_redirect_is_rejected_before_contacting_unapproved_target(location):
+    session = SequenceSession([DownloadResponse(302, headers={"Location": location})])
+    client = SECClient("TinyLlamaResearch researcher@example.edu", session=session)
+    with pytest.raises(SECRequestError, match="approved HTTPS"):
+        client.get_json("https://data.sec.gov/submissions/start.json")
+    assert len(session.calls) == 1
+    assert session.calls[0][1]["allow_redirects"] is False
+
+
+def test_redirect_allows_relative_sec_target():
+    session = SequenceSession([
+        DownloadResponse(302, headers={"Location": "next.json"}),
+        FakeResponse({"ok": True}),
+    ])
+    client = SECClient("TinyLlamaResearch researcher@example.edu", session=session)
+    assert client.get_json("https://data.sec.gov/submissions/start.json") == {"ok": True}
+    assert session.calls[1][0] == "https://data.sec.gov/submissions/next.json"
+
+
+@pytest.mark.parametrize("status", [403, 404])
+def test_permanent_http_failures_are_not_retried(status):
+    session = SequenceSession([DownloadResponse(status)])
+    client = SECClient("TinyLlamaResearch researcher@example.edu", session=session)
+    with pytest.raises(SECRequestError) as error:
+        client.get_json("https://data.sec.gov/submissions/start.json")
+    assert error.value.status_code == status
+    assert len(session.calls) == 1
+
+
+def test_stream_size_limit_removes_incomplete_download(tmp_path):
+    session = SequenceSession([DownloadResponse(200, b"12345")])
+    client = SECClient("TinyLlamaResearch researcher@example.edu", session=session)
+    target = tmp_path / "report.htm"
+    with pytest.raises(SECRequestError, match="byte limit"):
+        client.download("https://www.sec.gov/report.htm", target, max_bytes=4)
+    assert not target.exists()
+    assert not target.with_suffix(".htm.download").exists()

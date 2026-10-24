@@ -133,6 +133,28 @@ def test_job_checkpoint_resume_and_recovery(tmp_path):
     assert service.registry.get_job(another.job_id).status == "INTERRUPTED"
 
 
+def test_checkpoint_resumes_in_new_pipeline_and_registry_instances(tmp_path):
+    service, client = pipeline(tmp_path)
+    items = [filing(), filing("0000123456-24-000002", "10-K/A", "example-20231231x10ka.htm")]
+    job = service.create_job("restart-a", items)
+    service.run_job(job.job_id, stop_after=1)
+    before_ids = {row[0] for row in service.registry.connect().execute("SELECT chunk_id FROM chunks")}
+    completed_raw = Path(service.registry.get_filing(items[0].filing_id)["raw_path"])
+    before_raw = completed_raw.read_bytes()
+    restarted_client = FixtureClient()
+    restarted = FinancialCorpusPipeline(
+        root=tmp_path / "corpus", registry=FinancialRegistry(tmp_path / "registry.sqlite3"),
+        client=restarted_client)
+    resumed = restarted.run_job(job.job_id)
+    assert resumed.status == "COMPLETED"
+    assert restarted_client.download_calls == 1
+    assert completed_raw.read_bytes() == before_raw
+    after_ids = [row[0] for row in restarted.registry.connect().execute("SELECT chunk_id FROM chunks")]
+    assert before_ids.issubset(set(after_ids))
+    assert len(after_ids) == len(set(after_ids))
+    assert len(restarted.registry.list_filings("restart-a")) == 2
+
+
 def test_tampered_raw_source_invalidates_lineage(tmp_path):
     service, _ = pipeline(tmp_path)
     metadata = filing()

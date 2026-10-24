@@ -12,7 +12,7 @@ import re
 from threading import Lock
 import time
 from typing import Any, Iterable
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 
@@ -140,10 +140,27 @@ class SECClient:
         headers = {**self.headers, **(conditional or {})}
         last_error: Exception | None = None
         for attempt in range(self.max_retries + 1):
-            self.rate_limiter.wait()
             try:
-                response = self.session.get(url, headers=headers, timeout=self.timeout_seconds,
-                                            stream=stream, allow_redirects=True)
+                request_url = url
+                for redirect_count in range(6):
+                    self.rate_limiter.wait()
+                    response = self.session.get(
+                        request_url, headers=headers, timeout=self.timeout_seconds,
+                        stream=stream, allow_redirects=False)
+                    if response.status_code not in {301, 302, 303, 307, 308}:
+                        break
+                    location = response.headers.get("Location")
+                    close = getattr(response, "close", None)
+                    if close:
+                        close()
+                    if not location or redirect_count == 5:
+                        raise SECRequestError("SEC redirect missing Location or exceeds limit")
+                    next_url = urljoin(request_url, location)
+                    try:
+                        validate_sec_url(next_url)
+                    except ValueError as exc:
+                        raise SECRequestError("SEC redirect outside approved HTTPS hosts") from exc
+                    request_url = next_url
             except requests.RequestException as exc:
                 last_error = exc
                 retryable = True
