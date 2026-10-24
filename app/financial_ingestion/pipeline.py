@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 import json
 import logging
+import re
 from pathlib import Path
 from uuid import uuid4
 
@@ -33,6 +34,10 @@ def file_sha256(path: Path) -> str:
 
 
 def validate_metadata_identity(metadata: FilingMetadata) -> None:
+    if not re.fullmatch(r"[0-9]{10}", metadata.cik):
+        raise ValueError("Metadata CIK must be exactly 10 canonical ASCII digits")
+    if not re.fullmatch(r"[0-9]{10}-[0-9]{2}-[0-9]{6}", metadata.accession_number):
+        raise ValueError("Metadata accession must use the canonical SEC format")
     expected_id = f"sec:{metadata.cik}:{metadata.accession_number}"
     if metadata.filing_id != expected_id:
         raise ValueError(f"filing_id must equal {expected_id}")
@@ -45,6 +50,11 @@ def validate_metadata_identity(metadata: FilingMetadata) -> None:
 
 
 class FinancialCorpusPipeline:
+    @staticmethod
+    def validate_dataset_id(dataset_id: str) -> None:
+        if not re.fullmatch(r"[A-Za-z0-9_-]{1,80}", dataset_id):
+            raise ValueError("dataset_id must use 1-80 letters, digits, '-' or '_'")
+
     def __init__(self, *, root: Path | None = None,
                  registry: FinancialRegistry | None = None,
                  client: SECClient | None = None):
@@ -113,6 +123,7 @@ class FinancialCorpusPipeline:
 
     def ingest_one(self, dataset_id: str, metadata: FilingMetadata,
                    *, force: bool = False) -> dict:
+        self.validate_dataset_id(dataset_id)
         validate_metadata_identity(metadata)
         existing = self.registry.get_filing(metadata.filing_id)
         if existing and not force and existing["status"] in {"READY", "PARTIAL_EXTRACTION"}:
@@ -216,8 +227,7 @@ class FinancialCorpusPipeline:
 
     def create_job(self, dataset_id: str, filings: list[FilingMetadata], *,
                    dry_run: bool = False) -> IngestionJob:
-        if not dataset_id or any(char not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_" for char in dataset_id):
-            raise ValueError("dataset_id must use letters, digits, '-' or '_'")
+        self.validate_dataset_id(dataset_id)
         for metadata in filings:
             validate_metadata_identity(metadata)
         if len({item.filing_id for item in filings}) != len(filings):
@@ -280,6 +290,7 @@ class FinancialCorpusPipeline:
         return job
 
     def create_manifest(self, dataset_id: str) -> DatasetManifest:
+        self.validate_dataset_id(dataset_id)
         rows = self.registry.list_filings(dataset_id)
         if not rows:
             raise ValueError("Dataset has no registered filings")

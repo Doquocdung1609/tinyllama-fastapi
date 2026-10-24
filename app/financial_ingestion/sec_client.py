@@ -63,8 +63,10 @@ def validate_user_agent(value: str) -> str:
 def filing_source_url(cik: str, accession_number: str, primary_document: str) -> str:
     cik_number = str(int(normalize_cik(cik)))
     accession_digits = normalize_accession(accession_number).replace("-", "")
-    document = primary_document.strip().lstrip("/")
-    if not document or "/" in document or "\\" in document:
+    document = primary_document
+    if (not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", document)
+            or document.endswith(".")
+            or re.fullmatch(r"(?i)(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\..*)?", document)):
         raise ValueError("primary_document must be a single SEC archive filename")
     return f"{SEC_ARCHIVE_BASE}/{cik_number}/{accession_digits}/{document}"
 
