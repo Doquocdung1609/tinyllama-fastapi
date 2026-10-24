@@ -11,6 +11,7 @@ from app.config import get_settings
 from app.models import ChatRequest, NormalizeRequest, ScriptRequest, ScriptResponse, TTSRequest, ImageGenerationRequest
 from app.api.documents import router as documents_router
 from app.api.rag import router as rag_router
+from app.api.financial import router as financial_router
 from app.api.qdrant import router as qdrant_router
 from app.api.conversations import router as conversations_router
 from app.services.ollama_service import chat, chat_stream, ollama_status, process_script
@@ -42,6 +43,7 @@ app.add_middleware(
 )
 app.include_router(documents_router)
 app.include_router(rag_router)
+app.include_router(financial_router)
 app.include_router(qdrant_router)
 app.include_router(conversations_router)
 app.mount("/audio", StaticFiles(directory=str(settings.audio_dir)), name="audio")
