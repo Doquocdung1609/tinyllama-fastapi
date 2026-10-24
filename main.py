@@ -33,7 +33,11 @@ async def lifespan(_app):
     initialize_financial_registry()
     from app.services.conversation_service import init_database
     init_database()
-    yield
+    try:
+        yield
+    finally:
+        from app.api.financial_index import close_index
+        close_index()
 
 
 app = FastAPI(title="GenAI Learning Studio", description="Talk to Documents (RAG) với FastAPI, Qdrant và Ollama", version="1.1.0", lifespan=lifespan)

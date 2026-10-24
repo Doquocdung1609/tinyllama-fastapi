@@ -121,17 +121,11 @@ class FinancialIndex:
         started = perf_counter()
         try:
             record = self.lexical.generation(dataset, generation)
+            self.validate_implementation(record)
             metadata = record["metadata"]
             if record["state"] == "READY":
                 self.validate_dense(record, complete=True)
-                checked = set()
-                for item in self.lexical.records(generation):
-                    source = item["source"]
-                    if source["structured_path"] not in checked:
-                        for path, key in (("raw_path", "raw_hash"), ("structured_path", "structured_hash"), ("chunks_path", "chunks_hash")):
-                            if digest_file(Path(source[path])) != source[key]:
-                                raise ValueError("SOURCE_ARTIFACT_HASH_MISMATCH")
-                        checked.add(source["structured_path"])
+                self.validate_sources(record)
                 return {"generation": generation, "idempotent_reuse": True, "new_posting_documents": 0, "embedded_texts": 0}
             if self.provider.identity() != metadata["embedding"]:
                 raise ValueError("EMBEDDING_IDENTITY_MISMATCH")
@@ -218,11 +212,29 @@ class FinancialIndex:
                 if actual != expected:
                     raise ValueError("DENSE_CHUNK_ID_MISMATCH")
 
+    def validate_sources(self, record):
+        checked = set()
+        for item in self.lexical.records(record["generation"]):
+            source = item["source"]
+            if source["structured_path"] not in checked:
+                for path, key in (("raw_path", "raw_hash"), ("structured_path", "structured_hash"), ("chunks_path", "chunks_hash")):
+                    if digest_file(Path(source[path])) != source[key]:
+                        raise ValueError("SOURCE_ARTIFACT_HASH_MISMATCH")
+                checked.add(source["structured_path"])
+
+    @staticmethod
+    def validate_implementation(record):
+        metadata = record["metadata"]
+        if metadata["index_version"] != INDEX_VERSION or metadata["tokenizer_version"] != TOKENIZER_VERSION:
+            raise ValueError("INDEX_IMPLEMENTATION_VERSION_MISMATCH")
+
     def activate(self, dataset: str, generation: str):
         record = self.lexical.generation(dataset, generation)
         if record["state"] != "READY":
             raise ValueError("INDEX_NOT_READY")
+        self.validate_implementation(record)
         self.validate_dense(record, complete=True)
+        self.validate_sources(record)
         with closing(self.lexical.connect()) as c, c:
             c.execute("INSERT INTO active VALUES(?,?) ON CONFLICT(dataset) DO UPDATE SET generation=excluded.generation", (dataset, generation))
 
@@ -248,6 +260,7 @@ class FinancialIndex:
         record = self.lexical.generation(dataset, generation)
         if record["state"] != "READY":
             raise ValueError("INDEX_NOT_READY")
+        self.validate_implementation(record)
         metadata = record["metadata"]
         manifest_hashes = sorted(source["manifest"]["manifest_hash"] for source in metadata["sources"])
         if expected_manifests is not None and sorted(expected_manifests) != manifest_hashes:

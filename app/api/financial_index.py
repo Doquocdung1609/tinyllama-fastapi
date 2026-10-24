@@ -1,6 +1,6 @@
 """Persistent SEC evidence search integrated into the existing application."""
-from functools import lru_cache
 import logging
+from threading import Lock
 from typing import Literal
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException
@@ -14,9 +14,25 @@ router = APIRouter(prefix="/financial-index", tags=["financial-search"])
 logger = logging.getLogger(__name__)
 
 
-@lru_cache(maxsize=1)
+_engine = None
+_engine_lock = Lock()
+
+
 def get_index():
-    return FinancialIndex(get_settings().financial_index_path)
+    global _engine
+    if _engine is None:
+        with _engine_lock:
+            if _engine is None:
+                _engine = FinancialIndex(get_settings().financial_index_path)
+    return _engine
+
+
+def close_index():
+    global _engine
+    with _engine_lock:
+        if _engine is not None:
+            _engine.close()
+            _engine = None
 
 
 class BuildRequest(BaseModel):
@@ -43,6 +59,11 @@ class SearchRequest(BaseModel):
     filing_ids: list[str] = Field(default_factory=list, max_length=20)
     expected_manifests: list[str] | None = Field(default=None, max_length=8)
     allow_degraded: bool = False
+
+
+class ActivateRequest(BaseModel):
+    dataset_id: str = Field(pattern=r"^[A-Za-z0-9_-]{1,80}$")
+    generation: str = Field(pattern=r"^[0-9a-f]{64}$")
 
 
 @router.get("/datasets")
@@ -88,3 +109,12 @@ def financial_search(request: SearchRequest):
         raise HTTPException(409, detail={"code": str(exc)}) from exc
     except Exception as exc:
         raise HTTPException(503, detail={"code": "INDEX_SEARCH_UNAVAILABLE", "message": str(exc)}) from exc
+
+
+@router.post("/activate")
+def activate_generation(request: ActivateRequest):
+    try:
+        get_index().activate(request.dataset_id, request.generation)
+        return {"dataset_id": request.dataset_id, "generation": request.generation, "state": "READY"}
+    except Exception as exc:
+        raise HTTPException(409, detail={"code": "GENERATION_ACTIVATION_FAILED", "message": str(exc)}) from exc

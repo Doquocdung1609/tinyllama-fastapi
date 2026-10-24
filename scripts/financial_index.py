@@ -25,15 +25,22 @@ def main():
     query.add_argument("--dataset", required=True)
     query.add_argument("--query", required=True)
     query.add_argument("--mode", choices=["bm25", "dense", "hybrid"], default="hybrid")
+    activate = sub.add_parser("activate")
+    activate.add_argument("--dataset", required=True)
+    activate.add_argument("--generation", required=True)
     sub.add_parser("status")
     args = parser.parse_args()
     started = perf_counter()
     engine = FinancialIndex(args.index_root)
+    index_open_ms = (perf_counter() - started) * 1000
     try:
         if args.command == "build":
             generation = engine.plan(args.dataset, json.loads(args.sources.read_text("utf-8")), force_rebuild=args.force_rebuild)
             print(json.dumps({"generation": generation, "state": "BUILDING"}), flush=True)
             result = engine.build(args.dataset, generation, batch_size=args.batch_size)
+        elif args.command == "activate":
+            engine.activate(args.dataset, args.generation)
+            result = {"generation": args.generation, "state": "READY"}
         elif args.command == "search":
             result = engine.search(args.dataset, args.query, args.mode)
         else:
@@ -42,6 +49,7 @@ def main():
             memory = psutil.Process().memory_info()
             result["process_peak_rss_mb"] = getattr(memory, "peak_wset", memory.rss) / 2**20
             result["process_elapsed_ms"] = (perf_counter() - started) * 1000
+            result["index_open_ms"] = index_open_ms
         print(json.dumps(result, ensure_ascii=True, indent=2), flush=True)
     finally:
         engine.close()

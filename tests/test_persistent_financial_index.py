@@ -182,6 +182,27 @@ def test_qdrant_failure_is_explicit_and_failed_generation_never_active(tmp_path,
     engine.close()
 
 
+def test_changed_index_implementation_or_missing_source_cannot_be_activated(tmp_path):
+    engine, _, gen, _, _, pipeline = built(tmp_path)
+    with closing(engine.lexical.connect()) as c, c:
+        row = c.execute("SELECT metadata FROM generations WHERE generation=?", (gen,)).fetchone()
+        metadata = json.loads(row[0])
+        metadata["tokenizer_version"] = "unsupported-version"
+        c.execute("UPDATE generations SET metadata=? WHERE generation=?", (json.dumps(metadata), gen))
+    with pytest.raises(ValueError, match="IMPLEMENTATION_VERSION_MISMATCH"):
+        engine.search("test", "Revenue", "bm25")
+    with pytest.raises(ValueError, match="IMPLEMENTATION_VERSION_MISMATCH"):
+        engine.activate("test", gen)
+    from app.financial_index import TOKENIZER_VERSION
+    metadata["tokenizer_version"] = TOKENIZER_VERSION
+    with closing(engine.lexical.connect()) as c, c:
+        c.execute("UPDATE generations SET metadata=? WHERE generation=?", (json.dumps(metadata), gen))
+    Path(pipeline.registry.list_filings()[0]["raw_path"]).unlink()
+    with pytest.raises(FileNotFoundError):
+        engine.activate("test", gen)
+    engine.close()
+
+
 def test_dimension_mismatch_never_publishes_and_model_drift_fails_or_explicitly_degrades(tmp_path):
     specs, _ = source(tmp_path)
     provider = FakeVectors()

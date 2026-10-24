@@ -309,6 +309,12 @@ elif page == "Tìm kiếm tài chính":
     st.header("Tìm bằng chứng tài chính")
     st.caption("Tra cứu công bố SEC theo từ khóa hoặc ý nghĩa, rồi đối chiếu đoạn nguồn.")
     inventory = api("GET", "/financial-index/datasets")
+    pending = [item for item in (inventory or {}).get("datasets", []) if item["state"] != "READY"]
+    if pending:
+        st.info("Một số bản cập nhật dữ liệu chưa hoàn tất. Tìm kiếm chỉ sử dụng bản đã sẵn sàng.")
+        with st.expander("Tiến độ chuẩn bị dữ liệu"):
+            for item in pending:
+                st.caption(f"{item['dataset_id']}: {'Đang lập chỉ mục' if item['state'] == 'BUILDING' else 'Chưa hoàn tất, cần kiểm tra lại'}")
     ready = [item for item in (inventory or {}).get("datasets", []) if item["active"] and item["state"] == "READY"]
     if not ready:
         st.info("Chưa có tập tài liệu đã lập chỉ mục sẵn sàng để tìm kiếm.")
@@ -349,7 +355,7 @@ elif page == "Tìm kiếm tài chính":
                     cells = m.get("cells") or []
                     if item["kind"] == "table" and cells:
                         labels = m.get("column_labels") or []
-                        st.dataframe([{"Cột": labels[cell['column']] if cell['column'] < len(labels) and labels[cell['column']] else 'Nhãn hàng',
+                        st.dataframe([{"Cột": labels[cell['column']] if cell['column'] < len(labels) and labels[cell['column']] else ('Nhãn hàng' if cell['column'] == 0 else 'Cột chưa xác định'),
                                        "Nội dung nguồn": cell['text']} for cell in cells if cell['text']], hide_index=True, use_container_width=True)
                         if m.get("unit_context"):
                             st.caption("Đơn vị: " + m["unit_context"])
