@@ -2,6 +2,8 @@
 
 Freeze reviewed at source `a6c3d6f`. No historical measurement or query artifact was edited. New acceptance documents add audit evidence only.
 
+Windows checkout recovery: `core.autocrlf=true` produced CRLF copies and correctly triggered the runner's frozen-byte hash guard. `.gitattributes` now explicitly keeps scientific JSON and evaluation/benchmark scripts as LF. This changes checkout policy only; Git blobs, frozen queries, judgments and measurements are unchanged. Acceptance validates hashes on a fresh integration checkout.
+
 ## Scientific interpretation
 
 Original 14-query development Recall@5 remains BM25 0.911, Dense 0.321, Hybrid 0.714. Prefix-aware generations are explicitly separate from raw-policy generations. The old set diagnoses the prefix defect; its improvement is not an unbiased generalization result.
