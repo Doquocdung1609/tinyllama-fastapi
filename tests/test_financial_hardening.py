@@ -12,7 +12,7 @@ import pytest
 import requests
 
 from app.financial_index.corpus import ProvenanceCache, verified_source
-from app.financial_index.ownership import LocalQdrantOwnership
+from app.financial_index.ownership import LocalQdrantOwnership, require_supported_embedded_qdrant
 from app.financial_index.service import FinancialIndex, OllamaVectors
 from app.financial_ingestion.registry import atomic_write_bytes
 from app.path_safety import ensure_path_capacity
@@ -164,6 +164,18 @@ def test_server_mode_is_not_blocked_by_local_owner_lock(tmp_path):
     second = FinancialIndex(tmp_path / "server", provider=FakeVectors(), qdrant_url="http://127.0.0.1:6333")
     first.close()
     second.close()
+
+
+def test_embedded_qdrant_rejects_untested_persistent_format_version(monkeypatch):
+    from app.financial_index import ownership
+    monkeypatch.setattr(ownership, "package_version", lambda _name: "1.20.7")
+    assert require_supported_embedded_qdrant() == "1.20.7"
+    monkeypatch.setattr(ownership, "package_version", lambda _name: "1.19.1")
+    with pytest.raises(RuntimeError, match="EMBEDDED_QDRANT_CLIENT_VERSION_UNSUPPORTED"):
+        require_supported_embedded_qdrant()
+    monkeypatch.setattr(ownership, "package_version", lambda _name: "2.0.0")
+    with pytest.raises(RuntimeError, match="EMBEDDED_QDRANT_CLIENT_VERSION_UNSUPPORTED"):
+        require_supported_embedded_qdrant()
 
 
 def test_provenance_cache_hits_and_tampering_never_bypasses_hashes(tmp_path):

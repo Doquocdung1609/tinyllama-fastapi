@@ -17,7 +17,7 @@ from app.financial_index import INDEX_VERSION, TOKENIZER_VERSION
 from app.financial_index.corpus import (ProvenanceCache, canonical, digest_file, iter_documents,
                                         resolve_sources, verified_source)
 from app.financial_index.lexical import LexicalIndex
-from app.financial_index.ownership import LocalQdrantOwnership
+from app.financial_index.ownership import LocalQdrantOwnership, require_supported_embedded_qdrant
 from app.services.financial_search_service import reciprocal_rank_fusion
 from app.path_safety import ensure_path_capacity
 
@@ -88,6 +88,7 @@ class FinancialIndex:
         self.qdrant_url = settings.financial_index_qdrant_url if qdrant_url is None else qdrant_url.strip()
         self._ownership = None
         if dense_client is None and not self.qdrant_url:
+            require_supported_embedded_qdrant()
             self._ownership = LocalQdrantOwnership(self.root)
         try:
             self.lexical = LexicalIndex(self.root / "lexical.sqlite3")

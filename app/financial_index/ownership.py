@@ -2,11 +2,25 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from importlib.metadata import PackageNotFoundError, version as package_version
 import json
 import os
 from pathlib import Path
+import re
 
 import portalocker
+
+
+def require_supported_embedded_qdrant() -> str:
+    """Fail early instead of letting an incompatible client reinterpret storage."""
+    try:
+        raw = package_version("qdrant-client")
+    except PackageNotFoundError as exc:
+        raise RuntimeError("EMBEDDED_QDRANT_CLIENT_VERSION_UNSUPPORTED") from exc
+    match = re.match(r"^(\d+)\.(\d+)", raw)
+    if match is None or (int(match.group(1)), int(match.group(2))) != (1, 20):
+        raise RuntimeError("EMBEDDED_QDRANT_CLIENT_VERSION_UNSUPPORTED")
+    return raw
 
 
 class LocalQdrantOwnership:
