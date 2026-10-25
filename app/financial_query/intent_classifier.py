@@ -16,7 +16,11 @@ def parse_query(question: str) -> QueryIntentV1:
     if re.search(r'\b(before|after|since|until|between|through|prior to|at least|at most|greater than|less than|more than)\b', text):
         unresolved.append('RANGE_OPERATOR_REQUIRES_CLARIFICATION')
     metrics = resolve_terms(text)
-    forms = sorted(set(m.upper() for m in re.findall(r"(?<!\w)10-[kq](?:/a)?(?!\w)", text)))
+    form_tokens = re.findall(r'(?<!\w)(?:(?:10|20|40|6|8)-|s-)[a-z0-9/-]+(?!\w)', text)
+    supported_forms = {'10-K', '10-Q', '10-K/A', '10-Q/A'}
+    forms = sorted({f.upper() for f in form_tokens if f.upper() in supported_forms})
+    if any(f.upper() not in supported_forms for f in form_tokens):
+        unresolved.append('UNSUPPORTED_OR_MALFORMED_FORM')
     if re.search(r'\bannual report\b', text) and not forms:
         unresolved.append('EXPLICIT_FORM_REQUIRED')
     accessions = sorted(set(re.findall(r"(?<![0-9])[0-9]{10}-[0-9]{2}-[0-9]{6}(?![0-9])", text)))
@@ -58,9 +62,10 @@ def parse_query(question: str) -> QueryIntentV1:
         rules.append("UNSUPPORTED_TASK")
     operation = ("PERCENTAGE_POINTS" if 'percentage point' in text else "RELATIVE_CHANGE" if re.search(r"\b(growth|percent change)\b", text)
                  else "DIFFERENCE" if 'difference' in text else "COMPARE") if compare else None
-    units = [unit for phrase, unit in (("usd", "USD"), ("$", "USD"), ("thousand", "THOUSANDS"), ("million", "MILLIONS"),
-              ("billion", "BILLIONS"), ("%", "PERCENT"), ("percent", "PERCENT"), ("percentage point", "PERCENTAGE_POINTS"),
-              ("per share", "PER_SHARE"), ("eps", "PER_SHARE")) if phrase in text]
+    units = [unit for pattern, unit in ((r'\busd\b|\$', 'USD'), (r'\bthousands?\b', 'THOUSANDS'),
+              (r'\bmillions?\b', 'MILLIONS'), (r'\bbillions?\b', 'BILLIONS'), (r'%|\bpercent\b', 'PERCENT'),
+              (r'\bpercentage points?\b', 'PERCENTAGE_POINTS'),
+              (r'\bper[ -]share\b|\beps\b|\busd/share\b', 'PER_SHARE')) if re.search(pattern, text)]
     return QueryIntentV1(original_question=question, normalized_question=text, category=category,
         secondary_intents=tags[1:] if category == (tags[0] if tags else None) else tags,
         metric_mentions=metrics, forms=forms, accessions=accessions, filing_dates=dates,

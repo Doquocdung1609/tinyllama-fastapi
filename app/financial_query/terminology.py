@@ -5,6 +5,9 @@ from app.financial_query.contracts import MetricMentionV1
 TERMINOLOGY_VERSION = "financial-terminology/v1"
 # phrase, canonical, relationship, related (no issuer-specific equivalence inferred)
 ENTRIES = (
+    ('net income attributable to parent company', 'net income attributable to parent', 'SYNONYM', ['net income']),
+    ('net income attributable to parent', 'net income attributable to parent', 'EXACT', ['net income']),
+    ('net income attributable to noncontrolling interests', 'net income attributable to noncontrolling interests', 'EXACT', ['net income']),
     ("basic earnings per share", "basic EPS", "SYNONYM", []),
     ("diluted earnings per share", "diluted EPS", "SYNONYM", []),
     ("basic eps", "basic EPS", "SYNONYM", []),
@@ -28,6 +31,8 @@ def resolve_terms(text: str) -> list[MetricMentionV1]:
             if any(i in used for i in range(*m.span())):
                 continue
             used.update(range(*m.span()))
+            attribution_unknown = canonical == 'net income' and re.match(r'\s+attributable\b', text[m.end():])
             matches.append((m.start(), MetricMentionV1(raw=m.group(), canonical=canonical,
-                relationship=relationship, related_concepts=related, rule_id=f"TERM:{phrase}")))
+                relationship='AMBIGUOUS' if attribution_unknown else relationship,
+                related_concepts=related, rule_id=f"TERM:{phrase}")))
     return [m for _, m in sorted(matches, key=lambda pair: pair[0])]

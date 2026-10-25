@@ -39,10 +39,13 @@ def extract_periods(text: str):
     if re.search(r"\b(last year|this year|last quarter|latest|recent|previous year|yesterday|today)\b", text):
         unresolved.append("RELATIVE_PERIOD_REQUIRES_REFERENCE")
     # Any unconsumed date/year/quarter is unresolved, never assigned the filing period.
-    for m in re.finditer(r"\b(?:19|20|21)[0-9]{2}\b|\bq[1-4]\b", text):
+    for m in re.finditer(r"\b(?:19|20|21|22)[0-9]{2}\b|\bq[0-9]+\b", text):
         if not all(i in consumed for i in range(*m.span())):
             # Ignore the middle year digits in an explicitly formatted accession.
             unresolved.append("UNQUALIFIED_PERIOD")
+    for m in re.finditer(r'(?<![\w-])(?:fy|q|fiscal\s*(?:year\s*)?|calendar\s*(?:year\s*)?)\s*[0-9][a-z0-9]*(?!\w)', text):
+        if not all(i in consumed for i in range(*m.span())):
+            unresolved.append('UNSUPPORTED_PERIOD_SYNTAX')
     if len({(r.start, r.end) for r in ranges}) > 1:
         unresolved.append("CONFLICTING_FILING_DATES")
     distinct = {}

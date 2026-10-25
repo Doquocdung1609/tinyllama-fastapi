@@ -37,7 +37,7 @@ def numeric_constraints(text: str) -> tuple[list[NumericConstraintV1], list[str]
         raw = match.group(0).strip()
         token = match['num']
         # Bare years/counts/dates are not automatically monetary predicates.
-        if not (match['currency'] or match['scale'] or match['unit'] or token.startswith(('(', '-', '−', '+'))):
+        if not (match['currency'] or match['scale'] or match['unit'] or '.' in token or ',' in token or token.startswith(('(', '-', '−', '+'))):
             continue
         paren = token.startswith('(')
         inner = token.strip('()').replace('−', '-')
@@ -49,10 +49,14 @@ def numeric_constraints(text: str) -> tuple[list[NumericConstraintV1], list[str]
         value = Decimal(inner.replace(',', ''))
         sign = "PARENTHESES" if paren else "MINUS" if inner.startswith('-') else "PLUS" if inner.startswith('+') else "NONE"
         if paren:
-            value = -value
+            value = value.copy_negate()  # exact; unary minus obeys Decimal context precision
         scale = (match['scale'] or '').lower().rstrip('s')
         multiplier = Decimal({'thousand': '1000', 'million': '1000000', 'billion': '1000000000'}.get(scale, '1'))
         u = (match['unit'] or '').lower()
+        if (match['currency'] or match['scale']) and (u in {'%', 'percent'} or u.startswith('percentage')):
+            unresolved.append('CONFLICTING_NUMERIC_UNITS')
+        if u in {'usd', 'usd/share', 'per share', 'per-share'} and re.match(r'\s+(?:thousands?|millions?|billions?)\b', text[match.end():], re.I):
+            unresolved.append('UNSUPPORTED_UNIT_ORDER')
         unit = ('PERCENTAGE_POINTS' if u.startswith('percentage') else 'PERCENT' if u in {'%', 'percent'}
                 else 'USD_PER_SHARE' if u in {'usd/share', 'per share', 'per-share'} else 'USD' if match['currency'] or u == 'usd' else 'UNKNOWN')
         numbers.append(NumericConstraintV1(raw=raw, value=value, multiplier=multiplier, unit=unit, sign_source=sign))

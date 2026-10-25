@@ -7,8 +7,10 @@ from app.financial_query.normalizer import matching_text
 def extract_issuers(question, catalog):
     text = matching_text(question)
     mentions, occupied = [], set()
-    for m in re.finditer(r"\bcik\s*:?\s*([A-Za-z0-9]+)\b", text):
-        cik = canonical_cik(m[1])
+    for m in re.finditer(r"\bcik\s*:?\s*([^\s]+)", text):
+        # Validate the whole identifier token, not a valid-looking prefix of
+        # 202.9 / 202/101. Permit only trailing sentence punctuation.
+        cik = canonical_cik(m[1].rstrip(',;:?!.)'))
         candidates = [i.cik for i in catalog.issuers if i.cik == cik]
         mentions.append(IssuerMentionV1(text=m.group(), kind="CIK", candidate_ciks=candidates))
         occupied.update(range(*m.span()))

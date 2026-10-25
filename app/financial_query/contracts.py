@@ -9,7 +9,37 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 
 class Contract(BaseModel):
-    model_config = ConfigDict(extra="forbid", frozen=True)
+    model_config = ConfigDict(extra="forbid", frozen=True, str_max_length=4000)
+
+
+def validate_input_budget(value):
+    """Bound caller data before Pydantic serialization/validation. No I/O.
+
+    Counts the actual tree (including repeated references), rejects cycles, and
+    inspects model field dictionaries before model_dump can expand them.
+    """
+    stack = [(value, 0, frozenset())]
+    nodes = characters = 0
+    while stack:
+        item, depth, ancestors = stack.pop()
+        nodes += 1
+        if nodes > 100000 or depth > 12:
+            raise ValueError('INPUT_COMPLEXITY_LIMIT')
+        if isinstance(item, str):
+            characters += len(item)
+            if len(item) > 4000 or characters > 2000000:
+                raise ValueError('INPUT_TEXT_LIMIT')
+        elif isinstance(item, (BaseModel, dict, list, tuple)):
+            if id(item) in ancestors:
+                raise ValueError('CYCLIC_INPUT')
+            children = item.__dict__ if isinstance(item, BaseModel) else item
+            if len(children) > 50000:
+                raise ValueError('INPUT_CONTAINER_LIMIT')
+            ancestry = ancestors | {id(item)}
+            if isinstance(children, dict):
+                stack.extend((child, depth + 1, ancestry) for pair in children.items() for child in pair)
+            else:
+                stack.extend((child, depth + 1, ancestry) for child in children)
 
 
 class Status(str, Enum):
@@ -194,6 +224,14 @@ class CorpusCatalogV1(Contract):
         ids = [f.filing_id for f in self.filings]
         if len(ciks) != len(self.issuers) or len(set(ids)) != len(ids):
             raise ValueError("Duplicate corpus identity")
+        submissions = {}
+        for filing in self.filings:
+            identity = (filing.form, filing.filing_date, filing.report_end)
+            if filing.accession in submissions and submissions[filing.accession] != identity:
+                raise ValueError('Conflicting metadata for the same accession')
+            # Joint registrants may share a submission; never infer subject CIK
+            # from accession prefix or reject consistent co-registrant entries.
+            submissions[filing.accession] = identity
         by_id = {f.filing_id: f for f in self.filings}
         for f in self.filings:
             if f.cik not in ciks:

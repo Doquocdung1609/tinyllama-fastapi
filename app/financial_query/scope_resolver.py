@@ -6,7 +6,7 @@ complete supplied catalog, filters and generation identity, not current time.
 from pydantic import ValidationError
 from app.financial_query.contracts import (
     CorpusCatalogV1, ExplicitFiltersV1, IntentCategory, PeriodV1, ResolvedScopeV1,
-    ScopeResolutionResultV1, Status, TraceStepV1,
+    ScopeResolutionResultV1, Status, TraceStepV1, validate_input_budget,
 )
 from app.financial_query.filing_resolver import resolve_filings
 from app.financial_query.intent_classifier import parse_query
@@ -25,6 +25,8 @@ def resolve_financial_query(question, explicit_filters, corpus_catalog, generati
             warnings=sorted(set(warnings or [])), trace=trace)
     try:
         intent = parse_query(question)
+        validate_input_budget(explicit_filters)
+        validate_input_budget(corpus_catalog)
         filter_data = explicit_filters.model_dump(warnings=False) if isinstance(explicit_filters, ExplicitFiltersV1) else explicit_filters
         filters = ExplicitFiltersV1.model_validate(filter_data if filter_data is not None else {})
         # Revalidate copies; mutable containers inside frozen Pydantic objects are
@@ -49,6 +51,8 @@ def resolve_financial_query(question, explicit_filters, corpus_catalog, generati
         return result(status, reasons)
     filings, status, reasons, dates, amendment = resolve_filings(intent, filters, catalog, issuer.cik)
     step('filing', status.value, ','.join(reasons))
+    if status == Status.NEEDS_CLARIFICATION and not filings:
+        return result(status, reasons)
     periods = list(intent.reporting_periods)
     if filters.fiscal_period and not filters.fiscal_year:
         return result(Status.NEEDS_CLARIFICATION, ['FISCAL_YEAR_REQUIRED_FOR_QUARTER_FILTER'])
@@ -70,7 +74,8 @@ def resolve_financial_query(question, explicit_filters, corpus_catalog, generati
             period_reasons.append('COLUMN_PERIOD_METADATA_INCOMPLETE')
             status = Status.NEEDS_CLARIFICATION
         elif missing:
-            status = Status.NO_ELIGIBLE_EVIDENCE
+            if status != Status.NEEDS_CLARIFICATION:
+                status = Status.NO_ELIGIBLE_EVIDENCE
             period_reasons.append('REQUESTED_PERIOD_NOT_IN_CATALOG')
     if not eligible and status == Status.RESOLVED:
         status = Status.NO_ELIGIBLE_EVIDENCE
