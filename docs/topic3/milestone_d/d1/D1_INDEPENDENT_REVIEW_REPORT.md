@@ -125,7 +125,7 @@ Before repairs: original114 tests passed while the full new52-test inventory fai
 
 ## Owner recommendation and gates
 
-Final acceptance recommendation is conditional on successful final-head CI and candidate verification, reported below and in PR #10. No recommendation authorizes a merge. No unresolved HIGH/CRITICAL finding is retained after the nine repairs; broader English NER, authentic catalog acquisition and live source/LLM/UI verification remain outside demonstrated coverage.
+Recommendation: **MILESTONE_D1_ACCEPTANCE_RECOMMENDED_WITH_LIMITATIONS**, subject to the final delivery-head revalidation recorded in PR #10/final report. Repaired delivery `2bdeb0d54adc6c3c2d1af8fdd4d48951dc165973` passed [core run40176378480](https://github.com/Doquocdung1609/tinyllama-fastapi/actions/runs/40176378480); logs show temporary test-merge `ab1a5d4413e7d80c93a509525ac87b1aa363f787` with the exact accepted target,360 PASS/1 SKIP/3 deselected/1 warning. This subsequent documentation-only gate record does not change tested Python/fixtures; its own current-head CI is checked again at delivery and recorded outside the commit in PR metadata. No recommendation authorizes a merge. No unresolved HIGH/CRITICAL finding is retained after the nine repairs; broader English NER, authentic catalog acquisition and live source/LLM/UI verification remain outside demonstrated coverage.
 
 | Gate | Status | Evidence |
 |---|---|---|
@@ -141,7 +141,7 @@ Final acceptance recommendation is conditional on successful final-head CI and c
 | IR10 | VERIFIED_WITH_LIMITATIONS |Seeded20 permutations, aliases, restriction/no-mutation/bounds tests; finite test domain |
 | IR11 | VERIFIED |Nine findings, before-source18 failures and permanent regression fixtures; repaired |
 | IR12 | VERIFIED |Focused, full and core commands/results in adversarial/integration reports |
-| IR13 | PARTIAL |Final delivery-head CI must be checked after documentation push; original CI is not sufficient |
+| IR13 | VERIFIED_WITH_LIMITATIONS |Repaired delivery CI360 PASS/1 SKIP/3 deselected, exact source/target confirmed in logs; final documentation-head CI rechecked in PR #10 delivery record |
 | IR14 | VERIFIED_WITH_LIMITATIONS |Candidate `9c212968…` compiled, full361/3SKIP and core361/3deselected; fixture paths, no new live product acceptance |
 | IR15 | VERIFIED_WITH_LIMITATIONS |All524 existing baseline tracked blobs identical; no owner corpus/index opened; no new physical-disk audit of owner history |
 | IR16 | VERIFIED |PR #10 Draft/open/unmerged at verified checkpoint; rechecked at delivery |
