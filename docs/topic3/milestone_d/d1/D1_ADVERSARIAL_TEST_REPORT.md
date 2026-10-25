@@ -10,24 +10,24 @@ Original source: `4506e3e0346ce1107fefe90d2cc2e57e8bdfa3f5`. Tests were authored
 |---|---|---|
 | Original existing `tests/test_financial_query.py` |114 PASS,1.53s |Original suite alone misses the counterexamples |
 | First36 new tests, original source |17 FAIL,19 PASS,0.77s |Minimal failures saved before repairs |
-| Complete52 new tests, original source |18 FAIL,34 PASS,0.97s |Additional unsigned-number example fails too; unrelated controls pass |
+| Initial52 new tests, original source |18 FAIL,34 PASS,0.97s |Additional unsigned-number example fails too; unrelated controls pass |
 | Repaired combined original+new D1 suite |166 PASS,1.76s |No original test removed or rewritten |
 | Repaired original focused command |114 PASS,1.69s |Explicit original-suite reproduction |
 | Repaired review-focused command |52 PASS,0.94s |All new counterexamples/controls pass |
 | Repaired full suite |361 PASS,3 SKIP,1 warning,56.83s |All available regression; expected media skips |
 | Repaired core (`not integration`) |361 PASS,3 deselected,1 warning,86.23s |Windows has Tesseract; no test skip in this selection |
 
-Tested implementation commit: `901a4d389aedbdc69d0d744d437c95cdc113097e`. The full-suite run immediately before that commit used identical Python/fixture bytes. Separate merge-candidate outcomes are in [integration report](D1_INTEGRATION_CANDIDATE_REPORT.md).
+Initial repaired implementation commit: `901a4d389aedbdc69d0d744d437c95cdc113097e`. The full-suite run immediately before that commit used identical Python/fixture bytes. Subsequent full-lexeme closure is `812dca898bcf4f304e72c5bfa1c44eb67f8f272a`; final outcomes are appended below. Separate merge-candidate outcomes are in [integration report](D1_INTEGRATION_CANDIDATE_REPORT.md).
 
-## New inventory:52 cases/tests
+## Final new inventory:56 cases/tests
 
-All tests are in `tests/test_financial_query_review.py`; the11 named query oracles are stored in `tests/fixtures/financial_query/review_counterexamples.json`. This file was added rather than mutating the original40-case fixture or historical measurement JSON.
+All tests are in `tests/test_financial_query_review.py`; the15 named query oracles are stored in `tests/fixtures/financial_query/review_counterexamples.json`. This file was added rather than mutating the original40-case fixture or historical measurement JSON.
 
 | Inventory / count | Attempt to falsify | Original observation → repaired behavior |
 |---|---|---|
 | F01 CIK decimal/path,2 |Never use a valid prefix of an invalid explicit identifier |Both falsely resolve CIK202 → INVALID_INPUT |
-| F02 unsupported/malformed forms,3 |Never ignore20-F or truncate10-k/ab |Two falsely resolve10-K → clarification;10-q2 already blocked and remains control |
-| F03 invalid/compact/bare periods,3 |Never silently drop q5, fy2025q2 or2200 |Three falsely resolve → clarification |
+| F02 form/accession lexemes,6 |Never ignore20-F, truncate10-k/ab/dot/underscore suffixes or infer issuer from embedded accession |Five false resolutions → clarification;10-q2 already blocked and remains control |
+| F03 invalid/compact/bare periods,4 |Never silently drop q5, fy2025q2, fy2025.1 or2200 |Four falsely resolve → clarification |
 | F05 unit order/conflict,2 |No multiplier/currency loss |USD-million order loses scale, USD-percent loses currency → clarification |
 | F06 explicit conflict plus fiscal filter,1 |Conflict must not become corpus absence |NO_ELIGIBLE_EVIDENCE → NEEDS_CLARIFICATION |
 | F04 long parenthetical Decimal,1 |Numeric precision independent of decimal context |Rounded at6/28 precision → exact at6/28/50 |
@@ -69,6 +69,12 @@ git diff --check
 Windows11 build10.0.26300; Python3.13.2; Pydantic2.13.5; pytest8.4.2; FastAPI0.142.2; Starlette1.7.0; httpx0.28.1; qdrant-client1.20.0. The sole local warning is the pre-existing Starlette/httpx TestClient deprecation. Full-suite skips are the three existing real-media tests gated by `RUN_REAL_MEDIA_TESTS`; core deselects those three. No source test was disabled to obtain green results.
 
 One intermediate repair guard accidentally recognized the Q in10-Q followed by an accession as a period. The unchanged original explicit-filing test caught this (1 FAIL/149 PASS); the guard was narrowed to exclude a preceding hyphen. All final results above include that correction. This is disclosed as repair-development evidence, not an open finding.
+
+## Full-lexeme follow-up (same F02/F03 findings)
+
+Four further counterexamples (`10-k.a`, `10-k_b`, `fy2025.1`, accession inside a word) were reproduced on the original HEAD and the intermediate repaired delivery. The latter produced4 FAIL/52 PASS in1.08s. The complete56-case inventory on the original source produced22 FAIL/34 PASS in0.96s. Whole-lexeme guards in `812dca8` close those paths without supporting new form/period syntax. Combined D1 tests then passed170/170 in7.34s; separate commands passed114 original tests in1.50s and56 review tests in1.09s. Earlier52-case runs and candidate timings remain labeled as initial evidence, not silently relabeled.
+
+Final implementation-tree verification on `812dca898bcf4f304e72c5bfa1c44eb67f8f272a`: `python -m compileall -q app scripts` exited0; `python -m pytest -q` produced **365 PASS/3 SKIP/1 warning in62.32s**; `python -m pytest -q -m "not integration"` produced **365 PASS/3 deselected/1 warning in32.63s**. Same Windows environment/skip rules as above. The source/candidate/CI identities for the subsequent documentation-only delivery are recorded in PR #10; older360/361-PASS runs are not used as evidence for a new runtime revision.
 
 ## Qualifications and unverified assumptions
 

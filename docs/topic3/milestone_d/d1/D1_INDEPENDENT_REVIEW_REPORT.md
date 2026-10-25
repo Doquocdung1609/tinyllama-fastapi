@@ -8,7 +8,7 @@ This is a fresh adversarial pass by the same Codex system that authored D1, **no
 
 Original PR #10 review HEAD: `4506e3e0346ce1107fefe90d2cc2e57e8bdfa3f5`, Draft/open/unmerged, head `codex/topic3-milestone-d1-query-understanding`, base `codex/topic3-milestone-b-sec-corpus`. Target was `d1d5195b26f77d8fb25c830229c4c3693d4b638f`; accepted C merge `69e6866552d15571858b44707d59a453443fae9c` remains an ancestor. PR #9 was Draft/open/unmerged at `bcd5728afda4207e79ebf789edd73594aab60bbe`. GitHub discussion/review timeline returned no comments. No competing source/target commits were present at preflight or candidate construction.
 
-A dedicated managed review worktree starts at the exact original HEAD. Repairs are commit `901a4d389aedbdc69d0d744d437c95cdc113097e`; a second managed worktree tests a local merge candidate. Main and accepted target refs are not checked out or modified for integration. Final documentation-only delivery SHA and final-head CI identity are recorded in PR #10/final delivery, avoiding a self-referential SHA inside its own commit.
+A dedicated managed review worktree starts at the exact original HEAD. Initial repairs are commit `901a4d389aedbdc69d0d744d437c95cdc113097e`; full-lexeme closure is `812dca898bcf4f304e72c5bfa1c44eb67f8f272a`. A second managed worktree tests integration candidates. Main and accepted target refs are not checked out or modified for integration. Final documentation-only delivery SHA and final-head CI identity are recorded in PR #10/final delivery, avoiding a self-referential SHA inside its own commit.
 
 ## Original 19-file inventory and review checklist
 
@@ -51,20 +51,20 @@ No CRITICAL defect was demonstrated. Four HIGH and five MEDIUM findings below we
 - Repair: validate the entire CIK token, allowing only trailing sentence punctuation. No external identity lookup or permissive nondigit stripping.
 - Regression: `test_review_counterexamples[F01-cik-decimal/F01-cik-path]`; alias-equivalence controls retain leading-zero support.
 
-### F02 — HIGH: unsupported/malformed form silently ignored or truncated
+### F02 — HIGH: unsupported/malformed filing identity silently ignored or truncated
 
 - File/function: `intent_classifier.py::parse_query`.
 - Preconditions: Beta has10-K but no20-F.
-- Reproducer: `Beta revenue 20-F`; `Beta revenue 10-k/ab`.
+- Reproducer: `Beta revenue 20-F`; `Beta revenue 10-k/ab`; later suffix controls `10-k.a`, `10-k_b`, and `revenue prefix0000000202-25-000001`.
 - Expected: typed unresolved form; observed: `RESOLVED`10-K, either with no extracted form or a truncated10-K token.
-- Repair: inspect whole supported-family form tokens and add `UNSUPPORTED_OR_MALFORMED_FORM` for unsupported variants. No new filing-form coverage is asserted.
+- Repair: inspect whole supported-family form lexemes and add `UNSUPPORTED_OR_MALFORMED_FORM` for unsupported variants; accessions must be standalone tokens, never an embedded substring used to infer issuer. Malformed accession-containing tokens clarify. No new filing-form coverage is asserted.
 - Regression: F02 counterexamples. `10-q2` was already rejected on the original source through period ambiguity; it remains a negative control, not an additional claimed original failure.
 
 ### F03 — HIGH: malformed period request disappears
 
 - File/function: `period_resolver.py::extract_periods`.
 - Preconditions: Beta's typed FY2025 column is present.
-- Reproducer: `Beta revenue 10-K q5 FY2025` or lowercase `fy2025q2`; bare year2200 also escaped the old year guard.
+- Reproducer: `Beta revenue 10-K q5 FY2025`, lowercase `fy2025q2` or `fy2025.1`; bare year2200 also escaped the old year guard.
 - Expected: clarification, not a whole-year/unrestricted scope. Observed: FY2025/all-filing `RESOLVED`.
 - Repair: detect unconsumed fiscal/quarter/calendar-shaped tokens and cover the schema's upper year boundary. Supported grammar remains unchanged; compact/malformed variants are rejected conservatively. The guard excludes the Q in a10-Q form before an accession.
 - Regression: F03 counterexamples and all-four-quarter/January-fiscal/comparative controls.
@@ -121,7 +121,7 @@ Three distinct boundaries: (1) Pydantic structural validation, (2) metadata line
 
 `RESOLVED` is metadata scope only. Unresolved `eligible_filing_ids` are retained candidates, not verified evidence; consumers must gate on the result status. Matched refs are caller-supplied typed metadata references, not checked citations. Missing fiscal calendars, free-text-only period labels, partial extraction and orphan amendments remain explicit limitations. No financial answer or retrieval-quality claim is permitted.
 
-Before repairs: original114 tests passed while the full new52-test inventory failed18 and passed34. After repairs:114 original+52 review tests pass. Full/local/core/candidate results and exact candidate identity are in the companion reports. All original524 accepted-baseline Git blobs remain identical; D1 runtime additions/repairs are opt-in and no API/UI/retrieval default changed.
+Before repairs: original114 tests passed while the final new56-test inventory failed22 and passed34. Four full-lexeme suffix/embedded-token cases also failed on the intermediate repaired delivery (4 FAIL/52 PASS); these were closed in `812dca8`. After closure:114 original+56 review tests pass. Full/local/core/candidate results and exact candidate identity are in the companion reports. All original524 accepted-baseline Git blobs remain identical; D1 runtime additions/repairs are opt-in and no API/UI/retrieval default changed.
 
 ## Owner recommendation and gates
 
@@ -139,7 +139,7 @@ Recommendation: **MILESTONE_D1_ACCEPTANCE_RECOMMENDED_WITH_LIMITATIONS**, subjec
 | IR08 | VERIFIED_WITH_LIMITATIONS |Adapter tamper controls and forged-catalog dependency test; source bytes not authenticated by D1 |
 | IR09 | VERIFIED_WITH_LIMITATIONS |No-I/O/exec/SQL/network controls, input/cycle budgets; no public-service security certification |
 | IR10 | VERIFIED_WITH_LIMITATIONS |Seeded20 permutations, aliases, restriction/no-mutation/bounds tests; finite test domain |
-| IR11 | VERIFIED |Nine findings, before-source18 failures and permanent regression fixtures; repaired |
+| IR11 | VERIFIED |Nine findings, before-source22 failures and permanent regression fixtures; repaired including full-lexeme closure |
 | IR12 | VERIFIED |Focused, full and core commands/results in adversarial/integration reports |
 | IR13 | VERIFIED_WITH_LIMITATIONS |Repaired delivery CI360 PASS/1 SKIP/3 deselected, exact source/target confirmed in logs; final documentation-head CI rechecked in PR #10 delivery record |
 | IR14 | VERIFIED_WITH_LIMITATIONS |Candidate `9c212968…` compiled, full361/3SKIP and core361/3deselected; fixture paths, no new live product acceptance |
