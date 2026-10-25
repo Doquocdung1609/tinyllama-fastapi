@@ -49,10 +49,12 @@ Statuses refer to this research task. `VERIFIED` means an inspection or design a
 | RD13 resource budget | VERIFIED_WITH_LIMITATIONS |10 explicit local envelope/estimates; no new runtime measurement |
 | RD14 claim matrix | VERIFIED |12 distinguishes accepted observation, literature, hypothesis and unsupported speculation |
 | RD15 owner memo | VERIFIED |This memo answers ten questions and compares two architectures |
-| RD16 research-only Draft PR | PARTIAL |Research branch and13 documents prepared; delivery check recorded below after remote verification |
+| RD16 research-only Draft PR | VERIFIED |[Draft PR #9](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/9), open/unmerged, correct research head and accepted target;13 new documentation files only |
 
 ## Inspection and delivery record
 
 Inspection commands included `git status --short`, `git fetch origin --prune`, `git rev-parse HEAD`, `git merge-base --is-ancestor`, `git branch --show-current`, `rg` and source reads; read-only SQLite queries extracted examples. External paper records/full text were browsed; no unrelated secondary summaries were used as authority. No tests, models, benchmarks or app services were run for this design-only change. Accepted C test results are inherited historical evidence, not claimed as rerun.
 
 Research branch: `codex/topic3-milestone-d-research-blueprint`, target `codex/topic3-milestone-b-sec-corpus`. Delivery validation must check exactly13 new Markdown files, local links and diff whitespace; ensure all changed paths are under `docs/topic3/milestone_d/`, accepted artifacts/main unchanged, clean worktree after commit, Draft PR open/unmerged with correct base/head. Final commit and PR identity are supplied by GitHub/Git at delivery; do not put a self-referential commit hash inside its own content.
+
+Delivery check:13-document inventory, balanced Markdown fences, all relative links resolved, only permitted new paths and `git diff --cached --check` passed. Initial research commit `7210e477cb26f5e11cc0105c283d8a305ffc5dd8` was pushed normally; GitHub created [PR #9](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/9) as Draft, open and unmerged, base SHA `d1d5195b26f77d8fb25c830229c4c3693d4b638f`. This delivery-record update is a subsequent documentation commit. Git warned about future LF→CRLF checkout conversion for these new Markdown files; no historical file was rewritten. No runtime regression was rerun for a documentation-only diff, and no CI success is asserted by this record.
