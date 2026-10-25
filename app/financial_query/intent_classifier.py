@@ -16,14 +16,19 @@ def parse_query(question: str) -> QueryIntentV1:
     if re.search(r'\b(before|after|since|until|between|through|prior to|at least|at most|greater than|less than|more than)\b', text):
         unresolved.append('RANGE_OPERATOR_REQUIRES_CLARIFICATION')
     metrics = resolve_terms(text)
-    form_tokens = re.findall(r'(?<!\w)(?:(?:10|20|40|6|8)-|s-)[a-z0-9/-]+(?!\w)', text)
+    form_tokens = [token.rstrip('.') for token in re.findall(
+        r"""(?<!\w)(?:(?:10|20|40|6|8)-|s-)[^\s,;:?!()"']+""", text)]
     supported_forms = {'10-K', '10-Q', '10-K/A', '10-Q/A'}
     forms = sorted({f.upper() for f in form_tokens if f.upper() in supported_forms})
     if any(f.upper() not in supported_forms for f in form_tokens):
         unresolved.append('UNSUPPORTED_OR_MALFORMED_FORM')
     if re.search(r'\bannual report\b', text) and not forms:
         unresolved.append('EXPLICIT_FORM_REQUIRED')
-    accessions = sorted(set(re.findall(r"(?<![0-9])[0-9]{10}-[0-9]{2}-[0-9]{6}(?![0-9])", text)))
+    accession_pattern = r'[0-9]{10}-[0-9]{2}-[0-9]{6}'
+    accessions = sorted(set(re.findall(r'(?<!\w)' + accession_pattern + r'(?!\w)', text)))
+    for token in text.split():
+        if re.search(accession_pattern, token) and not re.fullmatch(accession_pattern, token.strip(".,;:?!()\"'")):
+            unresolved.append('MALFORMED_ACCESSION_TOKEN')
     original = bool(re.search(r"\b(original|originally)\b", text))
     amended = bool(re.search(r"\b(amended|amendment)\b", text) or any(f.endswith('/A') for f in forms))
     if original and amended:

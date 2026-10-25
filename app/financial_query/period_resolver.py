@@ -43,8 +43,11 @@ def extract_periods(text: str):
         if not all(i in consumed for i in range(*m.span())):
             # Ignore the middle year digits in an explicitly formatted accession.
             unresolved.append("UNQUALIFIED_PERIOD")
-    for m in re.finditer(r'(?<![\w-])(?:fy|q|fiscal\s*(?:year\s*)?|calendar\s*(?:year\s*)?)\s*[0-9][a-z0-9]*(?!\w)', text):
-        if not all(i in consumed for i in range(*m.span())):
+    for m in re.finditer(r"""(?<![\w-])(?:fy|q|fiscal\s*(?:year\s*)?|calendar\s*(?:year\s*)?)\s*[0-9][^\s,;:?!()"']*""", text):
+        end = m.end()
+        while end > m.start() and text[end - 1] == '.':
+            end -= 1
+        if not all(i in consumed for i in range(m.start(), end)):
             unresolved.append('UNSUPPORTED_PERIOD_SYNTAX')
     if len({(r.start, r.end) for r in ranges}) > 1:
         unresolved.append("CONFLICTING_FILING_DATES")
