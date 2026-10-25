@@ -79,3 +79,9 @@ Blueprint discrepancy resolved minimally: accepted C metadata has filing fiscal 
 ## Verification and limitations
 
 See [test and benchmark report](D1_TEST_AND_BENCHMARK_REPORT.md) for exact commands/results, [40 cases](D1_SCOPE_RESOLUTION_CASES.md) for fixture oracles and [compatibility/risk](D1_COMPATIBILITY_AND_RISK_REPORT.md) for gate evidence. No LLM, retrieval ranking, vector generation, API/UI wiring or production-default change is included. This interface is opt-in and is not imported by existing production routes.
+
+## Adversarial review addendum (original evidence preserved)
+
+The implementation/results above describe the original D1 delivery at `4506e3e0346ce1107fefe90d2cc2e57e8bdfa3f5`. A fresh same-system review found nine defects despite the original114 tests passing. Repair commit `901a4d389aedbdc69d0d744d437c95cdc113097e` validates whole CIK/form/period tokens, preserves Decimal precision and formatted numbers, rejects unsupported unit combinations, retains conflict priority, checks shared-accession metadata consistency, adds bounded catalog intake and preserves metric/unit distinctions. These are D1 corrections, not D2–D5 functionality.
+
+See [independent-style review](D1_INDEPENDENT_REVIEW_REPORT.md), [new adversarial evidence](D1_ADVERSARIAL_TEST_REPORT.md) and [integration candidate](D1_INTEGRATION_CANDIDATE_REPORT.md). Original40-case fixtures, benchmark bytes and historical C evidence are unchanged. The original performance values must not be presented as measurements of the repaired code.

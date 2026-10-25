@@ -51,3 +51,9 @@ New tests additionally prohibit socket creation during all40 resolver cases, ass
 | D1-16 Draft PR | VERIFIED |[Draft PR #10](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/10), open/unmerged, correct accepted target; implementation commit `8c49d041228ab18ca131af753f2c0b0446447cdc` |
 
 GitHub delivery:19 added files, no modifications/deletions to accepted files; normal push only. PR #9 remains a separate Draft, not merged into D1. The delivery-record commit changes documentation only; final HEAD/CI are independently visible in PR #10 and the final report. No merge is authorized or performed. No unsupported gate is upgraded merely because code is complete.
+
+## Later review qualification
+
+The gate ledger above is the original implementation checkpoint, not proof for a repaired HEAD. A new adversarial pass reproduced18 failing tests in a52-test independent-style inventory, repaired nine findings and retained all original tests/fixtures. Current evidence and IR01–IR18 are in [review report](D1_INDEPENDENT_REVIEW_REPORT.md) and [candidate report](D1_INTEGRATION_CANDIDATE_REPORT.md). D1 now rejects unsupported/malformed explicit identity/period tokens, unsupported numeric unit order and conflicting amount/percent modifiers instead of silently narrowing intent. Catalog intake additionally limits string/tree complexity; this is not a large-corpus performance guarantee. Consistent joint-registrant accessions are allowed, while conflicting form/date metadata is invalid.
+
+No accepted C production module, default, dependency or historical scientific blob was changed. Source-byte authentication, authentic alias/column evidence and any later integration consumer remain explicit dependencies. No live financial-answer or production certification is added by this review.

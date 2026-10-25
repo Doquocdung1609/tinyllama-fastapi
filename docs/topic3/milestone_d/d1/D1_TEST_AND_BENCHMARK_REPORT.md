@@ -44,3 +44,7 @@ Do not compare these numbers to C's HTTP, service search, provenance cache or en
 ## Delivery and CI
 
 Implementation commit: `8c49d041228ab18ca131af753f2c0b0446447cdc`. [Draft PR #10](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/10) targets the exact accepted base. A subsequent documentation-only delivery-record commit does not change tested Python/fixtures. Exact final source HEAD/current CI status are recorded in PR metadata and the final delivery report. This document records local evidence and does not assert a CI result from an older commit. The unchanged core workflow compiles and runs the deterministic suite on the PR; platform-dependent Tesseract/media selection may differ from Windows counts.
+
+## Later adversarial review evidence
+
+The preceding309-PASS/114-focused counts and benchmark JSON are preserved as original implementation evidence. They do not establish correctness of cases absent from that suite. Fresh tests found18 failures on the original HEAD, with34 controls passing. After targeted repairs, the original114 and new52 tests pass; local full regression reports361 PASS/3 SKIP/1 warning and core361 PASS/3 deselected/1 warning. Exact review commands, environment, before/after results, candidate identities and final-head CI are recorded in the [adversarial report](D1_ADVERSARIAL_TEST_REPORT.md), [candidate report](D1_INTEGRATION_CANDIDATE_REPORT.md) and PR #10 delivery record. No old numerical measurement has been overwritten or relabeled as a repaired-code speed result.
