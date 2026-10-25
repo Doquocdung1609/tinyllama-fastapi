@@ -52,6 +52,13 @@ class LexicalIndex:
                     PRIMARY KEY(generation,term));
                 CREATE TABLE IF NOT EXISTS vectors(identity TEXT NOT NULL,input_hash TEXT NOT NULL,vector TEXT NOT NULL,
                     PRIMARY KEY(identity,input_hash));
+                CREATE TABLE IF NOT EXISTS generation_protections(
+                    generation TEXT NOT NULL,kind TEXT NOT NULL,reference TEXT NOT NULL,
+                    created_at TEXT NOT NULL,PRIMARY KEY(generation,kind,reference),
+                    FOREIGN KEY(generation) REFERENCES generations(generation) ON DELETE CASCADE);
+                CREATE TABLE IF NOT EXISTS cleanup_audit(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,generation TEXT NOT NULL,state TEXT NOT NULL,
+                    requested_at TEXT NOT NULL,completed_at TEXT,error_code TEXT);
             ''')
             c.commit()
 

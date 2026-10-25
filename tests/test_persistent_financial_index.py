@@ -83,8 +83,14 @@ def test_nomic_embedding_inputs_use_required_asymmetric_retrieval_prefixes(monke
         calls.append(json)
         return Response()
 
-    monkeypatch.setattr(service.requests, "post", post)
-    provider = service.OllamaVectors()
+    class Session:
+        def post(self, *args, **kwargs):
+            return post(*args, **kwargs)
+
+        def close(self):
+            pass
+
+    provider = service.OllamaVectors(session=Session())
     assert provider.embed_documents(["row text"])[0] == [1., 2., 3.]
     assert calls[-1]["input"] == ["search_document: row text"]
     assert provider.embed_query("what is revenue?") == [1., 2., 3.]
