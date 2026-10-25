@@ -1,0 +1,62 @@
+{
+  "contract_version": "financial-query-catalog/v1",
+  "dataset_id": "d1_synthetic",
+  "manifest_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "generation_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "provenance": "SYNTHETIC D1 metadata fixtures. No real SEC evidence, companies, accessions or financial figures.",
+  "issuers": [
+    {"cik":"0000000101","company_name":"Alpha Example Corporation","tickers":["ALP","DUP"],"verified_aliases":["Alpha"]},
+    {"cik":"0000000202","company_name":"Beta Example Corporation","tickers":["BET","DUP"],"verified_aliases":["Beta"]},
+    {"cik":"0000000303","company_name":"Gamma Example Corporation","tickers":["GAM"],"verified_aliases":["Gamma"]}
+  ],
+  "filings": [
+    {
+      "filing_id":"sec:0000000101:0000000101-26-000001","cik":"0000000101","accession":"0000000101-26-000001","form":"10-K",
+      "filing_date":"2026-02-20","report_end":"2025-12-31","fiscal_year":2025,"fiscal_period":"FY","extraction_status":"READY",
+      "column_periods_complete":true,
+      "column_periods":[
+        {"period":{"kind":"FISCAL_YEAR","year":2025,"raw":"FY2025"},"source_ref":"synthetic:income:column2025"},
+        {"period":{"kind":"FISCAL_YEAR","year":2024,"raw":"FY2024 comparative"},"source_ref":"synthetic:income:column2024"},
+        {"period":{"kind":"CALENDAR_YEAR","year":2025,"raw":"calendar year 2025 explicitly verified"},"source_ref":"synthetic:calendar2025"},
+        {"period":{"kind":"INSTANT","end":"2025-12-31","raw":"As of December 31, 2025"},"source_ref":"synthetic:balance:2025"},
+        {"period":{"kind":"DURATION","months":12,"end":"2025-12-31","raw":"Year ended December 31, 2025"},"source_ref":"synthetic:income:year2025"}
+      ]
+    },
+    {
+      "filing_id":"sec:0000000101:0000000101-26-000002","cik":"0000000101","accession":"0000000101-26-000002","form":"10-K/A",
+      "filing_date":"2026-03-20","report_end":"2025-12-31","fiscal_year":2025,"fiscal_period":"FY",
+      "amendment_of":"sec:0000000101:0000000101-26-000001","extraction_status":"PARTIAL_EXTRACTION",
+      "column_periods_complete":true,
+      "column_periods":[{"period":{"kind":"FISCAL_YEAR","year":2025,"raw":"FY2025"},"source_ref":"synthetic:amended:2025"}]
+    },
+    {
+      "filing_id":"sec:0000000101:0000000101-25-000003","cik":"0000000101","accession":"0000000101-25-000003","form":"10-Q",
+      "filing_date":"2025-08-01","report_end":"2025-06-30","fiscal_year":2025,"fiscal_period":"Q2","extraction_status":"READY",
+      "column_periods_complete":true,
+      "column_periods":[
+        {"period":{"kind":"FISCAL_QUARTER","year":2025,"quarter":2,"raw":"Q2 FY2025"},"source_ref":"synthetic:quarter:q2"},
+        {"period":{"kind":"DURATION","months":3,"end":"2025-06-30","raw":"Quarter ended June 30, 2025"},"source_ref":"synthetic:quarter:3months"}
+      ]
+    },
+    {
+      "filing_id":"sec:0000000101:0000000101-25-000004","cik":"0000000101","accession":"0000000101-25-000004","form":"10-Q/A",
+      "filing_date":"2025-09-01","report_end":"2025-06-30","extraction_status":"READY",
+      "column_periods_complete":true,
+      "column_periods":[{"period":{"kind":"FISCAL_QUARTER","year":2025,"quarter":2,"raw":"Q2 FY2025"},"source_ref":"synthetic:unlinked:q2"}]
+    },
+    {
+      "filing_id":"sec:0000000202:0000000202-25-000001","cik":"0000000202","accession":"0000000202-25-000001","form":"10-K",
+      "filing_date":"2025-09-20","report_end":"2025-06-30","fiscal_year":2025,"fiscal_period":"FY","extraction_status":"READY",
+      "column_periods_complete":true,
+      "column_periods":[
+        {"period":{"kind":"FISCAL_YEAR","year":2025,"raw":"FY2025 ended June30"},"source_ref":"synthetic:beta:fiscal2025"},
+        {"period":{"kind":"INSTANT","end":"2025-06-30","raw":"As of June 30, 2025"},"source_ref":"synthetic:beta:instant"}
+      ]
+    },
+    {
+      "filing_id":"sec:0000000303:0000000303-26-000001","cik":"0000000303","accession":"0000000303-26-000001","form":"10-K",
+      "filing_date":null,"report_end":"2025-09-30","fiscal_year":null,"fiscal_period":null,"extraction_status":"PARTIAL_EXTRACTION",
+      "column_periods_complete":false,"raw_column_labels":["2025","2024"]
+    }
+  ]
+}

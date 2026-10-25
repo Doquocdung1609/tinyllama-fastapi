@@ -1,0 +1,39 @@
+{
+  "scope": "D1 resolver only on synthetic metadata; no retrieval-quality claim",
+  "python": "3.13.2",
+  "os": "Windows-11-10.0.26300-SP0",
+  "cpu": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel",
+  "fixture": {
+    "issuers": 3,
+    "filings": 6,
+    "queries": 40,
+    "catalog_sha256_canonical_lf": "fec773aed4eff25eec6eec3e5fc6ffd1d9e5acdb9b257db8ce0002139ba68b7e",
+    "cases_sha256_canonical_lf": "7744c9ced4ea8d2ef23fd97976153f80f47c3610d046f3e02a0953191b7b4d95"
+  },
+  "warm": {
+    "samples": 1000,
+    "p50_ms": 0.43065000500064343,
+    "p95_ms_nearest_rank": 0.5848000000696629
+  },
+  "first_request_fresh_process_C01": {
+    "samples": 10,
+    "p50_ms": 5.1774499952443875,
+    "p95_ms_nearest_rank": 7.667700003366917
+  },
+  "fresh_process_wall_including_startup_imports_fixture_load_C01": {
+    "samples": 10,
+    "p50_ms": 366.4842499929364,
+    "p95_ms_nearest_rank": 441.4956999971764
+  },
+  "tracemalloc_one_sweep_bytes": {
+    "current": 3135,
+    "peak": 37668
+  },
+  "process_rss_bytes_after_run": 35041280,
+  "notes": [
+    "One warmup sweep; fixed case order; 25 repeats by default; no GPU used",
+    "Fresh process is not a cold OS filesystem or CPU cache",
+    "RSS includes Python/dependencies/catalog, not incremental per-query memory",
+    "Do not compare resolver-only measurements with Milestone C end-to-end timings"
+  ]
+}
