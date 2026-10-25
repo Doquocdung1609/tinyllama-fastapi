@@ -31,6 +31,23 @@ class Settings:
     financial_registry_db: Path = Path(os.getenv(
         "FINANCIAL_REGISTRY_DB", str(ROOT_DIR / "financial_corpus" / "registry.sqlite3")))
     financial_staging_collection: str = os.getenv("FINANCIAL_STAGING_COLLECTION", "financial_staging")
+    financial_index_path: Path = Path(os.getenv("FINANCIAL_INDEX_PATH", str(ROOT_DIR / "financial_search_data")))
+    financial_index_qdrant_url: str = os.getenv("FINANCIAL_INDEX_QDRANT_URL", "").strip()
+    financial_index_admin_token: str = os.getenv("FINANCIAL_INDEX_ADMIN_TOKEN", "").strip()
+    financial_index_allow_local_mutations: bool = os.getenv(
+        "FINANCIAL_INDEX_ALLOW_LOCAL_MUTATIONS", "false").strip().lower() in {"1", "true", "yes"}
+    financial_index_max_request_bytes: int = int(os.getenv("FINANCIAL_INDEX_MAX_REQUEST_BYTES", "16384"))
+    financial_index_max_pending_builds: int = int(os.getenv("FINANCIAL_INDEX_MAX_PENDING_BUILDS", "2"))
+    financial_index_force_rebuild_cooldown_seconds: float = float(os.getenv(
+        "FINANCIAL_INDEX_FORCE_REBUILD_COOLDOWN_SECONDS", "60"))
+    financial_index_retained_ready: int = int(os.getenv("FINANCIAL_INDEX_RETAINED_READY", "3"))
+    financial_index_rollback_generations: int = int(os.getenv("FINANCIAL_INDEX_ROLLBACK_GENERATIONS", "1"))
+    financial_index_provenance_cache_entries: int = int(os.getenv(
+        "FINANCIAL_INDEX_PROVENANCE_CACHE_ENTRIES", "8"))
+    financial_index_provenance_cache_mb: int = int(os.getenv(
+        "FINANCIAL_INDEX_PROVENANCE_CACHE_MB", "128"))
+    ollama_identity_timeout_seconds: float = float(os.getenv("OLLAMA_IDENTITY_TIMEOUT_SECONDS", "10"))
+    ollama_embedding_timeout_seconds: float = float(os.getenv("OLLAMA_EMBEDDING_TIMEOUT_SECONDS", "300"))
     sec_user_agent: str = os.getenv("SEC_USER_AGENT", "").strip()
     sec_requests_per_second: float = float(os.getenv("SEC_REQUESTS_PER_SECOND", "6"))
     sec_timeout_seconds: float = float(os.getenv("SEC_TIMEOUT_SECONDS", "30"))

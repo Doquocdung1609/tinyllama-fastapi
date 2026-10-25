@@ -1,0 +1,579 @@
+{
+  "timestamp_local": "2026-10-25T12:51:30+07:00",
+  "base_url": "http://127.0.0.1:8000",
+  "candidate_source": "a6c3d6ff449e7ba7f783f548340a2b8ab76c1521",
+  "candidate_target": "b7fd390e39f5ba6a1031ff210181c009dbf362ed",
+  "checks": {
+    "health": {
+      "status": 200,
+      "elapsed_ms": 66.86,
+      "body": {
+        "status": "ok"
+      }
+    },
+    "system_status": {
+      "status": 200,
+      "elapsed_ms": 11869.49,
+      "body": {
+        "ollama": {
+          "online": true,
+          "model": "qwen2.5:3b",
+          "model_available": true,
+          "models": [
+            "qwen2.5:3b",
+            "nomic-embed-text:latest",
+            "llama3:latest"
+          ],
+          "running_models": [],
+          "gpu_vram_bytes": 0
+        },
+        "embedding": {
+          "provider": "ollama",
+          "model": "nomic-embed-text:latest",
+          "dimension": 768,
+          "available": true
+        },
+        "qdrant": {
+          "online": true,
+          "collection": "knowledgebase",
+          "vectors": 0,
+          "dimension": null,
+          "distance": "Cosine"
+        },
+        "gpu": {
+          "cuda_available": true,
+          "name": "NVIDIA GeForce GTX 1650 Ti",
+          "driver_version": "555.97",
+          "memory_total_mb": 4096,
+          "memory_free_mb": 3565,
+          "memory_used_mb": 371,
+          "utilization_percent": 7.0,
+          "compute_capability": "7.5",
+          "torch": "2.6.0+cu124",
+          "torch_cuda": "12.4"
+        }
+      }
+    },
+    "datasets": {
+      "status": 200,
+      "elapsed_ms": 23.1,
+      "body": {
+        "active": [
+          {
+            "dataset_id": "issuer-heldout-index-v1",
+            "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+            "chunks": 320,
+            "state": "READY",
+            "source_partial_documents": [
+              "sec:0000104169:0000104169-26-000055",
+              "sec:0001045810:0001045810-26-000021"
+            ],
+            "embedding": {
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimension": 768,
+              "document_prefix": "search_document: ",
+              "model": "nomic-embed-text:latest",
+              "normalization_policy": "unicode-preserved;whitespace-preserved",
+              "query_prefix": "search_query: ",
+              "truncation_policy": "first-6000-content-characters;ollama-truncate=true"
+            },
+            "manifests": [
+              "579c202eb8f41a964ab88fc551ab7cfe04774637db89acd27156f006add9cef7"
+            ]
+          },
+          {
+            "dataset_id": "issuer-dev-index-v1",
+            "generation": "ddf187006addb1c19462937ddff8b8707f6d524af827dd4bbd1946113a80a40d",
+            "chunks": 320,
+            "state": "READY",
+            "source_partial_documents": [
+              "sec:0000021344:0001628280-26-010047",
+              "sec:0000789019:0001193125-26-323660"
+            ],
+            "embedding": {
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimension": 768,
+              "document_prefix": "search_document: ",
+              "model": "nomic-embed-text:latest",
+              "normalization_policy": "unicode-preserved;whitespace-preserved",
+              "query_prefix": "search_query: ",
+              "truncation_policy": "first-6000-content-characters;ollama-truncate=true"
+            },
+            "manifests": [
+              "4bd1437b7a333fc660d59638a54017d761f9f098fcb8a0d9e3118f42c9f80ee5"
+            ]
+          }
+        ]
+      }
+    },
+    "bm25": {
+      "status": 200,
+      "elapsed_ms": 1861.27,
+      "summary": {
+        "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+        "effective_mode": "bm25",
+        "ids": [
+          "fin_cb5fd1b6ac172b0d600dd27213b06cfa",
+          "fin_72a8c0b6f0f15a6902dbdce0bd754078",
+          "fin_0bb89104d2f285bfb64370145bffe110",
+          "fin_2cb4507567702fe8fdb330213c423060",
+          "fin_0716267289bdade130cf5e134b6cb3fd"
+        ],
+        "unique_ids": true,
+        "provenance": [
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED"
+        ],
+        "sources": [
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 14,
+              "section": "Note 2. Net Income Per Common Share",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[9]/ix:nonnumeric[1]/div[2]/table[1]",
+              "table_id": "table_0289774539af35ad15d75d4b",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 29,
+              "section": "Consolidated Statements of Income",
+              "structural_path": "/document[1]/html[1]/body[1]/div[690]/table[1]",
+              "table_id": "table_9367382eaaa194aa1457e63c",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 4,
+              "section": "Note 3. Shareholders' Equity",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[12]/ix:continuation[1]/div[1]/table[1]",
+              "table_id": "table_347a5f852cb0b5e13ae34780",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": null,
+              "section": "Net Cash Used in Financing Activities",
+              "structural_path": "/document[1]/html[1]/body[1]/div[575]",
+              "table_id": null,
+              "text_end": 196,
+              "text_start": 0
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 7,
+              "section": "Consolidated Statements of Income",
+              "structural_path": "/document[1]/html[1]/body[1]/div[690]/table[1]",
+              "table_id": "table_9367382eaaa194aa1457e63c",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          }
+        ]
+      }
+    },
+    "dense": {
+      "status": 200,
+      "elapsed_ms": 892.63,
+      "summary": {
+        "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+        "effective_mode": "dense",
+        "ids": [
+          "fin_c9d4a66c4ff286a78fbeb9181adf8a74",
+          "fin_18bc631eaa8f6d2e80c446efd557dd37",
+          "fin_09a67c1c8154b570934ec49ed735249d",
+          "fin_5cc98a942a1ccfef8a75b79dd959879f",
+          "fin_5effdf056e993e8bf68080bb9742de49"
+        ],
+        "unique_ids": true,
+        "provenance": [
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED"
+        ],
+        "sources": [
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": null,
+              "section": "Market Risk",
+              "structural_path": "/document[1]/html[1]/body[1]/div[613]",
+              "table_id": null,
+              "text_end": 353,
+              "text_start": 0
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 13,
+              "section": "Note 5. Short-term Borrowings and Long-term Debt",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[14]/ix:nonnumeric[1]/div[2]/table[1]",
+              "table_id": "table_b5500a335b8f893e5a311cc7",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": null,
+              "section": "Note 7. Fair Value Measurements",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[18]/div[1]",
+              "table_id": null,
+              "text_end": 294,
+              "text_start": 0
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 7,
+              "section": "Note 5. Short-term Borrowings and Long-term Debt",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[14]/ix:nonnumeric[3]/div[1]/table[1]",
+              "table_id": "table_f8634746d465af79877c9a32",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 3,
+              "section": "Note 7. Fair Value Measurements",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[18]/ix:continuation[1]/div[1]/table[1]",
+              "table_id": "table_afed7f5249ecc9f5ebb7526d",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": null,
+            "dense_rank": null,
+            "rrf_score": null
+          }
+        ]
+      }
+    },
+    "hybrid": {
+      "status": 200,
+      "elapsed_ms": 260.15,
+      "summary": {
+        "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+        "effective_mode": "hybrid",
+        "ids": [
+          "fin_c9d4a66c4ff286a78fbeb9181adf8a74",
+          "fin_09a67c1c8154b570934ec49ed735249d",
+          "fin_18bc631eaa8f6d2e80c446efd557dd37",
+          "fin_5effdf056e993e8bf68080bb9742de49",
+          "fin_5cc98a942a1ccfef8a75b79dd959879f"
+        ],
+        "unique_ids": true,
+        "provenance": [
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED",
+          "VERIFIED"
+        ],
+        "sources": [
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": null,
+              "section": "Market Risk",
+              "structural_path": "/document[1]/html[1]/body[1]/div[613]",
+              "table_id": null,
+              "text_end": 353,
+              "text_start": 0
+            },
+            "bm25_rank": 1,
+            "dense_rank": 1,
+            "rrf_score": 0.03278688524590164
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": null,
+              "section": "Note 7. Fair Value Measurements",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[18]/div[1]",
+              "table_id": null,
+              "text_end": 294,
+              "text_start": 0
+            },
+            "bm25_rank": 2,
+            "dense_rank": 3,
+            "rrf_score": 0.03200204813108039
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 13,
+              "section": "Note 5. Short-term Borrowings and Long-term Debt",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[14]/ix:nonnumeric[1]/div[2]/table[1]",
+              "table_id": "table_b5500a335b8f893e5a311cc7",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": 4,
+            "dense_rank": 2,
+            "rrf_score": 0.031754032258064516
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 3,
+              "section": "Note 7. Fair Value Measurements",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[18]/ix:continuation[1]/div[1]/table[1]",
+              "table_id": "table_afed7f5249ecc9f5ebb7526d",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": 7,
+            "dense_rank": 5,
+            "rrf_score": 0.030309988518943745
+          },
+          {
+            "ticker": "WMT",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "filing_id": "sec:0000104169:0000104169-26-000055",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+            "source_location": {
+              "bbox": null,
+              "column_index": null,
+              "html_anchor": null,
+              "pdf_page": null,
+              "row_index": 7,
+              "section": "Note 5. Short-term Borrowings and Long-term Debt",
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[14]/ix:nonnumeric[3]/div[1]/table[1]",
+              "table_id": "table_f8634746d465af79877c9a32",
+              "text_end": null,
+              "text_start": null
+            },
+            "bm25_rank": 9,
+            "dense_rank": 4,
+            "rrf_score": 0.030117753623188408
+          }
+        ]
+      }
+    },
+    "invalid_generation": {
+      "status": 409,
+      "elapsed_ms": 6.18,
+      "body": {
+        "detail": {
+          "code": "INDEX_GENERATION_NOT_FOUND"
+        }
+      }
+    },
+    "unauthorized_activate": {
+      "status": 401,
+      "elapsed_ms": 4.02,
+      "body": {
+        "detail": {
+          "code": "FINANCIAL_ADMIN_UNAUTHORIZED"
+        }
+      }
+    },
+    "authorized_activate": {
+      "status": 200,
+      "elapsed_ms": 175.63,
+      "body": {
+        "dataset_id": "issuer-heldout-index-v1",
+        "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+        "state": "READY"
+      }
+    },
+    "retention": {
+      "status": 200,
+      "elapsed_ms": 7.85,
+      "body": {
+        "automatic_cleanup": false,
+        "generations": [
+          {
+            "dataset_id": "issuer-dev-index-v1",
+            "generation": "ddf187006addb1c19462937ddff8b8707f6d524af827dd4bbd1946113a80a40d",
+            "active": true,
+            "protected_reasons": [
+              "active",
+              "retention_floor"
+            ],
+            "cleanup_eligible": false
+          },
+          {
+            "dataset_id": "issuer-heldout-index-v1",
+            "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+            "active": true,
+            "protected_reasons": [
+              "active",
+              "retention_floor"
+            ],
+            "cleanup_eligible": false
+          }
+        ]
+      }
+    },
+    "legacy_chat": {
+      "status": 200,
+      "elapsed_ms": 6904.74,
+      "body": {
+        "answer": "legacy chat live",
+        "model": "qwen2.5:3b"
+      }
+    }
+  }
+}

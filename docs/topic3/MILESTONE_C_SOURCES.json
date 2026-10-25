@@ -1,0 +1,15 @@
+[
+  {
+    "root": "financial_corpus/collaborator-v5-final",
+    "dataset_id": "collaborator-v5-final",
+    "manifest_hash": "f192ac227f38c9fb18f707b8ecc2ba87546db81beae7c33a1a24b78959b32bd0",
+    "allow_partial": true
+  },
+  {
+    "root": "financial_corpus/gap-audit-amendment",
+    "dataset_id": "gap-audit-real-amendment",
+    "manifest_hash": "fad83b03abafefe126fb01c7147961544f91baa5ae1db7ff4ca7a5031f38e2a4",
+    "per_filing_limit": 128,
+    "allow_partial": true
+  }
+]

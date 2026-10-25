@@ -21,6 +21,7 @@ from app.financial_ingestion.schemas import (
     StructuredFiling,
 )
 from app.financial_ingestion.sec_client import ALLOWED_FORMS, SECClient, filing_source_url
+from app.path_safety import ensure_path_capacity
 
 logger = logging.getLogger(__name__)
 
@@ -77,8 +78,9 @@ class FinancialCorpusPipeline:
         return cls(client=client)
 
     def raw_path(self, metadata: FilingMetadata, raw_hash: str) -> Path:
-        return (self.root / "raw" / metadata.cik / metadata.accession_number /
-                raw_hash / metadata.primary_document)
+        relative = Path("raw") / metadata.cik / metadata.accession_number / raw_hash / metadata.primary_document
+        ensure_path_capacity(self.root, relative)
+        return self.root / relative
 
     def incoming_path(self, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
@@ -87,11 +89,15 @@ class FinancialCorpusPipeline:
 
     def structured_path(self, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
-        return self.root / "structured" / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.json"
+        relative = Path("structured") / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.json"
+        ensure_path_capacity(self.root, relative)
+        return self.root / relative
 
     def chunks_path(self, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
-        return self.root / "chunks" / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.jsonl"
+        relative = Path("chunks") / key / metadata.raw_content_hash / f"{self._derived_version(metadata)}.jsonl"
+        ensure_path_capacity(self.root, relative)
+        return self.root / relative
 
     @staticmethod
     def _derived_version(metadata: FilingMetadata) -> str:
@@ -99,8 +105,10 @@ class FinancialCorpusPipeline:
 
     def stage_path(self, dataset_id: str, metadata: FilingMetadata) -> Path:
         key = sha256(metadata.filing_id.encode()).hexdigest()[:24]
-        return (self.root / "staging_index" / dataset_id / key /
-                metadata.raw_content_hash / f"{self._derived_version(metadata)}.json")
+        relative = (Path("staging_index") / dataset_id / key /
+                    metadata.raw_content_hash / f"{self._derived_version(metadata)}.json")
+        ensure_path_capacity(self.root, relative)
+        return self.root / relative
 
     def _mark(self, dataset_id: str, metadata: FilingMetadata, status: DocumentStatus,
               *, error: str | None = None, **paths) -> None:

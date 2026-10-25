@@ -1,0 +1,583 @@
+{
+  "dataset_id": "sec-pilot-c",
+  "generation": "026d4963a52b347ffbe44f99cb91fe7af158cff646910eb91ce1907ecdb1618d",
+  "annotation_method": "Manually selected source row facts before first retrieval evaluation. No LLM answers or rank outputs used. Not an independent held-out benchmark.",
+  "cases": [
+    {
+      "id": "aapl_sales",
+      "query": "AAPL total net sales",
+      "filters": {
+        "ticker": "AAPL"
+      },
+      "relevant_chunk_ids": [
+        "fin_7825551f24b218f25c2b67012f1e803a",
+        "fin_e3517ee66b6a50d84c2c9405143b16fa",
+        "fin_6ff944d93d138ae6312f149cf905bcac",
+        "fin_66805f67042b4d7e28e9a97bbde27554"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_7825551f24b218f25c2b67012f1e803a",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[62]/table[1]",
+            "table_id": "table_e5380d8acee6d0e613f28085",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        {
+          "chunk_id": "fin_e3517ee66b6a50d84c2c9405143b16fa",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Note 2 – Revenue",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[2]/ix:nonnumeric[1]/div[2]/table[1]",
+            "table_id": "table_06819442267e6faff463726f",
+            "row_index": 8,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        {
+          "chunk_id": "fin_6ff944d93d138ae6312f149cf905bcac",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Segment Operating Performance",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[163]/table[1]",
+            "table_id": "table_eafe474e1aaf4c03509cb34a",
+            "row_index": 8,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        {
+          "chunk_id": "fin_66805f67042b4d7e28e9a97bbde27554",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Products and Services Performance",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[184]/table[1]",
+            "table_id": "table_20e303e6c3eb354981d8671f",
+            "row_index": 8,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "aapl_assets",
+      "query": "Apple total assets June 27 2026",
+      "filters": {
+        "ticker": "AAPL"
+      },
+      "relevant_chunk_ids": [
+        "fin_9c5c2aafd4935e4e87d9c990109b4253"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_9c5c2aafd4935e4e87d9c990109b4253",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total assets",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[80]/table[1]",
+            "table_id": "table_471afd8b47602e220d31e23e",
+            "row_index": 18,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "aapl_cashflow",
+      "query": "Apple cash generated by operating activities",
+      "filters": {
+        "ticker": "AAPL"
+      },
+      "relevant_chunk_ids": [
+        "fin_277b3def66c392ae7f7f325c31ab9a22"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_277b3def66c392ae7f7f325c31ab9a22",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Cash generated by operating activities",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[98]/table[1]",
+            "table_id": "table_cb621d11e44ebbe759d29a51",
+            "row_index": 18,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "aapl_eps",
+      "query": "Apple weighted-average basic shares outstanding",
+      "filters": {
+        "ticker": "AAPL"
+      },
+      "relevant_chunk_ids": [
+        "fin_8a0d64c45132a5f6bf00ea1faaf7917e"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_8a0d64c45132a5f6bf00ea1faaf7917e",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Weighted-average basic shares outstanding",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Note 3 – Earnings Per Share",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:nonnumeric[1]/ix:continuation[1]/div[2]/table[1]",
+            "table_id": "table_982291cd8970302ee7e95d75",
+            "row_index": 7,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "aapl_period",
+      "query": "Apple 2026 Q3 10-Q cash generated by operating activities",
+      "filters": {
+        "ticker": "AAPL",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "form_type": "10-Q"
+      },
+      "relevant_chunk_ids": [
+        "fin_277b3def66c392ae7f7f325c31ab9a22"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_277b3def66c392ae7f7f325c31ab9a22",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Cash generated by operating activities",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[98]/table[1]",
+            "table_id": "table_cb621d11e44ebbe759d29a51",
+            "row_index": 18,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "aapl_numeric",
+      "query": "Apple net sales 109,417",
+      "filters": {
+        "ticker": "AAPL"
+      },
+      "relevant_chunk_ids": [
+        "fin_7825551f24b218f25c2b67012f1e803a",
+        "fin_e3517ee66b6a50d84c2c9405143b16fa",
+        "fin_6ff944d93d138ae6312f149cf905bcac",
+        "fin_66805f67042b4d7e28e9a97bbde27554"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_7825551f24b218f25c2b67012f1e803a",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[62]/table[1]",
+            "table_id": "table_e5380d8acee6d0e613f28085",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        {
+          "chunk_id": "fin_e3517ee66b6a50d84c2c9405143b16fa",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Note 2 – Revenue",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[2]/ix:nonnumeric[1]/div[2]/table[1]",
+            "table_id": "table_06819442267e6faff463726f",
+            "row_index": 8,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        {
+          "chunk_id": "fin_6ff944d93d138ae6312f149cf905bcac",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Segment Operating Performance",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[163]/table[1]",
+            "table_id": "table_eafe474e1aaf4c03509cb34a",
+            "row_index": 8,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        {
+          "chunk_id": "fin_66805f67042b4d7e28e9a97bbde27554",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total net sales",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Products and Services Performance",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[184]/table[1]",
+            "table_id": "table_20e303e6c3eb354981d8671f",
+            "row_index": 8,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "aapl_percent",
+      "query": "Apple total gross margin percentage 50.1%",
+      "filters": {
+        "ticker": "AAPL"
+      },
+      "relevant_chunk_ids": [
+        "fin_ec080df3636e6d8a8218919f13c9d1ba"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_ec080df3636e6d8a8218919f13c9d1ba",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Total gross margin percentage",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "Gross Margin",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[206]/table[1]",
+            "table_id": "table_c0e13e4a4b25a0681bc8d0d2",
+            "row_index": 4,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "aapl_cash",
+      "query": "Apple cash and cash equivalents",
+      "filters": {
+        "ticker": "AAPL"
+      },
+      "relevant_chunk_ids": [
+        "fin_52162ce22d4d6cdbfefb96f028b06ab9"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_52162ce22d4d6cdbfefb96f028b06ab9",
+          "filing_id": "sec:0000320193:0000320193-26-000020",
+          "row_label": "Cash and cash equivalents",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
+          "source_location": {
+            "section": "CONDENSED CONSOLIDATED BALANCE SHEETS (Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[80]/table[1]",
+            "table_id": "table_471afd8b47602e220d31e23e",
+            "row_index": 4,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "tsla_profit",
+      "query": "Tesla gross profit 17,094",
+      "filters": {
+        "ticker": "TSLA",
+        "form_type": "10-K"
+      },
+      "relevant_chunk_ids": [
+        "fin_6d0c56c31b85d24540c27082d6180418",
+        "fin_717a8f8f883b68ba07082aa23198e4bc"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_6d0c56c31b85d24540c27082d6180418",
+          "filing_id": "sec:0001318605:0001628280-26-003952",
+          "row_label": "Total gross profit",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+          "source_location": {
+            "section": "Cost of Revenues and Gross Margin",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[542]/table[1]",
+            "table_id": "table_279c74aa5c99d698573dbeb2",
+            "row_index": 21,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        {
+          "chunk_id": "fin_717a8f8f883b68ba07082aa23198e4bc",
+          "filing_id": "sec:0001318605:0001628280-26-003952",
+          "row_label": "Gross profit",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+          "source_location": {
+            "section": "(in millions, except per share data)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[683]/table[1]",
+            "table_id": "table_a2363880a4b0a1cf394319c5",
+            "row_index": 18,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "tsla_receivables",
+      "query": "Tesla accounts receivable net 4,576",
+      "filters": {
+        "ticker": "TSLA",
+        "form_type": "10-K"
+      },
+      "relevant_chunk_ids": [
+        "fin_0dd1e5f65336a5e20a712d07f6c19568"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_0dd1e5f65336a5e20a712d07f6c19568",
+          "filing_id": "sec:0001318605:0001628280-26-003952",
+          "row_label": "Accounts receivable, net",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+          "source_location": {
+            "section": "(in millions, except per share data)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[675]/table[1]",
+            "table_id": "table_a7822becc4cdcd2562dbbbfc",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "tsla_revenue",
+      "query": "Tesla total revenues from sales and services 92,614",
+      "filters": {
+        "ticker": "TSLA",
+        "form_type": "10-K"
+      },
+      "relevant_chunk_ids": [
+        "fin_f3f9fa86d6e8d782dc706a1bf1a175bb"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_f3f9fa86d6e8d782dc706a1bf1a175bb",
+          "filing_id": "sec:0001318605:0001628280-26-003952",
+          "row_label": "Total revenues from sales and services",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+          "source_location": {
+            "section": "Note 2 – Summary of Significant Accounting Policies",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:nonnumeric[4]/ix:continuation[1]/ix:nonnumeric[1]/div[2]/table[1]",
+            "table_id": "table_8dcf228791b12bf38398375b",
+            "row_index": 7,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "tsla_debt",
+      "query": "Tesla total debt and finance leases 1,640",
+      "filters": {
+        "ticker": "TSLA",
+        "form_type": "10-K"
+      },
+      "relevant_chunk_ids": [
+        "fin_e4233359c7e3366d22e3acf3c615ca60"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_e4233359c7e3366d22e3acf3c615ca60",
+          "filing_id": "sec:0001318605:0001628280-26-003952",
+          "row_label": "Total debt and finance leases",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+          "source_location": {
+            "section": "Note 9 – Debt",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[24]/ix:nonnumeric[1]/div[2]/table[1]",
+            "table_id": "table_2f588a2ef6c431a8542598c8",
+            "row_index": 15,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "tsla_amend_ownership",
+      "query": "Tesla 10-K/A Vanguard Group 229,805,491",
+      "filters": {
+        "ticker": "TSLA",
+        "form_type": "10-K/A"
+      },
+      "relevant_chunk_ids": [
+        "fin_29c394d31bc8a884ee368d8fa6fb58de"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_29c394d31bc8a884ee368d8fa6fb58de",
+          "filing_id": "sec:0001318605:0001104659-26-053166",
+          "row_label": "The Vanguard Group(3)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm",
+          "source_location": {
+            "section": null,
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/table[86]",
+            "table_id": "table_0d95314b49e6ff71a54525a6",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "tsla_amend_fees",
+      "query": "Tesla 10-K/A All Other Fees",
+      "filters": {
+        "ticker": "TSLA",
+        "form_type": "10-K/A"
+      },
+      "relevant_chunk_ids": [
+        "fin_d268637f2e191788df4ab5c36a501ebd"
+      ],
+      "judgment": "Source-inspected exact-row targets within the frozen selected corpus; other semantically relevant passages may be unjudged.",
+      "source_evidence": [
+        {
+          "chunk_id": "fin_d268637f2e191788df4ab5c36a501ebd",
+          "filing_id": "sec:0001318605:0001104659-26-053166",
+          "row_label": "All Other Fees (4)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm",
+          "source_location": {
+            "section": null,
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/table[99]",
+            "table_id": "table_bc6322b6baa5e907b38fa374",
+            "row_index": 4,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        }
+      ]
+    }
+  ]
+}

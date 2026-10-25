@@ -18,7 +18,7 @@ st.markdown("""
 div[data-testid="stMetric"]{background:white;border:1px solid #dce4ef;padding:12px 14px;border-radius:12px}
 </style>""", unsafe_allow_html=True)
 
-PAGES = ["Dashboard", "Chat với Ollama", "Talk to Documents / RAG", "Chunk Explorer", "English Script → Audio", "Text → Image", "Image → Video", "System / GPU"]
+PAGES = ["Dashboard", "Chat với Ollama", "Talk to Documents / RAG", "Tìm kiếm tài chính", "Chunk Explorer", "English Script → Audio", "Text → Image", "Image → Video", "System / GPU"]
 st.sidebar.markdown("## ◈ GenAI Studio")
 st.sidebar.caption("FastAPI · Ollama · Qdrant")
 if os.getenv("GENAI_DEMO_MODE") == "1":
@@ -304,6 +304,70 @@ elif page == "Talk to Documents / RAG":
                 if debug and st.session_state.get("last_rag_debug"):
                     with st.expander("RAG diagnostics của lượt vừa chạy"):
                         st.json(st.session_state.last_rag_debug)
+
+elif page == "Tìm kiếm tài chính":
+    st.header("Tìm bằng chứng tài chính")
+    st.caption("Tra cứu công bố SEC theo từ khóa hoặc ý nghĩa, rồi đối chiếu đoạn nguồn.")
+    inventory = api("GET", "/financial-index/datasets")
+    pending = [item for item in (inventory or {}).get("datasets", []) if item["state"] != "READY"]
+    if pending:
+        st.info("Một số bản cập nhật dữ liệu chưa hoàn tất. Tìm kiếm chỉ sử dụng bản đã sẵn sàng.")
+        with st.expander("Tiến độ chuẩn bị dữ liệu"):
+            for item in pending:
+                st.caption(f"{item['dataset_id']}: {'Đang lập chỉ mục' if item['state'] == 'BUILDING' else 'Chưa hoàn tất, cần kiểm tra lại'}")
+    ready = [item for item in (inventory or {}).get("datasets", []) if item["active"] and item["state"] == "READY"]
+    if not ready:
+        st.info("Chưa có tập tài liệu đã lập chỉ mục sẵn sàng để tìm kiếm.")
+        for item in (inventory or {}).get("datasets", []):
+            st.caption(f"{item['dataset_id']}: {item['state']}")
+    else:
+        dataset = st.selectbox("Tập tài liệu", [item["dataset_id"] for item in ready])
+        selected = next(item for item in ready if item["dataset_id"] == dataset)
+        st.caption(f"{selected['chunks']:,} đoạn bằng chứng đã lập chỉ mục")
+        if selected["source_partial_documents"]:
+            st.warning("Có tờ khai được trích xuất một phần. Hãy kiểm tra nguồn trước khi sử dụng số liệu.")
+        with st.form("financial_evidence_search"):
+            question = st.text_input("Nội dung cần tìm", placeholder="Apple total net sales June 2026")
+            methods = {"Từ khóa": "bm25", "Ngữ nghĩa": "dense", "Kết hợp": "hybrid"}
+            mode = st.selectbox("Cách tìm", list(methods), index=0)
+            left, right = st.columns(2)
+            ticker = left.text_input("Mã cổ phiếu (tùy chọn)", placeholder="AAPL")
+            form = right.selectbox("Loại tờ khai", ["Tất cả", "10-K", "10-Q", "10-K/A", "10-Q/A"])
+            top_k = st.slider("Số kết quả", 1, 10, 5)
+            submitted = st.form_submit_button("Tìm bằng chứng")
+        if submitted:
+            payload = {"dataset_id": dataset, "generation": selected["generation"], "expected_manifests": selected["manifests"],
+                       "query": question, "mode": methods[mode], "top_k": top_k}
+            if ticker.strip():
+                payload["ticker"] = ticker.strip().upper()
+            if form != "Tất cả":
+                payload["form_type"] = form
+            found = api("POST", "/financial-index/search", json=payload, timeout=180)
+            if found:
+                if found.get("degraded_reason"):
+                    st.warning("Tìm kiếm đang dùng từ khóa vì chỉ mục ngữ nghĩa chưa khả dụng.")
+                if not found["results"]:
+                    st.info("Không tìm thấy bằng chứng trong phạm vi đã chọn.")
+                for item in found["results"]:
+                    m = item["metadata"]
+                    st.subheader(f"{item['rank']}. {m.get('statement_title') or m.get('section') or m.get('company_name')}")
+                    st.caption(f"{m.get('company_name')} · {m.get('form_type')} · Kỳ {m.get('report_date')} · Nộp {m.get('filing_date')}")
+                    cells = m.get("cells") or []
+                    if item["kind"] == "table" and cells:
+                        labels = m.get("column_labels") or []
+                        st.dataframe([{"Cột": labels[cell['column']] if cell['column'] < len(labels) and labels[cell['column']] else ('Nhãn hàng' if cell['column'] == 0 else 'Cột chưa xác định'),
+                                       "Nội dung nguồn": cell['text']} for cell in cells if cell['text']], hide_index=True, width="stretch")
+                        if m.get("unit_context"):
+                            st.caption("Đơn vị: " + m["unit_context"])
+                        for footnote in m.get("footnotes", []):
+                            st.caption(footnote)
+                    else:
+                        st.write(item["text"])
+                    st.caption("Nguồn đã đối chiếu" if item["provenance_status"] == "VERIFIED" else "Chưa đối chiếu nguồn")
+                    st.link_button("Xem công bố SEC", m["source_url"])
+                    with st.expander("Bằng chứng và phiên bản dữ liệu"):
+                        st.write({"chunk_id": item["chunk_id"], "filing_id": item["filing_id"],
+                                  "generation": found["generation"], "source_location": item["source_location"]})
 
 elif page == "Chunk Explorer":
     page_header("Chunk Explorer", "Xem từng bước từ PDF đến các chunk, chỉnh kích thước và overlap trực tiếp.")

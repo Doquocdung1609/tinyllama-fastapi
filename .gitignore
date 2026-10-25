@@ -4,6 +4,7 @@ __pycache__/
 .env
 qdrant_data/
 financial_corpus/
+financial_search_data/
 uploads/
 processed/
 images/
@@ -21,5 +22,6 @@ tmp/pdfs/
 tmp/production.*.log
 tmp/milestone_b_*.log
 tmp/milestone_b_verification/
+tmp/milestone_c_verification/
 checkpoints/
 tools/downloads/
