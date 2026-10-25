@@ -48,6 +48,6 @@ New tests additionally prohibit socket creation during all40 resolver cases, ass
 | D1-13 performance | VERIFIED_WITH_LIMITATIONS |1,000 warm fixture requests and10 fresh-process C01 trials; benchmark JSON/report, no large-corpus claim |
 | D1-14 historical evidence | VERIFIED |Only new allowed paths; exact-base diff check; no existing artifacts modified |
 | D1-15 production retrieval | VERIFIED |No route/UI/search edits or imports; existing compatibility tests |
-| D1-16 Draft PR | PARTIAL |Delivery pending final tests/push; no merge authorized |
+| D1-16 Draft PR | VERIFIED |[Draft PR #10](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/10), open/unmerged, correct accepted target; implementation commit `8c49d041228ab18ca131af753f2c0b0446447cdc` |
 
-Gate statuses are updated with actual final evidence before delivery. No unsupported gate is upgraded merely because the code is complete.
+GitHub delivery:19 added files, no modifications/deletions to accepted files; normal push only. PR #9 remains a separate Draft, not merged into D1. The delivery-record commit changes documentation only; final HEAD/CI are independently visible in PR #10 and the final report. No merge is authorized or performed. No unsupported gate is upgraded merely because code is complete.
