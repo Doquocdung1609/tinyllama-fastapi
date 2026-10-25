@@ -19,8 +19,13 @@ def utc_now() -> str:
 def atomic_write_bytes(path: Path, content: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_bytes(content)
-    temporary.replace(path)
+    try:
+        temporary.write_bytes(content)
+        temporary.replace(path)
+    finally:
+        # A failed replace (permissions, disk fault, interrupted destination)
+        # must not leave a file that can be mistaken for resumable evidence.
+        temporary.unlink(missing_ok=True)
 
 
 def atomic_write_json(path: Path, payload: Any) -> None:

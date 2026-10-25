@@ -37,4 +37,3 @@ class LocalQdrantOwnership:
         finally:
             self._stream.close()
             self._stream = None
-

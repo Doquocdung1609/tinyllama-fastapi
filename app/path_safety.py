@@ -13,4 +13,3 @@ def ensure_path_capacity(root: Path, projected_relative: Path, *, platform: str 
     # temporary/nested files below the path supplied by this application.
     if len(str(projected)) >= 250:
         raise ValueError("WINDOWS_PATH_CAPACITY_EXCEEDED")
-

@@ -1,5 +1,7 @@
 # Milestone C — retrieval diagnosis
 
+> Addendum 2026-10-25: issuer/document-held-out evaluation mới (MSFT/KO development; NVDA/WMT held-out) đã freeze và chạy one-shot. Xem `ISSUER_HELDOUT_EVALUATION.md` cùng raw per-query evidence trong `reports/milestone_c_issuer_*.json`. Historical 14-query numbers bên dưới không bị thay đổi.
+
 ## Reproduction độc lập
 
 Review tái tạo corpus từ đúng ba SEC URLs trong frozen qrels. Dấu vết nguồn:

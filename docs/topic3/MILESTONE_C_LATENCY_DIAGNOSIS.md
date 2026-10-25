@@ -1,5 +1,7 @@
 # Milestone C — latency diagnosis
 
+> Addendum 2026-10-25: safe generation-bound LRU đã được implement. Controlled same-corpus p50 provenance giảm `1.410 → 100 ms`, total `1.558 → 238 ms`, trong khi raw/structured/chunks vẫn SHA-256 mỗi request. Fresh-session localhost fallback được lặp 6/6 lần (~2,05 s); IPv4 p50 4,1 ms. Xem `PROVENANCE_CACHE.md` và JSON reports.
+
 ## Nguyên tắc đo
 
 - Không sửa số baseline trong `MILESTONE_C_MEASUREMENTS.json`.

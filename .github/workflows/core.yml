@@ -1,0 +1,33 @@
+name: core
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: core-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SCORE_THRESHOLD: "0.55"
+      RUN_REAL_MEDIA_TESTS: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install verification dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-verification.txt
+      - name: Compile Python sources
+        run: python -m compileall -q app scripts
+      - name: Run deterministic core suite
+        run: python -m pytest -q -m "not integration"

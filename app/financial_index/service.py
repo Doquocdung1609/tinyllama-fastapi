@@ -312,32 +312,35 @@ class FinancialIndex:
             raise ValueError("INDEX_IMPLEMENTATION_VERSION_MISMATCH")
 
     def activate(self, dataset: str, generation: str):
-        record = self.lexical.generation(dataset, generation)
-        if record["state"] != "READY":
-            raise ValueError("INDEX_NOT_READY")
-        self.validate_implementation(record)
-        self.validate_dense(record, complete=True)
-        self.validate_sources(record)
-        with closing(self.lexical.connect()) as c, c:
-            c.execute("INSERT INTO active VALUES(?,?) ON CONFLICT(dataset) DO UPDATE SET generation=excluded.generation", (dataset, generation))
+        with self._build_lock:
+            record = self.lexical.generation(dataset, generation)
+            if record["state"] != "READY":
+                raise ValueError("INDEX_NOT_READY")
+            self.validate_implementation(record)
+            self.validate_dense(record, complete=True)
+            self.validate_sources(record)
+            with closing(self.lexical.connect()) as c, c:
+                c.execute("INSERT INTO active VALUES(?,?) ON CONFLICT(dataset) DO UPDATE SET generation=excluded.generation", (dataset, generation))
 
     def protect_generation(self, dataset: str, generation: str, kind: str, reference: str):
         if kind not in {"pin", "evaluation"} or not re.fullmatch(r"[A-Za-z0-9_.:/-]{1,160}", reference):
             raise ValueError("INVALID_GENERATION_PROTECTION")
-        record = self.lexical.generation(dataset, generation)
-        if record["state"] != "READY":
-            raise ValueError("INDEX_NOT_READY")
-        with closing(self.lexical.connect()) as c, c:
-            c.execute("INSERT OR IGNORE INTO generation_protections VALUES(?,?,?,?)", (
-                generation, kind, reference, datetime.now(timezone.utc).isoformat()))
+        with self._build_lock:
+            record = self.lexical.generation(dataset, generation)
+            if record["state"] != "READY":
+                raise ValueError("INDEX_NOT_READY")
+            with closing(self.lexical.connect()) as c, c:
+                c.execute("INSERT OR IGNORE INTO generation_protections VALUES(?,?,?,?)", (
+                    generation, kind, reference, datetime.now(timezone.utc).isoformat()))
 
     def unprotect_generation(self, dataset: str, generation: str, kind: str, reference: str):
-        self.lexical.generation(dataset, generation)
         if kind not in {"pin", "evaluation"}:
             raise ValueError("INVALID_GENERATION_PROTECTION")
-        with closing(self.lexical.connect()) as c, c:
-            c.execute("DELETE FROM generation_protections WHERE generation=? AND kind=? AND reference=?",
-                      (generation, kind, reference))
+        with self._build_lock:
+            self.lexical.generation(dataset, generation)
+            with closing(self.lexical.connect()) as c, c:
+                c.execute("DELETE FROM generation_protections WHERE generation=? AND kind=? AND reference=?",
+                          (generation, kind, reference))
 
     def retention_inventory(self):
         settings = get_settings()
@@ -395,21 +398,28 @@ class FinancialIndex:
         if not generations or len(generations) > 20 or len(generations) != len(set(generations)) or any(
                 not re.fullmatch(r"[0-9a-f]{64}", value) for value in generations):
             raise ValueError("INVALID_CLEANUP_GENERATIONS")
-        inventory = {item["generation"]: item for item in self.retention_inventory()["generations"]}
-        plan = []
-        for generation in generations:
-            item = inventory.get(generation)
-            if item is None:
-                raise ValueError("INDEX_GENERATION_NOT_FOUND")
-            if not item["cleanup_eligible"]:
-                raise ValueError("GENERATION_PROTECTED_FROM_CLEANUP")
-            plan.append(item)
+        def current_plan():
+            inventory = {item["generation"]: item for item in self.retention_inventory()["generations"]}
+            result = []
+            for generation in generations:
+                item = inventory.get(generation)
+                if item is None:
+                    raise ValueError("INDEX_GENERATION_NOT_FOUND")
+                if not item["cleanup_eligible"]:
+                    raise ValueError("GENERATION_PROTECTED_FROM_CLEANUP")
+                result.append(item)
+            return result
+
+        plan = current_plan()
         if not apply:
             return {"dry_run": True, "planned": plan}
         completed = []
         self._build_lock.acquire()
         try:
             with self._cleanup_access():
+                # The dry plan may be stale: activation/pinning is allowed before
+                # this lock is acquired. Revalidate while all mutations are blocked.
+                plan = current_plan()
                 for item in plan:
                     generation = item["generation"]
                     now = datetime.now(timezone.utc).isoformat()

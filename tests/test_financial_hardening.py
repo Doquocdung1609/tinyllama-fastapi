@@ -14,6 +14,7 @@ import requests
 from app.financial_index.corpus import ProvenanceCache, verified_source
 from app.financial_index.ownership import LocalQdrantOwnership
 from app.financial_index.service import FinancialIndex, OllamaVectors
+from app.financial_ingestion.registry import atomic_write_bytes
 from app.path_safety import ensure_path_capacity
 from test_persistent_financial_index import FakeVectors, built
 
@@ -199,6 +200,20 @@ def test_provenance_cache_generation_version_eviction_and_single_flight(tmp_path
     assert cache.diagnostics()["misses"] == 3
 
     from app.financial_index import corpus
+    version_cache = ProvenanceCache(max_entries=4, max_bytes=64 * 1024 * 1024)
+    verified_source(frozen[0], cache=version_cache, generation="versioned")
+    original_chunker_version = corpus.CHUNKER_VERSION
+    monkeypatch.setattr(corpus, "CHUNKER_VERSION", original_chunker_version + "-changed")
+    verified_source(frozen[0], cache=version_cache, generation="versioned")
+    assert version_cache.diagnostics()["misses"] == 2
+    monkeypatch.setattr(corpus, "CHUNKER_VERSION", original_chunker_version)
+    original_parser_version = corpus.PARSER_VERSION
+    monkeypatch.setattr(corpus, "PARSER_VERSION", original_parser_version + "-changed")
+    with pytest.raises(ValueError, match="SOURCE_PARSER_VERSION_MISMATCH"):
+        verified_source(frozen[0], cache=version_cache, generation="versioned")
+    assert version_cache.diagnostics()["misses"] == 3
+    monkeypatch.setattr(corpus, "PARSER_VERSION", original_parser_version)
+
     fresh = ProvenanceCache(max_entries=4, max_bytes=64 * 1024 * 1024)
     calls = 0
     original_parse = corpus.parse_sec_html
@@ -288,6 +303,35 @@ def test_retention_protects_active_pin_evaluation_and_rollback_and_recovers_clea
     engine.close()
 
 
+def test_cleanup_revalidates_stale_plan_before_deleting_newly_active_generation(tmp_path, monkeypatch):
+    from app.config import get_settings
+    settings = get_settings()
+    monkeypatch.setattr(settings, "financial_index_retained_ready", 1)
+    monkeypatch.setattr(settings, "financial_index_rollback_generations", 0)
+    engine, _, first, _, specs, _ = built(tmp_path)
+    for _ in range(2):
+        generation = engine.plan("test", specs, force_rebuild=True)
+        engine.build("test", generation)
+    assert {item["generation"]: item for item in engine.retention_inventory()["generations"]}[
+        first]["cleanup_eligible"]
+    original_inventory = engine.retention_inventory
+    calls = 0
+
+    def activate_after_stale_snapshot():
+        nonlocal calls
+        calls += 1
+        snapshot = original_inventory()
+        if calls == 1:
+            engine.activate("test", first)
+        return snapshot
+
+    monkeypatch.setattr(engine, "retention_inventory", activate_after_stale_snapshot)
+    with pytest.raises(ValueError, match="PROTECTED"):
+        engine.cleanup_generations([first], apply=True)
+    assert engine.lexical.generation("test", first)["state"] == "READY"
+    engine.close()
+
+
 def test_ollama_identity_is_complete_and_connection_failures_do_not_fallback(monkeypatch):
     class Response:
         def raise_for_status(self):
@@ -322,3 +366,19 @@ def test_windows_path_preflight_is_actionable():
     ensure_path_capacity(Path("C:/short"), Path("ok/file.json"), platform="nt")
     with pytest.raises(ValueError, match="WINDOWS_PATH_CAPACITY_EXCEEDED"):
         ensure_path_capacity(Path("C:/") / ("x" * 300), Path("nested/file.json"), platform="nt")
+
+
+def test_failed_atomic_write_removes_temporary_artifact(tmp_path, monkeypatch):
+    target = tmp_path / "artifact.json"
+    original_replace = Path.replace
+
+    def fail_replace(self, destination):
+        if self == target.with_suffix(".json.tmp"):
+            raise OSError("controlled replace failure")
+        return original_replace(self, destination)
+
+    monkeypatch.setattr(Path, "replace", fail_replace)
+    with pytest.raises(OSError, match="controlled replace failure"):
+        atomic_write_bytes(target, b"new evidence")
+    assert not target.exists()
+    assert not target.with_suffix(".json.tmp").exists()

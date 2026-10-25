@@ -1,5 +1,7 @@
 # Milestone C — next experiment plan
 
+> Status 2026-10-25: E5 provenance cache và E6 issuer/document-held-out đã hoàn tất trong hardening. Held-out NVDA/WMT v1 nay đã consumed và tuyệt đối không dùng để tune. Các E1–E4 còn lại phải dùng development split và một fresh holdout mới nếu chọn configuration.
+
 ## Freeze và separation
 
 Giữ nguyên `MILESTONE_C_QUERIES.json` cùng SHA-256 đã báo cáo; 14 query đó là **legacy development/diagnostic set**, không được dùng để claim unbiased improvement.

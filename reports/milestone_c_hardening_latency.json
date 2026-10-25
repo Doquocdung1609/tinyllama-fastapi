@@ -1,0 +1,162 @@
+{
+  "query_file_sha256": "c8aedd619f362208fcb097c197f351b117aaa7e2c3bfd758ef97c56df842792a",
+  "cases": [
+    "heldout_nvda_net_income",
+    "heldout_nvda_finished_goods",
+    "heldout_nvda_cost_of_revenue_percent",
+    "heldout_nvda_segment_operating_income",
+    "heldout_nvda_foreign_tax",
+    "heldout_nvda_stock_comp_cost"
+  ],
+  "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+  "runs": {
+    "disabled": {
+      "normalization": {
+        "n": 6,
+        "mean_ms": 0.002199997349331776,
+        "p50_ms": 0.0016999983927235007,
+        "p95_ms": 0.005099995178170502
+      },
+      "metadata_filter": {
+        "n": 6,
+        "mean_ms": 6.306600000243634,
+        "p50_ms": 6.266600001254119,
+        "p95_ms": 6.777600006898865
+      },
+      "bm25": {
+        "n": 6,
+        "mean_ms": 48.36056666196479,
+        "p50_ms": 51.72309999761637,
+        "p95_ms": 55.771399987861514
+      },
+      "identity": {
+        "n": 6,
+        "mean_ms": 6.419833332377796,
+        "p50_ms": 3.3697499966365285,
+        "p95_ms": 21.51340000273194
+      },
+      "embedding": {
+        "n": 6,
+        "mean_ms": 143.40896667029787,
+        "p50_ms": 117.79385000409093,
+        "p95_ms": 278.8581000058912
+      },
+      "qdrant": {
+        "n": 18,
+        "mean_ms": 7.71826666540518,
+        "p50_ms": 10.22979999834206,
+        "p95_ms": 19.153500004904345
+      },
+      "rrf": {
+        "n": 6,
+        "mean_ms": 0.08251671666706291,
+        "p50_ms": 0.08068194999941625,
+        "p95_ms": 0.09067530000174884
+      },
+      "provenance": {
+        "n": 18,
+        "mean_ms": 1407.6440444453813,
+        "p50_ms": 1410.1882500035572,
+        "p95_ms": 1605.7326000009198
+      },
+      "serialization": {
+        "n": 18,
+        "mean_ms": 0.43926111053830635,
+        "p50_ms": 0.42425000719958916,
+        "p95_ms": 0.8019999950192869
+      },
+      "total": {
+        "n": 18,
+        "mean_ms": 1615.1779722212168,
+        "p50_ms": 1558.182549997582,
+        "p95_ms": 2762.973200005945
+      },
+      "cache_diagnostics": {
+        "hits": 0,
+        "misses": 18,
+        "evictions": 0,
+        "waits": 0,
+        "invalidations": 0,
+        "entries": 0,
+        "bytes": 0,
+        "max_entries": 0,
+        "max_bytes": 0
+      },
+      "note": "Identity and embedding are independently probed immediately before service searches; service total also includes its own identity lookup and embedding for dense/hybrid."
+    },
+    "generation_bound_lru": {
+      "normalization": {
+        "n": 6,
+        "mean_ms": 0.0013666649465449154,
+        "p50_ms": 0.0012999953469261527,
+        "p95_ms": 0.0020000006770715117
+      },
+      "metadata_filter": {
+        "n": 6,
+        "mean_ms": 6.449566661710075,
+        "p50_ms": 6.023399997502565,
+        "p95_ms": 9.137799992458895
+      },
+      "bm25": {
+        "n": 6,
+        "mean_ms": 49.697699995401,
+        "p50_ms": 49.20175000006566,
+        "p95_ms": 67.95039999997243
+      },
+      "identity": {
+        "n": 6,
+        "mean_ms": 6.480166666733567,
+        "p50_ms": 3.461000000243075,
+        "p95_ms": 21.490200000698678
+      },
+      "embedding": {
+        "n": 6,
+        "mean_ms": 129.34508333273698,
+        "p50_ms": 116.00039999757428,
+        "p95_ms": 264.57980000122916
+      },
+      "qdrant": {
+        "n": 18,
+        "mean_ms": 13.011233332185334,
+        "p50_ms": 11.083150006015785,
+        "p95_ms": 95.62999999616295
+      },
+      "rrf": {
+        "n": 6,
+        "mean_ms": 0.07984169999690494,
+        "p50_ms": 0.07953514999826439,
+        "p95_ms": 0.08409370000299532
+      },
+      "provenance": {
+        "n": 18,
+        "mean_ms": 103.28648333314858,
+        "p50_ms": 100.2336000019568,
+        "p95_ms": 120.06770000152756
+      },
+      "serialization": {
+        "n": 18,
+        "mean_ms": 0.413727776807112,
+        "p50_ms": 0.40499999158782884,
+        "p95_ms": 0.7269000052474439
+      },
+      "total": {
+        "n": 18,
+        "mean_ms": 231.78269999981342,
+        "p50_ms": 238.33860000013374,
+        "p95_ms": 325.07130000158213
+      },
+      "cache_diagnostics": {
+        "hits": 18,
+        "misses": 2,
+        "evictions": 0,
+        "waits": 0,
+        "invalidations": 0,
+        "entries": 2,
+        "bytes": 16002362,
+        "max_entries": 8,
+        "max_bytes": 134217728
+      },
+      "note": "Identity and embedding are independently probed immediately before service searches; service total also includes its own identity lookup and embedding for dense/hybrid."
+    }
+  }
+}

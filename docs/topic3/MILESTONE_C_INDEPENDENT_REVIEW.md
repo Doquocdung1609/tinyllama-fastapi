@@ -1,5 +1,7 @@
 # Milestone C — independent review
 
+> Hardening closure 2026-10-25: các gap auth, single-owner, retention, provenance cache, Windows path và stable errors dưới đây đã được triển khai/test. Một race stale cleanup-plan và temp-artifact failure được phát hiện thêm và sửa có regression. Kết luận cập nhật nằm ở `FINAL_ACCEPTANCE_REPORT.md`; phần còn lại của file giữ nguyên làm audit trail của review ban đầu.
+
 **Kết luận:** `READY_FOR_OWNER_REVIEW` cho phạm vi pilot cục bộ, sau hai sửa chữa có regression test. PR #8 phải tiếp tục là **Draft**, không merge trong đợt review này và không bắt đầu Milestone D.
 
 ## Phạm vi và danh tính bản review

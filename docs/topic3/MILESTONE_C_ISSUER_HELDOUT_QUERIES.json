@@ -1,0 +1,272 @@
+{
+  "version": "milestone-c-issuer-heldout-queries-v1",
+  "status": "FROZEN_UNEVALUATED",
+  "frozen_at_utc": "2026-10-25T05:08:00Z",
+  "ground_truth_policy": "Manual source inspection of frozen selected chunks; no LLM answers and no retrieval rankings were used to create judgments.",
+  "parameters": {"top_k": 5, "candidate_limit": 40, "rrf_k": 60, "modes": ["bm25", "dense", "hybrid"]},
+  "embedding_identity": {
+    "model": "nomic-embed-text:latest",
+    "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "dimension": 768,
+    "document_prefix": "search_document: ",
+    "query_prefix": "search_query: ",
+    "normalization_policy": "unicode-preserved;whitespace-preserved",
+    "truncation_policy": "first-6000-content-characters;ollama-truncate=true"
+  },
+  "splits": {
+    "development": {
+      "dataset_id": "issuer-dev-index-v1",
+      "generation": "ddf187006addb1c19462937ddff8b8707f6d524af827dd4bbd1946113a80a40d",
+      "manifest_hash": "4bd1437b7a333fc660d59638a54017d761f9f098fcb8a0d9e3118f42c9f80ee5",
+      "issuers": ["MSFT", "KO"]
+    },
+    "held_out": {
+      "dataset_id": "issuer-heldout-index-v1",
+      "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+      "manifest_hash": "579c202eb8f41a964ab88fc551ab7cfe04774637db89acd27156f006add9cef7",
+      "issuers": ["NVDA", "WMT"]
+    }
+  },
+  "cases": [
+    {
+      "id": "dev_msft_effective_tax_rate",
+      "split": "development",
+      "categories": ["percentage", "accounting_line_item"],
+      "query": "What effective income tax rate did Microsoft report for fiscal 2026?",
+      "filters": {"ticker": "MSFT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_6aa2a3f9e13b3c6d7533b57559a923a9"],
+      "expected_facts": ["19.4%"],
+      "source_evidence": [{"section": "Effective Tax Rate", "row_index": 27, "structural_path": "/document[1]/html[1]/body[1]/div[222]/div[1]/ix:continuation[1]/div[1]/ix:continuation[1]/table[1]"}]
+    },
+    {
+      "id": "dev_msft_diluted_eps",
+      "split": "development",
+      "categories": ["exact_financial_figure", "fiscal_period"],
+      "query": "Microsoft diluted earnings per share for the years ended June 30 2026, 2025 and 2024",
+      "filters": {"ticker": "MSFT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_ca522bedcb17780b0d48f8d011aaf494"],
+      "expected_facts": ["17.95", "13.64", "11.80"],
+      "source_evidence": [{"section": "NOTE 2 – EARNINGS PER SHARE", "row_index": 19, "structural_path": "/document[1]/html[1]/body[1]/div[186]/div[2]/ix:nonnumeric[1]/div[2]/ix:nonnumeric[1]/table[1]"}]
+    },
+    {
+      "id": "dev_msft_deferred_revenue",
+      "split": "development",
+      "categories": ["financial_terminology", "table_context"],
+      "query": "Find Microsoft's short-term contract liability or unearned revenue balance for 2026 and 2025",
+      "filters": {"ticker": "MSFT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_cb0db22c995b08dea3ed2d95e7edf9b2"],
+      "expected_facts": ["72,965 million", "64,555 million"],
+      "source_evidence": [{"section": "BALANCE SHEETS", "row_index": 36, "structural_path": "/document[1]/html[1]/body[1]/div[156]/table[1]"}]
+    },
+    {
+      "id": "dev_msft_operating_income",
+      "split": "development",
+      "categories": ["exact_financial_figure", "financial_statement"],
+      "query": "Microsoft operating income for fiscal 2026, 2025 and 2024",
+      "filters": {"ticker": "MSFT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_eb82d5bdd5d60102861cce465dc72457"],
+      "expected_facts": ["155,237 million", "128,528 million", "109,433 million"],
+      "source_evidence": [{"section": "INCOME STATEMENTS", "row_index": 28, "structural_path": "/document[1]/html[1]/body[1]/div[150]/table[1]"}]
+    },
+    {
+      "id": "dev_ko_tax_rate",
+      "split": "development",
+      "categories": ["paraphrase", "percentage", "cross_section"],
+      "query": "How much income tax did Coca-Cola record and what was its effective rate in 2025 versus 2024?",
+      "filters": {"ticker": "KO", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_6263aa399dade58542048e178849c65b"],
+      "expected_facts": ["2,861 million and 17.9% in 2025", "2,437 million and 18.6% in 2024"],
+      "source_evidence": [{"section": "Income Taxes", "structural_path": "/document[1]/html[1]/body[1]/div[677]"}]
+    },
+    {
+      "id": "dev_ko_inventory_cashflow",
+      "split": "development",
+      "categories": ["negative_value", "table_context"],
+      "query": "Coca-Cola cash-flow change from inventories in 2025, 2024 and 2023",
+      "filters": {"ticker": "KO", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_7782c67760521991290048b0ec03d769"],
+      "expected_facts": ["(154)", "(520)", "(597) million"],
+      "source_evidence": [{"section": "NOTE 21: NET CHANGE IN OPERATING ASSETS AND LIABILITIES", "row_index": 3, "structural_path": "/document[1]/html[1]/body[1]/ix:nonnumeric[12]/ix:continuation[1]/div[2]/table[1]"}]
+    },
+    {
+      "id": "dev_ko_operating_income",
+      "split": "development",
+      "categories": ["exact_financial_figure", "fiscal_period"],
+      "query": "Coca-Cola operating income for 2025, 2024 and 2023",
+      "filters": {"ticker": "KO", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_24ef9c3a168cd7be802ba7370ef99985"],
+      "expected_facts": ["13,426", "12,536", "11,868 million"],
+      "source_evidence": [{"section": "NOTE 6: EQUITY METHOD INVESTMENTS", "row_index": 5, "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[24]/ix:nonnumeric[1]/div[2]/table[1]"}]
+    },
+    {
+      "id": "dev_ko_customer_concentration",
+      "split": "development",
+      "categories": ["paraphrase", "cross_section"],
+      "query": "Did any Coca-Cola bottler account for at least ten percent of revenue in 2025?",
+      "filters": {"ticker": "KO", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_4a3400f9dfbac7e0b475c3676aca2adb"],
+      "expected_facts": ["one bottler accounted for 10%"],
+      "source_evidence": [{"section": "Geographic and Customer Data", "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[60]/ix:nonnumeric[2]/div[3]"}]
+    },
+    {
+      "id": "heldout_nvda_net_income",
+      "split": "held_out",
+      "categories": ["exact_financial_figure", "fiscal_period"],
+      "query": "NVIDIA net income for fiscal years ended January 25 2026, January 26 2025 and January 28 2024",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_298b4f4ad07087cc77e8f702ca497ba2"],
+      "expected_facts": ["120,067", "72,880", "29,760 million"],
+      "source_evidence": [{"section": "Note 4 - Net Income Per Share", "row_index": 6, "structural_path": "/document[1]/html[1]/body[1]/ix:nonnumeric[22]/ix:continuation[1]/div[2]/table[1]"}]
+    },
+    {
+      "id": "heldout_nvda_finished_goods",
+      "split": "held_out",
+      "categories": ["paraphrase", "table_context", "fiscal_period"],
+      "query": "How did NVIDIA's finished-goods inventory change between January 26 2025 and January 25 2026?",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_5bfa952d62635c58a11a200e85a0e38e"],
+      "expected_facts": ["3,273 million", "8,774 million"],
+      "source_evidence": [{"section": "Note 9 - Balance Sheet Components", "row_index": 5, "structural_path": "/document[1]/html[1]/body[1]/ix:nonnumeric[23]/ix:continuation[1]/div[2]/table[1]"}]
+    },
+    {
+      "id": "heldout_nvda_cost_of_revenue_percent",
+      "split": "held_out",
+      "categories": ["percentage", "financial_terminology"],
+      "query": "What percentage of NVIDIA revenue was cost of revenue in fiscal 2026 versus fiscal 2025?",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_1f9989cdc0da9aff8ef2d0da38c7c472"],
+      "expected_facts": ["28.9%", "25.0%"],
+      "source_evidence": [{"section": "Results of Operations", "row_index": 4, "structural_path": "/document[1]/html[1]/body[1]/div[619]/table[1]"}]
+    },
+    {
+      "id": "heldout_nvda_segment_operating_income",
+      "split": "held_out",
+      "categories": ["table_context", "percentage"],
+      "query": "NVIDIA total operating income by reportable segments in 2026 and 2025, including the percentage change",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_16dad97ca625b02269e2de09fbd6b28c"],
+      "expected_facts": ["139,297 million", "87,960 million", "58%"],
+      "source_evidence": [{"section": "Operating Income by Reportable Segments", "row_index": 7, "structural_path": "/document[1]/html[1]/body[1]/div[625]/table[1]"}]
+    },
+    {
+      "id": "heldout_nvda_foreign_tax",
+      "split": "held_out",
+      "categories": ["accounting_line_item", "fiscal_period"],
+      "query": "NVIDIA current foreign tax expense or benefit for fiscal 2026, 2025 and 2024",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_bfaab1c492bf86f6ac6f5b0766967d4b"],
+      "expected_facts": ["2,550", "699", "502 million"],
+      "source_evidence": [{"section": "Note 13 - Income Taxes", "row_index": 8, "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[33]/ix:nonnumeric[1]/div[2]/table[1]"}]
+    },
+    {
+      "id": "heldout_nvda_stock_comp_cost",
+      "split": "held_out",
+      "categories": ["financial_terminology", "table_context"],
+      "query": "How much NVIDIA stock-based compensation was allocated to cost of revenue in fiscal 2026, 2025 and 2024?",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_be317a619be75df79f268c33352a5ead"],
+      "expected_facts": ["261", "178", "141 million"],
+      "source_evidence": [{"section": "Note 3 - Stock-Based Compensation", "row_index": 5, "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[9]/ix:nonnumeric[1]/div[2]/table[1]"}]
+    },
+    {
+      "id": "heldout_nvda_sales_return_allowance",
+      "split": "held_out",
+      "categories": ["negative_value", "accounting_line_item"],
+      "query": "NVIDIA sales return allowance beginning balance, additions, deductions and ending balance",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_02f1094ca418a9ef4f6f5a560da476bf"],
+      "expected_facts": ["26", "213", "(130)", "109 million"],
+      "source_evidence": [{"section": "Schedule II – Valuation and Qualifying Accounts", "row_index": 14, "structural_path": "/document[1]/html[1]/body[1]/ix:nonnumeric[29]/div[2]/table[1]"}]
+    },
+    {
+      "id": "heldout_nvda_remaining_obligations",
+      "split": "held_out",
+      "categories": ["paraphrase", "cross_section", "percentage"],
+      "query": "How much NVIDIA revenue remained under contracts longer than one year, and how much was expected within twelve months?",
+      "filters": {"ticker": "NVDA", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_e67680ee1e267a812863bb261913de23"],
+      "expected_facts": ["2.3 billion", "1.9 billion deferred", "390 million unbilled", "42% within twelve months"],
+      "source_evidence": [{"section": "Notes to the Consolidated Financial Statements", "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[22]/div[2]"}]
+    },
+    {
+      "id": "heldout_wmt_net_sales",
+      "split": "held_out",
+      "categories": ["exact_financial_figure", "financial_statement"],
+      "query": "Walmart net sales for fiscal 2026, 2025 and 2024",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_19d2cfc014d0fa3de5de7388f8fc10a4"],
+      "expected_facts": ["706,413", "674,538", "642,637 million"],
+      "source_evidence": [{"section": "Consolidated Results of Operations", "row_index": 3, "structural_path": "/document[1]/html[1]/body[1]/div[494]/table[1]"}]
+    },
+    {
+      "id": "heldout_wmt_cashflow_income",
+      "split": "held_out",
+      "categories": ["table_context", "fiscal_period"],
+      "query": "Walmart consolidated net income as shown in the cash flow statement for 2026, 2025 and 2024",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_109254de42ad309951696ba81ea6dc04"],
+      "expected_facts": ["22,270", "20,157", "16,270 million"],
+      "source_evidence": [{"section": "Consolidated Statements of Cash Flows", "row_index": 4, "structural_path": "/document[1]/html[1]/body[1]/div[721]/table[1]"}]
+    },
+    {
+      "id": "heldout_wmt_repurchase_price",
+      "split": "held_out",
+      "categories": ["paraphrase", "exact_financial_figure"],
+      "query": "Average price Walmart paid per repurchased share in fiscal 2026, 2025 and 2024",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_0bb89104d2f285bfb64370145bffe110"],
+      "expected_facts": ["95.13", "72.72", "50.87 dollars per share"],
+      "source_evidence": [{"section": "Note 3. Shareholders' Equity", "row_index": 4, "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[12]/ix:continuation[1]/div[1]/table[1]"}]
+    },
+    {
+      "id": "heldout_wmt_us_margin",
+      "split": "held_out",
+      "categories": ["percentage", "table_context"],
+      "query": "Walmart U.S. operating income as a percentage for fiscal 2026, 2025 and 2024",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_39cd215b5c378e37ac84f4e5f25a3eaa"],
+      "expected_facts": ["3.9%", "4.5%", "4.3%"],
+      "source_evidence": [{"section": "Walmart U.S. Segment", "row_index": 13, "structural_path": "/document[1]/html[1]/body[1]/div[517]/table[1]"}]
+    },
+    {
+      "id": "heldout_wmt_debt_fair_value",
+      "split": "held_out",
+      "categories": ["financial_terminology", "fiscal_period"],
+      "query": "Compare Walmart long-term debt carrying value and fair value at January 31 2026 and 2025",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_5effdf056e993e8bf68080bb9742de49"],
+      "expected_facts": ["38,166 and 36,777 million for 2026", "35,999 and 33,790 million for 2025"],
+      "source_evidence": [{"section": "Note 7. Fair Value Measurements", "row_index": 3, "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[18]/ix:continuation[1]/div[1]/table[1]"}]
+    },
+    {
+      "id": "heldout_wmt_sams_growth",
+      "split": "held_out",
+      "categories": ["percentage", "table_context"],
+      "query": "Sam's Club U.S. percentage change from the comparable period in fiscal 2026, 2025 and 2024",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_b555d37ccd7b6d186e9decae96f586b8"],
+      "expected_facts": ["5.0%", "6.3%", "4.7%"],
+      "source_evidence": [{"section": "Sam's Club U.S. Segment", "row_index": 22, "structural_path": "/document[1]/html[1]/body[1]/div[526]/table[1]"}]
+    },
+    {
+      "id": "heldout_wmt_basic_eps",
+      "split": "held_out",
+      "categories": ["exact_financial_figure", "financial_terminology"],
+      "query": "Walmart basic earnings per common share for fiscal 2026, 2025 and 2024",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_cb5fd1b6ac172b0d600dd27213b06cfa"],
+      "expected_facts": ["2.74", "2.42", "1.92 dollars per share"],
+      "source_evidence": [{"section": "Note 2. Net Income Per Common Share", "row_index": 14, "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[9]/ix:nonnumeric[1]/div[2]/table[1]"}]
+    },
+    {
+      "id": "heldout_wmt_rate_risk",
+      "split": "held_out",
+      "categories": ["paraphrase", "percentage", "cross_section"],
+      "query": "What share of Walmart debt was variable-rate, and what would a 100-basis-point rate move do to annual interest cost?",
+      "filters": {"ticker": "WMT", "form_type": "10-K"},
+      "relevant_chunk_ids": ["fin_c9d4a66c4ff286a78fbeb9181adf8a74"],
+      "expected_facts": ["27%", "approximately 0.1 billion dollars"],
+      "source_evidence": [{"section": "Market Risk", "structural_path": "/document[1]/html[1]/body[1]/div[613]"}]
+    }
+  ]
+}

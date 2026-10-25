@@ -1,0 +1,82 @@
+{
+  "version": "milestone-c-issuer-heldout-v1",
+  "status": "DOCUMENT_SELECTION_FROZEN_BEFORE_QUERY_AUTHORING_OR_RANKING",
+  "frozen_at_utc": "2026-10-25T05:00:00Z",
+  "selection_policy": "Four large issuers from distinct industries were selected before observing retrieval rankings. The newest available 10-K was used for each issuer. No issuer or filing appeared in the Apple/Tesla development evidence.",
+  "sampling_policy": "Deterministic 160-ordinal sample per filing using round(i*(N-1)/(count-1)); identical across retrieval modes.",
+  "development": {
+    "dataset_id": "issuer-dev-v1",
+    "manifest_hash": "4bd1437b7a333fc660d59638a54017d761f9f098fcb8a0d9e3118f42c9f80ee5",
+    "manifest_index_generation": "5c071473cfbc70ca53e5baa9dc0597a90b2e89506a4a6dbd8d4eb5d85ddb2b3f",
+    "filings": [
+      {
+        "issuer": "MICROSOFT CORP",
+        "ticker": "MSFT",
+        "cik": "0000789019",
+        "form": "10-K",
+        "accession_number": "0001193125-26-323660",
+        "filing_date": "2026-07-29",
+        "reporting_period": "2026-06-30",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+        "raw_sha256": "8a078291300e9beea9ed30c72b8d2ecfa29d3924777ef18126e67569d53cc109",
+        "normalized_sha256": "b69033adc720950c051a31175abf49e1df95e923af7a21c97e1f1e146c34e505",
+        "extraction_status": "PARTIAL_EXTRACTION",
+        "available_chunks": 2317,
+        "selected_chunks": 160
+      },
+      {
+        "issuer": "COCA COLA CO",
+        "ticker": "KO",
+        "cik": "0000021344",
+        "form": "10-K",
+        "accession_number": "0001628280-26-010047",
+        "filing_date": "2026-02-20",
+        "reporting_period": "2025-12-31",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "raw_sha256": "107d927cce84b0c77cba26bf8296ae8b78c4370496224882c74f5c6d3e57f318",
+        "normalized_sha256": "c77ac1267a702cfed99a12ef5e9714f405e37bce9212c9943aba73369c3ceb6f",
+        "extraction_status": "PARTIAL_EXTRACTION",
+        "available_chunks": 2308,
+        "selected_chunks": 160
+      }
+    ]
+  },
+  "held_out": {
+    "dataset_id": "issuer-heldout-v1",
+    "manifest_hash": "579c202eb8f41a964ab88fc551ab7cfe04774637db89acd27156f006add9cef7",
+    "manifest_index_generation": "bc523666296b08020ca8d9e24c953f56368ee8d796feea836f186b32becdb193",
+    "filings": [
+      {
+        "issuer": "NVIDIA CORP",
+        "ticker": "NVDA",
+        "cik": "0001045810",
+        "form": "10-K",
+        "accession_number": "0001045810-26-000021",
+        "filing_date": "2026-02-25",
+        "reporting_period": "2026-01-25",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+        "raw_sha256": "887d559e6180462ecfe36d4c7bba0d8f04a1f63deaaa743ab945edefd9d074bf",
+        "normalized_sha256": "6974d0f2670707e8049a8e920492b16b6fa732d623d0f1c370325f4013bfbc83",
+        "extraction_status": "PARTIAL_EXTRACTION",
+        "available_chunks": 1637,
+        "selected_chunks": 160
+      },
+      {
+        "issuer": "Walmart Inc.",
+        "ticker": "WMT",
+        "cik": "0000104169",
+        "form": "10-K",
+        "accession_number": "0000104169-26-000055",
+        "filing_date": "2026-03-13",
+        "reporting_period": "2026-01-31",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+        "raw_sha256": "1c34c37ec615ea572ced3dd5e202b084057d262d55a779951cbfca9c3c25ed82",
+        "normalized_sha256": "9c674c1251432ebd1ffefaf42fea67daf735211a2b2c2b4b7cd468bbd0edc677",
+        "extraction_status": "PARTIAL_EXTRACTION",
+        "available_chunks": 1514,
+        "selected_chunks": 160
+      }
+    ]
+  },
+  "amendment_note": "No 10-K/A was returned for the selected issuers in the frozen period. Amendment-specific coverage remains a documented limitation rather than reusing the consumed Tesla filing."
+}
