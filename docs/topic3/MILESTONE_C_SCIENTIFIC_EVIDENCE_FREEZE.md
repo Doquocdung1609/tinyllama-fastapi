@@ -45,3 +45,19 @@ Historical HTTP, core lexical, embedding, Qdrant and provenance measurements rem
 | scripts/benchmark_financial_hardening.py | 34dff7a1e4461da9ae479eb1897f3eae40fc28cacf1ee9cc4858402b5ceb12c3 |
 
 Limits: small n and wide bootstrap intervals; deterministic filing subsets; exact-row qrels may omit useful narrative; partial administrative table extraction; limited issuer/form coverage. Source verification validates evidence correspondence, not generated financial answers or decisions.
+
+## Post-integration checksum clarification
+
+The table above preserves hashes observed on the original review workstation. Some older JSON files and Python-written result files used CRLF there. The accepted `.gitattributes` policy emits canonical LF Git-blob bytes in fresh checkouts; therefore their file hashes differ by newline encoding only. An explicit post-merge byte comparison of every frozen artifact's Git blob at `4eee5de` versus accepted merge `69e6866` found all identical. No numerical result, query, judgment or historical Git blob changed.
+
+Canonical LF SHA-256 values at accepted commit `69e6866552d15571858b44707d59a453443fae9c`:
+
+| Artifact | Canonical SHA-256 |
+|---|---|
+| MILESTONE_C_MEASUREMENTS.json | 9925a0f6cab569a36e0ceef0e1d53613c9e2306f67dae005b83faca5bac95554 |
+| MILESTONE_C_QUERIES.json | b98e125698a0c10db83c03327654264234326706d7256287e2189983d8757d86 |
+| reports/milestone_c_issuer_heldout.json | 7ee95bbefe47f2f92a3b99b48d886686a5fd41d0ee5017bf8ec8299015ee632e |
+| reports/milestone_c_issuer_development.json | 43d04075e2cc760ed07f137177b7a537294e3a555ff7b92fca7ea7551e951f22 |
+| reports/milestone_c_hardening_latency.json | fda94ba2dba563a817369cb7ce58025dd6c4459bb153f5a9242a0f184459ff8d |
+
+All other listed query/corpus/script hashes are unchanged between the reviewed workstation copies and canonical LF blobs. The held-out query hash `c8aedd…792a` remains byte-identical and the benchmark hash guard passes on the fresh Windows checkout.

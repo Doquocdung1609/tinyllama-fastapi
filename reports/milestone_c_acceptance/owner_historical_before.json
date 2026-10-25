@@ -1,0 +1,8 @@
+{
+  "financial_corpus\\registry.sqlite3": "b57bed7fe179df69e0d8e11b1b477475d74b12b356b668492648742052f92cfb",
+  "financial_corpus\\registry.sqlite3-shm": "440f93d90bb0a64694ba92502f66a1216535e60403e2e1f189845ec358f2f383",
+  "financial_corpus\\registry.sqlite3-wal": "df140c560d997fda3532da412ed02936d4adda5a5b2e992606510532c63e19cd",
+  "qdrant_data\\.lock": "67a987c432005e3afcc13a871b3ddabaeee0f4504058da65b0769016d3083b44",
+  "qdrant_data\\meta.json": "ca5bebd58134da95fd8ea8a9a55d4b86ff445d2f6df246fa85a0563ba338eb5e",
+  "qdrant_data\\collection\\knowledgebase\\storage.sqlite": "0d8cd6a16e10a567c791f276aac7551a60defff23083c3aad0cc7cfc69f40788"
+}

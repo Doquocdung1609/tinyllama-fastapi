@@ -1,0 +1,248 @@
+{
+  "commit": "69e6866552d15571858b44707d59a453443fae9c",
+  "checks": {
+    "health": {
+      "status": 200,
+      "body": {
+        "status": "ok"
+      }
+    },
+    "datasets": {
+      "status": 200,
+      "body": {
+        "datasets": [
+          {
+            "dataset_id": "issuer-heldout-index-v1",
+            "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+            "state": "READY",
+            "active": true,
+            "chunks": 320,
+            "error": null,
+            "embedding": {
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimension": 768,
+              "document_prefix": "search_document: ",
+              "model": "nomic-embed-text:latest",
+              "normalization_policy": "unicode-preserved;whitespace-preserved",
+              "query_prefix": "search_query: ",
+              "truncation_policy": "first-6000-content-characters;ollama-truncate=true"
+            },
+            "membership_hash": "78e5e58b267ba5cc4e4e6606fff8bbd839214f0ef0e787ba385f804e968680b5",
+            "manifests": [
+              "579c202eb8f41a964ab88fc551ab7cfe04774637db89acd27156f006add9cef7"
+            ],
+            "source_partial_documents": [
+              "sec:0000104169:0000104169-26-000055",
+              "sec:0001045810:0001045810-26-000021"
+            ],
+            "subset_policy": [
+              160
+            ]
+          },
+          {
+            "dataset_id": "issuer-dev-index-v1",
+            "generation": "ddf187006addb1c19462937ddff8b8707f6d524af827dd4bbd1946113a80a40d",
+            "state": "READY",
+            "active": true,
+            "chunks": 320,
+            "error": null,
+            "embedding": {
+              "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+              "dimension": 768,
+              "document_prefix": "search_document: ",
+              "model": "nomic-embed-text:latest",
+              "normalization_policy": "unicode-preserved;whitespace-preserved",
+              "query_prefix": "search_query: ",
+              "truncation_policy": "first-6000-content-characters;ollama-truncate=true"
+            },
+            "membership_hash": "c5d364457b0c8ebfb57797de3330fb74a333e58550b1d0d7f1b0d3edfc474cbb",
+            "manifests": [
+              "4bd1437b7a333fc660d59638a54017d761f9f098fcb8a0d9e3118f42c9f80ee5"
+            ],
+            "source_partial_documents": [
+              "sec:0000021344:0001628280-26-010047",
+              "sec:0000789019:0001193125-26-323660"
+            ],
+            "subset_policy": [
+              160
+            ]
+          }
+        ]
+      }
+    },
+    "bm25": {
+      "status": 200,
+      "body": {
+        "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+        "ids": [
+          "fin_42c177ddbe945cbdbde5fdceac0160c4",
+          "fin_19d2cfc014d0fa3de5de7388f8fc10a4",
+          "fin_14bcd733d3d5142e23b95ecca5f049b9",
+          "fin_b5d28a93b40bc2ca8364127184e863e7",
+          "fin_5322e3415c81dd3bf0a2202771307be7"
+        ],
+        "timings_ms": {
+          "lexical": 131.71309999597725,
+          "embedding": 0.0,
+          "dense": 0.0,
+          "retrieval_without_embedding_or_provenance": 134.7024999995483,
+          "provenance": 1696.045899996534,
+          "total": 1830.7514000043739
+        },
+        "provenance_cache": {
+          "hits": 0,
+          "misses": 1,
+          "evictions": 0,
+          "waits": 0,
+          "invalidations": 0,
+          "entries": 1,
+          "bytes": 8651722,
+          "max_entries": 8,
+          "max_bytes": 134217728
+        }
+      }
+    },
+    "dense": {
+      "status": 200,
+      "body": {
+        "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+        "ids": [
+          "fin_e15d0f3f8324fe73f4f824b0c07b6ba6",
+          "fin_2f768d8cf99794e7efd1deaab61f20e7",
+          "fin_84bbba3ccdceb526bab5c01cf01586f8",
+          "fin_cb5fd1b6ac172b0d600dd27213b06cfa",
+          "fin_9b90cfefc77e777bf4513ee29811f084"
+        ],
+        "timings_ms": {
+          "lexical": 0.000400003045797348,
+          "embedding": 147.44299999438226,
+          "dense": 16.824299993459135,
+          "retrieval_without_embedding_or_provenance": 1384.2894999979762,
+          "provenance": 119.96760001056828,
+          "total": 1651.701900002081
+        },
+        "provenance_cache": {
+          "hits": 1,
+          "misses": 1,
+          "evictions": 0,
+          "waits": 0,
+          "invalidations": 0,
+          "entries": 1,
+          "bytes": 8651722,
+          "max_entries": 8,
+          "max_bytes": 134217728
+        }
+      }
+    },
+    "hybrid": {
+      "status": 200,
+      "body": {
+        "generation": "afe00aa93e6957a92e0292f6ae54d258dc1c1f5a84e3f83c275931476875d691",
+        "ids": [
+          "fin_e15d0f3f8324fe73f4f824b0c07b6ba6",
+          "fin_19d2cfc014d0fa3de5de7388f8fc10a4",
+          "fin_2f768d8cf99794e7efd1deaab61f20e7",
+          "fin_b5d28a93b40bc2ca8364127184e863e7",
+          "fin_5322e3415c81dd3bf0a2202771307be7"
+        ],
+        "timings_ms": {
+          "lexical": 8.95920000039041,
+          "embedding": 123.86610000976361,
+          "dense": 16.270299995085225,
+          "retrieval_without_embedding_or_provenance": 32.1259999909671,
+          "provenance": 123.55750000278931,
+          "total": 279.5506000111345
+        },
+        "provenance_cache": {
+          "hits": 2,
+          "misses": 1,
+          "evictions": 0,
+          "waits": 0,
+          "invalidations": 0,
+          "entries": 1,
+          "bytes": 8651722,
+          "max_entries": 8,
+          "max_bytes": 134217728
+        }
+      }
+    },
+    "unauthorized": {
+      "status": 401,
+      "body": {
+        "detail": {
+          "code": "FINANCIAL_ADMIN_UNAUTHORIZED"
+        }
+      }
+    },
+    "invalid": {
+      "status": 409,
+      "body": {
+        "detail": {
+          "code": "INDEX_GENERATION_NOT_FOUND"
+        }
+      }
+    },
+    "chat": {
+      "status": 200,
+      "body": {
+        "answer": "post merge chat",
+        "model": "qwen2.5:3b"
+      }
+    },
+    "rag": {
+      "status": 200,
+      "body": {
+        "active_document_ids": [
+          "812a4d9c64e301b44411a427144149ba"
+        ],
+        "sources": [
+          {
+            "filename": "acceptance_B.pdf",
+            "page": 1,
+            "chunk_id": "812a4d9c64e301b44411a427144149ba-00000",
+            "score": 1.0,
+            "document_id": "812a4d9c64e301b44411a427144149ba",
+            "modality": "text",
+            "source_id": "text:p1:chars0-249",
+            "bbox": null,
+            "semantic_score": 0.41394219444739766,
+            "lexical_score": 0.062803,
+            "semantic_rank": 1,
+            "lexical_rank": 1
+          },
+          {
+            "filename": "acceptance_B.pdf",
+            "page": 1,
+            "chunk_id": "812a4d9c64e301b44411a427144149ba-00001",
+            "score": 0.983871,
+            "document_id": "812a4d9c64e301b44411a427144149ba",
+            "modality": "table",
+            "source_id": "table:p1:t1",
+            "bbox": [
+              77.95,
+              99.35,
+              517.32,
+              153.35
+            ],
+            "semantic_score": 0.4115397113529325,
+            "lexical_score": 0.062803,
+            "semantic_rank": 2,
+            "lexical_rank": 2
+          }
+        ]
+      }
+    }
+  },
+  "owner_historical_integrity": {
+    "files": 6,
+    "unchanged": true,
+    "sha256": {
+      "financial_corpus\\registry.sqlite3": "b57bed7fe179df69e0d8e11b1b477475d74b12b356b668492648742052f92cfb",
+      "financial_corpus\\registry.sqlite3-shm": "440f93d90bb0a64694ba92502f66a1216535e60403e2e1f189845ec358f2f383",
+      "financial_corpus\\registry.sqlite3-wal": "df140c560d997fda3532da412ed02936d4adda5a5b2e992606510532c63e19cd",
+      "qdrant_data\\.lock": "67a987c432005e3afcc13a871b3ddabaeee0f4504058da65b0769016d3083b44",
+      "qdrant_data\\meta.json": "ca5bebd58134da95fd8ea8a9a55d4b86ff445d2f6df246fa85a0563ba338eb5e",
+      "qdrant_data\\collection\\knowledgebase\\storage.sqlite": "0d8cd6a16e10a567c791f276aac7551a60defff23083c3aad0cc7cfc69f40788"
+    }
+  }
+}
