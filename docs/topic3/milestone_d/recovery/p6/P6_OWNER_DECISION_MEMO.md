@@ -1,0 +1,5 @@
+# P6 owner decision memo
+
+Recommendation: accept this **Draft PR for owner review as a narrow local research pilot**, not for merging or production. Automatic natural-language P&G NET SALES extraction and comparison now traverse D1, bounded lexical discovery, authenticated real SEC cell mapping, D4 typed Decimal arithmetic, authenticated HTTP and Streamlit. No client source ID or numeric operand is trusted. Missing, conflicting and unsupported evidence abstains.
+
+Conditions before any broader acceptance: independent source/alias security review; final-head CI and regression; exact-cell browser navigation improvement or clear UI locator guidance; source tamper E2E test; issuer-separated held-out evaluation frozen before scoring; broader metric/table coverage and valid Dense environment if D/F quality claims are desired. The current evidence does not justify a ranking-default change or any merge of PRs #11–#15. See `p6_execution_manifest.json`, `p6_test_results.json`, `p6_real_sec_evidence.json`, `p6_e2e_matrix.json` and the HTTP/UI/performance probes for auditable identities and outcomes.

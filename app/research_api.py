@@ -19,6 +19,7 @@ class ResearchRequest(BaseModel):
     operation:Operation='EXTRACT'
     top_k:Literal[5,10]=5
     use_llm:bool=False
+    workflow:Literal['research','automatic_real']='research'
 
 
 def create_research_app(backend=None,token=''):
@@ -43,7 +44,7 @@ def create_research_app(backend=None,token=''):
         supplied=request.headers.get('authorization','')
         if not hmac.compare_digest(supplied.encode('utf-8'),'Bearer '.encode()+token.encode('utf-8')):raise HTTPException(401,'RESEARCH_AUTHORIZATION_REQUIRED')
         if not slots.acquire(blocking=False):raise HTTPException(429,'RESEARCH_RESOURCE_BUSY')
-        try:return backend.query(payload.question,payload.filters.model_dump(mode='json'),payload.arm,payload.operation,payload.top_k,payload.use_llm)
+        try:return backend.query(payload.question,payload.filters.model_dump(mode='json'),payload.arm,payload.operation,payload.top_k,payload.use_llm,payload.workflow)
         except (ValueError,RuntimeError):raise HTTPException(409,'RESEARCH_SOURCE_OR_SCOPE_VALIDATION_FAILED') from None
         finally:slots.release()
     return app

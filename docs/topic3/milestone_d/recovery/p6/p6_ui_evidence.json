@@ -1,0 +1,38 @@
+{
+  "schema_version": "topic3-p6-browser-smoke/v1",
+  "browser": "Chromium/Chrome headless",
+  "local_url": "http://127.0.0.1:18502",
+  "synthetic": false,
+  "cases": [
+    {
+      "id": "exact",
+      "status": "LIVE_VERIFIED",
+      "elapsed_ms": 3437,
+      "visible_value": "23276000000",
+      "visible_status": "SUPPORTED"
+    },
+    {
+      "id": "citation",
+      "status": "LIVE_VERIFIED",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "verification_visible": true,
+      "locator_visible": true,
+      "partial_warning_visible": true
+    },
+    {
+      "id": "source_navigation",
+      "status": "LIVE_VERIFIED",
+      "opened_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "source_row_visible": false
+    },
+    {
+      "id": "comparison",
+      "status": "LIVE_VERIFIED",
+      "elapsed_ms": 3983,
+      "visible_values": [
+        "22386000000",
+        "23276000000"
+      ]
+    }
+  ]
+}

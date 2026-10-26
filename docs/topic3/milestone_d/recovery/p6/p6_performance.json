@@ -1,0 +1,118 @@
+{
+  "schema_version": "topic3-p6-performance/v1",
+  "python": "3.13.2",
+  "os": "Windows-11-10.0.26300-SP0",
+  "fixture": "real SEC P&G 10-Q, isolated read-only snapshot",
+  "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "candidate_budget": 64,
+  "runs": [
+    {
+      "run": 1,
+      "cold_in_process": true,
+      "http": false,
+      "wall_ms": 3744.719,
+      "stages_ms": {
+        "question_scope": 5.184,
+        "candidate_retrieval": 840.444,
+        "source_authentication_and_cell_derivation": 2010.263,
+        "d4_typed_numeric_verification": 867.604,
+        "total": 3727.577
+      },
+      "original_bm25_rank": 47
+    },
+    {
+      "run": 2,
+      "cold_in_process": false,
+      "http": false,
+      "wall_ms": 2783.894,
+      "stages_ms": {
+        "question_scope": 0.703,
+        "candidate_retrieval": 318.948,
+        "source_authentication_and_cell_derivation": 1810.768,
+        "d4_typed_numeric_verification": 648.521,
+        "total": 2782.895
+      },
+      "original_bm25_rank": 47
+    },
+    {
+      "run": 3,
+      "cold_in_process": false,
+      "http": false,
+      "wall_ms": 2710.739,
+      "stages_ms": {
+        "question_scope": 0.664,
+        "candidate_retrieval": 317.875,
+        "source_authentication_and_cell_derivation": 1813.326,
+        "d4_typed_numeric_verification": 573.972,
+        "total": 2709.86
+      },
+      "original_bm25_rank": 47
+    },
+    {
+      "run": 4,
+      "cold_in_process": false,
+      "http": false,
+      "wall_ms": 2828.23,
+      "stages_ms": {
+        "question_scope": 0.821,
+        "candidate_retrieval": 319.282,
+        "source_authentication_and_cell_derivation": 1888.151,
+        "d4_typed_numeric_verification": 615.178,
+        "total": 2827.444
+      },
+      "original_bm25_rank": 47
+    },
+    {
+      "run": 5,
+      "cold_in_process": false,
+      "http": false,
+      "wall_ms": 2935.684,
+      "stages_ms": {
+        "question_scope": 0.698,
+        "candidate_retrieval": 316.795,
+        "source_authentication_and_cell_derivation": 1937.524,
+        "d4_typed_numeric_verification": 675.291,
+        "total": 2934.527
+      },
+      "original_bm25_rank": 47
+    },
+    {
+      "run": 6,
+      "cold_in_process": false,
+      "http": false,
+      "wall_ms": 2857.592,
+      "stages_ms": {
+        "question_scope": 0.714,
+        "candidate_retrieval": 325.882,
+        "source_authentication_and_cell_derivation": 1917.742,
+        "d4_typed_numeric_verification": 607.946,
+        "total": 2856.943
+      },
+      "original_bm25_rank": 47
+    },
+    {
+      "run": 7,
+      "cold_in_process": false,
+      "http": false,
+      "wall_ms": 2738.216,
+      "stages_ms": {
+        "question_scope": 0.653,
+        "candidate_retrieval": 313.06,
+        "source_authentication_and_cell_derivation": 1824.335,
+        "d4_typed_numeric_verification": 595.071,
+        "total": 2737.003
+      },
+      "original_bm25_rank": 47
+    }
+  ],
+  "p50_ms": 2828.23,
+  "p95_nearest_rank_ms": 3744.719,
+  "rss_before_bytes": 46759936,
+  "rss_after_bytes": 117747712,
+  "limitations": [
+    "single process",
+    "no API transport",
+    "cold means first call in this process, not cold disk"
+  ]
+}
