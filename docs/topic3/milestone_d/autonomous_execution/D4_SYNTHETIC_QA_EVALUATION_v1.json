@@ -1,0 +1,120 @@
+{
+  "identity": "d4-synthetic-qa-evaluation/v1",
+  "fixture_sha256": "5e6a46bc75f64eba82cbf95337000627b0aacc9698eb2e989956c4e6acff1778",
+  "python": "3.13.2",
+  "question_count": 8,
+  "answerable": 4,
+  "answered": 4,
+  "answer_coverage": 1.0,
+  "conditional_correctness": 1.0,
+  "all_question_correctness": 0.5,
+  "appropriate_abstention": 4,
+  "false_abstentions": 0,
+  "unsupported_claims": 0,
+  "latency_p50_ms": 30.109,
+  "latency_max_ms": 49.526,
+  "cases": [
+    {
+      "id": "S1",
+      "answerable": true,
+      "status": "SUPPORTED",
+      "retrieval_status": "OK",
+      "value": "100000000",
+      "unit": "USD",
+      "citation_ok": true,
+      "correct": true,
+      "latency_ms": 49.526,
+      "expected_failure_observed": false
+    },
+    {
+      "id": "S2",
+      "answerable": true,
+      "status": "SUPPORTED",
+      "retrieval_status": "OK",
+      "value": "90000000",
+      "unit": "USD",
+      "citation_ok": true,
+      "correct": true,
+      "latency_ms": 43.412,
+      "expected_failure_observed": false
+    },
+    {
+      "id": "S3",
+      "answerable": true,
+      "status": "SUPPORTED",
+      "retrieval_status": "OK",
+      "value": "10000000",
+      "unit": "USD",
+      "citation_ok": true,
+      "correct": true,
+      "latency_ms": 45.71,
+      "expected_failure_observed": false
+    },
+    {
+      "id": "S4",
+      "answerable": true,
+      "status": "SUPPORTED",
+      "retrieval_status": "OK",
+      "value": "11.11111111111111111111111111",
+      "unit": "PERCENT",
+      "citation_ok": true,
+      "correct": true,
+      "latency_ms": 45.908,
+      "expected_failure_observed": false
+    },
+    {
+      "id": "S5",
+      "answerable": false,
+      "status": "NEEDS_CLARIFICATION",
+      "retrieval_status": "OK",
+      "value": null,
+      "unit": null,
+      "citation_ok": false,
+      "correct": false,
+      "latency_ms": 16.807,
+      "expected_failure_observed": true
+    },
+    {
+      "id": "S6",
+      "answerable": false,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "retrieval_status": "NO_ELIGIBLE_EVIDENCE",
+      "value": null,
+      "unit": null,
+      "citation_ok": false,
+      "correct": false,
+      "latency_ms": 0.595,
+      "expected_failure_observed": true
+    },
+    {
+      "id": "S7",
+      "answerable": false,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "retrieval_status": "NO_ELIGIBLE_EVIDENCE",
+      "value": null,
+      "unit": null,
+      "citation_ok": false,
+      "correct": false,
+      "latency_ms": 0.547,
+      "expected_failure_observed": true
+    },
+    {
+      "id": "S8",
+      "answerable": false,
+      "status": "UNSUPPORTED_OPERATION",
+      "retrieval_status": "UNSUPPORTED",
+      "value": null,
+      "unit": null,
+      "citation_ok": false,
+      "correct": false,
+      "latency_ms": 0.511,
+      "expected_failure_observed": true
+    }
+  ],
+  "limitations": [
+    "Synthetic only",
+    "No human SEC adjudication",
+    "No LLM",
+    "In-process coordinator timing, not HTTP latency"
+  ]
+}

@@ -1,0 +1,5 @@
+# D4 answer and citation audit
+
+Every synthetic supported result references verified D2 evidence cell IDs with parent ID/hash, original displayed string, scaled Decimal, unit, sign, reporting period, table coordinate, source URL and structural path. A `verify_claim` call reconstructs the bundle and exact expected claim. Fixture tests reject mutated numeric values, altered claims, bad citations and changed generation/manifest. The eight frozen synthetic diagnostic cases record whether an answer carries its expected fixture URL and nonempty structural locator.
+
+Real SEC mode can return C-verified chunk provenance through D3 and the opt-in API. It does **not** return verified numeric claims because D2's source-size limit rules out these retained filings. Therefore exact real SEC cell citation support: **NOT MEASURED**; real numeric claim provenance: **NOT MEASURED**. The historical C source URL alone does not certify a D4 figure. The synthetic `example.invalid` URL is a fixture locator and the UI explicitly labels it synthetic.
