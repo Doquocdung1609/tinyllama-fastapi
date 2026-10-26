@@ -1,16 +1,16 @@
 {
   "schema_version": "topic3-p8-integration-gates/v1",
-  "checkpoint": "pre-candidate",
+  "checkpoint": "local integration candidate complete; GitHub PR CI pending",
   "ancestry": "VERIFIED",
   "deterministic_mapping_tests": "VERIFIED",
   "source_operands": "VERIFIED_WITH_LIMITATIONS",
   "high_critical_open": "NONE_DEMONSTRATED",
   "unsupported_abstention": "VERIFIED_WITH_LIMITATIONS",
   "http_ui": "VERIFIED_WITH_LIMITATIONS",
-  "full_regression": "PARTIAL_FINAL_RERUN_PENDING",
+  "full_regression": "VERIFIED_575_PASS_3_SKIP",
   "final_head_ci": "NOT_TESTED",
   "historical_artifacts": "VERIFIED",
-  "full_stack_candidate": "NOT_TESTED",
+  "full_stack_candidate": "VERIFIED_LOCAL_FF16BC72992590A65D5D803D8656220961FCF9EC",
   "real_source_coverage": "VERIFIED_WITH_LIMITATIONS",
   "draft_pr_unmerged": "NOT_TESTED"
 }

@@ -1,0 +1,7 @@
+# P8 isolated full-stack integration audit
+
+Accepted target `codex/topic3-milestone-b-sec-corpus` was `32c4a4834c5f8a0b34ac28c42f960c862dd8077d`; P7 base was `559b2ebe26746450a863e71d37d8d6793d136d98`. P8 implementation checkpoint `93296e039dc349651a84b991773cea051a2622ff` has the accepted target as its merge base, so the full D2→D3→D4→D5→Recovery→P6→P7→P8 chain is reachable without cherry-picks.
+
+An isolated detached worktree at the accepted target ran `git merge --no-ff --no-commit 93296e039dc349651a84b991773cea051a2622ff`; it had **no conflicts**. The resulting local-only two-parent candidate commit is `ff16bc72992590a65d5d803d8656220961fcf9ec`, parents `32c4a483...` and `93296e03...`. Its tree `c0991ffe5c9b6780b60acc16f5f4630f614ecf32` equals the P8 source tree exactly, and `git diff P8_SHA candidate_SHA` was empty. It was not pushed and no GitHub PR was merged.
+
+On the candidate: `python -m compileall -q app scripts` PASS; `python -m pytest -q` **575 PASS, 3 SKIP, 1 warning** in 38.47 s. `git diff --check` passed. Target-to-candidate inspection found no changes to accepted core `app/main.py`, production Financial Search service, accepted B/C/D1 docs, migrations or tracked SQLite/vector artifacts. New research API/UI imports are opt-in. Historical SEC/Qdrant data was not used for destructive testing. The post-audit documentation commit will be a new P8 source HEAD; its final GitHub PR candidate CI is the authority for that final tree.
