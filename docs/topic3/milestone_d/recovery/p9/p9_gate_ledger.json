@@ -1,0 +1,19 @@
+{
+  "schema_version": "topic3-p9-gates/v1",
+  "checkpoint": "local technical RC before final-head CI",
+  "stack_ancestry": "VERIFIED",
+  "candidate_tree": "VERIFIED",
+  "source_authenticated_positive_controls": "VERIFIED_6_OF_6_DEVELOPMENT",
+  "safety_negative_controls": "VERIFIED_WITH_LIMITATIONS",
+  "full_regression": "VERIFIED_575_PASS_3_SKIP",
+  "live_http": "VERIFIED",
+  "live_ui": "VERIFIED_WITH_LIMITATIONS",
+  "source_tamper": "VERIFIED_12_OF_12_CLONE",
+  "concurrent_pinned_reads": "VERIFIED_12_READS_ZERO_MIXED_GENERATIONS",
+  "historical_artifacts": "VERIFIED_TRACKED_BLOBS",
+  "final_head_ci": "PENDING_PR",
+  "draft_pr": "PENDING_PR",
+  "dense_compatible_execution": "BLOCKED",
+  "new_human_labels": "NOT_AVAILABLE",
+  "scientific_heldout": "NOT_RUN"
+}

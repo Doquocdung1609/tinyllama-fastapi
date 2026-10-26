@@ -1,0 +1,38 @@
+{
+  "schema_version": "topic3-p9-resources/v1",
+  "os": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.2",
+  "local_total_ram_bytes": 8419053568,
+  "local_available_ram_bytes_at_packaging": 1169121280,
+  "disk_free_bytes_at_packaging": 4395585536,
+  "research_clone_peak_python_rss_bytes": 119013376,
+  "backend_initialization_ms": 4.556300002150238,
+  "api_cold_start_ms": 1687.4668000091333,
+  "streamlit_cold_start_ms": 4154.65059998678,
+  "api_restart_ms": 1289.8341999971308,
+  "positive_development_wall_ms": [
+    3751.1693999986164,
+    3175.238399999216,
+    1588.6996999906842,
+    1705.1283000037074,
+    2232.532899972284,
+    1674.4777000276372
+  ],
+  "warm_repeated_hd_wall_ms": [
+    1547.9033000010531,
+    1541.3117000134662,
+    1618.4033999743406,
+    1487.3771999846213,
+    1557.8220000024885
+  ],
+  "warm_repeated_hd_p50_ms": 1547.9033000010531,
+  "warm_repeated_hd_p95_nearest_ms": 1618.4033999743406,
+  "warm_stage_median_ms": {
+    "question_scope": 0.6384000007528812,
+    "candidate_retrieval": 318.7966999830678,
+    "source_authentication_and_cell_derivation": 573.0696999817155,
+    "d4_typed_numeric_verification": 589.8772999935318,
+    "total": 1547.3563999985345
+  },
+  "measurement_limit": "Five repeated HD queries; mixed positive-case timings are not a stable latency distribution."
+}
