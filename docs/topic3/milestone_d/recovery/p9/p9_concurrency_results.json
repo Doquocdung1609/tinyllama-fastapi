@@ -1,0 +1,11 @@
+{
+  "schema_version": "topic3-p7-concurrency/v1",
+  "clone_only": true,
+  "old_generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "new_active_generation": "7777777777777777777777777777777777777777777777777777777777777777",
+  "old_generation_state": "READY",
+  "parallel_readers": 3,
+  "queries_during_publication": 9,
+  "queries_after_publication": 3,
+  "mixed_generation_claims": 0
+}

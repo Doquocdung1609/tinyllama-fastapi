@@ -1,0 +1,61 @@
+{
+  "schema_version": "topic3-p9-tests/v1",
+  "candidate_commit": "aa78c1a5f5bdee0d1ac578c799e6cddca2d04045",
+  "candidate_tree": "d1d69269d4de4c97db9f429ba74031b8e43967f9",
+  "python": "3.13.2",
+  "compileall": "PASS",
+  "focused": {
+    "passed": 20
+  },
+  "full": {
+    "passed": 575,
+    "skipped": 3,
+    "warnings": 1,
+    "seconds": 33.48
+  },
+  "non_integration": {
+    "passed": 575,
+    "deselected": 3,
+    "warnings": 1,
+    "seconds": 108.25
+  },
+  "technical_cases": {
+    "total": 18,
+    "passed": 18,
+    "positive": 6,
+    "negative": 12
+  },
+  "tamper_cases_refused": 12,
+  "http_tamper": {
+    "http_status": 409,
+    "answer_status": null,
+    "values": [],
+    "detail": "RESEARCH_SOURCE_OR_SCOPE_VALIDATION_FAILED"
+  },
+  "semantic_percentage_points": {
+    "case_id": "percentage_points",
+    "question": "What was the percentage-point change in P&G net sales from the quarter ended September 30, 2025 to the quarter ended September 30, 2026?",
+    "filters": {},
+    "answer_status": "UNSUPPORTED_OPERATION",
+    "values": [],
+    "failure_code": "PERCENTAGE_POINTS_NOT_SUPPORTED"
+  },
+  "http_invalid_generation": 409,
+  "parallel_publication_reads": 9,
+  "mixed_generation_claims": 0,
+  "browser": {
+    "schema_version": "topic3-p9-browser/v1",
+    "real_sec_exact_value_visible": true,
+    "real_sec_comparison_visible": true,
+    "citation_panel_visible": true,
+    "copyable_json_visible": true,
+    "official_filing_opened": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+    "table_visible_in_popup": false,
+    "row_visible_in_popup": false,
+    "exact_cell_browser_confirmed": false,
+    "unverified_anchor_disclosed": true
+  },
+  "github_final_head_ci": "CHECK_AFTER_DRAFT_PR_PUSH",
+  "environment_note": "System Python lacked portalocker; configured repository venv used without code changes."
+}

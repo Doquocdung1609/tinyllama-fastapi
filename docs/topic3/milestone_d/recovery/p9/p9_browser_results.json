@@ -1,0 +1,13 @@
+{
+  "schema_version": "topic3-p9-browser/v1",
+  "real_sec_exact_value_visible": true,
+  "real_sec_comparison_visible": true,
+  "citation_panel_visible": true,
+  "copyable_json_visible": true,
+  "official_filing_opened": true,
+  "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+  "table_visible_in_popup": false,
+  "row_visible_in_popup": false,
+  "exact_cell_browser_confirmed": false,
+  "unverified_anchor_disclosed": true
+}

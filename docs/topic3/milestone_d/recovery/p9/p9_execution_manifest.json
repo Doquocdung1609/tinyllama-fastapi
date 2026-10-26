@@ -1,0 +1,18 @@
+{
+  "schema_version": "topic3-p9-execution/v1",
+  "authorization": "TOPIC3_P9_RELEASE_CANDIDATE_AND_SCIENTIFIC_READINESS_AUTHORIZED",
+  "accepted_target": "32c4a4834c5f8a0b34ac28c42f960c862dd8077d",
+  "p8_base": "468ddf6ca3f40edbd342b444a088cadc801b40c4",
+  "local_candidate": "aa78c1a5f5bdee0d1ac578c799e6cddca2d04045",
+  "candidate_tree": "d1d69269d4de4c97db9f429ba74031b8e43967f9",
+  "source_clone": "t3-p7-isolated-review-20261026-v1",
+  "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "candidate_budget": 64,
+  "historical_heldout_used": false,
+  "new_sec_download": false,
+  "owner_source_or_qdrant_mutated": false,
+  "production_default_changed": false,
+  "merge_authorized": false,
+  "final_pr_head": "SET_BY_GIT_COMMIT_AND_PR_METADATA"
+}

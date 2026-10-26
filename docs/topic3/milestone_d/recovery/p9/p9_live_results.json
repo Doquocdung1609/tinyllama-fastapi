@@ -1,0 +1,40 @@
+{
+  "schema_version": "topic3-p9-live/v1",
+  "source_clone_only": true,
+  "token_recorded": false,
+  "api_startup_ms": 1687.4668000091333,
+  "streamlit_startup_ms": 4154.65059998678,
+  "first_query": {
+    "http": 200,
+    "answer": "SUPPORTED",
+    "values": [
+      "109384000000"
+    ],
+    "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+    "wall_ms": 2439.9985000200104
+  },
+  "repeated_query": {
+    "http": 200,
+    "answer": "SUPPORTED",
+    "values": [
+      "109384000000"
+    ],
+    "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+    "wall_ms": 1771.0776000167243
+  },
+  "invalid_token_http": 401,
+  "invalid_generation_http": 409,
+  "generation_restored": true,
+  "browser_result": "see p9_browser_results.json",
+  "http_matrix": "see p9_http_matrix.json",
+  "api_restart_ms": 1289.8341999971308,
+  "after_restart": {
+    "http": 200,
+    "answer": "SUPPORTED",
+    "values": [
+      "109384000000"
+    ],
+    "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+    "wall_ms": 2063.5763999889605
+  }
+}
