@@ -1,0 +1,7 @@
+# P7 independent-style source review
+
+Review base: P6 `ac73de35fdf6047667adaab16780f35b29f4c6a0`; stacked PR #16 remains Draft. This is a fresh adversarial Codex pass, **not independent human review**. Source inspected: `app/research_qa/{source_alias,automatic_real,real_cells,backend}.py`, `app/research_api.py`, `app/research_retrieval/snapshot.py`, `app/table_evidence/real_source.py`, `research_ui.py`, P6 tests, scripts and reports. The accepted Financial Search and legacy Chat/RAG routes were not modified.
+
+The P6 trust chain is D1 metadata scope → pinned B-channel parent search → committed raw-source registry → C full-source reconstruction → physical table cell and iXBRL context → D4 Decimal operands → source-bound citation. D1 metadata validation alone is not cryptographic source authentication. P7 found four wrong-claim paths or source identity defects and made minimal changes; see `P7_FINDINGS_AND_REPAIRS.md`. A real P&G control remains supported. No broad issuer or table-family generalization is proven.
+
+Reviewed invariants: no client parent/cell/hash value accepted; exact issuer/filing/period filtering; P6 candidate budget unchanged at 64; D1 unresolved column status remains visible; no Ollama/vectors required for B; auth precedes query work; no raw source path escapes the snapshot root; source-byte hash is checked against a committed registry; selected parent is rechunked; each D4 operand preserves cell, unit, period and provenance. Remaining limitations are enumerated in the owner recommendation.

@@ -126,3 +126,27 @@ def test_p6_reversed_change_periods_refuse_wrong_sign():
     assert result['answer']['status']=='NEEDS_CLARIFICATION'
     assert result['failure_code']=='CHANGE_DIRECTION_REQUIRES_OLD_THEN_NEW'
     assert snapshot.calls==0
+
+
+def test_p7_fair_value_qualifier_cannot_be_answered_as_net_sales(monkeypatch):
+    parent,cell,catalog=fixture();snapshot=FakeSnapshot(parent,catalog)
+    monkeypatch.setattr('app.research_qa.automatic_real.verified_real_cells',lambda snap,cid:(cell,))
+    monkeypatch.setattr('app.research_qa.real_cells.verified_real_cells',lambda snap,cid:(cell,))
+    question='What were FX net sales fair value for the quarter ended September 30, 2026?'
+    result=automatic_real_query(snapshot,question,{})
+    assert result['answer']['status']!='SUPPORTED' and not result['answer']['result_values']
+    assert snapshot.calls==0
+
+
+def test_p7_percentage_point_change_cannot_be_answered_as_comparison(monkeypatch):
+    parent,cell,catalog=fixture();snapshot=FakeSnapshot(parent,catalog)
+    prior=cell.model_copy(update={'period_start':'2025-07-01','period_end':'2025-09-30',
+                                  'raw_value':'22,386','value':Decimal('22386'),
+                                  'effective_value':Decimal('22386000000'),'column':cell.column+1})
+    monkeypatch.setattr('app.research_qa.automatic_real.verified_real_cells',lambda snap,cid:(prior,cell))
+    monkeypatch.setattr('app.research_qa.real_cells.verified_real_cells',lambda snap,cid:(prior,cell))
+    question=('What was the percentage-point change in FX net sales from the quarter ended '
+              'September 30, 2025 to the quarter ended September 30, 2026?')
+    result=automatic_real_query(snapshot,question,{})
+    assert result['answer']['status']!='SUPPORTED' and not result['answer']['result_values']
+    assert snapshot.calls==0

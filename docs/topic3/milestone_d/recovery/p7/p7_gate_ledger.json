@@ -1,0 +1,18 @@
+{
+  "schema_version": "topic3-p7-gates/v1",
+  "P7-01": {"status": "VERIFIED", "evidence": "PR #16 HEAD ac73de35; git ancestry and PR #11-#16 snapshots"},
+  "P7-02": {"status": "VERIFIED", "evidence": "P7_INDEPENDENT_REVIEW_REPORT.md module checklist and source inspection"},
+  "P7-03": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "12 clone tamper cases all refused; raw tamper HTTP 409; no full multi-process cache test"},
+  "P7-04": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "14 real PG adversarial questions, focused regressions; narrow supported phrasing"},
+  "P7-05": {"status": "VERIFIED", "evidence": "PG authentic NET SALES 2026 and 2025 controls; p7_real_source_evidence.json"},
+  "P7-06": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "HD/COST and unsupported metric/period/refusal probes; no universal phrasing proof"},
+  "P7-07": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "Correct SEC filing opened and locator guidance visible; table/row/cell not browser-visible"},
+  "P7-08": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "12 isolated queries during/after publication, zero mixed claims; full rollback not tested"},
+  "P7-09": {"status": "VERIFIED", "evidence": "15 budget observations, five full calls; p7_budget_performance.json"},
+  "P7-10": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "Live Uvicorn HTTP and headless Chrome UI; external SEC row invisible"},
+  "P7-11": {"status": "VERIFIED", "evidence": "572 passed, 3 skipped under default and CI settings"},
+  "P7-12": {"status": "NOT_TESTED", "evidence": "Pending final-head GitHub Actions run; update PR body after result"},
+  "P7-13": {"status": "VERIFIED", "evidence": "No accepted scientific blob in branch diff; original PG raw SHA matched committed registry"},
+  "P7-14": {"status": "VERIFIED", "evidence": "Preflight origin/main ceaa8acf; integration 32c4a483; no writes to either"},
+  "P7-15": {"status": "NOT_TESTED", "evidence": "Publish separate stacked Draft PR after final diff review"}
+}

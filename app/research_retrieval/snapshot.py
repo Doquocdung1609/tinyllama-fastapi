@@ -31,6 +31,7 @@ class FrozenResearchSnapshot:
     def search(self,question,scope,channel,limit,deadline):
         if channel!='B':raise ChannelUnavailable('DENSE_NOT_AVAILABLE_NO_RESEARCH_VECTORS')
         record=self.lexical.generation(scope.dataset_id,scope.generation_id)
+        if record['state']!='READY':raise ValueError('RESEARCH_GENERATION_NOT_READY')
         hits=self.lexical.search(question,record,limit,{'cik':scope.cik,'filing_ids':scope.eligible_filing_ids})
         verified={};results=[]
         with closing(self.lexical.connect()) as conn:

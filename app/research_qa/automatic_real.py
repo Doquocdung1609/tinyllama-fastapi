@@ -6,6 +6,7 @@ scope; it never changes D1's status or accepts a client-provided source ID.
 """
 from time import perf_counter
 from typing import Literal
+import re
 from pydantic import BaseModel,ConfigDict,Field
 from app.financial_ingestion.schemas import FinancialChunk
 from app.financial_query import resolve_financial_query
@@ -76,6 +77,11 @@ def automatic_real_query(snapshot,question,filters,operation='EXTRACT',use_llm=F
         trace.append('D1_COLUMN_METADATA_UNCERTAIN_REQUIRES_SOURCE_PROOF')
     elif resolution.status!=Status.RESOLVED:
         return _response(resolution.status.value,'D1_'+resolution.status.value,resolution=resolution,timings=timings)
+    lowered=question.casefold()
+    if re.search(r'\b(?:percentage|percent)[\s\-\u2010-\u2015]*points?\b',lowered):
+        return _response('UNSUPPORTED','PERCENTAGE_POINTS_NOT_SUPPORTED',resolution=resolution,timings=timings)
+    if re.search(r'\b(?:fair\s+value|carrying\s+(?:amount|value))\b',lowered):
+        return _response('NEEDS_CLARIFICATION','NET_SALES_VALUATION_CONTEXT_UNSUPPORTED',resolution=resolution,timings=timings)
     if scope.generation_id!=snapshot.freeze['generation'] or scope.manifest_hash!=snapshot.freeze['manifest_hash']:
         return _response('BLOCKED','PINNED_GENERATION_OR_MANIFEST_MISMATCH',resolution=resolution,timings=timings)
     if len(scope.eligible_filing_ids)!=1 or any(f.form.endswith('/A') for f in catalog.filings if f.filing_id in scope.eligible_filing_ids):

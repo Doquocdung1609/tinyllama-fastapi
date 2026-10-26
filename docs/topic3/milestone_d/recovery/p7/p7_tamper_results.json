@@ -1,0 +1,271 @@
+{
+  "schema_version": "topic3-p7-tamper/v1",
+  "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+  "clone_only": true,
+  "cases": [
+    {
+      "case_id": "raw_byte",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "SOURCE_ARTIFACT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "source_manifest_hash",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "RESEARCH_PARENT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "parent_payload_hash",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "RESEARCH_PARENT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "source_locator",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "RESEARCH_PARENT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "issuer_membership",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "RESEARCH_PARENT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "filing_membership",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "FROZEN_PARENT_FILING_ID_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "raw_numeric_cell",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "SOURCE_ARTIFACT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "raw_xbrl_unit",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "SOURCE_ARTIFACT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "raw_xbrl_period",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "SOURCE_ARTIFACT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "different_filing_bytes",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "SOURCE_ARTIFACT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "self_declared_hash_replaced",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "REJECTED_EXCEPTION",
+        "values": [],
+        "code": "SOURCE_ARTIFACT_HASH_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    },
+    {
+      "case_id": "stale_generation",
+      "control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      },
+      "tampered": {
+        "result": "INSUFFICIENT_EVIDENCE",
+        "values": [],
+        "code": "PINNED_GENERATION_OR_MANIFEST_MISMATCH"
+      },
+      "restored_control": {
+        "result": "SUPPORTED",
+        "values": [
+          "23276000000"
+        ],
+        "code": null
+      }
+    }
+  ]
+}

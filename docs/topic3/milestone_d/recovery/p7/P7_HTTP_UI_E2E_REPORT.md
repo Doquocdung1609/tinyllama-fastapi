@@ -1,0 +1,5 @@
+# P7 live HTTP and UI
+
+Local Uvicorn and Streamlit used only the isolated P7 clone. `python -m scripts.p6_http_smoke --url http://127.0.0.1:18098 --output <p7_http_smoke.json>` verified exact/comparison 200/SUPPORTED, missing period and CIK conflict with no number, Dense unavailable with no number, unauthorized 401 and overlong question 422. `python -m scripts.p7_http_semantic_probe` further verified live exact 200/SUPPORTED, fair-value context NEEDS_CLARIFICATION, percentage-point operation UNSUPPORTED_OPERATION, and `use_llm=true` no number. Live raw tampering and invalid generation returned 409 without a value; restored/restarted service again answered correctly.
+
+Headless Chrome selected `automatic_real`, submitted a natural PG question, saw 23,276,000,000 and source locator/guidance, and clicked the official SEC URL. Exact-cell visibility in the external SEC tab was not established. P6's previous comparison UI test is retained, but this P7 browser run did not repeat the comparison interaction. No live legacy Chat/RAG UI check was performed. HTTP 200 with abstention is recorded as a refusal, not a successful financial answer.

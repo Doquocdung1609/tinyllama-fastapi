@@ -1,0 +1,19 @@
+{
+  "schema_version": "topic3-p7-adversarial-ledger/v1",
+  "source_tamper_details": "p7_tamper_results.json",
+  "semantic_before": "p7_semantic_before.json",
+  "semantic_after": "p7_semantic_after.json",
+  "invalid_generation_before": "p7_invalid_generation_before.json",
+  "invalid_generation_after": "p7_invalid_generation_after.json",
+  "http_details": ["p7_http_tamper.json", "p7_http_semantics.json", "p7_http_smoke.json"],
+  "tamper_cases": 12,
+  "tamper_refused_after_repair": 12,
+  "wrong_claim_paths_reproduced": ["filing_membership", "failed_generation", "fair_value_qualifier", "percentage_point_operation"],
+  "source_safe_http_409_on_tamper": true,
+  "negative_amount_probe": "Refused; P0 negative prior-base percent regression retained",
+  "basic_diluted_eps": "Refused; unsupported P6 metric",
+  "segment_query": "Refused by D1/P6 in real PG development probe",
+  "carrying_fair_value": "Valuation qualifier refused after P7 repair",
+  "amendment": "No supported numeric answer; amendment relationship not invented",
+  "unsupported_calculation": "Percentage-point operation refused after P7 repair"
+}

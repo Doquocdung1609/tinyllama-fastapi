@@ -1,0 +1,14 @@
+{
+  "schema_version": "topic3-p7-browser-navigation/v1",
+  "local_ui": "http://127.0.0.1:18512",
+  "exact_answer_visible": true,
+  "citation_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+  "opened_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+  "correct_filing_opened": true,
+  "verified_row_anchor_claimed": false,
+  "manual_locator_guidance_visible": true,
+  "correct_table_visible_in_popup": false,
+  "exact_row_visible_in_popup": false,
+  "exact_cell_confirmed_by_browser": false,
+  "popup_text_length": 2935
+}

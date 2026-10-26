@@ -1,0 +1,5 @@
+# P7 observational budget and performance
+
+`python -m scripts.p7_budget_probe --root <clone> --output <p7_budget_performance.json>` ran three repetitions per budget on the same development PG question. BM25 search median milliseconds: top 5 **244.60**, 10 **239.37**, 20 **259.95**, 32 **272.72**, 64 **329.95**. The verified parent was absent at 5/10/20/32 and appeared at original rank 47 under budget 64. These timings include snapshot candidate provenance work. They are engineering coverage observations, **not unbiased Recall@5** or a ranking-policy comparison.
+
+Five repeated full P6 calls after warmup gave wall p50 **2,774.266 ms**, nearest-rank p95 **2,848.498 ms**, peak observed RSS **118,693,888 bytes**. One representative request spent ~0.7 ms on D1, 325 ms retrieving candidates, 1,820 ms authenticating/deriving source cells, and 610 ms on the D4 path including fresh authentication. The full-source verification and repeated D4 authentication dominate. Cold disk-cache behavior and controlled peak allocation were not measured. Candidate budget 64 and accepted ranking defaults remain unchanged.

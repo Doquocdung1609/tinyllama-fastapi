@@ -1,0 +1,36 @@
+{
+  "schema_version": "topic3-p7-http-tamper/v1",
+  "clone_only": true,
+  "control": {
+    "http_status": 200,
+    "answer_status": "SUPPORTED",
+    "values": [
+      "23276000000"
+    ],
+    "detail": null
+  },
+  "tampered_raw": {
+    "http_status": 409,
+    "answer_status": null,
+    "values": [],
+    "detail": "RESEARCH_SOURCE_OR_SCOPE_VALIDATION_FAILED"
+  },
+  "restored": {
+    "http_status": 200,
+    "answer_status": "SUPPORTED",
+    "values": [
+      "23276000000"
+    ],
+    "detail": null
+  },
+  "restarted": {
+    "http_status": 200,
+    "answer_status": "SUPPORTED",
+    "values": [
+      "23276000000"
+    ],
+    "detail": null
+  },
+  "unauthorized_http": 401,
+  "token_recorded": false
+}

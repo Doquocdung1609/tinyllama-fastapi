@@ -52,6 +52,9 @@ if st.button('Research search',type='primary'):
                 for warning in item.get('warnings',[]):st.warning(warning)
                 if item['source_url'].startswith('https://www.sec.gov/Archives/'):
                     st.link_button('Open official SEC source',item['source_url'])
+                    if data.get('automatic_workflow_version'):
+                        st.caption('The SEC link opens the verified filing, not a verified row anchor. '
+                                   'Locate the row manually using the label, period, displayed value and structural locator above.')
                 else:st.caption('Synthetic source locator; no real SEC document is claimed.')
         st.caption('Generation: '+str(data['generation']));st.caption('Manifest: '+str(data['manifest_hash']))
     except requests.RequestException:st.error('Research transport unavailable or timed out; no answer inferred.')
