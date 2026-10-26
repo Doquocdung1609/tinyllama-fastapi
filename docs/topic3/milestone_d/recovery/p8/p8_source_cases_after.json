@@ -1,0 +1,2200 @@
+{
+  "schema_version": "topic3-p8-source-diagnostics/v1",
+  "read_only": true,
+  "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "source_cases": [
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_2468f00e715228c2360488b4120421ba",
+      "row_label": "net sales",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_b2e229c84819a77dfd1da8c5",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 7,
+      "failures": [
+        {
+          "row": 3,
+          "column": 4,
+          "text": "4,410",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-96"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 10,
+          "text": "1,889",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-97"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 16,
+          "text": "3,318",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-98"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 22,
+          "text": "8,204",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-99"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 28,
+          "text": "5,322",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-100"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 34,
+          "text": "132",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-101"
+            }
+          ],
+          "reason": "INLINE_DISPLAY_OR_FORMAT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 40,
+          "text": "23,276",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT"
+        }
+      ],
+      "failure_counts": {
+        "XBRL_SEGMENT_CONTEXT_UNSUPPORTED": 5,
+        "INLINE_DISPLAY_OR_FORMAT_UNSUPPORTED": 1,
+        "DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT": 1
+      }
+    },
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_30e79c30962b606d1f8c5ccbe12fb969",
+      "row_label": "net sales",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_626f65fd689a26fa9bb74ec6",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_6aa172cbe70f1beaca2bd58ecbe2853f",
+      "row_label": "net sales",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_9048eb319e8d346a17043b02",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 7,
+      "failures": [
+        {
+          "row": 3,
+          "column": 4,
+          "text": "4,143",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-102"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 10,
+          "text": "1,817",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-103"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 16,
+          "text": "3,220",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-104"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 22,
+          "text": "7,870",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-105"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 28,
+          "text": "5,171",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-106"
+            }
+          ],
+          "reason": "XBRL_SEGMENT_CONTEXT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 34,
+          "text": "165",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-107"
+            }
+          ],
+          "reason": "INLINE_DISPLAY_OR_FORMAT_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 40,
+          "text": "22,386",
+          "facts": [
+            {
+              "name": "us-gaap:Revenues",
+              "scale": "6",
+              "contextref": "c-20"
+            }
+          ],
+          "reason": "DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT"
+        }
+      ],
+      "failure_counts": {
+        "XBRL_SEGMENT_CONTEXT_UNSUPPORTED": 5,
+        "INLINE_DISPLAY_OR_FORMAT_UNSUPPORTED": 1,
+        "DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT": 1
+      }
+    },
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_9de0bcbe7322f7fe03ce2e50eaf08c04",
+      "row_label": "cash and cash equivalents",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_e8e90972935aaffbb69ea59c",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 4,
+          "column": 16,
+          "text": "15,365",
+          "facts": [
+            {
+              "name": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+              "scale": "6",
+              "contextref": "c-19"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 22,
+          "text": "9,942",
+          "facts": [
+            {
+              "name": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+              "scale": "6",
+              "contextref": "c-21"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 2
+      }
+    },
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_af5f1f3c1466c9041a173fd89df956af",
+      "row_label": "net sales",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_bf9dee3807a873b800687c6f",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+      "row_label": "net sales",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_24f0cc566ca5c5871edfcdb7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "VERIFIED_CELLS",
+      "source_error": null,
+      "cells": [
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+          "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+          "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row": 3,
+          "column": 4,
+          "row_label": "NET SALES",
+          "raw_value": "23,276",
+          "value": "23276",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions except per share amounts",
+          "multiplier": "1000000",
+          "effective_value": "23276000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-07-01",
+          "period_end": "2026-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30",
+            "2026"
+          ],
+          "fact_name": "us-gaap:Revenues",
+          "fact_context_ref": "c-1",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        },
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+          "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+          "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row": 3,
+          "column": 10,
+          "row_label": "NET SALES",
+          "raw_value": "22,386",
+          "value": "22386",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions except per share amounts",
+          "multiplier": "1000000",
+          "effective_value": "22386000000",
+          "period_kind": "DURATION",
+          "period_start": "2025-07-01",
+          "period_end": "2025-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30",
+            "2025"
+          ],
+          "fact_name": "us-gaap:Revenues",
+          "fact_context_ref": "c-20",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[7]",
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      ],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_d672c7165a5bb6a66c21bc904d480810",
+      "row_label": "total assets",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_e8e90972935aaffbb69ea59c",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "VERIFIED_CELLS",
+      "source_error": null,
+      "cells": [
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+          "parent_id": "fin_d672c7165a5bb6a66c21bc904d480810",
+          "parent_payload_hash": "956ceac2917b45dab26fa5d0cc8ececdee7575cfe2b90a928e95e10d430d5fcf",
+          "table_id": "table_e8e90972935aaffbb69ea59c",
+          "row": 17,
+          "column": 16,
+          "row_label": "TOTAL ASSETS",
+          "raw_value": "133,132",
+          "value": "133132",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions",
+          "multiplier": "1000000",
+          "effective_value": "133132000000",
+          "period_kind": "INSTANT",
+          "period_start": null,
+          "period_end": "2026-09-30",
+          "period_months": null,
+          "header_path": [
+            "September 30, 2026"
+          ],
+          "fact_name": "us-gaap:Assets",
+          "fact_context_ref": "c-19",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[62]/table[1]/tr[18]/td[7]",
+          "footnotes": [
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        },
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+          "parent_id": "fin_d672c7165a5bb6a66c21bc904d480810",
+          "parent_payload_hash": "956ceac2917b45dab26fa5d0cc8ececdee7575cfe2b90a928e95e10d430d5fcf",
+          "table_id": "table_e8e90972935aaffbb69ea59c",
+          "row": 17,
+          "column": 22,
+          "row_label": "TOTAL ASSETS",
+          "raw_value": "126,521",
+          "value": "126521",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions",
+          "multiplier": "1000000",
+          "effective_value": "126521000000",
+          "period_kind": "INSTANT",
+          "period_start": null,
+          "period_end": "2026-06-30",
+          "period_months": null,
+          "header_path": [
+            "June 30, 2026"
+          ],
+          "fact_name": "us-gaap:Assets",
+          "fact_context_ref": "c-21",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[62]/table[1]/tr[18]/td[11]",
+          "footnotes": [
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      ],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000080424",
+      "parent_id": "fin_f73462c708f37b793e98033a4673e952",
+      "row_label": "net sales",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "table_id": "table_bf9dee3807a873b800687c6f",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_02f2837acfb783083da350716e7141cd",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_8698218132ce890e519abcd8",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_2210b2a087aa6af970f64af2b0f32f56",
+      "row_label": "diluted earnings per share",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_b57796fdb5375765c05912d5",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 23,
+          "column": 4,
+          "text": "4.79",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareDiluted",
+              "scale": "0",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 23,
+          "column": 10,
+          "text": "4.58",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareDiluted",
+              "scale": "0",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 23,
+          "column": 16,
+          "text": "8.09",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareDiluted",
+              "scale": "0",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 23,
+          "column": 22,
+          "text": "8.03",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareDiluted",
+              "scale": "0",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_28a3e54b5735b1aefc0457c034427de9",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_095b5d603845e56eceabeafd",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 6,
+      "failures": [
+        {
+          "row": 4,
+          "column": 4,
+          "text": "42,806",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-63"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 10,
+          "text": "5,055",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-67"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 16,
+          "text": "47,861",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 22,
+          "text": "80,569",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-65"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 28,
+          "text": "9,057",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-68"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 34,
+          "text": "89,626",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 6
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_44e0dd818fc40cb6f0489ab5cce6ed3b",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_bb60ad4ad0bb0f9ca11f0da9",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 5,
+          "column": 4,
+          "text": "47,861",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 5,
+          "column": 10,
+          "text": "45,277",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 5,
+          "column": 16,
+          "text": "89,626",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 5,
+          "column": 22,
+          "text": "85,133",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_5abb01aff3e41859c6108f80f704f602",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_b2c05d1f08836ce6faaa2b5c",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 3,
+          "column": 4,
+          "text": "42,806",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-63"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 10,
+          "text": "42,157",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-64"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 16,
+          "text": "80,569",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-65"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 22,
+          "text": "79,444",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-66"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_63d826db3566c782f2fd32d32d877af2",
+      "row_label": "diluted earnings per share",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_d138161c7e5b0be957d92459",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_6ff4daba758c9570ac2ca7ec7d8a4c66",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_3a0ca82668380814fad83137",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 6,
+      "failures": [
+        {
+          "row": 4,
+          "column": 4,
+          "text": "42,157",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-64"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 10,
+          "text": "3,120",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-69"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 16,
+          "text": "45,277",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 22,
+          "text": "79,444",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-66"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 28,
+          "text": "5,689",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-70"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 34,
+          "text": "85,133",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 6
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_71034f1ffc28bda18cd684f091db40be",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_b57796fdb5375765c05912d5",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 3,
+          "column": 4,
+          "text": "47,861",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 10,
+          "text": "45,277",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 16,
+          "text": "89,626",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 3,
+          "column": 22,
+          "text": "85,133",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_86692d2bc2f953c88d66f004d44a50d0",
+      "row_label": "basic earnings per share",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_b57796fdb5375765c05912d5",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 20,
+          "column": 4,
+          "text": "4.79",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareBasic",
+              "scale": "0",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 20,
+          "column": 10,
+          "text": "4.59",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareBasic",
+              "scale": "0",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 20,
+          "column": 16,
+          "text": "8.10",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareBasic",
+              "scale": "0",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 20,
+          "column": 22,
+          "text": "8.05",
+          "facts": [
+            {
+              "name": "us-gaap:EarningsPerShareBasic",
+              "scale": "0",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_8c3cb12597b7b29bbe615f674de57f09",
+      "row_label": "diluted earnings per share",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_3add9c0153e8103eab18b4ef",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+      "row_label": "total assets",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_483d3ac2b60916e1e4c8d837",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "VERIFIED_CELLS",
+      "source_error": null,
+      "cells": [
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "cik": "0000354950",
+          "accession": "0001628280-26-058715",
+          "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+          "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+          "parent_payload_hash": "0ad23aead108f6effd06be7c460523bd14a792cdee808ae1c53b93b9ef3d308a",
+          "table_id": "table_483d3ac2b60916e1e4c8d837",
+          "row": 14,
+          "column": 4,
+          "row_label": "Total assets",
+          "raw_value": "109,384",
+          "value": "109384",
+          "unit": "USD",
+          "display_unit_header": "in millions, except per share data",
+          "multiplier": "1000000",
+          "effective_value": "109384000000",
+          "period_kind": "INSTANT",
+          "period_start": null,
+          "period_end": "2026-08-02",
+          "period_months": null,
+          "header_path": [
+            "August 2, 2026"
+          ],
+          "fact_name": "us-gaap:Assets",
+          "fact_context_ref": "c-3",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]/tr[15]/td[3]",
+          "footnotes": [
+            "See accompanying notes to consolidated financial statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        },
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "cik": "0000354950",
+          "accession": "0001628280-26-058715",
+          "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+          "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+          "parent_payload_hash": "0ad23aead108f6effd06be7c460523bd14a792cdee808ae1c53b93b9ef3d308a",
+          "table_id": "table_483d3ac2b60916e1e4c8d837",
+          "row": 14,
+          "column": 10,
+          "row_label": "Total assets",
+          "raw_value": "105,095",
+          "value": "105095",
+          "unit": "USD",
+          "display_unit_header": "in millions, except per share data",
+          "multiplier": "1000000",
+          "effective_value": "105095000000",
+          "period_kind": "INSTANT",
+          "period_start": null,
+          "period_end": "2026-02-01",
+          "period_months": null,
+          "header_path": [
+            "February 1, 2026"
+          ],
+          "fact_name": "us-gaap:Assets",
+          "fact_context_ref": "c-4",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]/tr[15]/td[7]",
+          "footnotes": [
+            "See accompanying notes to consolidated financial statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      ],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_a7afdc5cdfeafcabc141056772c80596",
+      "row_label": "cash and cash equivalents",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_483d3ac2b60916e1e4c8d837",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 4,
+          "column": 4,
+          "text": "2,085",
+          "facts": [
+            {
+              "name": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+              "scale": "6",
+              "contextref": "c-3"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 10,
+          "text": "1,389",
+          "facts": [
+            {
+              "name": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+              "scale": "6",
+              "contextref": "c-4"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 2
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_b9b221e3bd77265261326806da26ffba",
+      "row_label": "net cash provided by operating activities",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_ab148245bc3ad4ea504631d7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 17,
+          "column": 3,
+          "text": "11,422",
+          "facts": [
+            {
+              "name": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 17,
+          "column": 9,
+          "text": "8,968",
+          "facts": [
+            {
+              "name": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+              "scale": "6",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        }
+      ],
+      "failure_counts": {
+        "AMBIGUOUS_PHYSICAL_VALUE_CELL": 2
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_bce27aeaf77d245fa74531db6a5ab5b9",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_08899eb26881940a23a9e849",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 8,
+          "column": 4,
+          "text": "47,861",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 8,
+          "column": 10,
+          "text": "45,277",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 8,
+          "column": 16,
+          "text": "89,626",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 8,
+          "column": 22,
+          "text": "85,133",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_caf4744749e8e19f9b9d70cb8e1627f6",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_e73c19c12b9c6970a36391ec",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 5,
+          "column": 4,
+          "text": "47,861",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 5,
+          "column": 10,
+          "text": "45,277",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 5,
+          "column": 16,
+          "text": "89,626",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 5,
+          "column": 22,
+          "text": "85,133",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-7"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000354950",
+      "parent_id": "fin_ce74550ed4e48415cb766dbbad952398",
+      "row_label": "net sales",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "table_id": "table_87642b13aa57e54687f857d4",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_02651d00a7026275e1396cd0596be75c",
+      "row_label": "net sales",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_d1bb0cf8ec4660f93d0ed2e7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_0add16f8e004d5482a2c344e5500eb41",
+      "row_label": "net cash provided by operating activities",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_1ca71f27be6ec83712b076aa",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 14,
+          "column": 3,
+          "text": "11,133",
+          "facts": [
+            {
+              "name": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "SELECTED_TABLE_EXTRACTION_INCOMPLETE"
+        },
+        {
+          "row": 14,
+          "column": 9,
+          "text": "9,468",
+          "facts": [
+            {
+              "name": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+              "scale": "6",
+              "contextref": "c-13"
+            }
+          ],
+          "reason": "SELECTED_TABLE_EXTRACTION_INCOMPLETE"
+        }
+      ],
+      "failure_counts": {
+        "SELECTED_TABLE_EXTRACTION_INCOMPLETE": 2
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_161c27d72c8f9529617f54db0ba06431",
+      "row_label": "total revenue",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_2d1b764f9329b51d5b62d033",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 6,
+          "column": 3,
+          "text": "70,527",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-11"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 6,
+          "column": 9,
+          "text": "63,205",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-12"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 6,
+          "column": 15,
+          "text": "207,431",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 6,
+          "column": 21,
+          "text": "189,079",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-13"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        }
+      ],
+      "failure_counts": {
+        "AMBIGUOUS_PHYSICAL_VALUE_CELL": 4
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_1b12d65ea4bf76e1fcee7f7445274d2c",
+      "row_label": "total revenue",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_604ee5433933bb32dbd254c2",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 4,
+          "column": 4,
+          "text": "51,434",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-99"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 10,
+          "text": "46,318",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-100"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 16,
+          "text": "149,934",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-101"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 22,
+          "text": "137,819",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-102"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_2b112335b0e98413ef11b80b2c0c801e",
+      "row_label": "net sales",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_e470cafaa18f8aa7d413f568",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_36d90fb211ba74e2b3f170c95557aa40",
+      "row_label": "total assets",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_b5fa4107085e3637c6482ff1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 13,
+          "column": 3,
+          "text": "86,430",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-14"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 13,
+          "column": 9,
+          "text": "77,099",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-15"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        }
+      ],
+      "failure_counts": {
+        "AMBIGUOUS_PHYSICAL_VALUE_CELL": 2
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_5c26356dd6af1ede2b28f80278d1df21",
+      "row_label": "total assets",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_b5fa4107085e3637c6482ff1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 10,
+          "column": 3,
+          "text": "15,525",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-115"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 10,
+          "column": 9,
+          "text": "14,933",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-116"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        }
+      ],
+      "failure_counts": {
+        "AMBIGUOUS_PHYSICAL_VALUE_CELL": 2
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_671340cf8156181b188e509e080d6363",
+      "row_label": "total revenue",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_604ee5433933bb32dbd254c2",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 9,
+          "column": 4,
+          "text": "9,410",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-103"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 9,
+          "column": 10,
+          "text": "8,321",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-104"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 9,
+          "column": 16,
+          "text": "27,774",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-105"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 9,
+          "column": 22,
+          "text": "25,021",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-106"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_679c8c9b707012d267572159cb5114f8",
+      "row_label": "total assets",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_b5fa4107085e3637c6482ff1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 4,
+          "column": 3,
+          "text": "62,980",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-111"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 4,
+          "column": 9,
+          "text": "54,862",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-112"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        }
+      ],
+      "failure_counts": {
+        "AMBIGUOUS_PHYSICAL_VALUE_CELL": 2
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_68c0daa35b3369f3b3434cf0556d388f",
+      "row_label": "net cash provided by operating activities",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_4dab7a51c217b12eb72451bf",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_6afdab0009e646c1e2924e2a0f3ee6fe",
+      "row_label": "total assets",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_964ee909e7a889b2eef17dbc",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 14,
+          "column": 4,
+          "text": "86,430",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-14"
+            }
+          ],
+          "reason": "DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT"
+        },
+        {
+          "row": 14,
+          "column": 10,
+          "text": "77,099",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-15"
+            }
+          ],
+          "reason": "DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT"
+        }
+      ],
+      "failure_counts": {
+        "DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT": 2
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_6dd3b74521036724dc0b769911f778ab",
+      "row_label": "net sales",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_2d1b764f9329b51d5b62d033",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 4,
+          "column": 4,
+          "text": "69,154",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-3"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 10,
+          "text": "61,965",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-4"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 16,
+          "text": "203,374",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-5"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 22,
+          "text": "185,480",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-6"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_840bae3ee5348519758b5d74a780b903",
+      "row_label": "cash and cash equivalents",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_964ee909e7a889b2eef17dbc",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 4,
+          "column": 4,
+          "text": "18,946",
+          "facts": [
+            {
+              "name": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+              "scale": "6",
+              "contextref": "c-14"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 4,
+          "column": 10,
+          "text": "14,161",
+          "facts": [
+            {
+              "name": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+              "scale": "6",
+              "contextref": "c-15"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 2
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_8cf1c74d6793d05ba0d32350e466ad7c",
+      "row_label": "total revenue",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_604ee5433933bb32dbd254c2",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 14,
+          "column": 4,
+          "text": "9,683",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-107"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 14,
+          "column": 10,
+          "text": "8,566",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-108"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 14,
+          "column": 16,
+          "text": "29,723",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-109"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 14,
+          "column": 22,
+          "text": "26,239",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-110"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_a4ce545b4a638eeb1bb26846050c1578",
+      "row_label": "total assets",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_b5fa4107085e3637c6482ff1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 2,
+      "failures": [
+        {
+          "row": 7,
+          "column": 3,
+          "text": "7,925",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-113"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        },
+        {
+          "row": 7,
+          "column": 9,
+          "text": "7,304",
+          "facts": [
+            {
+              "name": "us-gaap:Assets",
+              "scale": "6",
+              "contextref": "c-114"
+            }
+          ],
+          "reason": "AMBIGUOUS_PHYSICAL_VALUE_CELL"
+        }
+      ],
+      "failure_counts": {
+        "AMBIGUOUS_PHYSICAL_VALUE_CELL": 2
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_a9d476b475b45eba350f8099e98c33c4",
+      "row_label": "total revenue",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_604ee5433933bb32dbd254c2",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 4,
+      "failures": [
+        {
+          "row": 19,
+          "column": 4,
+          "text": "70,527",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-11"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 19,
+          "column": 10,
+          "text": "63,205",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-12"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 19,
+          "column": 16,
+          "text": "207,431",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-1"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        },
+        {
+          "row": 19,
+          "column": 22,
+          "text": "189,079",
+          "facts": [
+            {
+              "name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "scale": "6",
+              "contextref": "c-13"
+            }
+          ],
+          "reason": "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED"
+        }
+      ],
+      "failure_counts": {
+        "CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED": 4
+      }
+    },
+    {
+      "cik": "0000909832",
+      "parent_id": "fin_bc58d094a6a17533af52235d0b26c71b",
+      "row_label": "revenue",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "table_id": "table_2d1b764f9329b51d5b62d033",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "status": "NO_SUPPORTED_CELL",
+      "source_error": null,
+      "cells": [],
+      "attempted_cells": 0,
+      "failures": [],
+      "failure_counts": {}
+    }
+  ]
+}

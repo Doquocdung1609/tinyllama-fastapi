@@ -1,5 +1,6 @@
 """Separate local research UI; run explicitly, never replaces accepted UI."""
 import os
+import json
 from urllib.parse import urlparse
 import requests
 import streamlit as st
@@ -47,6 +48,18 @@ if st.button('Research search',type='primary'):
             with st.expander(f"{item['issuer']} | {item['form']} | {item['report_date']} | {item['row_label'] or 'Text evidence'}"):
                 if item['extraction_status']=='PARTIAL_EXTRACTION':st.warning('Partial extraction — evidence may be incomplete.')
                 st.text(item['content']);st.json(item['locator'])
+                if data.get('automatic_workflow_version'):
+                    st.write('Filing accession:',item.get('accession'))
+                    st.write('Extracted table caption:',item.get('table_caption'))
+                    st.write('Source row:',item.get('row_label'),'| Original cell:',item.get('raw_value'))
+                    st.write('Column header path:',item.get('header_path'))
+                    period=item.get('financial_period') or {}
+                    st.text('Verified column period: '+str(period.get('kind'))+' '+str(period.get('end')))
+                    st.text('Structural locator: '+str((item.get('locator') or {}).get('structural_path')))
+                    st.code(json.dumps({'source_url':item.get('source_url'),'accession':item.get('accession'),
+                        'table_caption':item.get('table_caption'),'row_label':item.get('row_label'),
+                        'financial_period':item.get('financial_period'),'raw_value':item.get('raw_value'),
+                        'locator':item.get('locator')},ensure_ascii=False,indent=2),language='json')
                 if item.get('verification_status'):st.caption('Verification: '+item['verification_status'])
                 if item.get('financial_period'):st.write('Financial period:',item['financial_period'])
                 for warning in item.get('warnings',[]):st.warning(warning)

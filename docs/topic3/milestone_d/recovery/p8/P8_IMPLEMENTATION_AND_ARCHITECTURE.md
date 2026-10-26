@@ -1,0 +1,7 @@
+# P8 implementation and architecture
+
+Base: P7 `559b2ebe26746450a863e71d37d8d6793d136d98`, Draft PR #17. P8 is an opt-in research-path extension, not an accepted Financial Search change. Source adapter `CONCEPTS` now admits the exact row/fact pair `total assets` ↔ `us-gaap:Assets` in addition to the existing net-sales pair. The source adapter still authenticates complete SEC bytes, committed registry membership, canonical parent, table row, physical cell, XBRL context/unit and visible multiplier before creating `RealCellObservationV1`.
+
+The versioned P8 automatic policy retains the 64-parent BM25 budget and accepts two exact metric families: net sales as three-month DURATION and total assets as INSTANT. `RealCellRequestV1` enforces these metric-period pairings; D4 receives Decimal source operands, then produces exact extraction or a two-date comparison. D1 still interprets issuer, filing and periods, and its unresolved column-level status remains visible. No model guesses operands, no client supplies a parent/cell/value, and the P6/P7 source guards remain active.
+
+Fail-first synthetic test: `tests/test_p8_total_assets.py` initially raised `CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED`, then the automatic test returned `NEEDS_CLARIFICATION`. After the minimal mapping/contract changes, both tests pass. The original P&G net-sales control remains unchanged. PG/HD real-source outcomes are in `p8_real_qa_results.json`; COST and other financial families are explicitly unsupported.

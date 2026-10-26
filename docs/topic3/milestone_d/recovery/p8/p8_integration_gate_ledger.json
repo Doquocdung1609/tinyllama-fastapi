@@ -1,0 +1,16 @@
+{
+  "schema_version": "topic3-p8-integration-gates/v1",
+  "checkpoint": "pre-candidate",
+  "ancestry": "VERIFIED",
+  "deterministic_mapping_tests": "VERIFIED",
+  "source_operands": "VERIFIED_WITH_LIMITATIONS",
+  "high_critical_open": "NONE_DEMONSTRATED",
+  "unsupported_abstention": "VERIFIED_WITH_LIMITATIONS",
+  "http_ui": "VERIFIED_WITH_LIMITATIONS",
+  "full_regression": "PARTIAL_FINAL_RERUN_PENDING",
+  "final_head_ci": "NOT_TESTED",
+  "historical_artifacts": "VERIFIED",
+  "full_stack_candidate": "NOT_TESTED",
+  "real_source_coverage": "VERIFIED_WITH_LIMITATIONS",
+  "draft_pr_unmerged": "NOT_TESTED"
+}

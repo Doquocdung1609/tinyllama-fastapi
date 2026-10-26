@@ -20,15 +20,19 @@ class RealCellRequestV1(BaseModel):
     cik: str = Field(pattern=r'^[0-9]{10}$')
     accession: str = Field(pattern=r'^[0-9]{10}-[0-9]{2}-[0-9]{6}$')
     table_id: str = Field(pattern=r'^table_[0-9a-f]+$', max_length=100)
-    row_label: Literal['net sales'] = 'net sales'
+    row_label: Literal['net sales', 'total assets'] = 'net sales'
+    period_kind: Literal['DURATION', 'INSTANT'] = 'DURATION'
     period_ends: tuple[str, ...] = Field(min_length=1, max_length=2)
-    period_months: Literal[3, 6, 9, 12] = 3
+    period_months: Literal[3, 6, 9, 12] | None = 3
     operation: Literal['EXTRACT', 'COMPARE', 'ABS_CHANGE', 'PERCENT_CHANGE'] = 'EXTRACT'
 
     @model_validator(mode='after')
     def periods_match_operation(self):
         import re
         from datetime import date
+        if (self.row_label=='net sales' and (self.period_kind!='DURATION' or self.period_months!=3)
+            or self.row_label=='total assets' and (self.period_kind!='INSTANT' or self.period_months is not None)):
+            raise ValueError('METRIC_PERIOD_KIND_CONFLICT')
         if len(self.period_ends) != (1 if self.operation == 'EXTRACT' else 2):
             raise ValueError('OPERATION_PERIOD_COUNT')
         if len(set(self.period_ends)) != len(self.period_ends):
@@ -68,7 +72,7 @@ def answer_from_verified_real_cells(snapshot, request: RealCellRequestV1):
     common = dict(operation=request.operation)
     eligible = [c for c in cells if c.cik == request.cik and c.accession == request.accession
                 and c.table_id == request.table_id and c.row_label.casefold() == request.row_label
-                and c.period_kind == 'DURATION' and c.period_months == request.period_months
+                and c.period_kind == request.period_kind and c.period_months == request.period_months
                 and c.unit == 'USD' and c.source_status == 'VERIFIED_SOURCE_CELL']
     operands = []
     for end in request.period_ends:
