@@ -1,0 +1,5 @@
+# D4 abstention and error analysis
+
+The synthetic frozen diagnostic abstained on missing explicit observation period, unknown issuer, absent FY2099 corpus evidence and prompt-injection-like unsupported text. The corresponding four answerable cases all answered correctly under their manually fixed fixture oracle. The test suite also exercises a partial bundle, missing cell, wrong metric, conflicting generations, unit mismatch, mixed accounting qualifiers, unknown entity basis, quarterly/annual mix, instant/duration mix, ambiguous period/operation, nonpositive percentage-change denominator and percent-versus-points confusion.
+
+The large real SEC sources trigger D2 `UNSUPPORTED_SOURCE_SIZE`, so real D4 numeric answers abstain. This is a deliberate safety limitation, not a successful real QA measurement. No local LLM service was reachable; optional prose generation returns `UNSUPPORTED_OPERATION`. No system claim is made that unsupported cases can be answered, that all appropriate abstentions have been measured, or that wrong source values in an unauthenticated upstream catalog are detectable by structural Pydantic validation alone.

@@ -1,0 +1,7 @@
+# D4 security and trust-boundary review
+
+The opt-in research API defaults to 503 until both a token and root are supplied; configured POST requires Bearer token, 16 KiB body cap, strict typed fields and a single concurrent query slot. No build, generation activation, cleanup, SQL expression or arbitrary user file path endpoint exists. The UI restricts API targets to local HTTP and only offers source navigation for actual SEC Archive URLs; synthetic URLs are displayed as invented citations. API error messages are stable codes, not owner paths. Source document instructions remain inert data in D1/D2/D4 and no model or tool loop is invoked.
+
+A fail-first adversarial header test found that `hmac.compare_digest` on a non-ASCII Python string raised TypeError, exposing a 500. The minimal repair converts both operands to UTF-8 bytes before constant-time comparison. The test now returns 401. Fixture tests also cover unauthorized calls, malformed payloads, oversized streamed bodies and absent build route.
+
+Upstream cryptographic source authentication is a separate trust boundary. D4 validates D2 source-derived bundle identity, parent binding and claim reconstruction. The real snapshot delegates actual source-byte checks to accepted C `verified_source`; D1 catalog structural validation alone is not proof of source bytes. The synthetic fixture's static bytes are fully known but are not SEC evidence. Live hostile-network testing, multi-process race behavior and penetration testing were not performed.
