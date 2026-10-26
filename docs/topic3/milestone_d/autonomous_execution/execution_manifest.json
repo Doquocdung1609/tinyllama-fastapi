@@ -77,7 +77,64 @@
       "no_go": "REAL_NUMERIC_QA_AND_FULL_COMPARATIVE_D5",
       "authorization": "TOPIC3_AUTONOMOUS_D2_TO_D5_GATED_EXECUTION_AUTHORIZED"
     },
-    {"event":"D3_DELIVERY_CI_VERIFIED","source_commit":"e8230dddb29f57c5578050e23abb6169151e7986","pr":12,"ci_run":40280668811,"conclusion":"success"},
-    {"stage":"D4","status":"D4_DETERMINISTIC_ONLY","source_commit":"21ba61e898d894be237b8c8f47d0372474cc1f81","base_commit":"e8230dddb29f57c5578050e23abb6169151e7986","synthetic_qa_correct":"4/4 answerable","synthetic_abstention":"4/4 unanswerable","real_numeric_qa":"BLOCKED_D2_SOURCE_SIZE","ci":"PENDING_DELIVERY_VERIFICATION"}
-  ]
+    {
+      "event": "D3_DELIVERY_CI_VERIFIED",
+      "source_commit": "e8230dddb29f57c5578050e23abb6169151e7986",
+      "pr": 12,
+      "ci_run": 40280668811,
+      "conclusion": "success"
+    },
+    {
+      "stage": "D4",
+      "status": "D4_DETERMINISTIC_ONLY",
+      "source_commit": "21ba61e898d894be237b8c8f47d0372474cc1f81",
+      "base_commit": "e8230dddb29f57c5578050e23abb6169151e7986",
+      "synthetic_qa_correct": "4/4 answerable",
+      "synthetic_abstention": "4/4 unanswerable",
+      "real_numeric_qa": "BLOCKED_D2_SOURCE_SIZE",
+      "ci": "PENDING_DELIVERY_VERIFICATION"
+    },
+    {
+      "event": "D4_DELIVERY_CI_VERIFIED",
+      "pr": 13,
+      "source_commit": "1e0b9e0444a4595a39353938dd62fbe2b4a6e046",
+      "base_commit": "e8230dddb29f57c5578050e23abb6169151e7986",
+      "ci": {
+        "run": 40284075689,
+        "job": 121443552976,
+        "conclusion": "success",
+        "tested_source": "1e0b9e0444a4595a39353938dd62fbe2b4a6e046",
+        "pass": 551,
+        "skip": 1,
+        "deselected": 3,
+        "warning": 1
+      },
+      "go": "D5_FROZEN_ONE_SHOT_DIAGNOSTIC_AND_ISOLATED_E2E"
+    },
+    {
+      "stage": "D5",
+      "status": "PARTIALLY_COMPLETE_WITH_BLOCKERS",
+      "source_commit_before_final_docs": "21b7b6e0432c72b753ac6353aef47e5dd3c644fd",
+      "base_commit": "1e0b9e0444a4595a39353938dd62fbe2b4a6e046",
+      "pr": 14,
+      "pr_status": "DRAFT_OPEN_UNMERGED",
+      "prereg_sha256": "ce2c362b9cf894b523ec47b1cd6bae87b8f377e5cdc8cc9275247b7a369e71c7",
+      "heldout_sha256": "70c52b601f3da535ad12d0041abf04df73832f8e9681058ae73e928e0e5bf843",
+      "heldout_open_count": 1,
+      "heldout_issuer_clusters": 1,
+      "bm25_recall_at_5": 0.6857142857142857,
+      "dense_valid_runs": 0,
+      "fixed_rrf_valid_runs": 0,
+      "real_numeric_qa": "NOT_MEASURED_SOURCE_SIZE_BLOCKED",
+      "live_http_requests": 21,
+      "live_ui": "SYNTHETIC_AND_REAL_SEC_PARTIAL",
+      "full_pass": 552,
+      "full_skip": 3,
+      "core_pass": 552,
+      "core_deselected": 3,
+      "ci": "PENDING_FINAL_HEAD_VERIFICATION"
+    }
+  ],
+  "latest_execution_status": "TOPIC3_D2_D5_PARTIALLY_COMPLETE_WITH_BLOCKERS",
+  "latest_snapshot_version": 2
 }

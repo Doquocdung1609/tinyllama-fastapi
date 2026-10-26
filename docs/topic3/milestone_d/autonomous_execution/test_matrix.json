@@ -1,6 +1,46 @@
 {
   "schema_version": "topic3-e2e/v1",
-  "events": [],
+  "events": [
+    {
+      "identity": "D5_24_SCENARIO_LEDGER/v1",
+      "http_artifact": "D5_LIVE_HTTP_MATRIX_v1.json",
+      "live_http_requests": 21,
+      "http_200": 20,
+      "http_401": 1,
+      "live_ui_modes": [
+        "SYNTHETIC_DEMO",
+        "OFFICIAL_SEC_RESEARCH_DIAGNOSTIC"
+      ],
+      "scenario_statuses": {
+        "1": "VERIFIED_WITH_LIMITATIONS",
+        "2": "VERIFIED_WITH_LIMITATIONS",
+        "3": "VERIFIED_WITH_LIMITATIONS",
+        "4": "VERIFIED_WITH_LIMITATIONS",
+        "5": "VERIFIED_WITH_LIMITATIONS",
+        "6": "PARTIAL",
+        "7": "PARTIAL",
+        "8": "VERIFIED_WITH_LIMITATIONS",
+        "9": "PARTIAL",
+        "10": "VERIFIED",
+        "11": "VERIFIED",
+        "12": "PARTIAL",
+        "13": "PARTIAL",
+        "14": "PARTIAL",
+        "15": "VERIFIED_WITH_LIMITATIONS",
+        "16": "VERIFIED_WITH_LIMITATIONS",
+        "17": "VERIFIED_WITH_LIMITATIONS",
+        "18": "VERIFIED",
+        "19": "VERIFIED_WITH_LIMITATIONS",
+        "20": "VERIFIED_WITH_LIMITATIONS",
+        "21": "NOT_TESTED",
+        "22": "VERIFIED_WITH_LIMITATIONS",
+        "23": "VERIFIED_WITH_LIMITATIONS",
+        "24": "PARTIAL"
+      },
+      "source_link_navigation": "NOT_VERIFIED_LINK_VISIBLE_ONLY",
+      "legacy_live_ui": "NOT_TESTED"
+    }
+  ],
   "planned_scenarios": [
     1,
     2,
