@@ -1,0 +1,36 @@
+{
+  "identity": "d5-heldout-diagnostic/v1",
+  "source_manifest": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "heldout_query_sha256": "70c52b601f3da535ad12d0041abf04df73832f8e9681058ae73e928e0e5bf843",
+  "protocol_sha256": "ad807027c719e9dfb8688f1e77eec84d67cafa878138ca5b447ce46b673279d8",
+  "d3_code_sha256": {
+    "app/research_retrieval/__init__.py": "fb731716f7c5af29cfaf58af41a9ee2a3f676aa6a59705446851eaa5986c78a1",
+    "app/research_retrieval/adapters.py": "bcc725ace11630062fc5388d2b1038aa8f00be6c9228a4591aa1bee5060a0f99",
+    "app/research_retrieval/contracts.py": "6eb43dadebd9c1518871534a3aaaf7e72d07f981ac462a5d5e424813c740f85a",
+    "app/research_retrieval/evaluation.py": "22e6ffcf2cd8e23555abb810ae03291c3ecc736de76bd9780db3851e625a7a3e",
+    "app/research_retrieval/ranking.py": "b536b20afe9a2e800f27658422d24f2d962ca89ea8f2016796505b4de475e5c6",
+    "app/research_retrieval/service.py": "b0d951b8c93781011abb318d8cb22d88bb850b62775717f50666722571404ad3",
+    "app/research_retrieval/snapshot.py": "a8e23a52b066d3b2e5921e2a21d8a8cf3af61b4b3d6d64dc427fbb5ca8888d1e"
+  },
+  "d4_code_sha256": {
+    "app/research_qa/__init__.py": "5f1cd45416ec90ccf45e1060ba1669bb2940a32b136f1d58e649086b44f0712d",
+    "app/research_qa/backend.py": "2e102caa3bc4c96c4b0e666f52c1c6fe63f53763949634075fecee450f0be092",
+    "app/research_qa/contracts.py": "81cf6f7662432973b9e545d7a2cefa69593d992fb9ce78c0de4c6b7d7e946d2b",
+    "app/research_qa/numeric.py": "dc06ae242193affe9f0180f8a9222b3b06b5b995a2dfcff1dd3462597d49501b",
+    "app/research_qa/verifier.py": "0112f477f864b5ea480a44111d0f60b9546305306537495dee197b4c4197d979",
+    "app/research_api.py": "a2ebcc2a78c862925d9f748f55ad9ef48049a5e74c5a41fa6cddea7d62c946bf"
+  },
+  "runner_sha256": "01811bfc0aea001f7e9bebf1c6ee1e028ff8e071f53c67f70024d3aac28c0ec6",
+  "arms": [
+    "B",
+    "D",
+    "F"
+  ],
+  "selected_adaptive": null,
+  "qa_configuration": "deterministic source-bound verifier only; no real SEC numeric QA due D2 size cap",
+  "metric_contract": "D3 v1 Recall5/10, Precision5, MRR5, nDCG5, group coverage; failures included and separated",
+  "statistical_plan": "report paired B-D/B-F failure-inclusive differences as availability diagnostics; one HD issuer cluster means cluster CI not estimable",
+  "human_annotators": 0,
+  "no_heldout_tuning": true
+}
