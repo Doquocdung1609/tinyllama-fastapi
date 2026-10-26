@@ -1,0 +1,19 @@
+{
+  "schema_version": "topic3-recovery-http-smoke/v1",
+  "date": "2026-10-26",
+  "service": "uvicorn app.research_api:app",
+  "bind": "127.0.0.1:18087",
+  "source_type": "OFFICIAL_SEC_RESEARCH_DIAGNOSTIC",
+  "snapshot": "isolated-owned-research-v1",
+  "observations": [
+    {"request": "GET /research/v1/health", "http_status": 200, "status": "ready"},
+    {"request": "POST /research/v1/query without authorization", "http_status": 401},
+    {"request": "POST /research/v1/query; explicit CIK 0000080424; quarter ended 2026-09-30; B", "http_status": 200, "retrieval_status": "NEEDS_CLARIFICATION", "answer_status": "NEEDS_CLARIFICATION", "reason": "RETRIEVAL_SCOPE_NEEDS_CLARIFICATION"},
+    {"request": "POST /research/v1/query; CIK 0000080424 net sales; B", "http_status": 200, "retrieval_status": "OK", "effective_mode": "B", "evidence_count": 5, "answer_status": "INSUFFICIENT_EVIDENCE", "reason": "REAL_D2_SOURCE_CONTEXT_UNSUPPORTED_SIZE"},
+    {"request": "POST /research/v1/query; CIK 0000080424 net sales; D", "http_status": 200, "retrieval_status": "BLOCKED", "evidence_count": 0, "failure_code": "DENSE_NOT_AVAILABLE_NO_RESEARCH_VECTORS"},
+    {"request": "POST /research/v1/query; CIK 0000080424 net sales; F", "http_status": 200, "retrieval_status": "BLOCKED", "evidence_count": 0, "failure_code": "DENSE_NOT_AVAILABLE_NO_RESEARCH_VECTORS"}
+  ],
+  "server_stopped_after_probe": true,
+  "token_recorded": false,
+  "streamlit_or_browser_tested": false
+}
