@@ -85,6 +85,10 @@ def _inline_checks(facts, value, sign, unit, scale, basis):
             except ValueError:
                 unresolved.append('UNSUPPORTED_INLINE_SCALE')
         name=fact.get('name','').casefold()
+        if name:
+            # Concept-to-row correspondence is not established by a generic
+            # AMOUNT role. Preserve tags but never certify arbitrary concepts.
+            unresolved.append('INLINE_CONCEPT_ROW_CORRESPONDENCE_UNVERIFIED')
         if basis=='CARRYING_VALUE' and 'fairvalue' in name or basis=='FAIR_VALUE' and 'carrying' in name:
             conflicts.append('INLINE_HEADER_MEASUREMENT_CONFLICT')
         if basis=='BASIC_EPS' and 'diluted' in name or basis=='DILUTED_EPS' and 'basic' in name:
@@ -151,6 +155,13 @@ def build_table_evidence(parent_chunk, verification_context=None, representation
             headers=_headers(table,cell.column,row)
             labels=[h.original_text for h in headers if h.original_text]
             period,period_reason=period_context(labels)
+            repeated_header = table is not None and any(
+                min(table.row_indices)<=h.row<row and h.column<=cell.column<h.column+h.colspan
+                and (h.is_header or period_context([h.text])[0] is not None)
+                for h in table.cells)
+            if repeated_header:
+                period=None
+                period_reason='REPEATED_BODY_HEADER_UNRESOLVED'
             basis=measurement(label,labels)
             value,sign,missing,number_reason=parse_number(cell.text)
             unit,scale,unit_reason=units(cell.text,label,labels,m.get('unit_context'))

@@ -79,6 +79,8 @@ def units(raw,row,headers,unit_context):
     table=(unit_context or '').casefold()
     if re.match(r'\s*(?:USD|\$)',raw,re.I) and raw.strip().endswith('%'):
         return 'UNKNOWN',None,'CONFLICTING_NUMERIC_UNITS'
+    if re.match(r'\s*(?:USD|\$)',raw,re.I) and re.search(r'\bshares\b',local):
+        return 'UNKNOWN',None,'CONFLICTING_DISPLAY_CURRENCY_AND_SHARES'
     if re.search(r'\beur\b|\bgbp\b|\bjpy\b|\bcad\b|\bcny\b|[€£¥]',local+' '+table):
         return 'UNKNOWN',None,'CONFLICTING_CURRENCY_CONTEXT' if re.search(r'\busd\b|\$',local+' '+table) else 'UNSUPPORTED_CURRENCY'
     if raw.strip().endswith('%') or 'percent' in local or '%' in local:
