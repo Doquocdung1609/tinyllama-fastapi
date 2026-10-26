@@ -1,0 +1,410 @@
+{
+  "schema_version": "topic3-real-sec-recovery-probe/v1",
+  "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "cases": [
+    {
+      "operation": "EXTRACT",
+      "requested_period_ends": [
+        "2026-09-30"
+      ],
+      "elapsed_ms": 1261.345,
+      "result": {
+        "contract_version": "real-sec-cell-answer/v1",
+        "status": "SUPPORTED",
+        "operation": "EXTRACT",
+        "result_values": [
+          "23276000000"
+        ],
+        "result_unit": "USD",
+        "operands": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 4,
+            "row_label": "NET SALES",
+            "raw_value": "23,276",
+            "value": "23276",
+            "unit": "USD",
+            "multiplier": "1000000",
+            "effective_value": "23276000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2026"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+          }
+        ],
+        "reason": null,
+        "formula": "source[0]"
+      }
+    },
+    {
+      "operation": "COMPARE",
+      "requested_period_ends": [
+        "2025-09-30",
+        "2026-09-30"
+      ],
+      "elapsed_ms": 633.533,
+      "result": {
+        "contract_version": "real-sec-cell-answer/v1",
+        "status": "SUPPORTED",
+        "operation": "COMPARE",
+        "result_values": [
+          "22386000000",
+          "23276000000"
+        ],
+        "result_unit": "USD",
+        "operands": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 10,
+            "row_label": "NET SALES",
+            "raw_value": "22,386",
+            "value": "22386",
+            "unit": "USD",
+            "multiplier": "1000000",
+            "effective_value": "22386000000",
+            "period_kind": "DURATION",
+            "period_start": "2025-07-01",
+            "period_end": "2025-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2025"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-20",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[7]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 4,
+            "row_label": "NET SALES",
+            "raw_value": "23,276",
+            "value": "23276",
+            "unit": "USD",
+            "multiplier": "1000000",
+            "effective_value": "23276000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2026"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+          }
+        ],
+        "reason": null,
+        "formula": "ordered source[0], source[1]"
+      }
+    },
+    {
+      "operation": "ABS_CHANGE",
+      "requested_period_ends": [
+        "2025-09-30",
+        "2026-09-30"
+      ],
+      "elapsed_ms": 849.884,
+      "result": {
+        "contract_version": "real-sec-cell-answer/v1",
+        "status": "SUPPORTED",
+        "operation": "ABS_CHANGE",
+        "result_values": [
+          "890000000"
+        ],
+        "result_unit": "USD",
+        "operands": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 10,
+            "row_label": "NET SALES",
+            "raw_value": "22,386",
+            "value": "22386",
+            "unit": "USD",
+            "multiplier": "1000000",
+            "effective_value": "22386000000",
+            "period_kind": "DURATION",
+            "period_start": "2025-07-01",
+            "period_end": "2025-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2025"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-20",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[7]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 4,
+            "row_label": "NET SALES",
+            "raw_value": "23,276",
+            "value": "23276",
+            "unit": "USD",
+            "multiplier": "1000000",
+            "effective_value": "23276000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2026"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+          }
+        ],
+        "reason": null,
+        "formula": "source[1] - source[0]"
+      }
+    },
+    {
+      "operation": "PERCENT_CHANGE",
+      "requested_period_ends": [
+        "2025-09-30",
+        "2026-09-30"
+      ],
+      "elapsed_ms": 699.763,
+      "result": {
+        "contract_version": "real-sec-cell-answer/v1",
+        "status": "SUPPORTED",
+        "operation": "PERCENT_CHANGE",
+        "result_values": [
+          "3.975699097650317162512284464"
+        ],
+        "result_unit": "PERCENT",
+        "operands": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 10,
+            "row_label": "NET SALES",
+            "raw_value": "22,386",
+            "value": "22386",
+            "unit": "USD",
+            "multiplier": "1000000",
+            "effective_value": "22386000000",
+            "period_kind": "DURATION",
+            "period_start": "2025-07-01",
+            "period_end": "2025-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2025"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-20",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[7]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 4,
+            "row_label": "NET SALES",
+            "raw_value": "23,276",
+            "value": "23276",
+            "unit": "USD",
+            "multiplier": "1000000",
+            "effective_value": "23276000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2026"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+          }
+        ],
+        "reason": null,
+        "formula": "(source[1]-source[0])/source[0]*100"
+      }
+    },
+    {
+      "operation": "COMPARE",
+      "requested_period_ends": [
+        "2024-09-30",
+        "2026-09-30"
+      ],
+      "elapsed_ms": 646.264,
+      "result": {
+        "contract_version": "real-sec-cell-answer/v1",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "operation": "COMPARE",
+        "result_values": [],
+        "result_unit": null,
+        "operands": [],
+        "reason": "EXACT_VERIFIED_CELL_NOT_FOUND",
+        "formula": null
+      }
+    }
+  ]
+}
