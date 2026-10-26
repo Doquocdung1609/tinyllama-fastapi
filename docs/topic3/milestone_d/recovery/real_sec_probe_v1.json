@@ -8,7 +8,7 @@
       "requested_period_ends": [
         "2026-09-30"
       ],
-      "elapsed_ms": 1261.345,
+      "elapsed_ms": 1268.012,
       "result": {
         "contract_version": "real-sec-cell-answer/v1",
         "status": "SUPPORTED",
@@ -37,6 +37,7 @@
             "raw_value": "23,276",
             "value": "23276",
             "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
             "multiplier": "1000000",
             "effective_value": "23276000000",
             "period_kind": "DURATION",
@@ -72,7 +73,7 @@
         "2025-09-30",
         "2026-09-30"
       ],
-      "elapsed_ms": 633.533,
+      "elapsed_ms": 755.938,
       "result": {
         "contract_version": "real-sec-cell-answer/v1",
         "status": "SUPPORTED",
@@ -102,6 +103,7 @@
             "raw_value": "22,386",
             "value": "22386",
             "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
             "multiplier": "1000000",
             "effective_value": "22386000000",
             "period_kind": "DURATION",
@@ -145,6 +147,7 @@
             "raw_value": "23,276",
             "value": "23276",
             "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
             "multiplier": "1000000",
             "effective_value": "23276000000",
             "period_kind": "DURATION",
@@ -180,7 +183,7 @@
         "2025-09-30",
         "2026-09-30"
       ],
-      "elapsed_ms": 849.884,
+      "elapsed_ms": 707.812,
       "result": {
         "contract_version": "real-sec-cell-answer/v1",
         "status": "SUPPORTED",
@@ -209,6 +212,7 @@
             "raw_value": "22,386",
             "value": "22386",
             "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
             "multiplier": "1000000",
             "effective_value": "22386000000",
             "period_kind": "DURATION",
@@ -252,6 +256,7 @@
             "raw_value": "23,276",
             "value": "23276",
             "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
             "multiplier": "1000000",
             "effective_value": "23276000000",
             "period_kind": "DURATION",
@@ -287,7 +292,7 @@
         "2025-09-30",
         "2026-09-30"
       ],
-      "elapsed_ms": 699.763,
+      "elapsed_ms": 614.844,
       "result": {
         "contract_version": "real-sec-cell-answer/v1",
         "status": "SUPPORTED",
@@ -316,6 +321,7 @@
             "raw_value": "22,386",
             "value": "22386",
             "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
             "multiplier": "1000000",
             "effective_value": "22386000000",
             "period_kind": "DURATION",
@@ -359,6 +365,7 @@
             "raw_value": "23,276",
             "value": "23276",
             "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
             "multiplier": "1000000",
             "effective_value": "23276000000",
             "period_kind": "DURATION",
@@ -394,7 +401,7 @@
         "2024-09-30",
         "2026-09-30"
       ],
-      "elapsed_ms": 646.264,
+      "elapsed_ms": 668.134,
       "result": {
         "contract_version": "real-sec-cell-answer/v1",
         "status": "INSUFFICIENT_EVIDENCE",

@@ -15,7 +15,8 @@ def synthetic():
     <xbrli:unit id="usd"><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unit>
     <xbrli:context id="c1"><xbrli:entity><xbrli:identifier scheme="http://www.sec.gov/CIK">0000000202</xbrli:identifier></xbrli:entity>
     <xbrli:period><xbrli:startDate>2026-07-01</xbrli:startDate><xbrli:endDate>2026-09-30</xbrli:endDate></xbrli:period></xbrli:context></ix:resources>
-    <h2>Consolidated Statements of Earnings</h2><table><tr><th>Metric</th><th>Three Months Ended September 30, 2026</th></tr>
+    <h2>Consolidated Statements of Earnings</h2><table><tr><th>Metric</th><th>Three Months Ended September 30</th></tr>
+    <tr><th>Amounts in millions except per share amounts</th><th>2026</th></tr>
     <tr><td>NET SALES</td><td><ix:nonFraction name="us-gaap:Revenues" contextRef="c1" unitRef="usd" scale="6" format="ixt:num-dot-decimal">23,276</ix:nonFraction></td></tr></table></body></html>'''
     m=FilingMetadata(filing_id='sec:0000000202:0000000202-26-000001',cik='0000000202',accession_number='0000000202-26-000001',
         company_name='Synthetic Recovery Issuer',form_type='10-Q',filing_date='2026-11-01',report_date='2026-09-30',
@@ -33,6 +34,7 @@ def test_source_derived_xbrl_unit_period_and_exact_cell():
     observed=derive_cell(parent,table,cell,resources,raw_hash=sha256(raw).hexdigest(),generation='a'*64,manifest_hash='b'*64)
     assert observed.raw_value=='23,276' and observed.effective_value==Decimal('23276000000')
     assert observed.unit=='USD' and observed.multiplier==Decimal(1000000)
+    assert observed.display_unit_header=='Amounts in millions except per share amounts'
     assert observed.period_start=='2026-07-01' and observed.period_end=='2026-09-30'
     assert observed.row==cell.row and observed.column==cell.column and observed.structural_path==cell.source_location.structural_path
     assert observed.parent_id==parent.chunk_id and observed.fact_name=='us-gaap:Revenues'
@@ -52,7 +54,7 @@ def test_entity_and_period_header_mismatch_fail_closed():
     resources=parse_resources(raw)
     bad=raw.replace(b'0000000202</xbrli:identifier>',b'0000000999</xbrli:identifier>')
     with pytest.raises(ValueError):derive_cell(parent,table,cell,parse_resources(bad),raw_hash=sha256(raw).hexdigest(),generation='a'*64,manifest_hash='b'*64)
-    altered=table.model_copy(update={'cells':[c.model_copy(update={'text':'2025'}) if c.text=='Three Months Ended September 30, 2026' else c for c in table.cells]})
+    altered=table.model_copy(update={'cells':[c.model_copy(update={'text':'2025'}) if c.text=='2026' else c for c in table.cells]})
     with pytest.raises(ValueError):derive_cell(parent,altered,cell,resources,raw_hash=sha256(raw).hexdigest(),generation='a'*64,manifest_hash='b'*64)
 
 
@@ -66,6 +68,15 @@ def test_resource_budget_duplicate_identity_and_missing_unit_fail_closed():
     no_unit=raw.replace(b'iso4217:USD',b'iso4217:EUR')
     with pytest.raises(ValueError,match='XBRL_UNIT_UNSUPPORTED'):
         derive_cell(parent,table,cell,parse_resources(no_unit),raw_hash=sha256(raw).hexdigest(),generation='a'*64,manifest_hash='b'*64)
+
+
+def test_visible_unit_header_must_match_xbrl_scale():
+    raw,filing,parent,table,cell=synthetic();resources=parse_resources(raw)
+    contradictory=table.model_copy(update={'header_rows':[[text.replace('millions','thousands') for text in row]
+                                                     for row in table.header_rows]})
+    with pytest.raises(ValueError):derive_cell(parent,contradictory,cell,resources,raw_hash=sha256(raw).hexdigest(),generation='a'*64,manifest_hash='b'*64)
+    changed=cell.model_copy(update={'numeric_facts':[{**cell.numeric_facts[0],'scale':'3'}]})
+    with pytest.raises(ValueError):derive_cell(parent,table,changed,resources,raw_hash=sha256(raw).hexdigest(),generation='a'*64,manifest_hash='b'*64)
 
 
 def test_verified_cell_arithmetic_requires_exact_source_period(monkeypatch):

@@ -45,6 +45,7 @@ class RealCellObservationV1(BaseModel):
     raw_value:str
     value:Decimal
     unit:str
+    display_unit_header:str
     multiplier:Decimal
     effective_value:Decimal
     period_kind:str
@@ -175,6 +176,10 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
     try:exp=int(fact.get('scale','0'))
     except (TypeError,ValueError):raise ValueError('XBRL_SCALE_UNSUPPORTED') from None
     if not -12<=exp<=12:raise ValueError('XBRL_SCALE_UNSUPPORTED')
+    unit_headers=sorted({h.strip() for grid in table.header_rows for h in grid
+                         if re.search(r'\b(?:thousands|millions|billions)\b',h,re.I)})
+    if len(unit_headers)!=1 or 'millions' not in unit_headers[0].casefold() or exp!=6:
+        raise ValueError('DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT')
     multiplier=Decimal(10)**exp
     with localcontext() as dec:
         dec.prec=100;effective=value*multiplier
@@ -182,7 +187,7 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         filing_id=parent.filing_id,cik=m['cik'],accession=m['accession_number'],raw_sha256=raw_hash,
         parent_id=parent.chunk_id,parent_payload_hash=digest(parent.model_dump(mode='json')),
         table_id=table.table_id,row=cell.row,column=cell.column,row_label=m['row_label'],raw_value=cell.text,
-        value=value,unit='USD',multiplier=multiplier,effective_value=effective,
+        value=value,unit='USD',display_unit_header=unit_headers[0],multiplier=multiplier,effective_value=effective,
         period_kind=kind,period_start=start,period_end=end,period_months=months,header_path=tuple(headers),
         fact_name=fact['name'],fact_context_ref=fact['contextref'],fact_unit_ref=fact['unitref'],
         source_url=m['source_url'],structural_path=cell.source_location.structural_path,

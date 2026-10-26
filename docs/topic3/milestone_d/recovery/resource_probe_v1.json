@@ -20,14 +20,15 @@
   "tracemalloc_peak_bytes": 62301886,
   "result_status": "SUPPORTED",
   "untraced_latencies_ms": [
-    1091.288,
-    627.292,
-    582.994,
-    576.815,
-    651.82,
-    581.488,
-    585.409
+    1296.678,
+    745.794,
+    741.653,
+    688.935,
+    799.178,
+    844.399,
+    696.531
   ],
-  "untraced_p50_ms": 585.409,
-  "untraced_p95_nearest_rank_ms": 1091.288
+  "untraced_p50_ms": 745.794,
+  "untraced_p95_nearest_rank_ms": 1296.678,
+  "untraced_after_visible_unit_check": true
 }
