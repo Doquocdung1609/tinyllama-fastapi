@@ -1,0 +1,31 @@
+{
+  "synthetic_only": true,
+  "stages": {
+    "context": {
+      "p50_ms": 1.5997000155039132,
+      "p95_ms": 2.5440000172238797,
+      "samples": 25
+    },
+    "evidence": {
+      "p50_ms": 2.968999993754551,
+      "p95_ms": 4.091300012078136,
+      "samples": 25
+    },
+    "bundle": {
+      "p50_ms": 2.609999995911494,
+      "p95_ms": 4.255900013959035,
+      "samples": 25
+    },
+    "compact_serialization": {
+      "p50_ms": 0.05909998435527086,
+      "p95_ms": 0.10390000534243882,
+      "samples": 25
+    }
+  },
+  "limits": [
+    "No HTTP transport exposure at D2.",
+    "C verification/hash/parse/rechunk real-source boundaries are in retained audit v2.",
+    "Context creation reconstructs source once; each current candidate reparses the serialized full filing, a measured future optimization opportunity.",
+    "No persistent cache introduced; source limits unchanged."
+  ]
+}

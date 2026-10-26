@@ -1,0 +1,64 @@
+{
+  "schema_version": "topic3-artifacts/v1",
+  "events": [
+    {
+      "stage": "D2",
+      "source_commit": "14014d2919a55f9cb087deaf120a4dc5d8498d1e",
+      "artifacts": [
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_AUTONOMOUS_STAGE_LATENCY.json",
+          "sha256": "1457be3a865394d2a9b42da77b7c4e94e9466de218a9efd9bb81a8bf49a65564"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_D3_INTERFACE_READINESS.md",
+          "sha256": "9149c3a4e604d8d29954fb1f92fc1a45716495b98102044080172029e6adb572"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_IMPLEMENTATION_REPORT.md",
+          "sha256": "6014a69598d0ca3ef0e8093785cc7a26c9888afa88344a55c79b0a77e277b7fc"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_INDEPENDENT_REVIEW_REPORT.md",
+          "sha256": "5bec3227fd21910a5ff1554fc27967f969802ccd5707d2439d759b8c99f2967b"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_INTEGRATION_READINESS.md",
+          "sha256": "91458c2300b9917f7ecec9ff6a135a52c134c0b3264603fdea2fda83486b62b3"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_PROVENANCE_AND_CONFLICT_REPORT.md",
+          "sha256": "ae5da41fcb34b8c5bb3ac1646c2562b1134b88cd75e3a5d2b4611c20144f2b8d"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_REAL_SEC_VALIDATION_REPORT.md",
+          "sha256": "617892a6aced3111a38281e0da2a1a9b3e2ce550be46cd25ec753b38e9c4f3f4"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_REPRESENTATION_MEASUREMENTS.json",
+          "sha256": "8a2e0910704326cd2849ad9b0548fccdeb767147b3f0b789cbd4f7201a86afc0"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_RETAINED_SOURCE_AUDIT.json",
+          "sha256": "172a35a11d3ae07b701485f0d6c6b39ea28ea4d6e4e33ddd8e2dbce9caa53a19"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_RETAINED_SOURCE_AUDIT_v2.json",
+          "sha256": "088681bacbf97898d7851a679edf4c6cd9967d7efdd7a4b06ca8e2b63eee85d8"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_SOURCE_EVIDENCE_CASES.md",
+          "sha256": "634274672b04291e724c51f2a96496f197490d1976ccb51aa42b4869e4d88fb2"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_TARGETED_REPAIR_LEDGER.md",
+          "sha256": "59ef44d8404e13ad4a7b698a2728c43cce78fedb49ad842f97e2ca8f1d49bc47"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d2/D2_TEST_AND_BENCHMARK_REPORT.md",
+          "sha256": "13aa104abfe550e3f81933de07ce904264eb595834c32dec9c8964fcbc6cc4c3"
+        }
+      ],
+      "hash_convention": "raw checkout bytes; Git blobs separately protect historical LF evidence"
+    }
+  ]
+}
