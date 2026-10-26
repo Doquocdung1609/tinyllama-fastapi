@@ -84,6 +84,28 @@
       "go": "BOUNDED_D4_VERIFIER_IMPLEMENTATION_ONLY_AFTER_CI",
       "no_go": "REAL_NUMERIC_QA_AND_FULL_COMPARATIVE_D5",
       "authorization": "TOPIC3_AUTONOMOUS_D2_TO_D5_GATED_EXECUTION_AUTHORIZED"
+    },
+    {
+      "event": "D3_DELIVERY_CI_VERIFIED",
+      "source_commit": "e8230dddb29f57c5578050e23abb6169151e7986",
+      "pr": 12,
+      "ci": {"run": 40280668811, "job": 121433030898, "conclusion": "success", "tested_candidate": "d053397", "pass": 516, "skip": 1, "deselected": 3, "warning": 1},
+      "go": "BOUNDED_D4_DETERMINISTIC_IMPLEMENTATION",
+      "no_go": "REAL_NUMERIC_QA_OR_ADAPTIVE_SUPERIORITY_CLAIM"
+    },
+    {
+      "stage": "D4",
+      "status": "D4_DETERMINISTIC_ONLY",
+      "source_commit": "21ba61e898d894be237b8c8f47d0372474cc1f81",
+      "base_commit": "e8230dddb29f57c5578050e23abb6169151e7986",
+      "pr_status": "PENDING_DRAFT_PUBLICATION",
+      "tests": {"focused": 35, "full_pass": 552, "full_skip": 3, "core_pass": 552, "core_deselected": 3, "warning": 1, "fail": 0},
+      "synthetic_qa": {"cases": 8, "answerable": 4, "answered_correctly": 4, "appropriate_abstentions": 4},
+      "real_sec_numeric_qa": "BLOCKED_D2_SOURCE_SIZE",
+      "llm": "NOT_TESTED_OLLAMA_UNAVAILABLE",
+      "ci": {"status": "PENDING_DELIVERY_VERIFICATION"},
+      "go": "D5_FROZEN_HELDOUT_DIAGNOSTIC_AND_ISOLATED_HTTP_UI_TESTS_AFTER_CI",
+      "no_go": "PRODUCTION_QA_OR_REAL_NUMERIC_CORRECTNESS_CLAIM"
     }
   ]
 }
