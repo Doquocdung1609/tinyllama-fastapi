@@ -1,0 +1,49 @@
+{
+  "identity": "d5-synthetic-verifier-ablation/v1",
+  "source_type": "SYNTHETIC_DEMO",
+  "same_frozen_source_bundle_and_candidates": true,
+  "unverified_drafts_exposed_to_api": false,
+  "known_forgery_count": 5,
+  "forgeries_rejected_with_verifier": 5,
+  "forgeries_accepted_without_verifier": 5,
+  "authentic_accepted_with_verifier": true,
+  "interpretation": "Deterministic mutation rejection on one synthetic bundle only; not LLM hallucination or real SEC QA accuracy",
+  "rows": [
+    {
+      "variant": "authentic",
+      "known_authentic": true,
+      "without_verifier_accepted": true,
+      "with_verifier_accepted": true
+    },
+    {
+      "variant": "forged_number",
+      "known_authentic": false,
+      "without_verifier_accepted": true,
+      "with_verifier_accepted": false
+    },
+    {
+      "variant": "forged_unit",
+      "known_authentic": false,
+      "without_verifier_accepted": true,
+      "with_verifier_accepted": false
+    },
+    {
+      "variant": "forged_period",
+      "known_authentic": false,
+      "without_verifier_accepted": true,
+      "with_verifier_accepted": false
+    },
+    {
+      "variant": "forged_locator",
+      "known_authentic": false,
+      "without_verifier_accepted": true,
+      "with_verifier_accepted": false
+    },
+    {
+      "variant": "forged_generation",
+      "known_authentic": false,
+      "without_verifier_accepted": true,
+      "with_verifier_accepted": false
+    }
+  ]
+}
