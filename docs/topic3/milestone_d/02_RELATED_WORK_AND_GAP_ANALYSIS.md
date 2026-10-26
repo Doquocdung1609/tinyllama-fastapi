@@ -1,0 +1,51 @@
+# Related work and gap analysis
+
+**Design only.** Primary sources inspected on 2026-10-25; no external code or models executed. Local code comparisons are static inspections, not reproduced performance. Claims about a paper apply to its own setting.
+
+## Required paper: publication and method
+
+[Improved LLM Agents for Financial Document Question Answering](https://arxiv.org/abs/2506.08726), Nelvin Tan, Zian Seng, Liang Zhang, Yu-Ching Shih, Dong Yang and Amol Salunkhe: arXiv preprint, first submitted 2025-06-10; inspected [v3 full text](https://arxiv.org/html/2506.08726v3), dated 2026-01-07. Consulted primary metadata did not establish a proceedings/journal publication. Do not label the GitHub demo an official reproduction.
+
+The paper compares analyst CoT/PoT, critic, improved KEEP/UPDATE critic with analyst selection, and calculator variants. It uses Llama3-70B/GPT-4-turbo at temperature zero, supplied financial context, 717 numerical TAT-QA development questions and 883 FinQA development questions; overflowing contexts are excluded. Reported combined accuracy averages the two datasets: CoT 68.3%/79.2%, CoT+calculator 77.7%/82.6%, improved-critic+calculator 75.8%/82.7% (Llama/GPT). More agents do not uniformly help. Calculator extracts expressions, restricts arithmetic, then analyst finalizes; operand provenance is not established. Results do not measure SEC corpus retrieval, the local 3B model, production safety, or an untouched project holdout. D may test bounded calculation and critic ablations; its benefit remains a hypothesis.
+
+## Focused primary-source ledger
+
+Each row separates the source's evidence from our proposed use. No source demonstrates this project's proposed performance.
+
+| Source, authors, year, stable record | Method and reported evidence | Limits / project implication |
+|---|---|---|
+| *Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods*, Gordon V. Cormack, Charles L. A. Clarke, Stefan Büttcher, 2009; [DOI](https://doi.org/10.1145/1571941.1572114), [author PDF](https://cormack.uwaterloo.ca/cormack/cormacksigir09-rrf.pdf) | Rank-only reciprocal sum; evaluated on TREC/LETOR runs; k=60 follows pilot selection | Already implemented in C; finance overlap bias and adaptive weights are separate hypotheses |
+| *Dense Passage Retrieval for Open-Domain Question Answering*, Vladimir Karpukhin et al., 2020, EMNLP; [arXiv](https://arxiv.org/abs/2004.04906) | Learned dual encoders for passage retrieval; open-domain QA experiments support dense retrieval in that setting | No guarantee for unsupervised Nomic on SEC tables; retain Dense-only baseline |
+| *BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models*, Nandan Thakur, Nils Reimers, Andreas Rücklé, Abhishek Srivastava, Iryna Gurevych, 2021, NeurIPS Datasets and Benchmarks; [record](https://arxiv.org/abs/2104.08663) | Heterogeneous 18-dataset evaluation; robust BM25, stronger costly reranking in several settings | Domain-dependent results motivate fresh splits; BEIR scores are not financial pilot scores |
+| *FinQA: A Dataset of Numerical Reasoning over Financial Data*, Zhiyu Chen et al., 2021, EMNLP; [publisher](https://aclanthology.org/2021.emnlp-main.300/), DOI 10.18653/v1/2021.emnlp-main.300 | Expert-authored financial questions with reasoning programs; numerical reasoning model evaluation | Supplied-context/program task differs from open SEC retrieval. Optional answer diagnostic only, original splits and license checked before use |
+| *TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance*, Fengbin Zhu et al., 2021, ACL; [publisher](https://aclanthology.org/2021.acl-long.254/), DOI 10.18653/v1/2021.acl-long.254 | Table+text benchmark and TAGOP extraction/operation baseline | Motivates table/text coverage and operation labels, not a replacement for a fresh issuer-held-out retrieval set |
+| *Ad Hoc Table Retrieval using Semantic Similarity*, Shuo Zhang, Krisztian Balog, 2018, WWW; [author paper](https://krisztianbalog.com/files/www2018-table.pdf), DOI 10.1145/3178876.3186067 | Matches query/table semantic spaces and combines features with supervised ranking; Wikipedia table collection | Table ranking differs from source-cell financial evidence. Compact table/row channels are testable analogies, not reproduced results |
+| *Passage Re-ranking with BERT*, Rodrigo Nogueira, Kyunghyun Cho, 2019 preprint; [record](https://arxiv.org/abs/1901.04085) | Query-passage cross-encoder reranking; MS MARCO/TREC-CAR evidence | Additional pairwise inference is costly. A neural reranker is optional, outside the minimum local experiment |
+| *Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity*, Soyeong Jeong, Jinheon Baek, Sukmin Cho, Sung Ju Hwang, Jong C. Park, 2024, NAACL; [record](https://arxiv.org/abs/2403.14403) | Small LM routes no/single/multi-step retrieval using complexity labels; QA experiments | Not a finance-intent router. Start deterministic; never bypass source retrieval for financial numbers |
+| *Nomic Embed: Training a Reproducible Long Context Text Embedder*, Zach Nussbaum, John X. Morris, Brandon Duderstadt, Andriy Mulyar, 2024, revised 2025/TMLR; [record](https://arxiv.org/abs/2402.01613), [v1.5 model card](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5) | Reproducible embedding training and retrieval evaluations; task-prefixed embedding usage in official model documentation | Keep deployed digest/prefix/context identity; long-context paper capacity is not proof of the installed Ollama runtime limit |
+| *FinanceBench: A New Benchmark for Financial Question Answering*, Pranab Islam, Anand Kannappan, Douwe Kiela, Rebecca Qian, Nino Scherrer, Bertie Vidgen, 2023; [record](https://arxiv.org/abs/2311.11944) | Evidence-backed financial QA and human-reviewed system evaluation; public sample is 150 cases, not the entire 10,231-question collection | Useful citation/abstention diagnostic after overlap/license audit. Do not promise access to the full collection or transfer its scores |
+
+Leakage prevention in this blueprint is an explicit protocol commitment (08), informed by cross-domain evaluation, not a claim that one cited paper proves our split unbiased. Dataset membership must be audited for shared filings and pretraining contamination cannot be ruled out.
+
+## Actual second-repository inspection
+
+[AI_agent_Demo](https://github.com/Doquocdung1609/AI_agent_Demo), inspected clean local/remote HEAD `87681e11c3c38975a091993c0455a4cf3b0cf422`. Files examined: `agent_demo.py`, `chatbot.py`, file inventory and included results/dataset filenames. No test suite, pinned requirements or LICENSE was found in that inventory. No performance reproduction or dependency installation was attempted.
+
+| Dimension | tinyllama-fastapi accepted C | AI_agent_Demo actual source | Decision |
+|---|---|---|---|
+| Document ingestion | SEC snapshots, manifests, versioned HTML extraction | `chatbot.py:607–680` PDF/Excel/Word/JSON upload parsers | Keep SEC contracts; uploads are not equivalent provenance |
+| Financial tables | `chunker.py` row chunks, cell/header/footnote metadata | `chatbot.py:76–225` pipe-table detection, variable 2–5k character windows, repeated headers | Consider compact views/neighbor context only after measuring loss; do not replace parser |
+| Retrieval | SQLite BM25, Nomic/Qdrant, RRF, prefilters | `chatbot.py:230–398` in-memory BM25, MiniLM cosine, normalized score blend (0.4/0.6), neighbor expansion | Demo blend is not RRF and lacks persistent generation compatibility |
+| Agent orchestration | No financial agent chain on persistent path | `agent_demo.py:293–376,453ff`: analyst/critic/review/calculator/finalizer | Optional downstream controlled experiment; no wholesale transplant |
+| Financial QA | Financial evidence search; legacy QA separate | Supplied-context evaluator plus upload-based QA UI | Separate retrieval from oracle-context answer evaluation |
+| Source citation | Hash-verified filing, URL, structural locator | Context text and internal chunk selection, no SEC hash/locator contract | Preserve C provenance boundary |
+| Numerical validation | No verified financial calculation contract | AST whitelist arithmetic, floats, strips `%`; `Pow` allowed without explicit cost bound | Reuse arithmetic idea, not implementation; bind Decimal operands to verified source cells |
+| Models | Pinned Nomic identity; local legacy Qwen2.5 3B | Ollama `llama3` tag, optional `all-MiniLM-L6-v2`, no digest pin | Not comparable model capacity/runtime; no download now |
+| Runtime cost | Persistent reuse and measured stages | Several sequential model calls; cosine scan in memory | Actual latency unknown; no “faster” claim |
+| Reproducibility | Frozen queries/qrels, manifests, tests, CI | `agent_demo.py:691,775ff` supplied context, first up-to-20 TAT-QA questions, saved outputs, loose numeric/text scorer | Saved results are not independent held-out evidence |
+
+Specific limits: `critic_agent(question,cot_answer)` receives no source context and initializes HIGH/KEEP on unrecognized output. Calculator correctness cannot establish operand correctness. `evaluate_accuracy` uses 2% relative tolerance (zero absolute 0.02), sign checking, and weak text matching; loader reduces list answers to their first element and does not preserve every benchmark scale field. These choices prevent treating its reported accuracy as source-grounded financial correctness. They are code observations, not accusations about unseen versions.
+
+## Gap and reuse decision
+
+C already supplies persistence, row context, hybrid fusion and provenance. Literature supplies routing, semantic table matching, reranking and arithmetic-agent ideas. Missing locally is a controlled comparison connecting issuer/period-aware routing, bounded source-preserving evidence views and verifiable numeric claims under a measured local budget. That is the proposed project contribution; neither a new universal retrieval algorithm nor proven novel agent architecture is established. Conceptual reuse is allowed; code copying waits for license/owner clarification. Large-model multi-agent orchestration, unbounded PoT execution and replacing C with session-memory indexes are outside the recommended design.
