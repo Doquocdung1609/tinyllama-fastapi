@@ -6,3 +6,7 @@ Preflight Windows11/Python3.13.2,8,221,732KB visible RAM;826,420KB free at sampl
 ## D3 checkpoint addition
 
 D3 owned namespace62,654,330bytes after source freeze/index; no embeddings/Qdrant/model downloads.11-query B service p50/p95~437/1329ms, one descriptive run; not cold/warm throughput comparison. ProcessRSS/VRAM NOT_MEASURED. Source cache reuses C generation/hash-bound behavior,1entry32MiB, per-request byte checks.
+
+## D5 resource snapshot v2
+
+Later OS sample: 8,221,732 KiB visible RAM, 1,070,988 KiB free. D5 one-shot B held-out descriptive p50/p95 `309.45/925.14 ms` over five sequential requests; this includes real C source checks and differs from C end-to-end and D4 synthetic in-process boundaries. D5 21-request HTTP artifact retains per-request timings; no throughput/cold-warm benchmark or process RSS measurement. All local children launched for UI/HTTP smoke testing were stopped; no new paid service, embedding or vector collection was created.

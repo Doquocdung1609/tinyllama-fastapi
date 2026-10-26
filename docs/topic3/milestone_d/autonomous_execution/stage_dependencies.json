@@ -12,6 +12,21 @@
       "D3_implementation": "ba9e26294b225eedf8a7c3c7485ed0bf99ae9d3b",
       "D4_base": "PIN_FINAL_D3_AFTER_CI"
     },
-    {"D3_final":"e8230dddb29f57c5578050e23abb6169151e7986","D3_pr":12,"D3_ci_run":40280668811,"D4_implementation":"21ba61e898d894be237b8c8f47d0372474cc1f81","D5_base":"PIN_FINAL_D4_AFTER_CI"}
+    {
+      "D3_final": "e8230dddb29f57c5578050e23abb6169151e7986",
+      "D3_pr": 12,
+      "D3_ci_run": 40280668811,
+      "D4_implementation": "21ba61e898d894be237b8c8f47d0372474cc1f81",
+      "D5_base": "PIN_FINAL_D4_AFTER_CI"
+    },
+    {
+      "D3_final": "e8230dddb29f57c5578050e23abb6169151e7986",
+      "D4_final": "1e0b9e0444a4595a39353938dd62fbe2b4a6e046",
+      "D4_pr": 13,
+      "D4_ci_run": 40284075689,
+      "D5_evaluation_commit": "21b7b6e0432c72b753ac6353aef47e5dd3c644fd",
+      "D5_pr": 14,
+      "merge_authorized": false
+    }
   ]
 }

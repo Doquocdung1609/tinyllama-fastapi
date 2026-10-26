@@ -125,6 +125,88 @@
           "sha256": "e6c8207a65600719aa9a5f704bfe1a46dcafcdb1440106a438c6ca8e9e7fb61f"
         }
       ]
+    },
+    {
+      "stage": "D4",
+      "source_commit": "21ba61e898d894be237b8c8f47d0372474cc1f81",
+      "artifacts": [
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_ABSTENTION_AND_ERROR_ANALYSIS.md",
+          "sha256": "d1e2ea6141d617f47a5de25cd09824a1728534487485cefe2b24885214db49f1"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_ANSWER_EVIDENCE_AND_CITATION_AUDIT.md",
+          "sha256": "118b882d3c949b79ccea8ba050cf58ea9dbc3b67f743fe1dc16703257ec92593"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_GROUNDED_QA_TEST_REPORT.md",
+          "sha256": "3eec296dd330b4cb21a9296a88256e5b21a682ebc60362811157bf23236c985a"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_IMPLEMENTATION_REPORT.md",
+          "sha256": "f9415ce6418fa1c2b5c535e5d515f4b2e37435134623b2489fc22841ee7c08ed"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_INTEGRATION_READINESS.md",
+          "sha256": "95aefe84ae281a0d07e89639e90bab1536e9e25dc1f3e52c9326d888a2fba672"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_NUMERIC_VERIFICATION_SPEC.md",
+          "sha256": "9378cb29a531eaa68e52e3cb8f5406ea63aa564f63b534477633d133e8e14723"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_RESOURCE_REPORT.md",
+          "sha256": "4df990997efd46bcbc748b7eb7cc5ab942002898884b3bc86cff0bfd7011c6dd"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_SECURITY_REVIEW.md",
+          "sha256": "eb1de21429ddb46755adc70008f587d33618e1acbc169556b07da6e5bf709c0d"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_SYNTHETIC_QA_CASES_v1.json",
+          "sha256": "5e6a46bc75f64eba82cbf95337000627b0aacc9698eb2e989956c4e6acff1778"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D4_SYNTHETIC_QA_EVALUATION_v1.json",
+          "sha256": "a04a0f87f23651802e48afefa21f11427e5bc99a04aed5cb5b1ff21c2fb7a73a"
+        }
+      ],
+      "hash_convention": "raw checkout bytes"
+    },
+    {
+      "stage": "D5",
+      "source_commit": "21b7b6e0432c72b753ac6353aef47e5dd3c644fd",
+      "artifacts": [
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D5_E2E_VALIDATION_REPORT.md",
+          "sha256": "1c739fe0ab9d001ce794651075dd98b8eafcef55f4db9ad4c000c303054d38ae"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D5_FROZEN_HELDOUT_RESULT_v1.json",
+          "sha256": "bf4722667fa478fca7e295be2921ead78b394276f90530a998938cc939192d86"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D5_LIVE_HTTP_MATRIX_v1.json",
+          "sha256": "1f920853f461eb76f6a7abce3cf12a54a09f9bb39053d1de8f52bb7500d994b5"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D5_PREREGISTRATION_v1.json",
+          "sha256": "ce2c362b9cf894b523ec47b1cd6bae87b8f377e5cdc8cc9275247b7a369e71c7"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D5_REPRODUCIBILITY_AND_LIMITATIONS.md",
+          "sha256": "595301a127ff4f2a936cd538a714a7b708f1d2238b37dd49eed70b32737f294d"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D5_SCIENTIFIC_EVALUATION_REPORT.md",
+          "sha256": "033d94ce657cfb51cf3d6d843a5178c9cb085b2e2b0e697dd3edc991fd1a0118"
+        },
+        {
+          "path": "docs/topic3/milestone_d/autonomous_execution/D5_VERIFIER_ABLATION_v1.json",
+          "sha256": "61781696ff86ba4481dbce6fda1d16d5537c3794f52269d3fb003b0b452f5a4f"
+        }
+      ],
+      "hash_convention": "raw checkout bytes"
     }
   ]
 }

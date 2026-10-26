@@ -10,3 +10,7 @@ D2 final470bf86 CI40266090006 SUCCESS verified before D3. D3 implementationba9e2
 # D4 continuation checkpoint (26 October 2026)
 
 Source commit `21ba61e898d894be237b8c8f47d0372474cc1f81` on the D4 stacked branch from D3 final `e8230dddb29f57c5578050e23abb6169151e7986`. D3 PR #12 CI run 40280668811 succeeded on the final D3 source. D4 synthetic fixture: 4/4 answerable claims correct and 4/4 expected abstentions; 35 focused PASS, 552 full PASS/3 SKIP, 552 core PASS/3 deselected. Real SEC numeric QA blocked at D2 source-size cap; no LLM. Status **D4_DETERMINISTIC_ONLY**, delivery CI pending at this checkpoint. Next permitted step: publish Draft D4 PR, verify exact-head CI, then run frozen D5 diagnostics and isolated HTTP/UI tests. No stage merge authorized.
+
+## D5 final-stage checkpoint v2
+
+D4 delivery CI run `40284075689` succeeded on `1e0b9e0`. D5 preregistration commit `2e6a343` preceded one held-out evaluation; research evidence commit `21b7b6e` delivered five HD query ranks, 21 live HTTP requests, a browser-observed synthetic and SEC UI flow, and 24 scenario statuses. Local full suite: 552 PASS/3 SKIP; core 552 PASS/3 deselected. No eligible adaptive finalist; real numeric QA blocked. Draft PR #14 remains unmerged. Exact final-head CI should be read from PR #14 after the final documentation commit. Global checkpoint: **TOPIC3_D2_D5_PARTIALLY_COMPLETE_WITH_BLOCKERS**.
