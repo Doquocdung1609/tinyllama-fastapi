@@ -6,6 +6,11 @@
       "D3_base": "PIN_FINAL_D2_AFTER_CI",
       "D4_base": "PIN_FINAL_D3_AFTER_CI",
       "D5_base": "PIN_FINAL_D4_AFTER_CI"
+    },
+    {
+      "D2_final": "470bf86a98baad6b8011c166f00288a914e7a1a4",
+      "D3_implementation": "ba9e26294b225eedf8a7c3c7485ed0bf99ae9d3b",
+      "D4_base": "PIN_FINAL_D3_AFTER_CI"
     }
   ]
 }

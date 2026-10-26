@@ -43,5 +43,39 @@
     ],
     "authorization": "TOPIC3_AUTONOMOUS_D2_TO_D5_GATED_EXECUTION_AUTHORIZED"
   },
-  "continuation": "Verify final D2 delivery CI, pin it, branch D3 from that exact source; do not ask for repeat stage authorization."
+  "continuation": "Verify final D2 delivery CI, pin it, branch D3 from that exact source; do not ask for repeat stage authorization.",
+  "events": [
+    {
+      "stage": "D3",
+      "status": "IMPLEMENTATION_COMPLETE_SCIENTIFIC_COMPARISON_BLOCKED",
+      "source_commit": "ba9e26294b225eedf8a7c3c7485ed0bf99ae9d3b",
+      "base_commit": "470bf86a98baad6b8011c166f00288a914e7a1a4",
+      "pr": null,
+      "pr_status": "PENDING_DRAFT_PUBLICATION",
+      "tests": {
+        "focused": 40,
+        "full_pass": 517,
+        "full_skip": 3,
+        "core_pass": 517,
+        "core_deselected": 3,
+        "warning": 1,
+        "fail": 0
+      },
+      "ci": {
+        "status": "PENDING_DELIVERY_VERIFICATION"
+      },
+      "data_manifest": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+      "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+      "dev_queries": 5,
+      "validation_queries": 6,
+      "heldout_queries_frozen_not_opened": 5,
+      "human_annotators": 0,
+      "dense_available": false,
+      "real_d2_available": false,
+      "open_high_critical": 0,
+      "go": "BOUNDED_D4_VERIFIER_IMPLEMENTATION_ONLY_AFTER_CI",
+      "no_go": "REAL_NUMERIC_QA_AND_FULL_COMPARATIVE_D5",
+      "authorization": "TOPIC3_AUTONOMOUS_D2_TO_D5_GATED_EXECUTION_AUTHORIZED"
+    }
+  ]
 }

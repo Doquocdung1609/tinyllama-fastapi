@@ -1,0 +1,188 @@
+{
+  "schema_version": "topic3-sec-probe/v1",
+  "plan_fixed_before_acquisition": [
+    [
+      "JPM",
+      "0000019617",
+      "dev"
+    ],
+    [
+      "PG",
+      "0000080424",
+      "dev"
+    ],
+    [
+      "COST",
+      "0000909832",
+      "validation"
+    ],
+    [
+      "HD",
+      "0000354950",
+      "heldout"
+    ]
+  ],
+  "records": [
+    {
+      "ticker": "JPM",
+      "cik": "0000019617",
+      "partition": "dev",
+      "metadata": {
+        "filing_id": "sec:0000019617:0001628280-26-054343",
+        "company_name": "JPMORGAN CHASE & CO",
+        "cik": "0000019617",
+        "ticker": "JPM",
+        "form_type": "10-Q",
+        "accession_number": "0001628280-26-054343",
+        "filing_date": "2026-08-06",
+        "report_date": "2026-06-30",
+        "fiscal_year": null,
+        "fiscal_period": null,
+        "primary_document": "jpm-20260630.htm",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm",
+        "retrieved_at": null,
+        "source_type": "SEC_EDGAR",
+        "raw_content_hash": null,
+        "normalized_content_hash": null,
+        "parser_version": "sec-html-v5",
+        "chunker_version": null,
+        "ingestion_version": "topic3-milestone-b-v1",
+        "document_status": "DISCOVERED",
+        "amendment_of": null,
+        "unknown_reasons": {
+          "fiscal_year": "Not inferred from report date; parser may obtain an explicit iXBRL fact.",
+          "fiscal_period": "Parser may obtain an explicit iXBRL DocumentFiscalPeriodFocus fact."
+        },
+        "response_metadata": {}
+      },
+      "status": "PUBLIC_SOURCE_REQUEST_FAILED",
+      "http_status": null,
+      "error_type": "SECRequestError",
+      "reason": "SOURCE_BYTES_BUDGET_EXCEEDED"
+    },
+    {
+      "ticker": "PG",
+      "cik": "0000080424",
+      "partition": "dev",
+      "metadata": {
+        "filing_id": "sec:0000080424:0000080424-26-000256",
+        "company_name": "PROCTER & GAMBLE Co",
+        "cik": "0000080424",
+        "ticker": "PG",
+        "form_type": "10-Q",
+        "accession_number": "0000080424-26-000256",
+        "filing_date": "2026-10-22",
+        "report_date": "2026-09-30",
+        "fiscal_year": null,
+        "fiscal_period": null,
+        "primary_document": "pg-20260930.htm",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+        "retrieved_at": null,
+        "source_type": "SEC_EDGAR",
+        "raw_content_hash": null,
+        "normalized_content_hash": null,
+        "parser_version": "sec-html-v5",
+        "chunker_version": null,
+        "ingestion_version": "topic3-milestone-b-v1",
+        "document_status": "DISCOVERED",
+        "amendment_of": null,
+        "unknown_reasons": {
+          "fiscal_year": "Not inferred from report date; parser may obtain an explicit iXBRL fact.",
+          "fiscal_period": "Parser may obtain an explicit iXBRL DocumentFiscalPeriodFocus fact."
+        },
+        "response_metadata": {}
+      },
+      "status": "ACQUIRED_OFFICIAL_SOURCE",
+      "retrieved_at": "2026-10-26T06:11:54.835961+00:00",
+      "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+      "source_bytes": 1066740,
+      "relative_path": "raw/0000080424/0000080424-26-000256/pg-20260930.htm"
+    },
+    {
+      "ticker": "COST",
+      "cik": "0000909832",
+      "partition": "validation",
+      "metadata": {
+        "filing_id": "sec:0000909832:0000909832-26-000051",
+        "company_name": "COSTCO WHOLESALE CORP /NEW",
+        "cik": "0000909832",
+        "ticker": "COST",
+        "form_type": "10-Q",
+        "accession_number": "0000909832-26-000051",
+        "filing_date": "2026-06-03",
+        "report_date": "2026-05-10",
+        "fiscal_year": null,
+        "fiscal_period": null,
+        "primary_document": "cost-20260510.htm",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+        "retrieved_at": null,
+        "source_type": "SEC_EDGAR",
+        "raw_content_hash": null,
+        "normalized_content_hash": null,
+        "parser_version": "sec-html-v5",
+        "chunker_version": null,
+        "ingestion_version": "topic3-milestone-b-v1",
+        "document_status": "DISCOVERED",
+        "amendment_of": null,
+        "unknown_reasons": {
+          "fiscal_year": "Not inferred from report date; parser may obtain an explicit iXBRL fact.",
+          "fiscal_period": "Parser may obtain an explicit iXBRL DocumentFiscalPeriodFocus fact."
+        },
+        "response_metadata": {}
+      },
+      "status": "ACQUIRED_OFFICIAL_SOURCE",
+      "retrieved_at": "2026-10-26T06:11:56.358813+00:00",
+      "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+      "source_bytes": 897735,
+      "relative_path": "raw/0000909832/0000909832-26-000051/cost-20260510.htm"
+    },
+    {
+      "ticker": "HD",
+      "cik": "0000354950",
+      "partition": "heldout",
+      "metadata": {
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "company_name": "HOME DEPOT, INC.",
+        "cik": "0000354950",
+        "ticker": "HD",
+        "form_type": "10-Q",
+        "accession_number": "0001628280-26-058715",
+        "filing_date": "2026-08-25",
+        "report_date": "2026-08-02",
+        "fiscal_year": null,
+        "fiscal_period": null,
+        "primary_document": "hd-20260802.htm",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "retrieved_at": null,
+        "source_type": "SEC_EDGAR",
+        "raw_content_hash": null,
+        "normalized_content_hash": null,
+        "parser_version": "sec-html-v5",
+        "chunker_version": null,
+        "ingestion_version": "topic3-milestone-b-v1",
+        "document_status": "DISCOVERED",
+        "amendment_of": null,
+        "unknown_reasons": {
+          "fiscal_year": "Not inferred from report date; parser may obtain an explicit iXBRL fact.",
+          "fiscal_period": "Parser may obtain an explicit iXBRL DocumentFiscalPeriodFocus fact."
+        },
+        "response_metadata": {}
+      },
+      "status": "ACQUIRED_OFFICIAL_SOURCE",
+      "retrieved_at": "2026-10-26T06:11:58.565483+00:00",
+      "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+      "source_bytes": 953101,
+      "relative_path": "raw/0000354950/0001628280-26-058715/hd-20260802.htm"
+    }
+  ],
+  "limits": {
+    "requests_per_second": 1,
+    "retries": 0,
+    "request_timeout_seconds": 10,
+    "documents_max": 4,
+    "bytes_per_document_max": 4194304
+  },
+  "no_ranking_executed": true,
+  "timestamp_utc": "2026-10-26T06:11:51.301370+00:00",
+  "status": "SOURCE_AUDIT_REQUIRED"
+}

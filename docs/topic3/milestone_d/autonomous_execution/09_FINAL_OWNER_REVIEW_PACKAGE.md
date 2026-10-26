@@ -10,3 +10,8 @@ flowchart LR
  D4 --> UI[Opt-in API/UI]
  UI --> D5[Independent D5 evaluation]
 ```
+
+
+## D3 checkpoint addition
+
+D3 checkpoint appended: research implementation and real-source BM25 diagnostics exist, full scientific comparison blocked. D4/D5 still NOT_TESTED at this point. See d3 reports and machine checkpoint events; continue automatically after final D3 CI, no stage merge.
