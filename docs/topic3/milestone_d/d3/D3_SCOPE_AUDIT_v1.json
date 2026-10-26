@@ -1,0 +1,63 @@
+{
+  "dev_validation_checks": [
+    {
+      "id": "0000080424:net_sales",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000080424:total_assets",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000080424:current_liabilities",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000080424:operating_income",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000080424:cash_and_cash_equivalents",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000909832:net_sales",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000909832:net_income",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000909832:total_assets",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000909832:current_liabilities",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000909832:operating_income",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    },
+    {
+      "id": "0000909832:cash_and_cash_equivalents",
+      "status": "RESOLVED",
+      "gold_filing_excluded": false
+    }
+  ],
+  "exclusions": 0,
+  "count": 11,
+  "heldout_opened": false,
+  "research_disk_bytes": 62654330
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": "topic3-sec-probe/v1",
+  "plan_fixed_before_acquisition": [
+    [
+      "JPM",
+      "0000019617",
+      "dev"
+    ],
+    [
+      "PG",
+      "0000080424",
+      "dev"
+    ],
+    [
+      "COST",
+      "0000909832",
+      "validation"
+    ],
+    [
+      "HD",
+      "0000354950",
+      "heldout"
+    ]
+  ],
+  "records": [
+    {
+      "ticker": "JPM",
+      "cik": "0000019617",
+      "partition": "dev",
+      "metadata": {
+        "filing_id": "sec:0000019617:0001628280-26-054343",
+        "company_name": "JPMORGAN CHASE & CO",
+        "cik": "0000019617",
+        "ticker": "JPM",
+        "form_type": "10-Q",
+        "accession_number": "0001628280-26-054343",
+        "filing_date": "2026-08-06",
+        "report_date": "2026-06-30",
+        "fiscal_year": null,
+        "fiscal_period": null,
+        "primary_document": "jpm-20260630.htm",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026054343/jpm-20260630.htm",
+        "retrieved_at": null,
+        "source_type": "SEC_EDGAR",
+        "raw_content_hash": null,
+        "normalized_content_hash": null,
+        "parser_version": "sec-html-v5",
+        "chunker_version": null,
+        "ingestion_version": "topic3-milestone-b-v1",
+        "document_status": "DISCOVERED",
+        "amendment_of": null,
+        "unknown_reasons": {
+          "fiscal_year": "Not inferred from report date; parser may obtain an explicit iXBRL fact.",
+          "fiscal_period": "Parser may obtain an explicit iXBRL DocumentFiscalPeriodFocus fact."
+        },
+        "response_metadata": {}
+      },
+      "status": "PUBLIC_SOURCE_REQUEST_FAILED",
+      "http_status": null,
+      "error_type": "SECRequestError"
+    },
+    {
+      "ticker": "PG",
+      "cik": "0000080424",
+      "partition": "dev",
+      "status": "BLOCKED_AFTER_PUBLIC_SOURCE_FAILURE",
+      "reason": "SEC_HTTP_None"
+    },
+    {
+      "ticker": "COST",
+      "cik": "0000909832",
+      "partition": "validation",
+      "status": "BLOCKED_AFTER_PUBLIC_SOURCE_FAILURE",
+      "reason": "SEC_HTTP_None"
+    },
+    {
+      "ticker": "HD",
+      "cik": "0000354950",
+      "partition": "heldout",
+      "status": "BLOCKED_AFTER_PUBLIC_SOURCE_FAILURE",
+      "reason": "SEC_HTTP_None"
+    }
+  ],
+  "limits": {
+    "requests_per_second": 1,
+    "retries": 0,
+    "request_timeout_seconds": 10,
+    "documents_max": 4,
+    "bytes_per_document_max": 4194304
+  },
+  "no_ranking_executed": true,
+  "timestamp_utc": "2026-10-26T06:10:17.734019+00:00",
+  "status": "BLOCKED_PUBLIC_SOURCE"
+}

@@ -59,6 +59,72 @@
         }
       ],
       "hash_convention": "raw checkout bytes; Git blobs separately protect historical LF evidence"
+    },
+    {
+      "stage": "D3",
+      "source_commit": "ba9e26294b225eedf8a7c3c7485ed0bf99ae9d3b",
+      "artifacts": [
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_ABLATION_REPORT.md",
+          "sha256": "930ed47eca5f03119fdf2654d2319801af417b14a60312c47e3220a77c6ba002"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_ADAPTIVE_POLICY_REPORT.md",
+          "sha256": "8afd099b141788c933abb07bb6fe6efc09afa9cda60f86706aa885da345005e1"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_ARCHITECTURE_AND_IMPLEMENTATION.md",
+          "sha256": "477a5424de6b27e476a515d992cdcc37adc23eb6edfb17889a2459b6d29788b2"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_BASELINE_COMPARISON.md",
+          "sha256": "5209756ba2a7b3e6eb8fabfe65b62a953d3798654944c4522a387a6b95504ecb"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_COST_AND_RESOURCE_REPORT.md",
+          "sha256": "1a98dab479cb7f256674d4069a8f5ca625f3f06044b41f0a3483148cde48272a"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_DATASET_FREEZE_MANIFEST.md",
+          "sha256": "25244d2fbf9054c0c12242228417d191bbfd6f8f15b6b0fbf447ffa58dfdccab"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_DEV_VALIDATION_DIAGNOSTICS_v1.json",
+          "sha256": "05235390f15d6628cf53e873b2f4e642ad5599167ff3ae7a5350ce361c6d83ba"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_ERROR_ANALYSIS.md",
+          "sha256": "f2ebd55456ebc03d599453ad5c0cd6a0874a54381c421dd0e0e7f695f83c2497"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_EVALUATION_PROTOCOL_HASH_v1.json",
+          "sha256": "9a5ead40266b76df77c55493fe81607cc1841ae2bc66d3e488bfef865c2ecae8"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_EXPERIMENT_PREREGISTRATION.md",
+          "sha256": "f0dfd9af7ab885f9002dfe5d732073fef77f3ad367d697ebad6b7e57fe60cd4c"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_FRESH_EXACT_ROW_FREEZE_v1.json",
+          "sha256": "61420c737c8878ad8974af902788819ffa98e14a348767bd0d76923f92412217"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_PUBLIC_SOURCE_PROBE_v1.json",
+          "sha256": "5b559ff0ce07727457b63d85501c34cafb566e08b71770b5e8ba2ac5f55f48c4"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_PUBLIC_SOURCE_PROBE_v2.json",
+          "sha256": "6a68b22264dd25d6c78e88d84679821cefafd1757b490ad22c177d8d9f147910"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_REVIEW_AND_INTEGRATION_READINESS.md",
+          "sha256": "61334ca3d1a5215d043caa3895968055aa6e597050dba6c898d802d01edd0655"
+        },
+        {
+          "path": "docs/topic3/milestone_d/d3/D3_SCOPE_AUDIT_v1.json",
+          "sha256": "e6c8207a65600719aa9a5f704bfe1a46dcafcdb1440106a438c6ca8e9e7fb61f"
+        }
+      ]
     }
   ]
 }
