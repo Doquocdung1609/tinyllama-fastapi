@@ -14,7 +14,7 @@ from app.financial_query.contracts import Status
 from app.research_qa.real_cells import RealCellRequestV1,answer_from_verified_real_cells
 from app.table_evidence.real_source import RealCellObservationV1,verified_real_cells
 
-POLICY='p6-bm25-verified-cell-expansion/v1'
+POLICY='p8-bm25-verified-cell-expansion/v1'
 INITIAL_BUDGET=5
 CANDIDATE_BUDGET=64
 MAX_EXACT_ROWS=12
@@ -81,18 +81,20 @@ def automatic_real_query(snapshot,question,filters,operation='EXTRACT',use_llm=F
     if re.search(r'\b(?:percentage|percent)[\s\-\u2010-\u2015]*points?\b',lowered):
         return _response('UNSUPPORTED','PERCENTAGE_POINTS_NOT_SUPPORTED',resolution=resolution,timings=timings)
     if re.search(r'\b(?:fair\s+value|carrying\s+(?:amount|value))\b',lowered):
-        return _response('NEEDS_CLARIFICATION','NET_SALES_VALUATION_CONTEXT_UNSUPPORTED',resolution=resolution,timings=timings)
+        return _response('NEEDS_CLARIFICATION','VALUATION_CONTEXT_UNSUPPORTED',resolution=resolution,timings=timings)
     if scope.generation_id!=snapshot.freeze['generation'] or scope.manifest_hash!=snapshot.freeze['manifest_hash']:
         return _response('BLOCKED','PINNED_GENERATION_OR_MANIFEST_MISMATCH',resolution=resolution,timings=timings)
     if len(scope.eligible_filing_ids)!=1 or any(f.form.endswith('/A') for f in catalog.filings if f.filing_id in scope.eligible_filing_ids):
         return _response('NEEDS_CLARIFICATION','SINGLE_UNAMENDED_FILING_REQUIRED',resolution=resolution,timings=timings)
     exact_metrics={m.canonical.casefold() for m in intent.metric_mentions if m.relationship=='EXACT'}
     allowed_units={'USD','MILLIONS'}|({'PERCENT'} if operation=='PERCENT_CHANGE' or intent.comparison_operation=='RELATIVE_CHANGE' else set())
-    if exact_metrics!={'net sales'} or intent.numerical_constraints or any(u not in allowed_units for u in intent.unit_mentions):
+    if len(exact_metrics)!=1 or not exact_metrics<={'net sales','total assets'} or intent.numerical_constraints or any(u not in allowed_units for u in intent.unit_mentions):
         return _response('NEEDS_CLARIFICATION','EXACT_SUPPORTED_METRIC_AND_UNIT_REQUIRED',resolution=resolution,timings=timings)
+    metric=next(iter(exact_metrics))
+    expected_kind,expected_months=('DURATION',3) if metric=='net sales' else ('INSTANT',None)
     periods=scope.requested_periods
-    if len(periods) not in {1,2} or any(p.kind!='DURATION' or p.months!=3 or p.end is None for p in periods):
-        return _response('NEEDS_CLARIFICATION','EXPLICIT_QUARTER_ENDS_REQUIRED',resolution=resolution,timings=timings)
+    if len(periods) not in {1,2} or any(p.kind!=expected_kind or p.months!=expected_months or p.end is None for p in periods):
+        return _response('NEEDS_CLARIFICATION','EXPLICIT_COMPATIBLE_PERIODS_REQUIRED',resolution=resolution,timings=timings)
     ends=tuple(sorted(str(p.end) for p in periods))
     if len(set(ends))!=len(ends):
         return _response('NEEDS_CLARIFICATION','DISTINCT_PERIODS_REQUIRED',resolution=resolution,timings=timings)
@@ -115,7 +117,7 @@ def automatic_real_query(snapshot,question,filters,operation='EXTRACT',use_llm=F
     exact=[]
     for rank,candidate in enumerate(candidates,1):
         parent=FinancialChunk.model_validate_json(candidate.parent_json)
-        if parent.metadata.get('row_label','').strip().casefold()=='net sales':
+        if parent.metadata.get('row_label','').strip().casefold()==metric:
             if parent.metadata.get('cik')!=scope.cik or parent.filing_id not in scope.eligible_filing_ids:
                 raise ValueError('P6_CANDIDATE_ESCAPED_D1_SCOPE')
             exact.append((rank,parent))
@@ -125,8 +127,8 @@ def automatic_real_query(snapshot,question,filters,operation='EXTRACT',use_llm=F
     for rank,parent in exact:
         cells=verified_real_cells(snapshot,parent.chunk_id)
         selected=tuple(c for c in cells if c.cik==scope.cik and c.filing_id in scope.eligible_filing_ids
-            and c.period_kind=='DURATION' and c.period_months==3 and c.period_end in ends
-            and c.row_label.strip().casefold()=='net sales')
+            and c.period_kind==expected_kind and c.period_months==expected_months and c.period_end in ends
+            and c.row_label.strip().casefold()==metric)
         if len(selected)==len(ends) and {c.period_end for c in selected}==set(ends):
             eligible.append((rank,parent,selected))
     timings['source_authentication_and_cell_derivation']=(perf_counter()-t)*1000
@@ -141,7 +143,8 @@ def automatic_real_query(snapshot,question,filters,operation='EXTRACT',use_llm=F
     rank,parent,cells=eligible[0]
     filing=next(f for f in catalog.filings if f.filing_id==parent.filing_id)
     request=RealCellRequestV1(parent_id=parent.chunk_id,cik=scope.cik,accession=filing.accession,
-        table_id=cells[0].table_id,period_ends=ends,period_months=3,operation=operation)
+        table_id=cells[0].table_id,row_label=metric,period_kind=expected_kind,
+        period_ends=ends,period_months=expected_months,operation=operation)
     t=perf_counter();answer=answer_from_verified_real_cells(snapshot,request)
     timings['d4_typed_numeric_verification']=(perf_counter()-t)*1000
     timings['total']=(perf_counter()-t0)*1000
@@ -154,11 +157,14 @@ def automatic_real_query(snapshot,question,filters,operation='EXTRACT',use_llm=F
         reasons=tuple(scope.resolution_reasons))
     issuer=next(i.company_name for i in catalog.issuers if i.cik==scope.cik)
     citations=[{'parent_id':c.parent_id,'payload_hash':c.parent_payload_hash,'filing_id':c.filing_id,
-        'issuer':issuer,'form':filing.form,'report_date':str(filing.report_end) if filing.report_end else None,
+        'issuer':issuer,'form':filing.form,'accession':c.accession,
+        'table_caption':parent.metadata.get('table_title') or parent.metadata.get('statement_title'),
+        'report_date':str(filing.report_end) if filing.report_end else None,
         'financial_period':{'kind':c.period_kind,'start':c.period_start,'end':c.period_end,'months':c.period_months},
         'source_url':c.source_url,'locator':{'structural_path':c.structural_path,'table_id':c.table_id,
                                           'row_index':c.row,'column_index':c.column},
-        'row_label':c.row_label,'extraction_status':'PARTIAL_EXTRACTION' if c.warnings else 'OK',
+        'row_label':c.row_label,'raw_value':c.raw_value,'header_path':list(c.header_path),
+        'extraction_status':'PARTIAL_EXTRACTION' if c.warnings else 'OK',
         'verification_status':c.source_status,'content':f'{c.row_label}: {c.raw_value} ({c.display_unit_header})',
         'warnings':list(c.warnings)} for c in answer.operands]
     trace.extend((f'SELECTED_ORIGINAL_BM25_RANK_{rank}',f'SELECTED_PARENT_{parent.chunk_id}',

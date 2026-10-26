@@ -1,0 +1,19 @@
+{
+  "schema_version": "topic3-p8-execution/v1",
+  "authorization": "TOPIC3_P8_REAL_COVERAGE_AND_INTEGRATION_READINESS_AUTHORIZED",
+  "base_pr": 17,
+  "base_sha": "559b2ebe26746450a863e71d37d8d6793d136d98",
+  "branch": "codex/topic3-p8-real-coverage-integration-readiness",
+  "accepted_branch": "codex/topic3-milestone-b-sec-corpus",
+  "accepted_preflight_sha": "32c4a4834c5f8a0b34ac28c42f960c862dd8077d",
+  "dataset_id": "research-sec-v1",
+  "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "research_policy": "p8-bm25-verified-cell-expansion/v1",
+  "candidate_budget": 64,
+  "consumed_d5_heldout_reused": false,
+  "production_retrieval_defaults_changed": false,
+  "owner_source_or_qdrant_mutated": false,
+  "merge_authorized": false,
+  "final_head_and_ci": "See final Draft PR body after exact-head CI"
+}

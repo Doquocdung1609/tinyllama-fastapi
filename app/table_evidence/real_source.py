@@ -21,7 +21,8 @@ from app.financial_ingestion.schemas import FinancialChunk,FinancialTable,TableC
 from app.table_evidence.identity import digest
 
 MAX_SOURCE_BYTES=4_000_000
-CONCEPTS={'net sales':{'us-gaap:revenues'}}
+CONCEPTS={'net sales':{'us-gaap:revenues'},
+          'total assets':{'us-gaap:assets'}}
 MONTHS={name.casefold():n for n,name in enumerate(calendar.month_name) if name}
 
 

@@ -1,0 +1,5 @@
+# P8 source-bound numerical QA
+
+`python -m scripts.p8_real_qa_probe --root <isolated-research-snapshot> --output <p8_real_qa_results.json>` ran 13 development questions without supplying parent IDs or expected values to selection. Seven supported real answers: four single-date PG/HD total-asset values, two two-date asset comparisons, and the original PG net-sales control. Six questions safely returned no number: HD net sales, COST assets, absent HD period, contradictory CIK, wrong unit and fair-value qualifier.
+
+Each supported response carries exact Decimal-derived result strings, source-cell records with raw value, effective value, fact name, row/column, period, unit, multiplier, raw SHA256, generation and manifest, plus SEC URL and structural locator. Comparison is `ordered source[0], source[1]`, never a fabricated arithmetic change. PG/HD assets use `INSTANT`; P&G sales uses `DURATION`. The successful count is a small development probe, not statistical financial-answer accuracy. No answer is accepted from an HTTP 200 abstention.

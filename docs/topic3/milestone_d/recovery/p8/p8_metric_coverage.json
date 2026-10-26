@@ -1,0 +1,14 @@
+{
+  "schema_version": "topic3-p8-metric-coverage/v1",
+  "automatic_real_supported": [
+    {"issuer": "PG", "metric": "net sales", "period_kind": "DURATION", "source_parent": "fin_d411518414b61a2eb637d96721c5aaed"},
+    {"issuer": "PG", "metric": "total assets", "period_kind": "INSTANT", "source_parent": "fin_d672c7165a5bb6a66c21bc904d480810"},
+    {"issuer": "HD", "metric": "total assets", "period_kind": "INSTANT", "source_parent": "fin_9fadb8b8f3b78592782f972a63a9e7ed"}
+  ],
+  "development_questions_supported": 7,
+  "development_questions_abstained": 6,
+  "unsupported_targets": ["HD net sales", "COST revenue/assets", "cash flow", "EPS basic/diluted", "segment values", "carrying vs fair value"],
+  "heldout_used": false,
+  "source_details": "p8_source_cases_after.json",
+  "automatic_details": "p8_real_qa_results.json"
+}
