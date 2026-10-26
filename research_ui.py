@@ -16,9 +16,12 @@ if not token:token=st.text_input('Research API token',type='password')
 try:
     health=requests.get(url+'/research/v1/health',timeout=3).json()
     if health.get('source_type')=='SYNTHETIC_DEMO':st.warning('SYNTHETIC DEMO — all values are fabricated fixtures, not SEC observations.')
-    else:st.info('Official SEC research corpus. Numerical answers abstain when D2 source context is unsupported.')
+    else:st.info('Official SEC research corpus. Automatic answers require authenticated source cells; unsupported evidence abstains.')
 except requests.RequestException:st.error('Research API unavailable.');st.stop()
-question=st.text_area('Financial question',value='CIK 202 net sales 10-K FY2025',max_chars=2000)
+workflow=st.selectbox('Research workflow',['research','automatic_real'],
+    help='automatic_real is a bounded source-verified BM25 cell experiment; research preserves the original D3 path.')
+question=st.text_area('Financial question',value=("What were P&G's net sales for the three months ended September 30, 2026?"
+    if workflow=='automatic_real' else 'CIK 202 net sales 10-K FY2025'),max_chars=2000)
 arm=st.selectbox('Retrieval arm',['B','D','F','R','T','A','AT'])
 operation=st.selectbox('Operation',['EXTRACT','COMPARE','ABS_CHANGE','PERCENT_CHANGE','PERCENTAGE_POINTS'])
 with st.expander('Explicit scope filters'):
@@ -27,15 +30,26 @@ if st.button('Research search',type='primary'):
     filters={k:v for k,v in {'cik':cik.strip(),'form_type':form}.items() if v}
     try:
         response=requests.post(url+'/research/v1/query',headers={'Authorization':'Bearer '+token},
-            json={'question':question,'filters':filters,'arm':arm,'operation':operation},timeout=35)
+            json={'question':question,'filters':filters,'arm':arm,'operation':operation,'workflow':workflow},timeout=35)
         if response.status_code!=200:st.error(f'Research request failed ({response.status_code}).');st.stop()
         data=response.json();st.write('Retrieval:',data['retrieval_status'],'—',data['effective_mode'])
-        st.write('Answer:',data['answer']['status']);st.json(data['answer'])
+        st.write('Answer:',data['answer']['status'])
+        if data['answer']['status']=='SUPPORTED' and data.get('automatic_workflow_version'):
+            values=data['answer'].get('result_values',[]);unit=data['answer'].get('result_unit','')
+            st.success('Verified SEC source cells — '+', '.join(values)+' '+unit)
+            st.write('Calculation:',data['answer'].get('formula',''))
+            st.caption('D1 metadata scope remains '+data['column_refinement']['metadata_scope_status']+
+                       '; the requested columns were verified against source bytes.')
         if data['answer']['reasons']:st.warning(', '.join(data['answer']['reasons']))
+        with st.expander('Technical answer details'):
+            st.json(data['answer'])
         for item in data['evidence']:
             with st.expander(f"{item['issuer']} | {item['form']} | {item['report_date']} | {item['row_label'] or 'Text evidence'}"):
                 if item['extraction_status']=='PARTIAL_EXTRACTION':st.warning('Partial extraction — evidence may be incomplete.')
                 st.text(item['content']);st.json(item['locator'])
+                if item.get('verification_status'):st.caption('Verification: '+item['verification_status'])
+                if item.get('financial_period'):st.write('Financial period:',item['financial_period'])
+                for warning in item.get('warnings',[]):st.warning(warning)
                 if item['source_url'].startswith('https://www.sec.gov/Archives/'):
                     st.link_button('Open official SEC source',item['source_url'])
                 else:st.caption('Synthetic source locator; no real SEC document is claimed.')

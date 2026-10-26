@@ -1,0 +1,9 @@
+# P6 HTTP and Streamlit E2E
+
+The opt-in research API was served by local Uvicorn on `127.0.0.1:18088`; Streamlit was served on `127.0.0.1:18502`. Local browser automation used installed Chrome/Chromium through Playwright, selected `automatic_real`, entered natural P&G questions and clicked **Research search**. API and UI were restarted and the exact question was successfully rerun against the same generation. No accepted application route was changed.
+
+Actual HTTP: exact and two-period questions returned 200 / `SUPPORTED` with source cells and values; a missing 2024 comparative cell returned 200 / `INSUFFICIENT_EVIDENCE`; contradictory CIK returned 200 / `NEEDS_CLARIFICATION`; unavailable D arm returned no value; missing bearer token returned 401; an overlong question returned 422. Sanitized responses and measured wall time are in `p6_http_evidence.json`. The local token is absent from Git.
+
+Browser: exact value and comparison values were visibly rendered in the research page. The expanded evidence showed issuer, 10-Q, report end, partial-extraction warning, `VERIFIED_SOURCE_CELL`, period and structural locator. Clicking **Open official SEC source** opened the expected SEC URL in a new browser tab. The browser did **not** show the target row on that tab (`source_row_visible=false`), so exact-cell browser landing remains unverified; source row correspondence is established independently by authenticated bytes and the SEC page read. `p6_ui_evidence.json` and `p6_ui_evidence.png` record the UI run. Headless browser latency was approximately 3.4–3.9 s for supported questions; it includes local UI and HTTP transport.
+
+The P6 path is selected explicitly by the UI/API `workflow` field. `workflow=research` retains the original research route. Synthetic Demo mode is labeled synthetic and does not claim automatic real SEC answers. No live legacy Chat/RAG UI smoke was repeated here; core regression covers compatibility.

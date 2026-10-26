@@ -1,0 +1,7 @@
+# P6 scientific limitations
+
+P6 proves a narrow real SEC automatic question-to-answer workflow on one P&G 10-Q income-statement row and its comparative quarter. It does not establish financial-answer accuracy across issuers, forms, table families or phrasing. The P&G source is a development case already inspected during recovery; it is **not a held-out test**. The consumed D5 HD held-out is unchanged and was not used for tuning or relabeling. No new held-out study, human adjudication, B/D/F comparison or adaptive-superiority claim exists.
+
+The 64-parent expansion is an exploratory policy selected after seeing this development ranking. It must be frozen before an independently sourced issuer-held-out evaluation; its four successful examples cannot be generalized. The actual D1 catalog still lacks typed column metadata, so D1 remains `NEEDS_CLARIFICATION`. P6's source-backed cell refinement resolves only the selected observations. Partial extraction of the filing remains a warning. Source byte/locator correctness is not a certification of every financial statement or generated answer.
+
+Dense/RRF remain unavailable without compatible model identity and vectors. UI citation opens the correct SEC document, but the headless browser did not show an exact row landing. No production security, multi-node scalability, comprehensive SEC completeness or investment-decision suitability is claimed. Accepted Milestone C BM25 default and historical scientific results are unchanged.

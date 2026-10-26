@@ -1,0 +1,24 @@
+{
+  "schema_version": "topic3-p6-execution/v1",
+  "authorization": "TOPIC3_P6_REAL_SEC_AUTOMATIC_E2E_RECOVERY_AUTHORIZED",
+  "branch": "codex/topic3-p6-real-sec-automatic-qa",
+  "base_pr": 15,
+  "base_sha": "affa7979547c894dd894c827df50b3316528732a",
+  "policy": "p6-bm25-verified-cell-expansion/v1",
+  "candidate_budget": 64,
+  "initial_rank_budget": 5,
+  "dataset_id": "research-sec-v1",
+  "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "real_source": {
+    "cik": "0000080424",
+    "accession": "0000080424-26-000256",
+    "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+    "source_registry": "docs/topic3/milestone_d/d3/D3_FRESH_EXACT_ROW_FREEZE_v1.json"
+  },
+  "consumed_d5_heldout_reused": false,
+  "production_defaults_changed": false,
+  "owner_corpus_or_qdrant_mutated": false,
+  "merge_authorized": false,
+  "final_head_and_ci": "Record in final Draft PR description after GitHub verification"
+}

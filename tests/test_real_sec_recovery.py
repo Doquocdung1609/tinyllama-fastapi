@@ -95,3 +95,16 @@ def test_verified_cell_arithmetic_requires_exact_source_period(monkeypatch):
     missing=answer_from_verified_real_cells(None,RealCellRequestV1(**{**base,'period_ends':('2024-09-30','2026-09-30')},operation='COMPARE'))
     assert missing.status=='INSUFFICIENT_EVIDENCE' and not missing.operands
     with pytest.raises(ValueError):RealCellRequestV1(**{**base,'period_ends':('2026-09-30','2025-09-30')},operation='COMPARE')
+
+
+def test_negative_prior_value_never_produces_percent_growth(monkeypatch):
+    raw,filing,parent,table,cell=synthetic()
+    current=derive_cell(parent,table,cell,parse_resources(raw),raw_hash=sha256(raw).hexdigest(),generation='a'*64,manifest_hash='b'*64)
+    prior=current.model_copy(update={'period_start':'2025-07-01','period_end':'2025-09-30',
+        'value':Decimal('-125.50'),'effective_value':Decimal('-125500000'),'raw_value':'(125.50)','column':current.column+1})
+    monkeypatch.setattr('app.research_qa.real_cells.verified_real_cells',lambda snapshot,parent_id:(prior,current))
+    request=RealCellRequestV1(parent_id=parent.chunk_id,cik=current.cik,accession=current.accession,
+        table_id=current.table_id,period_ends=('2025-09-30','2026-09-30'),operation='PERCENT_CHANGE')
+    result=answer_from_verified_real_cells(None,request)
+    assert result.status=='INSUFFICIENT_EVIDENCE' and result.reason=='NONPOSITIVE_PERCENT_CHANGE_BASE'
+    assert not result.operands and not result.result_values

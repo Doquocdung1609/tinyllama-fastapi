@@ -38,10 +38,20 @@ class ResearchBackend:
     source_type='OFFICIAL_SEC_RESEARCH_DIAGNOSTIC'
     def __init__(self,root):
         self.adapter=FrozenResearchSnapshot(root);self.catalog=self.adapter.catalog;self.context=None
+        self.p6_catalog=None
 
     def evidence_lookup(self,hit):return None
 
-    def query(self,question,filters,arm='B',operation='EXTRACT',top_k=5,use_llm=False):
+    def query(self,question,filters,arm='B',operation='EXTRACT',top_k=5,use_llm=False,workflow='research'):
+        if workflow=='automatic_real':
+            if self.context is not None:raise ValueError('AUTOMATIC_REAL_REQUIRES_OFFICIAL_SEC_SNAPSHOT')
+            from app.research_qa.automatic_real import automatic_real_query
+            if self.p6_catalog is None:
+                from app.research_qa.source_alias import verified_alias_catalog
+                with self.adapter.lock:
+                    if self.p6_catalog is None:self.p6_catalog=verified_alias_catalog(self.adapter)
+            return automatic_real_query(self.adapter,question,filters,operation,use_llm,arm,self.p6_catalog)
+        if workflow!='research':raise ValueError('UNKNOWN_RESEARCH_WORKFLOW')
         r=retrieve_financial_query(question,filters,self.catalog,self.adapter,arm,policy=PolicyV1(top_k=top_k),evidence_lookup=self.evidence_lookup)
         def stop(status,reason):return AnswerResultV1(status=status,reasons=(reason,))
         citations=[]

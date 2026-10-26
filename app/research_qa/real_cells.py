@@ -3,10 +3,14 @@
 This deliberately requires explicit parent and period identities. It cannot
 promote an uncertain D1 scope or an unverified D2 cell into a financial answer.
 """
-from decimal import Decimal, localcontext, ROUND_HALF_EVEN
+from decimal import Decimal
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from app.table_evidence.real_source import RealCellObservationV1, verified_real_cells
+from app.table_evidence.contracts import PeriodContextV1
+from app.table_evidence.identity import digest
+from app.research_qa.contracts import OperandV1
+from app.research_qa.numeric import calculate
 
 
 class RealCellRequestV1(BaseModel):
@@ -79,19 +83,21 @@ def answer_from_verified_real_cells(snapshot, request: RealCellRequestV1):
         if (a.filing_id, a.parent_id, a.table_id, a.row, a.fact_name, a.unit, a.multiplier) != (
             b.filing_id, b.parent_id, b.table_id, b.row, b.fact_name, b.unit, b.multiplier):
             return RealCellAnswerV1(status='CONFLICTED_EVIDENCE', reason='INCOMPATIBLE_SOURCE_OPERANDS', **common)
-    values = [o.effective_value for o in operands]
-    with localcontext() as context:
-        context.prec = 28
-        context.rounding = ROUND_HALF_EVEN
-        if request.operation == 'EXTRACT':
-            result, unit, formula = (values[0],), 'USD', 'source[0]'
-        elif request.operation == 'COMPARE':
-            result, unit, formula = tuple(values), 'USD', 'ordered source[0], source[1]'
-        elif request.operation == 'ABS_CHANGE':
-            result, unit, formula = (values[1]-values[0],), 'USD', 'source[1] - source[0]'
-        else:
-            if values[0] <= 0:
-                return RealCellAnswerV1(status='INSUFFICIENT_EVIDENCE', reason='NONPOSITIVE_PERCENT_CHANGE_BASE', **common)
-            result, unit, formula = ((values[1]-values[0])/values[0]*Decimal(100),), 'PERCENT', '(source[1]-source[0])/source[0]*100'
+    typed=[]
+    for cell in operands:
+        typed.append(OperandV1(cell_id='cell_'+digest(cell.model_dump(mode='json')),
+            parent_id=cell.parent_id,parent_payload_hash=cell.parent_payload_hash,
+            raw_value=cell.raw_value,displayed_value=cell.value,effective_value=cell.effective_value,
+            unit=cell.unit,multiplier=cell.multiplier,
+            sign_representation='MINUS' if cell.value<0 else 'NONE',
+            period=PeriodContextV1(kind=cell.period_kind,end=cell.period_end,months=cell.period_months,
+                                   raw_labels=cell.header_path),
+            measurement_basis='BASE_AMOUNT',entity_basis='UNDIMENSIONED_ISSUER',
+            accounting_basis='GAAP' if cell.fact_name.casefold().startswith('us-gaap:') else 'NO_EXPLICIT_QUALIFIER',
+            header_path=cell.header_path,table_id=cell.table_id,row=cell.row,column=cell.column,
+            source_url=cell.source_url,structural_path=cell.structural_path,filing_id=cell.filing_id))
+    try:result,unit,formula=calculate(request.operation,typed)
+    except ValueError as exc:
+        return RealCellAnswerV1(status='INSUFFICIENT_EVIDENCE',reason=str(exc),**common)
     return RealCellAnswerV1(status='SUPPORTED', operation=request.operation, result_values=result,
                             result_unit=unit, operands=tuple(operands), formula=formula)

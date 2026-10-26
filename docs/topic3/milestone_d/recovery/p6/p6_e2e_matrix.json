@@ -1,0 +1,25 @@
+{
+  "schema_version": "topic3-p6-e2e-matrix/v1",
+  "statuses": {
+    "natural_question_scope": "LIVE_VERIFIED",
+    "automatic_parent_discovery_rank_47_budget_64": "LIVE_VERIFIED",
+    "real_source_bytes_and_cell": "LIVE_VERIFIED",
+    "d4_typed_decimal_calculation": "LIVE_VERIFIED",
+    "authenticated_http_exact_and_comparison": "LIVE_VERIFIED",
+    "streamlit_exact_and_comparison": "LIVE_VERIFIED",
+    "sec_url_click": "LIVE_VERIFIED",
+    "sec_target_row_visible_after_click": "NOT_VERIFIED",
+    "missing_period_abstention": "LIVE_VERIFIED",
+    "contradictory_filter_refusal": "LIVE_VERIFIED",
+    "api_unauthorized_rejection": "LIVE_VERIFIED",
+    "restart_same_generation": "LIVE_VERIFIED",
+    "isolated_read_publication_concurrency": "SYNTHETIC_FIXTURE_VERIFIED",
+    "dense_rrf_compatibility": "BLOCKED_NO_VALID_RESEARCH_VECTORS",
+    "new_issuer_heldout_quality": "NOT_TESTED",
+    "legacy_chat_rag_live_ui": "NOT_TESTED"
+  },
+  "source_evidence": "p6_real_sec_evidence.json",
+  "http_evidence": "p6_http_evidence.json",
+  "browser_evidence": "p6_ui_evidence.json",
+  "performance_evidence": "p6_performance.json"
+}

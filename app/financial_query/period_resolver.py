@@ -33,7 +33,7 @@ def extract_periods(text: str):
                                 quarter=int(m['q']) if m['q'] else None, raw=m.group())); consume(m)
     for m in re.finditer(r"\bcalendar (?:year )?(?P<y>[0-9]{4})\b", text):
         periods.append(PeriodV1(kind="CALENDAR_YEAR", year=int(m['y']), raw=m.group())); consume(m)
-    for m in re.finditer(rf"\b(?P<kind>year ended|quarter ended|as of) (?P<date>{DATE_PATTERN})\b", text):
+    for m in re.finditer(rf"\b(?P<kind>year ended|quarter ended|three months ended|as of) (?P<date>{DATE_PATTERN})\b", text):
         periods.append(PeriodV1(kind="INSTANT" if m['kind'] == 'as of' else "DURATION", end=parse_date(m['date']),
              months=None if m['kind'] == 'as of' else 12 if m['kind'] == 'year ended' else 3, raw=m.group())); consume(m)
     if re.search(r"\b(last year|this year|last quarter|latest|recent|previous year|yesterday|today)\b", text):
