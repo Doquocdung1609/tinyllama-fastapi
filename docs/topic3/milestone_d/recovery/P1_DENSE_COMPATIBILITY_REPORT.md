@@ -1,0 +1,5 @@
+# P1 Dense compatibility
+
+Local Ollama executable and a `nomic-embed-text:latest` model manifest exist. The model layer is 274,290,656 bytes; its local manifest config digest is `sha256:31df23ea7daa448f9ccdbbcecce6c14689c8552222b80defd3830707c0139d4f`. The accepted C embedding contract in `app/financial_index/service.py` requires 768 dimensions, `search_document: ` and `search_query: ` prefixes, and 6,000-character document truncation. A local manifest file is not proof of a live Ollama identity handshake or accepted vector-generation compatibility.
+
+`http://127.0.0.1:11434/api/tags` was unreachable at preflight. Windows reported approximately 8.2 GB visible RAM and only 0.8–1.1 GB free across checks. No server, model, Qdrant collection or vector build was started under that headroom. Existing accepted collections were untouched. Consequently D and F arms were **not eligible to score**, and no failure-inclusive zeros are presented as ranking quality. A future bounded experiment must first record the live model digest/dimension/prefix contract and build an isolated generation, never relabel existing vectors.

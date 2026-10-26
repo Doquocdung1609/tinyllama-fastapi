@@ -1,0 +1,52 @@
+{
+  "schema_version": "topic3-recovery-test-results/v1",
+  "base_sha": "0c6f98e6217e8c7db3162cedd5c0ae827f36e4c1",
+  "python": "3.13.2",
+  "os": "Windows",
+  "runs": [
+    {
+      "command": "python -m pytest -q tests/test_real_sec_recovery.py",
+      "environment": "ambient",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "duration_seconds": 0.46
+    },
+    {
+      "command": "python -m pytest -q",
+      "environment": "ambient; SCORE_THRESHOLD default 0.7",
+      "passed": 557,
+      "failed": 1,
+      "skipped": 3,
+      "warnings": 1,
+      "duration_seconds": 39.13,
+      "failure": "tests/test_models.py::test_rag_defaults expects 0.55; accepted configuration default is 0.7"
+    },
+    {
+      "command": "$env:SCORE_THRESHOLD='0.55'; python -m pytest -q",
+      "environment": "explicit SCORE_THRESHOLD=0.55",
+      "passed": 558,
+      "failed": 0,
+      "skipped": 3,
+      "warnings": 1,
+      "duration_seconds": 24.49
+    },
+    {
+      "command": "$env:SCORE_THRESHOLD='0.55'; python -m pytest -q -m 'not integration'",
+      "environment": "explicit SCORE_THRESHOLD=0.55; run during visible-unit repair",
+      "passed": 557,
+      "failed": 0,
+      "deselected": 3,
+      "warnings": 1,
+      "duration_seconds": 25.82
+    },
+    {
+      "command": "python -m compileall -q app scripts",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0
+    }
+  ]
+}
