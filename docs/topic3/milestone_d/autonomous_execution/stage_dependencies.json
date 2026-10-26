@@ -1,0 +1,11 @@
+{
+  "schema_version": "topic3-dependencies/v1",
+  "events": [
+    {
+      "D2": "14014d2919a55f9cb087deaf120a4dc5d8498d1e",
+      "D3_base": "PIN_FINAL_D2_AFTER_CI",
+      "D4_base": "PIN_FINAL_D3_AFTER_CI",
+      "D5_base": "PIN_FINAL_D4_AFTER_CI"
+    }
+  ]
+}
