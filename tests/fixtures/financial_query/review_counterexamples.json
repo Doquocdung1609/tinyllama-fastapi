@@ -1,0 +1,17 @@
+[
+  {"id":"F01-cik-decimal","question":"CIK 202.9 revenue 10-K","expected_status":"INVALID_INPUT"},
+  {"id":"F01-cik-path","question":"CIK 202/101 revenue 10-K","expected_status":"INVALID_INPUT"},
+  {"id":"F02-unsupported-form","question":"Beta revenue 20-F","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F02-malformed-amendment","question":"Beta revenue 10-k/ab","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F02-malformed-quarter-form","question":"Beta revenue 10-q2","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F03-invalid-quarter","question":"Beta revenue 10-K q5 FY2025","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F03-compact-fiscal","question":"Beta revenue 10-K fy2025q2","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F03-bare-upper-year","question":"Beta revenue 10-K 2200","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F05-currency-scale-order","question":"Beta revenue 10-K 125.50 USD million","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F05-conflicting-unit","question":"Beta revenue 10-K USD 12%","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F06-status-priority","question":"Beta revenue 10-K","filters":{"form_type":"10-Q","fiscal_year":2025},"expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F02-form-dot-suffix","question":"Beta revenue 10-k.a","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F02-form-underscore-suffix","question":"Beta revenue 10-k_b","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F03-fiscal-decimal-suffix","question":"Beta revenue 10-K fy2025.1","expected_status":"NEEDS_CLARIFICATION"},
+  {"id":"F02-accession-inside-word","question":"revenue prefix0000000202-25-000001","expected_status":"NEEDS_CLARIFICATION"}
+]
