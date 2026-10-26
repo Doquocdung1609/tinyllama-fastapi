@@ -1,0 +1,122 @@
+{
+  "schema_version": "topic3-p7-semantic-development/v1",
+  "heldout_used": false,
+  "cases": [
+    {
+      "case_id": "wrong_issuer",
+      "question": "What were HD net sales for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "failure_code": "NO_VERIFIED_CELL_WITHIN_CANDIDATE_BUDGET"
+    },
+    {
+      "case_id": "cik_conflict",
+      "question": "What were P&G's net sales for the three months ended September 30, 2026?",
+      "filters": {
+        "cik": "0000354950"
+      },
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "D1_NEEDS_CLARIFICATION"
+    },
+    {
+      "case_id": "wrong_year",
+      "question": "What were P&G's net sales for the three months ended September 30, 2024?",
+      "filters": {},
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "failure_code": "NO_VERIFIED_CELL_WITHIN_CANDIDATE_BUDGET"
+    },
+    {
+      "case_id": "wrong_quarter",
+      "question": "What were P&G's net sales for the three months ended June 30, 2026?",
+      "filters": {},
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "failure_code": "NO_VERIFIED_CELL_WITHIN_CANDIDATE_BUDGET"
+    },
+    {
+      "case_id": "instant_not_duration",
+      "question": "What were P&G's net sales as of September 30, 2026?",
+      "filters": {},
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "EXPLICIT_QUARTER_ENDS_REQUIRED"
+    },
+    {
+      "case_id": "prior_comparative",
+      "question": "What were P&G's net sales for the three months ended September 30, 2025?",
+      "filters": {},
+      "answer_status": "SUPPORTED",
+      "values": [
+        "22386000000"
+      ],
+      "failure_code": null
+    },
+    {
+      "case_id": "wrong_multiplier",
+      "question": "What were P&G's net sales in thousands for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "EXACT_SUPPORTED_METRIC_AND_UNIT_REQUIRED"
+    },
+    {
+      "case_id": "negative_requested",
+      "question": "Were P&G's net sales negative (125.50) for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "EXACT_SUPPORTED_METRIC_AND_UNIT_REQUIRED"
+    },
+    {
+      "case_id": "basic_eps",
+      "question": "What were P&G's basic earnings per share for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "D1_NEEDS_CLARIFICATION"
+    },
+    {
+      "case_id": "diluted_eps",
+      "question": "What were P&G's diluted earnings per share for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "D1_NEEDS_CLARIFICATION"
+    },
+    {
+      "case_id": "beauty_segment",
+      "question": "What were P&G's Beauty segment net sales for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "D1_NEEDS_CLARIFICATION"
+    },
+    {
+      "case_id": "fair_value",
+      "question": "What were P&G's net sales fair value for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "NET_SALES_VALUATION_CONTEXT_UNSUPPORTED"
+    },
+    {
+      "case_id": "amended",
+      "question": "What were P&G's net sales in amended 10-Q/A for the three months ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "failure_code": "D1_NO_ELIGIBLE_EVIDENCE"
+    },
+    {
+      "case_id": "percentage_points",
+      "question": "What was the percentage-point change in P&G net sales from the quarter ended September 30, 2025 to the quarter ended September 30, 2026?",
+      "filters": {},
+      "answer_status": "UNSUPPORTED_OPERATION",
+      "values": [],
+      "failure_code": "PERCENTAGE_POINTS_NOT_SUPPORTED"
+    }
+  ]
+}

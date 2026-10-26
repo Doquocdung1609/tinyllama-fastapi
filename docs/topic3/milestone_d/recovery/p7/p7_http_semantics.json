@@ -1,0 +1,43 @@
+{
+  "schema_version": "topic3-p7-http-semantics/v1",
+  "cases": [
+    {
+      "case_id": "exact",
+      "http_status": 200,
+      "answer_status": "SUPPORTED",
+      "values": [
+        "23276000000"
+      ],
+      "failure_code": null
+    },
+    {
+      "case_id": "fair_value",
+      "http_status": 200,
+      "answer_status": "NEEDS_CLARIFICATION",
+      "values": [],
+      "failure_code": "NET_SALES_VALUATION_CONTEXT_UNSUPPORTED"
+    },
+    {
+      "case_id": "percentage_points",
+      "http_status": 200,
+      "answer_status": "UNSUPPORTED_OPERATION",
+      "values": [],
+      "failure_code": "PERCENTAGE_POINTS_NOT_SUPPORTED"
+    },
+    {
+      "case_id": "dense_unavailable",
+      "http_status": 200,
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "failure_code": "P6_REQUIRES_VALID_BM25_CHANNEL"
+    },
+    {
+      "case_id": "ollama_not_enabled",
+      "http_status": 200,
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "failure_code": "LLM_NOT_AUTHORIZED_FOR_SOURCE_SELECTION"
+    }
+  ],
+  "token_recorded": false
+}

@@ -1,0 +1,5 @@
+# P7 SEC citation/navigation
+
+P6 cites the exact source URL authenticated against the committed filing registry and supplies table ID, row/column, structural path, row label, financial period and original cell text. No stable SEC fragment anchor matching that physical row was authenticated. P7 therefore added visible guidance: the link opens the filing and the user may need to locate the row using the displayed evidence. No fabricated `#fragment` was added.
+
+Headless Chrome clicked the real Streamlit link (`node scripts/p7_browser_navigation.cjs`). `p7_browser_evidence.json` distinguishes: correct filing URL opened **true**; manual locator guidance visible **true**; target table visible in destination browser **false**; exact row visible **false**; browser-confirmed exact cell **false**. The SEC popup had 2,935 text characters in that run; its content did not establish target-table visibility. Source-byte and physical-cell verification are independently recorded in P0/P7 evidence. A URL match alone is not an exact-cell browser landing test.

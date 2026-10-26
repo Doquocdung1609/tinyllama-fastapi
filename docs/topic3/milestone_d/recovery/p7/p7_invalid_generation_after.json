@@ -1,0 +1,12 @@
+{
+  "schema_version": "topic3-p7-invalid-generation/v1",
+  "clone_only": true,
+  "original_state": "READY",
+  "invalid_state": "FAILED",
+  "observed": {
+    "http_status": 409,
+    "answer_status": null,
+    "values": [],
+    "detail": "RESEARCH_SOURCE_OR_SCOPE_VALIDATION_FAILED"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "topic3-p7-invalid-generation/v1",
+  "clone_only": true,
+  "original_state": "READY",
+  "invalid_state": "FAILED",
+  "observed": {
+    "http_status": 200,
+    "answer_status": "SUPPORTED",
+    "values": [
+      "23276000000"
+    ],
+    "detail": null
+  }
+}

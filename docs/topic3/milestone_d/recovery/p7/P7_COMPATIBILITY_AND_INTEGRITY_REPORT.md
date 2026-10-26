@@ -1,0 +1,5 @@
+# P7 compatibility and integrity
+
+Base SHA `ac73de35fdf6047667adaab16780f35b29f4c6a0`; accepted integration branch at preflight `32c4a4834c5f8a0b34ac28c42f960c862dd8077d`, origin/main `ceaa8acfcfaea8056e45b859a0fc44d6381fb22a`. PRs #11–#16 were open/Draft/unmerged. P7 adds a separate stacked research branch. Only `app/research_qa/automatic_real.py`, `app/research_retrieval/snapshot.py`, `app/table_evidence/real_source.py`, `research_ui.py`, P7 tests/scripts/reports and two P6 test additions change relative to P6.
+
+No accepted B/C/D1 scientific artifact, D5 heldout or prior frozen experiment blob is in the diff. The source clone remapped paths; the original PG registry SHA256 was checked before mutation, and tamper scripts refused any root lacking the explicit P7 clone name. No accepted SEC or Qdrant storage was written. The original `workflow=research`, Financial Search and legacy Chat/RAG code paths remain unchanged. Python full suite and CI are reported separately; this is not a production-security certification.

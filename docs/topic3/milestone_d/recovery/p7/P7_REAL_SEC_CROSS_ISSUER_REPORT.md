@@ -1,0 +1,7 @@
+# P7 real SEC development coverage
+
+The three retained official filing groups use registry hashes PG `30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53`, HD `3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1`, and COST `8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2`. No D5 heldout query was accessed. `python -m scripts.p7_cross_issuer_probe --root <clone> --output <p7_real_source_evidence.json>` tested natural questions and four row families per issuer.
+
+PG 10-Q accession `0000080424-26-000256` remains the **only supported real numerical family**: NET SALES in parent `fin_d411518414b61a2eb637d96721c5aaed`, table `table_24f0cc566ca5c5871edfcdb7`, row 3, columns 4/10, 2026/2025 quarters, USD millions, source-bound values 23,276,000,000 and 22,386,000,000 USD. The 2026 natural query selects this parent at original BM25 rank 47. Citation: `https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm` plus structural locator in the machine evidence.
+
+HD's quarter net-sales question returned `NO_VERIFIED_CELL_WITHIN_CANDIDATE_BUDGET`; COST's 12-week question required clarification because P6's quarter-month contract cannot verify 12-week duration. Other attempted row families produced no supported cell. These are development/verification examples, not issuer-separated heldout accuracy. We did not expand the P6 concept map or force parser compatibility to produce extra successes.

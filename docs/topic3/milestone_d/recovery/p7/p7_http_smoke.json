@@ -1,0 +1,109 @@
+{
+  "schema_version": "topic3-p6-http/v1",
+  "health": {
+    "status": "ready",
+    "interface_version": "financial-research-api/v1",
+    "source_type": "OFFICIAL_SEC_RESEARCH_DIAGNOSTIC"
+  },
+  "cases": [
+    {
+      "case_id": "exact",
+      "http_status": 200,
+      "wall_ms": 2716.556,
+      "retrieval_status": "OK",
+      "answer_status": "SUPPORTED",
+      "result_values": [
+        "23276000000"
+      ],
+      "failure_code": null,
+      "evidence_count": 1,
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm"
+      ],
+      "locators": [
+        {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 3,
+          "column_index": 4
+        }
+      ]
+    },
+    {
+      "case_id": "comparison",
+      "http_status": 200,
+      "wall_ms": 4300.247,
+      "retrieval_status": "OK",
+      "answer_status": "SUPPORTED",
+      "result_values": [
+        "22386000000",
+        "23276000000"
+      ],
+      "failure_code": null,
+      "evidence_count": 2,
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+        "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm"
+      ],
+      "locators": [
+        {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[7]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 3,
+          "column_index": 10
+        },
+        {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 3,
+          "column_index": 4
+        }
+      ]
+    },
+    {
+      "case_id": "missing_comparative",
+      "http_status": 200,
+      "wall_ms": 3447.465,
+      "retrieval_status": "NO_ELIGIBLE_EVIDENCE",
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "result_values": [],
+      "failure_code": "NO_VERIFIED_CELL_WITHIN_CANDIDATE_BUDGET",
+      "evidence_count": 0,
+      "source_urls": [],
+      "locators": []
+    },
+    {
+      "case_id": "conflicting_cik",
+      "http_status": 200,
+      "wall_ms": 3.321,
+      "retrieval_status": "NEEDS_CLARIFICATION",
+      "answer_status": "NEEDS_CLARIFICATION",
+      "result_values": [],
+      "failure_code": "D1_NEEDS_CLARIFICATION",
+      "evidence_count": 0,
+      "source_urls": [],
+      "locators": []
+    },
+    {
+      "case_id": "dense_unavailable",
+      "http_status": 200,
+      "wall_ms": 23.667,
+      "retrieval_status": "BLOCKED",
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "result_values": [],
+      "failure_code": "P6_REQUIRES_VALID_BM25_CHANNEL",
+      "evidence_count": 0,
+      "source_urls": [],
+      "locators": []
+    },
+    {
+      "case_id": "unauthorized",
+      "http_status": 401
+    },
+    {
+      "case_id": "overlong_question",
+      "http_status": 422
+    }
+  ],
+  "token_recorded": false
+}

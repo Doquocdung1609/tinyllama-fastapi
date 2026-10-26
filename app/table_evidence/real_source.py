@@ -194,6 +194,12 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         footnotes=tuple(table.footnotes),warnings=('FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE',) if m.get('document_status')=='PARTIAL_EXTRACTION' else ())
 
 
+def validate_frozen_parent_membership(frozen:dict,payload:dict):
+    """A member cannot borrow a verified parent from a different filing."""
+    if frozen.get('filing_id')!=payload.get('filing_id'):
+        raise ValueError('FROZEN_PARENT_FILING_ID_MISMATCH')
+
+
 def verified_real_cells(snapshot,parent_id:str):
     """Authenticate complete owned SEC source and derive supported cells in one parent.
 
@@ -211,6 +217,7 @@ def verified_real_cells(snapshot,parent_id:str):
                        (parent_id,freeze['generation'])).fetchone()
     if row is None:raise ValueError('PARENT_NOT_IN_PINNED_GENERATION')
     frozen=json.loads(row['source']);payload=json.loads(row['payload'])
+    validate_frozen_parent_membership(frozen,payload)
     if frozen.get('manifest_hash')!=freeze['manifest_hash'] or digest(payload)!=row['payload_hash']:
         raise ValueError('PINNED_PARENT_OR_MANIFEST_MISMATCH')
     for key in ('raw_path','structured_path','chunks_path'):

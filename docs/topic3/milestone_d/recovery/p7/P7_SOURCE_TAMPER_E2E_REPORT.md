@@ -1,0 +1,7 @@
+# P7 source tamper E2E
+
+Only the 63,173,261-byte isolated clone `t3-p7-isolated-review-20261026-v1` was mutated. `python -m scripts.p7_clone_snapshot --source <owned-research-root> --target <new-isolated-root>` copied 25 files and remapped clone-local member paths. The original PG raw SHA256 remained `30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53`; the clone's valid control answered 23,276,000,000 USD. No accepted owner snapshot was written.
+
+`python -m scripts.p7_tamper_probe --root <clone> --output <p7_tamper_results.json>` mutated and restored 12 identities: raw byte, source manifest, parent payload hash, locator, issuer, filing, numeric cell, XBRL unit, XBRL period, different filing bytes, source plus self-declared hash, and stale generation. All 12 returned **no numeric claim** after repairs; each restored control again supported the correct value. Before repair, forged member `filing_id` still returned `SUPPORTED`; the permanent `test_frozen_member_filing_must_equal_authenticated_parent` and `FROZEN_PARENT_FILING_ID_MISMATCH` check close that path.
+
+Live Uvicorn against the clone: control 200/SUPPORTED, raw-byte mutation 409/no number, restored and restarted controls 200/SUPPORTED, no token 401 (`p7_http_tamper.json`). The warm backend was reused, exercising the source cache's per-request hash check. Source plus its self-declared hash remained rejected against the committed registry. HTTP 409 uses a generic source-safe error and intentionally does not reveal local paths. No persistent evidence cache exists in P6.
