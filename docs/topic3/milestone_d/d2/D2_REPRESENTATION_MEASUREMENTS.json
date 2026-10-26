@@ -1,0 +1,141 @@
+{
+  "environment": {
+    "python": "3.13.2",
+    "os": "Windows-11-10.0.26300-SP0",
+    "cpu": "Intel64 Family 6 Model 165 Stepping 2, GenuineIntel"
+  },
+  "fixture_sha256": "7b424f9d42af42a3585da17670dc2a9f5b2ba745372b52a86f67ba0a98b70b10",
+  "fixture_canonical_hash": "a3a23c63d2e9ee8b3b69977c17bfdeaf553bfd20f3b9ebcdfed7641ee40f7a42",
+  "implementation_files_sha256": {
+    "app/table_evidence/__init__.py": "91d03efa215cd06d7864acbc764a2f061a98a1c96b767f60a64522b5c6d2d582",
+    "app/table_evidence/bounds.py": "7d20560fad392cb220517eb01d033646830dc87c7831d7ffa517435b47fc6866",
+    "app/table_evidence/builder.py": "7548f21a0da9a3491c68bc8df40fd789d535392c4eb52372b76239fed636f108",
+    "app/table_evidence/bundle.py": "fc12064fdb0fa57ae237131c6b28728d42f4570207d3f6c3c3f36476cb49db4c",
+    "app/table_evidence/compact.py": "22717f11d89cadc93dfef02943b30d2fa87330f1a169172777e75d39e6fb7c7d",
+    "app/table_evidence/contracts.py": "94b45f1eca848e37485919dbfde4d447a56827f642def9ce0a40edb1970e2f5c",
+    "app/table_evidence/identity.py": "e7e309523b55625825e2626fa552d616aa4792e617222d01a722bdab847bbec7",
+    "app/table_evidence/interpretation.py": "d04e0cc820749e38cd2c023d7344431734b6d011c306339002d0e201ce7f5cbc",
+    "app/table_evidence/source.py": "28abe5c3da2ad27ff2ed86920078533f3290e4225c31b547186d21d89e8aa27a"
+  },
+  "denominators": {
+    "financial_value_cells": 13,
+    "parents": 6,
+    "synthetic_table_families": 6
+  },
+  "correctness": {
+    "cells": 13,
+    "coordinates_correct": 13,
+    "periods_correct": 13,
+    "typed_periods": 11,
+    "units_correct": 13,
+    "raw_correct": 13,
+    "locators_complete": 13,
+    "parent_correspondence": 6,
+    "partial_cells": 2,
+    "verified_cells": 11
+  },
+  "cases": [
+    {
+      "id": "income",
+      "family": "A",
+      "parent_id": "fin_cc0b1639b3fbeff730b0da3b94afc090",
+      "parent_hash": "79937d83d2181d1103cc8a4ade34fa80307e4161fca3c16ae9d4ea96e70b463c",
+      "status": "VERIFIED_CONTEXT",
+      "input_parent_bytes": 4052,
+      "parent_text_bytes": 670,
+      "full_evidence_bytes": 11737,
+      "compact_bytes": 2001
+    },
+    {
+      "id": "balance",
+      "family": "B",
+      "parent_id": "fin_06ef382f80a1b4ea62a0a7adbf93f146",
+      "parent_hash": "99d3addb417424e34f471408e156a6c358cfa2e8398f95a387658632c2741c35",
+      "status": "VERIFIED_CONTEXT",
+      "input_parent_bytes": 4016,
+      "parent_text_bytes": 658,
+      "full_evidence_bytes": 11666,
+      "compact_bytes": 2003
+    },
+    {
+      "id": "cashflow",
+      "family": "C",
+      "parent_id": "fin_1a4e6e41955a29d37418e4e899d4e55d",
+      "parent_hash": "258d8d6c63994e7b5399bdcc00115d2b5028473819ac217804df1c4708853716",
+      "status": "VERIFIED_CONTEXT",
+      "input_parent_bytes": 4172,
+      "parent_text_bytes": 707,
+      "full_evidence_bytes": 11990,
+      "compact_bytes": 2027
+    },
+    {
+      "id": "eps",
+      "family": "D",
+      "parent_id": "fin_5bd9b2eb226e7353ecd39e3ce393c3a1",
+      "parent_hash": "2cb5e6b148d9b2231ad66255c187304f355820d00639374759cbd514df7a3e81",
+      "status": "VERIFIED_CONTEXT",
+      "input_parent_bytes": 4084,
+      "parent_text_bytes": 690,
+      "full_evidence_bytes": 11777,
+      "compact_bytes": 2028
+    },
+    {
+      "id": "segment",
+      "family": "E",
+      "parent_id": "fin_234251c704b85fed372daf3798145101",
+      "parent_hash": "f5c63cdec5fd0372eb97aa8db1a18dd1629d05a359a7085570011ce8140c4f75",
+      "status": "PARTIAL_CONTEXT",
+      "input_parent_bytes": 4224,
+      "parent_text_bytes": 587,
+      "full_evidence_bytes": 12950,
+      "compact_bytes": 2263
+    },
+    {
+      "id": "fair",
+      "family": "F",
+      "parent_id": "fin_ab360843df359dc7b6e21a3ccdcb7200",
+      "parent_hash": "7d0c30946e37df29bfdca106308e032aa3d108dbb4dfe09ad1bb72d0886c38f6",
+      "status": "VERIFIED_CONTEXT",
+      "input_parent_bytes": 4196,
+      "parent_text_bytes": 727,
+      "full_evidence_bytes": 12045,
+      "compact_bytes": 2079
+    }
+  ],
+  "warm_build": {
+    "p50_ms": 3.170899988617748,
+    "p95_ms": 4.667400004109368,
+    "samples": 600
+  },
+  "first_call_after_imports": {
+    "p50_ms": 3.25209999573417,
+    "p95_ms": 7.653799984836951,
+    "samples": 6
+  },
+  "context_reconstruction_first_call": {
+    "p50_ms": 1.9559000065783039,
+    "p95_ms": 2.308800001628697,
+    "samples": 6
+  },
+  "larger_fixture": {
+    "source_bytes": 5205,
+    "rows": 100,
+    "physical_cells": 303,
+    "selected_parents": 5,
+    "context_reconstruction_ms": 232.63320000842214,
+    "bundle_build_with_tracemalloc": {
+      "p50_ms": 191.57604999782052,
+      "p95_ms": 241.478800016921,
+      "samples": 20
+    },
+    "python_peak_traced_bytes": 2103411,
+    "last_bundle_bytes": 59547
+  },
+  "limits": [
+    "Synthetic development oracles, not SEC/held-out evidence.",
+    "No cold-process/disk-cache or end-to-end retrieval measurement.",
+    "Context parsing is separate from candidate build.",
+    "Tracemalloc is Python allocation peak, not process RSS.",
+    "Unsupported change-column periods remain unresolved and included in denominator."
+  ]
+}
