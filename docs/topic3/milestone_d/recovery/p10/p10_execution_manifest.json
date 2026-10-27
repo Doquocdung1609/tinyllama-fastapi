@@ -1,0 +1,23 @@
+{
+  "schema_version": "topic3-p10-execution/v1",
+  "authorization": ["TOPIC3_P10_DENSE_FEASIBILITY_AND_NEW_EVALUATION_PREPARATION_AUTHORIZED", "TOPIC3_P10_LIVE_OLLAMA_VERIFIED_CONTINUE_DENSE_EXECUTION", "TOPIC3_P10_USER_APPROVED_LOCAL_DENSE_EXECUTION_WITH_RESOURCE_WARNINGS"],
+  "p9_base_sha": "d6bee5516cadf59017f05374a3f4b8d95ca74eab",
+  "accepted_branch_sha_at_preflight": "32c4a4834c5f8a0b34ac28c42f960c862dd8077d",
+  "main_sha_at_preflight": "ceaa8acfcfaea8056e45b859a0fc44d6381fb22a",
+  "branch": "codex/topic3-p10-dense-scientific-readiness",
+  "tested_code_commit": "b2baaf90fb408c84f4f3f442c1111a7ca938d73c",
+  "p9_pr": "https://github.com/Doquocdung1609/tinyllama-fastapi/pull/19",
+  "p10_pr": "https://github.com/Doquocdung1609/tinyllama-fastapi/pull/20",
+  "source_clone_identity": "t3-p7-isolated-review-20261026-v1",
+  "vector_root_identity": "t3-p10-isolated-vectors-20261027-v1",
+  "source_generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+  "source_manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+  "parent_membership_hash": "4522c70ba2c537bc150159e5e80a5f24d960066e0c9f4f4053230b66ead31b43",
+  "owner_sources_mutated": false,
+  "owner_vectors_mutated": false,
+  "production_defaults_changed": false,
+  "model_downloaded": false,
+  "consumed_heldout_used": false,
+  "new_final_heldout_executed": false,
+  "merge_authorized": false
+}

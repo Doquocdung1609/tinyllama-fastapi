@@ -1,0 +1,28 @@
+{
+  "schema_version": "topic3-p10-live-embedding/v1",
+  "endpoint": "http://127.0.0.1:11434",
+  "model": "nomic-embed-text:latest",
+  "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "expected_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "dimension": 768,
+  "all_finite": true,
+  "query_prefix": "search_query: ",
+  "document_prefix": "search_document: ",
+  "document_truncation_content_characters": 6000,
+  "normalization_policy": "unicode-preserved;whitespace-preserved",
+  "distance_policy": "COSINE",
+  "query_norm": 0.9999996958388311,
+  "document_norm": 1.0000000308183545,
+  "query_repeat_max_abs_delta": 0.0,
+  "query_vector_sha256_first": "a23b88a54a83c8af6f962f457f8625ca6c61a5e5e20ea6143fe3c5efc93791e8",
+  "query_vector_sha256_repeat": "a23b88a54a83c8af6f962f457f8625ca6c61a5e5e20ea6143fe3c5efc93791e8",
+  "latency_ms": {
+    "first_query": 5411.762700008694,
+    "repeat_query": 70.6606000312604,
+    "first_document": 75.09820000268519
+  },
+  "available_ram_bytes_before": 2264301568,
+  "available_ram_bytes_after": 1842552832,
+  "vector_values_recorded": false,
+  "model_downloaded": false
+}

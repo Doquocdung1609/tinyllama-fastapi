@@ -1,0 +1,12 @@
+{
+  "schema_version": "topic3-p10-gate-ledger/v1",
+  "model": {"status": "VERIFIED", "evidence": "p10_embedding_identity.json: live exact digest, 768 finite coordinates"},
+  "data": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "p10_generation_manifest.json: 1781/1781 READY; p10_handshake_results.json: same manifest in B/D/F; development corpus only"},
+  "labels": {"status": "BLOCKED", "evidence": "p10_dataset_registry.json: no new validation/heldout qrels or human review"},
+  "freeze": {"status": "BLOCKED", "evidence": "P10_EVALUATION_PREREGISTRATION.md is a protocol draft; no final dataset/policy freeze"},
+  "resources": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "P10_RESOURCE_AND_COST_REPORT.md: bounded build completed without OOM, one local machine only"},
+  "reproducibility": {"status": "VERIFIED_WITH_LIMITATIONS", "evidence": "local focused/full regression passed; core run 40534725240 succeeded on tested P10 code and its P9 merge tree; PR HEAD CI must be checked after any documentation update"},
+  "scientific_integrity": {"status": "VERIFIED", "evidence": "P10_HISTORICAL_INTEGRITY_REPORT.md: additions scoped to P10; consumed heldout unused"},
+  "dense_feasibility": "TOPIC3_P10_DENSE_RESEARCH_READY",
+  "new_evaluation": "TOPIC3_P10_NEW_EVALUATION_BLOCKED"
+}

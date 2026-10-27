@@ -1,0 +1,11 @@
+# P10 future independent retrieval experiment preregistration
+
+Status: **PROTOCOL DRAFT ONLY**. This file is committed before any new held-out scoring, but it is not a complete freeze: the new source set, queries, judgments, partitions and adaptive finalist have not been chosen. Do not execute the final held-out until a later immutable versioned freeze commit contains their hashes.
+
+Question: does a valid Dense, fixed equal-weight RRF, or one selected adaptive strategy improve source-grounded retrieval over BM25 for new issuer-disjoint SEC questions? Null hypothesis: no paired improvement on the prespecified primary measure. BM25 remains the accepted default pending credible contrary evidence. The development handshake only establishes that each channel executes; it supplies no accuracy evidence.
+
+Before experiments, freeze source eligibility and raw hashes; canonical parent and lexical/vector generation identities; issuer-disjoint development, validation and held-out splits; questions and source-grounded qrels; scripts and dependencies; BM25 parameters; exact model digest, prefix and truncation; fixed RRF k=60; top-k=5/10; candidate budget=40 per channel; timeouts; scoring and exclusion rules; a finite list of adaptive candidates and one selection rule. Any change requires a new protocol identity and can only use development/validation data. Select at most one adaptive finalist without viewing held-out. Do not treat failed Dense requests as zero ranking quality.
+
+Primary outcomes: Recall@5 and nDCG@5, with paired per-query and per-issuer differences against BM25. Secondary: Recall@10, Precision@5, MRR@5, evidence-group coverage, wrong-issuer/period rate, provenance validity, p50/p95 latency, timeout/failure rate, peak RAM and disk. Report every query and issuer, negative outcomes, and uncertainty. If issuer count is too small for a meaningful cluster interval, report descriptive differences only. Keep arm availability distinct from quality. No claim about financial answer correctness follows from retrieval metrics.
+
+Current gate: **BLOCKED** by missing new issuer-separated sources and source-grounded labels. The previously consumed D5 held-out is excluded and remains untouched.
