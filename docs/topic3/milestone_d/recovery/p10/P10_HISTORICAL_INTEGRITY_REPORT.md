@@ -1,0 +1,5 @@
+# P10 historical integrity
+
+P10 branch starts at exact P9 HEAD `d6bee5516cadf59017f05374a3f4b8d95ca74eab`; accepted integration branch was `32c4a4834c5f8a0b34ac28c42f960c862dd8077d` and main `ceaa8acfcfaea8056e45b859a0fc44d6381fb22a` at preflight. PR #19 remained Draft/open/unmerged. The P10 change set is confined to new `scripts/p10_*`, `tests/test_p10_dense_feasibility.py` and `docs/topic3/milestone_d/recovery/p10/`. No accepted app code, retrieval defaults, C/D5 evaluation artifact, source snapshot or owner Qdrant path was edited.
+
+The P7 isolated source clone was revalidated after vector construction: 1,781 canonical parent payloads and the same three SHA256 raw sources (`30904fac…`, `3d638bc…`, `8375d154…`) matched the committed D3 source registry. P10 Qdrant bytes reside under a newly named sibling root and are intentionally outside Git. The previously consumed held-out was neither opened nor scored. This is local non-destructive integrity evidence, not a cryptographic audit of every historical owner file on disk.

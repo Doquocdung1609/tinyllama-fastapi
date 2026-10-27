@@ -1,0 +1,5 @@
+# P10 embedding compatibility
+
+Accepted implementation `app/financial_index/service.py` defines document prefix `search_document: `, query prefix `search_query: ` and `text[:6000]` document truncation. The accepted Qdrant collection contract uses 768 dimensions and COSINE distance. The current live Ollama digest and sampled dimensions match this contract; `p10_embedding_identity.json` contains the actual measured result. Qdrant's COSINE policy is kept separate from the observed near-unit Ollama output norm; no extra manual normalization is applied.
+
+The P10 generation identity pins model digest, prefixes, dimension, truncation, distance, source manifest and exact parent membership hash. A different live digest fails closed; it would require a new experimental identity rather than being relabeled as accepted C. Historical C vectors are not edited or claimed equivalent by mere manifest resemblance. P10 vectors are an isolated rebuild of a development source snapshot, not a replacement for accepted owner generations.

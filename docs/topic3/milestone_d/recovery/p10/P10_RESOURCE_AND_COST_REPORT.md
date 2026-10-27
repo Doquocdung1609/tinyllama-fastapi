@@ -1,0 +1,7 @@
+# P10 resource and cost observations
+
+The already-installed Nomic model was used locally; no download, paid service or new persistent cache occurred. Before the build, the machine had 8.42 GB physical RAM, about 1.35 GB available at a mid-build check, 6.75 GB C: free and 3.54 GiB GPU memory free. Ollama 0.30.10 and embedded qdrant-client 1.20.0 ran concurrently. These values fluctuate and are not a safe minimum-capacity specification.
+
+One live embedding request warmed in 5.41 s; a repeat query took 70.7 ms and first document 75.1 ms. The resumed 442 four-parent embedding batches summed to 437.35 s of embedding HTTP time. They generated an exact 1,781-parent, 768-dimensional isolated vector collection; its root occupied 14,773,411 bytes after completion. This is a measured disk footprint for this local snapshot, not a forecast for all SEC filings. The builder guarded actual available RAM above 128 MiB. No actual OOM or filesystem-space failure occurred.
+
+Development-only handshake first-run wall times (ms): PG B 939.3/D 299.9/F 437.0; HD B 759.8/D 262.0/F 418.1. Provenance reconstruction, cache warming, source verification, Qdrant query and Ollama embedding are included in these wall readings. Five development cases are too few for meaningful p50/p95 product latency or financial retrieval-quality conclusions. A future comparative study must report cold/warm regimes, failures and per-stage costs with a larger preregistered query set.

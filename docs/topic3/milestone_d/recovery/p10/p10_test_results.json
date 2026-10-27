@@ -1,0 +1,17 @@
+{
+  "schema_version": "topic3-p10-test-results/v1",
+  "runtime": "project Python virtual environment",
+  "python": "3.13.2",
+  "os": "Windows 11 build 26300",
+  "compileall": {"command": "python -m compileall -q app scripts", "exit_code": 0},
+  "p10_offline_guards": {"command": "python -m pytest -q tests/test_p10_dense_feasibility.py", "passed": 6, "failed": 0},
+  "focused_retrieval_index": {"command": "python -m pytest -q tests/test_research_retrieval.py tests/test_persistent_financial_index.py", "passed": 55, "failed": 0, "warnings": 1},
+  "full": {"command": "python -m pytest -q", "passed": 581, "failed": 0, "skipped": 3, "warnings": 1, "seconds": 37.0},
+  "non_integration": {"command": "python -m pytest -q -m 'not integration'", "passed": 581, "failed": 0, "deselected": 3, "warnings": 1, "seconds": 30.02},
+  "live_embedding": {"status": "PASS", "artifact": "p10_embedding_identity.json"},
+  "isolated_vector_generation": {"status": "PASS", "artifact": "p10_generation_manifest.json"},
+  "development_handshake": {"status": "PASS", "artifact": "p10_handshake_results.json"},
+  "restart_handshake": {"status": "PASS", "artifact": "p10_handshake_restart_results.json"},
+  "diff_check": {"command": "git diff --check", "status": "PASS"},
+  "github_actions": {"status": "PENDING_FINAL_HEAD"}
+}
