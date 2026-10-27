@@ -1,0 +1,16 @@
+{
+  "schema_version": "topic3-p11-fixed-development-adaptive/v1",
+  "status": "PREREGISTERED_BEFORE_DEVELOPMENT_SCORING",
+  "purpose": "single exploratory D3-A-like candidate, not a selected finalist",
+  "input_category_source": "frozen_p11_query_registry_not_d1_production_intent",
+  "candidate_limit_per_channel": 40,
+  "rrf_k": 60,
+  "exact_categories": ["INSTANT_BALANCE", "INCOME_STATEMENT", "BALANCE_SHEET", "BASIC_EPS", "DILUTED_EPS", "COMPARATIVE_PERIOD"],
+  "rules": [
+    "If exact category and BM25 has at least five positive-scored candidates, return BM25 ranking and record heuristic-only route.",
+    "Otherwise obtain Dense; for exact categories use BM25:Dense RRF weights 2:1, for paraphrase use 1:1.",
+    "Never degrade a failed Dense arm into an apparent successful hybrid comparison."
+  ],
+  "validation_finalist_selected": false,
+  "heldout_used": false
+}
