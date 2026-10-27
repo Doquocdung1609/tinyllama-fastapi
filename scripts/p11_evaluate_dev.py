@@ -92,6 +92,20 @@ def evaluate(root):
     filing_by_ticker = {r["ticker"]: next(p["chunk"].filing_id for p in parents
                                               if p["chunk"].metadata["ticker"] == r["ticker"])
                         for r in source_rows}
+    if len(gold) != len(qrels) or len(gold) != sum(bool(q.get("eligible_parent_ids")) for q in queries):
+        raise ValueError("P11_QREL_QUERY_CARDINALITY_MISMATCH")
+    for query in queries:
+        if not query.get("eligible_parent_ids"):
+            continue
+        row = by_ticker.get(query["issuer"])
+        parent = by_id.get(gold.get(query["query_id"]))
+        if (row is None or parent is None or query["partition"] != "development"
+            or gold[query["query_id"]] not in query["eligible_parent_ids"]
+            or parent["chunk"].metadata["cik"] != query["cik"]
+            or parent["chunk"].filing_id != filing_by_ticker[query["issuer"]]
+            or query["raw_sha256"] != row["raw_sha256"]
+            or query["accession"] != row["accession"]):
+            raise ValueError("P11_QREL_SOURCE_SCOPE_MISMATCH")
     scope = SimpleNamespace(generation_id=generation, manifest_hash=manifest_hash)
     cache = ProvenanceCache(max_entries=2, max_bytes=64 * 1024 * 1024)
     with requests.Session() as session:

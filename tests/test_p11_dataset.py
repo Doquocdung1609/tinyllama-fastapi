@@ -64,6 +64,23 @@ def test_qrels_are_provisional_and_refer_only_to_positive_dev_questions():
             assert row["qrel_status"] == "NOT_A_NEGATIVE_QREL"
 
 
+def test_dev_labels_keep_source_and_partition_identity():
+    sources = {row["ticker"]: row for row in read("p11_source_registry.json")["records"]}
+    parsed = {row["ticker"]: row for row in read("p11_parsed_sources.json")["records"]}
+    for query in read("p11_query_registry.json")["queries"]:
+        if not query.get("eligible_parent_ids"):
+            continue
+        source = sources[query["issuer"]]
+        assert source["status"] == "ACQUIRED_OFFICIAL_SOURCE"
+        assert source["partition"] == parsed[query["issuer"]]["partition"] == "development"
+        assert query["cik"] == source["cik"]
+        assert query["accession"] == source["metadata"]["accession_number"]
+        assert query["source_url"] == source["metadata"]["source_url"]
+        assert query["raw_sha256"] == source["raw_sha256"]
+        assert query["reviewer_status"] == "NO_INDEPENDENT_HUMAN_REVIEW"
+        assert query["extraction_status"] == "PARTIAL_EXTRACTION"
+
+
 def test_exploratory_adaptive_policy_is_fixed_and_not_a_finalist():
     policy = read("p11_adaptive_policy_v1.json")
     freeze = read("p11_development_freeze.json")
