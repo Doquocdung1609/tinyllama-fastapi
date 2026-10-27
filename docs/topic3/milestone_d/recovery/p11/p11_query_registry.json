@@ -1,0 +1,345 @@
+{
+  "schema_version": "topic3-p11-dev-query-registry/v1",
+  "source_selection_commit": "d04fd4b53c104cbc5208ff33bcf876ae7bcbc03e",
+  "status": "PROVISIONAL_DEVELOPMENT_ONLY",
+  "queries": [
+    {
+      "query_id": "p11-dev-mcd-assets-exact",
+      "partition": "development",
+      "issuer": "MCD",
+      "cik": "0000063908",
+      "accession": "0000063908-26-000073",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+      "raw_sha256": "5a11b7e43689cdcff53b25381d99c1fae8a5795fa25c3cc441672048599f6541",
+      "question": "What were McDonald's total assets as of June 30, 2026?",
+      "category": "INSTANT_BALANCE",
+      "expected_evidence_group": "table_f8a8a01491e69b5fca6b84b2:row:5",
+      "eligible_parent_ids": [
+        "fin_f23049c3da0b325f73c7736d8c62a56c"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:nonnumeric[1]/div[3]/table[1]",
+      "row_index": 5,
+      "reporting_period": "June 30, 2026",
+      "units_observed": [
+        "usd",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-mcd-assets-paraphrase",
+      "partition": "development",
+      "issuer": "MCD",
+      "cik": "0000063908",
+      "accession": "0000063908-26-000073",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+      "raw_sha256": "5a11b7e43689cdcff53b25381d99c1fae8a5795fa25c3cc441672048599f6541",
+      "question": "How large was McDonald's asset base at June 30, 2026?",
+      "category": "SEMANTIC_PARAPHRASE",
+      "expected_evidence_group": "table_f8a8a01491e69b5fca6b84b2:row:5",
+      "eligible_parent_ids": [
+        "fin_f23049c3da0b325f73c7736d8c62a56c"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:nonnumeric[1]/div[3]/table[1]",
+      "row_index": 5,
+      "reporting_period": "June 30, 2026",
+      "units_observed": [
+        "usd",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-current",
+      "partition": "development",
+      "issuer": "MCD",
+      "cik": "0000063908",
+      "accession": "0000063908-26-000073",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+      "raw_sha256": "5a11b7e43689cdcff53b25381d99c1fae8a5795fa25c3cc441672048599f6541",
+      "question": "Find McDonald's total revenues for the six months ended June 30, 2026.",
+      "category": "INCOME_STATEMENT",
+      "expected_evidence_group": "table_76f4cf3ea0256b1604845887:row:6",
+      "eligible_parent_ids": [
+        "fin_7b4d037b06167f848cdc8822d4bb592b"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[199]/table[1]",
+      "row_index": 6,
+      "reporting_period": "2026",
+      "units_observed": [
+        "usd",
+        "usdPerShare"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-prior",
+      "partition": "development",
+      "issuer": "MCD",
+      "cik": "0000063908",
+      "accession": "0000063908-26-000073",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+      "raw_sha256": "5a11b7e43689cdcff53b25381d99c1fae8a5795fa25c3cc441672048599f6541",
+      "question": "Find McDonald's total revenues for the six months ended June 30, 2025.",
+      "category": "COMPARATIVE_PERIOD",
+      "expected_evidence_group": "table_76f4cf3ea0256b1604845887:row:6",
+      "eligible_parent_ids": [
+        "fin_7b4d037b06167f848cdc8822d4bb592b"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[199]/table[1]",
+      "row_index": 6,
+      "reporting_period": "2025",
+      "units_observed": [
+        "usd",
+        "usdPerShare"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-cat-sales-quarter",
+      "partition": "development",
+      "issuer": "CAT",
+      "cik": "0000018230",
+      "accession": "0000018230-26-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000046/cat-20260630.htm",
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "question": "What were Caterpillar's total sales and revenues for the three months ended June 30, 2026?",
+      "category": "INCOME_STATEMENT",
+      "expected_evidence_group": "table_b891b8ad2f9e518484d7b9c4:row:6",
+      "eligible_parent_ids": [
+        "fin_a14f0477ee7eff69139f7f49560c00c1"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "row_index": 6,
+      "reporting_period": "Three Months Ended June 30, / 2026",
+      "units_observed": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-cat-sales-paraphrase",
+      "partition": "development",
+      "issuer": "CAT",
+      "cik": "0000018230",
+      "accession": "0000018230-26-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000046/cat-20260630.htm",
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "question": "How much did Caterpillar sell in the June 2026 quarter, including financial products revenue?",
+      "category": "SEMANTIC_PARAPHRASE",
+      "expected_evidence_group": "table_b891b8ad2f9e518484d7b9c4:row:6",
+      "eligible_parent_ids": [
+        "fin_a14f0477ee7eff69139f7f49560c00c1"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "row_index": 6,
+      "reporting_period": "Three Months Ended June 30, / 2026",
+      "units_observed": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-cat-sales-sixmonths",
+      "partition": "development",
+      "issuer": "CAT",
+      "cik": "0000018230",
+      "accession": "0000018230-26-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000046/cat-20260630.htm",
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "question": "Locate Caterpillar total sales and revenues for the six months ended June 30, 2026.",
+      "category": "COMPARATIVE_PERIOD",
+      "expected_evidence_group": "table_a09da0ea30c7e827d4e6ce05:row:6",
+      "eligible_parent_ids": [
+        "fin_a2162fc0964413aafd953835bb3cefe5"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[78]/table[1]",
+      "row_index": 6,
+      "reporting_period": "Six Months Ended June 30, / 2026",
+      "units_observed": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-cat-cash",
+      "partition": "development",
+      "issuer": "CAT",
+      "cik": "0000018230",
+      "accession": "0000018230-26-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000046/cat-20260630.htm",
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "question": "What was Caterpillar's cash and cash equivalents as of June 30, 2026?",
+      "category": "BALANCE_SHEET",
+      "expected_evidence_group": "table_9a187831f64484472d744d41:row:4",
+      "eligible_parent_ids": [
+        "fin_6c444d43156fd60710ce02a6fbe73f8d"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[105]/table[1]",
+      "row_index": 4,
+      "reporting_period": "June 30, 2026",
+      "units_observed": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-cat-basic-eps",
+      "partition": "development",
+      "issuer": "CAT",
+      "cik": "0000018230",
+      "accession": "0000018230-26-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000046/cat-20260630.htm",
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "question": "Find Caterpillar profit per common share before dilution for the three months ended June 30, 2026.",
+      "category": "BASIC_EPS",
+      "expected_evidence_group": "table_b891b8ad2f9e518484d7b9c4:row:34",
+      "eligible_parent_ids": [
+        "fin_f1067b7da6743cb8182973a57755b50c"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "row_index": 34,
+      "reporting_period": "Three Months Ended June 30, / 2026",
+      "units_observed": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-cat-diluted-eps",
+      "partition": "development",
+      "issuer": "CAT",
+      "cik": "0000018230",
+      "accession": "0000018230-26-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000046/cat-20260630.htm",
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "question": "Find Caterpillar diluted profit per common share for the three months ended June 30, 2026.",
+      "category": "DILUTED_EPS",
+      "expected_evidence_group": "table_b891b8ad2f9e518484d7b9c4:row:36",
+      "eligible_parent_ids": [
+        "fin_7245c3efdca4dd8a2385381af281f098"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "row_index": 36,
+      "reporting_period": "Three Months Ended June 30, / 2026",
+      "units_observed": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "evidence_rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "labeling_method": "CODEX_SOURCE_INSPECTION_FIXED_SPEC_NO_RANKINGS",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW",
+      "ambiguity": "qrel exhaustiveness and column-level financial semantics unadjudicated",
+      "extraction_status": "PARTIAL_EXTRACTION"
+    },
+    {
+      "query_id": "p11-dev-wrong-issuer",
+      "partition": "development",
+      "question": "What were McDonald's total assets in Caterpillar's June 2026 10-Q?",
+      "category": "WRONG_ISSUER",
+      "expected_status": "CONFLICT_OR_CLARIFICATION",
+      "eligible_parent_ids": [],
+      "qrel_status": "NOT_A_NEGATIVE_QREL",
+      "labeling_method": "ADVERSARIAL_SCOPE_CONTROL",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW"
+    },
+    {
+      "query_id": "p11-dev-wrong-period",
+      "partition": "development",
+      "question": "What were Caterpillar's total sales and revenues for the three months ended June 30, 2027?",
+      "category": "WRONG_PERIOD",
+      "expected_status": "NO_VERIFIED_EVIDENCE",
+      "eligible_parent_ids": [],
+      "qrel_status": "NOT_A_NEGATIVE_QREL",
+      "labeling_method": "ADVERSARIAL_SCOPE_CONTROL",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW"
+    },
+    {
+      "query_id": "p11-dev-ambiguous",
+      "partition": "development",
+      "question": "What was revenue last year?",
+      "category": "AMBIGUOUS",
+      "expected_status": "NEEDS_CLARIFICATION",
+      "eligible_parent_ids": [],
+      "qrel_status": "NOT_A_NEGATIVE_QREL",
+      "labeling_method": "ADVERSARIAL_SCOPE_CONTROL",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW"
+    },
+    {
+      "query_id": "p11-dev-unsupported-duration",
+      "partition": "development",
+      "question": "What was McDonald's full-year 2026 revenue in its June 2026 10-Q?",
+      "category": "UNSUPPORTED_DURATION",
+      "expected_status": "NO_VERIFIED_EVIDENCE",
+      "eligible_parent_ids": [],
+      "qrel_status": "NOT_A_NEGATIVE_QREL",
+      "labeling_method": "ADVERSARIAL_SCOPE_CONTROL",
+      "reviewer_status": "NO_INDEPENDENT_HUMAN_REVIEW"
+    }
+  ],
+  "positive_count": 10,
+  "refusal_count": 4
+}

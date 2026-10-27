@@ -1,0 +1,122 @@
+{
+  "schema_version": "topic3-p11-canonical-parse/v1",
+  "source_root_identity": "t3-p11-new-sec-20261027-v1",
+  "records": [
+    {
+      "ticker": "MCD",
+      "partition": "development",
+      "cik": "0000063908",
+      "accession": "0000063908-26-000073",
+      "raw_sha256": "5a11b7e43689cdcff53b25381d99c1fae8a5795fa25c3cc441672048599f6541",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+      "parser_version": "sec-html-v5",
+      "chunker_version": "financial-structure-v5",
+      "structured_sha256": "d2c1f00bbd3d4b5d39769b8a837c21f235cb8dc4404770b5ea6a4545ff321aa5",
+      "chunks_sha256": "c5072282a2c3d6ea2475a7e42339c39805a90631c04a1810e1c426a644530df1",
+      "membership_sha256": "9cb5b687095730f5e1d69d844e5619459d736259b2e2f674fb73b1f3d168fb6b",
+      "parent_count": 876,
+      "table_count": 43,
+      "element_count": 328,
+      "parser_warnings": [
+        "PARTIAL_TABLE_EXTRACTION"
+      ],
+      "document_status": "PARTIAL_EXTRACTION",
+      "structured_path": "derived/MCD/structured.json",
+      "chunks_path": "derived/MCD/chunks.jsonl",
+      "worker_peak_working_set_bytes": 118435840
+    },
+    {
+      "ticker": "CAT",
+      "partition": "development",
+      "cik": "0000018230",
+      "accession": "0000018230-26-000046",
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000046/cat-20260630.htm",
+      "parser_version": "sec-html-v5",
+      "chunker_version": "financial-structure-v5",
+      "structured_sha256": "0da350fa596e78563743f196857515ec886cffa9f43be294edcd16967255afb0",
+      "chunks_sha256": "232e4d30588fca1dbaa053929e2290fd2bf8e0c4857eebe553e16f8ea3d462f7",
+      "membership_sha256": "28a50f6b0c401787e1306f77e935e26c3ddec27ebba8acc2a3439b7128fdb1a7",
+      "parent_count": 2011,
+      "table_count": 128,
+      "element_count": 630,
+      "parser_warnings": [
+        "PARTIAL_TABLE_EXTRACTION"
+      ],
+      "document_status": "PARTIAL_EXTRACTION",
+      "structured_path": "derived/CAT/structured.json",
+      "chunks_path": "derived/CAT/chunks.jsonl",
+      "worker_peak_working_set_bytes": 259461120
+    },
+    {
+      "ticker": "SBUX",
+      "partition": "validation",
+      "cik": "0000829224",
+      "accession": "0000829224-25-000114",
+      "raw_sha256": "38c18be57efcaf4368d09d38e7d26d179ab798b7fea92dad688f324c8b17a49c",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922425000114/sbux-20250928.htm",
+      "parser_version": "sec-html-v5",
+      "chunker_version": "financial-structure-v5",
+      "structured_sha256": "d2cd5a959c1dfcdb71af0d6ad81d970acd734ce2291d88d064ffb1ba0e7548f3",
+      "chunks_sha256": "06f4e268943f037354b33fb8333d5ff630da33e0e519f8602cac1ddc719a4b87",
+      "membership_sha256": "8397c739e8bd2bf1a43464de1860fd1f65a9019298a7f247b0f0d19705e3b501",
+      "parent_count": 1772,
+      "table_count": 81,
+      "element_count": 807,
+      "parser_warnings": [
+        "PARTIAL_TABLE_EXTRACTION"
+      ],
+      "document_status": "PARTIAL_EXTRACTION",
+      "structured_path": "derived/SBUX/structured.json",
+      "chunks_path": "derived/SBUX/chunks.jsonl",
+      "worker_peak_working_set_bytes": 175542272
+    },
+    {
+      "ticker": "UPS",
+      "partition": "validation",
+      "cik": "0001090727",
+      "accession": "0001628280-26-053249",
+      "raw_sha256": "4da382ec0ce2231c3adba1642caccca3525720f173c3bc38c17c7d1708547ecc",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090727/000162828026053249/ups-20260630.htm",
+      "parser_version": "sec-html-v5",
+      "chunker_version": "financial-structure-v5",
+      "structured_sha256": "ae29e151894ff7680fba9a3371894e78fd30204a23c8b4e841c98538117d2c98",
+      "chunks_sha256": "de8a282e66bc45c32b4fde00f9a56613178ee6fe13406e56717e52780832b665",
+      "membership_sha256": "0eb8311271f958a7036e174e40b7495ad215b266355176878df25b2cbc921f82",
+      "parent_count": 1175,
+      "table_count": 56,
+      "element_count": 519,
+      "parser_warnings": [
+        "PARTIAL_TABLE_EXTRACTION"
+      ],
+      "document_status": "PARTIAL_EXTRACTION",
+      "structured_path": "derived/UPS/structured.json",
+      "chunks_path": "derived/UPS/chunks.jsonl",
+      "worker_peak_working_set_bytes": 141328384
+    },
+    {
+      "ticker": "TXN",
+      "partition": "validation",
+      "cik": "0000097476",
+      "accession": "0000097476-26-000169",
+      "raw_sha256": "6230433eb88882b73071aaf4a3923a5f5f5479571f2994ee408a4f5874e087c4",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+      "parser_version": "sec-html-v5",
+      "chunker_version": "financial-structure-v5",
+      "structured_sha256": "90a06666661babf7e42be6ceac2936f8137fb75ba89514252ca8f851cf8bde83",
+      "chunks_sha256": "3c33b68e59466836abec81d8935ae0d70a3ea3d078a2fe197f5e3ea6c37abaf4",
+      "membership_sha256": "3c3f197934907c8721cf8d1ef879b5136a572905ee72097e875bd9f9d68d5bdc",
+      "parent_count": 598,
+      "table_count": 42,
+      "element_count": 199,
+      "parser_warnings": [
+        "PARTIAL_TABLE_EXTRACTION"
+      ],
+      "document_status": "PARTIAL_EXTRACTION",
+      "structured_path": "derived/TXN/structured.json",
+      "chunks_path": "derived/TXN/chunks.jsonl",
+      "worker_peak_working_set_bytes": 99483648
+    }
+  ],
+  "heldout_parsed": false
+}
