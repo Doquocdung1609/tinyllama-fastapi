@@ -62,3 +62,13 @@ def test_qrels_are_provisional_and_refer_only_to_positive_dev_questions():
     for row in questions["queries"]:
         if not row.get("eligible_parent_ids"):
             assert row["qrel_status"] == "NOT_A_NEGATIVE_QREL"
+
+
+def test_exploratory_adaptive_policy_is_fixed_and_not_a_finalist():
+    policy = read("p11_adaptive_policy_v1.json")
+    freeze = read("p11_development_freeze.json")
+    assert policy["candidate_limit_per_channel"] == freeze["candidate_budget_per_channel"] == 40
+    assert policy["rrf_k"] == freeze["rrf_k"] == 60
+    assert freeze["arms"] == ["B", "D", "F", "A"]
+    assert policy["validation_finalist_selected"] is False
+    assert freeze["heldout_opened"] is False
