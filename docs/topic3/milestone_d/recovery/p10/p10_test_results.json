@@ -13,5 +13,5 @@
   "development_handshake": {"status": "PASS", "artifact": "p10_handshake_results.json"},
   "restart_handshake": {"status": "PASS", "artifact": "p10_handshake_restart_results.json"},
   "diff_check": {"command": "git diff --check", "status": "PASS"},
-  "github_actions": {"status": "PENDING_FINAL_HEAD"}
+  "github_actions": {"status": "SUCCESS_ON_RECORDED_HEAD", "run_id": 40534725240, "source_sha": "63ecd9be321a4460423ef29c53fea3f0d6c4d141", "tested_merge_sha": "075043e5ffb491385dab3a3e6a3d2a6db38e6425", "passed": 580, "skipped": 1, "deselected": 3, "warnings": 1}
 }
