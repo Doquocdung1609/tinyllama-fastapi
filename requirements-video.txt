@@ -1,3 +1,0 @@
-# Optional; install only on a supported GPU with sufficient VRAM.
--r requirements-image.txt
-imageio[ffmpeg]

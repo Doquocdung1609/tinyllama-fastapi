@@ -78,20 +78,13 @@ def release_ollama_gpu() -> None:
 
 
 def release_diffusion_gpu() -> None:
-    """Unload only diffusion pipelines owned by this application."""
-    try:
-        from app.services import image_service, video_service
-        image_service.unload_pipeline()
-        video_service.unload_pipeline()
-        release_cuda_cache()
-    except Exception:
-        # A missing optional media dependency must not disable core chat/RAG.
-        release_cuda_cache()
+    """Compatibility hook for retained RAG/Ollama scheduling."""
+    release_cuda_cache()
 
 
 @contextmanager
 def heavy_inference(kind: str) -> Iterator[dict]:
-    """Bound the queue and serialize GPU-heavy jobs across image/video tasks."""
+    """Bound and serialize the retained local inference queue."""
     with _state_lock:
         if int(_state["queued"]) >= _max_waiting:
             raise ResourceBusyError("Hàng đợi tác vụ nặng đã đầy. Hãy thử lại sau khi tác vụ hiện tại hoàn tất.")

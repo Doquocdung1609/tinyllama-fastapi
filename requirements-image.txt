@@ -1,9 +1,0 @@
-# Optional. Install only on a compatible GPU machine; PyTorch can be a very large download.
--r requirements.txt
-torch==2.6.0
-torchvision==0.21.0
-diffusers==0.41.0
-transformers>=5.0,<6
-accelerate>=1.2,<2
-safetensors>=0.4,<1
-pillow>=11,<13
