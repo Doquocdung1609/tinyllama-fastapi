@@ -3,7 +3,7 @@ from functools import lru_cache
 import hmac
 import os
 from pathlib import Path
-from threading import Thread
+from threading import Thread, RLock
 
 from fastapi import APIRouter, Depends, File, Form, Header, HTTPException, UploadFile
 from fastapi.responses import Response
@@ -15,22 +15,39 @@ from app.product.sec_search import SecResearchIndex
 
 
 router = APIRouter(prefix="/studio", tags=["financial-studio"])
+_factory_lock = RLock()
 
 
 @lru_cache(maxsize=1)
-def workspace():
+def _workspace_cached():
     root = Path(os.getenv("STUDIO_WORKSPACE_DIR", str(ROOT_DIR / "studio_workspace")))
     return PdfWorkspace(root)
 
 
 @lru_cache(maxsize=1)
-def sec_index():
+def _sec_cached():
     root = os.getenv("STUDIO_SEC_RESEARCH_ROOT", "").strip()
     vector_root = os.getenv("STUDIO_SEC_VECTOR_ROOT", "").strip()
     qa_root = os.getenv("TOPIC3_RESEARCH_ROOT", "").strip()
     if not root or not vector_root or not qa_root:
         raise ValueError("SEC_SHARED_SOURCE_ROOTS_NOT_CONFIGURED")
     return SecResearchIndex(Path(root), Path(vector_root), Path(qa_root))
+
+
+def workspace():
+    with _factory_lock:
+        return _workspace_cached()
+
+
+def sec_index():
+    with _factory_lock:
+        return _sec_cached()
+
+
+workspace.cache_info = _workspace_cached.cache_info
+workspace.cache_clear = _workspace_cached.cache_clear
+sec_index.cache_info = _sec_cached.cache_info
+sec_index.cache_clear = _sec_cached.cache_clear
 
 
 def require_studio_token(authorization: str | None = Header(default=None)):

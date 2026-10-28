@@ -211,6 +211,8 @@ def verified_real_cells(snapshot,parent_id:str):
     root=snapshot.root;freeze=snapshot.freeze
     registry_path=Path(__file__).resolve().parents[2]/'docs/topic3/milestone_d/d3/D3_FRESH_EXACT_ROW_FREEZE_v1.json'
     registry=json.loads(registry_path.read_text(encoding='utf-8'))
+    from app.table_evidence.product_registry import product_registry
+    registry=product_registry(freeze) or registry
     if registry['manifest_hash']!=freeze['manifest_hash'] or registry['generation']!=freeze['generation']:
         raise ValueError('COMMITTED_RESEARCH_REGISTRY_MISMATCH')
     with closing(snapshot.lexical.connect()) as db:

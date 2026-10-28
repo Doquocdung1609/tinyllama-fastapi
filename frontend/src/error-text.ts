@@ -1,0 +1,26 @@
+const reasons:Record<string,string>={
+ STUDIO_UNAUTHORIZED:'Khóa truy cập chưa hợp lệ. Hãy đăng nhập lại.',
+ OCR_NOT_INSTALLED:'Chưa tìm thấy bộ OCR Tesseract trên máy. Tài liệu scan chưa thể xử lý.',
+ OCR_VI_LANGUAGE_MISSING:'OCR chưa có đủ dữ liệu ngôn ngữ tiếng Việt và tiếng Anh.',
+ PDF_SOURCE_HASH_MISMATCH:'Tệp gốc đã thay đổi so với bản được lập chỉ mục. Hệ thống đã chặn bằng chứng này.',
+ REVIEW_RECORD_INTEGRITY_FAILED:'Bản ghi đối chiếu không còn hợp lệ. Cần kiểm tra lại ô nguồn.',
+ REVIEWED_SOURCE_EVIDENCE_CHANGED:'Bằng chứng trích xuất đã thay đổi. Cần đối chiếu lại ảnh nguồn trước khi tính toán.',
+ SOURCE_COLUMN_GEOMETRY_MISMATCH:'Nhãn cột không khớp vị trí ô đã chọn. Hãy kiểm tra lại cột trên ảnh gốc.',
+ SOURCE_SCOPE_MISMATCH:'Phạm vi riêng/hợp nhất không khớp trang nguồn.',
+ SOURCE_UNIT_SCALE_MISMATCH:'Đơn vị hoặc hệ số nghìn/triệu/tỷ không khớp nguồn.',
+ QUESTION_METRIC_OR_OPERATION_CONFLICT:'Chỉ tiêu trong câu hỏi không khớp lựa chọn phân tích.',
+ QUESTION_REQUIRES_COMPARISON_OPERATION:'Câu hỏi yêu cầu so sánh; hãy chọn phép tính chênh lệch hoặc tỷ lệ thay đổi.',
+ QUESTION_STATEMENT_SCOPE_CONFLICT:'Câu hỏi và lựa chọn báo cáo riêng/hợp nhất không khớp.',
+ QUESTION_ADJUSTMENT_BASIS_CONFLICT:'Câu hỏi và lựa chọn số đã công bố/trình bày lại không khớp.',
+ QUESTION_COMPANY_SCOPE_CONFLICT:'Doanh nghiệp trong câu hỏi không khớp tài liệu được chọn.',
+ QUESTION_PERIOD_CONFLICT:'Kỳ trong câu hỏi không khớp các ô nguồn đủ điều kiện.',
+ MISSING_AMBIGUOUS_OR_CONTRADICTORY_SOURCE_FACT:'Thiếu ô đã xác minh, có nhiều kỳ hoặc bằng chứng mâu thuẫn. Hãy kiểm tra phạm vi và đối chiếu nguồn.',
+ SOURCE_CELL_HAS_NO_COORDINATES:'Ô trống hoặc chưa xác định được tọa độ; không dùng để tính toán.',
+ SEC_SHARED_SOURCE_ROOTS_NOT_CONFIGURED:'Chưa cấu hình snapshot SEC đã xác minh trên máy này.',
+ SEC_QA_NOT_CONFIGURED:'Chưa có nguồn SEC đã xác minh để trả lời số liệu.',
+ RESEARCH_RESOURCE_BUSY:'Đang xử lý một báo cáo nghiên cứu khác. Hãy chờ hoặc thử lại.',
+ ZERO_BASE_PERIOD:'Kỳ gốc bằng 0, không thể tính tỷ lệ thay đổi.',
+ ZERO_DENOMINATOR:'Mẫu số bằng 0, không thể tính tỷ lệ.',
+ EXPLICIT_ORDERED_PERIODS_REQUIRED:'Cần chọn rõ kỳ hiện tại và kỳ trước theo đúng thứ tự thời gian.'
+}
+export function reasonText(code:string){return reasons[code]||'Chưa thể xác minh yêu cầu này. Hãy kiểm tra nguồn tài liệu, phạm vi và trạng thái dịch vụ.'}

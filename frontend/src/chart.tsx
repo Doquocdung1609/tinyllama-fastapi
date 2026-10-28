@@ -1,0 +1,2 @@
+import {BarChart,Bar,XAxis,YAxis,Tooltip,ResponsiveContainer,CartesianGrid} from 'recharts'
+export default function LatencyChart({values}:{values:{name:string;ms:number}[]}){return <ResponsiveContainer width="100%" height={210}><BarChart data={values}><CartesianGrid strokeDasharray="3 3"/><XAxis dataKey="name"/><YAxis/><Tooltip/><Bar dataKey="ms" fill="#176cff" radius={[5,5,0,0]}/></BarChart></ResponsiveContainer>}

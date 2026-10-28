@@ -1,0 +1,3 @@
+# Optional rollback UI only. React is the default product frontend.
+-r requirements.txt
+streamlit>=1.40,<2

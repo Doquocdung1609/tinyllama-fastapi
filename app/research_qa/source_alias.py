@@ -11,6 +11,8 @@ from app.financial_query.contracts import CorpusCatalogV1
 def verified_alias_catalog(snapshot):
     registry_path=Path(__file__).resolve().parents[2]/'docs/topic3/milestone_d/d3/D3_FRESH_EXACT_ROW_FREEZE_v1.json'
     registry=json.loads(registry_path.read_text(encoding='utf-8'))
+    from app.table_evidence.product_registry import product_registry
+    registry=product_registry(snapshot.freeze) or registry
     if (registry['manifest_hash'],registry['generation'])!=(snapshot.freeze['manifest_hash'],snapshot.freeze['generation']):
         raise ValueError('ALIAS_SOURCE_REGISTRY_MISMATCH')
     groups={g['raw_hash']:g for g in registry['source_groups']}

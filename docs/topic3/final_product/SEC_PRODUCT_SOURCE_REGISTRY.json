@@ -1,0 +1,20 @@
+{
+  "schema": "product-official-sec-source-registry/v1",
+  "manifest_hash": "efb42eb96d2fb70bd0ffe04ac784c1a0a77b1995a37c8ad2e17d17429565c32d",
+  "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c",
+  "source_groups": [
+    {
+      "cik": "0000080424",
+      "accession": "0000080424-26-000256",
+      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "raw_hash": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+    },
+    {
+      "cik": "0000354950",
+      "accession": "0001628280-26-058715",
+      "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "raw_hash": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+    }
+  ],
+  "purpose": "Owner-authorized product acceptance sources. Fresh SEC bytes; not the old P10/P11 research snapshot; no evaluation qrels."
+}

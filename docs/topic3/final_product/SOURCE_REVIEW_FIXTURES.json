@@ -1,0 +1,175 @@
+{
+  "review_method": "Local visual inspection of original source pages, not OCR confidence or LLM answer ground truth. Application never imports this file.",
+  "sources": [
+    {
+      "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+      "sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "pages": 8,
+      "issuer": "BIDV",
+      "report_period": "2024-12-31"
+    },
+    {
+      "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+      "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "pages": 24,
+      "issuer": "Công ty mẹ Hòa Phát",
+      "report_period": "2025-12-31"
+    }
+  ],
+  "reviews": [
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 3,
+      "row_label": "TONG CONG TAI SAN",
+      "column_index": 0,
+      "metric": "assets",
+      "period": "2025-12-31",
+      "column_label": "31/12/2025",
+      "statement_scope": "SEPARATE",
+      "unit": "VND",
+      "convention": "vi_VN",
+      "basis": "AS_REPORTED",
+      "source_display": "98.670.778.691.605",
+      "box": [
+        384.56125094704424,
+        606.0000175628228,
+        472.15242510970955,
+        614.7000178149623
+      ],
+      "confidence": 70.0,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 3,
+      "row_label": "TONG CONG TAI SAN",
+      "column_index": 1,
+      "metric": "assets",
+      "period": "2025-01-01",
+      "column_label": "01/01/2025",
+      "statement_scope": "SEPARATE",
+      "unit": "VND",
+      "convention": "vi_VN",
+      "basis": "AS_REPORTED",
+      "source_display": "81.793.076.515.644",
+      "box": [
+        485.65106496354497,
+        604.5000175193504,
+        575.0420577733883,
+        613.5000177801844
+      ],
+      "confidence": 74.0,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 4,
+      "row_label": "NỢ PHẢI TRẢ (300 310 + 330) 300",
+      "column_index": 0,
+      "metric": "liabilities",
+      "period": "2025-12-31",
+      "column_label": "31/12/2025",
+      "statement_scope": "SEPARATE",
+      "unit": "VND",
+      "convention": "vi_VN",
+      "basis": "AS_REPORTED",
+      "source_display": "4.239.852.223.395",
+      "box": [
+        388.46085801593,
+        252.60000732074096,
+        470.65257623706117,
+        261.00000756418603
+      ],
+      "confidence": 92.0,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 4,
+      "row_label": "VON CHỦ SỞ HỮU 410) 400",
+      "column_index": 0,
+      "metric": "equity",
+      "period": "2025-12-31",
+      "column_label": "31/12/2025",
+      "statement_scope": "SEPARATE",
+      "unit": "VND",
+      "convention": "vi_VN",
+      "basis": "AS_REPORTED",
+      "source_display": "94.430.926.468.210",
+      "box": [
+        383.6613416234552,
+        462.6000134068677,
+        471.2525157861205,
+        471.30001365900716
+      ],
+      "confidence": 92.0,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "page": 6,
+      "row_label": "TỔNG TÀI SẢN",
+      "column_index": 0,
+      "metric": "assets",
+      "period": "2024-12-31",
+      "column_label": "Số liệu đã công bố",
+      "statement_scope": "CONSOLIDATED",
+      "unit": "TRIEU_VND",
+      "convention": "en_US",
+      "basis": "ORIGINAL",
+      "source_display": "2,760,791,854",
+      "box": [
+        315.826171875,
+        591.2344970703125,
+        366.6362609863281,
+        600.9321899414062
+      ],
+      "confidence": null,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "page": 6,
+      "row_label": "TỔNG TÀI SẢN",
+      "column_index": 1,
+      "metric": "assets",
+      "period": "2024-12-31",
+      "column_label": "Điều chỉnh",
+      "statement_scope": "CONSOLIDATED",
+      "unit": "TRIEU_VND",
+      "convention": "en_US",
+      "basis": "ADJUSTMENT",
+      "source_display": "115,110",
+      "box": [
+        424.8047790527344,
+        591.2344970703125,
+        453.5389099121094,
+        600.9321899414062
+      ],
+      "confidence": null,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "page": 6,
+      "row_label": "TỔNG TÀI SẢN",
+      "column_index": 2,
+      "metric": "assets",
+      "period": "2024-12-31",
+      "column_label": "Số trình bày lại",
+      "statement_scope": "CONSOLIDATED",
+      "unit": "TRIEU_VND",
+      "convention": "en_US",
+      "basis": "RESTATED",
+      "source_display": "2,760,906,964",
+      "box": [
+        494.55792236328125,
+        591.2344970703125,
+        545.3682861328125,
+        600.9321899414062
+      ],
+      "confidence": null,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+    }
+  ]
+}

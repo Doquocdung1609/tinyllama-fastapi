@@ -16,7 +16,7 @@ from pathlib import Path
 import re
 import shutil
 import sqlite3
-from threading import RLock
+from threading import RLock, Lock
 from time import perf_counter
 from uuid import NAMESPACE_URL, uuid5
 
@@ -99,6 +99,7 @@ class PdfWorkspace:
         self.root = Path(root).resolve()
         self._lock = RLock()
         self._processing = set()
+        self._ingestion_lock = Lock()
         self.embedder = embedder or OllamaEmbedder(os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434"))
         if self.root.exists() and any(self.root.iterdir()):
             marker = self.root / "ownership.json"
@@ -130,7 +131,22 @@ class PdfWorkspace:
                   line_boxes TEXT NOT NULL, FOREIGN KEY(document_id) REFERENCES documents(id));
                 CREATE INDEX IF NOT EXISTS chunks_document ON chunks(document_id);
                 CREATE VIRTUAL TABLE IF NOT EXISTS chunks_fts USING fts5(chunk_id UNINDEXED, text, tokenize='unicode61');
+                CREATE VIRTUAL TABLE IF NOT EXISTS chunks_fts_vi USING fts5(chunk_id UNINDEXED, text, tokenize='unicode61 remove_diacritics 2');
+                CREATE TABLE IF NOT EXISTS page_evidence(
+                  document_id TEXT NOT NULL,page INTEGER NOT NULL,payload TEXT NOT NULL,payload_hash TEXT NOT NULL,
+                  PRIMARY KEY(document_id,page));
+                CREATE TABLE IF NOT EXISTS reviewed_facts(id TEXT PRIMARY KEY,document_id TEXT NOT NULL,payload TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS analysis_jobs(id TEXT PRIMARY KEY,payload TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS fact_review_history(event_hash TEXT PRIMARY KEY,fact_id TEXT NOT NULL,payload TEXT NOT NULL);
             """)
+            # New derived lexical cache only; original text, old FTS, IDs and dense vectors remain intact.
+            from app.product.pdf_extract import folded
+            for row in db.execute('SELECT id,text FROM chunks WHERE id NOT IN (SELECT chunk_id FROM chunks_fts_vi)').fetchall():
+                db.execute('INSERT INTO chunks_fts_vi VALUES(?,?)',(row['id'],folded(row['text'])))
+            for row in db.execute('SELECT id,payload FROM analysis_jobs').fetchall():
+                job=json.loads(row['payload'])
+                if job.get('status') in {'QUEUED','RUNNING'}:
+                    job['status']='INTERRUPTED';db.execute('UPDATE analysis_jobs SET payload=? WHERE id=?',(json.dumps(job),row['id']))
             db.execute("UPDATE documents SET status='INTERRUPTED', stage='INTERRUPTED', updated_at=? "
                        "WHERE status IN ('UPLOADED','RETRY_QUEUED','PROCESSING','EXTRACTING',"
                        "'CHUNKING','INDEXING_BM25','EMBEDDING','INDEXING_DENSE')", (_now(),))
@@ -152,7 +168,8 @@ class PdfWorkspace:
                                       (doc["id"],)).fetchall()
                     fts_count = db.execute("SELECT COUNT(*) AS n FROM chunks_fts f JOIN chunks c "
                         "ON c.id=f.chunk_id WHERE c.document_id=?", (doc["id"],)).fetchone()["n"]
-                if not rows or len(rows) != doc["chunks"] or fts_count != len(rows):
+                    vi_count=db.execute('SELECT COUNT(*) AS n FROM chunks_fts_vi f JOIN chunks c ON c.id=f.chunk_id WHERE c.document_id=?',(doc['id'],)).fetchone()['n']
+                if not rows or len(rows) != doc["chunks"] or fts_count != len(rows) or vi_count!=len(rows):
                     raise ValueError("PDF_INDEX_MEMBERSHIP_INCOMPLETE")
                 for start in range(0, len(rows), 100):
                     batch = rows[start:start + 100]
@@ -312,7 +329,8 @@ class PdfWorkspace:
                 return self.document(document_id)
             self._processing.add(document_id)
         try:
-            return self._process_document(document_id)
+            with self._ingestion_lock:
+                return self._process_document(document_id)
         finally:
             with self._lock:
                 self._processing.discard(document_id)
@@ -329,7 +347,24 @@ class PdfWorkspace:
             if not path.is_file() or _hash_file(path) != doc["sha256"]:
                 raise ValueError("PDF_SOURCE_HASH_MISMATCH")
             self._stage(document_id, "PROCESSING", "EXTRACTING")
-            pages, chunks = self._extract(path, document_id)
+            from app.product.pdf_extract import extract_document, VERSION
+            def checkpoint(number):
+                with closing(self._connect()) as db:
+                    row=db.execute('SELECT payload,payload_hash FROM page_evidence WHERE document_id=? AND page=?',
+                                   (document_id,number)).fetchone()
+                if row and sha256(row['payload'].encode()).hexdigest()==row['payload_hash']:
+                    saved=json.loads(row['payload'])
+                    if saved.get('status')!='FAILED' and saved.get('version')==VERSION and saved.get('source_sha256')==doc['sha256']:
+                        return saved
+                return None
+            def progress(number,saved,total):
+                saved['source_sha256']=doc['sha256']
+                encoded=json.dumps(saved,ensure_ascii=False,sort_keys=True)
+                with closing(self._connect()) as db,db:
+                    db.execute('INSERT OR REPLACE INTO page_evidence VALUES(?,?,?,?)',
+                               (document_id,number,encoded,sha256(encoded.encode()).hexdigest()))
+                self._stage(document_id,'PROCESSING',f'EXTRACTING {number}/{total}',pages=total)
+            pages, chunks = extract_document(path, document_id, checkpoint, progress)
             self._stage(document_id, "PROCESSING", "CHUNKING", pages=pages, chunks=len(chunks))
             self.embedder.identity()
             with self._lock:
@@ -347,12 +382,15 @@ class PdfWorkspace:
                 old = [r["id"] for r in db.execute("SELECT id FROM chunks WHERE document_id=?", (document_id,))]
                 for cid in old:
                     db.execute("DELETE FROM chunks_fts WHERE chunk_id=?", (cid,))
+                    db.execute("DELETE FROM chunks_fts_vi WHERE chunk_id=?", (cid,))
                 db.execute("DELETE FROM chunks WHERE document_id=?", (document_id,))
                 for c in chunks:
                     db.execute("INSERT INTO chunks VALUES(?,?,?,?,?,?,?)", (c["id"], document_id,
                                c["page"], c["text"], c["text_hash"], c["page_text_hash"],
                                json.dumps(c["line_boxes"])))
                     db.execute("INSERT INTO chunks_fts(chunk_id,text) VALUES(?,?)", (c["id"], c["text"]))
+                    from app.product.pdf_extract import folded
+                    db.execute("INSERT INTO chunks_fts_vi(chunk_id,text) VALUES(?,?)", (c["id"], folded(c["text"])))
             self._stage(document_id, "PROCESSING", "EMBEDDING")
             for start in range(0, len(chunks), 4):
                 if shutil.disk_usage(self.root).free < 256 * 1024 * 1024:
@@ -369,8 +407,9 @@ class PdfWorkspace:
             with closing(self._connect()) as db:
                 row = db.execute("SELECT COUNT(*) AS n FROM chunks WHERE document_id=?", (document_id,)).fetchone()
                 lexical_count = row["n"]
+                vi_count=db.execute('SELECT COUNT(*) AS n FROM chunks_fts_vi f JOIN chunks c ON c.id=f.chunk_id WHERE c.document_id=?',(document_id,)).fetchone()['n']
             points = client.retrieve(COLLECTION, ids=ids, with_payload=True, with_vectors=True)
-            if lexical_count != len(chunks) or len(points) != len(chunks):
+            if lexical_count != len(chunks) or vi_count!=len(chunks) or len(points) != len(chunks):
                 raise ValueError("PDF_INDEX_MEMBERSHIP_INCOMPLETE")
             expected = {c["id"]: c for c in chunks}
             for point in points:
@@ -405,8 +444,11 @@ class PdfWorkspace:
             with closing(self._connect()) as db, db:
                 for row in db.execute("SELECT id FROM chunks WHERE document_id=?", (document_id,)):
                     db.execute("DELETE FROM chunks_fts WHERE chunk_id=?", (row["id"],))
+                    db.execute("DELETE FROM chunks_fts_vi WHERE chunk_id=?", (row["id"],))
                 db.execute("DELETE FROM chunks WHERE document_id=?", (document_id,))
                 db.execute("DELETE FROM documents WHERE id=?", (document_id,))
+                db.execute("DELETE FROM page_evidence WHERE document_id=?", (document_id,))
+                db.execute("DELETE FROM reviewed_facts WHERE document_id=?", (document_id,))
             (self.files / f"{document_id}.pdf").unlink(missing_ok=True)
             return True
 
@@ -447,9 +489,11 @@ class PdfWorkspace:
                 return {"mode": mode, "results": [], "documents": 0, "latency_ms": 0,
                         "status": "NO_READY_DOCUMENTS"}
             allowed = {d["id"]: d for d in docs}
-            generation = sha256(json.dumps(sorted((d["id"], d["sha256"], d["chunks"])
-                                                  for d in docs), separators=(",", ":")).encode()).hexdigest()
-            terms = _tokens(query)
+            generation = sha256(json.dumps({'documents':sorted((d['id'],d['sha256'],d['chunks']) for d in docs),
+                'lexical_version':'PDF_VI_FOLDED_FTS5_V2','embedding_digest':DIGEST,
+                'embedding_policy':'nomic-prefix-first6000-truncate'},sort_keys=True,separators=(',',':')).encode()).hexdigest()
+            from app.product.pdf_extract import folded
+            terms = _tokens(folded(query))
             if not terms:
                 raise ValueError("QUERY_HAS_NO_SEARCH_TERMS")
             b, d = [], []
@@ -458,8 +502,8 @@ class PdfWorkspace:
                 expression = " OR ".join('"' + term.replace('"', '""') + '"' for term in terms)
                 with closing(self._connect()) as db:
                     placeholders = ",".join("?" for _ in allowed)
-                    rows = db.execute("SELECT c.*, bm25(chunks_fts) AS bm25_score FROM chunks_fts "
-                        "JOIN chunks c ON c.id=chunks_fts.chunk_id WHERE chunks_fts MATCH ? "
+                    rows = db.execute("SELECT c.*, bm25(chunks_fts_vi) AS bm25_score FROM chunks_fts_vi "
+                        "JOIN chunks c ON c.id=chunks_fts_vi.chunk_id WHERE chunks_fts_vi MATCH ? "
                         f"AND c.document_id IN ({placeholders}) ORDER BY bm25_score ASC, c.id ASC LIMIT 40",
                         (expression, *allowed)).fetchall()
                     b = [(dict(row), -float(row["bm25_score"])) for row in rows]
@@ -554,6 +598,9 @@ class PdfWorkspace:
                         exact_phrase = bool(rects)
                     if not rects:
                         rects = [pymupdf.Rect(*box) for box in json.loads(row["line_boxes"])]
+                        with closing(self._connect()) as db:
+                            normalized=db.execute('SELECT 1 FROM page_evidence WHERE document_id=? AND page=?',(document_id,page_number)).fetchone()
+                        if normalized:rects=[rect*page.derotation_matrix for rect in rects]
                     if rects:
                         annotation = page.add_highlight_annot(rects)
                         annotation.set_colors(stroke=(1, .78, .18))
@@ -568,4 +615,50 @@ class PdfWorkspace:
         return {"workspace": "ISOLATED_USER_PDF", "ready_documents": sum(d["status"] == "READY" for d in docs),
                 "total_documents": len(docs), "ready_chunks": sum(d["chunks"] for d in docs if d["status"] == "READY"),
                 "vector_collection": COLLECTION, "model": MODEL, "dimension": DIMENSION,
+                "lexical_version": "PDF_VI_FOLDED_FTS5_V2",
                 "disk_free_bytes": shutil.disk_usage(self.root).free}
+
+    def source_file(self, document_id):
+        doc=self.document(document_id)
+        if not doc:
+            raise ValueError('DOCUMENT_NOT_FOUND')
+        path=self.files / f'{doc["id"]}.pdf'
+        if _hash_file(path)!=doc['sha256']:
+            raise ValueError('PDF_SOURCE_HASH_MISMATCH')
+        return path
+
+    def page_evidence(self, document_id, page_number):
+        self.source_file(document_id)
+        with closing(self._connect()) as db:
+            row=db.execute('SELECT payload,payload_hash FROM page_evidence WHERE document_id=? AND page=?',
+                           (document_id,page_number)).fetchone()
+        if row is None:
+            raise ValueError('PAGE_EVIDENCE_NOT_AVAILABLE')
+        if sha256(row['payload'].encode()).hexdigest()!=row['payload_hash']:
+            raise ValueError('PDF_PAGE_EVIDENCE_HASH_MISMATCH')
+        saved=json.loads(row['payload'])
+        from app.product.pdf_extract import table_candidates
+        # A versioned, derived layout view; immutable OCR checkpoint bytes are retained.
+        tables=table_candidates(saved.get('lines',[]),page_number,saved.get('engine',{}).get('correction_clockwise',0))
+        layout_hash=sha256(json.dumps(tables,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+        evidence_hash=sha256((row['payload_hash']+'TABLE_LAYOUT_V3'+layout_hash).encode()).hexdigest()
+        confidences=[w['confidence'] for line in saved.get('lines',[]) for w in line['words'] if w.get('confidence') is not None]
+        quality={'engine_mean_word_confidence':sum(confidences)/len(confidences) if confidences else None,
+                 'low_confidence_words':sum(v<60 for v in confidences),
+                 'status':'OCR_EXTRACTED_NOT_CERTIFIED' if saved.get('method')=='OCR' else 'NATIVE_TEXT_EXTRACTED'}
+        return {**saved,'tables':tables,'table_layout_version':'TABLE_LAYOUT_V3',
+                'quality':quality,'checkpoint_sha256':row['payload_hash'],'evidence_sha256':evidence_hash}
+
+    def extraction_status(self, document_id):
+        doc=self.document(document_id)
+        if not doc:raise ValueError('DOCUMENT_NOT_FOUND')
+        with closing(self._connect()) as db:
+            pages=[json.loads(row['payload']) for row in db.execute(
+                'SELECT payload FROM page_evidence WHERE document_id=? ORDER BY page',(document_id,))]
+        types={p.get('pdf_type') for p in pages}
+        return {'pages_completed':sum(p['status']!='FAILED' for p in pages),'pages_total':doc['pages'],
+                'pdf_type':'MIXED' if len(types)>1 else next(iter(types),'UNKNOWN'),
+                'table_status':'TABLE_STRUCTURE_UNVERIFIED' if any(p.get('tables') for p in pages) else 'NO_TABLE_CANDIDATES',
+                'search_ready':doc['status']=='READY',
+                'pages':[{'page':p['page'],'status':p['status'],'method':p.get('method'),'error':p.get('error'),
+                          'table_rows':len(p.get('tables',[]))} for p in pages]}
