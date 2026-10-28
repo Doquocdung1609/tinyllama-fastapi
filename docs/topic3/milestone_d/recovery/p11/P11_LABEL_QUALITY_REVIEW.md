@@ -8,4 +8,3 @@ Reviewers should verify issuer/entity, statement family, row and column header h
 # Source-context audit after proposal freeze
 
 An independent-style second pass over the **frozen proposal packet**, without using rankings, found that the proposed MCD total-assets parent is a row in a table captioned `Segment Information`. The row carries `us-gaap:Assets`, but a reviewer must establish whether that specific table row is eligible evidence for an unqualified consolidated-assets question. The MCD revenue proposal is in a management discussion table captioned `The Following Definitions Apply to these Terms as Used Throughout this Report:`; a reviewer must check whether it is an eligible alternative to the primary statement. Neither proposal can be promoted from provisional to independently verified solely because the row label matches. The frozen proposal and qrels are preserved unchanged so this issue remains visible.
-

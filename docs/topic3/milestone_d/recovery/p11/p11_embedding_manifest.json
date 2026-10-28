@@ -1,0 +1,48 @@
+{
+  "batch_limit": 4,
+  "collection": "topic3_p11_dev_nomic_v1",
+  "completed_points": 2887,
+  "dataset_id": "p11-new-sec-development-v1",
+  "dimension": 768,
+  "distance": "COSINE",
+  "document_prefix": "search_document: ",
+  "embedding_batches_this_run": 8,
+  "embedding_ms_this_run": 17611.811,
+  "generation": "d37a5139aa1817d4564238e7c1e03abc818991c6035991ce5b6d9435bac33f28",
+  "label_freeze_commit": "5377534170523a1872f0bcf17b72d69bfc595859",
+  "lexical_count": 2887,
+  "lexical_membership_hash": "ad09e550abd8e3bde655c92c49e71c0a43c5c43ddffb80d212c50ff4cda9b555",
+  "lexical_state": "READY",
+  "manifest_hash": "895759680e6617017fe3a168d87fb5ca4429fdc42260e9743bf755b2077a93fc",
+  "missing_points": 0,
+  "model": "nomic-embed-text:latest",
+  "model_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "parent_count": 2887,
+  "parent_membership_sha256": "f336c1850254eebef2aaef8f5a466d69e7f017712d0842a62d1353ad32f21781",
+  "qdrant_client_version": "1.20.0",
+  "query_prefix": "search_query: ",
+  "schema_version": "topic3-p11-dev-generation/v1",
+  "source_selection_commit": "d04fd4b53c104cbc5208ff33bcf876ae7bcbc03e",
+  "sources": [
+    {
+      "accession": "0000063908-26-000073",
+      "cik": "0000063908",
+      "extraction_status": "PARTIAL_EXTRACTION",
+      "membership_sha256": "9cb5b687095730f5e1d69d844e5619459d736259b2e2f674fb73b1f3d168fb6b",
+      "parent_count": 876,
+      "raw_sha256": "5a11b7e43689cdcff53b25381d99c1fae8a5795fa25c3cc441672048599f6541",
+      "ticker": "MCD"
+    },
+    {
+      "accession": "0000018230-26-000046",
+      "cik": "0000018230",
+      "extraction_status": "PARTIAL_EXTRACTION",
+      "membership_sha256": "28a50f6b0c401787e1306f77e935e26c3ddec27ebba8acc2a3439b7128fdb1a7",
+      "parent_count": 2011,
+      "raw_sha256": "abefe0510b34ebfe8e1cdce8371026fc12dc166f60b97fc3a9e1d7c6aa1d8849",
+      "ticker": "CAT"
+    }
+  ],
+  "state": "READY",
+  "truncation_content_chars": 6000
+}

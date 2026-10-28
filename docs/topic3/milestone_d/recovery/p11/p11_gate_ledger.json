@@ -1,0 +1,20 @@
+{
+  "schema_version": "topic3-p11-gate-ledger/v1",
+  "base_p10_sha": "0d6d9ce0796097c88342bff80cc6c195c3c123db",
+  "source_selection": {"status": "VERIFIED", "evidence": "d04fd4b53c104cbc5208ff33bcf876ae7bcbc03e; p11_partition_manifest.json"},
+  "official_sec_acquisition": {"status": "PARTIAL", "acquired_filings": 7, "planned_filings": 9, "excluded_after_limit": ["ORCL", "DE"], "evidence": "p11_source_registry.json"},
+  "issuer_disjoint_partitions": {"status": "VERIFIED_WITH_LIMITATIONS", "realized_development": ["MCD", "CAT"], "realized_validation": ["SBUX", "UPS", "TXN"], "realized_heldout_raw_only": ["AMGN", "BKNG"], "limitation": "Planned 3/3/3 membership incomplete"},
+  "source_grounded_development_labels": {"status": "PARTIAL", "positive_queries": 10, "scope_controls_without_qrels": 4, "human_reviewers": 0, "evidence": "p11_query_registry.json; p11_qrels.json; p11_label_review_queue.json"},
+  "human_adjudication": {"status": "NOT_TESTED", "completed_reviews": 0},
+  "development_bm25_dense_generation": {"status": "VERIFIED", "generation": "d37a5139aa1817d4564238e7c1e03abc818991c6035991ce5b6d9435bac33f28", "bm25_parents": 2887, "dense_vectors": 2887, "evidence": "p11_embedding_manifest.json"},
+  "validation_index_and_scoring": {"status": "NOT_TESTED", "reason": "No source-reviewed validation qrels or finalist-selection freeze"},
+  "heldout_index_and_scoring": {"status": "NOT_TESTED", "reason": "Held-out remains raw-only and unopened; final freeze gates absent"},
+  "development_b_d_f_a_comparison": {"status": "VERIFIED_WITH_LIMITATIONS", "questions": 10, "channel_failures": 0, "limitation": "Provisional unreviewed source-row labels", "evidence": "p11_development_metrics.json"},
+  "adaptive_finalist": {"status": "BLOCKED", "reason": "No validation judgments; A underperformed F on provisional dev labels"},
+  "one_byte_source_tamper": {"status": "VERIFIED", "expected_reason": "SOURCE_ARTIFACT_HASH_MISMATCH", "evidence": "p11_source_tamper_result.json"},
+  "full_regression": {"status": "VERIFIED", "passed": 587, "skipped": 3, "warnings": 1},
+  "historical_artifact_integrity": {"status": "VERIFIED", "evidence": "P11 diff against P10 base changes only docs/topic3/milestone_d/recovery/p11, scripts/p11_*, tests/test_p11_dataset.py"},
+  "final_scientific_freeze": {"status": "BLOCKED", "reason": "Incomplete 3/3/3 source plan, absent human review, validation/held-out qrels and finalist"},
+  "final_head_ci": {"status": "PENDING", "reason": "GitHub Actions must be verified after Draft PR publication"},
+  "draft_pr": {"status": "PENDING", "reason": "Publish after local evidence commit"}
+}
