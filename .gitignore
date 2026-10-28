@@ -5,6 +5,8 @@ __pycache__/
 qdrant_data/
 financial_corpus/
 financial_search_data/
+studio_workspace/
+.streamlit/secrets.toml
 uploads/
 processed/
 images/

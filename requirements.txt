@@ -13,7 +13,6 @@ opencv-python-headless>=4.10,<5
 # Embedded Qdrant persists a client-version-specific meta.json schema. Keep the
 # tested minor line pinned so a clean environment can reopen retained indexes.
 qdrant-client>=1.20,<1.21
-pyttsx3>=2.90,<3
 psutil>=6,<8
 portalocker>=3,<4
 python-dotenv>=1,<2

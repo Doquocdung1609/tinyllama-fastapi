@@ -6,3 +6,7 @@ docs/topic3/MILESTONE_C*.json text eol=lf
 reports/milestone_c*.json text eol=lf
 scripts/evaluate_persistent_financial.py text eol=lf
 scripts/benchmark_financial_hardening.py text eol=lf
+docs/topic3/milestone_d/recovery/p11/p11_partition_manifest.json text eol=lf
+docs/topic3/milestone_d/recovery/p11/p11_adaptive_policy_v1.json text eol=lf
+docs/topic3/milestone_d/recovery/p11/p11_execution_manifest.json text eol=lf
+docs/topic3/milestone_d/recovery/p11/p11_gate_ledger.json text eol=lf

@@ -70,7 +70,7 @@ class Settings:
     )
 
     def prepare_dirs(self) -> None:
-        for path in (self.upload_dir, self.processed_dir, self.audio_dir, self.image_dir, self.video_dir):
+        for path in (self.upload_dir, self.processed_dir):
             path.mkdir(parents=True, exist_ok=True)
         self.conversation_db.parent.mkdir(parents=True, exist_ok=True)
         for name in ("raw", "structured", "chunks", "manifests", "jobs", "staging_index"):

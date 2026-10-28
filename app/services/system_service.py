@@ -8,8 +8,7 @@ import threading
 from time import monotonic
 
 from app.config import ROOT_DIR, get_settings
-from app.services import embedding_service, image_service, qdrant_service, video_service
-from app.services.inference_manager import state as inference_state
+from app.services import embedding_service, qdrant_service
 from app.services.ollama_service import ollama_status
 
 _cache: tuple[float, dict] | None = None
@@ -49,7 +48,7 @@ def _gpu_info() -> dict:
             gpu["name"] = torch.cuda.get_device_name(0)
             gpu["memory_total_mb"] = round(torch.cuda.get_device_properties(0).total_memory / 1024**2)
     except ImportError:
-        gpu["note"] = "PyTorch chưa cài; CUDA cho ảnh/video chưa khả dụng. Ollama dùng runtime riêng."
+        gpu["note"] = "PyTorch chưa cài; Ollama dùng runtime riêng."
     return gpu
 
 
@@ -89,8 +88,7 @@ def status(force: bool = False) -> dict:
                   "disk": {"path": str(ROOT_DIR.drive or ROOT_DIR),
                            "total_gb": round(disk.total / 1024**3, 1),
                            "free_gb": round(disk.free / 1024**3, 1)},
-                  "ffmpeg": _ffmpeg(), "image": image_service.readiness(),
-                  "video": video_service.readiness(), "inference": inference_state()}
+                  }
         # Start the TTL after collection completes. On a memory-constrained host,
         # loading torch or querying a busy Ollama can itself exceed the TTL.
         _cache = (monotonic(), result)
