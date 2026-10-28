@@ -1,4 +1,6 @@
-INFO:     Started server process [24024]
+INFO:     Started server process [8128]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-10-28 09:51:48,073 INFO comtypes.client._code_cache Imported existing <module 'comtypes.gen' from 'C:\\Users\\Admin\\Desktop\\AI_thay_Hieu\\tinyllama-fastapi\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-10-28 09:51:48,099 INFO comtypes.client._code_cache Using writeable comtypes cache directory: 'C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\.venv\Lib\site-packages\comtypes\gen'
