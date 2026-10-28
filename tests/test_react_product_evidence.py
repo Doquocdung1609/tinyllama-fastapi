@@ -159,3 +159,166 @@ def test_failed_page_retries_without_reextracting_completed_checkpoint(tmp_path,
     pages,chunks=extraction.extract_document(path,'resume',checkpoint,progress)
     assert pages==2 and {chunk['page'] for chunk in chunks}=={1,2}
     assert calls==[1,2,2] and saved[2]['status']=='EXTRACTED'
+
+
+@pytest.mark.parametrize('text,expected',[
+ ('Tổng tài sản','assets'),('Quy mo tai san','assets'),('Tài sản cố định','fixed_assets'),
+ ('Tài sản cố định vô hình','intangible_assets'),('Doanh thu thuần','net_revenue'),
+ ('Doanh thu hoạt động tài chính','financial_revenue'),('Lãi sau thuế','net_income'),
+ ('Lợi nhuận kế toán trước thuế','pretax_income'),('Nợ phải trả khác','other_liabilities'),
+ ('Tổng nguồn vốn','total_funding'),('Tiền và tương đương tiền','cash_equivalents'),
+ ('Số dư tiền','cash_balance'),('Dòng tiền thuần trong kỳ','net_cashflow')])
+def test_financial_ontology_concepts_remain_distinct(text,expected):
+    from app.product.query_intent import metric_matches
+    assert metric_matches(text)==[expected]
+
+
+def test_query_intent_period_basis_operation():
+    from app.product.query_intent import understand
+    intent=understand('So sánh tổng tài sản hợp nhất số trình bày lại ngày 31/12/2024 với ngày 31/12/2023, triệu đồng')
+    assert intent.scope=='CONSOLIDATED' and intent.basis=='RESTATED'
+    assert intent.dates==('2023-12-31','2024-12-31') and intent.operation=='CHANGE' and intent.unit=='TRIEU_VND'
+
+
+def test_scope_basis_prefixes_and_negations_are_not_positive_matches():
+    from app.product.query_intent import understand
+    assert understand('unconsolidated total assets').scope=='SEPARATE'
+    assert understand('unrestated total assets').basis=='ORIGINAL'
+    assert understand('tổng tài sản không phải hợp nhất').scope=='AMBIGUOUS'
+    assert understand('total assets not restated').basis=='AMBIGUOUS'
+
+
+def test_source_statement_classification_and_conflicting_request(evidence_workspace,tmp_path):
+    from app.product.search_v2 import FinancialSearchV2,statement_kind,unit_header
+    assert statement_kind('BẢNG CÂN ĐỐI KẾ TOÁN HỢP NHẤT')=='BALANCE_SHEET'
+    assert statement_kind('BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH')=='INCOME_STATEMENT'
+    assert statement_kind('Thuyết minh báo cáo tài chính')=='NOTES'
+    assert statement_kind('unreadable')=='UNKNOWN'
+    assert unit_header('Đơn vị: triệu đồng')=='TRIEU_VND'
+    w,d,row=evidence_workspace;reviewed(w,d,row)
+    result=FinancialSearchV2(w,tmp_path/'sidecar').search('tổng tài sản riêng trong báo cáo kết quả kinh doanh ngày 31/12/2025','bm25',5,[d['id']])
+    assert result['results']==[]
+
+
+def test_v2_row_provenance_and_review_are_separate(evidence_workspace,tmp_path):
+    from app.product.search_v2 import FinancialSearchV2
+    w,d,row=evidence_workspace;v=FinancialSearchV2(w,tmp_path/'sidecar')
+    result=v.search('Tổng tài sản báo cáo riêng ngày 31/12/2025','bm25',5,[d['id']])
+    assert result['results'][0]['row_id']==row['id']
+    assert not result['results'][0]['numeric_answer_eligible']
+    reviewed(w,d,row)
+    result=v.search('Quy mô tài sản báo cáo riêng ngày 31/12/2025','bm25',5,[d['id']])
+    hit=result['results'][0]
+    assert hit['numeric_answer_eligible'] and hit['reviewed_facts'][0]['period']=='2025-12-31'
+    assert hit['source_sha256']==d['sha256'] and hit['box']==row['cells'][0]['box']
+    # The sidecar holds no open Windows SQLite handle after search.
+    file=next((tmp_path/'sidecar').glob('*.sqlite3'));renamed=file.with_suffix('.roundtrip')
+    file.rename(renamed);renamed.rename(file)
+
+
+@pytest.mark.parametrize('question',[
+ 'Tổng tài sản riêng năm 2031','Tổng tài sản hợp nhất năm 2025',
+ 'Tổng tài sản của ACME năm 2025','Tổng tài sản của Missing Company năm 2025',
+ 'Total assets of Apple separate as of 31/12/2025','total assets of missing company separate as of 31/12/2025',
+ 'Tổng tài sản riêng ngày 31/02/2025','Tổng tài sản riêng số trình bày lại năm 2025'])
+def test_v2_missing_context_never_claims_answer(evidence_workspace,tmp_path,question):
+    from app.product.search_v2 import FinancialSearchV2
+    w,d,row=evidence_workspace;reviewed(w,d,row)
+    result=FinancialSearchV2(w,tmp_path/'sidecar').search(question,'bm25',5,[d['id']])
+    assert result['evidence_status']=='NO_SUFFICIENT_EVIDENCE' and result['results']==[]
+
+
+def test_v2_index_tamper_rejected_without_changing_parent(evidence_workspace,tmp_path):
+    import sqlite3
+    from app.product.search_v2 import FinancialSearchV2
+    w,d,row=evidence_workspace;v=FinancialSearchV2(w,tmp_path/'sidecar')
+    result=v.search('tổng tài sản','bm25',5,[d['id']]);parent=result['results'][0]['chunk_id']
+    with closing(sqlite3.connect(next((tmp_path/'sidecar').glob('*.sqlite3')))) as db,db:db.execute("UPDATE fts SET body='forged'")
+    with pytest.raises(ValueError,match='INDEX_BYTES_CHANGED'):v.search('tổng tài sản','bm25',5,[d['id']])
+    assert w.search('tổng tài sản','bm25',5,[d['id']])['results'][0]['chunk_id']==parent
+
+
+def test_narrative_request_cannot_inherit_unrelated_reviewed_numbers(evidence_workspace,tmp_path):
+    from app.product.search_v2 import FinancialSearchV2
+    w,d,row=evidence_workspace;reviewed(w,d,row)
+    v=FinancialSearchV2(w,tmp_path/'sidecar')
+    for experiment in ['C2','C3','C4']:
+        result=v.search('rủi ro và dự phòng tài chính','bm25',5,[d['id']],experiment)
+        assert not any(h['numeric_answer_eligible'] for h in result['results'])
+
+
+def test_v2_multiple_source_periods_need_explicit_column(evidence_workspace,tmp_path):
+    from app.product.search_v2 import FinancialSearchV2
+    w,d,row=evidence_workspace;reviewed(w,d,row,0);reviewed(w,d,row,1)
+    v=FinancialSearchV2(w,tmp_path/'sidecar')
+    ambiguous=v.search('tổng tài sản báo cáo riêng năm 2025','bm25',5,[d['id']])
+    assert not any(r['numeric_answer_eligible'] for r in ambiguous['results'])
+    specific=v.search('tổng tài sản báo cáo riêng cuối năm 2025','bm25',5,[d['id']])
+    assert specific['results'][0]['numeric_answer_eligible']
+    assert {f['period'] for f in specific['results'][0]['reviewed_facts']}=={'2025-12-31'}
+
+
+def test_pdfjs_worker_mime_ignores_windows_registry_association(tmp_path,monkeypatch):
+    import mimetypes
+    from app.product.static_files import StudioStaticFiles
+    from fastapi import FastAPI
+    monkeypatch.setitem(mimetypes.types_map,'.mjs','text/plain')
+    worker=tmp_path/'pdf.worker.mjs';worker.write_text('export const test=1')
+    app=FastAPI();app.mount('/app',StudioStaticFiles(directory=tmp_path))
+    with TestClient(app) as client:
+        response=client.get('/app/pdf.worker.mjs')
+        assert response.status_code==200 and response.headers['content-type'].split(';')[0] in {'text/javascript','application/javascript'}
+        cached=client.get('/app/pdf.worker.mjs',headers={'If-None-Match':response.headers['etag']})
+        assert cached.status_code==304 and cached.headers['content-type'].startswith('text/javascript')
+
+
+def test_benchmark_duplicate_source_hits_cannot_inflate_ndcg():
+    from scripts.benchmark_search_v2 import score_query
+    import math
+    q={'relevant':[{'document_id':'d','page':3,'row_id':'r','span':'gold'}],'expected_abstention':False}
+    hits=[{'document_id':'d','page':1,'text':'wrong'},
+          {'document_id':'d','page':3,'text':'gold','row_id':'r'},
+          {'document_id':'d','page':3,'text':'gold duplicate','row_id':'r'}]
+    metrics=score_query(q,{'results':hits})
+    assert metrics['ndcg_at_5']==pytest.approx(1/math.log2(3))
+    assert metrics['recall_at_5']==1 and metrics['mrr_at_5']==.5
+    assert metrics['precision_at_5'] is None
+
+
+def test_api_v2_opt_in_and_baseline_comparison_contract(evidence_workspace,tmp_path,monkeypatch):
+    from app.product import frontend_api
+    from fastapi import FastAPI
+    w,d,row=evidence_workspace;reviewed(w,d,row)
+    monkeypatch.setattr(frontend_api,'workspace',lambda:w)
+    monkeypatch.setenv('STUDIO_API_TOKEN','fixture-private-test-access')
+    monkeypatch.setenv('STUDIO_SEARCH_V2_ROOT',str(tmp_path/'sidecar'))
+    app=FastAPI();app.include_router(frontend_api.router)
+    headers={'Authorization':'Bearer fixture-private-test-access'}
+    body={'query':'Tổng tài sản riêng ngày 31/12/2025','source':'USER_UPLOADS','mode':'bm25','document_ids':[d['id']],'search_profile':'production_v2'}
+    with TestClient(app) as client:
+        result=client.post('/studio/query',headers=headers,json=body)
+        assert result.status_code==200,result.text
+        assert result.json()['results'][0]['numeric_answer_eligible']
+        comparison=client.post('/studio/compare',headers=headers,json=body).json()
+        assert {arm['search_profile'] for arm in comparison['arms'].values()}=={'baseline'}
+        assert len({arm['generation'] for arm in comparison['arms'].values()})==1
+
+
+def test_experiment_copy_preserves_source_and_refuses_existing_destination(tmp_path,monkeypatch):
+    from scripts import prepare_search_v2_workspace as copying
+    from app.product.workspace import OWNER
+    fake=tmp_path/'repo';(fake/'scripts').mkdir(parents=True);(fake/'studio_workspace').mkdir()
+    monkeypatch.setattr(copying,'__file__',str(fake/'scripts/copy.py'))
+    source=tmp_path/'source';source.mkdir();(source/'ownership.json').write_text(json.dumps({'owner':OWNER}));(source/'raw.pdf').write_bytes(b'copy-test-only')
+    before=copying.inventory(source);destination=fake/'studio_workspace/search-v2-test'
+    copying.prepare(source,destination)
+    assert copying.inventory(source)==before and (destination/'raw.pdf').read_bytes()==b'copy-test-only'
+    with pytest.raises(ValueError,match='NEW_DISTINCT_DESTINATION_REQUIRED'):copying.prepare(source,destination)
+
+
+def test_experiment_copy_rejects_unowned_source(tmp_path,monkeypatch):
+    from scripts import prepare_search_v2_workspace as copying
+    fake=tmp_path/'repo';(fake/'scripts').mkdir(parents=True);(fake/'studio_workspace').mkdir()
+    monkeypatch.setattr(copying,'__file__',str(fake/'scripts/copy.py'))
+    source=tmp_path/'source';source.mkdir();(source/'ownership.json').write_text('{"owner":"not-owned"}')
+    with pytest.raises(ValueError,match='OWNERSHIP_INVALID'):copying.prepare(source,fake/'studio_workspace/search-v2-test')

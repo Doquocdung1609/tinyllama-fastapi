@@ -1,10 +1,10 @@
 export type Mode='bm25'|'dense'|'hybrid'
 export type Source='VIETNAM'|'US_SEC'|'ALL'|'USER_UPLOADS'
 export type Doc={id:string;filename:string;issuer:string;report_period:string;document_type:string;status:string;stage:string;pages:number;chunks:number;sha256:string;error_code?:string}
-export type Evidence={chunk_id?:string;parent_id?:string;document_id?:string;page?:number;rank?:number;text:string;issuer?:string;filename?:string;report_period?:string;source_sha256?:string;source_kind?:string;source_url?:string;source_location?:unknown;bm25_rank?:number;dense_rank?:number;provenance_status?:string;box?:number[];verification?:string;row_label?:string;column_label?:string;unit?:string;period?:string;extraction_method?:string}
+export type Evidence={evidence_id?:string;evidence_match?:string;row_id?:string;statement_scope?:string;document_type?:string;chunk_id?:string;parent_id?:string;document_id?:string;page?:number;rank?:number;text:string;issuer?:string;filename?:string;report_period?:string;source_sha256?:string;source_kind?:string;source_url?:string;source_location?:unknown;bm25_rank?:number;dense_rank?:number;provenance_status?:string;box?:number[];verification?:string;row_label?:string;column_label?:string;unit?:string;period?:string;extraction_method?:string}
 export type Fact=Evidence & {id:string;metric:string;period:string;statement_scope:string;basis:string;value:string;base_value:string;source_display:string;currency:string;page:number;document_id:string;text:string}
-export type SearchParams={query:string;mode:Mode;source:Source;top_k:number;document_ids:string[];issuer:string;period:string}
-export type SearchResult={status:string;results:Evidence[];generation:string;latency_ms:number;mode:Mode;source_errors:{source:string;reason:string}[]}
+export type SearchParams={search_profile?:"baseline"|"production_v2";query:string;mode:Mode;source:Source;top_k:number;document_ids:string[];issuer:string;period:string}
+export type SearchResult={evidence_status?:string;evidence_reason?:string;status:string;results:Evidence[];generation:string;latency_ms:number;mode:Mode;source_errors:{source:string;reason:string}[]}
 export type Ready={api:string;workspace:{ready_documents:number;total_documents:number;ready_chunks:number;model:string;dimension:number;disk_free_bytes:number};ocr:{status:string;languages:string[]};ollama:{status:string;models:string[]};sec:{status:string;reason?:string;parents?:number;dense_vectors?:number;generation?:string;filings:{issuer:string;ticker:string;report_period:string;form:string;chunks:number;source_url:string;accession:string}[]};resources:{available_ram_bytes:number}}
 export type Cell={column_index:number;text:string;box:number[]|null;confidence:number|null;verification:string}
 export type TableRow={id:string;row_label:string;cells:Cell[];box:number[];structure_status:string}
@@ -23,5 +23,5 @@ export async function api<T>(path:string,init:RequestInit={}):Promise<T>{
 }
 export async function pdfBytes(id:string){const r=await fetch(`/studio/documents/${encodeURIComponent(id)}/file`,{headers:{Authorization:'Bearer '+getToken()}});if(!r.ok)throw new ApiError(r.status,'Không mở được PDF hoặc nguồn đã thay đổi.');return r.arrayBuffer()}
 export const post=<T>(path:string,body:unknown)=>api<T>(path,{method:'POST',body:JSON.stringify(body)})
-export function evidenceId(e:Evidence){return e.chunk_id||e.parent_id||`${e.document_id}:${e.page}:${e.text}`}
+export function evidenceId(e:Evidence){return e.evidence_id||e.chunk_id||e.parent_id||`${e.document_id}:${e.page}:${e.text}`}
 export function citation(e:Evidence){return `${e.issuer||e.filename||'Tài liệu'} · ${e.period||e.report_period||'Kỳ chưa xác định'} · ${e.page?`trang PDF ${e.page}`:'SEC HTML, vị trí cấu trúc'}\n${e.text||e.row_label||''}\nSHA256: ${e.source_sha256||'Xem metadata nguồn'}`}

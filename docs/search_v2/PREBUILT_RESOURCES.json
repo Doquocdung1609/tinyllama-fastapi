@@ -1,0 +1,14 @@
+{
+  "sample_interval_s": 0.5,
+  "samples": 885,
+  "elapsed_s": 496.4495888000238,
+  "sampled_peak_rss_bytes": {
+    "app": 559300608,
+    "ocr": 148705280,
+    "ollama_including_runners": 719556608
+  },
+  "min_free_ram_bytes": 1087336448,
+  "peak_machine_ram_bytes": 15266320384,
+  "min_free_disk_bytes": 39987605504,
+  "note": "Actual Prebuilt fresh-ingestion/UI run on RTX3050Laptop4GB. Sampled RSS (shared pages possible); system RAM includes other apps. External Ollama runners included by executable installation path."
+}

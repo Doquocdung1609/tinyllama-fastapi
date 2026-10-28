@@ -1,0 +1,8 @@
+{
+  "qrels_sha256": "041f12981fc0a935e07ebb829008824cb64b8e74dc72d60b75ae572e30ce529d",
+  "queries": 70,
+  "development": 32,
+  "heldout": 38,
+  "selection": "Manual source page/row/span annotations; not generated from retrieval output. Query families assigned before first evaluation. Existing reported failure stays development.",
+  "independence_limit": "Single Codex source annotator; no independent human adjudication. Held-out labels never used to tune, but this is not an externally blinded evaluation. Gate5 cannot be certified PASS."
+}

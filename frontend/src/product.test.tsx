@@ -1,10 +1,13 @@
 import {describe,it,expect,vi,afterEach} from 'vitest'
 import {render,screen,cleanup} from '@testing-library/react'
 import {Highlight,formatDecimal} from './Studio'
-import {api,ApiError,citation} from './api'
+import {api,ApiError,citation,evidenceId} from './api'
 import {rotatedBox} from './geometry'
 afterEach(()=>{cleanup();vi.unstubAllGlobals();sessionStorage.clear()})
 describe('Vietnamese financial presentation integrity',()=>{
+ it('keeps separate source rows distinct when they share one parent chunk',()=>{
+  expect(evidenceId({text:'row A',chunk_id:'parent',evidence_id:'row:a'})).not.toBe(evidenceId({text:'row B',chunk_id:'parent',evidence_id:'row:b'}))
+ })
  it('rotates only measured source rectangles, preserving original page geometry',()=>{
   expect(rotatedBox([30,240,80,280],90,200,300)).toEqual([20,30,60,80])
   expect(rotatedBox([20,30,60,80],180,200,300)).toEqual([140,220,180,270])

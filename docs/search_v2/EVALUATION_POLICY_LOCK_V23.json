@@ -1,0 +1,10 @@
+{
+  "policy_sha256": "761583ea664d5d3c0bc42fd5613cbf2f00a8e7f847e2e3cf3177dbe2e7a55b61",
+  "qrels_sha256": "041f12981fc0a935e07ebb829008824cb64b8e74dc72d60b75ae572e30ce529d",
+  "selected": "C4",
+  "development_result_sha256": "65ca57ec1986be036db98c1c3621161a03db0a5546801c64ff89e2332cae70d2",
+  "evaluation_script_sha256": "c2ba19b950347edcfb44a935b84614933861d131fdc3dbc5371dbcc527d18e35",
+  "selection_reason": "C3/C4 highest development MRR;C4 keeps context-compatible rows and declines unsupported numeric intents;C1 is faster but weaker abstention. No model reranker installed or required.",
+  "gate5_status": "PARTIAL_SINGLE_ANNOTATOR_NOT_INDEPENDENT_HUMAN_REVIEW",
+  "rule": "No query ontology, source representation or ranking changes after heldout evaluation. Any subsequent repair invalidates heldout certification."
+}
