@@ -1,0 +1,211 @@
+"""Additive immutable row/chunk FTS generations. Baseline chunks/vectors untouched."""
+from contextlib import closing
+from hashlib import sha256
+from pathlib import Path
+from threading import RLock
+from time import perf_counter
+import json,re,sqlite3,os
+from app.product.query_intent import understand,metric_matches,lexical_terms,ONTOLOGY_VERSION
+from app.product.pdf_extract import folded
+from app.product.analysis import eligible_facts
+
+VERSION='financial-evidence-search-v2.3'
+EXPERIMENTS=('B0','B1','B2','C1','C2','C3','C4')
+
+def scope_of(text):
+ text=folded(text)
+ # Source title region, not manually entered document_type or a footer company name.
+ if 'hop nhat' in text and not any(t in text for t in ['rieng','cong ty me']):return 'CONSOLIDATED'
+ if any(t in text for t in ['rieng','cong ty me']) and 'hop nhat' not in text:return 'SEPARATE'
+ return None
+
+def _overlap(a,b):return max(0,min(a[2],b[2])-max(a[0],b[0]))*max(0,min(a[3],b[3])-max(a[1],b[1]))
+
+class FinancialSearchV2:
+ def __init__(self,workspace,index_root):
+  self.workspace=workspace;self.root=Path(index_root);self._lock=RLock();self._cache=None
+
+ def prepare(self):
+  w=self.workspace
+  # Source checks and layout fingerprints invalidate this derived sidecar automatically.
+  docs=[d for d in w.list_documents() if d['status']=='READY'];pages={};fingerprints=[]
+  with closing(w._connect()) as db:
+   checkpoints=db.execute('SELECT document_id,page,payload,payload_hash FROM page_evidence ORDER BY document_id,page').fetchall()
+   chunks=[dict(r) for r in db.execute('SELECT * FROM chunks ORDER BY id')]
+  for row in checkpoints:
+   if sha256(row['payload'].encode()).hexdigest()!=row['payload_hash']:raise ValueError('PDF_PAGE_EVIDENCE_HASH_MISMATCH')
+  for c in chunks:
+   if sha256(c['text'].encode()).hexdigest()!=c['text_hash']:raise ValueError('PDF_CHUNK_SOURCE_MISMATCH')
+  for doc in docs:w.source_file(doc['id'])
+  signature=sha256(json.dumps({'version':VERSION,'docs':[(d['id'],d['sha256'],d['issuer'],d['report_period'],d['document_type']) for d in docs],
+   'pages':[(r['document_id'],r['page'],r['payload_hash']) for r in checkpoints],
+   'chunks':[(c['id'],c['text_hash']) for c in chunks]},sort_keys=True).encode()).hexdigest()
+  if self._cache and self._cache['signature']==signature:
+   if sha256(self._cache['path'].read_bytes()).hexdigest()!=self._cache['file_sha256']:raise ValueError('V2_INDEX_BYTES_CHANGED')
+   return self._cache
+  for doc in docs:
+   w.source_file(doc['id'])
+   for n in range(1,doc['pages']+1):
+    page=w.page_evidence(doc['id'],n);pages[(doc['id'],n)]=page
+    fingerprints.append((doc['id'],doc['sha256'],n,page['evidence_sha256']))
+  with closing(w._connect()) as db:chunks=[dict(r) for r in db.execute('SELECT * FROM chunks ORDER BY id')]
+  for c in chunks:
+   if sha256(c['text'].encode()).hexdigest()!=c['text_hash']:raise ValueError('PDF_CHUNK_SOURCE_MISMATCH')
+  identity={'version':VERSION,'ontology':ONTOLOGY_VERSION,'signature':signature,'pages':fingerprints,'chunks':[(c['id'],c['text_hash']) for c in chunks]}
+  generation=sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()
+  if self._cache and self._cache['generation']==generation:
+   if sha256(self._cache['path'].read_bytes()).hexdigest()!=self._cache['file_sha256']:raise ValueError('V2_INDEX_BYTES_CHANGED')
+   return self._cache
+  entries=[]
+  for doc in docs:
+   source_pages=[p for (i,_),p in pages.items() if i==doc['id']]
+   scopes={scope_of(p['text'][:1000]) for p in source_pages}-{None}
+   doc_scope=next(iter(scopes)) if len(scopes)==1 else None
+   for c in [c for c in chunks if c['document_id']==doc['id']]:
+    page=pages[(doc['id'],c['page'])];context=page['text'][:1000]
+    entries.append({'evidence_id':c['id'],'kind':'chunk','chunk_id':c['id'],'document_id':doc['id'],'page':c['page'],
+     'text':c['text'],'row_label':'','metrics':metric_matches(c['text']),'scope':scope_of(context) or doc_scope,
+     'context':context,'box':None,'row_id':None,'page_evidence_sha256':page['evidence_sha256']})
+   for page in source_pages:
+    parent_chunks=[c for c in chunks if c['document_id']==doc['id'] and c['page']==page['page']]
+    for row in page['tables']:
+     if not parent_chunks:continue
+     parent=max(parent_chunks,key=lambda c:sum(_overlap(row['box'],b) for b in json.loads(c['line_boxes'])))
+     text=row['row_label']+' | '+' | '.join(c['text'] for c in row['cells'])
+     entries.append({'evidence_id':f"row:{doc['id']}:{row['id']}",'kind':'row','chunk_id':parent['id'],
+      'document_id':doc['id'],'page':page['page'],'text':text,'row_label':row['row_label'],
+      'metrics':metric_matches(row['row_label']),'item_code':row.get('item_code'),'row_id':row['id'],
+      'box':row['box'],'cells':row['cells'],'scope':scope_of(page['text'][:1000]) or doc_scope,
+      'context':page['text'][:1000],'page_evidence_sha256':page['evidence_sha256']})
+  self.root.mkdir(parents=True,exist_ok=True);target=self.root/(generation+'.sqlite3')
+  if not target.exists():
+   temporary=self.root/(generation+'.'+str(os.getpid())+'.tmp')
+   try:
+    with closing(sqlite3.connect(temporary)) as db,db:
+     db.executescript('CREATE TABLE evidence(id TEXT PRIMARY KEY,payload TEXT); CREATE VIRTUAL TABLE fts USING fts5(id UNINDEXED,label,body,context); CREATE TABLE identity(payload TEXT);')
+     db.execute('INSERT INTO identity VALUES(?)',(json.dumps(identity,sort_keys=True),))
+     for e in entries:
+      db.execute('INSERT INTO evidence VALUES(?,?)',(e['evidence_id'],json.dumps(e,ensure_ascii=False,sort_keys=True)))
+      db.execute('INSERT INTO fts VALUES(?,?,?,?)',(e['evidence_id'],folded(e['row_label']),folded(e['text']),folded(e['context'])))
+    os.replace(temporary,target)
+   finally:
+    if temporary.exists():temporary.unlink()
+  # Verify immutable sidecar bytes against freshly derived source records, not caller content.
+  with closing(sqlite3.connect(target)) as db:
+   if db.execute('SELECT payload FROM identity').fetchone()[0]!=json.dumps(identity,sort_keys=True):raise ValueError('V2_INDEX_IDENTITY_MISMATCH')
+   stored={i:json.loads(p) for i,p in db.execute('SELECT id,payload FROM evidence')}
+   if stored!={e['evidence_id']:e for e in entries}:raise ValueError('V2_INDEX_SOURCE_MISMATCH')
+   indexed=list(db.execute('SELECT id,label,body,context FROM fts'))
+   if sorted(indexed)!=sorted((e['evidence_id'],folded(e['row_label']),folded(e['text']),folded(e['context'])) for e in entries):raise ValueError('V2_FTS_SOURCE_MISMATCH')
+  self._cache={'signature':signature,'generation':generation,'path':target,'entries':entries,'documents':docs,'file_sha256':sha256(target.read_bytes()).hexdigest()}
+  return self._cache
+
+ def search(self,query,mode='hybrid',top_k=5,document_ids=None,experiment='C4'):
+  if experiment not in EXPERIMENTS or mode not in {'bm25','dense','hybrid'} or not 1<=top_k<=20 or not 2<=len(query)<=2000:raise ValueError('INVALID_V2_SEARCH_REQUEST')
+  if experiment in {'B0','B1','B2'}:
+   return self.workspace.search(query,{'B0':'bm25','B1':'dense','B2':'hybrid'}[experiment],top_k,document_ids)
+  start=perf_counter();intent=understand(query)
+  with self._lock:
+   snapshot=self.prepare();docs=snapshot['documents'];requested=set(document_ids or [d['id'] for d in docs])
+   all_docs=docs
+   def named(doc):
+    alias=re.sub(r'^(cong ty me|cong ty co phan|tap doan|ngan hang)\s+','',folded(doc['issuer']))
+    filename_alias=next((t for t in re.split(r'[^a-z0-9]+',folded(doc['filename'])) if t.isalpha() and 2<=len(t)<=6),'')
+    return (len(alias)>2 and alias in folded(query)) or bool(filename_alias and re.search(r'\b'+re.escape(filename_alias)+r'\b',folded(query)))
+   named_ids={d['id'] for d in all_docs if named(d)}
+   unknown_named=False
+   if not named_ids:
+    acronyms=set(re.findall(r'\b[A-Z]{2,6}\b',query))-{'VND','USD','BCTC','OCR','RRF','BM','AI','SEC','PDF'}
+    phrase=re.search(r'\bcua\s+(.+?)(?=\s+(?:tai|ngay|nam|cuoi|dau|la|bao|quy)\b|[?!.]|$)',folded(query))
+    generic={'cong','ty','me','doanh','nghiep','ngan','hang','nay','tat','ca','duoc','chon'}
+    unknown_named=bool(acronyms or (phrase and set(phrase[1].split())-generic))
+   if named_ids:requested&=named_ids
+   docs=[d for d in docs if d['id'] in requested];allowed={d['id']:d for d in docs}
+   generation=sha256((snapshot['generation']+json.dumps(sorted(allowed))).encode()).hexdigest()
+   result={'mode':mode,'profile':experiment,'generation':generation,'intent':intent.public(),'results':[],
+    'documents':len(docs),'status':'READY','latency_ms':0,'evidence_status':'NO_SUFFICIENT_EVIDENCE',
+    'score_semantics':'ORDINAL_EVIDENCE_COMPATIBILITY_NOT_PROBABILITY','index_version':VERSION}
+   result['intent']['entity_scope']={'requested_document_ids':sorted(document_ids or []),'resolved_document_ids':sorted(allowed),
+    'resolution':'DOCUMENT_METADATA_ALIAS_AND_EXPLICIT_SOURCE_FILTER','unrecognized_name':unknown_named}
+   def finish(reason=None):
+    result['latency_ms']=round((perf_counter()-start)*1000,2)
+    if reason:result['reason']=reason
+    return result
+   if not allowed:return finish('NO_MATCHING_COMPANY_IN_SELECTED_SCOPE')
+   if unknown_named:return finish('UNRECOGNIZED_COMPANY_REQUEST_CLARIFICATION')
+   if experiment=='C4' and not intent.metrics and any(t in folded(query) for t in ['bao nhieu','gia co phieu','stock price']):return finish('UNSUPPORTED_NUMERIC_INTENT')
+   if len(intent.metrics)>1 and intent.operation=='LOOKUP':return finish('CLARIFY_MULTIPLE_METRICS')
+   entries=[e for e in snapshot['entries'] if e['document_id'] in allowed]
+   if intent.scope=='AMBIGUOUS' or intent.basis=='AMBIGUOUS':return finish('AMBIGUOUS_QUERY_SCOPE_OR_BASIS')
+   scopes={e['scope'] for e in entries if e['kind']=='row' and (not intent.metrics or set(e['metrics'])&set(intent.metrics))}-{None}
+   # Never choose consolidated simply because only consolidated cells were manually reviewed.
+   if intent.metrics and not intent.scope and len(scopes)>1:
+    return finish('CLARIFY_SEPARATE_OR_CONSOLIDATED')
+   phrases=lexical_terms(query,intent)
+   expression=' OR '.join('"'+p.replace('"','""')+'"' for p in phrases)
+   scores={}
+   if expression:
+    with closing(sqlite3.connect(snapshot['path'])) as db:
+     placeholders=','.join('?' for _ in allowed)
+     for eid,score in db.execute('SELECT fts.id,bm25(fts,0,4,1,.2) FROM fts JOIN evidence ON evidence.id=fts.id WHERE fts MATCH ? '+
+       f"AND json_extract(evidence.payload,'$.document_id') IN ({placeholders}) ORDER BY bm25(fts,0,4,1,.2),fts.id LIMIT 160",(expression,*allowed)):
+      scores[eid]=-float(score)
+   lexical=sorted([e for e in entries if e['kind']=='chunk' and e['evidence_id'] in scores],key=lambda e:(-scores[e['evidence_id']],e['evidence_id']))[:40]
+   tables=[e for e in entries if e['kind']=='row' and (set(intent.metrics)&set(e['metrics']) if intent.metrics else e['evidence_id'] in scores)]
+   # A bounded row pool after requested metric filtering; lexical score is only a tie breaker.
+   tables=sorted(tables,key=lambda e:(-scores.get(e['evidence_id'],0),e['evidence_id']))[:40]
+   baseline=[]
+   if experiment in {'C3','C4'} and mode!='bm25':
+    found=self.workspace.search(query,mode,20,list(allowed))
+    ids={c['chunk_id'] for c in found['results']};baseline=[e for e in entries if e['evidence_id'] in ids]
+   candidates=lexical if experiment=='C1' else tables if experiment=='C2' else list({e['evidence_id']:e for e in lexical+tables+baseline}.values())
+   facts=eligible_facts(self.workspace,list(allowed));ranked=[]
+   for entry in candidates:
+    exact=bool(set(intent.metrics)&set(entry['metrics']));context=folded(entry['context']);conflicts=[]
+    if intent.metrics and not exact:conflicts.append('METRIC_NOT_MATCHED')
+    if intent.scope and entry['scope']!=intent.scope:conflicts.append('SCOPE_NOT_PROVEN')
+    if intent.years and any(y not in context for y in intent.years):conflicts.append('PERIOD_NOT_PROVEN')
+    if intent.dates and any(date not in context and ('/'.join(reversed(date.split('-')))) not in context for date in intent.dates):
+     # Vietnamese written dates must be explicit source tokens, not inferred from document metadata.
+     if not all(re.search(r'\b'+date[-2:].lstrip('0')+r'\s+thang\s+'+date[5:7].lstrip('0')+r'\s+nam\s+'+date[:4],context) for date in intent.dates):conflicts.append('EXACT_DATE_NOT_PROVEN')
+    bound=[f for f in facts if intent.metrics and entry['kind']=='row' and f['document_id']==entry['document_id'] and f['row_id']==entry['row_id']
+      and f['metric'] in intent.metrics and (not intent.scope or f['statement_scope']==intent.scope)
+      and (not intent.basis or f['basis']==intent.basis) and (not intent.dates or f['period'] in intent.dates)
+      and (not intent.years or f['period'][:4] in intent.years) and (not intent.unit or f['unit']==intent.unit)]
+    if bound and intent.dates and not set(intent.dates)<={f['period'] for f in bound}:bound=[]
+    if bound and intent.years and not set(intent.years)<={f['period'][:4] for f in bound}:bound=[]
+    if bound and not intent.dates and intent.operation=='LOOKUP' and len({f['period'] for f in bound})>1:
+     bound=[];conflicts.append('CLARIFY_PERIOD_COLUMN')
+    if bound and not intent.basis and len({f['basis'] for f in bound})>1:
+     bound=[];conflicts.append('CLARIFY_ORIGINAL_OR_RESTATED_COLUMN')
+    if bound:
+     conflicts=[c for c in conflicts if c not in {'EXACT_DATE_NOT_PROVEN','PERIOD_NOT_PROVEN','SCOPE_NOT_PROVEN'}]
+    if intent.basis and not bound:conflicts.append('REQUESTED_COLUMN_BASIS_NOT_VERIFIED')
+    score=scores.get(entry['evidence_id'],0)
+    if experiment!='C1':score+=20*exact+5*(bool(intent.metrics) and entry['kind']=='row')+5*bool(bound)-30*len(conflicts)
+    ranked.append((score,entry,conflicts,bound))
+   ranked.sort(key=lambda item:(-item[0],item[1]['evidence_id']))
+   # C4 financial lookups do not fill gaps using wrong-metric/year/scope paragraphs.
+   clarification={'CLARIFY_PERIOD_COLUMN','CLARIFY_ORIGINAL_OR_RESTATED_COLUMN'}
+   if experiment=='C4' and intent.metrics:ranked=[r for r in ranked if not set(r[2])-clarification and r[1]['kind']=='row']
+   if experiment=='C4' and not intent.metrics:ranked=[r for r in ranked if r[1]['kind']=='chunk']
+   for rank,(score,e,conflicts,bound) in enumerate(ranked[:top_k],1):
+    doc=allowed[e['document_id']]
+    verified=bool(bound) and not conflicts
+    text=e['text'];box=e['box']
+    if verified:
+     text=e['row_label']+' | '+' | '.join(f"{f['source_display']} {f['unit']} · {f['period']} · {f['basis']}" for f in bound)
+     box=bound[0]['box']
+    result['results'].append({'rank':rank,'score':score,'chunk_id':e['chunk_id'],'evidence_id':e['evidence_id'],
+     'document_id':doc['id'],'issuer':doc['issuer'],'filename':doc['filename'],'document_type':doc['document_type'],
+     'report_period':doc['report_period'],'page':e['page'],'row_id':e['row_id'],'row_label':e['row_label'],
+     'metric_ids':e['metrics'],'statement_scope':e['scope'],'text':text[:1400],'box':box,
+     'source_sha256':doc['sha256'],'page_evidence_sha256':e['page_evidence_sha256'],
+     'verification':'LOCALLY_REVIEWED_SOURCE_CELL' if verified else None,
+     'evidence_match':'REVIEWED_ANSWER_EVIDENCE' if verified else 'MATCHED_UNVERIFIED_ROW' if not conflicts and e['kind']=='row' else 'RELATED_PASSAGE',
+     'conflicts':conflicts,'numeric_answer_eligible':verified,'reviewed_facts':bound if verified else [],
+     'provenance_status':'VERIFIED_LOCAL_PDF_BYTES','source_kind':'PDF'})
+   if result['results']:
+    result['evidence_status']='REVIEWED_ANSWER_EVIDENCE' if any(r['numeric_answer_eligible'] for r in result['results']) else 'RELATED_UNVERIFIED_EVIDENCE'
+    if any(set(r['conflicts'])&clarification for r in result['results']):result['reason']='CLARIFY_PERIOD_OR_ORIGINAL_RESTATED_COLUMN; row is related evidence only'
+   return finish()

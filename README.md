@@ -29,3 +29,7 @@ npm run build --prefix frontend
 ```
 
 Live Chromium theo hướng dẫn Windows; GitHub CI chạy core deterministic và frontendunit/build. Development metrics lịch sử giữ nguyên và có nhãn riêng; không suy ra chất lượng truy vấn mới. Streamlit còn là rollback explicit qua -Legacy và requirements-legacy-ui.txt. Shared Chat/RAG/history tests giữ nguyên. Nguyên mẫu học tập cục bộ, chưa được chứng nhận cho tư vấn tài chính hoặc vận hành đa người dùng.
+
+## Search V2 — ứng viên chưa khóa chất lượng
+
+Xem [nghiệm thu Search V2](docs/search_v2/SEARCH_OWNER_ACCEPTANCE.md) và [benchmark có giới hạn](docs/search_v2/SEARCH_EVALUATION_REPORT.md). Baseline BM25/Dense/RRF được giữ nguyên; V2 bổ sung chỉ mục dòng và kiểm tra ngữ cảnh. Nhãn hiện chưa được rà soát độc lập; không tuyên bố SEARCH_V2_LOCKED.

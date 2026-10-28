@@ -10,3 +10,8 @@ docs/topic3/milestone_d/recovery/p11/p11_partition_manifest.json text eol=lf
 docs/topic3/milestone_d/recovery/p11/p11_adaptive_policy_v1.json text eol=lf
 docs/topic3/milestone_d/recovery/p11/p11_execution_manifest.json text eol=lf
 docs/topic3/milestone_d/recovery/p11/p11_gate_ledger.json text eol=lf
+
+# Search V2 labels are canonical UTF-8/LF; result snapshots retain their measured byte hashes.
+docs/search_v2/SEARCH_BENCHMARK_QRELS.jsonl text eol=lf
+docs/search_v2/*.json -text whitespace=cr-at-eol
+docs/search_v2/archive/**/*.txt text eol=lf

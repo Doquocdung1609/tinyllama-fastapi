@@ -14,7 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field
 import psutil
 import requests
 
-from app.product.api import workspace,sec_index,require_studio_token,_error
+from app.product.api import workspace,sec_index,require_studio_token,_error,_factory_lock
 from app.product.analysis import AnalysisRequest,FactReview,review_fact,eligible_facts,numeric_answer,research_steps
 from app.product.pdf_extract import ocr_capability,folded
 
@@ -31,6 +31,7 @@ class UnifiedSearch(BaseModel):
     document_ids:list[str]=Field(default_factory=list,max_length=100)
     issuer:str=Field(default='',max_length=160)
     period:str=Field(default='',max_length=80)
+    search_profile:Literal['baseline','production_v2']='baseline'
 
 
 class EvidenceResponse(BaseModel):
@@ -52,6 +53,10 @@ class SearchResponse(BaseModel):
     latency_ms:float=Field(ge=0)
     timings_ms:dict[str,float]
     cross_source_order:str|None
+    intent:dict|None=None
+    evidence_status:str|None=None
+    evidence_reason:str|None=None
+    search_profile:str='baseline'
 
 
 class ComparisonResponse(BaseModel):
@@ -63,7 +68,7 @@ class ComparisonResponse(BaseModel):
 
 
 def unified_search(payload:UnifiedSearch):
-    results=[];scopes=[];errors=[];timings={}
+    results=[];scopes=[];errors=[];timings={};intent=None;evidence_status=None;evidence_reason=None
     if payload.source!='US_SEC':
         docs=workspace()._eligible(payload.document_ids)
         if payload.issuer:docs=[d for d in docs if folded(payload.issuer) in folded(d['issuer'])]
@@ -75,7 +80,16 @@ def unified_search(payload:UnifiedSearch):
                 return any(word in folded(text) for word in ('tai san','bao cao','ngan hang','hoa phat'))
             docs=[d for d in docs if vietnamese(d)]
         if docs:
-            found=workspace().search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
+            if payload.search_profile=='production_v2':
+                from app.product.search_v2 import FinancialSearchV2
+                from pathlib import Path
+                w=workspace();root=Path(os.getenv('STUDIO_SEARCH_V2_ROOT','tmp/studio-runtime/search-v2'))
+                with _factory_lock:
+                    if not hasattr(w,'_search_v2') or w._search_v2.root!=root:w._search_v2=FinancialSearchV2(w,root)
+                    engine=w._search_v2
+                found=engine.search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
+                intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
+            else:found=workspace().search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
             results.extend({**r,'source_kind':'PDF'} for r in found['results'])
             scopes.append(('PDF',found.get('generation')));timings['PDF']=found['latency_ms']
     if payload.source in {'US_SEC','ALL'}:
@@ -93,6 +107,7 @@ def unified_search(payload:UnifiedSearch):
     return {'status':'PARTIAL' if errors else 'READY','generation':generation,'source_generations':scopes,
             'results':results[:payload.top_k],'mode':payload.mode,'source_errors':errors,
             'latency_ms':sum(timings.values()),'timings_ms':timings,
+            'intent':intent,'evidence_status':evidence_status,'evidence_reason':evidence_reason,'search_profile':payload.search_profile,
             'cross_source_order':'PER_STORE_RANK_THEN_SOURCE_ID' if len(scopes)>1 else None}
 
 
@@ -105,7 +120,8 @@ def query(payload:UnifiedSearch):
 @router.post('/compare',response_model=ComparisonResponse)
 def compare(payload:UnifiedSearch):
     try:
-        arms={mode:unified_search(payload.model_copy(update={'mode':mode})) for mode in ('bm25','dense','hybrid')}
+        # Scientific comparison remains B0/B1/B2 independently of the product profile.
+        arms={mode:unified_search(payload.model_copy(update={'mode':mode,'search_profile':'baseline'})) for mode in ('bm25','dense','hybrid')}
         if len({r['generation'] for r in arms.values()})!=1:
             raise ValueError('COMPARISON_SNAPSHOT_CHANGED')
         ids={mode:{r.get('chunk_id',r.get('parent_id')) for r in result['results']} for mode,result in arms.items()}
@@ -124,6 +140,20 @@ def recorded_evaluation():
     return {'status':'RECORDED_DEVELOPMENT_ONLY','dataset':saved['dataset'],'generation':saved['generation'],
             'chunks':saved['chunks'],'queries':saved['queries'],'quality_at_5':saved['quality_at_5'],
             'scope_note':'Bộ câu hỏi development đã ghi nhận trước đây, không phải holdout độc lập và không áp dụng cho các PDF/câu hỏi mới.'}
+
+
+@router.get('/evaluation/search-v2')
+def search_v2_evaluation():
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[2]/'docs/search_v2'
+    path=root/'BENCHMARK_SUMMARY.json'
+    if not path.is_file():return {'status':'NOT_RUN'}
+    saved=json.loads(path.read_text(encoding='utf-8'))
+    if sha256((root/'SEARCH_BENCHMARK_QRELS.jsonl').read_bytes()).hexdigest()!=saved['qrels_sha256']:
+        return {'status':'STALE_LABELS'}
+    from scripts.benchmark_search_v2 import policy_hash
+    if policy_hash()!=saved['policy_sha256']:return {'status':'STALE_POLICY'}
+    return saved
 
 
 @router.get('/readiness')

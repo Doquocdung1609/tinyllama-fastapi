@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
+from app.product.static_files import StudioStaticFiles
 from pathlib import Path
 
 from app.config import get_settings
@@ -56,7 +56,7 @@ app.add_middleware(
 )
 frontend_dist=Path(__file__).resolve().parent/'frontend'/'dist'
 if frontend_dist.is_dir():
-    app.mount('/app',StaticFiles(directory=frontend_dist,html=True),name='react-product')
+    app.mount('/app',StudioStaticFiles(directory=frontend_dist,html=True),name='react-product')
 for router in (documents_router, rag_router, financial_router, financial_index_router,
                financial_corpus_router, qdrant_router, conversations_router, product_router, frontend_router):
     app.include_router(router)

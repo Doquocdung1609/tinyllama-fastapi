@@ -57,6 +57,7 @@ test('live Vietnamese upload, retrieval, original PDF highlight and six pages',a
   return doc?.status
  },{timeout:550000,intervals:[3000,5000]}).toBe('READY')
  await page.getByRole('button',{name:'Tìm kiếm tài chính',exact:true}).click()
+ await page.getByLabel('Tài liệu tìm kiếm').selectOption('4a92af827aaf1e73e017544d0ff20d0d')
  await page.getByLabel('Câu hỏi tìm kiếm').fill('tổng cộng tài sản')
  await page.getByRole('button',{name:'Tìm kiếm',exact:true}).click()
  await expect(page.getByRole('button',{name:'Mở bằng chứng',exact:false}).first()).toBeVisible({timeout:30000})

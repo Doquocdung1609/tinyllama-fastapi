@@ -1,0 +1,9 @@
+import {useQuery} from '@tanstack/react-query'
+import {api} from './api'
+
+type Measurements={status:string;annotation_note?:string;split_results?:Record<string,{label?:string;queries:number;summaries:Record<string,{metrics:{recall_at_5:number|null;recall_at_10:number|null;mrr_at_5:number|null;ndcg_at_5:number|null;wrong_evidence_at_1:number|null};p50_ms:number;p95_ms:number}>}>}
+const show=(n:number|null|undefined)=>n==null?'Chưa đo':n.toFixed(3)
+export default function SearchV2Evaluation(){
+ const q=useQuery({queryKey:['search-v2-evaluation'],queryFn:()=>api<Measurements>('/evaluation/search-v2')})
+ return <section className="card"><h2>Benchmark Search V2 · kết quả có đối chiếu nguồn</h2><p className="notice">{q.data?.annotation_note||'Chưa có kết quả phù hợp phiên bản mã/nhãn hiện tại. Không hiển thị số liệu thay thế.'}</p>{q.data?.split_results&&Object.entries(q.data.split_results).map(([split,report])=><details key={split} open={split!=='development'}><summary>{report.label||(split==='heldout'?'Tập test giữ lại':'Tập development')} · {report.queries} câu hỏi</summary><div className="scroll-table"><table><thead><tr><th>Cấu hình</th><th>Recall@5</th><th>Recall@10</th><th>MRR@5</th><th>nDCG@5</th><th>Nguồn top1 lệch nhãn</th><th>p50 / p95 ms</th></tr></thead><tbody>{Object.entries(report.summaries).map(([arm,r])=><tr key={arm}><td>{arm}</td><td>{show(r.metrics.recall_at_5)}</td><td>{show(r.metrics.recall_at_10)}</td><td>{show(r.metrics.mrr_at_5)}</td><td>{show(r.metrics.ndcg_at_5)}</td><td>{show(r.metrics.wrong_evidence_at_1)}</td><td>{r.p50_ms.toFixed(1)} / {r.p95_ms.toFixed(1)}</td></tr>)}</tbody></table></div></details>)}<p className="muted">B0 BM25 · B1 Dense · B2 RRF k60 · C1 lexical theo cụm/trường · C2 dòng bảng · C3 xếp hạng bằng chứng · C4 ứng viên Search V2. SEC giữ engine cũ; chỉ các PDF dùng lớp mới. Hybrid có thể kém BM25. Nhãn tạm thời không phải đánh giá độc lập của con người; chưa khóa chất lượng.</p></section>
+}

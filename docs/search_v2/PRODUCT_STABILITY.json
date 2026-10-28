@@ -1,0 +1,57 @@
+{
+  "owner_original_workspace_byte_inventory": "PASS8filesunchanged",
+  "baseline_head": "6aa3ccd97cb0f59a0b338e5d6233f04897a992ce",
+  "smoke_workspace": "studio_workspace/search-v2-prebuilt-20261028",
+  "documents": [
+    {
+      "id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+      "sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "issuer": "BIDV",
+      "document_type": "Điều chỉnh báo cáo tài chính",
+      "report_period": "2024-12-31",
+      "size_bytes": 1760974,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 8,
+      "chunks": 23,
+      "created_at": "2026-10-28T17:09:28.875995+00:00",
+      "updated_at": "2026-10-28T17:09:36.920312+00:00"
+    },
+    {
+      "id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+      "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "issuer": "Công ty mẹ Hòa Phát",
+      "document_type": "Báo cáo tài chính riêng",
+      "report_period": "2025-12-31",
+      "size_bytes": 4897389,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 24,
+      "chunks": 64,
+      "created_at": "2026-10-28T17:07:48.763547+00:00",
+      "updated_at": "2026-10-28T17:09:28.120768+00:00"
+    }
+  ],
+  "reviewed_fact_count": 7,
+  "fresh_ingestion_timing_s": {
+    "BIDV": 8.044317,
+    "Công ty mẹ Hòa Phát": 99.357221
+  },
+  "fresh_browser_run": "PASS1test~2.0min; real new HPG/BIDV ingestion under initial source pipeline,source extraction unchanged after guard repair",
+  "final_browser_retest": "PASS final Prebuilt retest;see final private log summary",
+  "MIME": "PASS real module-worker response and actualPDF.js canvas; forced text/plain registry +304 regression covered",
+  "backend_regression": "643PASS1warning28.73s",
+  "frontend_unit": "7PASS",
+  "frontend_build": "PASSTypeScript/Vite",
+  "pip_check": "PASS",
+  "harness_failures": [
+    "First smoke runner stalled on an overly exact select label (no upload occurred); test selector corrected; rerun performed fresh OCR.",
+    "No failed real ingestion was hidden. Auth-bearing Playwright traces/logs remain private."
+  ],
+  "review_method": "Existing visual source-review annotations replayed only in the test after raw SHA,exact current cell string and header/scope checks. Product uploads do not automatically verify cells.",
+  "final_policy": "v2.6"
+}

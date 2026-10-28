@@ -13,6 +13,7 @@ frontend/playwright-report/
 tmp/reference-*/
 tmp/react*/
 tmp/react-*.txt
+tmp/search-v2*/
 tmp/studio-runtime/
 .streamlit/secrets.toml
 uploads/

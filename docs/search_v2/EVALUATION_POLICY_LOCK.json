@@ -1,0 +1,13 @@
+{
+  "policy_sha256": "582c6821964fead8812348322e27daf97ea52dc08c51a93850e2f095fbf3b4cf",
+  "qrels_sha256": "041f12981fc0a935e07ebb829008824cb64b8e74dc72d60b75ae572e30ce529d",
+  "selected": "C4",
+  "development_result_sha256": "bbbad8e6cc5afc65bfd2f16ffff79ced9558f9327100bccd580ba3386f8607f8",
+  "evaluation_script_sha256": "acaa081b6284c4325037b77a3e1f39e6f7de9fb52def93ceaf1c7f64304dfcad",
+  "selection_reason": "C3/C4 highest development MRR;C4 keeps context-compatible rows and declines unsupported numeric intents;C1 is faster but weaker abstention. No model reranker installed or required.",
+  "gate5_status": "PARTIAL_REUSED_TEST_AFTER_CRITICAL_FIX_AND_NO_INDEPENDENT_REVIEW",
+  "rule": "No query ontology, source representation or ranking changes after heldout evaluation. Any subsequent repair invalidates heldout certification.",
+  "protocol_deviation": "Critical wrong-company evidence guard found by an additional out-of-benchmark English proper-name probe after first heldout run. Fixed without using heldout labels. The38previously viewed test queries are now regression/retest only; no independent heldout certification claimed. Additional word-boundary/negation scope-basis guard regression was repaired before finalv2.5retest; no untouched-heldout claim. Finalv2.6adds generic source-title statement type/unit metadata and explicit statement-conflict checks; source/ontology completion after exposure,not a new blind test. Features are fixed categorical compatibility rules,not fitted from test labels.",
+  "development_result_file": "DEVELOPMENT_V26_RESULTS.json",
+  "raw_development_snapshot_sha256": "ae9f8299d078b12617ba502c62ce139b98277c9ef119dddae8f8112c85d63464"
+}

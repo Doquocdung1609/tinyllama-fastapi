@@ -1,0 +1,222 @@
+{
+  "query": "Tổng tài sản của Công ty mẹ Hòa Phát tại ngày 31/12/2025 là bao nhiêu?",
+  "baseline_head": "6aa3ccd97cb0f59a0b338e5d6233f04897a992ce",
+  "arms": {
+    "bm25": [
+      {
+        "rank": 1,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_10_00026",
+        "page": 10,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 8.833076392204756
+      },
+      {
+        "rank": 2,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_3_00004",
+        "page": 3,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 7.36598844525329
+      },
+      {
+        "rank": 3,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_2_00001",
+        "page": 2,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 7.315171459467415
+      },
+      {
+        "rank": 4,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_17_00047",
+        "page": 17,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 6.424291545045915
+      },
+      {
+        "rank": 5,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_4_00007",
+        "page": 4,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 6.172336152814562
+      },
+      {
+        "rank": 6,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_16_00045",
+        "page": 16,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 6.080676995140828
+      },
+      {
+        "rank": 7,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_9_00023",
+        "page": 9,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 5.880653394419577
+      },
+      {
+        "rank": 8,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_8_00020",
+        "page": 8,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 5.82695507582246
+      },
+      {
+        "rank": 9,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_24_00062",
+        "page": 24,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 5.584798458289747
+      },
+      {
+        "rank": 10,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_15_00043",
+        "page": 15,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 4.922384652373137
+      }
+    ],
+    "dense": [
+      {
+        "rank": 1,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_8_00020",
+        "page": 8,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.794661487674156
+      },
+      {
+        "rank": 2,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_16_00045",
+        "page": 16,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7859691275705868
+      },
+      {
+        "rank": 3,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_17_00047",
+        "page": 17,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7795497109267441
+      },
+      {
+        "rank": 4,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_19_00051",
+        "page": 19,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7760535940933452
+      },
+      {
+        "rank": 5,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_4_00007",
+        "page": 4,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7753029905932961
+      },
+      {
+        "rank": 6,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_23_00060",
+        "page": 23,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7746831102751437
+      },
+      {
+        "rank": 7,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_3_00004",
+        "page": 3,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7712387542217407
+      },
+      {
+        "rank": 8,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_2_00001",
+        "page": 2,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7701637816945004
+      },
+      {
+        "rank": 9,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_9_00023",
+        "page": 9,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.768263729575771
+      },
+      {
+        "rank": 10,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_24_00062",
+        "page": 24,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.7659245386042279
+      }
+    ],
+    "hybrid": [
+      {
+        "rank": 1,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_17_00047",
+        "page": 17,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.03149801587301587
+      },
+      {
+        "rank": 2,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_16_00045",
+        "page": 16,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.03128054740957967
+      },
+      {
+        "rank": 3,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_8_00020",
+        "page": 8,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.031099324975891997
+      },
+      {
+        "rank": 4,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_3_00004",
+        "page": 3,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.031054405392392875
+      },
+      {
+        "rank": 5,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_4_00007",
+        "page": 4,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.03076923076923077
+      },
+      {
+        "rank": 6,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_2_00001",
+        "page": 2,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.03057889822595705
+      },
+      {
+        "rank": 7,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_9_00023",
+        "page": 9,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.029418126757516764
+      },
+      {
+        "rank": 8,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_19_00051",
+        "page": 19,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.029138513513513514
+      },
+      {
+        "rank": 9,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_24_00062",
+        "page": 24,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.02877846790890269
+      },
+      {
+        "rank": 10,
+        "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00014",
+        "page": 6,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "score": 0.0273972602739726
+      }
+    ]
+  }
+}

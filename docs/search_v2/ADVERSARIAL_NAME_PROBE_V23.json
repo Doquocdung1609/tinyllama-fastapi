@@ -1,0 +1,18 @@
+{
+  "query": {
+    "source": "USER_UPLOADS",
+    "document_ids": [
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "search_profile": "production_v2",
+    "query": "Total assets of Apple separate as of 31/12/2025",
+    "mode": "bm25"
+  },
+  "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+  "claims": [
+    {
+      "issuer": "C\u00f4ng ty m\u1eb9 H\u00f2a Ph\u00e1t",
+      "numeric_answer_eligible": true
+    }
+  ]
+}

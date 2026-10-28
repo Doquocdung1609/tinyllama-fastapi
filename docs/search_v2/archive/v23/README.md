@@ -1,0 +1,1 @@
+Historical UNSAFE diagnostic policy only. Never imported by the application. Its canonical UTF-8/LF concatenation matches EVALUATION_POLICY_LOCK_V23.policy_sha256. Preserved for the initial first-run evidence; use final policy for product behavior.

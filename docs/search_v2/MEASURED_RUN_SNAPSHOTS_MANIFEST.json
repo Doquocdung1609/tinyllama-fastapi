@@ -1,0 +1,64 @@
+{
+  "purpose": "Byte-identical original diagnostic/final measured run snapshots; current final result files are semantically identical compact representations. No result values changed.",
+  "snapshots": [
+    {
+      "entry": "DEVELOPMENT_FINAL_RESULTS.json",
+      "sha256": "cb75b566299f8214199ead349658a189497ab49a88fde4483551c5c67981ea42",
+      "bytes": 1112926
+    },
+    {
+      "entry": "DEVELOPMENT_REPAIRED_RESULTS.json",
+      "sha256": "945f0052a9706c5dc14fa9772ea9ed786079ffdaae9136f19d50f87d8672b776",
+      "bytes": 1111917
+    },
+    {
+      "entry": "DEVELOPMENT_RESULTS.json",
+      "sha256": "8da828ecf33319db8287be58321cd66fe044be2b0186d76bdb0a414de67cd4c2",
+      "bytes": 1117999
+    },
+    {
+      "entry": "DEVELOPMENT_SCORED_RESULTS.json",
+      "sha256": "65ca57ec1986be036db98c1c3621161a03db0a5546801c64ff89e2332cae70d2",
+      "bytes": 1174248
+    },
+    {
+      "entry": "DEVELOPMENT_V24_RESULTS.json",
+      "sha256": "e914bd5bbea943e86eede20dfe848619cc59ae3ce30efbe63a727666b8a4cdfb",
+      "bytes": 1174600
+    },
+    {
+      "entry": "DEVELOPMENT_V25_RESULTS.json",
+      "sha256": "760e6503eaa685194e03f92c1e97b2bca21655bd9070e1c5aeca615cac4cc467",
+      "bytes": 1174324
+    },
+    {
+      "entry": "DEVELOPMENT_V26_RESULTS.json",
+      "sha256": "ae9f8299d078b12617ba502c62ce139b98277c9ef119dddae8f8112c85d63464",
+      "bytes": 1174340
+    },
+    {
+      "entry": "HELDOUT_RESULTS.json",
+      "sha256": "76476e184eb71898bb8a20a948d11f8a9f2c802608da00ef7b7ac5f96c7a0819",
+      "bytes": 1318926
+    },
+    {
+      "entry": "RETEST_V24_RESULTS.json",
+      "sha256": "3c73b5038c71968c4b04af0936de9b7261551b2981c70d9baaed3be2d0c7fb7d",
+      "bytes": 1293881
+    },
+    {
+      "entry": "RETEST_V25_RESULTS.json",
+      "sha256": "ed4744f1fb4c756609836bb6eac1c89c4b5e1f58890c5c42284aa4514834595f",
+      "bytes": 1294020
+    },
+    {
+      "entry": "RETEST_V26_RESULTS.json",
+      "sha256": "126378caf1eaa16f1f43b6637e6da59364043d9c7bc0d6ebb383cd1606b74d4d",
+      "bytes": 1294249
+    }
+  ],
+  "active_files": [
+    "DEVELOPMENT_V26_RESULTS.json",
+    "RETEST_V26_RESULTS.json"
+  ]
+}
