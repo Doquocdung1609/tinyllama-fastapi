@@ -1,0 +1,31 @@
+{
+  "schema_version": "topic3-p11-development-freeze/v1",
+  "status": "PROVISIONAL_DEVELOPMENT_LABELS_ONLY",
+  "source_selection_commit": "d04fd4b53c104cbc5208ff33bcf876ae7bcbc03e",
+  "file_sha256": {
+    "p11_partition_manifest.json": "e62477557a96f316dd96238d4203831aabd8e8cef95956ab112fd9c20b7e78d7",
+    "p11_source_registry.json": "3825d1fe45d38e46bf4e1c4fc1c53fe697e89d171a9ffac8cf4b4c2e2a591865",
+    "p11_parsed_sources.json": "b39e4e1f16ba2b81b3899ce91dcd9a884e6757f94d46f76869790d81e33eff92",
+    "p11_query_registry.json": "9270f0988f3f9a6e4963cc4f877780640ce644ba3d1bed8b6fc5435826ffff65",
+    "p11_qrels.json": "0dda952f589390a1a7a42cbfa42465e4279dcf9384092cb357a27477fc1375b3",
+    "p11_label_review_queue.json": "b38b807b23d56ba414806eaf08c07936b5ddfa7fd90a1a63a618220192989ba0"
+  },
+  "arms": [
+    "B",
+    "D",
+    "F",
+    "A"
+  ],
+  "candidate_budget_per_channel": 40,
+  "rrf_k": 60,
+  "top_k": [
+    5,
+    10
+  ],
+  "channel_deadline_seconds": 30,
+  "operational_fallback": false,
+  "adaptive_candidate": "D3_A_FIXED_BM25_FIRST",
+  "human_reviewers": 0,
+  "validation_scored": false,
+  "heldout_opened": false
+}

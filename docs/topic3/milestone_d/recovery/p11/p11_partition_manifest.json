@@ -1,0 +1,29 @@
+{
+  "schema_version": "topic3-p11-partition-preselection/v1",
+  "selection_date_utc": "2026-10-27",
+  "status": "PRESELECTED_BEFORE_ACQUISITION",
+  "source_rule": "most_recent_matching_form_filed_on_or_before_2026-10-27",
+  "excluded_ciks": ["0000320193", "0001318605", "0000789019", "0000021344", "0001045810", "0000104169", "0000080424", "0000354950", "0000909832", "0000019617"],
+  "limits": {"max_issuers": 9, "max_primary_filings": 9, "max_bytes_per_filing": 6291456, "max_total_raw_bytes": 56623104, "requests_per_second": 1, "max_requests": 18, "min_free_disk_bytes": 1073741824},
+  "partitions": {
+    "development": [
+      {"ticker": "ORCL", "cik": "0001341439", "requested_form": "10-K", "sector_reason": "enterprise software; May fiscal year end"},
+      {"ticker": "MCD", "cik": "0000063908", "requested_form": "10-Q", "sector_reason": "restaurants"},
+      {"ticker": "CAT", "cik": "0000018230", "requested_form": "10-Q", "sector_reason": "industrial equipment"}
+    ],
+    "validation": [
+      {"ticker": "SBUX", "cik": "0000829224", "requested_form": "10-K", "sector_reason": "restaurants; non-December fiscal year"},
+      {"ticker": "UPS", "cik": "0001090727", "requested_form": "10-Q", "sector_reason": "logistics"},
+      {"ticker": "TXN", "cik": "0000097476", "requested_form": "10-Q", "sector_reason": "semiconductors"}
+    ],
+    "heldout": [
+      {"ticker": "DE", "cik": "0000315189", "requested_form": "10-K", "sector_reason": "agricultural machinery; non-December fiscal year"},
+      {"ticker": "AMGN", "cik": "0000318154", "requested_form": "10-Q", "sector_reason": "biotechnology"},
+      {"ticker": "BKNG", "cik": "0001075531", "requested_form": "10-Q", "sector_reason": "travel services"}
+    ]
+  },
+  "accessions": "UNSELECTED_UNTIL_OFFICIAL_SUBMISSIONS_RESPONSE",
+  "queries_authored": 0,
+  "rankings_inspected": false,
+  "heldout_status": "SEALED_UNCREATED"
+}

@@ -1,0 +1,9 @@
+# P11 scientific limitations
+
+P11 acquired seven new official SEC primary filings from nine fixed candidates. The 6 MiB cap excluded one development and one held-out 10-K, leaving two development issuers, three validation issuers and two held-out raw-only issuers. This falls short of the planned 3/3/3 sample and contains limited 10-K coverage. No result should be generalized across industries, fiscal calendars or all SEC filings.
+
+The current 10 positive development labels cover seven distinct parent chunks and were authored by the same Codex system from canonical tables before rankings. They are provisional source-inspection proposals, **not independent human relevance judgments**. They may omit alternative evidence. Both development filings have `PARTIAL_TABLE_EXTRACTION`. The retrieval unit is a parent chunk: a hit can contain two comparative columns, so parent-level Recall does not verify the requested period or numeric answer. Period-level error rate remains unmeasured unless typed cells and column binding are independently checked.
+
+The development questions sample income statement, assets/cash, comparative columns and basic/diluted EPS. They do not yet supply verified cash-flow, notes, segment-measurement or cross-filing judgments. Four issuer/period/ambiguity/duration controls are scope checks without negative qrels. The MCD assets and revenue parent contexts are specifically awaiting financial relevance review, as recorded in the reviewer packet.
+
+Raw SHA256 hashes pin the exact bytes returned over official SEC HTTPS, but the SEC does not cryptographically sign the P11 local manifest. The source-authentication claim is limited to the official URL/submissions identity plus local hash/reparse checks. New source and vector generations stay outside accepted owner storage. The consumed C/D5 held-outs are untouched. Validation and held-out metrics, human adjudication, adaptive finalist selection and Hybrid superiority remain unverified.

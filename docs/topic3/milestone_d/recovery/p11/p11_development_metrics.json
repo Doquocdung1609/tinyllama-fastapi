@@ -1,0 +1,1853 @@
+{
+  "schema_version": "topic3-p11-provisional-development-comparison/v1",
+  "status": "COMPLETED_PROVISIONAL_UNREVIEWED_LABELS",
+  "dataset": "p11-new-sec-development-v1",
+  "generation": "d37a5139aa1817d4564238e7c1e03abc818991c6035991ce5b6d9435bac33f28",
+  "manifest_hash": "895759680e6617017fe3a168d87fb5ca4429fdc42260e9743bf755b2077a93fc",
+  "parent_membership_sha256": "f336c1850254eebef2aaef8f5a466d69e7f017712d0842a62d1353ad32f21781",
+  "model_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "candidate_budget_per_channel": 40,
+  "rrf_k": 60,
+  "top_k": [
+    5,
+    10
+  ],
+  "source_selection_commit": "d04fd4b53c104cbc5208ff33bcf876ae7bcbc03e",
+  "dev_label_freeze_commit": "5377534170523a1872f0bcf17b72d69bfc595859",
+  "human_reviewers": 0,
+  "qrel_exhaustiveness_verified": false,
+  "ranking_quality_claim": "PROVISIONAL_DEVELOPMENT_ONLY",
+  "adaptive_finalist_selected": false,
+  "validation_scored": false,
+  "heldout_opened": false,
+  "query_count": 10,
+  "refusal_count": 4,
+  "per_query": [
+    {
+      "query_id": "p11-dev-mcd-assets-exact",
+      "issuer": "MCD",
+      "category": "INSTANT_BALANCE",
+      "gold_parent_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 1404.181,
+        "ollama_embed": 240.8,
+        "qdrant_search_and_verification": 141.917,
+        "total": 3416.088
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_1be0939679faba66815729029148682d",
+            "fin_e0bff90f580712dbf681d59eda5fab6c",
+            "fin_6334d9bcfe59f63d4bb71e1e3a8dbf1c",
+            "fin_df943a92ffa3dc22dedacd4f59a81a39",
+            "fin_c1dc095d4c1cff7d3aa1ebac80ec64ad",
+            "fin_f6cceaa7b4a810275651e3aa333c2993",
+            "fin_500bbeae5987751ec55c0942bb43cdc3",
+            "fin_9380c0f5b69376c633ed97a62d766aae",
+            "fin_f23049c3da0b325f73c7736d8c62a56c",
+            "fin_cb19896111d18e679011c13d393d6de7"
+          ],
+          "gold_rank_at_10": 9,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_a99da6807178830812c67c473db0b46e",
+            "fin_b3ca90d4e5b167433cc82235dbb9819a",
+            "fin_00895d7f35bbc57fc4bddb51156c64ac",
+            "fin_e9972b700aed5d2a75723f0fbc139679",
+            "fin_f42599ab6dc09afaaa308f4fc3e54f1c",
+            "fin_d0ddafe6c21fe6ff6c69d153388dba16",
+            "fin_62e0b59ebe53ab124549c9be2a12b99a",
+            "fin_8952714f43d94f1d9b5667a8562d87dd",
+            "fin_f23049c3da0b325f73c7736d8c62a56c"
+          ],
+          "gold_rank_at_10": 10,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_f23049c3da0b325f73c7736d8c62a56c",
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_f42599ab6dc09afaaa308f4fc3e54f1c",
+            "fin_e25adcec317f0f89480bd9bd97f7f39a",
+            "fin_62e0b59ebe53ab124549c9be2a12b99a",
+            "fin_d500d4e35e6c3b4b0fb900bde3a53fc7",
+            "fin_ec9181adcd32b3ef8dee72b9e9d5924b",
+            "fin_1ce44a2ec73e26f7445ef9299a4cb517",
+            "fin_c63e31f735ce1e28633b9cb9d2b896ed",
+            "fin_be6fb4577ea600c096d1b29c027cea3b"
+          ],
+          "gold_rank_at_10": 1,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+              "b_rank": 9,
+              "d_rank": 10,
+              "b_contribution": 0.014492753623188406,
+              "d_contribution": 0.014285714285714285
+            },
+            {
+              "chunk_id": "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+              "b_rank": 30,
+              "d_rank": 1,
+              "b_contribution": 0.011111111111111112,
+              "d_contribution": 0.01639344262295082
+            },
+            {
+              "chunk_id": "fin_f42599ab6dc09afaaa308f4fc3e54f1c",
+              "b_rank": 39,
+              "d_rank": 6,
+              "b_contribution": 0.010101010101010102,
+              "d_contribution": 0.015151515151515152
+            },
+            {
+              "chunk_id": "fin_e25adcec317f0f89480bd9bd97f7f39a",
+              "b_rank": 22,
+              "d_rank": 18,
+              "b_contribution": 0.012195121951219513,
+              "d_contribution": 0.01282051282051282
+            },
+            {
+              "chunk_id": "fin_62e0b59ebe53ab124549c9be2a12b99a",
+              "b_rank": 37,
+              "d_rank": 8,
+              "b_contribution": 0.010309278350515464,
+              "d_contribution": 0.014705882352941176
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_1be0939679faba66815729029148682d",
+            "fin_e0bff90f580712dbf681d59eda5fab6c",
+            "fin_6334d9bcfe59f63d4bb71e1e3a8dbf1c",
+            "fin_df943a92ffa3dc22dedacd4f59a81a39",
+            "fin_c1dc095d4c1cff7d3aa1ebac80ec64ad",
+            "fin_f6cceaa7b4a810275651e3aa333c2993",
+            "fin_500bbeae5987751ec55c0942bb43cdc3",
+            "fin_9380c0f5b69376c633ed97a62d766aae",
+            "fin_f23049c3da0b325f73c7736d8c62a56c",
+            "fin_cb19896111d18e679011c13d393d6de7"
+          ],
+          "gold_rank_at_10": 9,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_1be0939679faba66815729029148682d",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_e0bff90f580712dbf681d59eda5fab6c",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_6334d9bcfe59f63d4bb71e1e3a8dbf1c",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_df943a92ffa3dc22dedacd4f59a81a39",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_c1dc095d4c1cff7d3aa1ebac80ec64ad",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-mcd-assets-paraphrase",
+      "issuer": "MCD",
+      "category": "SEMANTIC_PARAPHRASE",
+      "gold_parent_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+      "a_route": "FIXED_RRF_1_1",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 247.547,
+        "ollama_embed": 68.511,
+        "qdrant_search_and_verification": 104.57,
+        "total": 637.869
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_1be0939679faba66815729029148682d",
+            "fin_e721725c2e537fd57923e87ac63e1e4e",
+            "fin_59166d16b52608c33aa2434fd7adcf40",
+            "fin_0a4fe54a9410d4851343e7780f124684",
+            "fin_c925d1b5930e921061f24ff055a44303",
+            "fin_680cd12d70da43fc73f05bd8b9be59d4",
+            "fin_d89546386cfeb2c9b2ee65e695ed796f",
+            "fin_b45188637ee51e5dd0837cef66c4ee00",
+            "fin_6de473a2adb3904912350b7f7eb04503",
+            "fin_312c2cf727a8061bf41f98903d07ff0e"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_f23049c3da0b325f73c7736d8c62a56c",
+            "fin_c3be8b05377c6547ecb855133b7c67dd",
+            "fin_00895d7f35bbc57fc4bddb51156c64ac",
+            "fin_9bf93756f7f5c4f7cad135a98b6329bc",
+            "fin_f3cb97ee803bfd3b6d50f265e2f28a7b",
+            "fin_f79d21eb6a5598149ed59cf7223782b3",
+            "fin_7ea52299d37ba8fa113177084e3d0662",
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_0a42adcf48242e72d6b3047a50aaf1e5",
+            "fin_c6db581dbc21031403edf471db933982"
+          ],
+          "gold_rank_at_10": 1,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 1.0,
+          "ndcg_at_5": 1.0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_b45188637ee51e5dd0837cef66c4ee00",
+            "fin_1be0939679faba66815729029148682d",
+            "fin_f23049c3da0b325f73c7736d8c62a56c",
+            "fin_c3be8b05377c6547ecb855133b7c67dd",
+            "fin_e721725c2e537fd57923e87ac63e1e4e",
+            "fin_00895d7f35bbc57fc4bddb51156c64ac",
+            "fin_59166d16b52608c33aa2434fd7adcf40",
+            "fin_0a4fe54a9410d4851343e7780f124684",
+            "fin_9bf93756f7f5c4f7cad135a98b6329bc",
+            "fin_c925d1b5930e921061f24ff055a44303"
+          ],
+          "gold_rank_at_10": 3,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.3333333333333333,
+          "ndcg_at_5": 0.5,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_b45188637ee51e5dd0837cef66c4ee00",
+              "b_rank": 8,
+              "d_rank": 40,
+              "b_contribution": 0.014705882352941176,
+              "d_contribution": 0.01
+            },
+            {
+              "chunk_id": "fin_1be0939679faba66815729029148682d",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0.01639344262295082,
+              "d_contribution": 0.0
+            },
+            {
+              "chunk_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+              "b_rank": null,
+              "d_rank": 1,
+              "b_contribution": 0.0,
+              "d_contribution": 0.01639344262295082
+            },
+            {
+              "chunk_id": "fin_c3be8b05377c6547ecb855133b7c67dd",
+              "b_rank": null,
+              "d_rank": 2,
+              "b_contribution": 0.0,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_e721725c2e537fd57923e87ac63e1e4e",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0.016129032258064516,
+              "d_contribution": 0.0
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_b45188637ee51e5dd0837cef66c4ee00",
+            "fin_1be0939679faba66815729029148682d",
+            "fin_f23049c3da0b325f73c7736d8c62a56c",
+            "fin_c3be8b05377c6547ecb855133b7c67dd",
+            "fin_e721725c2e537fd57923e87ac63e1e4e",
+            "fin_00895d7f35bbc57fc4bddb51156c64ac",
+            "fin_59166d16b52608c33aa2434fd7adcf40",
+            "fin_0a4fe54a9410d4851343e7780f124684",
+            "fin_9bf93756f7f5c4f7cad135a98b6329bc",
+            "fin_c925d1b5930e921061f24ff055a44303"
+          ],
+          "gold_rank_at_10": 3,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.3333333333333333,
+          "ndcg_at_5": 0.5,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_b45188637ee51e5dd0837cef66c4ee00",
+              "b_rank": 8,
+              "d_rank": 40,
+              "b_contribution": 0.014705882352941176,
+              "d_contribution": 0.01
+            },
+            {
+              "chunk_id": "fin_1be0939679faba66815729029148682d",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0.01639344262295082,
+              "d_contribution": 0.0
+            },
+            {
+              "chunk_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+              "b_rank": null,
+              "d_rank": 1,
+              "b_contribution": 0.0,
+              "d_contribution": 0.01639344262295082
+            },
+            {
+              "chunk_id": "fin_c3be8b05377c6547ecb855133b7c67dd",
+              "b_rank": null,
+              "d_rank": 2,
+              "b_contribution": 0.0,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_e721725c2e537fd57923e87ac63e1e4e",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0.016129032258064516,
+              "d_contribution": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-current",
+      "issuer": "MCD",
+      "category": "INCOME_STATEMENT",
+      "gold_parent_id": "fin_7b4d037b06167f848cdc8822d4bb592b",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 452.978,
+        "ollama_embed": 106.522,
+        "qdrant_search_and_verification": 82.114,
+        "total": 825.939
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_1cb6889c812f191209580a8af3dd4787",
+            "fin_a34a196b2074a13d85c37db001da7e82",
+            "fin_62e0b59ebe53ab124549c9be2a12b99a",
+            "fin_8d4885ac017215c8bf969074c43b1ccc",
+            "fin_f42599ab6dc09afaaa308f4fc3e54f1c",
+            "fin_1ce44a2ec73e26f7445ef9299a4cb517",
+            "fin_d500d4e35e6c3b4b0fb900bde3a53fc7",
+            "fin_d0ddafe6c21fe6ff6c69d153388dba16",
+            "fin_b3ca90d4e5b167433cc82235dbb9819a",
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_f0cade8a457575d93105aee1a32943ad",
+            "fin_e9972b700aed5d2a75723f0fbc139679",
+            "fin_0d515b77ee664d2be7312179f350d105",
+            "fin_8082720bc317d19ed7d7170d6d5f84c1",
+            "fin_2a18915e153b32fa652755b50314db39",
+            "fin_8f20dcfbb5f0edaea5c4b82825712b82",
+            "fin_66a3f2e3aff98c66d05bb3be3135a97a",
+            "fin_9481052d36851b671ad388635ea1df06",
+            "fin_5250d29e4497e93aa2c5fe309700286c"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_f0cade8a457575d93105aee1a32943ad",
+            "fin_7618f05e6cf4baf49d6f56d328e75b6e",
+            "fin_1dcaa33e06edcd732726d37b686d02cb",
+            "fin_dc9a21e5171cc7cec2b8ecb084770a47",
+            "fin_3c1490a35b98c7590325fd8a95620eb9",
+            "fin_1cb6889c812f191209580a8af3dd4787",
+            "fin_a34a196b2074a13d85c37db001da7e82",
+            "fin_62e0b59ebe53ab124549c9be2a12b99a",
+            "fin_e9972b700aed5d2a75723f0fbc139679"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+              "b_rank": 10,
+              "d_rank": 1,
+              "b_contribution": 0.014285714285714285,
+              "d_contribution": 0.01639344262295082
+            },
+            {
+              "chunk_id": "fin_f0cade8a457575d93105aee1a32943ad",
+              "b_rank": 12,
+              "d_rank": 2,
+              "b_contribution": 0.013888888888888888,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_7618f05e6cf4baf49d6f56d328e75b6e",
+              "b_rank": 26,
+              "d_rank": 16,
+              "b_contribution": 0.011627906976744186,
+              "d_contribution": 0.013157894736842105
+            },
+            {
+              "chunk_id": "fin_1dcaa33e06edcd732726d37b686d02cb",
+              "b_rank": 30,
+              "d_rank": 20,
+              "b_contribution": 0.011111111111111112,
+              "d_contribution": 0.0125
+            },
+            {
+              "chunk_id": "fin_dc9a21e5171cc7cec2b8ecb084770a47",
+              "b_rank": 24,
+              "d_rank": 31,
+              "b_contribution": 0.011904761904761904,
+              "d_contribution": 0.01098901098901099
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_1cb6889c812f191209580a8af3dd4787",
+            "fin_a34a196b2074a13d85c37db001da7e82",
+            "fin_62e0b59ebe53ab124549c9be2a12b99a",
+            "fin_8d4885ac017215c8bf969074c43b1ccc",
+            "fin_f42599ab6dc09afaaa308f4fc3e54f1c",
+            "fin_1ce44a2ec73e26f7445ef9299a4cb517",
+            "fin_d500d4e35e6c3b4b0fb900bde3a53fc7",
+            "fin_d0ddafe6c21fe6ff6c69d153388dba16",
+            "fin_b3ca90d4e5b167433cc82235dbb9819a",
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_1cb6889c812f191209580a8af3dd4787",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_a34a196b2074a13d85c37db001da7e82",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_62e0b59ebe53ab124549c9be2a12b99a",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_8d4885ac017215c8bf969074c43b1ccc",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_f42599ab6dc09afaaa308f4fc3e54f1c",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-prior",
+      "issuer": "MCD",
+      "category": "COMPARATIVE_PERIOD",
+      "gold_parent_id": "fin_7b4d037b06167f848cdc8822d4bb592b",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 427.766,
+        "ollama_embed": 148.446,
+        "qdrant_search_and_verification": 94.622,
+        "total": 871.446
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_a99da6807178830812c67c473db0b46e",
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_f0cade8a457575d93105aee1a32943ad",
+            "fin_b3ca90d4e5b167433cc82235dbb9819a",
+            "fin_37a1bf5c02353b18eb1e8354a49816ff",
+            "fin_6de473a2adb3904912350b7f7eb04503",
+            "fin_7b4d037b06167f848cdc8822d4bb592b",
+            "fin_dc9a21e5171cc7cec2b8ecb084770a47",
+            "fin_3c1490a35b98c7590325fd8a95620eb9",
+            "fin_7001281ec642fa8872240ab333d6461d"
+          ],
+          "gold_rank_at_10": 7,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_f0cade8a457575d93105aee1a32943ad",
+            "fin_e9972b700aed5d2a75723f0fbc139679",
+            "fin_8f20dcfbb5f0edaea5c4b82825712b82",
+            "fin_8082720bc317d19ed7d7170d6d5f84c1",
+            "fin_0d515b77ee664d2be7312179f350d105",
+            "fin_66a3f2e3aff98c66d05bb3be3135a97a",
+            "fin_07646fc55655114e26ff45b8557c205f",
+            "fin_9481052d36851b671ad388635ea1df06",
+            "fin_2a18915e153b32fa652755b50314db39"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_f0cade8a457575d93105aee1a32943ad",
+            "fin_7618f05e6cf4baf49d6f56d328e75b6e",
+            "fin_dc9a21e5171cc7cec2b8ecb084770a47",
+            "fin_1dcaa33e06edcd732726d37b686d02cb",
+            "fin_3c1490a35b98c7590325fd8a95620eb9",
+            "fin_a99da6807178830812c67c473db0b46e",
+            "fin_e9972b700aed5d2a75723f0fbc139679",
+            "fin_8f20dcfbb5f0edaea5c4b82825712b82",
+            "fin_b3ca90d4e5b167433cc82235dbb9819a"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+              "b_rank": 2,
+              "d_rank": 1,
+              "b_contribution": 0.016129032258064516,
+              "d_contribution": 0.01639344262295082
+            },
+            {
+              "chunk_id": "fin_f0cade8a457575d93105aee1a32943ad",
+              "b_rank": 3,
+              "d_rank": 2,
+              "b_contribution": 0.015873015873015872,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_7618f05e6cf4baf49d6f56d328e75b6e",
+              "b_rank": 11,
+              "d_rank": 15,
+              "b_contribution": 0.014084507042253521,
+              "d_contribution": 0.013333333333333334
+            },
+            {
+              "chunk_id": "fin_dc9a21e5171cc7cec2b8ecb084770a47",
+              "b_rank": 8,
+              "d_rank": 31,
+              "b_contribution": 0.014705882352941176,
+              "d_contribution": 0.01098901098901099
+            },
+            {
+              "chunk_id": "fin_1dcaa33e06edcd732726d37b686d02cb",
+              "b_rank": 20,
+              "d_rank": 16,
+              "b_contribution": 0.0125,
+              "d_contribution": 0.013157894736842105
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_a99da6807178830812c67c473db0b46e",
+            "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+            "fin_f0cade8a457575d93105aee1a32943ad",
+            "fin_b3ca90d4e5b167433cc82235dbb9819a",
+            "fin_37a1bf5c02353b18eb1e8354a49816ff",
+            "fin_6de473a2adb3904912350b7f7eb04503",
+            "fin_7b4d037b06167f848cdc8822d4bb592b",
+            "fin_dc9a21e5171cc7cec2b8ecb084770a47",
+            "fin_3c1490a35b98c7590325fd8a95620eb9",
+            "fin_7001281ec642fa8872240ab333d6461d"
+          ],
+          "gold_rank_at_10": 7,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_a99da6807178830812c67c473db0b46e",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_27d89cff7e7e476ec4db9b206b6ed65f",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_f0cade8a457575d93105aee1a32943ad",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_b3ca90d4e5b167433cc82235dbb9819a",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_37a1bf5c02353b18eb1e8354a49816ff",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-cat-sales-quarter",
+      "issuer": "CAT",
+      "category": "INCOME_STATEMENT",
+      "gold_parent_id": "fin_a14f0477ee7eff69139f7f49560c00c1",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 560.204,
+        "ollama_embed": 319.924,
+        "qdrant_search_and_verification": 103.677,
+        "total": 4767.508
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_bdc8ccfd7714900714f2ad3904a67dba",
+            "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+            "fin_611f57c07532603558c57998ad268ea5",
+            "fin_a56a320f4dd7bd633ae3b7f4f2043e6b",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_a14f0477ee7eff69139f7f49560c00c1",
+            "fin_c8560d65beadd054140d3c2a38126189",
+            "fin_2b2b8086eb1dd29a8031050680072d58",
+            "fin_9afb7dc373a9b34c4ddb73cf4716c5db",
+            "fin_3a4be33ecc384e2998dcf2b703bd7965"
+          ],
+          "gold_rank_at_10": 6,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_d83fbb81433bdc476973158d0312c1e1",
+            "fin_ba1a5c96bdaae5d11c8dfe6331db69e4",
+            "fin_4b5ea04bb2f343123cb42cc35e7c24c9",
+            "fin_4ca28589ab92ad598dd2b8308096d91c",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_a14f0477ee7eff69139f7f49560c00c1",
+            "fin_0a8ce50f9b8c994a8f9b3227985a7bf9",
+            "fin_e88e3434a57615b914377c9ecf83112c",
+            "fin_bdc8ccfd7714900714f2ad3904a67dba",
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_611f57c07532603558c57998ad268ea5",
+            "fin_d83fbb81433bdc476973158d0312c1e1"
+          ],
+          "gold_rank_at_10": 4,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.25,
+          "ndcg_at_5": 0.43067655807339306,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+              "b_rank": 5,
+              "d_rank": 2,
+              "b_contribution": 0.015384615384615385,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+              "b_rank": 2,
+              "d_rank": 16,
+              "b_contribution": 0.016129032258064516,
+              "d_contribution": 0.013157894736842105
+            },
+            {
+              "chunk_id": "fin_01dc8b639a5203cf71611c5a24e4a518",
+              "b_rank": 15,
+              "d_rank": 8,
+              "b_contribution": 0.013333333333333334,
+              "d_contribution": 0.014705882352941176
+            },
+            {
+              "chunk_id": "fin_a14f0477ee7eff69139f7f49560c00c1",
+              "b_rank": 6,
+              "d_rank": 34,
+              "b_contribution": 0.015151515151515152,
+              "d_contribution": 0.010638297872340425
+            },
+            {
+              "chunk_id": "fin_0a8ce50f9b8c994a8f9b3227985a7bf9",
+              "b_rank": 16,
+              "d_rank": 25,
+              "b_contribution": 0.013157894736842105,
+              "d_contribution": 0.011764705882352941
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_bdc8ccfd7714900714f2ad3904a67dba",
+            "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+            "fin_611f57c07532603558c57998ad268ea5",
+            "fin_a56a320f4dd7bd633ae3b7f4f2043e6b",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_a14f0477ee7eff69139f7f49560c00c1",
+            "fin_c8560d65beadd054140d3c2a38126189",
+            "fin_2b2b8086eb1dd29a8031050680072d58",
+            "fin_9afb7dc373a9b34c4ddb73cf4716c5db",
+            "fin_3a4be33ecc384e2998dcf2b703bd7965"
+          ],
+          "gold_rank_at_10": 6,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_bdc8ccfd7714900714f2ad3904a67dba",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_611f57c07532603558c57998ad268ea5",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_a56a320f4dd7bd633ae3b7f4f2043e6b",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-cat-sales-paraphrase",
+      "issuer": "CAT",
+      "category": "SEMANTIC_PARAPHRASE",
+      "gold_parent_id": "fin_a14f0477ee7eff69139f7f49560c00c1",
+      "a_route": "FIXED_RRF_1_1",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 308.836,
+        "ollama_embed": 65.144,
+        "qdrant_search_and_verification": 129.8,
+        "total": 960.553
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_519b34b9902b3a2650cdf1d82d582314",
+            "fin_6fe97bd90f7627b8409974a5d59061fb",
+            "fin_292f1a38dcd088402ecde1a5a7eeed8d",
+            "fin_e0905222b64aca5ce5df8d4bd3c53786",
+            "fin_c4306462744c133c891cb4c546cde3dd",
+            "fin_f5b55262ebf627a1d6f5a737215e5810",
+            "fin_02d26fc41e2636eeab36f5036f7413ed",
+            "fin_1063a2db89057e0aa8da4abd9f492eb4",
+            "fin_75161d43a68089f994daae6336ce96e9",
+            "fin_b34d9b1f0496f182e531411175bf0e83"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_75161d43a68089f994daae6336ce96e9",
+            "fin_d83fbb81433bdc476973158d0312c1e1",
+            "fin_fe9477e44fc37607311d8ded223902bf",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_a35cb72c52014b562255d831a8035a24",
+            "fin_4ca28589ab92ad598dd2b8308096d91c",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_4b5ea04bb2f343123cb42cc35e7c24c9",
+            "fin_c0e090d670aaa47269bf45bb94bdf883"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_75161d43a68089f994daae6336ce96e9",
+            "fin_ee07d70076631b8e2f58d1e240c0f6f1",
+            "fin_02d26fc41e2636eeab36f5036f7413ed",
+            "fin_14019ca12ab8e053ec451084bf1a0296",
+            "fin_519b34b9902b3a2650cdf1d82d582314",
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_6fe97bd90f7627b8409974a5d59061fb",
+            "fin_292f1a38dcd088402ecde1a5a7eeed8d",
+            "fin_d83fbb81433bdc476973158d0312c1e1",
+            "fin_e0905222b64aca5ce5df8d4bd3c53786"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_75161d43a68089f994daae6336ce96e9",
+              "b_rank": 9,
+              "d_rank": 2,
+              "b_contribution": 0.014492753623188406,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_ee07d70076631b8e2f58d1e240c0f6f1",
+              "b_rank": 11,
+              "d_rank": 16,
+              "b_contribution": 0.014084507042253521,
+              "d_contribution": 0.013157894736842105
+            },
+            {
+              "chunk_id": "fin_02d26fc41e2636eeab36f5036f7413ed",
+              "b_rank": 7,
+              "d_rank": 27,
+              "b_contribution": 0.014925373134328358,
+              "d_contribution": 0.011494252873563218
+            },
+            {
+              "chunk_id": "fin_14019ca12ab8e053ec451084bf1a0296",
+              "b_rank": 33,
+              "d_rank": 14,
+              "b_contribution": 0.010752688172043012,
+              "d_contribution": 0.013513513513513514
+            },
+            {
+              "chunk_id": "fin_519b34b9902b3a2650cdf1d82d582314",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0.01639344262295082,
+              "d_contribution": 0.0
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_75161d43a68089f994daae6336ce96e9",
+            "fin_ee07d70076631b8e2f58d1e240c0f6f1",
+            "fin_02d26fc41e2636eeab36f5036f7413ed",
+            "fin_14019ca12ab8e053ec451084bf1a0296",
+            "fin_519b34b9902b3a2650cdf1d82d582314",
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_6fe97bd90f7627b8409974a5d59061fb",
+            "fin_292f1a38dcd088402ecde1a5a7eeed8d",
+            "fin_d83fbb81433bdc476973158d0312c1e1",
+            "fin_e0905222b64aca5ce5df8d4bd3c53786"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_75161d43a68089f994daae6336ce96e9",
+              "b_rank": 9,
+              "d_rank": 2,
+              "b_contribution": 0.014492753623188406,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_ee07d70076631b8e2f58d1e240c0f6f1",
+              "b_rank": 11,
+              "d_rank": 16,
+              "b_contribution": 0.014084507042253521,
+              "d_contribution": 0.013157894736842105
+            },
+            {
+              "chunk_id": "fin_02d26fc41e2636eeab36f5036f7413ed",
+              "b_rank": 7,
+              "d_rank": 27,
+              "b_contribution": 0.014925373134328358,
+              "d_contribution": 0.011494252873563218
+            },
+            {
+              "chunk_id": "fin_14019ca12ab8e053ec451084bf1a0296",
+              "b_rank": 33,
+              "d_rank": 14,
+              "b_contribution": 0.010752688172043012,
+              "d_contribution": 0.013513513513513514
+            },
+            {
+              "chunk_id": "fin_519b34b9902b3a2650cdf1d82d582314",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0.01639344262295082,
+              "d_contribution": 0.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-cat-sales-sixmonths",
+      "issuer": "CAT",
+      "category": "COMPARATIVE_PERIOD",
+      "gold_parent_id": "fin_a2162fc0964413aafd953835bb3cefe5",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 396.37,
+        "ollama_embed": 118.227,
+        "qdrant_search_and_verification": 119.657,
+        "total": 1078.732
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_bdc8ccfd7714900714f2ad3904a67dba",
+            "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_2b2b8086eb1dd29a8031050680072d58",
+            "fin_a2162fc0964413aafd953835bb3cefe5",
+            "fin_e88e3434a57615b914377c9ecf83112c",
+            "fin_611f57c07532603558c57998ad268ea5",
+            "fin_06d687006487694f005067ab05478f87",
+            "fin_1024bbb287dc825a41e66b6fde2cc2a0",
+            "fin_d9cc421280eedf22c2fd7476c52f2690"
+          ],
+          "gold_rank_at_10": 5,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.2,
+          "ndcg_at_5": 0.38685280723454163,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_ba1a5c96bdaae5d11c8dfe6331db69e4",
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_d83fbb81433bdc476973158d0312c1e1",
+            "fin_4b5ea04bb2f343123cb42cc35e7c24c9",
+            "fin_e8199ecab54776b48e39f574b55e3d48",
+            "fin_b2441a93249197cfba3f3d503684981f",
+            "fin_e88e3434a57615b914377c9ecf83112c",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_e88e3434a57615b914377c9ecf83112c",
+            "fin_e8199ecab54776b48e39f574b55e3d48",
+            "fin_b2441a93249197cfba3f3d503684981f",
+            "fin_a2162fc0964413aafd953835bb3cefe5",
+            "fin_6edb651cebe1008a4ad25469d22b3167",
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_01dc8b639a5203cf71611c5a24e4a518"
+          ],
+          "gold_rank_at_10": 5,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.2,
+          "ndcg_at_5": 0.38685280723454163,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+              "b_rank": 3,
+              "d_rank": 1,
+              "b_contribution": 0.015873015873015872,
+              "d_contribution": 0.01639344262295082
+            },
+            {
+              "chunk_id": "fin_e88e3434a57615b914377c9ecf83112c",
+              "b_rank": 6,
+              "d_rank": 8,
+              "b_contribution": 0.015151515151515152,
+              "d_contribution": 0.014705882352941176
+            },
+            {
+              "chunk_id": "fin_e8199ecab54776b48e39f574b55e3d48",
+              "b_rank": 13,
+              "d_rank": 6,
+              "b_contribution": 0.0136986301369863,
+              "d_contribution": 0.015151515151515152
+            },
+            {
+              "chunk_id": "fin_b2441a93249197cfba3f3d503684981f",
+              "b_rank": 16,
+              "d_rank": 7,
+              "b_contribution": 0.013157894736842105,
+              "d_contribution": 0.014925373134328358
+            },
+            {
+              "chunk_id": "fin_a2162fc0964413aafd953835bb3cefe5",
+              "b_rank": 5,
+              "d_rank": 20,
+              "b_contribution": 0.015384615384615385,
+              "d_contribution": 0.0125
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_bdc8ccfd7714900714f2ad3904a67dba",
+            "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_2b2b8086eb1dd29a8031050680072d58",
+            "fin_a2162fc0964413aafd953835bb3cefe5",
+            "fin_e88e3434a57615b914377c9ecf83112c",
+            "fin_611f57c07532603558c57998ad268ea5",
+            "fin_06d687006487694f005067ab05478f87",
+            "fin_1024bbb287dc825a41e66b6fde2cc2a0",
+            "fin_d9cc421280eedf22c2fd7476c52f2690"
+          ],
+          "gold_rank_at_10": 5,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.2,
+          "ndcg_at_5": 0.38685280723454163,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_bdc8ccfd7714900714f2ad3904a67dba",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_aec6a97f96d2fc9cfadc73e9e5118733",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_2b2b8086eb1dd29a8031050680072d58",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_a2162fc0964413aafd953835bb3cefe5",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-cat-cash",
+      "issuer": "CAT",
+      "category": "BALANCE_SHEET",
+      "gold_parent_id": "fin_6c444d43156fd60710ce02a6fbe73f8d",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 357.457,
+        "ollama_embed": 153.522,
+        "qdrant_search_and_verification": 69.83,
+        "total": 950.839
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_c86d019a27bc8c0ef75a7caddd63f338",
+            "fin_8662ae948cddf3b74b3b4b6c95bae211",
+            "fin_c9cdacb39e9e5f698b57851094f75f6b",
+            "fin_6fe97bd90f7627b8409974a5d59061fb",
+            "fin_6c444d43156fd60710ce02a6fbe73f8d",
+            "fin_a35cb72c52014b562255d831a8035a24",
+            "fin_d2ebb832363e5d9274ebdcb1c2a9bf6c",
+            "fin_14019ca12ab8e053ec451084bf1a0296",
+            "fin_4cbf6e7621264109861d788aefff809a",
+            "fin_736cd67c0118832f8f9249c35bcc2c56"
+          ],
+          "gold_rank_at_10": 5,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.2,
+          "ndcg_at_5": 0.38685280723454163,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_a35cb72c52014b562255d831a8035a24",
+            "fin_ccee03b31c82031e3a71cad75c3fd1fc",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_ba1a5c96bdaae5d11c8dfe6331db69e4",
+            "fin_4ca28589ab92ad598dd2b8308096d91c",
+            "fin_d83fbb81433bdc476973158d0312c1e1",
+            "fin_4b5ea04bb2f343123cb42cc35e7c24c9",
+            "fin_14019ca12ab8e053ec451084bf1a0296",
+            "fin_6b93bde7b5f4b3379432b2e1a9698d67"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_a35cb72c52014b562255d831a8035a24",
+            "fin_c86d019a27bc8c0ef75a7caddd63f338",
+            "fin_8662ae948cddf3b74b3b4b6c95bae211",
+            "fin_14019ca12ab8e053ec451084bf1a0296",
+            "fin_d2ebb832363e5d9274ebdcb1c2a9bf6c",
+            "fin_6c444d43156fd60710ce02a6fbe73f8d",
+            "fin_c9cdacb39e9e5f698b57851094f75f6b",
+            "fin_e604241d8a84dd1592521682d32f8f0b",
+            "fin_6b93bde7b5f4b3379432b2e1a9698d67",
+            "fin_ac15bb049317f7c33993dc7476288108"
+          ],
+          "gold_rank_at_10": 6,
+          "recall_at_5": 0,
+          "recall_at_10": 1,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_a35cb72c52014b562255d831a8035a24",
+              "b_rank": 6,
+              "d_rank": 2,
+              "b_contribution": 0.015151515151515152,
+              "d_contribution": 0.016129032258064516
+            },
+            {
+              "chunk_id": "fin_c86d019a27bc8c0ef75a7caddd63f338",
+              "b_rank": 1,
+              "d_rank": 13,
+              "b_contribution": 0.01639344262295082,
+              "d_contribution": 0.0136986301369863
+            },
+            {
+              "chunk_id": "fin_8662ae948cddf3b74b3b4b6c95bae211",
+              "b_rank": 2,
+              "d_rank": 14,
+              "b_contribution": 0.016129032258064516,
+              "d_contribution": 0.013513513513513514
+            },
+            {
+              "chunk_id": "fin_14019ca12ab8e053ec451084bf1a0296",
+              "b_rank": 8,
+              "d_rank": 9,
+              "b_contribution": 0.014705882352941176,
+              "d_contribution": 0.014492753623188406
+            },
+            {
+              "chunk_id": "fin_d2ebb832363e5d9274ebdcb1c2a9bf6c",
+              "b_rank": 7,
+              "d_rank": 16,
+              "b_contribution": 0.014925373134328358,
+              "d_contribution": 0.013157894736842105
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_c86d019a27bc8c0ef75a7caddd63f338",
+            "fin_8662ae948cddf3b74b3b4b6c95bae211",
+            "fin_c9cdacb39e9e5f698b57851094f75f6b",
+            "fin_6fe97bd90f7627b8409974a5d59061fb",
+            "fin_6c444d43156fd60710ce02a6fbe73f8d",
+            "fin_a35cb72c52014b562255d831a8035a24",
+            "fin_d2ebb832363e5d9274ebdcb1c2a9bf6c",
+            "fin_14019ca12ab8e053ec451084bf1a0296",
+            "fin_4cbf6e7621264109861d788aefff809a",
+            "fin_736cd67c0118832f8f9249c35bcc2c56"
+          ],
+          "gold_rank_at_10": 5,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.2,
+          "ndcg_at_5": 0.38685280723454163,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_c86d019a27bc8c0ef75a7caddd63f338",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_8662ae948cddf3b74b3b4b6c95bae211",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_c9cdacb39e9e5f698b57851094f75f6b",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_6fe97bd90f7627b8409974a5d59061fb",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_6c444d43156fd60710ce02a6fbe73f8d",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-cat-basic-eps",
+      "issuer": "CAT",
+      "category": "BASIC_EPS",
+      "gold_parent_id": "fin_f1067b7da6743cb8182973a57755b50c",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 532.017,
+        "ollama_embed": 171.283,
+        "qdrant_search_and_verification": 126.221,
+        "total": 1332.012
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_21162c10e04914d3a997e7a83057b710",
+            "fin_f8e1d52cd227db05e5a6a4f623787056",
+            "fin_77dd0e5ecfaaf21cdd8bbd457ae62a20",
+            "fin_2b0589dc989e7476f2f3a38277f0039c",
+            "fin_7553a01f64e1cdae15b2422345a0fc02",
+            "fin_b6db735dd9c800d2edfbeb077253f7f3"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_ba1a5c96bdaae5d11c8dfe6331db69e4",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_4ca28589ab92ad598dd2b8308096d91c",
+            "fin_a35cb72c52014b562255d831a8035a24",
+            "fin_4b5ea04bb2f343123cb42cc35e7c24c9",
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_dc8cb86c8c140463790441100d047a95"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_77dd0e5ecfaaf21cdd8bbd457ae62a20",
+            "fin_f8e1d52cd227db05e5a6a4f623787056",
+            "fin_4ca28589ab92ad598dd2b8308096d91c",
+            "fin_7245c3efdca4dd8a2385381af281f098",
+            "fin_63870be0d9884d628d6d862b51ae28eb",
+            "fin_7af4f1afbad8ae519a686624f19aea93"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+              "b_rank": 1,
+              "d_rank": 6,
+              "b_contribution": 0.01639344262295082,
+              "d_contribution": 0.015151515151515152
+            },
+            {
+              "chunk_id": "fin_711a6efa20149089493eb9b2b79dead0",
+              "b_rank": 2,
+              "d_rank": 7,
+              "b_contribution": 0.016129032258064516,
+              "d_contribution": 0.014925373134328358
+            },
+            {
+              "chunk_id": "fin_01dc8b639a5203cf71611c5a24e4a518",
+              "b_rank": 3,
+              "d_rank": 9,
+              "b_contribution": 0.015873015873015872,
+              "d_contribution": 0.014492753623188406
+            },
+            {
+              "chunk_id": "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+              "b_rank": 4,
+              "d_rank": 8,
+              "b_contribution": 0.015625,
+              "d_contribution": 0.014705882352941176
+            },
+            {
+              "chunk_id": "fin_77dd0e5ecfaaf21cdd8bbd457ae62a20",
+              "b_rank": 7,
+              "d_rank": 22,
+              "b_contribution": 0.014925373134328358,
+              "d_contribution": 0.012195121951219513
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_21162c10e04914d3a997e7a83057b710",
+            "fin_f8e1d52cd227db05e5a6a4f623787056",
+            "fin_77dd0e5ecfaaf21cdd8bbd457ae62a20",
+            "fin_2b0589dc989e7476f2f3a38277f0039c",
+            "fin_7553a01f64e1cdae15b2422345a0fc02",
+            "fin_b6db735dd9c800d2edfbeb077253f7f3"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_711a6efa20149089493eb9b2b79dead0",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_01dc8b639a5203cf71611c5a24e4a518",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_21162c10e04914d3a997e7a83057b710",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query_id": "p11-dev-cat-diluted-eps",
+      "issuer": "CAT",
+      "category": "DILUTED_EPS",
+      "gold_parent_id": "fin_7245c3efdca4dd8a2385381af281f098",
+      "a_route": "B_FIVE_POSITIVE_HEURISTIC",
+      "b_candidates": 40,
+      "d_candidates": 40,
+      "stage_ms": {
+        "bm25": 421.373,
+        "ollama_embed": 153.971,
+        "qdrant_search_and_verification": 87.98,
+        "total": 1102.69
+      },
+      "arms": {
+        "B": {
+          "top10_ids": [
+            "fin_21162c10e04914d3a997e7a83057b710",
+            "fin_77672980338dd82069ed8eaeee9f4101",
+            "fin_7245c3efdca4dd8a2385381af281f098",
+            "fin_6342fdf33b49c89e3b25d795727dd0c9",
+            "fin_f8e1d52cd227db05e5a6a4f623787056",
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_77dd0e5ecfaaf21cdd8bbd457ae62a20",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf"
+          ],
+          "gold_rank_at_10": 3,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.3333333333333333,
+          "ndcg_at_5": 0.5,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "D": {
+          "top10_ids": [
+            "fin_ba1a5c96bdaae5d11c8dfe6331db69e4",
+            "fin_4ca28589ab92ad598dd2b8308096d91c",
+            "fin_fa16679aa5dc459dc08dbcd89d2629b8",
+            "fin_a35cb72c52014b562255d831a8035a24",
+            "fin_4b5ea04bb2f343123cb42cc35e7c24c9",
+            "fin_dc8cb86c8c140463790441100d047a95",
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_c0e090d670aaa47269bf45bb94bdf883"
+          ],
+          "gold_rank_at_10": null,
+          "recall_at_5": 0,
+          "recall_at_10": 0,
+          "mrr_at_5": 0,
+          "ndcg_at_5": 0,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5
+        },
+        "F": {
+          "top10_ids": [
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_7245c3efdca4dd8a2385381af281f098",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_63870be0d9884d628d6d862b51ae28eb",
+            "fin_4ca28589ab92ad598dd2b8308096d91c",
+            "fin_f8e1d52cd227db05e5a6a4f623787056",
+            "fin_77dd0e5ecfaaf21cdd8bbd457ae62a20",
+            "fin_7af4f1afbad8ae519a686624f19aea93"
+          ],
+          "gold_rank_at_10": 3,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.3333333333333333,
+          "ndcg_at_5": 0.5,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+              "b_rank": 6,
+              "d_rank": 7,
+              "b_contribution": 0.015151515151515152,
+              "d_contribution": 0.014925373134328358
+            },
+            {
+              "chunk_id": "fin_711a6efa20149089493eb9b2b79dead0",
+              "b_rank": 7,
+              "d_rank": 8,
+              "b_contribution": 0.014925373134328358,
+              "d_contribution": 0.014705882352941176
+            },
+            {
+              "chunk_id": "fin_7245c3efdca4dd8a2385381af281f098",
+              "b_rank": 3,
+              "d_rank": 14,
+              "b_contribution": 0.015873015873015872,
+              "d_contribution": 0.013513513513513514
+            },
+            {
+              "chunk_id": "fin_6f3dc33aa47e15b2a194d7d7fb934edf",
+              "b_rank": 10,
+              "d_rank": 9,
+              "b_contribution": 0.014285714285714285,
+              "d_contribution": 0.014492753623188406
+            },
+            {
+              "chunk_id": "fin_01dc8b639a5203cf71611c5a24e4a518",
+              "b_rank": 9,
+              "d_rank": 11,
+              "b_contribution": 0.014492753623188406,
+              "d_contribution": 0.014084507042253521
+            }
+          ]
+        },
+        "A": {
+          "top10_ids": [
+            "fin_21162c10e04914d3a997e7a83057b710",
+            "fin_77672980338dd82069ed8eaeee9f4101",
+            "fin_7245c3efdca4dd8a2385381af281f098",
+            "fin_6342fdf33b49c89e3b25d795727dd0c9",
+            "fin_f8e1d52cd227db05e5a6a4f623787056",
+            "fin_4726b9acd42f2fc3fe3f2cc8a9c4e174",
+            "fin_711a6efa20149089493eb9b2b79dead0",
+            "fin_77dd0e5ecfaaf21cdd8bbd457ae62a20",
+            "fin_01dc8b639a5203cf71611c5a24e4a518",
+            "fin_6f3dc33aa47e15b2a194d7d7fb934edf"
+          ],
+          "gold_rank_at_10": 3,
+          "recall_at_5": 1,
+          "recall_at_10": 1,
+          "mrr_at_5": 0.3333333333333333,
+          "ndcg_at_5": 0.5,
+          "wrong_issuer_top5": 0,
+          "top5_count": 5,
+          "top5_contributions": [
+            {
+              "chunk_id": "fin_21162c10e04914d3a997e7a83057b710",
+              "b_rank": 1,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_77672980338dd82069ed8eaeee9f4101",
+              "b_rank": 2,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_7245c3efdca4dd8a2385381af281f098",
+              "b_rank": 3,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_6342fdf33b49c89e3b25d795727dd0c9",
+              "b_rank": 4,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            },
+            {
+              "chunk_id": "fin_f8e1d52cd227db05e5a6a4f623787056",
+              "b_rank": 5,
+              "d_rank": null,
+              "b_contribution": 0,
+              "d_contribution": 0
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "refusals": [
+    {
+      "query_id": "p11-dev-wrong-issuer",
+      "expected_class": "CONFLICT_OR_CLARIFICATION",
+      "observed_status": "NEEDS_CLARIFICATION",
+      "eligible_filing_ids": []
+    },
+    {
+      "query_id": "p11-dev-wrong-period",
+      "expected_class": "NO_VERIFIED_EVIDENCE",
+      "observed_status": "UNSUPPORTED",
+      "eligible_filing_ids": []
+    },
+    {
+      "query_id": "p11-dev-ambiguous",
+      "expected_class": "NEEDS_CLARIFICATION",
+      "observed_status": "NEEDS_CLARIFICATION",
+      "eligible_filing_ids": []
+    },
+    {
+      "query_id": "p11-dev-unsupported-duration",
+      "expected_class": "NO_VERIFIED_EVIDENCE",
+      "observed_status": "NEEDS_CLARIFICATION",
+      "eligible_filing_ids": []
+    }
+  ],
+  "aggregate": {
+    "B": {
+      "recall_at_5": 0.3,
+      "recall_at_10": 0.6,
+      "mrr_at_5": 0.07333333333333333,
+      "ndcg_at_5": 0.12737056144690834,
+      "evidence_group_coverage_at_5": 0.3,
+      "wrong_issuer_rate_at_5": 0.0,
+      "wrong_period_rate": "NOT_MEASURED_COLUMN_LEVEL",
+      "source_provenance_validity": "ALL_RETURNED_PARENTS_VERIFIED",
+      "channel_failures": 0
+    },
+    "D": {
+      "recall_at_5": 0.1,
+      "recall_at_10": 0.2,
+      "mrr_at_5": 0.1,
+      "ndcg_at_5": 0.1,
+      "evidence_group_coverage_at_5": 0.1,
+      "wrong_issuer_rate_at_5": 0.0,
+      "wrong_period_rate": "NOT_MEASURED_COLUMN_LEVEL",
+      "source_provenance_validity": "ALL_RETURNED_PARENTS_VERIFIED",
+      "channel_failures": 0
+    },
+    "F": {
+      "recall_at_5": 0.5,
+      "recall_at_10": 0.6,
+      "mrr_at_5": 0.21166666666666667,
+      "ndcg_at_5": 0.2817529365307935,
+      "evidence_group_coverage_at_5": 0.5,
+      "wrong_issuer_rate_at_5": 0.0,
+      "wrong_period_rate": "NOT_MEASURED_COLUMN_LEVEL",
+      "source_provenance_validity": "ALL_RETURNED_PARENTS_VERIFIED",
+      "channel_failures": 0
+    },
+    "A": {
+      "recall_at_5": 0.4,
+      "recall_at_10": 0.7,
+      "mrr_at_5": 0.10666666666666666,
+      "ndcg_at_5": 0.17737056144690833,
+      "evidence_group_coverage_at_5": 0.4,
+      "wrong_issuer_rate_at_5": 0.0,
+      "wrong_period_rate": "NOT_MEASURED_COLUMN_LEVEL",
+      "source_provenance_validity": "ALL_RETURNED_PARENTS_VERIFIED",
+      "channel_failures": 0
+    }
+  },
+  "total_wall_ms_p50": 1019.6424999999999,
+  "total_wall_ms_p95": 4159.368999999999,
+  "available_ram_bytes_after": 724246528,
+  "isolated_index_bytes": 94622119
+}

@@ -1,0 +1,8 @@
+{
+  "control": "FROZEN_SOURCES_CANONICAL_REPARSE_PASSED",
+  "generation": "d37a5139aa1817d4564238e7c1e03abc818991c6035991ce5b6d9435bac33f28",
+  "owner_source_modified": false,
+  "reason": "SOURCE_ARTIFACT_HASH_MISMATCH",
+  "source_sha256": "5a11b7e43689cdcff53b25381d99c1fae8a5795fa25c3cc441672048599f6541",
+  "tamper": "ONE_BYTE_MUTATION_REJECTED"
+}

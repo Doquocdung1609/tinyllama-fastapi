@@ -1,0 +1,656 @@
+{
+  "schema_version": "topic3-p11-label-review-queue/v1",
+  "status": "AWAITING_HUMAN_REVIEW",
+  "items": [
+    {
+      "query_id": "p11-dev-mcd-assets-exact",
+      "question": "What were McDonald's total assets as of June 30, 2026?",
+      "proposed_parent_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_f8a8a01491e69b5fca6b84b2\nCompany: MCDONALDS CORP\nCIK: 0000063908; Accession: 0000063908-26-000073; Form: 10-Q\nStatement: Segment Information\nSection: Segment Information\nCaption: Segment Information\nColumns: In millions | In millions | In millions | June 30, 2026 | June 30, 2026 | June 30, 2026 |  |  |  | December 31, 2025 | December 31, 2025 | December 31, 2025\nRow 5: Total Assets | Total Assets | Total Assets | $ | 59,920 |  |  |  |  | $ | 59,515 | \nRow period/group: NONE\nUnits: usd, millions\nReporting periods: December 31, 2025, June 30, 2026\nUnit context: UNKNOWN\nNumeric attributes: [{\"column\": 4, \"unitref\": \"usd\", \"contextref\": \"c-2\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"59,920\"}, {\"column\": 10, \"unitref\": \"usd\", \"contextref\": \"c-3\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\":",
+      "table_id": "table_f8a8a01491e69b5fca6b84b2",
+      "row_index": 5,
+      "row_cells": [
+        "Total Assets",
+        "Total Assets",
+        "Total Assets",
+        "$",
+        "59,920",
+        "",
+        "",
+        "",
+        "",
+        "$",
+        "59,515",
+        ""
+      ],
+      "table_headers": [
+        [
+          "In millions",
+          "In millions",
+          "In millions",
+          "June 30, 2026",
+          "June 30, 2026",
+          "June 30, 2026",
+          "",
+          "",
+          "",
+          "December 31, 2025",
+          "December 31, 2025",
+          "December 31, 2025"
+        ]
+      ],
+      "periods": [
+        "December 31, 2025",
+        "June 30, 2026"
+      ],
+      "units": [
+        "usd",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:nonnumeric[1]/div[3]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-mcd-assets-paraphrase",
+      "question": "How large was McDonald's asset base at June 30, 2026?",
+      "proposed_parent_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_f8a8a01491e69b5fca6b84b2\nCompany: MCDONALDS CORP\nCIK: 0000063908; Accession: 0000063908-26-000073; Form: 10-Q\nStatement: Segment Information\nSection: Segment Information\nCaption: Segment Information\nColumns: In millions | In millions | In millions | June 30, 2026 | June 30, 2026 | June 30, 2026 |  |  |  | December 31, 2025 | December 31, 2025 | December 31, 2025\nRow 5: Total Assets | Total Assets | Total Assets | $ | 59,920 |  |  |  |  | $ | 59,515 | \nRow period/group: NONE\nUnits: usd, millions\nReporting periods: December 31, 2025, June 30, 2026\nUnit context: UNKNOWN\nNumeric attributes: [{\"column\": 4, \"unitref\": \"usd\", \"contextref\": \"c-2\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"59,920\"}, {\"column\": 10, \"unitref\": \"usd\", \"contextref\": \"c-3\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\":",
+      "table_id": "table_f8a8a01491e69b5fca6b84b2",
+      "row_index": 5,
+      "row_cells": [
+        "Total Assets",
+        "Total Assets",
+        "Total Assets",
+        "$",
+        "59,920",
+        "",
+        "",
+        "",
+        "",
+        "$",
+        "59,515",
+        ""
+      ],
+      "table_headers": [
+        [
+          "In millions",
+          "In millions",
+          "In millions",
+          "June 30, 2026",
+          "June 30, 2026",
+          "June 30, 2026",
+          "",
+          "",
+          "",
+          "December 31, 2025",
+          "December 31, 2025",
+          "December 31, 2025"
+        ]
+      ],
+      "periods": [
+        "December 31, 2025",
+        "June 30, 2026"
+      ],
+      "units": [
+        "usd",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:nonnumeric[1]/div[3]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-current",
+      "question": "Find McDonald's total revenues for the six months ended June 30, 2026.",
+      "proposed_parent_id": "fin_7b4d037b06167f848cdc8822d4bb592b",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_76f4cf3ea0256b1604845887\nCompany: MCDONALDS CORP\nCIK: 0000063908; Accession: 0000063908-26-000073; Form: 10-Q\nStatement: The Following Definitions Apply to these Terms as Used Throughout this Report:\nSection: The Following Definitions Apply to these Terms as Used Throughout this Report:\nCaption: The Following Definitions Apply to these Terms as Used Throughout this Report:\nColumns: Six Months Ended June 30, | Six Months Ended June 30, | Six Months Ended June 30, | 2026 | 2026 | 2026 |  |  |  | 2025 | 2025 | 2025 |  |  |  | Inc/(Dec) | Inc/(Dec) | Inc/(Dec)\nRow 6: Total revenues | Total revenues | Total revenues | 13,616 | 13,616 |  |  |  |  | 12,799 | 12,799 |  |  |  |  | 6 | 6 | \nRow period/group: NONE\nUnits: usd, usdPerShare\nReporting periods: 2025, 2026\nUnit context: UNKNOWN\nNumeric attributes: [{\"column\": 3, \"unitref\": \"usd\", \"contextref\": \"c-1\", \"name\": \"us-gaap:Revenues",
+      "table_id": "table_76f4cf3ea0256b1604845887",
+      "row_index": 6,
+      "row_cells": [
+        "Total revenues",
+        "Total revenues",
+        "Total revenues",
+        "13,616",
+        "13,616",
+        "",
+        "",
+        "",
+        "",
+        "12,799",
+        "12,799",
+        "",
+        "",
+        ""
+      ],
+      "table_headers": [
+        [
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "2026",
+          "2026",
+          "2026",
+          "",
+          "",
+          "",
+          "2025",
+          "2025",
+          "2025",
+          "",
+          "",
+          "",
+          "Inc/(Dec)",
+          "Inc/(Dec)",
+          "Inc/(Dec)"
+        ]
+      ],
+      "periods": [
+        "2025",
+        "2026"
+      ],
+      "units": [
+        "usd",
+        "usdPerShare"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[199]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-prior",
+      "question": "Find McDonald's total revenues for the six months ended June 30, 2025.",
+      "proposed_parent_id": "fin_7b4d037b06167f848cdc8822d4bb592b",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_76f4cf3ea0256b1604845887\nCompany: MCDONALDS CORP\nCIK: 0000063908; Accession: 0000063908-26-000073; Form: 10-Q\nStatement: The Following Definitions Apply to these Terms as Used Throughout this Report:\nSection: The Following Definitions Apply to these Terms as Used Throughout this Report:\nCaption: The Following Definitions Apply to these Terms as Used Throughout this Report:\nColumns: Six Months Ended June 30, | Six Months Ended June 30, | Six Months Ended June 30, | 2026 | 2026 | 2026 |  |  |  | 2025 | 2025 | 2025 |  |  |  | Inc/(Dec) | Inc/(Dec) | Inc/(Dec)\nRow 6: Total revenues | Total revenues | Total revenues | 13,616 | 13,616 |  |  |  |  | 12,799 | 12,799 |  |  |  |  | 6 | 6 | \nRow period/group: NONE\nUnits: usd, usdPerShare\nReporting periods: 2025, 2026\nUnit context: UNKNOWN\nNumeric attributes: [{\"column\": 3, \"unitref\": \"usd\", \"contextref\": \"c-1\", \"name\": \"us-gaap:Revenues",
+      "table_id": "table_76f4cf3ea0256b1604845887",
+      "row_index": 6,
+      "row_cells": [
+        "Total revenues",
+        "Total revenues",
+        "Total revenues",
+        "13,616",
+        "13,616",
+        "",
+        "",
+        "",
+        "",
+        "12,799",
+        "12,799",
+        "",
+        "",
+        ""
+      ],
+      "table_headers": [
+        [
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "2026",
+          "2026",
+          "2026",
+          "",
+          "",
+          "",
+          "2025",
+          "2025",
+          "2025",
+          "",
+          "",
+          "",
+          "Inc/(Dec)",
+          "Inc/(Dec)",
+          "Inc/(Dec)"
+        ]
+      ],
+      "periods": [
+        "2025",
+        "2026"
+      ],
+      "units": [
+        "usd",
+        "usdPerShare"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[199]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-cat-sales-quarter",
+      "question": "What were Caterpillar's total sales and revenues for the three months ended June 30, 2026?",
+      "proposed_parent_id": "fin_a14f0477ee7eff69139f7f49560c00c1",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_b891b8ad2f9e518484d7b9c4\nCompany: CATERPILLAR INC\nCIK: 0000018230; Accession: 0000018230-26-000046; Form: 10-Q\nStatement: Consolidated Statement of Results of Operations\nSection: (Dollars in millions except per share data)\nCaption: Consolidated Statement of Results of Operations\nColumns:  |  |  | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025\nRow 6: Total sales and revenues | Total sales and revenues | Total sales and revenues | 20,543 | 20,543 |  |  |  |  | 16,569 | 16,569 | \nRow period/group: NONE\nUnits: shares, usd, usdPerShare, millions\nReporting periods: Three Months Ended June 30, / 2025, Three Months Ended June",
+      "table_id": "table_b891b8ad2f9e518484d7b9c4",
+      "row_index": 6,
+      "row_cells": [
+        "Total sales and revenues",
+        "Total sales and revenues",
+        "Total sales and revenues",
+        "20,543",
+        "20,543",
+        "",
+        "",
+        "",
+        "",
+        "16,569",
+        "16,569",
+        ""
+      ],
+      "table_headers": [
+        [
+          "",
+          "",
+          "",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,"
+        ],
+        [
+          "",
+          "",
+          "",
+          "2026",
+          "2026",
+          "2026",
+          "",
+          "",
+          "",
+          "2025",
+          "2025",
+          "2025"
+        ]
+      ],
+      "periods": [
+        "Three Months Ended June 30, / 2025",
+        "Three Months Ended June 30, / 2026"
+      ],
+      "units": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-cat-sales-paraphrase",
+      "question": "How much did Caterpillar sell in the June 2026 quarter, including financial products revenue?",
+      "proposed_parent_id": "fin_a14f0477ee7eff69139f7f49560c00c1",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_b891b8ad2f9e518484d7b9c4\nCompany: CATERPILLAR INC\nCIK: 0000018230; Accession: 0000018230-26-000046; Form: 10-Q\nStatement: Consolidated Statement of Results of Operations\nSection: (Dollars in millions except per share data)\nCaption: Consolidated Statement of Results of Operations\nColumns:  |  |  | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025\nRow 6: Total sales and revenues | Total sales and revenues | Total sales and revenues | 20,543 | 20,543 |  |  |  |  | 16,569 | 16,569 | \nRow period/group: NONE\nUnits: shares, usd, usdPerShare, millions\nReporting periods: Three Months Ended June 30, / 2025, Three Months Ended June",
+      "table_id": "table_b891b8ad2f9e518484d7b9c4",
+      "row_index": 6,
+      "row_cells": [
+        "Total sales and revenues",
+        "Total sales and revenues",
+        "Total sales and revenues",
+        "20,543",
+        "20,543",
+        "",
+        "",
+        "",
+        "",
+        "16,569",
+        "16,569",
+        ""
+      ],
+      "table_headers": [
+        [
+          "",
+          "",
+          "",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,"
+        ],
+        [
+          "",
+          "",
+          "",
+          "2026",
+          "2026",
+          "2026",
+          "",
+          "",
+          "",
+          "2025",
+          "2025",
+          "2025"
+        ]
+      ],
+      "periods": [
+        "Three Months Ended June 30, / 2025",
+        "Three Months Ended June 30, / 2026"
+      ],
+      "units": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-cat-sales-sixmonths",
+      "question": "Locate Caterpillar total sales and revenues for the six months ended June 30, 2026.",
+      "proposed_parent_id": "fin_a2162fc0964413aafd953835bb3cefe5",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_a09da0ea30c7e827d4e6ce05\nCompany: CATERPILLAR INC\nCIK: 0000018230; Accession: 0000018230-26-000046; Form: 10-Q\nStatement: Consolidated Statement of Results of Operations\nSection: (Dollars in millions except per share data)\nCaption: Consolidated Statement of Results of Operations\nColumns:  |  |  | Six Months Ended June 30, / 2026 | Six Months Ended June 30, / 2026 | Six Months Ended June 30, / 2026 | Six Months Ended June 30, | Six Months Ended June 30, | Six Months Ended June 30, | Six Months Ended June 30, / 2025 | Six Months Ended June 30, / 2025 | Six Months Ended June 30, / 2025\nRow 6: Total sales and revenues | Total sales and revenues | Total sales and revenues | 37,958 | 37,958 |  |  |  |  | 30,818 | 30,818 | \nRow period/group: NONE\nUnits: shares, usd, usdPerShare, millions\nReporting periods: Six Months Ended June 30, / 2025, Six Months Ended June 30, / 2026\nUnit conte",
+      "table_id": "table_a09da0ea30c7e827d4e6ce05",
+      "row_index": 6,
+      "row_cells": [
+        "Total sales and revenues",
+        "Total sales and revenues",
+        "Total sales and revenues",
+        "37,958",
+        "37,958",
+        "",
+        "",
+        "",
+        "",
+        "30,818",
+        "30,818",
+        ""
+      ],
+      "table_headers": [
+        [
+          "",
+          "",
+          "",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,",
+          "Six Months Ended June 30,"
+        ],
+        [
+          "",
+          "",
+          "",
+          "2026",
+          "2026",
+          "2026",
+          "",
+          "",
+          "",
+          "2025",
+          "2025",
+          "2025"
+        ]
+      ],
+      "periods": [
+        "Six Months Ended June 30, / 2025",
+        "Six Months Ended June 30, / 2026"
+      ],
+      "units": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[78]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-cat-cash",
+      "question": "What was Caterpillar's cash and cash equivalents as of June 30, 2026?",
+      "proposed_parent_id": "fin_6c444d43156fd60710ce02a6fbe73f8d",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_9a187831f64484472d744d41\nCompany: CATERPILLAR INC\nCIK: 0000018230; Accession: 0000018230-26-000046; Form: 10-Q\nStatement: Consolidated Statement of Financial Position\nSection: (Dollars in millions)\nCaption: Consolidated Statement of Financial Position\nColumns:  |  |  | June 30, 2026 | June 30, 2026 | June 30, 2026 |  |  |  | December 31, 2025 | December 31, 2025 | December 31, 2025\nRow 4: Cash and cash equivalents | Cash and cash equivalents | Cash and cash equivalents | $ | 6,713 |  |  |  |  | $ | 9,980 | \nRow period/group: NONE\nUnits: shares, usd, usdPerShare, millions\nReporting periods: December 31, 2025, June 30, 2026\nUnit context: (Dollars in millions)\nNumeric attributes: [{\"column\": 4, \"unitref\": \"usd\", \"contextref\": \"c-4\", \"name\": \"us-gaap:CashAndCashEquivalentsAtCarryingValue\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"6,713\"}, {\"column\": 10, \"uni",
+      "table_id": "table_9a187831f64484472d744d41",
+      "row_index": 4,
+      "row_cells": [
+        "Cash and cash equivalents",
+        "Cash and cash equivalents",
+        "Cash and cash equivalents",
+        "$",
+        "6,713",
+        "",
+        "",
+        "",
+        "",
+        "$",
+        "9,980",
+        ""
+      ],
+      "table_headers": [
+        [
+          "",
+          "",
+          "",
+          "June 30, 2026",
+          "June 30, 2026",
+          "June 30, 2026",
+          "",
+          "",
+          "",
+          "December 31, 2025",
+          "December 31, 2025",
+          "December 31, 2025"
+        ]
+      ],
+      "periods": [
+        "December 31, 2025",
+        "June 30, 2026"
+      ],
+      "units": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[105]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-cat-basic-eps",
+      "question": "Find Caterpillar profit per common share before dilution for the three months ended June 30, 2026.",
+      "proposed_parent_id": "fin_f1067b7da6743cb8182973a57755b50c",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_b891b8ad2f9e518484d7b9c4\nCompany: CATERPILLAR INC\nCIK: 0000018230; Accession: 0000018230-26-000046; Form: 10-Q\nStatement: Consolidated Statement of Results of Operations\nSection: (Dollars in millions except per share data)\nCaption: Consolidated Statement of Results of Operations\nColumns:  |  |  | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025\nRow 34: Profit per common share | Profit per common share | Profit per common share | $ | 7.80 |  |  |  |  | $ | 4.64 | \nRow period/group: NONE\nUnits: shares, usd, usdPerShare, millions\nReporting periods: Three Months Ended June 30, / 2025, Three Months Ended June 30, / 2026\nUnit",
+      "table_id": "table_b891b8ad2f9e518484d7b9c4",
+      "row_index": 34,
+      "row_cells": [
+        "Profit per common share",
+        "Profit per common share",
+        "Profit per common share",
+        "$",
+        "7.80",
+        "",
+        "",
+        "",
+        "",
+        "$",
+        "4.64",
+        ""
+      ],
+      "table_headers": [
+        [
+          "",
+          "",
+          "",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,"
+        ],
+        [
+          "",
+          "",
+          "",
+          "2026",
+          "2026",
+          "2026",
+          "",
+          "",
+          "",
+          "2025",
+          "2025",
+          "2025"
+        ]
+      ],
+      "periods": [
+        "Three Months Ended June 30, / 2025",
+        "Three Months Ended June 30, / 2026"
+      ],
+      "units": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    },
+    {
+      "query_id": "p11-dev-cat-diluted-eps",
+      "question": "Find Caterpillar diluted profit per common share for the three months ended June 30, 2026.",
+      "proposed_parent_id": "fin_7245c3efdca4dd8a2385381af281f098",
+      "proposed_grade": 2,
+      "source_excerpt": "TABLE table_b891b8ad2f9e518484d7b9c4\nCompany: CATERPILLAR INC\nCIK: 0000018230; Accession: 0000018230-26-000046; Form: 10-Q\nStatement: Consolidated Statement of Results of Operations\nSection: (Dollars in millions except per share data)\nCaption: Consolidated Statement of Results of Operations\nColumns:  |  |  | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, / 2026 | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025 | Three Months Ended June 30, / 2025\nRow 36: Profit per common share \u2013 diluted 2 | Profit per common share \u2013 diluted 2 | Profit per common share \u2013 diluted 2 | $ | 7.77 |  |  |  |  | $ | 4.62 | \nRow period/group: NONE\nUnits: shares, usd, usdPerShare, millions\nReporting periods: Three Months Ended June 30, / 2025, Thr",
+      "table_id": "table_b891b8ad2f9e518484d7b9c4",
+      "row_index": 36,
+      "row_cells": [
+        "Profit per common share \u2013 diluted 2",
+        "Profit per common share \u2013 diluted 2",
+        "Profit per common share \u2013 diluted 2",
+        "$",
+        "7.77",
+        "",
+        "",
+        "",
+        "",
+        "$",
+        "4.62",
+        ""
+      ],
+      "table_headers": [
+        [
+          "",
+          "",
+          "",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,",
+          "Three Months Ended June 30,"
+        ],
+        [
+          "",
+          "",
+          "",
+          "2026",
+          "2026",
+          "2026",
+          "",
+          "",
+          "",
+          "2025",
+          "2025",
+          "2025"
+        ]
+      ],
+      "periods": [
+        "Three Months Ended June 30, / 2025",
+        "Three Months Ended June 30, / 2026"
+      ],
+      "units": [
+        "shares",
+        "usd",
+        "usdPerShare",
+        "millions"
+      ],
+      "source_locator": "/document[1]/html[1]/body[1]/div[54]/table[1]",
+      "rationale": "Canonical table row contains the specified accounting label in the pinned official filing; table header includes the requested period. Alternative relevant rows may remain unjudged pending human review.",
+      "human_review_status": "UNREVIEWED",
+      "review_questions": [
+        "Is this the complete eligible evidence group?",
+        "Does the header bind this specific financial period?",
+        "Are unit, entity and EPS qualifier correct?"
+      ]
+    }
+  ],
+  "human_reviewers": 0,
+  "automated_consistency_checks_passed": true
+}

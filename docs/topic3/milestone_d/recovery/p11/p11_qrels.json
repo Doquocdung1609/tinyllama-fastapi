@@ -1,0 +1,68 @@
+{
+  "schema_version": "topic3-p11-dev-qrels/v1",
+  "status": "PROVISIONAL_NOT_HUMAN_ADJUDICATED",
+  "qrels": [
+    {
+      "query_id": "p11-dev-mcd-assets-exact",
+      "parent_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-mcd-assets-paraphrase",
+      "parent_id": "fin_f23049c3da0b325f73c7736d8c62a56c",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-current",
+      "parent_id": "fin_7b4d037b06167f848cdc8822d4bb592b",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-mcd-revenue-prior",
+      "parent_id": "fin_7b4d037b06167f848cdc8822d4bb592b",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-cat-sales-quarter",
+      "parent_id": "fin_a14f0477ee7eff69139f7f49560c00c1",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-cat-sales-paraphrase",
+      "parent_id": "fin_a14f0477ee7eff69139f7f49560c00c1",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-cat-sales-sixmonths",
+      "parent_id": "fin_a2162fc0964413aafd953835bb3cefe5",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-cat-cash",
+      "parent_id": "fin_6c444d43156fd60710ce02a6fbe73f8d",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-cat-basic-eps",
+      "parent_id": "fin_f1067b7da6743cb8182973a57755b50c",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    },
+    {
+      "query_id": "p11-dev-cat-diluted-eps",
+      "parent_id": "fin_7245c3efdca4dd8a2385381af281f098",
+      "grade": 2,
+      "status": "PROVISIONAL_SOURCE_ROW_LABEL"
+    }
+  ],
+  "human_reviewers": 0,
+  "rankings_used_for_labels": false
+}
