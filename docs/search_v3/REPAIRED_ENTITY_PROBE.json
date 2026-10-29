@@ -1,0 +1,26 @@
+[
+  {
+    "query": "Apple total assets separate as of 31/12/2025",
+    "related_hits": 2,
+    "verified_claims": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "apple total assets separate as of 31/12/2025",
+    "related_hits": 2,
+    "verified_claims": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Tổng tài sản Apple riêng 31/12/2025",
+    "related_hits": 5,
+    "verified_claims": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Tổng tài sản apple riêng 31/12/2025",
+    "related_hits": 5,
+    "verified_claims": 0,
+    "status": "PASS"
+  }
+]

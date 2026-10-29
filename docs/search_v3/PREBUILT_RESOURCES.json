@@ -1,0 +1,11 @@
+{
+  "elapsed_s": 115.28145739994943,
+  "sample_count": 458,
+  "api_sampled_peak_rss_bytes": 380878848,
+  "api_os_peak_working_set_bytes": 403496960,
+  "minimum_available_ram_bytes": 3488362496,
+  "maximum_whole_system_used_ram_bytes": 12865294336,
+  "minimum_free_disk_bytes": 35893678080,
+  "physical_ram_bytes": 16353656832,
+  "condition": "Real Windows Prebuilt/Chromium smoke;0.25s sampling;includes launcher idle and desktop background apps. API memory excludes Ollama/browser;whole-system RAM includes them. RTX3050Laptop4GB confirmed with Win32_VideoController."
+}

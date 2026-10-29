@@ -33,3 +33,7 @@ Live Chromium theo hướng dẫn Windows; GitHub CI chạy core deterministic v
 ## Search V2 — ứng viên chưa khóa chất lượng
 
 Xem [nghiệm thu Search V2](docs/search_v2/SEARCH_OWNER_ACCEPTANCE.md) và [benchmark có giới hạn](docs/search_v2/SEARCH_EVALUATION_REPORT.md). Baseline BM25/Dense/RRF được giữ nguyên; V2 bổ sung chỉ mục dòng và kiểm tra ngữ cảnh. Nhãn hiện chưa được rà soát độc lập; không tuyên bố SEARCH_V2_LOCKED.
+
+## Search V3 — kiểm định nguồn mới, chưa khóa chất lượng
+
+Xem [nghiệm thu V3](docs/search_v3/SEARCH_V3_FINAL_ACCEPTANCE.md), [kết quả tám phương pháp](docs/search_v3/SEARCH_V3_EVALUATION_REPORT.md) và [gói kiểm tra cho người rà soát](docs/search_v3/SEARCH_V3_OWNER_AUDIT_PACKET.md). V3 tách tìm đoạn liên quan khỏi quyền trả lời số; 84 câu mới có provenance và phân tách development/retest/test. Tập nguồn mới vẫn phát hiện lỗi mất bảng ảnh; trạng thái **SEARCH_V3_PARTIAL**, không tuyên bố LOCKED. PR23/24 và các baseline được giữ nguyên.

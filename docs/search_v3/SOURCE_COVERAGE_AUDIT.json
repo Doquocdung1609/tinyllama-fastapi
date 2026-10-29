@@ -1,0 +1,273 @@
+{
+  "records": [
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 3,
+      "metric": "assets",
+      "displayed_gold": [
+        "40.075.864.731.378"
+      ],
+      "native_characters": 2706,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 36,
+      "native_contains_gold": true,
+      "checkpoint_contains_gold": true,
+      "status": "PASS_SOURCE_VALUE_AVAILABLE"
+    },
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 3,
+      "metric": "liabilities",
+      "displayed_gold": [
+        "15.279.611.871.394"
+      ],
+      "native_characters": 2706,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 36,
+      "native_contains_gold": true,
+      "checkpoint_contains_gold": true,
+      "status": "PASS_SOURCE_VALUE_AVAILABLE"
+    },
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 4,
+      "metric": "equity",
+      "displayed_gold": [
+        "24.796.252.859.984"
+      ],
+      "native_characters": 1160,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 13,
+      "native_contains_gold": true,
+      "checkpoint_contains_gold": true,
+      "status": "PASS_SOURCE_VALUE_AVAILABLE"
+    },
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 2,
+      "metric": "cash_equivalents",
+      "displayed_gold": [
+        "3.045.833.042.094"
+      ],
+      "native_characters": 2278,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 31,
+      "native_contains_gold": true,
+      "checkpoint_contains_gold": true,
+      "status": "PASS_SOURCE_VALUE_AVAILABLE"
+    },
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 2,
+      "metric": "inventory",
+      "displayed_gold": [
+        "1.523.627.823.536"
+      ],
+      "native_characters": 2278,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 31,
+      "native_contains_gold": true,
+      "checkpoint_contains_gold": true,
+      "status": "PASS_SOURCE_VALUE_AVAILABLE"
+    },
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 2,
+      "metric": "fixed_assets",
+      "displayed_gold": [
+        "14.129.557.344.274"
+      ],
+      "native_characters": 2278,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 31,
+      "native_contains_gold": true,
+      "checkpoint_contains_gold": true,
+      "status": "PASS_SOURCE_VALUE_AVAILABLE"
+    },
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 3,
+      "metric": "investment_property",
+      "displayed_gold": [
+        "2.478.048.502.242"
+      ],
+      "native_characters": 2706,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 36,
+      "native_contains_gold": true,
+      "checkpoint_contains_gold": true,
+      "status": "PASS_SOURCE_VALUE_AVAILABLE"
+    },
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "page": 9,
+      "metric": null,
+      "displayed_gold": [],
+      "native_characters": 2613,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 12,
+      "native_contains_gold": null,
+      "checkpoint_contains_gold": null,
+      "status": "NARRATIVE_UNJUDGED"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 7,
+      "metric": "assets",
+      "displayed_gold": [
+        "14,595,895,255,468"
+      ],
+      "native_characters": 138,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 1,
+      "native_contains_gold": false,
+      "checkpoint_contains_gold": false,
+      "status": "PARTIAL_OR_MISSING_EXTRACTED_VALUE"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 8,
+      "metric": "liabilities",
+      "displayed_gold": [
+        "4,798,551,372,605"
+      ],
+      "native_characters": 140,
+      "embedded_images": 2,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 1,
+      "native_contains_gold": false,
+      "checkpoint_contains_gold": false,
+      "status": "PARTIAL_OR_MISSING_EXTRACTED_VALUE"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 8,
+      "metric": "equity",
+      "displayed_gold": [
+        "9,797,343,882,863"
+      ],
+      "native_characters": 140,
+      "embedded_images": 2,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 1,
+      "native_contains_gold": false,
+      "checkpoint_contains_gold": false,
+      "status": "PARTIAL_OR_MISSING_EXTRACTED_VALUE"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 7,
+      "metric": "cash_equivalents",
+      "displayed_gold": [
+        "2,701,205,916,236"
+      ],
+      "native_characters": 138,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 1,
+      "native_contains_gold": false,
+      "checkpoint_contains_gold": false,
+      "status": "PARTIAL_OR_MISSING_EXTRACTED_VALUE"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 7,
+      "metric": "inventory",
+      "displayed_gold": [
+        "2,412,996,843,057"
+      ],
+      "native_characters": 138,
+      "embedded_images": 1,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 1,
+      "native_contains_gold": false,
+      "checkpoint_contains_gold": false,
+      "status": "PARTIAL_OR_MISSING_EXTRACTED_VALUE"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 9,
+      "metric": "pretax_income",
+      "displayed_gold": [
+        "895,831,372,804"
+      ],
+      "native_characters": 144,
+      "embedded_images": 2,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 1,
+      "native_contains_gold": false,
+      "checkpoint_contains_gold": false,
+      "status": "PARTIAL_OR_MISSING_EXTRACTED_VALUE"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 9,
+      "metric": "net_income",
+      "displayed_gold": [
+        "730,989,517,218"
+      ],
+      "native_characters": 144,
+      "embedded_images": 2,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "MIXED",
+      "extracted_rows": 1,
+      "native_contains_gold": false,
+      "checkpoint_contains_gold": false,
+      "status": "PARTIAL_OR_MISSING_EXTRACTED_VALUE"
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "page": 3,
+      "metric": null,
+      "displayed_gold": [],
+      "native_characters": 2752,
+      "embedded_images": 0,
+      "extracted_method": "NATIVE",
+      "extracted_pdf_type": "TEXT",
+      "extracted_rows": 9,
+      "native_contains_gold": null,
+      "checkpoint_contains_gold": null,
+      "status": "NARRATIVE_UNJUDGED"
+    }
+  ],
+  "note": "Gold values manually transcribed from original PDF images;checkpoint availability is a separate extraction check. READY does not certify completeness. No repair made using final reserved labels."
+}

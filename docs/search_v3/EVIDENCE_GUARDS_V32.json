@@ -1,0 +1,286 @@
+{
+  "source_fact_cases": [
+    {
+      "query": "Tổng tài sản công ty mẹ Hòa Phát ngày 31/12/2025",
+      "expected": {
+        "metric": "assets",
+        "period": "2025-12-31",
+        "statement_scope": "SEPARATE",
+        "unit": "VND"
+      },
+      "status": "PASS",
+      "claimed_facts": [
+        {
+          "metric": "assets",
+          "period": "2025-12-31",
+          "statement_scope": "SEPARATE",
+          "basis": "AS_REPORTED",
+          "unit": "VND",
+          "source_display": "98.670.778.691.605",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "audit_hash": "6ef4a669b2ffbcdc5458db703228899190e3741c6e26bb39de17df72911198a4"
+        }
+      ],
+      "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+      "reason": null
+    },
+    {
+      "query": "Tổng tài sản công ty mẹ Hòa Phát ngày 01/01/2025",
+      "expected": {
+        "metric": "assets",
+        "period": "2025-01-01",
+        "statement_scope": "SEPARATE",
+        "unit": "VND"
+      },
+      "status": "PASS",
+      "claimed_facts": [
+        {
+          "metric": "assets",
+          "period": "2025-01-01",
+          "statement_scope": "SEPARATE",
+          "basis": "AS_REPORTED",
+          "unit": "VND",
+          "source_display": "81.793.076.515.644",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "audit_hash": "29f8bc474d249b0d90206809185f98e27804e88b0fa896983d8d4422a5b6d8e4"
+        }
+      ],
+      "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+      "reason": null
+    },
+    {
+      "query": "Nợ phải trả công ty mẹ Hòa Phát ngày 31/12/2025",
+      "expected": {
+        "metric": "liabilities",
+        "period": "2025-12-31",
+        "statement_scope": "SEPARATE",
+        "unit": "VND"
+      },
+      "status": "PASS",
+      "claimed_facts": [
+        {
+          "metric": "liabilities",
+          "period": "2025-12-31",
+          "statement_scope": "SEPARATE",
+          "basis": "AS_REPORTED",
+          "unit": "VND",
+          "source_display": "4.239.852.223.395",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "audit_hash": "7acf78d2b410f5112a3329eac61690e2031c13746491472383a0449906845223"
+        }
+      ],
+      "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+      "reason": null
+    },
+    {
+      "query": "Vốn chủ sở hữu công ty mẹ Hòa Phát ngày 31/12/2025",
+      "expected": {
+        "metric": "equity",
+        "period": "2025-12-31",
+        "statement_scope": "SEPARATE",
+        "unit": "VND"
+      },
+      "status": "PASS",
+      "claimed_facts": [
+        {
+          "metric": "equity",
+          "period": "2025-12-31",
+          "statement_scope": "SEPARATE",
+          "basis": "AS_REPORTED",
+          "unit": "VND",
+          "source_display": "94.430.926.468.210",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "audit_hash": "309f5f26d691aba8a6d23e159e65bd71b62438543e3543b73a13e7f98c2fd08d"
+        }
+      ],
+      "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+      "reason": null
+    },
+    {
+      "query": "Tổng tài sản hợp nhất BIDV số trình bày lại ngày 31/12/2024",
+      "expected": {
+        "metric": "assets",
+        "period": "2024-12-31",
+        "statement_scope": "CONSOLIDATED",
+        "basis": "RESTATED",
+        "unit": "TRIEU_VND"
+      },
+      "status": "PASS",
+      "claimed_facts": [
+        {
+          "metric": "assets",
+          "period": "2024-12-31",
+          "statement_scope": "CONSOLIDATED",
+          "basis": "RESTATED",
+          "unit": "TRIEU_VND",
+          "source_display": "2,760,906,964",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "audit_hash": "bbafbd0e29b8619cc1cd45b808ae8a7c1a66e83d28bd175df87c58f2cee35a7c"
+        }
+      ],
+      "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+      "reason": null
+    },
+    {
+      "query": "Tổng tài sản hợp nhất BIDV số đã công bố ngày 31/12/2024",
+      "expected": {
+        "metric": "assets",
+        "period": "2024-12-31",
+        "statement_scope": "CONSOLIDATED",
+        "basis": "ORIGINAL",
+        "unit": "TRIEU_VND"
+      },
+      "status": "PASS",
+      "claimed_facts": [
+        {
+          "metric": "assets",
+          "period": "2024-12-31",
+          "statement_scope": "CONSOLIDATED",
+          "basis": "ORIGINAL",
+          "unit": "TRIEU_VND",
+          "source_display": "2,760,791,854",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "audit_hash": "59f492ee9abcf85bf2dd09c30707f536fe1914fdd8f5fd6b992be99a6066809c"
+        }
+      ],
+      "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+      "reason": null
+    },
+    {
+      "query": "Tổng tài sản hợp nhất BIDV mức điều chỉnh ngày 31/12/2024",
+      "expected": {
+        "metric": "assets",
+        "period": "2024-12-31",
+        "statement_scope": "CONSOLIDATED",
+        "basis": "ADJUSTMENT",
+        "unit": "TRIEU_VND"
+      },
+      "status": "PASS",
+      "claimed_facts": [
+        {
+          "metric": "assets",
+          "period": "2024-12-31",
+          "statement_scope": "CONSOLIDATED",
+          "basis": "ADJUSTMENT",
+          "unit": "TRIEU_VND",
+          "source_display": "115,110",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "audit_hash": "6a648c3873c92e8961f3032851b1ffa3a6f481172c78cd4c4d9d91e90dd34fd2"
+        }
+      ],
+      "evidence_status": "REVIEWED_ANSWER_EVIDENCE",
+      "reason": null
+    },
+    {
+      "query": "Tổng tài sản riêng HPG năm 2031",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "NUMERIC_ANSWER_REQUIRES_REVIEWED_MATCHING_CELLS"
+    },
+    {
+      "query": "Tổng tài sản hợp nhất HPG năm 2025",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "NUMERIC_ANSWER_REQUIRES_REVIEWED_MATCHING_CELLS"
+    },
+    {
+      "query": "Tổng tài sản BIDV ngày 31/12/2024",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "NO_SUFFICIENT_EVIDENCE",
+      "reason": "NUMERIC_ANSWER_REQUIRES_REVIEWED_MATCHING_CELLS"
+    },
+    {
+      "query": "Tổng tài sản BIDV năm 2024",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "NUMERIC_ANSWER_REQUIRES_REVIEWED_MATCHING_CELLS"
+    },
+    {
+      "query": "Tổng tài sản hợp nhất BIDV năm 2024",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "NUMERIC_ANSWER_REQUIRES_REVIEWED_MATCHING_CELLS"
+    },
+    {
+      "query": "Tổng tài sản riêng HPG năm 2025",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "NUMERIC_ANSWER_REQUIRES_REVIEWED_MATCHING_CELLS"
+    },
+    {
+      "query": "Rủi ro phải thu khó đòi và dự phòng",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER"
+    },
+    {
+      "query": "Tổng tài sản của ACME ngày 31/12/2025",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER"
+    },
+    {
+      "query": "Total assets of Apple separate as of 31/12/2025",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER"
+    },
+    {
+      "query": "total assets of missing company separate as of 31/12/2025",
+      "expected": null,
+      "status": "PASS",
+      "claimed_facts": [],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+      "reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER"
+    }
+  ],
+  "numeric_cases": [
+    {
+      "question": "Tổng tài sản công ty mẹ Hòa Phát tăng bao nhiêu so với đầu năm 2025?",
+      "status": "PASS",
+      "answer_status": "SUPPORTED",
+      "values": [
+        "16877702175961"
+      ],
+      "unit": "VND"
+    },
+    {
+      "question": "Kiểm tra tổng tài sản hợp nhất BIDV: số đã công bố cộng điều chỉnh có khớp số trình bày lại năm 2024?",
+      "status": "PASS",
+      "answer_status": "SUPPORTED",
+      "values": [
+        "0"
+      ],
+      "unit": "TRIEU_VND"
+    },
+    {
+      "question": "Tổng tài sản công ty mẹ Hòa Phát năm 2031?",
+      "status": "PASS",
+      "answer_status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "unit": null
+    }
+  ],
+  "metric_basis_period_correctness": 1.0,
+  "numeric_claim_abstention_correctness": 1.0,
+  "unsupported_numeric_answer_rate": 0.0,
+  "scope": "17 bounded real-source guard cases,7 reviewed gold cells; separate from retrieval Recall and not a general financial accuracy estimate."
+}

@@ -31,7 +31,7 @@ class UnifiedSearch(BaseModel):
     document_ids:list[str]=Field(default_factory=list,max_length=100)
     issuer:str=Field(default='',max_length=160)
     period:str=Field(default='',max_length=80)
-    search_profile:Literal['baseline','production_v2']='baseline'
+    search_profile:Literal['baseline','production_v2','production_v3']='baseline'
 
 
 class EvidenceResponse(BaseModel):
@@ -65,6 +65,7 @@ class ComparisonResponse(BaseModel):
     overlap:dict[str,int]
     quality_metrics:None=None
     quality_reason:str
+    candidate:SearchResponse|None=None
 
 
 def unified_search(payload:UnifiedSearch):
@@ -80,13 +81,17 @@ def unified_search(payload:UnifiedSearch):
                 return any(word in folded(text) for word in ('tai san','bao cao','ngan hang','hoa phat'))
             docs=[d for d in docs if vietnamese(d)]
         if docs:
-            if payload.search_profile=='production_v2':
+            if payload.search_profile in {'production_v2','production_v3'}:
                 from app.product.search_v2 import FinancialSearchV2
                 from pathlib import Path
                 w=workspace();root=Path(os.getenv('STUDIO_SEARCH_V2_ROOT','tmp/studio-runtime/search-v2'))
                 with _factory_lock:
                     if not hasattr(w,'_search_v2') or w._search_v2.root!=root:w._search_v2=FinancialSearchV2(w,root)
                     engine=w._search_v2
+                if payload.search_profile=='production_v3':
+                    from app.product.search_v3 import FinancialSearchV3
+                    engine=FinancialSearchV3(w,root)
+                    engine.base=w._search_v2
                 found=engine.search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
                 intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
             else:found=workspace().search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
@@ -94,7 +99,11 @@ def unified_search(payload:UnifiedSearch):
             scopes.append(('PDF',found.get('generation')));timings['PDF']=found['latency_ms']
     if payload.source in {'US_SEC','ALL'}:
         try:
-            found=sec_index().search(payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
+            if payload.search_profile=='production_v3':
+                from app.product.search_v3 import search_sec_v3
+                found=search_sec_v3(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
+                intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
+            else:found=sec_index().search(payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
             results.extend({**r,'source_kind':'SEC'} for r in found['results'])
             scopes.append(('SEC',found.get('generation')));timings['SEC']=found.get('latency_ms',0)
         except Exception as exc:
@@ -127,7 +136,8 @@ def compare(payload:UnifiedSearch):
         ids={mode:{r.get('chunk_id',r.get('parent_id')) for r in result['results']} for mode,result in arms.items()}
         return {'arms':arms,'generation':arms['bm25']['generation'],
                 'overlap':{'bm25_dense':len(ids['bm25']&ids['dense']),'all_three':len(set.intersection(*ids.values()))},
-                'quality_metrics':None,'quality_reason':'NO_QRELS_FOR_THIS_QUERY'}
+                  'quality_metrics':None,'quality_reason':'NO_QRELS_FOR_THIS_QUERY',
+                  'candidate':unified_search(payload) if payload.search_profile=='production_v3' else None}
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
 
 

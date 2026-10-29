@@ -1,0 +1,53 @@
+{
+  "records": [
+    {
+      "ticker": "REE",
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "fresh_document": true,
+      "elapsed_s": 32.68742109998129,
+      "document": {
+        "id": "00499ce748dfd085f220339508cd56bb",
+        "filename": "REE.pdf",
+        "sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+        "issuer": "REE Corporation",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "size_bytes": 5256449,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 36,
+        "chunks": 129,
+        "created_at": "2026-10-29T04:11:40.583905+00:00",
+        "updated_at": "2026-10-29T04:12:13.227415+00:00"
+      }
+    },
+    {
+      "ticker": "SEM",
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "fresh_document": true,
+      "elapsed_s": 20.332016900007147,
+      "document": {
+        "id": "0991f170e8d358d9b09f851c49894d22",
+        "filename": "SEM.pdf",
+        "sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+        "issuer": "Samsung Electro-Mechanics",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "size_bytes": 1796363,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 88,
+        "chunks": 346,
+        "created_at": "2026-10-29T04:12:13.265537+00:00",
+        "updated_at": "2026-10-29T04:12:33.559180+00:00"
+      }
+    }
+  ],
+  "sampling": "0.25s ingestion process RSS and whole-system free RAM/disk; other desktop apps not controlled",
+  "sample_count": 201,
+  "process_peak_rss_bytes": 265396224,
+  "minimum_available_ram_bytes": 3659878400,
+  "minimum_free_disk_bytes": 35981422592
+}

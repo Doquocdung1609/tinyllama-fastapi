@@ -1,0 +1,61 @@
+{
+  "qrels_sha256": "109479405d4e90e639900708d14a05559f755ad09d066b4871c185d9a4a2c343",
+  "development_labels_pretest_sha256": "c9503042d162e5599c32c7691083d52925689cd2cfc9a1ace23d8aa5079802db",
+  "locked_labels_created_at_utc": "2026-10-29T04:03:34.600431+00:00",
+  "counts": {
+    "development": 24,
+    "locked_test": 36,
+    "independent_human_adjudications": 0
+  },
+  "families": {
+    "development": [
+      "dev_ceo_accounting_identity",
+      "dev_ceo_assets",
+      "dev_ceo_cash_equivalents",
+      "dev_ceo_current_assets",
+      "dev_ceo_equity",
+      "dev_ceo_financial_revenue",
+      "dev_ceo_fixed_assets",
+      "dev_ceo_inventory",
+      "dev_ceo_net_revenue",
+      "dev_ceo_pretax_income",
+      "dev_ceo_unsupported_market",
+      "dev_ceo_wrong_company",
+      "dev_ceo_wrong_period",
+      "dev_ceo_wrong_scope"
+    ],
+    "locked_test": [
+      "test_fox_assets",
+      "test_fox_crosspage",
+      "test_fox_equity",
+      "test_fox_financial_revenue",
+      "test_fox_liabilities",
+      "test_fox_narrative",
+      "test_fox_net_revenue",
+      "test_fox_operating_cashflow",
+      "test_fox_pretax_income",
+      "test_fox_wrong_period",
+      "test_fox_wrong_scope",
+      "test_samsung_assets",
+      "test_samsung_cash_equivalents",
+      "test_samsung_crosspage",
+      "test_samsung_equity",
+      "test_samsung_inventory",
+      "test_samsung_liabilities",
+      "test_samsung_narrative",
+      "test_samsung_net_income",
+      "test_samsung_pretax_income",
+      "test_samsung_unverified_basis",
+      "test_samsung_wrong_company"
+    ]
+  },
+  "family_overlap": [],
+  "limits": "IDs bind all source-target paraphrases within one split. Common financial concepts and query constructions occur across issuers; this is source-disjoint, not ontology-disjoint evaluation. Small corpus, single Codex annotator.",
+  "component_sha256": {
+    "SEARCH_V3_QRELS.jsonl": "109479405d4e90e639900708d14a05559f755ad09d066b4871c185d9a4a2c343",
+    "ANNOTATION_GUIDE.md": "d702feb06dc0445886698424f71786df5512b386cc31ab627f486a9064a223a7",
+    "SEARCH_V3_INDEPENDENT_EVAL_PROTOCOL.md": "8ed5ae4736ab81df18abbcd293746e31cbf4177332b4bfaa32737e2a81970db4",
+    "SOURCE_MANIFEST.json": "96c6f9d24c777bf97bfe4770f099919ab527475e288c8a0e2eb2bc7b5ce5bd93",
+    "POLICY_LOCK.json": "fa36bac65a744760d85bb598fafc2dac50a854683dd2e0cf3404c7288439e935"
+  }
+}

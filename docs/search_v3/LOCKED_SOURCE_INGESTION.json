@@ -1,0 +1,53 @@
+{
+  "records": [
+    {
+      "ticker": "FOX",
+      "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+      "fresh_document": true,
+      "elapsed_s": 216.3738713999628,
+      "document": {
+        "id": "9b76dc9f61b4d0be5923e74f726306cf",
+        "filename": "FOX.pdf",
+        "sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+        "issuer": "FPT Telecom",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "size_bytes": 11495165,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 36,
+        "chunks": 113,
+        "created_at": "2026-10-29T04:00:36.049180+00:00",
+        "updated_at": "2026-10-29T04:04:12.361108+00:00"
+      }
+    },
+    {
+      "ticker": "SAMSUNG",
+      "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+      "fresh_document": true,
+      "elapsed_s": 36.4143171000178,
+      "document": {
+        "id": "7c0b31d9926fc3ce6a932abd2e52bf80",
+        "filename": "SAMSUNG.pdf",
+        "sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+        "issuer": "Samsung Electronics",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2024-12-31",
+        "size_bytes": 1558200,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 88,
+        "chunks": 317,
+        "created_at": "2026-10-29T04:04:12.387355+00:00",
+        "updated_at": "2026-10-29T04:04:48.757961+00:00"
+      }
+    }
+  ],
+  "sampling": "0.25s ingestion process RSS and whole-system free RAM/disk; other desktop apps not controlled",
+  "sample_count": 964,
+  "process_peak_rss_bytes": 497475584,
+  "minimum_available_ram_bytes": 4800921600,
+  "minimum_free_disk_bytes": 36105838592
+}

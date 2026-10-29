@@ -40,6 +40,56 @@ def reviewed(workspace,doc,row,col=0):
         convention='en_US',source_image_reviewed=True))
 
 
+def test_v3_retrieval_retains_context_without_promoting_wrong_period(evidence_workspace,tmp_path):
+    from app.product.search_v3 import FinancialSearchV3
+    w,d,row=evidence_workspace;reviewed(w,d,row)
+    v=FinancialSearchV3(w,tmp_path/'v3')
+    result=v.search('Tìm tổng tài sản công ty mẹ năm 2031','bm25',5,[d['id']])
+    assert result['results'], 'Related source must remain discoverable'
+    assert not any(h['numeric_answer_eligible'] for h in result['results'])
+    assert any('PERIOD_NOT_PROVEN' in h['conflicts'] for h in result['results'])
+    assert v.search('Tong tai san rieng ngay 31/12/2025','bm25',5,[d['id']])['results'][0]['numeric_answer_eligible']
+
+
+def test_v3_entity_and_duration_guards(evidence_workspace,tmp_path):
+    from app.product.search_v3 import FinancialSearchV3,intent_for
+    w,d,row=evidence_workspace;reviewed(w,d,row)
+    v=FinancialSearchV3(w,tmp_path/'v3')
+    for query in ['Total assets of AnotherCompany separate as of 31/12/2025',
+                  'AnotherCompany total assets separate as of 31/12/2025',
+                  'anothercompany total assets separate as of 31/12/2025',
+                  'Tong tai san rieng quy IV nam 2025', 'Tong tai san khong phai hop nhat 31/12/2025']:
+        result=v.search(query,'bm25',5,[d['id']])
+        assert result['results'] and not any(h['numeric_answer_eligible'] for h in result['results'])
+    assert intent_for('net sales September 30, 2026')[0].dates==('2026-09-30',)
+    assert intent_for('Phuong trinh ke toan nam 2025')[0].metrics==('assets','liabilities','equity')
+
+
+def test_v3_natural_capitalization_does_not_guess_company(evidence_workspace,tmp_path):
+    from app.product.search_v3 import FinancialSearchV3
+    w,d,row=evidence_workspace
+    result=FinancialSearchV3(w,tmp_path/'v3').search('Tìm tổng tài sản trong bảng cân đối kế toán','bm25',5,[d['id']])
+    assert result['results'] and not result['intent']['entity_scope']['unrecognized_name']
+    assert not any(h['numeric_answer_eligible'] for h in result['results'])
+    from app.product.search_v3 import entity_conflict
+    assert not entity_conflict('Tong tai san quy IV nam 2025',[d])[1]
+
+
+@pytest.mark.parametrize('label,metric',[
+    ('Finance income','financial_revenue'),('Net operating revenues','net_revenue'),
+    ('Total equity','equity'),('Income before income taxes','pretax_income')])
+def test_v3_additive_concepts(label,metric):
+    from app.product.search_v3 import metrics_in
+    assert metrics_in(label)==[metric]
+
+
+def test_v3_fuzzy_ocr_is_candidate_only_and_does_not_merge_concepts():
+    from app.product.search_v3 import row_metrics
+    assert row_metrics('Tong loi nhuan ke toan truoc thue')==['pretax_income']
+    assert row_metrics('Tai san co dinh vo hinh')==['intangible_assets']
+    assert row_metrics('financial expenses')==[]
+
+
 @pytest.mark.parametrize('raw,locale,expected',[
  ('1.234.567','vi_VN','1234567'),('1.234,56','vi_VN','1234.56'),('1,234.56','en_US','1234.56'),
  ('(1.234.567)','vi_VN','-1234567'),('-1.234.567','vi_VN','-1234567'),('2,5','vi_VN','2.5'),
@@ -302,6 +352,10 @@ def test_api_v2_opt_in_and_baseline_comparison_contract(evidence_workspace,tmp_p
         comparison=client.post('/studio/compare',headers=headers,json=body).json()
         assert {arm['search_profile'] for arm in comparison['arms'].values()}=={'baseline'}
         assert len({arm['generation'] for arm in comparison['arms'].values()})==1
+        v3=client.post('/studio/compare',headers=headers,json={**body,'search_profile':'production_v3'}).json()
+        assert {arm['search_profile'] for arm in v3['arms'].values()}=={'baseline'}
+        assert v3['candidate']['search_profile']=='production_v3'
+        assert v3['candidate']['results'][0]['numeric_answer_eligible']
 
 
 def test_experiment_copy_preserves_source_and_refuses_existing_destination(tmp_path,monkeypatch):

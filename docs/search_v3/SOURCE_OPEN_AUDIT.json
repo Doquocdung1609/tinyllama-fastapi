@@ -1,0 +1,10 @@
+{
+  "opened_at_utc": "2026-10-29T04:11:36.396985+00:00",
+  "policy_sha256": "28df50bf06395496cd54340a8f0e944acf9403c52cf2b9c0752fc70ccda64ccb",
+  "frozen_at_utc": "2026-10-29T04:11:00.585956+00:00",
+  "sources": [
+    "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+    "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7"
+  ],
+  "note": "Replacement reserved source contents first inspected after repaired V3.2 freeze;no test queries or labels used for the repair."
+}
