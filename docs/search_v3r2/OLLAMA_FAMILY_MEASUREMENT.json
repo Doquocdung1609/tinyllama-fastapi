@@ -1,0 +1,106 @@
+{
+  "scope": "POST_RESTART_WARM_THREE_MODE_QUERIES",
+  "ollama_and_llama_server_peak_rss": 262029312,
+  "llama_server_peak_rss": 218886144,
+  "samples": [
+    {
+      "time": 1793270026.0879986,
+      "available_ram": 3418804224,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1638273024
+    },
+    {
+      "time": 1793270026.3638065,
+      "available_ram": 3409485824,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1637810176
+    },
+    {
+      "time": 1793270026.6265776,
+      "available_ram": 3398762496,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1638060032
+    },
+    {
+      "time": 1793270026.8927991,
+      "available_ram": 3404894208,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1638096896
+    },
+    {
+      "time": 1793270027.1718333,
+      "available_ram": 3398410240,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1638100992
+    },
+    {
+      "time": 1793270027.451641,
+      "available_ram": 3372183552,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1638100992
+    },
+    {
+      "time": 1793270027.7303061,
+      "available_ram": 3401310208,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1638117376
+    },
+    {
+      "time": 1793270028.0098903,
+      "available_ram": 3369914368,
+      "ollama_family_rss": 261967872,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1638187008
+    },
+    {
+      "time": 1793270028.2906923,
+      "available_ram": 3386515456,
+      "ollama_family_rss": 262000640,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1637871616
+    },
+    {
+      "time": 1793270028.5716279,
+      "available_ram": 3385147392,
+      "ollama_family_rss": 262000640,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1640189952
+    },
+    {
+      "time": 1793270028.8496304,
+      "available_ram": 3379204096,
+      "ollama_family_rss": 262000640,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1640513536
+    },
+    {
+      "time": 1793270029.1302502,
+      "available_ram": 3374940160,
+      "ollama_family_rss": 262000640,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1643618304
+    },
+    {
+      "time": 1793270029.4109478,
+      "available_ram": 3360514048,
+      "ollama_family_rss": 262000640,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1641041920
+    },
+    {
+      "time": 1793270029.6917338,
+      "available_ram": 3364745216,
+      "ollama_family_rss": 262029312,
+      "llama_server_rss": 218886144,
+      "chrome_rss": 1641271296
+    }
+  ],
+  "earlier_benchmark_name_filter_limitation": "ollama name filter misses separate llama-server.exe;earlier Ollama RSS is a lower bound,not whole family peak"
+}

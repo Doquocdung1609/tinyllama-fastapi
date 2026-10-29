@@ -1,6 +1,6 @@
 import {describe,it,expect,vi,afterEach} from 'vitest'
 import {render,screen,cleanup} from '@testing-library/react'
-import {Highlight,formatDecimal,ExtractionCoverage} from './Studio'
+import {Highlight,formatDecimal,ExtractionCoverage,SourceCellValues} from './Studio'
 import {api,ApiError,citation,evidenceId} from './api'
 import {rotatedBox} from './geometry'
 afterEach(()=>{cleanup();vi.unstubAllGlobals();sessionStorage.clear()})
@@ -13,6 +13,13 @@ describe('Vietnamese financial presentation integrity',()=>{
  it('does not describe processed regions as reviewed numeric evidence',()=>{
   render(<ExtractionCoverage doc={{extraction_coverage_status:'EXTRACTION_COMPLETE',financial_evidence_status:'FINANCIAL_EVIDENCE_REVIEW_PENDING'}}/>)
   expect(screen.getByText(/cần đối chiếu từng ô/)).toBeInTheDocument()
+ })
+ it('shows original amount,English scale and pending financial review without JS conversion',()=>{
+  render(<SourceCellValues item={{text:'raw source',source_cells:[{text:'13,688,193',unit_evidence:{unit:'TRIEU_VND',source_text:'VND million',status:'SOURCE_UNIT_CANDIDATE_NOT_REVIEWED'},numeric_syntax:{status:'VALID_SYNTAX_UNREVIEWED'},financial_evidence_status:'FINANCIAL_EVIDENCE_REVIEW_PENDING'}]}}/>)
+  expect(screen.getByText('13,688,193')).toBeInTheDocument()
+  expect(screen.getByText('VND million')).toBeInTheDocument()
+  expect(screen.getByText('Cần đối chiếu ảnh nguồn')).toBeInTheDocument()
+  expect(screen.queryByText('Đã đối chiếu ô nguồn')).toBeNull()
  })
  it('keeps separate source rows distinct when they share one parent chunk',()=>{
   expect(evidenceId({text:'row A',chunk_id:'parent',evidence_id:'row:a'})).not.toBe(evidenceId({text:'row B',chunk_id:'parent',evidence_id:'row:b'}))

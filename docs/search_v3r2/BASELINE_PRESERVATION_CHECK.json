@@ -1,0 +1,16 @@
+{
+  "checked_files": 592,
+  "changed": [
+    {
+      "path": "tmp/studio-runtime/sec/t3-p10-isolated-vectors-product-20261028/qdrant/.qdrant-owner.lock",
+      "before": "41338066bbba0dabf1872ff4d3c6257bf72fe93d214917f6dfdf7918a58f7223",
+      "after": "e5478361353c7692b90db9d01ea1fe3b72981dd493b880eb854358f08e750af2"
+    }
+  ],
+  "status": "PASS_CONTENT_WITH_RUNTIME_LEASE_CHANGE",
+  "source_and_evidence_status": "PASS_UNCHANGED",
+  "runtime_only_changes": [
+    "tmp/studio-runtime/sec/t3-p10-isolated-vectors-product-20261028/qdrant/.qdrant-owner.lock"
+  ],
+  "explanation": "591/592 exact bytes unchanged;only previously owned SEC .qdrant-owner.lock process lease changed on restart. No raw/vector/checkpoint/review/report changed."
+}

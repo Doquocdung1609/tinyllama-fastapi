@@ -1,0 +1,325 @@
+{
+  "before": {
+    "before": {
+      "queries": 178,
+      "metrics": {
+        "verified_claims": 0.1348314606741573,
+        "recall_at_10": 0.8779342723004695,
+        "wrong_basis_rate": null,
+        "unclassified_metric_at_1": 0.056451612903225805,
+        "precision_at_5": null,
+        "abstention_correct": 0.05555555555555555,
+        "digit_locator_recall_at_5": 0.8802816901408451,
+        "exact_evidence_hit_at_1": 0.7112676056338029,
+        "wrong_verified_claims": 0,
+        "wrong_evidence_at_1": 0.2887323943661972,
+        "digit_locator_mrr_at_5": 0.7913145539906103,
+        "metric_basis_period_correctness": null,
+        "wrong_document_at_1": 0,
+        "eligibility_correct": 1,
+        "correct_numeric_abstention": 1,
+        "ndcg_at_5": 0.7810260866087065,
+        "recall_at_5": 0.8474178403755869,
+        "digit_locator_recall_at_1": 0.6948356807511737,
+        "exact_cell_hit_at_5": 0.6875,
+        "unsupported_answer_rate": null,
+        "mrr_at_5": 0.7672535211267606,
+        "wrong_classified_metric_at_1": 0.008547008547008548,
+        "wrong_period_rate": null,
+        "digit_locator_recall_at_10": 0.9107981220657277
+      },
+      "denominators": {
+        "verified_claims": 178,
+        "recall_at_10": 142,
+        "wrong_basis_rate": 0,
+        "unclassified_metric_at_1": 124,
+        "precision_at_5": 0,
+        "abstention_correct": 36,
+        "digit_locator_recall_at_5": 142,
+        "exact_evidence_hit_at_1": 142,
+        "wrong_verified_claims": 178,
+        "wrong_evidence_at_1": 142,
+        "digit_locator_mrr_at_5": 142,
+        "metric_basis_period_correctness": 0,
+        "wrong_document_at_1": 168,
+        "eligibility_correct": 24,
+        "correct_numeric_abstention": 36,
+        "ndcg_at_5": 142,
+        "recall_at_5": 142,
+        "digit_locator_recall_at_1": 142,
+        "exact_cell_hit_at_5": 16,
+        "unsupported_answer_rate": 0,
+        "mrr_at_5": 142,
+        "wrong_classified_metric_at_1": 117,
+        "wrong_period_rate": 0,
+        "digit_locator_recall_at_10": 142
+      },
+      "p50_ms": 1641.2273500000083,
+      "p95_ms": 1835.0902949990996
+    }
+  },
+  "after": {
+    "after": {
+      "queries": 178,
+      "metrics": {
+        "unsupported_answer_rate": null,
+        "digit_locator_recall_at_1": 0.7136150234741784,
+        "exact_evidence_hit_at_1": 0.7183098591549296,
+        "digit_locator_recall_at_5": 0.9014084507042254,
+        "wrong_basis_rate": null,
+        "exact_cell_hit_at_5": 0.8125,
+        "recall_at_5": 0.8685446009389671,
+        "precision_at_5": null,
+        "verified_claims": 0.1348314606741573,
+        "mrr_at_5": 0.7848591549295775,
+        "digit_locator_recall_at_10": 0.9154929577464789,
+        "abstention_correct": 0.05555555555555555,
+        "wrong_period_rate": null,
+        "wrong_classified_metric_at_1": 0.03333333333333333,
+        "ndcg_at_5": 0.8012993604359875,
+        "recall_at_10": 0.8826291079812206,
+        "unclassified_metric_at_1": 0.03225806451612903,
+        "correct_numeric_abstention": 1,
+        "digit_locator_mrr_at_5": 0.8124413145539906,
+        "wrong_evidence_at_1": 0.28169014084507044,
+        "metric_basis_period_correctness": null,
+        "eligibility_correct": 1,
+        "wrong_document_at_1": 0,
+        "wrong_verified_claims": 0
+      },
+      "denominators": {
+        "unsupported_answer_rate": 0,
+        "digit_locator_recall_at_1": 142,
+        "exact_evidence_hit_at_1": 142,
+        "digit_locator_recall_at_5": 142,
+        "wrong_basis_rate": 0,
+        "exact_cell_hit_at_5": 16,
+        "recall_at_5": 142,
+        "precision_at_5": 0,
+        "verified_claims": 178,
+        "mrr_at_5": 142,
+        "digit_locator_recall_at_10": 142,
+        "abstention_correct": 36,
+        "wrong_period_rate": 0,
+        "wrong_classified_metric_at_1": 120,
+        "ndcg_at_5": 142,
+        "recall_at_10": 142,
+        "unclassified_metric_at_1": 124,
+        "correct_numeric_abstention": 36,
+        "digit_locator_mrr_at_5": 142,
+        "wrong_evidence_at_1": 142,
+        "metric_basis_period_correctness": 0,
+        "eligibility_correct": 24,
+        "wrong_document_at_1": 168,
+        "wrong_verified_claims": 178
+      },
+      "p50_ms": 1503.3500000008644,
+      "p95_ms": 1838.527884999803
+    }
+  },
+  "source_losses": [],
+  "source_gains": [
+    {
+      "id": "v3r-acb-06",
+      "before": 0.0,
+      "after": 1.0
+    },
+    {
+      "id": "v3r-acb-07",
+      "before": 0.0,
+      "after": 1.0
+    },
+    {
+      "id": "v3r-acb-08",
+      "before": 0.0,
+      "after": 1.0
+    }
+  ],
+  "acb": [
+    {
+      "id": "v3r-acb-06",
+      "metrics": {
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr_at_5": 0.3333333333333333,
+        "ndcg_at_5": 0.5,
+        "exact_evidence_hit_at_1": 0,
+        "wrong_evidence_at_1": 1,
+        "precision_at_5": null,
+        "abstention_correct": null,
+        "verified_claims": 0,
+        "wrong_verified_claims": 0,
+        "unsupported_answer_rate": null,
+        "metric_basis_period_correctness": null,
+        "matched_reference_indices": [
+          [],
+          [],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [],
+          [],
+          [],
+          [
+            0
+          ],
+          [],
+          []
+        ],
+        "score_limit": "Distinct-reference binary nDCG: repeated hits for the same gold source add no gain. Retrieval locator metrics, not general numeric QA. Column correctness evaluated through reviewed fact tests separately.",
+        "digit_locator_recall_at_1": 0.0,
+        "digit_locator_recall_at_5": 1.0,
+        "digit_locator_recall_at_10": 1.0,
+        "digit_locator_mrr_at_5": 0.3333333333333333,
+        "correct_numeric_abstention": null,
+        "eligibility_correct": null,
+        "wrong_document_at_1": 0,
+        "wrong_classified_metric_at_1": 0,
+        "unclassified_metric_at_1": 0,
+        "wrong_period_rate": null,
+        "wrong_basis_rate": null,
+        "exact_cell_hit_at_5": 1.0
+      },
+      "source_audit_corrected_metrics": null
+    },
+    {
+      "id": "v3r-acb-07",
+      "metrics": {
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "exact_evidence_hit_at_1": 1,
+        "wrong_evidence_at_1": 0,
+        "precision_at_5": null,
+        "abstention_correct": null,
+        "verified_claims": 0,
+        "wrong_verified_claims": 0,
+        "unsupported_answer_rate": null,
+        "metric_basis_period_correctness": null,
+        "matched_reference_indices": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "score_limit": "Distinct-reference binary nDCG: repeated hits for the same gold source add no gain. Retrieval locator metrics, not general numeric QA. Column correctness evaluated through reviewed fact tests separately.",
+        "digit_locator_recall_at_1": 1.0,
+        "digit_locator_recall_at_5": 1.0,
+        "digit_locator_recall_at_10": 1.0,
+        "digit_locator_mrr_at_5": 1.0,
+        "correct_numeric_abstention": null,
+        "eligibility_correct": null,
+        "wrong_document_at_1": 0,
+        "wrong_classified_metric_at_1": 0,
+        "unclassified_metric_at_1": 0,
+        "wrong_period_rate": null,
+        "wrong_basis_rate": null,
+        "exact_cell_hit_at_5": 1.0
+      },
+      "source_audit_corrected_metrics": null
+    },
+    {
+      "id": "v3r-acb-08",
+      "metrics": {
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "exact_evidence_hit_at_1": 1,
+        "wrong_evidence_at_1": 0,
+        "precision_at_5": null,
+        "abstention_correct": null,
+        "verified_claims": 0,
+        "wrong_verified_claims": 0,
+        "unsupported_answer_rate": null,
+        "metric_basis_period_correctness": null,
+        "matched_reference_indices": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "score_limit": "Distinct-reference binary nDCG: repeated hits for the same gold source add no gain. Retrieval locator metrics, not general numeric QA. Column correctness evaluated through reviewed fact tests separately.",
+        "digit_locator_recall_at_1": 1.0,
+        "digit_locator_recall_at_5": 1.0,
+        "digit_locator_recall_at_10": 1.0,
+        "digit_locator_mrr_at_5": 1.0,
+        "correct_numeric_abstention": null,
+        "eligibility_correct": null,
+        "wrong_document_at_1": 0,
+        "wrong_classified_metric_at_1": 0,
+        "unclassified_metric_at_1": 0,
+        "wrong_period_rate": null,
+        "wrong_basis_rate": null,
+        "exact_cell_hit_at_5": 0.0
+      },
+      "source_audit_corrected_metrics": {
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "exact_evidence_hit_at_1": 1,
+        "wrong_evidence_at_1": 0,
+        "precision_at_5": null,
+        "abstention_correct": null,
+        "verified_claims": 0,
+        "wrong_verified_claims": 0,
+        "unsupported_answer_rate": null,
+        "metric_basis_period_correctness": null,
+        "matched_reference_indices": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "score_limit": "Distinct-reference binary nDCG: repeated hits for the same gold source add no gain. Retrieval locator metrics, not general numeric QA. Column correctness evaluated through reviewed fact tests separately.",
+        "digit_locator_recall_at_1": 1.0,
+        "digit_locator_recall_at_5": 1.0,
+        "digit_locator_recall_at_10": 1.0,
+        "digit_locator_mrr_at_5": 1.0,
+        "correct_numeric_abstention": null,
+        "eligibility_correct": null,
+        "wrong_document_at_1": 0,
+        "wrong_classified_metric_at_1": 0,
+        "unclassified_metric_at_1": 0,
+        "wrong_period_rate": null,
+        "wrong_basis_rate": null,
+        "exact_cell_hit_at_5": 1.0
+      }
+    }
+  ]
+}

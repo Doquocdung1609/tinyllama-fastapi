@@ -21,6 +21,9 @@ _factory_lock = RLock()
 @lru_cache(maxsize=1)
 def _workspace_cached():
     root = Path(os.getenv("STUDIO_WORKSPACE_DIR", str(ROOT_DIR / "studio_workspace")))
+    if (root/'search-v3r2.json').is_file():
+        from app.product.controlled_workspace import ControlledPdfWorkspace
+        return ControlledPdfWorkspace(root)
     if (root/'derived-generation.json').is_file():
         from app.product.derived_workspace import DerivedPdfWorkspace
         return DerivedPdfWorkspace(root)
@@ -174,7 +177,7 @@ def delete(document_id: str, confirm: str = ""):
             raise HTTPException(404, detail={"code": "DOCUMENT_NOT_FOUND"})
         if (workspace().root/'derived-generation.json').exists():
             from app.product.search_preparation import preparation
-            preparation(workspace()).schedule()
+            preparation(workspace()).schedule(invalidate=getattr(workspace(),'search_candidate_version',None)=='V3R2')
     except ValueError as exc:
         raise HTTPException(409, detail={"code": _error(exc)}) from exc
     return {"deleted": True, "document_id": document_id}

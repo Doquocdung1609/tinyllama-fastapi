@@ -1,0 +1,11 @@
+# Numeric and unit validation
+
+PASS — Original SEM source PDF and all 88 page checkpoint hashes match the preserved V3R workspace; see SEM_SOURCE_PRESERVATION.json. No reviews were added to the seven protected SEM cells. Original raw text, confidence, boxes, column/header candidates and alternate extraction evidence remain in the source checkpoint. The retrieval view adds unit/syntax metadata without replacing them.
+
+Seven audit cases: assets, liabilities, equity, cash equivalents, inventory, pretax income, net income. The HUMAN_AUDIT_CASES.json preserves Top-10 API results and image references for every case. SEM assets raw `14,595895.255468` and cash raw `2,412,996843,057` are INVALID_NUMERIC_FORMAT. Neither is silently regrouped or converted. A syntactically valid number is still VALID_SYNTAX_UNREVIEWED, not proof of correct OCR. Valid digit characters do not establish the correct decimal/group separators or column.
+
+Unit support: explicit VND, VND million/Millions of VND/Triệu đồng (multiplier 1000000), Nghìn đồng (1000), KRW and USD. Mixed context without a column binding remains AMBIGUOUS_SOURCE_UNIT. Source header words and geometry may bind an individual cell to KRW/USD and candidate year; these remain unreviewed. ACB live `13,688,193` is paired with original `VND million`, TRIEU_VND; not treated as bare VND. KRW million and USD thousand without supported scale remain unknown; no uncertain conversion.
+
+Safety tests include parentheses/negative signs, malformed/nested/double signs, comma/dot alternatives, ambiguous decimal conventions, blank/dash not zero, English million mismatches and currency-column mismatch. Explicit human review rejects conflicting source scale/currency; the historical eight reviewed facts remain unchanged. No automatic Decimal financial fact is created from a retrieved candidate.
+
+PASS — Chrome expands original cell table and displays raw amount, source unit, column-year candidate and pending status; screenshots 07 and 10. FAIL/remaining data limitation — malformed SEM OCR, uncertain columns and general unreviewed source values require source review. All human decisions are blank. No numeric accuracy/generalization claim.

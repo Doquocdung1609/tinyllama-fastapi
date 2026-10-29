@@ -1,0 +1,174 @@
+[
+  {
+    "page": 8,
+    "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+    "lines": [
+      {
+        "native_text": "LIABILITIES AND OWNERS’ EQUITY",
+        "spans": [
+          {
+            "text": "LIABILITIES AND OWNERS’ EQUITY",
+            "font": "FEF40E5A3BE",
+            "box": [
+              108.50117492675781,
+              146.19532775878906,
+              264.81683349609375,
+              156.017333984375
+            ]
+          }
+        ]
+      },
+      {
+        "native_text": "OWNERS’ EQUITY",
+        "spans": [
+          {
+            "text": "OWNERS’ EQUITY",
+            "font": "FEFF4494382",
+            "box": [
+              108.50117492675781,
+              411.68896484375,
+              186.76339721679688,
+              421.5109558105469
+            ]
+          }
+        ]
+      },
+      {
+        "native_text": "TOTAL OWNERS’ EQUITY",
+        "spans": [
+          {
+            "text": "TOTAL OWNERS’ EQUITY",
+            "font": "FEF40E5A3BE",
+            "box": [
+              108.50117492675781,
+              541.68994140625,
+              219.64048767089844,
+              551.511962890625
+            ]
+          }
+        ]
+      },
+      {
+        "native_text": "TOTAL LIABILITIES AND OWNERS’ EQUITY",
+        "spans": [
+          {
+            "text": "TOTAL LIABILITIES AND OWNERS’ EQUITY",
+            "font": "FEF40E5A3BE",
+            "box": [
+              108.50117492675781,
+              569.6883544921875,
+              296.8785095214844,
+              579.5103759765625
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+    "lines": [
+      {
+        "native_text": "Operating pro\u0006t before allowance expenses for ",
+        "spans": [
+          {
+            "text": "Operating pro",
+            "font": "FEFC5DA6A43",
+            "box": [
+              105.49625396728516,
+              418.19244384765625,
+              168.66575622558594,
+              428.0144348144531
+            ]
+          },
+          {
+            "text": "\u0006t before allowance expenses for ",
+            "font": "FEFC5DA6A43",
+            "box": [
+              168.66575622558594,
+              418.19244384765625,
+              322.34130859375,
+              428.0144348144531
+            ]
+          }
+        ]
+      },
+      {
+        "native_text": "Pro\u0006t before tax",
+        "spans": [
+          {
+            "text": "Pro",
+            "font": "FEFC5DA6A43",
+            "box": [
+              105.49625396728516,
+              463.1864013671875,
+              119.6876220703125,
+              473.0083923339844
+            ]
+          },
+          {
+            "text": "\u0006t before tax",
+            "font": "FEFC5DA6A43",
+            "box": [
+              119.6876220703125,
+              463.1864013671875,
+              174.27651977539062,
+              473.0083923339844
+            ]
+          }
+        ]
+      },
+      {
+        "native_text": "Pro\u0006t after tax",
+        "spans": [
+          {
+            "text": "Pro",
+            "font": "FEFC5DA6A43",
+            "box": [
+              105.49625396728516,
+              535.6875,
+              119.6876220703125,
+              545.509521484375
+            ]
+          },
+          {
+            "text": "\u0006t after tax",
+            "font": "FEFC5DA6A43",
+            "box": [
+              119.6876220703125,
+              535.6875,
+              166.2767791748047,
+              545.509521484375
+            ]
+          }
+        ]
+      },
+      {
+        "native_text": "The consolidated statement of pro\u0006t or loss",
+        "spans": [
+          {
+            "text": "The consolidated statement of pro",
+            "font": "FEFC5DA6A43",
+            "box": [
+              75.00006866455078,
+              77.79467010498047,
+              294.4182434082031,
+              92.52667236328125
+            ]
+          },
+          {
+            "text": "\u0006t or loss",
+            "font": "FEFC5DA6A43",
+            "box": [
+              294.99298095703125,
+              77.79467010498047,
+              352.8210144042969,
+              92.52667236328125
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "status": "PROVISIONAL_AGENT_SOURCE_WINDOW_CORRECTION_NOT_HUMAN_APPROVAL",
+  "original_qrels": "docs/search_v3r/NEW_TEST_QRELS.jsonl",
+  "original_files_modified": false,
+  "corrections": {
+    "v3r-acb-08": {
+      "reference_index": 0,
+      "independently_located_cell_box": [401, 531, 460, 551],
+      "reason": "Original ACB PDF p10 Profit after tax is at y535.6875-545.5095. The old y513-529 window is above that row. Original query,metric,period,unit,value and original scores remain unchanged. Corrected-window scores are additive."
+    }
+  }
+}
