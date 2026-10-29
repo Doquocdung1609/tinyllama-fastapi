@@ -1,0 +1,1288 @@
+{
+  "recorded_at_utc": "2026-10-28T10:23:30.936724+00:00",
+  "integration_base": "39cc2ed203671ca3007db859eefe7155595a16b6",
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.10",
+    "node": "24.19.0",
+    "gpu": "RTX3050 4GB",
+    "target_gtx1650_tested": false
+  },
+  "tests": {
+    "baseline": "590 PASS, 1 warning, 33.43s",
+    "full_backend": "610 PASS,1 Starlette/httpx warning,23.65s; python -m pytest -q",
+    "frontend_unit": "6 PASS",
+    "frontend_build": "PASS TypeScript + Vite",
+    "real_browser_development": "3 PASS,1 intentional prebuilt SKIP,31.9s final sequential rerun; Prebuilt tested separately1PASS",
+    "real_browser_prebuilt": "1 PASS,3.5s; authenticated PDF bytes, native text layer, PDF worker and favicon",
+    "failed_observations": [
+      "Two overlapping Playwright runners collided in their shared trace output (FAIL); sequential rerun PASS.",
+      "One root-cwd invocation skipped all three live tests before token path was made cwd-independent; not counted as PASS."
+    ],
+    "intentional_ci_scope": "Deterministic core + frontend unit/build; local owner PDFs/models/live SEC are not downloaded by CI.",
+    "warnings": [
+      "Starlette TestClient/httpx deprecation",
+      "Playwright NO_COLOR ignored when FORCE_COLOR set"
+    ]
+  },
+  "pdf_documents": [
+    {
+      "id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+      "issuer": "BIDV",
+      "report_period": "2024-12-31",
+      "sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "pages": 8,
+      "chunks": 23,
+      "status": "READY"
+    },
+    {
+      "id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+      "issuer": "Công ty mẹ Hòa Phát",
+      "report_period": "2025-12-31",
+      "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "pages": 24,
+      "chunks": 64,
+      "status": "READY"
+    }
+  ],
+  "source_page_evidence": {
+    "4a92af827aaf1e73e017544d0ff20d0d:3": {
+      "method": "OCR",
+      "engine": {
+        "correction_clockwise": 0,
+        "dpi": 240,
+        "engine": "Tesseract",
+        "language": "vie+eng",
+        "orientation_method": "OSD",
+        "psm": 3
+      },
+      "table_rows": 23,
+      "page_hash": "1c3a70bd194852dacbb9e0b34b8ee989b919e0cb81a03d65d359b19e5ab03192"
+    },
+    "4a92af827aaf1e73e017544d0ff20d0d:4": {
+      "method": "OCR",
+      "engine": {
+        "correction_clockwise": 0,
+        "dpi": 240,
+        "engine": "Tesseract",
+        "language": "vie+eng",
+        "orientation_method": "OSD",
+        "psm": 3
+      },
+      "table_rows": 25,
+      "page_hash": "3c5daab28a0ff11e66f107d2b1d58fe8ac146538de41bea613b9ccd18e69eb72"
+    },
+    "4a92af827aaf1e73e017544d0ff20d0d:5": {
+      "method": "OCR",
+      "engine": {
+        "correction_clockwise": 90,
+        "dpi": 240,
+        "engine": "Tesseract",
+        "language": "vie+eng",
+        "orientation_method": "OSD",
+        "psm": 3
+      },
+      "table_rows": 28,
+      "page_hash": "680251704f1cac64d829b0ea92a22e9d722787a7cd4fc13aad01bc1872208d6d"
+    },
+    "2bed2b3c312c8149e6a2ff6ab80c694a:3": {
+      "method": "NATIVE",
+      "engine": {
+        "engine": "PyMuPDF",
+        "version": "1.28.2"
+      },
+      "table_rows": 37,
+      "page_hash": "0fa0aa98e98c6aa45151c887c279d77c6ec357298acf7d1ebdf982509f62469f"
+    },
+    "2bed2b3c312c8149e6a2ff6ab80c694a:6": {
+      "method": "NATIVE",
+      "engine": {
+        "engine": "PyMuPDF",
+        "version": "1.28.2"
+      },
+      "table_rows": 37,
+      "page_hash": "f9f3d8f255c069531f04cae82416f64e2c157fb57183ebdbc1af27d0edeb636a"
+    }
+  },
+  "reviewed_cells": [
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "page": 6,
+      "row_id": "p6-r48",
+      "column_index": 0,
+      "metric": "assets",
+      "period": "2024-12-31",
+      "unit": "TRIEU_VND",
+      "statement_scope": "CONSOLIDATED",
+      "basis": "ORIGINAL",
+      "source_display": "2,760,791,854",
+      "value": "2760791854",
+      "base_value": "2760791854000000",
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "page_evidence_sha256": "f9f3d8f255c069531f04cae82416f64e2c157fb57183ebdbc1af27d0edeb636a",
+      "audit_hash": "59f492ee9abcf85bf2dd09c30707f536fe1914fdd8f5fd6b992be99a6066809c"
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "page": 6,
+      "row_id": "p6-r48",
+      "column_index": 1,
+      "metric": "assets",
+      "period": "2024-12-31",
+      "unit": "TRIEU_VND",
+      "statement_scope": "CONSOLIDATED",
+      "basis": "ADJUSTMENT",
+      "source_display": "115,110",
+      "value": "115110",
+      "base_value": "115110000000",
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "page_evidence_sha256": "f9f3d8f255c069531f04cae82416f64e2c157fb57183ebdbc1af27d0edeb636a",
+      "audit_hash": "6a648c3873c92e8961f3032851b1ffa3a6f481172c78cd4c4d9d91e90dd34fd2"
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "page": 6,
+      "row_id": "p6-r48",
+      "column_index": 2,
+      "metric": "assets",
+      "period": "2024-12-31",
+      "unit": "TRIEU_VND",
+      "statement_scope": "CONSOLIDATED",
+      "basis": "RESTATED",
+      "source_display": "2,760,906,964",
+      "value": "2760906964",
+      "base_value": "2760906964000000",
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "page_evidence_sha256": "f9f3d8f255c069531f04cae82416f64e2c157fb57183ebdbc1af27d0edeb636a",
+      "audit_hash": "bbafbd0e29b8619cc1cd45b808ae8a7c1a66e83d28bd175df87c58f2cee35a7c"
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 3,
+      "row_id": "p3-r54",
+      "column_index": 1,
+      "metric": "assets",
+      "period": "2025-01-01",
+      "unit": "VND",
+      "statement_scope": "SEPARATE",
+      "basis": "AS_REPORTED",
+      "source_display": "81.793.076.515.644",
+      "value": "81793076515644",
+      "base_value": "81793076515644",
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "page_evidence_sha256": "1c3a70bd194852dacbb9e0b34b8ee989b919e0cb81a03d65d359b19e5ab03192",
+      "audit_hash": "29f8bc474d249b0d90206809185f98e27804e88b0fa896983d8d4422a5b6d8e4"
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 4,
+      "row_id": "p4-r14",
+      "column_index": 0,
+      "metric": "liabilities",
+      "period": "2025-12-31",
+      "unit": "VND",
+      "statement_scope": "SEPARATE",
+      "basis": "AS_REPORTED",
+      "source_display": "4.239.852.223.395",
+      "value": "4239852223395",
+      "base_value": "4239852223395",
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "page_evidence_sha256": "3c5daab28a0ff11e66f107d2b1d58fe8ac146538de41bea613b9ccd18e69eb72",
+      "audit_hash": "7acf78d2b410f5112a3329eac61690e2031c13746491472383a0449906845223"
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 4,
+      "row_id": "p4-r38",
+      "column_index": 0,
+      "metric": "equity",
+      "period": "2025-12-31",
+      "unit": "VND",
+      "statement_scope": "SEPARATE",
+      "basis": "AS_REPORTED",
+      "source_display": "94.430.926.468.210",
+      "value": "94430926468210",
+      "base_value": "94430926468210",
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "page_evidence_sha256": "3c5daab28a0ff11e66f107d2b1d58fe8ac146538de41bea613b9ccd18e69eb72",
+      "audit_hash": "309f5f26d691aba8a6d23e159e65bd71b62438543e3543b73a13e7f98c2fd08d"
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "page": 3,
+      "row_id": "p3-r54",
+      "column_index": 0,
+      "metric": "assets",
+      "period": "2025-12-31",
+      "unit": "VND",
+      "statement_scope": "SEPARATE",
+      "basis": "AS_REPORTED",
+      "source_display": "98.670.778.691.605",
+      "value": "98670778691605",
+      "base_value": "98670778691605",
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "page_evidence_sha256": "1c3a70bd194852dacbb9e0b34b8ee989b919e0cb81a03d65d359b19e5ab03192",
+      "audit_hash": "6ef4a669b2ffbcdc5458db703228899190e3741c6e26bb39de17df72911198a4"
+    }
+  ],
+  "numeric_checks": [
+    {
+      "question": "Tổng tài sản của công ty mẹ Hòa Phát ngày 31/12/2025 là bao nhiêu?",
+      "outcome": "PASS",
+      "status": "SUPPORTED",
+      "values": [
+        "98670778691605"
+      ],
+      "unit": "VND",
+      "formula": "Giá trị ô nguồn",
+      "reason": null
+    },
+    {
+      "question": "Tổng tài sản công ty mẹ Hòa Phát tăng bao nhiêu so với đầu năm 2025?",
+      "outcome": "PASS",
+      "status": "SUPPORTED",
+      "values": [
+        "16877702175961"
+      ],
+      "unit": "VND",
+      "formula": "Kỳ hiện tại − kỳ trước",
+      "reason": null
+    },
+    {
+      "question": "Nợ phải trả và vốn chủ sở hữu có khớp tổng tài sản công ty mẹ Hòa Phát năm 2025 không?",
+      "outcome": "PASS",
+      "status": "SUPPORTED",
+      "values": [
+        "0"
+      ],
+      "unit": "VND",
+      "formula": "Nợ phải trả + vốn chủ sở hữu − tổng tài sản",
+      "reason": null
+    },
+    {
+      "question": "Tổng tài sản hợp nhất BIDV ngày 31/12/2024 số trình bày lại là bao nhiêu?",
+      "outcome": "PASS",
+      "status": "SUPPORTED",
+      "values": [
+        "2760906964"
+      ],
+      "unit": "TRIEU_VND",
+      "formula": "Giá trị ô nguồn",
+      "reason": null
+    },
+    {
+      "question": "Kiểm tra tổng tài sản hợp nhất BIDV: số đã công bố cộng điều chỉnh có khớp số trình bày lại năm 2024 không?",
+      "outcome": "PASS",
+      "status": "SUPPORTED",
+      "values": [
+        "0"
+      ],
+      "unit": "TRIEU_VND",
+      "formula": "Số đã công bố + điều chỉnh − số trình bày lại",
+      "reason": null
+    },
+    {
+      "question": "Tổng tài sản Hòa Phát năm 2031 là bao nhiêu?",
+      "outcome": "PASS_ABSTENTION",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "unit": null,
+      "formula": null,
+      "reason": "QUESTION_PERIOD_CONFLICT"
+    },
+    {
+      "question": "Doanh thu thuần Hòa Phát là bao nhiêu?",
+      "outcome": "PASS_ABSTENTION",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "unit": null,
+      "formula": null,
+      "reason": "QUESTION_METRIC_OR_OPERATION_CONFLICT"
+    },
+    {
+      "question": "Tổng tài sản hợp nhất Hòa Phát là bao nhiêu?",
+      "outcome": "PASS_ABSTENTION",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "unit": null,
+      "formula": null,
+      "reason": "QUESTION_STATEMENT_SCOPE_CONFLICT"
+    },
+    {
+      "question": "Tổng tài sản BIDV là bao nhiêu?",
+      "outcome": "PASS_ABSTENTION",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "values": [],
+      "unit": null,
+      "formula": null,
+      "reason": "QUESTION_COMPANY_SCOPE_CONFLICT"
+    }
+  ],
+  "vietnamese_retrieval": [
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "tổng cộng tài sản",
+      "mode": "bm25",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 38.5,
+      "top5": [
+        {
+          "page": 3,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_3_00006"
+        },
+        {
+          "page": 16,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_16_00045"
+        },
+        {
+          "page": 17,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_17_00047"
+        },
+        {
+          "page": 15,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_15_00043"
+        },
+        {
+          "page": 20,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_20_00055"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "tổng cộng tài sản",
+      "mode": "dense",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 114.52,
+      "top5": [
+        {
+          "page": 3,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_3_00006"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_8_00020"
+        },
+        {
+          "page": 9,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_9_00023"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00033"
+        },
+        {
+          "page": 10,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_10_00025"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "tổng cộng tài sản",
+      "mode": "hybrid",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 112.83,
+      "top5": [
+        {
+          "page": 3,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_3_00006"
+        },
+        {
+          "page": 16,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_16_00045"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00033"
+        },
+        {
+          "page": 17,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_17_00047"
+        },
+        {
+          "page": 15,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_15_00043"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "chính sách kế toán ghi nhận doanh thu",
+      "mode": "bm25",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 34.75,
+      "top5": [
+        {
+          "page": 12,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_12_00037"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00031"
+        },
+        {
+          "page": 12,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_12_00036"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00034"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00033"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "chính sách kế toán ghi nhận doanh thu",
+      "mode": "dense",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 115.75,
+      "top5": [
+        {
+          "page": 9,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_9_00023"
+        },
+        {
+          "page": 10,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_10_00025"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00033"
+        },
+        {
+          "page": 12,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_12_00037"
+        },
+        {
+          "page": 6,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00015"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "chính sách kế toán ghi nhận doanh thu",
+      "mode": "hybrid",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 119.17,
+      "top5": [
+        {
+          "page": 12,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_12_00037"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00033"
+        },
+        {
+          "page": 11,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_11_00031"
+        },
+        {
+          "page": 12,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_12_00036"
+        },
+        {
+          "page": 10,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_10_00025"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "dòng tiền từ hoạt động kinh doanh",
+      "mode": "bm25",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 34.04,
+      "top5": [
+        {
+          "page": 6,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00015"
+        },
+        {
+          "page": 12,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_12_00037"
+        },
+        {
+          "page": 22,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_22_00058"
+        },
+        {
+          "page": 6,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00014"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_8_00020"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "dòng tiền từ hoạt động kinh doanh",
+      "mode": "dense",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 114.53,
+      "top5": [
+        {
+          "page": 6,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00015"
+        },
+        {
+          "page": 6,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00014"
+        },
+        {
+          "page": 22,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_22_00058"
+        },
+        {
+          "page": 9,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_9_00023"
+        },
+        {
+          "page": 7,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_7_00018"
+        }
+      ]
+    },
+    {
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "query": "dòng tiền từ hoạt động kinh doanh",
+      "mode": "hybrid",
+      "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+      "latency_ms": 122.69,
+      "top5": [
+        {
+          "page": 6,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00015"
+        },
+        {
+          "page": 6,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_6_00014"
+        },
+        {
+          "page": 22,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_22_00058"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_8_00020"
+        },
+        {
+          "page": 7,
+          "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_7_00018"
+        }
+      ]
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "query": "tổng tài sản hợp nhất điều chỉnh",
+      "mode": "bm25",
+      "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+      "latency_ms": 23.59,
+      "top5": [
+        {
+          "page": 6,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_6_00014"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00020"
+        },
+        {
+          "page": 1,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000"
+        },
+        {
+          "page": 1,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002"
+        },
+        {
+          "page": 3,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_3_00008"
+        }
+      ]
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "query": "tổng tài sản hợp nhất điều chỉnh",
+      "mode": "dense",
+      "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+      "latency_ms": 124.0,
+      "top5": [
+        {
+          "page": 6,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_6_00014"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00020"
+        },
+        {
+          "page": 3,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_3_00005"
+        },
+        {
+          "page": 7,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00018"
+        },
+        {
+          "page": 5,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00011"
+        }
+      ]
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "query": "tổng tài sản hợp nhất điều chỉnh",
+      "mode": "hybrid",
+      "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+      "latency_ms": 95.0,
+      "top5": [
+        {
+          "page": 6,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_6_00014"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00020"
+        },
+        {
+          "page": 3,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_3_00005"
+        },
+        {
+          "page": 3,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_3_00008"
+        },
+        {
+          "page": 6,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_6_00017"
+        }
+      ]
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "query": "số trình bày lại",
+      "mode": "bm25",
+      "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+      "latency_ms": 17.87,
+      "top5": [
+        {
+          "page": 5,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00011"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00020"
+        },
+        {
+          "page": 4,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00009"
+        },
+        {
+          "page": 7,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00018"
+        },
+        {
+          "page": 3,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_3_00005"
+        }
+      ]
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "query": "số trình bày lại",
+      "mode": "dense",
+      "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+      "latency_ms": 109.94,
+      "top5": [
+        {
+          "page": 6,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_6_00017"
+        },
+        {
+          "page": 8,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00020"
+        },
+        {
+          "page": 3,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_3_00008"
+        },
+        {
+          "page": 7,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00018"
+        },
+        {
+          "page": 4,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00009"
+        }
+      ]
+    },
+    {
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "query": "số trình bày lại",
+      "mode": "hybrid",
+      "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+      "latency_ms": 96.82,
+      "top5": [
+        {
+          "page": 8,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00020"
+        },
+        {
+          "page": 4,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00009"
+        },
+        {
+          "page": 7,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00018"
+        },
+        {
+          "page": 5,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00011"
+        },
+        {
+          "page": 6,
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_6_00017"
+        }
+      ]
+    }
+  ],
+  "restart": {
+    "status": "PASS",
+    "check": "Both document IDs/raw hashes/statuses and exact87chunk IDs retained after Development and Prebuilt restarts;7eligible facts retained.",
+    "startup_duplicate_port": "PASS rejected before creating processes; original listener PIDs unchanged",
+    "owned_stop": "PASS8110/5173 stopped; existing external Ollama service retained"
+  },
+  "sec_sources": {
+    "schema": "product-official-sec-source-registry/v1",
+    "manifest_hash": "efb42eb96d2fb70bd0ffe04ac784c1a0a77b1995a37c8ad2e17d17429565c32d",
+    "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c",
+    "source_groups": [
+      {
+        "cik": "0000080424",
+        "accession": "0000080424-26-000256",
+        "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+        "raw_hash": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+        "local_raw_last_write_at_utc": "2026-10-28T09:48:13.988634+00:00",
+        "timestamp_note": "Filesystem save time of fresh bytes; catalog discovery timestamp remains historical metadata."
+      },
+      {
+        "cik": "0000354950",
+        "accession": "0001628280-26-058715",
+        "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "raw_hash": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+        "local_raw_last_write_at_utc": "2026-10-28T09:52:11.697506+00:00",
+        "timestamp_note": "Filesystem save time of fresh bytes; catalog discovery timestamp remains historical metadata."
+      }
+    ],
+    "purpose": "Owner-authorized product acceptance sources. Fresh SEC bytes; not the old P10/P11 research snapshot; no evaluation qrels."
+  },
+  "sec_readiness": {
+    "status": "READY",
+    "dataset_id": "product-pg-hd-20261028",
+    "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c",
+    "manifest_hash": "efb42eb96d2fb70bd0ffe04ac784c1a0a77b1995a37c8ad2e17d17429565c32d",
+    "parents": 1241,
+    "dense_vectors": 1241,
+    "model_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "filings": [
+      {
+        "ticker": "HD",
+        "cik": "0000354950",
+        "issuer": "HOME DEPOT, INC.",
+        "accession": "0001628280-26-058715",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "form": "10-Q",
+        "report_period": "2026-08-02",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "raw_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+        "extraction_status": "PARTIAL_EXTRACTION",
+        "chunks": 608
+      },
+      {
+        "ticker": "PG",
+        "cik": "0000080424",
+        "issuer": "PROCTER & GAMBLE Co",
+        "accession": "0000080424-26-000256",
+        "filing_id": "sec:0000080424:0000080424-26-000256",
+        "form": "10-Q",
+        "report_period": "2026-09-30",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+        "raw_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+        "extraction_status": "PARTIAL_EXTRACTION",
+        "chunks": 633
+      }
+    ],
+    "scope_note": "Official SEC development filings shared with Financial AI; not human-adjudicated evaluation"
+  },
+  "sec_searches": [
+    {
+      "mode": "bm25",
+      "generation": "cf148a2be3d965339a95517e0b2273f3ed2af8745bff8f66c42f775e8d488633",
+      "latency_ms": 1062.23,
+      "hits": [
+        {
+          "chunk_id": "fin_4bcfdbfb84e3ef5b5cd5ef654038cce6",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_d9606b8334ee654d5cda6579123945a5",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_fea9494de208f56dedc6c830c39001da",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_868781b4fd0748224f6be2d6b8077b9d",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        }
+      ]
+    },
+    {
+      "mode": "dense",
+      "generation": "cf148a2be3d965339a95517e0b2273f3ed2af8745bff8f66c42f775e8d488633",
+      "latency_ms": 5314.06,
+      "hits": [
+        {
+          "chunk_id": "fin_4ef712597caa6aed3a1c4b2d5dd88328",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_a1c5c27beacc1304ddb53d7dbc3b2ab4",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_af662c92b2855d95ce581aca02458431",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_f226eb2500674b190f4bb4937cc703e7",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_76bbfffc8b3c5e2a080d13a6ba55abc8",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid",
+      "generation": "cf148a2be3d965339a95517e0b2273f3ed2af8745bff8f66c42f775e8d488633",
+      "latency_ms": 280.05,
+      "hits": [
+        {
+          "chunk_id": "fin_9047a4b3d76eb1d87a6521a6ac036b86",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_a1c5c27beacc1304ddb53d7dbc3b2ab4",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_ae96274120fa55ae759205ebcda01bae",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_f226eb2500674b190f4bb4937cc703e7",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        },
+        {
+          "chunk_id": "fin_4bcfdbfb84e3ef5b5cd5ef654038cce6",
+          "ticker": "HD",
+          "report_period": "2026-08-02",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+        }
+      ]
+    },
+    {
+      "mode": "bm25",
+      "generation": "cf148a2be3d965339a95517e0b2273f3ed2af8745bff8f66c42f775e8d488633",
+      "latency_ms": 1278.54,
+      "hits": [
+        {
+          "chunk_id": "fin_600c3d68b67287564f599173bd302228",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_60f6e3c63523707a49b003d17874e2b0",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_af4e7b9a5adcb05a7639ea9e61dc84f6",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_7af5c346828f22e8f2631f2a0ee4cc67",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_cca849086410eabef45f7b86d1338adf",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        }
+      ]
+    },
+    {
+      "mode": "dense",
+      "generation": "cf148a2be3d965339a95517e0b2273f3ed2af8745bff8f66c42f775e8d488633",
+      "latency_ms": 174.06,
+      "hits": [
+        {
+          "chunk_id": "fin_5f7cf498be431b5f61d6c2915be69868",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_fe80417948bf9a02eadf6a7894a5255d",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_3de0ef8cbeca1e7d8419a1520112c093",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_0ab6c12b90d381d26402be3c5dcfc23b",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_a0f4d227f191a5ffa42678e70d9207d0",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        }
+      ]
+    },
+    {
+      "mode": "hybrid",
+      "generation": "cf148a2be3d965339a95517e0b2273f3ed2af8745bff8f66c42f775e8d488633",
+      "latency_ms": 369.55,
+      "hits": [
+        {
+          "chunk_id": "fin_646a74814dc203212d54b1a94ab6d8ff",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_0f40b123dda534e08723949e2e0ae8db",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_e0cf3224661bb29f849bb17167ba698e",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_cd2c366bbef2f43c57cb27c0e25ddb9a",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        },
+        {
+          "chunk_id": "fin_3fbb6d112c469e7f1afb57efef85cb75",
+          "ticker": "PG",
+          "report_period": "2026-09-30",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+        }
+      ]
+    }
+  ],
+  "sec_answers": [
+    {
+      "status": "SUPPORTED",
+      "answer": "Kết quả từ ô nguồn SEC được xác thực.",
+      "values": [
+        "109384000000"
+      ],
+      "unit": "USD",
+      "formula": "source[0]",
+      "reason": "",
+      "citations": [
+        {
+          "source_kind": "SEC",
+          "chunk_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+          "issuer": "HOME DEPOT, INC.",
+          "report_period": "2026-08-02",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+          "text": "Total assets: 109,384 (in millions, except per share data) · 2026-08-02",
+          "row_label": "Total assets",
+          "column_label": "August 2, 2026",
+          "verification": "VERIFIED_SOURCE_CELL",
+          "unit": "USD",
+          "source_location": {
+            "table_id": "table_483d3ac2b60916e1e4c8d837",
+            "row_index": 14,
+            "column_index": 4
+          }
+        }
+      ],
+      "source_cells": [
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "product-pg-hd-20261028",
+          "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c",
+          "manifest_hash": "efb42eb96d2fb70bd0ffe04ac784c1a0a77b1995a37c8ad2e17d17429565c32d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "cik": "0000354950",
+          "accession": "0001628280-26-058715",
+          "raw_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+          "parent_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+          "parent_payload_hash": "24b04f226f59c10bf4d67c7894d10e5904ca8d15efe92c2cad057143597cfd77",
+          "table_id": "table_483d3ac2b60916e1e4c8d837",
+          "row": 14,
+          "column": 4,
+          "row_label": "Total assets",
+          "raw_value": "109,384",
+          "value": "109384",
+          "unit": "USD",
+          "display_unit_header": "in millions, except per share data",
+          "multiplier": "1000000",
+          "effective_value": "109384000000",
+          "period_kind": "INSTANT",
+          "period_start": null,
+          "period_end": "2026-08-02",
+          "period_months": null,
+          "fact_name": "us-gaap:Assets",
+          "fact_context_ref": "c-3",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "footnotes": [
+            "See accompanying notes to consolidated financial statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      ],
+      "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c"
+    },
+    {
+      "status": "SUPPORTED",
+      "answer": "Kết quả từ ô nguồn SEC được xác thực.",
+      "values": [
+        "23276000000"
+      ],
+      "unit": "USD",
+      "formula": "source[0]",
+      "reason": "",
+      "citations": [
+        {
+          "source_kind": "SEC",
+          "chunk_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+          "issuer": "PROCTER & GAMBLE Co",
+          "report_period": "2026-09-30",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+          "text": "NET SALES: 23,276 (Amounts in millions except per share amounts) · 2026-09-30",
+          "row_label": "NET SALES",
+          "column_label": "Three Months Ended September 30 / 2026",
+          "verification": "VERIFIED_SOURCE_CELL",
+          "unit": "USD",
+          "source_location": {
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row_index": 3,
+            "column_index": 4
+          }
+        }
+      ],
+      "source_cells": [
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "product-pg-hd-20261028",
+          "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c",
+          "manifest_hash": "efb42eb96d2fb70bd0ffe04ac784c1a0a77b1995a37c8ad2e17d17429565c32d",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+          "parent_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+          "parent_payload_hash": "8f7bf871abe55022daac6ad9d773dc72917bb1404051d0943688d69e592efdc6",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row": 3,
+          "column": 4,
+          "row_label": "NET SALES",
+          "raw_value": "23,276",
+          "value": "23276",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions except per share amounts",
+          "multiplier": "1000000",
+          "effective_value": "23276000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-07-01",
+          "period_end": "2026-09-30",
+          "period_months": 3,
+          "fact_name": "us-gaap:Revenues",
+          "fact_context_ref": "c-1",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      ],
+      "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c"
+    }
+  ],
+  "sec_abstention": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "KHÔNG ĐỦ BẰNG CHỨNG",
+    "values": [],
+    "unit": null,
+    "formula": null,
+    "reason": "NO_VERIFIED_CELL_WITHIN_CANDIDATE_BUDGET",
+    "citations": [],
+    "source_cells": [],
+    "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c"
+  },
+  "research": {
+    "status": "COMPLETED",
+    "events": [
+      {
+        "stage": "company_metadata",
+        "status": "COMPLETED"
+      },
+      {
+        "stage": "context",
+        "status": "COMPLETED"
+      },
+      {
+        "stage": "fundamentals",
+        "status": "COMPLETED"
+      },
+      {
+        "stage": "risks",
+        "status": "COMPLETED"
+      },
+      {
+        "stage": "numeric_facts",
+        "status": "COMPLETED"
+      },
+      {
+        "stage": "verified_calculations",
+        "status": "COMPLETED"
+      },
+      {
+        "stage": "official_market_news",
+        "status": "UNAVAILABLE"
+      },
+      {
+        "stage": "synthesis",
+        "status": "COMPLETED"
+      }
+    ],
+    "model_summaries": [
+      {
+        "stage": "Bối cảnh và hoạt động",
+        "status": "MODEL_PROSE_REJECTED"
+      },
+      {
+        "stage": "Nền tảng tài chính",
+        "status": "LOCAL_MODEL_DRAFT_REQUIRES_SOURCE_REVIEW"
+      },
+      {
+        "stage": "Rủi ro và góc nhìn phản biện",
+        "status": "LOCAL_MODEL_DRAFT_REQUIRES_SOURCE_REVIEW"
+      },
+      {
+        "stage": "synthesis",
+        "status": "MODEL_PROSE_REJECTED"
+      }
+    ],
+    "verified_calculations": [
+      {
+        "formula": "Kỳ hiện tại − kỳ trước",
+        "values": [
+          "16877702175961"
+        ],
+        "unit": "VND"
+      },
+      {
+        "formula": "Tử số / mẫu số × 100",
+        "values": [
+          "4.296968443561832861907895198112151720438"
+        ],
+        "unit": "%"
+      }
+    ],
+    "source_citation_count": 8,
+    "note": "Drafts that passed syntactic guard still require source review. No claim of general accuracy."
+  },
+  "historical_integrity": {
+    "raw_hash_checks": 8,
+    "manifest_checks": 8,
+    "whole_document_status_unchanged": "PARTIAL_EXTRACTION",
+    "derived_scope": "Files present, version/normalized-hash metadata and row counts match manifests. Old parser code is not replayed; this does not re-certify every old chunk.",
+    "lookup_contract": "Manifest inventory exposes paths; archived files persist. Registry chunk lookup and evidence API serve only the active derived revision."
+  }
+}

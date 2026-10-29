@@ -4,6 +4,12 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+import mimetypes
+
+# Serve ES module workers with the correct JavaScript MIME type.
+mimetypes.add_type("text/javascript", ".mjs")
+from pathlib import Path
 
 from app.config import get_settings
 from app.api.documents import router as documents_router
@@ -14,6 +20,7 @@ from app.api.financial_corpus import router as financial_corpus_router, initiali
 from app.api.qdrant import router as qdrant_router
 from app.api.conversations import router as conversations_router
 from app.product.api import router as product_router
+from app.product.frontend_api import router as frontend_router
 from app.services import rag_service
 from app.services.system_service import status as runtime_status
 
@@ -51,8 +58,11 @@ app.add_middleware(
     allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
     allow_headers=["Accept", "Authorization", "Content-Type"],
 )
+frontend_dist=Path(__file__).resolve().parent/'frontend'/'dist'
+if frontend_dist.is_dir():
+    app.mount('/app',StaticFiles(directory=frontend_dist,html=True),name='react-product')
 for router in (documents_router, rag_router, financial_router, financial_index_router,
-               financial_corpus_router, qdrant_router, conversations_router, product_router):
+               financial_corpus_router, qdrant_router, conversations_router, product_router, frontend_router):
     app.include_router(router)
 
 

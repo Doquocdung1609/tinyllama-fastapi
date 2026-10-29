@@ -6,6 +6,14 @@ qdrant_data/
 financial_corpus/
 financial_search_data/
 studio_workspace/
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+tmp/reference-*/
+tmp/react*/
+tmp/react-*.txt
+tmp/studio-runtime/
 .streamlit/secrets.toml
 uploads/
 processed/

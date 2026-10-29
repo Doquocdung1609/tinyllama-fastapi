@@ -53,6 +53,8 @@ def source_records(snapshot):
         raise ValueError("PINNED_LEXICAL_GENERATION_INCOMPLETE")
     registry_path = Path(__file__).resolve().parents[1] / "docs/topic3/milestone_d/d3/D3_FRESH_EXACT_ROW_FREEZE_v1.json"
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    from app.table_evidence.product_registry import product_registry
+    registry = product_registry(snapshot.freeze) or registry
     if (registry["manifest_hash"], registry["generation"]) != (
         snapshot.freeze["manifest_hash"], generation):
         raise ValueError("COMMITTED_SOURCE_REGISTRY_MISMATCH")
