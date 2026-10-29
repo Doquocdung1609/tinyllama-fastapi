@@ -1,4 +1,8 @@
 const reasons:Record<string,string>={
+ LOW_MEMORY_DEFERRED:'RAM khả dụng quá thấp cho tác vụ này. Tài liệu được giữ lại; hãy kiểm tra tài nguyên rồi thử lại.',
+ RESOURCE_BUSY_RETRY:'Đang có tác vụ dùng tài nguyên. Hãy chờ tác vụ hiện tại hoàn tất rồi thử lại.',
+ SOURCE_UNIT_COLUMN_AMBIGUOUS:'Chưa chứng minh được đơn vị của cột số. Cần đối chiếu nhãn đơn vị trên ảnh nguồn.',
+ V3R2_OWNER_WORKSPACE_REQUIRED:'Search V3R2 cần không gian kiểm định mới đã chuẩn bị.',
  SEARCH_INDEX_PREPARING:'Đang chuẩn bị chỉ mục theo vùng; hãy chờ trạng thái sẵn sàng rồi tìm lại.',
  V3R_DERIVED_WORKSPACE_REQUIRED:'V3R cần không gian trích xuất theo vùng. Hãy chọn Search V3 cho không gian cũ.',
  SEARCH_PREPARATION_FAILED_CHECK_SOURCE:'Không chuẩn bị được chỉ mục. Cần kiểm tra tính toàn vẹn nguồn.',

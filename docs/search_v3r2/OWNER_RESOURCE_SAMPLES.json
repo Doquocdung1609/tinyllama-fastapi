@@ -1,0 +1,5414 @@
+{
+  "status": "PARTIAL_MEMORY_PRESSURE_OBSERVED",
+  "sample_interval_seconds": 1,
+  "sample_count": 599,
+  "start_utc": "2026-10-29T10:22:19.696095+00:00",
+  "end_utc": "2026-10-29T10:33:11.128817+00:00",
+  "peaks_mib": {
+    "api_rss": 1091.5859375,
+    "ollama_rss": 41.06640625,
+    "chrome_rss": 4235.828125,
+    "tesseract_rss": 205.73828125
+  },
+  "minimum_available_mib": 708.15234375,
+  "minimum_free_disk_gib": 74.06501770019531,
+  "samples_below_768_mib": 1,
+  "samples_below_1536_mib": 6,
+  "ollama_family_post_restart_peak_mib": 249.890625,
+  "ollama_warning": "Initial name-based samples miss llama-server.exe;family measurement is separate and bounded.",
+  "chrome_scope": "All Chrome processes including owner tabs;not browser heap or private bytes;not a leak proof.",
+  "api_scope": "Owned launcher Python processes summed;Qdrant local in process.",
+  "samples": [
+    {
+      "time": 1793269339.6960955,
+      "available_ram": 2343145472,
+      "free_disk_bytes": 79793913856,
+      "api_rss": 776744960,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2184683520,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269340.7656088,
+      "available_ram": 2361106432,
+      "free_disk_bytes": 79793909760,
+      "api_rss": 777080832,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2184028160,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269341.8683624,
+      "available_ram": 2376945664,
+      "free_disk_bytes": 79793799168,
+      "api_rss": 777211904,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2163679232,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269342.9266307,
+      "available_ram": 2384777216,
+      "free_disk_bytes": 79793795072,
+      "api_rss": 778145792,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2148143104,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269344.084711,
+      "available_ram": 2435321856,
+      "free_disk_bytes": 79793786880,
+      "api_rss": 778141696,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2150567936,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269345.1554682,
+      "available_ram": 2433544192,
+      "free_disk_bytes": 79793782784,
+      "api_rss": 778166272,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2137231360,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269346.2348425,
+      "available_ram": 2440888320,
+      "free_disk_bytes": 79793754112,
+      "api_rss": 778190848,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2133008384,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269347.3067472,
+      "available_ram": 2471514112,
+      "free_disk_bytes": 79793745920,
+      "api_rss": 778190848,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2133323776,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269348.3775628,
+      "available_ram": 2467889152,
+      "free_disk_bytes": 79793741824,
+      "api_rss": 778211328,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2144845824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269349.457672,
+      "available_ram": 2475327488,
+      "free_disk_bytes": 79793737728,
+      "api_rss": 778211328,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2149220352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269350.5226326,
+      "available_ram": 2469212160,
+      "free_disk_bytes": 79793733632,
+      "api_rss": 778756096,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2146750464,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269351.5999026,
+      "available_ram": 2465267712,
+      "free_disk_bytes": 79793741824,
+      "api_rss": 778821632,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2146885632,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269352.6719394,
+      "available_ram": 2464567296,
+      "free_disk_bytes": 79793741824,
+      "api_rss": 778821632,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2145988608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269353.7405517,
+      "available_ram": 2466009088,
+      "free_disk_bytes": 79793733632,
+      "api_rss": 778821632,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2146693120,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269354.804797,
+      "available_ram": 2468118528,
+      "free_disk_bytes": 79793733632,
+      "api_rss": 778817536,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2149019648,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269355.8727794,
+      "available_ram": 2464591872,
+      "free_disk_bytes": 79793602560,
+      "api_rss": 779661312,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2153861120,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269356.9418118,
+      "available_ram": 2456109056,
+      "free_disk_bytes": 79793532928,
+      "api_rss": 779661312,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2155671552,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269358.014355,
+      "available_ram": 2454712320,
+      "free_disk_bytes": 79793524736,
+      "api_rss": 780189696,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2153693184,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269359.0843794,
+      "available_ram": 2454134784,
+      "free_disk_bytes": 79793524736,
+      "api_rss": 780189696,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2153906176,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269360.1484895,
+      "available_ram": 2446315520,
+      "free_disk_bytes": 79793520640,
+      "api_rss": 781066240,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2157416448,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269361.2162445,
+      "available_ram": 2441396224,
+      "free_disk_bytes": 79793516544,
+      "api_rss": 781070336,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2160283648,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269362.28854,
+      "available_ram": 2439974912,
+      "free_disk_bytes": 79793504256,
+      "api_rss": 781090816,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2088407040,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269363.3762932,
+      "available_ram": 2465771520,
+      "free_disk_bytes": 79793569792,
+      "api_rss": 781676544,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2088960000,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269364.4515905,
+      "available_ram": 2521214976,
+      "free_disk_bytes": 79793557504,
+      "api_rss": 782217216,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2076508160,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269365.5313585,
+      "available_ram": 2520363008,
+      "free_disk_bytes": 79793557504,
+      "api_rss": 782217216,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2075598848,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269366.5915534,
+      "available_ram": 2535047168,
+      "free_disk_bytes": 79793639424,
+      "api_rss": 782213120,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2067148800,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269367.6607487,
+      "available_ram": 2537021440,
+      "free_disk_bytes": 79793635328,
+      "api_rss": 782471168,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2065330176,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269368.736024,
+      "available_ram": 2539778048,
+      "free_disk_bytes": 79793631232,
+      "api_rss": 782471168,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2064818176,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269369.8058794,
+      "available_ram": 2520010752,
+      "free_disk_bytes": 79793627136,
+      "api_rss": 782467072,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2079588352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269370.8801637,
+      "available_ram": 2494836736,
+      "free_disk_bytes": 79794462720,
+      "api_rss": 782479360,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2171293696,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269371.9561503,
+      "available_ram": 2483290112,
+      "free_disk_bytes": 79794462720,
+      "api_rss": 782475264,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2231885824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269373.0603745,
+      "available_ram": 2416316416,
+      "free_disk_bytes": 79794450432,
+      "api_rss": 782475264,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2270781440,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269374.133532,
+      "available_ram": 2532454400,
+      "free_disk_bytes": 79794393088,
+      "api_rss": 782471168,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2201661440,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269375.250919,
+      "available_ram": 2546806784,
+      "free_disk_bytes": 79794262016,
+      "api_rss": 782475264,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2167422976,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269376.3139982,
+      "available_ram": 2542219264,
+      "free_disk_bytes": 79794204672,
+      "api_rss": 782471168,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2168029184,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269377.3850305,
+      "available_ram": 2532167680,
+      "free_disk_bytes": 79778795520,
+      "api_rss": 782503936,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2172715008,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269378.4583108,
+      "available_ram": 2470817792,
+      "free_disk_bytes": 79755403264,
+      "api_rss": 782499840,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2168107008,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269379.5387378,
+      "available_ram": 2182377472,
+      "free_disk_bytes": 79742042112,
+      "api_rss": 782512128,
+      "ollama_rss": 42545152,
+      "chrome_rss": 2575396864,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269380.6498888,
+      "available_ram": 1186328576,
+      "free_disk_bytes": 79741665280,
+      "api_rss": 783163392,
+      "ollama_rss": 42545152,
+      "chrome_rss": 3551793152,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269381.7756715,
+      "available_ram": 950657024,
+      "free_disk_bytes": 79741587456,
+      "api_rss": 738115584,
+      "ollama_rss": 42545152,
+      "chrome_rss": 3765538816,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269382.8463504,
+      "available_ram": 2222219264,
+      "free_disk_bytes": 79740149760,
+      "api_rss": 740814848,
+      "ollama_rss": 42557440,
+      "chrome_rss": 2689208320,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269384.1256294,
+      "available_ram": 2362609664,
+      "free_disk_bytes": 79738449920,
+      "api_rss": 769953792,
+      "ollama_rss": 42557440,
+      "chrome_rss": 2787262464,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269385.3649335,
+      "available_ram": 1607913472,
+      "free_disk_bytes": 79736569856,
+      "api_rss": 771194880,
+      "ollama_rss": 42557440,
+      "chrome_rss": 3712634880,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269386.497168,
+      "available_ram": 843214848,
+      "free_disk_bytes": 79725117440,
+      "api_rss": 771579904,
+      "ollama_rss": 42692608,
+      "chrome_rss": 4441587712,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269387.685656,
+      "available_ram": 742551552,
+      "free_disk_bytes": 79721222144,
+      "api_rss": 772288512,
+      "ollama_rss": 42692608,
+      "chrome_rss": 4277780480,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269388.9558442,
+      "available_ram": 994381824,
+      "free_disk_bytes": 79720898560,
+      "api_rss": 772317184,
+      "ollama_rss": 42414080,
+      "chrome_rss": 4107657216,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269390.2048821,
+      "available_ram": 2289168384,
+      "free_disk_bytes": 79720529920,
+      "api_rss": 772734976,
+      "ollama_rss": 42414080,
+      "chrome_rss": 2848235520,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269392.8097184,
+      "available_ram": 1863462912,
+      "free_disk_bytes": 79716442112,
+      "api_rss": 773853184,
+      "ollama_rss": 42414080,
+      "chrome_rss": 2834284544,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269394.189539,
+      "available_ram": 2101702656,
+      "free_disk_bytes": 79715512320,
+      "api_rss": 772808704,
+      "ollama_rss": 42414080,
+      "chrome_rss": 2744803328,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269395.3652484,
+      "available_ram": 2186366976,
+      "free_disk_bytes": 79715225600,
+      "api_rss": 772734976,
+      "ollama_rss": 42426368,
+      "chrome_rss": 2723958784,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269396.5990117,
+      "available_ram": 2261377024,
+      "free_disk_bytes": 79714832384,
+      "api_rss": 772804608,
+      "ollama_rss": 42426368,
+      "chrome_rss": 2662539264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269397.875863,
+      "available_ram": 2194477056,
+      "free_disk_bytes": 79714512896,
+      "api_rss": 773521408,
+      "ollama_rss": 42426368,
+      "chrome_rss": 2698444800,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269399.049517,
+      "available_ram": 2282700800,
+      "free_disk_bytes": 79714136064,
+      "api_rss": 773238784,
+      "ollama_rss": 42426368,
+      "chrome_rss": 2661736448,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269400.1693044,
+      "available_ram": 2257473536,
+      "free_disk_bytes": 79713820672,
+      "api_rss": 772759552,
+      "ollama_rss": 42450944,
+      "chrome_rss": 2639282176,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269401.3538723,
+      "available_ram": 2246815744,
+      "free_disk_bytes": 79713468416,
+      "api_rss": 773304320,
+      "ollama_rss": 42450944,
+      "chrome_rss": 2641129472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269402.4675543,
+      "available_ram": 2053611520,
+      "free_disk_bytes": 79711080448,
+      "api_rss": 773337088,
+      "ollama_rss": 42754048,
+      "chrome_rss": 2809913344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269403.561859,
+      "available_ram": 2083450880,
+      "free_disk_bytes": 79709515776,
+      "api_rss": 773337088,
+      "ollama_rss": 42827776,
+      "chrome_rss": 2798944256,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269404.7044358,
+      "available_ram": 2138595328,
+      "free_disk_bytes": 79707967488,
+      "api_rss": 773373952,
+      "ollama_rss": 42827776,
+      "chrome_rss": 2669809664,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269405.828924,
+      "available_ram": 2209792000,
+      "free_disk_bytes": 79705149440,
+      "api_rss": 773369856,
+      "ollama_rss": 42831872,
+      "chrome_rss": 2588241920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269406.924366,
+      "available_ram": 2233741312,
+      "free_disk_bytes": 79704338432,
+      "api_rss": 773373952,
+      "ollama_rss": 42831872,
+      "chrome_rss": 2562379776,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269408.0406115,
+      "available_ram": 2226778112,
+      "free_disk_bytes": 79703941120,
+      "api_rss": 773373952,
+      "ollama_rss": 42885120,
+      "chrome_rss": 2530967552,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269409.2860923,
+      "available_ram": 2218631168,
+      "free_disk_bytes": 79700533248,
+      "api_rss": 777719808,
+      "ollama_rss": 42885120,
+      "chrome_rss": 2519871488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269410.4321237,
+      "available_ram": 2205798400,
+      "free_disk_bytes": 79700299776,
+      "api_rss": 773386240,
+      "ollama_rss": 42885120,
+      "chrome_rss": 2489540608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269411.590807,
+      "available_ram": 2147917824,
+      "free_disk_bytes": 79696785408,
+      "api_rss": 773517312,
+      "ollama_rss": 42885120,
+      "chrome_rss": 2579750912,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269412.6970983,
+      "available_ram": 2206543872,
+      "free_disk_bytes": 79695990784,
+      "api_rss": 773533696,
+      "ollama_rss": 42930176,
+      "chrome_rss": 2593357824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269413.78405,
+      "available_ram": 2211893248,
+      "free_disk_bytes": 79695949824,
+      "api_rss": 769695744,
+      "ollama_rss": 42930176,
+      "chrome_rss": 2537099264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269414.908254,
+      "available_ram": 2212470784,
+      "free_disk_bytes": 79695953920,
+      "api_rss": 770031616,
+      "ollama_rss": 42356736,
+      "chrome_rss": 2532220928,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269415.9958375,
+      "available_ram": 2199396352,
+      "free_disk_bytes": 79695921152,
+      "api_rss": 771952640,
+      "ollama_rss": 42356736,
+      "chrome_rss": 2528182272,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269417.068162,
+      "available_ram": 2192437248,
+      "free_disk_bytes": 79695945728,
+      "api_rss": 770347008,
+      "ollama_rss": 42356736,
+      "chrome_rss": 2532982784,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269418.226597,
+      "available_ram": 2215227392,
+      "free_disk_bytes": 79695945728,
+      "api_rss": 770359296,
+      "ollama_rss": 42356736,
+      "chrome_rss": 2516938752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269419.339937,
+      "available_ram": 2236846080,
+      "free_disk_bytes": 79695912960,
+      "api_rss": 770539520,
+      "ollama_rss": 42438656,
+      "chrome_rss": 2487300096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269420.4268944,
+      "available_ram": 2187845632,
+      "free_disk_bytes": 79695912960,
+      "api_rss": 770547712,
+      "ollama_rss": 42541056,
+      "chrome_rss": 2420703232,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269421.6294546,
+      "available_ram": 2433302528,
+      "free_disk_bytes": 79695937536,
+      "api_rss": 770633728,
+      "ollama_rss": 42541056,
+      "chrome_rss": 2420187136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269422.7244024,
+      "available_ram": 2407821312,
+      "free_disk_bytes": 79695380480,
+      "api_rss": 771125248,
+      "ollama_rss": 42455040,
+      "chrome_rss": 2424836096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269423.84202,
+      "available_ram": 2414260224,
+      "free_disk_bytes": 79695380480,
+      "api_rss": 770772992,
+      "ollama_rss": 42467328,
+      "chrome_rss": 2351558656,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269424.9444735,
+      "available_ram": 2399518720,
+      "free_disk_bytes": 79695409152,
+      "api_rss": 770764800,
+      "ollama_rss": 42467328,
+      "chrome_rss": 2353385472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269426.1220226,
+      "available_ram": 2387214336,
+      "free_disk_bytes": 79691214848,
+      "api_rss": 770813952,
+      "ollama_rss": 42758144,
+      "chrome_rss": 2353123328,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269427.217617,
+      "available_ram": 2541051904,
+      "free_disk_bytes": 79691059200,
+      "api_rss": 772681728,
+      "ollama_rss": 43057152,
+      "chrome_rss": 2349719552,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269428.3496037,
+      "available_ram": 2539036672,
+      "free_disk_bytes": 79691087872,
+      "api_rss": 771969024,
+      "ollama_rss": 43061248,
+      "chrome_rss": 2345005056,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269429.473824,
+      "available_ram": 2489847808,
+      "free_disk_bytes": 79691079680,
+      "api_rss": 770957312,
+      "ollama_rss": 42733568,
+      "chrome_rss": 2344587264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269430.5996041,
+      "available_ram": 2500009984,
+      "free_disk_bytes": 79691022336,
+      "api_rss": 770965504,
+      "ollama_rss": 42733568,
+      "chrome_rss": 2347376640,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269431.697872,
+      "available_ram": 2499207168,
+      "free_disk_bytes": 79691022336,
+      "api_rss": 770981888,
+      "ollama_rss": 42868736,
+      "chrome_rss": 2348023808,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269432.7896588,
+      "available_ram": 2503901184,
+      "free_disk_bytes": 79691051008,
+      "api_rss": 770969600,
+      "ollama_rss": 42868736,
+      "chrome_rss": 2347294720,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269433.8855503,
+      "available_ram": 2472275968,
+      "free_disk_bytes": 79690985472,
+      "api_rss": 770957312,
+      "ollama_rss": 42713088,
+      "chrome_rss": 2353356800,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269434.9885027,
+      "available_ram": 2487205888,
+      "free_disk_bytes": 79690956800,
+      "api_rss": 771018752,
+      "ollama_rss": 42713088,
+      "chrome_rss": 2355920896,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269436.0996437,
+      "available_ram": 2489229312,
+      "free_disk_bytes": 79690985472,
+      "api_rss": 771006464,
+      "ollama_rss": 42713088,
+      "chrome_rss": 2356830208,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269437.182123,
+      "available_ram": 2477199360,
+      "free_disk_bytes": 79690952704,
+      "api_rss": 779182080,
+      "ollama_rss": 42582016,
+      "chrome_rss": 2355953664,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269438.3318884,
+      "available_ram": 2538524672,
+      "free_disk_bytes": 79689248768,
+      "api_rss": 771002368,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2352578560,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269439.4843738,
+      "available_ram": 2537975808,
+      "free_disk_bytes": 79689244672,
+      "api_rss": 770977792,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2358890496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269440.5588915,
+      "available_ram": 2527137792,
+      "free_disk_bytes": 79689179136,
+      "api_rss": 770977792,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2361155584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269441.6295621,
+      "available_ram": 2529402880,
+      "free_disk_bytes": 79689207808,
+      "api_rss": 770977792,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2360913920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269442.695064,
+      "available_ram": 2536230912,
+      "free_disk_bytes": 79689175040,
+      "api_rss": 770953216,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2361114624,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269443.778914,
+      "available_ram": 2539630592,
+      "free_disk_bytes": 79689199616,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2360549376,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269444.8416824,
+      "available_ram": 2546970624,
+      "free_disk_bytes": 79689195520,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2353090560,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269445.9241185,
+      "available_ram": 2540920832,
+      "free_disk_bytes": 79689195520,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2353508352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269447.0039809,
+      "available_ram": 2550530048,
+      "free_disk_bytes": 79689191424,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2353070080,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269448.0644705,
+      "available_ram": 2564689920,
+      "free_disk_bytes": 79689191424,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2351259648,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269449.1576693,
+      "available_ram": 2556547072,
+      "free_disk_bytes": 79689191424,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2351755264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269450.2121959,
+      "available_ram": 2556235776,
+      "free_disk_bytes": 79689158656,
+      "api_rss": 770945024,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2354069504,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269451.2767806,
+      "available_ram": 2552659968,
+      "free_disk_bytes": 79689187328,
+      "api_rss": 770940928,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2359128064,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269452.3398714,
+      "available_ram": 2552446976,
+      "free_disk_bytes": 79689187328,
+      "api_rss": 770940928,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2359132160,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269453.4012291,
+      "available_ram": 2553659392,
+      "free_disk_bytes": 79689187328,
+      "api_rss": 770940928,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2359283712,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269454.4635136,
+      "available_ram": 2553958400,
+      "free_disk_bytes": 79689183232,
+      "api_rss": 770940928,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2360107008,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269455.5264213,
+      "available_ram": 2551857152,
+      "free_disk_bytes": 79689183232,
+      "api_rss": 770940928,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2362580992,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269456.589301,
+      "available_ram": 2547654656,
+      "free_disk_bytes": 79688650752,
+      "api_rss": 770940928,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2362978304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269457.6524782,
+      "available_ram": 2685534208,
+      "free_disk_bytes": 79688650752,
+      "api_rss": 770940928,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2369830912,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269458.7451887,
+      "available_ram": 2687434752,
+      "free_disk_bytes": 79688642560,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2371829760,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269459.805262,
+      "available_ram": 2671689728,
+      "free_disk_bytes": 79688638464,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2374328320,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269460.9176,
+      "available_ram": 2672578560,
+      "free_disk_bytes": 79688601600,
+      "api_rss": 770953216,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2351312896,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269461.9997685,
+      "available_ram": 2684157952,
+      "free_disk_bytes": 79688634368,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2351689728,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269463.1317081,
+      "available_ram": 2672893952,
+      "free_disk_bytes": 79688630272,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2350243840,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269464.1951246,
+      "available_ram": 2692571136,
+      "free_disk_bytes": 79688630272,
+      "api_rss": 770949120,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2307334144,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269465.268487,
+      "available_ram": 2704822272,
+      "free_disk_bytes": 79688630272,
+      "api_rss": 770818048,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2310086656,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269466.333144,
+      "available_ram": 2661924864,
+      "free_disk_bytes": 79688622080,
+      "api_rss": 770818048,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2310389760,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269467.4100876,
+      "available_ram": 2710401024,
+      "free_disk_bytes": 79688609792,
+      "api_rss": 770818048,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2311917568,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269468.499026,
+      "available_ram": 2699808768,
+      "free_disk_bytes": 79688577024,
+      "api_rss": 772300800,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2310057984,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269469.5886953,
+      "available_ram": 2692907008,
+      "free_disk_bytes": 79688605696,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2311671808,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269470.6512048,
+      "available_ram": 2700328960,
+      "free_disk_bytes": 79688671232,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2313011200,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269471.718962,
+      "available_ram": 2699329536,
+      "free_disk_bytes": 79688671232,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 2318917632,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269472.7849002,
+      "available_ram": 2682490880,
+      "free_disk_bytes": 79682625536,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1989992448,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269473.869779,
+      "available_ram": 3121451008,
+      "free_disk_bytes": 79738290176,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1587679232,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269474.932231,
+      "available_ram": 3407970304,
+      "free_disk_bytes": 79738245120,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1563185152,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269476.0265534,
+      "available_ram": 3389931520,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1561686016,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269477.115767,
+      "available_ram": 3392344064,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1561681920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269478.1772625,
+      "available_ram": 3363909632,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1567420416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269479.239263,
+      "available_ram": 3380477952,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1565741056,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269480.297502,
+      "available_ram": 3397681152,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1566728192,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269481.3524559,
+      "available_ram": 3396792320,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1565532160,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269482.4110723,
+      "available_ram": 3403055104,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1564491776,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269483.4691381,
+      "available_ram": 3388755968,
+      "free_disk_bytes": 79738191872,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1563598848,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269484.5202847,
+      "available_ram": 3392073728,
+      "free_disk_bytes": 79738191872,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1562673152,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269485.579757,
+      "available_ram": 3416633344,
+      "free_disk_bytes": 79738191872,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1565458432,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269486.6460357,
+      "available_ram": 3419721728,
+      "free_disk_bytes": 79738191872,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1557475328,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269487.7083328,
+      "available_ram": 3482415104,
+      "free_disk_bytes": 79738191872,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1556987904,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269488.7702622,
+      "available_ram": 3490041856,
+      "free_disk_bytes": 79738191872,
+      "api_rss": 770846720,
+      "ollama_rss": 42586112,
+      "chrome_rss": 1555931136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269489.8350437,
+      "available_ram": 3587194880,
+      "free_disk_bytes": 79738179584,
+      "api_rss": 770846720,
+      "ollama_rss": 41664512,
+      "chrome_rss": 1426579456,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269490.9086351,
+      "available_ram": 3693383680,
+      "free_disk_bytes": 79738175488,
+      "api_rss": 770846720,
+      "ollama_rss": 41664512,
+      "chrome_rss": 1420197888,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269491.968233,
+      "available_ram": 3550306304,
+      "free_disk_bytes": 79743987712,
+      "api_rss": 770846720,
+      "ollama_rss": 41664512,
+      "chrome_rss": 1420341248,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269493.148713,
+      "available_ram": 3101560832,
+      "free_disk_bytes": 79735177216,
+      "api_rss": 771031040,
+      "ollama_rss": 41664512,
+      "chrome_rss": 2026483712,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269494.2826421,
+      "available_ram": 3038638080,
+      "free_disk_bytes": 79732244480,
+      "api_rss": 771043328,
+      "ollama_rss": 41664512,
+      "chrome_rss": 2045874176,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269495.4937706,
+      "available_ram": 2772848640,
+      "free_disk_bytes": 79719862272,
+      "api_rss": 771088384,
+      "ollama_rss": 41664512,
+      "chrome_rss": 2290409472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269496.5919347,
+      "available_ram": 2787237888,
+      "free_disk_bytes": 79716913152,
+      "api_rss": 771096576,
+      "ollama_rss": 41664512,
+      "chrome_rss": 2262790144,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269497.6791115,
+      "available_ram": 2726916096,
+      "free_disk_bytes": 79715487744,
+      "api_rss": 772587520,
+      "ollama_rss": 41664512,
+      "chrome_rss": 2314829824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269498.7728925,
+      "available_ram": 2702581760,
+      "free_disk_bytes": 79712894976,
+      "api_rss": 771198976,
+      "ollama_rss": 41631744,
+      "chrome_rss": 2325491712,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269499.9287307,
+      "available_ram": 2691391488,
+      "free_disk_bytes": 79712563200,
+      "api_rss": 771235840,
+      "ollama_rss": 41631744,
+      "chrome_rss": 2344718336,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269501.069099,
+      "available_ram": 2558513152,
+      "free_disk_bytes": 79709040640,
+      "api_rss": 771252224,
+      "ollama_rss": 41631744,
+      "chrome_rss": 2476232704,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269502.1961505,
+      "available_ram": 2742734848,
+      "free_disk_bytes": 79708041216,
+      "api_rss": 771235840,
+      "ollama_rss": 41631744,
+      "chrome_rss": 2307977216,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269503.3244522,
+      "available_ram": 2620485632,
+      "free_disk_bytes": 79704203264,
+      "api_rss": 772935680,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2368385024,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269504.4776433,
+      "available_ram": 2610581504,
+      "free_disk_bytes": 79703793664,
+      "api_rss": 771235840,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2353393664,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269505.620344,
+      "available_ram": 2599862272,
+      "free_disk_bytes": 79700594688,
+      "api_rss": 771252224,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2365464576,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269506.7296417,
+      "available_ram": 2473041920,
+      "free_disk_bytes": 79697305600,
+      "api_rss": 771809280,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2434494464,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269507.8651252,
+      "available_ram": 2492399616,
+      "free_disk_bytes": 79696261120,
+      "api_rss": 773296128,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2438852608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269508.9440212,
+      "available_ram": 2642120704,
+      "free_disk_bytes": 79696211968,
+      "api_rss": 771813376,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2420002816,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269510.0098395,
+      "available_ram": 2645069824,
+      "free_disk_bytes": 79694581760,
+      "api_rss": 771805184,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2340290560,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269511.1251397,
+      "available_ram": 2626797568,
+      "free_disk_bytes": 79692496896,
+      "api_rss": 771801088,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2341011456,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269512.3540905,
+      "available_ram": 2630291456,
+      "free_disk_bytes": 79689428992,
+      "api_rss": 771829760,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2324484096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269513.47386,
+      "available_ram": 2642464768,
+      "free_disk_bytes": 79685763072,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2313715712,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269514.572883,
+      "available_ram": 2583175168,
+      "free_disk_bytes": 79683637248,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2374287360,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269515.7103202,
+      "available_ram": 2497736704,
+      "free_disk_bytes": 79673057280,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2437996544,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269516.8693106,
+      "available_ram": 2431770624,
+      "free_disk_bytes": 79670394880,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2504507392,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269518.0290778,
+      "available_ram": 2365206528,
+      "free_disk_bytes": 79668228096,
+      "api_rss": 772894720,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2563145728,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269519.136852,
+      "available_ram": 2339778560,
+      "free_disk_bytes": 79666237440,
+      "api_rss": 773750784,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2560380928,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269520.2618573,
+      "available_ram": 2420482048,
+      "free_disk_bytes": 79664087040,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2566172672,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269521.3913827,
+      "available_ram": 2339278848,
+      "free_disk_bytes": 79662059520,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 2625413120,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269522.5020077,
+      "available_ram": 3492884480,
+      "free_disk_bytes": 79739502592,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1476980736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269523.595968,
+      "available_ram": 3401703424,
+      "free_disk_bytes": 79739490304,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1477001216,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269524.6657066,
+      "available_ram": 3420852224,
+      "free_disk_bytes": 79739490304,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1476136960,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269525.7527456,
+      "available_ram": 3369082880,
+      "free_disk_bytes": 79739371520,
+      "api_rss": 771842048,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1477492736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269526.8284342,
+      "available_ram": 3266924544,
+      "free_disk_bytes": 79739363328,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1476554752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269527.8950677,
+      "available_ram": 3065319424,
+      "free_disk_bytes": 79738904576,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1476689920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269528.9722397,
+      "available_ram": 3542355968,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1477820416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269530.0419471,
+      "available_ram": 3535257600,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478000640,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269531.1795292,
+      "available_ram": 3543089152,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478918144,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269532.251211,
+      "available_ram": 3537199104,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478983680,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269533.3207426,
+      "available_ram": 3553419264,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478729728,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269534.380466,
+      "available_ram": 3559604224,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478844416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269535.4445062,
+      "available_ram": 3559440384,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480781824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269536.5065167,
+      "available_ram": 3562463232,
+      "free_disk_bytes": 79735099392,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479884800,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269537.5649245,
+      "available_ram": 3561680896,
+      "free_disk_bytes": 79735066624,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479540736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269538.621153,
+      "available_ram": 3567390720,
+      "free_disk_bytes": 79735066624,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479733248,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269539.6811962,
+      "available_ram": 3562520576,
+      "free_disk_bytes": 79735062528,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479819264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269540.7545822,
+      "available_ram": 3556216832,
+      "free_disk_bytes": 79735058432,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479372800,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269541.8156793,
+      "available_ram": 3559563264,
+      "free_disk_bytes": 79735058432,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1477881856,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269542.8794804,
+      "available_ram": 3565654016,
+      "free_disk_bytes": 79735058432,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478148096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269543.9454513,
+      "available_ram": 3554693120,
+      "free_disk_bytes": 79735058432,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478205440,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269545.008297,
+      "available_ram": 3490766848,
+      "free_disk_bytes": 79735062528,
+      "api_rss": 771837952,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479507968,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269546.0708137,
+      "available_ram": 3543228416,
+      "free_disk_bytes": 79735054336,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478246400,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269547.168246,
+      "available_ram": 3529867264,
+      "free_disk_bytes": 79735054336,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478410240,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269548.2349236,
+      "available_ram": 3530350592,
+      "free_disk_bytes": 79735054336,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478668288,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269549.3112597,
+      "available_ram": 3528462336,
+      "free_disk_bytes": 79735054336,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1478336512,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269550.3727295,
+      "available_ram": 3573993472,
+      "free_disk_bytes": 79725441024,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480441856,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269551.4460804,
+      "available_ram": 3607838720,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480458240,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269552.5052922,
+      "available_ram": 3611041792,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479397376,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269553.564785,
+      "available_ram": 3611910144,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479139328,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269554.6271226,
+      "available_ram": 3609591808,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1479364608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269555.6879835,
+      "available_ram": 3612205056,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1481322496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269556.7511866,
+      "available_ram": 3612540928,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480364032,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269557.8257353,
+      "available_ram": 3612090368,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480314880,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269558.8890011,
+      "available_ram": 3615207424,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480536064,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269559.944265,
+      "available_ram": 3614572544,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480683520,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269561.0017152,
+      "available_ram": 3611746304,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1481461760,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269562.0574026,
+      "available_ram": 3614527488,
+      "free_disk_bytes": 79725436928,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1480507392,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269563.1171167,
+      "available_ram": 3575472128,
+      "free_disk_bytes": 79725432832,
+      "api_rss": 771694592,
+      "ollama_rss": 41652224,
+      "chrome_rss": 1481588736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269564.1951485,
+      "available_ram": 3448553472,
+      "free_disk_bytes": 79712149504,
+      "api_rss": 803155968,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1481461760,
+      "tesseract_rss": 35319808
+    },
+    {
+      "time": 1793269565.269377,
+      "available_ram": 3323052032,
+      "free_disk_bytes": 79711309824,
+      "api_rss": 864161792,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1482600448,
+      "tesseract_rss": 67715072
+    },
+    {
+      "time": 1793269566.3556428,
+      "available_ram": 3230789632,
+      "free_disk_bytes": 79711309824,
+      "api_rss": 864161792,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1480830976,
+      "tesseract_rss": 157134848
+    },
+    {
+      "time": 1793269567.4823713,
+      "available_ram": 3216486400,
+      "free_disk_bytes": 79711309824,
+      "api_rss": 864161792,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1478602752,
+      "tesseract_rss": 157757440
+    },
+    {
+      "time": 1793269568.5495777,
+      "available_ram": 3296100352,
+      "free_disk_bytes": 79712219136,
+      "api_rss": 887197696,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1489268736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269569.6558154,
+      "available_ram": 3168018432,
+      "free_disk_bytes": 79711870976,
+      "api_rss": 887238656,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1488482304,
+      "tesseract_rss": 203448320
+    },
+    {
+      "time": 1793269570.739748,
+      "available_ram": 3131891712,
+      "free_disk_bytes": 79711870976,
+      "api_rss": 887238656,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1486606336,
+      "tesseract_rss": 215732224
+    },
+    {
+      "time": 1793269571.8173563,
+      "available_ram": 3125817344,
+      "free_disk_bytes": 79711870976,
+      "api_rss": 887238656,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1484767232,
+      "tesseract_rss": 215732224
+    },
+    {
+      "time": 1793269572.9308677,
+      "available_ram": 3119173632,
+      "free_disk_bytes": 79711870976,
+      "api_rss": 887238656,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1481117696,
+      "tesseract_rss": 210165760
+    },
+    {
+      "time": 1793269574.021756,
+      "available_ram": 2988888064,
+      "free_disk_bytes": 79712108544,
+      "api_rss": 813617152,
+      "ollama_rss": 41820160,
+      "chrome_rss": 1586663424,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269575.181902,
+      "available_ram": 2932060160,
+      "free_disk_bytes": 79711870976,
+      "api_rss": 802738176,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1584603136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269576.2872732,
+      "available_ram": 2952761344,
+      "free_disk_bytes": 79711838208,
+      "api_rss": 779837440,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1583058944,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269577.3641646,
+      "available_ram": 3061551104,
+      "free_disk_bytes": 79711674368,
+      "api_rss": 924114944,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1581592576,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269578.486086,
+      "available_ram": 3064897536,
+      "free_disk_bytes": 79711150080,
+      "api_rss": 923856896,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1580969984,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269579.5644937,
+      "available_ram": 3071430656,
+      "free_disk_bytes": 79711150080,
+      "api_rss": 923983872,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1580969984,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269580.6763659,
+      "available_ram": 3063230464,
+      "free_disk_bytes": 79711150080,
+      "api_rss": 924012544,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1581764608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269581.8674412,
+      "available_ram": 3110641664,
+      "free_disk_bytes": 79711150080,
+      "api_rss": 925310976,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1580937216,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269582.9493186,
+      "available_ram": 3101163520,
+      "free_disk_bytes": 79711150080,
+      "api_rss": 925003776,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1580937216,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269584.0219336,
+      "available_ram": 3129966592,
+      "free_disk_bytes": 79711150080,
+      "api_rss": 924598272,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1557528576,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269585.0902376,
+      "available_ram": 3118104576,
+      "free_disk_bytes": 79711150080,
+      "api_rss": 924958720,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1557528576,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269586.1833472,
+      "available_ram": 3103604736,
+      "free_disk_bytes": 79710625792,
+      "api_rss": 941273088,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1558327296,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269587.3032873,
+      "available_ram": 3091255296,
+      "free_disk_bytes": 79710621696,
+      "api_rss": 975982592,
+      "ollama_rss": 41852928,
+      "chrome_rss": 1558327296,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269588.3730278,
+      "available_ram": 3077455872,
+      "free_disk_bytes": 79710588928,
+      "api_rss": 1000738816,
+      "ollama_rss": 41852928,
+      "chrome_rss": 1558319104,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269589.4442883,
+      "available_ram": 3124649984,
+      "free_disk_bytes": 79710621696,
+      "api_rss": 1011200000,
+      "ollama_rss": 41852928,
+      "chrome_rss": 1554087936,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269590.5022197,
+      "available_ram": 3088850944,
+      "free_disk_bytes": 79710621696,
+      "api_rss": 1011757056,
+      "ollama_rss": 41852928,
+      "chrome_rss": 1552449536,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269591.567851,
+      "available_ram": 3031437312,
+      "free_disk_bytes": 79710425088,
+      "api_rss": 1012920320,
+      "ollama_rss": 41852928,
+      "chrome_rss": 1548988416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269592.645328,
+      "available_ram": 3083091968,
+      "free_disk_bytes": 79710334976,
+      "api_rss": 1014497280,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1548955648,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269593.7188203,
+      "available_ram": 3137544192,
+      "free_disk_bytes": 79710330880,
+      "api_rss": 1016623104,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1548955648,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269594.7771676,
+      "available_ram": 3201830912,
+      "free_disk_bytes": 79710330880,
+      "api_rss": 1017864192,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1477951488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269595.8343067,
+      "available_ram": 3213496320,
+      "free_disk_bytes": 79710330880,
+      "api_rss": 1019801600,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1474523136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269596.8981645,
+      "available_ram": 3218571264,
+      "free_disk_bytes": 79710330880,
+      "api_rss": 1021472768,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1474506752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269597.9651241,
+      "available_ram": 3222376448,
+      "free_disk_bytes": 79710330880,
+      "api_rss": 1023918080,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1474506752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269599.0222816,
+      "available_ram": 3226587136,
+      "free_disk_bytes": 79697682432,
+      "api_rss": 1028472832,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1474506752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269600.080599,
+      "available_ram": 3173773312,
+      "free_disk_bytes": 79671140352,
+      "api_rss": 1028841472,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1541292032,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269601.1399448,
+      "available_ram": 3123224576,
+      "free_disk_bytes": 79654002688,
+      "api_rss": 1109630976,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1543249920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269602.2008672,
+      "available_ram": 3028070400,
+      "free_disk_bytes": 79653990400,
+      "api_rss": 1144610816,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1649168384,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269603.2604399,
+      "available_ram": 3369111552,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 796524544,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1649156096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269604.3189163,
+      "available_ram": 3373584384,
+      "free_disk_bytes": 79654100992,
+      "api_rss": 804974592,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1599852544,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269605.39435,
+      "available_ram": 3345416192,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 815267840,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1599234048,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269606.4596255,
+      "available_ram": 3360559104,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 818339840,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1594089472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269607.5130234,
+      "available_ram": 3413946368,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 818208768,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1594052608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269608.5691607,
+      "available_ram": 3358810112,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 796127232,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1593778176,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269609.6289062,
+      "available_ram": 3343732736,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 810385408,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1590849536,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269610.699133,
+      "available_ram": 3413753856,
+      "free_disk_bytes": 79654039552,
+      "api_rss": 814845952,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1586536448,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269611.75881,
+      "available_ram": 3428810752,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 817950720,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1584316416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269612.826927,
+      "available_ram": 3480735744,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 824823808,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1584312320,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269613.9022343,
+      "available_ram": 3472445440,
+      "free_disk_bytes": 79654035456,
+      "api_rss": 826388480,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1584312320,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269614.9608767,
+      "available_ram": 3476635648,
+      "free_disk_bytes": 79653511168,
+      "api_rss": 829661184,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1584459776,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269616.0270429,
+      "available_ram": 3440967680,
+      "free_disk_bytes": 79653355520,
+      "api_rss": 833093632,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1629470720,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269617.0865767,
+      "available_ram": 3358879744,
+      "free_disk_bytes": 79653355520,
+      "api_rss": 832573440,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1741836288,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269618.1539376,
+      "available_ram": 3332247552,
+      "free_disk_bytes": 79653158912,
+      "api_rss": 833859584,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1769385984,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269619.2094848,
+      "available_ram": 3298840576,
+      "free_disk_bytes": 79653355520,
+      "api_rss": 834482176,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1834004480,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269620.2807229,
+      "available_ram": 3305021440,
+      "free_disk_bytes": 79653355520,
+      "api_rss": 835514368,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1827262464,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269621.3585417,
+      "available_ram": 3289989120,
+      "free_disk_bytes": 79653134336,
+      "api_rss": 836136960,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1866686464,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269622.4182155,
+      "available_ram": 3318087680,
+      "free_disk_bytes": 79652995072,
+      "api_rss": 836136960,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1899302912,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269623.489915,
+      "available_ram": 3319013376,
+      "free_disk_bytes": 79652990976,
+      "api_rss": 838029312,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1881157632,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269624.5519636,
+      "available_ram": 3257593856,
+      "free_disk_bytes": 79652982784,
+      "api_rss": 837005312,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1880940544,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269625.6242218,
+      "available_ram": 3270832128,
+      "free_disk_bytes": 79652835328,
+      "api_rss": 838295552,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1885110272,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269626.6905966,
+      "available_ram": 3273957376,
+      "free_disk_bytes": 79653732352,
+      "api_rss": 838303744,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1887391744,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269627.771461,
+      "available_ram": 3265720320,
+      "free_disk_bytes": 79653666816,
+      "api_rss": 838647808,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1913475072,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269628.834244,
+      "available_ram": 3320434688,
+      "free_disk_bytes": 79653535744,
+      "api_rss": 839077888,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1899261952,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269629.9172125,
+      "available_ram": 3097255936,
+      "free_disk_bytes": 79653535744,
+      "api_rss": 839081984,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1969934336,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269631.0214052,
+      "available_ram": 2721144832,
+      "free_disk_bytes": 79652806656,
+      "api_rss": 839180288,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2260045824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269632.1069794,
+      "available_ram": 2822692864,
+      "free_disk_bytes": 79652806656,
+      "api_rss": 839184384,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2273910784,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269633.1839178,
+      "available_ram": 2831589376,
+      "free_disk_bytes": 79652806656,
+      "api_rss": 839192576,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2261377024,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269634.2497866,
+      "available_ram": 2830090240,
+      "free_disk_bytes": 79652806656,
+      "api_rss": 839196672,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2271539200,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269635.335703,
+      "available_ram": 2815930368,
+      "free_disk_bytes": 79652868096,
+      "api_rss": 839274496,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2277244928,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269636.4033635,
+      "available_ram": 2798125056,
+      "free_disk_bytes": 79652868096,
+      "api_rss": 839712768,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2270765056,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269637.477612,
+      "available_ram": 2808999936,
+      "free_disk_bytes": 79652704256,
+      "api_rss": 839888896,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2269913088,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269638.546343,
+      "available_ram": 2809184256,
+      "free_disk_bytes": 79631765504,
+      "api_rss": 840048640,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2265169920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269639.645141,
+      "available_ram": 2788638720,
+      "free_disk_bytes": 79607361536,
+      "api_rss": 840048640,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2257764352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269640.7156358,
+      "available_ram": 2909122560,
+      "free_disk_bytes": 79601262592,
+      "api_rss": 840040448,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2167754752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269641.7822366,
+      "available_ram": 3050340352,
+      "free_disk_bytes": 79601229824,
+      "api_rss": 782258176,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2070626304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269642.852817,
+      "available_ram": 3011260416,
+      "free_disk_bytes": 79600705536,
+      "api_rss": 823054336,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2070720512,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269643.984327,
+      "available_ram": 3141263360,
+      "free_disk_bytes": 79600705536,
+      "api_rss": 823054336,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1922846720,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269645.1286354,
+      "available_ram": 3224289280,
+      "free_disk_bytes": 79606951936,
+      "api_rss": 806395904,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1991737344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269646.3230054,
+      "available_ram": 2825338880,
+      "free_disk_bytes": 79606960128,
+      "api_rss": 997912576,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2030260224,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269647.4597633,
+      "available_ram": 2863976448,
+      "free_disk_bytes": 79606927360,
+      "api_rss": 1000833024,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2015051776,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269648.55335,
+      "available_ram": 2873724928,
+      "free_disk_bytes": 79606927360,
+      "api_rss": 999956480,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2002243584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269649.6314433,
+      "available_ram": 2885369856,
+      "free_disk_bytes": 79606894592,
+      "api_rss": 1000210432,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2001707008,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269650.6995356,
+      "available_ram": 2903990272,
+      "free_disk_bytes": 79606927360,
+      "api_rss": 1000411136,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1983209472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269651.7751696,
+      "available_ram": 2902085632,
+      "free_disk_bytes": 79606927360,
+      "api_rss": 1001537536,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1983586304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269652.8455703,
+      "available_ram": 2891194368,
+      "free_disk_bytes": 79606403072,
+      "api_rss": 1003380736,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1982431232,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269653.9141526,
+      "available_ram": 2923212800,
+      "free_disk_bytes": 79606403072,
+      "api_rss": 1001807872,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1966501888,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269654.9860551,
+      "available_ram": 2943447040,
+      "free_disk_bytes": 79606403072,
+      "api_rss": 1001844736,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1956970496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269656.0595274,
+      "available_ram": 2899775488,
+      "free_disk_bytes": 79606403072,
+      "api_rss": 1002962944,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2030309376,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269657.18735,
+      "available_ram": 2832912384,
+      "free_disk_bytes": 79606370304,
+      "api_rss": 1004007424,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2011758592,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269658.303302,
+      "available_ram": 2830766080,
+      "free_disk_bytes": 79606370304,
+      "api_rss": 1001922560,
+      "ollama_rss": 41869312,
+      "chrome_rss": 2002055168,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269659.4180534,
+      "available_ram": 2853392384,
+      "free_disk_bytes": 79606366208,
+      "api_rss": 1010954240,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1981104128,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269660.4927506,
+      "available_ram": 2891481088,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1011412992,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1925906432,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269661.5666156,
+      "available_ram": 2885365760,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1011851264,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1934729216,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269662.6390314,
+      "available_ram": 2894073856,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1012191232,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1876017152,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269663.7053514,
+      "available_ram": 2901835776,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1013604352,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1836843008,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269664.7734935,
+      "available_ram": 2931568640,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1015226368,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1832988672,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269665.8391552,
+      "available_ram": 2934185984,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1016786944,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1840513024,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269666.912203,
+      "available_ram": 3003224064,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1018486784,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1774628864,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269668.0126028,
+      "available_ram": 2994814976,
+      "free_disk_bytes": 79606378496,
+      "api_rss": 1020338176,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1764966400,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269669.0780423,
+      "available_ram": 2981629952,
+      "free_disk_bytes": 79606370304,
+      "api_rss": 1044439040,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1762639872,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269670.1434152,
+      "available_ram": 2845282304,
+      "free_disk_bytes": 79606337536,
+      "api_rss": 1138884608,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1800511488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269671.2202945,
+      "available_ram": 3102556160,
+      "free_disk_bytes": 79606337536,
+      "api_rss": 830242816,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1765748736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269672.2915711,
+      "available_ram": 3070939136,
+      "free_disk_bytes": 79606272000,
+      "api_rss": 807329792,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1876688896,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269673.361588,
+      "available_ram": 3044007936,
+      "free_disk_bytes": 79606272000,
+      "api_rss": 816447488,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1891823616,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269674.4318976,
+      "available_ram": 3069931520,
+      "free_disk_bytes": 79605747712,
+      "api_rss": 823595008,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1894862848,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269675.5393977,
+      "available_ram": 3080740864,
+      "free_disk_bytes": 79605383168,
+      "api_rss": 824463360,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1901350912,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269676.612599,
+      "available_ram": 3066552320,
+      "free_disk_bytes": 79605383168,
+      "api_rss": 828190720,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1907453952,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269677.6918452,
+      "available_ram": 3082489856,
+      "free_disk_bytes": 79605710848,
+      "api_rss": 831143936,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1878614016,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269678.7608285,
+      "available_ram": 3117686784,
+      "free_disk_bytes": 79605710848,
+      "api_rss": 810045440,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1879052288,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269679.8304741,
+      "available_ram": 3112333312,
+      "free_disk_bytes": 79605710848,
+      "api_rss": 814120960,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1882992640,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269680.9011981,
+      "available_ram": 3081302016,
+      "free_disk_bytes": 79605383168,
+      "api_rss": 823812096,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1881853952,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269681.9737432,
+      "available_ram": 3083010048,
+      "free_disk_bytes": 79605383168,
+      "api_rss": 830705664,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1882431488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269683.0550063,
+      "available_ram": 3071909888,
+      "free_disk_bytes": 79605383168,
+      "api_rss": 834441216,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1893376000,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269684.1296465,
+      "available_ram": 3060834304,
+      "free_disk_bytes": 79605379072,
+      "api_rss": 835571712,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1903976448,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269685.200708,
+      "available_ram": 3060248576,
+      "free_disk_bytes": 79605379072,
+      "api_rss": 839487488,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1893437440,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269686.2723498,
+      "available_ram": 3083284480,
+      "free_disk_bytes": 79613767680,
+      "api_rss": 841732096,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1818238976,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269687.3585093,
+      "available_ram": 3126534144,
+      "free_disk_bytes": 79613702144,
+      "api_rss": 842530816,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1728008192,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269688.4211905,
+      "available_ram": 3132751872,
+      "free_disk_bytes": 79613702144,
+      "api_rss": 843960320,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1717972992,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269689.492016,
+      "available_ram": 3116879872,
+      "free_disk_bytes": 79613698048,
+      "api_rss": 844328960,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1723748352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269690.5544205,
+      "available_ram": 3129634816,
+      "free_disk_bytes": 79613698048,
+      "api_rss": 844963840,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1721761792,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269691.6240337,
+      "available_ram": 3121885184,
+      "free_disk_bytes": 79613698048,
+      "api_rss": 849612800,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1722052608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269692.6846035,
+      "available_ram": 3116683264,
+      "free_disk_bytes": 79613698048,
+      "api_rss": 847278080,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1724420096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269693.7512076,
+      "available_ram": 3107794944,
+      "free_disk_bytes": 79613698048,
+      "api_rss": 848195584,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1741451264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269694.8246417,
+      "available_ram": 3099205632,
+      "free_disk_bytes": 79613698048,
+      "api_rss": 849289216,
+      "ollama_rss": 41869312,
+      "chrome_rss": 1747652608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269695.8928013,
+      "available_ram": 3087437824,
+      "free_disk_bytes": 79613693952,
+      "api_rss": 848678912,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1742618624,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269696.9673538,
+      "available_ram": 3089567744,
+      "free_disk_bytes": 79613853696,
+      "api_rss": 848957440,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1745375232,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269698.0358517,
+      "available_ram": 3086864384,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 850022400,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1743278080,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269699.102253,
+      "available_ram": 3075858432,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 850911232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1745539072,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269700.170498,
+      "available_ram": 3090247680,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 850927616,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1743171584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269701.2460415,
+      "available_ram": 3091312640,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 850980864,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1741398016,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269702.3145225,
+      "available_ram": 3103842304,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 850984960,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1726521344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269703.3747828,
+      "available_ram": 3102748672,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 851075072,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1725726720,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269704.4394355,
+      "available_ram": 3113844736,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 851079168,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1717243904,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269705.5008514,
+      "available_ram": 3119837184,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 851349504,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1714679808,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269706.5741587,
+      "available_ram": 3122421760,
+      "free_disk_bytes": 79613329408,
+      "api_rss": 851775488,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1714282496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269707.6413426,
+      "available_ram": 3172360192,
+      "free_disk_bytes": 79613325312,
+      "api_rss": 795123712,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1719386112,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269708.7017791,
+      "available_ram": 3174322176,
+      "free_disk_bytes": 79613325312,
+      "api_rss": 795123712,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1716686848,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269709.7696874,
+      "available_ram": 3264471040,
+      "free_disk_bytes": 79612837888,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1715007488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269710.831232,
+      "available_ram": 3225866240,
+      "free_disk_bytes": 79612837888,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1728356352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269711.9454296,
+      "available_ram": 3214499840,
+      "free_disk_bytes": 79612837888,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1743015936,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269713.0187361,
+      "available_ram": 3224178688,
+      "free_disk_bytes": 79612837888,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1740943360,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269714.076459,
+      "available_ram": 3228454912,
+      "free_disk_bytes": 79612837888,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1740251136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269715.136121,
+      "available_ram": 3230851072,
+      "free_disk_bytes": 79612837888,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1741185024,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269716.1945722,
+      "available_ram": 3225595904,
+      "free_disk_bytes": 79612837888,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1749663744,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269717.2523825,
+      "available_ram": 3224158208,
+      "free_disk_bytes": 79612903424,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1751179264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269718.3150067,
+      "available_ram": 3228229632,
+      "free_disk_bytes": 79612903424,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1750278144,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269719.3761265,
+      "available_ram": 3226722304,
+      "free_disk_bytes": 79612903424,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1749331968,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269720.4331422,
+      "available_ram": 3229118464,
+      "free_disk_bytes": 79612903424,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1748500480,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269721.493116,
+      "available_ram": 3229880320,
+      "free_disk_bytes": 79612903424,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1745408000,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269722.5530984,
+      "available_ram": 3235979264,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1733332992,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269723.6193576,
+      "available_ram": 3234332672,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1732689920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269724.678685,
+      "available_ram": 3235971072,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1732702208,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269725.7413535,
+      "available_ram": 3245912064,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1722306560,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269726.8079119,
+      "available_ram": 3246587904,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1723682816,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269727.8714,
+      "available_ram": 3243454464,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1726795776,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269728.9342313,
+      "available_ram": 3240108032,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1734115328,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269730.012368,
+      "available_ram": 3241160704,
+      "free_disk_bytes": 79612895232,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1731268608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269731.081658,
+      "available_ram": 3236458496,
+      "free_disk_bytes": 79612895232,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1732046848,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269732.1438317,
+      "available_ram": 3235479552,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1734238208,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269733.2053988,
+      "available_ram": 3234291712,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1732890624,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269734.268956,
+      "available_ram": 3234971648,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1732788224,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269735.3266208,
+      "available_ram": 3225010176,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1748803584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269736.3867552,
+      "available_ram": 3230425088,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1754169344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269737.450678,
+      "available_ram": 3227762688,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1757437952,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269738.5153623,
+      "available_ram": 3235160064,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1749692416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269739.5762086,
+      "available_ram": 3235311616,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1751015424,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269740.6388905,
+      "available_ram": 3231670272,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1750749184,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269741.6980672,
+      "available_ram": 3230511104,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1751764992,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269742.7559018,
+      "available_ram": 3217661952,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1754734592,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269743.8221922,
+      "available_ram": 3228729344,
+      "free_disk_bytes": 79612891136,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1754775552,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269744.8862567,
+      "available_ram": 3229028352,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1754484736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269745.9459834,
+      "available_ram": 3229589504,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1750888448,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269747.00813,
+      "available_ram": 3223715840,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1750388736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269748.0635955,
+      "available_ram": 3224637440,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1759055872,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269749.1305559,
+      "available_ram": 3225878528,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1756196864,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269750.1931794,
+      "available_ram": 3226406912,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1755242496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269751.2542427,
+      "available_ram": 3225116672,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1755422720,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269752.3150878,
+      "available_ram": 3224371200,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1757585408,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269753.3810327,
+      "available_ram": 3218243584,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1763418112,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269754.445724,
+      "available_ram": 3219386368,
+      "free_disk_bytes": 79612887040,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1763008512,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269755.5110304,
+      "available_ram": 3217952768,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1763504128,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269756.5744998,
+      "available_ram": 3215441920,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1763897344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269757.6359417,
+      "available_ram": 3211673600,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1770180608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269758.702559,
+      "available_ram": 3209015296,
+      "free_disk_bytes": 79612817408,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1769570304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269759.7673423,
+      "available_ram": 3206987776,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1770041344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269760.8334248,
+      "available_ram": 3207561216,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1770201088,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269761.895297,
+      "available_ram": 3226374144,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1756196864,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269762.9591556,
+      "available_ram": 3213459456,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1760722944,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269764.0155072,
+      "available_ram": 3214041088,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1760034816,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269765.082199,
+      "available_ram": 3215638528,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1759248384,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269766.1498568,
+      "available_ram": 3218862080,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1756241920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269767.2191007,
+      "available_ram": 3213983744,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1767485440,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269768.2793956,
+      "available_ram": 3211767808,
+      "free_disk_bytes": 79612882944,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1766850560,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269769.3558598,
+      "available_ram": 3246702592,
+      "free_disk_bytes": 79612805120,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1648963584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269770.4351096,
+      "available_ram": 3322437632,
+      "free_disk_bytes": 79612772352,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1633423360,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269771.4906209,
+      "available_ram": 3313393664,
+      "free_disk_bytes": 79612706816,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1632878592,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269772.5629013,
+      "available_ram": 3315462144,
+      "free_disk_bytes": 79612706816,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1637683200,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269773.6239653,
+      "available_ram": 3303702528,
+      "free_disk_bytes": 79612706816,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1648226304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269774.7058077,
+      "available_ram": 3322982400,
+      "free_disk_bytes": 79612706816,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1668268032,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269775.7701006,
+      "available_ram": 3292192768,
+      "free_disk_bytes": 79612669952,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1668935680,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269776.8407488,
+      "available_ram": 3292823552,
+      "free_disk_bytes": 79612669952,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1669611520,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269777.9112186,
+      "available_ram": 3296006144,
+      "free_disk_bytes": 79612669952,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1670754304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269778.9731524,
+      "available_ram": 3298844672,
+      "free_disk_bytes": 79612669952,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1666654208,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269780.0380375,
+      "available_ram": 3300802560,
+      "free_disk_bytes": 79612665856,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1667530752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269781.097183,
+      "available_ram": 3294744576,
+      "free_disk_bytes": 79612665856,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1676910592,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269782.1678228,
+      "available_ram": 3293835264,
+      "free_disk_bytes": 79612665856,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1676476416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269783.229384,
+      "available_ram": 3296796672,
+      "free_disk_bytes": 79612665856,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1677651968,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269784.2996454,
+      "available_ram": 3292921856,
+      "free_disk_bytes": 79612665856,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1678249984,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269785.3600018,
+      "available_ram": 3292516352,
+      "free_disk_bytes": 79611617280,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1677189120,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269786.423126,
+      "available_ram": 3286724608,
+      "free_disk_bytes": 79611617280,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1681252352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269787.482058,
+      "available_ram": 3288014848,
+      "free_disk_bytes": 79611617280,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1685671936,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269788.5428114,
+      "available_ram": 3284910080,
+      "free_disk_bytes": 79611617280,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1685880832,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269789.612657,
+      "available_ram": 3286822912,
+      "free_disk_bytes": 79611428864,
+      "api_rss": 795615232,
+      "ollama_rss": 40321024,
+      "chrome_rss": 1683988480,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269790.6715968,
+      "available_ram": 3320373248,
+      "free_disk_bytes": 79611428864,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1624412160,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269791.7469983,
+      "available_ram": 3266584576,
+      "free_disk_bytes": 79611265024,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1641095168,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269792.8252504,
+      "available_ram": 3336421376,
+      "free_disk_bytes": 79611265024,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1650167808,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269793.8912897,
+      "available_ram": 3384209408,
+      "free_disk_bytes": 79611265024,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1650135040,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269794.9566507,
+      "available_ram": 3381764096,
+      "free_disk_bytes": 79611265024,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1651240960,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269796.0275745,
+      "available_ram": 3424800768,
+      "free_disk_bytes": 79611105280,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1651810304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269797.088501,
+      "available_ram": 3424792576,
+      "free_disk_bytes": 79611105280,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1651519488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269798.1425767,
+      "available_ram": 3422060544,
+      "free_disk_bytes": 79611105280,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1656565760,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269799.2137692,
+      "available_ram": 3359633408,
+      "free_disk_bytes": 79611105280,
+      "api_rss": 795615232,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1657323520,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269800.281642,
+      "available_ram": 3341344768,
+      "free_disk_bytes": 79611105280,
+      "api_rss": 801628160,
+      "ollama_rss": 40148992,
+      "chrome_rss": 1676881920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269801.349386,
+      "available_ram": 3290959872,
+      "free_disk_bytes": 79611002880,
+      "api_rss": 840216576,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1698537472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269802.490364,
+      "available_ram": 2722852864,
+      "free_disk_bytes": 79610966016,
+      "api_rss": 840228864,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1770024960,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269804.0952766,
+      "available_ram": 3873824768,
+      "free_disk_bytes": 79610998784,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1758507008,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269805.260117,
+      "available_ram": 3958607872,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1754836992,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269806.3335905,
+      "available_ram": 3983163392,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1761673216,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269807.4255972,
+      "available_ram": 3969261568,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1762574336,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269808.504562,
+      "available_ram": 3977105408,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1761185792,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269809.577432,
+      "available_ram": 3936468992,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1759944704,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269810.6475573,
+      "available_ram": 3887337472,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1787162624,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269811.7572293,
+      "available_ram": 3866046464,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1744707584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269812.8203013,
+      "available_ram": 4020326400,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 0,
+      "ollama_rss": 40271872,
+      "chrome_rss": 1744994304,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269813.887828,
+      "available_ram": 3996577792,
+      "free_disk_bytes": 79611047936,
+      "api_rss": 0,
+      "ollama_rss": 40501248,
+      "chrome_rss": 1741402112,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269814.9631424,
+      "available_ram": 3901825024,
+      "free_disk_bytes": 79611047936,
+      "api_rss": 0,
+      "ollama_rss": 40501248,
+      "chrome_rss": 1740759040,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269816.0397866,
+      "available_ram": 3782369280,
+      "free_disk_bytes": 79611043840,
+      "api_rss": 0,
+      "ollama_rss": 40501248,
+      "chrome_rss": 1738301440,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269817.1133585,
+      "available_ram": 3550523392,
+      "free_disk_bytes": 79611039744,
+      "api_rss": 0,
+      "ollama_rss": 40501248,
+      "chrome_rss": 1737289728,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269818.261013,
+      "available_ram": 3474128896,
+      "free_disk_bytes": 79611039744,
+      "api_rss": 480514048,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1749393408,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269819.34991,
+      "available_ram": 3450851328,
+      "free_disk_bytes": 79611006976,
+      "api_rss": 491675648,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1727520768,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269820.5236695,
+      "available_ram": 3379245056,
+      "free_disk_bytes": 79610494976,
+      "api_rss": 496484352,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1718243328,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269821.6181662,
+      "available_ram": 3366928384,
+      "free_disk_bytes": 79610445824,
+      "api_rss": 518799360,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1717522432,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269822.7346926,
+      "available_ram": 3423170560,
+      "free_disk_bytes": 79610527744,
+      "api_rss": 544698368,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1723011072,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269823.8350945,
+      "available_ram": 3344510976,
+      "free_disk_bytes": 79610527744,
+      "api_rss": 616898560,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1731792896,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269824.9323676,
+      "available_ram": 3389759488,
+      "free_disk_bytes": 79610527744,
+      "api_rss": 663531520,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1732100096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269826.00379,
+      "available_ram": 3344248832,
+      "free_disk_bytes": 79610494976,
+      "api_rss": 718290944,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1730822144,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269827.0697887,
+      "available_ram": 3278696448,
+      "free_disk_bytes": 79610638336,
+      "api_rss": 788946944,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1731100672,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269828.1323073,
+      "available_ram": 3206500352,
+      "free_disk_bytes": 79610638336,
+      "api_rss": 835936256,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1733226496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269829.206461,
+      "available_ram": 3200499712,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 871510016,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1732149248,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269830.3472354,
+      "available_ram": 3149082624,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 903987200,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1740234752,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269831.4434092,
+      "available_ram": 3104862208,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 939929600,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1739235328,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269832.5428174,
+      "available_ram": 3104215040,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 957202432,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1737007104,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269833.6069086,
+      "available_ram": 3142230016,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 957267968,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1736265728,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269834.6757543,
+      "available_ram": 3126108160,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 958095360,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1735704576,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269835.7521474,
+      "available_ram": 3129098240,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 959410176,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1735335936,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269836.8189306,
+      "available_ram": 3103715328,
+      "free_disk_bytes": 79610109952,
+      "api_rss": 960823296,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1755697152,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269837.939694,
+      "available_ram": 3049467904,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 962269184,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1739689984,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269839.0158758,
+      "available_ram": 3042795520,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 963567616,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1740615680,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269840.0861275,
+      "available_ram": 3042344960,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 965349376,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1730940928,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269841.1792963,
+      "available_ram": 3021787136,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 967499776,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1738735616,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269842.2546961,
+      "available_ram": 3037503488,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 969486336,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1737338880,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269843.32379,
+      "available_ram": 2925920256,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 1083727872,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1739382784,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269844.3902943,
+      "available_ram": 2921693184,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 1094893568,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1735692288,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269845.4594753,
+      "available_ram": 3264528384,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 745345024,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1734266880,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269846.525679,
+      "available_ram": 3265503232,
+      "free_disk_bytes": 79610036224,
+      "api_rss": 747507712,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1735008256,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269847.5943315,
+      "available_ram": 3157262336,
+      "free_disk_bytes": 79610032128,
+      "api_rss": 751554560,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1741545472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269848.672942,
+      "available_ram": 2986979328,
+      "free_disk_bytes": 79610032128,
+      "api_rss": 759287808,
+      "ollama_rss": 40767488,
+      "chrome_rss": 1739190272,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269849.7834725,
+      "available_ram": 2727038976,
+      "free_disk_bytes": 79605817344,
+      "api_rss": 760758272,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2179715072,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269850.920295,
+      "available_ram": 2603266048,
+      "free_disk_bytes": 79601500160,
+      "api_rss": 760860672,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2263998464,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269852.0056016,
+      "available_ram": 2610298880,
+      "free_disk_bytes": 79601389568,
+      "api_rss": 762994688,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2306744320,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269853.1007736,
+      "available_ram": 2607153152,
+      "free_disk_bytes": 79600951296,
+      "api_rss": 760901632,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2285092864,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269854.1749039,
+      "available_ram": 2598838272,
+      "free_disk_bytes": 79600943104,
+      "api_rss": 762667008,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2284040192,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269855.2432349,
+      "available_ram": 2602950656,
+      "free_disk_bytes": 79600943104,
+      "api_rss": 762392576,
+      "ollama_rss": 40751104,
+      "chrome_rss": 2284724224,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269856.309432,
+      "available_ram": 2609324032,
+      "free_disk_bytes": 79600414720,
+      "api_rss": 763764736,
+      "ollama_rss": 40751104,
+      "chrome_rss": 2269814784,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269857.3792114,
+      "available_ram": 2647683072,
+      "free_disk_bytes": 79600410624,
+      "api_rss": 768716800,
+      "ollama_rss": 40751104,
+      "chrome_rss": 2264875008,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269858.454053,
+      "available_ram": 2659594240,
+      "free_disk_bytes": 79600406528,
+      "api_rss": 771067904,
+      "ollama_rss": 40751104,
+      "chrome_rss": 2261737472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269859.5236971,
+      "available_ram": 2697662464,
+      "free_disk_bytes": 79600377856,
+      "api_rss": 771788800,
+      "ollama_rss": 40751104,
+      "chrome_rss": 2244796416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269860.5967417,
+      "available_ram": 2754940928,
+      "free_disk_bytes": 79600340992,
+      "api_rss": 771817472,
+      "ollama_rss": 40751104,
+      "chrome_rss": 2240614400,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269861.6753967,
+      "available_ram": 2766073856,
+      "free_disk_bytes": 79600340992,
+      "api_rss": 773677056,
+      "ollama_rss": 40751104,
+      "chrome_rss": 2234236928,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269862.75588,
+      "available_ram": 2761306112,
+      "free_disk_bytes": 79600332800,
+      "api_rss": 777236480,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2241310720,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269863.8231373,
+      "available_ram": 2734202880,
+      "free_disk_bytes": 79600271360,
+      "api_rss": 778063872,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2243395584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269864.890958,
+      "available_ram": 2764451840,
+      "free_disk_bytes": 79600267264,
+      "api_rss": 778711040,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2243178496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269865.9594817,
+      "available_ram": 2747928576,
+      "free_disk_bytes": 79600263168,
+      "api_rss": 778747904,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2238021632,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269867.0285997,
+      "available_ram": 2751700992,
+      "free_disk_bytes": 79600259072,
+      "api_rss": 778809344,
+      "ollama_rss": 40767488,
+      "chrome_rss": 2238382080,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269868.1010356,
+      "available_ram": 2763296768,
+      "free_disk_bytes": 79600254976,
+      "api_rss": 778813440,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2243710976,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269869.1672118,
+      "available_ram": 2759495680,
+      "free_disk_bytes": 79600254976,
+      "api_rss": 778817536,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2243547136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269870.240725,
+      "available_ram": 2764234752,
+      "free_disk_bytes": 79600246784,
+      "api_rss": 778829824,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2242977792,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269871.3102808,
+      "available_ram": 2768629760,
+      "free_disk_bytes": 79600246784,
+      "api_rss": 780103680,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2244628480,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269872.3914852,
+      "available_ram": 2794405888,
+      "free_disk_bytes": 79600242688,
+      "api_rss": 780722176,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2243715072,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269873.4627168,
+      "available_ram": 2783977472,
+      "free_disk_bytes": 79600238592,
+      "api_rss": 782159872,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2242883584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269874.534603,
+      "available_ram": 2783752192,
+      "free_disk_bytes": 79600238592,
+      "api_rss": 781008896,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2238623744,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269875.6036599,
+      "available_ram": 2782404608,
+      "free_disk_bytes": 79600234496,
+      "api_rss": 781119488,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2236985344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269876.6677296,
+      "available_ram": 2776674304,
+      "free_disk_bytes": 79600168960,
+      "api_rss": 781688832,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2241310720,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269877.7385514,
+      "available_ram": 2782650368,
+      "free_disk_bytes": 79600156672,
+      "api_rss": 781705216,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2240303104,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269878.8089907,
+      "available_ram": 2780098560,
+      "free_disk_bytes": 79600156672,
+      "api_rss": 781705216,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2248126464,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269879.8925748,
+      "available_ram": 2760839168,
+      "free_disk_bytes": 79600201728,
+      "api_rss": 781705216,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2279825408,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269880.9602647,
+      "available_ram": 2769346560,
+      "free_disk_bytes": 79600185344,
+      "api_rss": 781733888,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2251988992,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269882.027218,
+      "available_ram": 2772692992,
+      "free_disk_bytes": 79600181248,
+      "api_rss": 781742080,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2247249920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269883.0976949,
+      "available_ram": 2770137088,
+      "free_disk_bytes": 79604297728,
+      "api_rss": 782524416,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2249875456,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269884.172946,
+      "available_ram": 2767101952,
+      "free_disk_bytes": 79604293632,
+      "api_rss": 787193856,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2250706944,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269885.2452297,
+      "available_ram": 2772488192,
+      "free_disk_bytes": 79604289536,
+      "api_rss": 782524416,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2248736768,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269886.32113,
+      "available_ram": 2757189632,
+      "free_disk_bytes": 79604154368,
+      "api_rss": 782524416,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2250051584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269887.391726,
+      "available_ram": 2759831552,
+      "free_disk_bytes": 79604150272,
+      "api_rss": 787107840,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2250264576,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269888.460124,
+      "available_ram": 2785751040,
+      "free_disk_bytes": 79604146176,
+      "api_rss": 782524416,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2251304960,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269889.530705,
+      "available_ram": 2765307904,
+      "free_disk_bytes": 79604146176,
+      "api_rss": 782524416,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2253930496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269890.596866,
+      "available_ram": 2754859008,
+      "free_disk_bytes": 79604137984,
+      "api_rss": 782520320,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2249322496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269891.6669893,
+      "available_ram": 2761904128,
+      "free_disk_bytes": 79604137984,
+      "api_rss": 782520320,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2249650176,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269892.7452857,
+      "available_ram": 2764808192,
+      "free_disk_bytes": 79604133888,
+      "api_rss": 782389248,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2249867264,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269893.825174,
+      "available_ram": 2764836864,
+      "free_disk_bytes": 79604129792,
+      "api_rss": 783212544,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2250833920,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269894.8968155,
+      "available_ram": 2763378688,
+      "free_disk_bytes": 79604191232,
+      "api_rss": 783233024,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2249338880,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269895.9650376,
+      "available_ram": 2761105408,
+      "free_disk_bytes": 79604191232,
+      "api_rss": 783233024,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2252120064,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269897.0365353,
+      "available_ram": 2771124224,
+      "free_disk_bytes": 79604187136,
+      "api_rss": 783257600,
+      "ollama_rss": 41738240,
+      "chrome_rss": 2252320768,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269898.1017818,
+      "available_ram": 2773434368,
+      "free_disk_bytes": 79604187136,
+      "api_rss": 783257600,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2251907072,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269899.1718912,
+      "available_ram": 2806931456,
+      "free_disk_bytes": 79603658752,
+      "api_rss": 783261696,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2217312256,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269900.2395658,
+      "available_ram": 2783580160,
+      "free_disk_bytes": 79603589120,
+      "api_rss": 783257600,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2284265472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269901.3212707,
+      "available_ram": 2812030976,
+      "free_disk_bytes": 79603580928,
+      "api_rss": 783253504,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2282840064,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269902.3897834,
+      "available_ram": 2768064512,
+      "free_disk_bytes": 79603580928,
+      "api_rss": 783249408,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2389889024,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269903.4617512,
+      "available_ram": 2769686528,
+      "free_disk_bytes": 79603572736,
+      "api_rss": 783249408,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2384629760,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269904.5450783,
+      "available_ram": 2780520448,
+      "free_disk_bytes": 79603572736,
+      "api_rss": 783228928,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2384904192,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269905.626614,
+      "available_ram": 2768928768,
+      "free_disk_bytes": 79603568640,
+      "api_rss": 783220736,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2407014400,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269906.7043989,
+      "available_ram": 2772185088,
+      "free_disk_bytes": 79603560448,
+      "api_rss": 783237120,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2394714112,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269907.7966354,
+      "available_ram": 2767659008,
+      "free_disk_bytes": 79603560448,
+      "api_rss": 783237120,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2401284096,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269908.871391,
+      "available_ram": 2772021248,
+      "free_disk_bytes": 79603556352,
+      "api_rss": 784670720,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2403946496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269909.951672,
+      "available_ram": 2774151168,
+      "free_disk_bytes": 79603535872,
+      "api_rss": 783200256,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2397872128,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269911.0347672,
+      "available_ram": 2778656768,
+      "free_disk_bytes": 79603404800,
+      "api_rss": 785784832,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2396237824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269912.107837,
+      "available_ram": 2776326144,
+      "free_disk_bytes": 79603363840,
+      "api_rss": 745775104,
+      "ollama_rss": 41775104,
+      "chrome_rss": 2464575488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269913.1925304,
+      "available_ram": 2676035584,
+      "free_disk_bytes": 79600140288,
+      "api_rss": 775946240,
+      "ollama_rss": 42057728,
+      "chrome_rss": 2525949952,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269914.2811267,
+      "available_ram": 2649980928,
+      "free_disk_bytes": 79599820800,
+      "api_rss": 774815744,
+      "ollama_rss": 42057728,
+      "chrome_rss": 2533679104,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269915.4288905,
+      "available_ram": 2507952128,
+      "free_disk_bytes": 79588241408,
+      "api_rss": 777355264,
+      "ollama_rss": 42262528,
+      "chrome_rss": 2693939200,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269916.6075659,
+      "available_ram": 2483236864,
+      "free_disk_bytes": 79586426880,
+      "api_rss": 775315456,
+      "ollama_rss": 42266624,
+      "chrome_rss": 2750287872,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269917.6994116,
+      "available_ram": 2459934720,
+      "free_disk_bytes": 79584550912,
+      "api_rss": 776601600,
+      "ollama_rss": 42266624,
+      "chrome_rss": 2752745472,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269918.8048525,
+      "available_ram": 2377850880,
+      "free_disk_bytes": 79580807168,
+      "api_rss": 776667136,
+      "ollama_rss": 42332160,
+      "chrome_rss": 2830102528,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269919.9007368,
+      "available_ram": 2380648448,
+      "free_disk_bytes": 79580520448,
+      "api_rss": 776794112,
+      "ollama_rss": 42590208,
+      "chrome_rss": 2827616256,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269921.0743155,
+      "available_ram": 2168729600,
+      "free_disk_bytes": 79580196864,
+      "api_rss": 776806400,
+      "ollama_rss": 42590208,
+      "chrome_rss": 3027931136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269922.146794,
+      "available_ram": 2179076096,
+      "free_disk_bytes": 79577157632,
+      "api_rss": 776925184,
+      "ollama_rss": 42590208,
+      "chrome_rss": 2994929664,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269923.2514923,
+      "available_ram": 2253901824,
+      "free_disk_bytes": 79576047616,
+      "api_rss": 776929280,
+      "ollama_rss": 42606592,
+      "chrome_rss": 2862702592,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269924.3926299,
+      "available_ram": 2174238720,
+      "free_disk_bytes": 79572971520,
+      "api_rss": 777052160,
+      "ollama_rss": 42606592,
+      "chrome_rss": 2869751808,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269925.6088922,
+      "available_ram": 2239795200,
+      "free_disk_bytes": 79571820544,
+      "api_rss": 777076736,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2867306496,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269926.7145185,
+      "available_ram": 2283442176,
+      "free_disk_bytes": 79569088512,
+      "api_rss": 777125888,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2822082560,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269927.9391336,
+      "available_ram": 2251079680,
+      "free_disk_bytes": 79568113664,
+      "api_rss": 777162752,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2878005248,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269929.1198082,
+      "available_ram": 2271051776,
+      "free_disk_bytes": 79564312576,
+      "api_rss": 777162752,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2840817664,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269930.3070047,
+      "available_ram": 2278092800,
+      "free_disk_bytes": 79564148736,
+      "api_rss": 779784192,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2835529728,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269931.398229,
+      "available_ram": 2231521280,
+      "free_disk_bytes": 79564050432,
+      "api_rss": 777175040,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2541346816,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269932.4976022,
+      "available_ram": 2313240576,
+      "free_disk_bytes": 79561003008,
+      "api_rss": 777175040,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2766925824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269933.6379106,
+      "available_ram": 2282532864,
+      "free_disk_bytes": 79560552448,
+      "api_rss": 777175040,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2766888960,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269934.8158147,
+      "available_ram": 2282647552,
+      "free_disk_bytes": 79557591040,
+      "api_rss": 777179136,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2757074944,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269935.9518504,
+      "available_ram": 2279301120,
+      "free_disk_bytes": 79554269184,
+      "api_rss": 779042816,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2765500416,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269937.126322,
+      "available_ram": 2261155840,
+      "free_disk_bytes": 79553245184,
+      "api_rss": 777170944,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2782785536,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269938.3260355,
+      "available_ram": 2161557504,
+      "free_disk_bytes": 79542226944,
+      "api_rss": 777187328,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2866544640,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269939.445793,
+      "available_ram": 2099646464,
+      "free_disk_bytes": 79535775744,
+      "api_rss": 777441280,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2929090560,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269940.5534062,
+      "available_ram": 2120953856,
+      "free_disk_bytes": 79532994560,
+      "api_rss": 777187328,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2935865344,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269941.6357083,
+      "available_ram": 2112573440,
+      "free_disk_bytes": 79531024384,
+      "api_rss": 777187328,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2947964928,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269942.702171,
+      "available_ram": 2100940800,
+      "free_disk_bytes": 79528878080,
+      "api_rss": 777187328,
+      "ollama_rss": 42381312,
+      "chrome_rss": 2965221376,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269943.7795353,
+      "available_ram": 1995833344,
+      "free_disk_bytes": 79526707200,
+      "api_rss": 777187328,
+      "ollama_rss": 42381312,
+      "chrome_rss": 3075158016,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269944.850421,
+      "available_ram": 3159998464,
+      "free_disk_bytes": 79610347520,
+      "api_rss": 777187328,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1901899776,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269945.9135625,
+      "available_ram": 3144224768,
+      "free_disk_bytes": 79610347520,
+      "api_rss": 777179136,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1903149056,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269946.9785006,
+      "available_ram": 3168657408,
+      "free_disk_bytes": 79610347520,
+      "api_rss": 777179136,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1903812608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269948.0568523,
+      "available_ram": 3154149376,
+      "free_disk_bytes": 79610347520,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1902858240,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269949.122122,
+      "available_ram": 3201302528,
+      "free_disk_bytes": 79610347520,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1863258112,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269950.179588,
+      "available_ram": 3201019904,
+      "free_disk_bytes": 79610347520,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1862881280,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269951.2363703,
+      "available_ram": 3204931584,
+      "free_disk_bytes": 79610343424,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1863278592,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269952.301472,
+      "available_ram": 3235840000,
+      "free_disk_bytes": 79610343424,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1863282688,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269953.3607738,
+      "available_ram": 3358076928,
+      "free_disk_bytes": 79610343424,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1864343552,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269954.4188542,
+      "available_ram": 3334008832,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1864654848,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269955.4791262,
+      "available_ram": 3331022848,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1873674240,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269956.5667138,
+      "available_ram": 3332976640,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1872859136,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269957.623634,
+      "available_ram": 3331268608,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42381312,
+      "chrome_rss": 1865072640,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269958.6870096,
+      "available_ram": 3300364288,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1869004800,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269959.7477634,
+      "available_ram": 3309580288,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1868525568,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269960.8106828,
+      "available_ram": 3323809792,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1855598592,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269961.8685372,
+      "available_ram": 3327266816,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1851944960,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269962.939427,
+      "available_ram": 3332034560,
+      "free_disk_bytes": 79610355712,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1791844352,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269964.0006049,
+      "available_ram": 3332608000,
+      "free_disk_bytes": 79610421248,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1790902272,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269965.0576756,
+      "available_ram": 3318169600,
+      "free_disk_bytes": 79610421248,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1792372736,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269966.1142225,
+      "available_ram": 3220742144,
+      "free_disk_bytes": 79610421248,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1827835904,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269967.2443721,
+      "available_ram": 3264049152,
+      "free_disk_bytes": 79610421248,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1835327488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269968.3220372,
+      "available_ram": 3486265344,
+      "free_disk_bytes": 79609917440,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1808703488,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269969.4637835,
+      "available_ram": 3027623936,
+      "free_disk_bytes": 79613751296,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2118705152,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269970.5293672,
+      "available_ram": 3081375744,
+      "free_disk_bytes": 79613521920,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2129166336,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269971.5951633,
+      "available_ram": 3074154496,
+      "free_disk_bytes": 79613521920,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2142461952,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269972.6488726,
+      "available_ram": 3087228928,
+      "free_disk_bytes": 79613521920,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2143498240,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269973.7120802,
+      "available_ram": 3008720896,
+      "free_disk_bytes": 79613448192,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2161082368,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269974.807639,
+      "available_ram": 3007545344,
+      "free_disk_bytes": 79613444096,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2178240512,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269975.8690584,
+      "available_ram": 3016622080,
+      "free_disk_bytes": 79613444096,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2170552320,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269976.930361,
+      "available_ram": 3025076224,
+      "free_disk_bytes": 79613378560,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2169769984,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269978.0000021,
+      "available_ram": 3027406848,
+      "free_disk_bytes": 79613509632,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2165301248,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269979.0625339,
+      "available_ram": 3060383744,
+      "free_disk_bytes": 79613509632,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2060685312,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269980.1231534,
+      "available_ram": 3177906176,
+      "free_disk_bytes": 79613509632,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 2000195584,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269981.1799269,
+      "available_ram": 3228168192,
+      "free_disk_bytes": 79613509632,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1953792000,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269982.2457137,
+      "available_ram": 3339866112,
+      "free_disk_bytes": 79613509632,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1841967104,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269983.3156357,
+      "available_ram": 3381510144,
+      "free_disk_bytes": 79613444096,
+      "api_rss": 777146368,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1825476608,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269984.3885114,
+      "available_ram": 3307728896,
+      "free_disk_bytes": 79613411328,
+      "api_rss": 785985536,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1828208640,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269985.4587946,
+      "available_ram": 3306110976,
+      "free_disk_bytes": 79613366272,
+      "api_rss": 777961472,
+      "ollama_rss": 42717184,
+      "chrome_rss": 1822208000,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269986.570824,
+      "available_ram": 3336663040,
+      "free_disk_bytes": 79613399040,
+      "api_rss": 777961472,
+      "ollama_rss": 42684416,
+      "chrome_rss": 1765208064,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269987.6700163,
+      "available_ram": 3356622848,
+      "free_disk_bytes": 79612841984,
+      "api_rss": 777961472,
+      "ollama_rss": 42729472,
+      "chrome_rss": 1681154048,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269988.766596,
+      "available_ram": 3310735360,
+      "free_disk_bytes": 79612776448,
+      "api_rss": 782180352,
+      "ollama_rss": 42737664,
+      "chrome_rss": 1775345664,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269989.9701583,
+      "available_ram": 3230830592,
+      "free_disk_bytes": 79612592128,
+      "api_rss": 779010048,
+      "ollama_rss": 42835968,
+      "chrome_rss": 1751117824,
+      "tesseract_rss": 0
+    },
+    {
+      "time": 1793269991.1288168,
+      "available_ram": 3160743936,
+      "free_disk_bytes": 79612592128,
+      "api_rss": 777953280,
+      "ollama_rss": 42835968,
+      "chrome_rss": 1798373376,
+      "tesseract_rss": 0
+    }
+  ]
+}

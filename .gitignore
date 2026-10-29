@@ -16,6 +16,8 @@ tmp/react-*.txt
 tmp/search-v2*/
 tmp/search-v3/
 tmp/search-v3r/
+tmp/search-v3r2/
+docs/search_v3r2/*.progress.jsonl
 tools/tessdata-v3r/
 tmp/studio-runtime/
 .streamlit/secrets.toml

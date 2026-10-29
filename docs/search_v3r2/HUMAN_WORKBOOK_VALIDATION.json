@@ -1,0 +1,8 @@
+{
+  "status": "PASS_EXPORTED_STRUCTURE_AND_ARTIFACT_ENGINE",
+  "blank_human_cells": 104,
+  "completion_formulas": 26,
+  "decision_validation": "<ns0:dataValidations xmlns:ns0=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" count=\"1\"><ns0:dataValidation type=\"list\" sqref=\"B6:B31\"><ns0:formula1>\"ĐÚNG,SAI,CHƯA RÕ\"</ns0:formula1></ns0:dataValidation></ns0:dataValidations>",
+  "native_excel_execution": "NOT_TESTED",
+  "source_images_all_exist": true
+}

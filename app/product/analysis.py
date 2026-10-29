@@ -27,7 +27,10 @@ SCALES={'VND':Decimal(1),'NGHIN_VND':Decimal(1000),'TRIEU_VND':Decimal(1000000),
 def parse_number(text, convention):
     text=text.strip().replace('−','-')
     negative=text.startswith('(') and text.endswith(')')
-    text=text.strip('()')
+    if ('(' in text or ')' in text) and not negative:raise ValueError('NUMERIC_FORMAT_AMBIGUOUS')
+    if negative:
+        text=text[1:-1]
+        if text.startswith(('+','-')):raise ValueError('NUMERIC_FORMAT_AMBIGUOUS')
     if not re.fullmatch(r'[+-]?\d[\d.,]*',text):
         raise ValueError('NUMERIC_FORMAT_AMBIGUOUS')
     group,decimal=('.',',') if convention=='vi_VN' else (',','.')
@@ -63,6 +66,13 @@ def review_fact(workspace,document_id,request:FactReview):
     row=next((x for x in page['tables'] if x['id']==request.row_id),None)
     if row is None or request.column_index>=len(row['cells']):
         raise ValueError('SOURCE_CELL_NOT_FOUND')
+    if 'header_word_candidates' in row:
+        from app.product.source_units import cell_unit
+        selected_unit=cell_unit(row['cells'][request.column_index],row['header_word_candidates'],page['text'][:1600])
+        if not selected_unit.get('unit'):raise ValueError('SOURCE_UNIT_COLUMN_AMBIGUOUS')
+        if selected_unit['unit']!=request.unit:
+            requested_currency='USD' if 'USD' in request.unit else 'VND'
+            raise ValueError('SOURCE_UNIT_SCALE_MISMATCH' if selected_unit.get('currency')==requested_currency else 'SOURCE_CURRENCY_MISMATCH')
     label=folded(row['row_label']);context=folded(page['text'])
     if not any(alias in label for alias in METRICS[request.metric]):
         raise ValueError('SOURCE_METRIC_MISMATCH')
@@ -73,6 +83,15 @@ def review_fact(workspace,document_id,request:FactReview):
     unit_words={'VND':['vnd','dong'],'NGHIN_VND':['nghin dong'],'TRIEU_VND':['trieu dong'],
                 'TY_VND':['ty dong'],'USD':['usd'],'MILLION_USD':['million','millions']}
     header_context=folded(page['text'][:1600])
+    # Explicit English scales must not be accepted as an unscaled currency.
+    from app.product.source_units import units_in
+    explicit=units_in(header_context)
+    requested_currency='USD' if 'USD' in request.unit else 'VND'
+    currency_units={u['unit'] for u in explicit if u['currency']==requested_currency}
+    if currency_units and request.unit not in currency_units:raise ValueError('SOURCE_UNIT_SCALE_MISMATCH')
+    if len(currency_units)>1:raise ValueError('SOURCE_UNIT_COLUMN_AMBIGUOUS')
+    if request.unit=='TRIEU_VND':unit_words['TRIEU_VND']+=['vnd million','million vnd','trieu vnd']
+    if request.unit=='NGHIN_VND':unit_words['NGHIN_VND']+=['vnd thousand','thousand vnd','nghin vnd']
     if not any(word in header_context for word in unit_words[request.unit]):
         raise ValueError('SOURCE_UNIT_MISSING')
     scales={unit for unit,words in unit_words.items() if unit in {'NGHIN_VND','TRIEU_VND','TY_VND'}

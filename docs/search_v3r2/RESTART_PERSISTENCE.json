@@ -1,0 +1,1182 @@
+{
+  "status": "PASS",
+  "wait_to_ready_ms": 77991.99849999968,
+  "documents": {
+    "documents": [
+      {
+        "id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "filename": "ACB.pdf",
+        "sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "issuer": "Asia Commercial Bank ACB",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "size_bytes": 9688887,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 78,
+        "chunks": 270,
+        "created_at": "2026-10-29T08:51:08.663670+00:00",
+        "updated_at": "2026-10-29T08:51:49.335865+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 2859,
+        "regions_processed": 10,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "id": "3dd381d161b321a9af4f3dd5b8394485",
+        "filename": "PNJ.pdf",
+        "sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "issuer": "Phu Nhuan Jewelry PNJ",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2025-12-31",
+        "size_bytes": 6575838,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 28,
+        "chunks": 90,
+        "created_at": "2026-10-29T08:45:04.529927+00:00",
+        "updated_at": "2026-10-29T08:48:31.130661+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COMPLETE",
+        "coverage_warnings": [],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 1295,
+        "regions_processed": 28,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "340bfb6d75626ebb8334882aa0632d6d00deac33182c24e9d044fe6d82d67aea"
+      },
+      {
+        "id": "0991f170e8d358d9b09f851c49894d22",
+        "filename": "SEM.pdf",
+        "sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+        "issuer": "Samsung Electro-Mechanics",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "size_bytes": 1796363,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 88,
+        "chunks": 367,
+        "created_at": "2026-10-29T06:04:23.653775+00:00",
+        "updated_at": "2026-10-29T06:05:37.364719+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COMPLETE",
+        "coverage_warnings": [],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 4799,
+        "regions_processed": 10,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "2375c335f68c5a8d04ddcce6c5fc39c65e28a6fc9ecf9829c88cb3661056cb7a"
+      },
+      {
+        "id": "00499ce748dfd085f220339508cd56bb",
+        "filename": "REE.pdf",
+        "sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+        "issuer": "REE Corporation",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "size_bytes": 5256449,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 36,
+        "chunks": 129,
+        "created_at": "2026-10-29T06:02:27.727137+00:00",
+        "updated_at": "2026-10-29T06:04:23.295700+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COMPLETE",
+        "coverage_warnings": [],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 1558,
+        "regions_processed": 36,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "426b46f0d17f8a28cdee289b92db42d7a118dd12e1122c772d410e8b855c8e40"
+      },
+      {
+        "id": "7c0b31d9926fc3ce6a932abd2e52bf80",
+        "filename": "SAMSUNG.pdf",
+        "sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+        "issuer": "Samsung Electronics",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2024-12-31",
+        "size_bytes": 1558200,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 88,
+        "chunks": 305,
+        "created_at": "2026-10-29T06:02:00.987126+00:00",
+        "updated_at": "2026-10-29T06:02:26.620502+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "REGION_TEXT_COVERAGE_REMAINS_UNCERTAIN"
+        ],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 4742,
+        "regions_processed": 3,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "81910057ca7ee14d2f6891349b20b1a7911bed7ec207366c9390bb24b475ec78"
+      },
+      {
+        "id": "9b76dc9f61b4d0be5923e74f726306cf",
+        "filename": "FOX.pdf",
+        "sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+        "issuer": "FPT Telecom",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "size_bytes": 11495165,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 36,
+        "chunks": 113,
+        "created_at": "2026-10-29T06:01:37.102410+00:00",
+        "updated_at": "2026-10-29T06:02:00.742208+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COMPLETE",
+        "coverage_warnings": [],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 1148,
+        "regions_processed": 36,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "1fd6bf41ae587327d78d9474848f3197f7eb23e772fc3d516313ce869ffbdf5f"
+      },
+      {
+        "id": "cd837d9dfbd725a716238c9a9f95c0e6",
+        "filename": "CEO_2025_consolidated.pdf",
+        "sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+        "issuer": "CEO Group",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "size_bytes": 10922791,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 29,
+        "chunks": 117,
+        "created_at": "2026-10-29T06:01:02.356709+00:00",
+        "updated_at": "2026-10-29T06:01:36.940145+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "REGION_TEXT_COVERAGE_REMAINS_UNCERTAIN"
+        ],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 550,
+        "regions_processed": 87,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "9ed316da5c627d454e8ce5faea40af93078b60d17bfdc068ed33156c3b5efe76"
+      },
+      {
+        "id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+        "sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "issuer": "BIDV",
+        "document_type": "Báo cáo tài chính riêng",
+        "report_period": "2024-12-31",
+        "size_bytes": 1760974,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 8,
+        "chunks": 23,
+        "created_at": "2026-10-29T06:00:58.439276+00:00",
+        "updated_at": "2026-10-29T06:01:02.218901+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COMPLETE",
+        "coverage_warnings": [],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 479,
+        "regions_processed": 6,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "b9add7e4acb8ab58a29933f4ec5b2cbdfc382740ccedc609e3b8bbb7568c8e01"
+      },
+      {
+        "id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "issuer": "Công ty mẹ Hòa Phát",
+        "document_type": "Báo cáo tài chính riêng",
+        "report_period": "2025-12-31",
+        "size_bytes": 4897389,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 24,
+        "chunks": 64,
+        "created_at": "2026-10-29T06:00:38.539160+00:00",
+        "updated_at": "2026-10-29T06:00:58.185756+00:00",
+        "processing_status": "PROCESSING_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COMPLETE",
+        "coverage_warnings": [],
+        "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+        "candidate_cells": 808,
+        "regions_processed": 24,
+        "extraction_profile": "studio-region-evidence-v3r.1",
+        "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+        "derived_generation": "2b0e30efcc54dd849aac7804fb1722d1bbdf8b052ad6966958c1862f1e44057e"
+      }
+    ]
+  },
+  "raw_hashes": {
+    "4279e4856d41db46abcffd38a7cbf4ea": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+    "3dd381d161b321a9af4f3dd5b8394485": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+    "0991f170e8d358d9b09f851c49894d22": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+    "00499ce748dfd085f220339508cd56bb": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+    "7c0b31d9926fc3ce6a932abd2e52bf80": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+    "9b76dc9f61b4d0be5923e74f726306cf": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+    "cd837d9dfbd725a716238c9a9f95c0e6": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+    "2bed2b3c312c8149e6a2ff6ab80c694a": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+    "4a92af827aaf1e73e017544d0ff20d0d": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+  },
+  "reviewed_fact_count": 8,
+  "facts_identical": true,
+  "indexes_bytes_and_mtime_unchanged": {
+    "v3r2-product-index\\71ff65ee564d85ba62a6a5621dae98cfa1ae61c8d78861565e0b42e26d7edcf6.sqlite3": {
+      "sha256": "0b53d971065d695843d5e76bdcd1c25ed5047eff3402caae8faa17469dfebe80",
+      "mtime_ns": 1793269379011504700
+    },
+    "v3r2-product-index\\d1950ad223104d8f37ebb2d9a0ae9e3acb5dd61e1d0165157d7472e90bf80b5a.sqlite3": {
+      "sha256": "2f7a559c603dad6c63efa1b88f6181f02cdc73556004d77a2dd63976dfdad99a",
+      "mtime_ns": 1793268863966106300
+    },
+    "v3r2-product-index\\ed54db641c5b000f912de3209456cfb63168aeaf2eb538d59ef48c8adf8100dc.sqlite3": {
+      "sha256": "e8814d6f1952fc5b31c882b21c0b3839737918a672ea7fcf44730e07d23ce928",
+      "mtime_ns": 1793269639782468500
+    },
+    "v3r2-product-index\\source-records\\63a62496c2a4a71ff840790ea85f6aa5d868ef9b065e84ae5b2e922d2789f465.sqlite3": {
+      "sha256": "f6f882f07e9ae339c98e980a6ea071fb60b31dd71fe450ebfe21c0103ceb8808",
+      "mtime_ns": 1793269600732337100
+    },
+    "v3r2-product-index\\source-records\\b72ee809d3329ee8479846da9f50002e2bddca80de899a517697e48634a14615.sqlite3": {
+      "sha256": "75dbecbf3fa0da53c6e0d87c8fe36838f48819565be3e8f2a3d331243d97140c",
+      "mtime_ns": 1793268797421559700
+    }
+  },
+  "preparation_before": {
+    "status": "READY",
+    "generation": "71ff65ee564d85ba62a6a5621dae98cfa1ae61c8d78861565e0b42e26d7edcf6",
+    "prepare_ms": 62892.19,
+    "cache": {
+      "builds": 3,
+      "entries": 7180,
+      "max_entries": 30000,
+      "max_index_bytes": 201326592,
+      "retained_page_views": 0,
+      "retained_source_entries": 0
+    },
+    "profile": "production_v3r2"
+  },
+  "preparation_after": {
+    "status": "READY",
+    "generation": "71ff65ee564d85ba62a6a5621dae98cfa1ae61c8d78861565e0b42e26d7edcf6",
+    "prepare_ms": 95083.35,
+    "cache": {
+      "builds": 1,
+      "entries": 7180,
+      "max_entries": 30000,
+      "max_index_bytes": 201326592,
+      "retained_page_views": 0,
+      "retained_source_entries": 0
+    },
+    "profile": "production_v3r2"
+  },
+  "query_before": {
+    "status": "READY",
+    "generation": "ed9e164a6d67c7a7b7000d9c22f1733207c44779af7cfb65ac4bf72d6a55dd03",
+    "source_generations": [
+      [
+        "PDF",
+        "813358280448858234eb8e3e0493bfdc9e63c31159dc8aa5c12c2504e2e2cd2a"
+      ]
+    ],
+    "results": [
+      {
+        "text": "XIII Pro t after tax | 13,688,193 | 9,602,746",
+        "rank": 1,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 10,
+        "score": 37,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_10_00026",
+        "evidence_id": "row:4279e4856d41db46abcffd38a7cbf4ea:p10-native-r22",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": "p10-native-r22",
+        "row_label": "XIII Pro t after tax",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "INCOME_STATEMENT",
+        "unit_header": "TRIEU_VND",
+        "box": [
+          81.49617767333984,
+          535.6875,
+          539.3311767578125,
+          545.509521484375
+        ],
+        "page_evidence_sha256": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "source_label_candidate": "XIII profit after tax",
+        "label_normalization": {
+          "raw": "XIII Pro t after tax",
+          "retrieval_candidate": "XIII profit after tax",
+          "raw_changed": false,
+          "policy": "CONTROLLED_RETRIEVAL_CANDIDATE_NOT_CERTIFIED_SOURCE_TEXT"
+        },
+        "source_cells": [
+          {
+            "blank": false,
+            "box": [
+              409.9849853515625,
+              535.6875,
+              457.3355712890625,
+              545.509521484375
+            ],
+            "column_index": 0,
+            "column_right_anchor": 457.50900003184444,
+            "confidence": null,
+            "currency_candidate": {
+              "box": [
+                414.49334716796875,
+                144.1772918701172,
+                432.1533203125,
+                153.01678466796875
+              ],
+              "confidence": null,
+              "text": "VND",
+              "unit": "VND"
+            },
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "period_year_candidate": {
+              "box": [
+                438.4974060058594,
+                133.68296813964844,
+                457.447509765625,
+                142.5224609375
+              ],
+              "confidence": null,
+              "text": "2022"
+            },
+            "source": "NATIVE",
+            "text": "13,688,193",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+            "unit_evidence": {
+              "unit": "TRIEU_VND",
+              "currency": "VND",
+              "multiplier": "1000000",
+              "source_text": "VND million",
+              "status": "SOURCE_UNIT_CANDIDATE_NOT_REVIEWED",
+              "span": [
+                0,
+                11
+              ],
+              "box": [
+                414.49334716796875,
+                144.1772918701172,
+                457.2124328613281,
+                153.01678466796875
+              ],
+              "selection_basis": "SOURCE_HEADER_WORDS_COLUMN_GEOMETRY"
+            },
+            "numeric_syntax": {
+              "status": "VALID_SYNTAX_UNREVIEWED",
+              "valid_conventions": [
+                "en_US"
+              ],
+              "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING"
+            },
+            "source_header_reference": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3"
+          },
+          {
+            "blank": false,
+            "box": [
+              496.9803771972656,
+              535.6875,
+              539.3311767578125,
+              545.509521484375
+            ],
+            "column_index": 1,
+            "column_right_anchor": 539.1582906971807,
+            "confidence": null,
+            "currency_candidate": {
+              "box": [
+                496.4923400878906,
+                144.1772918701172,
+                513.8124389648438,
+                153.01678466796875
+              ],
+              "confidence": null,
+              "text": "VND",
+              "unit": "VND"
+            },
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "period_year_candidate": {
+              "box": [
+                520.496337890625,
+                133.68296813964844,
+                539.129638671875,
+                142.5224609375
+              ],
+              "confidence": null,
+              "text": "2021"
+            },
+            "source": "NATIVE",
+            "text": "9,602,746",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+            "unit_evidence": {
+              "unit": "TRIEU_VND",
+              "currency": "VND",
+              "multiplier": "1000000",
+              "source_text": "VND million",
+              "status": "SOURCE_UNIT_CANDIDATE_NOT_REVIEWED",
+              "span": [
+                0,
+                11
+              ],
+              "box": [
+                496.4923400878906,
+                144.1772918701172,
+                538.7138671875,
+                153.01678466796875
+              ],
+              "selection_basis": "SOURCE_HEADER_WORDS_COLUMN_GEOMETRY"
+            },
+            "numeric_syntax": {
+              "status": "VALID_SYNTAX_UNREVIEWED",
+              "valid_conventions": [
+                "en_US"
+              ],
+              "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING"
+            },
+            "source_header_reference": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3"
+          }
+        ],
+        "source_region": [
+          0,
+          0,
+          595.2755737304688,
+          841.8897705078125
+        ],
+        "region_id": "native",
+        "region_status": "SOURCE_CHECKPOINT",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "6 Other expenses (120,800) (563,696)\nVI Net other income 29 989,694 139,463\nVII Income from investments in other entities 30 59,456 20,212\nVIII Operating expenses 31 (11,605,045) (8,229,776)\nOperating pro t before allowance expenses for\nIX 17,185,022 15,334,221\ncredit losses\nX Allowance expenses for credit losses 32 (70,814) (3,336,109)\nXI Pro t before tax 17,114,208 11,998,112\n7 Current corporate income tax 33.1 (3,445,611) (2,389,079)\n8 Deferred corporate income tax 33.2 19,596 (6,287)\nXII Total corporate income tax 33 (3,426,015) (2,395,366)\nXIII Pro t after tax 13,688,193 9,602,746\nXV Earnings per share (VND/share) 34 4,008 2,799\nNguyen Van Hoa Tu Tien Phat Tran Hung Huy",
+        "rank": 2,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 10,
+        "score": 29.773782076968153,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_10_00026",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_10_00026",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income",
+          "pretax_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "INCOME_STATEMENT",
+        "unit_header": "TRIEU_VND",
+        "box": null,
+        "page_evidence_sha256": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "CONSOLIDATED FINANCIAL STATEMENTS\nAccording to Circular No. 27/2002/TT-BTC dated 22 March 2002 issued by the Ministry of Finance, ACBA is\nrequired to appropriate the following reserves:\nPercentage of annual\nMaximum balance\nallocation\nReserve to supplement\n5% of profit after tax Charter capital\ncharter capital\nFinancial reserve 10% of profit after tax Not specified\nACBA only appropriates reserve to supplement charter capital and financial reserve at the year-end. Reserve to\nsupplement charter capital and financial reserve of ACBA are recognised as other reserves in the consolidated\nstatement of financial position.\n(v) ACB Capital Management Company Limited\nBefore 1 February 2022",
+        "rank": 3,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 33,
+        "score": 20.016393442622952,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00137",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00137",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "UNKNOWN",
+        "unit_header": null,
+        "box": null,
+        "page_evidence_sha256": "dd732a3767a8c5c935cad9cd38cad1369437499cf496743cff9f10f30300e8b0",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN",
+          "PERIOD_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "According to Circular No. 146/2014/TT-BTC dated 6 October 2014 issued by the Ministry of Finance, ACBC is\nrequired to appropriate the following reserves:\nPercentage of annual\nMaximum balance\nallocation\nReserve to supplement charter capital 5% of profit after tax 10% of Charter capital\nFinancial and operational risk reserve 5% of profit after tax 10% of Charter capital\nACBC only appropriates reserve to supplement charter capital and financial and operational risk reserve at the\nyear-end. The reserve to supplement charter capital and the financial and operational risk reserve of ACBC are\nrecognized as other reserves in the consolidated statement of financial position.\nFrom 1 February 2022",
+        "rank": 4,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 33,
+        "score": 20.015151515151516,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00138",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00138",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "UNKNOWN",
+        "unit_header": null,
+        "box": null,
+        "page_evidence_sha256": "dd732a3767a8c5c935cad9cd38cad1369437499cf496743cff9f10f30300e8b0",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN",
+          "PERIOD_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "Reserves are used for specific purposes and are appropriated from profit after tax of the Bank according to the\nproportion prescribed below:\n- Reserve to supplement charter capital;\n- Financial reserve;\n- Other reserves: appropriated according to the resolution of the General Meeting of Shareholders. The appropriation\nrates of these reserves are determined by the General Meeting of Shareholders in accordance with the law.\nThe remaining profit after the appropriation of the above reserves, bonus and welfare fund and distribution of\ndividends to the shareholders is recognised as retained profit of the Bank.\n150 Annual Report 2022",
+        "rank": 5,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 31,
+        "score": 20.013157894736842,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_31_00132",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_31_00132",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "UNKNOWN",
+        "unit_header": null,
+        "box": null,
+        "page_evidence_sha256": "fbb50f883b6c04a6c1219f035dfc8455e9cbba45e4a46d5ffa370d9ba5e7cd27",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN",
+          "PERIOD_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      }
+    ],
+    "mode": "hybrid",
+    "source_errors": [],
+    "latency_ms": 1389.25,
+    "timings_ms": {
+      "PDF": 1389.25
+    },
+    "cross_source_order": null,
+    "intent": {
+      "metrics": [
+        "net_income"
+      ],
+      "dates": [],
+      "years": [
+        "2022"
+      ],
+      "scope": "CONSOLIDATED",
+      "basis": null,
+      "statement": "INCOME_STATEMENT",
+      "unit": null,
+      "operation": "LOOKUP",
+      "period_reference": null,
+      "statement_explicit": false,
+      "evidence_requirement": "SOURCE_ROW_PERIOD_UNIT_SCOPE; numeric verification is separate",
+      "ontology_version": "financial-intent-v2.1",
+      "quarters": [],
+      "entity_scope": {
+        "resolved_document_ids": [
+          "4279e4856d41db46abcffd38a7cbf4ea"
+        ],
+        "unrecognized_name": true
+      }
+    },
+    "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+    "evidence_reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER",
+    "search_profile": "production_v3r2"
+  },
+  "query_after": {
+    "status": "READY",
+    "generation": "ed9e164a6d67c7a7b7000d9c22f1733207c44779af7cfb65ac4bf72d6a55dd03",
+    "source_generations": [
+      [
+        "PDF",
+        "813358280448858234eb8e3e0493bfdc9e63c31159dc8aa5c12c2504e2e2cd2a"
+      ]
+    ],
+    "results": [
+      {
+        "text": "XIII Pro t after tax | 13,688,193 | 9,602,746",
+        "rank": 1,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 10,
+        "score": 37,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_10_00026",
+        "evidence_id": "row:4279e4856d41db46abcffd38a7cbf4ea:p10-native-r22",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": "p10-native-r22",
+        "row_label": "XIII Pro t after tax",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "INCOME_STATEMENT",
+        "unit_header": "TRIEU_VND",
+        "box": [
+          81.49617767333984,
+          535.6875,
+          539.3311767578125,
+          545.509521484375
+        ],
+        "page_evidence_sha256": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "source_label_candidate": "XIII profit after tax",
+        "label_normalization": {
+          "raw": "XIII Pro t after tax",
+          "retrieval_candidate": "XIII profit after tax",
+          "raw_changed": false,
+          "policy": "CONTROLLED_RETRIEVAL_CANDIDATE_NOT_CERTIFIED_SOURCE_TEXT"
+        },
+        "source_cells": [
+          {
+            "blank": false,
+            "box": [
+              409.9849853515625,
+              535.6875,
+              457.3355712890625,
+              545.509521484375
+            ],
+            "column_index": 0,
+            "column_right_anchor": 457.50900003184444,
+            "confidence": null,
+            "currency_candidate": {
+              "box": [
+                414.49334716796875,
+                144.1772918701172,
+                432.1533203125,
+                153.01678466796875
+              ],
+              "confidence": null,
+              "text": "VND",
+              "unit": "VND"
+            },
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "period_year_candidate": {
+              "box": [
+                438.4974060058594,
+                133.68296813964844,
+                457.447509765625,
+                142.5224609375
+              ],
+              "confidence": null,
+              "text": "2022"
+            },
+            "source": "NATIVE",
+            "text": "13,688,193",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+            "unit_evidence": {
+              "unit": "TRIEU_VND",
+              "currency": "VND",
+              "multiplier": "1000000",
+              "source_text": "VND million",
+              "status": "SOURCE_UNIT_CANDIDATE_NOT_REVIEWED",
+              "span": [
+                0,
+                11
+              ],
+              "box": [
+                414.49334716796875,
+                144.1772918701172,
+                457.2124328613281,
+                153.01678466796875
+              ],
+              "selection_basis": "SOURCE_HEADER_WORDS_COLUMN_GEOMETRY"
+            },
+            "numeric_syntax": {
+              "status": "VALID_SYNTAX_UNREVIEWED",
+              "valid_conventions": [
+                "en_US"
+              ],
+              "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING"
+            },
+            "source_header_reference": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3"
+          },
+          {
+            "blank": false,
+            "box": [
+              496.9803771972656,
+              535.6875,
+              539.3311767578125,
+              545.509521484375
+            ],
+            "column_index": 1,
+            "column_right_anchor": 539.1582906971807,
+            "confidence": null,
+            "currency_candidate": {
+              "box": [
+                496.4923400878906,
+                144.1772918701172,
+                513.8124389648438,
+                153.01678466796875
+              ],
+              "confidence": null,
+              "text": "VND",
+              "unit": "VND"
+            },
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "period_year_candidate": {
+              "box": [
+                520.496337890625,
+                133.68296813964844,
+                539.129638671875,
+                142.5224609375
+              ],
+              "confidence": null,
+              "text": "2021"
+            },
+            "source": "NATIVE",
+            "text": "9,602,746",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+            "unit_evidence": {
+              "unit": "TRIEU_VND",
+              "currency": "VND",
+              "multiplier": "1000000",
+              "source_text": "VND million",
+              "status": "SOURCE_UNIT_CANDIDATE_NOT_REVIEWED",
+              "span": [
+                0,
+                11
+              ],
+              "box": [
+                496.4923400878906,
+                144.1772918701172,
+                538.7138671875,
+                153.01678466796875
+              ],
+              "selection_basis": "SOURCE_HEADER_WORDS_COLUMN_GEOMETRY"
+            },
+            "numeric_syntax": {
+              "status": "VALID_SYNTAX_UNREVIEWED",
+              "valid_conventions": [
+                "en_US"
+              ],
+              "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING"
+            },
+            "source_header_reference": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3"
+          }
+        ],
+        "source_region": [
+          0,
+          0,
+          595.2755737304688,
+          841.8897705078125
+        ],
+        "region_id": "native",
+        "region_status": "SOURCE_CHECKPOINT",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "6 Other expenses (120,800) (563,696)\nVI Net other income 29 989,694 139,463\nVII Income from investments in other entities 30 59,456 20,212\nVIII Operating expenses 31 (11,605,045) (8,229,776)\nOperating pro t before allowance expenses for\nIX 17,185,022 15,334,221\ncredit losses\nX Allowance expenses for credit losses 32 (70,814) (3,336,109)\nXI Pro t before tax 17,114,208 11,998,112\n7 Current corporate income tax 33.1 (3,445,611) (2,389,079)\n8 Deferred corporate income tax 33.2 19,596 (6,287)\nXII Total corporate income tax 33 (3,426,015) (2,395,366)\nXIII Pro t after tax 13,688,193 9,602,746\nXV Earnings per share (VND/share) 34 4,008 2,799\nNguyen Van Hoa Tu Tien Phat Tran Hung Huy",
+        "rank": 2,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 10,
+        "score": 29.773782076968153,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_10_00026",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_10_00026",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income",
+          "pretax_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "INCOME_STATEMENT",
+        "unit_header": "TRIEU_VND",
+        "box": null,
+        "page_evidence_sha256": "dffc695b1e96e0a08fd0835cde1cc5ac20601649668e76e6e7fe9402c6ec73c3",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "CONSOLIDATED FINANCIAL STATEMENTS\nAccording to Circular No. 27/2002/TT-BTC dated 22 March 2002 issued by the Ministry of Finance, ACBA is\nrequired to appropriate the following reserves:\nPercentage of annual\nMaximum balance\nallocation\nReserve to supplement\n5% of profit after tax Charter capital\ncharter capital\nFinancial reserve 10% of profit after tax Not specified\nACBA only appropriates reserve to supplement charter capital and financial reserve at the year-end. Reserve to\nsupplement charter capital and financial reserve of ACBA are recognised as other reserves in the consolidated\nstatement of financial position.\n(v) ACB Capital Management Company Limited\nBefore 1 February 2022",
+        "rank": 3,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 33,
+        "score": 20.016393442622952,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00137",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00137",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "UNKNOWN",
+        "unit_header": null,
+        "box": null,
+        "page_evidence_sha256": "dd732a3767a8c5c935cad9cd38cad1369437499cf496743cff9f10f30300e8b0",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN",
+          "PERIOD_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "According to Circular No. 146/2014/TT-BTC dated 6 October 2014 issued by the Ministry of Finance, ACBC is\nrequired to appropriate the following reserves:\nPercentage of annual\nMaximum balance\nallocation\nReserve to supplement charter capital 5% of profit after tax 10% of Charter capital\nFinancial and operational risk reserve 5% of profit after tax 10% of Charter capital\nACBC only appropriates reserve to supplement charter capital and financial and operational risk reserve at the\nyear-end. The reserve to supplement charter capital and the financial and operational risk reserve of ACBC are\nrecognized as other reserves in the consolidated statement of financial position.\nFrom 1 February 2022",
+        "rank": 4,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 33,
+        "score": 20.015151515151516,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00138",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_33_00138",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "UNKNOWN",
+        "unit_header": null,
+        "box": null,
+        "page_evidence_sha256": "dd732a3767a8c5c935cad9cd38cad1369437499cf496743cff9f10f30300e8b0",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN",
+          "PERIOD_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      },
+      {
+        "text": "Reserves are used for specific purposes and are appropriated from profit after tax of the Bank according to the\nproportion prescribed below:\n- Reserve to supplement charter capital;\n- Financial reserve;\n- Other reserves: appropriated according to the resolution of the General Meeting of Shareholders. The appropriation\nrates of these reserves are determined by the General Meeting of Shareholders in accordance with the law.\nThe remaining profit after the appropriation of the above reserves, bonus and welfare fund and distribution of\ndividends to the shareholders is recognised as retained profit of the Bank.\n150 Annual Report 2022",
+        "rank": 5,
+        "source_kind": "PDF",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "page": 31,
+        "score": 20.013157894736842,
+        "chunk_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_31_00132",
+        "evidence_id": "pdf_4279e4856d41db46abcffd38a7cbf4ea_31_00132",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "issuer": "Asia Commercial Bank ACB",
+        "filename": "ACB.pdf",
+        "document_type": "Consolidated financial statements",
+        "report_period": "2022-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "net_income"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "UNKNOWN",
+        "unit_header": null,
+        "box": null,
+        "page_evidence_sha256": "fbb50f883b6c04a6c1219f035dfc8455e9cbba45e4a46d5ffa370d9ba5e7cd27",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [
+          "ENTITY_NOT_PROVEN",
+          "PERIOD_NOT_PROVEN"
+        ],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "TEXT_LIKE_REGION_OCR_EMPTY"
+        ],
+        "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+      }
+    ],
+    "mode": "hybrid",
+    "source_errors": [],
+    "latency_ms": 1673.21,
+    "timings_ms": {
+      "PDF": 1673.21
+    },
+    "cross_source_order": null,
+    "intent": {
+      "metrics": [
+        "net_income"
+      ],
+      "dates": [],
+      "years": [
+        "2022"
+      ],
+      "scope": "CONSOLIDATED",
+      "basis": null,
+      "statement": "INCOME_STATEMENT",
+      "unit": null,
+      "operation": "LOOKUP",
+      "period_reference": null,
+      "statement_explicit": false,
+      "evidence_requirement": "SOURCE_ROW_PERIOD_UNIT_SCOPE; numeric verification is separate",
+      "ontology_version": "financial-intent-v2.1",
+      "quarters": [],
+      "entity_scope": {
+        "resolved_document_ids": [
+          "4279e4856d41db46abcffd38a7cbf4ea"
+        ],
+        "unrecognized_name": true
+      }
+    },
+    "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+    "evidence_reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER",
+    "search_profile": "production_v3r2"
+  },
+  "resources": {
+    "available_ram_bytes": 2455343104,
+    "warning": false,
+    "heavy_minimum_mb": 768,
+    "search_minimum_mb": 256,
+    "active": null,
+    "waiting": 0,
+    "max_active": 1,
+    "max_waiters": 2,
+    "max_active_observed": 1,
+    "completed": 3,
+    "demo_policy": "READY_DOCUMENTS_AND_PREPARED_INDEX;NO_BACKGROUND_REINGESTION",
+    "profile": "V3R2"
+  },
+  "readiness": {
+    "api": "ONLINE",
+    "workspace": {
+      "workspace": "ISOLATED_USER_PDF",
+      "ready_documents": 9,
+      "total_documents": 9,
+      "ready_chunks": 1478,
+      "vector_collection": "studio_user_pdf_v1",
+      "model": "nomic-embed-text:latest",
+      "dimension": 768,
+      "lexical_version": "PDF_VI_FOLDED_FTS5_V2",
+      "disk_free_bytes": 79588016128
+    },
+    "ocr": {
+      "status": "READY",
+      "languages": [
+        "eng",
+        "osd",
+        "vie"
+      ],
+      "engine": "Tesseract",
+      "dpi": 240
+    },
+    "ollama": {
+      "status": "ONLINE",
+      "models": [
+        "llama3:latest",
+        "nomic-embed-text:latest",
+        "qwen2.5:3b"
+      ]
+    },
+    "sec": {
+      "status": "READY",
+      "dataset_id": "product-pg-hd-20261028",
+      "generation": "dc4b8bcfaf9f19a6e8568ab792280ac21a472c9ffa9b48915e995ab133ccdc3c",
+      "manifest_hash": "efb42eb96d2fb70bd0ffe04ac784c1a0a77b1995a37c8ad2e17d17429565c32d",
+      "parents": 1241,
+      "dense_vectors": 1241,
+      "model_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+      "filings": [
+        {
+          "ticker": "HD",
+          "cik": "0000354950",
+          "issuer": "HOME DEPOT, INC.",
+          "accession": "0001628280-26-058715",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "form": "10-Q",
+          "report_period": "2026-08-02",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "raw_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+          "extraction_status": "PARTIAL_EXTRACTION",
+          "chunks": 608
+        },
+        {
+          "ticker": "PG",
+          "cik": "0000080424",
+          "issuer": "PROCTER & GAMBLE Co",
+          "accession": "0000080424-26-000256",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "form": "10-Q",
+          "report_period": "2026-09-30",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "raw_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+          "extraction_status": "PARTIAL_EXTRACTION",
+          "chunks": 633
+        }
+      ],
+      "scope_note": "Official SEC development filings shared with Financial AI; not human-adjudicated evaluation"
+    },
+    "resources": {
+      "available_ram_bytes": 2437742592
+    },
+    "limits": {
+      "pdf_mb": 20,
+      "ocr_concurrency": 1,
+      "embedding_dimension": 768
+    }
+  }
+}

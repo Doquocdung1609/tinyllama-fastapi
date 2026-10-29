@@ -1,0 +1,16 @@
+{
+  "backend": "706 PASS;1 existing Starlette/httpx deprecation warning",
+  "frontend": "10 PASS",
+  "build": "PASS TypeScript/Vite",
+  "chrome_live": "4 PASS after restart;20 page transitions",
+  "compileall": "PASS",
+  "pip_check": "No broken requirements found",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "logs": {
+    "final-pytest.log": "d3d5257b2bec613cc2d8c06e18c09cbb100692613c5169e5e32c27f68b69e1f6",
+    "final-frontend.log": "d332fcc61d018c0d21a3412e12be40436e126f24812aeca0e457d1cc3dfacf57",
+    "final-build.log": "4a702496f01fe5b972a211b4265d4f09ae618dbb00a355f8a2269826f3c47987",
+    "live-chrome-expanded-final.log": "cc6a340e127cee0e88849bf737ee384081b9b70a73e42b2c34b161b1be175e7d"
+  }
+}
