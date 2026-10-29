@@ -1,0 +1,42 @@
+[
+  {
+    "path": "docs/search_v3r/source_images/ACB-p10.png",
+    "sha256": "17eaa995e68a05f788a609d3f3ad988b28de4769d041c65ee337c54b88afff21"
+  },
+  {
+    "path": "docs/search_v3r/source_images/ACB-p7.png",
+    "sha256": "97dbe267f2c3535c2d48fa1c40c3212b1b16dca7b7f32a84ccc304cc5c874da2"
+  },
+  {
+    "path": "docs/search_v3r/source_images/ACB-p8.png",
+    "sha256": "c68ece3ed7120d73be608a3ebffc08be8215aa92cefdcbfaa478483dec95bd74"
+  },
+  {
+    "path": "docs/search_v3r/source_images/CEO-p2.png",
+    "sha256": "eabfb57c90949642ad209ff69b89b321ad9e099282dcca7e6e2ac9c5218594dd"
+  },
+  {
+    "path": "docs/search_v3r/source_images/PNJ-p3.png",
+    "sha256": "3fd7e6171fc7bee3371519397e382c5683e5eb1c25a7a8a0429eb62465e859d8"
+  },
+  {
+    "path": "docs/search_v3r/source_images/PNJ-p4.png",
+    "sha256": "b02e274be4bf34aae841a5c2870ef74e3b6087be87c6d5655a4c5e6f79302579"
+  },
+  {
+    "path": "docs/search_v3r/source_images/PNJ-p5.png",
+    "sha256": "e7e8d1e2ac0218bc594708095ead04017a35f538e93fbc00b7c2b6432a7ee37c"
+  },
+  {
+    "path": "docs/search_v3r/source_images/SEM-p7.png",
+    "sha256": "c92c331737eb52cb6b033d5074b7f0bab76d0aeffd4c8e351fcbbe3c033a2652"
+  },
+  {
+    "path": "docs/search_v3r/source_images/SEM-p8.png",
+    "sha256": "95b120070a27684eef69b144b7669ebdb02ae61a7761ace444ffef3c144f0ba2"
+  },
+  {
+    "path": "docs/search_v3r/source_images/SEM-p9.png",
+    "sha256": "17126c51c56cad3d76ff07804a857a12ab988d3769fd23a5339f32448bb89f11"
+  }
+]

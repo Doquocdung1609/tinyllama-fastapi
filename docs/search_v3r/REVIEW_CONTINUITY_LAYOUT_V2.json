@@ -1,0 +1,77 @@
+{
+  "events": [
+    {
+      "parent_review_hash": "29f8bc474d249b0d90206809185f98e27804e88b0fa896983d8d4422a5b6d8e4",
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "9249bb20702edcdfd3b104b76726b6ea2c545a1bd036236265e3da5f29d6addd",
+      "row_id": "p3-p3-image0-r21",
+      "column_index": 1,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "parent_review_hash": "7acf78d2b410f5112a3329eac61690e2031c13746491472383a0449906845223",
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "a443f1db05bd9655e7490d527c5d5d00cd577786394e84df4c9ed8839e3a3b4d",
+      "row_id": "p4-p4-image0-r1",
+      "column_index": 0,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "parent_review_hash": "309f5f26d691aba8a6d23e159e65bd71b62438543e3543b73a13e7f98c2fd08d",
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "483534039faf9b2e237a13831327561379a0d9ab3c57c0bf8a2f19778b989303",
+      "row_id": "p4-p4-image0-r13",
+      "column_index": 0,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "parent_review_hash": "59f492ee9abcf85bf2dd09c30707f536fe1914fdd8f5fd6b992be99a6066809c",
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "90fb9c9febc5e43d8463ac37b5cad34a936705f087cc0587158e9d4cb6ea2e95",
+      "row_id": "p6-native-r36",
+      "column_index": 0,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+    },
+    {
+      "parent_review_hash": "6a648c3873c92e8961f3032851b1ffa3a6f481172c78cd4c4d9d91e90dd34fd2",
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "6a9fbf4b781f8111fd9e29d2527b82f0bca05cc7efda08a682319d44b206526c",
+      "row_id": "p6-native-r36",
+      "column_index": 1,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+    },
+    {
+      "parent_review_hash": "bbafbd0e29b8619cc1cd45b808ae8a7c1a66e83d28bd175df87c58f2cee35a7c",
+      "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "06657397472fbda10d0167244b674c950194ac6813a987f6a109a77ba5797a7c",
+      "row_id": "p6-native-r36",
+      "column_index": 2,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+    },
+    {
+      "parent_review_hash": "6ef4a669b2ffbcdc5458db703228899190e3741c6e26bb39de17df72911198a4",
+      "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "33a308a85b2c79f3eeeb7d836b60e076b81a9265ca0d3c5a7bb89e38e576784f",
+      "row_id": "p3-p3-image0-r21",
+      "column_index": 0,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "parent_review_hash": "33d6e86a27095f3ff44e6184e62679cde370de235eb002b14e5da5e2684ff87d",
+      "document_id": "cd837d9dfbd725a716238c9a9f95c0e6",
+      "status": "CARRIED_EXACT_AUDIT_LINEAGE",
+      "new_review_hash": "e958f95d34255f6fda3e2fc88e2082dfda3381ed34ee14eac369b4e0f6ee178d",
+      "row_id": "p2-p2-image2-r9",
+      "column_index": 0,
+      "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da"
+    }
+  ],
+  "limits": "No new OCR cell was auto-reviewed.Only exact prior source-image/cell/format/box identity plus current header/scope/unit validation can inherit a local audited review.Not independent human adjudication."
+}

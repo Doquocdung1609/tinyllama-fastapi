@@ -1,0 +1,1339 @@
+{
+  "cold_search_without_prewarm_ms": 66998.60310001532,
+  "prewarm_after_cold": {
+    "status": "READY",
+    "generation": "fb58453315f93461a16a46784e27bacf3073330f6bdb33fe4c5ab7a752c5f85d",
+    "prepare_ms": 3092.32
+  },
+  "warm_ms": [
+    3365.6942999805324,
+    2981.5956999664195,
+    3438.072699995246,
+    3484.642800001893,
+    3349.6526000089943,
+    3071.6283000074327,
+    3248.367900028825,
+    4046.0074999718927,
+    3251.4791999710724,
+    3230.710700037889
+  ],
+  "warm_p50_ms": 3300.5658999900334,
+  "warm_p95_ms": 3793.3933849853925,
+  "nested_workspace_timings_ms": [],
+  "profile_functions": [
+    {
+      "file": "threading.py",
+      "function": "wait",
+      "calls": 15,
+      "self_s": 0.0054562000000000005,
+      "cumulative_s": 7.5425051000000005
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "search",
+      "calls": 2,
+      "self_s": 9.95e-05,
+      "cumulative_s": 3.6504551000000003
+    },
+    {
+      "file": "threading.py",
+      "function": "wait",
+      "calls": 15,
+      "self_s": 0.09950800000000001,
+      "cumulative_s": 2.2257277
+    },
+    {
+      "file": "__init__.py",
+      "function": "loads",
+      "calls": 358,
+      "self_s": 0.0015949,
+      "cumulative_s": 2.1172588
+    },
+    {
+      "file": "decoder.py",
+      "function": "decode",
+      "calls": 358,
+      "self_s": 0.0027793,
+      "cumulative_s": 2.1143043
+    },
+    {
+      "file": "decoder.py",
+      "function": "raw_decode",
+      "calls": 358,
+      "self_s": 2.1082933,
+      "cumulative_s": 2.1082933
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "verify_generation",
+      "calls": 1,
+      "self_s": 0.0793404,
+      "cumulative_s": 1.737691
+    },
+    {
+      "file": "~",
+      "function": "<method 'acquire' of '_thread.lock' objects>",
+      "calls": 63,
+      "self_s": 0.7482823000000001,
+      "cumulative_s": 0.7482823000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'fetchall' of 'sqlite3.Cursor' objects>",
+      "calls": 15,
+      "self_s": 0.18474770000000001,
+      "cumulative_s": 0.18474770000000001
+    },
+    {
+      "file": "search_v2.py",
+      "function": "prepare",
+      "calls": 1,
+      "self_s": 0.0045282000000000005,
+      "cumulative_s": 0.15113400000000002
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "calls": 1462,
+      "self_s": 0.12080600000000001,
+      "cumulative_s": 0.12080600000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'encode' of 'str' objects>",
+      "calls": 1432,
+      "self_s": 0.08875680000000001,
+      "cumulative_s": 0.08875680000000001
+    },
+    {
+      "file": "workspace.py",
+      "function": "source_file",
+      "calls": 7,
+      "self_s": 0.0003435,
+      "cumulative_s": 0.0802365
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "_describe",
+      "calls": 21,
+      "self_s": 0.0011266000000000002,
+      "cumulative_s": 0.061561700000000004
+    },
+    {
+      "file": "workspace.py",
+      "function": "_connect",
+      "calls": 38,
+      "self_s": 0.0003546,
+      "cumulative_s": 0.0546526
+    },
+    {
+      "file": "~",
+      "function": "<method 'read' of '_io.BufferedReader' objects>",
+      "calls": 97,
+      "self_s": 0.0514852,
+      "cumulative_s": 0.0514852
+    },
+    {
+      "file": "~",
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 181,
+      "self_s": 0.0503107,
+      "cumulative_s": 0.0503107
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "list_documents",
+      "calls": 2,
+      "self_s": 0.0003132,
+      "cumulative_s": 0.047702
+    },
+    {
+      "file": "workspace.py",
+      "function": "_hash_file",
+      "calls": 7,
+      "self_s": 0.0018387000000000002,
+      "cumulative_s": 0.0462518
+    },
+    {
+      "file": "pathlib.py",
+      "function": "read_bytes",
+      "calls": 51,
+      "self_s": 0.00022850000000000002,
+      "cumulative_s": 0.0392937
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "document",
+      "calls": 7,
+      "self_s": 0.0001895,
+      "cumulative_s": 0.0335364
+    },
+    {
+      "file": "search_v3.py",
+      "function": "search",
+      "calls": 1,
+      "self_s": 0.0001178,
+      "cumulative_s": 0.028167300000000003
+    },
+    {
+      "file": "~",
+      "function": "<method 'update' of '_hashlib.HASH' objects>",
+      "calls": 39,
+      "self_s": 0.024798200000000003,
+      "cumulative_s": 0.024798200000000003
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__exit__",
+      "calls": 38,
+      "self_s": 7.26e-05,
+      "cumulative_s": 0.023554000000000002
+    },
+    {
+      "file": "~",
+      "function": "<method 'close' of 'sqlite3.Connection' objects>",
+      "calls": 38,
+      "self_s": 0.023481400000000003,
+      "cumulative_s": 0.023481400000000003
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "prepare",
+      "calls": 1,
+      "self_s": 0.0024848,
+      "cumulative_s": 0.021451300000000003
+    },
+    {
+      "file": "workspace.py",
+      "function": "<lambda>",
+      "calls": 46,
+      "self_s": 8.120000000000001e-05,
+      "cumulative_s": 0.0183498
+    },
+    {
+      "file": "workspace.py",
+      "function": "document",
+      "calls": 7,
+      "self_s": 0.0001911,
+      "cumulative_s": 0.0147536
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _sqlite3.connect>",
+      "calls": 38,
+      "self_s": 0.011223100000000001,
+      "cumulative_s": 0.012477
+    },
+    {
+      "file": "pathlib.py",
+      "function": "open",
+      "calls": 59,
+      "self_s": 8.37e-05,
+      "cumulative_s": 0.0060555
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _io.open>",
+      "calls": 59,
+      "self_s": 0.0051154,
+      "cumulative_s": 0.005971700000000001
+    },
+    {
+      "file": "__init__.py",
+      "function": "virtual_memory",
+      "calls": 16,
+      "self_s": 5.86e-05,
+      "cumulative_s": 0.0059456000000000005
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "virtual_memory",
+      "calls": 16,
+      "self_s": 0.00012080000000000001,
+      "cumulative_s": 0.005887000000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method psutil_windows.virtual_mem>",
+      "calls": 16,
+      "self_s": 0.0054908000000000005,
+      "cumulative_s": 0.0054908000000000005
+    },
+    {
+      "file": "workspace.py",
+      "function": "list_documents",
+      "calls": 2,
+      "self_s": 0.00015000000000000001,
+      "cumulative_s": 0.0044204000000000005
+    },
+    {
+      "file": "pdf_extract.py",
+      "function": "folded",
+      "calls": 233,
+      "self_s": 0.00044330000000000004,
+      "cumulative_s": 0.004085200000000001
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "_source_entries",
+      "calls": 1,
+      "self_s": 0.0038691000000000003,
+      "cumulative_s": 0.0038691000000000003
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "_query_intent",
+      "calls": 1,
+      "self_s": 6.300000000000001e-06,
+      "cumulative_s": 0.0033532
+    },
+    {
+      "file": "search_v3.py",
+      "function": "intent_for",
+      "calls": 1,
+      "self_s": 3.8e-05,
+      "cumulative_s": 0.0033469000000000003
+    },
+    {
+      "file": "query_intent.py",
+      "function": "metric_matches",
+      "calls": 2,
+      "self_s": 0.00014470000000000002,
+      "cumulative_s": 0.0028026
+    },
+    {
+      "file": "~",
+      "function": "<method 'join' of 'str' objects>",
+      "calls": 274,
+      "self_s": 0.0008638000000000001,
+      "cumulative_s": 0.0026859
+    },
+    {
+      "file": "pathlib.py",
+      "function": "is_file",
+      "calls": 21,
+      "self_s": 6.560000000000001e-05,
+      "cumulative_s": 0.0025811000000000002
+    },
+    {
+      "file": "pathlib.py",
+      "function": "stat",
+      "calls": 21,
+      "self_s": 2.2800000000000002e-05,
+      "cumulative_s": 0.0024981
+    },
+    {
+      "file": "~",
+      "function": "<built-in method nt.stat>",
+      "calls": 21,
+      "self_s": 0.0010951000000000001,
+      "cumulative_s": 0.0024753
+    },
+    {
+      "file": "search_v3.py",
+      "function": "entity_conflict",
+      "calls": 1,
+      "self_s": 0.0002347,
+      "cumulative_s": 0.0024035000000000003
+    },
+    {
+      "file": "~",
+      "function": "<method 'match' of 're.Pattern' objects>",
+      "calls": 716,
+      "self_s": 0.0023825,
+      "cumulative_s": 0.0023825
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__fspath__",
+      "calls": 118,
+      "self_s": 0.000213,
+      "cumulative_s": 0.0023517
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__str__",
+      "calls": 118,
+      "self_s": 0.0003398,
+      "cumulative_s": 0.0021387000000000003
+    },
+    {
+      "file": "~",
+      "function": "<method 'hexdigest' of '_hashlib.HASH' objects>",
+      "calls": 1462,
+      "self_s": 0.0018523,
+      "cumulative_s": 0.0018523
+    },
+    {
+      "file": "pdf_extract.py",
+      "function": "<genexpr>",
+      "calls": 4821,
+      "self_s": 0.0012321,
+      "cumulative_s": 0.0018136
+    },
+    {
+      "file": "query_intent.py",
+      "function": "understand",
+      "calls": 1,
+      "self_s": 4.22e-05,
+      "cumulative_s": 0.0017490000000000001
+    },
+    {
+      "file": "pathlib.py",
+      "function": "drive",
+      "calls": 36,
+      "self_s": 0.00012230000000000002,
+      "cumulative_s": 0.0017164
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_load_parts",
+      "calls": 36,
+      "self_s": 0.00016930000000000002,
+      "cumulative_s": 0.0015941000000000002
+    },
+    {
+      "file": "search_v3.py",
+      "function": "metrics_in",
+      "calls": 1,
+      "self_s": 8.5e-06,
+      "cumulative_s": 0.001489
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__truediv__",
+      "calls": 63,
+      "self_s": 6.41e-05,
+      "cumulative_s": 0.0012055
+    },
+    {
+      "file": "~",
+      "function": "<method '__exit__' of '_io._IOBase' objects>",
+      "calls": 59,
+      "self_s": 0.0011865,
+      "cumulative_s": 0.0011865
+    },
+    {
+      "file": "pathlib.py",
+      "function": "joinpath",
+      "calls": 63,
+      "self_s": 0.0001683,
+      "cumulative_s": 0.0011414
+    },
+    {
+      "file": "_common.py",
+      "function": "wrapper",
+      "calls": 16,
+      "self_s": 0.00020930000000000002,
+      "cumulative_s": 0.0011401
+    },
+    {
+      "file": "functools.py",
+      "function": "decorating_function",
+      "calls": 38,
+      "self_s": 0.00022860000000000003,
+      "cumulative_s": 0.0010079000000000002
+    },
+    {
+      "file": "pathlib.py",
+      "function": "with_segments",
+      "calls": 63,
+      "self_s": 0.00024200000000000003,
+      "cumulative_s": 0.0009731000000000001
+    },
+    {
+      "file": "__init__.py",
+      "function": "memory_info",
+      "calls": 16,
+      "self_s": 4.1500000000000006e-05,
+      "cumulative_s": 0.0009308000000000001
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "wrapper",
+      "calls": 16,
+      "self_s": 8.71e-05,
+      "cumulative_s": 0.0008893000000000001
+    },
+    {
+      "file": "__init__.py",
+      "function": "dumps",
+      "calls": 3,
+      "self_s": 1.91e-05,
+      "cumulative_s": 0.0008561
+    },
+    {
+      "file": "encoder.py",
+      "function": "encode",
+      "calls": 3,
+      "self_s": 1.54e-05,
+      "cumulative_s": 0.0008354
+    },
+    {
+      "file": "encoder.py",
+      "function": "iterencode",
+      "calls": 3,
+      "self_s": 0.0008154000000000001,
+      "cumulative_s": 0.0008154000000000001
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "memory_info",
+      "calls": 16,
+      "self_s": 0.0001295,
+      "cumulative_s": 0.0008022000000000001
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_parse_path",
+      "calls": 36,
+      "self_s": 0.0003011,
+      "cumulative_s": 0.0007848000000000001
+    },
+    {
+      "file": "functools.py",
+      "function": "update_wrapper",
+      "calls": 38,
+      "self_s": 0.00033610000000000004,
+      "cumulative_s": 0.0007793
+    },
+    {
+      "file": "__init__.py",
+      "function": "sub",
+      "calls": 241,
+      "self_s": 0.00014680000000000002,
+      "cumulative_s": 0.0007014
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__init__",
+      "calls": 64,
+      "self_s": 0.000211,
+      "cumulative_s": 0.0006377
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "_get_raw_meminfo",
+      "calls": 16,
+      "self_s": 4.3700000000000005e-05,
+      "cumulative_s": 0.0006280000000000001
+    },
+    {
+      "file": "<frozen ntpath>",
+      "function": "join",
+      "calls": 35,
+      "self_s": 0.0002765,
+      "cumulative_s": 0.0006232000000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method psutil_windows.proc_memory_info>",
+      "calls": 16,
+      "self_s": 0.0005843,
+      "cumulative_s": 0.0005843
+    },
+    {
+      "file": "~",
+      "function": "<built-in method unicodedata.category>",
+      "calls": 5240,
+      "self_s": 0.0005815,
+      "cumulative_s": 0.0005815
+    },
+    {
+      "file": "~",
+      "function": "<method 'startswith' of 'str' objects>",
+      "calls": 330,
+      "self_s": 0.0005481,
+      "cumulative_s": 0.0005481
+    },
+    {
+      "file": "__init__.py",
+      "function": "search",
+      "calls": 174,
+      "self_s": 8.44e-05,
+      "cumulative_s": 0.0005278
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 1404,
+      "self_s": 0.0005229000000000001,
+      "cumulative_s": 0.0005229000000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'end' of 're.Match' objects>",
+      "calls": 716,
+      "self_s": 0.0004873,
+      "cumulative_s": 0.0004873
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__init__",
+      "calls": 64,
+      "self_s": 0.0002505,
+      "cumulative_s": 0.0004267
+    },
+    {
+      "file": "__init__.py",
+      "function": "escape",
+      "calls": 171,
+      "self_s": 7.900000000000001e-05,
+      "cumulative_s": 0.0004153
+    },
+    {
+      "file": "<frozen ntpath>",
+      "function": "splitroot",
+      "calls": 141,
+      "self_s": 0.0002945,
+      "cumulative_s": 0.00040060000000000003
+    },
+    {
+      "file": "__init__.py",
+      "function": "_compile",
+      "calls": 430,
+      "self_s": 0.0002776,
+      "cumulative_s": 0.00038300000000000004
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.getattr>",
+      "calls": 325,
+      "self_s": 0.00035810000000000003,
+      "cumulative_s": 0.00035810000000000003
+    },
+    {
+      "file": "~",
+      "function": "<method 'sub' of 're.Pattern' objects>",
+      "calls": 241,
+      "self_s": 0.00035350000000000003,
+      "cumulative_s": 0.00035350000000000003
+    },
+    {
+      "file": "pathlib.py",
+      "function": "read_text",
+      "calls": 1,
+      "self_s": 1.6100000000000002e-05,
+      "cumulative_s": 0.0003465
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.any>",
+      "calls": 32,
+      "self_s": 5.0900000000000004e-05,
+      "cumulative_s": 0.0003457
+    },
+    {
+      "file": "~",
+      "function": "<built-in method sys.intern>",
+      "calls": 323,
+      "self_s": 0.0003394,
+      "cumulative_s": 0.0003394
+    },
+    {
+      "file": "~",
+      "function": "<method 'decode' of 'bytes' objects>",
+      "calls": 28,
+      "self_s": 0.0003196,
+      "cumulative_s": 0.0003196
+    },
+    {
+      "file": "~",
+      "function": "<method 'translate' of 'str' objects>",
+      "calls": 171,
+      "self_s": 0.00031850000000000004,
+      "cumulative_s": 0.00031850000000000004
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.len>",
+      "calls": 500,
+      "self_s": 0.00031570000000000003,
+      "cumulative_s": 0.00031570000000000003
+    },
+    {
+      "file": "~",
+      "function": "<method 'search' of 're.Pattern' objects>",
+      "calls": 174,
+      "self_s": 0.0002773,
+      "cumulative_s": 0.0002773
+    },
+    {
+      "file": "~",
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "calls": 49,
+      "self_s": 0.00027380000000000004,
+      "cumulative_s": 0.00027380000000000004
+    },
+    {
+      "file": "~",
+      "function": "<method 'get' of 'dict' objects>",
+      "calls": 310,
+      "self_s": 0.000257,
+      "cumulative_s": 0.000257
+    },
+    {
+      "file": "_common.py",
+      "function": "usage_percent",
+      "calls": 16,
+      "self_s": 8.31e-05,
+      "cumulative_s": 0.0002459
+    },
+    {
+      "file": "__init__.py",
+      "function": "detect_encoding",
+      "calls": 28,
+      "self_s": 0.0001477,
+      "cumulative_s": 0.00024400000000000002
+    },
+    {
+      "file": "query_intent.py",
+      "function": "lexical_terms",
+      "calls": 1,
+      "self_s": 2.7600000000000003e-05,
+      "cumulative_s": 0.000202
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.round>",
+      "calls": 17,
+      "self_s": 0.0001721,
+      "cumulative_s": 0.0001721
+    },
+    {
+      "file": "~",
+      "function": "<method 'replace' of 'str' objects>",
+      "calls": 424,
+      "self_s": 0.00013570000000000002,
+      "cumulative_s": 0.00013570000000000002
+    },
+    {
+      "file": "~",
+      "function": "<method 'split' of 'str' objects>",
+      "calls": 128,
+      "self_s": 0.00012880000000000001,
+      "cumulative_s": 0.00012880000000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method unicodedata.normalize>",
+      "calls": 233,
+      "self_s": 0.00012770000000000001,
+      "cumulative_s": 0.00012770000000000001
+    },
+    {
+      "file": "functools.py",
+      "function": "lru_cache",
+      "calls": 38,
+      "self_s": 0.0001027,
+      "cumulative_s": 0.0001265
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 20,
+      "self_s": 1.94e-05,
+      "cumulative_s": 0.0001229
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__new__",
+      "calls": 64,
+      "self_s": 6.87e-05,
+      "cumulative_s": 0.00012030000000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'casefold' of 'str' objects>",
+      "calls": 233,
+      "self_s": 0.00011310000000000001,
+      "cumulative_s": 0.00011310000000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _thread.allocate_lock>",
+      "calls": 16,
+      "self_s": 0.00010580000000000001,
+      "cumulative_s": 0.00010580000000000001
+    },
+    {
+      "file": "threading.py",
+      "function": "_acquire_restore",
+      "calls": 16,
+      "self_s": 5.7100000000000006e-05,
+      "cumulative_s": 0.0001006
+    },
+    {
+      "file": "query_intent.py",
+      "function": "phrase",
+      "calls": 16,
+      "self_s": 1.3000000000000001e-05,
+      "cumulative_s": 8.7e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'read' of '_io.TextIOWrapper' objects>",
+      "calls": 1,
+      "self_s": 7.740000000000001e-05,
+      "cumulative_s": 8.690000000000001e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method __new__ of type object at 0x00007FF96F0D98F0>",
+      "calls": 96,
+      "self_s": 8.65e-05,
+      "cumulative_s": 8.65e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'startswith' of 'bytes' objects>",
+      "calls": 84,
+      "self_s": 8.070000000000001e-05,
+      "cumulative_s": 8.070000000000001e-05
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_format_parsed_parts",
+      "calls": 36,
+      "self_s": 3.8400000000000005e-05,
+      "cumulative_s": 6.93e-05
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 18,
+      "self_s": 9.600000000000001e-06,
+      "cumulative_s": 6.840000000000001e-05
+    },
+    {
+      "file": "query_intent.py",
+      "function": "public",
+      "calls": 1,
+      "self_s": 4.6e-06,
+      "cumulative_s": 6.110000000000001e-05
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 13,
+      "self_s": 3.9e-06,
+      "cumulative_s": 5.78e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "asdict",
+      "calls": 1,
+      "self_s": 6.1e-06,
+      "cumulative_s": 5.6500000000000005e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "__exit__",
+      "calls": 16,
+      "self_s": 3.7500000000000003e-05,
+      "cumulative_s": 5.0400000000000005e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.setattr>",
+      "calls": 76,
+      "self_s": 4.9800000000000004e-05,
+      "cumulative_s": 4.9800000000000004e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method nt.fspath>",
+      "calls": 240,
+      "self_s": 4.9000000000000005e-05,
+      "cumulative_s": 4.9000000000000005e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "_asdict_inner",
+      "calls": 15,
+      "self_s": 2.5900000000000003e-05,
+      "cumulative_s": 4.83e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'update' of 'dict' objects>",
+      "calls": 39,
+      "self_s": 4.24e-05,
+      "cumulative_s": 4.24e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'update' of 'set' objects>",
+      "calls": 77,
+      "self_s": 4.2300000000000005e-05,
+      "cumulative_s": 4.2300000000000005e-05
+    },
+    {
+      "file": "__init__.py",
+      "function": "split",
+      "calls": 7,
+      "self_s": 1.65e-05,
+      "cumulative_s": 4.19e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'append' of 'list' objects>",
+      "calls": 83,
+      "self_s": 4.11e-05,
+      "cumulative_s": 4.11e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'strip' of 'str' objects>",
+      "calls": 233,
+      "self_s": 4.0900000000000005e-05,
+      "cumulative_s": 4.0900000000000005e-05
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 8,
+      "self_s": 5.3e-06,
+      "cumulative_s": 3.8400000000000005e-05
+    },
+    {
+      "file": "__init__.py",
+      "function": "findall",
+      "calls": 8,
+      "self_s": 7.000000000000001e-06,
+      "cumulative_s": 3.69e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'extend' of 'list' objects>",
+      "calls": 63,
+      "self_s": 3.66e-05,
+      "cumulative_s": 3.66e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.next>",
+      "calls": 11,
+      "self_s": 7.6e-06,
+      "cumulative_s": 3.58e-05
+    },
+    {
+      "file": "<string>",
+      "function": "<lambda>",
+      "calls": 16,
+      "self_s": 1.55e-05,
+      "cumulative_s": 2.9500000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+      "calls": 1,
+      "self_s": 2.89e-05,
+      "cumulative_s": 2.89e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "__enter__",
+      "calls": 16,
+      "self_s": 1.63e-05,
+      "cumulative_s": 2.8400000000000003e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "_is_owned",
+      "calls": 16,
+      "self_s": 1.29e-05,
+      "cumulative_s": 2.6300000000000002e-05
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 14,
+      "self_s": 1.9200000000000003e-05,
+      "cumulative_s": 2.6200000000000003e-05
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__init__",
+      "calls": 38,
+      "self_s": 2.2800000000000002e-05,
+      "cumulative_s": 2.2800000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'findall' of 're.Pattern' objects>",
+      "calls": 8,
+      "self_s": 2.2800000000000002e-05,
+      "cumulative_s": 2.2800000000000002e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "replace",
+      "calls": 1,
+      "self_s": 1.36e-05,
+      "cumulative_s": 2.15e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'remove' of 'collections.deque' objects>",
+      "calls": 16,
+      "self_s": 1.79e-05,
+      "cumulative_s": 1.79e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "_release_save",
+      "calls": 16,
+      "self_s": 1.3800000000000002e-05,
+      "cumulative_s": 1.7500000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _stat.S_ISREG>",
+      "calls": 21,
+      "self_s": 1.74e-05,
+      "cumulative_s": 1.74e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'split' of 're.Pattern' objects>",
+      "calls": 7,
+      "self_s": 1.67e-05,
+      "cumulative_s": 1.67e-05
+    },
+    {
+      "file": "~",
+      "function": "<method '__exit__' of '_thread.lock' objects>",
+      "calls": 16,
+      "self_s": 1.29e-05,
+      "cumulative_s": 1.29e-05
+    },
+    {
+      "file": "~",
+      "function": "<method '__enter__' of '_thread.lock' objects>",
+      "calls": 16,
+      "self_s": 1.2100000000000001e-05,
+      "cumulative_s": 1.2100000000000001e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "fields",
+      "calls": 1,
+      "self_s": 6.8e-06,
+      "cumulative_s": 1.13e-05
+    },
+    {
+      "file": "<string>",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 9.600000000000001e-06,
+      "cumulative_s": 9.600000000000001e-06
+    },
+    {
+      "file": "<frozen codecs>",
+      "function": "decode",
+      "calls": 1,
+      "self_s": 5.600000000000001e-06,
+      "cumulative_s": 9.5e-06
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 15,
+      "self_s": 6.200000000000001e-06,
+      "cumulative_s": 8.5e-06
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__enter__",
+      "calls": 38,
+      "self_s": 8.3e-06,
+      "cumulative_s": 8.3e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.sorted>",
+      "calls": 9,
+      "self_s": 8.1e-06,
+      "cumulative_s": 8.1e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.iter>",
+      "calls": 9,
+      "self_s": 7.8e-06,
+      "cumulative_s": 7.8e-06
+    },
+    {
+      "file": "pathlib.py",
+      "function": "root",
+      "calls": 36,
+      "self_s": 7.7e-06,
+      "cumulative_s": 7.7e-06
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "_is_dataclass_instance",
+      "calls": 6,
+      "self_s": 4.800000000000001e-06,
+      "cumulative_s": 7.3e-06
+    },
+    {
+      "file": "threading.py",
+      "function": "is_set",
+      "calls": 16,
+      "self_s": 6.5000000000000004e-06,
+      "cumulative_s": 6.5000000000000004e-06
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_tail",
+      "calls": 36,
+      "self_s": 5.500000000000001e-06,
+      "cumulative_s": 5.500000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'isalpha' of 'str' objects>",
+      "calls": 9,
+      "self_s": 5.500000000000001e-06,
+      "cumulative_s": 5.500000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'append' of 'collections.deque' objects>",
+      "calls": 16,
+      "self_s": 5.1e-06,
+      "cumulative_s": 5.1e-06
+    },
+    {
+      "file": "enum.py",
+      "function": "__get__",
+      "calls": 1,
+      "self_s": 3e-06,
+      "cumulative_s": 5e-06
+    },
+    {
+      "file": "<frozen codecs>",
+      "function": "__init__",
+      "calls": 1,
+      "self_s": 3.9e-06,
+      "cumulative_s": 4.3e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.hasattr>",
+      "calls": 10,
+      "self_s": 4.000000000000001e-06,
+      "cumulative_s": 4.000000000000001e-06
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "<genexpr>",
+      "calls": 6,
+      "self_s": 3e-06,
+      "cumulative_s": 3.9e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _codecs.utf_8_decode>",
+      "calls": 1,
+      "self_s": 3.9e-06,
+      "cumulative_s": 3.9e-06
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "<genexpr>",
+      "calls": 12,
+      "self_s": 3.7e-06,
+      "cumulative_s": 3.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'release' of '_thread.lock' objects>",
+      "calls": 16,
+      "self_s": 3.7e-06,
+      "cumulative_s": 3.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method fromkeys>",
+      "calls": 1,
+      "self_s": 3.5000000000000004e-06,
+      "cumulative_s": 3.5000000000000004e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 13,
+      "self_s": 2.5e-06,
+      "cumulative_s": 2.5e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 8,
+      "self_s": 2.5e-06,
+      "cumulative_s": 2.5e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'isoformat' of 'datetime.date' objects>",
+      "calls": 1,
+      "self_s": 2.5e-06,
+      "cumulative_s": 2.5e-06
+    },
+    {
+      "file": "enum.py",
+      "function": "value",
+      "calls": 1,
+      "self_s": 2.0000000000000003e-06,
+      "cumulative_s": 2.0000000000000003e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'values' of 'dict' objects>",
+      "calls": 5,
+      "self_s": 2.0000000000000003e-06,
+      "cumulative_s": 2.0000000000000003e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 1,
+      "self_s": 1.9e-06,
+      "cumulative_s": 1.9e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'items' of 'dict' objects>",
+      "calls": 4,
+      "self_s": 1.8000000000000001e-06,
+      "cumulative_s": 1.8000000000000001e-06
+    },
+    {
+      "file": "encoder.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.6000000000000001e-06,
+      "cumulative_s": 1.6000000000000001e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 5,
+      "self_s": 1.3e-06,
+      "cumulative_s": 1.3e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'isdigit' of 'str' objects>",
+      "calls": 9,
+      "self_s": 1.3e-06,
+      "cumulative_s": 1.3e-06
+    },
+    {
+      "file": "~",
+      "function": "<method '__exit__' of '_thread.RLock' objects>",
+      "calls": 2,
+      "self_s": 1.2000000000000002e-06,
+      "cumulative_s": 1.2000000000000002e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 4,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.1e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 4,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.1e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method time.perf_counter>",
+      "calls": 2,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.1e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'sort' of 'list' objects>",
+      "calls": 1,
+      "self_s": 1.0000000000000002e-06,
+      "cumulative_s": 1.0000000000000002e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 3,
+      "self_s": 7.000000000000001e-07,
+      "cumulative_s": 7.000000000000001e-07
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 3,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _io.text_encoding>",
+      "calls": 2,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 3,
+      "self_s": 5.000000000000001e-07,
+      "cumulative_s": 5.000000000000001e-07
+    },
+    {
+      "file": "analysis.py",
+      "function": "eligible_facts",
+      "calls": 1,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 4.0000000000000003e-07
+    },
+    {
+      "file": "<frozen codecs>",
+      "function": "__init__",
+      "calls": 1,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 4.0000000000000003e-07
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 1,
+      "self_s": 3.0000000000000004e-07,
+      "cumulative_s": 3.0000000000000004e-07
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 1,
+      "self_s": 2.0000000000000002e-07,
+      "cumulative_s": 2.0000000000000002e-07
+    }
+  ],
+  "resources": {
+    "sampled_python_peak_rss": 818081792,
+    "minimum_available_ram": 1533251584,
+    "free_disk_bytes": 52142632960,
+    "python_cpu_s": 105.84375
+  },
+  "limits": [
+    "Local Qdrant is included in Python RSS;external Ollama/Chrome excluded.",
+    "cProfile cumulative phases overlap;do not add cumulative times.",
+    "Repeated-query warm sample is not a diverse workload or p99 SLA."
+  ],
+  "validity": "INVALID_PROFILE_WRONG_DOCUMENT_ID; no selected PDF; not a valid search-latency measurement"
+}

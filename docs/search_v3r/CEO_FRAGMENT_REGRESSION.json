@@ -1,0 +1,420 @@
+{
+  "query": "Cash and cash equivalents CEO consolidated 2025",
+  "result": {
+    "status": "READY",
+    "generation": "dc8d50eb1c6fed921b0aff49d2f1c4b2c75788e32cf7934ad16ebfea9e51d045",
+    "source_generations": [
+      [
+        "PDF",
+        "b09b7406dbb03252eae7a065fd884f28ff2b0af83e8c47e7c2f240da67b55975"
+      ]
+    ],
+    "results": [
+      {
+        "text": "Tiền và tương đương tiền đầu kỳ  | 993.340.552.048 | 1.153.356.865.428",
+        "rank": 1,
+        "source_kind": "PDF",
+        "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+        "page": 6,
+        "score": 31.03665653849974,
+        "chunk_id": "pdf_cd837d9dfbd725a716238c9a9f95c0e6_6_00017",
+        "evidence_id": "row:cd837d9dfbd725a716238c9a9f95c0e6:p6-p6-image1-r4",
+        "document_id": "cd837d9dfbd725a716238c9a9f95c0e6",
+        "issuer": "CEO Group",
+        "filename": "CEO_2025_consolidated.pdf",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "row_id": "p6-p6-image1-r4",
+        "row_label": "Tiền và tương đương tiền đầu kỳ ",
+        "metric_ids": [
+          "cash_equivalents"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "CASH_FLOW",
+        "unit_header": "VND",
+        "box": [
+          400.2,
+          266.40001098632814,
+          561.9599999999999,
+          274.5600109863281
+        ],
+        "page_evidence_sha256": "98178eaa1761861138261228812dc23513d14a7f18a5bd7ecd75fbd8e2c949b4",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [],
+        "verification": null,
+        "evidence_match": "MATCHED_UNVERIFIED_ROW",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "region_id": "p6-image1",
+        "source_region": [
+          27.0,
+          198.48001098632812,
+          585.0,
+          593.280029296875
+        ],
+        "source_label_candidate": "993.340.552.048 1.153.356.865.428",
+        "source_cells": [
+          {
+            "blank": false,
+            "box": [
+              400.2,
+              266.40001098632814,
+              469.08,
+              273.84001098632814
+            ],
+            "column_header_candidates": [
+              {
+                "box": [
+                  96.6,
+                  232.80001098632812,
+                  562.4399999999999,
+                  246.96001098632811
+                ],
+                "text": "Lưu chuyển tiền thuần từ hoạt động tài chính (100.536.000.192) (311.335.362.726)"
+              }
+            ],
+            "column_index": 0,
+            "column_right_anchor": 468.26399999999995,
+            "confidence": 96.0,
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "source": "OCR",
+            "text": "993.340.552.048",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED"
+          },
+          {
+            "blank": false,
+            "box": [
+              486.35999999999996,
+              266.8800109863281,
+              561.9599999999999,
+              274.5600109863281
+            ],
+            "column_header_candidates": [
+              {
+                "box": [
+                  96.6,
+                  232.80001098632812,
+                  562.4399999999999,
+                  246.96001098632811
+                ],
+                "text": "Lưu chuyển tiền thuần từ hoạt động tài chính (100.536.000.192) (311.335.362.726)"
+              }
+            ],
+            "column_index": 1,
+            "column_right_anchor": 561.7885714285713,
+            "confidence": 88.0,
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "source": "OCR",
+            "text": "1.153.356.865.428",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED"
+          }
+        ],
+        "region_status": "OCR_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "REGION_TEXT_COVERAGE_REMAINS_UNCERTAIN"
+        ],
+        "derived_generation": "9ed316da5c627d454e8ce5faea40af93078b60d17bfdc068ed33156c3b5efe76"
+      },
+      {
+        "text": "Tiền và tương đương tiền cuối kỳ (70 50+60+61)  | 780.824.676.397 | 993.340.552.048",
+        "rank": 2,
+        "source_kind": "PDF",
+        "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+        "page": 6,
+        "score": 31.00048334237856,
+        "chunk_id": "pdf_cd837d9dfbd725a716238c9a9f95c0e6_6_00017",
+        "evidence_id": "row:cd837d9dfbd725a716238c9a9f95c0e6:p6-p6-image1-r6",
+        "document_id": "cd837d9dfbd725a716238c9a9f95c0e6",
+        "issuer": "CEO Group",
+        "filename": "CEO_2025_consolidated.pdf",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "row_id": "p6-p6-image1-r6",
+        "row_label": "Tiền và tương đương tiền cuối kỳ (70 50+60+61) ",
+        "metric_ids": [
+          "cash_equivalents"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "CASH_FLOW",
+        "unit_header": "VND",
+        "box": [
+          396.11999999999995,
+          299.0400109863281,
+          558.12,
+          307.20001098632815
+        ],
+        "page_evidence_sha256": "98178eaa1761861138261228812dc23513d14a7f18a5bd7ecd75fbd8e2c949b4",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [],
+        "verification": null,
+        "evidence_match": "MATCHED_UNVERIFIED_ROW",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "region_id": "p6-image1",
+        "source_region": [
+          27.0,
+          198.48001098632812,
+          585.0,
+          593.280029296875
+        ],
+        "source_label_candidate": "780.824.676.397 993.340.552.048",
+        "source_cells": [
+          {
+            "blank": false,
+            "box": [
+              396.11999999999995,
+              299.0400109863281,
+              464.99999999999994,
+              306.4800109863281
+            ],
+            "column_header_candidates": [
+              {
+                "box": [
+                  96.6,
+                  232.80001098632812,
+                  562.4399999999999,
+                  246.96001098632811
+                ],
+                "text": "Lưu chuyển tiền thuần từ hoạt động tài chính (100.536.000.192) (311.335.362.726)"
+              }
+            ],
+            "column_index": 0,
+            "column_right_anchor": 468.26399999999995,
+            "confidence": 96.0,
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "source": "OCR",
+            "text": "780.824.676.397",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED"
+          },
+          {
+            "blank": false,
+            "box": [
+              489.47999999999996,
+              299.7600109863281,
+              558.12,
+              307.20001098632815
+            ],
+            "column_header_candidates": [
+              {
+                "box": [
+                  96.6,
+                  232.80001098632812,
+                  562.4399999999999,
+                  246.96001098632811
+                ],
+                "text": "Lưu chuyển tiền thuần từ hoạt động tài chính (100.536.000.192) (311.335.362.726)"
+              }
+            ],
+            "column_index": 1,
+            "column_right_anchor": 561.7885714285713,
+            "confidence": 88.0,
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+            "source": "OCR",
+            "text": "993.340.552.048",
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED"
+          }
+        ],
+        "region_status": "OCR_COMPLETE",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "REGION_TEXT_COVERAGE_REMAINS_UNCERTAIN"
+        ],
+        "derived_generation": "9ed316da5c627d454e8ce5faea40af93078b60d17bfdc068ed33156c3b5efe76"
+      },
+      {
+        "text": "1. Tiền và các khoản tương đương tiền  | 780.824.676.397 | 993.340.552.048",
+        "rank": 3,
+        "source_kind": "PDF",
+        "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+        "page": 2,
+        "score": 28.073846278809267,
+        "chunk_id": "pdf_cd837d9dfbd725a716238c9a9f95c0e6_2_00002",
+        "evidence_id": "row:cd837d9dfbd725a716238c9a9f95c0e6:p2-p2-image0-fragment-r3",
+        "document_id": "cd837d9dfbd725a716238c9a9f95c0e6",
+        "issuer": "CEO Group",
+        "filename": "CEO_2025_consolidated.pdf",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "row_id": "p2-p2-image0-fragment-r3",
+        "row_label": "1. Tiền và các khoản tương đương tiền ",
+        "metric_ids": [
+          "cash_equivalents"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "UNKNOWN",
+        "unit_header": "VND",
+        "box": [
+          396.3,
+          191.7,
+          563.1,
+          200.7
+        ],
+        "page_evidence_sha256": "ce6d0117f923ea6f334ba30e787ccc8f7cc6347b4505d673bdf5de2449a5a91b",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [],
+        "verification": null,
+        "evidence_match": "MATCHED_UNVERIFIED_ROW",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "region_id": "p2-image0",
+        "source_region": [
+          27.0,
+          1.0800018310546875,
+          585.0,
+          198.48001098632812
+        ],
+        "source_label_candidate": "780.824.676.397",
+        "source_cells": [
+          {
+            "column_index": 0,
+            "text": "780.824.676.397",
+            "box": [
+              396.3,
+              191.7,
+              465.0,
+              199.2
+            ],
+            "confidence": 92.0,
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+            "source": "PRESERVED_CHECKPOINT_WORDS",
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING"
+          },
+          {
+            "column_index": 1,
+            "text": "993.340.552.048",
+            "box": [
+              494.4,
+              192.9,
+              563.1,
+              200.7
+            ],
+            "confidence": 95.0,
+            "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+            "source": "PRESERVED_CHECKPOINT_WORDS",
+            "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING"
+          }
+        ],
+        "region_status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "REGION_TEXT_COVERAGE_REMAINS_UNCERTAIN"
+        ],
+        "derived_generation": "9ed316da5c627d454e8ce5faea40af93078b60d17bfdc068ed33156c3b5efe76"
+      },
+      {
+        "text": "Tiền và tương đương tiền đầu kỳ\n993.340.552.048 1.153.356.865.428\nẢnh hưởng của thay đồi tỷ giá hồi đoái đồi ngoại tệ\nquy 8.862.236 104.858.874\nTiền và tương đương tiền cuối kỳ (70 50+60+61)\n780.824.676.397 993.340.552.048\nNgười lập biểu Kế toán trưởng\ns\nLÁ\nĐỗ Hữu Thăng Thái Thị\nTươi",
+        "rank": 4,
+        "source_kind": "PDF",
+        "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+        "page": 6,
+        "score": 27.72950275130163,
+        "chunk_id": "pdf_cd837d9dfbd725a716238c9a9f95c0e6_6_00017",
+        "evidence_id": "pdf_cd837d9dfbd725a716238c9a9f95c0e6_6_00017",
+        "document_id": "cd837d9dfbd725a716238c9a9f95c0e6",
+        "issuer": "CEO Group",
+        "filename": "CEO_2025_consolidated.pdf",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "cash_equivalents"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "CASH_FLOW",
+        "unit_header": "VND",
+        "box": null,
+        "page_evidence_sha256": "98178eaa1761861138261228812dc23513d14a7f18a5bd7ecd75fbd8e2c949b4",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "REGION_TEXT_COVERAGE_REMAINS_UNCERTAIN"
+        ],
+        "derived_generation": "9ed316da5c627d454e8ce5faea40af93078b60d17bfdc068ed33156c3b5efe76"
+      },
+      {
+        "text": "CÔNG TY CO PHAN TAP ĐOÀN C.E.O BAO CÁO TÀI CHÍNH HỢP NHẤT\nDia chỉ: Tầng 5, Tháp CEO, HH2 -1, ĐTM Mễ Trì Hạ, đường Quý\n4 năm 2025\nPhạm Hùng, Phường Từ Liêm, TP Hà Nội\nBẢN THUYET MINH BAO CÁO TÀI CHÍNH HỢP NHAT (TIẾP THEO) Mẫu số B\n09—DN/HN\n(Các thuyết mình này là một bộ phận hợp thành và cần được đọc dong thời với báo chính hợp nhất\ncáo tài kèm theo)\n3. Nguyên tắc xác định các khoản tiền và các khoản tương đương tiền\nTiền và các khoản tương đương tiền bao gồm tiền tại tiền đầu\nmặt quỹ, các khoản gửi không kỳ hạn, các khoản tư\nngắn hạn, có khả năng thanh khoản dễ dàng chuyền đồi thành tiền đến biến\ncao, và ít rủi ro liên quan việc động\ngiá trị.\nNguyên tắc kế toán các khoản đầu tài chính\ntư",
+        "rank": 5,
+        "source_kind": "PDF",
+        "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+        "page": 11,
+        "score": 24.282655435397032,
+        "chunk_id": "pdf_cd837d9dfbd725a716238c9a9f95c0e6_11_00040",
+        "evidence_id": "pdf_cd837d9dfbd725a716238c9a9f95c0e6_11_00040",
+        "document_id": "cd837d9dfbd725a716238c9a9f95c0e6",
+        "issuer": "CEO Group",
+        "filename": "CEO_2025_consolidated.pdf",
+        "document_type": "Báo cáo tài chính hợp nhất",
+        "report_period": "2025-12-31",
+        "row_id": null,
+        "row_label": "",
+        "metric_ids": [
+          "cash_equivalents"
+        ],
+        "statement_scope": "CONSOLIDATED",
+        "statement_type": "NOTES",
+        "unit_header": null,
+        "box": null,
+        "page_evidence_sha256": "81b1ecf3c76bfd078dc74ca4ac9537e6700429238413d89507c161b4716ab411",
+        "numeric_answer_eligible": false,
+        "reviewed_facts": [],
+        "conflicts": [],
+        "verification": null,
+        "evidence_match": "RELATED_PASSAGE",
+        "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+        "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+        "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+        "coverage_warnings": [
+          "REGION_TEXT_COVERAGE_REMAINS_UNCERTAIN"
+        ],
+        "derived_generation": "9ed316da5c627d454e8ce5faea40af93078b60d17bfdc068ed33156c3b5efe76"
+      }
+    ],
+    "mode": "hybrid",
+    "source_errors": [],
+    "latency_ms": 1371.78,
+    "timings_ms": {
+      "PDF": 1371.78
+    },
+    "cross_source_order": null,
+    "intent": {
+      "metrics": [
+        "cash_equivalents"
+      ],
+      "dates": [],
+      "years": [
+        "2025"
+      ],
+      "scope": "CONSOLIDATED",
+      "basis": null,
+      "statement": "BALANCE_SHEET",
+      "unit": null,
+      "operation": "LOOKUP",
+      "period_reference": null,
+      "statement_explicit": false,
+      "evidence_requirement": "SOURCE_ROW_PERIOD_UNIT_SCOPE; numeric verification is separate",
+      "ontology_version": "financial-intent-v2.1",
+      "quarters": [],
+      "entity_scope": {
+        "resolved_document_ids": [
+          "cd837d9dfbd725a716238c9a9f95c0e6"
+        ],
+        "unrecognized_name": false
+      }
+    },
+    "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+    "evidence_reason": "NUMERIC_ANSWER_REQUIRES_REVIEWED_MATCHING_CELLS",
+    "search_profile": "production_v3r"
+  },
+  "status": "PASS"
+}

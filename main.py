@@ -32,6 +32,12 @@ async def lifespan(_app):
     initialize_financial_registry()
     from app.services.conversation_service import init_database
     init_database()
+    import os
+    product_root=Path(os.getenv('STUDIO_WORKSPACE_DIR','studio_workspace'))
+    if (product_root/'derived-generation.json').exists():
+        from app.product.api import workspace
+        from app.product.search_preparation import preparation
+        preparation(workspace()).schedule()
     try:
         yield
     finally:
@@ -39,6 +45,7 @@ async def lifespan(_app):
         from app.product.api import workspace, sec_index
         close_index()
         if workspace.cache_info().currsize:
+            if hasattr(workspace(),'_v3r_preparation'):workspace()._v3r_preparation.close()
             workspace().close()
         if sec_index.cache_info().currsize:
             sec_index().close()

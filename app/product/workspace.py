@@ -95,6 +95,16 @@ class OllamaEmbedder:
 
 
 class PdfWorkspace:
+    TABLE_LAYOUT_VERSION = 'TABLE_LAYOUT_V3'
+
+    def _extraction_engine(self):
+        from app.product import pdf_extract
+        return pdf_extract
+
+    def _page_tables(self, saved, page_number):
+        from app.product.pdf_extract import table_candidates
+        return table_candidates(saved.get('lines', []), page_number, saved.get('engine', {}).get('correction_clockwise', 0))
+
     def __init__(self, root: Path, embedder=None):
         self.root = Path(root).resolve()
         self._lock = RLock()
@@ -347,7 +357,8 @@ class PdfWorkspace:
             if not path.is_file() or _hash_file(path) != doc["sha256"]:
                 raise ValueError("PDF_SOURCE_HASH_MISMATCH")
             self._stage(document_id, "PROCESSING", "EXTRACTING")
-            from app.product.pdf_extract import extract_document, VERSION
+            engine = self._extraction_engine()
+            VERSION = engine.VERSION
             def checkpoint(number):
                 with closing(self._connect()) as db:
                     row=db.execute('SELECT payload,payload_hash FROM page_evidence WHERE document_id=? AND page=?',
@@ -364,7 +375,7 @@ class PdfWorkspace:
                     db.execute('INSERT OR REPLACE INTO page_evidence VALUES(?,?,?,?)',
                                (document_id,number,encoded,sha256(encoded.encode()).hexdigest()))
                 self._stage(document_id,'PROCESSING',f'EXTRACTING {number}/{total}',pages=total)
-            pages, chunks = extract_document(path, document_id, checkpoint, progress)
+            pages, chunks = engine.extract_document(path, document_id, checkpoint, progress)
             self._stage(document_id, "PROCESSING", "CHUNKING", pages=pages, chunks=len(chunks))
             self.embedder.identity()
             with self._lock:
@@ -637,16 +648,15 @@ class PdfWorkspace:
         if sha256(row['payload'].encode()).hexdigest()!=row['payload_hash']:
             raise ValueError('PDF_PAGE_EVIDENCE_HASH_MISMATCH')
         saved=json.loads(row['payload'])
-        from app.product.pdf_extract import table_candidates
         # A versioned, derived layout view; immutable OCR checkpoint bytes are retained.
-        tables=table_candidates(saved.get('lines',[]),page_number,saved.get('engine',{}).get('correction_clockwise',0))
+        tables=self._page_tables(saved,page_number)
         layout_hash=sha256(json.dumps(tables,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
-        evidence_hash=sha256((row['payload_hash']+'TABLE_LAYOUT_V3'+layout_hash).encode()).hexdigest()
+        evidence_hash=sha256((row['payload_hash']+self.TABLE_LAYOUT_VERSION+layout_hash).encode()).hexdigest()
         confidences=[w['confidence'] for line in saved.get('lines',[]) for w in line['words'] if w.get('confidence') is not None]
         quality={'engine_mean_word_confidence':sum(confidences)/len(confidences) if confidences else None,
                  'low_confidence_words':sum(v<60 for v in confidences),
-                 'status':'OCR_EXTRACTED_NOT_CERTIFIED' if saved.get('method')=='OCR' else 'NATIVE_TEXT_EXTRACTED'}
-        return {**saved,'tables':tables,'table_layout_version':'TABLE_LAYOUT_V3',
+                 'status':'OCR_EXTRACTED_NOT_CERTIFIED' if saved.get('method') in {'OCR','REGION_FUSION'} else 'NATIVE_TEXT_EXTRACTED'}
+        return {**saved,'tables':tables,'table_layout_version':self.TABLE_LAYOUT_VERSION,
                 'quality':quality,'checkpoint_sha256':row['payload_hash'],'evidence_sha256':evidence_hash}
 
     def extraction_status(self, document_id):

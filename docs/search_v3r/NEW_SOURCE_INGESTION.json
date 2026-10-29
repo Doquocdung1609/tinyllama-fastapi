@@ -1,0 +1,30 @@
+[
+  {
+    "document": {
+      "id": "3dd381d161b321a9af4f3dd5b8394485",
+      "filename": "PNJ.pdf",
+      "sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+      "issuer": "Phu Nhuan Jewelry PNJ",
+      "document_type": "Consolidated financial statements",
+      "report_period": "2025-12-31",
+      "size_bytes": 6575838,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 28,
+      "chunks": 90,
+      "created_at": "2026-10-29T08:45:04.529927+00:00",
+      "updated_at": "2026-10-29T08:48:31.130661+00:00",
+      "processing_status": "PROCESSING_COMPLETE",
+      "extraction_coverage_status": "EXTRACTION_COMPLETE",
+      "coverage_warnings": [],
+      "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+      "candidate_cells": 1295,
+      "regions_processed": 28,
+      "extraction_profile": "studio-region-evidence-v3r.1",
+      "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+      "derived_generation": "340bfb6d75626ebb8334882aa0632d6d00deac33182c24e9d044fe6d82d67aea"
+    },
+    "elapsed_s": 206.91831019999972
+  }
+]

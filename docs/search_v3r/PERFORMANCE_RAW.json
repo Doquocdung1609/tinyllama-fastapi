@@ -1,0 +1,4752 @@
+{
+  "cold_search_without_prewarm_ms": 70521.66279999074,
+  "prewarm_after_cold": {
+    "status": "READY",
+    "generation": "064e357e404e6ada8bf48bb7336ee1a30277d5b4f37399196c109c7e3a2ffa63",
+    "prepare_ms": 3641.49
+  },
+  "warm_ms": [
+    3778.632799978368,
+    3834.65850003995,
+    3941.014499985613,
+    4166.205300018191,
+    4080.424799991306,
+    3615.978299989365,
+    3877.8400999726728,
+    4049.4760000146925,
+    4250.023200002033,
+    3876.3330000219867
+  ],
+  "warm_p50_ms": 3909.427299979143,
+  "warm_p95_ms": 4212.305145009304,
+  "nested_workspace_timings_ms": [
+    {
+      "bm25": 7.6,
+      "embedding": 3462.79,
+      "dense": 25.78
+    },
+    {
+      "bm25": 11.09,
+      "embedding": 19.36,
+      "dense": 48.38
+    },
+    {
+      "bm25": 7.52,
+      "embedding": 57.49,
+      "dense": 25.7
+    },
+    {
+      "bm25": 8.14,
+      "embedding": 57.61,
+      "dense": 27.31
+    },
+    {
+      "bm25": 9.47,
+      "embedding": 57.79,
+      "dense": 24.51
+    },
+    {
+      "bm25": 7.59,
+      "embedding": 57.57,
+      "dense": 23.46
+    },
+    {
+      "bm25": 10.69,
+      "embedding": 57.7,
+      "dense": 23.88
+    },
+    {
+      "bm25": 8.37,
+      "embedding": 56.89,
+      "dense": 24.42
+    },
+    {
+      "bm25": 7.16,
+      "embedding": 56.44,
+      "dense": 22.52
+    },
+    {
+      "bm25": 9.9,
+      "embedding": 57.7,
+      "dense": 27.45
+    },
+    {
+      "bm25": 9.86,
+      "embedding": 57.29,
+      "dense": 25.51
+    },
+    {
+      "bm25": 10.17,
+      "embedding": 57.68,
+      "dense": 24.21
+    }
+  ],
+  "profile_functions": [
+    {
+      "file": "threading.py",
+      "function": "wait",
+      "calls": 19,
+      "self_s": 0.14193530000000001,
+      "cumulative_s": 8.1656355
+    },
+    {
+      "file": "threading.py",
+      "function": "wait",
+      "calls": 19,
+      "self_s": 0.0224864,
+      "cumulative_s": 5.2502753
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "verify_generation",
+      "calls": 1,
+      "self_s": 0.1313763,
+      "cumulative_s": 2.7678226
+    },
+    {
+      "file": "__init__.py",
+      "function": "loads",
+      "calls": 416,
+      "self_s": 0.0017425000000000001,
+      "cumulative_s": 2.0881006
+    },
+    {
+      "file": "decoder.py",
+      "function": "decode",
+      "calls": 416,
+      "self_s": 0.0027266,
+      "cumulative_s": 2.0846951000000002
+    },
+    {
+      "file": "decoder.py",
+      "function": "raw_decode",
+      "calls": 416,
+      "self_s": 2.0785545,
+      "cumulative_s": 2.0785545
+    },
+    {
+      "file": "pdf_extract.py",
+      "function": "folded",
+      "calls": 2113,
+      "self_s": 0.005382400000000001,
+      "cumulative_s": 0.7851616
+    },
+    {
+      "file": "~",
+      "function": "<method 'join' of 'str' objects>",
+      "calls": 2517,
+      "self_s": 0.2001599,
+      "cumulative_s": 0.6925546
+    },
+    {
+      "file": "~",
+      "function": "<method 'acquire' of '_thread.lock' objects>",
+      "calls": 83,
+      "self_s": 0.4996843,
+      "cumulative_s": 0.5003458000000001
+    },
+    {
+      "file": "pdf_extract.py",
+      "function": "<genexpr>",
+      "calls": 1637428,
+      "self_s": 0.3243885,
+      "cumulative_s": 0.49268510000000004
+    },
+    {
+      "file": "~",
+      "function": "<method 'fetchall' of 'sqlite3.Cursor' objects>",
+      "calls": 16,
+      "self_s": 0.33569980000000005,
+      "cumulative_s": 0.33569980000000005
+    },
+    {
+      "file": "profile_search_v3r.py",
+      "function": "instrument",
+      "calls": 1,
+      "self_s": 0.00022070000000000002,
+      "cumulative_s": 0.17151170000000002
+    },
+    {
+      "file": "workspace.py",
+      "function": "search",
+      "calls": 1,
+      "self_s": 0.0031579000000000004,
+      "cumulative_s": 0.17128990000000002
+    },
+    {
+      "file": "~",
+      "function": "<built-in method unicodedata.category>",
+      "calls": 1635967,
+      "self_s": 0.1683031,
+      "cumulative_s": 0.1683031
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "calls": 1522,
+      "self_s": 0.1284037,
+      "cumulative_s": 0.1284037
+    },
+    {
+      "file": "search_v3.py",
+      "function": "validate_entry",
+      "calls": 296,
+      "self_s": 0.0018015000000000001,
+      "cumulative_s": 0.1265872
+    },
+    {
+      "file": "~",
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 371,
+      "self_s": 0.11180000000000001,
+      "cumulative_s": 0.11180000000000001
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "_describe",
+      "calls": 39,
+      "self_s": 0.0018670000000000002,
+      "cumulative_s": 0.1059924
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "prepare",
+      "calls": 1,
+      "self_s": 0.0197372,
+      "cumulative_s": 0.09770140000000001
+    },
+    {
+      "file": "workspace.py",
+      "function": "_connect",
+      "calls": 71,
+      "self_s": 0.0006146000000000001,
+      "cumulative_s": 0.0974735
+    },
+    {
+      "file": "workspace.py",
+      "function": "_hash_file",
+      "calls": 28,
+      "self_s": 0.0034583,
+      "cumulative_s": 0.09363300000000001
+    },
+    {
+      "file": "workspace.py",
+      "function": "source_file",
+      "calls": 8,
+      "self_s": 0.0005160000000000001,
+      "cumulative_s": 0.0897902
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "document",
+      "calls": 18,
+      "self_s": 0.0006072,
+      "cumulative_s": 0.0877903
+    },
+    {
+      "file": "~",
+      "function": "<method 'encode' of 'str' objects>",
+      "calls": 1508,
+      "self_s": 0.076283,
+      "cumulative_s": 0.076283
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "search",
+      "calls": 2,
+      "self_s": 0.000288,
+      "cumulative_s": 0.071506
+    },
+    {
+      "file": "__init__.py",
+      "function": "sub",
+      "calls": 2121,
+      "self_s": 0.0017549000000000002,
+      "cumulative_s": 0.07093690000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'read' of '_io.BufferedReader' objects>",
+      "calls": 199,
+      "self_s": 0.0696196,
+      "cumulative_s": 0.0696446
+    },
+    {
+      "file": "~",
+      "function": "<method 'sub' of 're.Pattern' objects>",
+      "calls": 2123,
+      "self_s": 0.0662148,
+      "cumulative_s": 0.0662148
+    },
+    {
+      "file": "derived_workspace.py",
+      "function": "list_documents",
+      "calls": 3,
+      "self_s": 0.00039810000000000003,
+      "cumulative_s": 0.0634001
+    },
+    {
+      "file": "~",
+      "function": "<method 'update' of '_hashlib.HASH' objects>",
+      "calls": 81,
+      "self_s": 0.0495186,
+      "cumulative_s": 0.0495186
+    },
+    {
+      "file": "pathlib.py",
+      "function": "read_bytes",
+      "calls": 87,
+      "self_s": 0.0003643,
+      "cumulative_s": 0.045178600000000006
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__exit__",
+      "calls": 72,
+      "self_s": 0.00013470000000000002,
+      "cumulative_s": 0.043630100000000005
+    },
+    {
+      "file": "qdrant_client.py",
+      "function": "query_points",
+      "calls": 1,
+      "self_s": 3.7300000000000005e-05,
+      "cumulative_s": 0.043574
+    },
+    {
+      "file": "~",
+      "function": "<method 'close' of 'sqlite3.Connection' objects>",
+      "calls": 72,
+      "self_s": 0.043495400000000004,
+      "cumulative_s": 0.043495400000000004
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "query_points",
+      "calls": 1,
+      "self_s": 6.43e-05,
+      "cumulative_s": 0.0434374
+    },
+    {
+      "file": "local_collection.py",
+      "function": "query_points",
+      "calls": 1,
+      "self_s": 2.65e-05,
+      "cumulative_s": 0.0421054
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_query_collection",
+      "calls": 1,
+      "self_s": 1.9900000000000003e-05,
+      "cumulative_s": 0.0420362
+    },
+    {
+      "file": "local_collection.py",
+      "function": "search",
+      "calls": 1,
+      "self_s": 0.00018040000000000002,
+      "cumulative_s": 0.042016000000000005
+    },
+    {
+      "file": "sessions.py",
+      "function": "request",
+      "calls": 2,
+      "self_s": 5.9600000000000005e-05,
+      "cumulative_s": 0.0412049
+    },
+    {
+      "file": "sessions.py",
+      "function": "send",
+      "calls": 2,
+      "self_s": 6.97e-05,
+      "cumulative_s": 0.038454100000000005
+    },
+    {
+      "file": "adapters.py",
+      "function": "send",
+      "calls": 2,
+      "self_s": 6.54e-05,
+      "cumulative_s": 0.0379643
+    },
+    {
+      "file": "workspace.py",
+      "function": "document",
+      "calls": 18,
+      "self_s": 0.00048320000000000004,
+      "cumulative_s": 0.0377363
+    },
+    {
+      "file": "connectionpool.py",
+      "function": "urlopen",
+      "calls": 2,
+      "self_s": 5.5700000000000005e-05,
+      "cumulative_s": 0.0372901
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_payload_and_non_deleted_mask",
+      "calls": 1,
+      "self_s": 4.78e-05,
+      "cumulative_s": 0.037052600000000005
+    },
+    {
+      "file": "connectionpool.py",
+      "function": "_make_request",
+      "calls": 2,
+      "self_s": 4.71e-05,
+      "cumulative_s": 0.037001400000000004
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "calculate_payload_mask",
+      "calls": 1,
+      "self_s": 0.0014695,
+      "cumulative_s": 0.036988900000000005
+    },
+    {
+      "file": "connection.py",
+      "function": "getresponse",
+      "calls": 2,
+      "self_s": 6.440000000000001e-05,
+      "cumulative_s": 0.036209200000000004
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.all>",
+      "calls": 1419,
+      "self_s": 0.0007236,
+      "cumulative_s": 0.0361053
+    },
+    {
+      "file": "client.py",
+      "function": "getresponse",
+      "calls": 2,
+      "self_s": 2.18e-05,
+      "cumulative_s": 0.035898900000000004
+    },
+    {
+      "file": "client.py",
+      "function": "begin",
+      "calls": 2,
+      "self_s": 4.1500000000000006e-05,
+      "cumulative_s": 0.0357588
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "check_filter",
+      "calls": 1118,
+      "self_s": 0.0018299000000000002,
+      "cumulative_s": 0.0352847
+    },
+    {
+      "file": "client.py",
+      "function": "_read_status",
+      "calls": 2,
+      "self_s": 5.31e-05,
+      "cumulative_s": 0.035254
+    },
+    {
+      "file": "workspace.py",
+      "function": "<lambda>",
+      "calls": 109,
+      "self_s": 0.00018610000000000002,
+      "cumulative_s": 0.033820800000000005
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "check_must",
+      "calls": 1118,
+      "self_s": 0.0010194000000000002,
+      "cumulative_s": 0.0295026
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "<genexpr>",
+      "calls": 2236,
+      "self_s": 0.0007782,
+      "cumulative_s": 0.0279707
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "check_condition",
+      "calls": 1118,
+      "self_s": 0.0025052,
+      "cumulative_s": 0.0271925
+    },
+    {
+      "file": "search_v3.py",
+      "function": "search",
+      "calls": 1,
+      "self_s": 0.0007343,
+      "cumulative_s": 0.0237096
+    },
+    {
+      "file": "workspace.py",
+      "function": "identity",
+      "calls": 1,
+      "self_s": 2.0300000000000002e-05,
+      "cumulative_s": 0.0225733
+    },
+    {
+      "file": "sessions.py",
+      "function": "get",
+      "calls": 1,
+      "self_s": 1.8500000000000002e-05,
+      "cumulative_s": 0.022514000000000003
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _sqlite3.connect>",
+      "calls": 72,
+      "self_s": 0.019984400000000003,
+      "cumulative_s": 0.0222088
+    },
+    {
+      "file": "search_v2.py",
+      "function": "prepare",
+      "calls": 1,
+      "self_s": 0.0018385,
+      "cumulative_s": 0.0216702
+    },
+    {
+      "file": "workspace.py",
+      "function": "_eligible",
+      "calls": 1,
+      "self_s": 2.0600000000000003e-05,
+      "cumulative_s": 0.0201413
+    },
+    {
+      "file": "workspace.py",
+      "function": "embed",
+      "calls": 1,
+      "self_s": 1.2100000000000001e-05,
+      "cumulative_s": 0.019334300000000002
+    },
+    {
+      "file": "~",
+      "function": "<method 'readline' of '_io.BufferedReader' objects>",
+      "calls": 13,
+      "self_s": 3.58e-05,
+      "cumulative_s": 0.018756500000000002
+    },
+    {
+      "file": "socket.py",
+      "function": "readinto",
+      "calls": 3,
+      "self_s": 2.4200000000000002e-05,
+      "cumulative_s": 0.018743600000000003
+    },
+    {
+      "file": "sessions.py",
+      "function": "post",
+      "calls": 1,
+      "self_s": 5.600000000000001e-06,
+      "cumulative_s": 0.0187164
+    },
+    {
+      "file": "~",
+      "function": "<method 'recv_into' of '_socket.socket' objects>",
+      "calls": 3,
+      "self_s": 0.0187014,
+      "cumulative_s": 0.0187014
+    },
+    {
+      "file": "payload_value_extractor.py",
+      "function": "value_by_key",
+      "calls": 1118,
+      "self_s": 0.0012302,
+      "cumulative_s": 0.013949900000000001
+    },
+    {
+      "file": "pathlib.py",
+      "function": "open",
+      "calls": 116,
+      "self_s": 0.0001809,
+      "cumulative_s": 0.013241200000000002
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _io.open>",
+      "calls": 116,
+      "self_s": 0.0106437,
+      "cumulative_s": 0.013060100000000002
+    },
+    {
+      "file": "__init__.py",
+      "function": "search",
+      "calls": 2053,
+      "self_s": 0.0012536000000000001,
+      "cumulative_s": 0.011286200000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'casefold' of 'str' objects>",
+      "calls": 2114,
+      "self_s": 0.0108705,
+      "cumulative_s": 0.0108705
+    },
+    {
+      "file": "json_path_parser.py",
+      "function": "parse_json_path",
+      "calls": 1118,
+      "self_s": 0.0019625000000000003,
+      "cumulative_s": 0.010490800000000002
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.any>",
+      "calls": 2578,
+      "self_s": 0.0013985,
+      "cumulative_s": 0.010205500000000001
+    },
+    {
+      "file": "analysis.py",
+      "function": "eligible_facts",
+      "calls": 1,
+      "self_s": 3.19e-05,
+      "cumulative_s": 0.010033700000000001
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "<genexpr>",
+      "calls": 2236,
+      "self_s": 0.0007897000000000001,
+      "cumulative_s": 0.0089088
+    },
+    {
+      "file": "~",
+      "function": "<method 'search' of 're.Pattern' objects>",
+      "calls": 2075,
+      "self_s": 0.008181500000000001,
+      "cumulative_s": 0.008181500000000001
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "check_match",
+      "calls": 1118,
+      "self_s": 0.0035514,
+      "cumulative_s": 0.0081191
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 592,
+      "self_s": 0.0003195,
+      "cumulative_s": 0.0074603000000000004
+    },
+    {
+      "file": "search_v3.py",
+      "function": "date_present",
+      "calls": 296,
+      "self_s": 0.0008709000000000001,
+      "cumulative_s": 0.0071408
+    },
+    {
+      "file": "json_path_parser.py",
+      "function": "match_key",
+      "calls": 1118,
+      "self_s": 0.0034152,
+      "cumulative_s": 0.0071216000000000005
+    },
+    {
+      "file": "__init__.py",
+      "function": "virtual_memory",
+      "calls": 20,
+      "self_s": 7.25e-05,
+      "cumulative_s": 0.006634
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "virtual_memory",
+      "calls": 20,
+      "self_s": 0.0001374,
+      "cumulative_s": 0.0065615000000000005
+    },
+    {
+      "file": "workspace.py",
+      "function": "list_documents",
+      "calls": 3,
+      "self_s": 0.0001943,
+      "cumulative_s": 0.0064564
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 29287,
+      "self_s": 0.006177200000000001,
+      "cumulative_s": 0.006391
+    },
+    {
+      "file": "~",
+      "function": "<built-in method psutil_windows.virtual_mem>",
+      "calls": 20,
+      "self_s": 0.006117,
+      "cumulative_s": 0.006117
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "_source_entries",
+      "calls": 1,
+      "self_s": 0.005813100000000001,
+      "cumulative_s": 0.005813100000000001
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__fspath__",
+      "calls": 227,
+      "self_s": 0.000391,
+      "cumulative_s": 0.0051475
+    },
+    {
+      "file": "search_v3r.py",
+      "function": "_query_intent",
+      "calls": 1,
+      "self_s": 7.8e-06,
+      "cumulative_s": 0.0050401000000000005
+    },
+    {
+      "file": "search_v3.py",
+      "function": "intent_for",
+      "calls": 1,
+      "self_s": 6.83e-05,
+      "cumulative_s": 0.0050323
+    },
+    {
+      "file": "__init__.py",
+      "function": "_compile",
+      "calls": 4190,
+      "self_s": 0.0033004,
+      "cumulative_s": 0.0048698000000000005
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__str__",
+      "calls": 227,
+      "self_s": 0.0007796000000000001,
+      "cumulative_s": 0.0047565
+    },
+    {
+      "file": "~",
+      "function": "<built-in method unicodedata.normalize>",
+      "calls": 2113,
+      "self_s": 0.0045126,
+      "cumulative_s": 0.0045126
+    },
+    {
+      "file": "pathlib.py",
+      "function": "is_file",
+      "calls": 39,
+      "self_s": 0.0001221,
+      "cumulative_s": 0.0045033
+    },
+    {
+      "file": "pathlib.py",
+      "function": "stat",
+      "calls": 39,
+      "self_s": 3.88e-05,
+      "cumulative_s": 0.004351600000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method nt.stat>",
+      "calls": 39,
+      "self_s": 0.0017526000000000002,
+      "cumulative_s": 0.0043128
+    },
+    {
+      "file": "query_intent.py",
+      "function": "metric_matches",
+      "calls": 2,
+      "self_s": 0.00023180000000000002,
+      "cumulative_s": 0.0042521
+    },
+    {
+      "file": "pathlib.py",
+      "function": "drive",
+      "calls": 75,
+      "self_s": 0.0003064,
+      "cumulative_s": 0.0037901000000000002
+    },
+    {
+      "file": "typing.py",
+      "function": "__or__",
+      "calls": 1118,
+      "self_s": 0.0005189,
+      "cumulative_s": 0.0035039000000000003
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_load_parts",
+      "calls": 75,
+      "self_s": 0.00040310000000000004,
+      "cumulative_s": 0.0034837
+    },
+    {
+      "file": "distances.py",
+      "function": "calculate_distance",
+      "calls": 1,
+      "self_s": 2.2000000000000003e-05,
+      "cumulative_s": 0.0031604000000000003
+    },
+    {
+      "file": "distances.py",
+      "function": "cosine_similarity",
+      "calls": 1,
+      "self_s": 0.0010834,
+      "cumulative_s": 0.0031253
+    },
+    {
+      "file": "~",
+      "function": "<method '__exit__' of '_io._IOBase' objects>",
+      "calls": 116,
+      "self_s": 0.0030901,
+      "cumulative_s": 0.0030901
+    },
+    {
+      "file": "typing.py",
+      "function": "inner",
+      "calls": 1118,
+      "self_s": 0.0010545,
+      "cumulative_s": 0.0029850000000000002
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "<genexpr>",
+      "calls": 2236,
+      "self_s": 0.0012653,
+      "cumulative_s": 0.0026345
+    },
+    {
+      "file": "~",
+      "function": "<method 'match' of 're.Pattern' objects>",
+      "calls": 866,
+      "self_s": 0.0026111000000000003,
+      "cumulative_s": 0.0026111000000000003
+    },
+    {
+      "file": "query_intent.py",
+      "function": "understand",
+      "calls": 1,
+      "self_s": 5.7700000000000007e-05,
+      "cumulative_s": 0.0025619
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__truediv__",
+      "calls": 120,
+      "self_s": 0.00011460000000000001,
+      "cumulative_s": 0.0022874
+    },
+    {
+      "file": "search_v3.py",
+      "function": "metrics_in",
+      "calls": 1,
+      "self_s": 1.5e-05,
+      "cumulative_s": 0.0022758
+    },
+    {
+      "file": "payload_value_extractor.py",
+      "function": "_get_value",
+      "calls": 2236,
+      "self_s": 0.0017573,
+      "cumulative_s": 0.0022289000000000002
+    },
+    {
+      "file": "~",
+      "function": "<method 'hexdigest' of '_hashlib.HASH' objects>",
+      "calls": 1522,
+      "self_s": 0.0022199000000000003,
+      "cumulative_s": 0.0022199000000000003
+    },
+    {
+      "file": "pathlib.py",
+      "function": "joinpath",
+      "calls": 120,
+      "self_s": 0.00031,
+      "cumulative_s": 0.0021728000000000003
+    },
+    {
+      "file": "copy.py",
+      "function": "deepcopy",
+      "calls": 1215,
+      "self_s": 0.0009988,
+      "cumulative_s": 0.0020498
+    },
+    {
+      "file": "_linalg.py",
+      "function": "norm",
+      "calls": 2,
+      "self_s": 0.0014084000000000002,
+      "cumulative_s": 0.0020404
+    },
+    {
+      "file": "main.py",
+      "function": "__init__",
+      "calls": 1123,
+      "self_s": 0.0004926,
+      "cumulative_s": 0.0020177000000000003
+    },
+    {
+      "file": "typing.py",
+      "function": "__hash__",
+      "calls": 2236,
+      "self_s": 0.0015516000000000002,
+      "cumulative_s": 0.0019305000000000001
+    },
+    {
+      "file": "search_v3.py",
+      "function": "entity_conflict",
+      "calls": 1,
+      "self_s": 0.0001956,
+      "cumulative_s": 0.0018923000000000002
+    },
+    {
+      "file": "copy.py",
+      "function": "_deepcopy_dict",
+      "calls": 41,
+      "self_s": 0.00018,
+      "cumulative_s": 0.0018892000000000002
+    },
+    {
+      "file": "pathlib.py",
+      "function": "with_segments",
+      "calls": 120,
+      "self_s": 0.00043390000000000003,
+      "cumulative_s": 0.0018628000000000002
+    },
+    {
+      "file": "functools.py",
+      "function": "decorating_function",
+      "calls": 72,
+      "self_s": 0.0003905,
+      "cumulative_s": 0.0018138000000000002
+    },
+    {
+      "file": "~",
+      "function": "<method 'isalnum' of 'str' objects>",
+      "calls": 12298,
+      "self_s": 0.0018110000000000001,
+      "cumulative_s": 0.0018110000000000001
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_parse_path",
+      "calls": 75,
+      "self_s": 0.0006955,
+      "cumulative_s": 0.0016401
+    },
+    {
+      "file": "~",
+      "function": "<method 'validate_python' of 'pydantic_core._pydantic_core.SchemaValidator' objects>",
+      "calls": 1123,
+      "self_s": 0.0015209000000000002,
+      "cumulative_s": 0.0015251000000000002
+    },
+    {
+      "file": "sessions.py",
+      "function": "prepare_request",
+      "calls": 2,
+      "self_s": 4.83e-05,
+      "cumulative_s": 0.001516
+    },
+    {
+      "file": "_common.py",
+      "function": "wrapper",
+      "calls": 20,
+      "self_s": 0.0002769,
+      "cumulative_s": 0.0014706
+    },
+    {
+      "file": "functools.py",
+      "function": "update_wrapper",
+      "calls": 72,
+      "self_s": 0.0006236000000000001,
+      "cumulative_s": 0.0014233000000000002
+    },
+    {
+      "file": "<frozen ntpath>",
+      "function": "join",
+      "calls": 74,
+      "self_s": 0.0006230000000000001,
+      "cumulative_s": 0.0014037000000000001
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "values_match",
+      "calls": 1118,
+      "self_s": 0.0007126000000000001,
+      "cumulative_s": 0.0013692
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__init__",
+      "calls": 121,
+      "self_s": 0.00044720000000000003,
+      "cumulative_s": 0.0013193
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "_resolve_query_input",
+      "calls": 1,
+      "self_s": 1.22e-05,
+      "cumulative_s": 0.0012569
+    },
+    {
+      "file": "pathlib.py",
+      "function": "read_text",
+      "calls": 1,
+      "self_s": 6.26e-05,
+      "cumulative_s": 0.001247
+    },
+    {
+      "file": "main.py",
+      "function": "__deepcopy__",
+      "calls": 1,
+      "self_s": 9.9e-06,
+      "cumulative_s": 0.0012231
+    },
+    {
+      "file": "__init__.py",
+      "function": "memory_info",
+      "calls": 20,
+      "self_s": 6.08e-05,
+      "cumulative_s": 0.0011937
+    },
+    {
+      "file": "copy.py",
+      "function": "_deepcopy_list",
+      "calls": 1,
+      "self_s": 0.0002166,
+      "cumulative_s": 0.0011858
+    },
+    {
+      "file": "sessions.py",
+      "function": "merge_environment_settings",
+      "calls": 2,
+      "self_s": 1.8900000000000002e-05,
+      "cumulative_s": 0.0011535
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "wrapper",
+      "calls": 20,
+      "self_s": 0.000106,
+      "cumulative_s": 0.0011329
+    },
+    {
+      "file": "utils.py",
+      "function": "get_environ_proxies",
+      "calls": 2,
+      "self_s": 1.2400000000000002e-05,
+      "cumulative_s": 0.0010710000000000001
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "memory_info",
+      "calls": 20,
+      "self_s": 0.0001554,
+      "cumulative_s": 0.0010269
+    },
+    {
+      "file": "~",
+      "function": "<method 'replace' of 'str' objects>",
+      "calls": 2508,
+      "self_s": 0.0010028,
+      "cumulative_s": 0.0010028
+    },
+    {
+      "file": "~",
+      "function": "<method 'fetchone' of 'sqlite3.Cursor' objects>",
+      "calls": 136,
+      "self_s": 0.0009258000000000001,
+      "cumulative_s": 0.0009258000000000001
+    },
+    {
+      "file": "<frozen ntpath>",
+      "function": "splitroot",
+      "calls": 297,
+      "self_s": 0.0006524,
+      "cumulative_s": 0.000897
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_get_payload",
+      "calls": 40,
+      "self_s": 4.78e-05,
+      "cumulative_s": 0.0008820000000000001
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__init__",
+      "calls": 121,
+      "self_s": 0.0005177000000000001,
+      "cumulative_s": 0.0008721
+    },
+    {
+      "file": "~",
+      "function": "<method 'append' of 'list' objects>",
+      "calls": 4554,
+      "self_s": 0.0008661000000000001,
+      "cumulative_s": 0.0008661000000000001
+    },
+    {
+      "file": "__init__.py",
+      "function": "dumps",
+      "calls": 5,
+      "self_s": 3.33e-05,
+      "cumulative_s": 0.000866
+    },
+    {
+      "file": "models.py",
+      "function": "prepare",
+      "calls": 2,
+      "self_s": 3.19e-05,
+      "cumulative_s": 0.0008600000000000001
+    },
+    {
+      "file": "encoder.py",
+      "function": "encode",
+      "calls": 5,
+      "self_s": 2.5500000000000003e-05,
+      "cumulative_s": 0.0008272
+    },
+    {
+      "file": "~",
+      "function": "<method 'get' of 'dict' objects>",
+      "calls": 3382,
+      "self_s": 0.0008213000000000001,
+      "cumulative_s": 0.0008213000000000001
+    },
+    {
+      "file": "_pswindows.py",
+      "function": "_get_raw_meminfo",
+      "calls": 20,
+      "self_s": 5.2300000000000004e-05,
+      "cumulative_s": 0.0008095
+    },
+    {
+      "file": "~",
+      "function": "<method 'startswith' of 'str' objects>",
+      "calls": 1520,
+      "self_s": 0.0008014000000000001,
+      "cumulative_s": 0.0008014000000000001
+    },
+    {
+      "file": "encoder.py",
+      "function": "iterencode",
+      "calls": 5,
+      "self_s": 0.0007932000000000001,
+      "cumulative_s": 0.0007932000000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method psutil_windows.proc_memory_info>",
+      "calls": 20,
+      "self_s": 0.0007572000000000001,
+      "cumulative_s": 0.0007572000000000001
+    },
+    {
+      "file": "utils.py",
+      "function": "should_bypass_proxies",
+      "calls": 2,
+      "self_s": 4.58e-05,
+      "cumulative_s": 0.0007179
+    },
+    {
+      "file": "connection.py",
+      "function": "request",
+      "calls": 2,
+      "self_s": 5.92e-05,
+      "cumulative_s": 0.0007125
+    },
+    {
+      "file": "workspace.py",
+      "function": "_point_id",
+      "calls": 40,
+      "self_s": 6.49e-05,
+      "cumulative_s": 0.000705
+    },
+    {
+      "file": "json_path_parser.py",
+      "function": "match_quote",
+      "calls": 1118,
+      "self_s": 0.0003974,
+      "cumulative_s": 0.0006785000000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.getattr>",
+      "calls": 653,
+      "self_s": 0.0006517000000000001,
+      "cumulative_s": 0.0006517000000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'strip' of 'str' objects>",
+      "calls": 2146,
+      "self_s": 0.0006243,
+      "cumulative_s": 0.0006243
+    },
+    {
+      "file": "~",
+      "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+      "calls": 2,
+      "self_s": 0.0006212,
+      "cumulative_s": 0.0006212
+    },
+    {
+      "file": "~",
+      "function": "<built-in method sys.intern>",
+      "calls": 674,
+      "self_s": 0.000603,
+      "cumulative_s": 0.000603
+    },
+    {
+      "file": "__init__.py",
+      "function": "escape",
+      "calls": 171,
+      "self_s": 9.98e-05,
+      "cumulative_s": 0.0005973
+    },
+    {
+      "file": "_pydantic_compat.py",
+      "function": "construct",
+      "calls": 40,
+      "self_s": 6.500000000000001e-05,
+      "cumulative_s": 0.0005963
+    },
+    {
+      "file": "utils.py",
+      "function": "proxy_bypass",
+      "calls": 2,
+      "self_s": 2.5200000000000003e-05,
+      "cumulative_s": 0.0005830000000000001
+    },
+    {
+      "file": "uuid.py",
+      "function": "uuid5",
+      "calls": 40,
+      "self_s": 0.00019600000000000002,
+      "cumulative_s": 0.0005666
+    },
+    {
+      "file": "~",
+      "function": "<method 'decode' of 'bytes' objects>",
+      "calls": 54,
+      "self_s": 0.0005335,
+      "cumulative_s": 0.0005335
+    },
+    {
+      "file": "request.py",
+      "function": "getproxies_environment",
+      "calls": 4,
+      "self_s": 0.0001951,
+      "cumulative_s": 0.0005323
+    },
+    {
+      "file": "main.py",
+      "function": "model_construct",
+      "calls": 40,
+      "self_s": 0.00031620000000000004,
+      "cumulative_s": 0.0005313000000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'end' of 're.Match' objects>",
+      "calls": 832,
+      "self_s": 0.0004972,
+      "cumulative_s": 0.0004972
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.len>",
+      "calls": 1550,
+      "self_s": 0.0004933,
+      "cumulative_s": 0.0004957000000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'translate' of 'str' objects>",
+      "calls": 171,
+      "self_s": 0.00047000000000000004,
+      "cumulative_s": 0.00047000000000000004
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "ensure_condition_list",
+      "calls": 1118,
+      "self_s": 0.00028940000000000004,
+      "cumulative_s": 0.00044830000000000005
+    },
+    {
+      "file": "client.py",
+      "function": "parse_headers",
+      "calls": 2,
+      "self_s": 6.6e-06,
+      "cumulative_s": 0.0004444
+    },
+    {
+      "file": "workspace.py",
+      "function": "_validate_vector",
+      "calls": 1,
+      "self_s": 1.4000000000000001e-06,
+      "cumulative_s": 0.00043700000000000005
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_url",
+      "calls": 2,
+      "self_s": 4.1500000000000006e-05,
+      "cumulative_s": 0.0004353
+    },
+    {
+      "file": "client.py",
+      "function": "_parse_header_lines",
+      "calls": 2,
+      "self_s": 2.12e-05,
+      "cumulative_s": 0.0004109
+    },
+    {
+      "file": "parser.py",
+      "function": "parsestr",
+      "calls": 2,
+      "self_s": 2.29e-05,
+      "cumulative_s": 0.00038570000000000005
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.hash>",
+      "calls": 2236,
+      "self_s": 0.00037890000000000005,
+      "cumulative_s": 0.00037890000000000005
+    },
+    {
+      "file": "parser.py",
+      "function": "parse",
+      "calls": 2,
+      "self_s": 1.9600000000000002e-05,
+      "cumulative_s": 0.00036280000000000004
+    },
+    {
+      "file": "workspace.py",
+      "function": "<genexpr>",
+      "calls": 769,
+      "self_s": 0.00023080000000000003,
+      "cumulative_s": 0.00035610000000000004
+    },
+    {
+      "file": "request.py",
+      "function": "getproxies",
+      "calls": 2,
+      "self_s": 9.9e-06,
+      "cumulative_s": 0.00034070000000000004
+    },
+    {
+      "file": "models.py",
+      "function": "content",
+      "calls": 6,
+      "self_s": 8.3e-06,
+      "cumulative_s": 0.0003366
+    },
+    {
+      "file": "__init__.py",
+      "function": "detect_encoding",
+      "calls": 46,
+      "self_s": 0.00020060000000000002,
+      "cumulative_s": 0.00033200000000000005
+    },
+    {
+      "file": "~",
+      "function": "<method 'join' of 'bytes' objects>",
+      "calls": 20,
+      "self_s": 1.3000000000000001e-05,
+      "cumulative_s": 0.00033150000000000003
+    },
+    {
+      "file": "models.py",
+      "function": "generate",
+      "calls": 4,
+      "self_s": 7.3e-06,
+      "cumulative_s": 0.00031850000000000004
+    },
+    {
+      "file": "~",
+      "function": "<method 'split' of 'str' objects>",
+      "calls": 488,
+      "self_s": 0.00031570000000000003,
+      "cumulative_s": 0.00031570000000000003
+    },
+    {
+      "file": "pathlib.py",
+      "function": "__new__",
+      "calls": 121,
+      "self_s": 0.00018700000000000002,
+      "cumulative_s": 0.0003127
+    },
+    {
+      "file": "response.py",
+      "function": "stream",
+      "calls": 4,
+      "self_s": 3.03e-05,
+      "cumulative_s": 0.0003102
+    },
+    {
+      "file": "client.py",
+      "function": "send",
+      "calls": 3,
+      "self_s": 1.27e-05,
+      "cumulative_s": 0.0002968
+    },
+    {
+      "file": "client.py",
+      "function": "endheaders",
+      "calls": 2,
+      "self_s": 7.4e-06,
+      "cumulative_s": 0.0002834
+    },
+    {
+      "file": "~",
+      "function": "<method 'sendall' of '_socket.socket' objects>",
+      "calls": 3,
+      "self_s": 0.0002815,
+      "cumulative_s": 0.0002815
+    },
+    {
+      "file": "utils.py",
+      "function": "get_netrc_auth",
+      "calls": 2,
+      "self_s": 3.9500000000000005e-05,
+      "cumulative_s": 0.0002788
+    },
+    {
+      "file": "client.py",
+      "function": "_send_output",
+      "calls": 2,
+      "self_s": 1.1200000000000001e-05,
+      "cumulative_s": 0.00027600000000000004
+    },
+    {
+      "file": "sessions.py",
+      "function": "merge_setting",
+      "calls": 14,
+      "self_s": 3.91e-05,
+      "cumulative_s": 0.0002752
+    },
+    {
+      "file": "_common.py",
+      "function": "usage_percent",
+      "calls": 20,
+      "self_s": 9.66e-05,
+      "cumulative_s": 0.000275
+    },
+    {
+      "file": "adapters.py",
+      "function": "get_connection_with_tls_context",
+      "calls": 2,
+      "self_s": 2.18e-05,
+      "cumulative_s": 0.00027
+    },
+    {
+      "file": "utils.py",
+      "function": "proxy_bypass_registry",
+      "calls": 2,
+      "self_s": 2.2000000000000003e-05,
+      "cumulative_s": 0.00026680000000000003
+    },
+    {
+      "file": "~",
+      "function": "<method 'extend' of 'list' objects>",
+      "calls": 1242,
+      "self_s": 0.0002632,
+      "cumulative_s": 0.0002636
+    },
+    {
+      "file": "~",
+      "function": "<method 'sort' of 'list' objects>",
+      "calls": 4,
+      "self_s": 0.0001329,
+      "cumulative_s": 0.0002571
+    },
+    {
+      "file": "~",
+      "function": "<method 'items' of 'dict' objects>",
+      "calls": 1236,
+      "self_s": 0.0002563,
+      "cumulative_s": 0.0002563
+    },
+    {
+      "file": "feedparser.py",
+      "function": "feed",
+      "calls": 2,
+      "self_s": 6.900000000000001e-06,
+      "cumulative_s": 0.0002519
+    },
+    {
+      "file": "adapters.py",
+      "function": "build_response",
+      "calls": 2,
+      "self_s": 2.29e-05,
+      "cumulative_s": 0.0002451
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "__iter__",
+      "calls": 444,
+      "self_s": 9.76e-05,
+      "cumulative_s": 0.00024390000000000002
+    },
+    {
+      "file": "functools.py",
+      "function": "lru_cache",
+      "calls": 72,
+      "self_s": 0.000194,
+      "cumulative_s": 0.00023520000000000002
+    },
+    {
+      "file": "feedparser.py",
+      "function": "_call_parse",
+      "calls": 4,
+      "self_s": 1.86e-05,
+      "cumulative_s": 0.00023030000000000001
+    },
+    {
+      "file": "uuid.py",
+      "function": "__init__",
+      "calls": 40,
+      "self_s": 0.00016900000000000002,
+      "cumulative_s": 0.0002157
+    },
+    {
+      "file": "feedparser.py",
+      "function": "_parsegen",
+      "calls": 4,
+      "self_s": 4.27e-05,
+      "cumulative_s": 0.00021170000000000002
+    },
+    {
+      "file": "~",
+      "function": "<built-in method winreg.OpenKey>",
+      "calls": 4,
+      "self_s": 0.00020850000000000003,
+      "cumulative_s": 0.00020850000000000003
+    },
+    {
+      "file": "models.py",
+      "function": "json",
+      "calls": 2,
+      "self_s": 7.4e-06,
+      "cumulative_s": 0.0002008
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.round>",
+      "calls": 25,
+      "self_s": 0.0001966,
+      "cumulative_s": 0.0001966
+    },
+    {
+      "file": "~",
+      "function": "<built-in method __new__ of type object at 0x00007FF96F0D98F0>",
+      "calls": 230,
+      "self_s": 0.000193,
+      "cumulative_s": 0.000193
+    },
+    {
+      "file": "url.py",
+      "function": "parse_url",
+      "calls": 2,
+      "self_s": 5.3500000000000006e-05,
+      "cumulative_s": 0.0001899
+    },
+    {
+      "file": "json_path_parser.py",
+      "function": "match_brackets",
+      "calls": 1118,
+      "self_s": 0.0001832,
+      "cumulative_s": 0.0001832
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 592,
+      "self_s": 0.00016360000000000002,
+      "cumulative_s": 0.00016360000000000002
+    },
+    {
+      "file": "utils.py",
+      "function": "to_key_val_list",
+      "calls": 14,
+      "self_s": 3.55e-05,
+      "cumulative_s": 0.0001571
+    },
+    {
+      "file": "connection.py",
+      "function": "putheader",
+      "calls": 12,
+      "self_s": 3.34e-05,
+      "cumulative_s": 0.00015580000000000002
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_format_parsed_parts",
+      "calls": 75,
+      "self_s": 8.89e-05,
+      "cumulative_s": 0.00015570000000000002
+    },
+    {
+      "file": "json_path_parser.py",
+      "function": "trunk_sep",
+      "calls": 1118,
+      "self_s": 0.0001505,
+      "cumulative_s": 0.0001505
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.min>",
+      "calls": 297,
+      "self_s": 0.0001497,
+      "cumulative_s": 0.0001497
+    },
+    {
+      "file": "<frozen os>",
+      "function": "__iter__",
+      "calls": 444,
+      "self_s": 0.0001463,
+      "cumulative_s": 0.0001463
+    },
+    {
+      "file": "query_intent.py",
+      "function": "lexical_terms",
+      "calls": 1,
+      "self_s": 2.75e-05,
+      "cumulative_s": 0.00014460000000000002
+    },
+    {
+      "file": "response.py",
+      "function": "read",
+      "calls": 1,
+      "self_s": 1.97e-05,
+      "cumulative_s": 0.0001427
+    },
+    {
+      "file": "~",
+      "function": "<built-in method nt._path_exists>",
+      "calls": 4,
+      "self_s": 0.0001417,
+      "cumulative_s": 0.0001417
+    },
+    {
+      "file": "structures.py",
+      "function": "__init__",
+      "calls": 10,
+      "self_s": 3.86e-05,
+      "cumulative_s": 0.0001406
+    },
+    {
+      "file": "parse.py",
+      "function": "urlparse",
+      "calls": 20,
+      "self_s": 8.7e-05,
+      "cumulative_s": 0.00013790000000000002
+    },
+    {
+      "file": "poolmanager.py",
+      "function": "connection_from_host",
+      "calls": 2,
+      "self_s": 8.6e-06,
+      "cumulative_s": 0.000136
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _thread.allocate_lock>",
+      "calls": 20,
+      "self_s": 0.00013570000000000002,
+      "cumulative_s": 0.00013570000000000002
+    },
+    {
+      "file": "response.py",
+      "function": "read_chunked",
+      "calls": 2,
+      "self_s": 2.2800000000000002e-05,
+      "cumulative_s": 0.0001337
+    },
+    {
+      "file": "connection.py",
+      "function": "putrequest",
+      "calls": 2,
+      "self_s": 1.3300000000000001e-05,
+      "cumulative_s": 0.0001325
+    },
+    {
+      "file": "connectionpool.py",
+      "function": "_get_conn",
+      "calls": 2,
+      "self_s": 1.0500000000000001e-05,
+      "cumulative_s": 0.0001319
+    },
+    {
+      "file": "query_intent.py",
+      "function": "phrase",
+      "calls": 16,
+      "self_s": 1.6800000000000002e-05,
+      "cumulative_s": 0.00013010000000000002
+    },
+    {
+      "file": "typing.py",
+      "function": "__instancecheck__",
+      "calls": 16,
+      "self_s": 4.5100000000000005e-05,
+      "cumulative_s": 0.00012680000000000002
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.id>",
+      "calls": 1341,
+      "self_s": 0.00012460000000000002,
+      "cumulative_s": 0.00012460000000000002
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "get",
+      "calls": 22,
+      "self_s": 3.79e-05,
+      "cumulative_s": 0.0001238
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_cookies",
+      "calls": 2,
+      "self_s": 7.4e-06,
+      "cumulative_s": 0.0001237
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_headers",
+      "calls": 2,
+      "self_s": 2.44e-05,
+      "cumulative_s": 0.00012240000000000002
+    },
+    {
+      "file": "client.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.9900000000000003e-05,
+      "cumulative_s": 0.0001183
+    },
+    {
+      "file": "models.py",
+      "function": "_encode_params",
+      "calls": 2,
+      "self_s": 1.39e-05,
+      "cumulative_s": 0.0001179
+    },
+    {
+      "file": "poolmanager.py",
+      "function": "connection_from_context",
+      "calls": 2,
+      "self_s": 1.6000000000000003e-05,
+      "cumulative_s": 0.00011700000000000001
+    },
+    {
+      "file": "~",
+      "function": "<built-in method nt.fspath>",
+      "calls": 496,
+      "self_s": 0.00011640000000000001,
+      "cumulative_s": 0.00011640000000000001
+    },
+    {
+      "file": "cookies.py",
+      "function": "get_cookie_header",
+      "calls": 2,
+      "self_s": 1.3500000000000001e-05,
+      "cumulative_s": 0.0001156
+    },
+    {
+      "file": "client.py",
+      "function": "putrequest",
+      "calls": 2,
+      "self_s": 4.36e-05,
+      "cumulative_s": 0.0001155
+    },
+    {
+      "file": "~",
+      "function": "<method 'lstrip' of 'str' objects>",
+      "calls": 600,
+      "self_s": 0.0001151,
+      "cumulative_s": 0.0001151
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "update",
+      "calls": 14,
+      "self_s": 4.46e-05,
+      "cumulative_s": 0.00011360000000000001
+    },
+    {
+      "file": "threading.py",
+      "function": "_acquire_restore",
+      "calls": 20,
+      "self_s": 5.19e-05,
+      "cumulative_s": 0.0001082
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 18,
+      "self_s": 1.43e-05,
+      "cumulative_s": 0.00010690000000000001
+    },
+    {
+      "file": "cookies.py",
+      "function": "extract_cookies_to_jar",
+      "calls": 4,
+      "self_s": 1.4200000000000001e-05,
+      "cumulative_s": 0.0001066
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "__iter__",
+      "calls": 42,
+      "self_s": 3.74e-05,
+      "cumulative_s": 0.00010630000000000001
+    },
+    {
+      "file": "~",
+      "function": "<method 'startswith' of 'bytes' objects>",
+      "calls": 138,
+      "self_s": 0.0001055,
+      "cumulative_s": 0.0001055
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.next>",
+      "calls": 22,
+      "self_s": 2.6300000000000002e-05,
+      "cumulative_s": 0.0001055
+    },
+    {
+      "file": "~",
+      "function": "<built-in method winreg.QueryValueEx>",
+      "calls": 6,
+      "self_s": 0.00010480000000000001,
+      "cumulative_s": 0.00010480000000000001
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<lambda>",
+      "calls": 296,
+      "self_s": 0.00010420000000000001,
+      "cumulative_s": 0.00010420000000000001
+    },
+    {
+      "file": "fields.py",
+      "function": "get_default",
+      "calls": 80,
+      "self_s": 4.8400000000000004e-05,
+      "cumulative_s": 0.00010190000000000001
+    },
+    {
+      "file": "client.py",
+      "function": "putheader",
+      "calls": 12,
+      "self_s": 5.3e-05,
+      "cumulative_s": 9.960000000000001e-05
+    },
+    {
+      "file": "socket.py",
+      "function": "makefile",
+      "calls": 2,
+      "self_s": 7.92e-05,
+      "cumulative_s": 9.84e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "select_proxy",
+      "calls": 4,
+      "self_s": 1.7800000000000002e-05,
+      "cumulative_s": 9.83e-05
+    },
+    {
+      "file": "response.py",
+      "function": "_raw_read",
+      "calls": 2,
+      "self_s": 1.5100000000000001e-05,
+      "cumulative_s": 9.790000000000001e-05
+    },
+    {
+      "file": "cookies.py",
+      "function": "cookiejar_from_dict",
+      "calls": 4,
+      "self_s": 2.3400000000000003e-05,
+      "cumulative_s": 9.360000000000001e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'update' of 'dict' objects>",
+      "calls": 75,
+      "self_s": 9.22e-05,
+      "cumulative_s": 9.22e-05
+    },
+    {
+      "file": "copy.py",
+      "function": "_deepcopy_atomic",
+      "calls": 1172,
+      "self_s": 9.190000000000001e-05,
+      "cumulative_s": 9.190000000000001e-05
+    },
+    {
+      "file": "<frozen os>",
+      "function": "__getitem__",
+      "calls": 22,
+      "self_s": 5.05e-05,
+      "cumulative_s": 9.15e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.setattr>",
+      "calls": 144,
+      "self_s": 9.1e-05,
+      "cumulative_s": 9.1e-05
+    },
+    {
+      "file": "request.py",
+      "function": "getproxies_registry",
+      "calls": 2,
+      "self_s": 1.1900000000000001e-05,
+      "cumulative_s": 8.950000000000001e-05
+    },
+    {
+      "file": "_collections.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.63e-05,
+      "cumulative_s": 8.950000000000001e-05
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 13,
+      "self_s": 6e-06,
+      "cumulative_s": 8.730000000000001e-05
+    },
+    {
+      "file": "response.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 2.8000000000000003e-05,
+      "cumulative_s": 8.61e-05
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 20,
+      "self_s": 1.32e-05,
+      "cumulative_s": 8.6e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "__exit__",
+      "calls": 24,
+      "self_s": 6.15e-05,
+      "cumulative_s": 8.2e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.sum>",
+      "calls": 55,
+      "self_s": 5.3200000000000006e-05,
+      "cumulative_s": 7.900000000000001e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'read' of '_io.TextIOWrapper' objects>",
+      "calls": 1,
+      "self_s": 6.720000000000001e-05,
+      "cumulative_s": 7.72e-05
+    },
+    {
+      "file": "models.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.5100000000000001e-05,
+      "cumulative_s": 7.680000000000001e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "hostname",
+      "calls": 16,
+      "self_s": 2.7400000000000002e-05,
+      "cumulative_s": 7.670000000000001e-05
+    },
+    {
+      "file": "connection.py",
+      "function": "is_connection_dropped",
+      "calls": 2,
+      "self_s": 3e-06,
+      "cumulative_s": 7.65e-05
+    },
+    {
+      "file": "cookies.py",
+      "function": "__init__",
+      "calls": 6,
+      "self_s": 1.66e-05,
+      "cumulative_s": 7.47e-05
+    },
+    {
+      "file": "uuid.py",
+      "function": "__str__",
+      "calls": 40,
+      "self_s": 7.350000000000001e-05,
+      "cumulative_s": 7.350000000000001e-05
+    },
+    {
+      "file": "connection.py",
+      "function": "is_connected",
+      "calls": 2,
+      "self_s": 9.100000000000001e-06,
+      "cumulative_s": 7.350000000000001e-05
+    },
+    {
+      "file": "message.py",
+      "function": "get_content_type",
+      "calls": 8,
+      "self_s": 1.81e-05,
+      "cumulative_s": 7.25e-05
+    },
+    {
+      "file": "<frozen abc>",
+      "function": "__instancecheck__",
+      "calls": 58,
+      "self_s": 2.5600000000000002e-05,
+      "cumulative_s": 7.170000000000001e-05
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "add_cookie_header",
+      "calls": 2,
+      "self_s": 3.08e-05,
+      "cumulative_s": 7.000000000000001e-05
+    },
+    {
+      "file": "adapters.py",
+      "function": "request_url",
+      "calls": 2,
+      "self_s": 9.3e-06,
+      "cumulative_s": 6.99e-05
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_body",
+      "calls": 2,
+      "self_s": 1.45e-05,
+      "cumulative_s": 6.66e-05
+    },
+    {
+      "file": "poolmanager.py",
+      "function": "_default_key_normalizer",
+      "calls": 2,
+      "self_s": 5.380000000000001e-05,
+      "cumulative_s": 6.65e-05
+    },
+    {
+      "file": "wait.py",
+      "function": "wait_for_read",
+      "calls": 2,
+      "self_s": 6.7e-06,
+      "cumulative_s": 6.440000000000001e-05
+    },
+    {
+      "file": "<frozen ntpath>",
+      "function": "expanduser",
+      "calls": 4,
+      "self_s": 2.6300000000000002e-05,
+      "cumulative_s": 6.400000000000001e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method math.isfinite>",
+      "calls": 768,
+      "self_s": 6.36e-05,
+      "cumulative_s": 6.36e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'lower' of 'str' objects>",
+      "calls": 297,
+      "self_s": 6.31e-05,
+      "cumulative_s": 6.31e-05
+    },
+    {
+      "file": "_collections.py",
+      "function": "extend",
+      "calls": 2,
+      "self_s": 1.4400000000000001e-05,
+      "cumulative_s": 6.25e-05
+    },
+    {
+      "file": "__init__.py",
+      "function": "findall",
+      "calls": 9,
+      "self_s": 9.7e-06,
+      "cumulative_s": 6.14e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _hashlib.openssl_sha1>",
+      "calls": 40,
+      "self_s": 5.8500000000000006e-05,
+      "cumulative_s": 5.8500000000000006e-05
+    },
+    {
+      "file": "feedparser.py",
+      "function": "close",
+      "calls": 2,
+      "self_s": 7.100000000000001e-06,
+      "cumulative_s": 5.84e-05
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__exit__",
+      "calls": 5,
+      "self_s": 6.5000000000000004e-06,
+      "cumulative_s": 5.8200000000000005e-05
+    },
+    {
+      "file": "fromnumeric.py",
+      "function": "argsort",
+      "calls": 1,
+      "self_s": 5.1e-06,
+      "cumulative_s": 5.81e-05
+    },
+    {
+      "file": "inspect.py",
+      "function": "getattr_static",
+      "calls": 2,
+      "self_s": 2.16e-05,
+      "cumulative_s": 5.7700000000000007e-05
+    },
+    {
+      "file": "wait.py",
+      "function": "select_wait_for_socket",
+      "calls": 2,
+      "self_s": 5.69e-05,
+      "cumulative_s": 5.7700000000000007e-05
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 8,
+      "self_s": 8.1e-06,
+      "cumulative_s": 5.69e-05
+    },
+    {
+      "file": "feedparser.py",
+      "function": "_parse_headers",
+      "calls": 2,
+      "self_s": 2.5e-05,
+      "cumulative_s": 5.6800000000000005e-05
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "__init__",
+      "calls": 6,
+      "self_s": 2.4e-05,
+      "cumulative_s": 5.5700000000000005e-05
+    },
+    {
+      "file": "type_inspector.py",
+      "function": "inspect",
+      "calls": 2,
+      "self_s": 1.13e-05,
+      "cumulative_s": 5.5100000000000004e-05
+    },
+    {
+      "file": "copy.py",
+      "function": "_keep_alive",
+      "calls": 43,
+      "self_s": 4.6e-05,
+      "cumulative_s": 5.44e-05
+    },
+    {
+      "file": "fromnumeric.py",
+      "function": "_wrapfunc",
+      "calls": 1,
+      "self_s": 1.06e-05,
+      "cumulative_s": 5.3e-05
+    },
+    {
+      "file": "query_intent.py",
+      "function": "public",
+      "calls": 1,
+      "self_s": 3.4e-06,
+      "cumulative_s": 5.22e-05
+    },
+    {
+      "file": "adapters.py",
+      "function": "build_connection_pool_key_attributes",
+      "calls": 2,
+      "self_s": 6.200000000000001e-06,
+      "cumulative_s": 5.2000000000000004e-05
+    },
+    {
+      "file": "url.py",
+      "function": "_normalize_host",
+      "calls": 2,
+      "self_s": 2.05e-05,
+      "cumulative_s": 5.16e-05
+    },
+    {
+      "file": "message.py",
+      "function": "get",
+      "calls": 16,
+      "self_s": 1.93e-05,
+      "cumulative_s": 5.0600000000000003e-05
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "__contains__",
+      "calls": 12,
+      "self_s": 1.3300000000000001e-05,
+      "cumulative_s": 5.05e-05
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_auth",
+      "calls": 2,
+      "self_s": 6.300000000000001e-06,
+      "cumulative_s": 4.9500000000000004e-05
+    },
+    {
+      "file": "search_v3.py",
+      "function": "compatible_facts",
+      "calls": 296,
+      "self_s": 4.9000000000000005e-05,
+      "cumulative_s": 4.9000000000000005e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "asdict",
+      "calls": 1,
+      "self_s": 6.200000000000001e-06,
+      "cumulative_s": 4.88e-05
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "extract_cookies",
+      "calls": 4,
+      "self_s": 1.4900000000000001e-05,
+      "cumulative_s": 4.75e-05
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_resolve_query_vector_name",
+      "calls": 1,
+      "self_s": 3.7e-06,
+      "cumulative_s": 4.6200000000000005e-05
+    },
+    {
+      "file": "message.py",
+      "function": "get_content_maintype",
+      "calls": 6,
+      "self_s": 4.6e-06,
+      "cumulative_s": 4.6200000000000005e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _abc._abc_instancecheck>",
+      "calls": 58,
+      "self_s": 4.61e-05,
+      "cumulative_s": 4.61e-05
+    },
+    {
+      "file": "adapters.py",
+      "function": "_urllib3_request_context",
+      "calls": 2,
+      "self_s": 1.02e-05,
+      "cumulative_s": 4.58e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "requote_uri",
+      "calls": 2,
+      "self_s": 9.2e-06,
+      "cumulative_s": 4.58e-05
+    },
+    {
+      "file": "response.py",
+      "function": "_error_catcher",
+      "calls": 6,
+      "self_s": 7.100000000000001e-06,
+      "cumulative_s": 4.57e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'digest' of '_hashlib.HASH' objects>",
+      "calls": 40,
+      "self_s": 4.5400000000000006e-05,
+      "cumulative_s": 4.5400000000000006e-05
+    },
+    {
+      "file": "queue.py",
+      "function": "get",
+      "calls": 2,
+      "self_s": 1.88e-05,
+      "cumulative_s": 4.49e-05
+    },
+    {
+      "file": "qdrant_fastembed.py",
+      "function": "_resolve_query",
+      "calls": 1,
+      "self_s": 1.02e-05,
+      "cumulative_s": 4.4000000000000006e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "check_header_validity",
+      "calls": 8,
+      "self_s": 1.09e-05,
+      "cumulative_s": 4.38e-05
+    },
+    {
+      "file": "_fields.py",
+      "function": "resolve_default_value",
+      "calls": 80,
+      "self_s": 2.6600000000000003e-05,
+      "cumulative_s": 4.3100000000000004e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "_hostinfo",
+      "calls": 18,
+      "self_s": 2.65e-05,
+      "cumulative_s": 4.2900000000000006e-05
+    },
+    {
+      "file": "uuid.py",
+      "function": "bytes",
+      "calls": 40,
+      "self_s": 2.5300000000000002e-05,
+      "cumulative_s": 4.2600000000000005e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method numpy.array>",
+      "calls": 1,
+      "self_s": 4.2300000000000005e-05,
+      "cumulative_s": 4.2300000000000005e-05
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__init__",
+      "calls": 72,
+      "self_s": 4.1700000000000004e-05,
+      "cumulative_s": 4.1700000000000004e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'add' of 'set' objects>",
+      "calls": 201,
+      "self_s": 4.1700000000000004e-05,
+      "cumulative_s": 4.1700000000000004e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'pop' of 'dict' objects>",
+      "calls": 214,
+      "self_s": 4.1200000000000005e-05,
+      "cumulative_s": 4.1200000000000005e-05
+    },
+    {
+      "file": "<frozen os>",
+      "function": "encodekey",
+      "calls": 22,
+      "self_s": 2.0300000000000002e-05,
+      "cumulative_s": 4.1e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "_asdict_inner",
+      "calls": 15,
+      "self_s": 2.25e-05,
+      "cumulative_s": 4.0900000000000005e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+      "calls": 1,
+      "self_s": 4.0900000000000005e-05,
+      "cumulative_s": 4.0900000000000005e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "get_auth_from_url",
+      "calls": 2,
+      "self_s": 1.1700000000000001e-05,
+      "cumulative_s": 4.08e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'argsort' of 'numpy.ndarray' objects>",
+      "calls": 1,
+      "self_s": 4.08e-05,
+      "cumulative_s": 4.08e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "replace",
+      "calls": 1,
+      "self_s": 2.46e-05,
+      "cumulative_s": 3.9800000000000005e-05
+    },
+    {
+      "file": "structures.py",
+      "function": "__getitem__",
+      "calls": 40,
+      "self_s": 2.8800000000000002e-05,
+      "cumulative_s": 3.9200000000000004e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "_is_owned",
+      "calls": 24,
+      "self_s": 2.01e-05,
+      "cumulative_s": 3.8400000000000005e-05
+    },
+    {
+      "file": "feedparser.py",
+      "function": "push",
+      "calls": 2,
+      "self_s": 1.5100000000000001e-05,
+      "cumulative_s": 3.82e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "__enter__",
+      "calls": 24,
+      "self_s": 2.5300000000000002e-05,
+      "cumulative_s": 3.8e-05
+    },
+    {
+      "file": "response.py",
+      "function": "release_conn",
+      "calls": 3,
+      "self_s": 4.800000000000001e-06,
+      "cumulative_s": 3.79e-05
+    },
+    {
+      "file": "structures.py",
+      "function": "copy",
+      "calls": 2,
+      "self_s": 4.000000000000001e-06,
+      "cumulative_s": 3.65e-05
+    },
+    {
+      "file": "response.py",
+      "function": "_handle_chunk",
+      "calls": 1,
+      "self_s": 3.4e-06,
+      "cumulative_s": 3.62e-05
+    },
+    {
+      "file": "structures.py",
+      "function": "__setitem__",
+      "calls": 34,
+      "self_s": 2.8700000000000003e-05,
+      "cumulative_s": 3.5900000000000005e-05
+    },
+    {
+      "file": "__init__.py",
+      "function": "split",
+      "calls": 7,
+      "self_s": 1.54e-05,
+      "cumulative_s": 3.58e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "_coerce_args",
+      "calls": 24,
+      "self_s": 3.09e-05,
+      "cumulative_s": 3.5600000000000005e-05
+    },
+    {
+      "file": "typing.py",
+      "function": "__instancecheck__",
+      "calls": 5,
+      "self_s": 1.16e-05,
+      "cumulative_s": 3.48e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'findall' of 're.Pattern' objects>",
+      "calls": 9,
+      "self_s": 3.4200000000000005e-05,
+      "cumulative_s": 3.4200000000000005e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'setdefault' of 'dict' objects>",
+      "calls": 93,
+      "self_s": 3.4e-05,
+      "cumulative_s": 3.4e-05
+    },
+    {
+      "file": "cookies.py",
+      "function": "merge_cookies",
+      "calls": 4,
+      "self_s": 1.02e-05,
+      "cumulative_s": 3.38e-05
+    },
+    {
+      "file": "response.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.8900000000000002e-05,
+      "cumulative_s": 3.3600000000000004e-05
+    },
+    {
+      "file": "type_inspector.py",
+      "function": "_inspect_model",
+      "calls": 1,
+      "self_s": 1.1400000000000001e-05,
+      "cumulative_s": 3.32e-05
+    },
+    {
+      "file": "connectionpool.py",
+      "function": "_put_conn",
+      "calls": 2,
+      "self_s": 6.1e-06,
+      "cumulative_s": 3.3100000000000005e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'update' of 'set' objects>",
+      "calls": 77,
+      "self_s": 3.3100000000000005e-05,
+      "cumulative_s": 3.3100000000000005e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "_validate_header_part",
+      "calls": 16,
+      "self_s": 1.45e-05,
+      "cumulative_s": 3.29e-05
+    },
+    {
+      "file": "client.py",
+      "function": "_safe_read",
+      "calls": 2,
+      "self_s": 2.2e-06,
+      "cumulative_s": 3.2800000000000004e-05
+    },
+    {
+      "file": "poolmanager.py",
+      "function": "connection_from_pool_key",
+      "calls": 2,
+      "self_s": 8.1e-06,
+      "cumulative_s": 3.2200000000000003e-05
+    },
+    {
+      "file": "response.py",
+      "function": "_fp_read",
+      "calls": 2,
+      "self_s": 4.7e-06,
+      "cumulative_s": 3.21e-05
+    },
+    {
+      "file": "_policybase.py",
+      "function": "header_fetch_parse",
+      "calls": 16,
+      "self_s": 7.5e-06,
+      "cumulative_s": 3.19e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "urlunparse",
+      "calls": 2,
+      "self_s": 1.15e-05,
+      "cumulative_s": 3.07e-05
+    },
+    {
+      "file": "url.py",
+      "function": "_encode_invalid_chars",
+      "calls": 4,
+      "self_s": 1.79e-05,
+      "cumulative_s": 3.03e-05
+    },
+    {
+      "file": "feedparser.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.55e-05,
+      "cumulative_s": 3.0200000000000002e-05
+    },
+    {
+      "file": "response.py",
+      "function": "assert_header_parsing",
+      "calls": 2,
+      "self_s": 1.09e-05,
+      "cumulative_s": 2.9800000000000003e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _stat.S_ISREG>",
+      "calls": 39,
+      "self_s": 2.96e-05,
+      "cumulative_s": 2.96e-05
+    },
+    {
+      "file": "client.py",
+      "function": "close",
+      "calls": 2,
+      "self_s": 1.08e-05,
+      "cumulative_s": 2.93e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "get_proxy",
+      "calls": 2,
+      "self_s": 4.3e-06,
+      "cumulative_s": 2.9e-05
+    },
+    {
+      "file": "cookies.py",
+      "function": "__iter__",
+      "calls": 10,
+      "self_s": 1.97e-05,
+      "cumulative_s": 2.86e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "RLock",
+      "calls": 6,
+      "self_s": 2.8400000000000003e-05,
+      "cumulative_s": 2.8400000000000003e-05
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "make_cookies",
+      "calls": 4,
+      "self_s": 1.1700000000000001e-05,
+      "cumulative_s": 2.8000000000000003e-05
+    },
+    {
+      "file": "connectionpool.py",
+      "function": "_get_timeout",
+      "calls": 4,
+      "self_s": 5.9e-06,
+      "cumulative_s": 2.8000000000000003e-05
+    },
+    {
+      "file": "timeout.py",
+      "function": "__init__",
+      "calls": 6,
+      "self_s": 1.5100000000000001e-05,
+      "cumulative_s": 2.79e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "quote",
+      "calls": 2,
+      "self_s": 9e-06,
+      "cumulative_s": 2.78e-05
+    },
+    {
+      "file": "client.py",
+      "function": "read",
+      "calls": 2,
+      "self_s": 1.04e-05,
+      "cumulative_s": 2.7400000000000002e-05
+    },
+    {
+      "file": "contextlib.py",
+      "function": "helper",
+      "calls": 5,
+      "self_s": 1.29e-05,
+      "cumulative_s": 2.72e-05
+    },
+    {
+      "file": "queue.py",
+      "function": "put",
+      "calls": 2,
+      "self_s": 1.2400000000000002e-05,
+      "cumulative_s": 2.7000000000000002e-05
+    },
+    {
+      "file": "client.py",
+      "function": "_read_headers",
+      "calls": 2,
+      "self_s": 1.4200000000000001e-05,
+      "cumulative_s": 2.6900000000000003e-05
+    },
+    {
+      "file": "sessions.py",
+      "function": "resolve_redirects",
+      "calls": 2,
+      "self_s": 6.1e-06,
+      "cumulative_s": 2.6600000000000003e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'remove' of 'collections.deque' objects>",
+      "calls": 20,
+      "self_s": 2.65e-05,
+      "cumulative_s": 2.65e-05
+    },
+    {
+      "file": "url.py",
+      "function": "_encode_target",
+      "calls": 2,
+      "self_s": 6.1e-06,
+      "cumulative_s": 2.6200000000000003e-05
+    },
+    {
+      "file": "workspace.py",
+      "function": "_tokens",
+      "calls": 1,
+      "self_s": 8.8e-06,
+      "cumulative_s": 2.6000000000000002e-05
+    },
+    {
+      "file": "workspace.py",
+      "function": "<genexpr>",
+      "calls": 135,
+      "self_s": 2.58e-05,
+      "cumulative_s": 2.58e-05
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 14,
+      "self_s": 1.8500000000000002e-05,
+      "cumulative_s": 2.5600000000000002e-05
+    },
+    {
+      "file": "feedparser.py",
+      "function": "__next__",
+      "calls": 12,
+      "self_s": 1.1900000000000001e-05,
+      "cumulative_s": 2.5300000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.hasattr>",
+      "calls": 68,
+      "self_s": 2.46e-05,
+      "cumulative_s": 2.46e-05
+    },
+    {
+      "file": "_policybase.py",
+      "function": "_sanitize_header",
+      "calls": 16,
+      "self_s": 1.08e-05,
+      "cumulative_s": 2.44e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'fullmatch' of 're.Pattern' objects>",
+      "calls": 14,
+      "self_s": 2.43e-05,
+      "cumulative_s": 2.43e-05
+    },
+    {
+      "file": "_collections.py",
+      "function": "__getitem__",
+      "calls": 14,
+      "self_s": 1.67e-05,
+      "cumulative_s": 2.36e-05
+    },
+    {
+      "file": "typing.py",
+      "function": "__subclasscheck__",
+      "calls": 5,
+      "self_s": 7.000000000000001e-06,
+      "cumulative_s": 2.32e-05
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_hooks",
+      "calls": 2,
+      "self_s": 5.4e-06,
+      "cumulative_s": 2.3100000000000002e-05
+    },
+    {
+      "file": "connection.py",
+      "function": "_normalize_header_values",
+      "calls": 2,
+      "self_s": 7.7e-06,
+      "cumulative_s": 2.2700000000000003e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "get_encoding_from_headers",
+      "calls": 2,
+      "self_s": 7.8e-06,
+      "cumulative_s": 2.26e-05
+    },
+    {
+      "file": "structures.py",
+      "function": "<genexpr>",
+      "calls": 54,
+      "self_s": 2.23e-05,
+      "cumulative_s": 2.23e-05
+    },
+    {
+      "file": "structures.py",
+      "function": "__iter__",
+      "calls": 10,
+      "self_s": 1.76e-05,
+      "cumulative_s": 2.22e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'settimeout' of '_socket.socket' objects>",
+      "calls": 4,
+      "self_s": 2.22e-05,
+      "cumulative_s": 2.22e-05
+    },
+    {
+      "file": "connection.py",
+      "function": "<genexpr>",
+      "calls": 12,
+      "self_s": 1.1200000000000001e-05,
+      "cumulative_s": 2.19e-05
+    },
+    {
+      "file": "client.py",
+      "function": "_close_conn",
+      "calls": 2,
+      "self_s": 3.4e-06,
+      "cumulative_s": 2.16e-05
+    },
+    {
+      "file": "_policybase.py",
+      "function": "header_source_parse",
+      "calls": 6,
+      "self_s": 1.2400000000000002e-05,
+      "cumulative_s": 2.1300000000000003e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "_release_save",
+      "calls": 20,
+      "self_s": 1.6400000000000002e-05,
+      "cumulative_s": 2.11e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.sorted>",
+      "calls": 10,
+      "self_s": 1.97e-05,
+      "cumulative_s": 2.11e-05
+    },
+    {
+      "file": "timeout.py",
+      "function": "clone",
+      "calls": 4,
+      "self_s": 7.7e-06,
+      "cumulative_s": 2.0700000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<method '__exit__' of '_thread.lock' objects>",
+      "calls": 24,
+      "self_s": 2.05e-05,
+      "cumulative_s": 2.05e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'values' of 'dict' objects>",
+      "calls": 72,
+      "self_s": 2.05e-05,
+      "cumulative_s": 2.05e-05
+    },
+    {
+      "file": "workspace.py",
+      "function": "<lambda>",
+      "calls": 55,
+      "self_s": 2e-05,
+      "cumulative_s": 2e-05
+    },
+    {
+      "file": "type_inspector.py",
+      "function": "_inspect_inner_models",
+      "calls": 1,
+      "self_s": 4.5e-06,
+      "cumulative_s": 1.98e-05
+    },
+    {
+      "file": "cookies.py",
+      "function": "update",
+      "calls": 4,
+      "self_s": 5.500000000000001e-06,
+      "cumulative_s": 1.93e-05
+    },
+    {
+      "file": "_collections.py",
+      "function": "__getitem__",
+      "calls": 2,
+      "self_s": 1.0700000000000001e-05,
+      "cumulative_s": 1.8900000000000002e-05
+    },
+    {
+      "file": "inspect.py",
+      "function": "_shadowed_dict",
+      "calls": 8,
+      "self_s": 1.88e-05,
+      "cumulative_s": 1.88e-05
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "clear_expired_cookies",
+      "calls": 2,
+      "self_s": 7.000000000000001e-06,
+      "cumulative_s": 1.88e-05
+    },
+    {
+      "file": "response.py",
+      "function": "_init_length",
+      "calls": 2,
+      "self_s": 1.11e-05,
+      "cumulative_s": 1.86e-05
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_process_payload",
+      "calls": 41,
+      "self_s": 1.3500000000000001e-05,
+      "cumulative_s": 1.8500000000000002e-05
+    },
+    {
+      "file": "url.py",
+      "function": "_remove_path_dot_segments",
+      "calls": 2,
+      "self_s": 1.15e-05,
+      "cumulative_s": 1.84e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'close' of '_io.BufferedReader' objects>",
+      "calls": 2,
+      "self_s": 7.000000000000001e-06,
+      "cumulative_s": 1.8200000000000002e-05
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_content_length",
+      "calls": 2,
+      "self_s": 8.400000000000001e-06,
+      "cumulative_s": 1.79e-05
+    },
+    {
+      "file": "models.py",
+      "function": "register_hook",
+      "calls": 2,
+      "self_s": 6e-06,
+      "cumulative_s": 1.77e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'to_bytes' of 'int' objects>",
+      "calls": 40,
+      "self_s": 1.73e-05,
+      "cumulative_s": 1.73e-05
+    },
+    {
+      "file": "inspect.py",
+      "function": "_check_class",
+      "calls": 2,
+      "self_s": 9e-06,
+      "cumulative_s": 1.72e-05
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__enter__",
+      "calls": 5,
+      "self_s": 5.8e-06,
+      "cumulative_s": 1.7100000000000002e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "quote_from_bytes",
+      "calls": 2,
+      "self_s": 1.1900000000000001e-05,
+      "cumulative_s": 1.7100000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'partition' of 'str' objects>",
+      "calls": 60,
+      "self_s": 1.7100000000000002e-05,
+      "cumulative_s": 1.7100000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.issubclass>",
+      "calls": 9,
+      "self_s": 7.6e-06,
+      "cumulative_s": 1.7e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'count' of 'list' objects>",
+      "calls": 40,
+      "self_s": 1.67e-05,
+      "cumulative_s": 1.67e-05
+    },
+    {
+      "file": "socket.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.66e-05,
+      "cumulative_s": 1.66e-05
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "deepvalues",
+      "calls": 10,
+      "self_s": 1.2800000000000001e-05,
+      "cumulative_s": 1.66e-05
+    },
+    {
+      "file": "pathlib.py",
+      "function": "root",
+      "calls": 75,
+      "self_s": 1.65e-05,
+      "cumulative_s": 1.65e-05
+    },
+    {
+      "file": "_utils.py",
+      "function": "smart_deepcopy",
+      "calls": 80,
+      "self_s": 1.65e-05,
+      "cumulative_s": 1.65e-05
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "items",
+      "calls": 8,
+      "self_s": 1.1200000000000001e-05,
+      "cumulative_s": 1.6400000000000002e-05
+    },
+    {
+      "file": "request.py",
+      "function": "body_to_chunks",
+      "calls": 2,
+      "self_s": 1.2e-05,
+      "cumulative_s": 1.6000000000000003e-05
+    },
+    {
+      "file": "payload_filters.py",
+      "function": "validate_filter",
+      "calls": 1,
+      "self_s": 1.16e-05,
+      "cumulative_s": 1.59e-05
+    },
+    {
+      "file": "message.py",
+      "function": "get_payload",
+      "calls": 2,
+      "self_s": 8.200000000000001e-06,
+      "cumulative_s": 1.5700000000000002e-05
+    },
+    {
+      "file": "url.py",
+      "function": "__new__",
+      "calls": 2,
+      "self_s": 9.5e-06,
+      "cumulative_s": 1.5700000000000002e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "notify",
+      "calls": 4,
+      "self_s": 8.000000000000001e-06,
+      "cumulative_s": 1.56e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "port",
+      "calls": 2,
+      "self_s": 7.2000000000000005e-06,
+      "cumulative_s": 1.56e-05
+    },
+    {
+      "file": "url.py",
+      "function": "_idna_encode",
+      "calls": 2,
+      "self_s": 8.6e-06,
+      "cumulative_s": 1.55e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'split' of 're.Pattern' objects>",
+      "calls": 7,
+      "self_s": 1.54e-05,
+      "cumulative_s": 1.54e-05
+    },
+    {
+      "file": "message.py",
+      "function": "_splitparam",
+      "calls": 8,
+      "self_s": 9.800000000000001e-06,
+      "cumulative_s": 1.5300000000000003e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.iter>",
+      "calls": 30,
+      "self_s": 1.52e-05,
+      "cumulative_s": 1.52e-05
+    },
+    {
+      "file": "util.py",
+      "function": "to_str",
+      "calls": 18,
+      "self_s": 9.100000000000001e-06,
+      "cumulative_s": 1.4900000000000001e-05
+    },
+    {
+      "file": "sessions.py",
+      "function": "get_adapter",
+      "calls": 2,
+      "self_s": 9.7e-06,
+      "cumulative_s": 1.4700000000000002e-05
+    },
+    {
+      "file": "pathlib.py",
+      "function": "_tail",
+      "calls": 75,
+      "self_s": 1.46e-05,
+      "cumulative_s": 1.46e-05
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__init__",
+      "calls": 5,
+      "self_s": 1.0700000000000001e-05,
+      "cumulative_s": 1.43e-05
+    },
+    {
+      "file": "type_inspector.py",
+      "function": "_numbers_or_lists",
+      "calls": 1,
+      "self_s": 1.43e-05,
+      "cumulative_s": 1.43e-05
+    },
+    {
+      "file": "~",
+      "function": "<built-in method from_bytes>",
+      "calls": 40,
+      "self_s": 1.43e-05,
+      "cumulative_s": 1.43e-05
+    },
+    {
+      "file": "<string>",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.41e-05,
+      "cumulative_s": 1.41e-05
+    },
+    {
+      "file": "contextlib.py",
+      "function": "__enter__",
+      "calls": 72,
+      "self_s": 1.3700000000000001e-05,
+      "cumulative_s": 1.3700000000000001e-05
+    },
+    {
+      "file": "feedparser.py",
+      "function": "readline",
+      "calls": 12,
+      "self_s": 1.16e-05,
+      "cumulative_s": 1.34e-05
+    },
+    {
+      "file": "models.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 9.600000000000001e-06,
+      "cumulative_s": 1.3300000000000001e-05
+    },
+    {
+      "file": "<frozen os>",
+      "function": "check_str",
+      "calls": 22,
+      "self_s": 9.800000000000001e-06,
+      "cumulative_s": 1.3300000000000001e-05
+    },
+    {
+      "file": "message.py",
+      "function": "get_all",
+      "calls": 8,
+      "self_s": 8.000000000000001e-06,
+      "cumulative_s": 1.3100000000000002e-05
+    },
+    {
+      "file": "sessions.py",
+      "function": "get_redirect_target",
+      "calls": 2,
+      "self_s": 3e-06,
+      "cumulative_s": 1.3100000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'any' of 'numpy.ndarray' objects>",
+      "calls": 1,
+      "self_s": 3.3e-06,
+      "cumulative_s": 1.3100000000000002e-05
+    },
+    {
+      "file": "~",
+      "function": "<function SocketIO.close at 0x000002055AF40180>",
+      "calls": 4,
+      "self_s": 4.6e-06,
+      "cumulative_s": 1.3000000000000001e-05
+    },
+    {
+      "file": "timeout.py",
+      "function": "_validate_timeout",
+      "calls": 18,
+      "self_s": 1.09e-05,
+      "cumulative_s": 1.2800000000000001e-05
+    },
+    {
+      "file": "message.py",
+      "function": "items",
+      "calls": 2,
+      "self_s": 4.000000000000001e-06,
+      "cumulative_s": 1.27e-05
+    },
+    {
+      "file": "~",
+      "function": "<method '__enter__' of '_thread.lock' objects>",
+      "calls": 24,
+      "self_s": 1.27e-05,
+      "cumulative_s": 1.27e-05
+    },
+    {
+      "file": "models.py",
+      "function": "path_url",
+      "calls": 2,
+      "self_s": 1.02e-05,
+      "cumulative_s": 1.25e-05
+    },
+    {
+      "file": "typing.py",
+      "function": "get_args",
+      "calls": 4,
+      "self_s": 6.7e-06,
+      "cumulative_s": 1.23e-05
+    },
+    {
+      "file": "response.py",
+      "function": "get",
+      "calls": 1,
+      "self_s": 9.100000000000001e-06,
+      "cumulative_s": 1.23e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "_has_surrogates",
+      "calls": 18,
+      "self_s": 7.3e-06,
+      "cumulative_s": 1.23e-05
+    },
+    {
+      "file": "response.py",
+      "function": "_init_decoder",
+      "calls": 2,
+      "self_s": 6.200000000000001e-06,
+      "cumulative_s": 1.22e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'upper' of 'str' objects>",
+      "calls": 34,
+      "self_s": 1.18e-05,
+      "cumulative_s": 1.18e-05
+    },
+    {
+      "file": "utils.py",
+      "function": "_parse_content_type_header",
+      "calls": 2,
+      "self_s": 7.6e-06,
+      "cumulative_s": 1.1700000000000001e-05
+    },
+    {
+      "file": "fields.py",
+      "function": "is_required",
+      "calls": 80,
+      "self_s": 1.1700000000000001e-05,
+      "cumulative_s": 1.1700000000000001e-05
+    },
+    {
+      "file": "parse.py",
+      "function": "urlunsplit",
+      "calls": 2,
+      "self_s": 7.7e-06,
+      "cumulative_s": 1.15e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'readlines' of '_io._IOBase' objects>",
+      "calls": 4,
+      "self_s": 1.15e-05,
+      "cumulative_s": 1.15e-05
+    },
+    {
+      "file": "socket.py",
+      "function": "close",
+      "calls": 2,
+      "self_s": 9e-06,
+      "cumulative_s": 1.1200000000000001e-05
+    },
+    {
+      "file": "~",
+      "function": "<method 'rpartition' of 'str' objects>",
+      "calls": 24,
+      "self_s": 1.1200000000000001e-05,
+      "cumulative_s": 1.1200000000000001e-05
+    },
+    {
+      "file": "threading.py",
+      "function": "is_set",
+      "calls": 20,
+      "self_s": 1.11e-05,
+      "cumulative_s": 1.11e-05
+    },
+    {
+      "file": "response.py",
+      "function": "_update_chunk_length",
+      "calls": 2,
+      "self_s": 8.3e-06,
+      "cumulative_s": 1.1000000000000001e-05
+    },
+    {
+      "file": "client.py",
+      "function": "_output",
+      "calls": 14,
+      "self_s": 6.900000000000001e-06,
+      "cumulative_s": 1.08e-05
+    },
+    {
+      "file": "fields.py",
+      "function": "default_factory_takes_validated_data",
+      "calls": 80,
+      "self_s": 1.04e-05,
+      "cumulative_s": 1.04e-05
+    },
+    {
+      "file": "poolmanager.py",
+      "function": "_merge_pool_kwargs",
+      "calls": 2,
+      "self_s": 7.6e-06,
+      "cumulative_s": 1.04e-05
+    },
+    {
+      "file": "_collections.py",
+      "function": "add",
+      "calls": 6,
+      "self_s": 6.1e-06,
+      "cumulative_s": 1.04e-05
+    },
+    {
+      "file": "connection.py",
+      "function": "<genexpr>",
+      "calls": 24,
+      "self_s": 8.3e-06,
+      "cumulative_s": 1.02e-05
+    },
+    {
+      "file": "models.py",
+      "function": "is_redirect",
+      "calls": 2,
+      "self_s": 4.6e-06,
+      "cumulative_s": 1.01e-05
+    },
+    {
+      "file": "feedparser.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1e-05,
+      "cumulative_s": 1e-05
+    },
+    {
+      "file": "<frozen codecs>",
+      "function": "decode",
+      "calls": 1,
+      "self_s": 5.600000000000001e-06,
+      "cumulative_s": 1e-05
+    },
+    {
+      "file": "_methods.py",
+      "function": "_any",
+      "calls": 1,
+      "self_s": 3.6000000000000003e-06,
+      "cumulative_s": 9.800000000000001e-06
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "fields",
+      "calls": 1,
+      "self_s": 6.5000000000000004e-06,
+      "cumulative_s": 9.600000000000001e-06
+    },
+    {
+      "file": "<frozen abc>",
+      "function": "__subclasscheck__",
+      "calls": 5,
+      "self_s": 3.4e-06,
+      "cumulative_s": 9.4e-06
+    },
+    {
+      "file": "parse.py",
+      "function": "username",
+      "calls": 2,
+      "self_s": 3.3e-06,
+      "cumulative_s": 9.3e-06
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "_is_dataclass_instance",
+      "calls": 6,
+      "self_s": 6.900000000000001e-06,
+      "cumulative_s": 9.2e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'Close' of 'winreg.PyHKEY' objects>",
+      "calls": 2,
+      "self_s": 9.100000000000001e-06,
+      "cumulative_s": 9.100000000000001e-06
+    },
+    {
+      "file": "workspace.py",
+      "function": "<genexpr>",
+      "calls": 10,
+      "self_s": 6.5000000000000004e-06,
+      "cumulative_s": 9e-06
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "__iter__",
+      "calls": 10,
+      "self_s": 8.900000000000001e-06,
+      "cumulative_s": 8.900000000000001e-06
+    },
+    {
+      "file": "utils.py",
+      "function": "unquote_unreserved",
+      "calls": 2,
+      "self_s": 6.900000000000001e-06,
+      "cumulative_s": 8.8e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'dot' of 'numpy.ndarray' objects>",
+      "calls": 1,
+      "self_s": 8.8e-06,
+      "cumulative_s": 8.8e-06
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "_cookie_attrs",
+      "calls": 2,
+      "self_s": 6.300000000000001e-06,
+      "cumulative_s": 8.7e-06
+    },
+    {
+      "file": "feedparser.py",
+      "function": "close",
+      "calls": 2,
+      "self_s": 4.1000000000000006e-06,
+      "cumulative_s": 8.5e-06
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "keys",
+      "calls": 4,
+      "self_s": 7.7e-06,
+      "cumulative_s": 8.5e-06
+    },
+    {
+      "file": "client.py",
+      "function": "flush",
+      "calls": 2,
+      "self_s": 6.4000000000000006e-06,
+      "cumulative_s": 8.400000000000001e-06
+    },
+    {
+      "file": "inspect.py",
+      "function": "_check_instance",
+      "calls": 2,
+      "self_s": 7.6e-06,
+      "cumulative_s": 8.3e-06
+    },
+    {
+      "file": "utils.py",
+      "function": "super_len",
+      "calls": 1,
+      "self_s": 5.7000000000000005e-06,
+      "cumulative_s": 8.3e-06
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 15,
+      "self_s": 5.9e-06,
+      "cumulative_s": 7.9e-06
+    },
+    {
+      "file": "parse.py",
+      "function": "unquote",
+      "calls": 2,
+      "self_s": 6.4000000000000006e-06,
+      "cumulative_s": 7.6e-06
+    },
+    {
+      "file": "retry.py",
+      "function": "is_retry",
+      "calls": 2,
+      "self_s": 3.7e-06,
+      "cumulative_s": 7.5e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'pop' of 'collections.OrderedDict' objects>",
+      "calls": 2,
+      "self_s": 7.4e-06,
+      "cumulative_s": 7.4e-06
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_get_vectors",
+      "calls": 40,
+      "self_s": 7.3e-06,
+      "cumulative_s": 7.3e-06
+    },
+    {
+      "file": "models.py",
+      "function": "prepare_method",
+      "calls": 2,
+      "self_s": 4.7e-06,
+      "cumulative_s": 7.100000000000001e-06
+    },
+    {
+      "file": "feedparser.py",
+      "function": "pushlines",
+      "calls": 4,
+      "self_s": 4.5e-06,
+      "cumulative_s": 7.000000000000001e-06
+    },
+    {
+      "file": "models.py",
+      "function": "text",
+      "calls": 2,
+      "self_s": 5.9e-06,
+      "cumulative_s": 6.8e-06
+    },
+    {
+      "file": "queue.py",
+      "function": "_get",
+      "calls": 2,
+      "self_s": 5.3e-06,
+      "cumulative_s": 6.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'append' of 'collections.deque' objects>",
+      "calls": 22,
+      "self_s": 6.7e-06,
+      "cumulative_s": 6.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method time.perf_counter>",
+      "calls": 14,
+      "self_s": 6.6e-06,
+      "cumulative_s": 6.6e-06
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "__len__",
+      "calls": 2,
+      "self_s": 1.2000000000000002e-06,
+      "cumulative_s": 6.4000000000000006e-06
+    },
+    {
+      "file": "distances.py",
+      "function": "distance_to_order",
+      "calls": 1,
+      "self_s": 6.300000000000001e-06,
+      "cumulative_s": 6.300000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method fromkeys>",
+      "calls": 2,
+      "self_s": 6.300000000000001e-06,
+      "cumulative_s": 6.300000000000001e-06
+    },
+    {
+      "file": "parse.py",
+      "function": "urlencode",
+      "calls": 2,
+      "self_s": 4.5e-06,
+      "cumulative_s": 6.200000000000001e-06
+    },
+    {
+      "file": "feedparser.py",
+      "function": "_new_message",
+      "calls": 2,
+      "self_s": 4.3e-06,
+      "cumulative_s": 6.200000000000001e-06
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "function": "parent",
+      "calls": 2,
+      "self_s": 3.2000000000000003e-06,
+      "cumulative_s": 6.200000000000001e-06
+    },
+    {
+      "file": "_internal_utils.py",
+      "function": "to_native_string",
+      "calls": 10,
+      "self_s": 4.7e-06,
+      "cumulative_s": 6.1e-06
+    },
+    {
+      "file": "parse.py",
+      "function": "_userinfo",
+      "calls": 2,
+      "self_s": 5e-06,
+      "cumulative_s": 6e-06
+    },
+    {
+      "file": "message.py",
+      "function": "__init__",
+      "calls": 4,
+      "self_s": 6e-06,
+      "cumulative_s": 6e-06
+    },
+    {
+      "file": "<frozen _collections_abc>",
+      "function": "__init__",
+      "calls": 12,
+      "self_s": 6e-06,
+      "cumulative_s": 6e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _abc._abc_subclasscheck>",
+      "calls": 5,
+      "self_s": 6e-06,
+      "cumulative_s": 6e-06
+    },
+    {
+      "file": "client.py",
+      "function": "_check_close",
+      "calls": 2,
+      "self_s": 2.5e-06,
+      "cumulative_s": 5.7000000000000005e-06
+    },
+    {
+      "file": "main.py",
+      "function": "__setattr__",
+      "calls": 1,
+      "self_s": 2.3e-06,
+      "cumulative_s": 5.7000000000000005e-06
+    },
+    {
+      "file": "message.py",
+      "function": "set_raw",
+      "calls": 6,
+      "self_s": 4.2000000000000004e-06,
+      "cumulative_s": 5.7000000000000005e-06
+    },
+    {
+      "file": "_types.py",
+      "function": "is_prepared",
+      "calls": 18,
+      "self_s": 5.600000000000001e-06,
+      "cumulative_s": 5.600000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'acquire' of '_thread.RLock' objects>",
+      "calls": 8,
+      "self_s": 5.600000000000001e-06,
+      "cumulative_s": 5.600000000000001e-06
+    },
+    {
+      "file": "encoder.py",
+      "function": "__init__",
+      "calls": 4,
+      "self_s": 5.500000000000001e-06,
+      "cumulative_s": 5.500000000000001e-06
+    },
+    {
+      "file": "client.py",
+      "function": "isclosed",
+      "calls": 9,
+      "self_s": 5.500000000000001e-06,
+      "cumulative_s": 5.500000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method '_checkReadable' of '_io._IOBase' objects>",
+      "calls": 3,
+      "self_s": 4.3e-06,
+      "cumulative_s": 5.500000000000001e-06
+    },
+    {
+      "file": "enum.py",
+      "function": "__get__",
+      "calls": 2,
+      "self_s": 3.2000000000000003e-06,
+      "cumulative_s": 5.4e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'isoformat' of 'datetime.date' objects>",
+      "calls": 1,
+      "self_s": 5.4e-06,
+      "cumulative_s": 5.4e-06
+    },
+    {
+      "file": "<string>",
+      "function": "<lambda>",
+      "calls": 2,
+      "self_s": 3.3e-06,
+      "cumulative_s": 5.3e-06
+    },
+    {
+      "file": "__init__.py",
+      "function": "debug",
+      "calls": 2,
+      "self_s": 3.8e-06,
+      "cumulative_s": 5.3e-06
+    },
+    {
+      "file": "timeout.py",
+      "function": "start_connect",
+      "calls": 2,
+      "self_s": 4.5e-06,
+      "cumulative_s": 5.3e-06
+    },
+    {
+      "file": "timeout.py",
+      "function": "read_timeout",
+      "calls": 2,
+      "self_s": 4.4e-06,
+      "cumulative_s": 5.2e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method time.time>",
+      "calls": 8,
+      "self_s": 5.2e-06,
+      "cumulative_s": 5.2e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'values' of 'collections.OrderedDict' objects>",
+      "calls": 12,
+      "self_s": 5.2e-06,
+      "cumulative_s": 5.2e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'isdigit' of 'str' objects>",
+      "calls": 11,
+      "self_s": 5.1e-06,
+      "cumulative_s": 5.1e-06
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "_cookies_for_request",
+      "calls": 2,
+      "self_s": 4.1000000000000006e-06,
+      "cumulative_s": 5e-06
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "input_into_vector",
+      "calls": 1,
+      "self_s": 1.4000000000000001e-06,
+      "cumulative_s": 5e-06
+    },
+    {
+      "file": "adapters.py",
+      "function": "cert_verify",
+      "calls": 2,
+      "self_s": 3.6000000000000003e-06,
+      "cumulative_s": 4.9000000000000005e-06
+    },
+    {
+      "file": "local_collection.py",
+      "function": "get_vector_params",
+      "calls": 1,
+      "self_s": 3.9e-06,
+      "cumulative_s": 4.800000000000001e-06
+    },
+    {
+      "file": "hooks.py",
+      "function": "default_hooks",
+      "calls": 4,
+      "self_s": 4.800000000000001e-06,
+      "cumulative_s": 4.800000000000001e-06
+    },
+    {
+      "file": "models.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 2.8000000000000003e-06,
+      "cumulative_s": 4.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'release' of '_thread.lock' objects>",
+      "calls": 20,
+      "self_s": 4.7e-06,
+      "cumulative_s": 4.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'isalpha' of 'str' objects>",
+      "calls": 9,
+      "self_s": 4.6e-06,
+      "cumulative_s": 4.6e-06
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_validate_with_payload",
+      "calls": 1,
+      "self_s": 3.7e-06,
+      "cumulative_s": 4.5e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method numpy.zeros>",
+      "calls": 1,
+      "self_s": 4.5e-06,
+      "cumulative_s": 4.5e-06
+    },
+    {
+      "file": "<frozen codecs>",
+      "function": "__init__",
+      "calls": 1,
+      "self_s": 4.1000000000000006e-06,
+      "cumulative_s": 4.5e-06
+    },
+    {
+      "file": "copy.py",
+      "function": "copy",
+      "calls": 1,
+      "self_s": 3.2000000000000003e-06,
+      "cumulative_s": 4.4e-06
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "_validate_query",
+      "calls": 1,
+      "self_s": 3.5000000000000004e-06,
+      "cumulative_s": 4.4e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _codecs.utf_8_decode>",
+      "calls": 1,
+      "self_s": 4.4e-06,
+      "cumulative_s": 4.4e-06
+    },
+    {
+      "file": "response.py",
+      "function": "closed",
+      "calls": 2,
+      "self_s": 3.4e-06,
+      "cumulative_s": 4.3e-06
+    },
+    {
+      "file": "connection.py",
+      "function": "host",
+      "calls": 2,
+      "self_s": 3.2000000000000003e-06,
+      "cumulative_s": 4.3e-06
+    },
+    {
+      "file": "<frozen ntpath>",
+      "function": "_get_bothseps",
+      "calls": 4,
+      "self_s": 3.6000000000000003e-06,
+      "cumulative_s": 4.3e-06
+    },
+    {
+      "file": "connection.py",
+      "function": "_wrap_ipv6",
+      "calls": 2,
+      "self_s": 4.2000000000000004e-06,
+      "cumulative_s": 4.2000000000000004e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'groups' of 're.Match' objects>",
+      "calls": 6,
+      "self_s": 4.1000000000000006e-06,
+      "cumulative_s": 4.1000000000000006e-06
+    },
+    {
+      "file": "models.py",
+      "function": "iter_content",
+      "calls": 2,
+      "self_s": 3.7e-06,
+      "cumulative_s": 3.9e-06
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "_get_collection",
+      "calls": 2,
+      "self_s": 3.5000000000000004e-06,
+      "cumulative_s": 3.9e-06
+    },
+    {
+      "file": "socket.py",
+      "function": "readable",
+      "calls": 5,
+      "self_s": 3.8e-06,
+      "cumulative_s": 3.8e-06
+    },
+    {
+      "file": "retry.py",
+      "function": "_is_method_retryable",
+      "calls": 2,
+      "self_s": 3.2000000000000003e-06,
+      "cumulative_s": 3.8e-06
+    },
+    {
+      "file": "_internal_utils.py",
+      "function": "unicode_is_ascii",
+      "calls": 2,
+      "self_s": 2.7e-06,
+      "cumulative_s": 3.8e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'find' of 'str' objects>",
+      "calls": 8,
+      "self_s": 3.8e-06,
+      "cumulative_s": 3.8e-06
+    },
+    {
+      "file": "utils.py",
+      "function": "<genexpr>",
+      "calls": 6,
+      "self_s": 3.7e-06,
+      "cumulative_s": 3.7e-06
+    },
+    {
+      "file": "structures.py",
+      "function": "__len__",
+      "calls": 4,
+      "self_s": 2.2e-06,
+      "cumulative_s": 3.7e-06
+    },
+    {
+      "file": "client.py",
+      "function": "_validate_method",
+      "calls": 2,
+      "self_s": 2.1000000000000002e-06,
+      "cumulative_s": 3.6000000000000003e-06
+    },
+    {
+      "file": "queue.py",
+      "function": "_qsize",
+      "calls": 4,
+      "self_s": 2.8000000000000003e-06,
+      "cumulative_s": 3.6000000000000003e-06
+    },
+    {
+      "file": "~",
+      "function": "<method '__exit__' of '_thread.RLock' objects>",
+      "calls": 7,
+      "self_s": 3.6000000000000003e-06,
+      "cumulative_s": 3.6000000000000003e-06
+    },
+    {
+      "file": "parse.py",
+      "function": "_noop",
+      "calls": 24,
+      "self_s": 3.5000000000000004e-06,
+      "cumulative_s": 3.5000000000000004e-06
+    },
+    {
+      "file": "message.py",
+      "function": "is_multipart",
+      "calls": 4,
+      "self_s": 1.7e-06,
+      "cumulative_s": 3.4e-06
+    },
+    {
+      "file": "request.py",
+      "function": "set_file_position",
+      "calls": 2,
+      "self_s": 2.2e-06,
+      "cumulative_s": 3.4e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'count' of 'str' objects>",
+      "calls": 8,
+      "self_s": 3.4e-06,
+      "cumulative_s": 3.4e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'endswith' of 'str' objects>",
+      "calls": 4,
+      "self_s": 3.4e-06,
+      "cumulative_s": 3.4e-06
+    },
+    {
+      "file": "message.py",
+      "function": "set_payload",
+      "calls": 2,
+      "self_s": 1.9e-06,
+      "cumulative_s": 3.3e-06
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "__init__",
+      "calls": 6,
+      "self_s": 3.3e-06,
+      "cumulative_s": 3.3e-06
+    },
+    {
+      "file": "_collections.py",
+      "function": "__iter__",
+      "calls": 8,
+      "self_s": 2.9e-06,
+      "cumulative_s": 3.3e-06
+    },
+    {
+      "file": "sessions.py",
+      "function": "merge_hooks",
+      "calls": 2,
+      "self_s": 2.5e-06,
+      "cumulative_s": 3.3e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'truncate' of '_io.StringIO' objects>",
+      "calls": 4,
+      "self_s": 3.3e-06,
+      "cumulative_s": 3.3e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 8,
+      "self_s": 3.2000000000000003e-06,
+      "cumulative_s": 3.2000000000000003e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'items' of 'collections.OrderedDict' objects>",
+      "calls": 8,
+      "self_s": 3.2000000000000003e-06,
+      "cumulative_s": 3.2000000000000003e-06
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "<genexpr>",
+      "calls": 6,
+      "self_s": 2.3e-06,
+      "cumulative_s": 3.1000000000000004e-06
+    },
+    {
+      "file": "client.py",
+      "function": "_encode_request",
+      "calls": 2,
+      "self_s": 1.7e-06,
+      "cumulative_s": 3.1000000000000004e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'copy' of 'dict' objects>",
+      "calls": 4,
+      "self_s": 3.1000000000000004e-06,
+      "cumulative_s": 3.1000000000000004e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'release' of '_thread.RLock' objects>",
+      "calls": 8,
+      "self_s": 3e-06,
+      "cumulative_s": 3e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'rstrip' of 'str' objects>",
+      "calls": 8,
+      "self_s": 3e-06,
+      "cumulative_s": 3e-06
+    },
+    {
+      "file": "response.py",
+      "function": "retries",
+      "calls": 4,
+      "self_s": 2.9e-06,
+      "cumulative_s": 2.9e-06
+    },
+    {
+      "file": "response.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 2.9e-06,
+      "cumulative_s": 2.9e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 13,
+      "self_s": 2.9e-06,
+      "cumulative_s": 2.9e-06
+    },
+    {
+      "file": "feedparser.py",
+      "function": "_pop_message",
+      "calls": 2,
+      "self_s": 2.2e-06,
+      "cumulative_s": 2.8000000000000003e-06
+    },
+    {
+      "file": "client.py",
+      "function": "_validate_path",
+      "calls": 2,
+      "self_s": 1.6000000000000001e-06,
+      "cumulative_s": 2.8000000000000003e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method _io.text_encoding>",
+      "calls": 2,
+      "self_s": 2.8000000000000003e-06,
+      "cumulative_s": 2.8000000000000003e-06
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_validate_text_queries",
+      "calls": 1,
+      "self_s": 2.0000000000000003e-06,
+      "cumulative_s": 2.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'read' of '_io.StringIO' objects>",
+      "calls": 4,
+      "self_s": 2.7e-06,
+      "cumulative_s": 2.7e-06
+    },
+    {
+      "file": "workspace.py",
+      "function": "<genexpr>",
+      "calls": 2,
+      "self_s": 2.2e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "main.py",
+      "function": "_model_field_setattr_handler",
+      "calls": 1,
+      "self_s": 2.1000000000000002e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "response.py",
+      "function": "<genexpr>",
+      "calls": 4,
+      "self_s": 2.2e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "response.py",
+      "function": "put",
+      "calls": 2,
+      "self_s": 1.8000000000000001e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 1,
+      "self_s": 2.6e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'ravel' of 'numpy.ndarray' objects>",
+      "calls": 1,
+      "self_s": 2.6e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'write' of '_io.StringIO' objects>",
+      "calls": 2,
+      "self_s": 2.6e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'rstrip' of 'bytes' objects>",
+      "calls": 2,
+      "self_s": 2.6e-06,
+      "cumulative_s": 2.6e-06
+    },
+    {
+      "file": "dataclasses.py",
+      "function": "<genexpr>",
+      "calls": 12,
+      "self_s": 2.5e-06,
+      "cumulative_s": 2.5e-06
+    },
+    {
+      "file": "models.py",
+      "function": "raise_for_status",
+      "calls": 2,
+      "self_s": 2.0000000000000003e-06,
+      "cumulative_s": 2.5e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'extend' of 'collections.deque' objects>",
+      "calls": 4,
+      "self_s": 2.5e-06,
+      "cumulative_s": 2.5e-06
+    },
+    {
+      "file": "schema_parser.py",
+      "function": "parse_model",
+      "calls": 1,
+      "self_s": 2.4000000000000003e-06,
+      "cumulative_s": 2.4000000000000003e-06
+    },
+    {
+      "file": "hooks.py",
+      "function": "dispatch_hook",
+      "calls": 2,
+      "self_s": 1.5e-06,
+      "cumulative_s": 2.4000000000000003e-06
+    },
+    {
+      "file": "typing.py",
+      "function": "cast",
+      "calls": 14,
+      "self_s": 2.3e-06,
+      "cumulative_s": 2.3e-06
+    },
+    {
+      "file": "queue.py",
+      "function": "_put",
+      "calls": 2,
+      "self_s": 1.2000000000000002e-06,
+      "cumulative_s": 2.3e-06
+    },
+    {
+      "file": "connection.py",
+      "function": "_normalize_header_value",
+      "calls": 6,
+      "self_s": 2.3e-06,
+      "cumulative_s": 2.3e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'update' of 'collections.OrderedDict' objects>",
+      "calls": 4,
+      "self_s": 2.3e-06,
+      "cumulative_s": 2.3e-06
+    },
+    {
+      "file": "enum.py",
+      "function": "value",
+      "calls": 2,
+      "self_s": 2.2e-06,
+      "cumulative_s": 2.2e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'popleft' of 'collections.deque' objects>",
+      "calls": 10,
+      "self_s": 2.2e-06,
+      "cumulative_s": 2.2e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'isascii' of 'str' objects>",
+      "calls": 8,
+      "self_s": 2.2e-06,
+      "cumulative_s": 2.2e-06
+    },
+    {
+      "file": "~",
+      "function": "<method '_checkClosed' of '_io._IOBase' objects>",
+      "calls": 3,
+      "self_s": 2.0000000000000003e-06,
+      "cumulative_s": 2.0000000000000003e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'pop' of 'list' objects>",
+      "calls": 4,
+      "self_s": 2.0000000000000003e-06,
+      "cumulative_s": 2.0000000000000003e-06
+    },
+    {
+      "file": "response.py",
+      "function": "is_fp_closed",
+      "calls": 2,
+      "self_s": 1.3e-06,
+      "cumulative_s": 1.8000000000000001e-06
+    },
+    {
+      "file": "cookiejar.py",
+      "function": "_debug",
+      "calls": 6,
+      "self_s": 1.7e-06,
+      "cumulative_s": 1.7e-06
+    },
+    {
+      "file": "response.py",
+      "function": "supports_chunked_reads",
+      "calls": 2,
+      "self_s": 1.2000000000000002e-06,
+      "cumulative_s": 1.7e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 5,
+      "self_s": 1.7e-06,
+      "cumulative_s": 1.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'seek' of '_io.StringIO' objects>",
+      "calls": 8,
+      "self_s": 1.7e-06,
+      "cumulative_s": 1.7e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method sys.audit>",
+      "calls": 3,
+      "self_s": 1.7e-06,
+      "cumulative_s": 1.7e-06
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 11,
+      "self_s": 1.6000000000000001e-06,
+      "cumulative_s": 1.6000000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'keys' of 'dict' objects>",
+      "calls": 4,
+      "self_s": 1.6000000000000001e-06,
+      "cumulative_s": 1.6000000000000001e-06
+    },
+    {
+      "file": "typing.py",
+      "function": "_should_unflatten_callable_args",
+      "calls": 1,
+      "self_s": 1.5e-06,
+      "cumulative_s": 1.5e-06
+    },
+    {
+      "file": "__init__.py",
+      "function": "isEnabledFor",
+      "calls": 2,
+      "self_s": 1.5e-06,
+      "cumulative_s": 1.5e-06
+    },
+    {
+      "file": "utils.py",
+      "function": "set_environ",
+      "calls": 4,
+      "self_s": 1.5e-06,
+      "cumulative_s": 1.5e-06
+    },
+    {
+      "file": "workspace.py",
+      "function": "<genexpr>",
+      "calls": 2,
+      "self_s": 1.4000000000000001e-06,
+      "cumulative_s": 1.4000000000000001e-06
+    },
+    {
+      "file": "_linalg.py",
+      "function": "isComplexType",
+      "calls": 1,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.4000000000000001e-06
+    },
+    {
+      "file": "response.py",
+      "function": "is_response_to_head",
+      "calls": 1,
+      "self_s": 1.2000000000000002e-06,
+      "cumulative_s": 1.4000000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'write' of '_io.BytesIO' objects>",
+      "calls": 2,
+      "self_s": 1.4000000000000001e-06,
+      "cumulative_s": 1.4000000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'flush' of '_io.BufferedReader' objects>",
+      "calls": 1,
+      "self_s": 1.4000000000000001e-06,
+      "cumulative_s": 1.4000000000000001e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'split' of 'bytes' objects>",
+      "calls": 2,
+      "self_s": 1.4000000000000001e-06,
+      "cumulative_s": 1.4000000000000001e-06
+    },
+    {
+      "file": "local_collection.py",
+      "function": "ignore_mentioned_ids_filter",
+      "calls": 1,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.3e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 4,
+      "self_s": 1.3e-06,
+      "cumulative_s": 1.3e-06
+    },
+    {
+      "file": "timeout.py",
+      "function": "resolve_default_timeout",
+      "calls": 4,
+      "self_s": 1.2000000000000002e-06,
+      "cumulative_s": 1.2000000000000002e-06
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 4,
+      "self_s": 1.2000000000000002e-06,
+      "cumulative_s": 1.2000000000000002e-06
+    },
+    {
+      "file": "response.py",
+      "function": "_decode",
+      "calls": 3,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.1e-06
+    },
+    {
+      "file": "response.py",
+      "function": "__len__",
+      "calls": 6,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.1e-06
+    },
+    {
+      "file": "cookies.py",
+      "function": "info",
+      "calls": 8,
+      "self_s": 1.1e-06,
+      "cumulative_s": 1.1e-06
+    },
+    {
+      "file": "socket.py",
+      "function": "_decref_socketios",
+      "calls": 2,
+      "self_s": 1.0000000000000002e-06,
+      "cumulative_s": 1.0000000000000002e-06
+    },
+    {
+      "file": "parser.py",
+      "function": "__init__",
+      "calls": 2,
+      "self_s": 1.0000000000000002e-06,
+      "cumulative_s": 1.0000000000000002e-06
+    },
+    {
+      "file": "~",
+      "function": "<method 'conj' of 'numpy.ndarray' objects>",
+      "calls": 1,
+      "self_s": 1.0000000000000002e-06,
+      "cumulative_s": 1.0000000000000002e-06
+    },
+    {
+      "file": "~",
+      "function": "<built-in method builtins.max>",
+      "calls": 1,
+      "self_s": 1.0000000000000002e-06,
+      "cumulative_s": 1.0000000000000002e-06
+    },
+    {
+      "file": "workspace.py",
+      "function": "_vector_client",
+      "calls": 1,
+      "self_s": 9.000000000000001e-07,
+      "cumulative_s": 9.000000000000001e-07
+    },
+    {
+      "file": "timeout.py",
+      "function": "connect_timeout",
+      "calls": 4,
+      "self_s": 9.000000000000001e-07,
+      "cumulative_s": 9.000000000000001e-07
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 3,
+      "self_s": 9.000000000000001e-07,
+      "cumulative_s": 9.000000000000001e-07
+    },
+    {
+      "file": "~",
+      "function": "<method 'getvalue' of '_io.BytesIO' objects>",
+      "calls": 1,
+      "self_s": 9.000000000000001e-07,
+      "cumulative_s": 9.000000000000001e-07
+    },
+    {
+      "file": "workspace.py",
+      "function": "<genexpr>",
+      "calls": 2,
+      "self_s": 8.000000000000001e-07,
+      "cumulative_s": 8.000000000000001e-07
+    },
+    {
+      "file": "connection.py",
+      "function": "is_closed",
+      "calls": 2,
+      "self_s": 8.000000000000001e-07,
+      "cumulative_s": 8.000000000000001e-07
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "_parse_search_params",
+      "calls": 1,
+      "self_s": 7.000000000000001e-07,
+      "cumulative_s": 8.000000000000001e-07
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 3,
+      "self_s": 8.000000000000001e-07,
+      "cumulative_s": 8.000000000000001e-07
+    },
+    {
+      "file": "~",
+      "function": "<built-in method time.monotonic>",
+      "calls": 2,
+      "self_s": 8.000000000000001e-07,
+      "cumulative_s": 8.000000000000001e-07
+    },
+    {
+      "file": "query_intent.py",
+      "function": "<genexpr>",
+      "calls": 3,
+      "self_s": 7.000000000000001e-07,
+      "cumulative_s": 7.000000000000001e-07
+    },
+    {
+      "file": "~",
+      "function": "<built-in method numpy.asarray>",
+      "calls": 2,
+      "self_s": 7.000000000000001e-07,
+      "cumulative_s": 7.000000000000001e-07
+    },
+    {
+      "file": "local_collection.py",
+      "function": "_idf_corpus_of",
+      "calls": 1,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "proxy.py",
+      "function": "connection_requires_http_tunnel",
+      "calls": 2,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "connectionpool.py",
+      "function": "_validate_conn",
+      "calls": 2,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "cookies.py",
+      "function": "__init__",
+      "calls": 4,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "~",
+      "function": "<function HTTPResponse.flush at 0x00000205761D98A0>",
+      "calls": 2,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "~",
+      "function": "<method 'copy' of 'set' objects>",
+      "calls": 1,
+      "self_s": 6.000000000000001e-07,
+      "cumulative_s": 6.000000000000001e-07
+    },
+    {
+      "file": "_linalg.py",
+      "function": "_norm_dispatcher",
+      "calls": 2,
+      "self_s": 5.000000000000001e-07,
+      "cumulative_s": 5.000000000000001e-07
+    },
+    {
+      "file": "feedparser.py",
+      "function": "__iter__",
+      "calls": 4,
+      "self_s": 5.000000000000001e-07,
+      "cumulative_s": 5.000000000000001e-07
+    },
+    {
+      "file": "util.py",
+      "function": "to_bytes",
+      "calls": 1,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 5.000000000000001e-07
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "_has_ignored_search_params",
+      "calls": 1,
+      "self_s": 5.000000000000001e-07,
+      "cumulative_s": 5.000000000000001e-07
+    },
+    {
+      "file": "adapters.py",
+      "function": "add_headers",
+      "calls": 2,
+      "self_s": 5.000000000000001e-07,
+      "cumulative_s": 5.000000000000001e-07
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "closed",
+      "calls": 2,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 4.0000000000000003e-07
+    },
+    {
+      "file": "cookies.py",
+      "function": "get_new_headers",
+      "calls": 2,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 4.0000000000000003e-07
+    },
+    {
+      "file": "models.py",
+      "function": "<genexpr>",
+      "calls": 2,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 4.0000000000000003e-07
+    },
+    {
+      "file": "<frozen codecs>",
+      "function": "__init__",
+      "calls": 1,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 4.0000000000000003e-07
+    },
+    {
+      "file": "~",
+      "function": "<method 'pop' of 'set' objects>",
+      "calls": 1,
+      "self_s": 4.0000000000000003e-07,
+      "cumulative_s": 4.0000000000000003e-07
+    },
+    {
+      "file": "multiarray.py",
+      "function": "where",
+      "calls": 2,
+      "self_s": 3.0000000000000004e-07,
+      "cumulative_s": 3.0000000000000004e-07
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "_resolve_prefetches_input",
+      "calls": 1,
+      "self_s": 3.0000000000000004e-07,
+      "cumulative_s": 3.0000000000000004e-07
+    },
+    {
+      "file": "response.py",
+      "function": "_flush_decoder",
+      "calls": 1,
+      "self_s": 3.0000000000000004e-07,
+      "cumulative_s": 3.0000000000000004e-07
+    },
+    {
+      "file": "search_v3.py",
+      "function": "<genexpr>",
+      "calls": 1,
+      "self_s": 3.0000000000000004e-07,
+      "cumulative_s": 3.0000000000000004e-07
+    },
+    {
+      "file": "multiarray.py",
+      "function": "dot",
+      "calls": 1,
+      "self_s": 2.0000000000000002e-07,
+      "cumulative_s": 2.0000000000000002e-07
+    },
+    {
+      "file": "fromnumeric.py",
+      "function": "_argsort_dispatcher",
+      "calls": 1,
+      "self_s": 2.0000000000000002e-07,
+      "cumulative_s": 2.0000000000000002e-07
+    },
+    {
+      "file": "qdrant_local.py",
+      "function": "_validate_prefetch",
+      "calls": 1,
+      "self_s": 2.0000000000000002e-07,
+      "cumulative_s": 2.0000000000000002e-07
+    }
+  ],
+  "resources": {
+    "sampled_python_peak_rss": 846151680,
+    "minimum_available_ram": 2104627200,
+    "free_disk_bytes": 52032729088,
+    "python_cpu_s": 111.1875
+  },
+  "limits": [
+    "Local Qdrant is included in Python RSS;external Ollama/Chrome excluded.",
+    "cProfile cumulative phases overlap;do not add cumulative times.",
+    "Repeated-query warm sample is not a diverse workload or p99 SLA."
+  ]
+}

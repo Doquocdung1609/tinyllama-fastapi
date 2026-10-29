@@ -1,0 +1,50 @@
+{
+  "at_utc": "2026-10-29T08:43:45.574960+00:00",
+  "events": [
+    {
+      "ticker": "SONY",
+      "status": "NOT_ACQUIRED_HTTP_403",
+      "url": "https://www.sony.com/en/SonyInfo/IR/library/presen/er/pdf/25q3_sony.pdf",
+      "policy": "No benchmark run or labels created for inaccessible source"
+    },
+    {
+      "ticker": "PNJ",
+      "url": "https://cdn.pnj.io/images/quan-he-co-dong/2025/BCTC-Q4-HN-31-01.pdf",
+      "path": "tmp\\search-v3r\\PNJ.pdf",
+      "sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+      "status": "ACQUIRED_AFTER_FREEZE"
+    },
+    {
+      "ticker": "TOYOTA",
+      "status": "NOT_ACQUIRED_HTTP_403",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_3q_summary_en.pdf"
+    },
+    {
+      "ticker": "KO",
+      "status": "NOT_ACQUIRED_HTTP_403",
+      "url": "https://investors.coca-colacompany.com/_assets/_2ca1fd8b1d655b58f15d1c9ffaf6f30b/cocacolacompany/db/880/11088/earnings_release/Coca-Cola%2BQ4%2B2025%2BEarnings%2BRelease_Full%2BRelease_2.10.26.pdf"
+    },
+    {
+      "ticker": "VNM",
+      "status": "NOT_ACQUIRED_HTTP_403",
+      "url": "https://www.vinamilk.com.vn/static/uploads/documents/bctc/1745922429_20250429_-_VNM_-_B%E1%BA%A3n_tin_N%C4%90T_Q1.2025_.pdf"
+    },
+    {
+      "ticker": "FPT",
+      "status": "NOT_ACQUIRED_HTTP_404",
+      "url": "https://fpt.com/-/media/project/fpt-corporation/fpt/ir/information-disclosures/year-report/2025/april/20250422---fpt---separate-financial-statements-for-quarter-1-2025.pdf"
+    },
+    {
+      "ticker": "MSN",
+      "status": "NOT_ACQUIRED_REMOTE_52MB_EXCEEDS_BOUNDED_BUDGET",
+      "url": "https://www.masangroup.com/wp-content/uploads/2025/10/b8da3c6c1ed5c423e1cda5ce8895f99b.pdf"
+    },
+    {
+      "ticker": "ACB",
+      "status": "ACQUIRED_AFTER_FREEZE",
+      "url": "https://acb.com.vn/acbwebsite/files/BCTN%202022-EN_Part2.pdf",
+      "sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f"
+    }
+  ],
+  "limits": "Acquisition availability/file-budget decisions before benchmark;no unsuccessful test score was removed. Sony web search content read after freeze,but inaccessible PDFs not indexed or tested."
+}
