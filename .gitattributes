@@ -15,3 +15,6 @@ docs/topic3/milestone_d/recovery/p11/p11_gate_ledger.json text eol=lf
 docs/search_v2/SEARCH_BENCHMARK_QRELS.jsonl text eol=lf
 docs/search_v2/*.json -text whitespace=cr-at-eol
 docs/search_v2/archive/**/*.txt text eol=lf
+
+# Keep Search V3 measured labels, component fingerprints and report bytes intact across hosts.
+docs/search_v3/** -text whitespace=cr-at-eol

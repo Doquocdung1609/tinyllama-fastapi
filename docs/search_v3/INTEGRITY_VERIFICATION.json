@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "baseline_files_verified": 120,
+  "owner_files_byte_identical": 8,
+  "v2_implementation_and70labels_unchanged": true,
+  "accepted_SEC_manifest_and_available_raw_fingerprints_unchanged": true,
+  "current_policy_sha256": "28df50bf06395496cd54340a8f0e944acf9403c52cf2b9c0752fc70ccda64ccb",
+  "final_test_source_open_after_repaired_freeze": true,
+  "final_labels_sha256": "5dcfd059af59f03d837cc0e31988aed30bca75398ab5a34de0d10b49bee892bf",
+  "public_raw_pdfs_sha_verified": 5,
+  "source_images_sha_verified": 21,
+  "invalidated_policy_archive_verified": true,
+  "live_embedding_identity": {
+    "model": "nomic-embed-text:latest",
+    "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "dimension": 768,
+    "document_prefix": "search_document: ",
+    "query_prefix": "search_query: ",
+    "distance": "COSINE"
+  },
+  "limits": "Only historical sources actually present on this machine are covered. No claim of unavailable historical generations. All original owner files retained;new experiments/sidecars in owned clones."
+}

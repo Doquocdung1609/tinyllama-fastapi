@@ -14,6 +14,7 @@ tmp/reference-*/
 tmp/react*/
 tmp/react-*.txt
 tmp/search-v2*/
+tmp/search-v3/
 tmp/studio-runtime/
 .streamlit/secrets.toml
 uploads/

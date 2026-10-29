@@ -1,0 +1,19 @@
+{
+  "policy_sha256": "4f559f1e2e7ffff05af4024333ec4323be84f2e6430c3a4c3eaa600cb2cb3c46",
+  "frozen_at_utc": "2026-10-29T04:00:27.813205+00:00",
+  "files": {
+    "app/product/search_v3.py": "4b9779d5e09f9fd52b60cc4040449ef41236efb3b0c2a1e138c553ea1c802dfb",
+    "app/product/search_v2.py": "584327fb79547f2547ab169dc009f57418a52ee5ae30ba49d34f0e2fb8002d04",
+    "app/product/query_intent.py": "424337ad07a2654eccd14a4f163289909285354499ab88cb1bfcdac3225e55be",
+    "app/product/pdf_extract.py": "1e7a2c536e2be29e86c595d2748bffb0692b500b93799e74178f7d3519de48ab",
+    "app/product/workspace.py": "94c322c7204299960ec76fe0913b303bf447307d6f9d5bb8b933f82aeb64f29e",
+    "app/product/sec_search.py": "62f6444bcd883f4f477fcb7f9d6d1dfda48194e3d0ddca15299d587274758777",
+    "app/product/frontend_api.py": "6a3ad4b1b7ce5cd53ae28e3f306fbada0e034fee99748f0a816c7034b2b0dbbd",
+    "app/product/analysis.py": "41da81ad9cbcbfb5f72ea5d7cfe7a0019539d2e0146cb10632b930cb1752aa43",
+    "frontend/src/Studio.tsx": "082ff0e08791fa3a209f2b7eaab121953ab64c373138f1b04055cbca883fd28d",
+    "frontend/src/api.ts": "3e2bfa511d1fa7f061258d5b803dc0443d10cbbf83b0a20b5f2dc5ae4a0b678f",
+    "scripts/benchmark_search_v3.py": "dd57d0d7d9917952b11a9d9517adc7c49c8d6b6262802ee7a348d99e8911ed5c"
+  },
+  "hash_convention": "UTF8 canonical text with universal newline normalization",
+  "protocol": "Reserved source contents and queries not inspected before this freeze; single Codex annotator, no independent human reviewer."
+}

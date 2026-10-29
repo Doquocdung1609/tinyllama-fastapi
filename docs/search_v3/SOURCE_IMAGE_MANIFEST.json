@@ -1,0 +1,275 @@
+[
+  {
+    "ticker": "CEO",
+    "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+    "page": 2,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "image": "source_images/CEO-p2.png",
+    "image_sha256": "20be8b7d8fc340cf2e50035f5c18074286da964849d6f74db98c5e37cdda5d4a"
+  },
+  {
+    "ticker": "CEO",
+    "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+    "page": 3,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "image": "source_images/CEO-p3.png",
+    "image_sha256": "c5d5f9aed4e0d901984195319aa2cb85d5d0ae20cefa9fd9fba8633128b279a4"
+  },
+  {
+    "ticker": "CEO",
+    "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+    "page": 4,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "image": "source_images/CEO-p4.png",
+    "image_sha256": "3cb1b6177a7f410845a472c698a6013f971d4aaaa9778e6538c61f080c99134c"
+  },
+  {
+    "ticker": "FOX",
+    "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+    "page": 3,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      594.0,
+      843.0
+    ],
+    "image": "source_images/FOX-p3.png",
+    "image_sha256": "743f1dea7e1ca01f83ec490b2e10b1fb01f8992f39a69718e4310d3a67a27b76"
+  },
+  {
+    "ticker": "FOX",
+    "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+    "page": 4,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      594.0,
+      843.0
+    ],
+    "image": "source_images/FOX-p4.png",
+    "image_sha256": "b8fbb4f59a9d76df56ecfc480cebdd5961827e312b22afd0a0ce927bd1cfc515"
+  },
+  {
+    "ticker": "FOX",
+    "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+    "page": 5,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      595.0,
+      844.0
+    ],
+    "image": "source_images/FOX-p5.png",
+    "image_sha256": "15409b0ce5a34a82adbc5812189527680b6db83f0f3fd3140e1d0fadff7f1a02"
+  },
+  {
+    "ticker": "FOX",
+    "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+    "page": 6,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      594.0,
+      843.0
+    ],
+    "image": "source_images/FOX-p6.png",
+    "image_sha256": "3a2faf20289cd90b65057cc60f929cd1acfa46f4999645f12fd9f5ae99c53ab5"
+  },
+  {
+    "ticker": "FOX",
+    "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+    "page": 7,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      594.0,
+      842.0
+    ],
+    "image": "source_images/FOX-p7.png",
+    "image_sha256": "6097b1c12d4792a35b5c609913a800eddebd72dc14eb16c8a478f50cc31485d6"
+  },
+  {
+    "ticker": "SAMSUNG",
+    "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+    "page": 6,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      595.3200073242188,
+      841.9200439453125
+    ],
+    "image": "source_images/SAMSUNG-p6.png",
+    "image_sha256": "6aeaf2c293bb41c986ef1a03d6be5e784473565c6f5eafb68fad75ae45e2a52d"
+  },
+  {
+    "ticker": "SAMSUNG",
+    "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+    "page": 7,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      595.3200073242188,
+      841.9200439453125
+    ],
+    "image": "source_images/SAMSUNG-p7.png",
+    "image_sha256": "0171f87bd7454b4e0ed8c8c558605a6d9a7609a65fa1851f429fade87e389829"
+  },
+  {
+    "ticker": "SAMSUNG",
+    "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+    "page": 8,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      595.3200073242188,
+      841.9200439453125
+    ],
+    "image": "source_images/SAMSUNG-p8.png",
+    "image_sha256": "e926c8699342c66570a46a5ef6c5762bd3e318e2f9e594e54370072645a5c627"
+  },
+  {
+    "ticker": "SAMSUNG",
+    "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+    "page": 9,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      595.3200073242188,
+      841.9200439453125
+    ],
+    "image": "source_images/SAMSUNG-p9.png",
+    "image_sha256": "2cfb08230d44003abc931dd129517e10e958a2d9a1f98a4478641457988f5db7"
+  },
+  {
+    "ticker": "SAMSUNG",
+    "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+    "page": 3,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      595.3200073242188,
+      841.9200439453125
+    ],
+    "image": "source_images/SAMSUNG-p3.png",
+    "image_sha256": "af63c4e195b5ea8c81a32cf0d473fec00d23e6d43164cbbadf0e1a33452fad7c"
+  },
+  {
+    "ticker": "REE",
+    "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+    "page": 3,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      593.0,
+      836.0
+    ],
+    "image": "source_images/REE-p3.png",
+    "image_sha256": "d3e36d48909125d40e144dfd08af673cb00f5b4844c3b93cc208fa2ee1e2ac67"
+  },
+  {
+    "ticker": "REE",
+    "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+    "page": 4,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      592.0,
+      837.0
+    ],
+    "image": "source_images/REE-p4.png",
+    "image_sha256": "f6c1328b9692ef05c66e2aa05f970b83e4293e82580a58794195c126528c951f"
+  },
+  {
+    "ticker": "REE",
+    "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+    "page": 2,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      592.0,
+      837.0
+    ],
+    "image": "source_images/REE-p2.png",
+    "image_sha256": "e6b3dbb23b0f181c0602cd795a2bbad1f0a194a52da9b1d14cfe10a174b776d7"
+  },
+  {
+    "ticker": "REE",
+    "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+    "page": 9,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      592.0,
+      836.0
+    ],
+    "image": "source_images/REE-p9.png",
+    "image_sha256": "45d1cda148930dcc228eb94e5aa15c36a9fc712680a26d4de48d75215885976d"
+  },
+  {
+    "ticker": "SEM",
+    "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+    "page": 7,
+    "clip_pdf_viewport_points": [
+      35.0,
+      65.0,
+      565.0,
+      485.0
+    ],
+    "image": "source_images/SEM-p7.png",
+    "image_sha256": "6f54716891452c8074cba26d862b26087d546e663d8af953914ee72031aa3615"
+  },
+  {
+    "ticker": "SEM",
+    "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+    "page": 8,
+    "clip_pdf_viewport_points": [
+      35.0,
+      65.0,
+      565.0,
+      485.0
+    ],
+    "image": "source_images/SEM-p8.png",
+    "image_sha256": "8cadc7a23a808ce6238ca320f5a65747f4a027ca038796cada9217f42a7328be"
+  },
+  {
+    "ticker": "SEM",
+    "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+    "page": 9,
+    "clip_pdf_viewport_points": [
+      35.0,
+      65.0,
+      565.0,
+      485.0
+    ],
+    "image": "source_images/SEM-p9.png",
+    "image_sha256": "73e2a24388175409d87e4751e7115be838c4a459a560feb80ad09165d541e8b9"
+  },
+  {
+    "ticker": "SEM",
+    "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+    "page": 3,
+    "clip_pdf_viewport_points": [
+      0.0,
+      0.0,
+      595.3200073242188,
+      842.0399780273438
+    ],
+    "image": "source_images/SEM-p3.png",
+    "image_sha256": "78b5685f01c6171970f0e906e3d5712d2c4e53860aaeae7d33cae2c0498d6c01"
+  }
+]

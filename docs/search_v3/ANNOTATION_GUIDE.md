@@ -1,0 +1,7 @@
+# Source annotation guide
+
+Read the original PDF page and visually inspect every target row, column heading, unit and report scope. Labels must not be derived from returned search hits. Store raw SHA256, one-based PDF page, viewport-point table/row/cell boxes, exact source span, displayed value, metric, column period/start, basis, scope and unit. Keep original displayed punctuation; normalize Decimal values only with an explicit locale. Blank/dash/uncertain OCR is not zero. A row hit does not prove the requested column.
+
+Narrative references record an exact source passage and coordinates, without invented numeric labels. Multi-page requests list every required source. Negative requests specify the unsupported dimension and source bounds; they need not have zero related passages. Do not label an ambiguous period/basis as a supported answer. Mark uncertain OCR/transcription as disputed and exclude it from exact-cell accuracy until reviewed.
+
+Identify source-seen/unseen, scanned/native/mixed, language, tabular/narrative, exact/paraphrase, single/multi-page and positive/no-answer strata. Family IDs bind all paraphrases of a question/source target to one split. Source documents and metric concepts shared across splits must be disclosed. Independent owner audit state defaults PENDING; Codex is the annotator, never an independent human reviewer. Any owner changes become a new version of labels; retain the old measurement and do not retroactively improve its score.
