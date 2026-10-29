@@ -5,6 +5,10 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+import mimetypes
+
+# Serve ES module workers with the correct JavaScript MIME type.
+mimetypes.add_type("text/javascript", ".mjs")
 from pathlib import Path
 
 from app.config import get_settings
