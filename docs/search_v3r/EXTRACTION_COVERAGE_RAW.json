@@ -1,0 +1,871 @@
+{
+  "annotation_status": "PROVISIONAL_AGENT_ANNOTATED_NOT_INDEPENDENT_HUMAN_REVIEW",
+  "source_pages": [
+    {
+      "ticker": "HPG",
+      "page": 3,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "derived_checkpoint_sha256": "1c2b0897a46500061f9e81461f9a26145160e30fce7da379dfd0e44d14d8c14d",
+      "regions": [
+        {
+          "id": "p3-image0",
+          "box": [
+            0.0,
+            0.0,
+            595.4400024414062,
+            842.4000244140625
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 324.963,
+      "candidate_rows": 23,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 0,
+      "ocr_or_prior_words": 290,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "HPG",
+      "page": 5,
+      "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "derived_checkpoint_sha256": "781c6140dc4d6ae28ba1875357027394588511b9573bd549179adc4ffe270fb4",
+      "regions": [
+        {
+          "id": "p5-image0",
+          "box": [
+            0.0,
+            0.0,
+            595.4400024414062,
+            842.4000244140625
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 649.806,
+      "candidate_rows": 28,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 0,
+      "ocr_or_prior_words": 415,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "BIDV",
+      "page": 3,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "derived_checkpoint_sha256": "7b688df146af36b2aa272a638f3e291f673fce3e31a25e85bf4ee10d2a16e204",
+      "regions": [
+        {
+          "id": "p3-image0",
+          "box": [
+            42.959999084472656,
+            74.63999938964844,
+            100.08000183105469,
+            92.63999938964844
+          ],
+          "kind": "NON_TABLE_IMAGE",
+          "status": "DECORATIVE_OR_SPARSE_IMAGE",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 474.865,
+      "candidate_rows": 37,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 423,
+      "ocr_or_prior_words": 0,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "BIDV",
+      "page": 6,
+      "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "derived_checkpoint_sha256": "d1f186d99ab5667ac680f048f864713c46dae4f7e2324b731d953bac2d12c01c",
+      "regions": [
+        {
+          "id": "p6-image0",
+          "box": [
+            50.63999938964844,
+            62.159996032714844,
+            108.24000549316406,
+            79.91999816894531
+          ],
+          "kind": "NON_TABLE_IMAGE",
+          "status": "DECORATIVE_OR_SPARSE_IMAGE",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 412.565,
+      "candidate_rows": 37,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 426,
+      "ocr_or_prior_words": 0,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "CEO",
+      "page": 2,
+      "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+      "derived_checkpoint_sha256": "f9bf278fc82f00a0980b9ecfd554308137b5556918ffcd52218419ad06f4f35a",
+      "regions": [
+        {
+          "id": "p2-image0",
+          "box": [
+            27.0,
+            1.0800018310546875,
+            585.0,
+            198.48001098632812
+          ],
+          "kind": "TEXT_IMAGE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        },
+        {
+          "id": "p2-image1",
+          "box": [
+            27.0,
+            198.48001098632812,
+            585.0,
+            593.280029296875
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        },
+        {
+          "id": "p2-image2",
+          "box": [
+            27.0,
+            593.2799072265625,
+            585.0,
+            790.5599365234375
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 470.491,
+      "candidate_rows": 40,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 0,
+      "ocr_or_prior_words": 396,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "CEO",
+      "page": 4,
+      "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+      "derived_checkpoint_sha256": "7b5d1cf334f4294d3d5f8610b016020cc03f6fade14118bcfc99b238a77fd967",
+      "regions": [
+        {
+          "id": "p4-image0",
+          "box": [
+            27.0,
+            1.0800018310546875,
+            585.0,
+            198.48001098632812
+          ],
+          "kind": "TEXT_IMAGE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        },
+        {
+          "id": "p4-image1",
+          "box": [
+            27.0,
+            198.48001098632812,
+            585.0,
+            593.280029296875
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        },
+        {
+          "id": "p4-image2",
+          "box": [
+            27.0,
+            593.2799072265625,
+            585.0,
+            790.5599365234375
+          ],
+          "kind": "TEXT_IMAGE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 465.145,
+      "candidate_rows": 6,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 0,
+      "ocr_or_prior_words": 347,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "FOX",
+      "page": 3,
+      "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+      "derived_checkpoint_sha256": "e918975a21a47d2519e7881084ab7f1798e84e3731bb35a04fc45494fe719a19",
+      "regions": [
+        {
+          "id": "p3-image0",
+          "box": [
+            0.0,
+            0.5999755859375,
+            594.0,
+            843.0
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 881.413,
+      "candidate_rows": 41,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 0,
+      "ocr_or_prior_words": 385,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "FOX",
+      "page": 5,
+      "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+      "derived_checkpoint_sha256": "c2b7e88962c06625722aa1714214b549e54cfd3c1c630e7c693b950ed47a8b6b",
+      "regions": [
+        {
+          "id": "p5-image0",
+          "box": [
+            0.0,
+            0.52001953125,
+            594.3599853515625,
+            844.0
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 606.453,
+      "candidate_rows": 28,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 0,
+      "ocr_or_prior_words": 315,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "SAMSUNG",
+      "page": 6,
+      "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+      "derived_checkpoint_sha256": "76dee59ba070cea7a8c2f2df22466e1ac32300253ca3092ce1d26e8d9cd3083b",
+      "regions": [],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 277.106,
+      "candidate_rows": 21,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 261,
+      "ocr_or_prior_words": 0,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "SAMSUNG",
+      "page": 9,
+      "source_sha256": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+      "derived_checkpoint_sha256": "e73b47c0596e8cb6ed13966744c3bce804a3c74a2a92458000cc4c75ccf2824f",
+      "regions": [],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 200.157,
+      "candidate_rows": 19,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 206,
+      "ocr_or_prior_words": 0,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "REE",
+      "page": 3,
+      "source_sha256": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "derived_checkpoint_sha256": "36a5b7177ce7b20a5954cd9cf3ee0bfc4ee964f5ec62cf6a2fa38322b9aa9524",
+      "regions": [
+        {
+          "id": "p3-image0",
+          "box": [
+            0.0,
+            0.0,
+            593.0,
+            836.0
+          ],
+          "kind": "REPRESENTED_TEXT_IMAGE",
+          "status": "REPRESENTED_BY_PRIOR_CHECKPOINT",
+          "ocr_words": null
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 2182.933,
+      "candidate_rows": 36,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 401,
+      "ocr_or_prior_words": 401,
+      "duplicates_merged": 401,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "SEM",
+      "page": 7,
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "derived_checkpoint_sha256": "3beaf09b503e68d0980a4eb3e60b20397e04249cf1c3d8abae306420549b4eff",
+      "regions": [
+        {
+          "id": "p7-image0",
+          "box": [
+            53.849998474121094,
+            88.29998779296875,
+            541.5,
+            378.5999755859375
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "OCR_COMPLETE",
+          "ocr_words": 207
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 7043.946,
+      "candidate_rows": 24,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 17,
+      "ocr_or_prior_words": 207,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "SEM",
+      "page": 8,
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "derived_checkpoint_sha256": "4542e5806b684b1aa55d45ce607a4585694d0d1475eadb3d8c1d85f910fde17c",
+      "regions": [
+        {
+          "id": "p8-image0",
+          "box": [
+            53.849998474121094,
+            88.29995727539062,
+            541.5,
+            444.7499694824219
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "OCR_COMPLETE",
+          "ocr_words": 239
+        },
+        {
+          "id": "p8-image1",
+          "box": [
+            53.849998474121094,
+            456.79998779296875,
+            541.5,
+            491.8499755859375
+          ],
+          "kind": "TEXT_IMAGE",
+          "status": "OCR_COMPLETE",
+          "ocr_words": 40
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 7540.88,
+      "candidate_rows": 33,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 17,
+      "ocr_or_prior_words": 279,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    },
+    {
+      "ticker": "SEM",
+      "page": 9,
+      "source_sha256": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "derived_checkpoint_sha256": "c29c7028fa1570c16684237b9e1c6d73a6c9b07493a4070582de80973eb0c7d5",
+      "regions": [
+        {
+          "id": "p9-image0",
+          "box": [
+            53.849998474121094,
+            88.29995727539062,
+            541.5,
+            418.89996337890625
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "OCR_COMPLETE",
+          "ocr_words": 256
+        },
+        {
+          "id": "p9-image1",
+          "box": [
+            53.849998474121094,
+            441.8899841308594,
+            541.5,
+            705.2899780273438
+          ],
+          "kind": "TABLE_IMAGE_CANDIDATE",
+          "status": "OCR_COMPLETE",
+          "ocr_words": 220
+        }
+      ],
+      "coverage_status": "EXTRACTION_COMPLETE",
+      "warnings": [],
+      "elapsed_ms": 10499.06,
+      "candidate_rows": 38,
+      "source_coordinate_boxes_in_page": true,
+      "native_words": 17,
+      "ocr_or_prior_words": 476,
+      "duplicates_merged": 0,
+      "reviewed_cells": 0
+    }
+  ],
+  "SEM_seven_checked_cells": [
+    {
+      "metric": "assets",
+      "page": 7,
+      "matches": [
+        {
+          "raw": "14,595895.255468",
+          "source_display": "14,595,895,255,468",
+          "row_label": "Total assets hid",
+          "row_id": "p7-p7-image0-r22",
+          "column_index": 1,
+          "box": [
+            291.1300048828125,
+            363.5,
+            337.5299987792969,
+            370.2200012207031
+          ],
+          "confidence": 64.0,
+          "period_year_candidate": {
+            "box": [
+              299.6099984741211,
+              106.05998779296874,
+              312.8099984741211,
+              113.25998779296874
+            ],
+            "confidence": 95.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              345.68999847412107,
+              96.69998779296876,
+              356.9699984741211,
+              103.65998779296875
+            ],
+            "confidence": 96.0,
+            "text": "won",
+            "unit": "KRW"
+          },
+          "checks": {
+            "value_digits": true,
+            "label_matches_original": true,
+            "current_year_column": true,
+            "currency_KRW": true,
+            "source_cell_window": true,
+            "unreviewed": true
+          },
+          "raw_format_exact": false
+        }
+      ],
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "metric": "liabilities",
+      "page": 8,
+      "matches": [
+        {
+          "raw": "4798551372605",
+          "source_display": "4,798,551,372,605",
+          "row_label": "Total liabilities",
+          "row_id": "p8-p8-image0-r19",
+          "column_index": 1,
+          "box": [
+            292.1699984741211,
+            321.3399572753906,
+            337.5299984741211,
+            328.53995727539063
+          ],
+          "confidence": 56.0,
+          "period_year_candidate": {
+            "box": [
+              298.1699984741211,
+              102.21995727539063,
+              311.3699984741211,
+              109.41995727539063
+            ],
+            "confidence": 95.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              343.0499984741211,
+              94.29995727539062,
+              355.0499984741211,
+              97.17995727539062
+            ],
+            "confidence": 96.0,
+            "text": "won",
+            "unit": "KRW"
+          },
+          "checks": {
+            "value_digits": true,
+            "label_matches_original": true,
+            "current_year_column": true,
+            "currency_KRW": true,
+            "source_cell_window": true,
+            "unreviewed": true
+          },
+          "raw_format_exact": false
+        }
+      ],
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "metric": "equity",
+      "page": 8,
+      "matches": [
+        {
+          "raw": "9,797,343,882,863",
+          "source_display": "9,797,343,882,863",
+          "row_label": "Total equity",
+          "row_id": "p8-p8-image0-r30",
+          "column_index": 1,
+          "box": [
+            292.1699984741211,
+            423.8199572753906,
+            337.5299984741211,
+            432.2199572753906
+          ],
+          "confidence": 29.0,
+          "period_year_candidate": {
+            "box": [
+              298.1699984741211,
+              102.21995727539063,
+              311.3699984741211,
+              109.41995727539063
+            ],
+            "confidence": 95.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              343.0499984741211,
+              94.29995727539062,
+              355.0499984741211,
+              97.17995727539062
+            ],
+            "confidence": 96.0,
+            "text": "won",
+            "unit": "KRW"
+          },
+          "checks": {
+            "value_digits": true,
+            "label_matches_original": true,
+            "current_year_column": true,
+            "currency_KRW": true,
+            "source_cell_window": true,
+            "unreviewed": true
+          },
+          "raw_format_exact": true
+        }
+      ],
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "metric": "cash_equivalents",
+      "page": 7,
+      "matches": [
+        {
+          "raw": "2,701,205,916,236",
+          "source_display": "2,701,205,916,236",
+          "row_label": "Cash and cash equivalents 427 Ww",
+          "row_id": "p7-p7-image0-r2",
+          "column_index": 1,
+          "box": [
+            293.5299984741211,
+            138.53998779296876,
+            337.8499984741211,
+            143.49998779296874
+          ],
+          "confidence": 18.0,
+          "period_year_candidate": {
+            "box": [
+              299.6099984741211,
+              106.05998779296874,
+              312.8099984741211,
+              113.25998779296874
+            ],
+            "confidence": 95.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              345.68999847412107,
+              96.69998779296876,
+              356.9699984741211,
+              103.65998779296875
+            ],
+            "confidence": 96.0,
+            "text": "won",
+            "unit": "KRW"
+          },
+          "checks": {
+            "value_digits": true,
+            "label_matches_original": true,
+            "current_year_column": true,
+            "currency_KRW": true,
+            "source_cell_window": true,
+            "unreviewed": true
+          },
+          "raw_format_exact": true
+        }
+      ],
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "metric": "inventory",
+      "page": 7,
+      "matches": [
+        {
+          "raw": "2,412,996843,057",
+          "source_display": "2,412,996,843,057",
+          "row_label": "Inventories, net 7",
+          "row_id": "p7-p7-image0-r9",
+          "column_index": 1,
+          "box": [
+            293.6099853515625,
+            206.6199951171875,
+            338.010009765625,
+            214.7799835205078
+          ],
+          "confidence": 57.0,
+          "period_year_candidate": {
+            "box": [
+              299.6099984741211,
+              106.05998779296874,
+              312.8099984741211,
+              113.25998779296874
+            ],
+            "confidence": 95.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              345.68999847412107,
+              96.69998779296876,
+              356.9699984741211,
+              103.65998779296875
+            ],
+            "confidence": 96.0,
+            "text": "won",
+            "unit": "KRW"
+          },
+          "checks": {
+            "value_digits": true,
+            "label_matches_original": true,
+            "current_year_column": true,
+            "currency_KRW": true,
+            "source_cell_window": true,
+            "unreviewed": true
+          },
+          "raw_format_exact": false
+        }
+      ],
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "metric": "pretax_income",
+      "page": 9,
+      "matches": [
+        {
+          "raw": "895,831,372,804",
+          "source_display": "895,831,372,804",
+          "row_label": "Profit before tax from continuing operations",
+          "row_id": "p9-p9-image0-r13",
+          "column_index": 1,
+          "box": [
+            294.8099984741211,
+            231.8199572753906,
+            331.2899984741211,
+            236.3799572753906
+          ],
+          "confidence": 79.0,
+          "period_year_candidate": {
+            "box": [
+              293.6899984741211,
+              96.61995727539062,
+              305.5299984741211,
+              102.53995727539062
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              338.8099984741211,
+              90.05995727539063,
+              349.2099984741211,
+              92.77995727539063
+            ],
+            "confidence": 95.0,
+            "text": "won",
+            "unit": "KRW"
+          },
+          "checks": {
+            "value_digits": true,
+            "label_matches_original": true,
+            "current_year_column": true,
+            "currency_KRW": true,
+            "source_cell_window": true,
+            "unreviewed": true
+          },
+          "raw_format_exact": true
+        }
+      ],
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "metric": "net_income",
+      "page": 9,
+      "matches": [
+        {
+          "raw": "730.989.517.218",
+          "source_display": "730,989,517,218",
+          "row_label": "Profit for the year hid",
+          "row_id": "p9-p9-image0-r17",
+          "column_index": 1,
+          "box": [
+            294.8099984741211,
+            293.01995727539065,
+            331.2899984741211,
+            298.53995727539063
+          ],
+          "confidence": 50.0,
+          "period_year_candidate": {
+            "box": [
+              293.6899984741211,
+              96.61995727539062,
+              305.5299984741211,
+              102.53995727539062
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              338.8099984741211,
+              90.05995727539063,
+              349.2099984741211,
+              92.77995727539063
+            ],
+            "confidence": 95.0,
+            "text": "won",
+            "unit": "KRW"
+          },
+          "checks": {
+            "value_digits": true,
+            "label_matches_original": true,
+            "current_year_column": true,
+            "currency_KRW": true,
+            "source_cell_window": true,
+            "unreviewed": true
+          },
+          "raw_format_exact": false
+        }
+      ],
+      "status": "PASS_BOUNDED"
+    }
+  ],
+  "negative_regions": [
+    {
+      "source_sha256": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+      "page": 1,
+      "box": [
+        100,
+        10,
+        180,
+        95
+      ],
+      "case": "company_logo",
+      "text_like": false,
+      "financial_candidate": false,
+      "status": "PASS"
+    },
+    {
+      "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+      "page": 3,
+      "box": [
+        350,
+        595,
+        500,
+        710
+      ],
+      "case": "corporate_stamp",
+      "text_like": true,
+      "financial_candidate": false,
+      "status": "PASS"
+    },
+    {
+      "source_sha256": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da",
+      "page": 3,
+      "box": [
+        85,
+        655,
+        250,
+        745
+      ],
+      "case": "signature",
+      "text_like": true,
+      "financial_candidate": false,
+      "status": "PASS"
+    }
+  ],
+  "gate_B_D": "PASS_BOUNDED",
+  "resources": {
+    "elapsed_s": 33.346042299992405,
+    "parent_peak_rss": 271093760,
+    "parent_plus_ocr_peak_rss": 399462400,
+    "minimum_free_ram": 2419253248,
+    "parent_cpu_s": 14.765625,
+    "sampled_child_cpu_s_lower_bound": 17.90625,
+    "extractor_gpu_used": false
+  },
+  "limits": "Digit-equivalent OCR candidates are source/row/year/currency/window checked. Raw separators are not silently corrected;no numeric cell becomes REVIEWED. Source windows manually checked on original images;no independent human review."
+}

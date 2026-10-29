@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-10-29T08:58:53.840208+00:00",
+  "unchanged_files": 150,
+  "documented_runtime_metadata_changes": [
+    {
+      "path": "studio_workspace\\search-v2-v3-final-20261029\\index.sqlite3-shm",
+      "prior_sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+      "current_sha256": null,
+      "reason": "SQLite transient journals removed on close;prior WAL empty;database bytes unchanged"
+    },
+    {
+      "path": "studio_workspace\\search-v2-v3-final-20261029\\index.sqlite3-wal",
+      "prior_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "current_sha256": null,
+      "reason": "SQLite transient journals removed on close;prior WAL empty;database bytes unchanged"
+    },
+    {
+      "path": "tmp\\studio-runtime\\sec\\t3-p10-isolated-vectors-product-20261028\\qdrant\\.qdrant-owner.lock",
+      "prior_sha256": "7e551db85d496a045fe1614fb51f024c8b7ac366f758f9b9c80f72b7c2fb13a8",
+      "current_sha256": "41338066bbba0dabf1872ff4d3c6257bf72fe93d214917f6dfdf7918a58f7223",
+      "reason": "Existing ownership.py acquires runtime PID/time lease;SEC source and vector content unchanged"
+    }
+  ],
+  "changed_source_or_evidence_files": [],
+  "model_identity": {
+    "model": "nomic-embed-text:latest",
+    "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "dimension": 768,
+    "document_prefix": "search_document: ",
+    "query_prefix": "search_query: ",
+    "distance": "COSINE"
+  },
+  "active_ocr_sha256": {
+    "eng": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba",
+    "vie": "b6b49293d95d0b6dbd8780174627e82c75be957b6f4ed9862155540d6b00bb45",
+    "osd": "9cf5d576fcc47564f11265841e5ca839001e7e6f38ff7f7aacf46d15a96b00ff"
+  },
+  "frozen_policy_verified": true,
+  "full_model_binary_baseline": "NOT_CAPTURED;locked runtime model digest checked,no Nomic pull/replacement",
+  "status": "PASS_SOURCE_CONTENT_WITH_DOCUMENTED_RUNTIME_METADATA"
+}

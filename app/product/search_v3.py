@@ -153,9 +153,14 @@ class FinancialSearchV3:
         self.workspace=workspace
         self.base=FinancialSearchV2(workspace,index_root)
 
+    def _source_entries(self,snapshot,docs):
+        return [dict(e,metrics=row_metrics(e['row_label']) if e['kind']=='row' else metrics_in(e['text'])) for e in snapshot['entries'] if e['document_id'] in docs]
+
+    def _query_intent(self,query):return intent_for(query)
+
     def search(self, query, mode='hybrid', top_k=5, document_ids=None):
         if mode not in {'bm25','dense','hybrid'} or not 1<=top_k<=20 or not 2<=len(query)<=2000: raise ValueError('INVALID_V3_SEARCH_REQUEST')
-        started=perf_counter(); intent,quarters=intent_for(query)
+        started=perf_counter(); intent,quarters=self._query_intent(query)
         with self.base._lock:
             snapshot=self.base.prepare()
             requested=set(document_ids or [d['id'] for d in snapshot['documents']])
@@ -166,7 +171,7 @@ class FinancialSearchV3:
                 'intent':{**intent.public(),'quarters':quarters,'entity_scope':{'resolved_document_ids':sorted(docs),'unrecognized_name':unknown}},
                 'results':[],'evidence_status':'NO_SUFFICIENT_EVIDENCE','latency_ms':0,
                 'score_semantics':'ORDINAL_RETRIEVAL_SCORE_NOT_NUMERIC_ANSWER_CONFIDENCE'}
-            entries=[dict(e,metrics=row_metrics(e['row_label']) if e['kind']=='row' else metrics_in(e['text'])) for e in snapshot['entries'] if e['document_id'] in docs]
+            entries=self._source_entries(snapshot,docs)
             for e in entries:
                 # Source-title pattern tolerates intervening OCR tokens; ranking context
                 # only, never a repaired/certified column heading.

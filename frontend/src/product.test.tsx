@@ -1,10 +1,19 @@
 import {describe,it,expect,vi,afterEach} from 'vitest'
 import {render,screen,cleanup} from '@testing-library/react'
-import {Highlight,formatDecimal} from './Studio'
+import {Highlight,formatDecimal,ExtractionCoverage} from './Studio'
 import {api,ApiError,citation,evidenceId} from './api'
 import {rotatedBox} from './geometry'
 afterEach(()=>{cleanup();vi.unstubAllGlobals();sessionStorage.clear()})
 describe('Vietnamese financial presentation integrity',()=>{
+ it('warns about unread image/table regions independently of technical READY',()=>{
+  render(<ExtractionCoverage doc={{extraction_coverage_status:'EXTRACTION_COVERAGE_WARNING',coverage_warnings:['REGION_OCR_FAILED'],financial_evidence_status:'FINANCIAL_EVIDENCE_REVIEW_PENDING'}}/>)
+  expect(screen.getByRole('alert')).toHaveTextContent('Cảnh báo độ phủ trích xuất')
+  expect(screen.getByRole('alert')).toHaveTextContent('không xác nhận số liệu tài chính')
+ })
+ it('does not describe processed regions as reviewed numeric evidence',()=>{
+  render(<ExtractionCoverage doc={{extraction_coverage_status:'EXTRACTION_COMPLETE',financial_evidence_status:'FINANCIAL_EVIDENCE_REVIEW_PENDING'}}/>)
+  expect(screen.getByText(/cần đối chiếu từng ô/)).toBeInTheDocument()
+ })
  it('keeps separate source rows distinct when they share one parent chunk',()=>{
   expect(evidenceId({text:'row A',chunk_id:'parent',evidence_id:'row:a'})).not.toBe(evidenceId({text:'row B',chunk_id:'parent',evidence_id:'row:b'}))
  })

@@ -1,4 +1,7 @@
 const reasons:Record<string,string>={
+ SEARCH_INDEX_PREPARING:'Đang chuẩn bị chỉ mục theo vùng; hãy chờ trạng thái sẵn sàng rồi tìm lại.',
+ V3R_DERIVED_WORKSPACE_REQUIRED:'V3R cần không gian trích xuất theo vùng. Hãy chọn Search V3 cho không gian cũ.',
+ SEARCH_PREPARATION_FAILED_CHECK_SOURCE:'Không chuẩn bị được chỉ mục. Cần kiểm tra tính toàn vẹn nguồn.',
  STUDIO_UNAUTHORIZED:'Khóa truy cập chưa hợp lệ. Hãy đăng nhập lại.',
  OCR_NOT_INSTALLED:'Chưa tìm thấy bộ OCR Tesseract trên máy. Tài liệu scan chưa thể xử lý.',
  OCR_VI_LANGUAGE_MISSING:'OCR chưa có đủ dữ liệu ngôn ngữ tiếng Việt và tiếng Anh.',

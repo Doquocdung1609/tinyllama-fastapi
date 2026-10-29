@@ -1,0 +1,250 @@
+{
+  "at_utc": "2026-10-29T09:08:53.720791+00:00",
+  "layout_version": "TABLE_LAYOUT_V3R_REGIONS_V2_FRAGMENTS",
+  "generations": [
+    {
+      "relative_generation_file": "ablation-labels/fb58453315f93461a16a46784e27bacf3073330f6bdb33fe4c5ab7a752c5f85d.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "0ccb9c8ddaa4c16cb633ea57ee0fe87cf5f7a5c6f5c16c0c66262bcb680bd9ae",
+      "bytes": 56348672,
+      "identity_sha256": "fb58453315f93461a16a46784e27bacf3073330f6bdb33fe4c5ab7a752c5f85d",
+      "source_generation": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-region/09407e489c3ca33291e39ebddd13bcfb7011e8348d060d205ea98ad8d71dbf5e.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "b59d3cf7e5a3d2c99f0f2da224a6b6e3ff303524454af9258f935381c76350c8",
+      "bytes": 56348672,
+      "identity_sha256": "09407e489c3ca33291e39ebddd13bcfb7011e8348d060d205ea98ad8d71dbf5e",
+      "source_generation": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-region/4394c2c81ffdbc7dbecfd83c3cba2e2450f831a2d64abe3db8ee55667d9340f5.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "54d0a2737c7ca7501969fe7fce94dfa6ef1cc0cfb07f32bafd4d6cd1f9e57e72",
+      "bytes": 56348672,
+      "identity_sha256": "4394c2c81ffdbc7dbecfd83c3cba2e2450f831a2d64abe3db8ee55667d9340f5",
+      "source_generation": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-v3/d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "8724378ac151dcc3f31d92955a11a523e97a259c22c81947eb7ea036e7a8b4b5",
+      "bytes": 44068864,
+      "identity_sha256": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "profile-index/064e357e404e6ada8bf48bb7336ee1a30277d5b4f37399196c109c7e3a2ffa63.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "54a58ad3dcd6116ad2af92b71f42216175f16330ac2d897b843df9029f332d74",
+      "bytes": 56360960,
+      "identity_sha256": "064e357e404e6ada8bf48bb7336ee1a30277d5b4f37399196c109c7e3a2ffa63",
+      "source_generation": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "profile-index/fb58453315f93461a16a46784e27bacf3073330f6bdb33fe4c5ab7a752c5f85d.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "0ccb9c8ddaa4c16cb633ea57ee0fe87cf5f7a5c6f5c16c0c66262bcb680bd9ae",
+      "bytes": 56348672,
+      "identity_sha256": "fb58453315f93461a16a46784e27bacf3073330f6bdb33fe4c5ab7a752c5f85d",
+      "source_generation": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "v3r-product-index/064e357e404e6ada8bf48bb7336ee1a30277d5b4f37399196c109c7e3a2ffa63.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "54a58ad3dcd6116ad2af92b71f42216175f16330ac2d897b843df9029f332d74",
+      "bytes": 56360960,
+      "identity_sha256": "064e357e404e6ada8bf48bb7336ee1a30277d5b4f37399196c109c7e3a2ffa63",
+      "source_generation": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-labels/source-records/d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "8724378ac151dcc3f31d92955a11a523e97a259c22c81947eb7ea036e7a8b4b5",
+      "bytes": 44068864,
+      "identity_sha256": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-region/source-records/d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "8724378ac151dcc3f31d92955a11a523e97a259c22c81947eb7ea036e7a8b4b5",
+      "bytes": 44068864,
+      "identity_sha256": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "profile-index/source-records/1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "03ed7b1607e26959edccae875a70da2066cd3bfb255fc1b72a1a655f57d8f119",
+      "bytes": 44068864,
+      "identity_sha256": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "profile-index/source-records/d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "8724378ac151dcc3f31d92955a11a523e97a259c22c81947eb7ea036e7a8b4b5",
+      "bytes": 44068864,
+      "identity_sha256": "d23f8e6879eceb54d011a55f5cd85a9afcc5bd0b3d7d4fbd22e75b5b412fca6f",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "v3r-product-index/source-records/1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5.sqlite3",
+      "workspace": "search-v3r-development-20261029",
+      "file_sha256": "03ed7b1607e26959edccae875a70da2066cd3bfb255fc1b72a1a655f57d8f119",
+      "bytes": 44068864,
+      "identity_sha256": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-labels/064e357e404e6ada8bf48bb7336ee1a30277d5b4f37399196c109c7e3a2ffa63.sqlite3",
+      "workspace": "search-v3r-final-regression-20261029",
+      "file_sha256": "54a58ad3dcd6116ad2af92b71f42216175f16330ac2d897b843df9029f332d74",
+      "bytes": 56360960,
+      "identity_sha256": "064e357e404e6ada8bf48bb7336ee1a30277d5b4f37399196c109c7e3a2ffa63",
+      "source_generation": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-region/7df500ececfcef11c3cadef6d544fae47f721f11c65fe43f00cf4a4810e18896.sqlite3",
+      "workspace": "search-v3r-final-regression-20261029",
+      "file_sha256": "4c7abe6a838841a12404686d844e8bd253009cdd3fccc6b50c338dd2e1121c11",
+      "bytes": 56360960,
+      "identity_sha256": "7df500ececfcef11c3cadef6d544fae47f721f11c65fe43f00cf4a4810e18896",
+      "source_generation": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-v3/1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5.sqlite3",
+      "workspace": "search-v3r-final-regression-20261029",
+      "file_sha256": "03ed7b1607e26959edccae875a70da2066cd3bfb255fc1b72a1a655f57d8f119",
+      "bytes": 44068864,
+      "identity_sha256": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-labels/source-records/1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5.sqlite3",
+      "workspace": "search-v3r-final-regression-20261029",
+      "file_sha256": "03ed7b1607e26959edccae875a70da2066cd3bfb255fc1b72a1a655f57d8f119",
+      "bytes": 44068864,
+      "identity_sha256": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-region/source-records/1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5.sqlite3",
+      "workspace": "search-v3r-final-regression-20261029",
+      "file_sha256": "03ed7b1607e26959edccae875a70da2066cd3bfb255fc1b72a1a655f57d8f119",
+      "bytes": 44068864,
+      "identity_sha256": "1282cd09d2e37fbe5074859b8cfdc4a9996d222f669a00312e27469a26cbade5",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-labels/7e3938af25be0fd77429323f326f49c33499f0034d836d13b026a7629dfe80b1.sqlite3",
+      "workspace": "search-v3r-unseen-20261029",
+      "file_sha256": "2b66930a9871249b72ca4fafad4d9fc8493386a01512244f9bbc68181b8441b0",
+      "bytes": 4702208,
+      "identity_sha256": "7e3938af25be0fd77429323f326f49c33499f0034d836d13b026a7629dfe80b1",
+      "source_generation": "8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-region/08ead15705fdf1cbb3321077c40b3ff925a3be0beeb667ac94b8c17fa9766cf5.sqlite3",
+      "workspace": "search-v3r-unseen-20261029",
+      "file_sha256": "68ff7d5c47a2183c759a2d9826636090f179e30df64a777c083dc3f3b48fb5ac",
+      "bytes": 4702208,
+      "identity_sha256": "08ead15705fdf1cbb3321077c40b3ff925a3be0beeb667ac94b8c17fa9766cf5",
+      "source_generation": "8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-v3/8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126.sqlite3",
+      "workspace": "search-v3r-unseen-20261029",
+      "file_sha256": "3376af8ec0e18455e95f875cba0adbb72e04d4f612e46c004736e53bbf6f8fec",
+      "bytes": 4075520,
+      "identity_sha256": "8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-labels/source-records/8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126.sqlite3",
+      "workspace": "search-v3r-unseen-20261029",
+      "file_sha256": "3376af8ec0e18455e95f875cba0adbb72e04d4f612e46c004736e53bbf6f8fec",
+      "bytes": 4075520,
+      "identity_sha256": "8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-region/source-records/8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126.sqlite3",
+      "workspace": "search-v3r-unseen-20261029",
+      "file_sha256": "3376af8ec0e18455e95f875cba0adbb72e04d4f612e46c004736e53bbf6f8fec",
+      "bytes": 4075520,
+      "identity_sha256": "8c5bc545873a50b50fab0e39ff258db5fd812e85346acc484407c408d4797126",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-labels/1187874f2a60a754d4755e04e50b928cf39120339a6922476c7e0d1a50a37c72.sqlite3",
+      "workspace": "search-v3r-unseen-acb-20261029",
+      "file_sha256": "10c85ed4fe1fef50c1889e7bbb9f88af472b0347f98885182de174e5bc398f73",
+      "bytes": 10018816,
+      "identity_sha256": "1187874f2a60a754d4755e04e50b928cf39120339a6922476c7e0d1a50a37c72",
+      "source_generation": "e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-region/e8d422dab489786d70c86f9e047d3bf0c6cf8d8d36970249ca193f84a077e4bb.sqlite3",
+      "workspace": "search-v3r-unseen-acb-20261029",
+      "file_sha256": "0925f426239634f0d0f49a70043e745cef7bf90e6015e0762565ab562a6a5fa6",
+      "bytes": 10018816,
+      "identity_sha256": "e8d422dab489786d70c86f9e047d3bf0c6cf8d8d36970249ca193f84a077e4bb",
+      "source_generation": "e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd",
+      "version": "financial-region-search-v3r.1"
+    },
+    {
+      "relative_generation_file": "ablation-v3/e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd.sqlite3",
+      "workspace": "search-v3r-unseen-acb-20261029",
+      "file_sha256": "49133296893174e6c0d758642405e5f751accca9a21709b1d5fae674635275d7",
+      "bytes": 8638464,
+      "identity_sha256": "e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-labels/source-records/e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd.sqlite3",
+      "workspace": "search-v3r-unseen-acb-20261029",
+      "file_sha256": "49133296893174e6c0d758642405e5f751accca9a21709b1d5fae674635275d7",
+      "bytes": 8638464,
+      "identity_sha256": "e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    },
+    {
+      "relative_generation_file": "ablation-region/source-records/e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd.sqlite3",
+      "workspace": "search-v3r-unseen-acb-20261029",
+      "file_sha256": "49133296893174e6c0d758642405e5f751accca9a21709b1d5fae674635275d7",
+      "bytes": 8638464,
+      "identity_sha256": "e88eab969cee4e8e5e63edc06c14076de4a1670b853b31989e7970c1ea219ffd",
+      "source_generation": null,
+      "version": "financial-evidence-search-v2.6"
+    }
+  ],
+  "limits": "Immutable derived FTS snapshots,raw indices remain private;old files retained,not overwritten"
+}

@@ -1,0 +1,7 @@
+{
+  "sealed_at_utc": "2026-10-29T08:52:32.030096+00:00",
+  "policy_sha256": "2b87405221010745d1d4a3f4981ace28092a2bc48de02b73afcb2c7504e338f7",
+  "qrels_sha256": "6db90f1d4c8ba8f16cfead76182b33ed6d22e5a9ec856ab77345ceb6c903c322",
+  "queries": 24,
+  "protocol": "All labels from original source images before opening search results;16 positive source locators plus8 negative numeric-context cases;no independent human review;single pass per question on source-scoped isolated roots"
+}

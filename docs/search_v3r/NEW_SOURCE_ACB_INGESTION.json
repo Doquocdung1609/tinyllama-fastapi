@@ -1,0 +1,32 @@
+[
+  {
+    "document": {
+      "id": "4279e4856d41db46abcffd38a7cbf4ea",
+      "filename": "ACB.pdf",
+      "sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+      "issuer": "Asia Commercial Bank ACB",
+      "document_type": "Consolidated financial statements",
+      "report_period": "2022-12-31",
+      "size_bytes": 9688887,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 78,
+      "chunks": 270,
+      "created_at": "2026-10-29T08:51:08.663670+00:00",
+      "updated_at": "2026-10-29T08:51:49.335865+00:00",
+      "processing_status": "PROCESSING_COMPLETE",
+      "extraction_coverage_status": "EXTRACTION_COVERAGE_WARNING",
+      "coverage_warnings": [
+        "TEXT_LIKE_REGION_OCR_EMPTY"
+      ],
+      "financial_evidence_status": "FINANCIAL_EVIDENCE_REVIEW_PENDING",
+      "candidate_cells": 2859,
+      "regions_processed": 10,
+      "extraction_profile": "studio-region-evidence-v3r.1",
+      "coverage_scope": "REGIONS_PROCESSED_UNDER_POLICY;NOT_FINANCIAL_ACCURACY_OR_FULL_CELL_REVIEW",
+      "derived_generation": "d2e33b4e6476678e957e44da5dd9354ca22dd7b11dd2c5f3072a1ac34d1500b1"
+    },
+    "elapsed_s": 41.263037599999734
+  }
+]

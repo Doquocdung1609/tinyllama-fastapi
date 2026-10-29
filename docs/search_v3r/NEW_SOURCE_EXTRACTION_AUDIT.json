@@ -1,0 +1,926 @@
+{
+  "annotation": "PROVISIONAL_AGENT_ANNOTATED;offline source inspection after single benchmark;no policy changes or new queries",
+  "cells": [
+    {
+      "id": "v3r-pnj-01",
+      "ticker": "PNJ",
+      "page": 3,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "20.168.475.768.890",
+        "independently_located_cell_box": [
+          340,
+          710,
+          437,
+          729
+        ],
+        "metric": "assets",
+        "page": 3,
+        "period": "2025-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "20.168.475.768.890"
+        ],
+        "span": "TỔNG CỘNG TÀI SẢN",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "270 TỎNG CỘNG TÀI SẢN",
+          "raw_value": "20.168.475.768.890",
+          "box": [
+            344.34,
+            715.3199999999999,
+            432.65999999999997,
+            723.7199999999999
+          ],
+          "year_candidate": {
+            "box": [
+              186.42,
+              82.67999999999999,
+              205.85999999999999,
+              89.64
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              410.09999999999997,
+              133.32,
+              430.73999999999995,
+              141.0
+            ],
+            "confidence": 91.0,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty C6 phần Vàng bac Đá quý Phú Nhuận\nBANG CÂN DOI KE TOÁN HỢP NHAT Mẫu B01-DN/HN\nNgày 31 tháng 12 năm 2025\nMS TÀI SAN TM SÓ CUÓI KỲ SO DAU NĂM\nVND VND\n100 TÀI SẢN NGẮN HẠN 18.617.297.232.257 15.692.597.267.632\n110 Tiền và các khoản tương đương tiền 522.025.257.031 1.122.712.392.130\n111 Tiền 438.425.257.031 1.022.712.392.130\n112 Các khoản tương đương tiền 83.600.000.000 100.000.000.000\n120 Đầu tư tài chính ngắn hạn 2a 2.007.488.137.408 1.020.170.000.000\n121 Chứng khoán kinh doanh 97.918.137.408\n123 Đầu tư nắm giữ đến ngày đáo hạn 1.909.570.000.000 1.020.170.000.000\n130 Các khoản phải thu ngắn hạn 156.742.123.121 401.134.922.152\n131 Phải thu ngắn hạn của khách hàng Ø 48.760.415.990 70.851",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-pnj-02",
+      "ticker": "PNJ",
+      "page": 3,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "17.207.730.777.685",
+        "independently_located_cell_box": [
+          445,
+          710,
+          544,
+          729
+        ],
+        "metric": "assets",
+        "page": 3,
+        "period": "2024-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "17.207.730.777.685"
+        ],
+        "span": "TỔNG CỘNG TÀI SẢN",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "270 TỎNG CỘNG TÀI SẢN",
+          "raw_value": "17.207.730.777.685",
+          "box": [
+            451.14,
+            714.3599999999999,
+            538.74,
+            722.76
+          ],
+          "year_candidate": {
+            "box": [
+              186.42,
+              82.67999999999999,
+              205.85999999999999,
+              89.64
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              516.42,
+              133.32,
+              536.8199999999999,
+              141.0
+            ],
+            "confidence": 96.0,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty C6 phần Vàng bac Đá quý Phú Nhuận\nBANG CÂN DOI KE TOÁN HỢP NHAT Mẫu B01-DN/HN\nNgày 31 tháng 12 năm 2025\nMS TÀI SAN TM SÓ CUÓI KỲ SO DAU NĂM\nVND VND\n100 TÀI SẢN NGẮN HẠN 18.617.297.232.257 15.692.597.267.632\n110 Tiền và các khoản tương đương tiền 522.025.257.031 1.122.712.392.130\n111 Tiền 438.425.257.031 1.022.712.392.130\n112 Các khoản tương đương tiền 83.600.000.000 100.000.000.000\n120 Đầu tư tài chính ngắn hạn 2a 2.007.488.137.408 1.020.170.000.000\n121 Chứng khoán kinh doanh 97.918.137.408\n123 Đầu tư nắm giữ đến ngày đáo hạn 1.909.570.000.000 1.020.170.000.000\n130 Các khoản phải thu ngắn hạn 156.742.123.121 401.134.922.152\n131 Phải thu ngắn hạn của khách hàng Ø 48.760.415.990 70.851",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-pnj-03",
+      "ticker": "PNJ",
+      "page": 3,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "522.025.257.031",
+        "independently_located_cell_box": [
+          343,
+          162,
+          437,
+          180
+        ],
+        "metric": "cash_equivalents",
+        "page": 3,
+        "period": "2025-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "522.025.257.031"
+        ],
+        "span": "Tiền và các khoản tương đương tiền",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "110 Tiền và các khoản tương đương tiền",
+          "raw_value": "522.025.257.031",
+          "box": [
+            356.34,
+            167.64,
+            429.78,
+            175.32
+          ],
+          "year_candidate": {
+            "box": [
+              186.42,
+              82.67999999999999,
+              205.85999999999999,
+              89.64
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              410.09999999999997,
+              133.32,
+              430.73999999999995,
+              141.0
+            ],
+            "confidence": 91.0,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty C6 phần Vàng bac Đá quý Phú Nhuận\nBANG CÂN DOI KE TOÁN HỢP NHAT Mẫu B01-DN/HN\nNgày 31 tháng 12 năm 2025\nMS TÀI SAN TM SÓ CUÓI KỲ SO DAU NĂM\nVND VND\n100 TÀI SẢN NGẮN HẠN 18.617.297.232.257 15.692.597.267.632\n110 Tiền và các khoản tương đương tiền 522.025.257.031 1.122.712.392.130\n111 Tiền 438.425.257.031 1.022.712.392.130\n112 Các khoản tương đương tiền 83.600.000.000 100.000.000.000\n120 Đầu tư tài chính ngắn hạn 2a 2.007.488.137.408 1.020.170.000.000\n121 Chứng khoán kinh doanh 97.918.137.408\n123 Đầu tư nắm giữ đến ngày đáo hạn 1.909.570.000.000 1.020.170.000.000\n130 Các khoản phải thu ngắn hạn 156.742.123.121 401.134.922.152\n131 Phải thu ngắn hạn của khách hàng Ø 48.760.415.990 70.851",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-pnj-04",
+      "ticker": "PNJ",
+      "page": 3,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "15.835.506.447.900",
+        "independently_located_cell_box": [
+          340,
+          344,
+          438,
+          362
+        ],
+        "metric": "inventory",
+        "page": 3,
+        "period": "2025-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "15.835.506.447.900"
+        ],
+        "span": "Hàng tồn kho",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "140 Hàng tồn kho",
+          "raw_value": "15.835.506.447.900",
+          "box": [
+            343.14,
+            349.79999999999995,
+            431.46,
+            357.96
+          ],
+          "year_candidate": {
+            "box": [
+              186.42,
+              82.67999999999999,
+              205.85999999999999,
+              89.64
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              410.09999999999997,
+              133.32,
+              430.73999999999995,
+              141.0
+            ],
+            "confidence": 91.0,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty C6 phần Vàng bac Đá quý Phú Nhuận\nBANG CÂN DOI KE TOÁN HỢP NHAT Mẫu B01-DN/HN\nNgày 31 tháng 12 năm 2025\nMS TÀI SAN TM SÓ CUÓI KỲ SO DAU NĂM\nVND VND\n100 TÀI SẢN NGẮN HẠN 18.617.297.232.257 15.692.597.267.632\n110 Tiền và các khoản tương đương tiền 522.025.257.031 1.122.712.392.130\n111 Tiền 438.425.257.031 1.022.712.392.130\n112 Các khoản tương đương tiền 83.600.000.000 100.000.000.000\n120 Đầu tư tài chính ngắn hạn 2a 2.007.488.137.408 1.020.170.000.000\n121 Chứng khoán kinh doanh 97.918.137.408\n123 Đầu tư nắm giữ đến ngày đáo hạn 1.909.570.000.000 1.020.170.000.000\n130 Các khoản phải thu ngắn hạn 156.742.123.121 401.134.922.152\n131 Phải thu ngắn hạn của khách hàng Ø 48.760.415.990 70.851",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-pnj-05",
+      "ticker": "PNJ",
+      "page": 4,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "6.892.720.947.176",
+        "independently_located_cell_box": [
+          349,
+          150,
+          444,
+          167
+        ],
+        "metric": "liabilities",
+        "page": 4,
+        "period": "2025-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "6.892.720.947.176"
+        ],
+        "span": "NỢ PHẢI TRẢ",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "300 NỢ PHẢI TRA",
+          "raw_value": "6.892.720.947.176",
+          "box": [
+            359.46,
+            156.11999999999998,
+            444.41999999999996,
+            163.79999999999998
+          ],
+          "year_candidate": {
+            "box": [
+              194.1,
+              86.03999999999999,
+              214.01999999999998,
+              93.47999999999999
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              423.05999999999995,
+              132.6,
+              444.41999999999996,
+              140.51999999999998
+            ],
+            "confidence": 92.0,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty Cổ phan Vàng bạc Đá quý Phú Nhuận\nBANG CÂN ĐÓI KE TOÁN HỢP NHAT tiép theo) Mẫu\nB01-DN/HN\nNgày 31 tháng 12 năm 2025\nMS NGUON VON SÓ CUÓI KỲ SÓ ĐẦU NĂM\nVND VND\n300 NỢ PHẢI TRA 6.892.720.947.176 5.952.424.147.163\n310 Nợ ngắn hạn 6.878.322.933.176 5.941.881.733.413\n311 Phải trả người bán ngắn hạn 13 333.861.329.514 624.291.098.148\n312 Người trả tiền trước ngắn hạn 182.492.529.057 188.182.044.409\nmua\n313 Thuế và các khoản phải nộp Nhà nước 777.440.891.757 448.697.283.312\n314 Phải trả người lao động 569.309.777.234 596.322.426.230\n315 Chỉ phí phải trả ngắn hạn 15 326.106.966.821 360.040.211.420\n319 Phải trả ngăn hạn khác 16a 103.175.435.252 106.241.642.105\n320 Vay và thuê tài chính ngắn hạ",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-pnj-06",
+      "ticker": "PNJ",
+      "page": 4,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "13.275.754.821.714",
+        "independently_located_cell_box": [
+          347,
+          348,
+          444,
+          365
+        ],
+        "metric": "equity",
+        "page": 4,
+        "period": "2025-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "13.275.754.821.714"
+        ],
+        "span": "VỐN CHỦ SỞ HỮU",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "400 VÓN CHỦ SỞ HỮU",
+          "raw_value": "13.275.754.821.714",
+          "box": [
+            353.7,
+            353.88,
+            444.41999999999996,
+            362.03999999999996
+          ],
+          "year_candidate": {
+            "box": [
+              194.1,
+              86.03999999999999,
+              214.01999999999998,
+              93.47999999999999
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              423.05999999999995,
+              132.6,
+              444.41999999999996,
+              140.51999999999998
+            ],
+            "confidence": 92.0,
+            "text": "VND",
+            "unit": "VND"
+          }
+        },
+        {
+          "row_label": "410 Vốn chủ sở hữu 17",
+          "raw_value": "13.275.754.821.714",
+          "box": [
+            353.7,
+            377.64,
+            444.41999999999996,
+            385.55999999999995
+          ],
+          "year_candidate": {
+            "box": [
+              194.1,
+              86.03999999999999,
+              214.01999999999998,
+              93.47999999999999
+            ],
+            "confidence": 96.0,
+            "text": "2025"
+          },
+          "currency_candidate": {
+            "box": [
+              423.05999999999995,
+              132.6,
+              444.41999999999996,
+              140.51999999999998
+            ],
+            "confidence": 92.0,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty Cổ phan Vàng bạc Đá quý Phú Nhuận\nBANG CÂN ĐÓI KE TOÁN HỢP NHAT tiép theo) Mẫu\nB01-DN/HN\nNgày 31 tháng 12 năm 2025\nMS NGUON VON SÓ CUÓI KỲ SÓ ĐẦU NĂM\nVND VND\n300 NỢ PHẢI TRA 6.892.720.947.176 5.952.424.147.163\n310 Nợ ngắn hạn 6.878.322.933.176 5.941.881.733.413\n311 Phải trả người bán ngắn hạn 13 333.861.329.514 624.291.098.148\n312 Người trả tiền trước ngắn hạn 182.492.529.057 188.182.044.409\nmua\n313 Thuế và các khoản phải nộp Nhà nước 777.440.891.757 448.697.283.312\n314 Phải trả người lao động 569.309.777.234 596.322.426.230\n315 Chỉ phí phải trả ngắn hạn 15 326.106.966.821 360.040.211.420\n319 Phải trả ngăn hạn khác 16a 103.175.435.252 106.241.642.105\n320 Vay và thuê tài chính ngắn hạ",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-pnj-07",
+      "ticker": "PNJ",
+      "page": 5,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "34.976.042.929.392",
+        "independently_located_cell_box": [
+          181,
+          150,
+          194,
+          247
+        ],
+        "metric": "net_revenue",
+        "page": 5,
+        "period": "2025-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "34.976.042.929.392"
+        ],
+        "span": "Doanh thu thuần về bán hàng và cung cấp dịch vụ",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "10 Doanh thu thuần về bán hàng 18.1",
+          "raw_value": "34.976.042.929.392",
+          "box": [
+            182.33999999999997,
+            158.75896240234374,
+            193.38,
+            241.07896240234373
+          ],
+          "year_candidate": {
+            "box": [
+              134.82,
+              274.43896240234375,
+              142.01999999999998,
+              295.31896240234374
+            ],
+            "confidence": 95.0,
+            "text": "2024"
+          },
+          "currency_candidate": {
+            "box": [
+              87.78,
+              582.5989624023437,
+              97.13999999999999,
+              610.1989624023437
+            ],
+            "confidence": 92.0,
+            "text": "ĐỘNG",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty C6 phan Vàng bạc Đá quý Phú Nhuận\nBAO CÁO KET QUA HOẠT ĐỘNG KINH DOANH HỢP NHÁT Mẫu\nB02-DN/HN\ncho quý 4 năm 2025 kết thúc ngày 31 tháng 12 năm 2025\nQUÝ IV Lũy kế từ đầu\nnăm\nNAM 202 NĂM 2024 N\ns45\n01 Doanh thu bán hàng và cung cấp dịchvụ 9.750.682.769.282 8.698.354.347.717 35.410.589.612.616 38.232.401.184.050\n02 Các khoản giảm trừ doanh thu 127.690.260.415 117.666.403.375 434.546.683.224 409.564.012.665\n10 Doanh thu thuần về bán hàng 18.1 9.622.992.508.867 8.580.687.944.342 34.976.042.929.392\n37.822.837.171.385\nvà cấp dịch\ncung vụ\n11 Giá vốn hàng bán 19 7.204.336.172.931 6.788.226.293.053 27.272.874.467.210 31.149.334.531.193\n20 Lợi nhuận gdp về bán hàng 2.418.656.335.936 1.792.461.6",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-pnj-08",
+      "ticker": "PNJ",
+      "page": 5,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "3dd381d161b321a9af4f3dd5b8394485",
+        "expected_display": "2.829.338.825.192",
+        "independently_located_cell_box": [
+          395,
+          150,
+          411,
+          247
+        ],
+        "metric": "net_income",
+        "page": 5,
+        "period": "2025-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+        "source_values": [
+          "2.829.338.825.192"
+        ],
+        "span": "Lợi nhuận sau thuế TNDN",
+        "unit": "VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "60 Lợi nhuận thuế TNDN",
+          "raw_value": "2.829.338.825.192",
+          "box": [
+            399.78,
+            160.19896240234374,
+            407.46,
+            236.99896240234372
+          ],
+          "year_candidate": {
+            "box": [
+              134.82,
+              274.43896240234375,
+              142.01999999999998,
+              295.31896240234374
+            ],
+            "confidence": 95.0,
+            "text": "2024"
+          },
+          "currency_candidate": {
+            "box": [
+              87.78,
+              582.5989624023437,
+              97.13999999999999,
+              610.1989624023437
+            ],
+            "confidence": 92.0,
+            "text": "ĐỘNG",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "Công ty C6 phan Vàng bạc Đá quý Phú Nhuận\nBAO CÁO KET QUA HOẠT ĐỘNG KINH DOANH HỢP NHÁT Mẫu\nB02-DN/HN\ncho quý 4 năm 2025 kết thúc ngày 31 tháng 12 năm 2025\nQUÝ IV Lũy kế từ đầu\nnăm\nNAM 202 NĂM 2024 N\ns45\n01 Doanh thu bán hàng và cung cấp dịchvụ 9.750.682.769.282 8.698.354.347.717 35.410.589.612.616 38.232.401.184.050\n02 Các khoản giảm trừ doanh thu 127.690.260.415 117.666.403.375 434.546.683.224 409.564.012.665\n10 Doanh thu thuần về bán hàng 18.1 9.622.992.508.867 8.580.687.944.342 34.976.042.929.392\n37.822.837.171.385\nvà cấp dịch\ncung vụ\n11 Giá vốn hàng bán 19 7.204.336.172.931 6.788.226.293.053 27.272.874.467.210 31.149.334.531.193\n20 Lợi nhuận gdp về bán hàng 2.418.656.335.936 1.792.461.6",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-01",
+      "ticker": "ACB",
+      "page": 7,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "607,875,185",
+        "independently_located_cell_box": [
+          377,
+          731,
+          438,
+          750
+        ],
+        "metric": "assets",
+        "page": 7,
+        "period": "2022-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "607,875,185"
+        ],
+        "span": "TOTAL ASSETS",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "TOTAL ASSETS",
+          "raw_value": "607,875,185",
+          "box": [
+            379.48406982421875,
+            733.6803588867188,
+            433.3343505859375,
+            743.5023803710938
+          ],
+          "year_candidate": null,
+          "currency_candidate": null
+        }
+      ],
+      "source_header_snippet": "CONSOLIDATED FINANCIAL STATEMENTS\nTHE CONSOLIDATED STATEMENT OF FINANCIAL POSITION\nForm B02/TCTD-HN As at\nNote 31.12.2022 31.12.2021\nVND million VND million\nA ASSETS\nI Cash on hand, gold and gemstones 4 8,460,892 7,509,877\nII Balances with the State Bank of Vietnam 5 13,657,531 32,349,574\nIII Deposits with and loans to other credit institutions 6 85,971,313 49,818,776\n1 Deposits with other credit institutions 6.1 82,338,762 43,713,230\n2 Loans to other credit institutions 6.1 3,682,551 6,105,546\n3 Allowance for credit losses 6.3 (50,000) -\nIV Held-for-trading securities 7 1,131,327 11,259,731\n1 Held-for-trading securities 1,320,941 11,325,371\n2 Allowance for losses on held-for-trading securit",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-02",
+      "ticker": "ACB",
+      "page": 7,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "527,769,944",
+        "independently_located_cell_box": [
+          459,
+          731,
+          525,
+          750
+        ],
+        "metric": "assets",
+        "page": 7,
+        "period": "2021-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "527,769,944"
+        ],
+        "span": "TOTAL ASSETS",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "TOTAL ASSETS",
+          "raw_value": "527,769,944",
+          "box": [
+            461.98187255859375,
+            733.6803588867188,
+            515.8322143554688,
+            743.5023803710938
+          ],
+          "year_candidate": null,
+          "currency_candidate": null
+        }
+      ],
+      "source_header_snippet": "CONSOLIDATED FINANCIAL STATEMENTS\nTHE CONSOLIDATED STATEMENT OF FINANCIAL POSITION\nForm B02/TCTD-HN As at\nNote 31.12.2022 31.12.2021\nVND million VND million\nA ASSETS\nI Cash on hand, gold and gemstones 4 8,460,892 7,509,877\nII Balances with the State Bank of Vietnam 5 13,657,531 32,349,574\nIII Deposits with and loans to other credit institutions 6 85,971,313 49,818,776\n1 Deposits with other credit institutions 6.1 82,338,762 43,713,230\n2 Loans to other credit institutions 6.1 3,682,551 6,105,546\n3 Allowance for credit losses 6.3 (50,000) -\nIV Held-for-trading securities 7 1,131,327 11,259,731\n1 Held-for-trading securities 1,320,941 11,325,371\n2 Allowance for losses on held-for-trading securit",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-03",
+      "ticker": "ACB",
+      "page": 7,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "8,460,892",
+        "independently_located_cell_box": [
+          379,
+          165,
+          439,
+          181
+        ],
+        "metric": "cash_on_hand",
+        "page": 7,
+        "period": "2022-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "8,460,892"
+        ],
+        "span": "Cash on hand, gold and gemstones",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "I Cash on hand, gold and gemstones 4",
+          "raw_value": "8,460,892",
+          "box": [
+            390.9832763671875,
+            165.19496154785156,
+            433.333984375,
+            175.0169677734375
+          ],
+          "year_candidate": null,
+          "currency_candidate": null
+        }
+      ],
+      "source_header_snippet": "CONSOLIDATED FINANCIAL STATEMENTS\nTHE CONSOLIDATED STATEMENT OF FINANCIAL POSITION\nForm B02/TCTD-HN As at\nNote 31.12.2022 31.12.2021\nVND million VND million\nA ASSETS\nI Cash on hand, gold and gemstones 4 8,460,892 7,509,877\nII Balances with the State Bank of Vietnam 5 13,657,531 32,349,574\nIII Deposits with and loans to other credit institutions 6 85,971,313 49,818,776\n1 Deposits with other credit institutions 6.1 82,338,762 43,713,230\n2 Loans to other credit institutions 6.1 3,682,551 6,105,546\n3 Allowance for credit losses 6.3 (50,000) -\nIV Held-for-trading securities 7 1,131,327 11,259,731\n1 Held-for-trading securities 1,320,941 11,325,371\n2 Allowance for losses on held-for-trading securit",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-04",
+      "ticker": "ACB",
+      "page": 7,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "3,981,376",
+        "independently_located_cell_box": [
+          380,
+          481,
+          439,
+          496
+        ],
+        "metric": "fixed_assets",
+        "page": 7,
+        "period": "2022-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "3,981,376"
+        ],
+        "span": "Fixed assets",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "X Fixed assets 12",
+          "raw_value": "3,981,376",
+          "box": [
+            390.9832763671875,
+            483.18804931640625,
+            433.333984375,
+            493.0100402832031
+          ],
+          "year_candidate": null,
+          "currency_candidate": null
+        }
+      ],
+      "source_header_snippet": "CONSOLIDATED FINANCIAL STATEMENTS\nTHE CONSOLIDATED STATEMENT OF FINANCIAL POSITION\nForm B02/TCTD-HN As at\nNote 31.12.2022 31.12.2021\nVND million VND million\nA ASSETS\nI Cash on hand, gold and gemstones 4 8,460,892 7,509,877\nII Balances with the State Bank of Vietnam 5 13,657,531 32,349,574\nIII Deposits with and loans to other credit institutions 6 85,971,313 49,818,776\n1 Deposits with other credit institutions 6.1 82,338,762 43,713,230\n2 Loans to other credit institutions 6.1 3,682,551 6,105,546\n3 Allowance for credit losses 6.3 (50,000) -\nIV Held-for-trading securities 7 1,131,327 11,259,731\n1 Held-for-trading securities 1,320,941 11,325,371\n2 Allowance for losses on held-for-trading securit",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-05",
+      "ticker": "ACB",
+      "page": 8,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "549,436,522",
+        "independently_located_cell_box": [
+          395,
+          387,
+          459,
+          405
+        ],
+        "metric": "liabilities",
+        "page": 8,
+        "period": "2022-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "549,436,522"
+        ],
+        "span": "TOTAL LIABILITIES",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "TOTAL LIABILITIES",
+          "raw_value": "549,436,522",
+          "box": [
+            399.98822021484375,
+            389.69305419921875,
+            453.5426940917969,
+            399.5150451660156
+          ],
+          "year_candidate": null,
+          "currency_candidate": null
+        }
+      ],
+      "source_header_snippet": "As at\nNote 31.12.2022 31.12.2021\nVND million VND million\nB LIABILITIES AND OWNERS’ EQUITY\nDue to the Government and the State Bank\nv 15 505,876 -\nof Vietnam\nDeposits and borrowings from the Government and\n1 505,876 -\nthe State Bank of Vietnam\nDeposits and borrowings from other\nII 16 67,840,840 54,393,939\ncredit institutions\n1 Deposits from other credit institutions 60,002,732 41,380,571\n2 Borrowings from other credit institutions 7,838,108 13,013,368\nIII Deposits from customers 17 413,952,789 379,920,669\nFunds and entrusted investments received from\nV the Government, international and other credit 18 60,188 86,066\ninstitutions\nVI Valuable papers issued 19 44,304,367 30,547,883\nVII Other liab",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-06",
+      "ticker": "ACB",
+      "page": 8,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "58,438,663",
+        "independently_located_cell_box": [
+          396,
+          540,
+          459,
+          556
+        ],
+        "metric": "equity",
+        "page": 8,
+        "period": "2022-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "58,438,663"
+        ],
+        "span": "TOTAL OWNERS’ EQUITY",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "VIII OWNERS’ EQUITY 21",
+          "raw_value": "58,438,663",
+          "box": [
+            406.48907470703125,
+            411.68896484375,
+            453.339599609375,
+            421.5109558105469
+          ],
+          "year_candidate": null,
+          "currency_candidate": null
+        },
+        {
+          "row_label": "TOTAL OWNERS’ EQUITY",
+          "raw_value": "58,438,663",
+          "box": [
+            405.4874267578125,
+            541.68994140625,
+            453.69000244140625,
+            551.511962890625
+          ],
+          "year_candidate": null,
+          "currency_candidate": null
+        }
+      ],
+      "source_header_snippet": "As at\nNote 31.12.2022 31.12.2021\nVND million VND million\nB LIABILITIES AND OWNERS’ EQUITY\nDue to the Government and the State Bank\nv 15 505,876 -\nof Vietnam\nDeposits and borrowings from the Government and\n1 505,876 -\nthe State Bank of Vietnam\nDeposits and borrowings from other\nII 16 67,840,840 54,393,939\ncredit institutions\n1 Deposits from other credit institutions 60,002,732 41,380,571\n2 Borrowings from other credit institutions 7,838,108 13,013,368\nIII Deposits from customers 17 413,952,789 379,920,669\nFunds and entrusted investments received from\nV the Government, international and other credit 18 60,188 86,066\ninstitutions\nVI Valuable papers issued 19 44,304,367 30,547,883\nVII Other liab",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-07",
+      "ticker": "ACB",
+      "page": 10,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "17,114,208",
+        "independently_located_cell_box": [
+          400,
+          463,
+          460,
+          478
+        ],
+        "metric": "pretax_income",
+        "page": 10,
+        "period": "2022-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "17,114,208"
+        ],
+        "span": "Profit before tax",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "XI Pro t before tax",
+          "raw_value": "17,114,208",
+          "box": [
+            409.9849853515625,
+            463.1864013671875,
+            457.3355712890625,
+            473.0083923339844
+          ],
+          "year_candidate": {
+            "box": [
+              438.4974060058594,
+              133.68296813964844,
+              457.447509765625,
+              142.5224609375
+            ],
+            "confidence": null,
+            "text": "2022"
+          },
+          "currency_candidate": {
+            "box": [
+              414.49334716796875,
+              144.1772918701172,
+              432.1533203125,
+              153.01678466796875
+            ],
+            "confidence": null,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "The consolidated statement of pro t or loss\nForm B03/TCTD-HN\nFor the year ended 31 December\nNote 2022 2021\nVND million VND million\n1 Interest and similar income 22 40,698,834 33,713,810\n2 Interest and similar expenses 23 (17,165,305) (14,769,018)\nI Net interest income 23,533,529 18,944,792\n3 Fee and commission income 24 5,057,559 4,026,460\n4 Fee and commission expenses 25 (1,531,315) (1,132,497)\nII Net fee and commission income 3,526,244 2,893,963\nIII Net gain from trading of foreign currencies 26 1,048,369 871,556\nNet (loss)/gain from trading of held-for-trading\nIV 27 (387,873) 449,960\nsecurities\nV Net gain from trading of investment securities 28 20,648 244,051\n5 Other income 1,110,494 703",
+      "source_value_in_checkpoint_text": true
+    },
+    {
+      "id": "v3r-acb-08",
+      "ticker": "ACB",
+      "page": 10,
+      "expected": {
+        "annotation_basis": "SINGLE_AGENT_ORIGINAL_PDF_IMAGE_WINDOW;not independent human review",
+        "basis": "AS_REPORTED",
+        "document_id": "4279e4856d41db46abcffd38a7cbf4ea",
+        "expected_display": "13,688,193",
+        "independently_located_cell_box": [
+          401,
+          513,
+          460,
+          529
+        ],
+        "metric": "net_income",
+        "page": 10,
+        "period": "2022-12-31",
+        "scope": "CONSOLIDATED",
+        "source_sha256": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+        "source_values": [
+          "13,688,193"
+        ],
+        "span": "Profit after tax",
+        "unit": "TRIEU_VND"
+      },
+      "checkpoint_cell_matches": [
+        {
+          "row_label": "XIII Pro t after tax",
+          "raw_value": "13,688,193",
+          "box": [
+            409.9849853515625,
+            535.6875,
+            457.3355712890625,
+            545.509521484375
+          ],
+          "year_candidate": {
+            "box": [
+              438.4974060058594,
+              133.68296813964844,
+              457.447509765625,
+              142.5224609375
+            ],
+            "confidence": null,
+            "text": "2022"
+          },
+          "currency_candidate": {
+            "box": [
+              414.49334716796875,
+              144.1772918701172,
+              432.1533203125,
+              153.01678466796875
+            ],
+            "confidence": null,
+            "text": "VND",
+            "unit": "VND"
+          }
+        }
+      ],
+      "source_header_snippet": "The consolidated statement of pro t or loss\nForm B03/TCTD-HN\nFor the year ended 31 December\nNote 2022 2021\nVND million VND million\n1 Interest and similar income 22 40,698,834 33,713,810\n2 Interest and similar expenses 23 (17,165,305) (14,769,018)\nI Net interest income 23,533,529 18,944,792\n3 Fee and commission income 24 5,057,559 4,026,460\n4 Fee and commission expenses 25 (1,531,315) (1,132,497)\nII Net fee and commission income 3,526,244 2,893,963\nIII Net gain from trading of foreign currencies 26 1,048,369 871,556\nNet (loss)/gain from trading of held-for-trading\nIV 27 (387,873) 449,960\nsecurities\nV Net gain from trading of investment securities 28 20,648 244,051\n5 Other income 1,110,494 703",
+      "source_value_in_checkpoint_text": true
+    }
+  ]
+}

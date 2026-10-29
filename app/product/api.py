@@ -21,6 +21,9 @@ _factory_lock = RLock()
 @lru_cache(maxsize=1)
 def _workspace_cached():
     root = Path(os.getenv("STUDIO_WORKSPACE_DIR", str(ROOT_DIR / "studio_workspace")))
+    if (root/'derived-generation.json').is_file():
+        from app.product.derived_workspace import DerivedPdfWorkspace
+        return DerivedPdfWorkspace(root)
     return PdfWorkspace(root)
 
 
@@ -128,7 +131,8 @@ async def upload_document(file: UploadFile = File(...), issuer: str = Form(""),
     except RuntimeError as exc:
         raise HTTPException(507, detail={"code": _error(exc)}) from exc
     if not item.get("duplicate") and item["status"] == "UPLOADED":
-        Thread(target=workspace().process, args=(item["id"],), daemon=True).start()
+        from app.product.search_preparation import process_and_prepare
+        Thread(target=process_and_prepare, args=(workspace(),item["id"]), daemon=True).start()
     return item
 
 
@@ -156,7 +160,8 @@ def retry(document_id: str):
     if item["status"] not in {"FAILED", "INTERRUPTED"}:
         raise HTTPException(409, detail={"code": "DOCUMENT_RETRY_NOT_ALLOWED"})
     workspace()._stage(document_id, "RETRY_QUEUED", "RETRY_QUEUED")
-    Thread(target=workspace().process, args=(document_id,), daemon=True).start()
+    from app.product.search_preparation import process_and_prepare
+    Thread(target=process_and_prepare, args=(workspace(),document_id), daemon=True).start()
     return {"document_id": document_id, "status": "RETRY_QUEUED"}
 
 
@@ -167,6 +172,9 @@ def delete(document_id: str, confirm: str = ""):
     try:
         if not workspace().delete(document_id):
             raise HTTPException(404, detail={"code": "DOCUMENT_NOT_FOUND"})
+        if (workspace().root/'derived-generation.json').exists():
+            from app.product.search_preparation import preparation
+            preparation(workspace()).schedule()
     except ValueError as exc:
         raise HTTPException(409, detail={"code": _error(exc)}) from exc
     return {"deleted": True, "document_id": document_id}

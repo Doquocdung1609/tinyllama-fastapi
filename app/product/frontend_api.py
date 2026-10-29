@@ -31,7 +31,7 @@ class UnifiedSearch(BaseModel):
     document_ids:list[str]=Field(default_factory=list,max_length=100)
     issuer:str=Field(default='',max_length=160)
     period:str=Field(default='',max_length=80)
-    search_profile:Literal['baseline','production_v2','production_v3']='baseline'
+    search_profile:Literal['baseline','production_v2','production_v3','production_v3r']='baseline'
 
 
 class EvidenceResponse(BaseModel):
@@ -81,7 +81,7 @@ def unified_search(payload:UnifiedSearch):
                 return any(word in folded(text) for word in ('tai san','bao cao','ngan hang','hoa phat'))
             docs=[d for d in docs if vietnamese(d)]
         if docs:
-            if payload.search_profile in {'production_v2','production_v3'}:
+            if payload.search_profile in {'production_v2','production_v3','production_v3r'}:
                 from app.product.search_v2 import FinancialSearchV2
                 from pathlib import Path
                 w=workspace();root=Path(os.getenv('STUDIO_SEARCH_V2_ROOT','tmp/studio-runtime/search-v2'))
@@ -92,6 +92,10 @@ def unified_search(payload:UnifiedSearch):
                     from app.product.search_v3 import FinancialSearchV3
                     engine=FinancialSearchV3(w,root)
                     engine.base=w._search_v2
+                if payload.search_profile=='production_v3r':
+                    if not (w.root/'derived-generation.json').exists():raise ValueError('V3R_DERIVED_WORKSPACE_REQUIRED')
+                    from app.product.search_preparation import preparation
+                    engine=preparation(w).ready_engine()
                 found=engine.search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
                 intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
             else:found=workspace().search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
@@ -99,7 +103,7 @@ def unified_search(payload:UnifiedSearch):
             scopes.append(('PDF',found.get('generation')));timings['PDF']=found['latency_ms']
     if payload.source in {'US_SEC','ALL'}:
         try:
-            if payload.search_profile=='production_v3':
+            if payload.search_profile in {'production_v3','production_v3r'}:
                 from app.product.search_v3 import search_sec_v3
                 found=search_sec_v3(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
                 intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
@@ -137,8 +141,18 @@ def compare(payload:UnifiedSearch):
         return {'arms':arms,'generation':arms['bm25']['generation'],
                 'overlap':{'bm25_dense':len(ids['bm25']&ids['dense']),'all_three':len(set.intersection(*ids.values()))},
                   'quality_metrics':None,'quality_reason':'NO_QRELS_FOR_THIS_QUERY',
-                  'candidate':unified_search(payload) if payload.search_profile=='production_v3' else None}
+                  'candidate':unified_search(payload) if payload.search_profile in {'production_v3','production_v3r'} else None}
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
+
+
+@router.get('/search-preparation')
+def search_preparation():
+    w=workspace()
+    if not (w.root/'derived-generation.json').exists():return {'status':'LEGACY_WORKSPACE','profile':'production_v3'}
+    from app.product.search_preparation import preparation
+    state=preparation(w)
+    if state.status()['status']=='NOT_PREPARED':state.schedule()
+    return {**state.status(),'profile':'production_v3r'}
 
 
 @router.get('/evaluation')

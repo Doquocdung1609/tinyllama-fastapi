@@ -18,3 +18,6 @@ docs/search_v2/archive/**/*.txt text eol=lf
 
 # Keep Search V3 measured labels, component fingerprints and report bytes intact across hosts.
 docs/search_v3/** -text whitespace=cr-at-eol
+
+# V3R measured source and freeze evidence retain exact bytes.
+docs/search_v3r/** -text whitespace=cr-at-eol

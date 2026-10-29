@@ -1,0 +1,136 @@
+{
+  "at_utc": "2026-10-29T08:58:54.493688+00:00",
+  "os": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "system_ram": {
+    "total": 16353656832,
+    "available": 77475840,
+    "percent": 99.5,
+    "used": 16276180992,
+    "free": 77475840
+  },
+  "disk": {
+    "total": 480362098688,
+    "used": 399354552320,
+    "free": 81007546368,
+    "percent": 83.1
+  },
+  "process_rss": [
+    {
+      "pid": 2976,
+      "name": "python.exe",
+      "rss": 4907008
+    },
+    {
+      "pid": 7888,
+      "name": "chrome.exe",
+      "rss": 19263488
+    },
+    {
+      "pid": 10028,
+      "name": "chrome.exe",
+      "rss": 20279296
+    },
+    {
+      "pid": 10880,
+      "name": "python.exe",
+      "rss": 709554176
+    },
+    {
+      "pid": 16752,
+      "name": "chrome.exe",
+      "rss": 20819968
+    },
+    {
+      "pid": 16988,
+      "name": "python.exe",
+      "rss": 4923392
+    },
+    {
+      "pid": 20040,
+      "name": "ollama.exe",
+      "rss": 36024320
+    },
+    {
+      "pid": 21628,
+      "name": "chrome.exe",
+      "rss": 65384448
+    },
+    {
+      "pid": 21688,
+      "name": "chrome.exe",
+      "rss": 28172288
+    },
+    {
+      "pid": 22260,
+      "name": "chrome.exe",
+      "rss": 113496064
+    },
+    {
+      "pid": 22280,
+      "name": "chrome.exe",
+      "rss": 40161280
+    },
+    {
+      "pid": 22464,
+      "name": "chrome.exe",
+      "rss": 420503552
+    },
+    {
+      "pid": 22480,
+      "name": "chrome.exe",
+      "rss": 266231808
+    },
+    {
+      "pid": 25784,
+      "name": "chrome.exe",
+      "rss": 240951296
+    },
+    {
+      "pid": 26412,
+      "name": "chrome.exe",
+      "rss": 406298624
+    },
+    {
+      "pid": 26744,
+      "name": "python.exe",
+      "rss": 210800640
+    },
+    {
+      "pid": 27156,
+      "name": "chrome.exe",
+      "rss": 34009088
+    },
+    {
+      "pid": 28040,
+      "name": "ollama app.exe",
+      "rss": 17563648
+    }
+  ],
+  "ollama_loaded_models": {
+    "models": [
+      {
+        "name": "nomic-embed-text:latest",
+        "model": "nomic-embed-text:latest",
+        "size": 414239947,
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "nomic-bert",
+          "families": [
+            "nomic-bert"
+          ],
+          "parameter_size": "137M",
+          "quantization_level": "F16"
+        },
+        "expires_at": "2026-10-29T16:00:15.1353714+07:00",
+        "size_vram": 106975723,
+        "context_length": 2048,
+        "runner": "llamacpp"
+      }
+    ]
+  },
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU, 4096 MiB, 3619 MiB",
+  "limits": "Point-in-time owner laptop;unrelated applications present. RSS is not private committed memory;do not sum into physical RAM."
+}

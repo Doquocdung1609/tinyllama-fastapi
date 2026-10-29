@@ -1,0 +1,25 @@
+{
+  "preparation": "READY",
+  "same_exposed_SEM_query": true,
+  "queries": [
+    {
+      "http_ms": 5125.81,
+      "backend_ms": 5067.54,
+      "first_page": 7,
+      "numeric_answer_eligible": false
+    },
+    {
+      "http_ms": 1312.13,
+      "backend_ms": 1254.21,
+      "first_page": 7,
+      "numeric_answer_eligible": false
+    },
+    {
+      "http_ms": 1620.43,
+      "backend_ms": 1559.97,
+      "first_page": 7,
+      "numeric_answer_eligible": false
+    }
+  ],
+  "scope": "Operational smoke after frozen policy,new-source test not rerun"
+}
