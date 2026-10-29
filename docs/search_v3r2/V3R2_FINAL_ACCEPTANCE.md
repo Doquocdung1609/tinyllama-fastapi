@@ -2,6 +2,8 @@
 
 Authorization: SEARCH_V3R2_TARGETED_REPAIR_ONLY. Base Draft PR26 exact SHA `3ba5e5e0f138fd2c1fd41c34c8b1262d74c308a9`; contributor branch `codex/financial-search-v3r2-hardening`. No merge. No model/service/agent roadmap change.
 
+Published as [Draft PR27](https://github.com/Doquocdung1609/tinyllama-fastapi/pull/27), stacked directly on PR26's contributor branch. Code-bearing commit `b35b8028c4d239b1abe9c25277e4b94a827cb1b3`; exact-head CI was blocked before any job steps by the account restriction. Later documentation bookkeeping does not change tested code.
+
 **Decision: SEARCH_V3R2_PARTIAL.** Targeted ACB repairs and bounded regression/source/persistence checks pass, and a usable 26-case human review packet is prepared. Overall financial answer quality and Windows memory stability remain limited. Do not mark SEARCH_LOCKED or independently reviewed. Owner retains acceptance authority. SEARCH_V3R2_OWNER_REVIEW_READY is not issued as an unqualified final gate.
 
 | Gate/workflow | Actual status | Evidence/limit |
