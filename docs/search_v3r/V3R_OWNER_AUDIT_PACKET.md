@@ -39,7 +39,7 @@ For PNJ p5, the original statement is rotated; the saved original image is inten
 |C|PASS_BOUNDED|84/84 baseline rank replay identical;no lost A0-positive top-five coverage after fragment repair;70 legacy API questions and17+3+4 guards pass their bounded contracts.|
 |D|PASS_BOUNDED / broader limits|Checked SEM row/year/KRW/current-column/source windows pass;raw punctuation and unreviewed wider scale interpretation remain limitations.|
 |E|PARTIAL|24 post-freeze questions,13/16 positive cell locators at5,8/8 numeric abstentions;no new mixed-image test and no independent human labels.|
-|F|PASS_BOUNDED + warning|671 backend,9 frontend,build,pip/compile and3 real Chrome tests pass;actual machine RAM pressure remains a warning.|
+|F|PARTIAL — local PASS,remote CI blocked|671 backend,9 frontend,build,pip/compile and3 real Chrome tests pass;remote jobs did not start due GitHub billing/spending limit;RAM pressure warning remains.|
 |G|PENDING|Owner or independent human must review actual source samples;no self-approval.|
 
 The eight inherited reviewed cells are covered by REVIEW_CONTINUITY_LAYOUT_V2.json. Their source bytes, source display and exact boxes match previous audited reviews, with new lineage events. This is not a new independent human review of OCR. No new SEM,PNJ or ACB cell was automatically certified.
@@ -55,3 +55,7 @@ Start on Windows from this repository:
 Open http://127.0.0.1:8110/app/, use the existing local key privately, choose **Search V3R · bằng chứng theo vùng**, then wait for the prepared-index notice. Old profile preferences remain preserved; V3R is an explicit opt-in. For SEM choose PDF tải lên as the source and Samsung Electro-Mechanics as the document. Candidate results are useful for locating source images; they are not numeric answers. The CEO audited-assets sample demonstrates the separate reviewed-cell state.
 
 Rollback: stop the owned launcher with `.\scripts\run_financial_studio.ps1 -Stop`; launch an existing old workspace with its old code/profile. Old PDF/checkpoint/SEC generations were not replaced. New derived roots and immutable source/index files remain available for inspection. PR23/24/25 must remain Draft, and neither this branch nor those PRs is merged by this task.
+
+## Remote CI disposition
+
+GitHub Actions run40847818610 on code commit9b2d32d reported FAILURE for backend and frontend before any step ran. Check annotations identify failed recent account payments or an insufficient spending limit. There are no test logs because the jobs were not started. This is **FAIL_INFRASTRUCTURE_NOT_STARTED**,not a remote test PASS or a demonstrated code-test failure. Local671backend/9frontend/3Chrome passes remain valid;owner-side remote CI is pending. No billing setting or paid service was changed. REMOTE_CI_DIAGNOSTICS.json preserves actual check IDs,source annotations and run link.

@@ -1,0 +1,74 @@
+{
+  "at_utc": "2026-10-29T09:14:33.819291+00:00",
+  "tested_head": "9b2d32d23b84d84018c05423e7c830e7afa338af",
+  "run_url": "https://github.com/Doquocdung1609/tinyllama-fastapi/actions/runs/40847818610",
+  "status": "FAIL_INFRASTRUCTURE_NOT_STARTED",
+  "cause": "GitHub account payments/spending limit prevented both jobs starting;no remote tests ran",
+  "jobs": [
+    {
+      "name": "test",
+      "check_id": 123359540191,
+      "conclusion": "FAILURE",
+      "execution": "NOT_STARTED_NO_STEPS_NO_LOGS",
+      "annotations": [
+        {
+          "path": ".github",
+          "blob_href": "https://github.com/Doquocdung1609/tinyllama-fastapi/blob/9b2d32d23b84d84018c05423e7c830e7afa338af/.github",
+          "start_line": 1,
+          "start_column": null,
+          "end_line": 1,
+          "end_column": null,
+          "annotation_level": "failure",
+          "title": "",
+          "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+          "raw_details": ""
+        },
+        {
+          "path": ".github",
+          "blob_href": "https://github.com/Doquocdung1609/tinyllama-fastapi/blob/9b2d32d23b84d84018c05423e7c830e7afa338af/.github",
+          "start_line": 1,
+          "start_column": null,
+          "end_line": 1,
+          "end_column": null,
+          "annotation_level": "notice",
+          "title": "",
+          "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+          "raw_details": ""
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "check_id": 123359539863,
+      "conclusion": "FAILURE",
+      "execution": "NOT_STARTED_NO_STEPS_NO_LOGS",
+      "annotations": [
+        {
+          "path": ".github",
+          "blob_href": "https://github.com/Doquocdung1609/tinyllama-fastapi/blob/9b2d32d23b84d84018c05423e7c830e7afa338af/.github",
+          "start_line": 1,
+          "start_column": null,
+          "end_line": 1,
+          "end_column": null,
+          "annotation_level": "failure",
+          "title": "",
+          "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+          "raw_details": ""
+        },
+        {
+          "path": ".github",
+          "blob_href": "https://github.com/Doquocdung1609/tinyllama-fastapi/blob/9b2d32d23b84d84018c05423e7c830e7afa338af/.github",
+          "start_line": 1,
+          "start_column": null,
+          "end_line": 1,
+          "end_column": null,
+          "annotation_level": "notice",
+          "title": "",
+          "message": "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\"",
+          "raw_details": ""
+        }
+      ]
+    }
+  ],
+  "limitations": "Local671/9/3passes remain separate;no remote CI success.No billing settings changed."
+}

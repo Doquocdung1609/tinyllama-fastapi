@@ -15,7 +15,7 @@ After full policy freeze,24new PNJ/ACB questions ran once. Source-cell hit@5 is1
 |C|PASS_BOUNDED|84/84 baseline rank replay identical;no lost A0-positive top-five coverage after fragment repair;70 legacy API questions and17+3+4 guards pass their bounded contracts.|
 |D|PASS_BOUNDED / broader limits|Checked SEM row/year/KRW/current-column/source windows pass;raw punctuation and unreviewed wider scale interpretation remain limitations.|
 |E|PARTIAL|24 post-freeze questions,13/16 positive cell locators at5,8/8 numeric abstentions;no new mixed-image test and no independent human labels.|
-|F|PASS_BOUNDED + warning|671 backend,9 frontend,build,pip/compile and3 real Chrome tests pass;actual machine RAM pressure remains a warning.|
+|F|PARTIAL — local PASS,remote CI blocked|671 backend,9 frontend,build,pip/compile and3 real Chrome tests pass;remote jobs did not start due GitHub billing/spending limit;RAM pressure warning remains.|
 |G|PENDING|Owner or independent human must review actual source samples;no self-approval.|
 
 ## Actual verification
@@ -32,3 +32,7 @@ Background preparation took58.31s on the final owner run. Warm repeated-query p9
 The technical source-recovery work and bounded demonstration flows are reviewable. Unrestricted financial-question accuracy and unconditional presentation readiness are **not** established. Demonstrate checked CEO/HPG/BIDV cells and candidate-only SEM retrieval with explicit limitations; finish owner source audit and check free RAM before acceptance.
 
 All eight required reports and reproduction tools are included. Credentials, original PDFs,private logs and workspaces remain local. Existing SEC data and locked Nomic768were preserved; the only inventory differences are documented runtime lock/journal metadata. No paid OCR,new large model,SPLADE,new agent framework or Milestone C feature was introduced.
+
+## Remote CI disposition
+
+GitHub Actions run40847818610 on code commit9b2d32d reported FAILURE for backend and frontend before any step ran. Check annotations identify failed recent account payments or an insufficient spending limit. There are no test logs because the jobs were not started. This is **FAIL_INFRASTRUCTURE_NOT_STARTED**,not a remote test PASS or a demonstrated code-test failure. Local671backend/9frontend/3Chrome passes remain valid;owner-side remote CI is pending. No billing setting or paid service was changed. REMOTE_CI_DIAGNOSTICS.json preserves actual check IDs,source annotations and run link.

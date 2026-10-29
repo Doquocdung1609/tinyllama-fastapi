@@ -75,5 +75,13 @@
   "frontend_pass": 9,
   "chrome_pass": 3,
   "independent_human_review": "PENDING",
-  "annotation": "Actual owner-machine logs;private raw logs not published"
+  "annotation": "Actual owner-machine logs;private raw logs not published",
+  "remote_ci": {
+    "status": "FAIL_INFRASTRUCTURE_NOT_STARTED",
+    "run_id": 40847818610,
+    "head": "9b2d32d23b84d84018c05423e7c830e7afa338af",
+    "backend_steps_executed": 0,
+    "frontend_steps_executed": 0,
+    "reason": "GitHub account payment/spending limit restriction"
+  }
 }
