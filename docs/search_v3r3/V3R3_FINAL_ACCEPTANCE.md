@@ -12,6 +12,7 @@
 | Prebuilt browser and source viewer | PARTIAL | 4/5 first batch, failing case PASS on replay, all 13 actual screenshots; resource guard blocked a later post-restart browser replay |
 | Index/source restart integrity | PASS with startup limit | 11/11 stable hashes; unchanged generation; API query 200 with correct page-2 row; ~114-second in-memory preparation |
 | Windows demo memory | PARTIAL | Minimum available RAM 16.59 MiB; preflight alternated WAIT/READY; `V3R3_DEMO_STABILITY_REPORT.md` |
+| Remote GitHub Actions | BLOCKED BY ACCOUNT | PR #28 run `41034542242`: test and frontend jobs failed before steps; billing/spending-limit annotation, no CI test result |
 | Independent heldout and owner signoff | NOT AVAILABLE | `NEW_INDEPENDENT_EVAL_NOT_AVAILABLE`; `HUMAN_AUDIT_PENDING` |
 
 The product preserves raw OCR, source boxes, unit/period guards and numeric eligibility. The ranking change alone does not certify a value. Wrong period/basis/unit rates were not measured independently in the exposed set. The prior SEC data and original owner workspaces were retained. The complete 178-query harness did not write its normal final artifact because its repeat prewarm was deferred by low RAM; the per-query records and reconstructed summary explicitly retain that limitation.
