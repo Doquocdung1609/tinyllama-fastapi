@@ -1,0 +1,8 @@
+
+Running 1 test using 1 worker
+
+(node:31296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 e2e\search-v3r3.spec.ts:7:1 › Prebuilt V3R3: source cell, related-only retrieval, same-scope comparison and stale response (14.1s)
+
+  1 passed (15.7s)

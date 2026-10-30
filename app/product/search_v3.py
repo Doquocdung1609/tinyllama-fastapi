@@ -149,6 +149,9 @@ def compatible_facts(entry, intent, quarters, facts, unknown_entity):
 
 
 class FinancialSearchV3:
+    def _metric_ranking_adjustment(self, entry, intent, query):
+        return 0
+
     def __init__(self, workspace, index_root):
         self.workspace=workspace
         self.base=FinancialSearchV2(workspace,index_root)
@@ -205,6 +208,7 @@ class FinancialSearchV3:
                 score=min(scores.get(e['evidence_id'],0),10)+20*metric_hit+5*(metric_hit and e['kind']=='row')
                 if intent.statement: score+=6 if e['statement_type']==intent.statement else -2
                 score-=4*len(conflicts)
+                score+=self._metric_ranking_adjustment(e,intent,query)
                 score+=2*bool(bound)+(1/(60+dense_ids[e['chunk_id']]) if e['chunk_id'] in dense_ids else 0)
                 ranked.append((score,e,conflicts,bound))
             ranked.sort(key=lambda r:(-r[0],r[1]['evidence_id']))

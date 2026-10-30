@@ -6,15 +6,15 @@ from hashlib import sha256
 from pathlib import Path
 from threading import RLock
 from time import perf_counter
-import gc,json,os,sqlite3
+import gc,json,os,re,sqlite3
 from app.product.search_v2 import FinancialSearchV2,VERSION as SOURCE_VERSION
 from app.product.search_v3 import FinancialSearchV3,intent_for,metrics_in
 from app.product.search_v3r import _scope,_label_metric,_spatial_label
-from app.product.financial_labels import normalize_label,label_metrics,statement_candidate,specialized_profit
+from app.product.financial_labels import normalize_label,label_metrics,statement_candidate,specialized_profit,source_row_candidate
 from app.product.source_units import header_unit,cell_unit,numeric_syntax,word_units
 from app.product.pdf_extract import folded
 
-VERSION='financial-source-hardening-v3r2.1'
+VERSION='financial-source-precision-v3r3.0'
 MAX_CACHE_ENTRIES=30000
 MAX_INDEX_BYTES=192*1024*1024
 
@@ -75,12 +75,18 @@ class CompactRegionIndex:
                     headers='\n'.join(h['text'] for h in row.get('header_candidates',[]))
                     context=contexts.setdefault(page['text'][:600]+'\n'+headers,page['text'][:600]+'\n'+headers)
                     e.update(context=context,statement_type=statement_candidate(context),scope=_scope(context) or e.get('scope'),unit_header=header_unit(context))
+                    if re.search(r'bao cao ket qua.{0,35}kinh doanh',folded(context)):
+                        e['statement_type']='INCOME_STATEMENT'
                     unit_key=json.dumps(words,sort_keys=True)
                     if unit_key not in units_cache:
                         units_cache[unit_key]=word_units(words)
                         while len(units_cache)>64:units_cache.popitem(last=False)
-                    raw=e['row_label'];candidate=normalize_label(raw);spatial=normalize_label(_spatial_label(page,row))
+                    raw=e['row_label'];candidate=source_row_candidate(raw,e['statement_type']);spatial=normalize_label(_spatial_label(page,row))
                     concepts=label_metrics(raw)
+                    # Source-anchored VAS codes and damaged labels can supply a
+                    # provisional retrieval candidate, never a reviewed value.
+                    if candidate!=normalize_label(raw):
+                        concepts=sorted(set(concepts)|set(label_metrics(candidate)))
                     if not specialized_profit(raw):
                         concepts=_label_metric(candidate,e['statement_type'],concepts)
                         concepts=_label_metric(spatial,e['statement_type'],concepts)
@@ -126,6 +132,18 @@ class CompactRegionIndex:
     def cache_stats(self):return {'builds':self.builds,'entries':len(self._cache['entries']) if self._cache else 0,'max_entries':MAX_CACHE_ENTRIES,'max_index_bytes':MAX_INDEX_BYTES,'retained_page_views':0,'retained_source_entries':0}
 
 class FinancialSearchV3R2(FinancialSearchV3):
+    def _metric_ranking_adjustment(self,entry,intent,query):
+        # A known, different metric is weaker than an unclassified source row.
+        # This only changes ordering; source evidence and eligibility are untouched.
+        if intent.metrics and entry['metrics'] and not set(intent.metrics).intersection(entry['metrics']):return -12
+        # A source row can carry the exact requested phrase even when damaged OCR
+        # prevents safe ontology classification. Keep it unreviewed.
+        if entry['kind']=='row' and not intent.metrics and specialized_profit(query):
+            label=normalize_label(entry.get('source_label_candidate') or entry['row_label']).lower()
+            phrase=normalize_label(query).lower()
+            if len(label)>=12 and label in phrase:return 4
+        return 0
+
     def __init__(self,workspace,index_root,resources=None):
         self.workspace=workspace;self.base=CompactRegionIndex(workspace,index_root);self.resources=resources;self._last_entries={}
 

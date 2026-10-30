@@ -1,0 +1,17 @@
+{
+  "status": "PASS_STABLE_SOURCE_AND_INDEX_BYTES",
+  "copied_files_verified": 350,
+  "differences": [
+    "index.sqlite3-shm",
+    "index.sqlite3-wal",
+    "search-v3r2.json"
+  ],
+  "unreadable_while_benchmark_active": [
+    {
+      "path": "qdrant\\.lock",
+      "reason": "PermissionError"
+    }
+  ],
+  "marker": "V3R3",
+  "interpretation": "350 stable copied files match;candidate marker intentionally changes;SQLite WAL/SHM and Qdrant process lock are transient and not preservation evidence."
+}

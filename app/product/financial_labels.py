@@ -21,6 +21,16 @@ def specialized_profit(text):
     return bool(re.search(r'\b(?:profit|net income|net earnings)\b',t) and
         re.search(r'\b(?:attributable|non.?controlling|minority|discontinued|continuing)\b',t))
 
+def source_row_candidate(raw,statement):
+    candidate=normalize_label(raw)
+    if statement=='INCOME_STATEMENT' and re.search(r'(?i)\b60\s+lợi\s+nhuận\s+thuế\s+TNDN\b',candidate):
+        return re.sub(r'(?i)(\b60\s+lợi\s+nhuận)\s+(thuế\s+TNDN\b)',r'\1 sau \2',candidate)
+    if statement=='INCOME_STATEMENT' and re.search(r'\b(?:cấp|cap)\b.*\(10\s*=\s*01\s*-\s*02\).*\b(?:vụ|vu)\b',candidate,re.I):
+        return '10 Doanh thu thuần về bán hàng và cung cấp dịch vụ'
+    if statement=='BALANCE_SHEET' and re.search(r'^\s*230\b.{0,35}\b(?:san|sản)\b',candidate,re.I):
+        return '230 Bất động sản đầu tư'
+    return candidate
+
 def label_metrics(raw):
     text=normalize_label(raw);t=text.lower()
     if specialized_profit(text):return []

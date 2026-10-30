@@ -1,0 +1,9 @@
+{
+  "status": "PASS_SOURCE_AND_WORKBOOK_INTEGRITY",
+  "cases": 26,
+  "references_checked": 30,
+  "all_images_and_source_sha_match": true,
+  "human_cells_filled": [],
+  "completion_formulas": 26,
+  "human_review_status": "HUMAN_AUDIT_PENDING"
+}

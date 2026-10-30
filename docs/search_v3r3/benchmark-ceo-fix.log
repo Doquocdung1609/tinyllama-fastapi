@@ -1,0 +1,62 @@
+after v3r-pnj-01 R5 1.0 cell5 1.0
+after v3r-pnj-02 R5 1.0 cell5 1.0
+after v3r-pnj-03 R5 1.0 cell5 1.0
+after v3r-pnj-04 R5 1.0 cell5 1.0
+after v3r-pnj-05 R5 1.0 cell5 1.0
+after v3r-pnj-06 R5 1.0 cell5 1.0
+after v3r-pnj-07 R5 1.0 cell5 1.0
+after v3r-pnj-08 R5 1.0 cell5 1.0
+after v3r-pnj-09 R5 None cell5 None
+after v3r-pnj-10 R5 None cell5 None
+after v3r-pnj-11 R5 None cell5 None
+after v3r-pnj-12 R5 None cell5 None
+after v3r-acb-01 R5 1.0 cell5 1.0
+after v3r-acb-02 R5 1.0 cell5 1.0
+after v3r-acb-03 R5 1.0 cell5 0.0
+after v3r-acb-04 R5 1.0 cell5 1.0
+after v3r-acb-05 R5 1.0 cell5 1.0
+after v3r-acb-06 R5 1.0 cell5 1.0
+after v3r-acb-07 R5 1.0 cell5 1.0
+after v3r-acb-08 R5 1.0 cell5 0.0
+after v3r-acb-09 R5 None cell5 None
+after v3r-acb-10 R5 None cell5 None
+after v3r-acb-11 R5 None cell5 None
+after v3r-acb-12 R5 None cell5 None
+after v3d001 R5 1.0 cell5 None
+after v3d002 R5 1.0 cell5 None
+after v3d003 R5 1.0 cell5 None
+after v3d004 R5 1.0 cell5 None
+after v3d005 R5 1.0 cell5 None
+after v3d006 R5 1.0 cell5 None
+after v3d007 R5 1.0 cell5 None
+after v3d008 R5 1.0 cell5 None
+after v3d009 R5 1.0 cell5 None
+after v3d010 R5 1.0 cell5 None
+after v3d011 R5 1.0 cell5 None
+after v3d012 R5 1.0 cell5 None
+after v3d013 R5 1.0 cell5 None
+after v3d014 R5 1.0 cell5 None
+after v3d015 R5 0.0 cell5 None
+after v3d016 R5 0.0 cell5 None
+after v3d017 R5 1.0 cell5 None
+after v3d018 R5 1.0 cell5 None
+after v3d019 R5 0.6666666666666666 cell5 None
+after v3d020 R5 0.6666666666666666 cell5 None
+after v3d021 R5 None cell5 None
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\GitHub\tinyllama-fastapi\scripts\benchmark_search_v3r2.py", line 74, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',required=True);p.add_argument('--arm',choices=['before','after'],required=True);p.add_argument('--qrels',action='append',required=True);p.add_argument('--output',required=True);p.add_argument('--ids');p.add_argument('--corrections',default='docs/search_v3r2/SOURCE_ANNOTATION_CORRECTIONS.json');p.add_argument('--sec-root');p.add_argument('--sec-vectors');p.add_argument('--gpu',action='store_true');run(p.parse_args())
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\tinyllama-fastapi\scripts\benchmark_search_v3r2.py", line 48, in run
+    t=time.perf_counter();result=search_sec_v3(sec,q['query'],'hybrid',10,q['ticker']) if q['source']=='SEC' else engine.search(q['query'],'hybrid',10,q['document_ids']);elapsed=(time.perf_counter()-t)*1000
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\tinyllama-fastapi\app\product\search_v3r2.py", line 180, in search
+    with self.resources.claim('SEARCH',minimum_mb=256,timeout=10):return self._run_search(*args,**kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\GitHub\tinyllama-fastapi\app\product\resource_control.py", line 24, in claim
+    if psutil.virtual_memory().available<minimum_mb*1024**2:raise ValueError('LOW_MEMORY_DEFERRED')
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: LOW_MEMORY_DEFERRED

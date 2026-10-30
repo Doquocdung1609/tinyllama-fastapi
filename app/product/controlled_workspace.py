@@ -13,6 +13,7 @@ class ControlledPdfWorkspace(DerivedPdfWorkspace):
         root=Path(root)
         if not (root/MARKER).is_file() or json.loads((root/MARKER).read_text(encoding='utf-8')).get('owner')!=OWNER:
             raise ValueError('V3R2_EXPLICIT_NEW_OWNER_CLONE_REQUIRED')
+        self.search_candidate_version=json.loads((root/MARKER).read_text(encoding='utf-8')).get('candidate_version','V3R2')
         self.resources=ResourceControl();super().__init__(root,embedder)
 
     def process(self,document_id):

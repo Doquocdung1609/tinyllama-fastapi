@@ -1,0 +1,13 @@
+{
+  "scope": "direct_local_ollama_embed_HTTP_not_full_search",
+  "model": "nomic-embed-text",
+  "calls": 5,
+  "latency_ms": [
+    47.84,
+    51.73,
+    37.9,
+    38.12,
+    40.06
+  ],
+  "dimensions": 768
+}
