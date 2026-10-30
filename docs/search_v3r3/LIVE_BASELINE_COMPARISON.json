@@ -1,0 +1,27 @@
+{
+  "http_status": 200,
+  "document_scope_sha256": "6ed8e5c05ca7459daba8bcf5b0c32526bf21238692505a7e9be4b9be60d45bbc",
+  "question": "Tổng tài sản CEO hợp nhất ngày 31/12/2025",
+  "arms": {
+    "bm25": {
+      "count": 5,
+      "latency_ms": 133.57,
+      "top_page": 23
+    },
+    "dense": {
+      "count": 5,
+      "latency_ms": 199.95,
+      "top_page": 8
+    },
+    "hybrid": {
+      "count": 5,
+      "latency_ms": 227.32,
+      "top_page": 22
+    }
+  },
+  "overlap": {
+    "bm25_dense": 2,
+    "all_three": 2
+  },
+  "candidate_status": "REVIEWED_ANSWER_EVIDENCE"
+}

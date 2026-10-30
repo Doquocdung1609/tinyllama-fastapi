@@ -1,0 +1,43 @@
+
+Running 1 test using 1 worker
+
+(node:32752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\search-v3r3.spec.ts:7:1 › Prebuilt V3R3: source cell, related-only retrieval, same-scope comparison and stale response (1.0m)
+
+
+  1) e2e\search-v3r3.spec.ts:7:1 › Prebuilt V3R3: source cell, related-only retrieval, same-scope comparison and stale response
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.hit').first()
+    Expected substring: "8.728.184.945.992"
+    Timeout: 60000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" locator('article.hit').first() with timeout 60000ms
+      - waiting for locator('article.hit').first()
+
+
+      20 |  await page.getByLabel('Câu hỏi tìm kiếm').fill('Tổng tài sản CEO hợp nhất ngày 31/12/2025')
+      21 |  await page.getByRole('button',{name:'Tìm kiếm',exact:true}).click()
+    > 22 |  await expect(page.locator('article.hit').first()).toContainText('8.728.184.945.992',{timeout:60000})
+         |                                                    ^
+      23 |  await expect(page.locator('article.hit').first()).toContainText('Trang PDF 2')
+      24 |  await page.screenshot({path:folder+'/01-reviewed-source-row.png',fullPage:true})
+      25 |  const worker=page.waitForResponse(r=>r.url().includes('pdf.worker')&&r.url().includes('.mjs'))
+        at C:\Users\Admin\Documents\GitHub\tinyllama-fastapi\frontend\e2e\search-v3r3.spec.ts:22:52
+
+    Error Context: test-results\search-v3r3-Prebuilt-V3R3--ea358-mparison-and-stale-response\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\search-v3r3-Prebuilt-V3R3--ea358-mparison-and-stale-response\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\search-v3r3-Prebuilt-V3R3--ea358-mparison-and-stale-response\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e\search-v3r3.spec.ts:7:1 › Prebuilt V3R3: source cell, related-only retrieval, same-scope comparison and stale response

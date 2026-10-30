@@ -1,0 +1,50 @@
+
+Running 5 tests using 1 worker
+
+(node:23288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 e2e\search-v3r3.spec.ts:7:1 › Prebuilt V3R3: source cell, related-only retrieval, same-scope comparison and stale response (1.0m)
+(node:1792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 e2e\search-v3r3.spec.ts:58:1 › Prebuilt V3R3: a matching unreviewed row is a candidate, not reviewed evidence (2.5s)
+  ok 3 e2e\search-v3r3.spec.ts:75:1 › Prebuilt V3R3: mixed-PDF SEM recovery and persistent coverage warning (6.1s)
+  ok 4 e2e\search-v3r3.spec.ts:102:2 › Prebuilt V3R3: ACB repairs and bounded PDF navigation (15.9s)
+  ok 5 e2e\search-v3r3.spec.ts:126:1 › Prebuilt V3R3: damaged PNJ after-tax row remains unreviewed (2.5s)
+
+
+  1) e2e\search-v3r3.spec.ts:7:1 › Prebuilt V3R3: source cell, related-only retrieval, same-scope comparison and stale response
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.hit').first()
+    Expected substring: "8.728.184.945.992"
+    Timeout: 60000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" locator('article.hit').first() with timeout 60000ms
+      - waiting for locator('article.hit').first()
+
+
+      20 |  await page.getByLabel('Câu hỏi tìm kiếm').fill('Tổng tài sản CEO hợp nhất ngày 31/12/2025')
+      21 |  await page.getByRole('button',{name:'Tìm kiếm',exact:true}).click()
+    > 22 |  await expect(page.locator('article.hit').first()).toContainText('8.728.184.945.992',{timeout:60000})
+         |                                                    ^
+      23 |  await expect(page.locator('article.hit').first()).toContainText('Trang PDF 2')
+      24 |  await page.screenshot({path:folder+'/01-reviewed-source-row.png',fullPage:true})
+      25 |  const worker=page.waitForResponse(r=>r.url().includes('pdf.worker')&&r.url().includes('.mjs'))
+        at C:\Users\Admin\Documents\GitHub\tinyllama-fastapi\frontend\e2e\search-v3r3.spec.ts:22:52
+
+    Error Context: test-results\search-v3r3-Prebuilt-V3R3--ea358-mparison-and-stale-response\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\search-v3r3-Prebuilt-V3R3--ea358-mparison-and-stale-response\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\search-v3r3-Prebuilt-V3R3--ea358-mparison-and-stale-response\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e\search-v3r3.spec.ts:7:1 › Prebuilt V3R3: source cell, related-only retrieval, same-scope comparison and stale response
+  4 passed (1.5m)

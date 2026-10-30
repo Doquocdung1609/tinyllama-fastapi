@@ -6,7 +6,34 @@ from threading import Event,Thread
 import hashlib,json
 import pymupdf
 import pytest
-from app.product.financial_labels import normalize_label,label_metrics,statement_candidate
+from app.product.financial_labels import normalize_label,label_metrics,statement_candidate,source_row_candidate
+
+def test_damaged_vas_after_tax_is_only_a_candidate_on_income_statement():
+    raw='60 Lợi nhuận thuế TNDN'
+    assert source_row_candidate(raw,'INCOME_STATEMENT')=='60 Lợi nhuận sau thuế TNDN'
+    assert source_row_candidate(raw,'BALANCE_SHEET')==raw
+    assert source_row_candidate('50 Lợi nhuận thuế TNDN','INCOME_STATEMENT')=='50 Lợi nhuận thuế TNDN'
+    assert raw=='60 Lợi nhuận thuế TNDN'
+
+def test_damaged_vas_revenue_and_property_rows_require_code_and_statement():
+    revenue='cấp địch (10=01-02) vụ'
+    property_row="230 III. Bi't ding san (nu tu' 11"
+    assert label_metrics(source_row_candidate(revenue,'INCOME_STATEMENT'))==['net_revenue']
+    assert label_metrics(source_row_candidate(property_row,'BALANCE_SHEET'))==['investment_property']
+    assert source_row_candidate(revenue,'BALANCE_SHEET')==revenue
+    assert source_row_candidate(property_row,'INCOME_STATEMENT')==normalize_label(property_row)
+    assert source_row_candidate('cấp địch (10=01-02)','INCOME_STATEMENT')=='cấp địch (10=01-02)'
+
+def test_precision_adjustment_demotes_known_other_metric_without_certifying_it():
+    engine=FinancialSearchV3R2.__new__(FinancialSearchV3R2)
+    intent=SimpleNamespace(metrics=('net_income',))
+    wrong={'kind':'row','metrics':['pretax_income'],'row_label':'Profit before tax'}
+    matching={'kind':'row','metrics':['net_income'],'row_label':'Profit after tax'}
+    unknown={'kind':'row','metrics':[],'row_label':'Uncertain OCR'}
+    assert engine._metric_ranking_adjustment(wrong,intent,'Profit after tax')==-12
+    assert engine._metric_ranking_adjustment(matching,intent,'Profit after tax')==0
+    assert engine._metric_ranking_adjustment(unknown,intent,'Profit after tax')==0
+    assert engine._metric_ranking_adjustment({'kind':'row','metrics':[],'row_label':'Profit before tax from continuing operations'},SimpleNamespace(metrics=()),'Profit before tax from continuing operations Samsung 2025')==4
 from app.product.source_units import units_in,header_unit,word_units,cell_unit,numeric_syntax
 from app.product.resource_control import ResourceControl
 from app.product.derived_workspace import DerivedPdfWorkspace

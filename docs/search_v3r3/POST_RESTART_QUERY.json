@@ -1,0 +1,14 @@
+{
+  "http_status": 200,
+  "status": "REVIEWED_ANSWER_EVIDENCE",
+  "result_count": 5,
+  "top": {
+    "page": 2,
+    "row_label": "TỎNG CỘNG TÀI SẲN | ",
+    "metric_ids": [
+      "assets"
+    ],
+    "numeric_answer_eligible": true
+  },
+  "error": null
+}

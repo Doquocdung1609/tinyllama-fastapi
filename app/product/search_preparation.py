@@ -6,7 +6,7 @@ from app.product.search_v3r import FinancialSearchV3R
 
 class SearchPreparation:
     def __init__(self,workspace,root):
-        self.is_v3r2=getattr(workspace,'search_candidate_version',None)=='V3R2'
+        self.is_v3r2=getattr(workspace,'search_candidate_version',None) in {'V3R2','V3R3'}
         if self.is_v3r2:
             from app.product.search_v3r2 import FinancialSearchV3R2
             self.engine=FinancialSearchV3R2(workspace,Path(root),workspace.resources)
@@ -65,11 +65,11 @@ _creation_lock=Lock()
 def preparation(workspace):
     with _creation_lock:
         if not hasattr(workspace,'_v3r_preparation'):
-            name='v3r2-product-index' if getattr(workspace,'search_candidate_version',None)=='V3R2' else 'v3r-product-index'
+            name='v3r3-product-index' if getattr(workspace,'search_candidate_version',None)=='V3R3' else 'v3r2-product-index' if getattr(workspace,'search_candidate_version',None)=='V3R2' else 'v3r-product-index'
             workspace._v3r_preparation=SearchPreparation(workspace,workspace.root/name)
         return workspace._v3r_preparation
 
 def process_and_prepare(workspace,document_id):
     result=workspace.process(document_id)
-    if (workspace.root/'derived-generation.json').exists():preparation(workspace).schedule(invalidate=getattr(workspace,'search_candidate_version',None)=='V3R2')
+    if (workspace.root/'derived-generation.json').exists():preparation(workspace).schedule(invalidate=getattr(workspace,'search_candidate_version',None) in {'V3R2','V3R3'})
     return result

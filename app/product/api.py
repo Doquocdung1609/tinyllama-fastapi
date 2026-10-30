@@ -177,7 +177,7 @@ def delete(document_id: str, confirm: str = ""):
             raise HTTPException(404, detail={"code": "DOCUMENT_NOT_FOUND"})
         if (workspace().root/'derived-generation.json').exists():
             from app.product.search_preparation import preparation
-            preparation(workspace()).schedule(invalidate=getattr(workspace(),'search_candidate_version',None)=='V3R2')
+            preparation(workspace()).schedule(invalidate=getattr(workspace(),'search_candidate_version',None) in {'V3R2','V3R3'})
     except ValueError as exc:
         raise HTTPException(409, detail={"code": _error(exc)}) from exc
     return {"deleted": True, "document_id": document_id}

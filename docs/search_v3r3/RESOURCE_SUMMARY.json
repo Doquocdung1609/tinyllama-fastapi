@@ -1,0 +1,10 @@
+{
+  "samples": 504,
+  "span_seconds": 577.7,
+  "api_peak_mib": 1039.46,
+  "chrome_peak_mib": 1278.75,
+  "ollama_family_peak_mib": 1252.05,
+  "tesseract_peak_mib": 0.0,
+  "available_ram_min_mib": 16.59,
+  "free_disk_min_gib": 64.36
+}
