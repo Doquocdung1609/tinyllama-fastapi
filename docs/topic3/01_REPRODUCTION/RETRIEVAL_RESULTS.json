@@ -1,0 +1,3367 @@
+{
+  "status": "PROVISIONAL_UNREVIEWED_METHODOLOGICAL_REPLICATION",
+  "corpus_sha256": "f8e4fc3650976b3b7658b6eac8bbf1d26e92e23fa11bd05f83f115bbd39ccbbf",
+  "qrels_sha256": "daeb3bc5ba9425aa4ed729e6967bff73177b3c6f12beae52d8a8ba56043ea601",
+  "query_vector_sha256": {
+    "bm25": "bb3490e70ee46b5294328a568c9ff3a886752a6fb9c41681a30635addb60b4a4",
+    "dense": "ae2fc5aea71e6755deb38b49639be1428c99ec2237b9db08fcb4aab2515caf36",
+    "splade": "64046706a07539337b69c0ebb6088a4d56eb22db0435d28627616a1d00be54a6"
+  },
+  "collection": "topic3_author_methods_2sec_2026",
+  "corpus_points": 121,
+  "query_count": 6,
+  "metrics": {
+    "R0_BM25": {
+      "known_target_positive_denominator": 4,
+      "known_target_at_1": 0,
+      "known_target_at_5": 3,
+      "known_target_at_10": 3,
+      "provisional_mrr_at_10": 0.3,
+      "negative_queries_unjudged_for_numeric_abstention": 2,
+      "qdrant_query_p50_ms": 3.997,
+      "qdrant_query_max_ms": 4.851,
+      "full_latency_includes_embedding": false
+    },
+    "R1_DENSE": {
+      "known_target_positive_denominator": 4,
+      "known_target_at_1": 0,
+      "known_target_at_5": 1,
+      "known_target_at_10": 1,
+      "provisional_mrr_at_10": 0.08333,
+      "negative_queries_unjudged_for_numeric_abstention": 2,
+      "qdrant_query_p50_ms": 0.457,
+      "qdrant_query_max_ms": 0.65,
+      "full_latency_includes_embedding": false
+    },
+    "R2_SPLADE": {
+      "known_target_positive_denominator": 4,
+      "known_target_at_1": 0,
+      "known_target_at_5": 1,
+      "known_target_at_10": 2,
+      "provisional_mrr_at_10": 0.16667,
+      "negative_queries_unjudged_for_numeric_abstention": 2,
+      "qdrant_query_p50_ms": 6.571,
+      "qdrant_query_max_ms": 7.259,
+      "full_latency_includes_embedding": false
+    },
+    "R3_BM25_DENSE_RRF": {
+      "known_target_positive_denominator": 4,
+      "known_target_at_1": 0,
+      "known_target_at_5": 2,
+      "known_target_at_10": 3,
+      "provisional_mrr_at_10": 0.22321,
+      "negative_queries_unjudged_for_numeric_abstention": 2,
+      "qdrant_query_p50_ms": 4.62,
+      "qdrant_query_max_ms": 6.632,
+      "full_latency_includes_embedding": false
+    },
+    "R4_SPLADE_DENSE_RRF": {
+      "known_target_positive_denominator": 4,
+      "known_target_at_1": 0,
+      "known_target_at_5": 1,
+      "known_target_at_10": 1,
+      "provisional_mrr_at_10": 0.125,
+      "negative_queries_unjudged_for_numeric_abstention": 2,
+      "qdrant_query_p50_ms": 7.351,
+      "qdrant_query_max_ms": 8.37,
+      "full_latency_includes_embedding": false
+    },
+    "R5_THREE_WAY_RRF": {
+      "known_target_positive_denominator": 4,
+      "known_target_at_1": 0,
+      "known_target_at_5": 1,
+      "known_target_at_10": 3,
+      "provisional_mrr_at_10": 0.19792,
+      "negative_queries_unjudged_for_numeric_abstention": 2,
+      "qdrant_query_p50_ms": 11.099,
+      "qdrant_query_max_ms": 14.315,
+      "full_latency_includes_embedding": false
+    },
+    "R6_AUTHOR_DETERMINISTIC_STAGE2": {
+      "known_target_positive_denominator": 4,
+      "known_target_at_1": 1,
+      "known_target_at_5": 2,
+      "known_target_at_10": 3,
+      "provisional_mrr_at_10": 0.34167,
+      "negative_queries_unjudged_for_numeric_abstention": 2,
+      "qdrant_query_p50_ms": 27.823,
+      "qdrant_query_max_ms": 30.077,
+      "full_latency_includes_embedding": false
+    }
+  },
+  "records": [
+    {
+      "id": "t3-pg-net-sales-2026",
+      "query": "What were Procter & Gamble's net sales for the three months ended September 30, 2026?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        "0000080424_0000080424-26-000256_chunk_0003"
+      ],
+      "arms": {
+        "R0_BM25": {
+          "query_ms": 4.442,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 14.201517105102539
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0041",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.427882194519043
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.13472843170166
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0035",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.830781936645508
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0047",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.806894302368164
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0045",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.718798637390137
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0039",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.367856979370117
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0064",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.154136657714844
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0051",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 11.8887357711792
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 11.686834335327148
+            }
+          ]
+        },
+        "R1_DENSE": {
+          "query_ms": 0.65,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7512382233045023
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.748640038620904
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7459414263238091
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7328173269845886
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7282112716446315
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0043",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7203306882196636
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7141100530999841
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0015",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7115383717297847
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0047",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7110943244625422
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7108068839194721
+            }
+          ]
+        },
+        "R2_SPLADE": {
+          "query_ms": 6.532,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 15.739612579345703
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0041",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 15.0867280960083
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0045",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 14.495156288146973
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0035",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 14.402952194213867
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0015",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 14.14227294921875
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0003",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.920004844665527
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.629542350769043
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0064",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.559926986694336
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0014",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.043889045715332
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0047",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.027321815490723
+            }
+          ]
+        },
+        "R3_BM25_DENSE_RRF": {
+          "query_ms": 5.265,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.75
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5833333333333333
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.524390243902439
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0041",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3611111111111111
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0047",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.26666666666666666
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2277777777777778
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2159090909090909
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0035",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0039",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.19642857142857142
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0045",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.19285714285714284
+            }
+          ]
+        },
+        "R4_SPLADE_DENSE_RRF": {
+          "query_ms": 8.255,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.75
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5285714285714286
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4583333333333333
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0041",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3611111111111111
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0045",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0015",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2777777777777778
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.24000000000000002
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.23809523809523808
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0035",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0047",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.19090909090909092
+            }
+          ]
+        },
+        "R5_THREE_WAY_RRF": {
+          "query_ms": 11.106,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 1.25
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7083333333333333
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0041",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6944444444444444
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5529616724738676
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0045",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.44285714285714284
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0035",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0047",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.35757575757575755
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0015",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.30277777777777776
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2677777777777778
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.26082251082251084
+            }
+          ]
+        },
+        "R6_AUTHOR_DETERMINISTIC_STAGE2": {
+          "query_ms": 25.144,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4862,
+              "exact_answer": "The table below provides supplemental information on net sales, earnings before income taxes and net earnings by reportable business segment for the three months ended September 30"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0047",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4611,
+              "exact_answer": "Three months ended September 30, 2026, compared with three months ended September 30, 2025 18 The Procter & Gamble Company Beauty net sales increased 6% to $4.4 billion, driven by "
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.447,
+              "exact_answer": "The Procter & Gamble Company 5 THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF CASH FLOWS Three Months Ended September 30 Amounts in millions 2026 2025 CAS"
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0038",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4065,
+              "exact_answer": "Three Months Ended September 30, 2026 | Net Sales | Net Earnings | Beauty | 19 | % | 18 | % | Grooming | 8 | % | 10 | % | Health Care | 14 | % | 16 | % | Fabric & Home Care | 36 | "
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0045",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4037,
+              "exact_answer": "The effective income tax rate for the three months ended September 30, 2026, was 21.0%, compared to 20.8% for the three months ended September 30, 2025."
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3929,
+              "exact_answer": "RESERVE JUNE 30, 2026 | 229 | - | 107 | 336 | Costs incurred for the three months ended September 30, 2026 | 86 | 73 | 33 | 192 | Costs paid/settled for the three months ended Sept"
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0035",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3887,
+              "exact_answer": "Summary of Results - Three Months Ended September 30, 2026"
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3819,
+              "exact_answer": "Net earnings attributable to Procter & Gamble -> 2026: $4,731M | 2025: $4,750M"
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0039",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.377,
+              "exact_answer": "SUMMARY OF RESULTS - Three Months Ended September 30, 2026"
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0050",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3747,
+              "exact_answer": "Three months ended September 30, 2026, compared with three months ended September 30, 2025"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "t3-pg-assets-2026",
+      "query": "What were Procter & Gamble's total assets on September 30, 2026?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        "0000080424_0000080424-26-000256_chunk_0006"
+      ],
+      "arms": {
+        "R0_BM25": {
+          "query_ms": 4.851,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.52132797241211
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.191337585449219
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0005",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.04764175415039
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.478261947631836
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.412849426269531
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 11.804722785949707
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 11.632180213928223
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 10.808154106140137
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 10.535377502441406
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 10.182096481323242
+            }
+          ]
+        },
+        "R1_DENSE": {
+          "query_ms": 0.42,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.768795610669744
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7687888710446462
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7567722985669754
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7532282813016524
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7490233823091657
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7429763323956942
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0000",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7361405974226205
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0011",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7360706208611323
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7347428080914861
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0012",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7293036981879152
+            }
+          ]
+        },
+        "R2_SPLADE": {
+          "query_ms": 7.078,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 16.315134048461914
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.647429466247559
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.031716346740723
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.83349895477295
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.83236026763916
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.799135208129883
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0062",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.425882339477539
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.26025104522705
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.206257820129395
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.015585899353027
+            }
+          ]
+        },
+        "R3_BM25_DENSE_RRF": {
+          "query_ms": 6.632,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6428571428571428
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5833333333333333
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.537037037037037
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.40476190476190477
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.27692307692307694
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0005",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.275
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.23703703703703705
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2121212121212121
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.1722689075630252
+            }
+          ]
+        },
+        "R4_SPLADE_DENSE_RRF": {
+          "query_ms": 8.37,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6428571428571428
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5833333333333333
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5333333333333333
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5294117647058824
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2803030303030303
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.25555555555555554
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.24285714285714285
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.19791666666666666
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.18333333333333335
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0011",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.17777777777777776
+            }
+          ]
+        },
+        "R5_THREE_WAY_RRF": {
+          "query_ms": 14.315,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 1.1428571428571428
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.9166666666666665
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6047619047619048
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5664488017429193
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.39141414141414144
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0005",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.35833333333333334
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.34285714285714286
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3324786324786325
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.30846560846560844
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.303030303030303
+            }
+          ]
+        },
+        "R6_AUTHOR_DETERMINISTIC_STAGE2": {
+          "query_ms": 30.077,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3789,
+              "exact_answer": "The Procter & Gamble Company Identifiable intangible assets at September 30, 2026, were comprised of: Gross Carrying Amount Accumulated Amortization Intangible assets with determin"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3058,
+              "exact_answer": "The Procter & Gamble Company 5 THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF CASH FLOWS Three Months Ended September 30 Amounts in millions 2026 2025 CAS"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0005",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.288,
+              "exact_answer": "The Procter & Gamble Company 3 THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES CONSOLIDATED BALANCE SHEETS Amounts in millions September 30, 2026 June 30, 2026 Assets CURRENT ASSETS"
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2697,
+              "exact_answer": "The Procter & Gamble Company Disclosures about Financial Instruments The notional amounts and fair values of financial instruments used in hedging transactions as of September 30, "
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2348,
+              "exact_answer": "OTHER NONCURRENT ASSETS -> 2026: $12,549M"
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0003",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2274,
+              "exact_answer": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF EARNINGS Three Months Ended September 30 Amounts in millions except per share amounts 2026 2025 NET SALES $"
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2107,
+              "exact_answer": "9/01/2026 - 9/30/2026 -> 2026: $4,271,128M"
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.1993,
+              "exact_answer": "RESERVE JUNE 30, 2026 | 229 | - | 107 | 336 | Costs incurred for the three months ended September 30, 2026 | 86 | 73 | 33 | 192 | Costs paid/settled for the three months ended Sept"
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0012",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.1896,
+              "exact_answer": "The accompanying unaudited Consolidated of The Procter & Gamble Company and subsidiaries (\"the Company,\" \"Procter & Gamble,\" \"P&G,\" \"we\" or \"our\") should be read in conjunction wit"
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.1732,
+              "exact_answer": "The carrying amount of the underlying debt obligation, which includes the unamortized discount or premium and the fair value adjustment, was $4.9 billion and $5.0 billion as of Sep"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "t3-hd-assets-2026",
+      "query": "What were Home Depot's total assets on August 2, 2026?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        "0000354950_0001628280-26-058715_chunk_0000"
+      ],
+      "arms": {
+        "R0_BM25": {
+          "query_ms": 2.825,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0018",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.863482475280762
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.647420883178711
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.291715621948242
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.207775115966797
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.065682411193848
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.029766082763672
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0013",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 11.650009155273438
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 11.13015079498291
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 10.894638061523438
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0014",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 10.751311302185059
+            }
+          ]
+        },
+        "R1_DENSE": {
+          "query_ms": 0.377,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7761365745119442
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7729701468538277
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7698417351641917
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0038",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7656512365536909
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7652010122743693
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0034",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7639860842540318
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0013",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7621999325576487
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0004",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7611314871179118
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0012",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7593242074071955
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0001",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7563320494218387
+            }
+          ]
+        },
+        "R2_SPLADE": {
+          "query_ms": 5.724,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 14.731429100036621
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 14.093894958496094
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.894299507141113
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0001",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.827743530273438
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.5900297164917
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.41530704498291
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0018",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.255961418151855
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.094446182250977
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0004",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.53999137878418
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.43380355834961
+            }
+          ]
+        },
+        "R3_BM25_DENSE_RRF": {
+          "query_ms": 3.397,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6428571428571428
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0018",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5526315789473684
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.43333333333333335
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.38095238095238093
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.31666666666666665
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.29
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0013",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.25
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0038",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.19047619047619047
+            }
+          ]
+        },
+        "R4_SPLADE_DENSE_RRF": {
+          "query_ms": 6.952,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6111111111111112
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5666666666666667
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3565891472868217
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0001",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2909090909090909
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.25
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0038",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.22040816326530613
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0004",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2111111111111111
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.20666666666666667
+            }
+          ]
+        },
+        "R5_THREE_WAY_RRF": {
+          "query_ms": 11.093,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.8166666666666667
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.753968253968254
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0018",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6776315789473684
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5232558139534884
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.45787545787545786
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.45
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0001",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3678321678321679
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.33999999999999997
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.293968253968254
+            }
+          ]
+        },
+        "R6_AUTHOR_DETERMINISTIC_STAGE2": {
+          "query_ms": 28.681,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3162,
+              "exact_answer": ". . THE HOME DEPOT, INC. CONSOLIDATED BALANCE SHEETS (Unaudited) | in millions, except per share data | August 2, 2026 | February 1, 2026 | Assets | Current assets: | Cash and cash"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2725,
+              "exact_answer": "(2) Primarily reflects the net impact of foreign currency translation as well as immaterial measurement period adjustments related to acquisitions completed in the prior fiscal yea"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2667,
+              "exact_answer": "Fiscal Q2 2026 Form 10-Q 4 THE HOME DEPOT, INC."
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2625,
+              "exact_answer": "The following table presents the estimated future amortization expense related to definite-lived intangible assets as of August 2, 2026: in millions Amortization Expense Fiscal 202"
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.225,
+              "exact_answer": "Assets and Liabilities Measured at Fair Value on a Recurring Basis The following table presents the assets and liabilities that are measured at fair value on a recurring basis: Aug"
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0018",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2141,
+              "exact_answer": "Leases The following table presents certain consolidated balance sheet information related to operating and finance leases: in millions Consolidated Balance Sheet Classification Au"
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1902,
+              "exact_answer": "The cash collateral posted by the Company related to derivative instruments under our collateral security arrangements was $498 million and $459 million as of August 2, 2026 and Fe"
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0004",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1877,
+              "exact_answer": "Fiscal Q2 2026 Form 10-Q 3 THE HOME DEPOT, INC."
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.181,
+              "exact_answer": "The following table presents net sales, significant expenses, and operating income for our Primary segment: Three Months Ended Six Months Ended in millions August 2, 2026 August 3,"
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0035",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1429,
+              "exact_answer": "Fiscal Q2 2026 Form 10-Q 17 FISCAL 2026 AND FISCAL 2025 SIX MONTH COMPARISONS Six Months Ended August 2, 2026 August 3, 2025 dollars in millions $ % of Net Sales $ % of Net Sales N"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "t3-hd-cash-2026",
+      "query": "How much cash and cash equivalents did Home Depot report on August 2, 2026?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        "0000354950_0001628280-26-058715_chunk_0000"
+      ],
+      "arms": {
+        "R0_BM25": {
+          "query_ms": 4.081,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0007",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 14.134322166442871
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0026",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.765953063964844
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.4747896194458
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.246888160705566
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.512556076049805
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0012",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.482831001281738
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 11.742945671081543
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0009",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 11.440193176269531
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0019",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 10.815469741821289
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 10.358583450317383
+            }
+          ]
+        },
+        "R1_DENSE": {
+          "query_ms": 0.494,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7683310445994178
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0007",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7631624209094978
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0008",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7537331802243746
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7523042194872029
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0028",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7516373241084326
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0017",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.751231252868298
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7505059971121859
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0044",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7474596791572188
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7464089004658214
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0004",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7449012017611618
+            }
+          ]
+        },
+        "R2_SPLADE": {
+          "query_ms": 6.609,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.949844360351562
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 13.663692474365234
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0007",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.814702033996582
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0026",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.572721481323242
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.51949691772461
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0041",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 12.123878479003906
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 11.267580032348633
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0029",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 11.057849884033203
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0019",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 11.044870376586914
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0049",
+              "ticker": "HD",
+              "section": "Part II - Item 2. Unregistered Sales of Equity Securities",
+              "score": 10.964859008789062
+            }
+          ]
+        },
+        "R3_BM25_DENSE_RRF": {
+          "query_ms": 4.329,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0007",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.8333333333333333
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5909090909090909
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.375
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0026",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.36666666666666664
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0008",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3214285714285714
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2196078431372549
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.21666666666666667
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0028",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.19791666666666666
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1875
+            }
+          ]
+        },
+        "R4_SPLADE_DENSE_RRF": {
+          "query_ms": 6.693,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.625
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.625
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0007",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5833333333333333
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3529411764705882
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0008",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2976190476190476
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0026",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.23333333333333334
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.22916666666666666
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.225
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0041",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.21978021978021978
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0017",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.19285714285714284
+            }
+          ]
+        },
+        "R5_THREE_WAY_RRF": {
+          "query_ms": 10.172,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0007",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 1.0833333333333333
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.875
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.7159090909090909
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0026",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5666666666666667
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5529411764705883
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0008",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.369047619047619
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.35416666666666663
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2833333333333333
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0019",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2833333333333333
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0041",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2822802197802198
+            }
+          ]
+        },
+        "R6_AUTHOR_DETERMINISTIC_STAGE2": {
+          "query_ms": 26.72,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0040",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2715,
+              "exact_answer": "LIQUIDITY AND CAPITAL RESOURCES At August 2, 2026, we had $2.1 billion in cash and cash equivalents, of which $1.4 billion was held by our foreign subsidiaries."
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0007",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2614,
+              "exact_answer": "Change in cash and cash equivalents -> 2026: $710M"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2326,
+              "exact_answer": "Fiscal Q2 2026 Form 10-Q 4 THE HOME DEPOT, INC."
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0023",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2233,
+              "exact_answer": "We did not hold any cash collateral from counterparties as of August 2, 2026 or February 1, 2026."
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0025",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2141,
+              "exact_answer": "Fiscal Q2 2026 Form 10-Q 13 We did not have any material assets or liabilities that were measured and recognized at fair value on a nonrecurring basis during the three and six mont"
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2025,
+              "exact_answer": "Cash and cash equivalents -> 2026: $2,085M"
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0026",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1961,
+              "exact_answer": "Fiscal Q2 2026 Form 10-Q 13 We did not have any material assets or liabilities that were measured and recognized at fair value on a nonrecurring basis during the three and six mont"
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0008",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1908,
+              "exact_answer": "Cash paid for income taxes -> 2026: $2,431M"
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0019",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1664,
+              "exact_answer": "The following table presents supplemental non-cash information related to leases: Six Months Ended in millions August 2, 2026 August 3, 2025 Lease assets obtained in exchange for n"
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0049",
+              "ticker": "HD",
+              "section": "Part II - Item 2. Unregistered Sales of Equity Securities",
+              "score": 0.1558,
+              "exact_answer": "During the second quarter of fiscal 2026, we issued 3,113 deferred stock units under The Home Depot, Inc."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "t3-negative-pg-2037",
+      "query": "What were Procter & Gamble's total assets on September 30, 2037?",
+      "answerable": false,
+      "expected_chunk_ids": [],
+      "arms": {
+        "R0_BM25": {
+          "query_ms": 3.912,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.093271255493164
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.836610794067383
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0005",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.69990348815918
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.068583488464355
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 11.958560943603516
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 11.403559684753418
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 11.276361465454102
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 10.362210273742676
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 10.089171409606934
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 9.773367881774902
+            }
+          ]
+        },
+        "R1_DENSE": {
+          "query_ms": 0.52,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7640391783810601
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7611077915317467
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7554810804264847
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7477804291148418
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7461371325990218
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0054",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7427886526204807
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0000",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7411983969621441
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0063",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7404653091502017
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0001",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7391676237605127
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0017",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.7367682077813331
+            }
+          ]
+        },
+        "R2_SPLADE": {
+          "query_ms": 7.259,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 16.117372512817383
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.3456392288208
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 13.227923393249512
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.539626121520996
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0062",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.464194297790527
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.444720268249512
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.424592971801758
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.370165824890137
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.271480560302734
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0001",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 12.19468879699707
+            }
+          ]
+        },
+        "R3_BM25_DENSE_RRF": {
+          "query_ms": 4.542,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.75
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6666666666666666
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.5666666666666667
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0005",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.27380952380952384
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.24358974358974358
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2285714285714286
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.22040816326530613
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0054",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.21428571428571427
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.19607843137254902
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0017",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.17424242424242425
+            }
+          ]
+        },
+        "R4_SPLADE_DENSE_RRF": {
+          "query_ms": 6.905,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.75
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6666666666666666
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.27
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.23125
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0065",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2285714285714286
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.21428571428571427
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0062",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.20512820512820512
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0046",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.20192307692307693
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0001",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.19090909090909092
+            }
+          ]
+        },
+        "R5_THREE_WAY_RRF": {
+          "query_ms": 10.613,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 1.25
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 1.0
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6666666666666666
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.37142857142857144
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3609090909090909
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3423611111111111
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0005",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3404761904761905
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2912087912087912
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.26750700280112044
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2564935064935065
+            }
+          ]
+        },
+        "R6_AUTHOR_DETERMINISTIC_STAGE2": {
+          "query_ms": 29.192,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4167,
+              "exact_answer": "The Procter & Gamble Company Identifiable intangible assets at September 30, 2026, were comprised of: Gross Carrying Amount Accumulated Amortization Intangible assets with determin"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0010",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3213,
+              "exact_answer": "The Procter & Gamble Company 5 THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF CASH FLOWS Three Months Ended September 30 Amounts in millions 2026 2025 CAS"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.284,
+              "exact_answer": "The Procter & Gamble Company Disclosures about Financial Instruments The notional amounts and fair values of financial instruments used in hedging transactions as of September 30, "
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2689,
+              "exact_answer": "OTHER NONCURRENT ASSETS -> 2026: $12,549M"
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.21,
+              "exact_answer": "(1) For the derivatives in net investment hedging relationships, the amount of gain/(loss) excluded from effectiveness testing, which was recognized in Interest expense, was $59 an"
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2074,
+              "exact_answer": "RESERVE JUNE 30, 2026 | 229 | - | 107 | 336 | Costs incurred for the three months ended September 30, 2026 | 86 | 73 | 33 | 192 | Costs paid/settled for the three months ended Sept"
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0008",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2031,
+              "exact_answer": "Noncontrolling interest -> 2026: $239M"
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0054",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2006,
+              "exact_answer": "Corporate 20 The Procter & Gamble Company Corporate includes certain operating and non-operating activities not allocated to specific business segments."
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0038",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2005,
+              "exact_answer": "Three Months Ended September 30, 2026 | Net Sales | Net Earnings | Beauty | 19 | % | 18 | % | Grooming | 8 | % | 10 | % | Health Care | 14 | % | 16 | % | Fabric & Home Care | 36 | "
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0030",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.1943,
+              "exact_answer": "For the three months ended September 30, 2026, the Company incurred total before tax restructuring charges of $192, including $106 in Costs of products sold, $82 in SG&A and $4 in "
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "t3-negative-issuer",
+      "query": "What were Apple Inc.'s total assets on September 27, 2025?",
+      "answerable": false,
+      "expected_chunk_ids": [],
+      "arms": {
+        "R0_BM25": {
+          "query_ms": 3.224,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 14.943878173828125
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0011",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 10.635085105895996
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0015",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 9.773294448852539
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0029",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 9.544501304626465
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 9.220325469970703
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 9.035378456115723
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 8.810919761657715
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0018",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 8.36741828918457
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0000",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 8.348172187805176
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0042",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 8.32077407836914
+            }
+          ]
+        },
+        "R1_DENSE": {
+          "query_ms": 0.368,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6613219911473827
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0012",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.63626304994575
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6352134941628591
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6350726413438306
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0044",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6335825730828304
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0004",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6319572419807531
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0009",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.6300902428422698
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0024",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.628258700065128
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0041",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.627462287148681
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0002",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.6272756700341289
+            }
+          ]
+        },
+        "R2_SPLADE": {
+          "query_ms": 6.296,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 9.484387397766113
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 7.5750956535339355
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 7.531521320343018
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 7.4986371994018555
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 7.436501979827881
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 7.073256015777588
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0031",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 6.936361789703369
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 6.637143135070801
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 6.521215438842773
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0023",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 6.441567420959473
+            }
+          ]
+        },
+        "R3_BM25_DENSE_RRF": {
+          "query_ms": 4.697,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.54
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5232558139534884
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.39285714285714285
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0011",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.35416666666666663
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0012",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3333333333333333
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0015",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.25
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.24545454545454548
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.21014492753623187
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0029",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.2
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.19642857142857142
+            }
+          ]
+        },
+        "R4_SPLADE_DENSE_RRF": {
+          "query_ms": 7.749,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.75
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.55
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3611111111111111
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0012",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3333333333333333
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3214285714285714
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.30000000000000004
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.21014492753623187
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.2
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.16993464052287582
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0044",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.16666666666666666
+            }
+          ]
+        },
+        "R5_THREE_WAY_RRF": {
+          "query_ms": 11.264,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.8928571428571428
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5900000000000001
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0011",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.5899224806201551
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4464285714285714
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0025",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.4045893719806763
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0011",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.3844696969696969
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.37681159420289856
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.34545454545454546
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0012",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.3333333333333333
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0015",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.25
+            }
+          ]
+        },
+        "R6_AUTHOR_DETERMINISTIC_STAGE2": {
+          "query_ms": 26.965,
+          "results": [
+            {
+              "rank": 1,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0018",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.1876,
+              "exact_answer": "The Procter & Gamble Company Identifiable intangible assets at September 30, 2026, were comprised of: Gross Carrying Amount Accumulated Amortization Intangible assets with determin"
+            },
+            {
+              "rank": 2,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0021",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1177,
+              "exact_answer": "The following table presents the estimated future amortization expense related to definite-lived intangible assets as of August 2, 2026: in millions Amortization Expense Fiscal 202"
+            },
+            {
+              "rank": 3,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0019",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.1077,
+              "exact_answer": "Intangible assets with indefinite lives -> 2026: $19,527M"
+            },
+            {
+              "rank": 4,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0027",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.107,
+              "exact_answer": "Diluted weighted average common shares -> 2026: $996M | 2025: $994M"
+            },
+            {
+              "rank": 5,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0020",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.1006,
+              "exact_answer": "(2) Primarily reflects the net impact of foreign currency translation as well as immaterial measurement period adjustments related to acquisitions completed in the prior fiscal yea"
+            },
+            {
+              "rank": 6,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0026",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.0901,
+              "exact_answer": "(1) For the derivatives in net investment hedging relationships, the amount of gain/(loss) excluded from effectiveness testing, which was recognized in Interest expense, was $59 an"
+            },
+            {
+              "rank": 7,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0018",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.0806,
+              "exact_answer": "(1) Finance lease assets are recorded net of accumulated amortization of $1.7 billion and $1.6 billion as of August 2, 2026 and February 1, 2026, respectively. The following table "
+            },
+            {
+              "rank": 8,
+              "chunk_id": "0000354950_0001628280-26-058715_chunk_0006",
+              "ticker": "HD",
+              "section": "Part I - Item 1. Financial Statements",
+              "score": 0.0796,
+              "exact_answer": "CONSOLIDATED STATEMENTS OF CASH FLOWS (Unaudited) Six Months Ended in millions August 2, 2026 August 3, 2025 Cash Flows from Operating Activities: Net earnings $ 8,055 $ 7,984 Reco"
+            },
+            {
+              "rank": 9,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0006",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.068,
+              "exact_answer": "OTHER NONCURRENT ASSETS -> 2026: $12,549M"
+            },
+            {
+              "rank": 10,
+              "chunk_id": "0000080424_0000080424-26-000256_chunk_0024",
+              "ticker": "PG",
+              "section": "Full Filing Narrative",
+              "score": 0.0483,
+              "exact_answer": "The notional amounts and fair values of financial instruments used in hedging transactions as of September 30, 2026 and June 30, 2026, are as follows: Notional Amount Fair Value As"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "warnings": [
+    "Agent-prepared source target IDs are not independent human gold",
+    "Known target count is not exhaustive corpus Recall@k",
+    "Qdrant local payload indexes do not exercise server prefilter performance",
+    "R6 source code is deterministic, despite class name",
+    "Query embeddings were generated in separate model processes; latency is separate"
+  ]
+}

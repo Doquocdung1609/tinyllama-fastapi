@@ -1,0 +1,16 @@
+{
+  "status": "AUTHOR_BENCHMARK_DENOMINATOR_COUNTEREXAMPLE",
+  "retrieved_ids": [
+    "A"
+  ],
+  "independently_relevant_ids": [
+    "A",
+    "B"
+  ],
+  "author_relevant_ids_from_returned_only": [
+    "A"
+  ],
+  "author_style_recall_at_10": 1.0,
+  "source_judged_recall_at_10": 0.5,
+  "scope": "metric-code audit, synthetic counterexample; not empirical retrieval"
+}

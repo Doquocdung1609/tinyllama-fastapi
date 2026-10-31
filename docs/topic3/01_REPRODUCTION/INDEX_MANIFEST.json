@@ -1,0 +1,19 @@
+{
+  "status": "PASS_THREE_VECTOR_ISOLATED_INDEX",
+  "collection": "topic3_author_methods_2sec_2026",
+  "points": 121,
+  "corpus_sha256": "f8e4fc3650976b3b7658b6eac8bbf1d26e92e23fa11bd05f83f115bbd39ccbbf",
+  "vector_sha256": {
+    "dense": "d52ebdcff27ac4b9e48b9bbf175b86aac1e536e94e3da455e94ba31e790c8afc",
+    "bm25": "2fdc64660df988f0bec31ff8635a2b53a23be8123bf52a98f3514cfe35681478",
+    "splade": "8eb492873cfb118179f8b9a58302367f58eb02952e6a50d3c536b3336ca68e02"
+  },
+  "elapsed_s": 0.283,
+  "point_schema": [
+    "dense:384d_cosine",
+    "bm25:sparse_idf",
+    "sparse:splade_idf"
+  ],
+  "local_qdrant": true,
+  "limitation": "Different two-filing corpus, sequential embedding lifecycle and Qdrant local payload-index warning; not exact author benchmark"
+}

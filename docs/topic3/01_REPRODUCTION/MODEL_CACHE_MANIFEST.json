@@ -1,0 +1,212 @@
+{
+  "status": "LOCAL_MODEL_CACHE_HASHED",
+  "file_count": 41,
+  "total_bytes": 600020407,
+  "files": [
+    {
+      "path": "blobs/.huggingface-shared-blobs",
+      "bytes": 3,
+      "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+    },
+    {
+      "path": "blobs/22/22fdccece68e07a8e483a6fc387c3a264d9e0fad4826d3aa9ba9bfa5fe02c71b",
+      "bytes": 532091260,
+      "sha256": "65adbad0d7e1bc882c867d534821d52e60d6f666a91662be3f58457d08d25bf3"
+    },
+    {
+      "path": "blobs/22/22fdccece68e07a8e483a6fc387c3a264d9e0fad4826d3aa9ba9bfa5fe02c71b.refs",
+      "bytes": 104,
+      "sha256": "0ac277384f947e7e90691d81287059d35ef78f4f02f5d06bc8d0b42bd152db1c"
+    },
+    {
+      "path": "blobs/aa/aaca296ced1def8c4e3df6cb215f78017b69427da86a9b725e77e8f68665ca8d",
+      "bytes": 66465124,
+      "sha256": "51f1bd0addd6e859e42c2c8021a5e5461385bb676a649f4b269aa445449f2431"
+    },
+    {
+      "path": "blobs/aa/aaca296ced1def8c4e3df6cb215f78017b69427da86a9b725e77e8f68665ca8d.refs",
+      "bytes": 113,
+      "sha256": "cfefc13b128d7eeec715cc65877ff0a9f823f1dcce87fb3d777614f4d2493d96"
+    },
+    {
+      "path": "CACHEDIR.TAG",
+      "bytes": 195,
+      "sha256": "e8893e2dcb3f4545ef67a0a5b7b769113d38eef1aa61c7c7ba14659b02af955f"
+    },
+    {
+      "path": "models--Qdrant--bge-small-en-v1.5-onnx-Q/blobs/0d7726d0cdccb62ee17c03bd1595cff07199b8f8",
+      "bytes": 706,
+      "sha256": "13582bcf2effc85b7bf3d3f5532e686bc1c9ce86bb009d10f0ec33cbe92299dd"
+    },
+    {
+      "path": "models--Qdrant--bge-small-en-v1.5-onnx-Q/blobs/688882a79f44442ddc1f60d70334a7ff5df0fb47",
+      "bytes": 711396,
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    },
+    {
+      "path": "models--Qdrant--bge-small-en-v1.5-onnx-Q/blobs/75305659f7795d4549f0e23688b52fa20a32f925",
+      "bytes": 1242,
+      "sha256": "0b29c7bfc889e53b36d9dd3e686dd4300f6525110eaa98c76a5dafceb2029f53"
+    },
+    {
+      "path": "models--Qdrant--bge-small-en-v1.5-onnx-Q/blobs/9bbecc17cabbcbd3112c14d6982b51403b264bfa",
+      "bytes": 695,
+      "sha256": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a"
+    },
+    {
+      "path": "models--Qdrant--bge-small-en-v1.5-onnx-Q/files_metadata.json",
+      "bytes": 733,
+      "sha256": "b7c49dae21a6abb256580b264f6bfe250f28674ebf98209014d25cf4dcab8f92"
+    },
+    {
+      "path": "models--Qdrant--bge-small-en-v1.5-onnx-Q/refs/main",
+      "bytes": 40,
+      "sha256": "5821be71e4de7a1e0abd47d130583a7c38ec6ed676fdf8d0d532a168edb60438"
+    },
+    {
+      "path": "models--Qdrant--bge-small-en-v1.5-onnx-Q/trees/aa8f8b060edb00e03bfdd08813a2949946c8ba55.json",
+      "bytes": 1199,
+      "sha256": "b36745b192ad9da9788cb4505f6eb753786ee077609b52283ba92e3aedc7f4ed"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/00af58791541ed63f33c98207199f6b32727f571",
+      "bytes": 813,
+      "sha256": "58ac7f7c074b70dc0fc86f6fcf40b2c227e9f95627e90e57971d5cce1e30e2e9"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/1280aa3b08d64b846272b2d23314377200db36e9",
+      "bytes": 936,
+      "sha256": "019f104ba2ed07436d05f9cdd3383034ad66014edc27fc651f837e1a038b6451"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/45651c90ec7ea5b26c51ea9a11fddafb00652190",
+      "bytes": 1910,
+      "sha256": "0ab53d21cbde00c6bf367706a0243c646140ba564cce7e83ac33d80f8923e957"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/47ee200f6781ddfdb31af37e317e1f05d10a04ff",
+      "bytes": 1579,
+      "sha256": "952af766edc9b8e7ddc877fc464cbd94b91754b5621fdfdd7020568fd4813fcd"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/5a48ccce0737bb38cb99cafa1f8d3d0ce34e7488",
+      "bytes": 260,
+      "sha256": "f2c7f0c2bd3dba42da700776266831853a3b5f1207fada5c15207334109abb57"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/6a7d50cc633609c8bc2da53c3dac9a015c248b62",
+      "bytes": 2176,
+      "sha256": "6125eadf28ba664a60bf4296147bcbd40b80be93670056fdb229960ac15e2310"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/6ee02b51fb1711625c1de28595615cdecba4de7c",
+      "bytes": 1654,
+      "sha256": "293d7841f198e4012f49e8e5653c3bfd073a58cea1259fa2c0fcec894167b628"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/742bb6263b99fb2ea6e1e3624a65eb2799a1e24c",
+      "bytes": 559,
+      "sha256": "2a9d9d756bc4257d49329994f805c712cd5ab6746162e2082752238766c1c0c8"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/94e9f9a0b07a68aeff30605fc445db71f63be630",
+      "bytes": 1227,
+      "sha256": "64a68b5ebaa616b25bd976ac915c326f2ea8cce8b59a0ac8c5728b980ae4fb0c"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/9ac1abbb6cba1fb3159caa6d88b25543b9080031",
+      "bytes": 851,
+      "sha256": "f7e5b42208ccf1b1f282f9e0f8570e464272762bda5718b6b26750f510a688dc"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/9d08b144659c4ae804bb84a624e1248bb2b90e40",
+      "bytes": 2167,
+      "sha256": "7a97c6dc81144f7e8fcfe976025954ca3731f78a75d1fd86aa87f261fd195dae"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/9e26dfeeb6e641a33dae4961196235bdb965b21b",
+      "bytes": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/c2241d0ee7bbc192abe3b56efffb75f29a29e185",
+      "bytes": 1362,
+      "sha256": "f0c25acd7ec02a31f6679d9664ec5222ca846fdbc58db96160f4e7c0ddb0f7ea"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/cafa0324b53763f7efadda5b0f3d0321ffa7ab38",
+      "bytes": 453,
+      "sha256": "e5a2a7c390fe3ad0c0a132586ed11492b635d66a1f426cd89677f80b07bc76a6"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/d3edc6757912e3d83acfa241859c4a1bdb6005ad",
+      "bytes": 424,
+      "sha256": "1bedc9cf5a8830dacf8c4ee0d8b301f0801861756ad0d504431d01047f961b0c"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/eb53a8fc2544b16d2a849d98e26c6e34bf07bdb0",
+      "bytes": 1286,
+      "sha256": "6e7b98378c6b728266a83ebf035d927abf16b9e0d815d6204d81d90d896bcc9b"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/ecb83d4a7f393b67b054b44e337d683b2ff2d973",
+      "bytes": 1235,
+      "sha256": "1743191192b4a4f77fcc216499455dc00c1b8626fdd407076a8deefff80e3d59"
+    },
+    {
+      "path": "models--Qdrant--bm25/blobs/ee3a26e793f8ab69a44b30332708cc122b258b51",
+      "bytes": 6348,
+      "sha256": "0df01c0a184d8c15077c6f0ee70e25e0c0308d827b92b14a19f5f819a0c465d0"
+    },
+    {
+      "path": "models--Qdrant--bm25/files_metadata.json",
+      "bytes": 2492,
+      "sha256": "04aa00b9a0db081bf9f184adc5ef58def85d4de9462f7b30370706ff70579887"
+    },
+    {
+      "path": "models--Qdrant--bm25/refs/main",
+      "bytes": 40,
+      "sha256": "2c7abc4aab2af8a57d18868f76bdf4d27cabff8945d059535fa29d5673da1749"
+    },
+    {
+      "path": "models--Qdrant--bm25/trees/22b8d2af71a76161e18dd432d2cee0eefa66e412.json",
+      "bytes": 3403,
+      "sha256": "41d24eccd4e5bf3bdcb69d15160998f603de60babdaa8bc87b19ef03a20b8f47"
+    },
+    {
+      "path": "models--Qdrant--Splade_PP_en_v1/blobs/0b2e19562270fa3f6c35a6c544cf7def4a05ec27",
+      "bytes": 1360,
+      "sha256": "fc88e344ea2ba2cb3feb4e78fbc3813d194bbe12bc5cbb7094572f8628a26085"
+    },
+    {
+      "path": "models--Qdrant--Splade_PP_en_v1/blobs/3c0e6344ec45a9a6e5a621d6711baf109c2d9f87",
+      "bytes": 711649,
+      "sha256": "91f1def9b9391fdabe028cd3f3fcc4efd34e5d1f08c3bf2de513ebb5911a1854"
+    },
+    {
+      "path": "models--Qdrant--Splade_PP_en_v1/blobs/9bbecc17cabbcbd3112c14d6982b51403b264bfa",
+      "bytes": 695,
+      "sha256": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a"
+    },
+    {
+      "path": "models--Qdrant--Splade_PP_en_v1/blobs/f881cc73494a37c9ce2a59b46efde89f47a7cb25",
+      "bytes": 755,
+      "sha256": "017fde19abff1131c9c747fbd71f8348173409ac6d3d350fd122fd33341ecd85"
+    },
+    {
+      "path": "models--Qdrant--Splade_PP_en_v1/files_metadata.json",
+      "bytes": 724,
+      "sha256": "af8ba0cc5823e32925f1861483b691839dfea8b0d55b758187ffe25757cf3612"
+    },
+    {
+      "path": "models--Qdrant--Splade_PP_en_v1/refs/main",
+      "bytes": 40,
+      "sha256": "fb1110335e33adb2508681c66ac16333cfcba260ed5ab1dcf5b42b064f719a76"
+    },
+    {
+      "path": "models--Qdrant--Splade_PP_en_v1/trees/600ce23fd7611e71694fcf724f46778f1ad24c1c.json",
+      "bytes": 1197,
+      "sha256": "1f0927ee2696575a216fef3b8694f29186c837213e1de49ad353af5353847850"
+    }
+  ]
+}
