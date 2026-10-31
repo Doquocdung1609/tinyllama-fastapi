@@ -262,11 +262,16 @@ def analysis(payload:AnalysisRequest):
     try:
         if payload.mode=='numeric':return numeric_answer(workspace(),payload)
         if payload.mode=='document_qa':
-            result=workspace().search(payload.question,'hybrid',5,payload.document_ids)
+            if payload.search_profile=='production_v3':
+                result=unified_search(UnifiedSearch(query=payload.question,mode='hybrid',top_k=5,
+                    source='USER_UPLOADS',document_ids=payload.document_ids,search_profile='production_v3'))
+            else:
+                result=workspace().search(payload.question,'hybrid',5,payload.document_ids)
             # Ordinary RAG explanations never certify unchecked numbers.
             return {'status':'SOURCE_EXCERPTS' if result['results'] else 'INSUFFICIENT_EVIDENCE',
                     'answer':'Các đoạn nguồn liên quan; số liệu trong trích đoạn chưa được xác minh ô nguồn.',
-                    'citations':result['results'],'values':[]}
+                    'citations':result['results'],'values':[],
+                    'search_profile':payload.search_profile,'generation':result.get('generation')}
         raise ValueError('USE_RESEARCH_JOB_ENDPOINT')
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
 

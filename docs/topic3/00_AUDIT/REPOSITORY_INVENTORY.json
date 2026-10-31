@@ -1,0 +1,53 @@
+{
+  "status": "P0_READ_ONLY_INVENTORY",
+  "branch": "codex/topic3-reproduction-improvement",
+  "base_commit": "f5b3b619be12aa0b6d8f7e62b349eb8a634e57ef",
+  "paper": {
+    "sha256": "93438e122961cc88ac65b7753b4dc1d301dc15c6d89c2e4467f46cd6aa04d251",
+    "bytes": 8528493,
+    "pages": 23,
+    "text_layer": false
+  },
+  "author_repository": {
+    "url": "https://github.com/satyam671/financial-hybrid-search-qdrant",
+    "commit": "16682dd42ca9cd4887ae74935cb3526dce580c49",
+    "golden_query_count": 25,
+    "golden_sha256": "7c00f56e778149f9d04d504f04b2869af7deb9866f4dd8a446092345a4edc800",
+    "golden_fields": [
+      "category",
+      "description",
+      "expected_winner",
+      "id",
+      "query",
+      "relevant_terms"
+    ],
+    "included_data_files": [
+      "benchmark_report.md"
+    ],
+    "raw_sec_corpus_included": false
+  },
+  "local_isolated_sources": {
+    "sec_raw": {
+      "0000080424/0000080424-26-000256/pg-20260930.htm": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+      "0000354950/0001628280-26-058715/hd-20260802.htm": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+    },
+    "owner_pdf_count": 9,
+    "owner_pdf_sha256": {
+      "00499ce748dfd085f220339508cd56bb.pdf": "00499ce748dfd085f220339508cd56bb49695d45f03d3610f5fc955013d998c7",
+      "0991f170e8d358d9b09f851c49894d22.pdf": "0991f170e8d358d9b09f851c49894d22f1a5184a9dab6191bc528bb46ec3a6a7",
+      "2bed2b3c312c8149e6a2ff6ab80c694a.pdf": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "3dd381d161b321a9af4f3dd5b8394485.pdf": "3dd381d161b321a9af4f3dd5b8394485661595fd502d6ff39a43df3e3d794e6e",
+      "4279e4856d41db46abcffd38a7cbf4ea.pdf": "4279e4856d41db46abcffd38a7cbf4eaa299940dc2139625688d5ef14e46d61f",
+      "4a92af827aaf1e73e017544d0ff20d0d.pdf": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "7c0b31d9926fc3ce6a932abd2e52bf80.pdf": "7c0b31d9926fc3ce6a932abd2e52bf804406c38858b16e50526d799e354b24a4",
+      "9b76dc9f61b4d0be5923e74f726306cf.pdf": "9b76dc9f61b4d0be5923e74f726306cfa6b161584dc0867d73d3c50f38e42e16",
+      "cd837d9dfbd725a716238c9a9f95c0e6.pdf": "cd837d9dfbd725a716238c9a9f95c0e66f41190666c673514e412dda0ea762da"
+    }
+  },
+  "v3r3_artifacts_sha256": {
+    "PAIRED_PRECISION_FINAL.json": "1bfdc11ca9e32c4a5972fd27f9cda8794f7ff4400007666f33f9f243f9d9688c",
+    "AFTER_178_CEO_RECONSTRUCTED.json": "0321586553d9a6612cbc3116fd923498cb3082c7c430d9d036c1584edc5f418f",
+    "BASELINE_AUDIT.json": "462054fd0d4205de9428e880eb8c9e0c86f3f0d9434e908c5127d46303d5fe19"
+  },
+  "equivalence": "EXACT_REPRODUCTION_NOT_ESTABLISHED"
+}

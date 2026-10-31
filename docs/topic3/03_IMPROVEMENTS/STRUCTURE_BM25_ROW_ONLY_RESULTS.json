@@ -1,0 +1,627 @@
+{
+  "status": "PROVISIONAL_EXPOSED_STRUCTURE_BM25",
+  "variant": "row_only",
+  "source_chunk_sha256": {
+    "0000080424.jsonl": "2de4b808c6f33473e7b9a2e0acf041504b7782a3c1bb77deac09522a2b7ab6aa",
+    "0000354950.jsonl": "0b6bb51912420a0e45aeb4e2ddb7a5c3d0a5588c4101f5cfa7e74e3573c8bd21"
+  },
+  "structure_targets_sha256": "cb8b64be7ff96937b617e2ec805cc9aa7b3e05afaf3bde14ff3f71bb63889cfc",
+  "qrels_sha256": "daeb3bc5ba9425aa4ed729e6967bff73177b3c6f12beae52d8a8ba56043ea601",
+  "model": "Qdrant/bm25",
+  "index_points": 1241,
+  "index_s": 3.05,
+  "summary": {
+    "known_target_at_1": 0,
+    "known_target_at_5": 1,
+    "known_target_at_10": 1,
+    "positive_denominator": 4,
+    "query_p50_ms": 6.952
+  },
+  "records": [
+    {
+      "id": "t3-pg-net-sales-2026",
+      "query": "What were Procter & Gamble's net sales for the three months ended September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+      "target_rank_top10": null,
+      "query_ms": 7.985,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_600c3d68b67287564f599173bd302228",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 59.36728286743164,
+          "statement_title": null,
+          "source_text_hash": "e6d8d81a7831329d33b861391a7b2f222ed726bcd33a29e3463c2f7b32fe89f5"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_9ddbf1d9eff707fedbc80e74463ce65f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 54.650489807128906,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "d4bdea78c2f87bdb43c1d63ecd63e4d82dbd9596d24465b69da6153230e25585"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_abc5586c106b6bfed55a93258340dcba",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 52.892845153808594,
+          "statement_title": null,
+          "source_text_hash": "bc635ebcf48c32d46761e8d1443eb90c708f8e17fa00db825457f0dcad0e1d2b"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_5f7cf498be431b5f61d6c2915be69868",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 52.24921417236328,
+          "statement_title": null,
+          "source_text_hash": "5272ff21f3addbe41c38b3091c614035fb56bb2e98e76db91bde75fd255b3026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_03d2a413b6034a36c1e50fff30300235",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 51.117576599121094,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "2a34353d53ce1107146c474dc879a9edc5b95e60a6ef8d8e87eb564114685a6e"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_4c8708e08a625ac401d56985b0c12502",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 50.956844329833984,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "c5c1134067ff81d4407b6d0829acc0844ef60853920117000fad1c94910bf2f3"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_2c4525b2c0d8d0286c8b4a7fe53a46a2",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 48.69178771972656,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "3fa5082885aabfa0f6151d90b38716e9f480e7fff65ada533f5cd69c49eb1495"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_45ecdffa57cf52e1ab872dd38a501e53",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 48.527584075927734,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "50a04a3777c6424e5a9a817dcedd9764fedcac0511080b6b7ed3216bda686c13"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_30720b82637875d7defcdce54dcfe56c",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 48.03205108642578,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "7d19314faefa8147cc6387f270739381fc8ddef67b9f926b29af5fb2a055f4b5"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_78eda8bf75526a5411cb9f608f20d55f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 48.03205108642578,
+          "statement_title": "Disclosures about Financial Instruments",
+          "source_text_hash": "7d19314faefa8147cc6387f270739381fc8ddef67b9f926b29af5fb2a055f4b5"
+        }
+      ]
+    },
+    {
+      "id": "t3-pg-assets-2026",
+      "query": "What were Procter & Gamble's total assets on September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_b411c28ab2846244e486bed33892be95",
+      "target_rank_top10": null,
+      "query_ms": 7.753,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_df2d43ed4654e98d89f55a8c9be22148",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 30.77557373046875,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4fe3794cd455573f12e7eac5beb14948dd5719b5aa90926a2cc8f2c52254c369"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_8dc9e43221105373980cc4567645a147",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 29.75458335876465,
+          "statement_title": null,
+          "source_text_hash": "c4e4e310ed9cdc44f1f6cb87fb6d010210fb8b5b0a65b70015950dde972c88c1"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_352f363ba0f3c2e6bb261858b93803ee",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 28.18276596069336,
+          "statement_title": null,
+          "source_text_hash": "fd03b820e116507ea08ca7946c231adc1dab880f8b092e431313afd364a2f992"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_0573f88a08e8d2b6238d56fe06be6ab8",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 28.123552322387695,
+          "statement_title": null,
+          "source_text_hash": "bb63eb1632b85329ebaaf42aa24afdb773c120e7a3befc64a3487d7a5334f4a1"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_d420e97b9bd459185a0f0b83f5dd232a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 27.849281311035156,
+          "statement_title": null,
+          "source_text_hash": "35a6b9d672e3f94479f2dbd5cfc9bfb8af0830ae67aec40d9d74550bd08a7b7e"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_c22f8d67ffd0f5207b76c4b1439044a2",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 27.729040145874023,
+          "statement_title": null,
+          "source_text_hash": "93dd75909ad68a05999823c29d511d2c493f9636e12039165f51451b11feef6a"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_e6c5138d68dcf758aafc72012465eb6e",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 27.499725341796875,
+          "statement_title": null,
+          "source_text_hash": "c6e8143831c3b9b4e08d72d32a82c3e9e7740a54f79b737ae2b8b44e9b9855c0"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_9ddbf1d9eff707fedbc80e74463ce65f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.994199752807617,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "d4bdea78c2f87bdb43c1d63ecd63e4d82dbd9596d24465b69da6153230e25585"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_4bcfdbfb84e3ef5b5cd5ef654038cce6",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 25.870187759399414,
+          "statement_title": null,
+          "source_text_hash": "763e899555c4a4dc4db8a50fbcf3df708706ef863a36faa2fd568d54be1d9587"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_355280c4bf6438db97ed2f5d064c1fbd",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 24.939393997192383,
+          "statement_title": null,
+          "source_text_hash": "71d43c982bd40fd29c38af48664fe8a3fcc92a2afbc9a6d9c2a6f3060fc3aae7"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-assets-2026",
+      "query": "What were Home Depot's total assets on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+      "target_rank_top10": null,
+      "query_ms": 5.892,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_8924b9fc7d82cfd23356caee6edb9d43",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 41.96908187866211,
+          "statement_title": null,
+          "source_text_hash": "55867478a83eec3a96550dc593532e1235e578add27f4d7f67a61b4d6bb62950"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_d9606b8334ee654d5cda6579123945a5",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 31.654464721679688,
+          "statement_title": null,
+          "source_text_hash": "77f2ebb75d94ba7d542e9e7fbba6ec53f03b5e383a682b2d3dadb811703366c8"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_4bcfdbfb84e3ef5b5cd5ef654038cce6",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 30.630361557006836,
+          "statement_title": null,
+          "source_text_hash": "763e899555c4a4dc4db8a50fbcf3df708706ef863a36faa2fd568d54be1d9587"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_de16e3fa7c39ddf112baffe41b5c5d74",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 29.28866958618164,
+          "statement_title": null,
+          "source_text_hash": "de808486d2cbfe646decf9a92785566e66216045f5a297e15d084e2d9963e096"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_ed76823ada8bc0597d68f5a172dbf4c2",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.255395889282227,
+          "statement_title": "SIGNATURES",
+          "source_text_hash": "47c6d870f81deddc82ef5f7142137e8ca394ff018033a45859978537cd580d25"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_e0b0859f6e9e7b7174e35973566869f8",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 29.196725845336914,
+          "statement_title": null,
+          "source_text_hash": "074642decafc5aaeb73b0254975dfcbb0c9c83b6f573df40198c637ce33d7c83"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_0406e65af2c8451b73d9376836532c66",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 28.194683074951172,
+          "statement_title": null,
+          "source_text_hash": "3f4f983767df5d3109484dd93ca622a1b3bf5cefbd53a417800772d2d3059449"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_9e17541eb016b7d1503184922a398048",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 27.74541664123535,
+          "statement_title": null,
+          "source_text_hash": "cd84d3f30a44361b2c7b051df0f76abc2a3205a688d1646f536d82c80d517e02"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_9047a4b3d76eb1d87a6521a6ac036b86",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 27.321035385131836,
+          "statement_title": null,
+          "source_text_hash": "e985379a18d8152a86309b3ce5c5e334b93c909866ebb31036c3302ee250405b"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_15ccd133edbe4e5e8f0874ee18dfee7c",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 26.85080909729004,
+          "statement_title": null,
+          "source_text_hash": "9dd087988897b07062c90416736d23df2ee01357d59e341bfa26472ed2c8dc8e"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-cash-2026",
+      "query": "How much cash and cash equivalents did Home Depot report on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+      "target_rank_top10": 5,
+      "query_ms": 6.511,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_8924b9fc7d82cfd23356caee6edb9d43",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 41.63755416870117,
+          "statement_title": null,
+          "source_text_hash": "55867478a83eec3a96550dc593532e1235e578add27f4d7f67a61b4d6bb62950"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_6fd57379156be0ffc7eccfe48deaaecd",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 37.34052276611328,
+          "statement_title": null,
+          "source_text_hash": "030f782f6f604ad468e6d277003b324cbd0b9b3a711ff9c0ae8b78a5824457cd"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_de16e3fa7c39ddf112baffe41b5c5d74",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 36.47852325439453,
+          "statement_title": null,
+          "source_text_hash": "de808486d2cbfe646decf9a92785566e66216045f5a297e15d084e2d9963e096"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_78d7302efb4070e58371cd63ace449af",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.745685577392578,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "96f9810c6f64c52774795239f1507837f255c71d1a0a2b0ebb97a70bf4857799"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.201723098754883,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "d55a5039537169f160f46cebd3b35ef0c4743832facfa78603376cd6f6c289dd"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_15ccd133edbe4e5e8f0874ee18dfee7c",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 29.115877151489258,
+          "statement_title": null,
+          "source_text_hash": "9dd087988897b07062c90416736d23df2ee01357d59e341bfa26472ed2c8dc8e"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_ed76823ada8bc0597d68f5a172dbf4c2",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.0242977142334,
+          "statement_title": "SIGNATURES",
+          "source_text_hash": "47c6d870f81deddc82ef5f7142137e8ca394ff018033a45859978537cd580d25"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_6abce682d837db10de886b84722d0511",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 27.14949607849121,
+          "statement_title": null,
+          "source_text_hash": "5339093211ca559df7cfc556c555876767e005be79dc7b771da12a1e2789d38f"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_e35994dfd36489a76caa3d4bef9bbf69",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 26.47930335998535,
+          "statement_title": null,
+          "source_text_hash": "bf768ebdefd210e8e55a36011fcfcb63f21bc30aa2a8ca0334919780b4244467"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_180fe3058699abdf996c006b738d1edc",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 26.382652282714844,
+          "statement_title": null,
+          "source_text_hash": "ba1d1a38e3fc872686d80dbe20127fa17c4a6df3d34e8e5545107399069f73b4"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-pg-2037",
+      "query": "What were Procter & Gamble's total assets on September 30, 2037?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 6.429,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_df2d43ed4654e98d89f55a8c9be22148",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 30.77557373046875,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4fe3794cd455573f12e7eac5beb14948dd5719b5aa90926a2cc8f2c52254c369"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_8dc9e43221105373980cc4567645a147",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 24.803157806396484,
+          "statement_title": null,
+          "source_text_hash": "c4e4e310ed9cdc44f1f6cb87fb6d010210fb8b5b0a65b70015950dde972c88c1"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_d420e97b9bd459185a0f0b83f5dd232a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 23.877513885498047,
+          "statement_title": null,
+          "source_text_hash": "35a6b9d672e3f94479f2dbd5cfc9bfb8af0830ae67aec40d9d74550bd08a7b7e"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_0573f88a08e8d2b6238d56fe06be6ab8",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 23.579853057861328,
+          "statement_title": null,
+          "source_text_hash": "bb63eb1632b85329ebaaf42aa24afdb773c120e7a3befc64a3487d7a5334f4a1"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_352f363ba0f3c2e6bb261858b93803ee",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 23.32552146911621,
+          "statement_title": null,
+          "source_text_hash": "fd03b820e116507ea08ca7946c231adc1dab880f8b092e431313afd364a2f992"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_e6c5138d68dcf758aafc72012465eb6e",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 22.875661849975586,
+          "statement_title": null,
+          "source_text_hash": "c6e8143831c3b9b4e08d72d32a82c3e9e7740a54f79b737ae2b8b44e9b9855c0"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_69771d08332635d89990f881a18bf15c",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 22.712549209594727,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "7c3b4f86e313dab1f339d34251532540f321bfc335883c8ebed77ac81a062442"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_7f6f7790bd970a1b36e9e95523007a65",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 22.712549209594727,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "7c3b4f86e313dab1f339d34251532540f321bfc335883c8ebed77ac81a062442"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_96e6be8c30f1dbf4e66068c223708591",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 22.375877380371094,
+          "statement_title": "(Exact name of registrant as specified in its charter)",
+          "source_text_hash": "f4c8ea85294925e5f302dd9caae5daffd78f8a3d4a44f86bfaf843958e6db5b3"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_410dcc00d4e2d8896175b8f88ae21603",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 22.33625602722168,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "bce25373cf517c4293ceea35dc379339844b275e5aa96602f6833ba9f44e84e4"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-issuer",
+      "query": "What were Apple Inc.'s total assets on September 27, 2025?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 7.393,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_4bcfdbfb84e3ef5b5cd5ef654038cce6",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 28.190290451049805,
+          "statement_title": null,
+          "source_text_hash": "763e899555c4a4dc4db8a50fbcf3df708706ef863a36faa2fd568d54be1d9587"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_0573f88a08e8d2b6238d56fe06be6ab8",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 23.60701560974121,
+          "statement_title": null,
+          "source_text_hash": "bb63eb1632b85329ebaaf42aa24afdb773c120e7a3befc64a3487d7a5334f4a1"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_8dc9e43221105373980cc4567645a147",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 23.476301193237305,
+          "statement_title": null,
+          "source_text_hash": "c4e4e310ed9cdc44f1f6cb87fb6d010210fb8b5b0a65b70015950dde972c88c1"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_c7fb7c43c92cf468d258a929c5d5abe5",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.31673240661621,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "076c0fe021032eefb6386b708a1da00f22d5ea49870b6fce6a54083d1b19578d"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_88e7fc817805b5a85695a003b19d8637",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 22.075458526611328,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "09dc0538a1bc02f811d178335bd70d0fe3243abdde949f881887fcf181a4908a"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_45ecdffa57cf52e1ab872dd38a501e53",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 19.859437942504883,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "50a04a3777c6424e5a9a817dcedd9764fedcac0511080b6b7ed3216bda686c13"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 19.125398635864258,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "ceed3df40fa6d83384479044bcf4bd34aee57437c239dc9a9db3c0ec87c79187"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 19.125398635864258,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_fea9494de208f56dedc6c830c39001da",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 19.065486907958984,
+          "statement_title": "The following table presents certain consolidated balance sheet information related to operating and finance leases:",
+          "source_text_hash": "7633434b9c37aa6a7bfcd6559b4a7b86c767a9c809baf925d479ebcd3c2788f0"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_0e727845b3cd20600e7cc4be2cda419e",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 19.005949020385742,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "8b48f50ee93f4da26db19d6d6d4b2225ca345ded6ae69bfad6c9e00b8419be5e"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Machine-prepared source row targets, not independent human gold",
+    "Different evidence units change corpus cardinality and BM25 IDF; same raw filings/model/query vectors",
+    "PARTIAL_EXTRACTION source documents; numeric certification not attempted"
+  ]
+}

@@ -1,0 +1,627 @@
+{
+  "status": "PROVISIONAL_EXPOSED_STRUCTURE_BM25",
+  "variant": "no_issuer",
+  "source_chunk_sha256": {
+    "0000080424.jsonl": "2de4b808c6f33473e7b9a2e0acf041504b7782a3c1bb77deac09522a2b7ab6aa",
+    "0000354950.jsonl": "0b6bb51912420a0e45aeb4e2ddb7a5c3d0a5588c4101f5cfa7e74e3573c8bd21"
+  },
+  "structure_targets_sha256": "cb8b64be7ff96937b617e2ec805cc9aa7b3e05afaf3bde14ff3f71bb63889cfc",
+  "qrels_sha256": "daeb3bc5ba9425aa4ed729e6967bff73177b3c6f12beae52d8a8ba56043ea601",
+  "model": "Qdrant/bm25",
+  "index_points": 1241,
+  "index_s": 4.94,
+  "summary": {
+    "known_target_at_1": 2,
+    "known_target_at_5": 3,
+    "known_target_at_10": 3,
+    "positive_denominator": 4,
+    "query_p50_ms": 15.391
+  },
+  "records": [
+    {
+      "id": "t3-pg-net-sales-2026",
+      "query": "What were Procter & Gamble's net sales for the three months ended September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+      "target_rank_top10": 1,
+      "query_ms": 17.937,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 41.970359802246094,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "5e90d5648f13c8f7ef1a88a14078a9090226ecc5ad322b7cf976df7b546a96e7"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_82fddc6d7b3f833bff9ca172730281aa",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 38.237083435058594,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "de3a6230386e53d04bdaf88f72295744daa8bb2489ae651df07099e1641a3dd2"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_c7fb7c43c92cf468d258a929c5d5abe5",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 38.17509078979492,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "076c0fe021032eefb6386b708a1da00f22d5ea49870b6fce6a54083d1b19578d"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_70c7930c68c1b324e6ec4231fae36714",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 38.11076736450195,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "531e95365678168922b19ab8838f8a6a07e0c5023124caaaf087d9bfc1e07667"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_ba5faabc6c03b1c9abf35c89c7024e71",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 37.81557083129883,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "b0143290175ff1c55b1559141b68a1602b44bd957a61e5f8529790cc86994944"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_22c885bf0d0235377118dcb6698671b3",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 37.39474105834961,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "ac488ec3b1f24309d70b006453b9870c8cee19622f529d817af6134735cbf05d"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_755e549623d25cffff0533e75e4148d2",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 37.28181838989258,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "365d2bd021a8d92d4ad76321e07bfa714f76059fdb7cae3cb8f0f4fb8973b32b"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_29c77511e9548f70b9451045137a2d7f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 37.264892578125,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "7a971f55cf4763361a68f59960322b3da049da3889863c43d53926634183f2b3"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_df2d43ed4654e98d89f55a8c9be22148",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 37.26396942138672,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4fe3794cd455573f12e7eac5beb14948dd5719b5aa90926a2cc8f2c52254c369"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_ecc6cd2e7c89fc9e1c9aea670438f4c1",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 37.163719177246094,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "8e3e0f5e3ff1bde4fc324f5be90e499799609c36fa4deadb0836bb2427fa3727"
+        }
+      ]
+    },
+    {
+      "id": "t3-pg-assets-2026",
+      "query": "What were Procter & Gamble's total assets on September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_b411c28ab2846244e486bed33892be95",
+      "target_rank_top10": 1,
+      "query_ms": 14.975,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 35.827823638916016,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_9674955b4a910f287e1d876922e3c5ba",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 35.01252365112305,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "cff8fec83da7321c5340e7d04f0a0d349d9891f0e86b85f16ba8933dcc7a791a"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_86f19e39dfa17760fde7fba0609f73df",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 29.835590362548828,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "7105c607a52de360b9923753c868362a5818125d9e3cf2e65d1cfbb39f0b04cb"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_0935a479182f1571ed737fcf29691d45",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 29.76369285583496,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "fac5afb401ca6a5ec0defa956cd715f43411594207b90251050a92cb3e50b350"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_df2d43ed4654e98d89f55a8c9be22148",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 29.56166648864746,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4fe3794cd455573f12e7eac5beb14948dd5719b5aa90926a2cc8f2c52254c369"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_78206867a4b84b097256a331098db4c8",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 29.171138763427734,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "82d29847d219ec4fa15649e17bb51e98d14f34a18fbcd0fd6fcd7cf40720261b"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_d2dbe2c93eb069f1aeb4778dd596d9dc",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 29.06896209716797,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "df0bb5c2cfca274f2215f1a21f4c1826b5e05e0bf64d10d9ff8f37cfb60ec2e5"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_c7b5803d75be0bbf44aabe249da3cf37",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 28.640213012695312,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4bcd602448a0a3b8ed3ee8e5f9a33754f4159c03ef47c0a829955cd19b2032d1"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_6a857b02c0a6e20ac55e5ee5e7a38660",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 28.640213012695312,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "33e4e9329ec9b996b07e53222992668d9e04210e1710e28619e86642a0dd805b"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_e2e8c270a2ece5362b29264d18eddd5f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 28.618244171142578,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "19ac1940f0628b68faac2635e1853e9959d2038ba2033322df6d9c3b660d0256"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-assets-2026",
+      "query": "What were Home Depot's total assets on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+      "target_rank_top10": null,
+      "query_ms": 15.411,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_8924b9fc7d82cfd23356caee6edb9d43",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 27.870492935180664,
+          "statement_title": null,
+          "source_text_hash": "55867478a83eec3a96550dc593532e1235e578add27f4d7f67a61b4d6bb62950"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_2332f2854e138a718cd090a10a7ecb0a",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.47484016418457,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "527ff5a2039b2dd35e7b75cc04491f4cdb2f3035d2bb8e7b9d2232a5e6a61eec"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_35990221841060c5fc6c7df296d4a19d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.442472457885742,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "c998f0a3743313989404570ac5c3a544c3a6e98038c17288d887709baa040483"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_b689e7029c4d83d01384cbd334b7fd8f",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.442472457885742,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "bceba39b4c28a0697e96c67a3248b973d3b6684cc0c13094f49d5240d26f9bdb"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_bc1ddf4e43915a11e1b110e4a641c4fd",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.442472457885742,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "8f59cca482b2eb5235784e37b6ff9b5ab209cc087de0602ada0eb9bf73f7afde"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_510202c3475a1fc9dc2f339e0c542035",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.442472457885742,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "826d0d23b6e0d473f6f5f6ac8db7d4aed1fc03529138abfeb4d49cab7a094316"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_a04bedb3283b4e80c37d59a5adfb4275",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.34585952758789,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "463717971fa3c2e4a0c5261dca43e67e5885dfeb81f99ab635791e6a73055e3d"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_dcbc011f90727110d5fc2fc650d7d658",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.154804229736328,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "46c8eeadbf87dbcb0d819cc24571dd3a45d0360cef4a41faea923b5d2eaa600c"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_88e86743de9cca978ea6b67df7c35920",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.154804229736328,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "6af3a735baee493769bf5897dcc87e59f27061b04e894534dc663af37877f196"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_206f8897fca0a121ad35a584af485848",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.029014587402344,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "bde611a36eec5161b2491e2819ee24c77fde18d048bacf209c05157dc50d465e"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-cash-2026",
+      "query": "How much cash and cash equivalents did Home Depot report on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+      "target_rank_top10": 2,
+      "query_ms": 19.65,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_78d7302efb4070e58371cd63ace449af",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 30.9647159576416,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "96f9810c6f64c52774795239f1507837f255c71d1a0a2b0ebb97a70bf4857799"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 30.881061553955078,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "d55a5039537169f160f46cebd3b35ef0c4743832facfa78603376cd6f6c289dd"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_76df117b9fc578e67e60c6e6430bb1fd",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 30.834957122802734,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "bb3f1a3d8b7b33082cf04333ebd37f4099f229c2881fae8c9c3906e9f145f2c7"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_59b83d7801fd4b25d70934a90d5e271d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 30.793344497680664,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "ca06f5c740c408b810a30c5065cb1f20b9365473b3cfc70c8583c07c8e98a26b"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_ef0e2bf67da6c74c6546f53174359633",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 30.607751846313477,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "d480927dbb6f928b26505219a22d8485ed817762d742aca56e8ef20adca6cf51"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_8924b9fc7d82cfd23356caee6edb9d43",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 27.650333404541016,
+          "statement_title": null,
+          "source_text_hash": "55867478a83eec3a96550dc593532e1235e578add27f4d7f67a61b4d6bb62950"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_2332f2854e138a718cd090a10a7ecb0a",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 27.11403465270996,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "527ff5a2039b2dd35e7b75cc04491f4cdb2f3035d2bb8e7b9d2232a5e6a61eec"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_35990221841060c5fc6c7df296d4a19d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 27.077829360961914,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "c998f0a3743313989404570ac5c3a544c3a6e98038c17288d887709baa040483"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_510202c3475a1fc9dc2f339e0c542035",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 27.077829360961914,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "826d0d23b6e0d473f6f5f6ac8db7d4aed1fc03529138abfeb4d49cab7a094316"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_b689e7029c4d83d01384cbd334b7fd8f",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 27.077829360961914,
+          "statement_title": "Item 6. Exhibits.",
+          "source_text_hash": "bceba39b4c28a0697e96c67a3248b973d3b6684cc0c13094f49d5240d26f9bdb"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-pg-2037",
+      "query": "What were Procter & Gamble's total assets on September 30, 2037?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 15.371,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 33.73419189453125,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_9674955b4a910f287e1d876922e3c5ba",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 32.92470932006836,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "cff8fec83da7321c5340e7d04f0a0d349d9891f0e86b85f16ba8933dcc7a791a"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_df2d43ed4654e98d89f55a8c9be22148",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.735591888427734,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4fe3794cd455573f12e7eac5beb14948dd5719b5aa90926a2cc8f2c52254c369"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_86f19e39dfa17760fde7fba0609f73df",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.700340270996094,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "7105c607a52de360b9923753c868362a5818125d9e3cf2e65d1cfbb39f0b04cb"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_0935a479182f1571ed737fcf29691d45",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.63103675842285,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "fac5afb401ca6a5ec0defa956cd715f43411594207b90251050a92cb3e50b350"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_78206867a4b84b097256a331098db4c8",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.092391967773438,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "82d29847d219ec4fa15649e17bb51e98d14f34a18fbcd0fd6fcd7cf40720261b"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_d2dbe2c93eb069f1aeb4778dd596d9dc",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 26.99349594116211,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "df0bb5c2cfca274f2215f1a21f4c1826b5e05e0bf64d10d9ff8f37cfb60ec2e5"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_c7fb7c43c92cf468d258a929c5d5abe5",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 26.74172019958496,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "076c0fe021032eefb6386b708a1da00f22d5ea49870b6fce6a54083d1b19578d"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_70c7930c68c1b324e6ec4231fae36714",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 26.68714714050293,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "531e95365678168922b19ab8838f8a6a07e0c5023124caaaf087d9bfc1e07667"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_c7b5803d75be0bbf44aabe249da3cf37",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 26.549907684326172,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4bcd602448a0a3b8ed3ee8e5f9a33754f4159c03ef47c0a829955cd19b2032d1"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-issuer",
+      "query": "What were Apple Inc.'s total assets on September 27, 2025?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 11.652,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_c7fb7c43c92cf468d258a929c5d5abe5",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 24.21622657775879,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "076c0fe021032eefb6386b708a1da00f22d5ea49870b6fce6a54083d1b19578d"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_c96dcea2414cdccf54d6f58f55ead4a4",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.733318328857422,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4c7bf69057ed758a47e6e2599180a84490bcc779cb99f5cd05e93b8ea2501161"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_61826bb235e8cc0605a921a2161b7339",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.555513381958008,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "bad88cc22ec4e9c592b6ab589e69e9f7c8468733d74bb4c32ce75644dd73dad8"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_abf16ef4465dbba8a7e128e32cd6a7ce",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.50432014465332,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "692df6c975a3f0d86474839096a039ddcc2e68a6a169067eafc9d6884562e50a"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_de75bf3d8d28f1aeee81f23511fd8e12",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.4688663482666,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "a6680aee6dac4b936d7d3f30ea82588524e0cc061619acef2e8437f945759062"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_5b47ba1d98c96c2de5d19aa7116e6e08",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.440710067749023,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "4d8dfdba1863d7450481b79527b432e11ef1cb3851bee977aabeba7f3a19b536"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_4ab593c4c03e632e4d7fa797c90ff06f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.19858741760254,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "7f28b68efb8affb437ebf815726e55ec117fc49c97e50110e626b9fe4cdbe039"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.085397720336914,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_7441cff47c690802a3cc8d71cdc27e7a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.01942253112793,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "659bd2a31ff0c17091c7843a0a5f906ee1f7d20c3fcc2b0452f35345b58b94e0"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_e09f19e3c7a99688dc3be525201e3f05",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.004148483276367,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "c99192f77277af76fd27155a33dcdd43f84bb255acce58016953166fc5f4e862"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Machine-prepared source row targets, not independent human gold",
+    "Different evidence units change corpus cardinality and BM25 IDF; same raw filings/model/query vectors",
+    "PARTIAL_EXTRACTION source documents; numeric certification not attempted"
+  ]
+}

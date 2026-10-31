@@ -1,0 +1,32 @@
+{
+  "status": "METHODOLOGICAL_REPLICATION_TWO_2026_SEC_FILINGS",
+  "author_commit": "16682dd42ca9cd4887ae74935cb3526dce580c49",
+  "parser": "EdgarHtmlParser+SectionExtractor+TextNormalizer",
+  "chunker": {
+    "chunk_size_tokens": 500,
+    "chunk_overlap_tokens": 100
+  },
+  "sources": [
+    {
+      "filename": "pg-20260930.htm",
+      "sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "document_id": "0000080424_0000080424-26-000256",
+      "sections": 1
+    },
+    {
+      "filename": "hd-20260802.htm",
+      "sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+      "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "document_id": "0000354950_0001628280-26-058715",
+      "sections": 7
+    }
+  ],
+  "chunk_count": 121,
+  "chunks_sha256": "f8e4fc3650976b3b7658b6eac8bbf1d26e92e23fa11bd05f83f115bbd39ccbbf",
+  "limitations": [
+    "Different corpus and filing years from the author's 47 filings",
+    "No independent qrels or author model weights locked yet",
+    "SEC source extraction status in the product workspace is partial"
+  ]
+}

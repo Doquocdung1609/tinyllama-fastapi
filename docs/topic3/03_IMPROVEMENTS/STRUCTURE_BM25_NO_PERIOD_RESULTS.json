@@ -1,0 +1,627 @@
+{
+  "status": "PROVISIONAL_EXPOSED_STRUCTURE_BM25",
+  "variant": "no_period",
+  "source_chunk_sha256": {
+    "0000080424.jsonl": "2de4b808c6f33473e7b9a2e0acf041504b7782a3c1bb77deac09522a2b7ab6aa",
+    "0000354950.jsonl": "0b6bb51912420a0e45aeb4e2ddb7a5c3d0a5588c4101f5cfa7e74e3573c8bd21"
+  },
+  "structure_targets_sha256": "cb8b64be7ff96937b617e2ec805cc9aa7b3e05afaf3bde14ff3f71bb63889cfc",
+  "qrels_sha256": "daeb3bc5ba9425aa4ed729e6967bff73177b3c6f12beae52d8a8ba56043ea601",
+  "model": "Qdrant/bm25",
+  "index_points": 1241,
+  "index_s": 4.792,
+  "summary": {
+    "known_target_at_1": 0,
+    "known_target_at_5": 1,
+    "known_target_at_10": 1,
+    "positive_denominator": 4,
+    "query_p50_ms": 12.956
+  },
+  "records": [
+    {
+      "id": "t3-pg-net-sales-2026",
+      "query": "What were Procter & Gamble's net sales for the three months ended September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+      "target_rank_top10": null,
+      "query_ms": 13.824,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_af4e7b9a5adcb05a7639ea9e61dc84f6",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 51.290950775146484,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "849c1d20073da7375714ae297b2fe85350b674f49f8c0630ad9f7d21c509e829"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_60f6e3c63523707a49b003d17874e2b0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 51.21807098388672,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "d56e704dbc01f20ac70024e93ca4eace49a71ffd7741f4fe76f40c7653d8787d"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_7af5c346828f22e8f2631f2a0ee4cc67",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 51.181732177734375,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "90391ddf866326c565a2e905614c70cc849afe8c8973585ec0829a7564f420da"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_4c7e31cb7be371292297652abca2ea83",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 51.14546585083008,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "f1abdfd4a1eef596c64fe3ef5032911e9adaece66ebb58d5b633f825cb6cffc8"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_cca849086410eabef45f7b86d1338adf",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 51.00106430053711,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "61a9469219ca7b9f935a714f50ddd6b7445cc1e3f35cf691c10045b897e83397"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_6143d73cc352031cb6cd8a7ee995501e",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 50.8796272277832,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "63af91355f1e69e5c4c750d41f68143f9ee503ace11d41daaeedaa0a0fac89a4"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_4f485bc3cb1b84f33b4081c07ae1cba9",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 50.822059631347656,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "981fe36303f4b4a89b6682e0e26be7efee4767a013c7ae6021f9f880a0d918ac"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_fe80417948bf9a02eadf6a7894a5255d",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 50.744991302490234,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "284daaff8798af9471c51849cfb9cf5a246041f4a08506afde2413eb785eae65"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_d54deb94daa7510f745f4540b629d1b0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 50.7154426574707,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "7ef66916739e3348e8ecd77798de90ef3cf43e3abcba788f7ff2e8bc1be4600b"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_30720b82637875d7defcdce54dcfe56c",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 48.72503662109375,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "7d19314faefa8147cc6387f270739381fc8ddef67b9f926b29af5fb2a055f4b5"
+        }
+      ]
+    },
+    {
+      "id": "t3-pg-assets-2026",
+      "query": "What were Procter & Gamble's total assets on September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_b411c28ab2846244e486bed33892be95",
+      "target_rank_top10": null,
+      "query_ms": 13.006,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_60f6e3c63523707a49b003d17874e2b0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 31.504234313964844,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "d56e704dbc01f20ac70024e93ca4eace49a71ffd7741f4fe76f40c7653d8787d"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_4418916c2aa7626db986b7904051850c",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 26.495317459106445,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "43cd0ca03c287bd41d5b979027e4d5467a932b21cc8bf0b071caaa4e580a32eb"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_9ddbf1d9eff707fedbc80e74463ce65f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.34678077697754,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "d4bdea78c2f87bdb43c1d63ecd63e4d82dbd9596d24465b69da6153230e25585"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_5c2d4ffc623d6237c3c0f9715f60222e",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.196352005004883,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "d297b5ce2ec7e7b04659cbb21b5fa900e000dc0904c116541f50de362a4420cc"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_8508c830580ae0baeff401136f4c85ad",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.151206970214844,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "2cc32438e906d212e7d2808f94c18cbd74514b73f0a36dd18e9826d958a1fb8b"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_2c4525b2c0d8d0286c8b4a7fe53a46a2",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 24.70358657836914,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "3fa5082885aabfa0f6151d90b38716e9f480e7fff65ada533f5cd69c49eb1495"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_8dc9e43221105373980cc4567645a147",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 24.446365356445312,
+          "statement_title": null,
+          "source_text_hash": "c4e4e310ed9cdc44f1f6cb87fb6d010210fb8b5b0a65b70015950dde972c88c1"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_af4e7b9a5adcb05a7639ea9e61dc84f6",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.48697853088379,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "849c1d20073da7375714ae297b2fe85350b674f49f8c0630ad9f7d21c509e829"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_00e0f48a1ec5c6bff0dfbaea52128e7a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.467092514038086,
+          "statement_title": "Disclosures about Financial Instruments",
+          "source_text_hash": "7d19314faefa8147cc6387f270739381fc8ddef67b9f926b29af5fb2a055f4b5"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_7af5c346828f22e8f2631f2a0ee4cc67",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.432170867919922,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "90391ddf866326c565a2e905614c70cc849afe8c8973585ec0829a7564f420da"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-assets-2026",
+      "query": "What were Home Depot's total assets on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+      "target_rank_top10": null,
+      "query_ms": 12.518,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_fea9494de208f56dedc6c830c39001da",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 32.19134521484375,
+          "statement_title": "The following table presents certain consolidated balance sheet information related to operating and finance leases:",
+          "source_text_hash": "7633434b9c37aa6a7bfcd6559b4a7b86c767a9c809baf925d479ebcd3c2788f0"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_1ba4dfc31c18af3dd9a401921d727406",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.98356056213379,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "f297b026e2b974ff0aa8725ddd15b9705789f5db7304814d382dfdf7f7eaf153"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_16701e695c8f1a4c8906e35809701294",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.818117141723633,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "88b184918eb0a7599c21a2582419333ee1bc67b3ac425a9fedbf1e7639c08c88"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_868781b4fd0748224f6be2d6b8077b9d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.629955291748047,
+          "statement_title": "The following table presents certain consolidated balance sheet information related to operating and finance leases:",
+          "source_text_hash": "d09f41095e23d55820e4c9f89c84fe71bba47b3f6a68d4da430b8faa31c66a54"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_49a608bfc01dffba5287fcd3913efb25",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.17659568786621,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "b8ff2775024c72217cd1500325294519803b3e9a96408f790134b81a1b3022f3"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_67d901b8dbb1cb4e568b46226c3cd07b",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 28.07022476196289,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "2ab9203794240d76fff9f361af5a3324f67acb174b9db94960643013f27bc3cc"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_b4ce318efb7942fa781e72d444aba107",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 27.15675163269043,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "251cd835979dfcf6b03c5dc43cf086a6e8994e1c7bca4e2b04cd39d2bb195469"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_66a31dfffbfd97af461722b58bfaa787",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 27.103620529174805,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "90fd97a1bf17b261a61599e5c014a5cac656e15e176ccaf374e9d7595f24e74e"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_d9606b8334ee654d5cda6579123945a5",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 26.272415161132812,
+          "statement_title": null,
+          "source_text_hash": "77f2ebb75d94ba7d542e9e7fbba6ec53f03b5e383a682b2d3dadb811703366c8"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_ae96274120fa55ae759205ebcda01bae",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.249629974365234,
+          "statement_title": "The following table presents certain consolidated balance sheet information related to operating and finance leases:",
+          "source_text_hash": "03a8b92f8d96c9a888ae938a1a0a88178af5a61f82fc1d4024e905e7431174d5"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-cash-2026",
+      "query": "How much cash and cash equivalents did Home Depot report on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+      "target_rank_top10": 3,
+      "query_ms": 13.659,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_6fd57379156be0ffc7eccfe48deaaecd",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 32.1427116394043,
+          "statement_title": null,
+          "source_text_hash": "030f782f6f604ad468e6d277003b324cbd0b9b3a711ff9c0ae8b78a5824457cd"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_78d7302efb4070e58371cd63ace449af",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 30.349491119384766,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "96f9810c6f64c52774795239f1507837f255c71d1a0a2b0ebb97a70bf4857799"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 29.727413177490234,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "d55a5039537169f160f46cebd3b35ef0c4743832facfa78603376cd6f6c289dd"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_76df117b9fc578e67e60c6e6430bb1fd",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.781177520751953,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "bb3f1a3d8b7b33082cf04333ebd37f4099f229c2881fae8c9c3906e9f145f2c7"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_59b83d7801fd4b25d70934a90d5e271d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.72947120666504,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "ca06f5c740c408b810a30c5065cb1f20b9365473b3cfc70c8583c07c8e98a26b"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_ef0e2bf67da6c74c6546f53174359633",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.50006675720215,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "d480927dbb6f928b26505219a22d8485ed817762d742aca56e8ef20adca6cf51"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_1ba4dfc31c18af3dd9a401921d727406",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 25.676048278808594,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "f297b026e2b974ff0aa8725ddd15b9705789f5db7304814d382dfdf7f7eaf153"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_16701e695c8f1a4c8906e35809701294",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 25.56603240966797,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "88b184918eb0a7599c21a2582419333ee1bc67b3ac425a9fedbf1e7639c08c88"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_49a608bfc01dffba5287fcd3913efb25",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 25.13700294494629,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "b8ff2775024c72217cd1500325294519803b3e9a96408f790134b81a1b3022f3"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_67d901b8dbb1cb4e568b46226c3cd07b",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 24.518264770507812,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "2ab9203794240d76fff9f361af5a3324f67acb174b9db94960643013f27bc3cc"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-pg-2037",
+      "query": "What were Procter & Gamble's total assets on September 30, 2037?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 12.905,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_60f6e3c63523707a49b003d17874e2b0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.31301498413086,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "d56e704dbc01f20ac70024e93ca4eace49a71ffd7741f4fe76f40c7653d8787d"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.02391815185547,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_4418916c2aa7626db986b7904051850c",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 22.868844985961914,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "43cd0ca03c287bd41d5b979027e4d5467a932b21cc8bf0b071caaa4e580a32eb"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_9674955b4a910f287e1d876922e3c5ba",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 22.28416633605957,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "cff8fec83da7321c5340e7d04f0a0d349d9891f0e86b85f16ba8933dcc7a791a"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_5c2d4ffc623d6237c3c0f9715f60222e",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 21.157175064086914,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "d297b5ce2ec7e7b04659cbb21b5fa900e000dc0904c116541f50de362a4420cc"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_8508c830580ae0baeff401136f4c85ad",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 21.119741439819336,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "2cc32438e906d212e7d2808f94c18cbd74514b73f0a36dd18e9826d958a1fb8b"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_2c4525b2c0d8d0286c8b4a7fe53a46a2",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 20.848735809326172,
+          "statement_title": "RESULTS OF OPERATIONS – Three Months Ended September 30, 2026",
+          "source_text_hash": "3fa5082885aabfa0f6151d90b38716e9f480e7fff65ada533f5cd69c49eb1495"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_9ddbf1d9eff707fedbc80e74463ce65f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 20.666337966918945,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "d4bdea78c2f87bdb43c1d63ecd63e4d82dbd9596d24465b69da6153230e25585"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_45ecdffa57cf52e1ab872dd38a501e53",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 20.666337966918945,
+          "statement_title": "MEASURES NOT DEFINED BY U.S. GAAP",
+          "source_text_hash": "50a04a3777c6424e5a9a817dcedd9764fedcac0511080b6b7ed3216bda686c13"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_8dc9e43221105373980cc4567645a147",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 20.637287139892578,
+          "statement_title": null,
+          "source_text_hash": "c4e4e310ed9cdc44f1f6cb87fb6d010210fb8b5b0a65b70015950dde972c88c1"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-issuer",
+      "query": "What were Apple Inc.'s total assets on September 27, 2025?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 11.899,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_4bcfdbfb84e3ef5b5cd5ef654038cce6",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 23.743202209472656,
+          "statement_title": null,
+          "source_text_hash": "763e899555c4a4dc4db8a50fbcf3df708706ef863a36faa2fd568d54be1d9587"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_0813b7a0c26894c37dbdea89986a0e24",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 22.006338119506836,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "4abcf47547edda2f34344cda58e4f827fe6fc284dca2a3fe10b9d856db764117"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_88e7fc817805b5a85695a003b19d8637",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 20.289730072021484,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "09dc0538a1bc02f811d178335bd70d0fe3243abdde949f881887fcf181a4908a"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_60f6e3c63523707a49b003d17874e2b0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 19.977144241333008,
+          "statement_title": "SEGMENT RESULTS – Three Months Ended September 30, 2026",
+          "source_text_hash": "d56e704dbc01f20ac70024e93ca4eace49a71ffd7741f4fe76f40c7653d8787d"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_66a31dfffbfd97af461722b58bfaa787",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 19.41485595703125,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "90fd97a1bf17b261a61599e5c014a5cac656e15e176ccaf374e9d7595f24e74e"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_0573f88a08e8d2b6238d56fe06be6ab8",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 19.25977897644043,
+          "statement_title": null,
+          "source_text_hash": "bb63eb1632b85329ebaaf42aa24afdb773c120e7a3befc64a3487d7a5334f4a1"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_8dc9e43221105373980cc4567645a147",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "text",
+          "score": 19.215084075927734,
+          "statement_title": null,
+          "source_text_hash": "c4e4e310ed9cdc44f1f6cb87fb6d010210fb8b5b0a65b70015950dde972c88c1"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 18.654678344726562,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "ceed3df40fa6d83384479044bcf4bd34aee57437c239dc9a9db3c0ec87c79187"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_2a6a605606ed5c4f052819ad4cf41ff8",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 18.65257453918457,
+          "statement_title": "Segment Reporting",
+          "source_text_hash": "a7a41eef7d37c0f7176087d6eb38315a532048cee2649aaaa8d9af9a3be103b3"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_d62a0f90b9286d500399dd12a84d8ad5",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 18.61734390258789,
+          "statement_title": "Intangible Assets",
+          "source_text_hash": "d72c752ce5a5be2e7168442e264dc124a1f909a4d51bf2ad6a3d4e50ef933c0d"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Machine-prepared source row targets, not independent human gold",
+    "Different evidence units change corpus cardinality and BM25 IDF; same raw filings/model/query vectors",
+    "PARTIAL_EXTRACTION source documents; numeric certification not attempted"
+  ]
+}
