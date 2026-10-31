@@ -1,0 +1,13 @@
+{
+  "status": "PROVISIONAL_UNREVIEWED_SOURCE_LOCATORS",
+  "basis": "SEC source table row, period column, and value matched in the preserved financial-structure-v5 chunks before running the structure-aware BM25 arm",
+  "targets": {
+    "t3-pg-net-sales-2026": {"chunk_id": "fin_a3c5c5addcb74077435a19ee2b7186f2", "filing_id": "sec:0000080424:0000080424-26-000256", "row_label": "NET SALES", "row_index": 3, "candidate_value": "23,276", "period": "September 30, 2026", "scope": "CONSOLIDATED", "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"},
+    "t3-pg-assets-2026": {"chunk_id": "fin_b411c28ab2846244e486bed33892be95", "filing_id": "sec:0000080424:0000080424-26-000256", "row_label": "TOTAL ASSETS", "row_index": 17, "candidate_value": "133,132", "period": "September 30, 2026", "scope": "CONSOLIDATED", "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"},
+    "t3-hd-assets-2026": {"chunk_id": "fin_5a59ada12c1825cd73f3db578f1a73e6", "filing_id": "sec:0000354950:0001628280-26-058715", "row_label": "Total assets", "row_index": 14, "candidate_value": "109,384", "period": "August 2, 2026", "scope": "CONSOLIDATED", "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"},
+    "t3-hd-cash-2026": {"chunk_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c", "filing_id": "sec:0000354950:0001628280-26-058715", "row_label": "Cash and cash equivalents", "row_index": 4, "candidate_value": "2,085", "period": "August 2, 2026", "scope": "CONSOLIDATED", "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"}
+  },
+  "negative_queries": ["t3-negative-pg-2037", "t3-negative-issuer"],
+  "human_review": "PENDING",
+  "numeric_answer_eligible": false
+}

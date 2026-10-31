@@ -1,0 +1,626 @@
+{
+  "status": "PROVISIONAL_EXPOSED_STRUCTURE_BM25",
+  "source_chunk_sha256": {
+    "0000080424.jsonl": "2de4b808c6f33473e7b9a2e0acf041504b7782a3c1bb77deac09522a2b7ab6aa",
+    "0000354950.jsonl": "0b6bb51912420a0e45aeb4e2ddb7a5c3d0a5588c4101f5cfa7e74e3573c8bd21"
+  },
+  "structure_targets_sha256": "cb8b64be7ff96937b617e2ec805cc9aa7b3e05afaf3bde14ff3f71bb63889cfc",
+  "qrels_sha256": "daeb3bc5ba9425aa4ed729e6967bff73177b3c6f12beae52d8a8ba56043ea601",
+  "model": "Qdrant/bm25",
+  "index_points": 1241,
+  "index_s": 3.266,
+  "summary": {
+    "known_target_at_1": 4,
+    "known_target_at_5": 4,
+    "known_target_at_10": 4,
+    "positive_denominator": 4,
+    "query_p50_ms": 13.802
+  },
+  "records": [
+    {
+      "id": "t3-pg-net-sales-2026",
+      "query": "What were Procter & Gamble's net sales for the three months ended September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+      "target_rank_top10": 1,
+      "query_ms": 15.428,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_a3c5c5addcb74077435a19ee2b7186f2",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 37.36461639404297,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "5e90d5648f13c8f7ef1a88a14078a9090226ecc5ad322b7cf976df7b546a96e7"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_4d578478326d1f58fbca7afcb951fa3a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 36.79328918457031,
+          "statement_title": "OVERVIEW",
+          "source_text_hash": "736585d86874810c8adf5f96fc0a78b6f61f7ba4a22d9d37a50701f99c19c257"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_2585c50e22063de878f33d8abb1b7d92",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 36.79328918457031,
+          "statement_title": "OVERVIEW",
+          "source_text_hash": "fdb5b7aa4ebdcbc035386f47a4e8941721961cc159b863ad81884fac15e99433"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_8aa9b9b8c438fbdbcc9a146776a739c9",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 36.73307800292969,
+          "statement_title": "OVERVIEW",
+          "source_text_hash": "7ba7002ead8251391d87118b8aa0b554a1fd99c39446dfd7cc2997057728c126"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_209bdf634627922ef07fd3444fb764b6",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 36.73307800292969,
+          "statement_title": "OVERVIEW",
+          "source_text_hash": "39681cc415f42351fa15e4308f5c8ca00bd165a1247674bfbcf15cfdf25685bd"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_3ad7b10def6a7b337533dbb9063cc002",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 36.67323684692383,
+          "statement_title": "OVERVIEW",
+          "source_text_hash": "839be86cfb2c7178a86bb449054865d8b50fd9df41de2b680a9cd0cfac1dbbc3"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_9bc7c104300881a965ebff8af1d34a5d",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 36.613765716552734,
+          "statement_title": "OVERVIEW",
+          "source_text_hash": "91e78f948334f5b754bcc249a14be3c6b7c85f059304e95730d53ccb96584edb"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_e0cf3224661bb29f849bb17167ba698e",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 35.5379524230957,
+          "statement_title": "Net Sales",
+          "source_text_hash": "826738056a069d0a188cd2c7be3e78bd90e022d896802b7e9a52c3e1c3cffac9"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_cd2c366bbef2f43c57cb27c0e25ddb9a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 35.533935546875,
+          "statement_title": "Net Sales",
+          "source_text_hash": "004780f57ed01362423e651416694425d91fa5427731acee7099b62dd78cb4b2"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_646a74814dc203212d54b1a94ab6d8ff",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 35.51789093017578,
+          "statement_title": "Net Sales",
+          "source_text_hash": "e6b012245ae5e458d90a98557266494cbb79b8aad15a4bbbeade030009b6ac49"
+        }
+      ]
+    },
+    {
+      "id": "t3-pg-assets-2026",
+      "query": "What were Procter & Gamble's total assets on September 30, 2026?",
+      "answerable": true,
+      "target_id": "fin_b411c28ab2846244e486bed33892be95",
+      "target_rank_top10": 1,
+      "query_ms": 16.221,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 31.252206802368164,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_9674955b4a910f287e1d876922e3c5ba",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 30.455595016479492,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "cff8fec83da7321c5340e7d04f0a0d349d9891f0e86b85f16ba8933dcc7a791a"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_f8d170eb74745f7e31d1bf6580fc5e76",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.40939712524414,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "393eaf48cd8ac1d46cb01617cb5a359f6fbf933999179f5dde5d0c44e61c819b"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_dcc8b64df5fe48dba59efdb1bcc18ad6",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.352510452270508,
+          "statement_title": "Disclosures about Financial Instruments",
+          "source_text_hash": "0dd242ead654cc19ddbc084921aea9ecd977b700a8ed969fe3ac35d86a83bffa"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_847e8d8eff48ecdf0bb25084c9793c9a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 27.314502716064453,
+          "statement_title": "Disclosures about Financial Instruments",
+          "source_text_hash": "7ce81215933fe3eb4c5797ad57daaab570a0efac4dde1babca2569811303e312"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_03d2a413b6034a36c1e50fff30300235",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 26.966106414794922,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "2a34353d53ce1107146c474dc879a9edc5b95e60a6ef8d8e87eb564114685a6e"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_4c8708e08a625ac401d56985b0c12502",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 26.869892120361328,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "c5c1134067ff81d4407b6d0829acc0844ef60853920117000fad1c94910bf2f3"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_6aac83a9d5119bf0db091eeafeef6924",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.625911712646484,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "5920709cef50f5c61b90189b27c856ccf7f83f65b2d900ad7229b85140e384f7"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_86f19e39dfa17760fde7fba0609f73df",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.02591323852539,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "7105c607a52de360b9923753c868362a5818125d9e3cf2e65d1cfbb39f0b04cb"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_0935a479182f1571ed737fcf29691d45",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 24.972679138183594,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "fac5afb401ca6a5ec0defa956cd715f43411594207b90251050a92cb3e50b350"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-assets-2026",
+      "query": "What were Home Depot's total assets on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+      "target_rank_top10": 1,
+      "query_ms": 10.81,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 27.222145080566406,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "ceed3df40fa6d83384479044bcf4bd34aee57437c239dc9a9db3c0ec87c79187"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_319c3c9f8078fc8cd1dbf1bb74692ae2",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.54030990600586,
+          "statement_title": "Assets and Liabilities Measured at Fair Value on a Recurring Basis",
+          "source_text_hash": "7fa5aa26b1dae8c311f2e0da432e4e9896a43b9676d3417ba2bd4dbc910201e2"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_fea9494de208f56dedc6c830c39001da",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.48465919494629,
+          "statement_title": "The following table presents certain consolidated balance sheet information related to operating and finance leases:",
+          "source_text_hash": "7633434b9c37aa6a7bfcd6559b4a7b86c767a9c809baf925d479ebcd3c2788f0"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_2a48e829615c556075453f4a7fbe1321",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 26.393381118774414,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "4b2ff0c939b1c815d6a98c4bd01ce3f3eeefeb77e7aafd8acc2b9200bb3f838b"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_4625ef1faadb4fa94dc86809ce5ad458",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 25.07839584350586,
+          "statement_title": "Intangible Assets",
+          "source_text_hash": "37a7f1ab3bb81fe1524f9e71cc393693863c063f07ffe7792f5c85909119ca03"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_868781b4fd0748224f6be2d6b8077b9d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 23.928382873535156,
+          "statement_title": "The following table presents certain consolidated balance sheet information related to operating and finance leases:",
+          "source_text_hash": "d09f41095e23d55820e4c9f89c84fe71bba47b3f6a68d4da430b8faa31c66a54"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_96b6369281118b9569f8cb201200b1f8",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 21.382450103759766,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "f8957035f2fb396a5ef999fc22aa9b62783b7576931212b13ca6237045a9af71"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_ae96274120fa55ae759205ebcda01bae",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 21.23870086669922,
+          "statement_title": "The following table presents certain consolidated balance sheet information related to operating and finance leases:",
+          "source_text_hash": "03a8b92f8d96c9a888ae938a1a0a88178af5a61f82fc1d4024e905e7431174d5"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_fb1939608594341db7d185f26b566939",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 21.166332244873047,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "08aa036be3e0dba0127ee4a1a633307079cd3f17cabebea88c91bfdd7a392638"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_d62a0f90b9286d500399dd12a84d8ad5",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 21.120698928833008,
+          "statement_title": "Intangible Assets",
+          "source_text_hash": "d72c752ce5a5be2e7168442e264dc124a1f909a4d51bf2ad6a3d4e50ef933c0d"
+        }
+      ]
+    },
+    {
+      "id": "t3-hd-cash-2026",
+      "query": "How much cash and cash equivalents did Home Depot report on August 2, 2026?",
+      "answerable": true,
+      "target_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+      "target_rank_top10": 1,
+      "query_ms": 13.176,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 35.25362777709961,
+          "statement_title": "CONSOLIDATED BALANCE SHEETS",
+          "source_text_hash": "d55a5039537169f160f46cebd3b35ef0c4743832facfa78603376cd6f6c289dd"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_78d7302efb4070e58371cd63ace449af",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 35.159183502197266,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "96f9810c6f64c52774795239f1507837f255c71d1a0a2b0ebb97a70bf4857799"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_76df117b9fc578e67e60c6e6430bb1fd",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 35.072792053222656,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "bb3f1a3d8b7b33082cf04333ebd37f4099f229c2881fae8c9c3906e9f145f2c7"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_59b83d7801fd4b25d70934a90d5e271d",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 35.01605987548828,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "ca06f5c740c408b810a30c5065cb1f20b9365473b3cfc70c8583c07c8e98a26b"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_ef0e2bf67da6c74c6546f53174359633",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 34.76374435424805,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "d480927dbb6f928b26505219a22d8485ed817762d742aca56e8ef20adca6cf51"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_6fd57379156be0ffc7eccfe48deaaecd",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "text",
+          "score": 26.26991844177246,
+          "statement_title": null,
+          "source_text_hash": "030f782f6f604ad468e6d277003b324cbd0b9b3a711ff9c0ae8b78a5824457cd"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_620b2e7e1a440119b18b2a696dba9884",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 23.691282272338867,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "82944b2a27b0b6a62a81ccc1bf763782f5394a36d8f5c25fd1922f9a54338482"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_aac0bc9c68625d69c1480241a8169f38",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 23.691282272338867,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "738e93ac8a4610bf33631c0e9b63251e28ecfb0e8bc3e88c594fde2d67aabd57"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_3f9750efb5360213644acd3caf4da7a3",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "kind": "table",
+          "score": 23.691282272338867,
+          "statement_title": "CONSOLIDATED STATEMENTS OF CASH FLOWS",
+          "source_text_hash": "1627e56123635e067d7e61598a06fba215c8fd6af53b5dee51caa3c0b09d921e"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_e969926f2f22c5ba4d74d20c284f82e7",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.6091365814209,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "998c8dbe35979343e0fac901be50aa146d999913a3b1e6b6ecf4771f9bba9349"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-pg-2037",
+      "query": "What were Procter & Gamble's total assets on September 30, 2037?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 14.428,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 29.169347763061523,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_9674955b4a910f287e1d876922e3c5ba",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 28.378490447998047,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "cff8fec83da7321c5340e7d04f0a0d349d9891f0e86b85f16ba8933dcc7a791a"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_f8d170eb74745f7e31d1bf6580fc5e76",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.469341278076172,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "393eaf48cd8ac1d46cb01617cb5a359f6fbf933999179f5dde5d0c44e61c819b"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_dcc8b64df5fe48dba59efdb1bcc18ad6",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.184520721435547,
+          "statement_title": "Disclosures about Financial Instruments",
+          "source_text_hash": "0dd242ead654cc19ddbc084921aea9ecd977b700a8ed969fe3ac35d86a83bffa"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_847e8d8eff48ecdf0bb25084c9793c9a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.14740753173828,
+          "statement_title": "Disclosures about Financial Instruments",
+          "source_text_hash": "7ce81215933fe3eb4c5797ad57daaab570a0efac4dde1babca2569811303e312"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_03d2a413b6034a36c1e50fff30300235",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 25.046430587768555,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "2a34353d53ce1107146c474dc879a9edc5b95e60a6ef8d8e87eb564114685a6e"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_4c8708e08a625ac401d56985b0c12502",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 24.954687118530273,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "c5c1134067ff81d4407b6d0829acc0844ef60853920117000fad1c94910bf2f3"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_6aac83a9d5119bf0db091eeafeef6924",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.685855865478516,
+          "statement_title": "Restructuring Program",
+          "source_text_hash": "5920709cef50f5c61b90189b27c856ccf7f83f65b2d900ad7229b85140e384f7"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_4418916c2aa7626db986b7904051850c",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.153627395629883,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "43cd0ca03c287bd41d5b979027e4d5467a932b21cc8bf0b071caaa4e580a32eb"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_86f19e39dfa17760fde7fba0609f73df",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 22.901865005493164,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "7105c607a52de360b9923753c868362a5818125d9e3cf2e65d1cfbb39f0b04cb"
+        }
+      ]
+    },
+    {
+      "id": "t3-negative-issuer",
+      "query": "What were Apple Inc.'s total assets on September 27, 2025?",
+      "answerable": false,
+      "target_id": null,
+      "target_rank_top10": null,
+      "query_ms": 12.384,
+      "hits": [
+        {
+          "rank": 1,
+          "chunk_id": "fin_c7fb7c43c92cf468d258a929c5d5abe5",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 23.984067916870117,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "076c0fe021032eefb6386b708a1da00f22d5ea49870b6fce6a54083d1b19578d"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "fin_c96dcea2414cdccf54d6f58f55ead4a4",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.617048263549805,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "4c7bf69057ed758a47e6e2599180a84490bcc779cb99f5cd05e93b8ea2501161"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "fin_61826bb235e8cc0605a921a2161b7339",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.44315528869629,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "bad88cc22ec4e9c592b6ab589e69e9f7c8468733d74bb4c32ce75644dd73dad8"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "fin_de75bf3d8d28f1aeee81f23511fd8e12",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.358379364013672,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "a6680aee6dac4b936d7d3f30ea82588524e0cc061619acef2e8437f945759062"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "fin_abf16ef4465dbba8a7e128e32cd6a7ce",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.232160568237305,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "692df6c975a3f0d86474839096a039ddcc2e68a6a169067eafc9d6884562e50a"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "fin_5b47ba1d98c96c2de5d19aa7116e6e08",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.170618057250977,
+          "statement_title": "3. Goodwill and Intangible Assets",
+          "source_text_hash": "4d8dfdba1863d7450481b79527b432e11ef1cb3851bee977aabeba7f3a19b536"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "fin_4ab593c4c03e632e4d7fa797c90ff06f",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 18.096515655517578,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "7f28b68efb8affb437ebf815726e55ec117fc49c97e50110e626b9fe4cdbe039"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "fin_7441cff47c690802a3cc8d71cdc27e7a",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 17.920991897583008,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "659bd2a31ff0c17091c7843a0a5f906ee1f7d20c3fcc2b0452f35345b58b94e0"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 17.911771774291992,
+          "statement_title": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "source_text_hash": "159019c0bafc66fa378e494e93a20421f18cb4edd80f45c849604451e706b41e"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "fin_e09f19e3c7a99688dc3be525201e3f05",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "kind": "table",
+          "score": 17.906023025512695,
+          "statement_title": "2. Segment Information",
+          "source_text_hash": "c99192f77277af76fd27155a33dcdd43f84bb255acce58016953166fc5f4e862"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Machine-prepared source row targets, not independent human gold",
+    "Different evidence units change corpus cardinality and BM25 IDF; same raw filings/model/query vectors",
+    "PARTIAL_EXTRACTION source documents; numeric certification not attempted"
+  ]
+}

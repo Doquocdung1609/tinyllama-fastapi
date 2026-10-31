@@ -1,0 +1,42 @@
+[
+  {
+    "variant": "Full structure",
+    "file": "STRUCTURE_BM25_RESULTS.json",
+    "index_points": 1241,
+    "known_target_at_1": 4,
+    "known_target_at_5": 4,
+    "known_target_at_10": 4,
+    "positive_denominator": 4,
+    "query_p50_ms": 13.802
+  },
+  {
+    "variant": "Row only",
+    "file": "STRUCTURE_BM25_ROW_ONLY_RESULTS.json",
+    "index_points": 1241,
+    "known_target_at_1": 0,
+    "known_target_at_5": 1,
+    "known_target_at_10": 1,
+    "positive_denominator": 4,
+    "query_p50_ms": 6.952
+  },
+  {
+    "variant": "Without issuer",
+    "file": "STRUCTURE_BM25_NO_ISSUER_RESULTS.json",
+    "index_points": 1241,
+    "known_target_at_1": 2,
+    "known_target_at_5": 3,
+    "known_target_at_10": 3,
+    "positive_denominator": 4,
+    "query_p50_ms": 15.391
+  },
+  {
+    "variant": "Without period",
+    "file": "STRUCTURE_BM25_NO_PERIOD_RESULTS.json",
+    "index_points": 1241,
+    "known_target_at_1": 0,
+    "known_target_at_5": 1,
+    "known_target_at_10": 1,
+    "positive_denominator": 4,
+    "query_p50_ms": 12.956
+  }
+]

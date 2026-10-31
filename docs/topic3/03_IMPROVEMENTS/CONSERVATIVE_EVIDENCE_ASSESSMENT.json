@@ -1,0 +1,54 @@
+{
+  "status": "EXPOSED_MACHINE_REVIEW_ONLY",
+  "numeric_answers_certified": 0,
+  "records": [
+    {
+      "id": "t3-pg-net-sales-2026",
+      "answerable_source_candidate": true,
+      "status": "AMBIGUOUS",
+      "reason": "TOP1_PERIOD_MISMATCH",
+      "numeric_answer_eligible": false
+    },
+    {
+      "id": "t3-pg-assets-2026",
+      "answerable_source_candidate": true,
+      "status": "SOURCE_SUPPORTED_UNREVIEWED",
+      "reason": "SOURCE_ROW_LOCATED_HUMAN_REVIEW_PENDING",
+      "source_chunk_id": "fin_b411c28ab2846244e486bed33892be95",
+      "source_hash": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+      "numeric_answer_eligible": false
+    },
+    {
+      "id": "t3-hd-assets-2026",
+      "answerable_source_candidate": true,
+      "status": "SOURCE_SUPPORTED_UNREVIEWED",
+      "reason": "SOURCE_ROW_LOCATED_HUMAN_REVIEW_PENDING",
+      "source_chunk_id": "fin_5a59ada12c1825cd73f3db578f1a73e6",
+      "source_hash": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+      "numeric_answer_eligible": false
+    },
+    {
+      "id": "t3-hd-cash-2026",
+      "answerable_source_candidate": true,
+      "status": "SOURCE_SUPPORTED_UNREVIEWED",
+      "reason": "SOURCE_ROW_LOCATED_HUMAN_REVIEW_PENDING",
+      "source_chunk_id": "fin_5ead3d1bebd9f6b06bf22c5b51c5044c",
+      "source_hash": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+      "numeric_answer_eligible": false
+    },
+    {
+      "id": "t3-negative-pg-2037",
+      "answerable_source_candidate": false,
+      "status": "INSUFFICIENT_EVIDENCE",
+      "reason": "PERIOD_NOT_IN_LOCKED_CORPUS",
+      "numeric_answer_eligible": false
+    },
+    {
+      "id": "t3-negative-issuer",
+      "answerable_source_candidate": false,
+      "status": "UNSUPPORTED_REQUEST",
+      "reason": "ISSUER_NOT_IN_LOCKED_CORPUS",
+      "numeric_answer_eligible": false
+    }
+  ]
+}

@@ -117,7 +117,7 @@ function Analysis({selected,open}:{selected:Evidence|null;open:(e:Evidence)=>voi
  const [secTicker,setSecTicker]=useState('');const secReady=useReady()
  const chosen=docId||docs.data?.documents.find(d=>d.status==='READY')?.id||''
  const facts=useQuery({queryKey:['facts',chosen],queryFn:()=>api<{facts:Fact[]}>(`/documents/${chosen}/facts`),enabled:!!chosen})
- const request={question,document_ids:[chosen],mode,operation,metric,current_period:current,previous_period:previous,statement_scope:scope,basis,use_llm:useLlm}
+ const request={question,document_ids:[chosen],mode,operation,metric,current_period:current,previous_period:previous,statement_scope:scope,basis,use_llm:useLlm,search_profile:'production_v3'}
  const run=useMutation({mutationFn:()=>source==='SEC'?post<Answer>('/sec/analysis',{question,operation,ticker:secTicker}):post<Answer>('/analysis',request)})
  const research=useMutation({mutationFn:()=>post<{id:string}>('/research',{...request,mode:'research'}),onSuccess:r=>setJobId(r.id)})
  const job=useQuery({queryKey:['research-job',jobId],queryFn:()=>api<Job>(`/research/${jobId}`),enabled:!!jobId,refetchInterval:q=>['QUEUED','RUNNING'].includes(q.state.data?.status||'QUEUED')?2000:false})
