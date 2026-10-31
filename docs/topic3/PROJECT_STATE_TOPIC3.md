@@ -21,6 +21,7 @@
 - PDF OCR and BIDV revised cells were not independently image-reviewed; no verified PDF numeric/Decimal result claimed from this smoke.
 - SPLADE document embedding peak **5,516.5 MiB** and minimum free RAM **0.8 MiB**; resource risk on this laptop.
 - API process peak RAM, OCR-only duration and full automated browser/recovery suite not measured in this checkpoint. Manual browser and fresh-process API checks are recorded separately.
+- Draft PR #29 CI `frontend`/`test` jobs did not start; GitHub annotation cites account payment/spending limit. Local tests passed; remote CI is externally blocked.
 
 **Next action for scientific completion:** acquire and freeze new issuer/document-separated source questions with independent human-reviewed row/cell annotations, then rerun without tuning on held-out results. The owner may review the Draft PR now; the research release recommendation is `RESEARCH_PARTIAL`.
 

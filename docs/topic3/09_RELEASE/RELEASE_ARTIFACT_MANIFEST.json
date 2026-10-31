@@ -283,8 +283,8 @@
     },
     {
       "path": "docs/topic3/09_RELEASE/FINAL_ACCEPTANCE_REPORT.md",
-      "bytes": 3231,
-      "sha256": "ccc6688dcdb7221639b661f6ae34d4e60148844e1ff1aed8a942c20d4f5f6271"
+      "bytes": 3578,
+      "sha256": "00c33ef478cd255e6566ed3a47ba826ee66d6fb3e1c53adf3cbead6458489592"
     },
     {
       "path": "docs/topic3/09_RELEASE/RELEASE_ARTIFACT_MANIFEST.md",
@@ -1898,8 +1898,8 @@
     },
     {
       "path": "docs/topic3/PROJECT_STATE_TOPIC3.md",
-      "bytes": 3458,
-      "sha256": "6af94aa5cc7d915d12aff807ca1041ed89ec521a1371ac706a350c965bc6f923"
+      "bytes": 3623,
+      "sha256": "4eaedec0c16004b9584483233eb4d8b044e36eee53fbc1c35324df5fbeabbe77"
     },
     {
       "path": "docs/topic3/PROVENANCE_CACHE.md",

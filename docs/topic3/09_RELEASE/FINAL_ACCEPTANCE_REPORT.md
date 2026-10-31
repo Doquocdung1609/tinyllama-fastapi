@@ -20,6 +20,7 @@
 - Frontend: **10 PASS**, TypeScript/Vite production build PASS.
 - Manual browser: 12 actual screenshots across overview, Search, Analysis, Library, Viewer, Compare and System; HD 2026 source cell supported; 2037 request abstained; Hòa Phát and BIDV PDFs READY.
 - A fresh-process start after the assistant-routing repair returned Hòa Phát page 3 with five citations and zero values; legacy API default retained by unit test.
+- Draft PR #29 remote checks `frontend` and `test` show FAIL with **zero job steps executed**. GitHub's check annotation says the jobs were not started because recent account payments failed or the spending limit needs to increase. This is a CI account blocker, not an observed code/test failure; local results above remain the executed evidence.
 
 ## Remaining review decision
 
