@@ -15,7 +15,7 @@ import psutil
 import requests
 
 from app.product.api import workspace,sec_index,require_studio_token,_error,_factory_lock
-from app.product.analysis import AnalysisRequest,FactReview,review_fact,eligible_facts,numeric_answer,research_steps
+from app.product.analysis import AnalysisRequest,FactReview,review_fact,eligible_facts,numeric_answer,research_steps,METRICS
 from app.product.pdf_extract import ocr_capability,folded
 
 router=APIRouter(prefix='/studio',tags=['react-product'],dependencies=[Depends(require_studio_token)])
@@ -204,6 +204,13 @@ def search_v2_evaluation():
     return saved
 
 
+@router.get('/research-lab/topic3')
+def topic3_historical_lab():
+    from app.product.topic3_lab import historical_experiment
+    try:return historical_experiment()
+    except (OSError,ValueError,KeyError) as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
+
+
 @router.get('/readiness')
 def readiness():
     try:
@@ -262,16 +269,25 @@ def analysis(payload:AnalysisRequest):
     try:
         if payload.mode=='numeric':return numeric_answer(workspace(),payload)
         if payload.mode=='document_qa':
-            if payload.search_profile=='production_v3':
+            from app.product.assistant_answer import contract,needs_number,reviewed_plan
+            profile=payload.search_profile
+            if profile=='auto':
+                profile='production_v3r3' if getattr(workspace(),'search_candidate_version',None)=='V3R3' else 'production_v3'
+            if profile in {'production_v3','production_v3r3'}:
                 result=unified_search(UnifiedSearch(query=payload.question,mode='hybrid',top_k=5,
-                    source='USER_UPLOADS',document_ids=payload.document_ids,search_profile='production_v3'))
+                    source='USER_UPLOADS',document_ids=payload.document_ids,search_profile=profile))
             else:
                 result=workspace().search(payload.question,'hybrid',5,payload.document_ids)
-            # Ordinary RAG explanations never certify unchecked numbers.
-            return {'status':'SOURCE_EXCERPTS' if result['results'] else 'INSUFFICIENT_EVIDENCE',
-                    'answer':'Các đoạn nguồn liên quan; số liệu trong trích đoạn chưa được xác minh ô nguồn.',
-                    'citations':result['results'],'values':[],
-                    'search_profile':payload.search_profile,'generation':result.get('generation')}
+            answer=contract(payload.question,result,profile)
+            if needs_number(payload.question):
+                plan=reviewed_plan(payload.question,eligible_facts(workspace(),payload.document_ids),METRICS)
+                if plan:
+                    verified=numeric_answer(workspace(),payload.model_copy(update={'mode':'numeric',**plan}))
+                    if verified['status']=='SUPPORTED':
+                        return {**answer,**verified,'verification_status':verified['verification'],
+                                'warnings':[],'retrieval_trace':answer['retrieval_trace'],
+                                'search_profile':profile,'generation':result.get('generation')}
+            return answer
         raise ValueError('USE_RESEARCH_JOB_ENDPOINT')
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
 

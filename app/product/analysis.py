@@ -206,7 +206,7 @@ class AnalysisRequest(BaseModel):
     statement_scope:Literal['SEPARATE','CONSOLIDATED']='SEPARATE'
     basis:Literal['AS_REPORTED','ORIGINAL','ADJUSTMENT','RESTATED']='AS_REPORTED'
     use_llm:bool=False
-    search_profile:Literal['baseline','production_v3']='baseline'
+    search_profile:Literal['baseline','production_v3','production_v3r3','auto']='baseline'
 
 
 def bounded_summary(title,sources):
