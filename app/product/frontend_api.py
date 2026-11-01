@@ -211,6 +211,13 @@ def topic3_historical_lab():
     except (OSError,ValueError,KeyError) as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
 
 
+@router.get('/research-lab/faith-r')
+def faith_r_historical_lab():
+    from app.product.topic3_lab import faith_r_recorded_experiment
+    try:return faith_r_recorded_experiment()
+    except (OSError,ValueError,KeyError) as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
+
+
 @router.get('/readiness')
 def readiness():
     try:

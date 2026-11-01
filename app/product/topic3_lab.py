@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2] / 'docs/topic3'
+V5_ROOT = Path(__file__).resolve().parents[2] / 'docs/topic3_v5'
 ARM_GROUP = {
     'R0_BM25': 'AUTHOR_METHOD_REPRODUCTION',
     'R1_DENSE': 'AUTHOR_METHOD_REPRODUCTION',
@@ -64,3 +65,29 @@ def historical_experiment() -> dict:
             'live_modes': ['PRODUCT_BM25', 'PRODUCT_DENSE', 'PRODUCT_HYBRID_RRF'],
             'unavailable_live_modes': ['AUTHOR_SPLADE', 'AUTHOR_DETERMINISTIC_STAGE2', 'STRUCTURE_BM25_RESEARCH_INDEX'],
             'questions': questions}
+
+
+def faith_r_recorded_experiment() -> dict:
+    """Expose the audited development replay, never a simulated live run."""
+    path = V5_ROOT / 'replay_results.json'
+    if not path.is_file():
+        return {'status': 'NOT_AVAILABLE', 'reason': 'V5 replay artifact absent'}
+    data, digest = _read(path)
+    return {
+        'status': 'RECORDED_EXPERIMENT', 'review_status': 'UNREVIEWED',
+        'dataset': 'F10 exposed development, 15 questions',
+        'sha256': digest, 'aggregate': data['aggregate'],
+        'historical_target_filing_hits': data['historical_target_filing_hits'],
+        'cases': [{
+            'case': c['case'], 'question': c['question'],
+            'accession': c['source']['accession'], 'source_url': c['source']['source_url'],
+            'report_date': c['source']['sec_report_date'],
+            'a1_top1': {'chunk_id': c['A1_recorded']['ids'][0], 'label': c['A1_recorded']['labels'][0]},
+            'a4_top1': {'chunk_id': c['A4_reranked']['ids'][0], 'label': c['A4_reranked']['labels'][0],
+                        'excerpt': c['candidate_features'][0]['row_excerpt'],
+                        'verification_status': c['verification_status']},
+        } for c in data['cases']],
+        'limits': ['Qdrant snapshots/vectors absent: these are saved Top-10 candidates',
+                   'Labels were exposed before analysis; not independent human gold',
+                   'Top-1 chunk relevance does not verify row, column, value or unit'],
+    }

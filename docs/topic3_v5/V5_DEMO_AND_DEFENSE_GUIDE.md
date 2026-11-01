@@ -1,0 +1,5 @@
+# Instructor demo and defense guide
+
+Open the existing React Compare screen. Run one live BM25/Dense/Hybrid question on the same selected PDF scope, then expand “FAITH-R · thử nghiệm trên 15 câu hỏi đã lưu.” Explain that these SEC results are `RECORDED_EXPERIMENT / UNREVIEWED`, not live or the PDF comparison above. Select AMD FY2022: saved fiscal correction restores target filing; rerank puts a known-positive chunk first. Show AMZN FY2024 and Meta FY2024 CAPEX as failures and explain that a chunk label is not a checked table cell. Show the source-linked PDF viewer and V4 verified SEC cell separately; they demonstrate product capabilities, not V5 independent retrieval quality.
+
+Defense narrative: author benchmark constructs relevance from its own retrieved results → fiscal labels blocked filtering → 0/90 to 90/90 target-filing recovery in saved P7L → a fixed attribute/row reorder improves known-positive top1 on exposed cases → missing vector snapshots and human gold block live replication and superiority. Source code trace is in [author audit](V5_AUTHOR_VS_PROJECT_CODE_AUDIT.md); all paired IDs in [replay JSON](replay_results.json).
