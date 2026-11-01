@@ -1,0 +1,350 @@
+{
+  "outer_sha256": "3b26f9ddbe84b92f87078b12ff3e0b71f792796e3ac1b12a877bae4f3c65edaf",
+  "outer_crc": null,
+  "files": {
+    "audit/p7g_fiscal_metadata_audit.csv": {
+      "sha256": "f12090fa9156cd3c529bb79adac2c44e617af9f37c85e5111b5587aebcc99b76",
+      "bytes": 9287,
+      "matches_manifest": true
+    },
+    "audit/p7l_full_manifest.json": {
+      "sha256": "3b77d59d30678e6774a86d71e95f9e5000733edb74e0d78a19493b24b7dff9a7",
+      "bytes": 806,
+      "matches_manifest": true
+    },
+    "audit/p7l_full_raw_top10.jsonl": {
+      "sha256": "e33bad1b618341e1526c4b49186e22d40e99a243280f272a767c263cb11a6f44",
+      "bytes": 2706414,
+      "matches_manifest": true
+    },
+    "audit/p7l_full_results.csv": {
+      "sha256": "1d2b5d61d1a35d56e87bfc29615b6db87fdb0f3327745172f117991f3153ca9d",
+      "bytes": 22845,
+      "matches_manifest": true
+    },
+    "baseline/p5_query_results.jsonl": {
+      "sha256": "1ac5490855d3ab30ed269984cebc06af5f93ea4bd0eba1be3664866cd5d0567a",
+      "bytes": 4432812,
+      "matches_manifest": true
+    },
+    "corpus/chunks_frozen.jsonl": {
+      "sha256": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f",
+      "bytes": 23361744,
+      "matches_manifest": true
+    },
+    "research/f10/F10_STATUS_AND_REVIEW_PLAN.md": {
+      "sha256": "4e8ef5d1749d7612181c09d4906e925135a0a81b085ac7a3556f8c3abfc8d20f",
+      "bytes": 1769,
+      "matches_manifest": true
+    },
+    "research/f10/f10_18_method_metric_bounds.csv": {
+      "sha256": "a0068c358ddf8c40c6c77d8cea0f0f210809f41978934acbc938f21434783e25",
+      "bytes": 760,
+      "matches_manifest": true
+    },
+    "research/f10/f10_225_human_sec_review_TEMPLATE.csv": {
+      "sha256": "5588d5d5dd479b8001bc3d882536ae06a335765e1f8911e20493847569e3f9f6",
+      "bytes": 531393,
+      "matches_manifest": true
+    },
+    "research/f10/f10_270_metric_bounds.csv": {
+      "sha256": "1702e5b6e2b1f2706db677e2a5018ef0ae9b2278655c86efd6a5454aa1dbe55a",
+      "bytes": 13687,
+      "matches_manifest": true
+    },
+    "research/f10/f10_900_review_aware_ranks.csv": {
+      "sha256": "f42c5bdee73a0343300a87e72672545f1ae82432d9e35116860e2ab36714c1c7",
+      "bytes": 87096,
+      "matches_manifest": true
+    },
+    "research/f10/f10_holdout_design_SEALED_UNSCORED.csv": {
+      "sha256": "f7c98639ad56b924bfdc07d13269108e4027f8abb1731aa18801c434a2a35cc2",
+      "bytes": 2051,
+      "matches_manifest": true
+    },
+    "research/f10/f10_manifest.json": {
+      "sha256": "d1753315541546aad215571e5dfa434aba4d32410b8373d7d53f7dfd5aa31ae5",
+      "bytes": 733,
+      "matches_manifest": true
+    },
+    "research/f10_closeout/F10_STATUS.md": {
+      "sha256": "b523b8af9177e01d5030bc9628fd439962b49b435807c9da1b5185fff235601b",
+      "bytes": 494,
+      "matches_manifest": true
+    },
+    "research/f10_closeout/f10_192_sec_review_queue.csv": {
+      "sha256": "8a7ca296436d21269b73bf0ead633016817ab419e60308ae9a999621f42de94a",
+      "bytes": 450294,
+      "matches_manifest": true
+    },
+    "research/f10_closeout/f10_corpuswide_numeric_review_NOT_QRELS.csv": {
+      "sha256": "0ef9203d2ff8366d736181ceb925f4e03b21c5c34cecf554f85b07fde61cb182",
+      "bytes": 163815,
+      "matches_manifest": true
+    },
+    "research/f10_closeout/f10_current_900_rank_checkpoint.csv": {
+      "sha256": "81c2e38fddb431d71f464e01188488abc2be4467c6ffa3b638e0eff162ecfcd9",
+      "bytes": 85566,
+      "matches_manifest": true
+    },
+    "research/f10_closeout/f10_holdout_12_runs_UNSCORED.csv": {
+      "sha256": "b1a8fc3b4af67b6ab2b58a6dbe09fa624a1dd276c7ad9a998d06f888a68c5d8f",
+      "bytes": 17392,
+      "matches_manifest": true
+    },
+    "research/f10_closeout/f10_holdout_source_first_REVIEW.csv": {
+      "sha256": "62a633afc1c93df45773b5f37fbfaf7780a5ce3de5e4105cf4affb8c0686393f",
+      "bytes": 68402,
+      "matches_manifest": true
+    },
+    "research/f10_closeout/f10_manifest.json": {
+      "sha256": "1ba8eb6cf94f68ef2e7af5d2759ddbd05ca692525f48f616208c3e0458799756",
+      "bytes": 1061,
+      "matches_manifest": true
+    },
+    "research/p7r/AMD_FY2022_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "0c657c8888b68a43e114597b22ca606a8e3d32f0d2b821c4d56b7e7d72ecfac6",
+      "bytes": 59365,
+      "matches_manifest": true
+    },
+    "research/p7r/AMD_FY2023_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "84ce0df7f2041edd8d96ab810eb49abfdbb1ea8200d583fe2fa66af93079ae40",
+      "bytes": 58954,
+      "matches_manifest": true
+    },
+    "research/p7r/AMD_FY2024_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "72ccae7d2faca288ca08c3959edfe3b80233c8010fcf5e3f86a43ced791e5827",
+      "bytes": 59317,
+      "matches_manifest": true
+    },
+    "research/p7r/AMZN_FY2022_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "63e73beb5e9abd1ebf0cfa6e2cbe9ea7a817f20ab27a882eaf785bef148de102",
+      "bytes": 58615,
+      "matches_manifest": true
+    },
+    "research/p7r/AMZN_FY2023_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "18460ae0d6735d9bc740f06ec0cd30a27aad1610b4cfc15c8521dd44f28f804d",
+      "bytes": 59773,
+      "matches_manifest": true
+    },
+    "research/p7r/AMZN_FY2024_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "cbd56370202216975e4977e449c2262111db77d51b187feeb0236d5e4f252ec8",
+      "bytes": 59475,
+      "matches_manifest": true
+    },
+    "research/p7r/GOOGL_FY2023_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "cfb4f76a69a1f577c393dd9915f324aad90641c6a6a8e1fc45e1cf0f022febc8",
+      "bytes": 52681,
+      "matches_manifest": true
+    },
+    "research/p7r/GOOGL_FY2024_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "27d5e6026bf36a7884a147b26f4db6de269148c31c5afcf2e4e97989f4955dc0",
+      "bytes": 54109,
+      "matches_manifest": true
+    },
+    "research/p7r/INTC_FY2022_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "db4218ec0c3221d8cc57de875108e3c163aefb17fc445154191d72eb4c264633",
+      "bytes": 54535,
+      "matches_manifest": true
+    },
+    "research/p7r/INTC_FY2023_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "eea9f65b3b756f2e25417ca8778926c5a43af475723e9bbf4471ef1a3d10864d",
+      "bytes": 52995,
+      "matches_manifest": true
+    },
+    "research/p7r/INTC_FY2024_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "3e136fd197a63c507204bbaa677d9caac647a1d9f0240fa44455e6409b6193aa",
+      "bytes": 52771,
+      "matches_manifest": true
+    },
+    "research/p7r/META_FY2024_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "a6c438d2cbbcd3d86a8db3ce817bd85b4d3c92395fc2f5b94c9b9bd8e39739b0",
+      "bytes": 56898,
+      "matches_manifest": true
+    },
+    "research/p7r/TSLA_FY2022_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "053ef9807d06c4ec31d59dd17f8e009ea363b848e64567c2801044413a0ca74a",
+      "bytes": 58655,
+      "matches_manifest": true
+    },
+    "research/p7r/TSLA_FY2023_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "f82d55abf907fd4e21e90ea6023bc145e2912a2a7529f43d9f1dfdeb091b50fe",
+      "bytes": 58546,
+      "matches_manifest": true
+    },
+    "research/p7r/TSLA_FY2024_SOURCE_FIRST_CANDIDATES.md": {
+      "sha256": "113e9066c66e73c0ce9e35ab71c244fd008c85c62623148e93f813e265955a49",
+      "bytes": 56391,
+      "matches_manifest": true
+    },
+    "research/p7r/p7r_12cases_independent_qrels_TEMPLATE.csv": {
+      "sha256": "3d8b5a7eb2bd63ca82e521006de438818dda6d03bbbae64594a72cc3f1cef989",
+      "bytes": 288316,
+      "matches_manifest": true
+    },
+    "research/p7r/p7r_3516_filing_chunk_review_queue.csv": {
+      "sha256": "52757b3c8b1dda3f29d204de73e546a6f0b615fb314ec5240c85130f463d2833",
+      "bytes": 907754,
+      "matches_manifest": true
+    },
+    "research/p7r/p7r_900_rank_labels.csv": {
+      "sha256": "72539186b10471490adf91bd49fef93612448046dfd10a858b9658d0d73c835c",
+      "bytes": 115831,
+      "matches_manifest": true
+    },
+    "research/p7r/p7r_90_method_diagnosis.csv": {
+      "sha256": "fe30d58f526e0c7a0c1d0c0938647a8997d75eb72b4985ab735a3a2328cce176",
+      "bytes": 6675,
+      "matches_manifest": true
+    },
+    "research/p7r/p7r_manifest.json": {
+      "sha256": "8ff5db3bef441fb043079fc0f9c892e025a538112907530fcc32abac8935c51b",
+      "bytes": 1762,
+      "matches_manifest": true
+    },
+    "research/p7r/p7r_stale_fy_header_conflicts.csv": {
+      "sha256": "fd2d1de7d6de26dec0f634e9892d9d2e547c8661ba3a90664bd5f6f04dd6dbaa",
+      "bytes": 1246817,
+      "matches_manifest": true
+    },
+    "snapshots/COMMANDER_INDEX_RECOVERY_MANIFEST.json": {
+      "sha256": "0ca12a6e59d4c3a639ca07b33bf5430212de9f5f52e9212ccc0543ad3e2377b1",
+      "bytes": 972,
+      "matches_manifest": true
+    },
+    "snapshots/FAITH_R_P3D_RECOVERED_8670.zip": {
+      "sha256": "1e8e3c6393e7e59786575ed0228254079639016c7b986d1e9702fa5a3ce32540",
+      "bytes": 43983428,
+      "matches_manifest": true
+    },
+    "snapshots/FAITH_R_P7K_CORRECTED_8670.zip": {
+      "sha256": "fef99bfa5cde1ec358f460efacd3db4ca540673213491c569d64e313070df663",
+      "bytes": 44078704,
+      "matches_manifest": true
+    },
+    "snapshots/P7K_RESTORED_PATCH_LOG.csv": {
+      "sha256": "e2ab7a1d5bc2592ca885b4cf60de6ae8dac93aeab473fed0bf0cf00f1b48778a",
+      "bytes": 736,
+      "matches_manifest": true
+    }
+  },
+  "snapshots": {
+    "A": {
+      "sha256": "1e8e3c6393e7e59786575ed0228254079639016c7b986d1e9702fa5a3ce32540",
+      "crc": null,
+      "sqlite_sha256": "22555431963c4c4a6318e0087850d2cd6a305e0f14a18e008fee4d9da324b917",
+      "collection_meta": {
+        "collections": {
+          "financial_docs": {
+            "vectors": {
+              "dense": {
+                "size": 384,
+                "distance": "Cosine",
+                "hnsw_config": null,
+                "quantization_config": null,
+                "on_disk": null,
+                "memory": null,
+                "datatype": null,
+                "multivector_config": null
+              }
+            },
+            "shard_number": null,
+            "sharding_method": null,
+            "replication_factor": null,
+            "write_consistency_factor": null,
+            "on_disk_payload": null,
+            "payload": null,
+            "id_tracker": null,
+            "hnsw_config": null,
+            "wal_config": null,
+            "optimizers_config": null,
+            "quantization_config": null,
+            "sparse_vectors": {
+              "bm25": {
+                "index": {
+                  "full_scan_threshold": null,
+                  "on_disk": false,
+                  "memory": null,
+                  "datatype": null
+                },
+                "modifier": "idf"
+              },
+              "sparse": {
+                "index": {
+                  "full_scan_threshold": null,
+                  "on_disk": false,
+                  "memory": null,
+                  "datatype": null
+                },
+                "modifier": "idf"
+              }
+            },
+            "strict_mode_config": null,
+            "metadata": null
+          }
+        },
+        "aliases": {},
+        "text_indexes": {}
+      }
+    },
+    "B": {
+      "sha256": "fef99bfa5cde1ec358f460efacd3db4ca540673213491c569d64e313070df663",
+      "crc": null,
+      "sqlite_sha256": "99e484d79ceb6f3832b3dc5c7eddc137347dc88779e9dda5e199b3c79f595913",
+      "collection_meta": {
+        "collections": {
+          "financial_docs": {
+            "vectors": {
+              "dense": {
+                "size": 384,
+                "distance": "Cosine",
+                "hnsw_config": null,
+                "quantization_config": null,
+                "on_disk": null,
+                "memory": null,
+                "datatype": null,
+                "multivector_config": null
+              }
+            },
+            "shard_number": null,
+            "sharding_method": null,
+            "replication_factor": null,
+            "write_consistency_factor": null,
+            "on_disk_payload": null,
+            "payload": null,
+            "id_tracker": null,
+            "hnsw_config": null,
+            "wal_config": null,
+            "optimizers_config": null,
+            "quantization_config": null,
+            "sparse_vectors": {
+              "bm25": {
+                "index": {
+                  "full_scan_threshold": null,
+                  "on_disk": false,
+                  "memory": null,
+                  "datatype": null
+                },
+                "modifier": "idf"
+              },
+              "sparse": {
+                "index": {
+                  "full_scan_threshold": null,
+                  "on_disk": false,
+                  "memory": null,
+                  "datatype": null
+                },
+                "modifier": "idf"
+              }
+            },
+            "strict_mode_config": null,
+            "metadata": null
+          }
+        },
+        "aliases": {},
+        "text_indexes": {}
+      }
+    }
+  },
+  "corpus_sha256": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f"
+}

@@ -1,0 +1,266 @@
+{
+  "status": "POST_HOC_EXPOSED_DEVELOPMENT_ONLY",
+  "case_count": 15,
+  "inputs_sha256": {
+    "a4": "7b796ccd78a3e60a7d9142421d843a9e6802ed7163cee220e5d963c0d9de3473",
+    "a4r": "cb6a5087d13e182108609658ab0acb01b4a5429184709eedddfff0a90c631d9a"
+  },
+  "same_candidate_pool_all": true,
+  "a4_top1_labels": {
+    "YES": 10,
+    "NO": 3,
+    "UNJUDGED": 1,
+    "PARTIAL_NOT_GOLD": 1
+  },
+  "a4r_top1_labels": {
+    "YES": 13,
+    "UNJUDGED": 2
+  },
+  "a4r_known_positive_h3": 14,
+  "a4r_known_positive_h10": 15,
+  "a4_p50_ms": 597.554,
+  "a4r_p50_ms": 687.295,
+  "cases": [
+    {
+      "case": "AMD_FY2022",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0000002488_0000002488-23-000047_chunk_0103",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0000002488_0000002488-23-000047_chunk_0103",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 595.241,
+      "a4r_ms": 1380.568
+    },
+    {
+      "case": "AMD_FY2023",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0000002488_0000002488-24-000012_chunk_0150",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0000002488_0000002488-24-000012_chunk_0150",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 592.317,
+      "a4r_ms": 683.023
+    },
+    {
+      "case": "AMD_FY2024",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0000002488_0000002488-25-000012_chunk_0108",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0000002488_0000002488-25-000012_chunk_0108",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 721.987,
+      "a4r_ms": 665.576
+    },
+    {
+      "case": "AMZN_FY2022",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001018724_0001018724-23-000004_chunk_0107",
+        "label": "NO"
+      },
+      "a4r_top1": {
+        "id": "0001018724_0001018724-23-000004_chunk_0053",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 533.299,
+      "a4r_ms": 661.944
+    },
+    {
+      "case": "AMZN_FY2023",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001018724_0001018724-24-000008_chunk_0056",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0001018724_0001018724-24-000008_chunk_0081",
+        "label": "UNJUDGED"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 546.395,
+      "a4r_ms": 629.277
+    },
+    {
+      "case": "AMZN_FY2024",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001018724_0001018724-25-000004_chunk_0058",
+        "label": "NO"
+      },
+      "a4r_top1": {
+        "id": "0001018724_0001018724-25-000004_chunk_0081",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 597.554,
+      "a4r_ms": 692.509
+    },
+    {
+      "case": "GOOGL_FY2023",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001652044_0001652044-24-000022_chunk_0075",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0001652044_0001652044-24-000022_chunk_0075",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 656.227,
+      "a4r_ms": 735.902
+    },
+    {
+      "case": "GOOGL_FY2024",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001652044_0001652044-25-000014_chunk_0135",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0001652044_0001652044-25-000014_chunk_0135",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 793.884,
+      "a4r_ms": 741.719
+    },
+    {
+      "case": "INTC_FY2022",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0000050863_0000050863-23-000006_chunk_0210",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0000050863_0000050863-23-000006_chunk_0210",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 623.329,
+      "a4r_ms": 687.295
+    },
+    {
+      "case": "INTC_FY2023",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0000050863_0000050863-24-000010_chunk_0209",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0000050863_0000050863-24-000010_chunk_0209",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 597.52,
+      "a4r_ms": 662.565
+    },
+    {
+      "case": "INTC_FY2024",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0000050863_0000050863-25-000009_chunk_0063",
+        "label": "UNJUDGED"
+      },
+      "a4r_top1": {
+        "id": "0000050863_0000050863-25-000009_chunk_0063",
+        "label": "UNJUDGED"
+      },
+      "a4r_known_positive_h3": 0,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 695.78,
+      "a4r_ms": 729.577
+    },
+    {
+      "case": "META_FY2024",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001326801_0001326801-25-000017_chunk_0176",
+        "label": "PARTIAL_NOT_GOLD"
+      },
+      "a4r_top1": {
+        "id": "0001326801_0001326801-25-000017_chunk_0175",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 713.607,
+      "a4r_ms": 715.215
+    },
+    {
+      "case": "TSLA_FY2022",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001318605_0000950170-23-001409_chunk_0127",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0001318605_0000950170-23-001409_chunk_0127",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 589.708,
+      "a4r_ms": 672.431
+    },
+    {
+      "case": "TSLA_FY2023",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001318605_0001628280-24-002390_chunk_0089",
+        "label": "NO"
+      },
+      "a4r_top1": {
+        "id": "0001318605_0001628280-24-002390_chunk_0069",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 546.414,
+      "a4r_ms": 668.946
+    },
+    {
+      "case": "TSLA_FY2024",
+      "same_candidate_pool": true,
+      "a4_top1": {
+        "id": "0001318605_0001628280-25-003063_chunk_0110",
+        "label": "YES"
+      },
+      "a4r_top1": {
+        "id": "0001318605_0001628280-25-003063_chunk_0110",
+        "label": "YES"
+      },
+      "a4r_known_positive_h3": 1,
+      "a4r_known_positive_h10": 1,
+      "a4_ms": 649.165,
+      "a4r_ms": 691.477
+    }
+  ],
+  "qualification": "Repair designed after inspecting exposed failures; no independent superiority or cell accuracy claim"
+}

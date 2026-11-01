@@ -1,0 +1,23 @@
+const fs = require('fs');
+const path = require('path');
+const { chromium } = require('playwright');
+(async () => {
+  const root = path.resolve(__dirname, '..');
+  const token = fs.readFileSync(path.join(root, 'tmp/studio-runtime/access-token.txt'), 'utf8').trim();
+  const browser = await chromium.launch({headless:true});
+  const page = await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
+  const errors=[];
+  page.on('pageerror', e=>errors.push(e.message));
+  await page.addInitScript(value=>sessionStorage.setItem('studio-token', value), token);
+  await page.goto('http://127.0.0.1:18110/app/#/compare', {waitUntil:'networkidle'});
+  await page.getByRole('heading',{name:'FAITH-R · chạy trên chỉ mục SEC phục hồi'}).waitFor();
+  const status = await page.locator('text=LIVE_ON_DEMAND').count();
+  const summary = await page.getByText('Kết quả các phương án đã chạy').count();
+  await page.getByRole('button',{name:'Chạy truy vấn trên Qdrant nghiên cứu'}).click();
+  await page.getByText('LIVE_EXECUTED',{exact:false}).first().waitFor({timeout:90000});
+  const first = await page.locator('code').allTextContents();
+  const screenshot=path.join(root,'docs/topic3_v5/recovery_live/live_faith_r_react.png');
+  await page.screenshot({path:screenshot,fullPage:true});
+  console.log(JSON.stringify({status,summary,first:first.filter(x=>x.includes('chunk_')).slice(0,3),errors,screenshot}));
+  await browser.close();
+})().catch(e=>{console.error(e.message);process.exit(1)});

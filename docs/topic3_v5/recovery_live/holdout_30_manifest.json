@@ -1,0 +1,7 @@
+{
+  "status": "SEALED_DESIGN_UNJUDGED",
+  "questions": 30,
+  "sha256": "3e02003cdb56d81bfaacf4680e94f9a62faa2445acc7ecd2f49e6634356efadc",
+  "rule": "No evaluation or tuning on these questions before human source adjudication",
+  "source_level": "filing URL only; exact cell spans pending reviewer"
+}

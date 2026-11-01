@@ -1,0 +1,28 @@
+{
+  "status": "LIVE_EXECUTED",
+  "arm": "A",
+  "dataset": "p7l",
+  "questions": 15,
+  "methods": [
+    "bm25",
+    "dense",
+    "sparse",
+    "bm25_dense",
+    "sparse_dense",
+    "rerank"
+  ],
+  "runs": 90,
+  "expected_runs": 90,
+  "index_points": 8670,
+  "raw_path": "C:\\Users\\Admin\\Documents\\GitHub\\tinyllama-fastapi\\tmp\\topic3_v5r\\live\\p7l_A.jsonl",
+  "raw_sha256": "5cd8cfa1daead38b455dc7bc390547bdbb86af71fb3481e20051d9551d52985e",
+  "p50_ms": 600.8565,
+  "p95_ms": 1096.696,
+  "peak_observed_process_rss_mib": 1207.38,
+  "minimum_observed_free_ram_mib": 788.09,
+  "limits": [
+    "Elapsed time includes query embedding and Qdrant local search, warm/cold mixed",
+    "P7L filters are ticker+fiscal period; P5 is unfiltered",
+    "Index A recovered from P3D, equivalence to original P3C unproven"
+  ]
+}

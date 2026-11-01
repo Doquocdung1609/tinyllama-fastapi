@@ -1,0 +1,167 @@
+{
+  "status": "LIVE_VS_HISTORICAL_RECONCILED",
+  "summary": {
+    "p5_A": {
+      "runs": 150,
+      "historical_comparable": 150,
+      "exact_top10": 150,
+      "same_top1": 150,
+      "target_filing_h10": null,
+      "methods": {
+        "bm25": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "bm25_dense": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "dense": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "rerank": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "sparse": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "sparse_dense": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        }
+      }
+    },
+    "p5_B": {
+      "runs": 150,
+      "historical_comparable": 0,
+      "exact_top10": 0,
+      "same_top1": 0,
+      "target_filing_h10": null,
+      "methods": {
+        "bm25": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "bm25_dense": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "dense": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "rerank": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "sparse": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        },
+        "sparse_dense": {
+          "runs": 25,
+          "known_positive_h1": null,
+          "known_positive_h10": null
+        }
+      }
+    },
+    "p7l_A": {
+      "runs": 90,
+      "historical_comparable": 90,
+      "exact_top10": 88,
+      "same_top1": 90,
+      "target_filing_h10": 0,
+      "methods": {
+        "bm25": {
+          "runs": 15,
+          "known_positive_h1": 0,
+          "known_positive_h10": 0
+        },
+        "bm25_dense": {
+          "runs": 15,
+          "known_positive_h1": 0,
+          "known_positive_h10": 0
+        },
+        "dense": {
+          "runs": 15,
+          "known_positive_h1": 0,
+          "known_positive_h10": 0
+        },
+        "rerank": {
+          "runs": 15,
+          "known_positive_h1": 0,
+          "known_positive_h10": 0
+        },
+        "sparse": {
+          "runs": 15,
+          "known_positive_h1": 0,
+          "known_positive_h10": 0
+        },
+        "sparse_dense": {
+          "runs": 15,
+          "known_positive_h1": 0,
+          "known_positive_h10": 0
+        }
+      }
+    },
+    "p7l_B": {
+      "runs": 90,
+      "historical_comparable": 90,
+      "exact_top10": 90,
+      "same_top1": 90,
+      "target_filing_h10": 90,
+      "methods": {
+        "bm25": {
+          "runs": 15,
+          "known_positive_h1": 3,
+          "known_positive_h10": 12
+        },
+        "bm25_dense": {
+          "runs": 15,
+          "known_positive_h1": 3,
+          "known_positive_h10": 14
+        },
+        "dense": {
+          "runs": 15,
+          "known_positive_h1": 5,
+          "known_positive_h10": 13
+        },
+        "rerank": {
+          "runs": 15,
+          "known_positive_h1": 4,
+          "known_positive_h10": 14
+        },
+        "sparse": {
+          "runs": 15,
+          "known_positive_h1": 0,
+          "known_positive_h10": 12
+        },
+        "sparse_dense": {
+          "runs": 15,
+          "known_positive_h1": 3,
+          "known_positive_h10": 13
+        }
+      }
+    }
+  },
+  "csv_sha256": "2ca486c30307ba2c2375af82f606aea3434246ec7723be8b3a976cc71dbcde94",
+  "limits": [
+    "Historical P5 is for Index A only",
+    "Index A P3D equivalence to P3C unproven",
+    "F10 labels are exposed/incomplete; known-positive Hit is not independent Recall"
+  ]
+}

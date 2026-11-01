@@ -4,6 +4,8 @@ from functools import lru_cache
 from hashlib import sha256
 import json
 import os
+import subprocess
+from pathlib import Path
 from threading import BoundedSemaphore, Thread
 from typing import Literal
 from uuid import uuid4
@@ -20,6 +22,7 @@ from app.product.pdf_extract import ocr_capability,folded
 
 router=APIRouter(prefix='/studio',tags=['react-product'],dependencies=[Depends(require_studio_token)])
 slots=BoundedSemaphore(1)
+research_slots=BoundedSemaphore(1)
 
 
 class UnifiedSearch(BaseModel):
@@ -216,6 +219,72 @@ def faith_r_historical_lab():
     from app.product.topic3_lab import faith_r_recorded_experiment
     try:return faith_r_recorded_experiment()
     except (OSError,ValueError,KeyError) as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
+
+
+class FaithRLiveRequest(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    query:str=Field(min_length=3,max_length=300)
+    arm:Literal['A0','A1','A2','A3','A4','A4R','A5']='A4R'
+
+
+@router.get('/research-lab/faith-r/live/status')
+def faith_r_live_status():
+    root=Path(__file__).resolve().parents[2]
+    ready=(root/'tmp/topic3_v5r/research-venv/Scripts/python.exe').is_file() and all(
+        (root/f'tmp/topic3_v5r/restored/{arm}/meta.json').is_file() for arm in ('A','B'))
+    return {'status':'AVAILABLE' if os.getenv('FAITH_R_LIVE_ENABLED')=='1' and ready else 'NOT_AVAILABLE',
+            'index_a':'P3D_RECOVERED_NOT_EXACT_P3C','index_b':'P7K_FISCAL_CORRECTED',
+            'mode':'LIVE_ON_DEMAND' if os.getenv('FAITH_R_LIVE_ENABLED')=='1' and ready else 'DISABLED'}
+
+
+@router.get('/research-lab/faith-r/live/summary')
+def faith_r_live_summary():
+    root=Path(__file__).resolve().parents[2]
+    path=root/'docs/topic3_v5/recovery_live/ablation_summary.json'
+    repair=root/'docs/topic3_v5/recovery_live/posthoc_repair.json'
+    if not path.is_file():
+        raise HTTPException(404,detail={'code':'LIVE_EXPERIMENT_NOT_RECORDED'})
+    measured=json.loads(path.read_text(encoding='utf-8'))
+    arms={key:{'known_positive_hit':value['known_positive_hit'],
+               'target_filing_hit':value['target_filing_hit'],
+               'top1_labels':value['top1_labels'],'p50_ms':value['p50_ms']}
+          for key,value in measured['arms'].items()}
+    if repair.is_file():
+        posthoc=json.loads(repair.read_text(encoding='utf-8'))
+        arms['A4R']={'known_positive_hit':{'1':posthoc['a4r_top1_labels'].get('YES',0),
+                                          '3':posthoc['a4r_known_positive_h3'],
+                                          '10':posthoc['a4r_known_positive_h10']},
+                     'target_filing_hit':None,
+                     'top1_labels':posthoc['a4r_top1_labels'],
+                     'p50_ms':posthoc['a4r_p50_ms']}
+    return {'status':'RECORDED_LIVE_RUN_EXPOSED_DEVELOPMENT','case_count':measured['case_count'],
+            'arms':arms,'human_gold':False,'numeric_cells_verified':0}
+
+
+@router.post('/research-lab/faith-r/live')
+def faith_r_live_lab(payload:FaithRLiveRequest):
+    if os.getenv('FAITH_R_LIVE_ENABLED')!='1':
+        raise HTTPException(503,detail={'code':'RESEARCH_INDEX_NOT_ENABLED'})
+    root=Path(__file__).resolve().parents[2]
+    python=root/'tmp/topic3_v5r/research-venv/Scripts/python.exe'
+    script=root/'scripts/topic3_v5r_query_once.py'
+    if not python.is_file() or not all((root/f'tmp/topic3_v5r/restored/{arm}/meta.json').is_file() for arm in ('A','B')):
+        raise HTTPException(503,detail={'code':'RESTORED_RESEARCH_INDEX_NOT_AVAILABLE'})
+    if not research_slots.acquire(blocking=False):
+        raise HTTPException(429,detail={'code':'RESEARCH_INDEX_BUSY'})
+    try:
+        try:
+            result=subprocess.run([str(python),str(script),'--query',payload.query,'--arm',payload.arm],
+                                  cwd=root,capture_output=True,text=True,encoding='utf-8',timeout=60,check=False)
+        except subprocess.TimeoutExpired:
+            raise HTTPException(504,detail={'code':'RESEARCH_QUERY_TIMEOUT'}) from None
+        if result.returncode!=0:
+            raise HTTPException(503,detail={'code':'RESEARCH_QUERY_FAILED'})
+        return json.loads(result.stdout)
+    except (ValueError,json.JSONDecodeError):
+        raise HTTPException(503,detail={'code':'RESEARCH_QUERY_INVALID_RESULT'}) from None
+    finally:
+        research_slots.release()
 
 
 @router.get('/readiness')
