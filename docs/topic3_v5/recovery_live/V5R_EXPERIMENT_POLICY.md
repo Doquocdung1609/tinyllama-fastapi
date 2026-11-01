@@ -1,0 +1,7 @@
+# V5R live ablation policy — fixed before outcomes
+
+Date: 2026-11-02. The 15 P7L/F10 development questions and many labels were exposed in V5. These arms are exploratory, not a sealed test. Use the recovered Index A (`P3D_RECOVERED`) and fiscal-corrected Index B, identical 8,670 source chunk IDs and vectors. Index A is **not** claimed bit-identical to original P3C.
+
+For each question, `bm25_dense` with author BGE/BM25 query embeddings, Qdrant RRF and candidate budget 10: A0 = unfiltered A; A1 = unfiltered B; A2 = B with explicit issuer + single fiscal-year filter; A3 = A2 plus a sidecar lookup over *the same 8,670 chunk IDs*, reserving 25% of the 10 candidate slots for table-like exact/related metric phrases, filling duplicate slots from Qdrant; A4 = A3 reordered by the V5 deterministic features; A5 = A4 with no numeric certification unless a separate exact source-cell reviewer exists. The sidecar is extra scanning work, so A2→A3 is not a pure equal-compute comparison; point count, source corpus and output budget remain fixed.
+
+Sidecar row candidates are provisional. No column/year/value/unit is inferred from pipe text. The historical F10 labels are read **only after** all arms produce their results. Unknown is never counted as NO; PARTIAL_NOT_GOLD is not YES. Report known-positive lower and unknown-sensitive upper Hit bounds, target-filing Hit, individual failures, query and memory latency. No Recall or independent superiority claim. A5 refusal is an answer-safety outcome, not a retrieval gain.

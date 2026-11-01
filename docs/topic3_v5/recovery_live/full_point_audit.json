@@ -1,0 +1,51 @@
+{
+  "frozen_chunks": 8670,
+  "arms": {
+    "A": {
+      "arm": "A",
+      "points": 8670,
+      "bm25_nonempty": 8670,
+      "sparse_nonempty": 8670,
+      "unique_point_ids": 8670,
+      "unique_chunk_ids": 8670,
+      "errors_count": 0,
+      "errors_sample": [],
+      "signature_path": "C:\\Users\\Admin\\Documents\\GitHub\\tinyllama-fastapi\\tmp\\topic3_v5r\\signatures\\A.jsonl"
+    },
+    "B": {
+      "arm": "B",
+      "points": 8670,
+      "bm25_nonempty": 8670,
+      "sparse_nonempty": 8670,
+      "unique_point_ids": 8670,
+      "unique_chunk_ids": 8670,
+      "errors_count": 0,
+      "errors_sample": [],
+      "signature_path": "C:\\Users\\Admin\\Documents\\GitHub\\tinyllama-fastapi\\tmp\\topic3_v5r\\signatures\\B.jsonl"
+    }
+  },
+  "comparison": {
+    "point_sets_equal": true,
+    "changed_counts": {
+      "payload:fiscal_period": 3516
+    },
+    "changed_accessions": {
+      "0001628280-25-003063": 241,
+      "0000050863-24-000010": 303,
+      "0000002488-24-000012": 228,
+      "0000050863-25-000009": 302,
+      "0001652044-25-000014": 211,
+      "0001326801-25-000017": 280,
+      "0001628280-24-002390": 246,
+      "0000950170-23-001409": 263,
+      "0000002488-25-000012": 219,
+      "0001018724-25-000004": 163,
+      "0000050863-23-000006": 303,
+      "0001652044-24-000022": 206,
+      "0000002488-23-000047": 225,
+      "0001018724-24-000008": 166,
+      "0001018724-23-000004": 160
+    },
+    "point_diff_sha256": "63a3ac44ed8f9ddfeff7d4a4ed06460300e3a9f9eb725bef68b9df760bcfa370"
+  }
+}

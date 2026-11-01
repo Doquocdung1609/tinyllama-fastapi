@@ -11,10 +11,13 @@ import re
 from dataclasses import dataclass
 
 from app.financial_query.normalizer import normalize_question
-from app.financial_query.terminology import resolve_terms
 
 
 ISSUER_ALIASES = {
+    "AAPL": ("apple", "aapl"),
+    "MSFT": ("microsoft", "msft"),
+    "NVDA": ("nvidia", "nvda"),
+    "TSM": ("tsmc", "taiwan semiconductor", "tsm"),
     "AMD": ("amd", "advanced micro devices"),
     "INTC": ("intel", "intc"),
     "AMZN": ("amazon", "amzn"),
@@ -35,6 +38,11 @@ class QuerySlots:
     metric: str | None
     total_required: bool
     unresolved: tuple[str, ...]
+    currency: str | None = None
+    unit: str | None = None
+    statement_scope: str | None = None
+    comparative_intent: bool = False
+    requested_years: tuple[int, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -66,20 +74,24 @@ def parse_query(question: str) -> QuerySlots:
     q = normalize_question(question)
     issuers = [ticker for ticker, aliases in ISSUER_ALIASES.items()
                if any(re.search(r"(?<!\w)" + re.escape(alias) + r"(?!\w)", q) for alias in aliases)]
-    years = {int(y) for y in re.findall(r"\b(?:19|20)\d{2}\b", q)}
-    terms = resolve_terms(q)
+    years = {int(y) for y in re.findall(r"(?<!\d)(?:fy\s*)?((?:19|20)\d{2})\b", q)}
     metric = "CAPEX" if re.search(r"\bcapital\s+expenditures?\b|\bcapex\b", q) else (
-        "TOTAL_REVENUE" if "total revenue" in q or "total revenues" in q else None)
+        "TOTAL_REVENUE" if re.search(r"\b(?:total\s+(?:net\s+)?(?:revenues?|sales)|net\s+sales)\b", q) else None)
     unresolved = []
     if len(issuers) != 1:
         unresolved.append("ISSUER_AMBIGUOUS_OR_ABSENT")
     if len(years) != 1:
         unresolved.append("FISCAL_YEAR_AMBIGUOUS_OR_ABSENT")
-    if metric is None or (terms and not any(t.canonical == "revenue" for t in terms) and metric == "TOTAL_REVENUE"):
+    if metric is None:
         unresolved.append("METRIC_AMBIGUOUS_OR_ABSENT")
+    currency = "USD" if re.search(r"\b(?:usd|u\.s\. dollars?|dollars?)\b", q) else None
+    unit = "MILLION" if re.search(r"\bmillions?\b", q) else "BILLION" if re.search(r"\bbillions?\b", q) else None
+    scope = "CONSOLIDATED" if "consolidated" in q else "PARENT" if "parent company" in q else None
+    comparative = len(years) > 1 or bool(re.search(r"\b(?:compare|versus|vs\.?|compared|change between)\b", q))
     return QuerySlots(issuers[0] if len(issuers) == 1 else None,
                       next(iter(years)) if len(years) == 1 else None,
-                      metric, "total" in q, tuple(unresolved))
+                      metric, "total" in q, tuple(unresolved), currency, unit, scope, comparative,
+                      tuple(sorted(years)))
 
 
 def candidate(hit: dict, rank: int, slots: QuerySlots) -> EvidenceCandidate:
@@ -110,7 +122,12 @@ def candidate(hit: dict, rank: int, slots: QuerySlots) -> EvidenceCandidate:
 
 
 def rank_recorded_top10(hits: list[dict], slots: QuerySlots) -> list[EvidenceCandidate]:
-    if len(hits) > 10 or len({h["chunk_id"] for h in hits}) != len(hits):
+    return rank_candidates(hits, slots, budget=10)
+
+
+def rank_candidates(hits: list[dict], slots: QuerySlots, budget: int) -> list[EvidenceCandidate]:
+    """Rerank a fixed live or recorded pool without expanding its identifiers."""
+    if not 1 <= budget <= 100 or len(hits) > budget or len({h["chunk_id"] for h in hits}) != len(hits):
         raise ValueError("RECORDED_TOP10_BUDGET_OR_DUPLICATE")
     candidates = [candidate(hit, i, slots) for i, hit in enumerate(hits, 1)]
     return sorted(candidates, key=lambda item: (tuple(-x for x in item.ordering()), item.original_rank, item.chunk_id))

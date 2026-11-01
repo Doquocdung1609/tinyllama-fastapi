@@ -1,0 +1,38 @@
+{
+  "contact_user_agent_configured": true,
+  "max_requests_per_second": 1,
+  "sources": [
+    {
+      "accession": "0000320193-24-000123",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "sec_report_date": "2024-09-28",
+      "bytes": 1503887,
+      "sha256": "af35e3e22f0ef07b1363e03a994dd349af6dc6c3eda0a6792d01e9065f121b09",
+      "status": "DOWNLOADED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0001018724-25-000004",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "sec_report_date": "2024-12-31",
+      "bytes": 1922462,
+      "sha256": "76c534223003d4f887482922be85ace0b952216122ae47747a012d622ae91f2c",
+      "status": "DOWNLOADED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0001628280-24-002390",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024002390/tsla-20231231.htm",
+      "sec_report_date": "2023-12-31",
+      "bytes": 2672853,
+      "sha256": "f2329820ee0508c175921bfe2c8f21226a13f32de1bd5113cab7add04a01a51c",
+      "status": "DOWNLOADED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0001326801-25-000017",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+      "sec_report_date": "2024-12-31",
+      "bytes": 2369876,
+      "sha256": "f137b12990dec2438f6ccef0d3be3164c062cbf15e32f8ac7b48e2598405d186",
+      "status": "DOWNLOADED_OFFICIAL_SEC"
+    }
+  ]
+}
