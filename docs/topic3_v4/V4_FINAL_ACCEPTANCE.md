@@ -10,6 +10,6 @@
 
 **Recommendation: `PRODUCT_DEMO_READY / RESEARCH_PARTIAL` for the bounded presentation script.** This does not assert complete PDF numerical QA or research reproduction of the original 47 SEC filings. The repository owner retains final acceptance authority. Do not merge PR #29 or this V4 Draft PR on the basis of this memo alone.
 
-Local checks: 722 Python PASS (one Starlette `httpx` deprecation warning); 10 frontend PASS; Vite build PASS. Remote GitHub Actions require a separate check; PR #29 jobs previously did not start due to account billing, which is not a test PASS.
+Local checks: 722 Python PASS (one Starlette `httpx` deprecation warning); 10 frontend PASS; Vite build PASS. PR #30 GitHub Actions run 41299532098 completed with `test` PASS and `frontend` PASS on commit `71deda8`; the run warned about Node.js 20 action deprecation and the Ubuntu runner migration. PR #29's older account billing block remains a historical observation, not this PR's CI state.
 
 Remaining work for a stronger claim: human-reviewed independent qrels, equal-count chunking control, exact PDF table-cell review, Apple PDF unit case, cold OCR timing and resource peaks. No model weights, source PDFs, local token or Qdrant index are part of the commit.
