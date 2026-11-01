@@ -11,7 +11,7 @@ export type Cell={column_index:number;text:string;box:number[]|null;confidence:n
 export type TableRow={id:string;row_label:string;cells:Cell[];box:number[];structure_status:string}
 export type PageEvidence={page:number;width:number;height:number;method:string;original_rotation:number;pdf_type:string;engine:Record<string,unknown>;text:string;lines:{text:string;box:number[];words:{text:string;box:number[];confidence:number|null;source?:string}[]}[];tables:TableRow[];evidence_sha256:string}
 export type Extraction={pages_completed:number;pages_total:number;pdf_type:string;table_status:string;search_ready:boolean;pages:{page:number;status:string;method:string;error?:string;table_rows:number}[]}
-export type Answer={status:string;answer?:string;reason?:string;values?:string[];unit?:string;formula?:string;citations?:Evidence[];operands?:{value:string;period:string;unit:string;normalized_value:string;normalized_unit:string}[]}
+export type Answer={status:string;answer?:string;reason?:string;values?:string[];unit?:string;formula?:string;citations?:Evidence[];warnings?:string[];verification_status?:string;search_profile?:string;operands?:{value:string;period:string;unit:string;normalized_value:string;normalized_unit:string}[]}
 export type ResearchEvent={stage:string;status:string;label:string;data:unknown}
 export type Job={id:string;status:string;error?:string;events:ResearchEvent[]}
 
