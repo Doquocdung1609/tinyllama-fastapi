@@ -1,0 +1,5 @@
+# Ablation and errors
+
+A0→A1 isolates the *recorded* fiscal payload correction for target-filing filtering; it does not establish financial-cell improvement. A1→A4 keeps the exact same Top-10 candidate IDs, proving any top-rank change is ordering only. A2/A3 are feature construction within that arm and have no separate causal retrieval result. A5 refuses to verify any new numeric cell. An equal-count index segmentation ablation is blocked by absent vectors/Qdrant snapshots; V4's 121-versus-1,241 point comparison is confounded.
+
+Per-case results are in [replay_results.json](replay_results.json). AMZN FY2022 and FY2024 top1 remain `NO`; Meta FY2024 CAPEX remains `PARTIAL_NOT_GOLD`, illustrating component-versus-total ambiguity. INTC FY2024 moves from `NO` to `UNJUDGED`, not to demonstrated success. The 14/15 known-positive Top-10 ceiling is unchanged: no reranker can retrieve missing candidates. The V5 rule did not make any known-positive top1 case worse in this exposed set, but the unjudged outcome and lack of independent gold prevent a generalized win claim. A4 adds text scanning over up to 10 candidates; current replay is not a live latency/memory study.

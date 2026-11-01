@@ -1,0 +1,3 @@
+# Independent evaluation state
+
+`NO_INDEPENDENT_GOLD`. The F10 checkpoint contains 900 ranking positions, but only 340 distinct case/chunk pairs: 57 YES, 89 NO, 2 PARTIAL_NOT_GOLD, 192 UNJUDGED. The 15 development questions and labels were available during implementation; the preregistration records this exposure. Holdout design has eight pending rows; 31 source-first review rows remain unjudged. None are a completed, independently reviewed new 30-question set. No MRR, nDCG, Recall, exact-cell accuracy or superiority inference is reported. [`independent_qrels.py`](../../app/research_retrieval/independent_qrels.py) enforces this gate. Human source adjudication with accession, cell locator, period, unit and reviewer identity is the remaining acceptance work.

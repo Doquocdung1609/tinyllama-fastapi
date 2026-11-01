@@ -6,11 +6,14 @@ type Hit={rank:number;chunk_id:string;score:number;snippet:string;statement_titl
 type Arm={name:string;family:string;target_rank_top10:number|null;query_ms:number;hits:Hit[]}
 type Question={id:string;query:string;ticker:string;source_url:string|null;source_locator:string|null;answerable:boolean;review_status:string;arms:Arm[]}
 type Lab={status:string;base_commit:string;corpus:string;qrels_sha256:string;human_gold:boolean;limits:string[];live_modes:string[];unavailable_live_modes:string[];questions:Question[]}
+type ReplayCase={case:string;question:string;accession:string;source_url:string;report_date:string;a1_top1:{chunk_id:string;label:string};a4_top1:{chunk_id:string;label:string;excerpt:string|null;verification_status:string}}
+type Replay={status:string;review_status?:string;dataset?:string;aggregate?:Record<string,{known_positive_hit:Record<string,number>;top1_labels:Record<string,number>}>;cases?:ReplayCase[];limits?:string[]}
 
 const names:Record<string,string>={R0_BM25:'BM25 tác giả',R1_DENSE:'Dense BGE-small',R2_SPLADE:'SPLADE',R3_BM25_DENSE_RRF:'BM25 + Dense RRF',R4_SPLADE_DENSE_RRF:'SPLADE + Dense RRF',R5_THREE_WAY_RRF:'RRF ba nhánh',R6_AUTHOR_DETERMINISTIC_STAGE2:'Stage-2 quy tắc',I1_STRUCTURE_BM25:'BM25 theo cấu trúc bảng'}
 
 export default function Topic3Lab(){
  const result=useQuery({queryKey:['topic3-historical-lab'],queryFn:()=>api<Lab>('/research-lab/topic3'),staleTime:300000})
+ const replay=useQuery({queryKey:['faith-r-recorded-lab'],queryFn:()=>api<Replay>('/research-lab/faith-r'),staleTime:300000})
  const [selected,setSelected]=useState('')
  const lab=result.data
  const q=lab?.questions.find(item=>item.id===selected)||lab?.questions[0]
@@ -27,5 +30,11 @@ export default function Topic3Lab(){
    <p className="muted">* Hạng của một dòng nguồn máy chuẩn bị; chưa phải Recall độc lập. Thời gian chỉ tính truy vấn Qdrant, không gồm embedding, API hay trình duyệt. Điểm BM25, Dense, SPLADE và RRF không cùng thang.</p>
    <details><summary>Giới hạn và trạng thái live</summary><p>Live trong ứng dụng: {lab.live_modes.join(', ')}. Chỉ có bản đo lưu, chưa có index online phù hợp: {lab.unavailable_live_modes.join(', ')}.</p><ul>{lab.limits.map(limit=><li key={limit}>{limit}</li>)}</ul><p>Qrels SHA-256: <code>{lab.qrels_sha256}</code></p></details>
   </>}
+  {replay.data?.status==='RECORDED_EXPERIMENT'&&<details><summary>FAITH-R · thử nghiệm trên 15 câu hỏi đã lưu</summary>
+   <p className="notice">RECORDED_EXPERIMENT · UNREVIEWED. Cùng Top-10 đã lưu; chỉ đổi thứ tự. Không phải tìm kiếm trực tiếp hoặc đánh giá độc lập.</p>
+   <p>Đoạn được gắn nhãn đúng ở hạng 1: ban đầu {replay.data.aggregate?.A1_recorded.known_positive_hit['1']}/15; FAITH-R {replay.data.aggregate?.A4_reranked.known_positive_hit['1']}/15. Đây là nhãn đoạn, chưa xác minh ô số liệu.</p>
+   <div className="scroll-table"><table><thead><tr><th>Câu hỏi</th><th>Ban đầu · Top 1</th><th>FAITH-R · Top 1</th><th>Bằng chứng ứng viên</th></tr></thead><tbody>{replay.data.cases?.map(item=><tr key={item.case}><td>{item.question}<br/><a href={item.source_url} target="_blank" rel="noreferrer">SEC {item.accession}</a> · {item.report_date}</td><td><code>{item.a1_top1.chunk_id}</code><br/>{item.a1_top1.label}</td><td><code>{item.a4_top1.chunk_id}</code><br/>{item.a4_top1.label} · {item.a4_top1.verification_status}</td><td><small>{item.a4_top1.excerpt||'Chưa định vị dòng nguồn'}</small></td></tr>)}</tbody></table></div>
+   <ul>{replay.data.limits?.map(limit=><li key={limit}>{limit}</li>)}</ul>
+  </details>}
  </section>
 }

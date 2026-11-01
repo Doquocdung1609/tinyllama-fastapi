@@ -1,0 +1,154 @@
+{
+  "archives": {
+    "FAITH_R_COMMANDER_DRIVE_PART_01_OF_01.zip": {
+      "sha256": "f2fdd13c88ee2c110ebd888813c1f369439a5b51b56370671b686290e8237d55",
+      "members": 137,
+      "uncompressed_bytes": 45656934,
+      "bad_crc_member": null
+    },
+    "FAITH_R_COMMANDER_COMPLETE_REPACK.zip": {
+      "sha256": "c84c7b2061b32aa47c76beee4b4689b5432eca3c7e8d1c6e437c3470767df9a9",
+      "members": 25,
+      "uncompressed_bytes": 2371418,
+      "bad_crc_member": null
+    }
+  },
+  "inventory": [
+    {
+      "filename": "FAITH_R_EVIDENCE_LEDGER_2026-11-01.md",
+      "status": "MATCH",
+      "actual_size": 14800,
+      "actual_sha256": "b4d9ceb6cf69e0b812f36a996004f82561f33a30178f1d7287cb19abee7ace89"
+    },
+    {
+      "filename": "FAITH_R_TONG_HOP_LOI_P5_P7W_2026-11-01.md",
+      "status": "MATCH",
+      "actual_size": 11789,
+      "actual_sha256": "ff49f0d724e82afe906215122a47d4f3e20320157a960cf1f60c4f2373230356"
+    },
+    {
+      "filename": "FAITH_R_P7G_EVIDENCE_NOTE.md",
+      "status": "MATCH",
+      "actual_size": 3585,
+      "actual_sha256": "280e171252ca2ad24976d1a51671a23bfd8b7e5f7a0dd6e5717473d58146a6e6"
+    },
+    {
+      "filename": "FAITH_R_P7J_CHECKPOINT.md",
+      "status": "MATCH",
+      "actual_size": 8777,
+      "actual_sha256": "6a32e3fbd0adf39d093ebbcb2eb64558fb76d5a0ac1f3844961b1365af2e3137"
+    },
+    {
+      "filename": "FAITH_R_P7Q_VERIFIED_RESULTS.zip",
+      "status": "MATCH",
+      "actual_size": 12194,
+      "actual_sha256": "583b33938f1bdc3c75b341aabe7e8cfbc6348d5258469a4a9fd7cc0e86f03754"
+    },
+    {
+      "filename": "FAITH_R_P7V_REVIEWED_CHECKPOINT.zip",
+      "status": "MATCH",
+      "actual_size": 132504,
+      "actual_sha256": "01f5d55bd0e6b430cbedd8d5c01c88a0dd53c3bac57242e64fb35f2a18765cb6"
+    },
+    {
+      "filename": "FAITH_R_P7W_REVIEW_WORKBENCH.zip",
+      "status": "MATCH",
+      "actual_size": 274194,
+      "actual_sha256": "548343f97bb0cfcb16ff0e14f85cd9a0f8300b122ac110a8e9e7fe231151b72c"
+    },
+    {
+      "filename": "F10_VERIFIED_CONTINUATION_6_CHUNKS.zip",
+      "status": "MATCH",
+      "actual_size": 123290,
+      "actual_sha256": "2b013073690dbb4c05de2ae92a4f8f9467e51527f630f7193070d1b2f8672859"
+    },
+    {
+      "filename": "F10_ONE_RUN_RESULTS.zip",
+      "status": "MATCH",
+      "actual_size": 167369,
+      "actual_sha256": "0456a57ed598049ad65dddfb3499618253fc442337e161b0d6cb6076c32da11a"
+    },
+    {
+      "filename": "FAITH_R_F10_HOLDOUT_REVIEW_CONTINUED.zip",
+      "status": "MATCH",
+      "actual_size": 121610,
+      "actual_sha256": "c88807915a04ba3bf72046e6ee8906bab6160908165bb5e4f41bd9731bde622a"
+    },
+    {
+      "filename": "P7L_ab_corrected_metadata.py",
+      "status": "MATCH",
+      "actual_size": 9332,
+      "actual_sha256": "ec442c0ec247d05f1093124fbbba31c2c18ad5b5d004ec0179cc6845c27b06b5"
+    },
+    {
+      "filename": "P7K_clone_patch_qdrant.py",
+      "status": "MATCH",
+      "actual_size": 6011,
+      "actual_sha256": "e347d5ad259f787480932da4d681050cc693b120f46ad97a691fbf6879d2e041"
+    },
+    {
+      "filename": "P7R_financial_coverage_diagnosis.py",
+      "status": "MATCH",
+      "actual_size": 12531,
+      "actual_sha256": "4ccdb6a0d8ea84911a43e907ec85c263feb0ab93de6917ac1c55af230ffd304b"
+    },
+    {
+      "filename": "P7T_ALL_RESULTS.zip",
+      "status": "MATCH",
+      "actual_size": 1094122,
+      "actual_sha256": "d7772a700626953bd5456d77f793301ffb62ada5bf20e4e24e94c84b92ebc032"
+    },
+    {
+      "filename": "FAITH_R_P7T_SEC_VERIFIED_SEEDS.zip",
+      "status": "MATCH",
+      "actual_size": 4545,
+      "actual_sha256": "455f17e4145ec2d20b79573c9c1b73c901189ac17c89f53ce5b0329314f7d18d"
+    },
+    {
+      "filename": "FAITH_R_P7U_ONE_SHOT_COLAB.zip",
+      "status": "MATCH",
+      "actual_size": 7881,
+      "actual_sha256": "11a3dfd78b77bbae1934feb072f795f3890ea29ae669d377b85854373a7b46db"
+    },
+    {
+      "filename": "P7O_financial_cell_review/p7o_20_unique_chunk_labels.csv",
+      "status": "MATCH",
+      "actual_size": 2504,
+      "actual_sha256": "76429adc9175c7a8913035ab5d7c99e21e19e238695cd2ef454f92d3aa91c822"
+    },
+    {
+      "filename": "F10_AUDIT_RESULTS.zip",
+      "status": "MATCH",
+      "actual_size": 142655,
+      "actual_sha256": "6a6a671e9a43b03ce5c8a101aea05760d8766f33dfa624fcb84db9b09231f730"
+    },
+    {
+      "filename": "FAITH_R_F10_CONTINUATION_TOP1_REVIEW.zip",
+      "status": "MATCH",
+      "actual_size": 128750,
+      "actual_sha256": "f56af99d049f1d87de62ac3bc3da237f054ffe5a760fdabc45dc9c28525ed6a4"
+    }
+  ],
+  "inventory_matched": 19,
+  "corpus": {
+    "sha256": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f",
+    "expected_sha256": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f",
+    "sha256_matches": true,
+    "chunk_count": 8670,
+    "filing_count": 47,
+    "duplicate_ids": [],
+    "dense_dimensions": {
+      "MISSING": 8670
+    },
+    "bm25_vectors": {
+      "MISSING_OR_BAD": 8670
+    },
+    "splade_vectors": {
+      "MISSING_OR_BAD": 8670
+    }
+  },
+  "external_ledger": {
+    "sha256": "7ead7d4b0c2187d3266d27ff09f396c28d1918fa34dd419fd226f1baa5f1f6c4",
+    "matches_repack": false
+  }
+}

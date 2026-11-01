@@ -1,0 +1,5 @@
+# Corpus and qrel protocol
+
+Frozen 47-filing corpus integrity is checked in [handoff_audit.json](handoff_audit.json). The 25 original author questions and 15 F10 analyzed cases are development/reproduction material. Eight holdout-design rows are `PENDING`; the accompanying 31 source-first review rows are `UNJUDGED`. No unseen, human-adjudicated 30-question set is present.
+
+Future qrel rows require question ID, original accession, immutable source locator/span, metric, period, unit, label (`YES`, `NO`, `PARTIAL_NOT_GOLD`, `UNCERTAIN`), adjudicator and reviewer kind. [`independent_qrels.py`](../../app/research_retrieval/independent_qrels.py) rejects machine labels as independent gold. Use two independent reviewers where possible, resolve disagreements before unsealing, and retain `UNCERTAIN`; never map it to `NO`. Only a complete judged candidate universe can support ordinary Recall/nDCG. For incomplete judgments use known-positive and possible-positive Hit bounds. The sealed test must be new and untouched by model tuning.
