@@ -1,0 +1,452 @@
+{
+  "question_id": "V5R_H29",
+  "question": "What was AMD's FY2024 operating income?",
+  "category": "EXACT_CELL",
+  "issuer": "AMD",
+  "accession": "0000002488-25-000012",
+  "form": "10-K",
+  "filing_date": "2025-02-05",
+  "report_date": "2024-12-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm",
+  "official_html_sha256": "256897a9d356c66cd45d4ba4224a3902163e0f94df784566ee96305388578860",
+  "frozen_corpus_chunk_count": 219,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "income",
+    "operating"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 12,
+      "row_index_zero_based": 13,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "1,900",
+        "",
+        "",
+        "401",
+        "",
+        "",
+        "1,264",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "December 28, 2024",
+          "",
+          "December 30, 2023",
+          "",
+          "December 31, 2022"
+        ],
+        [
+          "",
+          "(In millions, except per share amounts)"
+        ],
+        [
+          "Net revenue",
+          "$",
+          "25,785",
+          "",
+          "",
+          "$",
+          "22,680",
+          "",
+          "",
+          "$",
+          "23,601",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Licensing gain",
+        "( 48 )",
+        "",
+        "",
+        "( 34 )",
+        "",
+        "",
+        "( 102 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Interest expense",
+        "( 92 )",
+        "",
+        "",
+        "( 106 )",
+        "",
+        "",
+        "( 88 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,900",
+        "401",
+        "1,264"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 22,
+      "row_index_zero_based": 22,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Total operating income",
+        "$",
+        "1,900",
+        "",
+        "",
+        "$",
+        "401",
+        "",
+        "",
+        "$",
+        "1,264",
+        ""
+      ],
+      "candidate_row_label": "Total operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "December 28, 2024",
+          "",
+          "December 30, 2023",
+          "",
+          "December 31, 2022"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Net revenue:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "All Other",
+        "( 4,190 )",
+        "",
+        "",
+        "( 4,419 )",
+        "",
+        "",
+        "( 4,979 )",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "1,900",
+        "401",
+        "1,264"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 8,
+      "row_index_zero_based": 15,
+      "score": 28,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Total operating income",
+        "$",
+        "1,900",
+        "",
+        "",
+        "$",
+        "401",
+        ""
+      ],
+      "candidate_row_label": "Total operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "December 28, 2024",
+          "",
+          "December 30, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Net revenue:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "All Other",
+        "(4,190)",
+        "",
+        "",
+        "(4,419)",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "1,900",
+        "401"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 28,
+      "row_index_zero_based": 3,
+      "score": 27,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "$",
+        "2,247",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "2022"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Net revenue",
+          "$",
+          "4,612",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net revenue",
+        "$",
+        "4,612",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "2,247"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 8,
+      "row_index_zero_based": 9,
+      "score": 26,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income (loss):",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Operating income (loss):",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "December 28, 2024",
+          "",
+          "December 30, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Net revenue:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Total net revenue",
+        "$",
+        "25,785",
+        "",
+        "",
+        "$",
+        "22,680",
+        ""
+      ],
+      "neighbor_after": [
+        "Data Center",
+        "$",
+        "3,482",
+        "",
+        "",
+        "$",
+        "1,267",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 16,
+      "row_index_zero_based": 5,
+      "score": 26,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Adjustments to reconcile net income to net cash provided by operating activities:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Adjustments to reconcile net income to net cash provided by operating activities:",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "December 28, 2024",
+          "",
+          "December 30, 2023",
+          "",
+          "December 31, 2022"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Cash flows from operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net income",
+        "$",
+        "1,641",
+        "",
+        "",
+        "$",
+        "854",
+        "",
+        "",
+        "$",
+        "1,320",
+        ""
+      ],
+      "neighbor_after": [
+        "Depreciation and amortization",
+        "671",
+        "",
+        "",
+        "642",
+        "",
+        "",
+        "626",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 582,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "Our deferred tax assets include net operating losses and tax credit carryforwards that can be used to offset taxable income and reduce income taxes payable in future periods. Each quarter, we consider both positive and negative evidence to determine whether all or a portion of the deferred tax assets are more likely than not to be realized. If we determine that some or all of our deferred tax assets are not realizable, it could result in a material expense in the period in which this determination is made which may have a material adverse effect on our financial condition and results of operations."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 590,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "We are a U.S.-based multinational company subject to income tax, indirect tax or other tax claims in multiple U.S. and foreign tax jurisdictions in which we conduct business. Significant judgment is required in determining our worldwide provision for income taxes. Tax laws are dynamic and subject to change as new laws are passed and new interpretations of the law are issued or applied. Any changes to tax laws could have a material adverse effect on our tax obligations and effective tax rate. Our income tax obligations could be affected by many factors, including, but not limited to, changes to our corporate operating structure, intercompany arrangements, and tax planning strategies."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 778,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "Gross margin, as a percentage of net revenue, was 49% for 2024, compared to 46% in 2023. The increase in gross margin was primarily due to a favorable shift in revenue mix with higher Data Center and Client revenues, lower Gaming revenue, partially offset by the impact of lower Embedded revenue. Operating income for 2024 was $1.9 billion compared to operating income of $401 million for 2023. The increase in operating income was primarily driven by higher revenue, partially offset by increased R&D investments. Net income for 2024 was $1.6 billion compared to $854 million in the prior year. The increase in net income was primarily driven by higher revenue."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

@@ -1,0 +1,504 @@
+{
+  "question_id": "V6_H029",
+  "question": "What gross profit did NVIDIA report for FY2025?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "NVDA",
+  "accession": "0001045810-25-000023",
+  "form": "10-K",
+  "filing_date": "2025-02-26",
+  "report_date": "2025-01-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+  "official_html_sha256": "060c3cbb1e96feb4a6948acfe7fc013507f24b4deecb735d729cf730c07ffd0c",
+  "frozen_corpus_chunk_count": 202,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "gross",
+    "profit"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "profit"
+      ],
+      "row_cells": [
+        "Gross profit",
+        "97,858",
+        "",
+        "",
+        "44,301",
+        "",
+        "",
+        "15,356",
+        ""
+      ],
+      "candidate_row_label": "Gross profit",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "$",
+          "26,974",
+          ""
+        ],
+        [
+          "Cost of revenue",
+          "32,639",
+          "",
+          "",
+          "16,621",
+          "",
+          "",
+          "11,618",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Cost of revenue",
+        "32,639",
+        "",
+        "",
+        "16,621",
+        "",
+        "",
+        "11,618",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "97,858",
+        "44,301",
+        "15,356"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 10,
+      "row_index_zero_based": 4,
+      "score": 28,
+      "matched_terms": [
+        "gross",
+        "profit"
+      ],
+      "row_cells": [
+        "Gross profit",
+        "75.0",
+        "",
+        "",
+        "72.7",
+        ""
+      ],
+      "candidate_row_label": "Gross profit",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "Revenue",
+          "100.0",
+          "%",
+          "",
+          "100.0",
+          "%"
+        ],
+        [
+          "Cost of revenue",
+          "25.0",
+          "",
+          "",
+          "27.3",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Cost of revenue",
+        "25.0",
+        "",
+        "",
+        "27.3",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "75.0",
+        "72.7"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 4,
+      "score": 13,
+      "matched_terms": [
+        "gross"
+      ],
+      "row_cells": [
+        "Gross margin",
+        "75.0",
+        "%",
+        "",
+        "72.7",
+        "%",
+        "",
+        "Up 2.3 pts"
+      ],
+      "candidate_row_label": "Gross margin",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Change"
+        ],
+        [
+          "",
+          "($ in millions, except per share data)"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "Up 114%"
+        ]
+      ],
+      "neighbor_before": [
+        "Revenue",
+        "$",
+        "130,497",
+        "",
+        "",
+        "$",
+        "60,922",
+        "",
+        "",
+        "Up 114%"
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "$",
+        "16,405",
+        "",
+        "",
+        "$",
+        "11,329",
+        "",
+        "",
+        "Up 45%"
+      ],
+      "numeric_tokens_unassigned": [
+        "75.0",
+        "72.7",
+        "2.3"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 41,
+      "row_index_zero_based": 6,
+      "score": 12,
+      "matched_terms": [
+        "gross"
+      ],
+      "row_cells": [
+        "Total property and equipment, gross",
+        "10,684",
+        "",
+        "",
+        "7,423",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Total property and equipment, gross",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Estimated Useful Life"
+        ],
+        [
+          "Property and Equipment:",
+          "(In millions)",
+          "",
+          "(In years)"
+        ],
+        [
+          "Land",
+          "$",
+          "511",
+          "",
+          "",
+          "$",
+          "218",
+          "",
+          "",
+          "(A)"
+        ],
+        [
+          "Buildings, leasehold improvements, and furniture",
+          "2,076",
+          "",
+          "",
+          "1,816",
+          "",
+          "",
+          "(B)"
+        ]
+      ],
+      "neighbor_before": [
+        "Construction in process",
+        "529",
+        "",
+        "",
+        "189",
+        "",
+        "",
+        "(C)"
+      ],
+      "neighbor_after": [
+        "Accumulated depreciation and amortization",
+        "( 4,401 )",
+        "",
+        "",
+        "( 3,509 )",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "10,684",
+        "7,423"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 53,
+      "row_index_zero_based": 12,
+      "score": 12,
+      "matched_terms": [
+        "gross"
+      ],
+      "row_cells": [
+        "Gross deferred tax assets",
+        "13,214",
+        "",
+        "",
+        "8,060",
+        ""
+      ],
+      "candidate_row_label": "Gross deferred tax assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Deferred tax assets:",
+          ""
+        ],
+        [
+          "Capitalized research and development expenditure",
+          "$",
+          "6,256",
+          "",
+          "",
+          "$",
+          "3,376",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other deferred tax assets",
+        "360",
+        "",
+        "",
+        "179",
+        ""
+      ],
+      "neighbor_after": [
+        "Less valuation allowance",
+        "( 1,610 )",
+        "",
+        "",
+        "( 1,552 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "13,214",
+        "8,060"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 53,
+      "row_index_zero_based": 20,
+      "score": 12,
+      "matched_terms": [
+        "gross"
+      ],
+      "row_cells": [
+        "Gross deferred tax liabilities",
+        "( 1,511 )",
+        "",
+        "",
+        "( 891 )",
+        ""
+      ],
+      "candidate_row_label": "Gross deferred tax liabilities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Deferred tax assets:",
+          ""
+        ],
+        [
+          "Capitalized research and development expenditure",
+          "$",
+          "6,256",
+          "",
+          "",
+          "$",
+          "3,376",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Acquired intangibles",
+        "( 70 )",
+        "",
+        "",
+        "( 74 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Net deferred tax asset (1)",
+        "$",
+        "10,093",
+        "",
+        "",
+        "$",
+        "5,617",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,511",
+        "891"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 786,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "profit"
+      ],
+      "text": "Refer to the Gross Profit and Gross Margin discussion below in this Management's Discussion and Analysis for further discussion."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 839,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "profit"
+      ],
+      "text": "Gross profit consists of total net revenue less cost of revenue. Cost of revenue consists primarily of the cost of semiconductors, including wafer fabrication, assembly, testing and packaging, board and device costs, manufacturing support costs, including labor and overhead associated with such purchases, final test yield fallout, inventory and warranty provisions, memory and component costs, tariffs, and shipping costs. Cost of revenue also includes acquisition-related intangible amortization expense, costs for license and development and service arrangements, IP-related costs, and stock-based compensation related to personnel associated with manufacturing operations."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

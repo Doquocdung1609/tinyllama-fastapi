@@ -1,0 +1,182 @@
+{
+  "question_id": "V6_H002",
+  "question": "What capital expenditures did Apple disclose for FY2024?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "AAPL",
+  "accession": "0000320193-24-000123",
+  "form": "10-K",
+  "filing_date": "2024-11-01",
+  "report_date": "2024-09-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+  "official_html_sha256": "af35e3e22f0ef07b1363e03a994dd349af6dc6c3eda0a6792d01e9065f121b09",
+  "frozen_corpus_chunk_count": 125,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "capital",
+    "disclose",
+    "expenditure"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 31,
+      "score": 13,
+      "matched_terms": [
+        "capital"
+      ],
+      "row_cells": [
+        "Common stock and additional paid-in capital, $ 0.00001 par value: 50,400,000 shares authorized; 15,116,786 and 15,550,061 shares issued and outstanding, respectively",
+        "83,276",
+        "",
+        "",
+        "73,812",
+        ""
+      ],
+      "candidate_row_label": "Common stock and additional paid-in capital, $ 0.00001 par value: 50,400,000 shares authorized; 15,116,786 and 15,550,061 shares issued and outstanding, respectively",
+      "candidate_header_rows": [
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023"
+        ],
+        [
+          "ASSETS:"
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cash and cash equivalents",
+          "$",
+          "29,943",
+          "",
+          "",
+          "$",
+          "29,965",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Shareholders’ equity:",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Accumulated deficit",
+        "( 19,154 )",
+        "",
+        "",
+        "( 214 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "0.00001",
+        "50,400,000",
+        "15,116,786",
+        "15,550,061",
+        "83,276",
+        "73,812"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 3,
+      "score": 10,
+      "matched_terms": [
+        "capital"
+      ],
+      "row_cells": [
+        "Common stock and additional paid-in capital:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Common stock and additional paid-in capital:",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023",
+          "",
+          "September 24, 2022"
+        ],
+        [
+          "Total shareholders’ equity, beginning balances",
+          "$",
+          "62,146",
+          "",
+          "",
+          "$",
+          "50,672",
+          "",
+          "",
+          "$",
+          "63,090",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Total shareholders’ equity, beginning balances",
+        "$",
+        "62,146",
+        "",
+        "",
+        "$",
+        "50,672",
+        "",
+        "",
+        "$",
+        "63,090",
+        ""
+      ],
+      "neighbor_after": [
+        "Beginning balances",
+        "73,812",
+        "",
+        "",
+        "64,849",
+        "",
+        "",
+        "57,365",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    }
+  ],
+  "source_first_prose_candidates": [],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

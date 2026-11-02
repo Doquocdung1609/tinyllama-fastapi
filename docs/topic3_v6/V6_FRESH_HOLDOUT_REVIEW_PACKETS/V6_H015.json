@@ -1,0 +1,689 @@
+{
+  "question_id": "V6_H015",
+  "question": "What were Microsoft's FY2024 total current assets?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "MSFT",
+  "accession": "0000950170-24-087843",
+  "form": "10-K",
+  "filing_date": "2024-07-30",
+  "report_date": "2024-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+  "official_html_sha256": "420a47b7aa1e622380add216b8e1a9ed5e865393bcb7628f44c45e476919327e",
+  "frozen_corpus_chunk_count": 246,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "assets",
+    "current"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 27,
+      "row_index_zero_based": 12,
+      "score": 29,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "row_cells": [
+        "Other current assets",
+        "",
+        "",
+        "( 1,648",
+        ")",
+        "",
+        "",
+        "( 1,991",
+        ")",
+        "",
+        "",
+        "( 709",
+        ")"
+      ],
+      "candidate_row_label": "Other current assets",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "",
+          "$",
+          "88,136",
+          "",
+          "",
+          "$",
+          "72,361",
+          "",
+          "",
+          "$",
+          "72,738",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Inventories",
+        "",
+        "",
+        "1,284",
+        "",
+        "",
+        "",
+        "1,242",
+        "",
+        "",
+        "",
+        "( 1,123",
+        ")"
+      ],
+      "neighbor_after": [
+        "Other long-term assets",
+        "",
+        "",
+        "( 6,817",
+        ")",
+        "",
+        "",
+        "( 2,833",
+        ")",
+        "",
+        "",
+        "( 2,805",
+        ")"
+      ],
+      "numeric_tokens_unassigned": [
+        "1,648",
+        "1,991",
+        "709"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 41,
+      "row_index_zero_based": 16,
+      "score": 29,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "row_cells": [
+        "Other current assets",
+        "",
+        "",
+        "149",
+        "",
+        "",
+        "",
+        "0",
+        "",
+        "",
+        "",
+        "245",
+        "",
+        "",
+        "",
+        "0",
+        ""
+      ],
+      "candidate_row_label": "Other current assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "",
+          "Derivative",
+          "",
+          "Derivative",
+          "",
+          "Derivative",
+          "",
+          "Derivative",
+          ""
+        ],
+        [
+          "(In millions)",
+          "",
+          "Assets",
+          "",
+          "Liabilities",
+          "",
+          "Assets",
+          "",
+          "Liabilities",
+          ""
+        ],
+        [
+          "",
+          "",
+          "June 30, 2024",
+          "",
+          "June 30, 2023",
+          ""
+        ],
+        [
+          "Designated as Hedging Instruments",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Short-term investments",
+        "",
+        "$",
+        "12",
+        "",
+        "",
+        "$",
+        "0",
+        "",
+        "",
+        "$",
+        "6",
+        "",
+        "",
+        "$",
+        "0",
+        ""
+      ],
+      "neighbor_after": [
+        "Other long-term assets",
+        "",
+        "",
+        "19",
+        "",
+        "",
+        "",
+        "0",
+        "",
+        "",
+        "",
+        "16",
+        "",
+        "",
+        "",
+        "0",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "149",
+        "0",
+        "245",
+        "0"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 9,
+      "score": 28,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "row_cells": [
+        "Other current assets",
+        "",
+        "",
+        "26,021",
+        "",
+        "",
+        "",
+        "21,807",
+        ""
+      ],
+      "candidate_row_label": "Other current assets",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Assets",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Inventories",
+        "",
+        "",
+        "1,246",
+        "",
+        "",
+        "",
+        "2,500",
+        ""
+      ],
+      "neighbor_after": [
+        "Total current assets",
+        "",
+        "",
+        "159,734",
+        "",
+        "",
+        "",
+        "184,257",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "26,021",
+        "21,807"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 10,
+      "score": 28,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "row_cells": [
+        "Total current assets",
+        "",
+        "",
+        "159,734",
+        "",
+        "",
+        "",
+        "184,257",
+        ""
+      ],
+      "candidate_row_label": "Total current assets",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Assets",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other current assets",
+        "",
+        "",
+        "26,021",
+        "",
+        "",
+        "",
+        "21,807",
+        ""
+      ],
+      "neighbor_after": [
+        "Property and equipment, net of accumulated depreciation of $ 76,421 and $ 68,251",
+        "",
+        "",
+        "135,591",
+        "",
+        "",
+        "",
+        "95,641",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "159,734",
+        "184,257"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 3,
+      "score": 26,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "row_cells": [
+        "Current assets:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Current assets:",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Assets",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Assets",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Cash and cash equivalents",
+        "",
+        "$",
+        "18,315",
+        "",
+        "",
+        "$",
+        "34,704",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 27,
+      "row_index_zero_based": 13,
+      "score": 13,
+      "matched_terms": [
+        "assets"
+      ],
+      "row_cells": [
+        "Other long-term assets",
+        "",
+        "",
+        "( 6,817",
+        ")",
+        "",
+        "",
+        "( 2,833",
+        ")",
+        "",
+        "",
+        "( 2,805",
+        ")"
+      ],
+      "candidate_row_label": "Other long-term assets",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "",
+          "$",
+          "88,136",
+          "",
+          "",
+          "$",
+          "72,361",
+          "",
+          "",
+          "$",
+          "72,738",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other current assets",
+        "",
+        "",
+        "( 1,648",
+        ")",
+        "",
+        "",
+        "( 1,991",
+        ")",
+        "",
+        "",
+        "( 709",
+        ")"
+      ],
+      "neighbor_after": [
+        "Accounts payable",
+        "",
+        "",
+        "3,545",
+        "",
+        "",
+        "",
+        "( 2,721",
+        ")",
+        "",
+        "",
+        "2,943",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "6,817",
+        "2,833",
+        "2,805"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 3384,
+      "score": 20,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "text": "The objectives of accounting for income taxes are to recognize the amount of taxes payable or refundable for the current year, and deferred tax liabilities and assets for the future tax consequences of events that have been recognized in an entity’s financial statements or tax returns. We recognize the tax benefit from an uncertain tax position only if it is more likely than not that the tax position will be sustained on examination by the taxing authorities, based on the technical merits of the position. The tax benefits recognized in the financial statements from such a position are measured based on the largest benefit that has a greater than 50% likelihood of being realized upon ultimate settlement. Accounting literature also provides guidance on derecognition of income tax assets and liabilities, classification of deferred income tax assets and liabilities, accounting for interest and penalties associated with tax positions, and income tax disclosures. Judgment is required in assessing the future tax consequences of events that have been recognized in our consolidated financial "
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 6340,
+      "score": 20,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "text": "As of June 30, 2024 and 2023, other receivables related to activities to facilitate the purchase of server components were $ 10.5 billion and $ 9.2 billion, respectively, and are included in other current assets in our consolidated balance sheets."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 6341,
+      "score": 20,
+      "matched_terms": [
+        "assets",
+        "current"
+      ],
+      "text": "We record financing receivables when we offer certain customers the option to acquire our software products and services offerings through a financing program in a limited number of countries. As of June 30, 2024 and 2023, our financing receivables, net were $ 4.5 billion and $ 5.3 billion, respectively, for short-term and long-term financing receivables, which are included in other current assets and other long-term assets in our consolidated balance sheets. We record an allowance to cover expected losses based on troubled accounts, historical experience, and other currently available evidence."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

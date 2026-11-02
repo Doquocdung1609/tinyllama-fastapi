@@ -1,0 +1,595 @@
+{
+  "question_id": "V6_H018",
+  "question": "Compare Microsoft's total revenue for FY2024 with FY2025 in its FY2025 filing.",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "MSFT",
+  "accession": "0000950170-25-100235",
+  "form": "10-K",
+  "filing_date": "2025-07-30",
+  "report_date": "2025-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+  "official_html_sha256": "15d2ebb941500e84aeadd2654143ac3d0fbb10a65d8387391727ec4ae36fcd42",
+  "frozen_corpus_chunk_count": 223,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "filing",
+    "its",
+    "revenue"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 11,
+      "row_index_zero_based": 0,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Microsoft 365 Commercial cloud revenue growth",
+        "",
+        "Revenue from Microsoft 365 Commercial subscriptions, comprising Microsoft 365 Commercial, Enterprise Mobility + Security, the cloud portion of Windows Commercial, the per-user portion of Power BI, Exchange, SharePoint, Microsoft Teams, Microsoft 365 Security and Compliance, and Microsoft 365 Copilot"
+      ],
+      "candidate_row_label": "Microsoft 365 Commercial cloud revenue growth",
+      "candidate_header_rows": [],
+      "neighbor_before": null,
+      "neighbor_after": [
+        "Microsoft 365 Commercial seat growth",
+        "",
+        "The number of Microsoft 365 Commercial seats at end of period where seats are paid users covered by a Microsoft 365 Commercial subscription"
+      ],
+      "numeric_tokens_unassigned": [
+        "365",
+        "365",
+        "365",
+        "365",
+        "365"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 13,
+      "row_index_zero_based": 1,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "",
+        "$",
+        "281,724",
+        "",
+        "",
+        "$",
+        "245,122",
+        "",
+        "",
+        "",
+        "15%",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages and per share amounts)",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "(In millions, except percentages and per share amounts)",
+        "",
+        "2025",
+        "",
+        "",
+        "2024",
+        "",
+        "",
+        "Percentage Change",
+        ""
+      ],
+      "neighbor_after": [
+        "Gross margin",
+        "",
+        "",
+        "193,893",
+        "",
+        "",
+        "",
+        "171,008",
+        "",
+        "",
+        "",
+        "13%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "281,724",
+        "245,122",
+        "15%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 14,
+      "row_index_zero_based": 2,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "",
+        "$",
+        "120,810",
+        "",
+        "",
+        "$",
+        "106,820",
+        "",
+        "",
+        "",
+        "13%",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Productivity and Business Processes",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Productivity and Business Processes",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Cost of revenue",
+        "",
+        "",
+        "22,422",
+        "",
+        "",
+        "",
+        "19,611",
+        "",
+        "",
+        "",
+        "14%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "120,810",
+        "106,820",
+        "13%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 14,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "",
+        "",
+        "22,422",
+        "",
+        "",
+        "",
+        "19,611",
+        "",
+        "",
+        "",
+        "14%",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Productivity and Business Processes",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "120,810",
+          "",
+          "",
+          "$",
+          "106,820",
+          "",
+          "",
+          "",
+          "13%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Revenue",
+        "",
+        "$",
+        "120,810",
+        "",
+        "",
+        "$",
+        "106,820",
+        "",
+        "",
+        "",
+        "13%",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "",
+        "",
+        "28,615",
+        "",
+        "",
+        "",
+        "27,548",
+        "",
+        "",
+        "",
+        "4%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "22,422",
+        "19,611",
+        "14%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 14,
+      "row_index_zero_based": 7,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "",
+        "$",
+        "106,265",
+        "",
+        "",
+        "$",
+        "87,464",
+        "",
+        "",
+        "",
+        "21%",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Productivity and Business Processes",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "120,810",
+          "",
+          "",
+          "$",
+          "106,820",
+          "",
+          "",
+          "",
+          "13%",
+          ""
+        ],
+        [
+          "Cost of revenue",
+          "",
+          "",
+          "22,422",
+          "",
+          "",
+          "",
+          "19,611",
+          "",
+          "",
+          "",
+          "14%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Intelligent Cloud",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Cost of revenue",
+        "",
+        "",
+        "40,171",
+        "",
+        "",
+        "",
+        "29,611",
+        "",
+        "",
+        "",
+        "36%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "106,265",
+        "87,464",
+        "21%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 14,
+      "row_index_zero_based": 8,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "",
+        "",
+        "40,171",
+        "",
+        "",
+        "",
+        "29,611",
+        "",
+        "",
+        "",
+        "36%",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Productivity and Business Processes",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "120,810",
+          "",
+          "",
+          "$",
+          "106,820",
+          "",
+          "",
+          "",
+          "13%",
+          ""
+        ],
+        [
+          "Cost of revenue",
+          "",
+          "",
+          "22,422",
+          "",
+          "",
+          "",
+          "19,611",
+          "",
+          "",
+          "",
+          "14%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Revenue",
+        "",
+        "$",
+        "106,265",
+        "",
+        "",
+        "$",
+        "87,464",
+        "",
+        "",
+        "",
+        "21%",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "",
+        "",
+        "21,505",
+        "",
+        "",
+        "",
+        "20,040",
+        "",
+        "",
+        "",
+        "7%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "40,171",
+        "29,611",
+        "36%"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 905,
+      "score": 20,
+      "matched_terms": [
+        "its",
+        "revenue"
+      ],
+      "text": "We derive substantial revenue from licenses of Windows operating systems on PCs. We face significant competition from competing platforms developed for new devices and form factors such as smartphones and tablets. These devices compete on multiple bases including price and the perceived utility of the device and its platform. Users continue to turn to these devices to perform functions that in the past were performed by PCs. Even if many users view these devices as complementary to a PC, the prevalence of these devices may make it more difficult to attract application developers to our PC operating system platforms. Competing with operating systems licensed at low or no cost may decrease our PC operating system margins. Popular products or services offered on competing platforms could increase their competitive strength. In addition, some of our devices compete with products made by our OEM partners, which may affect their commitment to our platform."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 18069,
+      "score": 20,
+      "matched_terms": [
+        "its",
+        "revenue"
+      ],
+      "text": "The Company recognizes revenue upon transfer of control of promised products or services to customers in an amount that reflects the consideration the Company expects to receive in exchange for those products or services. The Company offers customers the ability to acquire multiple licenses of software products and services, including cloud-based services, in its customer agreements through its volume licensing programs."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

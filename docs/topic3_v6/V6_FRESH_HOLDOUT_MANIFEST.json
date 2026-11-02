@@ -1,0 +1,12 @@
+{
+  "status": "SEALED_DESIGN_UNJUDGED_NO_RANKING_RUN",
+  "questions": 30,
+  "source_filings": 6,
+  "issuers": [
+    "AAPL",
+    "MSFT",
+    "NVDA"
+  ],
+  "sha256": "28983cf8ec1bc9a08721369f8bc68cb41e6fddfc385fdba873139cb34b1b229c",
+  "policy": "No ranking or tuning against this split before independent source adjudication"
+}

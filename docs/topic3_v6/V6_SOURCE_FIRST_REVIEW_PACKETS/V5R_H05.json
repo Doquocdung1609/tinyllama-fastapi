@@ -1,0 +1,470 @@
+{
+  "question_id": "V5R_H05",
+  "question": "What were Apple's total assets at the FY2025 reporting date?",
+  "category": "BALANCE_SHEET",
+  "issuer": "AAPL",
+  "accession": "0000320193-25-000079",
+  "form": "10-K",
+  "filing_date": "2025-10-31",
+  "report_date": "2025-09-27",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+  "official_html_sha256": "056f733f13ff7407e64dc81fb96da3c3c55a6ba429bf094f57cb6bd472231f82",
+  "frozen_corpus_chunk_count": 124,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "assets",
+    "date",
+    "reporting"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 13,
+      "score": 13,
+      "matched_terms": [
+        "assets"
+      ],
+      "row_cells": [
+        "Other current and non-current assets",
+        "( 9,197 )",
+        "",
+        "",
+        "( 11,731 )",
+        "",
+        "",
+        "( 5,684 )",
+        ""
+      ],
+      "candidate_row_label": "Other current and non-current assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 27, 2025",
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023"
+        ],
+        [
+          "Cash, cash equivalents, and restricted cash and cash equivalents, beginning balances",
+          "$",
+          "29,943",
+          "",
+          "",
+          "$",
+          "30,737",
+          "",
+          "",
+          "$",
+          "24,977",
+          ""
+        ],
+        [
+          "Operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Inventories",
+        "1,400",
+        "",
+        "",
+        "( 1,046 )",
+        "",
+        "",
+        "( 1,618 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Accounts payable",
+        "902",
+        "",
+        "",
+        "6,020",
+        "",
+        "",
+        "( 1,889 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "9,197",
+        "11,731",
+        "5,684"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 8,
+      "score": 12,
+      "matched_terms": [
+        "assets"
+      ],
+      "row_cells": [
+        "Other current assets",
+        "14,585",
+        "",
+        "",
+        "14,287",
+        ""
+      ],
+      "candidate_row_label": "Other current assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "September 27, 2025",
+          "",
+          "September 28, 2024"
+        ],
+        [
+          "ASSETS:"
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cash and cash equivalents",
+          "$",
+          "35,934",
+          "",
+          "",
+          "$",
+          "29,943",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Inventories",
+        "5,718",
+        "",
+        "",
+        "7,286",
+        ""
+      ],
+      "neighbor_after": [
+        "Total current assets",
+        "147,957",
+        "",
+        "",
+        "152,987",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "14,585",
+        "14,287"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 9,
+      "score": 12,
+      "matched_terms": [
+        "assets"
+      ],
+      "row_cells": [
+        "Total current assets",
+        "147,957",
+        "",
+        "",
+        "152,987",
+        ""
+      ],
+      "candidate_row_label": "Total current assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "September 27, 2025",
+          "",
+          "September 28, 2024"
+        ],
+        [
+          "ASSETS:"
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cash and cash equivalents",
+          "$",
+          "35,934",
+          "",
+          "",
+          "$",
+          "29,943",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other current assets",
+        "14,585",
+        "",
+        "",
+        "14,287",
+        ""
+      ],
+      "neighbor_after": [
+        "Non-current assets:",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "147,957",
+        "152,987"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 13,
+      "score": 12,
+      "matched_terms": [
+        "assets"
+      ],
+      "row_cells": [
+        "Other non-current assets",
+        "83,727",
+        "",
+        "",
+        "74,834",
+        ""
+      ],
+      "candidate_row_label": "Other non-current assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "September 27, 2025",
+          "",
+          "September 28, 2024"
+        ],
+        [
+          "ASSETS:"
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cash and cash equivalents",
+          "$",
+          "35,934",
+          "",
+          "",
+          "$",
+          "29,943",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Property, plant and equipment, net",
+        "49,834",
+        "",
+        "",
+        "45,680",
+        ""
+      ],
+      "neighbor_after": [
+        "Total non-current assets",
+        "211,284",
+        "",
+        "",
+        "211,993",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "83,727",
+        "74,834"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 14,
+      "score": 12,
+      "matched_terms": [
+        "assets"
+      ],
+      "row_cells": [
+        "Total non-current assets",
+        "211,284",
+        "",
+        "",
+        "211,993",
+        ""
+      ],
+      "candidate_row_label": "Total non-current assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "September 27, 2025",
+          "",
+          "September 28, 2024"
+        ],
+        [
+          "ASSETS:"
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cash and cash equivalents",
+          "$",
+          "35,934",
+          "",
+          "",
+          "$",
+          "29,943",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other non-current assets",
+        "83,727",
+        "",
+        "",
+        "74,834",
+        ""
+      ],
+      "neighbor_after": [
+        "Total assets",
+        "$",
+        "359,241",
+        "",
+        "",
+        "$",
+        "364,980",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "211,284",
+        "211,993"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 15,
+      "score": 12,
+      "matched_terms": [
+        "assets"
+      ],
+      "row_cells": [
+        "Total assets",
+        "$",
+        "359,241",
+        "",
+        "",
+        "$",
+        "364,980",
+        ""
+      ],
+      "candidate_row_label": "Total assets",
+      "candidate_header_rows": [
+        [
+          "",
+          "September 27, 2025",
+          "",
+          "September 28, 2024"
+        ],
+        [
+          "ASSETS:"
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cash and cash equivalents",
+          "$",
+          "35,934",
+          "",
+          "",
+          "$",
+          "29,943",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Total non-current assets",
+        "211,284",
+        "",
+        "",
+        "211,993",
+        ""
+      ],
+      "neighbor_after": [
+        "LIABILITIES AND SHAREHOLDERS’ EQUITY:"
+      ],
+      "numeric_tokens_unassigned": [
+        "359,241",
+        "364,980"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 630,
+      "score": 20,
+      "matched_terms": [
+        "date",
+        "reporting"
+      ],
+      "text": "In November 2024, the FASB issued ASU No. 2024-03, Income Statement—Reporting Comprehensive Income—Expense Disaggregation Disclosures (Subtopic 220-40): Disaggregation of Income Statement Expenses (“ASU 2024-03”) and in January 2025, the FASB issued ASU No. 2025-01, Income Statement—Reporting Comprehensive Income—Expense Disaggregation Disclosures (Subtopic 220-40): Clarifying the Effective Date , which clarified the effective date of ASU 2024-03. ASU 2024-03 will require the Company to disclose the amounts of purchases of inventory, employee compensation, depreciation and intangible asset amortization, as applicable, included in certain expense captions in the Consolidated Statements of Operations, as well as qualitatively describe remaining amounts included in those captions. ASU 2024-03 will also require the Company to disclose both the amount and the Company’s definition of selling expenses. The Company will adopt ASU 2024-03 in its fourth quarter of 2028 using a prospective transition method."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1099,
+      "score": 20,
+      "matched_terms": [
+        "assets",
+        "reporting"
+      ],
+      "text": "A company’s internal control over financial reporting is a process designed to provide reasonable assurance regarding the reliability of financial reporting and the preparation of financial statements for external purposes in accordance with generally accepted accounting principles. A company’s internal control over financial reporting includes those policies and procedures that (1) pertain to the maintenance of records that, in reasonable detail, accurately and fairly reflect the transactions and dispositions of the assets of the company; (2) provide reasonable assurance that transactions are recorded as necessary to permit preparation of financial statements in accordance with generally accepted accounting principles, and that receipts and expenditures of the company are being made only in accordance with authorizations of management and directors of the company; and (3) provide reasonable assurance regarding prevention or timely detection of unauthorized acquisition, use, or disposition of the company’s assets that could have a material effect on the financial statements."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

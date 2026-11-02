@@ -1,0 +1,732 @@
+{
+  "question_id": "V5R_H11",
+  "question": "Compare Microsoft's net income in FY2024 and FY2025.",
+  "category": "COMPARATIVE_COLUMN",
+  "issuer": "MSFT",
+  "accession": "0000950170-25-100235",
+  "form": "10-K",
+  "filing_date": "2025-07-30",
+  "report_date": "2025-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+  "official_html_sha256": "15d2ebb941500e84aeadd2654143ac3d0fbb10a65d8387391727ec4ae36fcd42",
+  "frozen_corpus_chunk_count": 223,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "income",
+    "net"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 13,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "",
+        "",
+        "101,832",
+        "",
+        "",
+        "",
+        "88,136",
+        "",
+        "",
+        "",
+        "16%",
+        ""
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages and per share amounts)",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "281,724",
+          "",
+          "",
+          "$",
+          "245,122",
+          "",
+          "",
+          "",
+          "15%",
+          ""
+        ],
+        [
+          "Gross margin",
+          "",
+          "",
+          "193,893",
+          "",
+          "",
+          "",
+          "171,008",
+          "",
+          "",
+          "",
+          "13%",
+          ""
+        ],
+        [
+          "Operating income",
+          "",
+          "",
+          "128,528",
+          "",
+          "",
+          "",
+          "109,433",
+          "",
+          "",
+          "",
+          "17%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "",
+        "",
+        "128,528",
+        "",
+        "",
+        "",
+        "109,433",
+        "",
+        "",
+        "",
+        "17%",
+        ""
+      ],
+      "neighbor_after": [
+        "Diluted earnings per share",
+        "",
+        "",
+        "13.64",
+        "",
+        "",
+        "",
+        "11.80",
+        "",
+        "",
+        "",
+        "16%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "101,832",
+        "88,136",
+        "16%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 23,
+      "row_index_zero_based": 15,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Other income (expense), net",
+        "",
+        "",
+        "( 4,901",
+        ")",
+        "",
+        "",
+        "( 1,646",
+        ")",
+        "",
+        "",
+        "788",
+        ""
+      ],
+      "candidate_row_label": "Other income (expense), net",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Revenue:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Product",
+          "",
+          "$",
+          "63,946",
+          "",
+          "",
+          "$",
+          "64,773",
+          "",
+          "",
+          "$",
+          "64,699",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "",
+        "",
+        "128,528",
+        "",
+        "",
+        "",
+        "109,433",
+        "",
+        "",
+        "",
+        "88,523",
+        ""
+      ],
+      "neighbor_after": [
+        "Income before income taxes",
+        "",
+        "",
+        "123,627",
+        "",
+        "",
+        "",
+        "107,787",
+        "",
+        "",
+        "",
+        "89,311",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "4,901",
+        "1,646",
+        "788"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 23,
+      "row_index_zero_based": 18,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "",
+        "$",
+        "101,832",
+        "",
+        "",
+        "$",
+        "88,136",
+        "",
+        "",
+        "$",
+        "72,361",
+        ""
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Revenue:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Product",
+          "",
+          "$",
+          "63,946",
+          "",
+          "",
+          "$",
+          "64,773",
+          "",
+          "",
+          "$",
+          "64,699",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Provision for income taxes",
+        "",
+        "",
+        "21,795",
+        "",
+        "",
+        "",
+        "19,651",
+        "",
+        "",
+        "",
+        "16,950",
+        ""
+      ],
+      "neighbor_after": [
+        "Earnings per share:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "101,832",
+        "88,136",
+        "72,361"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 2,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "",
+        "$",
+        "101,832",
+        "",
+        "",
+        "$",
+        "88,136",
+        "",
+        "",
+        "$",
+        "72,361",
+        ""
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Year Ended June 30,",
+        "",
+        "2025",
+        "",
+        "",
+        "2024",
+        "",
+        "",
+        "2023",
+        ""
+      ],
+      "neighbor_after": [
+        "Other comprehensive income (loss), net of tax:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "101,832",
+        "88,136",
+        "72,361"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 3,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "",
+        "$",
+        "101,832",
+        "",
+        "",
+        "$",
+        "88,136",
+        "",
+        "",
+        "$",
+        "72,361",
+        ""
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operations",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Adjustments to reconcile net income to net cash from operations:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "101,832",
+        "88,136",
+        "72,361"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 27,
+      "row_index_zero_based": 11,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "",
+        "",
+        "101,832",
+        "",
+        "",
+        "",
+        "88,136",
+        "",
+        "",
+        "",
+        "72,361",
+        ""
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Common stock and paid-in capital",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Balance, beginning of period",
+          "",
+          "$",
+          "100,923",
+          "",
+          "",
+          "$",
+          "93,718",
+          "",
+          "",
+          "$",
+          "86,939",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Balance, beginning of period",
+        "",
+        "",
+        "173,144",
+        "",
+        "",
+        "",
+        "118,848",
+        "",
+        "",
+        "",
+        "84,281",
+        ""
+      ],
+      "neighbor_after": [
+        "Common stock cash dividends",
+        "",
+        "",
+        "( 24,677",
+        ")",
+        "",
+        "",
+        "( 22,293",
+        ")",
+        "",
+        "",
+        "( 20,226",
+        ")"
+      ],
+      "numeric_tokens_unassigned": [
+        "101,832",
+        "88,136",
+        "72,361"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2665,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "text": "The components of other income (expense), net were as follows:"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2785,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "text": "We use derivative instruments to manage risks related to foreign currencies, interest rates, equity prices, and credit; to enhance investment returns; and to facilitate portfolio diversification. Gains and losses from changes in fair values of derivatives that are not designated as hedging instruments are primarily recognized in other income (expense), net."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2794,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "text": "Interest and dividends income decreased primarily due to lower portfolio balances. Interest expense decreased primarily due to maturities of commercial paper and higher capitalization of debt interest expense, offset in part by higher finance lease interest expense. Net recognized losses on investments increased primarily due to higher impairments, offset in part by higher gains on equity investments in the current period. Net losses on derivatives increased primarily due to higher losses on equity derivatives in the current period. Other, net primarily reflects net recognized losses on equity method investments, including OpenAI."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": [
+    "Comparative question: check every requested year column"
+  ]
+}

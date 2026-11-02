@@ -1,0 +1,607 @@
+{
+  "question_id": "V5R_H22",
+  "question": "How do Meta's FY2024 property purchases differ from capital expenditures including finance leases?",
+  "category": "ACCOUNTING_DEFINITION",
+  "issuer": "META",
+  "accession": "0001326801-25-000017",
+  "form": "10-K",
+  "filing_date": "2025-01-30",
+  "report_date": "2024-12-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+  "official_html_sha256": "f137b12990dec2438f6ccef0d3be3164c062cbf15e32f8ac7b48e2598405d186",
+  "frozen_corpus_chunk_count": 280,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "capital",
+    "do",
+    "expenditure",
+    "finance",
+    "including",
+    "leases",
+    "property",
+    "purchase"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 20,
+      "row_index_zero_based": 3,
+      "score": 23,
+      "matched_terms": [
+        "property",
+        "purchase"
+      ],
+      "row_cells": [
+        "Purchases of property and equipment",
+        "(37,256)",
+        "",
+        "",
+        "(27,045)",
+        "",
+        "",
+        "(31,186)",
+        ""
+      ],
+      "candidate_row_label": "Purchases of property and equipment",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Net cash provided by operating activities",
+          "$",
+          "91,328",
+          "",
+          "",
+          "$",
+          "71,113",
+          "",
+          "",
+          "$",
+          "50,475",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net cash provided by operating activities",
+        "$",
+        "91,328",
+        "",
+        "",
+        "$",
+        "71,113",
+        "",
+        "",
+        "$",
+        "50,475",
+        ""
+      ],
+      "neighbor_after": [
+        "Principal payments on finance leases",
+        "(1,969)",
+        "",
+        "",
+        "(1,058)",
+        "",
+        "",
+        "(850)",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(37,256)",
+        "(27,045)",
+        "(31,186)"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 20,
+      "row_index_zero_based": 4,
+      "score": 23,
+      "matched_terms": [
+        "finance",
+        "leases"
+      ],
+      "row_cells": [
+        "Principal payments on finance leases",
+        "(1,969)",
+        "",
+        "",
+        "(1,058)",
+        "",
+        "",
+        "(850)",
+        ""
+      ],
+      "candidate_row_label": "Principal payments on finance leases",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Net cash provided by operating activities",
+          "$",
+          "91,328",
+          "",
+          "",
+          "$",
+          "71,113",
+          "",
+          "",
+          "$",
+          "50,475",
+          ""
+        ],
+        [
+          "Purchases of property and equipment",
+          "(37,256)",
+          "",
+          "",
+          "(27,045)",
+          "",
+          "",
+          "(31,186)",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Purchases of property and equipment",
+        "(37,256)",
+        "",
+        "",
+        "(27,045)",
+        "",
+        "",
+        "(31,186)",
+        ""
+      ],
+      "neighbor_after": [
+        "Free cash flow",
+        "$",
+        "52,103",
+        "",
+        "",
+        "$",
+        "43,010",
+        "",
+        "",
+        "$",
+        "18,439",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(1,969)",
+        "(1,058)",
+        "(850)"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 28,
+      "row_index_zero_based": 20,
+      "score": 23,
+      "matched_terms": [
+        "property",
+        "purchase"
+      ],
+      "row_cells": [
+        "Purchases of property and equipment",
+        "( 37,256 )",
+        "",
+        "",
+        "( 27,045 )",
+        "",
+        "",
+        "( 31,186 )",
+        ""
+      ],
+      "candidate_row_label": "Purchases of property and equipment",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Cash flows from operating activities",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "62,360",
+          "",
+          "",
+          "$",
+          "39,098",
+          "",
+          "",
+          "$",
+          "23,200",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Cash flows from investing activities",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Purchases of marketable securities",
+        "( 25,542 )",
+        "",
+        "",
+        "( 2,982 )",
+        "",
+        "",
+        "( 9,626 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "37,256",
+        "27,045",
+        "31,186"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 28,
+      "row_index_zero_based": 31,
+      "score": 23,
+      "matched_terms": [
+        "finance",
+        "leases"
+      ],
+      "row_cells": [
+        "Principal payments on finance leases",
+        "( 1,969 )",
+        "",
+        "",
+        "( 1,058 )",
+        "",
+        "",
+        "( 850 )",
+        ""
+      ],
+      "candidate_row_label": "Principal payments on finance leases",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Cash flows from operating activities",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "62,360",
+          "",
+          "",
+          "$",
+          "39,098",
+          "",
+          "",
+          "$",
+          "23,200",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Proceeds from issuance of long-term debt, net",
+        "10,432",
+        "",
+        "",
+        "8,455",
+        "",
+        "",
+        "9,921",
+        ""
+      ],
+      "neighbor_after": [
+        "Other financing activities",
+        "( 277 )",
+        "",
+        "",
+        "( 111 )",
+        "",
+        "",
+        "344",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,969",
+        "1,058",
+        "850"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 46,
+      "row_index_zero_based": 4,
+      "score": 23,
+      "matched_terms": [
+        "finance",
+        "leases"
+      ],
+      "row_cells": [
+        "Operating cash flows for finance leases",
+        "$",
+        "23",
+        "",
+        "",
+        "$",
+        "20",
+        "",
+        "",
+        "$",
+        "16",
+        ""
+      ],
+      "candidate_row_label": "Operating cash flows for finance leases",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Cash paid for amounts included in the measurement of lease liabilities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Operating cash flows for operating leases (1)",
+          "$",
+          "2,830",
+          "",
+          "",
+          "$",
+          "2,233",
+          "",
+          "",
+          "$",
+          "1,654",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating cash flows for operating leases (1)",
+        "$",
+        "2,830",
+        "",
+        "",
+        "$",
+        "2,233",
+        "",
+        "",
+        "$",
+        "1,654",
+        ""
+      ],
+      "neighbor_after": [
+        "Financing cash flows for finance leases",
+        "$",
+        "1,969",
+        "",
+        "",
+        "$",
+        "1,058",
+        "",
+        "",
+        "$",
+        "850",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "23",
+        "20",
+        "16"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 46,
+      "row_index_zero_based": 5,
+      "score": 23,
+      "matched_terms": [
+        "finance",
+        "leases"
+      ],
+      "row_cells": [
+        "Financing cash flows for finance leases",
+        "$",
+        "1,969",
+        "",
+        "",
+        "$",
+        "1,058",
+        "",
+        "",
+        "$",
+        "850",
+        ""
+      ],
+      "candidate_row_label": "Financing cash flows for finance leases",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Cash paid for amounts included in the measurement of lease liabilities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Operating cash flows for operating leases (1)",
+          "$",
+          "2,830",
+          "",
+          "",
+          "$",
+          "2,233",
+          "",
+          "",
+          "$",
+          "1,654",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating cash flows for finance leases",
+        "$",
+        "23",
+        "",
+        "",
+        "$",
+        "20",
+        "",
+        "",
+        "$",
+        "16",
+        ""
+      ],
+      "neighbor_after": [
+        "Lease liabilities arising from obtaining right-of-use assets:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,969",
+        "1,058",
+        "850"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1374,
+      "score": 50,
+      "matched_terms": [
+        "capital",
+        "expenditure",
+        "finance",
+        "including",
+        "leases"
+      ],
+      "text": "• Capital expenditures, including principal payments on finance leases, were $39.23 billion for the year ended December 31, 2024."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1772,
+      "score": 50,
+      "matched_terms": [
+        "capital",
+        "expenditure",
+        "finance",
+        "including",
+        "leases"
+      ],
+      "text": "Our principal sources of liquidity are our cash, cash equivalents, marketable securities, and cash generated from operations. Cash, cash equivalents, and marketable securities are comprised of cash on deposit with banks, time deposits, money market funds, U.S. government and agency securities, investment grade corporate debt securities, and marketable equity securities. As part of our cash management strategy, we concentrate cash deposits with large financial institutions and our investment holdings are in diversified highly rated securities. Cash, cash equivalents, and marketable securities were $77.81 billion as of December 31, 2024, an increase of $12.41 billion from December 31, 2023. The increase was due to $91.33 billion of cash generated from operations and $10.43 billion of net proceeds from the issuance of fixed-rate senior unsecured notes (the Notes) in August 2024. These increases were offset by $39.23 billion of capital expenditures, including principal payments on finance leases, our capital returns of $35.20 billion for repurchases of our Class A common stock and paymen"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1800,
+      "score": 40,
+      "matched_terms": [
+        "finance",
+        "leases",
+        "property",
+        "purchase"
+      ],
+      "text": "In addition to other financial measures presented in accordance with U.S. GAAP, we monitor free cash flow (FCF) as a non-GAAP measure to manage our business, make planning decisions, evaluate our performance, and allocate resources. We define FCF as net cash provided by operating activities reduced by purchases of property and equipment and principal payments on finance leases."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

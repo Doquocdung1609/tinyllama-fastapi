@@ -1,0 +1,405 @@
+{
+  "question_id": "V6_H021",
+  "question": "Locate NVIDIA's total revenue for FY2024 in the annual report.",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "NVDA",
+  "accession": "0001045810-24-000029",
+  "form": "10-K",
+  "filing_date": "2024-02-21",
+  "report_date": "2024-01-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+  "official_html_sha256": "df36bd3e45a8061136763f166f71b91df4ce777624cae80ca240c8c8cbde2901",
+  "frozen_corpus_chunk_count": 200,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "annual",
+    "locate",
+    "revenue"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 0,
+      "row_index_zero_based": 0,
+      "score": 13,
+      "matched_terms": [
+        "annual"
+      ],
+      "row_cells": [
+        "☒",
+        "ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934"
+      ],
+      "candidate_row_label": "☒",
+      "candidate_header_rows": [],
+      "neighbor_before": null,
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "13",
+        "15",
+        "1934"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "60,922",
+        "",
+        "",
+        "$",
+        "26,974",
+        "",
+        "",
+        "Up 126%"
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023",
+          "",
+          "Change"
+        ],
+        [
+          "",
+          "($ in millions, except per share data)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "($ in millions, except per share data)"
+      ],
+      "neighbor_after": [
+        "Gross margin",
+        "72.7",
+        "%",
+        "",
+        "56.9",
+        "%",
+        "",
+        "Up 15.8 pts"
+      ],
+      "numeric_tokens_unassigned": [
+        "60,922",
+        "26,974",
+        "126%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 19,
+      "row_index_zero_based": 2,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "60,922",
+        "",
+        "",
+        "$",
+        "26,974",
+        "",
+        "",
+        "$",
+        "26,914",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023",
+          "",
+          "Jan 30, 2022"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "Jan 28, 2024",
+        "",
+        "Jan 29, 2023",
+        "",
+        "Jan 30, 2022"
+      ],
+      "neighbor_after": [
+        "Cost of revenue",
+        "16,621",
+        "",
+        "",
+        "11,618",
+        "",
+        "",
+        "9,439",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "60,922",
+        "26,974",
+        "26,914"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 19,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "16,621",
+        "",
+        "",
+        "11,618",
+        "",
+        "",
+        "9,439",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023",
+          "",
+          "Jan 30, 2022"
+        ],
+        [
+          "Revenue",
+          "$",
+          "60,922",
+          "",
+          "",
+          "$",
+          "26,974",
+          "",
+          "",
+          "$",
+          "26,914",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Revenue",
+        "$",
+        "60,922",
+        "",
+        "",
+        "$",
+        "26,974",
+        "",
+        "",
+        "$",
+        "26,914",
+        ""
+      ],
+      "neighbor_after": [
+        "Gross profit",
+        "44,301",
+        "",
+        "",
+        "15,356",
+        "",
+        "",
+        "17,475",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "16,621",
+        "11,618",
+        "9,439"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "$",
+        "141",
+        "",
+        "",
+        "$",
+        "138",
+        "",
+        "",
+        "$",
+        "141",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023",
+          "",
+          "Jan 30, 2022"
+        ],
+        [
+          "",
+          "(In millions)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "(In millions)"
+      ],
+      "neighbor_after": [
+        "Research and development",
+        "2,532",
+        "",
+        "",
+        "1,892",
+        "",
+        "",
+        "1,298",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "141",
+        "138",
+        "141"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 44,
+      "row_index_zero_based": 5,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Deferred revenue (2)",
+        "764",
+        "",
+        "",
+        "354",
+        ""
+      ],
+      "candidate_row_label": "Deferred revenue (2)",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Accrued and Other Current Liabilities:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Customer program accruals",
+          "$",
+          "2,081",
+          "",
+          "",
+          "$",
+          "1,196",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Excess inventory purchase obligations (1)",
+        "1,655",
+        "",
+        "",
+        "954",
+        ""
+      ],
+      "neighbor_after": [
+        "Accrued payroll and related expenses",
+        "675",
+        "",
+        "",
+        "530",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(2)",
+        "764",
+        "354"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 751,
+      "score": 20,
+      "matched_terms": [
+        "annual",
+        "revenue"
+      ],
+      "text": "Our consolidated financial statements are prepared in accordance with accounting principles generally accepted in the United States, or U.S. GAAP. The preparation of these financial statements requires us to make estimates and judgments that affect the reported amounts of assets, liabilities, revenue, cost of revenue, expenses and related disclosure of contingencies. Critical accounting estimates are those estimates that involve a significant level of estimation uncertainty and could have a material impact on our financial condition or results of operations. We have critical accounting estimates in the areas of inventories, revenue recognition, and income taxes. Refer to Note 1 of the Notes to the Consolidated Financial Statements in Part IV, Item 15 of this Annual Report on Form 10-K for a summary of significant accounting policies."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

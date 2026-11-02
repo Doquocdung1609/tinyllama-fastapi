@@ -1,0 +1,509 @@
+{
+  "question_id": "V5R_H07",
+  "question": "What was Microsoft's FY2024 total revenue?",
+  "category": "EXACT_CELL",
+  "issuer": "MSFT",
+  "accession": "0000950170-24-087843",
+  "form": "10-K",
+  "filing_date": "2024-07-30",
+  "report_date": "2024-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+  "official_html_sha256": "420a47b7aa1e622380add216b8e1a9ed5e865393bcb7628f44c45e476919327e",
+  "frozen_corpus_chunk_count": 246,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "revenue"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 11,
+      "row_index_zero_based": 0,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Office Commercial products and cloud services revenue growth",
+        "",
+        "Revenue from Office Commercial products and cloud services (Office 365 subscriptions, the Office 365 portion of Microsoft 365 Commercial subscriptions, and Office licensed on-premises), comprising Office, Exchange, SharePoint, Microsoft Teams, Office 365 Security and Compliance, Microsoft Viva, and "
+      ],
+      "candidate_row_label": "Office Commercial products and cloud services revenue growth",
+      "candidate_header_rows": [],
+      "neighbor_before": null,
+      "neighbor_after": [
+        "Office Consumer products and cloud services revenue growth",
+        "",
+        "Revenue from Office Consumer products and cloud services, including Microsoft 365 Consumer and Copilot Pro subscriptions, Office licensed on-premises, and other Office services"
+      ],
+      "numeric_tokens_unassigned": [
+        "365",
+        "365",
+        "365",
+        "365"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 13,
+      "row_index_zero_based": 1,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "",
+        "$",
+        "245,122",
+        "",
+        "",
+        "$",
+        "211,915",
+        "",
+        "",
+        "",
+        "16%",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages and per share amounts)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "(In millions, except percentages and per share amounts)",
+        "",
+        "2024",
+        "",
+        "",
+        "2023",
+        "",
+        "",
+        "Percentage Change",
+        ""
+      ],
+      "neighbor_after": [
+        "Gross margin",
+        "",
+        "",
+        "171,008",
+        "",
+        "",
+        "",
+        "146,052",
+        "",
+        "",
+        "",
+        "17%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "245,122",
+        "211,915",
+        "16%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 15,
+      "row_index_zero_based": 2,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "As a percent of revenue",
+        "",
+        "",
+        "12%",
+        "",
+        "",
+        "",
+        "13%",
+        "",
+        "",
+        "",
+        "(1)ppt",
+        ""
+      ],
+      "candidate_row_label": "As a percent of revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Research and development",
+          "",
+          "$",
+          "29,510",
+          "",
+          "",
+          "$",
+          "27,195",
+          "",
+          "",
+          "",
+          "9%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Research and development",
+        "",
+        "$",
+        "29,510",
+        "",
+        "",
+        "$",
+        "27,195",
+        "",
+        "",
+        "",
+        "9%",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "12%",
+        "13%",
+        "(1)"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 16,
+      "row_index_zero_based": 2,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "As a percent of revenue",
+        "",
+        "",
+        "10%",
+        "",
+        "",
+        "",
+        "11%",
+        "",
+        "",
+        "",
+        "(1)ppt",
+        ""
+      ],
+      "candidate_row_label": "As a percent of revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Sales and marketing",
+          "",
+          "$",
+          "24,456",
+          "",
+          "",
+          "$",
+          "22,759",
+          "",
+          "",
+          "",
+          "7%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Sales and marketing",
+        "",
+        "$",
+        "24,456",
+        "",
+        "",
+        "$",
+        "22,759",
+        "",
+        "",
+        "",
+        "7%",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "10%",
+        "11%",
+        "(1)"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 17,
+      "row_index_zero_based": 2,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "As a percent of revenue",
+        "",
+        "",
+        "3%",
+        "",
+        "",
+        "",
+        "4%",
+        "",
+        "",
+        "",
+        "(1)ppt",
+        ""
+      ],
+      "candidate_row_label": "As a percent of revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "General and administrative",
+          "",
+          "$",
+          "7,609",
+          "",
+          "",
+          "$",
+          "7,575",
+          "",
+          "",
+          "",
+          "0%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "General and administrative",
+        "",
+        "$",
+        "7,609",
+        "",
+        "",
+        "$",
+        "7,575",
+        "",
+        "",
+        "",
+        "0%",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "3%",
+        "4%",
+        "(1)"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 5,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Total revenue",
+        "",
+        "",
+        "245,122",
+        "",
+        "",
+        "",
+        "211,915",
+        "",
+        "",
+        "",
+        "198,270",
+        ""
+      ],
+      "candidate_row_label": "Total revenue",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Revenue:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Product",
+          "",
+          "$",
+          "64,773",
+          "",
+          "",
+          "$",
+          "64,699",
+          "",
+          "",
+          "$",
+          "72,732",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Service and other",
+        "",
+        "",
+        "180,349",
+        "",
+        "",
+        "",
+        "147,216",
+        "",
+        "",
+        "",
+        "125,538",
+        ""
+      ],
+      "neighbor_after": [
+        "Cost of revenue:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "245,122",
+        "211,915",
+        "198,270"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 678,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "Office Commercial is designed to increase personal, team, and organizational productivity through a range of products and services. Growth depends on our ability to reach new users in new markets such as frontline workers, small and medium businesses, and growth markets, as well as add value to our core product and service offerings to span AI and productivity categories such as communication, collaboration, analytics, security, and compliance. Office Commercial revenue is mainly affected by a combination of continued installed base growth and average revenue per user expansion, as well as the continued shift from Office licensed on-premises to Office 365."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 680,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "Office Consumer is designed to increase personal productivity and creativity through a range of products and services. Growth depends on our ability to reach new users, add value to our core product set with new features including AI tools, and continue to expand our product and service offerings into new markets. Office Consumer revenue is mainly affected by the percentage of customers that buy Office with their new devices and the continued shift from Office licensed on-premises to Microsoft 365 Consumer subscriptions. Office Consumer Services revenue is mainly affected by the demand for communication and storage through Skype, Outlook.com, and OneDrive, which is largely driven by subscriptions, advertising, and the sale of minutes."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 684,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "Dynamics provides cloud-based and on-premises business solutions for financial management, enterprise resource planning (“ERP”), customer relationship management (“CRM”), and supply chain management, as well as other low code application development platforms and AI offerings, for small and medium businesses, large organizations, and divisions of global enterprises. Dynamics revenue is driven by the number of users licensed and applications consumed, expansion of average revenue per user, and the continued shift to Dynamics 365, a unified set of cloud-based intelligent business applications, including our low code development platforms, such as Power Apps and Power Automate."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

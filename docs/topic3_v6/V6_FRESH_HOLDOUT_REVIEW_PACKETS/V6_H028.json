@@ -1,0 +1,458 @@
+{
+  "question_id": "V6_H028",
+  "question": "Compare NVIDIA's total revenue for FY2024 and FY2025 in its FY2025 filing.",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "NVDA",
+  "accession": "0001045810-25-000023",
+  "form": "10-K",
+  "filing_date": "2025-02-26",
+  "report_date": "2025-01-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+  "official_html_sha256": "060c3cbb1e96feb4a6948acfe7fc013507f24b4deecb735d729cf730c07ffd0c",
+  "frozen_corpus_chunk_count": 202,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "filing",
+    "its",
+    "revenue"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "130,497",
+        "",
+        "",
+        "$",
+        "60,922",
+        "",
+        "",
+        "Up 114%"
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Change"
+        ],
+        [
+          "",
+          "($ in millions, except per share data)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "($ in millions, except per share data)"
+      ],
+      "neighbor_after": [
+        "Gross margin",
+        "75.0",
+        "%",
+        "",
+        "72.7",
+        "%",
+        "",
+        "Up 2.3 pts"
+      ],
+      "numeric_tokens_unassigned": [
+        "130,497",
+        "60,922",
+        "114%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 2,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "130,497",
+        "",
+        "",
+        "$",
+        "60,922",
+        "",
+        "",
+        "$",
+        "26,974",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "Jan 26, 2025",
+        "",
+        "Jan 28, 2024",
+        "",
+        "Jan 29, 2023"
+      ],
+      "neighbor_after": [
+        "Cost of revenue",
+        "32,639",
+        "",
+        "",
+        "16,621",
+        "",
+        "",
+        "11,618",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "130,497",
+        "60,922",
+        "26,974"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "32,639",
+        "",
+        "",
+        "16,621",
+        "",
+        "",
+        "11,618",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "$",
+          "26,974",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Revenue",
+        "$",
+        "130,497",
+        "",
+        "",
+        "$",
+        "60,922",
+        "",
+        "",
+        "$",
+        "26,974",
+        ""
+      ],
+      "neighbor_after": [
+        "Gross profit",
+        "97,858",
+        "",
+        "",
+        "44,301",
+        "",
+        "",
+        "15,356",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "32,639",
+        "16,621",
+        "11,618"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "$",
+        "178",
+        "",
+        "",
+        "$",
+        "141",
+        "",
+        "",
+        "$",
+        "138",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "(In millions)"
+      ],
+      "neighbor_after": [
+        "Research and development",
+        "3,423",
+        "",
+        "",
+        "2,532",
+        "",
+        "",
+        "1,892",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "178",
+        "141",
+        "138"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 43,
+      "row_index_zero_based": 7,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Deferred revenue (2)",
+        "837",
+        "",
+        "",
+        "764",
+        ""
+      ],
+      "candidate_row_label": "Deferred revenue (2)",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "Accrued and Other Current Liabilities:",
+          "(In millions)"
+        ],
+        [
+          "Customer program accruals",
+          "$",
+          "4,880",
+          "",
+          "",
+          "$",
+          "2,081",
+          ""
+        ],
+        [
+          "Excess inventory purchase obligations (1)",
+          "2,095",
+          "",
+          "",
+          "1,655",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Accrued payroll and related expenses",
+        "848",
+        "",
+        "",
+        "675",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating leases",
+        "288",
+        "",
+        "",
+        "228",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(2)",
+        "837",
+        "764"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 44,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Deferred revenue (2)",
+        "976",
+        "",
+        "",
+        "573",
+        ""
+      ],
+      "candidate_row_label": "Deferred revenue (2)",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "Other Long-Term Liabilities:",
+          "(In millions)"
+        ],
+        [
+          "Income tax payable (1)",
+          "$",
+          "2,188",
+          "",
+          "",
+          "$",
+          "1,361",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Income tax payable (1)",
+        "$",
+        "2,188",
+        "",
+        "",
+        "$",
+        "1,361",
+        ""
+      ],
+      "neighbor_after": [
+        "Deferred income tax",
+        "886",
+        "",
+        "",
+        "462",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(2)",
+        "976",
+        "573"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 575,
+      "score": 20,
+      "matched_terms": [
+        "its",
+        "revenue"
+      ],
+      "text": "Such restrictions could include additional unilateral or multilateral export controls on certain products or technology, including but not limited to AI technologies. As geopolitical tensions have increased, semiconductors associated with AI, including GPUs and related products, are increasingly the focus of export control restrictions proposed by stakeholders in the U.S. and its allies. The United States has imposed unilateral worldwide controls restricting GPUs and associated products, and it is likely that additional unilateral or multilateral controls will be adopted. Such controls have been and may again be very broad in scope and application, prohibit us from exporting our products to any or all customers in one or more markets, including but not limited to China and over 150 countries designated “Tier 2” by the January 2025 AI Diffusion IFR, and could negatively impact our manufacturing, testing and warehousing locations and options, or could impose other conditions that limit our ability to serve demand abroad and could negatively and materially impact our business, revenue a"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 629,
+      "score": 20,
+      "matched_terms": [
+        "its",
+        "revenue"
+      ],
+      "text": "Worldwide regulatory authorities are also considering and have approved various legislative proposals concerning data protection. The European Union adopted the General Data Protection Regulation, or GDPR, and the United Kingdom similarly adopted the U.K. GDPR, governing the strict handling of personal data of persons within the European Economic Area, or EEA, and the United Kingdom, respectively, including its use and protection and the ability of persons whose data is stored to access, correct, and delete such data about themselves. If we are found not to comply, we could be subject to penalties of up to €20 million or 4% of worldwide revenue, whichever is greater, and classes of individuals or consumer protection organizations may initiate litigation related to our processing of their personal data. Furthermore, the EU AI Act and similar legislation could impose onerous obligations that may disproportionately impact and disadvantage us and require us to change our business practices. Additionally, Europe’s Network and Information Security Directive, or NIS2, regulates resilience a"
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

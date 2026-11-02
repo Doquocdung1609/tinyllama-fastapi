@@ -1,0 +1,465 @@
+{
+  "question_id": "V5R_H16",
+  "question": "Compare NVIDIA's total revenue between FY2024 and FY2025.",
+  "category": "COMPARATIVE_COLUMN",
+  "issuer": "NVDA",
+  "accession": "0001045810-25-000023",
+  "form": "10-K",
+  "filing_date": "2025-02-26",
+  "report_date": "2025-01-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+  "official_html_sha256": "060c3cbb1e96feb4a6948acfe7fc013507f24b4deecb735d729cf730c07ffd0c",
+  "frozen_corpus_chunk_count": 202,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "revenue"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 3,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "130,497",
+        "",
+        "",
+        "$",
+        "60,922",
+        "",
+        "",
+        "Up 114%"
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Change"
+        ],
+        [
+          "",
+          "($ in millions, except per share data)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "($ in millions, except per share data)"
+      ],
+      "neighbor_after": [
+        "Gross margin",
+        "75.0",
+        "%",
+        "",
+        "72.7",
+        "%",
+        "",
+        "Up 2.3 pts"
+      ],
+      "numeric_tokens_unassigned": [
+        "130,497",
+        "60,922",
+        "114%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 2,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "130,497",
+        "",
+        "",
+        "$",
+        "60,922",
+        "",
+        "",
+        "$",
+        "26,974",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "Jan 26, 2025",
+        "",
+        "Jan 28, 2024",
+        "",
+        "Jan 29, 2023"
+      ],
+      "neighbor_after": [
+        "Cost of revenue",
+        "32,639",
+        "",
+        "",
+        "16,621",
+        "",
+        "",
+        "11,618",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "130,497",
+        "60,922",
+        "26,974"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 3,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "32,639",
+        "",
+        "",
+        "16,621",
+        "",
+        "",
+        "11,618",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "$",
+          "26,974",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Revenue",
+        "$",
+        "130,497",
+        "",
+        "",
+        "$",
+        "60,922",
+        "",
+        "",
+        "$",
+        "26,974",
+        ""
+      ],
+      "neighbor_after": [
+        "Gross profit",
+        "97,858",
+        "",
+        "",
+        "44,301",
+        "",
+        "",
+        "15,356",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "32,639",
+        "16,621",
+        "11,618"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 3,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "$",
+        "178",
+        "",
+        "",
+        "$",
+        "141",
+        "",
+        "",
+        "$",
+        "138",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "(In millions)"
+      ],
+      "neighbor_after": [
+        "Research and development",
+        "3,423",
+        "",
+        "",
+        "2,532",
+        "",
+        "",
+        "1,892",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "178",
+        "141",
+        "138"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 43,
+      "row_index_zero_based": 7,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Deferred revenue (2)",
+        "837",
+        "",
+        "",
+        "764",
+        ""
+      ],
+      "candidate_row_label": "Deferred revenue (2)",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "Accrued and Other Current Liabilities:",
+          "(In millions)"
+        ],
+        [
+          "Customer program accruals",
+          "$",
+          "4,880",
+          "",
+          "",
+          "$",
+          "2,081",
+          ""
+        ],
+        [
+          "Excess inventory purchase obligations (1)",
+          "2,095",
+          "",
+          "",
+          "1,655",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Accrued payroll and related expenses",
+        "848",
+        "",
+        "",
+        "675",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating leases",
+        "288",
+        "",
+        "",
+        "228",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(2)",
+        "837",
+        "764"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 44,
+      "row_index_zero_based": 3,
+      "score": 19,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Deferred revenue (2)",
+        "976",
+        "",
+        "",
+        "573",
+        ""
+      ],
+      "candidate_row_label": "Deferred revenue (2)",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "Other Long-Term Liabilities:",
+          "(In millions)"
+        ],
+        [
+          "Income tax payable (1)",
+          "$",
+          "2,188",
+          "",
+          "",
+          "$",
+          "1,361",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Income tax payable (1)",
+        "$",
+        "2,188",
+        "",
+        "",
+        "$",
+        "1,361",
+        ""
+      ],
+      "neighbor_after": [
+        "Deferred income tax",
+        "886",
+        "",
+        "",
+        "462",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(2)",
+        "976",
+        "573"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 232,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "Our computing platforms serve a diverse set of markets such as data centers, gaming, professional visualization, and automotive. Our desktop gaming products typically see stronger revenue in the second half of our fiscal year. Historical seasonality trends may not repeat."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 358,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "• A significant amount of our revenue stems from a limited number of partners and distributors and we have a concentration of sales to customers, and our revenue could be adversely affected if we lose or are prevented from selling to any of these end customers."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 389,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "We have invested in research and development in markets where we have a limited operating history, which may not produce meaningful revenue for several years, if at all. If we fail to develop or monetize new products and technologies, or if they do not become widely adopted, our financial results could be adversely affected. Obtaining design wins may involve a lengthy process and depends on our ability to anticipate and provide features and functionality that customers will demand. They also do not guarantee revenue. Failure to obtain a design win may prevent us from obtaining future design wins in subsequent generations. We cannot ensure that our products and technologies will provide value to our customers and partners. If we fail any of these key success criteria, our financial results may be harmed."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": [
+    "Comparative question: check every requested year column"
+  ]
+}

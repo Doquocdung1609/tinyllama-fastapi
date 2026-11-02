@@ -1,0 +1,331 @@
+{
+  "question_id": "V6_H022",
+  "question": "What capital expenditures did NVIDIA disclose for FY2024?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "NVDA",
+  "accession": "0001045810-24-000029",
+  "form": "10-K",
+  "filing_date": "2024-02-21",
+  "report_date": "2024-01-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+  "official_html_sha256": "df36bd3e45a8061136763f166f71b91df4ce777624cae80ca240c8c8cbde2901",
+  "frozen_corpus_chunk_count": 200,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "capital",
+    "disclose",
+    "expenditure"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 30,
+      "score": 12,
+      "matched_terms": [
+        "capital"
+      ],
+      "row_cells": [
+        "Additional paid-in capital",
+        "13,132",
+        "",
+        "",
+        "11,971",
+        ""
+      ],
+      "candidate_row_label": "Additional paid-in capital",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Assets",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Cash and cash equivalents",
+          "$",
+          "7,280",
+          "",
+          "",
+          "$",
+          "3,389",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Common stock, $ 0.001 par value; 8,000 shares authorized; 2,464 shares issued and outstanding as of January 28, 2024; 2,466 shares issued and outstanding as of January 29, 2023",
+        "2",
+        "",
+        "",
+        "2",
+        ""
+      ],
+      "neighbor_after": [
+        "Accumulated other comprehensive income (loss)",
+        "27",
+        "",
+        "",
+        "( 43 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "13,132",
+        "11,971"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 54,
+      "row_index_zero_based": 3,
+      "score": 12,
+      "matched_terms": [
+        "expenditure"
+      ],
+      "row_cells": [
+        "Capitalized research and development expenditure",
+        "$",
+        "3,376",
+        "",
+        "",
+        "$",
+        "1,859",
+        ""
+      ],
+      "candidate_row_label": "Capitalized research and development expenditure",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Deferred tax assets:",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Deferred tax assets:",
+        ""
+      ],
+      "neighbor_after": [
+        "GILTI deferred tax assets",
+        "1,576",
+        "",
+        "",
+        "800",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "3,376",
+        "1,859"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 54,
+      "row_index_zero_based": 7,
+      "score": 12,
+      "matched_terms": [
+        "capital"
+      ],
+      "row_cells": [
+        "Net operating loss and capital loss carryforwards",
+        "439",
+        "",
+        "",
+        "409",
+        ""
+      ],
+      "candidate_row_label": "Net operating loss and capital loss carryforwards",
+      "candidate_header_rows": [
+        [
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Deferred tax assets:",
+          ""
+        ],
+        [
+          "Capitalized research and development expenditure",
+          "$",
+          "3,376",
+          "",
+          "",
+          "$",
+          "1,859",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Research and other tax credit carryforwards",
+        "936",
+        "",
+        "",
+        "951",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating lease liabilities",
+        "263",
+        "",
+        "",
+        "193",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "439",
+        "409"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 22,
+      "row_index_zero_based": 1,
+      "score": 10,
+      "matched_terms": [
+        "capital"
+      ],
+      "row_cells": [
+        "",
+        "Shares",
+        "",
+        "Amount",
+        "",
+        "Capital",
+        "",
+        "Stock",
+        "",
+        "Income (Loss)",
+        "",
+        "Earnings",
+        "",
+        "Equity"
+      ],
+      "candidate_row_label": "",
+      "candidate_header_rows": [
+        [
+          "",
+          "Common Stock Outstanding",
+          "",
+          "Additional Paid-in",
+          "",
+          "Treasury",
+          "",
+          "Accumulated Other Comprehensive",
+          "",
+          "Retained",
+          "",
+          "Total Shareholders'"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "Common Stock Outstanding",
+        "",
+        "Additional Paid-in",
+        "",
+        "Treasury",
+        "",
+        "Accumulated Other Comprehensive",
+        "",
+        "Retained",
+        "",
+        "Total Shareholders'"
+      ],
+      "neighbor_after": [
+        "(In millions, except per share data)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 266,
+      "score": 20,
+      "matched_terms": [
+        "capital",
+        "expenditure"
+      ],
+      "text": "Compliance with laws, rules, and regulations has not otherwise had a material effect upon our capital expenditures, results of operations, or competitive position and we do not currently anticipate material capital expenditures for environmental control facilities. Compliance with existing or future governmental regulations, including, but not limited to, those pertaining to IP ownership and infringement, taxes, import and export requirements and tariffs, anti-corruption, business acquisitions, foreign exchange controls and cash repatriation restrictions, data privacy requirements, competition and antitrust, advertising, employment, product regulations, cybersecurity, environmental, health and safety requirements, the responsible use of AI, climate change, cryptocurrency, and consumer laws, could increase our costs, impact our competitive position, and otherwise may have a material adverse impact on our business, financial condition and results of operations in subsequent periods. Refer to “Item 1A. Risk Factors” for a discussion of these potential impacts."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 272,
+      "score": 20,
+      "matched_terms": [
+        "capital",
+        "expenditure"
+      ],
+      "text": "In May 2023, we published metrics related to our environmental impact for fiscal year 2023. Fiscal year 2024 metrics are expected to be published in the first half of fiscal year 2025. There has been no material impact to our capital expenditures, results of operations or competitive position associated with global environmental sustainability regulations, compliance, or costs from sourcing renewable energy. By the end of fiscal year 2025, our goal is to purchase"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 460,
+      "score": 20,
+      "matched_terms": [
+        "capital",
+        "expenditure"
+      ],
+      "text": "Economic and industry uncertainty or changes, including recession or slowing growth, inflation, changes or uncertainty in fiscal, monetary or trade policy, disruptions to capital markets and the banking system, currency fluctuations, higher interest rates, tighter credit, lower capital expenditures by businesses, including on IT infrastructure, increases in unemployment, labor shortages, and lower consumer confidence and spending, global supply chain constraints and global economic and geopolitical developments have in the past and/or could in the future have adverse, wide-ranging effects on our business and financial results, including:"
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}
