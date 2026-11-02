@@ -4,6 +4,7 @@ from functools import lru_cache
 from hashlib import sha256
 import json
 import os
+import re
 import subprocess
 from pathlib import Path
 from threading import BoundedSemaphore, Thread
@@ -375,6 +376,14 @@ def analysis(payload:AnalysisRequest):
         if payload.mode=='numeric':return numeric_answer(workspace(),payload)
         if payload.mode=='document_qa':
             from app.product.assistant_answer import contract,needs_number,reviewed_plan
+            if hasattr(workspace(),'document'):
+                companies=re.findall(r"\b([A-Z][\w&.-]+)['’]s\b",payload.question)
+                issuers=[str((workspace().document(i) or {}).get('issuer','')).casefold() for i in payload.document_ids]
+                if companies and any(not any(re.search(r'\b'+re.escape(name.casefold())+r'\b',issuer)
+                                            for issuer in issuers) for name in companies):
+                    return {'status':'QUERY_CONTEXT_CONFLICT','reason':'QUESTION_COMPANY_SCOPE_CONFLICT',
+                            'answer':'Doanh nghiệp trong câu hỏi không khớp tài liệu đã chọn.',
+                            'values':[],'citations':[],'verification_status':'QUERY_CONTEXT_CONFLICT'}
             profile=payload.search_profile
             if profile=='auto':
                 profile='production_v3r3' if getattr(workspace(),'search_candidate_version',None)=='V3R3' else 'production_v3'
@@ -399,6 +408,13 @@ def analysis(payload:AnalysisRequest):
                         return {**answer,**verified,'verification_status':verified['verification'],
                                 'warnings':[],'retrieval_trace':answer['retrieval_trace'],
                                 'search_profile':profile,'generation':result.get('generation')}
+                if answer['status']=='SOURCE_EXCERPTS' and hasattr(workspace(),'source_file'):
+                    from app.product.native_financial_tables import recover_retrieved_tables
+                    recovered=recover_retrieved_tables(workspace(),payload.document_ids,result.get('results',[]))
+                    if recovered:
+                        answer['source_verification_evidence']=recovered
+                        answer['verification_status']='TABLE_CONTEXT_INCOMPLETE'
+                        answer['reason']='NATIVE_CELLS_REQUIRE_CURRENCY_FISCAL_AND_METRIC_BINDING'
             return answer
         raise ValueError('USE_RESEARCH_JOB_ENDPOINT')
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None

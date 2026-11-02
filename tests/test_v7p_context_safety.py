@@ -42,3 +42,13 @@ def test_omitted_ui_defaults_do_not_block_verified_plan(monkeypatch):
         'status':'SUPPORTED','values':['1'],'verification':'TEST_FIXTURE','citations':[]})
     result=frontend_api.analysis(AnalysisRequest(question='What was net income in 2025?',document_ids=['d']))
     assert result['status']=='SUPPORTED'
+
+
+def test_possessive_company_conflict_stops_before_retrieval(monkeypatch):
+    class Workspace:
+        def document(self,_):return {'issuer':'Example Industries'}
+        def search(self,*args):raise AssertionError('must refuse before retrieval')
+    monkeypatch.setattr(frontend_api,'workspace',lambda:Workspace())
+    result=frontend_api.analysis(AnalysisRequest(question="OtherCorp's net income in 2025?",document_ids=['d']))
+    assert result['status']=='QUERY_CONTEXT_CONFLICT'
+    assert result['values']==[]
