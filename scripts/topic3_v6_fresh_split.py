@@ -76,7 +76,7 @@ def main():
     assert len(output) == 30 and len({x["question"] for x in output}) == 30
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(output[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(output[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(output)
     manifest = {"status": "SEALED_DESIGN_UNJUDGED_NO_RANKING_RUN", "questions": 30,

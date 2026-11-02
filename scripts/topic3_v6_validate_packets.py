@@ -32,7 +32,7 @@ def main():
     for queue_path, directory in SPLITS:
         queue = list(csv.DictReader(queue_path.open(encoding="utf-8", newline="")))
         manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
-        if len(queue) != 30 or manifest["queue_sha256"] != hashlib.sha256(queue_path.read_bytes()).hexdigest():
+        if len(queue) != 30 or manifest["queue_sha256"] != hashlib.sha256(queue_path.read_bytes().replace(b"\r\n", b"\n")).hexdigest():
             errors.append(f"Queue/manifest mismatch: {queue_path}")
         for row in queue:
             qid = row["question_id"]

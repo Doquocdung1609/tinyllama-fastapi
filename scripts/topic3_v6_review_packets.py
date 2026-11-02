@@ -177,7 +177,7 @@ def main() -> None:
                                     "".join(rows) + "</table></html>", encoding="utf-8")
     manifest = {"status": "MACHINE_PREPARED_UNJUDGED", "question_count": len(packets),
                 "independently_reviewed": 0, "packet_selection": "SEC original HTML table/prose lexical search; no Qdrant ranking or qrels",
-                "queue_sha256": hashlib.sha256(queue_path.read_bytes()).hexdigest(), "packets": packets}
+                "queue_sha256": hashlib.sha256(queue_path.read_bytes().replace(b"\r\n", b"\n")).hexdigest(), "packets": packets}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps({"packets": len(packets), "table_candidates": sum(p["table_candidates"] for p in packets),
                       "prose_candidates": sum(p["prose_candidates"] for p in packets),
