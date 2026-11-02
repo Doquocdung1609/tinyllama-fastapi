@@ -133,6 +133,10 @@ def test_supported_automatic_answer_has_no_stale_numeric_warning(tmp_path,monkey
         answer=frontend_api.analysis(AnalysisRequest(question='Net income fiscal 2025?',document_ids=[d['id']],search_profile='auto'))
         assert answer['status']=='SUPPORTED' and answer['warnings']==[]
         assert answer['retrieved_excerpt_verification']=='SOURCE_TEXT_UNREVIEWED'
+        prior=frontend_api.analysis(AnalysisRequest(question='Net income fiscal 2024?',document_ids=[d['id']],search_profile='auto'))
+        assert prior['status']=='SUPPORTED' and prior['period']=='2024-09-28'
+        assert prior['source_periods']==['2024-09-28'] and prior['answer_source_chunk_id'] is None
+        assert prior['answer_evidence_ids']==[c['evidence_id'] for c in prior['citations']]
     finally:w.close()
 
 

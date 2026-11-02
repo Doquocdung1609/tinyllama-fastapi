@@ -3,6 +3,17 @@ import {useQuery} from '@tanstack/react-query'
 import {post} from './api'
 import type {Evidence} from './api'
 
+const sourceErrors:Record<string,string>={
+ SOURCE_BYTES_NOT_AVAILABLE:'Không tìm thấy bytes snapshot gốc trong kho đã cấu hình. Không thay bằng một filing khác.',
+ SOURCE_HASH_MISMATCH:'Bytes nguồn đã thay đổi so với hash đăng ký. Bằng chứng này đã bị chặn.',
+ SOURCE_LOCATOR_UNRESOLVED:'Không đối chiếu được đúng hàng, cột hoặc kỳ của citation. Không tạo highlight hay số liệu thay thế.',
+ SOURCE_IDENTITY_MISMATCH:'Danh tính filing hoặc membership không khớp nguồn đã đăng ký.',
+ SOURCE_GENERATION_MISMATCH:'Generation hoặc manifest đã thay đổi. Hãy chạy lại câu hỏi trong nguồn phù hợp.',
+ UNREGISTERED_SOURCE_REFERENCE:'Tham chiếu nguồn không hợp lệ hoặc thuộc workspace khác. Hãy lấy citation mới.',
+ SOURCE_EVIDENCE_BUDGET:'Nguồn hoặc bảng vượt giới hạn hiển thị an toàn hiện tại.',
+ SOURCE_VIEW_BUSY:'Một nguồn khác đang được xác minh. Hãy chờ và kiểm tra lại.'
+}
+
 type PhysicalCell={column:number;text:string;colspan:number;rowspan:number}
 export type SecView={status:string;issuer:string;form:string;accession:string;report_period:string;source_sha256:string;normalized_sha256:string;official_url:string;generation:string;manifest_hash:string;parent_id:string;rendering:string;warnings:string[];excerpt:string;locator_limitation?:string;locator:unknown;
  selected_cell:null|{row:number;column:number;row_label:string;raw_value:string;period_end:string;unit:string;multiplier:string;period_kind:string;fact_name:string;header_path:string[];warnings:string[]};
@@ -37,7 +48,7 @@ export function SafeSecEvidence({data}:{data:SecView}){
 export default function SecSourceViewer({evidence}:{evidence:Evidence}){
  const view=useQuery({queryKey:['sec-source-view',evidence.source_reference],queryFn:()=>post<SecView>('/sec/evidence',{reference:evidence.source_reference}),enabled:!!evidence.source_reference,retry:false,gcTime:0,staleTime:0})
  if(!evidence.source_reference)return <section className="notice" role="alert">Citation cũ chưa có tham chiếu nguồn xác thực. Hãy chạy lại câu hỏi SEC để lấy citation mới; không dùng URL do client gửi để mở tệp.</section>
- if(view.error)return <section className="notice" role="alert"><h2>Không thể xác minh nguồn SEC</h2><p>{view.error.message}</p><p>Không hiển thị lại ô đã xác minh cũ khi bytes/nguồn/locator không còn hợp lệ.</p><button onClick={()=>view.refetch()}>Kiểm tra lại nguồn</button></section>
+ if(view.error)return <section className="notice" role="alert"><h2>Không thể xác minh nguồn SEC</h2><p>{sourceErrors[view.error.message]||'Chưa thể xác minh nguồn hiện tại; hãy kiểm tra kho dữ liệu và kết nối API.'}</p><p>Không hiển thị lại ô đã xác minh cũ khi bytes/nguồn/locator không còn hợp lệ.</p><details><summary>Chi tiết trạng thái</summary>{view.error.message}</details><button onClick={()=>view.refetch()}>Kiểm tra lại nguồn</button></section>
  if(!view.data)return <p role="status">Đang xác minh bytes nguồn và định vị bảng SEC…</p>
  return <SafeSecEvidence data={view.data}/>
 }

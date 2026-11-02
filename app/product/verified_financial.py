@@ -257,7 +257,12 @@ def automatic_answer(workspace,request,result):
             'source_display':c['value_raw']})
     display=format(value,',f').replace(',','_').replace('.',',').replace('_','.')
     label={'MILLION_USD':'triệu USD','THOUSAND_USD':'nghìn USD','BILLION_USD':'tỷ USD'}.get(unit,unit)
+    source_periods=sorted({c['period_end'] for c in operands})
     return {'status':'SUPPORTED','operation':operation,'values':[str(value)],'unit':unit,'formula':formula,
+        'metric':metric,'statement_scope':scope,'period':source_periods[0] if len(source_periods)==1 else None,
+        'source_periods':source_periods,'answer_source_chunk_id':None,
+        'answer_evidence_ids':[c['evidence_id'] for c in citations],
+        'evidence_references_kind':'ORIGINAL_RETRIEVAL_NOT_VERIFIED_CELL_CITATIONS',
         'answer':(winner['row_label']+' — ' if winner else '')+display+' '+label,
         'winner':winner['row_label'] if winner else None,'citations':citations,'operands':operands,
         'verification_status':'CELL_VERIFIED','verification':'DECIMAL_WITH_AUTOMATIC_SOURCE_CELLS',
