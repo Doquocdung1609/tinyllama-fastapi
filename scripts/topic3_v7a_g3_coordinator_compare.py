@@ -46,6 +46,10 @@ def clean(s: object) -> str:
     return ' '.join(re.findall(r'[a-z0-9]+', str(s or '').lower()))
 
 
+def markdown_cell(value: object) -> str:
+    return str(value or '').replace('|', '\\|').replace('\r', ' ').replace('\n', ' ')
+
+
 def decimal_value(value: object) -> Decimal | None:
     value = str(value or '').strip().replace(',', '')
     if value.startswith('(') and value.endswith(')'):
@@ -218,7 +222,9 @@ def compare(a1_path: Path, a2_path: Path, a1_first_path: Path,
             priority = 'CELL_PERIOD_SCOPE_REVIEW_REQUIRED'
         else:
             priority = 'STANDARD_CELL_VALIDATION_REQUIRED'
-        record = {'question_id': qid, 'accession': frozen['accession_number'], 'ticker': frozen['ticker'],
+        record = {'question_id': qid, 'question': g2[qid]['question'],
+                  'accession': frozen['accession_number'], 'source_url': frozen['source_url'],
+                  'ticker': frozen['ticker'],
                   'agent1_round': x['G3_review_round'], 'agent1_decision': s1, 'agent2_decision': s2,
                   'classification': classification, 'source_raw_now_available': str(raw_ready),
                   'source_raw_sha256': source_by_acc[frozen['accession_number']]['sha256'] if raw_ready else '',
@@ -247,6 +253,24 @@ def compare(a1_path: Path, a2_path: Path, a1_first_path: Path,
     (output_dir / 'V7A_G3_PRIVATE_94_FIELD_COMPARISON.csv').write_bytes(csv_bytes(rows))
     (output_dir / 'V7A_G3_PRIVATE_DISPUTE_PACKETS.json').write_text(json.dumps(disputes, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
     (output_dir / 'V7A_G3_PRIVATE_RAW_SOURCE_REVIEW_QUEUE.json').write_text(json.dumps(source_queue, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
+    md = ['# V7A G3 private dispute review packet', '',
+          '**Coordinator-only AI evidence. Not human-approved gold.** Both agent freezes were verified before comparison. '
+          'Open the original SEC source for every case and record an independent adjudicator decision; do not return this comparison to blind reviewers before their post-source deltas are frozen.', '']
+    for r in disputes:
+        md += [f"## {r['question_id']} — {r['classification']}", '',
+               f"Question: {r['question']}", '',
+               f"Source: {r['source_url']} (accession `{r['accession']}`)", '',
+               f"Agent 1: **{r['agent1_decision']}**; Agent 2: **{r['agent2_decision']}**. Review priority: `{r['review_priority']}`.", '',
+               '| Field | Agent 1 | Agent 2 | Machine relation |', '|---|---|---|---|',
+               f"| Metric | {markdown_cell(r['agent1_metric'])} | {markdown_cell(r['agent2_metric'])} | {r['metric_text_relation']} |",
+               f"| Statement/section | {markdown_cell(r['agent1_statement'])} | {markdown_cell(r['agent2_statement'])} | {r['statement_text_relation']} |",
+               f"| Row | {markdown_cell(r['agent1_rows'])} | {markdown_cell(r['agent2_row'])} | {r['row_text_relation']} |",
+               f"| Period/column | {markdown_cell(r['agent1_period'])} | {markdown_cell(r['agent2_period'])} | {r['period_date_relation']} |",
+               f"| Currency/scale | {markdown_cell(r['agent1_currency'])} / {markdown_cell(r['agent1_scale'])} | {markdown_cell(r['agent2_currency'])} / {markdown_cell(r['agent2_scale'])} | {r['unit_compatibility']} |",
+               f"| Numeric values | `{markdown_cell(r['agent1_values_json'])}` | `{markdown_cell(r['agent2_values_json'])}` | {r['numeric_token_relation']} |", '',
+               f"Locators: Agent 1 `{r['agent1_locator']}`; Agent 2 `{r['agent2_locator']}`.", '',
+               'Adjudicator decision: **PENDING**. Check exact SEC row, requested period, accounting scope and unit; preserve both AI proposals.', '']
+    (output_dir / 'V7A_G3_PRIVATE_DISPUTE_REVIEW.md').write_text('\n'.join(md) + '\n', encoding='utf-8', newline='\n')
     categories = Counter(r['classification'] for r in rows)
     numeric = Counter(r['numeric_token_relation'] for r in rows)
     priorities = Counter(r['review_priority'] for r in rows)
