@@ -1,0 +1,428 @@
+{
+  "question_id": "V6_H009",
+  "question": "What gross margin did Apple report for FY2025?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "AAPL",
+  "accession": "0000320193-25-000079",
+  "form": "10-K",
+  "filing_date": "2025-10-31",
+  "report_date": "2025-09-27",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+  "official_html_sha256": "056f733f13ff7407e64dc81fb96da3c3c55a6ba429bf094f57cb6bd472231f82",
+  "frozen_corpus_chunk_count": 124,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "gross",
+    "margin"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 16,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Total gross margin",
+        "$",
+        "195,201",
+        "",
+        "",
+        "$",
+        "180,683",
+        "",
+        "",
+        "$",
+        "169,148",
+        ""
+      ],
+      "candidate_row_label": "Total gross margin",
+      "candidate_header_rows": [
+        [
+          "",
+          "2025",
+          "",
+          "2024",
+          "",
+          "2023"
+        ],
+        [
+          "Gross margin:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Products",
+          "$",
+          "112,887",
+          "",
+          "",
+          "$",
+          "109,633",
+          "",
+          "",
+          "$",
+          "108,803",
+          ""
+        ],
+        [
+          "Services",
+          "82,314",
+          "",
+          "",
+          "71,050",
+          "",
+          "",
+          "60,345",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Services",
+        "82,314",
+        "",
+        "",
+        "71,050",
+        "",
+        "",
+        "60,345",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "195,201",
+        "180,683",
+        "169,148"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 17,
+      "row_index_zero_based": 3,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Total gross margin percentage",
+        "46.9",
+        "%",
+        "",
+        "46.2",
+        "%",
+        "",
+        "44.1",
+        "%"
+      ],
+      "candidate_row_label": "Total gross margin percentage",
+      "candidate_header_rows": [
+        [
+          "Gross margin percentage:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Products",
+          "36.8",
+          "%",
+          "",
+          "37.2",
+          "%",
+          "",
+          "36.5",
+          "%"
+        ],
+        [
+          "Services",
+          "75.4",
+          "%",
+          "",
+          "73.9",
+          "%",
+          "",
+          "70.8",
+          "%"
+        ]
+      ],
+      "neighbor_before": [
+        "Services",
+        "75.4",
+        "%",
+        "",
+        "73.9",
+        "%",
+        "",
+        "70.8",
+        "%"
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "46.9",
+        "46.2",
+        "44.1"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 22,
+      "row_index_zero_based": 10,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin",
+        "195,201",
+        "",
+        "",
+        "180,683",
+        "",
+        "",
+        "169,148",
+        ""
+      ],
+      "candidate_row_label": "Gross margin",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 27, 2025",
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023"
+        ],
+        [
+          "Net sales:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Products",
+          "$",
+          "307,003",
+          "",
+          "",
+          "$",
+          "294,866",
+          "",
+          "",
+          "$",
+          "298,085",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Total cost of sales",
+        "220,960",
+        "",
+        "",
+        "210,352",
+        "",
+        "",
+        "214,137",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "195,201",
+        "180,683",
+        "169,148"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 16,
+      "row_index_zero_based": 1,
+      "score": 26,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Gross margin:",
+      "candidate_header_rows": [
+        [
+          "",
+          "2025",
+          "",
+          "2024",
+          "",
+          "2023"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2025",
+        "",
+        "2024",
+        "",
+        "2023"
+      ],
+      "neighbor_after": [
+        "Products",
+        "$",
+        "112,887",
+        "",
+        "",
+        "$",
+        "109,633",
+        "",
+        "",
+        "$",
+        "108,803",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 17,
+      "row_index_zero_based": 0,
+      "score": 26,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin percentage:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Gross margin percentage:",
+      "candidate_header_rows": [],
+      "neighbor_before": null,
+      "neighbor_after": [
+        "Products",
+        "36.8",
+        "%",
+        "",
+        "37.2",
+        "%",
+        "",
+        "36.5",
+        "%"
+      ],
+      "numeric_tokens_unassigned": []
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 53,
+      "row_index_zero_based": 1,
+      "score": 13,
+      "matched_terms": [
+        "gross"
+      ],
+      "row_cells": [
+        "Description of the Matter",
+        "As discussed in Note 7 to the financial statements, the Company is subject to income taxes in the U.S. and numerous foreign jurisdictions. As of September 27, 2025, the total amount of gross unrecognized tax benefits was $23.2 billion, of which $10.6 billion, if recognized, would impact the Company’"
+      ],
+      "candidate_row_label": "Description of the Matter",
+      "candidate_header_rows": [
+        [
+          "",
+          "Uncertain Tax Positions"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "Uncertain Tax Positions"
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "7",
+        "27,",
+        "2025,",
+        "$23.2",
+        "$10.6"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 569,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "text": "Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 574,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "text": "Products gross margin increased during 2025 compared to 2024 primarily due to favorable costs and a different mix of products, partially offset by tariff costs."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 575,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "text": "Products gross margin percentage decreased during 2025 compared to 2024 primarily due to a different mix of products and tariff costs, partially offset by other favorable costs."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

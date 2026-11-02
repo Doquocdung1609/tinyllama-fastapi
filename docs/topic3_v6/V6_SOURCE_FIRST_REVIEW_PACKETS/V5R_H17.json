@@ -1,0 +1,547 @@
+{
+  "question_id": "V5R_H17",
+  "question": "What was NVIDIA's FY2025 net cash from operating activities?",
+  "category": "CASH_FLOW",
+  "issuer": "NVDA",
+  "accession": "0001045810-25-000023",
+  "form": "10-K",
+  "filing_date": "2025-02-26",
+  "report_date": "2025-01-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+  "official_html_sha256": "060c3cbb1e96feb4a6948acfe7fc013507f24b4deecb735d729cf730c07ffd0c",
+  "frozen_corpus_chunk_count": 202,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "cash",
+    "net",
+    "operating"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 18,
+      "score": 39,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "row_cells": [
+        "Net cash provided by operating activities",
+        "64,089",
+        "",
+        "",
+        "28,090",
+        "",
+        "",
+        "5,641",
+        ""
+      ],
+      "candidate_row_label": "Net cash provided by operating activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Cash flows from operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "72,880",
+          "",
+          "",
+          "$",
+          "29,760",
+          "",
+          "",
+          "$",
+          "4,368",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other long-term liabilities",
+        "1,221",
+        "",
+        "",
+        "514",
+        "",
+        "",
+        "252",
+        ""
+      ],
+      "neighbor_after": [
+        "Cash flows from investing activities:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "64,089",
+        "28,090",
+        "5,641"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 17,
+      "row_index_zero_based": 3,
+      "score": 38,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "row_cells": [
+        "Net cash provided by operating activities",
+        "$",
+        "64,089",
+        "",
+        "",
+        "$",
+        "28,090",
+        ""
+      ],
+      "candidate_row_label": "Net cash provided by operating activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024"
+        ],
+        [
+          "",
+          "(In millions)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "(In millions)"
+      ],
+      "neighbor_after": [
+        "Net cash used in investing activities",
+        "$",
+        "(20,421)",
+        "",
+        "",
+        "$",
+        "(10,566)",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "64,089",
+        "28,090"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 4,
+      "score": 36,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "row_cells": [
+        "Adjustments to reconcile net income to net cash provided by operating activities:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Adjustments to reconcile net income to net cash provided by operating activities:",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Cash flows from operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "72,880",
+          "",
+          "",
+          "$",
+          "29,760",
+          "",
+          "",
+          "$",
+          "4,368",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net income",
+        "$",
+        "72,880",
+        "",
+        "",
+        "$",
+        "29,760",
+        "",
+        "",
+        "$",
+        "4,368",
+        ""
+      ],
+      "neighbor_after": [
+        "Stock-based compensation expense",
+        "4,737",
+        "",
+        "",
+        "3,549",
+        "",
+        "",
+        "2,709",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 26,
+      "score": 23,
+      "matched_terms": [
+        "cash",
+        "net"
+      ],
+      "row_cells": [
+        "Acquisitions, net of cash acquired",
+        "( 1,007 )",
+        "",
+        "",
+        "( 83 )",
+        "",
+        "",
+        "( 49 )",
+        ""
+      ],
+      "candidate_row_label": "Acquisitions, net of cash acquired",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Cash flows from operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "72,880",
+          "",
+          "",
+          "$",
+          "29,760",
+          "",
+          "",
+          "$",
+          "4,368",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Purchases of non-marketable equity securities",
+        "( 1,486 )",
+        "",
+        "",
+        "( 862 )",
+        "",
+        "",
+        "( 85 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Other",
+        "22",
+        "",
+        "",
+        "( 124 )",
+        "",
+        "",
+        "—",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,007",
+        "83",
+        "49"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 28,
+      "score": 23,
+      "matched_terms": [
+        "cash",
+        "net"
+      ],
+      "row_cells": [
+        "Net cash provided by (used in) investing activities",
+        "( 20,421 )",
+        "",
+        "",
+        "( 10,566 )",
+        "",
+        "",
+        "7,375",
+        ""
+      ],
+      "candidate_row_label": "Net cash provided by (used in) investing activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Cash flows from operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "72,880",
+          "",
+          "",
+          "$",
+          "29,760",
+          "",
+          "",
+          "$",
+          "4,368",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other",
+        "22",
+        "",
+        "",
+        "( 124 )",
+        "",
+        "",
+        "—",
+        ""
+      ],
+      "neighbor_after": [
+        "Cash flows from financing activities:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "20,421",
+        "10,566",
+        "7,375"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 37,
+      "score": 23,
+      "matched_terms": [
+        "cash",
+        "net"
+      ],
+      "row_cells": [
+        "Net cash used in financing activities",
+        "( 42,359 )",
+        "",
+        "",
+        "( 13,633 )",
+        "",
+        "",
+        "( 11,617 )",
+        ""
+      ],
+      "candidate_row_label": "Net cash used in financing activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Cash flows from operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "72,880",
+          "",
+          "",
+          "$",
+          "29,760",
+          "",
+          "",
+          "$",
+          "4,368",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other",
+        "—",
+        "",
+        "",
+        "( 1 )",
+        "",
+        "",
+        "( 2 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Change in cash and cash equivalents",
+        "1,309",
+        "",
+        "",
+        "3,891",
+        "",
+        "",
+        "1,399",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "42,359",
+        "13,633",
+        "11,617"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 560,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "operating"
+      ],
+      "text": "Any of these factors could prevent us from achieving our anticipated financial results. For example, we have granted and may continue to grant extended payment terms to some customers, particularly during macroeconomic downturns, which could impact our ability to collect payment. Our vendors have requested and may continue to ask for shorter payment terms, which may impact our cash flow generation. These arrangements reduce the cash we have available for general business operations. In addition, the pace of growth in our operating expenses and investments may lag our revenue growth, creating volatility or periods where profitability levels may not be sustainable. Failure to meet our expectations or the expectations of our investors or security analysts is likely to cause our stock price to decline, as it has in the past, or substantial price volatility."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 640,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "net"
+      ],
+      "text": "We are subject to complex income tax laws and regulations, as well as non-income-based taxes, in various jurisdictions. Significant judgment is required in determining our worldwide provision for income taxes and other tax liabilities. We are regularly under audit by tax authorities in different jurisdictions. Although we believe our tax estimates are reasonable, any adverse outcome could increase our worldwide effective tax rate, increase the amount of non-income taxes imposed on our business, and harm our financial position, results of operations, net income, and cash flows."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 641,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "net"
+      ],
+      "text": "Further, changes in tax laws or their interpretation by tax authorities in the U.S. or foreign jurisdictions could increase our future tax liability or cause other adverse tax impacts, which may materially impact our results of operations, or the way we conduct our business. Most of our income is taxable in the U.S., with a significant portion qualifying for preferential treatment as foreign-derived intangible income, or FDII. If U.S. tax rates increase or the FDII deduction is reduced, our provision for income taxes, results of operations, net income, and cash flows would be adversely affected. In addition, our tax obligations and effective tax rate in the jurisdictions in which we conduct business could increase as a result of international tax developments, including the implementation of the Two-Pillar framework led by the Organization for Economic Cooperation and Development, or OECD, which involves the reallocation of taxing rights in respect of certain multinational enterprises above a fixed profit margin to the jurisdictions in which they carry on business (referred to as Pil"
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

@@ -1,0 +1,279 @@
+{
+  "status": "MACHINE_PREPARED_UNJUDGED",
+  "question_count": 30,
+  "independently_reviewed": 0,
+  "packet_selection": "SEC original HTML table/prose lexical search; no Qdrant ranking or qrels",
+  "queue_sha256": "01e841d14692477512f1029f2638f353765a9a59f44379dc09783e78bcdcab79",
+  "packets": [
+    {
+      "id": "V6_H001",
+      "question": "Locate Apple's total net sales in the fiscal 2024 annual filing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "403e15190a2d707b1cec761e6b3beac946d7e27c55195e49b5e3d0e788097771"
+    },
+    {
+      "id": "V6_H002",
+      "question": "What capital expenditures did Apple disclose for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 2,
+      "prose_candidates": 0,
+      "packet_sha256": "199ed015a1ee0dbc7c796f5b10c935379cc04fd3927c37c43f1adebe574b19ae"
+    },
+    {
+      "id": "V6_H003",
+      "question": "Locate Apple's FY2023 and FY2024 net sales columns in the FY2024 filing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "2547bdce8a763a53cb6f1c9732d2487c0894ddb689ecf0da31b620811b428a0b"
+    },
+    {
+      "id": "V6_H004",
+      "question": "What research and development expense did Apple report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 2,
+      "packet_sha256": "1bb837bfc986cb93e5bf1edc8b99fcd33fdbdb5a78dc1427d827180f1b1b7d01"
+    },
+    {
+      "id": "V6_H005",
+      "question": "What net cash from operating activities did Apple report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "3e52aea6cafc50380e8ea4418b344a19315656cfe166943ad2eda990952d1e41"
+    },
+    {
+      "id": "V6_H006",
+      "question": "What were Apple's FY2025 total net sales?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "accession": "0000320193-25-000079",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "3c3d420123253a0fa154c60825916bec8790a596e0fb8d99a9ca57b92caa2232"
+    },
+    {
+      "id": "V6_H007",
+      "question": "Locate Apple's capital expenditures for FY2025.",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "accession": "0000320193-25-000079",
+      "table_candidates": 2,
+      "prose_candidates": 0,
+      "packet_sha256": "c88c9357f38245e5d3f3576ad9beb70700bc494d7ee051e6871e4ab1cf607ee6"
+    },
+    {
+      "id": "V6_H008",
+      "question": "Compare Apple's FY2024 and FY2025 total net sales in the FY2025 filing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "accession": "0000320193-25-000079",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "1dd18cfe7b9e067af5eb185bf5f28192db92092ca4171cac74b673365fe7d927"
+    },
+    {
+      "id": "V6_H009",
+      "question": "What gross margin did Apple report for FY2025?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "accession": "0000320193-25-000079",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "fd7858b68b48ad77cd489c0716ef412f46f505eef091301b4c460f51b0b7fbc8"
+    },
+    {
+      "id": "V6_H010",
+      "question": "What were Apple's FY2025 total liabilities?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "accession": "0000320193-25-000079",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "4ff37a30acea8a0ae49d758f1599c698b2bc638ed04af55603e5d08d99b7ae54"
+    },
+    {
+      "id": "V6_H011",
+      "question": "Locate Microsoft's total revenue for FY2024 in the FY2024 filing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "8d44e17be5ccd65538b5516bf6df2620260519dbc3db816bd16ed27eade4fcc7"
+    },
+    {
+      "id": "V6_H012",
+      "question": "What capital expenditures did Microsoft disclose for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 2,
+      "prose_candidates": 3,
+      "packet_sha256": "70898b5efe575413e0287be542926d40607af444eee010ad867267523a7ef306"
+    },
+    {
+      "id": "V6_H013",
+      "question": "Compare Microsoft's total revenue columns for FY2023 and FY2024.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 6,
+      "prose_candidates": 0,
+      "packet_sha256": "dfb0a9f8e01c6c3dfb66cabdcbb3d6a5dad24a39cb14641a9de7247b96d01f60"
+    },
+    {
+      "id": "V6_H014",
+      "question": "What income tax expense did Microsoft report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "d2427395eea452335191e85bcd9599ca05cc9654770ffbb26b86ed8ea49822e0"
+    },
+    {
+      "id": "V6_H015",
+      "question": "What were Microsoft's FY2024 total current assets?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "9022bb30c351bdeb92d0890cf09c109e40c7a4181c4afb329afa5258d53ed451"
+    },
+    {
+      "id": "V6_H016",
+      "question": "What total revenue did Microsoft report for FY2025?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "4f7f3c53e4bc64e9691c0815c38a92977d53c8c9776fbcc421530debc01b3ea5"
+    },
+    {
+      "id": "V6_H017",
+      "question": "What were Microsoft's FY2025 capital expenditures?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 2,
+      "prose_candidates": 3,
+      "packet_sha256": "6c48cb961859f85049b4bd4df1b9e8efb74b7ce13f7b86c66d5acb1f561276a0"
+    },
+    {
+      "id": "V6_H018",
+      "question": "Compare Microsoft's total revenue for FY2024 with FY2025 in its FY2025 filing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "f0828cf986e96d09597374f720e84d8798de03e2758fa03548db6c7e0892da4b"
+    },
+    {
+      "id": "V6_H019",
+      "question": "What research and development expense did Microsoft report for FY2025?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "36b2710880519fb5d8daad75bdb88b5d1676bd01d643389bb078aae5e498e736"
+    },
+    {
+      "id": "V6_H020",
+      "question": "What total assets did Microsoft report at FY2025 year end?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "ae15f6cea55cdcbc95f9950fb6710c51271ac25e3356e2b0420ee1508ab15520"
+    },
+    {
+      "id": "V6_H021",
+      "question": "Locate NVIDIA's total revenue for FY2024 in the annual report.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "6d478f6e17e4ecaef41d54cd820f1bab97b692916e1a288d3b0035464a543a17"
+    },
+    {
+      "id": "V6_H022",
+      "question": "What capital expenditures did NVIDIA disclose for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 4,
+      "prose_candidates": 3,
+      "packet_sha256": "0b2b71308ba60c2aacc529af1d57c288a3d9476350641dfc89fc4e8304cec970"
+    },
+    {
+      "id": "V6_H023",
+      "question": "Compare NVIDIA's FY2023 and FY2024 total revenue columns.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 6,
+      "prose_candidates": 0,
+      "packet_sha256": "6bb3ba7c83bb2ab58a75d9dd212554a86d28cc053f16d47b45838bd5d621ba67"
+    },
+    {
+      "id": "V6_H024",
+      "question": "What research and development expense did NVIDIA report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "6d75242d439ac778b74da2fd201794a8f2f8e472b9b3b91c0203bfe0c94f7136"
+    },
+    {
+      "id": "V6_H025",
+      "question": "What net income did NVIDIA report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "071427268bc33323d3711bd5064fbf82b78e8d19a47f478190aa8b83e6efdb9d"
+    },
+    {
+      "id": "V6_H026",
+      "question": "What total revenue did NVIDIA report for FY2025?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "accession": "0001045810-25-000023",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "f3e237c65696862221e5d68376d89484d79a2a319362ba86353865bbe2886a21"
+    },
+    {
+      "id": "V6_H027",
+      "question": "Locate NVIDIA's capital expenditures for FY2025.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "accession": "0001045810-25-000023",
+      "table_candidates": 4,
+      "prose_candidates": 3,
+      "packet_sha256": "2cdd276f739c6740188a2b73052dc8608a92a5c710e3bcd157f0354341aeffb5"
+    },
+    {
+      "id": "V6_H028",
+      "question": "Compare NVIDIA's total revenue for FY2024 and FY2025 in its FY2025 filing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "accession": "0001045810-25-000023",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "5054eff907a146c6265afbd2a5e954e393d70c9fb0e30c17d8a14c9708d906db"
+    },
+    {
+      "id": "V6_H029",
+      "question": "What gross profit did NVIDIA report for FY2025?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "accession": "0001045810-25-000023",
+      "table_candidates": 6,
+      "prose_candidates": 2,
+      "packet_sha256": "25e66572f76df4bef42c20fb95adb4d1c6bbb5d441b58432b3af6efbb36f332b"
+    },
+    {
+      "id": "V6_H030",
+      "question": "What net income did NVIDIA report for FY2025?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "accession": "0001045810-25-000023",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "4ce086c9884deca8dbdd2b08ab6e0b4839d85529b87753d23812153cdf2e3ca5"
+    }
+  ]
+}

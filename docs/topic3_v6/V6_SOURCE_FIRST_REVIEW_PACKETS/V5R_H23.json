@@ -1,0 +1,548 @@
+{
+  "question_id": "V5R_H23",
+  "question": "What was Meta's FY2024 net cash from operating activities?",
+  "category": "CASH_FLOW",
+  "issuer": "META",
+  "accession": "0001326801-25-000017",
+  "form": "10-K",
+  "filing_date": "2025-01-30",
+  "report_date": "2024-12-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+  "official_html_sha256": "f137b12990dec2438f6ccef0d3be3164c062cbf15e32f8ac7b48e2598405d186",
+  "frozen_corpus_chunk_count": 280,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "cash",
+    "net",
+    "operating"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 19,
+      "row_index_zero_based": 2,
+      "score": 39,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "row_cells": [
+        "Net cash provided by operating activities",
+        "$",
+        "91,328",
+        "",
+        "",
+        "$",
+        "71,113",
+        "",
+        "",
+        "$",
+        "50,475",
+        ""
+      ],
+      "candidate_row_label": "Net cash provided by operating activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2024",
+        "",
+        "2023",
+        "",
+        "2022"
+      ],
+      "neighbor_after": [
+        "Net cash used in investing activities",
+        "$",
+        "(47,150)",
+        "",
+        "",
+        "$",
+        "(24,495)",
+        "",
+        "",
+        "$",
+        "(28,970)",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "91,328",
+        "71,113",
+        "50,475"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 20,
+      "row_index_zero_based": 2,
+      "score": 39,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "row_cells": [
+        "Net cash provided by operating activities",
+        "$",
+        "91,328",
+        "",
+        "",
+        "$",
+        "71,113",
+        "",
+        "",
+        "$",
+        "50,475",
+        ""
+      ],
+      "candidate_row_label": "Net cash provided by operating activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2024",
+        "",
+        "2023",
+        "",
+        "2022"
+      ],
+      "neighbor_after": [
+        "Purchases of property and equipment",
+        "(37,256)",
+        "",
+        "",
+        "(27,045)",
+        "",
+        "",
+        "(31,186)",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "91,328",
+        "71,113",
+        "50,475"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 28,
+      "row_index_zero_based": 18,
+      "score": 39,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "row_cells": [
+        "Net cash provided by operating activities",
+        "91,328",
+        "",
+        "",
+        "71,113",
+        "",
+        "",
+        "50,475",
+        ""
+      ],
+      "candidate_row_label": "Net cash provided by operating activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Cash flows from operating activities",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "62,360",
+          "",
+          "",
+          "$",
+          "39,098",
+          "",
+          "",
+          "$",
+          "23,200",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other liabilities",
+        "2,805",
+        "",
+        "",
+        "624",
+        "",
+        "",
+        "886",
+        ""
+      ],
+      "neighbor_after": [
+        "Cash flows from investing activities",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "91,328",
+        "71,113",
+        "50,475"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 28,
+      "row_index_zero_based": 4,
+      "score": 36,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "row_cells": [
+        "Adjustments to reconcile net income to net cash provided by operating activities:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Adjustments to reconcile net income to net cash provided by operating activities:",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Cash flows from operating activities",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "$",
+          "62,360",
+          "",
+          "",
+          "$",
+          "39,098",
+          "",
+          "",
+          "$",
+          "23,200",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net income",
+        "$",
+        "62,360",
+        "",
+        "",
+        "$",
+        "39,098",
+        "",
+        "",
+        "$",
+        "23,200",
+        ""
+      ],
+      "neighbor_after": [
+        "Depreciation and amortization",
+        "15,498",
+        "",
+        "",
+        "11,178",
+        "",
+        "",
+        "8,686",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 19,
+      "row_index_zero_based": 3,
+      "score": 23,
+      "matched_terms": [
+        "cash",
+        "net"
+      ],
+      "row_cells": [
+        "Net cash used in investing activities",
+        "$",
+        "(47,150)",
+        "",
+        "",
+        "$",
+        "(24,495)",
+        "",
+        "",
+        "$",
+        "(28,970)",
+        ""
+      ],
+      "candidate_row_label": "Net cash used in investing activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Net cash provided by operating activities",
+          "$",
+          "91,328",
+          "",
+          "",
+          "$",
+          "71,113",
+          "",
+          "",
+          "$",
+          "50,475",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net cash provided by operating activities",
+        "$",
+        "91,328",
+        "",
+        "",
+        "$",
+        "71,113",
+        "",
+        "",
+        "$",
+        "50,475",
+        ""
+      ],
+      "neighbor_after": [
+        "Net cash used in financing activities",
+        "$",
+        "(40,781)",
+        "",
+        "",
+        "$",
+        "(19,500)",
+        "",
+        "",
+        "$",
+        "(22,136)",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "(47,150)",
+        "(24,495)",
+        "(28,970)"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 19,
+      "row_index_zero_based": 4,
+      "score": 23,
+      "matched_terms": [
+        "cash",
+        "net"
+      ],
+      "row_cells": [
+        "Net cash used in financing activities",
+        "$",
+        "(40,781)",
+        "",
+        "",
+        "$",
+        "(19,500)",
+        "",
+        "",
+        "$",
+        "(22,136)",
+        ""
+      ],
+      "candidate_row_label": "Net cash used in financing activities",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Net cash provided by operating activities",
+          "$",
+          "91,328",
+          "",
+          "",
+          "$",
+          "71,113",
+          "",
+          "",
+          "$",
+          "50,475",
+          ""
+        ],
+        [
+          "Net cash used in investing activities",
+          "$",
+          "(47,150)",
+          "",
+          "",
+          "$",
+          "(24,495)",
+          "",
+          "",
+          "$",
+          "(28,970)",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net cash used in investing activities",
+        "$",
+        "(47,150)",
+        "",
+        "",
+        "$",
+        "(24,495)",
+        "",
+        "",
+        "$",
+        "(28,970)",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "(40,781)",
+        "(19,500)",
+        "(22,136)"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1779,
+      "score": 30,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "text": "Cash provided by operating activities during 2024 mostly consisted of $62.36 billion net income adjusted for certain non-cash items, such as $16.69 billion of share-based compensation expense and $15.50 billion of depreciation and amortization expense. The increase in cash flows from operating activities during 2024 compared to 2023, was due to an increase in cash collection from our customers driven by the increase in revenue, partially offset by higher cash paid for income taxes and other operational spending."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1800,
+      "score": 30,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "text": "In addition to other financial measures presented in accordance with U.S. GAAP, we monitor free cash flow (FCF) as a non-GAAP measure to manage our business, make planning decisions, evaluate our performance, and allocate resources. We define FCF as net cash provided by operating activities reduced by purchases of property and equipment and principal payments on finance leases."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1806,
+      "score": 30,
+      "matched_terms": [
+        "cash",
+        "net",
+        "operating"
+      ],
+      "text": "FCF has limitations as an analytical tool, and you should not consider it in isolation or as a substitute for analysis of other GAAP financial measures, such as net cash provided by operating activities. FCF is not intended to represent our residual cash flow available for discretionary expenses. Some of the limitations of FCF are:"
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": [
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
+  ]
+}

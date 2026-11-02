@@ -1,0 +1,99 @@
+{
+  "status": "OFFICIAL_SEC_SOURCE_SNAPSHOTS",
+  "max_requests_per_second": 1,
+  "contact_user_agent_configured": true,
+  "files_committed": false,
+  "sources": [
+    {
+      "accession": "0000002488-25-000012",
+      "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm",
+      "sha256": "256897a9d356c66cd45d4ba4224a3902163e0f94df784566ee96305388578860",
+      "bytes": 2091283,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0000050863-25-000009",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+      "sha256": "4ef406ff5174bcb4a4493fa23fecee224b2e5c213ce60ffb85a5b9d15d6289e6",
+      "bytes": 3334328,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0000320193-24-000123",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "sha256": "af35e3e22f0ef07b1363e03a994dd349af6dc6c3eda0a6792d01e9065f121b09",
+      "bytes": 1503887,
+      "action": "REUSED_LOCAL_SNAPSHOT"
+    },
+    {
+      "accession": "0000320193-25-000079",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "sha256": "056f733f13ff7407e64dc81fb96da3c3c55a6ba429bf094f57cb6bd472231f82",
+      "bytes": 1520317,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0000950170-24-087843",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "sha256": "420a47b7aa1e622380add216b8e1a9ed5e865393bcb7628f44c45e476919327e",
+      "bytes": 6861020,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0000950170-25-100235",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "sha256": "15d2ebb941500e84aeadd2654143ac3d0fbb10a65d8387391727ec4ae36fcd42",
+      "bytes": 8158176,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0001018724-24-000008",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+      "sha256": "ee72abb07ae30d6da36584ef9c36c5a56c96fe62dfed7dae2c11dd6dd2694857",
+      "bytes": 1945287,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0001018724-25-000004",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "sha256": "76c534223003d4f887482922be85ace0b952216122ae47747a012d622ae91f2c",
+      "bytes": 1922462,
+      "action": "REUSED_LOCAL_SNAPSHOT"
+    },
+    {
+      "accession": "0001045810-24-000029",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "sha256": "df36bd3e45a8061136763f166f71b91df4ce777624cae80ca240c8c8cbde2901",
+      "bytes": 2085675,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0001045810-25-000023",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "sha256": "060c3cbb1e96feb4a6948acfe7fc013507f24b4deecb735d729cf730c07ffd0c",
+      "bytes": 2067629,
+      "action": "FETCHED_OFFICIAL_SEC"
+    },
+    {
+      "accession": "0001326801-25-000017",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+      "sha256": "f137b12990dec2438f6ccef0d3be3164c062cbf15e32f8ac7b48e2598405d186",
+      "bytes": 2369876,
+      "action": "REUSED_LOCAL_SNAPSHOT"
+    },
+    {
+      "accession": "0001628280-24-002390",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024002390/tsla-20231231.htm",
+      "sha256": "f2329820ee0508c175921bfe2c8f21226a13f32de1bd5113cab7add04a01a51c",
+      "bytes": 2672853,
+      "action": "REUSED_LOCAL_SNAPSHOT"
+    },
+    {
+      "accession": "0001628280-25-003063",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025003063/tsla-20241231.htm",
+      "sha256": "8e920d2c97ffbc458b22b73ad9789b6b4350dd643dca4f791078b5e1eb50aee2",
+      "bytes": 2596568,
+      "action": "FETCHED_OFFICIAL_SEC"
+    }
+  ]
+}

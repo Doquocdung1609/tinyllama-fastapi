@@ -1,0 +1,244 @@
+{
+  "question_id": "V6_H017",
+  "question": "What were Microsoft's FY2025 capital expenditures?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "MSFT",
+  "accession": "0000950170-25-100235",
+  "form": "10-K",
+  "filing_date": "2025-07-30",
+  "report_date": "2025-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+  "official_html_sha256": "15d2ebb941500e84aeadd2654143ac3d0fbb10a65d8387391727ec4ae36fcd42",
+  "frozen_corpus_chunk_count": 223,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "capital",
+    "expenditure"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 37,
+      "score": 13,
+      "matched_terms": [
+        "capital"
+      ],
+      "row_cells": [
+        "Common stock and paid-in capital – shares authorized 24,000 ; outstanding 7,434 and 7,434",
+        "",
+        "",
+        "109,095",
+        "",
+        "",
+        "",
+        "100,923",
+        ""
+      ],
+      "candidate_row_label": "Common stock and paid-in capital – shares authorized 24,000 ; outstanding 7,434 and 7,434",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          ""
+        ],
+        [
+          "Assets",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Stockholders’ equity:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Retained earnings",
+        "",
+        "",
+        "237,731",
+        "",
+        "",
+        "",
+        "173,144",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "24,000",
+        "7,434",
+        "7,434",
+        "109,095",
+        "100,923"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 27,
+      "row_index_zero_based": 2,
+      "score": 10,
+      "matched_terms": [
+        "capital"
+      ],
+      "row_cells": [
+        "Common stock and paid-in capital",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Common stock and paid-in capital",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Year Ended June 30,",
+        "",
+        "2025",
+        "",
+        "",
+        "2024",
+        "",
+        "",
+        "2023",
+        ""
+      ],
+      "neighbor_after": [
+        "Balance, beginning of period",
+        "",
+        "$",
+        "100,923",
+        "",
+        "",
+        "$",
+        "93,718",
+        "",
+        "",
+        "$",
+        "86,939",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2813,
+      "score": 20,
+      "matched_terms": [
+        "capital",
+        "expenditure"
+      ],
+      "text": "We expect existing cash, cash equivalents, short-term investments, cash flows from operations, and access to capital markets to continue to be sufficient to fund our operating activities and cash commitments for investing and financing activities, such as dividends, share repurchases, debt maturities, material capital expenditures, and the transition tax related to the Tax Cuts and Jobs Act (“TCJA”), for at least the next 12 months and thereafter for the foreseeable future."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2829,
+      "score": 20,
+      "matched_terms": [
+        "capital",
+        "expenditure"
+      ],
+      "text": "We issue debt to take advantage of favorable pricing and liquidity in the debt markets, reflecting our credit rating. The proceeds of these issuances were or will be used for general corporate purposes, which may include, among other things, funding for working capital, capital expenditures, repurchases of capital stock, acquisitions, and repayment of existing debt. Refer to Note 10 – Debt of the Notes to Financial Statements (Part II, Item 8 of this Form 10-K)."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 3072,
+      "score": 20,
+      "matched_terms": [
+        "capital",
+        "expenditure"
+      ],
+      "text": "We will continue to invest in sales, marketing, product support infrastructure, and existing and advanced areas of technology, as well as acquisitions that align with our business strategy. Additions to property and equipment will continue, including new facilities, datacenters, and computer systems for research and development, sales and marketing, support, and administrative staff. We will continue to invest in capital expenditures to support growth in our cloud offerings and our investments in AI infrastructure and training. We have operating and finance leases for datacenters, corporate offices, research and development facilities, Microsoft Experience Centers, and certain equipment. We have not engaged in any related party transactions or arrangements with unconsolidated entities or other persons that are reasonably likely to materially affect liquidity or the availability of capital resources."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

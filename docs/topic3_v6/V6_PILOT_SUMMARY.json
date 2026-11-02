@@ -1,0 +1,115 @@
+{
+  "status": "EXPLORATORY_PILOT_UNJUDGED_NOT_INDEPENDENT",
+  "questions": 30,
+  "runs": 300,
+  "index": "B_P7K_CORRECTED",
+  "point_count": 8670,
+  "queue_sha256": "dd8be3d26deec52d8f1dcddb135c69f5f4c00c30d4924fe96ccbbcdd492ec6c2",
+  "raw_sha256": "f4ee52ff41f354d2aea575fcc418c26a86ed9ebabd581fdcaf531fccd860fb78",
+  "compact_sha256": "569c02a5467f62ec40f3724b8d8a1f34454956da08a880c349916c78eaa041e6",
+  "methods": {
+    "bm25": {
+      "runs": 30,
+      "p50_ms": 254.514,
+      "p95_ms": 279.355,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2695.11,
+      "candidate_source_accession_h1": 16,
+      "candidate_source_accession_h10": 23,
+      "source_accession_denominator": 29
+    },
+    "dense": {
+      "runs": 30,
+      "p50_ms": 41.173,
+      "p95_ms": 48.213,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2701.84,
+      "candidate_source_accession_h1": 11,
+      "candidate_source_accession_h10": 29,
+      "source_accession_denominator": 29
+    },
+    "sparse": {
+      "runs": 30,
+      "p50_ms": 610.641,
+      "p95_ms": 671.036,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2961.54,
+      "candidate_source_accession_h1": 14,
+      "candidate_source_accession_h10": 28,
+      "source_accession_denominator": 29
+    },
+    "bm25_dense": {
+      "runs": 30,
+      "p50_ms": 301.523,
+      "p95_ms": 338.263,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2950.28,
+      "candidate_source_accession_h1": 16,
+      "candidate_source_accession_h10": 28,
+      "source_accession_denominator": 29
+    },
+    "sparse_dense": {
+      "runs": 30,
+      "p50_ms": 671.009,
+      "p95_ms": 719.431,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2916.6,
+      "candidate_source_accession_h1": 14,
+      "candidate_source_accession_h10": 29,
+      "source_accession_denominator": 29
+    },
+    "rerank": {
+      "runs": 30,
+      "p50_ms": 691.106,
+      "p95_ms": 759.619,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2908.2,
+      "candidate_source_accession_h1": 18,
+      "candidate_source_accession_h10": 29,
+      "source_accession_denominator": 29
+    },
+    "A2": {
+      "runs": 30,
+      "p50_ms": 425.337,
+      "p95_ms": 445.54,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2899.23,
+      "candidate_source_accession_h1": 25,
+      "candidate_source_accession_h10": 29,
+      "source_accession_denominator": 29
+    },
+    "A3": {
+      "runs": 30,
+      "p50_ms": 433.695,
+      "p95_ms": 471.39,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2857.98,
+      "candidate_source_accession_h1": 25,
+      "candidate_source_accession_h10": 29,
+      "source_accession_denominator": 29
+    },
+    "A4": {
+      "runs": 30,
+      "p50_ms": 430.423,
+      "p95_ms": 547.096,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2471.45,
+      "candidate_source_accession_h1": 25,
+      "candidate_source_accession_h10": 29,
+      "source_accession_denominator": 29
+    },
+    "A4R": {
+      "runs": 30,
+      "p50_ms": 428.708,
+      "p95_ms": 477.211,
+      "peak_observed_rss_mib": 1216.68,
+      "minimum_observed_free_ram_mib": 2514.47,
+      "candidate_source_accession_h1": 29,
+      "candidate_source_accession_h10": 29,
+      "source_accession_denominator": 29
+    }
+  },
+  "relevance_labels": 0,
+  "numeric_cells_verified": 0,
+  "qualification": "Source-accession occurrence is not relevant evidence, Recall, or answer correctness; unsupported-future case excluded from accession denominator"
+}

@@ -261,6 +261,35 @@ def faith_r_live_summary():
             'arms':arms,'human_gold':False,'numeric_cells_verified':0}
 
 
+@router.get('/research-lab/faith-r/v6/development')
+def faith_r_v6_development():
+    root=Path(__file__).resolve().parents[2]
+    base=root/'docs/topic3_v5/recovery_live'
+    study=json.loads((base/'ablation_summary.json').read_text(encoding='utf-8'))
+    repair=json.loads((base/'posthoc_repair.json').read_text(encoding='utf-8'))
+    repair_cases={case['case']:case for case in repair['cases']}
+    cases=[]
+    for item in study['cases']:
+        arms={}
+        for name,data in item['arms'].items():
+            arms[name]={'top1_id':data['ids'][0] if data['ids'] else None,
+                        'top1_label':data['labels'][0] if data['labels'] else 'NO_RESULT',
+                        'known_positive_rank':next((i for i,label in enumerate(data['labels'],1) if label=='YES'),None),
+                        'elapsed_ms':data['elapsed_ms']}
+        posthoc=repair_cases[item['id']]
+        arms['A4R']={'top1_id':posthoc['a4r_top1']['id'],'top1_label':posthoc['a4r_top1']['label'],
+                     'known_positive_rank':1 if posthoc['a4r_top1']['label']=='YES' else None,
+                     'elapsed_ms':posthoc['a4r_ms']}
+        cases.append({'id':item['id'],'question':item['question'],'source_url':item['source_url'],
+                      'target_accession':item['target_accession'],'arms':arms,
+                      'a3_added_ids':sorted(set(item['arms']['A3']['ids'])-set(item['arms']['A2']['ids'])),
+                      'a4_changed_top1':arms['A4']['top1_id']!=arms['A3']['top1_id']})
+    freeze=root/'docs/topic3_v6/V6_ALGORITHM_FREEZE_MANIFEST.json'
+    return {'status':'RECORDED_EXPOSED_DEVELOPMENT','case_count':len(cases),'human_gold':False,
+            'numeric_cells_verified':0,'freeze_sha256':sha256(freeze.read_bytes()).hexdigest() if freeze.is_file() else None,
+            'cases':cases}
+
+
 @router.post('/research-lab/faith-r/live')
 def faith_r_live_lab(payload:FaithRLiveRequest):
     if os.getenv('FAITH_R_LIVE_ENABLED')!='1':

@@ -1,0 +1,648 @@
+{
+  "question_id": "V5R_H19",
+  "question": "What were Amazon's total operating expenses in FY2024?",
+  "category": "EXACT_CELL",
+  "issuer": "AMZN",
+  "accession": "0001018724-25-000004",
+  "form": "10-K",
+  "filing_date": "2025-02-07",
+  "report_date": "2024-12-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+  "official_html_sha256": "76c534223003d4f887482922be85ace0b952216122ae47747a012d622ae91f2c",
+  "frozen_corpus_chunk_count": 163,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "expense",
+    "operating"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 30,
+      "row_index_zero_based": 3,
+      "score": 29,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating expenses",
+        "537,933",
+        "",
+        "",
+        "531",
+        "",
+        "",
+        "538,464",
+        "",
+        "",
+        "569,366",
+        "",
+        "",
+        "2,466",
+        "",
+        "",
+        "571,832",
+        ""
+      ],
+      "candidate_row_label": "Operating expenses",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31, 2023",
+          "",
+          "Year Ended December 31, 2024"
+        ],
+        [
+          "",
+          "As Reported",
+          "",
+          "Exchange Rate Effect (1)",
+          "",
+          "At Prior Year Rates (2)",
+          "",
+          "As Reported",
+          "",
+          "Exchange Rate Effect (1)",
+          "",
+          "At Prior Year Rates (2)"
+        ],
+        [
+          "Net sales",
+          "$",
+          "574,785",
+          "",
+          "",
+          "$",
+          "71",
+          "",
+          "",
+          "$",
+          "574,856",
+          "",
+          "",
+          "$",
+          "637,959",
+          "",
+          "",
+          "$",
+          "2,335",
+          "",
+          "",
+          "$",
+          "640,294",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net sales",
+        "$",
+        "574,785",
+        "",
+        "",
+        "$",
+        "71",
+        "",
+        "",
+        "$",
+        "574,856",
+        "",
+        "",
+        "$",
+        "637,959",
+        "",
+        "",
+        "$",
+        "2,335",
+        "",
+        "",
+        "$",
+        "640,294",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating income",
+        "36,852",
+        "",
+        "",
+        "(460)",
+        "",
+        "",
+        "36,392",
+        "",
+        "",
+        "68,593",
+        "",
+        "",
+        "(131)",
+        "",
+        "",
+        "68,462",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "537,933",
+        "531",
+        "538,464",
+        "569,366",
+        "2,466",
+        "571,832"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 36,
+      "row_index_zero_based": 8,
+      "score": 29,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "row_cells": [
+        "Non-operating expense (income), net",
+        "16,966",
+        "",
+        "",
+        "( 748 )",
+        "",
+        "",
+        "2,012",
+        ""
+      ],
+      "candidate_row_label": "Non-operating expense (income), net",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2022",
+          "",
+          "2023",
+          "",
+          "2024"
+        ],
+        [
+          "CASH, CASH EQUIVALENTS, AND RESTRICTED CASH, BEGINNING OF PERIOD",
+          "$",
+          "36,477",
+          "",
+          "",
+          "$",
+          "54,253",
+          "",
+          "",
+          "$",
+          "73,890",
+          ""
+        ],
+        [
+          "OPERATING ACTIVITIES:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Stock-based compensation",
+        "19,621",
+        "",
+        "",
+        "24,023",
+        "",
+        "",
+        "22,011",
+        ""
+      ],
+      "neighbor_after": [
+        "Deferred income taxes",
+        "( 8,148 )",
+        "",
+        "",
+        "( 5,876 )",
+        "",
+        "",
+        "( 4,648 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "16,966",
+        "748",
+        "2,012"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 37,
+      "row_index_zero_based": 11,
+      "score": 29,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "row_cells": [
+        "Other operating expense (income), net",
+        "1,263",
+        "",
+        "",
+        "767",
+        "",
+        "",
+        "763",
+        ""
+      ],
+      "candidate_row_label": "Other operating expense (income), net",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2022",
+          "",
+          "2023",
+          "",
+          "2024"
+        ],
+        [
+          "Net product sales",
+          "$",
+          "242,901",
+          "",
+          "",
+          "$",
+          "255,887",
+          "",
+          "",
+          "$",
+          "272,311",
+          ""
+        ],
+        [
+          "Net service sales",
+          "271,082",
+          "",
+          "",
+          "318,898",
+          "",
+          "",
+          "365,648",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "General and administrative",
+        "11,891",
+        "",
+        "",
+        "11,816",
+        "",
+        "",
+        "11,359",
+        ""
+      ],
+      "neighbor_after": [
+        "Total operating expenses",
+        "501,735",
+        "",
+        "",
+        "537,933",
+        "",
+        "",
+        "569,366",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,263",
+        "767",
+        "763"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 37,
+      "row_index_zero_based": 12,
+      "score": 29,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "row_cells": [
+        "Total operating expenses",
+        "501,735",
+        "",
+        "",
+        "537,933",
+        "",
+        "",
+        "569,366",
+        ""
+      ],
+      "candidate_row_label": "Total operating expenses",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2022",
+          "",
+          "2023",
+          "",
+          "2024"
+        ],
+        [
+          "Net product sales",
+          "$",
+          "242,901",
+          "",
+          "",
+          "$",
+          "255,887",
+          "",
+          "",
+          "$",
+          "272,311",
+          ""
+        ],
+        [
+          "Net service sales",
+          "271,082",
+          "",
+          "",
+          "318,898",
+          "",
+          "",
+          "365,648",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other operating expense (income), net",
+        "1,263",
+        "",
+        "",
+        "767",
+        "",
+        "",
+        "763",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating income",
+        "12,248",
+        "",
+        "",
+        "36,852",
+        "",
+        "",
+        "68,593",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "501,735",
+        "537,933",
+        "569,366"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 37,
+      "row_index_zero_based": 17,
+      "score": 29,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "row_cells": [
+        "Total non-operating income (expense)",
+        "( 18,184 )",
+        "",
+        "",
+        "705",
+        "",
+        "",
+        "21",
+        ""
+      ],
+      "candidate_row_label": "Total non-operating income (expense)",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2022",
+          "",
+          "2023",
+          "",
+          "2024"
+        ],
+        [
+          "Net product sales",
+          "$",
+          "242,901",
+          "",
+          "",
+          "$",
+          "255,887",
+          "",
+          "",
+          "$",
+          "272,311",
+          ""
+        ],
+        [
+          "Net service sales",
+          "271,082",
+          "",
+          "",
+          "318,898",
+          "",
+          "",
+          "365,648",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other income (expense), net",
+        "( 16,806 )",
+        "",
+        "",
+        "938",
+        "",
+        "",
+        "( 2,250 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Income (loss) before income taxes",
+        "( 5,936 )",
+        "",
+        "",
+        "37,557",
+        "",
+        "",
+        "68,614",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "18,184",
+        "705",
+        "21"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 68,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating expenses",
+        "318,727",
+        "",
+        "",
+        "337,951",
+        "",
+        "",
+        "362,530",
+        ""
+      ],
+      "candidate_row_label": "Operating expenses",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2022",
+          "",
+          "2023",
+          "",
+          "2024"
+        ],
+        [
+          "North America",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net sales",
+          "$",
+          "315,880",
+          "",
+          "",
+          "$",
+          "352,828",
+          "",
+          "",
+          "$",
+          "387,497",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net sales",
+        "$",
+        "315,880",
+        "",
+        "",
+        "$",
+        "352,828",
+        "",
+        "",
+        "$",
+        "387,497",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating income (loss)",
+        "$",
+        "( 2,847 )",
+        "",
+        "",
+        "$",
+        "14,877",
+        "",
+        "",
+        "$",
+        "24,967",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "318,727",
+        "337,951",
+        "362,530"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 326,
+      "score": 20,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "text": "• additional operating losses and expenses of the businesses we acquired or in which we invested;"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 476,
+      "score": 20,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "text": "Our financial reporting currency is the U.S. Dollar and changes in foreign exchange rates significantly affect our reported results and consolidated trends. For example, if the U.S. Dollar weakens year-over-year relative to currencies in our international locations, our consolidated net sales and operating expenses will be higher than if currencies had remained constant. Likewise, if the U.S. Dollar strengthens year-over-year relative to currencies in our international locations, our consolidated net sales and operating expenses will be lower than if currencies had remained constant. We believe that our increasing diversification beyond the U.S. economy through our growing international businesses benefits our shareholders over the long-term. We also believe it is useful to evaluate our operating results and growth rates before and after the effect of currency changes."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 505,
+      "score": 20,
+      "matched_terms": [
+        "expense",
+        "operating"
+      ],
+      "text": "Cash provided by (used in) operating activities was $84.9 billion and $115.9 billion in 2023 and 2024. Our operating cash flows result primarily from cash received from our consumer, seller, developer, enterprise, and content creator customers, and advertisers, offset by cash payments we make for products and services, employee compensation, payment processing and related transaction costs, operating leases, and interest payments. Cash received from our customers and other activities generally corresponds to our net sales. The increase in operating cash flow in 2024, compared to the prior year, was due to an increase in net income (loss), excluding non-cash expenses, and changes in working capital. Working capital at any specific point in time is subject to many variables, including variability in demand, inventory management and category expansion, the timing of cash receipts and payments, customer and vendor payment terms, and fluctuations in foreign exchange rates."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": [
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
+  ]
+}

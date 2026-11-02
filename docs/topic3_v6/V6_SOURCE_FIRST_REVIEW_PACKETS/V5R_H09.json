@@ -1,0 +1,708 @@
+{
+  "question_id": "V5R_H09",
+  "question": "What research and development expense did Microsoft report for FY2024?",
+  "category": "METRIC_DISAMBIGUATION",
+  "issuer": "MSFT",
+  "accession": "0000950170-24-087843",
+  "form": "10-K",
+  "filing_date": "2024-07-30",
+  "report_date": "2024-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+  "official_html_sha256": "420a47b7aa1e622380add216b8e1a9ed5e865393bcb7628f44c45e476919327e",
+  "frozen_corpus_chunk_count": 246,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "development",
+    "expense",
+    "research"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 15,
+      "row_index_zero_based": 1,
+      "score": 23,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Research and development",
+        "",
+        "$",
+        "29,510",
+        "",
+        "",
+        "$",
+        "27,195",
+        "",
+        "",
+        "",
+        "9%",
+        ""
+      ],
+      "candidate_row_label": "Research and development",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "(In millions, except percentages)",
+        "",
+        "2024",
+        "",
+        "",
+        "2023",
+        "",
+        "",
+        "Percentage Change",
+        ""
+      ],
+      "neighbor_after": [
+        "As a percent of revenue",
+        "",
+        "",
+        "12%",
+        "",
+        "",
+        "",
+        "13%",
+        "",
+        "",
+        "",
+        "(1)ppt",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "29,510",
+        "27,195",
+        "9%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 11,
+      "score": 23,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Research and development",
+        "",
+        "",
+        "29,510",
+        "",
+        "",
+        "",
+        "27,195",
+        "",
+        "",
+        "",
+        "24,512",
+        ""
+      ],
+      "candidate_row_label": "Research and development",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Revenue:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Product",
+          "",
+          "$",
+          "64,773",
+          "",
+          "",
+          "$",
+          "64,699",
+          "",
+          "",
+          "$",
+          "72,732",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Gross margin",
+        "",
+        "",
+        "171,008",
+        "",
+        "",
+        "",
+        "146,052",
+        "",
+        "",
+        "",
+        "135,620",
+        ""
+      ],
+      "neighbor_after": [
+        "Sales and marketing",
+        "",
+        "",
+        "24,456",
+        "",
+        "",
+        "",
+        "22,759",
+        "",
+        "",
+        "",
+        "21,825",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "29,510",
+        "27,195",
+        "24,512"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 61,
+      "row_index_zero_based": 7,
+      "score": 23,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Research and development credit",
+        "",
+        "",
+        "( 1.1 )%",
+        "",
+        "",
+        "",
+        "( 1.1 )%",
+        "",
+        "",
+        "",
+        "( 0.9 )%",
+        ""
+      ],
+      "candidate_row_label": "Research and development credit",
+      "candidate_header_rows": [
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Federal statutory rate",
+          "",
+          "",
+          "21.0 %",
+          "",
+          "",
+          "",
+          "21.0 %",
+          "",
+          "",
+          "",
+          "21.0 %",
+          ""
+        ],
+        [
+          "Effect of:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Foreign earnings taxed at lower rates",
+          "",
+          "",
+          "( 1.4 )%",
+          "",
+          "",
+          "",
+          "( 1.8 )%",
+          "",
+          "",
+          "",
+          "( 1.3 )%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "State income taxes, net of federal benefit",
+        "",
+        "",
+        "1.5 %",
+        "",
+        "",
+        "",
+        "1.6 %",
+        "",
+        "",
+        "",
+        "1.4 %",
+        ""
+      ],
+      "neighbor_after": [
+        "Excess tax benefits relating to stock-based compensation",
+        "",
+        "",
+        "( 1.1 )%",
+        "",
+        "",
+        "",
+        "( 0.7 )%",
+        "",
+        "",
+        "",
+        "( 1.9 )%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1.1",
+        "1.1",
+        "0.9"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 62,
+      "row_index_zero_based": 10,
+      "score": 22,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Capitalized research and development",
+        "",
+        "",
+        "11,442",
+        "",
+        "",
+        "",
+        "6,958",
+        ""
+      ],
+      "candidate_row_label": "Capitalized research and development",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Deferred Income Tax Assets",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Stock-based compensation expense",
+          "",
+          "$",
+          "765",
+          "",
+          "",
+          "$",
+          "681",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Book/tax basis differences in investments and debt",
+        "",
+        "",
+        "9",
+        "",
+        "",
+        "",
+        "373",
+        ""
+      ],
+      "neighbor_after": [
+        "Other",
+        "",
+        "",
+        "426",
+        "",
+        "",
+        "",
+        "489",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "11,442",
+        "6,958"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 15,
+      "score": 13,
+      "matched_terms": [
+        "expense"
+      ],
+      "row_cells": [
+        "Other income (expense), net",
+        "",
+        "",
+        "( 1,646",
+        ")",
+        "",
+        "",
+        "788",
+        "",
+        "",
+        "",
+        "333",
+        ""
+      ],
+      "candidate_row_label": "Other income (expense), net",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Revenue:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Product",
+          "",
+          "$",
+          "64,773",
+          "",
+          "",
+          "$",
+          "64,699",
+          "",
+          "",
+          "$",
+          "72,732",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "",
+        "",
+        "109,433",
+        "",
+        "",
+        "",
+        "88,523",
+        "",
+        "",
+        "",
+        "83,383",
+        ""
+      ],
+      "neighbor_after": [
+        "Income before income taxes",
+        "",
+        "",
+        "107,787",
+        "",
+        "",
+        "",
+        "89,311",
+        "",
+        "",
+        "",
+        "83,716",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,646",
+        "788",
+        "333"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 27,
+      "row_index_zero_based": 6,
+      "score": 13,
+      "matched_terms": [
+        "expense"
+      ],
+      "row_cells": [
+        "Stock-based compensation expense",
+        "",
+        "",
+        "10,734",
+        "",
+        "",
+        "",
+        "9,611",
+        "",
+        "",
+        "",
+        "7,502",
+        ""
+      ],
+      "candidate_row_label": "Stock-based compensation expense",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "",
+          "$",
+          "88,136",
+          "",
+          "",
+          "$",
+          "72,361",
+          "",
+          "",
+          "$",
+          "72,738",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Depreciation, amortization, and other",
+        "",
+        "",
+        "22,287",
+        "",
+        "",
+        "",
+        "13,861",
+        "",
+        "",
+        "",
+        "14,460",
+        ""
+      ],
+      "neighbor_after": [
+        "Net recognized losses (gains) on investments and derivatives",
+        "",
+        "",
+        "305",
+        "",
+        "",
+        "",
+        "196",
+        "",
+        "",
+        "",
+        "( 409",
+        ")"
+      ],
+      "numeric_tokens_unassigned": [
+        "10,734",
+        "9,611",
+        "7,502"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2380,
+      "score": 30,
+      "matched_terms": [
+        "development",
+        "expense",
+        "research"
+      ],
+      "text": "Research and development expenses include payroll, employee benefits, stock-based compensation expense, and other headcount-related expenses associated with product development. Research and development expenses also include third-party development and programming costs and the amortization of purchased software code and services content."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2382,
+      "score": 30,
+      "matched_terms": [
+        "development",
+        "expense",
+        "research"
+      ],
+      "text": "Research and development expenses increased $2.3 billion or 9% driven by Gaming, with 7 points of growth from the Activision Blizzard acquisition, and investments in cloud engineering."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 3351,
+      "score": 30,
+      "matched_terms": [
+        "development",
+        "expense",
+        "research"
+      ],
+      "text": "Our consolidated financial statements and accompanying notes are prepared in accordance with GAAP. Preparing consolidated financial statements requires management to make estimates and assumptions that affect the reported amounts of assets, liabilities, revenue, and expenses. Critical accounting estimates are those estimates that involve a significant level of estimation uncertainty and could have a material impact on our financial condition or results of operations. We have critical accounting estimates in the areas of revenue recognition, impairment of investment securities, goodwill, research and development costs, legal and other contingencies, income taxes, and business combinations – valuation of intangible assets."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

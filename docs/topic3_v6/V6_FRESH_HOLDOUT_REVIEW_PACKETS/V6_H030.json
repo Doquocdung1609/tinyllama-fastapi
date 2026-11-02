@@ -1,0 +1,544 @@
+{
+  "question_id": "V6_H030",
+  "question": "What net income did NVIDIA report for FY2025?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "NVDA",
+  "accession": "0001045810-25-000023",
+  "form": "10-K",
+  "filing_date": "2025-02-26",
+  "report_date": "2025-01-26",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+  "official_html_sha256": "060c3cbb1e96feb4a6948acfe7fc013507f24b4deecb735d729cf730c07ffd0c",
+  "frozen_corpus_chunk_count": 202,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "income",
+    "net"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 7,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "$",
+        "72,880",
+        "",
+        "",
+        "$",
+        "29,760",
+        "",
+        "",
+        "Up 145%"
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Change"
+        ],
+        [
+          "",
+          "($ in millions, except per share data)"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "Up 114%"
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "$",
+        "81,453",
+        "",
+        "",
+        "$",
+        "32,972",
+        "",
+        "",
+        "Up 147%"
+      ],
+      "neighbor_after": [
+        "Net income per diluted share",
+        "$",
+        "2.94",
+        "",
+        "",
+        "$",
+        "1.19",
+        "",
+        "",
+        "Up 147%"
+      ],
+      "numeric_tokens_unassigned": [
+        "72,880",
+        "29,760",
+        "145%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 8,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income per diluted share",
+        "$",
+        "2.94",
+        "",
+        "",
+        "$",
+        "1.19",
+        "",
+        "",
+        "Up 147%"
+      ],
+      "candidate_row_label": "Net income per diluted share",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Change"
+        ],
+        [
+          "",
+          "($ in millions, except per share data)"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "Up 114%"
+        ]
+      ],
+      "neighbor_before": [
+        "Net income",
+        "$",
+        "72,880",
+        "",
+        "",
+        "$",
+        "29,760",
+        "",
+        "",
+        "Up 145%"
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "2.94",
+        "1.19",
+        "147%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 15,
+      "row_index_zero_based": 6,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Other income (expense), net",
+        "$",
+        "2,573",
+        "",
+        "",
+        "$",
+        "846",
+        "",
+        "",
+        "$",
+        "1,727",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Other income (expense), net",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "$ Change",
+          "",
+          ""
+        ],
+        [
+          "",
+          "($ in millions)"
+        ],
+        [
+          "Interest income",
+          "$",
+          "1,786",
+          "",
+          "",
+          "$",
+          "866",
+          "",
+          "",
+          "$",
+          "920",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other, net",
+        "1,034",
+        "",
+        "",
+        "237",
+        "",
+        "",
+        "797",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "2,573",
+        "846",
+        "1,727"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 14,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Other income (expense), net",
+        "2,573",
+        "",
+        "",
+        "846",
+        "",
+        "",
+        "( 43 )",
+        ""
+      ],
+      "candidate_row_label": "Other income (expense), net",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "$",
+          "26,974",
+          ""
+        ],
+        [
+          "Cost of revenue",
+          "32,639",
+          "",
+          "",
+          "16,621",
+          "",
+          "",
+          "11,618",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Other, net",
+        "1,034",
+        "",
+        "",
+        "237",
+        "",
+        "",
+        "( 48 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Income before income tax",
+        "84,026",
+        "",
+        "",
+        "33,818",
+        "",
+        "",
+        "4,181",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "2,573",
+        "846",
+        "43"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 21,
+      "row_index_zero_based": 17,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "$",
+        "72,880",
+        "",
+        "",
+        "$",
+        "29,760",
+        "",
+        "",
+        "$",
+        "4,368",
+        ""
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ],
+        [
+          "Revenue",
+          "$",
+          "130,497",
+          "",
+          "",
+          "$",
+          "60,922",
+          "",
+          "",
+          "$",
+          "26,974",
+          ""
+        ],
+        [
+          "Cost of revenue",
+          "32,639",
+          "",
+          "",
+          "16,621",
+          "",
+          "",
+          "11,618",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Income tax expense (benefit)",
+        "11,146",
+        "",
+        "",
+        "4,058",
+        "",
+        "",
+        "( 187 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Net income per share:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "72,880",
+        "29,760",
+        "4,368"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 22,
+      "row_index_zero_based": 2,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "row_cells": [
+        "Net income",
+        "$",
+        "72,880",
+        "",
+        "",
+        "$",
+        "29,760",
+        "",
+        "",
+        "$",
+        "4,368",
+        ""
+      ],
+      "candidate_row_label": "Net income",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "Jan 26, 2025",
+          "",
+          "Jan 28, 2024",
+          "",
+          "Jan 29, 2023"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "Jan 26, 2025",
+        "",
+        "Jan 28, 2024",
+        "",
+        "Jan 29, 2023"
+      ],
+      "neighbor_after": [
+        "Other comprehensive income (loss), net of tax",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "72,880",
+        "29,760",
+        "4,368"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 640,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "text": "We are subject to complex income tax laws and regulations, as well as non-income-based taxes, in various jurisdictions. Significant judgment is required in determining our worldwide provision for income taxes and other tax liabilities. We are regularly under audit by tax authorities in different jurisdictions. Although we believe our tax estimates are reasonable, any adverse outcome could increase our worldwide effective tax rate, increase the amount of non-income taxes imposed on our business, and harm our financial position, results of operations, net income, and cash flows."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 641,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "text": "Further, changes in tax laws or their interpretation by tax authorities in the U.S. or foreign jurisdictions could increase our future tax liability or cause other adverse tax impacts, which may materially impact our results of operations, or the way we conduct our business. Most of our income is taxable in the U.S., with a significant portion qualifying for preferential treatment as foreign-derived intangible income, or FDII. If U.S. tax rates increase or the FDII deduction is reduced, our provision for income taxes, results of operations, net income, and cash flows would be adversely affected. In addition, our tax obligations and effective tax rate in the jurisdictions in which we conduct business could increase as a result of international tax developments, including the implementation of the Two-Pillar framework led by the Organization for Economic Cooperation and Development, or OECD, which involves the reallocation of taxing rights in respect of certain multinational enterprises above a fixed profit margin to the jurisdictions in which they carry on business (referred to as Pil"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 909,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "net"
+      ],
+      "text": "We consider our direct exposure to foreign exchange rate fluctuations to be minimal as substantially all of our sales are in United States dollars and foreign currency forward contracts are used to offset movements of foreign currency exchange rates. Gains or losses from foreign currency remeasurement are included in other income or expenses. The impact of foreign currency transaction gain or loss included in determining net income was not significant for fiscal years 2025 and 2024."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

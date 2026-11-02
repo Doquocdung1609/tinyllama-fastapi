@@ -1,0 +1,771 @@
+{
+  "question_id": "V5R_H08",
+  "question": "What was Microsoft's operating income in FY2024?",
+  "category": "EXACT_CELL",
+  "issuer": "MSFT",
+  "accession": "0000950170-24-087843",
+  "form": "10-K",
+  "filing_date": "2024-07-30",
+  "report_date": "2024-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+  "official_html_sha256": "420a47b7aa1e622380add216b8e1a9ed5e865393bcb7628f44c45e476919327e",
+  "frozen_corpus_chunk_count": 246,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "income",
+    "operating"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 13,
+      "row_index_zero_based": 3,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "",
+        "",
+        "109,433",
+        "",
+        "",
+        "",
+        "88,523",
+        "",
+        "",
+        "",
+        "24%",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages and per share amounts)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "245,122",
+          "",
+          "",
+          "$",
+          "211,915",
+          "",
+          "",
+          "",
+          "16%",
+          ""
+        ],
+        [
+          "Gross margin",
+          "",
+          "",
+          "171,008",
+          "",
+          "",
+          "",
+          "146,052",
+          "",
+          "",
+          "",
+          "17%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Gross margin",
+        "",
+        "",
+        "171,008",
+        "",
+        "",
+        "",
+        "146,052",
+        "",
+        "",
+        "",
+        "17%",
+        ""
+      ],
+      "neighbor_after": [
+        "Net income",
+        "",
+        "",
+        "88,136",
+        "",
+        "",
+        "",
+        "72,361",
+        "",
+        "",
+        "",
+        "22%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "109,433",
+        "88,523",
+        "24%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 13,
+      "row_index_zero_based": 7,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Adjusted operating income (non-GAAP)",
+        "",
+        "",
+        "109,433",
+        "",
+        "",
+        "",
+        "89,694",
+        "",
+        "",
+        "",
+        "22%",
+        ""
+      ],
+      "candidate_row_label": "Adjusted operating income (non-GAAP)",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages and per share amounts)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "245,122",
+          "",
+          "",
+          "$",
+          "211,915",
+          "",
+          "",
+          "",
+          "16%",
+          ""
+        ],
+        [
+          "Gross margin",
+          "",
+          "",
+          "171,008",
+          "",
+          "",
+          "",
+          "146,052",
+          "",
+          "",
+          "",
+          "17%",
+          ""
+        ],
+        [
+          "Operating income",
+          "",
+          "",
+          "109,433",
+          "",
+          "",
+          "",
+          "88,523",
+          "",
+          "",
+          "",
+          "24%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Adjusted gross margin (non-GAAP)",
+        "",
+        "",
+        "171,008",
+        "",
+        "",
+        "",
+        "146,204",
+        "",
+        "",
+        "",
+        "17%",
+        ""
+      ],
+      "neighbor_after": [
+        "Adjusted net income (non-GAAP)",
+        "",
+        "",
+        "88,136",
+        "",
+        "",
+        "",
+        "73,307",
+        "",
+        "",
+        "",
+        "20%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "109,433",
+        "89,694",
+        "22%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 19,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "",
+        "$",
+        "109,433",
+        "",
+        "",
+        "$",
+        "88,523",
+        "",
+        "",
+        "",
+        "24%",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages and per share amounts)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Gross margin",
+          "",
+          "$",
+          "171,008",
+          "",
+          "",
+          "$",
+          "146,052",
+          "",
+          "",
+          "",
+          "17%",
+          ""
+        ],
+        [
+          "Severance, hardware-related impairment, and lease consolidation costs",
+          "",
+          "",
+          "0",
+          "",
+          "",
+          "",
+          "152",
+          "",
+          "",
+          "",
+          "*",
+          ""
+        ],
+        [
+          "Adjusted gross margin (non-GAAP)",
+          "",
+          "$",
+          "171,008",
+          "",
+          "",
+          "$",
+          "146,204",
+          "",
+          "",
+          "",
+          "17%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Adjusted gross margin (non-GAAP)",
+        "",
+        "$",
+        "171,008",
+        "",
+        "",
+        "$",
+        "146,204",
+        "",
+        "",
+        "",
+        "17%",
+        ""
+      ],
+      "neighbor_after": [
+        "Severance, hardware-related impairment, and lease consolidation costs",
+        "",
+        "",
+        "0",
+        "",
+        "",
+        "",
+        "1,171",
+        "",
+        "",
+        "",
+        "*",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "109,433",
+        "88,523",
+        "24%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 19,
+      "row_index_zero_based": 6,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Adjusted operating income (non-GAAP)",
+        "",
+        "$",
+        "109,433",
+        "",
+        "",
+        "$",
+        "89,694",
+        "",
+        "",
+        "",
+        "22%",
+        ""
+      ],
+      "candidate_row_label": "Adjusted operating income (non-GAAP)",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages and per share amounts)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Gross margin",
+          "",
+          "$",
+          "171,008",
+          "",
+          "",
+          "$",
+          "146,052",
+          "",
+          "",
+          "",
+          "17%",
+          ""
+        ],
+        [
+          "Severance, hardware-related impairment, and lease consolidation costs",
+          "",
+          "",
+          "0",
+          "",
+          "",
+          "",
+          "152",
+          "",
+          "",
+          "",
+          "*",
+          ""
+        ],
+        [
+          "Adjusted gross margin (non-GAAP)",
+          "",
+          "$",
+          "171,008",
+          "",
+          "",
+          "$",
+          "146,204",
+          "",
+          "",
+          "",
+          "17%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Severance, hardware-related impairment, and lease consolidation costs",
+        "",
+        "",
+        "0",
+        "",
+        "",
+        "",
+        "1,171",
+        "",
+        "",
+        "",
+        "*",
+        ""
+      ],
+      "neighbor_after": [
+        "Net income",
+        "",
+        "$",
+        "88,136",
+        "",
+        "",
+        "$",
+        "72,361",
+        "",
+        "",
+        "",
+        "22%",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "109,433",
+        "89,694",
+        "22%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 14,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "",
+        "",
+        "109,433",
+        "",
+        "",
+        "",
+        "88,523",
+        "",
+        "",
+        "",
+        "83,383",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Revenue:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Product",
+          "",
+          "$",
+          "64,773",
+          "",
+          "",
+          "$",
+          "64,699",
+          "",
+          "",
+          "$",
+          "72,732",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "General and administrative",
+        "",
+        "",
+        "7,609",
+        "",
+        "",
+        "",
+        "7,575",
+        "",
+        "",
+        "",
+        "5,900",
+        ""
+      ],
+      "neighbor_after": [
+        "Other income (expense), net",
+        "",
+        "",
+        "( 1,646",
+        ")",
+        "",
+        "",
+        "788",
+        "",
+        "",
+        "",
+        "333",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "109,433",
+        "88,523",
+        "83,383"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 14,
+      "row_index_zero_based": 6,
+      "score": 26,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating Income",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Operating Income",
+      "candidate_header_rows": [
+        [
+          "(In millions, except percentages)",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "Percentage Change",
+          ""
+        ],
+        [
+          "Revenue",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Productivity and Business Processes",
+          "",
+          "$",
+          "77,728",
+          "",
+          "",
+          "$",
+          "69,274",
+          "",
+          "",
+          "",
+          "12%",
+          ""
+        ],
+        [
+          "Intelligent Cloud",
+          "",
+          "",
+          "105,362",
+          "",
+          "",
+          "",
+          "87,907",
+          "",
+          "",
+          "",
+          "20%",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Total",
+        "",
+        "$",
+        "245,122",
+        "",
+        "",
+        "$",
+        "211,915",
+        "",
+        "",
+        "",
+        "16%",
+        ""
+      ],
+      "neighbor_after": [
+        "Productivity and Business Processes",
+        "",
+        "$",
+        "40,540",
+        "",
+        "",
+        "$",
+        "34,189",
+        "",
+        "",
+        "",
+        "19%",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1154,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "We earn a significant amount of our operating income outside the U.S. A change in the mix of earnings and losses in countries with differing statutory tax rates, changes in our business or structure, or the expiration of or disputes about certain tax agreements in a particular country may result in higher effective tax rates for the company. In addition, changes in U.S. federal and state or international tax laws applicable to corporate multinationals, other global fundamental law changes currently being considered by many countries, including in the U.S., and changes in taxing jurisdictions’ administrative interpretations, decisions, policies, and positions may materially adversely affect our financial condition and results of operations."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1997,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "Adjusted gross margin, operating income, net income, and diluted earnings per share (“EPS”) are non-GAAP financial measures. Prior year non-GAAP financial measures exclude the impact of a $1.2 billion charge in the second quarter of fiscal year 2023 (“Q2 charge”), which included employee severance expenses, impairment charges resulting from changes to our hardware portfolio, and costs related to lease consolidation activities. Refer to the Non-GAAP Financial Measures section below for a reconciliation of our financial results reported in accordance with GAAP to non-GAAP financial results."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2007,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "Operating income increased $20.9 billion or 24% driven by growth across each of our segments."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

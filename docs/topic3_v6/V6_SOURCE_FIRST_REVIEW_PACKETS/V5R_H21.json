@@ -1,0 +1,603 @@
+{
+  "question_id": "V5R_H21",
+  "question": "How much advertising revenue did Meta report for FY2024?",
+  "category": "SEGMENT_VS_TOTAL",
+  "issuer": "META",
+  "accession": "0001326801-25-000017",
+  "form": "10-K",
+  "filing_date": "2025-01-30",
+  "report_date": "2024-12-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+  "official_html_sha256": "f137b12990dec2438f6ccef0d3be3164c062cbf15e32f8ac7b48e2598405d186",
+  "frozen_corpus_chunk_count": 280,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "advertising",
+    "revenue"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 6,
+      "row_index_zero_based": 4,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "162,355",
+        "",
+        "",
+        "$",
+        "133,006",
+        "",
+        "",
+        "22%",
+        "",
+        "$",
+        "2,146",
+        "",
+        "",
+        "$",
+        "1,896",
+        "",
+        "",
+        "13%",
+        "",
+        "$",
+        "164,501",
+        "",
+        "",
+        "$",
+        "134,902",
+        "",
+        "",
+        "22%",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Family of Apps",
+          "",
+          "Reality Labs",
+          "",
+          "Total",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Year Ended December 31,",
+          "",
+          "",
+          "",
+          "Year Ended December 31,",
+          "",
+          "",
+          "",
+          "Year Ended December 31,",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "% change",
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "% change",
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "% change",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "(in millions, except percentages)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "(in millions, except percentages)",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Costs and expenses",
+        "75,246",
+        "",
+        "",
+        "70,135",
+        "",
+        "",
+        "7%",
+        "",
+        "19,875",
+        "",
+        "",
+        "18,016",
+        "",
+        "",
+        "10%",
+        "",
+        "95,121",
+        "",
+        "",
+        "88,151",
+        "",
+        "",
+        "8%",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "162,355",
+        "133,006",
+        "22%",
+        "2,146",
+        "1,896",
+        "13%",
+        "164,501",
+        "134,902",
+        "22%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 2,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "$",
+        "164,501",
+        "",
+        "",
+        "$",
+        "134,902",
+        "",
+        "",
+        "$",
+        "116,609",
+        ""
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2024",
+        "",
+        "2023",
+        "",
+        "2022"
+      ],
+      "neighbor_after": [
+        "Costs and expenses:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "164,501",
+        "134,902",
+        "116,609"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 9,
+      "row_index_zero_based": 4,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "30,161",
+        "",
+        "",
+        "25,959",
+        "",
+        "",
+        "25,249",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Revenue",
+          "$",
+          "164,501",
+          "",
+          "",
+          "$",
+          "134,902",
+          "",
+          "",
+          "$",
+          "116,609",
+          ""
+        ],
+        [
+          "Costs and expenses:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Costs and expenses:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Research and development",
+        "43,873",
+        "",
+        "",
+        "38,483",
+        "",
+        "",
+        "35,338",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "30,161",
+        "25,959",
+        "25,249"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 10,
+      "row_index_zero_based": 2,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Revenue",
+        "100",
+        "%",
+        "",
+        "100",
+        "%",
+        "",
+        "100",
+        "%"
+      ],
+      "candidate_row_label": "Revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2024",
+        "",
+        "2023",
+        "",
+        "2022"
+      ],
+      "neighbor_after": [
+        "Costs and expenses:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "100",
+        "100",
+        "100"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 10,
+      "row_index_zero_based": 4,
+      "score": 13,
+      "matched_terms": [
+        "revenue"
+      ],
+      "row_cells": [
+        "Cost of revenue",
+        "18",
+        "",
+        "",
+        "19",
+        "",
+        "",
+        "22",
+        ""
+      ],
+      "candidate_row_label": "Cost of revenue",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Revenue",
+          "100",
+          "%",
+          "",
+          "100",
+          "%",
+          "",
+          "100",
+          "%"
+        ],
+        [
+          "Costs and expenses:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Costs and expenses:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Research and development",
+        "27",
+        "",
+        "",
+        "29",
+        "",
+        "",
+        "30",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "18",
+        "19",
+        "22"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 11,
+      "row_index_zero_based": 3,
+      "score": 13,
+      "matched_terms": [
+        "advertising"
+      ],
+      "row_cells": [
+        "Advertising",
+        "$",
+        "160,633",
+        "",
+        "",
+        "$",
+        "131,948",
+        "",
+        "",
+        "$",
+        "113,642",
+        "",
+        "",
+        "22",
+        "%",
+        "",
+        "16",
+        "%"
+      ],
+      "candidate_row_label": "Advertising",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022",
+          "",
+          "2024 vs 2023 % change",
+          "",
+          "2023 vs 2022 % change"
+        ],
+        [
+          "",
+          "(in millions, except percentages)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "(in millions, except percentages)"
+      ],
+      "neighbor_after": [
+        "Other revenue",
+        "1,722",
+        "",
+        "",
+        "1,058",
+        "",
+        "",
+        "808",
+        "",
+        "",
+        "63",
+        "%",
+        "",
+        "31",
+        "%"
+      ],
+      "numeric_tokens_unassigned": [
+        "160,633",
+        "131,948",
+        "113,642",
+        "22",
+        "16"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 234,
+      "score": 20,
+      "matched_terms": [
+        "advertising",
+        "revenue"
+      ],
+      "text": "We report financial results for two segments: Family of Apps (FoA) and Reality Labs (RL). Currently, we generate substantially all of our revenue from selling advertising placements on our family of apps to marketers, which is reflected in FoA. Ads on our platform enable marketers to reach people across a range of marketing objectives, such as generating leads or driving awareness. Marketers purchase ads that can appear in multiple places including on Facebook, Instagram, Messenger, and third-party applications and websites. RL generates revenue from sales of consumer hardware products, software, and content."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 489,
+      "score": 20,
+      "matched_terms": [
+        "advertising",
+        "revenue"
+      ],
+      "text": "We generate substantially all of our revenue from advertising. The loss of marketers, or reduction in spending by marketers, could seriously harm our business."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 491,
+      "score": 20,
+      "matched_terms": [
+        "advertising",
+        "revenue"
+      ],
+      "text": "Substantially all of our revenue is currently generated from marketers advertising on Facebook and Instagram. As is common in the industry, our marketers do not have long-term advertising commitments with us. Many of our marketers spend only a relatively small portion of their overall advertising budget with us. Marketers will not continue to do business with us, or they will reduce the budgets they are willing to commit to us, if we do not deliver ads in an effective manner, if they do not believe that their investment in advertising with us will generate a competitive return relative to other alternatives, or if they are not satisfied for any other reason. We have implemented, and we will continue to implement, changes to our user data practices. Some of these changes reduce our ability to effectively target ads, which has to some extent adversely affected, and will continue to adversely affect, our advertising business. If we are unable to provide marketers with a suitable return on investment, the demand for our ads may not increase, or may decline, in which case our revenue and "
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": [
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
+  ]
+}

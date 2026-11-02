@@ -1,0 +1,751 @@
+{
+  "question_id": "V6_H014",
+  "question": "What income tax expense did Microsoft report for FY2024?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "MSFT",
+  "accession": "0000950170-24-087843",
+  "form": "10-K",
+  "filing_date": "2024-07-30",
+  "report_date": "2024-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+  "official_html_sha256": "420a47b7aa1e622380add216b8e1a9ed5e865393bcb7628f44c45e476919327e",
+  "frozen_corpus_chunk_count": 246,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "expense",
+    "income",
+    "tax"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 73,
+      "row_index_zero_based": 6,
+      "score": 39,
+      "matched_terms": [
+        "expense",
+        "income",
+        "tax"
+      ],
+      "row_cells": [
+        "Tax expense (benefit) included in provision for income taxes",
+        "",
+        "",
+        "( 10",
+        ")",
+        "",
+        "",
+        "13",
+        "",
+        "",
+        "",
+        "( 16",
+        ")"
+      ],
+      "candidate_row_label": "Tax expense (benefit) included in provision for income taxes",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Derivatives",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Balance, beginning of period",
+          "",
+          "$",
+          "( 27",
+          ")",
+          "",
+          "$",
+          "( 13",
+          ")",
+          "",
+          "$",
+          "( 19",
+          ")"
+        ]
+      ],
+      "neighbor_before": [
+        "Reclassification adjustments for (gains) losses included in other income (expense), net",
+        "",
+        "",
+        "48",
+        "",
+        "",
+        "",
+        "( 61",
+        ")",
+        "",
+        "",
+        "79",
+        ""
+      ],
+      "neighbor_after": [
+        "Amounts reclassified from accumulated other comprehensive loss",
+        "",
+        "",
+        "38",
+        "",
+        "",
+        "",
+        "( 48",
+        ")",
+        "",
+        "",
+        "63",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "10",
+        "13",
+        "16"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 15,
+      "score": 23,
+      "matched_terms": [
+        "expense",
+        "income"
+      ],
+      "row_cells": [
+        "Other income (expense), net",
+        "",
+        "",
+        "( 1,646",
+        ")",
+        "",
+        "",
+        "788",
+        "",
+        "",
+        "",
+        "333",
+        ""
+      ],
+      "candidate_row_label": "Other income (expense), net",
+      "candidate_header_rows": [
+        [
+          "(In millions, except per share amounts)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Revenue:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Product",
+          "",
+          "$",
+          "64,773",
+          "",
+          "",
+          "$",
+          "64,699",
+          "",
+          "",
+          "$",
+          "72,732",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "",
+        "",
+        "109,433",
+        "",
+        "",
+        "",
+        "88,523",
+        "",
+        "",
+        "",
+        "83,383",
+        ""
+      ],
+      "neighbor_after": [
+        "Income before income taxes",
+        "",
+        "",
+        "107,787",
+        "",
+        "",
+        "",
+        "89,311",
+        "",
+        "",
+        "",
+        "83,716",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,646",
+        "788",
+        "333"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 73,
+      "row_index_zero_based": 5,
+      "score": 23,
+      "matched_terms": [
+        "expense",
+        "income"
+      ],
+      "row_cells": [
+        "Reclassification adjustments for (gains) losses included in other income (expense), net",
+        "",
+        "",
+        "48",
+        "",
+        "",
+        "",
+        "( 61",
+        ")",
+        "",
+        "",
+        "79",
+        ""
+      ],
+      "candidate_row_label": "Reclassification adjustments for (gains) losses included in other income (expense), net",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Derivatives",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Balance, beginning of period",
+          "",
+          "$",
+          "( 27",
+          ")",
+          "",
+          "$",
+          "( 13",
+          ")",
+          "",
+          "$",
+          "( 19",
+          ")"
+        ]
+      ],
+      "neighbor_before": [
+        "Unrealized gains (losses), net of tax of $( 4 ) , $ 9 , and $( 15 )",
+        "",
+        "",
+        "( 14",
+        ")",
+        "",
+        "",
+        "34",
+        "",
+        "",
+        "",
+        "( 57",
+        ")"
+      ],
+      "neighbor_after": [
+        "Tax expense (benefit) included in provision for income taxes",
+        "",
+        "",
+        "( 10",
+        ")",
+        "",
+        "",
+        "13",
+        "",
+        "",
+        "",
+        "( 16",
+        ")"
+      ],
+      "numeric_tokens_unassigned": [
+        "48",
+        "61",
+        "79"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 73,
+      "row_index_zero_based": 13,
+      "score": 23,
+      "matched_terms": [
+        "expense",
+        "income"
+      ],
+      "row_cells": [
+        "Reclassification adjustments for losses included in other income (expense), net",
+        "",
+        "",
+        "53",
+        "",
+        "",
+        "",
+        "99",
+        "",
+        "",
+        "",
+        "57",
+        ""
+      ],
+      "candidate_row_label": "Reclassification adjustments for losses included in other income (expense), net",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Derivatives",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Balance, beginning of period",
+          "",
+          "$",
+          "( 27",
+          ")",
+          "",
+          "$",
+          "( 13",
+          ")",
+          "",
+          "$",
+          "( 19",
+          ")"
+        ]
+      ],
+      "neighbor_before": [
+        "Unrealized gains (losses), net of tax of $ 247 , $( 393 ), and $( 1,440 )",
+        "",
+        "",
+        "915",
+        "",
+        "",
+        "",
+        "( 1,523",
+        ")",
+        "",
+        "",
+        "( 5,405",
+        ")"
+      ],
+      "neighbor_after": [
+        "Tax benefit included in provision for income taxes",
+        "",
+        "",
+        "( 11",
+        ")",
+        "",
+        "",
+        "( 20",
+        ")",
+        "",
+        "",
+        "( 12",
+        ")"
+      ],
+      "numeric_tokens_unassigned": [
+        "53",
+        "99",
+        "57"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 73,
+      "row_index_zero_based": 14,
+      "score": 23,
+      "matched_terms": [
+        "income",
+        "tax"
+      ],
+      "row_cells": [
+        "Tax benefit included in provision for income taxes",
+        "",
+        "",
+        "( 11",
+        ")",
+        "",
+        "",
+        "( 20",
+        ")",
+        "",
+        "",
+        "( 12",
+        ")"
+      ],
+      "candidate_row_label": "Tax benefit included in provision for income taxes",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Derivatives",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Balance, beginning of period",
+          "",
+          "$",
+          "( 27",
+          ")",
+          "",
+          "$",
+          "( 13",
+          ")",
+          "",
+          "$",
+          "( 19",
+          ")"
+        ]
+      ],
+      "neighbor_before": [
+        "Reclassification adjustments for losses included in other income (expense), net",
+        "",
+        "",
+        "53",
+        "",
+        "",
+        "",
+        "99",
+        "",
+        "",
+        "",
+        "57",
+        ""
+      ],
+      "neighbor_after": [
+        "Amounts reclassified from accumulated other comprehensive loss",
+        "",
+        "",
+        "42",
+        "",
+        "",
+        "",
+        "79",
+        "",
+        "",
+        "",
+        "45",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "11",
+        "20",
+        "12"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 74,
+      "row_index_zero_based": 3,
+      "score": 23,
+      "matched_terms": [
+        "income",
+        "tax"
+      ],
+      "row_cells": [
+        "Income tax benefits related to stock-based compensation",
+        "",
+        "",
+        "1,826",
+        "",
+        "",
+        "",
+        "1,651",
+        "",
+        "",
+        "",
+        "1,293",
+        ""
+      ],
+      "candidate_row_label": "Income tax benefits related to stock-based compensation",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          "",
+          "",
+          "2022",
+          ""
+        ],
+        [
+          "Stock-based compensation expense",
+          "",
+          "$",
+          "10,734",
+          "",
+          "",
+          "$",
+          "9,611",
+          "",
+          "",
+          "$",
+          "7,502",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Stock-based compensation expense",
+        "",
+        "$",
+        "10,734",
+        "",
+        "",
+        "$",
+        "9,611",
+        "",
+        "",
+        "$",
+        "7,502",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "1,826",
+        "1,651",
+        "1,293"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1145,
+      "score": 30,
+      "matched_terms": [
+        "expense",
+        "income",
+        "tax"
+      ],
+      "text": "We may have additional tax liabilities. We are subject to income taxes in the U.S. and many foreign jurisdictions. Significant judgment is required in determining our worldwide provision for income taxes. In the course of our business, there are many transactions and calculations where the ultimate tax determination is uncertain. We may recognize additional tax expense and be subject to additional tax liabilities due to changes in tax laws, regulations, and administrative practices and principles, including changes to the global tax framework, in various jurisdictions. In recent years, multiple domestic and international tax proposals were proposed to impose greater tax burdens on large multinational enterprises. For example, the Organisation for Economic Co-operation and Development continues to advance proposals or guidance in international taxation, including the establishment of a global minimum tax."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 6370,
+      "score": 30,
+      "matched_terms": [
+        "expense",
+        "income",
+        "tax"
+      ],
+      "text": "Income tax expense includes U.S. and international income taxes, and interest and penalties on uncertain tax positions. Certain income and expenses are not reported in tax returns and financial statements in the same year. The tax effect of such temporary differences is reported as deferred income taxes. Deferred tax assets are reported net of a valuation allowance when it is more likely than not that a tax benefit will not be realized. All deferred income taxes are classified as long-term in our consolidated balance sheets."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 15049,
+      "score": 30,
+      "matched_terms": [
+        "expense",
+        "income",
+        "tax"
+      ],
+      "text": "As of June 30, 2024, 2023, and 2022, we had accrued interest expense related to uncertain tax positions of $ 6.8 billion, $ 5.2 billion, and $ 4.3 billion, respectively, net of income tax benefits. The provision for income taxes for fiscal years 2024, 2023, and 2022 included interest expense related to uncertain tax positions of $ 1.5 billion, $ 918 million, and $ 36 million, respectively, net of income tax benefits."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

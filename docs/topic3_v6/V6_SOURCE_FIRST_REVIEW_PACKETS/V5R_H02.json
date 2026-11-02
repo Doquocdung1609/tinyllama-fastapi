@@ -1,0 +1,498 @@
+{
+  "question_id": "V5R_H02",
+  "question": "What cash and cash equivalents did Apple report at FY2024 year end?",
+  "category": "BALANCE_SHEET",
+  "issuer": "AAPL",
+  "accession": "0000320193-24-000123",
+  "form": "10-K",
+  "filing_date": "2024-11-01",
+  "report_date": "2024-09-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+  "official_html_sha256": "af35e3e22f0ef07b1363e03a994dd349af6dc6c3eda0a6792d01e9065f121b09",
+  "frozen_corpus_chunk_count": 125,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "cash",
+    "equivalent"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 2,
+      "score": 29,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Cash, cash equivalents, and restricted cash and cash equivalents, beginning balances",
+        "$",
+        "30,737",
+        "",
+        "",
+        "$",
+        "24,977",
+        "",
+        "",
+        "$",
+        "35,929",
+        ""
+      ],
+      "candidate_row_label": "Cash, cash equivalents, and restricted cash and cash equivalents, beginning balances",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023",
+          "",
+          "September 24, 2022"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "September 28, 2024",
+        "",
+        "September 30, 2023",
+        "",
+        "September 24, 2022"
+      ],
+      "neighbor_after": [
+        "Operating activities:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "30,737",
+        "24,977",
+        "35,929"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 33,
+      "score": 29,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Increase/(Decrease) in cash, cash equivalents, and restricted cash and cash equivalents",
+        "( 794 )",
+        "",
+        "",
+        "5,760",
+        "",
+        "",
+        "( 10,952 )",
+        ""
+      ],
+      "candidate_row_label": "Increase/(Decrease) in cash, cash equivalents, and restricted cash and cash equivalents",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023",
+          "",
+          "September 24, 2022"
+        ],
+        [
+          "Cash, cash equivalents, and restricted cash and cash equivalents, beginning balances",
+          "$",
+          "30,737",
+          "",
+          "",
+          "$",
+          "24,977",
+          "",
+          "",
+          "$",
+          "35,929",
+          ""
+        ],
+        [
+          "Operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Cash used in financing activities",
+        "( 121,983 )",
+        "",
+        "",
+        "( 108,488 )",
+        "",
+        "",
+        "( 110,749 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Cash, cash equivalents, and restricted cash and cash equivalents, ending balances",
+        "$",
+        "29,943",
+        "",
+        "",
+        "$",
+        "30,737",
+        "",
+        "",
+        "$",
+        "24,977",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "794",
+        "5,760",
+        "10,952"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 34,
+      "score": 29,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Cash, cash equivalents, and restricted cash and cash equivalents, ending balances",
+        "$",
+        "29,943",
+        "",
+        "",
+        "$",
+        "30,737",
+        "",
+        "",
+        "$",
+        "24,977",
+        ""
+      ],
+      "candidate_row_label": "Cash, cash equivalents, and restricted cash and cash equivalents, ending balances",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023",
+          "",
+          "September 24, 2022"
+        ],
+        [
+          "Cash, cash equivalents, and restricted cash and cash equivalents, beginning balances",
+          "$",
+          "30,737",
+          "",
+          "",
+          "$",
+          "24,977",
+          "",
+          "",
+          "$",
+          "35,929",
+          ""
+        ],
+        [
+          "Operating activities:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Increase/(Decrease) in cash, cash equivalents, and restricted cash and cash equivalents",
+        "( 794 )",
+        "",
+        "",
+        "5,760",
+        "",
+        "",
+        "( 10,952 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Supplemental cash flow disclosure:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "29,943",
+        "30,737",
+        "24,977"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 24,
+      "row_index_zero_based": 3,
+      "score": 28,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Cash and cash equivalents",
+        "$",
+        "29,943",
+        "",
+        "",
+        "$",
+        "29,965",
+        ""
+      ],
+      "candidate_row_label": "Cash and cash equivalents",
+      "candidate_header_rows": [
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023"
+        ],
+        [
+          "ASSETS:"
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Current assets:",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Marketable securities",
+        "35,228",
+        "",
+        "",
+        "31,590",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "29,943",
+        "29,965"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 29,
+      "row_index_zero_based": 1,
+      "score": 26,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "",
+        "Adjusted Cost",
+        "",
+        "Unrealized Gains",
+        "",
+        "Unrealized Losses",
+        "",
+        "Fair Value",
+        "",
+        "Cash and Cash Equivalents",
+        "",
+        "Current Marketable Securities",
+        "",
+        "Non-Current Marketable Securities"
+      ],
+      "candidate_row_label": "",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2024"
+      ],
+      "neighbor_after": [
+        "Cash",
+        "$",
+        "27,199",
+        "",
+        "",
+        "$",
+        "—",
+        "",
+        "",
+        "$",
+        "—",
+        "",
+        "",
+        "$",
+        "27,199",
+        "",
+        "",
+        "$",
+        "27,199",
+        "",
+        "",
+        "$",
+        "—",
+        "",
+        "",
+        "$",
+        "—",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 30,
+      "row_index_zero_based": 1,
+      "score": 26,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "",
+        "Adjusted Cost",
+        "",
+        "Unrealized Gains",
+        "",
+        "Unrealized Losses",
+        "",
+        "Fair Value",
+        "",
+        "Cash and Cash Equivalents",
+        "",
+        "Current Marketable Securities",
+        "",
+        "Non-Current Marketable Securities"
+      ],
+      "candidate_row_label": "",
+      "candidate_header_rows": [
+        [
+          "",
+          "2023"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2023"
+      ],
+      "neighbor_after": [
+        "Cash",
+        "$",
+        "28,359",
+        "",
+        "",
+        "$",
+        "—",
+        "",
+        "",
+        "$",
+        "—",
+        "",
+        "",
+        "$",
+        "28,359",
+        "",
+        "",
+        "$",
+        "28,359",
+        "",
+        "",
+        "$",
+        "—",
+        "",
+        "",
+        "$",
+        "—",
+        ""
+      ],
+      "numeric_tokens_unassigned": []
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 414,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "text": "The Company’s investments can be negatively affected by changes in liquidity, credit deterioration, financial results, market and economic conditions, political risk, sovereign risk, interest rate fluctuations or other factors. As a result, the value and liquidity of the Company’s cash, cash equivalents and marketable securities may fluctuate substantially. Although the Company has not realized significant losses on its cash, cash equivalents and marketable securities, future fluctuations in their value could result in significant losses and could have a material adverse impact on the Company’s results of operations and financial condition."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 616,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "text": "The Company believes its balances of unrestricted cash, cash equivalents and marketable securities, which totaled $140.8 billion as of September 28, 2024, along with cash generated by ongoing operations and continued access to debt markets, will be sufficient to satisfy its cash requirements and capital return program over the next 12 months and beyond."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 761,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "text": "Cash, cash equivalents, and restricted cash and cash equivalents, beginning balances"
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

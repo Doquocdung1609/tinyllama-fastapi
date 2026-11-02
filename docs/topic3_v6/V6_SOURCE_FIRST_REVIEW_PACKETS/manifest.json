@@ -1,0 +1,279 @@
+{
+  "status": "MACHINE_PREPARED_UNJUDGED",
+  "question_count": 30,
+  "independently_reviewed": 0,
+  "packet_selection": "SEC original HTML table/prose lexical search; no Qdrant ranking or qrels",
+  "queue_sha256": "dd8be3d26deec52d8f1dcddb135c69f5f4c00c30d4924fe96ccbbcdd492ec6c2",
+  "packets": [
+    {
+      "id": "V5R_H01",
+      "question": "What were Apple's FY2024 net sales?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "22f04a874ee5246c8abac4fd7a081db6bfbffdc15417c1dbd65504c32735f309"
+    },
+    {
+      "id": "V5R_H02",
+      "question": "What cash and cash equivalents did Apple report at FY2024 year end?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "f37973e78fb9ccf6e52a779f4bdb7ab7c140d1699764b21664ca0ee4898df7cd"
+    },
+    {
+      "id": "V5R_H03",
+      "question": "What was Apple's FY2024 operating income?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "29822f904f391a2c6ac399370df771deaac9c7f3e73c180ff51a9c6a94bef9fb"
+    },
+    {
+      "id": "V5R_H04",
+      "question": "How did Apple's net sales change from FY2023 to FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "cb3c9024fcdb3e7bcdb64370826cac6051ba9577193d3ad1bc866907dafebaa4"
+    },
+    {
+      "id": "V5R_H05",
+      "question": "What were Apple's total assets at the FY2025 reporting date?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "accession": "0000320193-25-000079",
+      "table_candidates": 6,
+      "prose_candidates": 2,
+      "packet_sha256": "53eb2e4d71add629f0cb51783b759f3bb654e20c28e0535fe778dd1bc623a566"
+    },
+    {
+      "id": "V5R_H06",
+      "question": "How did iPhone sales compare with Apple's total net sales in FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "accession": "0000320193-24-000123",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "7407610cb3da71f432393efbcf247dff38ef81f4eda7b70aeb7ae3d64ca1bcdb"
+    },
+    {
+      "id": "V5R_H07",
+      "question": "What was Microsoft's FY2024 total revenue?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "9feb65e4227700ce258917bcc049580bdceeec7f596de4966f46997abc85819a"
+    },
+    {
+      "id": "V5R_H08",
+      "question": "What was Microsoft's operating income in FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "ed3d9a2565cc57611a2959a8c045c1a9bdd37ebf29f5093c85444c286e801750"
+    },
+    {
+      "id": "V5R_H09",
+      "question": "What research and development expense did Microsoft report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
+      "accession": "0000950170-24-087843",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "e63874f064e68bc74f6387dec7100461aee7900209d721b0508d310b879eeda2"
+    },
+    {
+      "id": "V5R_H10",
+      "question": "What cash and cash equivalents did Microsoft report at FY2025 year end?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "412264f5128f0cb8028b0ccc41c6b79e26c292e8f8bc6b0171dbeb321a0ddf29"
+    },
+    {
+      "id": "V5R_H11",
+      "question": "Compare Microsoft's net income in FY2024 and FY2025.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "df2252cc6004e92f8b072cd5f32d6ac757294105bf10c7c2f9c6368f2818f521"
+    },
+    {
+      "id": "V5R_H12",
+      "question": "What will Microsoft's net income be in FY2037?",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+      "accession": "0000950170-25-100235",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "6f2b95d78b8dde5a215df77c9412bf11ffc5818c4c95e7b96e3ea141d3d4f73e"
+    },
+    {
+      "id": "V5R_H13",
+      "question": "What total revenue did NVIDIA report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "021c0bfd0a4b44bbb7548bf61b754c0ea575ea50a9efcfe094ae963572a54ad8"
+    },
+    {
+      "id": "V5R_H14",
+      "question": "How much FY2024 NVIDIA revenue came from data center operations?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "4adfbf9f13263aef8f48ad1f52114792346abe112508832978a057649ce9d00e"
+    },
+    {
+      "id": "V5R_H15",
+      "question": "What was NVIDIA's FY2024 operating income?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
+      "accession": "0001045810-24-000029",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "6b5a5e2a213d7b2b251b43d81755c7318659052c50d0ea52e7d446c569761217"
+    },
+    {
+      "id": "V5R_H16",
+      "question": "Compare NVIDIA's total revenue between FY2024 and FY2025.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "accession": "0001045810-25-000023",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "57e6026a1c523dd13e0e08c392c2e2739117987fe1fc940ac8d80cab6b78c4fa"
+    },
+    {
+      "id": "V5R_H17",
+      "question": "What was NVIDIA's FY2025 net cash from operating activities?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+      "accession": "0001045810-25-000023",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "262fbc9554cc63ac5842d8ced10356754b69f889d7bcbc0826a9cc98fe5d6ba2"
+    },
+    {
+      "id": "V5R_H18",
+      "question": "How did Amazon's FY2024 net product sales differ from total net sales?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "accession": "0001018724-25-000004",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "1a12c67e2dd215aaf38fcf86420385e9a39232f4e22b908b2fb4e8771d90c02d"
+    },
+    {
+      "id": "V5R_H19",
+      "question": "What were Amazon's total operating expenses in FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "accession": "0001018724-25-000004",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "ba11765420042520855f12e747f69da8c8a969b0a97dbb758fc7b8cfb8a93fed"
+    },
+    {
+      "id": "V5R_H20",
+      "question": "Compare Amazon's total net sales in FY2022 and FY2023.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+      "accession": "0001018724-24-000008",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "728864b090c69d71e8920cf854da5264b3a65a0ae075570b37c596b8c5d0a607"
+    },
+    {
+      "id": "V5R_H21",
+      "question": "How much advertising revenue did Meta report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+      "accession": "0001326801-25-000017",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "e3df0a3ab65f26e35f15cd83e6cfedbf8a7b42935cb42d55c546c9c3642cf4cd"
+    },
+    {
+      "id": "V5R_H22",
+      "question": "How do Meta's FY2024 property purchases differ from capital expenditures including finance leases?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+      "accession": "0001326801-25-000017",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "0d3e7ab20463857ca6f714f58c915dc2a1dd2a352c702db79564fd96893caa8d"
+    },
+    {
+      "id": "V5R_H23",
+      "question": "What was Meta's FY2024 net cash from operating activities?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000017/meta-20241231.htm",
+      "accession": "0001326801-25-000017",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "60f2d855aff3127c85a13ac5828c0c0082ad353e379df0503c974604225a142a"
+    },
+    {
+      "id": "V5R_H24",
+      "question": "What FY2024 revenue came from Tesla's energy generation and storage segment?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025003063/tsla-20241231.htm",
+      "accession": "0001628280-25-003063",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "4654707615d4c1f3a79e6924bf9c955ca58871f3ffd59db7874c9c7bc561608e"
+    },
+    {
+      "id": "V5R_H25",
+      "question": "Compare Tesla's total revenues in FY2022 and FY2023.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024002390/tsla-20231231.htm",
+      "accession": "0001628280-24-002390",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "22515471bfe3f4cb765bd9510eeae96e0d3170b1523e025e883c7ccb7fdcabdb"
+    },
+    {
+      "id": "V5R_H26",
+      "question": "What portion of Tesla's FY2023 revenues came from automotive activities?",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024002390/tsla-20231231.htm",
+      "accession": "0001628280-24-002390",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "21acb2d50cdf7a5d6bc360c6a6102cf6e246af250f26eef1d3a986a3135f6e08"
+    },
+    {
+      "id": "V5R_H27",
+      "question": "What net income did Intel report for FY2024?",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+      "accession": "0000050863-25-000009",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "4e4f23412fcc1a760cc54e77884b19867a155bef94462b01588b0ec9003d95da"
+    },
+    {
+      "id": "V5R_H28",
+      "question": "What was Intel's FY2024 gross margin?",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+      "accession": "0000050863-25-000009",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "f5fc0a6aa453bfd149e79e6eeb95af66ff2c1a8a35e6f340e184f66dffafb219"
+    },
+    {
+      "id": "V5R_H29",
+      "question": "What was AMD's FY2024 operating income?",
+      "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm",
+      "accession": "0000002488-25-000012",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "eb05d4065db38dc0a949450538307945b740cffc3e681b6e4cdadc89ab9322c7"
+    },
+    {
+      "id": "V5R_H30",
+      "question": "What FY2024 revenue did AMD attribute to its data center segment?",
+      "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/amd-20241228.htm",
+      "accession": "0000002488-25-000012",
+      "table_candidates": 6,
+      "prose_candidates": 3,
+      "packet_sha256": "014e8298438cb3e3ea106e8bf6d43328f8d5c693c24aa771e5fc74fc4c37c856"
+    }
+  ]
+}

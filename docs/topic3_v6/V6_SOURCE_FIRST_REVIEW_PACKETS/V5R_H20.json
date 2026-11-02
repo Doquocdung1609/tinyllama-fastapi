@@ -1,0 +1,561 @@
+{
+  "question_id": "V5R_H20",
+  "question": "Compare Amazon's total net sales in FY2022 and FY2023.",
+  "category": "COMPARATIVE_COLUMN",
+  "issuer": "AMZN",
+  "accession": "0001018724-24-000008",
+  "form": "10-K",
+  "filing_date": "2024-02-02",
+  "report_date": "2023-12-31",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm",
+  "official_html_sha256": "ee72abb07ae30d6da36584ef9c36c5a56c96fe62dfed7dae2c11dd6dd2694857",
+  "frozen_corpus_chunk_count": 166,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "net",
+    "sales"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 30,
+      "row_index_zero_based": 2,
+      "score": 29,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "row_cells": [
+        "Net sales",
+        "$",
+        "513,983",
+        "",
+        "",
+        "$",
+        "15,495",
+        "",
+        "",
+        "$",
+        "529,478",
+        "",
+        "",
+        "$",
+        "574,785",
+        "",
+        "",
+        "$",
+        "71",
+        "",
+        "",
+        "$",
+        "574,856",
+        ""
+      ],
+      "candidate_row_label": "Net sales",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31, 2022",
+          "",
+          "Year Ended December 31, 2023"
+        ],
+        [
+          "",
+          "As Reported",
+          "",
+          "Exchange Rate Effect (1)",
+          "",
+          "At Prior Year Rates (2)",
+          "",
+          "As Reported",
+          "",
+          "Exchange Rate Effect (1)",
+          "",
+          "At Prior Year Rates (2)"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "As Reported",
+        "",
+        "Exchange Rate Effect (1)",
+        "",
+        "At Prior Year Rates (2)",
+        "",
+        "As Reported",
+        "",
+        "Exchange Rate Effect (1)",
+        "",
+        "At Prior Year Rates (2)"
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "501,735",
+        "",
+        "",
+        "16,356",
+        "",
+        "",
+        "518,091",
+        "",
+        "",
+        "537,933",
+        "",
+        "",
+        "531",
+        "",
+        "",
+        "538,464",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "513,983",
+        "15,495",
+        "529,478",
+        "574,785",
+        "71",
+        "574,856"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 37,
+      "row_index_zero_based": 2,
+      "score": 29,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "row_cells": [
+        "Net product sales",
+        "$",
+        "241,787",
+        "",
+        "",
+        "$",
+        "242,901",
+        "",
+        "",
+        "$",
+        "255,887",
+        ""
+      ],
+      "candidate_row_label": "Net product sales",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2021",
+          "",
+          "2022",
+          "",
+          "2023"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2021",
+        "",
+        "2022",
+        "",
+        "2023"
+      ],
+      "neighbor_after": [
+        "Net service sales",
+        "228,035",
+        "",
+        "",
+        "271,082",
+        "",
+        "",
+        "318,898",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "241,787",
+        "242,901",
+        "255,887"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 37,
+      "row_index_zero_based": 3,
+      "score": 29,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "row_cells": [
+        "Net service sales",
+        "228,035",
+        "",
+        "",
+        "271,082",
+        "",
+        "",
+        "318,898",
+        ""
+      ],
+      "candidate_row_label": "Net service sales",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2021",
+          "",
+          "2022",
+          "",
+          "2023"
+        ],
+        [
+          "Net product sales",
+          "$",
+          "241,787",
+          "",
+          "",
+          "$",
+          "242,901",
+          "",
+          "",
+          "$",
+          "255,887",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net product sales",
+        "$",
+        "241,787",
+        "",
+        "",
+        "$",
+        "242,901",
+        "",
+        "",
+        "$",
+        "255,887",
+        ""
+      ],
+      "neighbor_after": [
+        "Total net sales",
+        "469,822",
+        "",
+        "",
+        "513,983",
+        "",
+        "",
+        "574,785",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "228,035",
+        "271,082",
+        "318,898"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 37,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "row_cells": [
+        "Total net sales",
+        "469,822",
+        "",
+        "",
+        "513,983",
+        "",
+        "",
+        "574,785",
+        ""
+      ],
+      "candidate_row_label": "Total net sales",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2021",
+          "",
+          "2022",
+          "",
+          "2023"
+        ],
+        [
+          "Net product sales",
+          "$",
+          "241,787",
+          "",
+          "",
+          "$",
+          "242,901",
+          "",
+          "",
+          "$",
+          "255,887",
+          ""
+        ],
+        [
+          "Net service sales",
+          "228,035",
+          "",
+          "",
+          "271,082",
+          "",
+          "",
+          "318,898",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net service sales",
+        "228,035",
+        "",
+        "",
+        "271,082",
+        "",
+        "",
+        "318,898",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "469,822",
+        "513,983",
+        "574,785"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 70,
+      "row_index_zero_based": 3,
+      "score": 29,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "row_cells": [
+        "Net sales",
+        "$",
+        "279,833",
+        "",
+        "",
+        "$",
+        "315,880",
+        "",
+        "",
+        "$",
+        "352,828",
+        ""
+      ],
+      "candidate_row_label": "Net sales",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2021",
+          "",
+          "2022",
+          "",
+          "2023"
+        ],
+        [
+          "North America",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "North America",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "272,562",
+        "",
+        "",
+        "318,727",
+        "",
+        "",
+        "337,951",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "279,833",
+        "315,880",
+        "352,828"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 70,
+      "row_index_zero_based": 7,
+      "score": 29,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "row_cells": [
+        "Net sales",
+        "$",
+        "127,787",
+        "",
+        "",
+        "$",
+        "118,007",
+        "",
+        "",
+        "$",
+        "131,200",
+        ""
+      ],
+      "candidate_row_label": "Net sales",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended December 31,"
+        ],
+        [
+          "",
+          "2021",
+          "",
+          "2022",
+          "",
+          "2023"
+        ],
+        [
+          "North America",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net sales",
+          "$",
+          "279,833",
+          "",
+          "",
+          "$",
+          "315,880",
+          "",
+          "",
+          "$",
+          "352,828",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "International",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "128,711",
+        "",
+        "",
+        "125,753",
+        "",
+        "",
+        "133,856",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "127,787",
+        "118,007",
+        "131,200"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 125,
+      "score": 20,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "text": "We have organized our operations into three segments: North America, International, and Amazon Web Services (“AWS”). These segments reflect the way the Company evaluates its business performance and manages its operations. Information on our net sales is contained in Item 8 of Part II, “Financial Statements and Supplementary Data — Note 10 — Segment Information.”"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 225,
+      "score": 20,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "text": "Demand for our products and services can fluctuate significantly for many reasons, including as a result of seasonality, promotions, product launches, or unforeseeable events, such as in response to global economic conditions such as recessionary fears or rising inflation, natural or human-caused disasters (including public health crises) or extreme weather (including as a result of climate change), or geopolitical events. For example, we expect a disproportionate amount of our retail sales to occur during our fourth quarter. Our failure to stock or restock popular products in sufficient amounts such that we fail to meet customer demand could significantly affect our revenue and our future growth. When we overstock products, we may be required to take significant inventory markdowns or write-offs and incur commitment costs, which could materially reduce profitability. We regularly experience increases in our net shipping cost due to complimentary upgrades, split-shipments, and additional long-zone shipments necessary to ensure timely delivery for the holiday season. If too many custo"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 293,
+      "score": 20,
+      "matched_terms": [
+        "net",
+        "sales"
+      ],
+      "text": "We experience occasional system interruptions and delays that make our websites and services unavailable or slow to respond and prevent us from efficiently accepting or fulfilling orders or providing services to customers and third parties, which may reduce our net sales and the attractiveness of our products and services. Steps we take to add software and hardware, upgrade our systems and network infrastructure, and improve the stability and efficiency of our systems may not be sufficient to avoid system interruptions or delays that could adversely affect our operating results."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": [
+    "Comparative question: check every requested year column",
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
+  ]
+}

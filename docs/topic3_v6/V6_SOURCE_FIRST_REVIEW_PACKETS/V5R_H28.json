@@ -1,0 +1,699 @@
+{
+  "question_id": "V5R_H28",
+  "question": "What was Intel's FY2024 gross margin?",
+  "category": "METRIC_DISAMBIGUATION",
+  "issuer": "INTC",
+  "accession": "0000050863-25-000009",
+  "form": "10-K",
+  "filing_date": "2025-01-31",
+  "report_date": "2024-12-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+  "official_html_sha256": "4ef406ff5174bcb4a4493fa23fecee224b2e5c213ce60ffb85a5b9d15d6289e6",
+  "frozen_corpus_chunk_count": 302,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "gross",
+    "margin"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 46,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin",
+        "",
+        "15,721",
+        "",
+        "",
+        "6,025",
+        "",
+        "",
+        "3,385",
+        "",
+        "",
+        "25,131",
+        ""
+      ],
+      "candidate_row_label": "Gross margin",
+      "candidate_header_rows": [
+        [
+          "",
+          "",
+          "Dec 28, 2024"
+        ],
+        [
+          "(In Millions)",
+          "",
+          "CCG",
+          "",
+          "DCAI",
+          "",
+          "NEX",
+          "",
+          "Total"
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "30,290",
+          "",
+          "",
+          "$",
+          "12,817",
+          "",
+          "",
+          "$",
+          "5,842",
+          "",
+          "",
+          "$",
+          "48,949",
+          ""
+        ],
+        [
+          "Cost of sales",
+          "",
+          "14,569",
+          "",
+          "",
+          "6,792",
+          "",
+          "",
+          "2,457",
+          "",
+          "",
+          "23,818",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Cost of sales",
+        "",
+        "14,569",
+        "",
+        "",
+        "6,792",
+        "",
+        "",
+        "2,457",
+        "",
+        "",
+        "23,818",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "",
+        "4,801",
+        "",
+        "",
+        "4,687",
+        "",
+        "",
+        "2,454",
+        "",
+        "",
+        "11,942",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "15,721",
+        "6,025",
+        "3,385",
+        "25,131"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 46,
+      "row_index_zero_based": 7,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin %",
+        "",
+        "52%",
+        "",
+        "47%",
+        "",
+        "58%",
+        "",
+        "51%"
+      ],
+      "candidate_row_label": "Gross margin %",
+      "candidate_header_rows": [
+        [
+          "",
+          "",
+          "Dec 28, 2024"
+        ],
+        [
+          "(In Millions)",
+          "",
+          "CCG",
+          "",
+          "DCAI",
+          "",
+          "NEX",
+          "",
+          "Total"
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "30,290",
+          "",
+          "",
+          "$",
+          "12,817",
+          "",
+          "",
+          "$",
+          "5,842",
+          "",
+          "",
+          "$",
+          "48,949",
+          ""
+        ],
+        [
+          "Cost of sales",
+          "",
+          "14,569",
+          "",
+          "",
+          "6,792",
+          "",
+          "",
+          "2,457",
+          "",
+          "",
+          "23,818",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "",
+        "$",
+        "10,920",
+        "",
+        "",
+        "$",
+        "1,338",
+        "",
+        "",
+        "$",
+        "931",
+        "",
+        "",
+        "$",
+        "13,189",
+        ""
+      ],
+      "neighbor_after": [
+        "Operating margin %",
+        "",
+        "36%",
+        "",
+        "10%",
+        "",
+        "16%",
+        "",
+        "27%"
+      ],
+      "numeric_tokens_unassigned": [
+        "52%",
+        "47%",
+        "58%",
+        "51%"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 47,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin",
+        "",
+        "14,652",
+        "",
+        "6,215",
+        "",
+        "2,679",
+        "",
+        "23,546"
+      ],
+      "candidate_row_label": "Gross margin",
+      "candidate_header_rows": [
+        [
+          "",
+          "",
+          "Dec 30, 2023"
+        ],
+        [
+          "(In Millions)",
+          "",
+          "CCG",
+          "",
+          "DCAI",
+          "",
+          "NEX",
+          "",
+          "Total"
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "29,258",
+          "",
+          "$",
+          "12,635",
+          "",
+          "$",
+          "5,774",
+          "",
+          "$",
+          "47,667"
+        ],
+        [
+          "Cost of sales",
+          "",
+          "14,606",
+          "",
+          "6,420",
+          "",
+          "3,095",
+          "",
+          "24,121"
+        ]
+      ],
+      "neighbor_before": [
+        "Cost of sales",
+        "",
+        "14,606",
+        "",
+        "6,420",
+        "",
+        "3,095",
+        "",
+        "24,121"
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "",
+        "5,139",
+        "",
+        "4,595",
+        "",
+        "2,475",
+        "",
+        "12,209"
+      ],
+      "numeric_tokens_unassigned": [
+        "14,652",
+        "6,215",
+        "2,679",
+        "23,546"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 47,
+      "row_index_zero_based": 7,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin %",
+        "",
+        "50",
+        "%",
+        "",
+        "49",
+        "%",
+        "",
+        "46",
+        "%",
+        "",
+        "49",
+        "%"
+      ],
+      "candidate_row_label": "Gross margin %",
+      "candidate_header_rows": [
+        [
+          "",
+          "",
+          "Dec 30, 2023"
+        ],
+        [
+          "(In Millions)",
+          "",
+          "CCG",
+          "",
+          "DCAI",
+          "",
+          "NEX",
+          "",
+          "Total"
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "29,258",
+          "",
+          "$",
+          "12,635",
+          "",
+          "$",
+          "5,774",
+          "",
+          "$",
+          "47,667"
+        ],
+        [
+          "Cost of sales",
+          "",
+          "14,606",
+          "",
+          "6,420",
+          "",
+          "3,095",
+          "",
+          "24,121"
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "",
+        "$",
+        "9,513",
+        "",
+        "$",
+        "1,620",
+        "",
+        "$",
+        "204",
+        "",
+        "$",
+        "11,337"
+      ],
+      "neighbor_after": [
+        "Operating margin %",
+        "",
+        "33",
+        "%",
+        "",
+        "13",
+        "%",
+        "",
+        "4",
+        "%",
+        "",
+        "24",
+        "%"
+      ],
+      "numeric_tokens_unassigned": [
+        "50",
+        "49",
+        "46",
+        "49"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 48,
+      "row_index_zero_based": 4,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin",
+        "",
+        "14,947",
+        "",
+        "9,775",
+        "",
+        "4,553",
+        "",
+        "29,275"
+      ],
+      "candidate_row_label": "Gross margin",
+      "candidate_header_rows": [
+        [
+          "",
+          "",
+          "Dec 31, 2022"
+        ],
+        [
+          "(In Millions)",
+          "",
+          "CCG",
+          "",
+          "DCAI",
+          "",
+          "NEX",
+          "",
+          "Total"
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "31,773",
+          "",
+          "$",
+          "16,856",
+          "",
+          "$",
+          "8,409",
+          "",
+          "$",
+          "57,038"
+        ],
+        [
+          "Cost of sales",
+          "",
+          "16,826",
+          "",
+          "7,081",
+          "",
+          "3,856",
+          "",
+          "27,763"
+        ]
+      ],
+      "neighbor_before": [
+        "Cost of sales",
+        "",
+        "16,826",
+        "",
+        "7,081",
+        "",
+        "3,856",
+        "",
+        "27,763"
+      ],
+      "neighbor_after": [
+        "Operating expenses",
+        "",
+        "6,740",
+        "",
+        "5,577",
+        "",
+        "3,021",
+        "",
+        "15,338"
+      ],
+      "numeric_tokens_unassigned": [
+        "14,947",
+        "9,775",
+        "4,553",
+        "29,275"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 48,
+      "row_index_zero_based": 7,
+      "score": 29,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "row_cells": [
+        "Gross margin %",
+        "",
+        "47",
+        "%",
+        "",
+        "58",
+        "%",
+        "",
+        "54",
+        "%",
+        "",
+        "51",
+        "%"
+      ],
+      "candidate_row_label": "Gross margin %",
+      "candidate_header_rows": [
+        [
+          "",
+          "",
+          "Dec 31, 2022"
+        ],
+        [
+          "(In Millions)",
+          "",
+          "CCG",
+          "",
+          "DCAI",
+          "",
+          "NEX",
+          "",
+          "Total"
+        ],
+        [
+          "Revenue",
+          "",
+          "$",
+          "31,773",
+          "",
+          "$",
+          "16,856",
+          "",
+          "$",
+          "8,409",
+          "",
+          "$",
+          "57,038"
+        ],
+        [
+          "Cost of sales",
+          "",
+          "16,826",
+          "",
+          "7,081",
+          "",
+          "3,856",
+          "",
+          "27,763"
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income",
+        "",
+        "$",
+        "8,207",
+        "",
+        "$",
+        "4,198",
+        "",
+        "$",
+        "1,532",
+        "",
+        "$",
+        "13,937"
+      ],
+      "neighbor_after": [
+        "Operating margin %",
+        "",
+        "26",
+        "%",
+        "",
+        "25",
+        "%",
+        "",
+        "18",
+        "%",
+        "",
+        "24",
+        "%"
+      ],
+      "numeric_tokens_unassigned": [
+        "47",
+        "58",
+        "54",
+        "51"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 779,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "text": "We derived a majority of our consolidated gross margin in 2024, and 2023 from our Intel Products business sales through our CCG, DCAI, and NEX operating segments."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 784,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "text": "Our consolidated gross margin in 2024 decreased by $4.4 billion, or 20%, compared to 2023 due primarily to higher 2024 impairment charges and accelerated depreciation. During Q3 2024, we concluded that our manufacturing asset portfolio, primarily for our Intel 7 process node, exceeded manufacturing capacity requirements. Upon completing an asset re-use assessment, we impaired certain construction-in-progress assets and accelerated depreciation for certain in-use manufacturing assets that resulted in $3.3 billion of charges in 2024. Our 2024 gross margin also decreased due to lower revenue, higher unit cost primarily from an increased mix of Intel 4 and Intel 7 products, higher period charges due to $922 million in Gaudi AI accelerator inventory-related charges recognized in 2024, and higher factory start-up costs. These 2024 unfavorable gross margin impacts were partially offset by certain favorable gross margin movements in 2024, including lower period charges driven by the sell-through of previously reserved inventory and lower non-accelerator reserves taken, lower period charges r"
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 786,
+      "score": 20,
+      "matched_terms": [
+        "gross",
+        "margin"
+      ],
+      "text": "We are making capital investments in furtherance of our strategy. As of December 28, 2024, our capital investments classified as construction in progress totaled $50.4 billion ($43.4 billion as of December 30, 2023). These assets have not yet been placed into service and have not yet begun depreciating. As these construction-in-progress assets are placed into service, we expect to incur depreciation expense that impacts future production costs and, ultimately, cost of sales. To the extent we are unable to grow our revenues to offset these production costs, our gross margin and operating income will be unfavorably affected. Additionally, we could incur asset impairments on property, plant, and equipment assets if our strategy is not successful."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": [
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
+  ]
+}

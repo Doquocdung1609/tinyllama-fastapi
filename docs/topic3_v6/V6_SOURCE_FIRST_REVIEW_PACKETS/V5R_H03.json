@@ -1,0 +1,627 @@
+{
+  "question_id": "V5R_H03",
+  "question": "What was Apple's FY2024 operating income?",
+  "category": "EXACT_CELL",
+  "issuer": "AAPL",
+  "accession": "0000320193-24-000123",
+  "form": "10-K",
+  "filing_date": "2024-11-01",
+  "report_date": "2024-09-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+  "official_html_sha256": "af35e3e22f0ef07b1363e03a994dd349af6dc6c3eda0a6792d01e9065f121b09",
+  "frozen_corpus_chunk_count": 125,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "income",
+    "operating"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 22,
+      "row_index_zero_based": 15,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "123,216",
+        "",
+        "",
+        "114,301",
+        "",
+        "",
+        "119,437",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023",
+          "",
+          "September 24, 2022"
+        ],
+        [
+          "Net sales:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Products",
+          "$",
+          "294,866",
+          "",
+          "",
+          "$",
+          "298,085",
+          "",
+          "",
+          "$",
+          "316,199",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Total operating expenses",
+        "57,467",
+        "",
+        "",
+        "54,847",
+        "",
+        "",
+        "51,345",
+        ""
+      ],
+      "neighbor_after": [
+        "Other income/(expense), net",
+        "269",
+        "",
+        "",
+        "( 565 )",
+        "",
+        "",
+        "( 334 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "123,216",
+        "114,301",
+        "119,437"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 50,
+      "row_index_zero_based": 3,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "$",
+        "67,656",
+        "",
+        "",
+        "$",
+        "60,508",
+        "",
+        "",
+        "$",
+        "62,683",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Americas:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net sales",
+          "$",
+          "167,045",
+          "",
+          "",
+          "$",
+          "162,560",
+          "",
+          "",
+          "$",
+          "169,658",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net sales",
+        "$",
+        "167,045",
+        "",
+        "",
+        "$",
+        "162,560",
+        "",
+        "",
+        "$",
+        "169,658",
+        ""
+      ],
+      "neighbor_after": [
+        "Europe:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "67,656",
+        "60,508",
+        "62,683"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 50,
+      "row_index_zero_based": 6,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "$",
+        "41,790",
+        "",
+        "",
+        "$",
+        "36,098",
+        "",
+        "",
+        "$",
+        "35,233",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Americas:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net sales",
+          "$",
+          "167,045",
+          "",
+          "",
+          "$",
+          "162,560",
+          "",
+          "",
+          "$",
+          "169,658",
+          ""
+        ],
+        [
+          "Operating income",
+          "$",
+          "67,656",
+          "",
+          "",
+          "$",
+          "60,508",
+          "",
+          "",
+          "$",
+          "62,683",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net sales",
+        "$",
+        "101,328",
+        "",
+        "",
+        "$",
+        "94,294",
+        "",
+        "",
+        "$",
+        "95,118",
+        ""
+      ],
+      "neighbor_after": [
+        "Greater China:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "41,790",
+        "36,098",
+        "35,233"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 50,
+      "row_index_zero_based": 9,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "$",
+        "27,082",
+        "",
+        "",
+        "$",
+        "30,328",
+        "",
+        "",
+        "$",
+        "31,153",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Americas:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net sales",
+          "$",
+          "167,045",
+          "",
+          "",
+          "$",
+          "162,560",
+          "",
+          "",
+          "$",
+          "169,658",
+          ""
+        ],
+        [
+          "Operating income",
+          "$",
+          "67,656",
+          "",
+          "",
+          "$",
+          "60,508",
+          "",
+          "",
+          "$",
+          "62,683",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net sales",
+        "$",
+        "66,952",
+        "",
+        "",
+        "$",
+        "72,559",
+        "",
+        "",
+        "$",
+        "74,200",
+        ""
+      ],
+      "neighbor_after": [
+        "Japan:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "27,082",
+        "30,328",
+        "31,153"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 50,
+      "row_index_zero_based": 12,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "$",
+        "12,454",
+        "",
+        "",
+        "$",
+        "11,888",
+        "",
+        "",
+        "$",
+        "12,257",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Americas:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net sales",
+          "$",
+          "167,045",
+          "",
+          "",
+          "$",
+          "162,560",
+          "",
+          "",
+          "$",
+          "169,658",
+          ""
+        ],
+        [
+          "Operating income",
+          "$",
+          "67,656",
+          "",
+          "",
+          "$",
+          "60,508",
+          "",
+          "",
+          "$",
+          "62,683",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net sales",
+        "$",
+        "25,052",
+        "",
+        "",
+        "$",
+        "24,257",
+        "",
+        "",
+        "$",
+        "25,977",
+        ""
+      ],
+      "neighbor_after": [
+        "Rest of Asia Pacific:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "12,454",
+        "11,888",
+        "12,257"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 50,
+      "row_index_zero_based": 15,
+      "score": 29,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "row_cells": [
+        "Operating income",
+        "$",
+        "13,062",
+        "",
+        "",
+        "$",
+        "12,066",
+        "",
+        "",
+        "$",
+        "11,569",
+        ""
+      ],
+      "candidate_row_label": "Operating income",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Americas:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net sales",
+          "$",
+          "167,045",
+          "",
+          "",
+          "$",
+          "162,560",
+          "",
+          "",
+          "$",
+          "169,658",
+          ""
+        ],
+        [
+          "Operating income",
+          "$",
+          "67,656",
+          "",
+          "",
+          "$",
+          "60,508",
+          "",
+          "",
+          "$",
+          "62,683",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net sales",
+        "$",
+        "30,658",
+        "",
+        "",
+        "$",
+        "29,615",
+        "",
+        "",
+        "$",
+        "29,375",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "13,062",
+        "12,066",
+        "11,569"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 649,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "The Company is subject to income taxes in the U.S. and numerous foreign jurisdictions. The evaluation of the Company’s uncertain tax positions involves significant judgment in the interpretation and application of GAAP and complex domestic and international tax laws, including the TCJA and the allocation of international taxation rights between countries. Although management believes the Company’s reserves are reasonable, no assurance can be given that the final outcome of these uncertainties will not be different from that reflected in the Company’s reserves. Reserves are adjusted considering changing facts and circumstances, such as the closing of a tax examination. Resolution of these uncertainties in a manner inconsistent with management’s expectations could have a material impact on the Company’s financial condition and operating results."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1034,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "The Company evaluates the performance of its reportable segments based on net sales and operating income. Net sales for geographic segments are generally based on the location of customers and sales through the Company’s retail stores located in those geographic locations. Operating income for each segment consists of net sales to third parties, related cost of sales, and operating expenses directly attributable to the segment. The information provided to the Company’s chief operating decision maker for purposes of making decisions and assessing segment performance excludes asset information."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 1042,
+      "score": 20,
+      "matched_terms": [
+        "income",
+        "operating"
+      ],
+      "text": "A reconciliation of the Company’s segment operating income to the Consolidated Statements of Operations for 2024, 2023 and 2022 is as follows (in millions):"
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

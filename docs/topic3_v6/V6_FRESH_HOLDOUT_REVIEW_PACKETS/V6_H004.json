@@ -1,0 +1,586 @@
+{
+  "question_id": "V6_H004",
+  "question": "What research and development expense did Apple report for FY2024?",
+  "category": "FRESH_HOLDOUT_PENDING_REVIEW",
+  "issuer": "AAPL",
+  "accession": "0000320193-24-000123",
+  "form": "10-K",
+  "filing_date": "2024-11-01",
+  "report_date": "2024-09-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+  "official_html_sha256": "af35e3e22f0ef07b1363e03a994dd349af6dc6c3eda0a6792d01e9065f121b09",
+  "frozen_corpus_chunk_count": 125,
+  "frozen_corpus_period_labels": [
+    "FY2024"
+  ],
+  "query_terms_for_packet_search": [
+    "development",
+    "expense",
+    "research"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 51,
+      "row_index_zero_based": 2,
+      "score": 39,
+      "matched_terms": [
+        "development",
+        "expense",
+        "research"
+      ],
+      "row_cells": [
+        "Research and development expense",
+        "( 31,370 )",
+        "",
+        "",
+        "( 29,915 )",
+        "",
+        "",
+        "( 26,251 )",
+        ""
+      ],
+      "candidate_row_label": "Research and development expense",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Segment operating income",
+          "$",
+          "162,044",
+          "",
+          "",
+          "$",
+          "150,888",
+          "",
+          "",
+          "$",
+          "152,895",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Segment operating income",
+        "$",
+        "162,044",
+        "",
+        "",
+        "$",
+        "150,888",
+        "",
+        "",
+        "$",
+        "152,895",
+        ""
+      ],
+      "neighbor_after": [
+        "Other corporate expenses, net (1)",
+        "( 7,458 )",
+        "",
+        "",
+        "( 6,672 )",
+        "",
+        "",
+        "( 7,207 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "31,370",
+        "29,915",
+        "26,251"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 18,
+      "row_index_zero_based": 1,
+      "score": 23,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Research and development",
+        "$",
+        "31,370",
+        "",
+        "",
+        "5",
+        "%",
+        "",
+        "$",
+        "29,915",
+        "",
+        "",
+        "14",
+        "%",
+        "",
+        "$",
+        "26,251",
+        ""
+      ],
+      "candidate_row_label": "Research and development",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "Change",
+          "",
+          "2023",
+          "",
+          "Change",
+          "",
+          "2022"
+        ]
+      ],
+      "neighbor_before": [
+        "",
+        "2024",
+        "",
+        "Change",
+        "",
+        "2023",
+        "",
+        "Change",
+        "",
+        "2022"
+      ],
+      "neighbor_after": [
+        "Percentage of total net sales",
+        "8",
+        "%",
+        "",
+        "",
+        "",
+        "8",
+        "%",
+        "",
+        "",
+        "",
+        "7",
+        "%"
+      ],
+      "numeric_tokens_unassigned": [
+        "31,370",
+        "5",
+        "29,915",
+        "14",
+        "26,251"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 22,
+      "row_index_zero_based": 12,
+      "score": 23,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Research and development",
+        "31,370",
+        "",
+        "",
+        "29,915",
+        "",
+        "",
+        "26,251",
+        ""
+      ],
+      "candidate_row_label": "Research and development",
+      "candidate_header_rows": [
+        [
+          "",
+          "Years ended"
+        ],
+        [
+          "",
+          "September 28, 2024",
+          "",
+          "September 30, 2023",
+          "",
+          "September 24, 2022"
+        ],
+        [
+          "Net sales:",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Products",
+          "$",
+          "294,866",
+          "",
+          "",
+          "$",
+          "298,085",
+          "",
+          "",
+          "$",
+          "316,199",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating expenses:",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Selling, general and administrative",
+        "26,097",
+        "",
+        "",
+        "24,932",
+        "",
+        "",
+        "25,094",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "31,370",
+        "29,915",
+        "26,251"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 38,
+      "row_index_zero_based": 5,
+      "score": 23,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Research and development credit, net",
+        "( 1,397 )",
+        "",
+        "",
+        "( 1,212 )",
+        "",
+        "",
+        "( 1,153 )",
+        ""
+      ],
+      "candidate_row_label": "Research and development credit, net",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023",
+          "",
+          "2022"
+        ],
+        [
+          "Computed expected tax",
+          "$",
+          "25,932",
+          "",
+          "",
+          "$",
+          "23,885",
+          "",
+          "",
+          "$",
+          "25,012",
+          ""
+        ],
+        [
+          "State taxes, net of federal effect",
+          "1,162",
+          "",
+          "",
+          "1,124",
+          "",
+          "",
+          "1,518",
+          ""
+        ],
+        [
+          "Impact of the State Aid Decision",
+          "10,246",
+          "",
+          "",
+          "—",
+          "",
+          "",
+          "—",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Earnings of foreign subsidiaries",
+        "( 5,311 )",
+        "",
+        "",
+        "( 5,744 )",
+        "",
+        "",
+        "( 4,366 )",
+        ""
+      ],
+      "neighbor_after": [
+        "Excess tax benefits from equity awards",
+        "( 893 )",
+        "",
+        "",
+        "( 1,120 )",
+        "",
+        "",
+        "( 1,871 )",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "1,397",
+        "1,212",
+        "1,153"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 39,
+      "row_index_zero_based": 2,
+      "score": 22,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "row_cells": [
+        "Capitalized research and development",
+        "$",
+        "10,739",
+        "",
+        "",
+        "$",
+        "6,294",
+        ""
+      ],
+      "candidate_row_label": "Capitalized research and development",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "2023"
+        ],
+        [
+          "Deferred tax assets:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Deferred tax assets:",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Tax credit carryforwards",
+        "8,856",
+        "",
+        "",
+        "8,302",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "10,739",
+        "6,294"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 18,
+      "row_index_zero_based": 5,
+      "score": 13,
+      "matched_terms": [
+        "expense"
+      ],
+      "row_cells": [
+        "Total operating expenses",
+        "$",
+        "57,467",
+        "",
+        "",
+        "5",
+        "%",
+        "",
+        "$",
+        "54,847",
+        "",
+        "",
+        "7",
+        "%",
+        "",
+        "$",
+        "51,345",
+        ""
+      ],
+      "candidate_row_label": "Total operating expenses",
+      "candidate_header_rows": [
+        [
+          "",
+          "2024",
+          "",
+          "Change",
+          "",
+          "2023",
+          "",
+          "Change",
+          "",
+          "2022"
+        ],
+        [
+          "Research and development",
+          "$",
+          "31,370",
+          "",
+          "",
+          "5",
+          "%",
+          "",
+          "$",
+          "29,915",
+          "",
+          "",
+          "14",
+          "%",
+          "",
+          "$",
+          "26,251",
+          ""
+        ],
+        [
+          "Percentage of total net sales",
+          "8",
+          "%",
+          "",
+          "",
+          "",
+          "8",
+          "%",
+          "",
+          "",
+          "",
+          "7",
+          "%"
+        ],
+        [
+          "Selling, general and administrative",
+          "$",
+          "26,097",
+          "",
+          "",
+          "5",
+          "%",
+          "",
+          "$",
+          "24,932",
+          "",
+          "",
+          "(1)",
+          "%",
+          "",
+          "$",
+          "25,094",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Percentage of total net sales",
+        "7",
+        "%",
+        "",
+        "",
+        "",
+        "7",
+        "%",
+        "",
+        "",
+        "",
+        "6",
+        "%"
+      ],
+      "neighbor_after": [
+        "Percentage of total net sales",
+        "15",
+        "%",
+        "",
+        "",
+        "",
+        "14",
+        "%",
+        "",
+        "",
+        "",
+        "13",
+        "%"
+      ],
+      "numeric_tokens_unassigned": [
+        "57,467",
+        "5",
+        "54,847",
+        "7",
+        "51,345"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 210,
+      "score": 20,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "text": "Because the industries in which the Company competes are characterized by rapid technological advances, the Company’s ability to compete successfully depends heavily upon its ability to ensure a continual and timely flow of competitive products, services and technologies to the marketplace. The Company continues to develop new technologies to enhance existing products and services, and to expand the range of its offerings through research and development (“R&D”), licensing of intellectual property and acquisition of third-party businesses and technology."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 214,
+      "score": 20,
+      "matched_terms": [
+        "development",
+        "research"
+      ],
+      "text": "The Company regularly files patent, design, copyright and trademark applications to protect innovations arising from its research, development, design and marketing, and is currently pursuing thousands of applications around the world. Over time, the Company has accumulated a large portfolio of issued and registered intellectual property rights around the world. No single intellectual property right is solely responsible for protecting the Company’s products and services. The Company believes the duration of its intellectual property rights is adequate relative to the expected lives of its products and services."
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}

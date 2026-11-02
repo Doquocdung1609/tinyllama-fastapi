@@ -1,0 +1,707 @@
+{
+  "question_id": "V5R_H10",
+  "question": "What cash and cash equivalents did Microsoft report at FY2025 year end?",
+  "category": "BALANCE_SHEET",
+  "issuer": "MSFT",
+  "accession": "0000950170-25-100235",
+  "form": "10-K",
+  "filing_date": "2025-07-30",
+  "report_date": "2025-06-30",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+  "official_html_sha256": "15d2ebb941500e84aeadd2654143ac3d0fbb10a65d8387391727ec4ae36fcd42",
+  "frozen_corpus_chunk_count": 223,
+  "frozen_corpus_period_labels": [
+    "FY2025"
+  ],
+  "query_terms_for_packet_search": [
+    "cash",
+    "equivalent"
+  ],
+  "source_first_table_candidates": [
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 37,
+      "score": 29,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Effect of foreign exchange rates on cash and cash equivalents",
+        "",
+        "",
+        "63",
+        "",
+        "",
+        "",
+        "( 210",
+        ")",
+        "",
+        "",
+        "( 194",
+        ")"
+      ],
+      "candidate_row_label": "Effect of foreign exchange rates on cash and cash equivalents",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "",
+          "$",
+          "101,832",
+          "",
+          "",
+          "$",
+          "88,136",
+          "",
+          "",
+          "$",
+          "72,361",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net cash used in investing",
+        "",
+        "",
+        "( 72,599",
+        ")",
+        "",
+        "",
+        "( 96,970",
+        ")",
+        "",
+        "",
+        "( 22,680",
+        ")"
+      ],
+      "neighbor_after": [
+        "Net change in cash and cash equivalents",
+        "",
+        "",
+        "11,927",
+        "",
+        "",
+        "",
+        "( 16,389",
+        ")",
+        "",
+        "",
+        "20,773",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "63",
+        "210",
+        "194"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 38,
+      "score": 29,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Net change in cash and cash equivalents",
+        "",
+        "",
+        "11,927",
+        "",
+        "",
+        "",
+        "( 16,389",
+        ")",
+        "",
+        "",
+        "20,773",
+        ""
+      ],
+      "candidate_row_label": "Net change in cash and cash equivalents",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "",
+          "$",
+          "101,832",
+          "",
+          "",
+          "$",
+          "88,136",
+          "",
+          "",
+          "$",
+          "72,361",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Effect of foreign exchange rates on cash and cash equivalents",
+        "",
+        "",
+        "63",
+        "",
+        "",
+        "",
+        "( 210",
+        ")",
+        "",
+        "",
+        "( 194",
+        ")"
+      ],
+      "neighbor_after": [
+        "Cash and cash equivalents, beginning of period",
+        "",
+        "",
+        "18,315",
+        "",
+        "",
+        "",
+        "34,704",
+        "",
+        "",
+        "",
+        "13,931",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "11,927",
+        "16,389",
+        "20,773"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 39,
+      "score": 29,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Cash and cash equivalents, beginning of period",
+        "",
+        "",
+        "18,315",
+        "",
+        "",
+        "",
+        "34,704",
+        "",
+        "",
+        "",
+        "13,931",
+        ""
+      ],
+      "candidate_row_label": "Cash and cash equivalents, beginning of period",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "",
+          "$",
+          "101,832",
+          "",
+          "",
+          "$",
+          "88,136",
+          "",
+          "",
+          "$",
+          "72,361",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Net change in cash and cash equivalents",
+        "",
+        "",
+        "11,927",
+        "",
+        "",
+        "",
+        "( 16,389",
+        ")",
+        "",
+        "",
+        "20,773",
+        ""
+      ],
+      "neighbor_after": [
+        "Cash and cash equivalents, end of period",
+        "",
+        "$",
+        "30,242",
+        "",
+        "",
+        "$",
+        "18,315",
+        "",
+        "",
+        "$",
+        "34,704",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "18,315",
+        "34,704",
+        "13,931"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 26,
+      "row_index_zero_based": 40,
+      "score": 29,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Cash and cash equivalents, end of period",
+        "",
+        "$",
+        "30,242",
+        "",
+        "",
+        "$",
+        "18,315",
+        "",
+        "",
+        "$",
+        "34,704",
+        ""
+      ],
+      "candidate_row_label": "Cash and cash equivalents, end of period",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Year Ended June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          "",
+          "",
+          "2023",
+          ""
+        ],
+        [
+          "Operations",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Net income",
+          "",
+          "$",
+          "101,832",
+          "",
+          "",
+          "$",
+          "88,136",
+          "",
+          "",
+          "$",
+          "72,361",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Cash and cash equivalents, beginning of period",
+        "",
+        "",
+        "18,315",
+        "",
+        "",
+        "",
+        "34,704",
+        "",
+        "",
+        "",
+        "13,931",
+        ""
+      ],
+      "neighbor_after": null,
+      "numeric_tokens_unassigned": [
+        "30,242",
+        "18,315",
+        "34,704"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 4,
+      "score": 28,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Cash and cash equivalents",
+        "",
+        "$",
+        "30,242",
+        "",
+        "",
+        "$",
+        "18,315",
+        ""
+      ],
+      "candidate_row_label": "Cash and cash equivalents",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          ""
+        ],
+        [
+          "Assets",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Current assets:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Short-term investments",
+        "",
+        "",
+        "64,323",
+        "",
+        "",
+        "",
+        "57,228",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "30,242",
+        "18,315"
+      ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 25,
+      "row_index_zero_based": 6,
+      "score": 28,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "row_cells": [
+        "Total cash, cash equivalents, and short-term investments",
+        "",
+        "",
+        "94,565",
+        "",
+        "",
+        "",
+        "75,543",
+        ""
+      ],
+      "candidate_row_label": "Total cash, cash equivalents, and short-term investments",
+      "candidate_header_rows": [
+        [
+          "(In millions)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "June 30,",
+          "",
+          "2025",
+          "",
+          "",
+          "2024",
+          ""
+        ],
+        [
+          "Assets",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Current assets:",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Short-term investments",
+        "",
+        "",
+        "64,323",
+        "",
+        "",
+        "",
+        "57,228",
+        ""
+      ],
+      "neighbor_after": [
+        "Accounts receivable, net of allowance for doubtful accounts of $ 944 and $ 830",
+        "",
+        "",
+        "69,905",
+        "",
+        "",
+        "",
+        "56,924",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "94,565",
+        "75,543"
+      ]
+    }
+  ],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2813,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "text": "We expect existing cash, cash equivalents, short-term investments, cash flows from operations, and access to capital markets to continue to be sufficient to fund our operating activities and cash commitments for investing and financing activities, such as dividends, share repurchases, debt maturities, material capital expenditures, and the transition tax related to the Tax Cuts and Jobs Act (“TCJA”), for at least the next 12 months and thereafter for the foreseeable future."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 2815,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "text": "Cash, cash equivalents, and short-term investments totaled $94.6 billion and $75.5 billion as of June 30, 2025 and 2024, respectively. Equity and other investments were $15.4 billion and $14.6 billion as of June 30, 2025 and 2024, respectively. Our short-term investments are primarily intended to facilitate liquidity and capital preservation. They consist predominantly of highly liquid investment-grade fixed-income securities, diversified among industries and individual issuers. The investments are predominantly U.S. dollar-denominated securities, but also include foreign currency-denominated securities to diversify risk. Our fixed-income investments are exposed to interest rate risk and credit risk. The credit risk and average maturity of our fixed-income portfolio are managed to achieve economic returns that correlate to certain fixed-income indices. The settlement risk related to these investments is insignificant given that the short-term investments held are primarily highly liquid investment-grade fixed-income securities."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 4070,
+      "score": 20,
+      "matched_terms": [
+        "cash",
+        "equivalent"
+      ],
+      "text": "Total cash, cash equivalents, and short-term investments"
+    }
+  ],
+  "machine_prepared_only": true,
+  "label": "UNJUDGED",
+  "review_fields": {
+    "metric_definition": null,
+    "statement_scope": null,
+    "selected_source_locator": null,
+    "row_label": null,
+    "column_header": null,
+    "period_year": null,
+    "value": null,
+    "unit": null,
+    "scale": null,
+    "source_span": null,
+    "answerable_in_frozen_corpus": null,
+    "reviewer": null,
+    "review_decision": null,
+    "ambiguity_notes": null
+  },
+  "warnings": []
+}
