@@ -1,0 +1,57 @@
+{
+  "status": "G2_FROZEN_DESIGN_PENDING_INDEPENDENT_SOURCE_REVIEW",
+  "source_zip_sha256": {
+    "AGENT1_SEC_47_FILINGS_AUDIT_PARTIAL.zip": "e5de4f1e642a8d9e596a9d1ebf63ea0ca0d9479ab720962f6ba6e6c221d02329",
+    "AGENT2_SEC_47_FILINGS_INDEPENDENT_CHECKPOINT.zip": "9a9c6a324eddcca09b6c8ee19c74a1eab674c5598d6d4595f2b0b16b58ba25bc",
+    "FAITH_R_F10_COMPLETE_HISTORY_AND_COMMANDER_HANDOFF.zip": "9981d68e38d103608a1fec0ee995d8dcf598fb0b737a7ad88a3163c89bdb9591"
+  },
+  "agent1_original_csv_sha256": "65681f0bd3e07eeab9d7a1c505fadf35eb4c62ea3cc0ac0805277412a2f3129a",
+  "v6_sealed_csv_sha256_unchanged": "01e841d14692477512f1029f2638f353765a9a59f44379dc09783e78bcdcab79",
+  "source_filings": 47,
+  "issuers": 10,
+  "form_counts": {
+    "10-K": 24,
+    "10-Q": 18,
+    "20-F": 3,
+    "6-K": 2
+  },
+  "question_ids": 94,
+  "category_counts": {
+    "FINANCIAL_NUMERIC": 49,
+    "FINANCIAL_COMPARATIVE": 26,
+    "ANSWERABILITY_CHECK": 4,
+    "FINANCIAL_DISCLOSURE": 11,
+    "DISCLOSURE_OR_ANSWERABILITY": 4
+  },
+  "reference_counts": {
+    "P5": 25,
+    "P7L15": 15,
+    "F10_60": 60,
+    "F10_192": 192,
+    "V6_PILOT30": 30,
+    "V6_SEALED30": 30
+  },
+  "shared_blind_input_sha256": {
+    "QUESTION_ONLY.csv": "a92cdfb6a00744c3ea8bdae93b337d60919be52e65019b4f541b40235f4aa4ef",
+    "SOURCE_FILINGS.csv": "fbbd196cba53a1c3b7f70bb919ee850976cf44b478f27b90046a1a8504bba1da",
+    "SOURCE_LOOKUP.md": "ee2241eb97fd6625f56bf38dc3cef0f15310d6321bf6cf8f5c03569707893884",
+    "REVIEW_RUBRIC.md": "eea4d12d1e51b899bd04fd1b16ced715af5206726b8f24aa599fc62ae49de73b",
+    "READ_FIRST.md": "4797c0584af796d0b2e7389671353876832806e5623f64949a0ad3b7a94d7dff"
+  },
+  "limitations": [
+    "No independent 94-question source-cell judgments",
+    "Agent 1 original HTML hash absent for most candidates",
+    "Potential source-cell overlap does not establish answer equivalence",
+    "P5 has no accession metadata in query log; document-unseen cannot be established for P5"
+  ],
+  "output_sha256": {
+    "V7A_AGENT1_BLIND_REVIEW_PACKAGE.zip": "102c5aa035e8060fdc3114f05862f2948f090509da62b46e40cfc81443a6436e",
+    "V7A_AGENT2_BLIND_REVIEW_PACKAGE.zip": "0569c6cd6d3b058156e839b64a6fec55f5c3ec9ab524e48fa66268b574b00767",
+    "V7A_G2_ACCEPTANCE.md": "096087838e29b6ef0e7bc1dea806f07bac544be2041853fb67a477000af6dfdd",
+    "V7A_QUESTION_DESIGN_CHANGELOG.md": "cf79f61ecc9d2bc6f78da1df6c7055c8e4fa2f42bf57f1db12279cc7e2c6bd15",
+    "V7A_QUESTION_OVERLAP_AUDIT.csv": "380cb998f550d0f6e2f75bb9c22e8a88e0b5906b14aa916e6cec0d1d4481b042",
+    "V7A_SEC47_PRIVATE_SOURCE_MANIFEST.csv": "46c0d0a0fed423ba373afab075b1952a6a0d3da85041c0f5b0f626585bbebaa6",
+    "V7A_SEC47_QUESTION_DESIGN_V1.csv": "2b909d3cde9ba3e15efffc286430c7be4d065fa6c736f945b1cc9ae7622f2ae1",
+    "V7A_SEC47_QUESTION_ONLY.csv": "a92cdfb6a00744c3ea8bdae93b337d60919be52e65019b4f541b40235f4aa4ef"
+  }
+}

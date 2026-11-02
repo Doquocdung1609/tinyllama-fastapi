@@ -1,0 +1,95 @@
+question_id,question,category
+V7A_G2_01_01,"What net sales did Apple report for the fiscal year ended 2023-09-30 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_01_02,"What current and comparative amounts did Apple report for cash and cash equivalents in its 10-K covering 2023-09-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_02_01,"What selling, general and administrative expense did Apple report for the fiscal year ended 2024-09-28 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_02_02,"What total cost of sales did Apple report for the fiscal year ended 2024-09-28 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_03_01,"What total assets did Apple report for the as of 2025-03-29 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_03_02,"What current and comparative amounts did Apple report for total liabilities in its 10-Q covering 2025-03-29, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_04_01,"What selling, general and administrative did Apple report for the three months ended 2025-06-28 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_04_02,"What current and comparative amounts did Apple report for total operating expenses in its 10-Q covering 2025-06-28, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_05_01,"What cost of revenue did Apple report for the fiscal year ended 2025-09-27 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_05_02,"What current and comparative amounts did Apple report for inventories in its 10-K covering 2025-09-27, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_06_01,"What accounts payable did AMD report for the as of 2022-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_06_02,"What current and comparative amounts did AMD report for gross profit in its 10-K covering 2022-12-31, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_07_01,"What cash and cash equivalents did AMD report for the as of 2023-12-30 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_07_02,"What current and comparative amounts did AMD report for accounts payable in its 10-K covering 2023-12-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_08_01,"What net income did AMD report for the fiscal year ended 2024-12-28 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_08_02,"What current and comparative amounts did AMD report for cash and cash equivalents in its 10-K covering 2024-12-28, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_09_01,"What data center segment net revenue did AMD report for the three months ended 2025-06-28 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_09_02,"What client segment net revenue did AMD report for the three months ended 2025-06-28 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_10_01,"What data center segment net revenue did AMD report for the three months ended 2025-09-27 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_10_02,"What embedded segment net revenue did AMD report for the three months ended 2025-09-27 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_11_01,"What inventories did Amazon report for the as of 2022-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_11_02,"What current and comparative amounts did Amazon report for total operating expenses in its 10-K covering 2022-12-31, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_12_01,"Does Amazon report consolidated gross profit as a standalone line item for fiscal 2023 in its 10-K? If so, what amount and unit does it report?",ANSWERABILITY_CHECK
+V7A_G2_12_02,"What current and comparative amounts did Amazon report for operating income in its 10-K covering 2023-12-31, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_13_01,"What aws net sales did Amazon report for the fiscal year ended 2024-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_13_02,"What international net sales did Amazon report for the fiscal year ended 2024-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_14_01,"What net income did Amazon report for the three months ended 2025-06-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_14_02,"What current and comparative amounts did Amazon report for operating expenses in its 10-Q covering 2025-06-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_15_01,"What property and equipment, net did Amazon report for the as of 2025-09-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_15_02,"What current and comparative amounts did Amazon report for net income in its 10-Q covering 2025-09-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_16_01,"What research and development did Alphabet report for the fiscal year ended 2023-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_16_02,"What current and comparative amounts did Alphabet report for total assets in its 10-K covering 2023-12-31, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_17_01,"What research and development expenses did Alphabet report for the fiscal year ended 2024-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_17_02,"What current and comparative amounts did Alphabet report for research and development expenses in its 10-K covering 2024-12-31, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_18_01,"What operating income did Alphabet report for the three months ended 2025-06-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_18_02,"What current and comparative amounts did Alphabet report for cost of revenue in its 10-Q covering 2025-06-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_19_01,"What cash and cash equivalents did Alphabet report for the as of 2025-09-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_19_02,"What current and comparative amounts did Alphabet report for accounts payable in its 10-Q covering 2025-09-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_20_01,"What operating expenses did Intel report for the fiscal year ended 2022-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_20_02,"What current and comparative amounts did Intel report for cash and cash equivalents in its 10-K covering 2022-12-31, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_21_01,"What gross margin did Intel report for the fiscal year ended 2023-12-30 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_21_02,"What current and comparative amounts did Intel report for net income in its 10-K covering 2023-12-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_22_01,"What net revenue did Intel report for China for the fiscal year ended 2024-12-28 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_22_02,What share of net revenue did Intel attribute to Customer B for the fiscal year ended 2024-12-28 in its 10-K?,FINANCIAL_NUMERIC
+V7A_G2_23_01,"What research and development did Intel report for the three months ended 2025-06-28 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_23_02,"What current and comparative amounts did Intel report for total assets in its 10-Q covering 2025-06-28, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_24_01,"What cost of revenue did Intel report for the three months ended 2025-09-27 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_24_02,"What current and comparative amounts did Intel report for inventories in its 10-Q covering 2025-09-27, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_25_01,"What total assets did Meta report for the as of 2024-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_25_02,"What net cash provided by operating activities did Meta report for the as of 2024-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_26_01,"What revenue did Meta report for the three months ended 2025-06-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_26_02,"What current and comparative amounts did Meta report for cash and cash equivalents in its 10-Q covering 2025-06-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_27_01,"What net income did Meta report for the three months ended 2025-09-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_27_02,"What current and comparative amounts did Meta report for revenue in its 10-Q covering 2025-09-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_28_01,How does Microsoft describe its revenue recognition policy in its 10-K covering 2023-06-30?,FINANCIAL_DISCLOSURE
+V7A_G2_28_02,"What research and development did Microsoft report for the fiscal year ended 2023-06-30 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_29_01,How does Microsoft describe its revenue recognition policy in its 10-K covering 2024-06-30?,FINANCIAL_DISCLOSURE
+V7A_G2_29_02,"What research and development did Microsoft report for the fiscal year ended 2024-06-30 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_30_01,How does Microsoft describe its revenue recognition policy in its 10-Q covering 2025-03-31?,FINANCIAL_DISCLOSURE
+V7A_G2_30_02,"What research and development did Microsoft report for the three months ended 2025-03-31 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_31_01,How does Microsoft describe its revenue recognition policy in its 10-K covering 2025-06-30?,FINANCIAL_DISCLOSURE
+V7A_G2_31_02,"What research and development did Microsoft report for the fiscal year ended 2025-06-30 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_32_01,How does Microsoft describe its revenue recognition policy in its 10-Q covering 2025-09-30?,FINANCIAL_DISCLOSURE
+V7A_G2_32_02,"What research and development did Microsoft report for the three months ended 2025-09-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_33_01,How does NVIDIA describe its revenue recognition policy in its 10-K covering 2023-01-29?,FINANCIAL_DISCLOSURE
+V7A_G2_33_02,What does NVIDIA say about its research and development investment in the Business section of its 10-K covering 2023-01-29?,FINANCIAL_DISCLOSURE
+V7A_G2_34_01,"What data center revenue did NVIDIA report for the fiscal year ended 2024-01-28 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_34_02,"What gaming revenue did NVIDIA report for the fiscal year ended 2024-01-28 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_35_01,How does NVIDIA describe its revenue recognition policy in its 10-K covering 2025-01-26?,FINANCIAL_DISCLOSURE
+V7A_G2_35_02,"What research and development did NVIDIA report for the fiscal year ended 2025-01-26 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_36_01,"What selling, general and administrative did NVIDIA report for the three months ended 2025-07-27 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_36_02,"What current and comparative amounts did NVIDIA report for total operating expenses in its 10-Q covering 2025-07-27, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_37_01,"What operating income did NVIDIA report for the three months ended 2025-10-26 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_37_02,"What current and comparative amounts did NVIDIA report for cost of revenue in its 10-Q covering 2025-10-26, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_38_01,"What revenue recognition did Tesla report for the fiscal year ended 2022-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_38_02,"What research and development did Tesla report for the fiscal year ended 2022-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_39_01,"What energy generation and storage sales revenue did Tesla report for the fiscal year ended 2023-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_39_02,"What automotive regulatory credits revenue did Tesla report for the fiscal year ended 2023-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_40_01,"What net income did Tesla report for the fiscal year ended 2024-12-31 in its 10-K, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_40_02,"What current and comparative amounts did Tesla report for revenue in its 10-K covering 2024-12-31, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_41_01,"What total assets did Tesla report for the as of 2025-06-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_41_02,"What current and comparative amounts did Tesla report for total liabilities in its 10-Q covering 2025-06-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_42_01,"What selling, general and administrative did Tesla report for the three months ended 2025-09-30 in its 10-Q, including the reporting unit?",FINANCIAL_NUMERIC
+V7A_G2_42_02,"What current and comparative amounts did Tesla report for total operating expenses in its 10-Q covering 2025-09-30, and which period does each amount represent?",FINANCIAL_COMPARATIVE
+V7A_G2_43_01,How does TSMC describe its revenue recognition policy in its 20-F covering 2022-12-31?,FINANCIAL_DISCLOSURE
+V7A_G2_43_02,"Does TSMC disclose research and development expense for the fiscal year ended 2022-12-31 in its 20-F? If so, what amount and unit does it report?",ANSWERABILITY_CHECK
+V7A_G2_44_01,How does TSMC describe its revenue recognition policy in its 20-F covering 2023-12-31?,FINANCIAL_DISCLOSURE
+V7A_G2_44_02,"Does TSMC disclose research and development expense for the fiscal year ended 2023-12-31 in its 20-F? If so, what amount and unit does it report?",ANSWERABILITY_CHECK
+V7A_G2_45_01,How does TSMC describe its revenue recognition policy in its 20-F covering 2024-12-31?,FINANCIAL_DISCLOSURE
+V7A_G2_45_02,"Does TSMC disclose research and development expense for the fiscal year ended 2024-12-31 in its 20-F? If so, what amount and unit does it report?",ANSWERABILITY_CHECK
+V7A_G2_46_01,"What categories of corporate changes does TSMC disclose in its December 23, 2025 Form 6-K, and are financial statement amounts included?",DISCLOSURE_OR_ANSWERABILITY
+V7A_G2_46_02,"Which reporting month do the corporate changes in TSMC's December 23, 2025 Form 6-K cover?",DISCLOSURE_OR_ANSWERABILITY
+V7A_G2_47_01,"What corporate action involving TSMC Arizona does TSMC disclose in its December 19, 2025 Form 6-K?",DISCLOSURE_OR_ANSWERABILITY
+V7A_G2_47_02,"Does TSMC's December 19, 2025 Form 6-K provide financial statement values, and what is the scope of its disclosure?",DISCLOSURE_OR_ANSWERABILITY
