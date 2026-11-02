@@ -22,3 +22,6 @@ docs/search_v3/** -text whitespace=cr-at-eol
 # V3R measured source and freeze evidence retain exact bytes.
 docs/search_v3r/** -text whitespace=cr-at-eol
 docs/search_v3r2/** -text whitespace=cr-at-eol
+
+# V7A G2 frozen question exports and blind packages must retain exact bytes.
+docs/topic3_v7a_g2/** -text whitespace=cr-at-eol
