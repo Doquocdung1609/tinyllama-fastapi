@@ -5,6 +5,7 @@
 ## Local package
 
 - File: `C:\Users\Admin\Downloads\V7A_G3_SEC9_SOURCE_HANDOFF_20261102.zip`
+- Exact-hash alias requested by the owner: `C:\Users\Admin\Downloads\V7A_G3_SEC_SOURCE_HANDOFF_20261102.zip`
 - ZIP SHA-256: `9ab979c7156b99b1f0ca25747b0ff1ca24771812253f2d1e0cae3deec95c3afb`
 - Acquisition manifest SHA-256: `0851c2441a8818407e83329aa618ac81a0a1d2bc420b95a47ce494bbbab20e60`
 - Input G3 checkpoint ZIP SHA-256: `e3225aada3a05ef0b9218b7fa885df8600e97eccae3618cba3bb95ffbe505e07`
