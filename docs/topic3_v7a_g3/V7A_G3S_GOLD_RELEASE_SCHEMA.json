@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "G3S human-reviewed subset release",
+  "type": "object",
+  "required": ["schema", "status", "question_manifest_count", "approved_count", "pending_count", "blocked_count", "excluded_count", "selection_method", "source_dataset_sha256", "f10_policy", "approved", "blocked", "excluded", "pending"],
+  "properties": {
+    "schema": {"const": "g3s_human_reviewed_subset/v1"},
+    "status": {"const": "REVIEW_PREVIEW_NOT_FINAL_BENCHMARK"},
+    "question_manifest_count": {"const": 94},
+    "approved_count": {"type": "integer", "minimum": 0, "maximum": 94},
+    "pending_count": {"type": "integer", "minimum": 0, "maximum": 94},
+    "blocked_count": {"type": "integer", "minimum": 0, "maximum": 94},
+    "excluded_count": {"type": "integer", "minimum": 0, "maximum": 94},
+    "selection_method": {"type": "string"},
+    "source_dataset_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "f10_policy": {"type": "string"},
+    "approved": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question_id", "source_accession", "source_sha256", "review_event_sha256", "reviewer", "reviewed_utc", "decision", "evidence_reference", "original_chunk_qrels"],
+        "properties": {
+          "question_id": {"type": "string"},
+          "source_accession": {"type": "string"},
+          "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "review_event_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "reviewer": {"type": "string"},
+          "reviewed_utc": {"type": "string", "format": "date-time"},
+          "decision": {"const": "APPROVE"},
+          "evidence_reference": {"type": "string"},
+          "erratum_id": {"type": "string"},
+          "original_chunk_qrels": {"const": "UNJUDGED"}
+        }
+      }
+    },
+    "blocked": {"type": "array"},
+    "excluded": {"type": "array"},
+    "pending": {"type": "array", "items": {"type": "string"}}
+  }
+}

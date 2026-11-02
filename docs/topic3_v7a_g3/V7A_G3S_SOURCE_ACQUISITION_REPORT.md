@@ -1,0 +1,9 @@
+# SEC-47 primary-source acquisition
+
+**47/47 verified accession-specific primary SEC HTML responses:** 17 preserved from two prior handoffs and 30 newly retrieved from the official SEC URLs at one request per second with the configured contact User-Agent. No source acquisition failures. Forms: 24 10-K, 18 10-Q, three 20-F and two 6-K. The two 6-K documents are corporate disclosures; neither is treated as a complete financial statement.
+
+The [compact source manifest](V7A_G3S_SEC47_RAW_SOURCE_MANIFEST.json) maps each accession, CIK, form, reporting date, primary filename, SEC URL, package member, byte size and SHA-256. The private full registry (`C:\Users\Admin\Downloads\V7A_G3S_SEC47_SOURCE_RECOVERY_20261102\V7A_G3S_SEC47_RAW_SOURCE_MANIFEST.json`, SHA-256 `483fb746fe7dce0aa33cc9105025a454343297371fd47f620827a55d593083fd`) additionally records UTC acquisition, HTTP response, final URL, filing-index URL/hash, identity checks and HTML table counts for new downloads.
+
+New 30-source handoff: `C:\Users\Admin\Downloads\V7A_G3S_SEC47_SOURCE_RECOVERY_20261102_SOURCE_HANDOFF.zip`, SHA-256 `69060ac21108e4e4cd19524c6ae66ee40ca4702c5a6cb2980c5c402ca30f2887`. ZIP CRC and all member hashes passed. The earlier nine- and eight-source handoffs complete the 47-document registry. The original response bytes were preserved. SEC responses may include a trailing 109-byte script compared with filing-index listed sizes; the report claims verified SEC-served responses, not pristine archival equivalence. Scripts were never executed.
+
+No raw HTML is committed to the application repository. `python scripts/topic3_v7a_g3s_verify.py` independently reopened all three ZIPs and checked 47 frozen accession/form/CIK/URL mappings, raw-member SHA-256/size, HTML boundaries and ZIP CRC: **PASS 47/47**. Reproduce a new acquisition with `python scripts/topic3_v7a_g3s_sources.py --help`; that script refuses a pre-existing output directory and never silently substitutes an accession.
