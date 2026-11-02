@@ -115,7 +115,7 @@ def verified_bundle(workspace,document_ids,hits):
                        for c in t['cells']) for h in seeds):
                 if not any(other['page']==t['page'] and other['heading']==t['heading'] for other in selected):
                     for c in t['cells']:
-                        c['retrieved_chunk_ids']=[h['chunk_id'] for h in seeds]
+                        c['retrieved_chunk_ids']=list(dict.fromkeys(h['chunk_id'] for h in seeds))
                         c['supplementary_source_lookup']=True
                     selected.append(t)
         ends={}
@@ -250,7 +250,8 @@ def automatic_answer(workspace,request,result):
             elif operation=='ABS_CHANGE':value=calculate('ABS_CHANGE',numbers);formula=f'{numbers[0]} - {numbers[1]}'
     citations=[]
     for c in operands:
-        citations.append({**c,'text':c['source_excerpt'],'box':c['cell_bbox'],'header_box':c['header_bbox'],
+        citations.append({**c,'evidence_id':'pdfcell_'+_digest([c['source_sha256'],c['page'],c['cell_bbox'],c['header_bbox']])[:32],
+            'text':c['source_excerpt'],'box':c['cell_bbox'],'header_box':c['header_bbox'],
             'row_box':c['row_bbox'],'period':c['period_end'],'unit':_source_unit(c),
             'verification':'AUTO_SOURCE_CELL_VERIFIED','chunk_id':c['retrieved_chunk_ids'][0],
             'source_display':c['value_raw']})
@@ -263,7 +264,7 @@ def automatic_answer(workspace,request,result):
         'effective_mode':result.get('mode'),'routing_reason':result.get('routing_reason'),
         'evidence_contract':VERSION,'retrieval_trace':{'profile':result.get('search_profile','baseline'),
             'generation':result.get('generation'),'effective_mode':result.get('mode'),
-            'original_hit_ids':[h['chunk_id'] for h in result.get('results',[])]}}
+            'original_hit_ids':list(dict.fromkeys(h['chunk_id'] for h in result.get('results',[])))}}
 
 
 def validate_supported_response(workspace,answer,operation=None):

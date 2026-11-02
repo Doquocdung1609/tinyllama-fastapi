@@ -11,7 +11,7 @@ from threading import BoundedSemaphore, Thread
 from typing import Literal, Annotated
 from uuid import uuid4
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 import psutil
@@ -24,6 +24,29 @@ from app.product.pdf_extract import ocr_capability,folded
 router=APIRouter(prefix='/studio',tags=['react-product'],dependencies=[Depends(require_studio_token)])
 slots=BoundedSemaphore(1)
 research_slots=BoundedSemaphore(1)
+sec_view_slots=BoundedSemaphore(1)
+
+
+class SecSourceRequest(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    reference:str=Field(min_length=10,max_length=4096,pattern=r'^[A-Za-z0-9_-]+\.[a-f0-9]{64}$')
+
+
+@router.post('/sec/evidence')
+def sec_source_evidence(payload:SecSourceRequest,response:Response):
+    from app.product.sec_viewer import resolve,SourceViewError,server_key
+    if not sec_view_slots.acquire(blocking=False):raise HTTPException(429,detail={'code':'SOURCE_VIEW_BUSY'})
+    try:
+        index=sec_index()
+        with index._lock:result=resolve(index,payload.reference,server_key(workspace().root))
+        response.headers['Cache-Control']='no-store'
+        response.headers['X-Content-Type-Options']='nosniff'
+        response.headers['Content-Security-Policy']="default-src 'none'; frame-ancestors 'none'"
+        return result
+    except SourceViewError as exc:raise HTTPException(409,detail={'code':str(exc)}) from None
+    except (FileNotFoundError,OSError):raise HTTPException(409,detail={'code':'SOURCE_BYTES_NOT_AVAILABLE'}) from None
+    except (ValueError,RecursionError,KeyError,TypeError):raise HTTPException(409,detail={'code':'SOURCE_IDENTITY_MISMATCH'}) from None
+    finally:sec_view_slots.release()
 
 
 class MetadataUpdate(BaseModel):
@@ -553,7 +576,9 @@ def analysis(payload:AnalysisRequest):
                     from app.product.verified_financial import validate_supported_response
                     verified=validate_supported_response(workspace(),verified)
                     if verified['status'] in {'SUPPORTED','QUERY_CONTEXT_CONFLICT'}:
-                        return {**answer,**verified,'search_profile':profile,'generation':result.get('generation')}
+                        return {**answer,**verified,'warnings':verified.get('warnings',[]),
+                                'retrieved_excerpt_verification':'SOURCE_TEXT_UNREVIEWED',
+                                'search_profile':profile,'generation':result.get('generation')}
                     return {**answer,**verified,'related_evidence':answer.get('citations',[]),
                             'search_profile':profile,'generation':result.get('generation')}
             return answer
@@ -616,7 +641,7 @@ class SecQA(BaseModel):
 @router.post('/sec/analysis')
 def sec_analysis(payload:SecQA):
     def public(value):
-        if isinstance(value,dict):return {key:public(item) for key,item in value.items() if not key.endswith('_path') and key not in {'root','token'}}
+        if isinstance(value,dict):return {key:public(item) for key,item in value.items() if (not key.endswith('_path') or key=='structural_path') and key not in {'root','token'}}
         if isinstance(value,list):return [public(item) for item in value]
         if isinstance(value,str) and (len(value)>2 and value[1:3] in {':\\',':/'}):return '[local path omitted]'
         return value
@@ -630,8 +655,12 @@ def sec_analysis(payload:SecQA):
         raw=sec_backend().query(payload.question,filters,'B',payload.operation,5,False,'automatic_real')
         answer=raw.get('answer',{});citations=[]
         for cell in answer.get('source_cells',[]):
-            source=next((f for f in filings if f['cik']==cell['cik']),{})
+            source=next((f for f in filings if f['filing_id']==cell['filing_id']),{})
+            if not source:raise ValueError('SEC_CITATION_FILING_NOT_REGISTERED')
+            from app.product.sec_viewer import reference,server_key
             citations.append({'source_kind':'SEC','chunk_id':cell['parent_id'],'issuer':source.get('issuer',cell['cik']),
+                'source_reference':reference(sec_index(),cell['parent_id'],server_key(workspace().root),cell),
+                'filing_id':cell['filing_id'],'accession':cell['accession'],'form':source['form'],
                 'report_period':cell['period_end'],'source_url':cell['source_url'],'source_sha256':cell['raw_sha256'],
                 'text':f"{cell['row_label']}: {cell['raw_value']} ({cell['display_unit_header']}) · {cell['period_end']}",
                 'row_label':cell['row_label'],'column_label':' / '.join(cell['header_path']),

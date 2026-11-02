@@ -8,6 +8,7 @@ from pathlib import Path
 from threading import RLock
 from time import perf_counter
 import json
+import os
 
 from qdrant_client import QdrantClient, models
 
@@ -181,6 +182,10 @@ class SecResearchIndex:
                     "source_location": chunk.source_location.model_dump(mode="json"),
                     "extraction_status": chunk.extraction_status,
                     "provenance_status": "VERIFIED_LOCAL_SEC_SOURCE_BYTES"})
+                if len(os.getenv('STUDIO_API_TOKEN',''))>=16:
+                    from app.product.sec_viewer import reference,server_key
+                    from app.product.api import workspace
+                    output[-1]['source_reference']=reference(self,cid,server_key(workspace().root))
             return {"status": "READY", "dataset_id": self.identity["dataset_id"], "mode": mode,
                 "generation": self.identity["generation"], "manifest_hash": self.identity["manifest_hash"],
                 "results": output, "latency_ms": round((perf_counter()-started)*1000, 2),

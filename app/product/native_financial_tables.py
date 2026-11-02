@@ -130,7 +130,7 @@ def recover_native_tables(path, pages, expected_hash, chunk_ids_by_page=None):
                             row_box=[min(w[0] for w in ws),min(w[1] for w in ws),max(w[2] for w in ws),max(w[3] for w in ws)],
                             table_heading=heading,statement_scope=scope,scale=scale,currency=currency,
                             source_excerpt=' '.join(w[4] for w in ws),header_context=context,
-                            retrieved_chunk_ids=list((chunk_ids_by_page or {}).get(number,[])),
+                            retrieved_chunk_ids=list(dict.fromkeys((chunk_ids_by_page or {}).get(number,[]))),
                             status='TABLE_CONTEXT_INCOMPLETE' if not scale or currency=='UNKNOWN' or scope=='UNKNOWN'
                                 else 'SOURCE_CELL_CANDIDATE')
                     cells.extend(values)
