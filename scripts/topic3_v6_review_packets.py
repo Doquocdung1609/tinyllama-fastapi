@@ -163,7 +163,7 @@ def main() -> None:
         packets.append({"id": question["question_id"], "question": question["question"],
                         "url": question["source_url"], "accession": accession,
                         "table_candidates": len(candidates), "prose_candidates": len(prose),
-                        "packet_sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+                        "packet_sha256": hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()})
     rows = []
     for p in packets:
         rows.append("<tr><td><a href='" + html.escape(p["id"] + ".html") + "'>" + p["id"] + "</a> · <a href='" + html.escape(p["id"] + ".json") + "'>JSON</a></td><td>" +

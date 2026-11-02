@@ -6,7 +6,7 @@
   "point_count": 8670,
   "queue_sha256": "dd8be3d26deec52d8f1dcddb135c69f5f4c00c30d4924fe96ccbbcdd492ec6c2",
   "raw_sha256": "f4ee52ff41f354d2aea575fcc418c26a86ed9ebabd581fdcaf531fccd860fb78",
-  "compact_sha256": "ac4472dda6b9afd7f89b764c0092f7c74c3b7c5ad84f8cc853b1d2bee157d298",
+  "compact_sha256": "569c02a5467f62ec40f3724b8d8a1f34454956da08a880c349916c78eaa041e6",
   "methods": {
     "bm25": {
       "runs": 30,

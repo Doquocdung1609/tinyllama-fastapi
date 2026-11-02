@@ -4,7 +4,7 @@
 
 ## What actually ran
 
-On corrected Index B (8,670 points), the six pinned author methods and A2/A3/A4/A4R each ran on all 30 pilot questions: **300 live searches**. Full-text raw results remain ignored locally at `tmp/topic3_v6/pilot_raw.jsonl` (SHA-256 `f4ee52ff41f354d2aea575fcc418c26a86ed9ebabd581fdcaf531fccd860fb78`). Tracked `V6_PILOT_RANKS_COMPACT.jsonl` preserves per-question Top-10 IDs, ranks, scores, source locators, fiscal labels and text hashes (SHA-256 `ac4472dda6b9afd7f89b764c0092f7c74c3b7c5ad84f8cc853b1d2bee157d298`). `V6_PILOT_SUMMARY.json` records times and process memory. The unsupported FY2037 question is excluded from the accession denominator and yields zero hits under A2/A3/A4/A4R.
+On corrected Index B (8,670 points), the six pinned author methods and A2/A3/A4/A4R each ran on all 30 pilot questions: **300 live searches**. Full-text raw results remain ignored locally at `tmp/topic3_v6/pilot_raw.jsonl` (owner-machine byte SHA-256 `f4ee52ff41f354d2aea575fcc418c26a86ed9ebabd581fdcaf531fccd860fb78`). Tracked `V6_PILOT_RANKS_COMPACT.jsonl` preserves per-question Top-10 IDs, ranks, scores, source locators, fiscal labels and text hashes (LF-normalized SHA-256 `569c02a5467f62ec40f3724b8d8a1f34454956da08a880c349916c78eaa041e6`). `V6_PILOT_SUMMARY.json` records times and process memory. The unsupported FY2037 question is excluded from the accession denominator and yields zero hits under A2/A3/A4/A4R.
 
 The only numerical retrieval proxy available before human review is whether the **preselected source accession appears**. It does not test the correct financial row, column, period, unit or value. On the other 29 pilot questions:
 

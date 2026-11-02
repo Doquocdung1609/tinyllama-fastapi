@@ -123,7 +123,7 @@ def summarize() -> None:
                                    "questions": len(questions), "runs": len(rows),
                                    "index": "B_P7K_CORRECTED", "point_count": 8670,
                                    "queue_sha256": hashlib.sha256(QUEUE.read_bytes().replace(b"\r\n", b"\n")).hexdigest(), "raw_sha256": digest(RAW),
-                                   "compact_sha256": digest(COMPACT), "methods": stats,
+                                   "compact_sha256": hashlib.sha256(COMPACT.read_bytes().replace(b"\r\n", b"\n")).hexdigest(), "methods": stats,
                                    "relevance_labels": 0, "numeric_cells_verified": 0,
                                    "qualification": "Source-accession occurrence is not relevant evidence, Recall, or answer correctness; unsupported-future case excluded from accession denominator"},
                                   indent=2) + "\n", encoding="utf-8")

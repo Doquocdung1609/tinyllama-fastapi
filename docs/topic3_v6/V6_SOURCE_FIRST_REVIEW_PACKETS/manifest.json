@@ -12,7 +12,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "746f8063fd1b555897bdfc9aa411215e51b574fc98410e355373a68e8f9845f2"
+      "packet_sha256": "22f04a874ee5246c8abac4fd7a081db6bfbffdc15417c1dbd65504c32735f309"
     },
     {
       "id": "V5R_H02",
@@ -21,7 +21,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "c3dc43d0da84be86a4cc5969248cbd310cf1fa2e4ac05102f754cfc0177a5050"
+      "packet_sha256": "f37973e78fb9ccf6e52a779f4bdb7ab7c140d1699764b21664ca0ee4898df7cd"
     },
     {
       "id": "V5R_H03",
@@ -30,7 +30,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "aca486cacefb620246af068a7970e7719e9a0e1d68d3d0320201d351f3bbf2de"
+      "packet_sha256": "29822f904f391a2c6ac399370df771deaac9c7f3e73c180ff51a9c6a94bef9fb"
     },
     {
       "id": "V5R_H04",
@@ -39,7 +39,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "d3f7c8b65e5d2b589093ccf6460954120a685c9897b3b9192b064ba2a0546798"
+      "packet_sha256": "cb3c9024fcdb3e7bcdb64370826cac6051ba9577193d3ad1bc866907dafebaa4"
     },
     {
       "id": "V5R_H05",
@@ -48,7 +48,7 @@
       "accession": "0000320193-25-000079",
       "table_candidates": 6,
       "prose_candidates": 2,
-      "packet_sha256": "ac03c05b0049da4860a1cbf0e497d3f40c85c5e72d05a53b581029340d47c6b3"
+      "packet_sha256": "53eb2e4d71add629f0cb51783b759f3bb654e20c28e0535fe778dd1bc623a566"
     },
     {
       "id": "V5R_H06",
@@ -57,7 +57,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "4d1396c063e7553c6acc9ccdbcc29083c9e2d0b73ad3fa9cd817d75e0b8db44c"
+      "packet_sha256": "7407610cb3da71f432393efbcf247dff38ef81f4eda7b70aeb7ae3d64ca1bcdb"
     },
     {
       "id": "V5R_H07",
@@ -66,7 +66,7 @@
       "accession": "0000950170-24-087843",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "d69bc78202aae58234b04956c955032260beff2a9b6efbf84dfdef9e3ee8279d"
+      "packet_sha256": "9feb65e4227700ce258917bcc049580bdceeec7f596de4966f46997abc85819a"
     },
     {
       "id": "V5R_H08",
@@ -75,7 +75,7 @@
       "accession": "0000950170-24-087843",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "8d027e24aa57ee0b9e9ccccc14f53e72eb21fac578dca10510ea8ec84df519a0"
+      "packet_sha256": "ed3d9a2565cc57611a2959a8c045c1a9bdd37ebf29f5093c85444c286e801750"
     },
     {
       "id": "V5R_H09",
@@ -84,7 +84,7 @@
       "accession": "0000950170-24-087843",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "80a36572e85e2a8a383b0039d9f06759f35eb0634956a214bf937b35b7dbe9f2"
+      "packet_sha256": "e63874f064e68bc74f6387dec7100461aee7900209d721b0508d310b879eeda2"
     },
     {
       "id": "V5R_H10",
@@ -93,7 +93,7 @@
       "accession": "0000950170-25-100235",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "6001c3fbd9288cea70c082f0ecc03e5e8c5a26d139a247c03a92c030885ef8b0"
+      "packet_sha256": "412264f5128f0cb8028b0ccc41c6b79e26c292e8f8bc6b0171dbeb321a0ddf29"
     },
     {
       "id": "V5R_H11",
@@ -102,7 +102,7 @@
       "accession": "0000950170-25-100235",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "e34bbd623a5084886374aeacff8572aba8d718c3e651f35f5bc0647941374b62"
+      "packet_sha256": "df2252cc6004e92f8b072cd5f32d6ac757294105bf10c7c2f9c6368f2818f521"
     },
     {
       "id": "V5R_H12",
@@ -111,7 +111,7 @@
       "accession": "0000950170-25-100235",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "e209d5dbe4b68ed7634c39e886e4a20cbd04d54bee042775e7ae23fb7109e470"
+      "packet_sha256": "6f2b95d78b8dde5a215df77c9412bf11ffc5818c4c95e7b96e3ea141d3d4f73e"
     },
     {
       "id": "V5R_H13",
@@ -120,7 +120,7 @@
       "accession": "0001045810-24-000029",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "9230edea7eb54b038cb6dca56ccfb55427ac264c2d264cc79dfbc62f27547c74"
+      "packet_sha256": "021c0bfd0a4b44bbb7548bf61b754c0ea575ea50a9efcfe094ae963572a54ad8"
     },
     {
       "id": "V5R_H14",
@@ -129,7 +129,7 @@
       "accession": "0001045810-24-000029",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "de30fb487ae84dfbb7525af07e71ea4da9883cd8b6414d42ee54e2b2fa0e6f73"
+      "packet_sha256": "4adfbf9f13263aef8f48ad1f52114792346abe112508832978a057649ce9d00e"
     },
     {
       "id": "V5R_H15",
@@ -138,7 +138,7 @@
       "accession": "0001045810-24-000029",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "0344dbf8e5afa75ebae97947f195a01d777c331c7e029205808d7612edf965b8"
+      "packet_sha256": "6b5a5e2a213d7b2b251b43d81755c7318659052c50d0ea52e7d446c569761217"
     },
     {
       "id": "V5R_H16",
@@ -147,7 +147,7 @@
       "accession": "0001045810-25-000023",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "0da622a15e5c6d1d610d9814176642c91e0b98aa58e10ba8a485122150169ab2"
+      "packet_sha256": "57e6026a1c523dd13e0e08c392c2e2739117987fe1fc940ac8d80cab6b78c4fa"
     },
     {
       "id": "V5R_H17",
@@ -156,7 +156,7 @@
       "accession": "0001045810-25-000023",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "39415db37bbd2b61eccaf3d45e734cfc0e80fd35def57f87a7e996c80474357e"
+      "packet_sha256": "262fbc9554cc63ac5842d8ced10356754b69f889d7bcbc0826a9cc98fe5d6ba2"
     },
     {
       "id": "V5R_H18",
@@ -165,7 +165,7 @@
       "accession": "0001018724-25-000004",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "731a602faf03bc24b595b150a13cff5b6fc526085fce7a5af53d3350f89e149a"
+      "packet_sha256": "1a12c67e2dd215aaf38fcf86420385e9a39232f4e22b908b2fb4e8771d90c02d"
     },
     {
       "id": "V5R_H19",
@@ -174,7 +174,7 @@
       "accession": "0001018724-25-000004",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "df96805fcc77683002949bdd01431a29cf605f9a9fedd97f4db91175d131655b"
+      "packet_sha256": "ba11765420042520855f12e747f69da8c8a969b0a97dbb758fc7b8cfb8a93fed"
     },
     {
       "id": "V5R_H20",
@@ -183,7 +183,7 @@
       "accession": "0001018724-24-000008",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "3b3428cd86145337837bee0752eaaa84d2981cd2d983f2663dfda6ce42bb51fd"
+      "packet_sha256": "728864b090c69d71e8920cf854da5264b3a65a0ae075570b37c596b8c5d0a607"
     },
     {
       "id": "V5R_H21",
@@ -192,7 +192,7 @@
       "accession": "0001326801-25-000017",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "9b3b22228bf2fef5a5a50debbc1baf0d79746dbac2b23e8209c16bd152f266c5"
+      "packet_sha256": "e3df0a3ab65f26e35f15cd83e6cfedbf8a7b42935cb42d55c546c9c3642cf4cd"
     },
     {
       "id": "V5R_H22",
@@ -201,7 +201,7 @@
       "accession": "0001326801-25-000017",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "f7af913d3eba650187d56100d27ea0660b8135350e1f3aa7c54678b381bd39c9"
+      "packet_sha256": "0d3e7ab20463857ca6f714f58c915dc2a1dd2a352c702db79564fd96893caa8d"
     },
     {
       "id": "V5R_H23",
@@ -210,7 +210,7 @@
       "accession": "0001326801-25-000017",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "f15502090a435f4da692558607f4a4c46ef7d339a739725d2c683407e9f64145"
+      "packet_sha256": "60f2d855aff3127c85a13ac5828c0c0082ad353e379df0503c974604225a142a"
     },
     {
       "id": "V5R_H24",
@@ -219,7 +219,7 @@
       "accession": "0001628280-25-003063",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "03d1b9666570813dfeaf9b2a95f7d271cceca90a12d911ab38522a7738ffbd86"
+      "packet_sha256": "4654707615d4c1f3a79e6924bf9c955ca58871f3ffd59db7874c9c7bc561608e"
     },
     {
       "id": "V5R_H25",
@@ -228,7 +228,7 @@
       "accession": "0001628280-24-002390",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "02f0f328ee21f6c3e40cd13dc61ff76c8090d48826075abcd66c554432644ff4"
+      "packet_sha256": "22515471bfe3f4cb765bd9510eeae96e0d3170b1523e025e883c7ccb7fdcabdb"
     },
     {
       "id": "V5R_H26",
@@ -237,7 +237,7 @@
       "accession": "0001628280-24-002390",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "70d80ef42aa0b72af84624218c986e8e5cd746a10dcfafe807e78084d6128bf5"
+      "packet_sha256": "21acb2d50cdf7a5d6bc360c6a6102cf6e246af250f26eef1d3a986a3135f6e08"
     },
     {
       "id": "V5R_H27",
@@ -246,7 +246,7 @@
       "accession": "0000050863-25-000009",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "7481e96d9656ed15c542041295374cd59ce1ec966741a32dc25619281f651ee9"
+      "packet_sha256": "4e4f23412fcc1a760cc54e77884b19867a155bef94462b01588b0ec9003d95da"
     },
     {
       "id": "V5R_H28",
@@ -255,7 +255,7 @@
       "accession": "0000050863-25-000009",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "6762f5f1982204bf47d066432c0c5f66d6d6bf3ff43028e46dfa358a6124fba4"
+      "packet_sha256": "f5fc0a6aa453bfd149e79e6eeb95af66ff2c1a8a35e6f340e184f66dffafb219"
     },
     {
       "id": "V5R_H29",
@@ -264,7 +264,7 @@
       "accession": "0000002488-25-000012",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "842aabaae839be368197bb6faa01f63ec057045bfba0baf502acb7f6e829bafa"
+      "packet_sha256": "eb05d4065db38dc0a949450538307945b740cffc3e681b6e4cdadc89ab9322c7"
     },
     {
       "id": "V5R_H30",
@@ -273,7 +273,7 @@
       "accession": "0000002488-25-000012",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "c93183d60216173b0af293c9b1553cd08a5dbbd67d214d0318600a22cec14419"
+      "packet_sha256": "014e8298438cb3e3ea106e8bf6d43328f8d5c693c24aa771e5fc74fc4c37c856"
     }
   ]
 }
