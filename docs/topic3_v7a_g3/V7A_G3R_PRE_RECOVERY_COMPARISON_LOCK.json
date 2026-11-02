@@ -1,0 +1,11 @@
+{
+  "pre_recovery_sha256": "9745ace32bf57d252f1fedfe8454ba716949be2a2634dbe5f5191e3faff3bfed",
+  "classifications": {
+    "AGREED_SUPPORTED_DECISION_ONLY": 70,
+    "DISAGREED_DECISION": 5,
+    "AMBIGUOUS_BOTH": 1,
+    "SOURCE_UNAVAILABLE_IN_FROZEN_REVIEWS": 18
+  },
+  "question_only_sha256": "a92cdfb6a00744c3ea8bdae93b337d60919be52e65019b4f541b40235f4aa4ef",
+  "frozen_question_count": 94
+}

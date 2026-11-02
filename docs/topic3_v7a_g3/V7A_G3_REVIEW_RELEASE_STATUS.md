@@ -1,6 +1,6 @@
 # V7A G3 review-release status
 
-**Source acquisition: PASS. Full G3 independent review: PENDING.** The nine official SEC primary HTML files passed accession/form/index identity checks and are available in one immutable source ZIP. This does not change any reviewer decision or constitute gold approval.
+**Historical release checkpoint:** The nine official SEC primary HTML files passed accession/form/index identity checks and are available in one immutable source ZIP. The later 2026-11-02 Agent 1 and Agent 2 post-source submissions are audited in [V7A_G3R_FINAL_ACCEPTANCE.md](V7A_G3R_FINAL_ACCEPTANCE.md). Human adjudication remains pending. The pre-recovery decisions and reviewer inputs below are unchanged.
 
 ## Separate blind inputs
 
