@@ -283,6 +283,12 @@ def _unified_search(payload:UnifiedSearch):
                 found=search_sec_v3(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
                 intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
             else:found=sec_index().search(payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
+            # V3 constructs new result dictionaries; sign final canonical
+            # parents here as well, without changing ranks or evidence grades.
+            from app.product.sec_viewer import reference,server_key
+            key=server_key(workspace().root)
+            for hit in found['results']:
+                hit['source_reference']=reference(sec_index(),hit['chunk_id'],key)
             results.extend({**r,'source_kind':'SEC'} for r in found['results'])
             scopes.append(('SEC',found.get('generation')));timings['SEC']=found.get('latency_ms',0)
         except Exception as exc:

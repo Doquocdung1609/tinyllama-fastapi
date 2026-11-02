@@ -158,3 +158,15 @@ def test_duplicate_retrieval_links_do_not_inflate_cell_evidence(tmp_path):
     assert len(answer['retrieval_trace']['original_hit_ids'])==1
     assert len({c['evidence_id'] for c in answer['citations']})==2
     assert all(len(c['retrieved_chunk_ids'])==1 for c in answer['citations'])
+
+
+def test_final_sec_search_profile_retains_source_resolver_reference(tmp_path,monkeypatch):
+    from app.product.sec_viewer import decode_reference
+    i,c,_=source_fixture(tmp_path)
+    monkeypatch.setattr(frontend_api,'workspace',lambda:SimpleNamespace(root=tmp_path))
+    monkeypatch.setattr(frontend_api,'sec_index',lambda:i)
+    monkeypatch.setattr('app.product.search_v3.search_sec_v3',lambda *a:{'intent':{},'evidence_status':'RELATED_UNVERIFIED_EVIDENCE','results':[{'rank':1,'chunk_id':c['parent_id'],'text':'synthetic source'}],'generation':'a'*64,'latency_ms':0})
+    r=frontend_api.unified_search(frontend_api.UnifiedSearch(query='net sales',source='US_SEC',mode='bm25',search_profile='production_v3'))
+    ref=r['results'][0]['source_reference']
+    assert decode_reference(ref,server_key(tmp_path))['parent_id']==c['parent_id']
+    assert resolve(i,ref,server_key(tmp_path))['table']['selected_row']==c['row']
