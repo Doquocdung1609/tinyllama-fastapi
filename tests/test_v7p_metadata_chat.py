@@ -38,6 +38,9 @@ def test_zero_metadata_upload_and_auditable_correction(tmp_path):
         assert corrected['corrections'][-1]['status']=='USER_CORRECTED'
         assert sha256(w.source_file(doc['id']).read_bytes()).hexdigest()==doc['sha256']
         assert w.document(doc['id'])['issuer']=='Confirmed display name'
+        duplicate=w.add_pdf('same-source-new-name.pdf',raw)
+        assert duplicate['duplicate'] and duplicate['issuer']=='Confirmed display name'
+        assert read_metadata(w,doc['id'])['corrections']==corrected['corrections']
     finally:w.close()
     w=PdfWorkspace(tmp_path/'workspace',embedder=SyntheticEmbedder())
     try:assert read_metadata(w,doc['id'])['corrections']==corrected['corrections']

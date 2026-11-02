@@ -53,6 +53,8 @@ def test_verified_source_context_is_from_original_bytes(tmp_path):
     i,c,_=source_fixture(tmp_path);r=reference(i,c['parent_id'],SECRET,c);d=resolve(i,r,SECRET)
     assert d['status']=='VERIFIED_LOCAL_SEC_SNAPSHOT' and d['selected_cell']['raw_value']=='23,276'
     assert d['selected_cell']['period_end']=='2026-09-30' and d['selected_cell']['multiplier']=='1000000'
+    assert d['report_period']=='2026-09-30' and d['filing_date']=='2026-11-01'
+    assert d['fiscal_year'] is None  # Never derive FY from a calendar/filing year.
     assert any('Three Months' in cell['text'] for row in d['table']['rows'] for cell in row['cells'])
     assert not any(key.endswith('_path') for key in d)
 
