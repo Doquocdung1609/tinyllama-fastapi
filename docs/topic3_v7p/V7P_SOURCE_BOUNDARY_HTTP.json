@@ -1,0 +1,881 @@
+[
+  {
+    "case": "UNKNOWN_CURRENCY",
+    "label": "SOURCE_DERIVED_NEGATIVE_FIXTURE_NOT_ORIGINAL_FILING",
+    "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+    "http_status": 200,
+    "response": {
+      "status": "INSUFFICIENT_EVIDENCE",
+      "answer": "Chưa đủ bằng chứng phù hợp để xác nhận số liệu.",
+      "citations": [],
+      "evidence_references": [
+        {
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_1_00000",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "page": 1,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00003",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        }
+      ],
+      "values": [],
+      "verification_status": "AMBIGUOUS_UNIT",
+      "warnings": [
+        "Số liệu trong trích đoạn chưa được đối chiếu ô nguồn, kỳ và đơn vị."
+      ],
+      "metric": null,
+      "period": "2025-09-27",
+      "answer_source_chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+      "statement_scope": null,
+      "unit": null,
+      "retrieval_trace": {
+        "profile": "production_v3",
+        "generation": "9344319aac9f70e74543570115a429a15f70b1a93be17991cca0fd9c6983e164",
+        "latency_ms": 6464.57,
+        "top_ids": [
+          "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_1_00000",
+          "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00003"
+        ],
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE"
+      },
+      "search_profile": "production_v3",
+      "generation": "9344319aac9f70e74543570115a429a15f70b1a93be17991cca0fd9c6983e164",
+      "reason": "AMBIGUOUS_UNIT",
+      "related_evidence": [
+        {
+          "rank": 1,
+          "score": 28.520648306470246,
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "evidence_id": "row:5f8cc6e8f4bdc7e67dcbb071c1b8d05e:p2-r23",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r23",
+          "row_label": "Net income $",
+          "metric_ids": [
+            "net_income"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Net income $ | 112,010 | 93,736 | 96,995",
+          "box": [
+            52.130001068115234,
+            421.7980041503906,
+            558.78515625,
+            430.8079833984375
+          ],
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "page_evidence_sha256": "86a2a46cfa55922fdf2869a91630af4386d4c6caf2e944f50738f5f7c936a1c3",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 2,
+          "score": 20.785319725191684,
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "evidence_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": null,
+          "row_label": "",
+          "metric_ids": [
+            "net_income"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Other income/(expense), net (321) 269 (565)\nIncome before provision for income taxes 132,729 123,485 113,736\nProvision for income taxes 20,719 29,749 16,741\nNet income $ 112,010 $ 93,736 $ 96,995\nEarnings per share:\nBasic $ 7.49 $ 6.11 $ 6.16\nDiluted $ 7.46 $ 6.08 $ 6.13\nShares used in computing earnings per share:\nBasic 14,948,500 15,343,783 15,744,231\nDiluted 15,004,697 15,408,095 15,812,547\nSee accompanying Notes to Consolidated Financial Statements.\nApple Inc. | 2025 Form 10-K | 29",
+          "box": null,
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "page_evidence_sha256": "86a2a46cfa55922fdf2869a91630af4386d4c6caf2e944f50738f5f7c936a1c3",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 3,
+          "score": -4.347401092617252,
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00004",
+          "evidence_id": "row:5f8cc6e8f4bdc7e67dcbb071c1b8d05e:p2-r20",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r20",
+          "row_label": "Other income/(expense), net",
+          "metric_ids": [],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Other income/(expense), net | (321) | 269 | (565)",
+          "box": [
+            52.130001068115234,
+            379.0480041503906,
+            561.7731323242188,
+            388.0579833984375
+          ],
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "page_evidence_sha256": "86a2a46cfa55922fdf2869a91630af4386d4c6caf2e944f50738f5f7c936a1c3",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 4,
+          "score": -4.618278957008537,
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_1_00000",
+          "evidence_id": "row:5f8cc6e8f4bdc7e67dcbb071c1b8d05e:p1-r7",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 1,
+          "row_id": "p1-r7",
+          "row_label": "For the fiscal year ended September 27,",
+          "metric_ids": [],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "For the fiscal year ended September 27, | 2025",
+          "box": [
+            214.52999877929688,
+            184.59799194335938,
+            397.5290222167969,
+            193.59799194335938
+          ],
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "page_evidence_sha256": "72b1f9745f74cd0f514efa470c54f93e343ca9b5d9d2a9b56fa1f4a2c13e9249",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 5,
+          "score": -5.324812248818427,
+          "chunk_id": "pdf_5f8cc6e8f4bdc7e67dcbb071c1b8d05e_2_00003",
+          "evidence_id": "row:5f8cc6e8f4bdc7e67dcbb071c1b8d05e:p2-r9",
+          "document_id": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_CURRENCY.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r9",
+          "row_label": "Total net sales",
+          "metric_ids": [
+            "net_revenue"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Total net sales | 416,161 | 391,035 | 383,285",
+          "box": [
+            70.12999725341797,
+            179.55801391601562,
+            558.7852172851562,
+            188.55801391601562
+          ],
+          "source_sha256": "5f8cc6e8f4bdc7e67dcbb071c1b8d05e9295f3216c42c378b8ad485d0a149dd9",
+          "page_evidence_sha256": "86a2a46cfa55922fdf2869a91630af4386d4c6caf2e944f50738f5f7c936a1c3",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        }
+      ],
+      "session_id": "a251a4c1eb734d9190e29deeaa3e0132",
+      "resolved_question": "Net income fiscal 2025?",
+      "source_scope": [
+        "5f8cc6e8f4bdc7e67dcbb071c1b8d05e"
+      ],
+      "conversation_reset": false
+    },
+    "removed_only_new_fixture": true,
+    "pass": true
+  },
+  {
+    "case": "UNKNOWN_SCOPE",
+    "label": "SOURCE_DERIVED_NEGATIVE_FIXTURE_NOT_ORIGINAL_FILING",
+    "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+    "http_status": 200,
+    "response": {
+      "status": "INSUFFICIENT_EVIDENCE",
+      "answer": "Chưa đủ bằng chứng phù hợp để xác nhận số liệu.",
+      "citations": [],
+      "evidence_references": [
+        {
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_1_00000",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "page": 1,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00003",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        }
+      ],
+      "values": [],
+      "verification_status": "SOURCE_PERIOD_OR_CELL_NOT_FOUND",
+      "warnings": [
+        "Số liệu trong trích đoạn chưa được đối chiếu ô nguồn, kỳ và đơn vị."
+      ],
+      "metric": null,
+      "period": "2025-09-27",
+      "answer_source_chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+      "statement_scope": null,
+      "unit": null,
+      "retrieval_trace": {
+        "profile": "production_v3",
+        "generation": "363903ed0c8e7208f8070153ebe8eb215951a6268a13340b82044e8d1284011e",
+        "latency_ms": 7778.53,
+        "top_ids": [
+          "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "pdf_b5c251ec8eda643c8f6676285c6484d1_1_00000",
+          "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00003"
+        ],
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE"
+      },
+      "search_profile": "production_v3",
+      "generation": "363903ed0c8e7208f8070153ebe8eb215951a6268a13340b82044e8d1284011e",
+      "reason": "SOURCE_PERIOD_OR_CELL_NOT_FOUND",
+      "related_evidence": [
+        {
+          "rank": 1,
+          "score": 28.503589416435776,
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "evidence_id": "row:b5c251ec8eda643c8f6676285c6484d1:p2-r23",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r23",
+          "row_label": "Net income $",
+          "metric_ids": [
+            "net_income"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": "USD",
+          "text": "Net income $ | 112,010 | 93,736 | 96,995",
+          "box": [
+            52.130001068115234,
+            421.7980041503906,
+            558.78515625,
+            430.8079833984375
+          ],
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "page_evidence_sha256": "c2b6f2c76be1fe4db018ddc69955fed89c9fc3671f3986dc4dfc1fc1ce7dcce2",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 2,
+          "score": 20.76490167720727,
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "evidence_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": null,
+          "row_label": "",
+          "metric_ids": [
+            "net_income"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": "USD",
+          "text": "Other income/(expense), net (321) 269 (565)\nIncome before provision for income taxes 132,729 123,485 113,736\nProvision for income taxes 20,719 29,749 16,741\nNet income $ 112,010 $ 93,736 $ 96,995\nEarnings per share:\nBasic $ 7.49 $ 6.11 $ 6.16\nDiluted $ 7.46 $ 6.08 $ 6.13\nShares used in computing earnings per share:\nBasic 14,948,500 15,343,783 15,744,231\nDiluted 15,004,697 15,408,095 15,812,547\nSee accompanying Notes to Consolidated Financial Statements.\nApple Inc. | 2025 Form 10-K | 29",
+          "box": null,
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "page_evidence_sha256": "c2b6f2c76be1fe4db018ddc69955fed89c9fc3671f3986dc4dfc1fc1ce7dcce2",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 3,
+          "score": -4.363444851719185,
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00004",
+          "evidence_id": "row:b5c251ec8eda643c8f6676285c6484d1:p2-r20",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r20",
+          "row_label": "Other income/(expense), net",
+          "metric_ids": [],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": "USD",
+          "text": "Other income/(expense), net | (321) | 269 | (565)",
+          "box": [
+            52.130001068115234,
+            379.0480041503906,
+            561.7731323242188,
+            388.0579833984375
+          ],
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "page_evidence_sha256": "c2b6f2c76be1fe4db018ddc69955fed89c9fc3671f3986dc4dfc1fc1ce7dcce2",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 4,
+          "score": -4.618169125219924,
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_1_00000",
+          "evidence_id": "row:b5c251ec8eda643c8f6676285c6484d1:p1-r7",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 1,
+          "row_id": "p1-r7",
+          "row_label": "For the fiscal year ended September 27,",
+          "metric_ids": [],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "For the fiscal year ended September 27, | 2025",
+          "box": [
+            214.52999877929688,
+            184.59799194335938,
+            397.5290222167969,
+            193.59799194335938
+          ],
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "page_evidence_sha256": "f4dbf4a31f8db76e07fcec000e2be19e7ba0938b396bfcea4930632ccf3b85ab",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 5,
+          "score": -5.34462517327486,
+          "chunk_id": "pdf_b5c251ec8eda643c8f6676285c6484d1_2_00003",
+          "evidence_id": "row:b5c251ec8eda643c8f6676285c6484d1:p2-r9",
+          "document_id": "b5c251ec8eda643c8f6676285c6484d1",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-UNKNOWN_SCOPE.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r9",
+          "row_label": "Total net sales",
+          "metric_ids": [
+            "net_revenue"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": "USD",
+          "text": "Total net sales | 416,161 | 391,035 | 383,285",
+          "box": [
+            70.12999725341797,
+            179.55801391601562,
+            558.7852172851562,
+            188.55801391601562
+          ],
+          "source_sha256": "b5c251ec8eda643c8f6676285c6484d1dcd9e02ea211b1df10a7fb3713891f88",
+          "page_evidence_sha256": "c2b6f2c76be1fe4db018ddc69955fed89c9fc3671f3986dc4dfc1fc1ce7dcce2",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        }
+      ],
+      "session_id": "a9fdc7943cb941e0a2cd91f722597ca5",
+      "resolved_question": "Net income fiscal 2025?",
+      "source_scope": [
+        "b5c251ec8eda643c8f6676285c6484d1"
+      ],
+      "conversation_reset": false
+    },
+    "removed_only_new_fixture": true,
+    "pass": true
+  },
+  {
+    "case": "MIXED_UNVERIFIED_PERIOD",
+    "label": "SOURCE_DERIVED_NEGATIVE_FIXTURE_NOT_ORIGINAL_FILING",
+    "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+    "http_status": 200,
+    "response": {
+      "status": "INSUFFICIENT_EVIDENCE",
+      "answer": "Chưa đủ bằng chứng phù hợp để xác nhận số liệu.",
+      "citations": [],
+      "evidence_references": [
+        {
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00003",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        },
+        {
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "page": 2,
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "statement_scope": null,
+          "unit": null,
+          "report_period": "2025-09-27"
+        }
+      ],
+      "values": [],
+      "verification_status": "AMBIGUOUS_UNIT",
+      "warnings": [
+        "Số liệu trong trích đoạn chưa được đối chiếu ô nguồn, kỳ và đơn vị."
+      ],
+      "metric": null,
+      "period": "2025-09-27",
+      "answer_source_chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+      "statement_scope": null,
+      "unit": null,
+      "retrieval_trace": {
+        "profile": "production_v3",
+        "generation": "7e5232df93c60d1c943829486328251a770cfcc811dac1cdd25d808617e4cc4c",
+        "latency_ms": 6190.33,
+        "top_ids": [
+          "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00003",
+          "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004"
+        ],
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE"
+      },
+      "search_profile": "production_v3",
+      "generation": "7e5232df93c60d1c943829486328251a770cfcc811dac1cdd25d808617e4cc4c",
+      "reason": "AMBIGUOUS_UNIT",
+      "related_evidence": [
+        {
+          "rank": 1,
+          "score": 28.520648306470246,
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "evidence_id": "row:3298f6b1c6824f2b91db4eeddb36193a:p2-r23",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r23",
+          "row_label": "Net income $",
+          "metric_ids": [
+            "net_income"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Net income $ | 112,010 | 93,736 | 96,995",
+          "box": [
+            52.130001068115234,
+            421.7980041503906,
+            558.78515625,
+            430.8079833984375
+          ],
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "page_evidence_sha256": "85ce4c43268c1e52e28aee259971609c57e76dd57be384a480e9e6055b8231c7",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 2,
+          "score": 20.785320624351723,
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "evidence_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": null,
+          "row_label": "",
+          "metric_ids": [
+            "net_income"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Other income/(expense), net (321) 269 (565)\nIncome before provision for income taxes 132,729 123,485 113,736\nProvision for income taxes 20,719 29,749 16,741\nNet income $ 112,010 $ 93,736 $ 96,995\nEarnings per share:\nBasic $ 7.49 $ 6.11 $ 6.16\nDiluted $ 7.46 $ 6.08 $ 6.13\nShares used in computing earnings per share:\nBasic 14,948,500 15,343,783 15,744,231\nDiluted 15,004,697 15,408,095 15,812,547\nSee accompanying Notes to Consolidated Financial Statements.\nApple Inc. | 2025 Form 10-K | 29",
+          "box": null,
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "page_evidence_sha256": "85ce4c43268c1e52e28aee259971609c57e76dd57be384a480e9e6055b8231c7",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 3,
+          "score": -4.347401092617252,
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "evidence_id": "row:3298f6b1c6824f2b91db4eeddb36193a:p2-r20",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r20",
+          "row_label": "Other income/(expense), net",
+          "metric_ids": [],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Other income/(expense), net | (321) | 269 | (565)",
+          "box": [
+            52.130001068115234,
+            379.0480041503906,
+            561.7731323242188,
+            388.0579833984375
+          ],
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "page_evidence_sha256": "85ce4c43268c1e52e28aee259971609c57e76dd57be384a480e9e6055b8231c7",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 4,
+          "score": -5.324812248818427,
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00003",
+          "evidence_id": "row:3298f6b1c6824f2b91db4eeddb36193a:p2-r9",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r9",
+          "row_label": "Total net sales",
+          "metric_ids": [
+            "net_revenue"
+          ],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Total net sales | 416,161 | 391,035 | 383,285",
+          "box": [
+            70.12999725341797,
+            179.55801391601562,
+            558.7852172851562,
+            188.55801391601562
+          ],
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "page_evidence_sha256": "85ce4c43268c1e52e28aee259971609c57e76dd57be384a480e9e6055b8231c7",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        },
+        {
+          "rank": 5,
+          "score": -5.331140091689798,
+          "chunk_id": "pdf_3298f6b1c6824f2b91db4eeddb36193a_2_00004",
+          "evidence_id": "row:3298f6b1c6824f2b91db4eeddb36193a:p2-r21",
+          "document_id": "3298f6b1c6824f2b91db4eeddb36193a",
+          "issuer": "Apple Inc.",
+          "filename": "source-derived-negative-MIXED_UNVERIFIED_PERIOD.pdf",
+          "document_type": "10-K",
+          "report_period": "2025-09-27",
+          "page": 2,
+          "row_id": "p2-r21",
+          "row_label": "Income before provision for income taxes",
+          "metric_ids": [],
+          "statement_scope": null,
+          "statement_type": "UNKNOWN",
+          "unit_header": null,
+          "text": "Income before provision for income taxes | 132,729 | 123,485 | 113,736",
+          "box": [
+            52.130001068115234,
+            393.2980041503906,
+            558.7852172851562,
+            402.3079833984375
+          ],
+          "source_sha256": "3298f6b1c6824f2b91db4eeddb36193af21beff648966fdfcb73d451b88e4923",
+          "page_evidence_sha256": "85ce4c43268c1e52e28aee259971609c57e76dd57be384a480e9e6055b8231c7",
+          "numeric_answer_eligible": false,
+          "reviewed_facts": [],
+          "conflicts": [
+            "ENTITY_NOT_PROVEN",
+            "METRIC_NOT_MATCHED"
+          ],
+          "verification": null,
+          "evidence_match": "RELATED_PASSAGE",
+          "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+          "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+          "source_kind": "PDF"
+        }
+      ],
+      "session_id": "6d45f479c35a4c04b605616623bdfaae",
+      "resolved_question": "Net income growth fiscal 2024 to 2025?",
+      "source_scope": [
+        "3298f6b1c6824f2b91db4eeddb36193a"
+      ],
+      "conversation_reset": false
+    },
+    "removed_only_new_fixture": true,
+    "pass": true
+  }
+]
