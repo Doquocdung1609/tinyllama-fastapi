@@ -30,6 +30,13 @@ def finalize(directory: Path) -> dict[str, object]:
         raw = primary.read_bytes()
         if sha(raw) != rec['sha256'] or len(raw) != rec['byte_size']:
             raise ValueError(f'Primary bytes changed: {rec["accession"]}')
+        checks = rec['boundary_checks']
+        checks['table_tags_balanced'] = checks['table_open_count'] == checks['table_close_count']
+        checks['financial_statement_heading_observed'] = any(term in raw.lower() for term in (b'consolidated statements', b'consolidated financial statements', b'financial statements'))
+        checks['primary_boundary_pass'] = bool(checks['html_open_near_start'] and checks['html_close_near_end']
+                                               and checks['table_open_count'] > 0 and checks['table_tags_balanced']
+                                               and checks['financial_statement_heading_observed']
+                                               and not checks['access_denied_marker'])
         idx = rec['filing_index_crosscheck']
         if not idx.get('index_json_file') or not idx.get('filing_index_file'):
             rec['identity_pass'] = False

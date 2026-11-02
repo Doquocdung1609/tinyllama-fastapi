@@ -33,7 +33,9 @@
         "table_close_count": 90,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/index.json",
@@ -88,7 +90,9 @@
         "table_close_count": 92,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/index.json",
@@ -143,7 +147,9 @@
         "table_close_count": 61,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/index.json",
@@ -198,7 +204,9 @@
         "table_close_count": 85,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/index.json",
@@ -253,7 +261,9 @@
         "table_close_count": 59,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/index.json",
@@ -308,7 +318,9 @@
         "table_close_count": 100,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/1318605/000095017023001409/index.json",
@@ -363,7 +375,9 @@
         "table_close_count": 497,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312523107214/index.json",
@@ -418,7 +432,9 @@
         "table_close_count": 506,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312524099840/index.json",
@@ -473,7 +489,9 @@
         "table_close_count": 514,
         "access_denied_marker": false,
         "document_type_marker_in_primary": false,
-        "primary_boundary_pass": true
+        "primary_boundary_pass": true,
+        "table_tags_balanced": true,
+        "financial_statement_heading_observed": true
       },
       "filing_index_crosscheck": {
         "index_json_url": "https://www.sec.gov/Archives/edgar/data/1046179/000119312525083423/index.json",

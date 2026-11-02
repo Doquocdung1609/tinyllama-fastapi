@@ -77,12 +77,17 @@ def boundary_checks(path: Path, form: str) -> dict[str, object]:
     html_close = b'</html>' in end
     table_open_count = low.count(b'<table')
     table_close_count = low.count(b'</table>')
+    financial_statement_heading = any(term in low for term in (b'consolidated statements', b'consolidated financial statements', b'financial statements'))
     access_denied = b'access denied' in beginning or b'undeclared automated tool' in beginning
     document_type_marker = bool(re.search(rb'(?:documenttype|document type|form type)[^<]{0,100}' + form.encode(), low[:500000], re.I))
     return {'html_open_near_start': html_open, 'html_close_near_end': html_close,
             'table_open_count': table_open_count, 'table_close_count': table_close_count,
+            'table_tags_balanced': table_open_count == table_close_count,
+            'financial_statement_heading_observed': financial_statement_heading,
             'access_denied_marker': access_denied, 'document_type_marker_in_primary': document_type_marker,
-            'primary_boundary_pass': html_open and html_close and table_open_count > 0 and not access_denied}
+            'primary_boundary_pass': html_open and html_close and table_open_count > 0
+                                     and table_open_count == table_close_count
+                                     and financial_statement_heading and not access_denied}
 
 
 def acquire(input_zip: Path, output_dir: Path) -> None:
