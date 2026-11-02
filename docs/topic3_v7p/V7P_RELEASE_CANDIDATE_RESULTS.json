@@ -1,0 +1,317 @@
+{
+  "status": "PASS",
+  "browser": "147.0.7727.15",
+  "scenarios": [
+    {
+      "scenario": 1,
+      "input": "What was Apple's net income in fiscal year 2025?",
+      "output": {
+        "status": "SUPPORTED",
+        "values": [
+          "112010"
+        ],
+        "unit": "MILLION_USD",
+        "verification": "CELL_VERIFIED",
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 32,
+            "row_label": "Net income",
+            "period": "2025-09-27"
+          }
+        ]
+      },
+      "browser_result": "PASS"
+    },
+    {
+      "scenario": 2,
+      "input": "Which geographic segment generated the highest net sales in fiscal year 2025, and how much did it generate?",
+      "output": {
+        "status": "SUPPORTED",
+        "values": [
+          "178353"
+        ],
+        "unit": "MILLION_USD",
+        "verification": "CELL_VERIFIED",
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 25,
+            "row_label": "Americas",
+            "period": "2025-09-27"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 25,
+            "row_label": "Europe",
+            "period": "2025-09-27"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 25,
+            "row_label": "Greater China",
+            "period": "2025-09-27"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 25,
+            "row_label": "Japan",
+            "period": "2025-09-27"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 25,
+            "row_label": "Rest of Asia Pacific",
+            "period": "2025-09-27"
+          }
+        ]
+      },
+      "browser_result": "PASS"
+    },
+    {
+      "scenario": 3,
+      "input": "Calculate Apple's year-over-year total net sales growth rate from fiscal 2024 to fiscal 2025. Show the calculation and round to two decimal places.",
+      "output": {
+        "status": "SUPPORTED",
+        "values": [
+          "6.43"
+        ],
+        "unit": "%",
+        "verification": "CELL_VERIFIED",
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 32,
+            "row_label": "Total net sales",
+            "period": "2025-09-27"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 32,
+            "row_label": "Total net sales",
+            "period": "2024-09-28"
+          }
+        ]
+      },
+      "browser_result": "PASS"
+    },
+    {
+      "scenario": 4,
+      "input": "What were HD total assets as of August 2, 2026?",
+      "output": {
+        "status": "SUPPORTED",
+        "values": [
+          "109384000000"
+        ],
+        "unit": "USD",
+        "display": "109.384 triÃ¡Â»â€¡u USD",
+        "viewer_status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+        "filing_date": "2026-08-25",
+        "report_period": "2026-08-02",
+        "period": "2026-08-02",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]/tr[15]/td[3]",
+          "table_id": "table_483d3ac2b60916e1e4c8d837",
+          "row_index": 14,
+          "column_index": 4,
+          "parent_location": {
+            "section": "(Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]",
+            "table_id": "table_483d3ac2b60916e1e4c8d837",
+            "row_index": 14,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "colors": {
+          "cell": "rgb(187, 247, 208)",
+          "column": "rgb(224, 242, 254)",
+          "row": "rgb(255, 247, 237)"
+        }
+      },
+      "browser_result": "PASS"
+    },
+    {
+      "scenario": 5,
+      "input": "Open registered SEC.gov link",
+      "output": {
+        "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "correct_url": true,
+        "external_access": "EXTERNAL_ACCESS_BLOCKED",
+        "exact_cell_landing": false
+      },
+      "browser_result": "PASS",
+      "limitation": "No stealth/retries or exact external cell-landing claim."
+    },
+    {
+      "scenario": 6,
+      "input": "Upload with no issuer/year/form inputs",
+      "output": {
+        "status": "READY",
+        "pages": 2,
+        "chunks": 5,
+        "source_sha256": "2ba930aa3611c0e5420288a96b204c1393163e38d1d92cdf0cfa98401b2c6f0e",
+        "stages": [
+          "EXTRACTING",
+          "EMBEDDING",
+          "EMBEDDING 4/5",
+          "READY"
+        ],
+        "explicit_correction_retained": true
+      },
+      "browser_result": "PASS",
+      "limitation": "SOURCE_DERIVED_TWO_PAGE_SAMPLE from original Apple pages1/32; not the complete original report. No financial QA claim made on this sample."
+    },
+    {
+      "scenario": 7,
+      "input": "CÃƒÂ²n nÃ„Æ’m 2024?",
+      "output": {
+        "status": "SUPPORTED",
+        "values": [
+          "391035"
+        ],
+        "period": "2024-09-28",
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 32,
+            "row_label": "Total net sales",
+            "period": "2024-09-28"
+          }
+        ]
+      },
+      "browser_result": "PASS"
+    },
+    {
+      "scenario": 8,
+      "input": "Wrong company and FY2037",
+      "output": [
+        {
+          "question": "What was Microsoft's net income in fiscal year 2025?",
+          "status": "QUERY_CONTEXT_CONFLICT",
+          "reason": "QUESTION_COMPANY_SCOPE_CONFLICT",
+          "values": []
+        },
+        {
+          "question": "What was Apple's net income in fiscal year 2037?",
+          "status": "INSUFFICIENT_EVIDENCE",
+          "reason": "SOURCE_PERIOD_OR_CELL_NOT_FOUND",
+          "values": []
+        }
+      ],
+      "browser_result": "PASS"
+    },
+    {
+      "scenario": 9,
+      "input": "Search and ask existing HPG scanned PDF",
+      "output": {
+        "status": "READY",
+        "pages": 24,
+        "chunks": 64,
+        "retrieved": 5,
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "numeric_status": "INSUFFICIENT_EVIDENCE",
+        "reason": "AMBIGUOUS_METRIC_DEFINITION",
+        "values": []
+      },
+      "browser_result": "PASS",
+      "limitation": "Existing OCR/index revalidated, not rebuilt; unsupported numeric mapping remains refused."
+    },
+    {
+      "scenario": 10,
+      "input": "Open Research Lab",
+      "output": {
+        "accessible": true,
+        "benchmark_not_executed": true
+      },
+      "browser_result": "PASS",
+      "limitation": "Interactive product comparison is not a newly scored frozen benchmark; integrity audit recorded separately."
+    }
+  ],
+  "page_errors": [],
+  "new_upload_sample_removed": true,
+  "review_checkpoint": "53a1ab2d7722438912e4d1b13b5329b00af8ee29",
+  "code_head": "209faf9988490ec9f8f6979f304b4e3852724d5a",
+  "method": "Real authenticated local HTTP and Chromium; same-system Codex smoke, not independent human review.",
+  "regression": {
+    "python_version": "3.13.2",
+    "node_version": "24.22.1",
+    "compileall": {
+      "command": "python -m compileall -q app scripts",
+      "exit_code": 0
+    },
+    "full": {
+      "command": "python -m pytest -q",
+      "passed": 818,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 1,
+      "seconds": 99.62
+    },
+    "non_integration": {
+      "command": "python -m pytest -q -m \"not integration\"",
+      "passed": 818,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 1,
+      "seconds": 89.09
+    },
+    "warning": "Existing StarletteDeprecationWarning: httpx with starlette.testclient",
+    "frontend": {
+      "command": "tsc -b; vitest run --config vitest.config.ts; vite build",
+      "passed": 30,
+      "files": 3,
+      "failed": 0,
+      "typecheck": "PASS",
+      "build": "PASS"
+    },
+    "diff_check": "PASS"
+  },
+  "research_integrity": {
+    "frozen_blobs_checked": 843,
+    "changed": [],
+    "original_a7_artifacts_changed": false,
+    "sealed_benchmark_executed": false,
+    "pr36_imported": false,
+    "hd_raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1"
+  },
+  "historical_verdict": "V7P_NOT_ACCEPTED",
+  "demo_protocol_status": "V7P_PRODUCT_DEMO_RELEASE_CANDIDATE_WITH_EXTERNAL_SEC_LIMITATION",
+  "code_ci": {
+    "head": "209faf9988490ec9f8f6979f304b4e3852724d5a",
+    "run": 41495835003,
+    "conclusion": "success",
+    "url": "https://github.com/Doquocdung1609/tinyllama-fastapi/actions/runs/41495835003"
+  },
+  "post_smoke_original_documents": [
+    {
+      "id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+      "status": "READY",
+      "pages": 24,
+      "chunks": 64
+    },
+    {
+      "id": "3eb270b22acb7d8d8e9c32a43dc221de",
+      "filename": "NASDAQ_AAPL_2025.pdf",
+      "status": "READY",
+      "pages": 80,
+      "chunks": 451
+    }
+  ],
+  "mobile_capture": "Sidebar transition completed; target source cell scrolled into table viewport; no whole-page horizontal overflow."
+}
