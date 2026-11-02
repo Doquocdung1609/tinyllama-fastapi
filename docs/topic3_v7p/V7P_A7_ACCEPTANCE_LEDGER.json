@@ -1,0 +1,50 @@
+{
+  "start_head": "9047888178ec67929b59f4577b832dd9ca6a5767",
+  "code_head": "dd6e1d08d8d2f225f16761347d551f3854c54ac9",
+  "original_strict_status": "V7P_NOT_ACCEPTED",
+  "extended_status": "V7P_LOCAL_SOURCE_VERIFICATION_COMPLETE_EXTERNAL_SEC_ACCESS_BLOCKED",
+  "gates": {
+    "A7-LOCAL": "PASS",
+    "A7-EXTERNAL": "EXTERNAL_ACCESS_BLOCKED",
+    "SEC-01": "PASS",
+    "SEC-02": "EXTERNAL_ACCESS_BLOCKED",
+    "SEC-03": "PASS",
+    "SEC-04": "PASS",
+    "SEC-05": "PASS",
+    "SEC-06": "PASS",
+    "SEC-07": "PASS_SYNTHETIC_SECURITY_FIXTURE",
+    "SEC-08": "PASS",
+    "SEC-09": "PASS",
+    "SEC-10": "PASS"
+  },
+  "http_controls": 13,
+  "additional_http_controls": 4,
+  "python_focused": 22,
+  "python_full": 818,
+  "frontend": 15,
+  "source_snapshot_verified": true,
+  "official_content_visible": false,
+  "original_gate_history_rewritten": false,
+  "research_complete": false,
+  "ci": {
+    "code_head": "dd6e1d08d8d2f225f16761347d551f3854c54ac9",
+    "run": 41482798805,
+    "conclusion": "success"
+  },
+  "regression": {
+    "full": {
+      "passed": 818,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 1,
+      "runtime_s": 43.43
+    },
+    "not_integration": {
+      "passed": 818,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 1,
+      "runtime_s": 58.8
+    }
+  }
+}

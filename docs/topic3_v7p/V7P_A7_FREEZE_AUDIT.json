@@ -1,0 +1,11 @@
+{
+  "baseline_blob_audit": "docs\\topic3_v7p\\V7P_FREEZE_BLOB_AUDIT.json",
+  "baseline_manifest_sha256": "739a81d0f54aef534a0744f3709756703ff4c1563a4466bfdd023b712f06ce28",
+  "historical_files": 843,
+  "a7_start_head": "9047888178ec67929b59f4577b832dd9ca6a5767",
+  "code_head": "dd6e1d08d8d2f225f16761347d551f3854c54ac9",
+  "changed_historical_files": [],
+  "original_a7_ledger_changed": false,
+  "sealed_questions_run": false,
+  "pr36_merged_or_sources_substituted": false
+}

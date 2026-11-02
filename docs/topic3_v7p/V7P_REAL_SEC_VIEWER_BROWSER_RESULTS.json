@@ -1,0 +1,24 @@
+{
+  "browser": "147.0.7727.15",
+  "local_status": "PASS",
+  "external": {
+    "status": "EXTERNAL_ACCESS_BLOCKED",
+    "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+    "correct_url": true,
+    "filing_content_visible": false,
+    "exact_cell_landing": false
+  },
+  "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+  "accession": "0001628280-26-058715",
+  "table_id": "table_483d3ac2b60916e1e4c8d837",
+  "row": 14,
+  "column": 4,
+  "displayed_value": "109,384",
+  "period": "2026-08-02",
+  "unit": "USD",
+  "multiplier": "1000000",
+  "back_navigation": true,
+  "citation_copy": true,
+  "mobile_table_scroll": true,
+  "page_errors": []
+}

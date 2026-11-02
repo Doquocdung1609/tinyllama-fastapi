@@ -1,0 +1,14 @@
+# Source resolver contract
+
+Read-only source API: `POST /studio/sec/evidence`, JSON `{ "reference": "<opaque server-issued reference>" }`, existing bearer authentication. Extra keys forbidden; reference length≤4096 and signed-envelope syntax checked. No filesystem path, client raw hash, URL, issuer, period or numeric value accepted as a trust input.
+
+Success version `registered-sec-viewer/v1`: status VERIFIED_LOCAL_SEC_SNAPSHOT (or SOURCE_EVIDENCE_PARTIAL for paragraph-only location), source/normalized hash, dataset/generation/manifest, filing ID/issuer/CIK/form/accession/report period, registered official URL, canonical parent, exact locator, bounded table rows/cells and selected-cell observation. Raw HTML and private Windows paths are not returned. A full raw-byte hash is distinct from selected-cell semantic validation and from remote SEC website availability.
+
+409 errors distinguish SOURCE_BYTES_NOT_AVAILABLE, SOURCE_HASH_MISMATCH, SOURCE_LOCATOR_UNRESOLVED, SOURCE_IDENTITY_MISMATCH, SOURCE_GENERATION_MISMATCH, UNREGISTERED_SOURCE_REFERENCE and SOURCE_EVIDENCE_BUDGET. 401 missing/wrong bearer,422 malformed/extra fields,429 SOURCE_VIEW_BUSY. Failure response contains only a source-safe code, no stale cell value. Vietnamese error text explains missing bytes versus wrong hash versus unresolved location. Local response external_access is NOT_CHECKED_BY_LOCAL_VIEWER; external browser result is recorded separately, not guessed by this API.
+
+Headers: application/json; Cache-Control no-store; X-Content-Type-Options nosniff; CSP default-src 'none'; frame-ancestors 'none'. This is a JSON-only API, not a sanitized-HTML proxy. Source signing key is server-private, independent from bearer credentials. Wrong-workspace signatures, old generation, altered lexical membership, forged targets or mismatched period/value do not yield a verified highlight.
+
+Original retrieval IDs remain in their own trace. Verified PDF citations now have stable `pdfcell_` evidence IDs, source page/cell/header geometry, deduplicated retrieval links and actual source periods. Generic filing-period metadata and answer_source_chunk_id are not presented as a verified financial-cell locator. Search and Chat reuse the same source-cell service; SEC Search profiles attach a reference after final parent selection so V3 cannot drop it while reconstructing result dictionaries.
+
+
+Review scope: existing Draft PR35, branch `codex/topic3-v7p-verified-financial-chatbot`; A7 start `9047888178ec67929b59f4577b832dd9ca6a5767`; implementation HEAD `dd6e1d08d8d2f225f16761347d551f3854c54ac9`. Same-system Codex review/test, not independent human adjudication. No merge, PR36 import, benchmark scoring, model downloads, source replacement or index rebuild. Final evidence commit/CI identity is recorded in PR35 checks and handoff.
