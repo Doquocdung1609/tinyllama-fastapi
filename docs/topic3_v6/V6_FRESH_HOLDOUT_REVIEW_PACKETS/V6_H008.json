@@ -14,7 +14,6 @@
     "FY2025"
   ],
   "query_terms_for_packet_search": [
-    "filing",
     "net",
     "sales"
   ],
@@ -23,7 +22,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 14,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -147,7 +146,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 15,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -271,7 +270,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 2,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -376,7 +375,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 4,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -516,7 +515,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -637,7 +636,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 22,
       "row_index_zero_based": 5,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"

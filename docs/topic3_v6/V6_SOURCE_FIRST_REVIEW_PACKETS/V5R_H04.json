@@ -15,15 +15,14 @@
   ],
   "query_terms_for_packet_search": [
     "net",
-    "sales",
-    "to"
+    "sales"
   ],
   "source_first_table_candidates": [
     {
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 14,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -147,7 +146,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 15,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -271,7 +270,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 2,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -376,7 +375,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 4,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -516,7 +515,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -637,7 +636,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 22,
       "row_index_zero_based": 5,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -720,35 +719,32 @@
     {
       "kind": "SEC_HTML_PROSE",
       "node_index_zero_based": 192,
-      "score": 30,
+      "score": 20,
       "matched_terms": [
         "net",
-        "sales",
-        "to"
+        "sales"
       ],
       "text": "The Company’s customers are primarily in the consumer, small and mid-sized business, education, enterprise and government markets. The Company sells its products and resells third-party products in most of its major markets directly to customers through its retail and online stores and its direct sales force. The Company also employs a variety of indirect distribution channels, such as third-party cellular network carriers, wholesalers, retailers and resellers. During 2024, the Company’s net sales through its direct and indirect distribution channels accounted for 38% and 62%, respectively, of total net sales."
     },
     {
       "kind": "SEC_HTML_PROSE",
       "node_index_zero_based": 223,
-      "score": 30,
+      "score": 20,
       "matched_terms": [
         "net",
-        "sales",
-        "to"
+        "sales"
       ],
       "text": "The Company has historically experienced higher net sales in its first quarter compared to other quarters in its fiscal year due in part to seasonal holiday demand. Additionally, new product and service introductions can significantly impact net sales, cost of sales and operating expenses. The timing of product introductions can also impact the Company’s net sales to its indirect distribution channels as these channels are filled with new inventory following a product launch, and channel inventory of an older product often declines as the launch of a newer product approaches. Net sales can also be affected when consumers and distributors anticipate a product introduction."
     },
     {
       "kind": "SEC_HTML_PROSE",
-      "node_index_zero_based": 266,
-      "score": 30,
+      "node_index_zero_based": 255,
+      "score": 20,
       "matched_terms": [
         "net",
-        "sales",
-        "to"
+        "sales"
       ],
-      "text": "The Company has a large, global business with sales outside the U.S. representing a majority of the Company’s total net sales, and the Company believes that it generally benefits from growth in international trade. Substantially all of the Company’s manufacturing is performed in whole or in part by outsourcing partners located primarily in China mainland, India, Japan, South Korea, Taiwan and Vietnam. Restrictions on international trade, such as tariffs and other controls on imports or exports of goods, technology or data, can materially adversely affect the Company’s business and supply chain. The impact can be particularly significant if these restrictive measures apply to countries and regions where the Company derives a significant portion of its revenues and/or has significant supply chain operations. Restrictive measures can increase the cost of the Company’s products and the components and raw materials that go into them, and can require the Company to take various actions, including changing suppliers, restructuring business relationships and operations, and ceasing to offer "
+      "text": "The Company has international operations with sales outside the U.S. representing a majority of the Company’s total net sales. In addition, the Company’s global supply chain is large and complex and a majority of the Company’s supplier facilities, including manufacturing and assembly sites, are located outside the U.S. As a result, the Company’s operations and performance depend significantly on global and regional economic conditions."
     }
   ],
   "machine_prepared_only": true,

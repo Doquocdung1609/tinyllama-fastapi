@@ -14,7 +14,6 @@
     "FY2025"
   ],
   "query_terms_for_packet_search": [
-    "be",
     "income",
     "net"
   ],
@@ -23,7 +22,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 13,
       "row_index_zero_based": 4,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "income",
         "net"
@@ -143,7 +142,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 23,
       "row_index_zero_based": 15,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "income",
         "net"
@@ -260,7 +259,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 23,
       "row_index_zero_based": 18,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "income",
         "net"
@@ -377,7 +376,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 24,
       "row_index_zero_based": 2,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "income",
         "net"
@@ -461,7 +460,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 26,
       "row_index_zero_based": 3,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "income",
         "net"
@@ -563,7 +562,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 27,
       "row_index_zero_based": 11,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "income",
         "net"
@@ -680,36 +679,33 @@
   "source_first_prose_candidates": [
     {
       "kind": "SEC_HTML_PROSE",
-      "node_index_zero_based": 3091,
-      "score": 30,
+      "node_index_zero_based": 2665,
+      "score": 20,
       "matched_terms": [
-        "be",
         "income",
         "net"
       ],
-      "text": "We review debt investments quarterly for credit losses and impairment. If the cost of an investment exceeds its fair value, we evaluate, among other factors, general market conditions, credit quality of debt instrument issuers, and the extent to which the fair value is less than cost. This determination requires significant judgment. In making this judgment, we employ a systematic methodology that considers available quantitative and qualitative evidence in evaluating potential impairment of our investments. In addition, we consider specific adverse conditions related to the financial health of, and business outlook for, the investee. If we have plans to sell the security or it is more likely than not that we will be required to sell the security before recovery, then a decline in fair value below cost is recorded as an impairment charge in other income (expense), net and a new cost basis in the investment is established. If market, industry, and/or investee conditions deteriorate, we may incur future impairments."
+      "text": "The components of other income (expense), net were as follows:"
     },
     {
       "kind": "SEC_HTML_PROSE",
-      "node_index_zero_based": 3092,
-      "score": 30,
+      "node_index_zero_based": 2785,
+      "score": 20,
       "matched_terms": [
-        "be",
         "income",
         "net"
       ],
-      "text": "Equity investments without readily determinable fair values are written down to fair value if a qualitative assessment indicates that the investment is impaired and the fair value of the investment is less than carrying value. We perform a qualitative assessment on a periodic basis. We are required to estimate the fair value of the investment to determine the amount of the impairment loss. Once an investment is determined to be impaired, an impairment charge is recorded in other income (expense), net."
+      "text": "We use derivative instruments to manage risks related to foreign currencies, interest rates, equity prices, and credit; to enhance investment returns; and to facilitate portfolio diversification. Gains and losses from changes in fair values of derivatives that are not designated as hedging instruments are primarily recognized in other income (expense), net."
     },
     {
       "kind": "SEC_HTML_PROSE",
-      "node_index_zero_based": 5805,
-      "score": 30,
+      "node_index_zero_based": 2794,
+      "score": 20,
       "matched_terms": [
-        "be",
         "income",
         "net"
       ],
-      "text": "Income tax expense includes U.S. and international income taxes, and interest and penalties on uncertain tax positions. Certain income and expenses are not reported in tax returns and financial statements in the same year. The tax effect of such temporary differences is reported as deferred income taxes. Deferred tax assets are reported net of a valuation allowance when it is more likely than not that a tax benefit will not be realized. All deferred income taxes are classified as long-term in our consolidated balance sheets."
+      "text": "Interest and dividends income decreased primarily due to lower portfolio balances. Interest expense decreased primarily due to maturities of commercial paper and higher capitalization of debt interest expense, offset in part by higher finance lease interest expense. Net recognized losses on investments increased primarily due to higher impairments, offset in part by higher gains on equity investments in the current period. Net losses on derivatives increased primarily due to higher losses on equity derivatives in the current period. Other, net primarily reflects net recognized losses on equity method investments, including OpenAI."
     }
   ],
   "machine_prepared_only": true,

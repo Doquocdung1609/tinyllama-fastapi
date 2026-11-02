@@ -80,3 +80,15 @@ def test_recorded_live_summary_is_explicitly_unreviewed():
     assert result["status"] == "RECORDED_LIVE_RUN_EXPOSED_DEVELOPMENT"
     assert result["human_gold"] is False and result["numeric_cells_verified"] == 0
     assert result["arms"]["A4R"]["known_positive_hit"]["1"] == 13
+
+
+def test_v6_development_comparison_preserves_unknown_and_posthoc_label():
+    from app.product.frontend_api import faith_r_v6_development
+
+    result = faith_r_v6_development()
+    assert result["status"] == "RECORDED_EXPOSED_DEVELOPMENT"
+    assert result["case_count"] == 15
+    assert result["human_gold"] is False and result["numeric_cells_verified"] == 0
+    assert len(result["freeze_sha256"]) == 64
+    assert all("A1" in case["arms"] and "A4R" in case["arms"] for case in result["cases"])
+    assert any(case["arms"]["A4R"]["top1_label"] == "UNJUDGED" for case in result["cases"])

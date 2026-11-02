@@ -12,6 +12,7 @@ type LiveStatus={status:string;index_a:string;index_b:string;mode:string}
 type LiveHit={rank:number;chunk_id:string;fiscal_period:string;source_url:string;accession_number:string;snippet:string;verification_status:string}
 type LiveResult={status:string;experiment_id:string;arm:string;index:string;run_utc:string;elapsed_ms:number;hits:LiveHit[];limits:string[]}
 type LiveSummary={status:string;case_count:number;human_gold:boolean;numeric_cells_verified:number;arms:Record<string,{known_positive_hit:Record<string,number>;top1_labels:Record<string,number>;p50_ms:number}>}
+type Development={status:string;case_count:number;human_gold:boolean;numeric_cells_verified:number;freeze_sha256:string|null;cases:{id:string;question:string;source_url:string;target_accession:string;a3_added_ids:string[];a4_changed_top1:boolean;arms:Record<string,{top1_id:string|null;top1_label:string;known_positive_rank:number|null;elapsed_ms:number}>}[]}
 
 const names:Record<string,string>={R0_BM25:'BM25 tác giả',R1_DENSE:'Dense BGE-small',R2_SPLADE:'SPLADE',R3_BM25_DENSE_RRF:'BM25 + Dense RRF',R4_SPLADE_DENSE_RRF:'SPLADE + Dense RRF',R5_THREE_WAY_RRF:'RRF ba nhánh',R6_AUTHOR_DETERMINISTIC_STAGE2:'Stage-2 quy tắc',I1_STRUCTURE_BM25:'BM25 theo cấu trúc bảng'}
 
@@ -20,12 +21,15 @@ export default function Topic3Lab(){
  const replay=useQuery({queryKey:['faith-r-recorded-lab'],queryFn:()=>api<Replay>('/research-lab/faith-r'),staleTime:300000})
  const liveStatus=useQuery({queryKey:['faith-r-live-status'],queryFn:()=>api<LiveStatus>('/research-lab/faith-r/live/status'),staleTime:30000})
  const liveSummary=useQuery({queryKey:['faith-r-live-summary'],queryFn:()=>api<LiveSummary>('/research-lab/faith-r/live/summary'),staleTime:300000})
+ const development=useQuery({queryKey:['faith-r-v6-development'],queryFn:()=>api<Development>('/research-lab/faith-r/v6/development'),staleTime:300000})
  const [liveQuestion,setLiveQuestion]=useState('What was Amazon total revenue in fiscal 2024?')
  const [liveArm,setLiveArm]=useState('A4R')
  const live=useMutation({mutationFn:()=>post<LiveResult>('/research-lab/faith-r/live',{query:liveQuestion,arm:liveArm})})
  const [selected,setSelected]=useState('')
+ const [selectedDevelopment,setSelectedDevelopment]=useState('')
  const lab=result.data
  const q=lab?.questions.find(item=>item.id===selected)||lab?.questions[0]
+ const devCase=development.data?.cases.find(item=>item.id===selectedDevelopment)||development.data?.cases[0]
  return <section className="card" aria-label="Topic 3 Research Lab">
   <h2>Topic 3 · phòng thí nghiệm nghiên cứu</h2>
   <p className="notice"><strong>Kết quả đã đo trước đây — không phải truy vấn vừa chạy.</strong> Ba cột BM25/Dense/Hybrid phía trên là so sánh trực tiếp trên tài liệu đang chọn. Bảng dưới dùng hai hồ sơ SEC năm 2026 và cấu hình mô hình khác.</p>
@@ -44,6 +48,13 @@ export default function Topic3Lab(){
    <p>Đoạn được gắn nhãn đúng ở hạng 1: ban đầu {replay.data.aggregate?.A1_recorded.known_positive_hit['1']}/15; FAITH-R {replay.data.aggregate?.A4_reranked.known_positive_hit['1']}/15. Đây là nhãn đoạn, chưa xác minh ô số liệu.</p>
    <div className="scroll-table"><table><thead><tr><th>Câu hỏi</th><th>Ban đầu · Top 1</th><th>FAITH-R · Top 1</th><th>Bằng chứng ứng viên</th></tr></thead><tbody>{replay.data.cases?.map(item=><tr key={item.case}><td>{item.question}<br/><a href={item.source_url} target="_blank" rel="noreferrer">SEC {item.accession}</a> · {item.report_date}</td><td><code>{item.a1_top1.chunk_id}</code><br/>{item.a1_top1.label}</td><td><code>{item.a4_top1.chunk_id}</code><br/>{item.a4_top1.label} · {item.a4_top1.verification_status}</td><td><small>{item.a4_top1.excerpt||'Chưa định vị dòng nguồn'}</small></td></tr>)}</tbody></table></div>
    <ul>{replay.data.limits?.map(limit=><li key={limit}>{limit}</li>)}</ul>
+  </details>}
+  {development.data&&devCase&&<details><summary>V6 · đối chiếu từng câu phát triển đã lưu</summary>
+   <p className="notice">{development.data.status} · {development.data.case_count} câu đã lộ nhãn · chưa có nhãn độc lập hoặc ô số liệu xác minh. So sánh dưới đây là kết quả đã chạy, không phải truy vấn vừa thực hiện.</p>
+   <label>Câu hỏi phát triển<select aria-label="Câu hỏi V6 đã lưu" value={devCase.id} onChange={e=>setSelectedDevelopment(e.target.value)}>{development.data.cases.map(item=><option value={item.id} key={item.id}>{item.id} · {item.question}</option>)}</select></label>
+   <p><a href={devCase.source_url} target="_blank" rel="noreferrer">Mở SEC gốc · {devCase.target_accession}</a> · A3 thêm {devCase.a3_added_ids.length} ứng viên so với A2 · A4 {devCase.a4_changed_top1?'đổi':'giữ'} Top 1 sau xếp hạng.</p>
+   <div className="scroll-table"><table><thead><tr><th>Phương án</th><th>Top 1 · nhãn hiện có</th><th>Đoạn YES đầu tiên</th><th>Thời gian ms</th></tr></thead><tbody>{Object.entries(devCase.arms).map(([name,arm])=><tr key={name}><td>{name}{name==='A4R'?' · sửa sau khi thấy lỗi':''}</td><td><code>{arm.top1_id||'—'}</code><br/>{arm.top1_label}</td><td>{arm.known_positive_rank??'chưa thấy trong Top 10 / chưa chấm'}</td><td>{arm.elapsed_ms.toFixed(1)}</td></tr>)}</tbody></table></div>
+   <small>Mã khóa thuật toán: {development.data.freeze_sha256?.slice(0,16)}… · Nhãn UNJUDGED không được tính là NO. A4R có đoạn YES đầu tiên chỉ khi Top 1 là YES; thứ hạng dưới Top 1 không hiển thị trong bản đối chiếu này.</small>
   </details>}
   <div className="card"><h3>FAITH-R · chạy trên chỉ mục SEC phục hồi</h3>
    <p className="muted">{liveStatus.data?.status==='AVAILABLE'?'LIVE_ON_DEMAND · 8.670 đoạn SEC; Index A phục hồi P3D, Index B đã sửa kỳ tài chính.':'NOT_AVAILABLE · cần bật chỉ mục nghiên cứu riêng trên máy này.'} Kết quả là đoạn nguồn, chưa phải số liệu được xác minh.</p>

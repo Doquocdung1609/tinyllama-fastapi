@@ -17,10 +17,8 @@
     "attribute",
     "center",
     "data",
-    "its",
     "revenue",
-    "segment",
-    "to"
+    "segment"
   ],
   "source_first_table_candidates": [
     {
@@ -331,68 +329,6 @@
     },
     {
       "kind": "SEC_HTML_TABLE_ROW",
-      "table_index_zero_based": 64,
-      "row_index_zero_based": 8,
-      "score": 23,
-      "matched_terms": [
-        "its",
-        "to"
-      ],
-      "row_cells": [
-        "",
-        "*10.5",
-        "",
-        "Form of Indemnity Agreement, between Advanced Micro Devices, Inc. and its officers and directors, filed as Exhibit 10.1 to AMD’s Current Report on Form 8-K dated October 6, 2008, is hereby incorporated by reference."
-      ],
-      "candidate_row_label": "",
-      "candidate_header_rows": [
-        [
-          "",
-          "4.4",
-          "",
-          "First Supplemental Indenture by and among Advanced Micro Devices, Inc. and Wells Fargo Bank N.A., dated September 23, 2016, filed as Exhibit 4.1 to AMD's Quarterly Report on Form 10-Q for the fiscal quarter ended September 24, 2016, is hereby incorporated by reference."
-        ],
-        [
-          "",
-          "4.5",
-          "",
-          "Second Supplemental Indenture governing the Xilinx 2.2375% Senior Notes due 2030, by and among Xilinx, Inc., Advanced Micro Devices, Inc. and U.S. Bank Trust Company, National Association, dated February 14, 2022, filed as Exhibit 4.2 to AMD’s Current Report on Form 8-K dated February 14, 2022, is h"
-        ],
-        [
-          "",
-          "4.6",
-          "",
-          "Indenture, dated as of June 9, 2022, by and between Advanced Micro Devices, Inc. and U.S. Bank Trust Company, National Association, as trustee, filed as exhibit 4.1 to AMD’s Current Report on Form 8-K dated June 9, 2022, is hereby incorporated by reference."
-        ],
-        [
-          "",
-          "4.7",
-          "",
-          "First Supplemental Indenture, dated as of June 9, 2022, by and between the Company and U.S. Bank Trust Company, National Association, as trustee, including the Form of 2032 Note and Form of 2052 Note, filed as exhibit 4.2 to AMD’s Current Report on Form 8-K dated June 9, 2022, is hereby incorporated"
-        ]
-      ],
-      "neighbor_before": [
-        "",
-        "*10.4",
-        "",
-        "Amendment No. 1 to the AMD Deferred Income Account Plan, as amended and restated, effective July 1, 2012, filed as Exhibit 10.16(a) to AMD’s Annual Report on Form 10-K for the period ended December 29, 2012, is hereby incorporated by reference."
-      ],
-      "neighbor_after": [
-        "",
-        "*10.6",
-        "",
-        "Form of Management Continuity Agreement, as amended and restated, filed as Exhibit 10.13(b) to AMD’s Annual Report on Form 10-K for the fiscal year ended December 29, 2007, is hereby incorporated by reference."
-      ],
-      "numeric_tokens_unassigned": [
-        "10.5",
-        "10.1",
-        "8",
-        "6,",
-        "2008,"
-      ]
-    },
-    {
-      "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 8,
       "row_index_zero_based": 4,
       "score": 22,
@@ -451,45 +387,103 @@
         "12,579",
         "6,496"
       ]
+    },
+    {
+      "kind": "SEC_HTML_TABLE_ROW",
+      "table_index_zero_based": 8,
+      "row_index_zero_based": 10,
+      "score": 22,
+      "matched_terms": [
+        "center",
+        "data"
+      ],
+      "row_cells": [
+        "Data Center",
+        "$",
+        "3,482",
+        "",
+        "",
+        "$",
+        "1,267",
+        ""
+      ],
+      "candidate_row_label": "Data Center",
+      "candidate_header_rows": [
+        [
+          "",
+          "Year Ended"
+        ],
+        [
+          "",
+          "December 28, 2024",
+          "",
+          "December 30, 2023"
+        ],
+        [
+          "",
+          "(In millions)"
+        ],
+        [
+          "Net revenue:",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "neighbor_before": [
+        "Operating income (loss):",
+        "",
+        "",
+        ""
+      ],
+      "neighbor_after": [
+        "Client",
+        "897",
+        "",
+        "",
+        "(46)",
+        ""
+      ],
+      "numeric_tokens_unassigned": [
+        "3,482",
+        "1,267"
+      ]
     }
   ],
   "source_first_prose_candidates": [
     {
       "kind": "SEC_HTML_PROSE",
       "node_index_zero_based": 446,
-      "score": 50,
+      "score": 40,
       "matched_terms": [
         "center",
         "data",
         "revenue",
-        "segment",
-        "to"
+        "segment"
       ],
       "text": "Industry-wide fluctuations in the computer marketplace have materially adversely affected us in the past and may materially adversely affect us in the future. We offer products that are used in different end markets and the demand for our products can vary among our Data Center, Client, Gaming and Embedded end markets. For instance, in our Data Center segment, we offer products that are optimized for generative AI applications and since the fourth quarter of 2023, we have experienced significant demand for our AI accelerators. The demand for such products in part will depend on the extent to which our customers utilize generative AI solutions in a wide variety of applications, and both the near-term and long-term trajectory of such generative AI solutions is unknown. Also, our Client segment revenue is focused on the consumer desktop and notebook PC segments and will depend in part on the market’s adoption of AI PCs. We are actively building AI capabilities into all our Client products, such as Ryzen AI PC processors, but there can be no assurance about the rate and pace of adoption "
     },
     {
       "kind": "SEC_HTML_PROSE",
       "node_index_zero_based": 767,
-      "score": 50,
+      "score": 40,
       "matched_terms": [
         "center",
         "data",
         "revenue",
-        "segment",
-        "to"
+        "segment"
       ],
       "text": "In 2024, we delivered strong annual revenue growth with net revenue increasing 14% to $25.8 billion, compared to $22.7 billion in 2023. This growth was driven by the performance of our Data Center and Client segments. Data Center net revenue of $12.6 billion increased by 94% compared to $6.5 billion in 2023, driven by higher sales of our AMD Instinct™ GPUs and AMD EPYC™ CPUs. Client segment net revenue of $7.1 billion in 2024 increased by 52% compared to $4.7 billion in 2023, primarily due to higher sales of our AMD Ryzen™ mobile and desktop processors. The increase in annual net revenue was partially offset by a decrease in net revenue in our Gaming and Embedded segments. Gaming net revenue of $2.6 billion decreased by 58% compared to $6.2 billion in 2023. The decrease in net revenue was primarily due to lower semi-custom product revenue. Embedded net revenue of $3.6 billion decreased by 33% compared to net revenue of $5.3 billion in 2023, as customers normalized their inventory levels."
     },
     {
       "kind": "SEC_HTML_PROSE",
       "node_index_zero_based": 1214,
-      "score": 50,
+      "score": 40,
       "matched_terms": [
         "center",
         "data",
         "revenue",
-        "segment",
-        "to"
+        "segment"
       ],
       "text": "From the acquisition date to December 30, 2022, the Consolidated Statements of Operations include immaterial revenue and operating results attributable to Pensando, which are reported under the Data Center segment."
     }
@@ -512,5 +506,7 @@
     "review_decision": null,
     "ambiguity_notes": null
   },
-  "warnings": []
+  "warnings": [
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
+  ]
 }

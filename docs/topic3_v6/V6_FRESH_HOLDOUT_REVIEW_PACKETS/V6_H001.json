@@ -14,9 +14,6 @@
     "FY2024"
   ],
   "query_terms_for_packet_search": [
-    "annual",
-    "filing",
-    "locate",
     "net",
     "sales"
   ],
@@ -25,7 +22,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 14,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -149,7 +146,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 15,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -273,7 +270,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 2,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -378,7 +375,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 4,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -518,7 +515,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 18,
       "row_index_zero_based": 6,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -639,7 +636,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 22,
       "row_index_zero_based": 5,
-      "score": 23,
+      "score": 29,
       "matched_terms": [
         "net",
         "sales"
@@ -741,13 +738,13 @@
     },
     {
       "kind": "SEC_HTML_PROSE",
-      "node_index_zero_based": 246,
+      "node_index_zero_based": 255,
       "score": 20,
       "matched_terms": [
-        "annual",
-        "filing"
+        "net",
+        "sales"
       ],
-      "text": "The Company’s Annual Reports on Form 10-K, Quarterly Reports on Form 10-Q, Current Reports on Form 8-K, and amendments to reports filed pursuant to Sections 13(a) and 15(d) of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), are filed with the U.S. Securities and Exchange Commission (the “SEC”). Such reports and other information filed by the Company with the SEC are available free of charge at investor.apple.com/investor-relations/sec-filings/default.aspx when such reports are available on the SEC’s website. The Company periodically provides certain information for investors on its corporate website, www.apple.com, and its investor relations website, investor.apple.com. This includes press releases and other information about financial performance, information on environmental, social and governance matters, and details related to the Company’s annual meeting of shareholders. The information contained on the websites referenced in this Form 10-K is not incorporated by reference into this filing. Further, the Company’s references to website URLs are intended to b"
+      "text": "The Company has international operations with sales outside the U.S. representing a majority of the Company’s total net sales. In addition, the Company’s global supply chain is large and complex and a majority of the Company’s supplier facilities, including manufacturing and assembly sites, are located outside the U.S. As a result, the Company’s operations and performance depend significantly on global and regional economic conditions."
     }
   ],
   "machine_prepared_only": true,

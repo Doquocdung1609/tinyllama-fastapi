@@ -12,7 +12,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "75dfadd3c0d84cee63bd9054e50707c54be07bd03e31365b88a8b4b5661f32fd"
+      "packet_sha256": "7f9087a07e90d2c160cca116b9464bbd23d7147fb900958bce83dc246b6f08f8"
     },
     {
       "id": "V6_H002",
@@ -30,7 +30,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "c96c43f0bbcf752a6e3a772d916ca345f9e2275b69ce46b1ea435e7c307f03b8"
+      "packet_sha256": "808df8cce6943c935acae23a8d7fe494948b266caf8ae72dc3a8f4b08e4c057d"
     },
     {
       "id": "V6_H004",
@@ -66,7 +66,7 @@
       "accession": "0000320193-25-000079",
       "table_candidates": 2,
       "prose_candidates": 0,
-      "packet_sha256": "1d949a37b8174f55fe181cc1b5a2f2e1dabf4602a939c1afe6d38ebcc75c6121"
+      "packet_sha256": "e0ba716ed4f71434297d8b7f0277db0b27def6bf289992c3ced2cd65b9ffcc8a"
     },
     {
       "id": "V6_H008",
@@ -75,7 +75,7 @@
       "accession": "0000320193-25-000079",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "d3ce373c563ab6c6bdd0b9e31f5a1ce491026a6e424cfbb170f511e019036b3a"
+      "packet_sha256": "1b08a0b03860eb774d03065105c71cf8c22320d6f496ddf33f81f26ac8669767"
     },
     {
       "id": "V6_H009",
@@ -101,8 +101,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/msft-20240630.htm",
       "accession": "0000950170-24-087843",
       "table_candidates": 6,
-      "prose_candidates": 0,
-      "packet_sha256": "ab4b6ce5ce813eb44b27677d7eb8244626f32272242b6265ad9d7f4eb92a2f4f"
+      "prose_candidates": 3,
+      "packet_sha256": "490dae5e3af8c81f51182b6cb72757be669cd5207d9c7c19143d51a528c4efa7"
     },
     {
       "id": "V6_H012",
@@ -164,8 +164,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
       "accession": "0000950170-25-100235",
       "table_candidates": 6,
-      "prose_candidates": 2,
-      "packet_sha256": "f19a7d9b4172e3080779e59c63028749fba80a9a80dca5f51c3b45e17f31416f"
+      "prose_candidates": 3,
+      "packet_sha256": "60c10991f5acd33cd21740667d60d6de2980abb1f3ea5aab95b75d4822819bd3"
     },
     {
       "id": "V6_H019",
@@ -191,8 +191,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm",
       "accession": "0001045810-24-000029",
       "table_candidates": 6,
-      "prose_candidates": 1,
-      "packet_sha256": "fff7d665a48a43525fdf794c919e030d90b12900c195be85d7bb23835ea79282"
+      "prose_candidates": 3,
+      "packet_sha256": "1bc3da9caceaa3a4a9c4e730e6ba42f451902860e2ab8c1ef48564c08e5e081d"
     },
     {
       "id": "V6_H022",
@@ -246,7 +246,7 @@
       "accession": "0001045810-25-000023",
       "table_candidates": 4,
       "prose_candidates": 3,
-      "packet_sha256": "55097d8e95f26fe986c15567b106ecc28d5e7192a10578e3a2491f5bf88d9f62"
+      "packet_sha256": "8b7946a343f1e4d8d465b6baeed9835c6bc4f6885170605391c15fa503698c64"
     },
     {
       "id": "V6_H028",
@@ -254,8 +254,8 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
       "accession": "0001045810-25-000023",
       "table_candidates": 6,
-      "prose_candidates": 2,
-      "packet_sha256": "efce90562be7c696f77ff38a4587e43e80d14a4e015c7475436b77f1fbad2363"
+      "prose_candidates": 3,
+      "packet_sha256": "2d9af0ed1c503c1e2f24e295dfcdffbf806a7c8e652afeab59f973bd5274ee1d"
     },
     {
       "id": "V6_H029",

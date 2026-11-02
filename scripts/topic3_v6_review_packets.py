@@ -22,6 +22,7 @@ OUT = REPO / "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS"
 STOP = {"what", "were", "was", "did", "the", "a", "an", "of", "in", "for", "at", "how", "much", "from",
         "with", "and", "between", "report", "reported", "compare", "compared", "change", "differ", "difference",
         "fy2022", "fy2023", "fy2024", "fy2025", "fy2037", "fiscal", "year", "end", "total", "portion", "will",
+        "to", "be", "do", "its", "its'", "attributed", "locate", "filing", "annual",
         "apple", "microsoft", "nvidia", "amazon", "meta", "tesla", "intel", "amd", "s", "s'", "activities"}
 ALIASES = {"revenues": "revenue", "sales": "sales", "purchases": "purchase", "expenses": "expense",
            "equivalents": "equivalent", "operating": "operating", "expenditures": "expenditure"}
@@ -85,17 +86,18 @@ def render_packet(packet: dict) -> str:
     rows = []
     for item in packet["source_first_table_candidates"]:
         locator = f"table {item['table_index_zero_based']}, row {item['row_index_zero_based']} (zero-based)"
-        context = "\n".join(" | ".join(row) for row in item["candidate_header_rows"][-3:])
+        context = "\n".join(" | ".join(row).rstrip() for row in item["candidate_header_rows"][-3:])
         rows.append("<tr><td>" + html.escape(locator) + "</td><td><pre>" + html.escape(context) +
-                    "</pre></td><td><pre>" + html.escape(" | ".join(item["row_cells"])) + "</pre></td></tr>")
+                    "</pre></td><td><pre>" + html.escape(" | ".join(item["row_cells"]).rstrip()) + "</pre></td></tr>")
     prose = "".join("<li><p>" + html.escape(item["text"]) + "</p></li>" for item in packet["source_first_prose_candidates"])
+    warnings = "".join("<li>" + html.escape(warning) + "</li>" for warning in packet["warnings"])
     return ("<!doctype html><html lang='en'><meta charset='utf-8'><title>" + html.escape(packet["question_id"]) +
             " source review</title><style>body{font:16px system-ui;max-width:1300px;margin:2rem auto;padding:1rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:.6rem;vertical-align:top}pre{white-space:pre-wrap;overflow-wrap:anywhere}code{overflow-wrap:anywhere}.warn{background:#fff4dc;padding:1rem}</style>" +
             "<h1>" + html.escape(packet["question_id"]) + " · source-first review</h1><p class='warn'>Machine-prepared candidates; label UNJUDGED. Do not treat a row below as verified gold.</p>" +
             "<h2>Question</h2><p>" + html.escape(packet["question"]) + "</p><p>" +
             html.escape(packet["issuer"] + " · " + packet["form"] + " · " + packet["report_date"] + " · " + packet["accession"]) +
             " · <a href='" + source + "'>Open original SEC filing</a></p>" +
-            "<h2>Candidate original HTML rows</h2><table><tr><th>Original locator</th><th>Header context</th><th>Row cells in source order</th></tr>" +
+            "<h2>Review cautions</h2><ul>" + warnings + "</ul><h2>Candidate original HTML rows</h2><table><tr><th>Original locator</th><th>Header context</th><th>Row cells in source order</th></tr>" +
             "".join(rows) + "</table><h2>Candidate original prose</h2><ul>" + prose + "</ul>" +
             "<h2>Reviewer decision</h2><p>Record exact SEC source span, metric definition, row, period column, value, unit/scale and label in the review sheet. If multiple plausible rows conflict, mark UNCERTAIN and request a second reviewer. Confirm the requested period exists in the frozen filing.</p>" +
             "<p>Official HTML SHA-256: <code>" + packet["official_html_sha256"] + "</code></p></html>")
@@ -150,7 +152,10 @@ def main() -> None:
             "warnings": (["FY2037 is outside the filing period; verify unsupported status"]
                          if question.get("category") == "UNSUPPORTED_FUTURE" else []) +
                         (["Comparative question: check every requested year column"]
-                         if question.get("category") == "COMPARATIVE_COLUMN" else []),
+                         if question.get("category") == "COMPARATIVE_COLUMN" else []) +
+                        (["Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"]
+                         if first["document_type"] == "10-K" and
+                         first["fiscal_period"] != "FY" + question["sec_report_date"][:4] else []),
         }
         path = out / f"{question['question_id']}.json"
         path.write_text(json.dumps(packet, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

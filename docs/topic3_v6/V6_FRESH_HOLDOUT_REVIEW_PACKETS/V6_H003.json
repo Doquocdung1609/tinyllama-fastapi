@@ -15,8 +15,6 @@
   ],
   "query_terms_for_packet_search": [
     "columns",
-    "filing",
-    "locate",
     "net",
     "sales"
   ],

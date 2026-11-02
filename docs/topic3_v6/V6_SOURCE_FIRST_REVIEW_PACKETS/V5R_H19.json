@@ -642,5 +642,7 @@
     "review_decision": null,
     "ambiguity_notes": null
   },
-  "warnings": []
+  "warnings": [
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
+  ]
 }

@@ -39,7 +39,7 @@
       "accession": "0000320193-24-000123",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "9747851b228f0d67c0d32924c7f1f44037aa0364dc0137d7997b8fbe446697e8"
+      "packet_sha256": "d3f7c8b65e5d2b589093ccf6460954120a685c9897b3b9192b064ba2a0546798"
     },
     {
       "id": "V5R_H05",
@@ -111,7 +111,7 @@
       "accession": "0000950170-25-100235",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "1aa9b3e418fe2c9968a9e2216192c3f84be7fc3d8f0eac6e61efa914108eefe7"
+      "packet_sha256": "e209d5dbe4b68ed7634c39e886e4a20cbd04d54bee042775e7ae23fb7109e470"
     },
     {
       "id": "V5R_H13",
@@ -165,7 +165,7 @@
       "accession": "0001018724-25-000004",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "c41a16ffc36a69f4f784634d2ea0c642bff10f9dd2b95bc62a298a61362a2989"
+      "packet_sha256": "731a602faf03bc24b595b150a13cff5b6fc526085fce7a5af53d3350f89e149a"
     },
     {
       "id": "V5R_H19",
@@ -174,7 +174,7 @@
       "accession": "0001018724-25-000004",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "348c38a714373629aa2d2c8bca014f7df8aa5d36b2e8a1121858c89d910c6241"
+      "packet_sha256": "df96805fcc77683002949bdd01431a29cf605f9a9fedd97f4db91175d131655b"
     },
     {
       "id": "V5R_H20",
@@ -183,7 +183,7 @@
       "accession": "0001018724-24-000008",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "e72e969e1077b5daee1303bb4c1524f32c28ab69c1a102e1966e64d48ea2bf07"
+      "packet_sha256": "3b3428cd86145337837bee0752eaaa84d2981cd2d983f2663dfda6ce42bb51fd"
     },
     {
       "id": "V5R_H21",
@@ -192,7 +192,7 @@
       "accession": "0001326801-25-000017",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "f342da288d6bc4bc1193ac919275f59bf04069a411055c8181437fbe77442852"
+      "packet_sha256": "9b3b22228bf2fef5a5a50debbc1baf0d79746dbac2b23e8209c16bd152f266c5"
     },
     {
       "id": "V5R_H22",
@@ -201,7 +201,7 @@
       "accession": "0001326801-25-000017",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "13aa4278cbc93ad17688d7e1311195cc6f5484c25b87a9a94ea022a3a5c4fce4"
+      "packet_sha256": "f7af913d3eba650187d56100d27ea0660b8135350e1f3aa7c54678b381bd39c9"
     },
     {
       "id": "V5R_H23",
@@ -210,7 +210,7 @@
       "accession": "0001326801-25-000017",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "625664aff050987e12c9744a433972464ab8fc49eaebbb26bca976ca8539b12e"
+      "packet_sha256": "f15502090a435f4da692558607f4a4c46ef7d339a739725d2c683407e9f64145"
     },
     {
       "id": "V5R_H24",
@@ -219,7 +219,7 @@
       "accession": "0001628280-25-003063",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "bd03e3747247fc3a3ba46db4f549e26dced99bee648894880f740cc56861f5f5"
+      "packet_sha256": "03d1b9666570813dfeaf9b2a95f7d271cceca90a12d911ab38522a7738ffbd86"
     },
     {
       "id": "V5R_H25",
@@ -228,7 +228,7 @@
       "accession": "0001628280-24-002390",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "7869a5e7335199f2e82b23c0516253481521cac44db0f9517bf398b8af591ffd"
+      "packet_sha256": "02f0f328ee21f6c3e40cd13dc61ff76c8090d48826075abcd66c554432644ff4"
     },
     {
       "id": "V5R_H26",
@@ -237,7 +237,7 @@
       "accession": "0001628280-24-002390",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "1fa7c88a9b7bd0cbe9951a8ff77d0cff66bdb883bbdb182cb69b16f23ac5c702"
+      "packet_sha256": "70d80ef42aa0b72af84624218c986e8e5cd746a10dcfafe807e78084d6128bf5"
     },
     {
       "id": "V5R_H27",
@@ -246,7 +246,7 @@
       "accession": "0000050863-25-000009",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "0889a43f7b93e5897e1e5a1e9f897692374a8cab63621162e5192d4969bb996e"
+      "packet_sha256": "7481e96d9656ed15c542041295374cd59ce1ec966741a32dc25619281f651ee9"
     },
     {
       "id": "V5R_H28",
@@ -255,7 +255,7 @@
       "accession": "0000050863-25-000009",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "5e782fff5e98093f4703c69c7bf99d56e03c88f3b8b74f4c28992d35799a4214"
+      "packet_sha256": "6762f5f1982204bf47d066432c0c5f66d6d6bf3ff43028e46dfa358a6124fba4"
     },
     {
       "id": "V5R_H29",
@@ -264,7 +264,7 @@
       "accession": "0000002488-25-000012",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "8096f37314dca3c10891abb9881d9f6d65a9dd89a61724a2bed8274a0d6c963b"
+      "packet_sha256": "842aabaae839be368197bb6faa01f63ec057045bfba0baf502acb7f6e829bafa"
     },
     {
       "id": "V5R_H30",
@@ -273,7 +273,7 @@
       "accession": "0000002488-25-000012",
       "table_candidates": 6,
       "prose_candidates": 3,
-      "packet_sha256": "dd399f9a10fecc966974caa3bb5a33c343c36a7cd5ed1b911348b921e1b1b2ed"
+      "packet_sha256": "c93183d60216173b0af293c9b1553cd08a5dbbd67d214d0318600a22cec14419"
     }
   ]
 }

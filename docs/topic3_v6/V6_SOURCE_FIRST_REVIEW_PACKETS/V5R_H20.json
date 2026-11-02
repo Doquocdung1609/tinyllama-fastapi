@@ -555,6 +555,7 @@
     "ambiguity_notes": null
   },
   "warnings": [
-    "Comparative question: check every requested year column"
+    "Comparative question: check every requested year column",
+    "Frozen source chunk header fiscal year differs from SEC report-date year; inspect original SEC header and corrected B metadata"
   ]
 }

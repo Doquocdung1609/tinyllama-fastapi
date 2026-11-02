@@ -14,8 +14,6 @@
     "FY2024"
   ],
   "query_terms_for_packet_search": [
-    "filing",
-    "locate",
     "revenue"
   ],
   "source_first_table_candidates": [
@@ -23,7 +21,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 11,
       "row_index_zero_based": 0,
-      "score": 13,
+      "score": 19,
       "matched_terms": [
         "revenue"
       ],
@@ -51,7 +49,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 13,
       "row_index_zero_based": 1,
-      "score": 13,
+      "score": 19,
       "matched_terms": [
         "revenue"
       ],
@@ -122,7 +120,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 15,
       "row_index_zero_based": 2,
-      "score": 13,
+      "score": 19,
       "matched_terms": [
         "revenue"
       ],
@@ -197,7 +195,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 16,
       "row_index_zero_based": 2,
-      "score": 13,
+      "score": 19,
       "matched_terms": [
         "revenue"
       ],
@@ -272,7 +270,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 17,
       "row_index_zero_based": 2,
-      "score": 13,
+      "score": 19,
       "matched_terms": [
         "revenue"
       ],
@@ -347,7 +345,7 @@
       "kind": "SEC_HTML_TABLE_ROW",
       "table_index_zero_based": 24,
       "row_index_zero_based": 5,
-      "score": 13,
+      "score": 19,
       "matched_terms": [
         "revenue"
       ],
@@ -460,7 +458,35 @@
       ]
     }
   ],
-  "source_first_prose_candidates": [],
+  "source_first_prose_candidates": [
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 678,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "Office Commercial is designed to increase personal, team, and organizational productivity through a range of products and services. Growth depends on our ability to reach new users in new markets such as frontline workers, small and medium businesses, and growth markets, as well as add value to our core product and service offerings to span AI and productivity categories such as communication, collaboration, analytics, security, and compliance. Office Commercial revenue is mainly affected by a combination of continued installed base growth and average revenue per user expansion, as well as the continued shift from Office licensed on-premises to Office 365."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 680,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "Office Consumer is designed to increase personal productivity and creativity through a range of products and services. Growth depends on our ability to reach new users, add value to our core product set with new features including AI tools, and continue to expand our product and service offerings into new markets. Office Consumer revenue is mainly affected by the percentage of customers that buy Office with their new devices and the continued shift from Office licensed on-premises to Microsoft 365 Consumer subscriptions. Office Consumer Services revenue is mainly affected by the demand for communication and storage through Skype, Outlook.com, and OneDrive, which is largely driven by subscriptions, advertising, and the sale of minutes."
+    },
+    {
+      "kind": "SEC_HTML_PROSE",
+      "node_index_zero_based": 684,
+      "score": 10,
+      "matched_terms": [
+        "revenue"
+      ],
+      "text": "Dynamics provides cloud-based and on-premises business solutions for financial management, enterprise resource planning (“ERP”), customer relationship management (“CRM”), and supply chain management, as well as other low code application development platforms and AI offerings, for small and medium businesses, large organizations, and divisions of global enterprises. Dynamics revenue is driven by the number of users licensed and applications consumed, expansion of average revenue per user, and the continued shift to Dynamics 365, a unified set of cloud-based intelligent business applications, including our low code development platforms, such as Power Apps and Power Automate."
+    }
+  ],
   "machine_prepared_only": true,
   "label": "UNJUDGED",
   "review_fields": {
