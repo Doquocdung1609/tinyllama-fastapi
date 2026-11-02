@@ -34,6 +34,7 @@ data/*.sqlite3-*
 tmp/final_product/
 tmp/phase1_*/
 tmp/topic3_*
+tmp/topic3/
 tmp/holdout_previews/
 tmp/pdfs/
 tmp/production.*.log

@@ -86,6 +86,12 @@ if ($env:STUDIO_API_TOKEN.Length -lt 16) {throw 'Khoa truy cap khong hop le; kie
 if (-not $Workspace) {$Workspace=Join-Path $repo 'studio_workspace/react-user'}
 $env:STUDIO_WORKSPACE_DIR=[IO.Path]::GetFullPath($Workspace)
 $env:OLLAMA_BASE_URL='http://127.0.0.1:11434'
+# Reuse a standard existing Windows OCR installation without changing PATH.
+$existingOcr=Join-Path $env:ProgramFiles 'Tesseract-OCR/tesseract.exe'
+$existingLanguages=Join-Path $env:ProgramFiles 'Tesseract-OCR/tessdata'
+if (-not $env:TESSERACT_CMD -and (Test-Path -LiteralPath $existingOcr)) {$env:TESSERACT_CMD=$existingOcr}
+if (-not $env:TESSDATA_DIR -and (Test-Path (Join-Path $existingLanguages 'vie.traineddata')) -and
+    (Test-Path (Join-Path $existingLanguages 'eng.traineddata'))) {$env:TESSDATA_DIR=$existingLanguages}
 $env:CORS_ORIGINS="http://127.0.0.1:$UiPort"
 $env:STUDIO_API_TARGET="http://127.0.0.1:$ApiPort"
 # Legacy compatibility routes use an isolated store, never the owner's old knowledgebase.
@@ -110,17 +116,20 @@ try {
     catch {
         $ollama=Get-Command ollama -ErrorAction SilentlyContinue
         $ollamaExe=if ($ollama) {$ollama.Source} else {Join-Path $env:LOCALAPPDATA 'Programs/Ollama/ollama.exe'}
-        if (-not (Test-Path -LiteralPath $ollamaExe)) {throw 'Ollama chua chay/chua cai; script khong tu tai mo hinh.'}
-        $process=Start-Process -FilePath $ollamaExe -ArgumentList 'serve' -PassThru -WindowStyle Hidden
-        $started+=@($process.Id)
-        for ($attempt=0;$attempt -lt 30;$attempt++) {
-            Start-Sleep -Seconds 1
-            try {$tags=Invoke-RestMethod 'http://127.0.0.1:11434/api/tags' -TimeoutSec 2;break}catch{}
+        if (Test-Path -LiteralPath $ollamaExe) {
+            $process=Start-Process -FilePath $ollamaExe -ArgumentList 'serve' -PassThru -WindowStyle Hidden
+            $started+=@($process.Id)
+            for ($attempt=0;$attempt -lt 30;$attempt++) {
+                Start-Sleep -Seconds 1
+                try {$tags=Invoke-RestMethod 'http://127.0.0.1:11434/api/tags' -TimeoutSec 2;break}catch{}
+            }
+        } else {
+            Write-Warning 'Ollama chua kha dung. AUTO chi dung BM25 tren tai lieu da READY; tai lieu moi can retry khi model san sang.'
         }
     }
     $model=$tags.models | Where-Object name -eq 'nomic-embed-text:latest' | Select-Object -First 1
     if (-not $model -or $model.digest -ne '0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f') {
-        throw 'Khong co dung Nomic digest da chap nhan. Khong tu tai/thay mo hinh hoac vector cu.'
+        Write-Warning 'Khong co dung Nomic digest. AUTO se tu choi Dense va dung BM25; khong tai/thay model hoac vector cu.'
     }
     $process=Start-Process -FilePath $python -ArgumentList @('-m','uvicorn','main:app','--host','127.0.0.1','--port',"$ApiPort") -WorkingDirectory $repo -PassThru -WindowStyle Hidden -RedirectStandardOutput (Join-Path $runtime 'api.out') -RedirectStandardError (Join-Path $runtime 'api.err')
     $started+=@($process.Id)

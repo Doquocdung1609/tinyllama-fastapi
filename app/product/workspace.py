@@ -270,13 +270,22 @@ class PdfWorkspace:
             temporary = self.files / f".{document_id}.tmp"
             temporary.write_bytes(data)
             temporary.replace(target)
+            from app.product.document_metadata import extract_metadata,save_metadata
+            try:metadata=extract_metadata(target)
+            except (RuntimeError,ValueError) as exc:
+                target.unlink(missing_ok=True)
+                raise ValueError('PDF_CONTENT_INVALID_OR_ENCRYPTED') from exc
+            issuer=issuer or metadata['fields']['issuer']['value'] or ''
+            report_period=report_period or metadata['fields']['report_period']['value'] or ''
+            if document_type=='PDF':document_type=metadata['fields']['document_type']['value'] or 'PDF'
             now = _now()
             with closing(self._connect()) as db, db:
                 db.execute("INSERT INTO documents(id,filename,sha256,issuer,document_type,report_period,"
                            "size_bytes,status,stage,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                            (document_id, filename, digest, issuer.strip(), document_type.strip(),
                             report_period.strip(), len(data), "UPLOADED", "UPLOAD", now, now))
-            return {**self.document(document_id), "duplicate": False}
+            save_metadata(self,document_id,metadata)
+            return {**self.document(document_id), "duplicate": False,'metadata':metadata}
 
     def _stage(self, document_id: str, status: str, stage: str, *, error=None, pages=None, chunks=None):
         with closing(self._connect()) as db, db:
@@ -460,6 +469,10 @@ class PdfWorkspace:
                 db.execute("DELETE FROM documents WHERE id=?", (document_id,))
                 db.execute("DELETE FROM page_evidence WHERE document_id=?", (document_id,))
                 db.execute("DELETE FROM reviewed_facts WHERE document_id=?", (document_id,))
+                if db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='document_metadata'").fetchone():
+                    db.execute('DELETE FROM document_metadata WHERE document_id=?',(document_id,))
+                if db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='financial_chat_sessions'").fetchone():
+                    db.execute('DELETE FROM financial_chat_sessions WHERE payload LIKE ?',('%'+document_id+'%',))
             (self.files / f"{document_id}.pdf").unlink(missing_ok=True)
             return True
 

@@ -13,6 +13,7 @@ import re
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 from app.product.pdf_extract import folded
+from app.product.financial_math import calculate,normalize_amount
 
 METRICS={'assets':['tong tai san','tong cong tai san','total assets'],
          'liabilities':['no phai tra','total liabilities'],
@@ -59,6 +60,22 @@ class FactReview(BaseModel):
     source_image_reviewed:bool=False
 
 
+def table_bound_scope(page,row):
+    top=row.get('reading_y',row.get('box',[0,0])[1])
+    lines=[]
+    for line in page.get('lines',[]):
+        y=min((w.get('ry',w.get('box',[0,0])[1]) for w in line.get('words',[])),default=line.get('box',[0,0])[1])
+        if y<top:lines.append((y,folded(line['text'])))
+    headings=[(y,text) for y,text in lines if re.search(r'statements|balance sheet|bao cao|bang can doi|ket qua kinh doanh',text)]
+    if not headings:return None
+    y,text=max(headings)
+    context=' '.join(t for ly,t in lines if y-20<=ly<=y)
+    scopes=[]
+    if re.search(r'hop nhat|consolidated',context):scopes.append('CONSOLIDATED')
+    if re.search(r'cong ty me|\brieng\b|parent company|separate financial',context):scopes.append('SEPARATE')
+    return scopes[0] if len(scopes)==1 else None
+
+
 def review_fact(workspace,document_id,request:FactReview):
     page=workspace.page_evidence(document_id,request.page)
     if not request.source_image_reviewed:
@@ -76,9 +93,7 @@ def review_fact(workspace,document_id,request:FactReview):
     label=folded(row['row_label']);context=folded(page['text'])
     if not any(alias in label for alias in METRICS[request.metric]):
         raise ValueError('SOURCE_METRIC_MISMATCH')
-    if request.statement_scope=='CONSOLIDATED' and not any(x in context for x in ('hop nhat','consolidated')):
-        raise ValueError('SOURCE_SCOPE_MISMATCH')
-    if request.statement_scope=='SEPARATE' and not any(x in context for x in ('cong ty me','rieng','parent company','separate financial statements')):
+    if table_bound_scope(page,row)!=request.statement_scope:
         raise ValueError('SOURCE_SCOPE_MISMATCH')
     unit_words={'VND':['vnd','dong'],'NGHIN_VND':['nghin dong'],'TRIEU_VND':['trieu dong'],
                 'TY_VND':['ty dong'],'USD':['usd'],'MILLION_USD':['million','millions']}
@@ -145,10 +160,11 @@ def review_fact(workspace,document_id,request:FactReview):
     value=parse_number(cell['text'],request.convention)
     doc=workspace.document(document_id)
     fact={**request.model_dump(),'document_id':document_id,'issuer':doc['issuer'],
+          'scope_verifier_version':'TABLE_BOUND_SCOPE_V1',
           'source_sha256':doc['sha256'],'page_evidence_sha256':page['evidence_sha256'],
           'row_label':row['row_label'],'item_code':row.get('item_code'),'table_id':row['table_id'],
           'source_display':cell['text'],'box':cell['box'],'confidence':cell['confidence'],
-          'extraction_method':page['method'],'value':str(value),'base_value':str(value*SCALES[request.unit]),
+          'extraction_method':page['method'],'value':str(value),'base_value':str(normalize_amount(value,SCALES[request.unit])),
           'currency':'USD' if 'USD' in request.unit else 'VND',
           'verification':'VERIFIED_BY_LOCAL_SOURCE_IMAGE_REVIEW',
           'reviewed_at':datetime.now(timezone.utc).isoformat()}
@@ -185,10 +201,12 @@ def eligible_facts(workspace,document_ids):
                 raise ValueError('REVIEWED_SOURCE_EVIDENCE_CHANGED')
             row=next((r for r in evidence['tables'] if r['id']==fact['row_id']),None)
             if row is None or fact['column_index']>=len(row['cells']):raise ValueError('REVIEWED_SOURCE_CELL_CHANGED')
+            if fact.get('scope_verifier_version')!='TABLE_BOUND_SCOPE_V1':raise ValueError('LEGACY_FACT_REQUIRES_TABLE_SCOPE_REREVIEW')
+            if table_bound_scope(evidence,row)!=fact['statement_scope']:raise ValueError('REVIEWED_SCOPE_CHANGED')
             cell=row['cells'][fact['column_index']]
             if (cell['text']!=fact['source_display'] or cell['box']!=fact['box']
                 or parse_number(cell['text'],fact['convention'])!=Decimal(fact['value'])
-                or Decimal(fact['value'])*SCALES[fact['unit']]!=Decimal(fact['base_value'])):
+                or normalize_amount(fact['value'],SCALES[fact['unit']])!=Decimal(fact['base_value'])):
                 raise ValueError('REVIEWED_SOURCE_VALUE_CHANGED')
             result.append(fact)
     return result
@@ -292,19 +310,19 @@ def numeric_answer(workspace,request):
         return no('EXPLICIT_ORDERED_PERIODS_REQUIRED')
     numbers=[Decimal(f['base_value']) for f in operands]
     with localcontext() as ctx:
-        ctx.prec=40
-        value=numbers[0];formula='Giá trị ô nguồn';unit=operands[0]['currency']
-        if request.operation=='ABS_CHANGE':value=numbers[0]-numbers[1];formula='Kỳ hiện tại − kỳ trước'
+        ctx.prec=max(40,max(len(n.as_tuple().digits)+abs(n.as_tuple().exponent) for n in numbers)+20)
+        value=calculate('EXTRACT',[numbers[0]]);formula='Giá trị ô nguồn';unit=operands[0]['currency']
+        if request.operation=='ABS_CHANGE':value=calculate('ABS_CHANGE',numbers);formula='Kỳ hiện tại − kỳ trước'
         elif request.operation=='PERCENT_CHANGE':
             if numbers[1]==0:return no('ZERO_BASE_PERIOD')
-            value=(numbers[0]-numbers[1])/numbers[1]*100;formula='(Kỳ hiện tại − kỳ trước) / kỳ trước × 100';unit='%'
+            value=calculate('PERCENT_CHANGE',numbers);formula='(Kỳ hiện tại − kỳ trước) / kỳ trước × 100';unit='%'
         elif request.operation in {'DEBT_TO_ASSETS','NET_MARGIN'}:
             if numbers[1]==0:return no('ZERO_DENOMINATOR')
-            value=numbers[0]/numbers[1]*100;formula='Tử số / mẫu số × 100';unit='%'
+            value=calculate(request.operation,numbers);formula='Tử số / mẫu số × 100';unit='%'
         elif request.operation=='ACCOUNTING_IDENTITY':
-            value=numbers[0]+numbers[1]-numbers[2];formula='Nợ phải trả + vốn chủ sở hữu − tổng tài sản'
+            value=calculate('ACCOUNTING_IDENTITY',numbers);formula='Nợ phải trả + vốn chủ sở hữu − tổng tài sản'
         elif request.operation=='RESTATEMENT_CHECK':
-            value=numbers[0]+numbers[1]-numbers[2];formula='Số đã công bố + điều chỉnh − số trình bày lại'
+            value=calculate('RESTATEMENT_CHECK',numbers);formula='Số đã công bố + điều chỉnh − số trình bày lại'
         if unit!='%' and len({f['unit'] for f in operands})==1:
             unit=operands[0]['unit'];value=value/SCALES[unit]
     return {'status':'SUPPORTED','answer':'Kết quả từ các ô đã được đối chiếu ảnh nguồn.',

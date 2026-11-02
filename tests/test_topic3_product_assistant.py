@@ -105,7 +105,7 @@ def test_auto_uses_v3r3_only_for_owned_workspace(monkeypatch):
     assert result["status"] == "INSUFFICIENT_EVIDENCE"
 
 
-def test_direct_question_uses_only_existing_verified_fact(monkeypatch):
+def test_direct_question_rejects_producer_claim_without_source_identity(monkeypatch):
     fact = {"metric": "assets", "period": "2025-12-31", "issuer": "HPG", "statement_scope": "SEPARATE", "currency": "VND", "basis": "AS_REPORTED"}
     monkeypatch.setattr(frontend_api, "workspace", lambda: _Workspace())
     monkeypatch.setattr(frontend_api, "unified_search", lambda _: {"generation": "g", "results": [{"text": "row", "page": 3}]})
@@ -116,7 +116,11 @@ def test_direct_question_uses_only_existing_verified_fact(monkeypatch):
         return {"status": "SUPPORTED", "answer": "Reviewed cell", "values": ["100"], "citations": [fact], "verification": "DECIMAL_WITH_LOCALLY_REVIEWED_SOURCE_CELLS"}
     monkeypatch.setattr(frontend_api, "numeric_answer", verified)
     result = frontend_api.analysis(AnalysisRequest(question="Tong tai san cong ty me HPG 2025 la bao nhieu?", document_ids=["pdf-1"], search_profile="production_v3"))
-    assert result["status"] == "SUPPORTED"
+    # A producer label alone is no longer proof: this legacy mock omits the
+    # source hash, document membership and cell coordinates. Keep plan routing
+    # assertions, and require the new postcondition to block its numeric claim.
+    assert result["status"] == "CONFLICTING_EVIDENCE"
+    assert result['values']==[] and result['citations']==[]
     assert plans[0].current_period == "2025-12-31"
-    assert result["verification_status"] == "DECIMAL_WITH_LOCALLY_REVIEWED_SOURCE_CELLS"
+    assert result["verification_status"] == "CONFLICTING_EVIDENCE"
     assert result["retrieval_trace"]["generation"] == "g"

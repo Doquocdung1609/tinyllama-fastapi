@@ -7,6 +7,8 @@ for the subsequent verifier without writing reviewed_facts.
 from decimal import Decimal
 from hashlib import sha256
 from pathlib import Path
+from datetime import datetime
+from contextlib import closing
 import re
 
 import pymupdf
@@ -25,6 +27,12 @@ def recover_retrieved_tables(workspace, document_ids, hits):
         mapping={}
         for hit in selected:
             if hit.get('source_sha256')!=doc['sha256']:raise ValueError('NATIVE_RETRIEVAL_SOURCE_MISMATCH')
+            if hasattr(workspace,'_connect'):
+                with closing(workspace._connect()) as db:
+                    original=db.execute('SELECT document_id,page,text,text_hash FROM chunks WHERE id=?',(hit['chunk_id'],)).fetchone()
+                if (original is None or original['document_id']!=document_id or original['page']!=int(hit['page'])
+                        or sha256(original['text'].encode()).hexdigest()!=original['text_hash']):
+                    raise ValueError('NATIVE_RETRIEVAL_CHUNK_MEMBERSHIP_MISMATCH')
             mapping.setdefault(int(hit['page']),[]).append(hit['chunk_id'])
         tables=recover_native_tables(workspace.source_file(document_id),list(mapping),doc['sha256'],mapping)
         for table in tables:table['document_id']=document_id
@@ -78,6 +86,8 @@ def recover_native_tables(path, pages, expected_hash, chunk_ids_by_page=None):
                 context='\n'.join(' '.join(w[4] for w in ws) for ry,ws in above if ry>=heading_y)
                 # A narrative may span a heading/header; preserve it for audit.
                 scale='1000000' if re.search(r'\bmillions?\b',context,re.I) else None
+                if re.search(r'\b(?:thousands?|billions?)\b',context,re.I) and not re.search(r'except.{0,150}shares.{0,150}thousands',context,re.I|re.S):
+                    scale=None
                 currency='USD' if re.search(r'\bUSD\b|U\.S\. dollars?',context,re.I) else 'UNKNOWN'
                 scope='SEGMENT' if re.search('segment',heading,re.I) else 'CONSOLIDATED' if re.search('consolidated',heading,re.I) else 'UNKNOWN'
                 cells=[];last_y=y
@@ -87,6 +97,7 @@ def recover_native_tables(path, pages, expected_hash, chunk_ids_by_page=None):
                     numeric=[w for w in ws if NUMBER.fullmatch(w[4])]
                     values=[]
                     for w in numeric:
+                        if len(w[4])>80:continue
                         if any(other[4]=='%' and 0<=other[0]-w[2]<8 for other in ws):continue
                         near=min(range(len(years)),key=lambda k:abs(w[2]-centers[k]))
                         if abs(w[2]-centers[near])>gap*.48:continue
@@ -107,7 +118,16 @@ def recover_native_tables(path, pages, expected_hash, chunk_ids_by_page=None):
                     if not label:break
                     last_y=ry
                     for v in values:
+                        k=v['column']
+                        date_words=[w[4] for ry,hs in above if y-ry<22 for w in hs
+                                    if abs((w[0]+w[2])/2-centers[k])<gap/2]
+                        date_label=' '.join(date_words)+f" {v['year']}"
+                        date_match=re.search(r'(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?',date_label)
+                        try: end=datetime.strptime((date_match[0].replace(',','')+f" {v['year']}") if date_match else '', '%B %d %Y').date().isoformat()
+                        except ValueError:end=None
                         v.update(row_label=label,source_sha256=expected_hash,page=number,
+                            period_end=end,column_label=date_label if end else str(v['year']),
+                            row_box=[min(w[0] for w in ws),min(w[1] for w in ws),max(w[2] for w in ws),max(w[3] for w in ws)],
                             table_heading=heading,statement_scope=scope,scale=scale,currency=currency,
                             source_excerpt=' '.join(w[4] for w in ws),header_context=context,
                             retrieved_chunk_ids=list((chunk_ids_by_page or {}).get(number,[])),
