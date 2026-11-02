@@ -17,6 +17,7 @@ NUMERIC_TERMS = (
     'so lieu', 'gia tri', 'tong tai san', 'total assets', 'doanh thu',
     'revenue', 'net sales', 'loi nhuan', 'profit', 'chenh lech',
     'tang truong', 'growth', 'phan tram', 'percent', 'ty le', 'ratio',
+    'net income', 'highest', 'largest', 'maximum', 'lowest', 'minimum',
 )
 
 

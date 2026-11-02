@@ -387,6 +387,13 @@ def analysis(payload:AnalysisRequest):
             if needs_number(payload.question):
                 plan=reviewed_plan(payload.question,eligible_facts(workspace(),payload.document_ids),METRICS)
                 if plan:
+                    conflicts=[key for key,value in plan.items()
+                               if key in payload.model_fields_set and getattr(payload,key)!=value]
+                    if conflicts:
+                        return {**answer,'status':'QUERY_CONTEXT_CONFLICT',
+                                'answer':'Câu hỏi mâu thuẫn với tùy chọn đã chọn. Hãy sửa hoặc bỏ tùy chọn trước khi tính.',
+                                'reason':'EXPLICIT_QUERY_CONTEXT_CONFLICT','conflicting_fields':conflicts,
+                                'values':[],'citations':[], 'verification_status':'QUERY_CONTEXT_CONFLICT'}
                     verified=numeric_answer(workspace(),payload.model_copy(update={'mode':'numeric',**plan}))
                     if verified['status']=='SUPPORTED':
                         return {**answer,**verified,'verification_status':verified['verification'],

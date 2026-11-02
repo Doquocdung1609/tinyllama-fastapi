@@ -76,9 +76,9 @@ def review_fact(workspace,document_id,request:FactReview):
     label=folded(row['row_label']);context=folded(page['text'])
     if not any(alias in label for alias in METRICS[request.metric]):
         raise ValueError('SOURCE_METRIC_MISMATCH')
-    if request.statement_scope=='CONSOLIDATED' and 'hop nhat' not in context:
+    if request.statement_scope=='CONSOLIDATED' and not any(x in context for x in ('hop nhat','consolidated')):
         raise ValueError('SOURCE_SCOPE_MISMATCH')
-    if request.statement_scope=='SEPARATE' and not any(x in context for x in ('cong ty me','rieng')):
+    if request.statement_scope=='SEPARATE' and not any(x in context for x in ('cong ty me','rieng','parent company','separate financial statements')):
         raise ValueError('SOURCE_SCOPE_MISMATCH')
     unit_words={'VND':['vnd','dong'],'NGHIN_VND':['nghin dong'],'TRIEU_VND':['trieu dong'],
                 'TY_VND':['ty dong'],'USD':['usd'],'MILLION_USD':['million','millions']}
