@@ -43,7 +43,7 @@ def test_typed_cells_and_decimal_growth(tmp_path):
         assert c['retrieved_chunk_ids']==['synthetic-original-chunk']
 
 
-@pytest.mark.parametrize('updates',[{'metric':'assets'},{'operation':'ABS_CHANGE'},{'statement_scope':'SEPARATE'},{'current_period':'2025-12-31'}])
+@pytest.mark.parametrize('updates',[{'metric':'assets'},{'operation':'ABS_CHANGE'},{'statement_scope':'SEPARATE'},{'current_period':'2025-12-31'},{'basis':'RESTATED'}])
 def test_explicit_conflicts_fail_closed(tmp_path,updates):
     w,r,_=setup_source(tmp_path)
     req=AnalysisRequest(question='Total net sales growth rate fiscal 2024 to 2025?',document_ids=['d'],**updates)
@@ -70,6 +70,16 @@ def test_reverse_comparison_not_silently_reordered(tmp_path):
     w,r,_=setup_source(tmp_path)
     result=automatic_answer(w,AnalysisRequest(question='Total net sales growth from fiscal 2025 to fiscal 2024?',document_ids=['d']),r)
     assert result['values']==[] and result['reason']=='REVERSE_COMPARISON_REQUIRES_EXPLICIT_OPERAND_ORDER'
+
+
+@pytest.mark.parametrize('question',[
+    'Which segment had highest net income fiscal 2025?',
+    'Net income fiscal 2025 in EUR?',
+    'Revenue fiscal 2025?'])
+def test_unsupported_metric_or_currency_never_silently_substituted(tmp_path,question):
+    w,r,_=setup_source(tmp_path)
+    result=automatic_answer(w,AnalysisRequest(question=question,document_ids=['d']),r)
+    assert result['status']!='SUPPORTED' and result['values']==[]
 
 
 @pytest.mark.parametrize('question',['Net income fiscal 2037?','Net income attributable to common shareholders 2025?','Net income Q2 2025?','Total assets 2025?'])
@@ -143,5 +153,8 @@ def test_segment_set_must_match_source_declaration(tmp_path,complete):
         def source_file(self,_):return path
     hits={'results':[{'document_id':'d','page':3,'source_sha256':digest,'chunk_id':'synthetic-segment-source','text':'net sales reportable segments'}]}
     r=automatic_answer(Workspace(),AnalysisRequest(question='Which segment had highest net sales fiscal 2025?',document_ids=['d']),hits)
-    if complete:assert r['status']=='SUPPORTED' and r['winner']=='North' and len(r['citations'])==2
+    if complete:
+        assert r['status']=='SUPPORTED' and r['winner']=='North' and len(r['citations'])==2
+        wrong=automatic_answer(Workspace(),AnalysisRequest(question='Which segment had highest net income fiscal 2025?',document_ids=['d']),hits)
+        assert wrong['values']==[] and wrong['reason']=='AMBIGUOUS_SEGMENT_METRIC'
     else:assert r['reason']=='INCOMPLETE_OR_AMBIGUOUS_SEGMENT_SET' and r['values']==[]

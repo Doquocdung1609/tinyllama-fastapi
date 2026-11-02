@@ -177,14 +177,19 @@ def automatic_answer(workspace,request,result):
         return {'status':status,'reason':reason,'answer':'Chưa đủ bằng chứng phù hợp để xác nhận số liệu.',
                 'values':[],'citations':[],'verification_status':reason}
     if len(request.document_ids)!=1:return refuse('SELECT_ONE_DOCUMENT_FOR_VERIFIED_CALCULATION')
+    if re.search(r'\b(?:eur|vnd|cad|aud|hkd|jpy|cny|gbp|euros?|yen|dong)\b|in (?:thousands?|billions?)|percentage points|diem phan tram',q):
+        return refuse('UNSUPPORTED_REQUESTED_CURRENCY_SCALE_OR_PERCENTAGE_POINTS')
     if re.search(r'\bquarter|\bq[1-4]\b|\bcalendar\b|(?:three|six|nine) months|quy [1-4]',q):return refuse('UNSUPPORTED_DURATION_REQUIRES_TYPED_PERIOD')
-    if re.search(r'attributable|per share|eps|capex|capital expenditure',q):return refuse('AMBIGUOUS_METRIC_DEFINITION')
+    if re.search(r'attributable|per share|eps|capex|capital expenditure|adjusted|restated|non-gaap|dieu chinh|trinh bay lai',q):return refuse('AMBIGUOUS_METRIC_DEFINITION')
+    if 'basis' in request.model_fields_set and request.basis!='AS_REPORTED':return refuse('EXPLICIT_BASIS_CONFLICT','QUERY_CONTEXT_CONFLICT')
     from app.product.query_intent import metric_matches
     metrics=metric_matches(q)
     extreme=bool(re.search(r'highest|largest|maximum|lowest|minimum|lon nhat|nho nhat',q))
-    if extreme and ('segment' in q or 'phan khuc' in q):metric='segment_net_sales'
+    if extreme and ('segment' in q or 'phan khuc' in q):
+        if metrics!=['net_revenue']:return refuse('AMBIGUOUS_SEGMENT_METRIC')
+        metric='segment_net_sales'
     elif len(metrics)==1:metric=metrics[0]
-    elif not metrics and re.search(r'\bdoanh thu\b|\brevenue\b',q):metric='net_revenue'
+    elif not metrics and re.search(r'\bdoanh thu\b|\brevenue\b',q):return refuse('AMBIGUOUS_METRIC_DEFINITION')
     else:return refuse('AMBIGUOUS_METRIC')
     operation='MAX' if extreme and not re.search(r'lowest|minimum|nho nhat',q) else 'MIN' if extreme else 'PERCENT_CHANGE' if re.search(r'growth|tang truong|phan tram',q) else 'ABS_CHANGE' if re.search(r'difference|chenh lech',q) else 'EXTRACT'
     years=sorted(set(int(y) for y in re.findall(r'\b20\d{2}\b',q)))

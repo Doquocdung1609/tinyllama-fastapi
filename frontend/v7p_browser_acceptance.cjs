@@ -109,12 +109,33 @@ const {chromium}=require('playwright');
   if(!['bm25','dense','hybrid'].every(m=>comparison.arms?.[m]?.results?.length))throw new Error('Missing real comparison arm');
   await page.getByRole('heading',{name:'Độ trễ đo được',exact:true}).waitFor();
   await page.screenshot({path:path.join(screenshots,'research-lab.png'),fullPage:true});
+  await page.getByRole('button',{name:'Trợ lý tài chính',exact:true}).click();
+  await page.getByText('Công cụ nâng cao và phân tích SEC',{exact:true}).click();
+  await page.getByLabel('Nguồn phân tích',{exact:true}).selectOption('SEC');
+  await page.getByLabel('Doanh nghiệp SEC',{exact:true}).selectOption('HD');
+  await page.getByLabel('Câu hỏi phân tích',{exact:true}).fill('What were HD total assets as of August 2, 2026?');
+  const secResponse=page.waitForResponse(r=>r.url().endsWith('/studio/sec/analysis')&&r.request().method()==='POST');
+  await page.getByRole('button',{name:'Phân tích có bằng chứng',exact:true}).click();
+  const sec=await(await secResponse).json();if(sec.status!=='SUPPORTED'||!sec.citations?.length)throw new Error('Real SEC control failed');
+  const citationName=sec.citations[0].issuer.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  await page.getByRole('button',{name:new RegExp(citationName)}).last().click();
+  const official=page.getByRole('link',{name:/Mở công bố SEC gốc/});await official.waitFor();
+  if(await official.getAttribute('href')!==sec.citations[0].source_url)throw new Error('SEC URL/source mismatch');
+  await page.screenshot({path:path.join(screenshots,'sec-verified-evidence.png'),fullPage:true});
+  const popupEvent=page.waitForEvent('popup');await official.click();const popup=await popupEvent;
+  await popup.waitForLoadState('domcontentloaded',{timeout:60000});
+  const exactURL=popup.url()===sec.citations[0].source_url;
+  const visible=await popup.locator('body').innerText();
+  const secNavigation={url:popup.url(),exact_filing_url:exactURL,filing_text_visible:/home depot/i.test(visible)&&!/undeclared automated tool|access denied|request rate threshold/i.test(visible),exact_cell_landing:false};
+  await popup.screenshot({path:path.join(screenshots,'sec-official-navigation.png'),fullPage:false});await popup.close();
   await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'Mở điều hướng',exact:true}).click();
   await page.screenshot({path:path.join(screenshots,'mobile-navigation.png'),fullPage:true});
   if(errors.length)throw new Error('Browser page errors: '+errors.join(';'));
   const result={status:'PASS',browser:await browser.version(),document_id:doc.id,source_sha256:doc.sha256,
     apple_cases:3,future_year_refusal:true,source_pdf_page:32,followup_2024:true,narrative:true,company_research:true,
-    advanced_conflict:true,metadata_correction_reload:true,comparison_modes:['bm25','dense','hybrid'],page_errors:errors};
+    advanced_conflict:true,metadata_correction_reload:true,alternate_source_refusal:!!alternate,
+    sec_control:{status:sec.status,values:sec.values,citations:sec.citations},sec_navigation:secNavigation,
+    comparison_modes:['bm25','dense','hybrid'],page_errors:errors};
   fs.writeFileSync(path.join(root,'docs/topic3_v7p/V7P_BROWSER_RESULT.json'),JSON.stringify(result,null,2));
   console.log(JSON.stringify(result));
  }catch(e){await page.screenshot({path:path.join(screenshots,'failure.png'),fullPage:true});throw e}
