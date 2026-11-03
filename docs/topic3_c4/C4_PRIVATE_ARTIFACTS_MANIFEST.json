@@ -1,0 +1,66 @@
+{
+  "schema": "c4_private_artifacts_manifest/v1",
+  "private_location": "OWNER_MACHINE_DOWNLOADS_OUTSIDE_GIT",
+  "run_manifest_sha256": "6e3e4ac8474a29cdfeaab91e123f6da60104181c5254d4f0aaf393f8205f55cc",
+  "files": {
+    "C4_JUDGED_ELIGIBILITY.json": {
+      "sha256": "d1074190dbee580e5d821584df0d149638b76a70ebafe5b9b8307e1ab6987d90",
+      "bytes": 51782
+    },
+    "C4_PER_QUERY_ARM_RESULTS.jsonl": {
+      "sha256": "8fe53e3b9adf5ef97e3d66a0b30f8af0a0edb80434ebb7729912fee7f165c76d",
+      "bytes": 1410374
+    },
+    "C4_RUN_SUMMARY.json": {
+      "sha256": "3086197341883ac833ac202db071254aefa5e5a78eaf5bfb10c8c66800e85e37",
+      "bytes": 11871
+    },
+    "C4_FAILURE_DIAGNOSIS_PRIVATE.json": {
+      "sha256": "0216f87eb568ddcbfa82e329eab7b99fdb7170a95dc59bce4e898fbc908ffc48",
+      "bytes": 31598
+    },
+    "C4_PR35_PRODUCT_SMOKE.json": {
+      "sha256": "9a0ce8f70d5e97fe70114a6e32b8ed775e2213426d46ab11530b038eef4fbaa8",
+      "bytes": 58015
+    },
+    "C4_DEMO_WIN_CASE.txt": {
+      "sha256": "17319f53bdd03fe5c00cdf09c76cabd6befcfc708623c9f52916be1095d2a139",
+      "bytes": 5048
+    },
+    "C4_DEMO_LOSS_CASE.txt": {
+      "sha256": "99e381685f994b389d397cf001f58861a4c127d8854cf23cca79c8f459857353",
+      "bytes": 5039
+    },
+    "screenshots/01_financial_assistant.png": {
+      "sha256": "2954e4d722c6b48bf5f40c17e6ed6e2895b90e7069e06a6f72889e1ef380a549",
+      "bytes": 49858
+    },
+    "screenshots/02_library_ready.png": {
+      "sha256": "33dd3cca0028b6513f919a3e4151a2b771fd6d006f35351be1c7244e49ee6935",
+      "bytes": 99324
+    },
+    "screenshots/03_bidv_search_evidence.png": {
+      "sha256": "65c610df0123e2c4499cc0f72eb753d8673e227b85ca1e4291e751c3bd8cc476",
+      "bytes": 200817
+    },
+    "screenshots/04_bidv_three_method_live.png": {
+      "sha256": "f42bd01d3c954a25eeed2daa8e7e241bf4710c41fca9415ff10f14ed63accb29",
+      "bytes": 727245
+    },
+    "screenshots/05_hpg_scanned_search.png": {
+      "sha256": "0e64ac4d0a270ccb618e79e47e4c52a214aea2f17b64fba2a3259e70ee7d4487",
+      "bytes": 172056
+    },
+    "screenshots/06_hpg_pdf_viewer.png": {
+      "sha256": "327ea6eb320432d662704c98dc6d6477b6bb74796226504f76d528f48e875274",
+      "bytes": 136294
+    }
+  },
+  "public_input_sha256": {
+    "C4_ELIGIBILITY_LOCK_V1.json": "8cb835f95b9dbb2f3c7f37275925e98048cab5f37863fd4532d521d01464a017",
+    "C4_OBJECTIVE_PROXY_SCORECARD_V1.json": "3086197341883ac833ac202db071254aefa5e5a78eaf5bfb10c8c66800e85e37",
+    "C4_QREL_COVERAGE_AT_K_V1.json": "8a719f79cf291c519a0d6e3ac434e188da0bee392b6041f628b8e17e2b2a52ea",
+    "C4_FAILURE_DIAGNOSIS_V1.json": "306643c7d323e8eedb2184b7aaf7b9e6e03c1a164415a8c9c426e2e97c0df71b"
+  },
+  "original_private_bytes_in_git": false
+}

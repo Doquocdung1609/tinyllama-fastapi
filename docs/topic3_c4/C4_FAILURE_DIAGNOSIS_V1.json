@@ -1,0 +1,16 @@
+{
+  "schema": "c4_frozen_a4_metadata_diagnosis/v1",
+  "read_only_index_b_points": 8670,
+  "read_only_index_b_accessions": 47,
+  "eligible_questions": 93,
+  "target_filing_hit_and_filter_match": 47,
+  "no_ranked_hit_rows_with_target_filter_mismatch": 26,
+  "wrong_filing_all_top20_with_target_filter_mismatch": 20,
+  "no_ranked_hit_rows_by_form": {
+    "10-Q": 24,
+    "20-F": 2
+  },
+  "root_cause": "safe_filters asks for FY<question year> on single-year questions; 10-Q target payloads use Q-YYYY-MM, and the two TSM 20-F FY2022 targets carry FY2023 metadata in index B.",
+  "causality_limit": "Metadata mismatch explains target exclusion. It does not prove why every non-target candidate was ordered as observed.",
+  "post_score_action": "DIAGNOSIS_ONLY_NO_G2_RERUN_NO_POST_HOC_ALGORITHM_FIX"
+}

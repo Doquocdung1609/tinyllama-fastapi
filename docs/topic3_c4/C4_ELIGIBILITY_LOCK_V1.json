@@ -1,0 +1,30 @@
+{
+  "schema": "c4_pre_scoring_eligibility_lock/v1",
+  "private_eligibility_sha256": "d1074190dbee580e5d821584df0d149638b76a70ebafe5b9b8307e1ab6987d90",
+  "event_log_sha256": "be9cd71e6731aa48287c63078737a6f10e1c4fb00c30c191f8a41f72effa3991",
+  "ranked_pool_sha256": "93c9dcf09112dc106f1d79aa63f232c03752c5d7c4ba0127221f10e300759a21",
+  "review_input_sha256": "694e55134cc20dc204df02c16bb5397af50e2f4a62088ec04213a0ec026de6e2",
+  "question_count": 94,
+  "objective_target_filing_eligible": 93,
+  "prior_excluded": 1,
+  "human_source_release_preview_only": 67,
+  "source_structure_blocked": 19,
+  "review_correction_blocked": 7,
+  "original_single_chunk_exact_qrels": 0,
+  "metric_scope": "TRACK_B_OBJECTIVE_TARGET_FILING_PROXY_ONLY",
+  "top_k": [
+    1,
+    5,
+    10
+  ],
+  "no_hit_policy": "NO_HIT_IS_PROXY_MISS_IF_RUN_LOG_PROVES_EXECUTION; OTHERWISE_UNKNOWN",
+  "author_rrf": "NATIVE_DEFAULT_K2_V2_POOL; EXPLICIT_K60_NOT_RUN",
+  "stage2": "NATIVE_INTERNAL_60_FOR_TOP20_POOL_OUTPUT",
+  "frozen_status_csv_warning": "V7A_G2_25_02_LAST_EVENT_HASH_STALE_USE_102_EVENT_LOG",
+  "not_authorized_by_this_lock": [
+    "original_chunk EXACT/MRR/nDCG/Recall scoring",
+    "financial answer correctness scoring",
+    "human gold certification",
+    "rerun or expansion of the G3U one-shot pool"
+  ]
+}
