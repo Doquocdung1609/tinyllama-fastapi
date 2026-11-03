@@ -1,0 +1,25 @@
+{
+  "schema": "c4r_recovery_gate_matrix/v1",
+  "overall": "MEASURED_EXPLORATORY_RECOVERY_WITH_LIMITATIONS",
+  "gates": {
+    "K0": {"status": "PASS", "evidence": "Started existing Draft PR36 at ee0063f; SEC 9/8/30 ZIP hashes match frozen manifest; index B 8670 points; PR35 and prior G3U/C4 assets unchanged"},
+    "K1": {"status": "PARTIAL", "evidence": "46 old fiscal metadata exclusions reconciled and A5 target-compatible 46/46; three AMD corpus holes retained from C1/G3U audit, not independently repaired"},
+    "K2": {"status": "PARTIAL", "evidence": "40 EN/VI contrastive metric cases plus 10-K/10-Q/20-F/6-K and negative unit tests PASS; comparative/narrative/segment semantics are still limited"},
+    "K3": {"status": "PASS", "evidence": "Opt-in A5 records status/attempt/filter even for empty and error; new holdout 108/108 method rows; exposed G2 94/94 A5 rows"},
+    "K4": {"status": "PARTIAL", "evidence": "Original IDs and 60 candidate cap preserved; source iXBRL tuple/citation verified in a separate answer track; sidecar v1 truncation repaired on dev only; original chunk cell structure remains incomplete"},
+    "K5": {"status": "PARTIAL", "evidence": "12/12 A5 and 11/12 Stage2 source-enriched exact Decimal/period/unit/scope/source answers on new English facts; original-chunk-only 0/12 with abstention; multi-period/narrative/parent unsupported"},
+    "K6": {"status": "PASS", "evidence": "English holdout 12x9=108 raw outcomes and 216 two-track comparisons; VN paired 108 outcomes and 216 comparisons; private casebook covers all 121 English wrong/refused rows"},
+    "K7": {"status": "PARTIAL", "evidence": "16 facts frozen before outputs with source hashes, 4 dev/12 holdout, 16/16 iXBRL row-label QA; reference is AI/machine-verified and not human-certified; same issuers/documents seen by corpus"},
+    "K8": {"status": "PARTIAL", "evidence": "40 bilingual contrasts PASS; 12 paired Vietnamese SEC questions A5 12/12 source-enriched; second pass emits Vietnamese literal 12/12; real PR35 HPG/BIDV paired VI/EN PDF retrieval 12/12 HTTP200 but no new PDF numeric gold"},
+    "K9": {"status": "PARTIAL", "evidence": "Six native author methods vs A5 on same B and 12 questions; Stage2 internal60 vs A5 cap60 but different compute/filter; sidecar v1 ineffective and repaired only on dev; G2 explicitly post-exposure"},
+    "K10": {"status": "PARTIAL", "evidence": "Full private per-question logs, public scorecards/casebook, RSS and latency measured; fixed method order and warming source cache limit latency comparability"},
+    "K11": {"status": "PASS_LOCAL_CI_PENDING", "evidence": "47 targeted C4R tests and 815 full Python tests PASS, one existing Starlette/httpx warning; final-head GitHub CI to verify after commit"},
+    "K12": {"status": "PASS_LOCAL_PR_UPDATE_PENDING", "evidence": "Live Vietnamese CLI demo and SHA/CRC private handoff V3 ready; commit/update existing Draft PR36 pending"}
+  },
+  "operational_parity_new_12_filing_hit_top5": "YES_A5_12_OF_12_VS_STAGE2_11_OF_12_EXPLORATORY",
+  "general_superiority": "NOT_ESTABLISHED",
+  "original_chunk_exact_qrels": "UNAVAILABLE",
+  "human_gold_certification": "PENDING",
+  "pdf_vietnamese_new_gold": "NOT_RUN",
+  "final_independent_large_benchmark": "NOT_RUN"
+}

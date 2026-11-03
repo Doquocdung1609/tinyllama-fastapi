@@ -1,0 +1,16 @@
+{
+  "schema": "c4r_new_evaluation_public_lock/v1",
+  "private_manifest_sha256": "fe192c60300282dd7b55b0e14c2c51db9ba92fca1804b2b12b614b96e938c140",
+  "source_manifest_sha256": "6e81fb8aba356a91fe47c6509abb5aa266849d372175a24a18670f62c43c1ab6",
+  "facts": 16,
+  "dev": 4,
+  "holdout": 12,
+  "forms": {
+    "10-K": 8,
+    "10-Q": 8
+  },
+  "reference_status": "SOURCE_XBRL_MACHINE_VERIFIED_UNREVIEWED",
+  "query_new_not_document_unseen": true,
+  "original_chunk_qrels": "NOT_CREATED",
+  "question_answer_fields_committed": false
+}

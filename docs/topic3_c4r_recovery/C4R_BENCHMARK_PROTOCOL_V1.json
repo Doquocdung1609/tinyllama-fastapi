@@ -1,0 +1,32 @@
+{
+  "schema": "c4r_new_query_source_first_exploratory_protocol/v1",
+  "frozen_private_manifest_sha256": "fe192c60300282dd7b55b0e14c2c51db9ba92fca1804b2b12b614b96e938c140",
+  "frozen_original_index": "B_P7K_8670_UNMODIFIED",
+  "split": {"development_distinct_facts": 4, "holdout_distinct_facts": 12, "holdout_runs": 1},
+  "question_set": "New iXBRL source-derived questions on previously indexed filings; not issuer/document unseen; reference not human-certified",
+  "retrieval": {
+    "author_methods": ["bm25", "dense", "sparse", "bm25_dense", "sparse_dense", "rerank"],
+    "author_native_rrf_constant": 2,
+    "author_stage2_internal_depth_at_k20": 60,
+    "a5_ablations": ["A5_BASE", "A5_FALLBACK", "A5_SIDECAR"],
+    "a5_union_candidate_cap": 60,
+    "output_k": 20,
+    "same_index_and_questions": true,
+    "run_outcome_record_even_if_empty": true,
+    "sidecar_scan_is_extra_compute_and_not_equal_budget": true
+  },
+  "answering": {
+    "common_answerer_for_every_arm": "SourceArchiveAnswererV8",
+    "tracks": ["ORIGINAL_CHUNK_ONLY", "SOURCE_ENRICHED_V1"],
+    "source_enrichment": "Read-only primary SEC iXBRL from an accession surfaced in original top-5; separately labeled and same for all arms",
+    "gold_manifest_never_loaded_by_retrieval_or_answerer": true,
+    "exact_decimal_match_no_tolerance": true,
+    "period_unit_scope_must_match": true,
+    "source_xbrl_reference_unreviewed": true
+  },
+  "primary_metrics": ["target_accession_hit_at_1_5_10", "source_enriched_exact_answer_at_5", "wrong_answer_rate", "abstention_rate"],
+  "not_reportable": ["human_gold_certification", "original_chunk_EXACT_qrels", "corpus_Recall_MRR_nDCG"],
+  "runtime": "owner Windows laptop, local Qdrant and cached models, no paid service",
+  "post_exposure_G2": "diagnostic only, never independent holdout",
+  "no_changes_after_holdout": "Any later tuning requires a newly versioned question set"
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "c4r_owner_laptop_resource_report/v1",
+  "machine_total_ram_gib": 15.23,
+  "machine_available_ram_at_report_gib": 3.93,
+  "free_disk_gib": 61.29,
+  "gpu_vram": "NOT_MEASURED_CPU_ONNX_ONLY",
+  "index_B_storage_bytes": 99038035,
+  "runs": {
+    "DEV": {
+      "questions": 4,
+      "rows": 36,
+      "peak_rss_mb": 1306.48,
+      "wall_seconds": 34.9,
+      "raw_output_sha256": "5e50554e273dc39ca5af0a0eb66ebc9d217212443009e52b769d66790d81719c"
+    },
+    "HOLDOUT": {
+      "questions": 12,
+      "rows": 108,
+      "peak_rss_mb": 1328.19,
+      "wall_seconds": 98.35,
+      "raw_output_sha256": "322de307031b1a1364be64c385e0d9a4c724c181db735cb45e6b3fa15cae6fc3"
+    },
+    "VN_PAIRED": {
+      "questions": 12,
+      "rows": 108,
+      "peak_rss_mb": 1330.54,
+      "wall_seconds": 87.55,
+      "raw_output_sha256": "02468692dde3fcdb5c2bd9b0d2f193ae247bcb3f1b69ff0e2b3f31f07c9e6537"
+    },
+    "DEV_SIDECAR_REPAIR": {
+      "questions": 4,
+      "rows": 36,
+      "peak_rss_mb": 1305.79,
+      "wall_seconds": 28.25,
+      "raw_output_sha256": "cad758eed335a603b6ef9ec700e5b5c29b4ae13c9e916d75a2d37e934a071db4"
+    },
+    "VN_PAIRED_LITERAL_V2": {
+      "questions": 12,
+      "rows": 108,
+      "peak_rss_mb": 1330.56,
+      "wall_seconds": 85.21,
+      "raw_output_sha256": "c86f54f4d62eca70a50ee0eda6db2125e4ef1511a2eae28f0771a67a284ba448"
+    }
+  },
+  "sidecar_payloads_scanned_per_query": 8670,
+  "sidecar_cost": "EXTRA_SCAN_NOT_EQUAL_COMPUTE_TO_AUTHOR_STAGE2",
+  "model_cache": "REUSED_NO_HEAVY_DOWNLOAD",
+  "latency_limitation": "Fixed method order; source archive cache warms across arms. Observed elapsed is not a randomized equal-warm latency comparison."
+}
