@@ -1,0 +1,7 @@
+# G3T pre-registration v1
+
+Registered 2026-11-03 under `FAITH_R_G3T_C1_C2_C3_END_TO_END_EXECUTION_AUTHORIZED`, before this work order inspects any new G2 author or FAITH-R predictions. Prior development summaries are known, so this is not claimed to be a pristine unseen evaluation. The machine-readable [v1 rubric](G3T_PRE_REGISTRATION_V1.json) fixes labels, source-cell requirements, fiscal/comparative rules, negative support, exclusions, qrels, metrics, pool depth, uncertainty and tier eligibility. Its SHA-256 is recorded separately after file creation to avoid a circular hash.
+
+The current year and one immediately prior comparable year are required for an unenumerated “current and comparative” question; extra older columns are supplemental. Three-, six- and nine-month flows cannot substitute for each other. Balance-sheet values are point-in-time. Synonym mapping, especially cost of sales/revenue, needs an explicit declared equivalence. A bounded negative requires inspection of the full relevant statement, not a failed search. The original 94 question bytes remain unchanged.
+
+All raw SEC facts, AI source-first dispositions, human-certified decisions and unjudged states have separate schemas. Original single chunks alone earn retrieval credit. The pool is predeclared at depth 20 per six author arms and frozen FAITH-R arms, but no sealed pool is generated until the gates pass. Partial qrels never become exhaustive recall. Any future policy change must be a new version referencing this file's hash and disclosing score exposure.

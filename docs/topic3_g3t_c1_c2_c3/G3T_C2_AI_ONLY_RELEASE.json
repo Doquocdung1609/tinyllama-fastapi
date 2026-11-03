@@ -1,0 +1,9 @@
+{
+  "schema": "g3t_ai_source_adjudicated_v1",
+  "status": "AI_ONLY_PROVISIONAL_NOT_HUMAN_GOLD",
+  "adjudication_manifest_sha256": "2e7f69264d9146b74dca20424df50524d8f250a54ca69abf6e7c00bbf43204cc",
+  "eligible_candidate_count": 72,
+  "excluded_or_unresolved_count": 22,
+  "human_approved_count": 0,
+  "qrels_scoring_gate": "NOT_YET_ASSESSED"
+}

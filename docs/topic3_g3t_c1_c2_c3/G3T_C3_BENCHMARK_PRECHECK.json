@@ -1,0 +1,40 @@
+{
+  "schema": "g3t_c3_benchmark_precheck/v1",
+  "question_count": 94,
+  "original_chunks": 8670,
+  "qrel_pairs": 17340,
+  "qrel_grades": {
+    "UNJUDGED": 17153,
+    "PARTIAL": 187
+  },
+  "human": {
+    "events": 0,
+    "approvals": 0,
+    "identity_assurance": "SELF_DECLARED_NOT_CRYPTOGRAPHICALLY_VERIFIED"
+  },
+  "status": {
+    "tier_A_ai_provisional": "BLOCKED",
+    "tier_H_human_certified": "BLOCKED",
+    "one_shot_ai_provisional": "ONE_SHOT_AI_PROVISIONAL_NOT_RUN",
+    "human_final_benchmark": "NOT_RUN"
+  },
+  "reasons": [
+    "No EXACT original single-chunk judgments; static row/value co-occurrence is at most PARTIAL.",
+    "Full six-author/FAITH-R depth-20 ranked pool has not been generated or judged.",
+    "No genuine human approval; source facts and AI labels are not human gold."
+  ],
+  "synthetic_dry_run": {
+    "fixture": "SYNTHETIC_FOUR_FILINGS_EIGHT_PAIRS_NOT_G2",
+    "seed": 20261103,
+    "replicates": 1000,
+    "mean": 0.625,
+    "clustered_95pct_interval": [
+      0.25,
+      1
+    ]
+  },
+  "c1_sha256": "77fe777af38c52e435c46706262ddbf23099254c94dcea7f7937e57674151631",
+  "c2_sha256": "7a302d0164aae5207a760dd96881ed205b6fac26c8c35fd9898ee7dbfa009dcc",
+  "qrels_sha256": "aa233427e69c644acc6eef506106cba3fba2ae2499635d5d8765decebc3d5bd8",
+  "protocol_sha256": "2a8372f17d0a421879bbca858ae09224b8b91d948e80ff2d239e771ebacc4b59"
+}

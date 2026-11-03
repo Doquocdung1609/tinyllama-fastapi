@@ -1,0 +1,22 @@
+{
+  "schema": "g3t_acceptance_gates/v1",
+  "overall": "TECHNICAL_EVIDENCE_PARTIAL_HUMAN_ADJUDICATION_PENDING",
+  "gates": {
+    "T0": {"status": "PASS", "evidence": "Draft PR36 head/base and owner worktree checked before editing"},
+    "T1": {"status": "PASS", "evidence": "47/47 original SEC source identities, bytes and hashes verified"},
+    "T2": {"status": "PASS", "evidence": "8670 frozen corpus chunks and both recovered index memberships validated; no frozen changes"},
+    "T3": {"status": "PASS", "evidence": "Pre-registration v1 locked before new model scoring; SHA-256 detached"},
+    "T4": {"status": "PARTIAL", "evidence": "11/11 case dispositions documented; eight cells verified, three comparative-scope questions pending"},
+    "T5": {"status": "PARTIAL", "evidence": "94/94 source records, 13/13 narrative anchors and 12/12 priority packets; narrative proposition sufficiency needs human review"},
+    "T6": {"status": "PASS", "evidence": "94/94 AI-only hash-chained records; zero human impersonations"},
+    "T7": {"status": "PASS_WITH_HUMAN_PENDING", "evidence": "Local review UI and guarded event import operational; zero genuine human decisions"},
+    "T8": {"status": "PASS", "evidence": "8670 original chunk IDs and text hashes match both indexes; three AMD static text gaps labelled for manual check"},
+    "T9": {"status": "PARTIAL", "evidence": "17340 original chunk pairs, 187 PARTIAL, 17153 UNJUDGED, zero EXACT; ranked union and actual relevance review pending"},
+    "T10": {"status": "PASS", "evidence": "Versioned arm, metric, denominator, overlap, confidence interval and leakage protocol locked"},
+    "T11": {"status": "PASS", "evidence": "Focused 10/10; full pytest 754 passed, one StarletteDeprecationWarning, zero failures"},
+    "T12": {"status": "PASS_VERDICT", "evidence": "Tier A blocked by qrels; Tier H blocked by qrels and human gold; no benchmark run"}
+  },
+  "human_approval_count": 0,
+  "human_gold_status": "HUMAN_ADJUDICATION_PENDING",
+  "benchmark_status": "ONE_SHOT_AI_PROVISIONAL_NOT_RUN"
+}

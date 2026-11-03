@@ -1,0 +1,18 @@
+{
+  "schema": "g3t_prospective_question_overlay/v1",
+  "base_question_count": 94,
+  "frozen_question_text_modified": false,
+  "actual_exclusions": [],
+  "actual_denominator": 94,
+  "proposals_requiring_human_policy": [
+    {"question_id": "V7A_G2_05_01", "issue": "cost of revenue versus total cost of sales", "proposed_action": "DECLARE_EQUIVALENCE_WITH_SCOPE_OR_KEEP_AMBIGUOUS"},
+    {"question_id": "V7A_G2_09_02", "issue": "Client business line versus reportable segment", "proposed_action": "QUALIFY_SCOPE_OR_KEEP_PARTIAL"},
+    {"question_id": "V7A_G2_14_02", "issue": "three-month versus six-month comparison", "proposed_action": "PROSPECTIVE_DURATION_ERRATUM_OR_KEEP_AMBIGUOUS"},
+    {"question_id": "V7A_G2_21_01", "issue": "gross margin amount versus percentage", "proposed_action": "DECLARE_ACCEPTABLE_REPRESENTATIONS_OR_KEEP_AMBIGUOUS"},
+    {"question_id": "V7A_G2_24_01", "issue": "cost of revenue versus cost of sales", "proposed_action": "DECLARE_EQUIVALENCE_WITH_3M_SCOPE_OR_KEEP_AMBIGUOUS"},
+    {"question_id": "V7A_G2_25_02", "issue": "cash flow year-ended versus question as-of", "proposed_action": "VERSIONED_ERRATUM_OR_EXCLUDE_FROM_STRICT_PERIOD_SCORING"},
+    {"question_id": "V7A_G2_38_01", "issue": "qualitative policy requested with numeric reporting unit", "proposed_action": "VERSIONED_ERRATUM_OR_EXCLUDE"}
+  ],
+  "excluded_is_correct_model_answer": false,
+  "human_decision": "PENDING"
+}

@@ -1,0 +1,7 @@
+# G3T C3 evaluation protocol lock v1
+
+This protocol fixes six pinned author arms, the frozen FAITH-R A0–A4R arms, identical Top-5/10 reporting and prospective depth-20 candidate pooling. The author's Stage-2 is its actual heuristic feature reranker, not a ColBERT inference claim. A4R remains post-hoc exposed development. Index A is recovered P3D and not proven historically identical to P3C; B changes fiscal metadata on 3,516 points/15 filings, so any A/B difference cannot be credited solely to ranking.
+
+The [machine-readable lock](G3T_C3_EVALUATION_PROTOCOL_LOCK_V1.json) references the earlier pre-registration hash and fixes models, collection, budgets, RRF constant, seeds, exclusions, metrics, latency/resource reporting and accession-clustered confidence intervals. The protocol hash is stored in a detached file. No sealed G2 model rankings have been generated in this work order. The future union pool is an evaluation-stage run and must be built once at equal depth without expansion after scores are viewed.
+
+Original single-chunk qrels are separate from SEC answer truth. Current static qrels are only candidate diagnostics: co-occurrence receives provisional PARTIAL, not EXACT; all other pairs are UNJUDGED. No corpus-exhaustive Recall, nDCG or MRR may be reported from that set. Tier A and Tier H readiness are checked separately. A future substantive change requires v2 and explicit score-exposure disclosure.

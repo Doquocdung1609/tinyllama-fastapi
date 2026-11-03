@@ -1,0 +1,16 @@
+{
+  "schema": "g3t_qrels_pool_manifest/v1",
+  "status": "SEALED_RANKED_POOL_NOT_RUN",
+  "candidate_depth_per_arm": 20,
+  "author_arms": ["BM25", "BGE_DENSE", "SPLADE", "BM25_BGE_RRF", "SPLADE_BGE_RRF", "ORIGINAL_HEURISTIC_STAGE2"],
+  "faith_r_arms": ["A0", "A1", "A2", "A3", "A4", "A4R_POST_HOC_EXPOSED_DEV"],
+  "union_key": "frozen original chunk_id",
+  "static_target_filing_pairs": 17340,
+  "static_partial_pairs": 187,
+  "static_unjudged_pairs": 17153,
+  "static_exact_pairs": 0,
+  "ranked_candidates_seen_this_work_order": 0,
+  "leakage_guard": "No sealed G2 ranked pool generated; static source/corpus audit is not a retrieval hit or final judged pool",
+  "score_rule": "No Recall, nDCG or MRR from these incomplete qrels",
+  "human_qrels": "NONE"
+}

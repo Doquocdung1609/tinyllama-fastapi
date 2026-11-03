@@ -1,0 +1,5 @@
+# Defense handoff
+
+Suggested demonstration: show the frozen 47-source manifest and 47/47 raw-byte verification, then open one of the eleven C1 case locators in the original SEC document. Explain that eight source cells were recovered while three Amazon comparison scopes remain open. Show the 94-row AI ledger summary and the human review screen with zero saved events. Finally show the 8,670-chunk A/B provenance manifest and the benchmark precheck with zero EXACT qrels. This supports a defensible **source evidence and protocol** demonstration, not a final retrieval-quality claim.
+
+Reproduce the integrity checks with `python -m pytest -q tests/test_topic3_g3t_gates.py tests/test_topic3_v7a_g3s.py`. Full regression results are recorded in the final test log. The private handoff files stay on the owner machine; byte hashes in the public manifest identify exact versions. The scripts `topic3_g3t_c1.py`, `topic3_g3t_c2.py`, `topic3_g3t_c3.py`, `topic3_g3t_validate.py` and `topic3_g3t_review_bundle.py` are invoked as modules with explicit input/output paths. They refuse to overwrite an existing output, preserving earlier ledger versions.
