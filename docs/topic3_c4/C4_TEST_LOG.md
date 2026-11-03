@@ -15,6 +15,6 @@
 | Full Python suite | 768 PASS, 0 FAIL, 0 SKIP, one existing Starlette/httpx deprecation warning in 39.87 s |
 | PR35 frontend | `npm ci` and `npm run build` PASS, 2,695 modules, 0 npm vulnerabilities |
 | Syntax and dependency | C4/G3U intake `py_compile` PASS; `pip check` no broken requirements |
-| GitHub CI | Verify after PR36 commit; do not preclaim |
+| GitHub CI | PR36 commit `36eeedf`: Python core PASS and frontend test/build PASS, run `41620465333`; GitHub action annotations concern Node 20 deprecation and Ubuntu migration |
 
 No paid service, SEC refetch, new G2 retrieval run, model tuning, original human event write, final relevance benchmark, PR merge or PR35 tracked edit occurred.
