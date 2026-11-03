@@ -1,0 +1,8 @@
+# G3U P0 checkpoint and source boundary
+
+- Start: Draft PR #36 on `codex/topic3-v7a-g3-sec-source-snapshots`, HEAD `869de21a79df05e3cf44b8c277a93f6c32a47716`, base PR #34. The working tree contained only owner `output/` and `tmp/` directories; they were preserved. GitHub `test` and `frontend` checks on the starting HEAD passed. PR #35 is a separate product branch.
+- The owner-only G3T handoff ZIP has SHA-256 `2392027056f713bc465eaf0bba25461dec813ce7e0b080717018ad90c5f3485b`, 18 entries and valid CRC. All 17 private manifest members matched exact bytes and SHA-256, as did the separately recorded V2 human review input. No missing input was substituted.
+- Independent G3T validator rechecked 94 unique C1/C2 question IDs and the C2 hash chain, 8,670 original chunk identities, and 17,340 prior static qrel pairs. A fresh G3U replay of the index verifier statically inspected both restored SQLite payload sets without unpickling executable objects: 8,670/8,670 IDs and text hashes matched each index, and its provenance, qrel and coverage SHA-256 outputs exactly matched G3T. The 17,153 `UNJUDGED` entries remain null, 187 are static `PARTIAL` candidates, zero are `EXACT`. Human events remain zero. The 47-source verifier was also rerun in G3U: 47/47, three ZIP CRC PASS, no source reacquisition.
+- C1 source truth, C2 AI answer proposal, original frozen chunk relevance and actual retrieval rankings are four distinct objects. The old G3T ledgers, G2 questions, corpus, index snapshots and v1 protocol have not been modified.
+
+Result: **P0 integrity PASS; strict exact-answer eligibility PARTIAL** because two comparative scopes and some unit/scale bindings need independent review. See the versioned risk overlay and AMD diagnosis.

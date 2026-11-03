@@ -1,0 +1,75 @@
+{
+  "schema": "g3u_private_hash_audit/v1",
+  "location": "OWNER_MACHINE_DOWNLOADS_OUTSIDE_GIT",
+  "private_value_or_rank_bearing": true,
+  "files": {
+    "risk_overlay": {
+      "filename": "G3U_AI_EXACT_RISK_PRIVATE_20261103_V1.json",
+      "sha256": "972808d6756b0913ce5c871feac4703f7039a956bec70315457af06a3a662366",
+      "bytes": 12868
+    },
+    "amd_diagnosis": {
+      "filename": "G3U_AMD_ORIGINAL_CHUNK_DIAGNOSIS_20261103_V2.json",
+      "sha256": "9e4e5acedc3889e4546091267b5d48c7babff37cdff3cfac2936f3b370dbdee1",
+      "bytes": 47945
+    },
+    "g3t_revalidation": {
+      "filename": "G3U_G3T_REVALIDATION_20261103_V1.json",
+      "sha256": "e5c050326cc64e5a0f04fb3e6a49e46aad0592efd943fcf99dfd06319a9f9dd7",
+      "bytes": 1402
+    },
+    "partial_run_started": {
+      "filename": "RUN_STARTED.json",
+      "sha256": "1a4eca5f36440dd991c05ec8d103d17a7ca716d479debc1e0a737eced0b0693c",
+      "bytes": 516
+    },
+    "partial_sealed_ranked_log": {
+      "filename": "G3U_RANKED_POOL_SEALED.jsonl",
+      "sha256": "87b6058236045d84be79d0773582e849920114d1657143071ec294a82fcd5bc0",
+      "bytes": 7462885
+    },
+    "partial_abort_record": {
+      "filename": "ABORTED_PROTOCOL_CONFLICT.json",
+      "sha256": "c8cfc7c0fbe2d9f0def21ddd3c9b2c9752ca333e40fa3f27ee0ecc955bbbdb73",
+      "bytes": 858
+    },
+    "source_audit_blind_queue": {
+      "filename": "G3U_SOURCE_AUDIT_BLIND_POOL.jsonl",
+      "sha256": "2f591e2680ac8a99237be56d9c4aebdd61d21aff4f6dace28f906d707a5c7e90",
+      "bytes": 50624164
+    },
+    "source_audit_queue_manifest": {
+      "filename": "G3U_SOURCE_AUDIT_QUEUE_MANIFEST.json",
+      "sha256": "314a8d67a14557b88a207a2e91b654f2e37c1ce1dad256fd6bd48fdd2ce58ec9",
+      "bytes": 518
+    },
+    "source_only_ai_qrels": {
+      "filename": "G3U_AI_QREL_PROVISIONAL.jsonl",
+      "sha256": "d4bc57ea2c04bda119bc088b7bf7046898bddae59bdee00810809ab838695342",
+      "bytes": 16439141
+    },
+    "source_only_human_queue": {
+      "filename": "G3U_HUMAN_CHUNK_REVIEW_QUEUE.jsonl",
+      "sha256": "4ba25bd89269683311d732b5aaca1379325b82afdb7eead0673782ffa71e1173",
+      "bytes": 52052668
+    },
+    "source_only_challenge_queue": {
+      "filename": "G3U_QREL_CHALLENGE_QUEUE.jsonl",
+      "sha256": "3c255cf999c5878e4260c1cdf45517215f5751ca5962fc37b231e617af986d92",
+      "bytes": 947729
+    },
+    "source_only_qrel_manifest": {
+      "filename": "G3U_QREL_PREPARATION_MANIFEST.json",
+      "sha256": "12780ddf584a1d17fcd99e42c86197bd24cd0dae64e520004dc317397603ba02",
+      "bytes": 1206
+    },
+    "source_only_validation": {
+      "filename": "G3U_SOURCE_ONLY_QREL_AUDIT_20261103_V1.json",
+      "sha256": "34bcae5e4b77dca64bbed3e0858c1be8101f6892957fe42b2938e46c4341d076",
+      "bytes": 621
+    }
+  },
+  "full_ranked_pool": "NOT_GENERATED",
+  "partial_ranked_pool": "ABORTED_PROTOCOL_CONFLICT",
+  "human_events": 0
+}

@@ -29,3 +29,4 @@ docs/topic3_v7a_g3/** -text whitespace=cr-at-eol
 
 # G3T protocol and detached SHA files must survive Windows checkout byte-for-byte.
 docs/topic3_g3t_c1_c2_c3/** -text whitespace=cr-at-eol
+docs/topic3_g3u/** -text whitespace=cr-at-eol

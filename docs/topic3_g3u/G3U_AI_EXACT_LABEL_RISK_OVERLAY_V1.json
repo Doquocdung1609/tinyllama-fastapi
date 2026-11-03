@@ -1,0 +1,21 @@
+{
+  "schema": "g3u_ai_exact_label_risk_overlay_public/v1",
+  "original_c1_sha256": "77fe777af38c52e435c46706262ddbf23099254c94dcea7f7937e57674151631",
+  "original_c2_sha256": "7a302d0164aae5207a760dd96881ed205b6fac26c8c35fd9898ee7dbfa009dcc",
+  "private_full_overlay_sha256": "972808d6756b0913ce5c871feac4703f7039a956bec70315457af06a3a662366",
+  "original_ai_supported_exact": 71,
+  "strict_hold_question_ids": ["V7A_G2_12_02", "V7A_G2_15_01"],
+  "strict_exact_candidate_count_before_unit_review": 69,
+  "hold_status": "POLICY_RESOLVED_PROVISIONAL_NOT_HUMAN_RESOLVED",
+  "systematic_historical_sample_questions": 8,
+  "systematic_historical_sample_cells": 19,
+  "same_table_scale_explicit": 6,
+  "scale_not_explicit_in_same_table_human_check": 13,
+  "sample_limit": "Absence inside the table does not prove absence from surrounding source heading; independent human unit/scale confirmation remains required.",
+  "negative_supported_12_01_scope": "BOUNDED_AMAZON_CONSOLIDATED_OPERATIONS_STATEMENT_ONLY",
+  "potential_cell_overlap_rows": 8,
+  "potential_cell_overlap_question_ids": ["V7A_G2_02_02", "V7A_G2_05_01", "V7A_G2_05_02", "V7A_G2_29_02", "V7A_G2_31_02", "V7A_G2_40_02"],
+  "human_approved": 0,
+  "frozen_g3t_labels_modified": false,
+  "new_g2_rankings_exposed_during_audit": false
+}

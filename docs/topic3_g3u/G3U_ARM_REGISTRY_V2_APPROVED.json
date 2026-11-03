@@ -1,0 +1,56 @@
+{
+  "schema": "g3u_arm_registry/v2",
+  "protocol_v1_sha256": "153873bb84a87c72c700c349253e46ddaff15e4536478fa98fdf400d2e2347cc",
+  "frozen_question_sha256": "a92cdfb6a00744c3ea8bdae93b337d60919be52e65019b4f541b40235f4aa4ef",
+  "frozen_corpus_sha256": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f",
+  "index_sha256": {
+    "A": "1e8e3c6393e7e59786575ed0228254079639016c7b986d1e9702fa5a3ce32540",
+    "B": "fef99bfa5cde1ec358f460efacd3db4ca540673213491c569d64e313070df663"
+  },
+  "author_commit": "16682dd42ca9cd4887ae74935cb3526dce580c49",
+  "author_engine_sha256": "fcff7cbcd7cfed9a0688a8480b2bf476d8bbb09c4d65b7aa21f067a62b7d4f50",
+  "author_reranker_sha256": "b204f1756233e8c303bfe16058a369e023c8aa8874fb79ec294b2edf177dc99f",
+  "faith_r_live_sha256_at_v6_freeze": "ecdea7ba260fee8dbee3c8f335e6054f3342d047ee2d344223bc0cfa9fb43993",
+  "query_scope": "94 frozen G2 questions, exact bytes, no target filing hard filter for author arms",
+  "collection": "financial_docs",
+  "models": {
+    "bm25": "Qdrant/bm25",
+    "dense": "BAAI/bge-small-en-v1.5",
+    "splade": "prithivida/Splade_PP_en_v1"
+  },
+  "output_pool_depth_per_arm": 20,
+  "author_prefetch": 50,
+  "rrf_constant": 2,
+  "author_stage2_internal_candidates_at_output_20": 60,
+  "author_stage2_native_rule": "max(k*3,20), so k=20 retrieves 60 before fixed-feature rerank",
+  "faith_r_candidate_budget": 20,
+  "faith_r_prefetch": 50,
+  "blind_seed": 20261104,
+  "author_arms_each_index_A_and_B": [
+    "bm25",
+    "dense",
+    "sparse",
+    "bm25_dense",
+    "sparse_dense",
+    "rerank"
+  ],
+  "faith_r_arms": [
+    "A0",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A4R"
+  ],
+  "A4R_status": "POST_HOC_EXPOSED_DEVELOPMENT_ONLY",
+  "controlled_budget_comparison": "Pool contributions equal depth 20; native Stage-2 internal 60 and A3/A4 sidecar work are reported separately. Equal compute is not asserted.",
+  "score_exposure_at_freeze": "PARTIAL_G2_RANKS_GENERATED_NOT_INSPECTED_PER_HIT; NO_QUALITY_METRICS",
+  "final_scoring_authorized": false,
+  "protocol_v2_sha256": "1bfbcad876e123d975a2475a0d2c2516c98677e3eb4e81296d1195cc5ed15f32",
+  "prior_registry_v1_sha256": "5c9e95a81d21548f9fa2166785cbaa5e2a3e604791b65cd7900252171d3a20ca",
+  "rrf_runtime": "Qdrant FusionQuery default2; native pinned author path",
+  "fastembed_runtime": "0.9.1",
+  "qdrant_client_runtime": "1.20.0",
+  "pool_owner_approved": true,
+  "partial_exposure_sha256": "87b6058236045d84be79d0773582e849920114d1657143071ec294a82fcd5bc0"
+}

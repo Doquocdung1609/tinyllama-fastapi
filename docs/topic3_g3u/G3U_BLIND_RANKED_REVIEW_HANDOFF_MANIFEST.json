@@ -1,0 +1,15 @@
+{
+  "schema": "g3u_blind_ranked_review_handoff/v2",
+  "filename": "G3U_BLIND_RANKED_REVIEW_HANDOFF_20261103_V2.zip",
+  "sha256": "6e9ca8f100ba333a23721416099c514c6ea9b039053c4e5e8a96705492683b05",
+  "location": "OWNER_MACHINE_DOWNLOADS_OUTSIDE_GIT",
+  "zip_crc": "PASS",
+  "only_member": "G3U_HUMAN_CHUNK_REVIEW_QUEUE.jsonl",
+  "queue_sha256": "b316161c133ffde9ed318cfeb8600c580b14d280a20b9ad097b5092e55a4cb17",
+  "unique_question_chunk_pairs": 5792,
+  "off_target_candidates_included": true,
+  "method_rank_score_hidden": true,
+  "ai_qrel_suggestions_hidden": true,
+  "human_decisions": 0,
+  "prior_partial_exposure_disclosed_in_protocol_v2": true
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "g3u_approved_pool_status/v2",
+  "status": "POOL_GENERATED_NOT_SCORED",
+  "owner_approved_protocol": true,
+  "prior_partial_exposure": "DISCLOSED_NOT_TUNED",
+  "question_count": 94,
+  "arm_runs": 1692,
+  "arm_question_pairs_without_ranked_hits": 104,
+  "ranked_lines": 31760,
+  "unique_blind_pairs": 5792,
+  "off_target_candidates_retained": 3946,
+  "blind_leakage": "PASS_WITH_UNLOGGED_ZERO_RESULT_ARMS",
+  "ranked_sha256": "93c9dcf09112dc106f1d79aa63f232c03752c5d7c4ba0127221f10e300759a21",
+  "blind_sha256": "8d1aa863a9a60ed2782573399c78ee558d120e9d4faeaba9b2c87caec1c8019b",
+  "registry_sha256": "eddef050ac78b1184d4fa311ffbf1758ae7f458940483a412f8d69271aad1f76",
+  "protocol_sha256": "1bfbcad876e123d975a2475a0d2c2516c98677e3eb4e81296d1195cc5ed15f32",
+  "peak_process_rss_mib": 1491.64,
+  "latency_p50_ms": 656.4215,
+  "latency_p95_ms": 1116.832,
+  "final_quality_metrics": "NOT_RUN"
+}

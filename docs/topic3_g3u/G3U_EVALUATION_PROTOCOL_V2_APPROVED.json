@@ -1,0 +1,53 @@
+{
+  "schema": "g3u_evaluation_protocol_lock/v2",
+  "status": "OWNER_APPROVED_FOR_ONE_COMPLETE_CANDIDATE_POOL_ONLY",
+  "approved_utc_recorded": "2026-11-03T05:57:37Z",
+  "approval_provenance": "Owner reply in this Codex conversation to the explicit G3U v2 pool-approval question",
+  "approval_token": "FAITH_R_G3U_BLIND_QRELS_AND_V7B_READINESS_AUTHORIZED_PLUS_EXPLICIT_V2_POOL_REPLY",
+  "approval_scope": "One complete 94-question blind candidate-pool acquisition under native pinned-author Qdrant RRF default k=2, with prior partial exposure disclosed. No G2 final scoring, tuning or human qrel approval.",
+  "prior_g3t_protocol_v1_sha256": "153873bb84a87c72c700c349253e46ddaff15e4536478fa98fdf400d2e2347cc",
+  "prior_g3u_registry_v1_sha256": "5c9e95a81d21548f9fa2166785cbaa5e2a3e604791b65cd7900252171d3a20ca",
+  "proposal_sha256": "182b9a7e577eafff9a33a3c166185452c0de74ae187eb42a81c85589f216f98a",
+  "method_boundary": {
+    "author_rrf_executed": "Qdrant local FusionQuery(RRF), default k=2 because pinned author retrievers pass no k",
+    "author_config_rrf_advertised": 60,
+    "native_author_track_label": "NATIVE_PINNED_AUTHOR_EXECUTABLE_PATH_WITH_QDRANT_DEFAULT2",
+    "controlled_explicit_rrf60_track": "NOT_RUN_NOT_PART_OF_THIS_APPROVAL",
+    "six_author_arms": ["bm25", "dense", "sparse", "bm25_dense", "sparse_dense", "rerank"],
+    "author_indexes": ["A_RECOVERED_P3D", "B_FISCAL_CORRECTED"],
+    "faith_r_arms": ["A0", "A1", "A2", "A3", "A4", "A4R_POST_HOC_EXPOSED_DEV"],
+    "output_depth_per_arm": 20,
+    "author_stage2_internal_candidates_for_output20": 60,
+    "author_prefetch": 50,
+    "faith_r_candidate_budget": 20
+  },
+  "frozen_inputs": {
+    "question_count": 94,
+    "question_csv_sha256": "a92cdfb6a00744c3ea8bdae93b337d60919be52e65019b4f541b40235f4aa4ef",
+    "original_chunk_count": 8670,
+    "corpus_sha256": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f",
+    "index_A_sha256": "1e8e3c6393e7e59786575ed0228254079639016c7b986d1e9702fa5a3ce32540",
+    "index_B_sha256": "fef99bfa5cde1ec358f460efacd3db4ca540673213491c569d64e313070df663"
+  },
+  "runtime_versions_for_new_run": {
+    "qdrant_client": "1.20.0",
+    "fastembed": "0.9.1",
+    "onnxruntime": "1.31.1",
+    "pillow": "12.3.0"
+  },
+  "partial_exposure": {
+    "status": "PARTIAL_ABORTED_PROTOCOL_RRF_CONSTANT_MISMATCH",
+    "sealed_partial_sha256": "87b6058236045d84be79d0773582e849920114d1657143071ec294a82fcd5bc0",
+    "ranked_lines": 16020,
+    "question_arm_index_runs": 801,
+    "runtime_fastembed": "0.7.4",
+    "per_hit_rank_or_score_inspected_by_coordinator": false,
+    "quality_metric_computed": false,
+    "independence_disclosure": "A new complete pool is an exposed continuation, not a pristine first sealed run"
+  },
+  "blind_judging_rule": "Deduplicate question/original_chunk IDs and remove arm, rank, score and model output from reviewer view; include off-target candidates",
+  "qrel_rule": "One frozen original chunk only; no HTML/source bundle as retrieval hit; UNJUDGED remains null",
+  "final_scoring_authorized": false,
+  "human_gold_authorized_or_claimed": false,
+  "change_control": "Any further substantive protocol change requires a new version and owner signoff; do not modify v1 or this v2."
+}

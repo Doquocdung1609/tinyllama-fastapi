@@ -1,0 +1,84 @@
+{
+  "schema": "g3u_private_hash_audit/v2",
+  "location": "OWNER_MACHINE_DOWNLOADS_OUTSIDE_GIT",
+  "contains_private_rank_or_answer_values": true,
+  "files": {
+    "approved_pool_started": {
+      "filename": "RUN_STARTED.json",
+      "sha256": "7f3fc66f8c02000e8a2a436e9850721097e1d8f7d66e79c569c2146087133613",
+      "bytes": 516
+    },
+    "approved_sealed_ranked_log": {
+      "filename": "G3U_RANKED_POOL_SEALED.jsonl",
+      "sha256": "93c9dcf09112dc106f1d79aa63f232c03752c5d7c4ba0127221f10e300759a21",
+      "bytes": 14787307
+    },
+    "approved_blind_review_pool": {
+      "filename": "G3U_BLIND_REVIEW_POOL.jsonl",
+      "sha256": "8d1aa863a9a60ed2782573399c78ee558d120e9d4faeaba9b2c87caec1c8019b",
+      "bytes": 16213482
+    },
+    "approved_pool_manifest": {
+      "filename": "G3U_POOL_MANIFEST.json",
+      "sha256": "0ccc4525f12c3b42e603c2adca3c4b4dd67640541e79139c6e1958629e568403",
+      "bytes": 929
+    },
+    "approved_ai_qrel": {
+      "filename": "G3U_AI_QREL_PROVISIONAL.jsonl",
+      "sha256": "ebf9ccbc964be3d908029791591aa516970d9bc7a98ab99391a91dbe7e6c9c0d",
+      "bytes": 7639755
+    },
+    "approved_human_queue": {
+      "filename": "G3U_HUMAN_CHUNK_REVIEW_QUEUE.jsonl",
+      "sha256": "b316161c133ffde9ed318cfeb8600c580b14d280a20b9ad097b5092e55a4cb17",
+      "bytes": 16690693
+    },
+    "approved_challenge_queue": {
+      "filename": "G3U_QREL_CHALLENGE_QUEUE.jsonl",
+      "sha256": "abc5c6fb5448f9e5a403852851ba66177c5facd6ce20c19c18a53054b4673685",
+      "bytes": 407681
+    },
+    "approved_qrel_manifest": {
+      "filename": "G3U_QREL_PREPARATION_MANIFEST.json",
+      "sha256": "70287bbb29e5d329b01f855fe780a04324b48ea6a65b1a39aec3d7db9fe9e1b7",
+      "bytes": 1194
+    },
+    "approved_structural_verification": {
+      "filename": "G3U_RANKED_POOL_STRUCTURAL_AUDIT_20261103_V2.json",
+      "sha256": "1a82eaa3dc38fe5b19579ae7fbffe7d2da1ee647647d98d4e01fa08f1ff2f90b",
+      "bytes": 1054
+    },
+    "aborted_partial_ranked_log": {
+      "filename": "G3U_RANKED_POOL_SEALED.jsonl",
+      "sha256": "87b6058236045d84be79d0773582e849920114d1657143071ec294a82fcd5bc0",
+      "bytes": 7462885
+    },
+    "aborted_partial_record": {
+      "filename": "ABORTED_PROTOCOL_CONFLICT.json",
+      "sha256": "c8cfc7c0fbe2d9f0def21ddd3c9b2c9752ca333e40fa3f27ee0ecc955bbbdb73",
+      "bytes": 858
+    },
+    "source_only_blind_queue": {
+      "filename": "G3U_SOURCE_AUDIT_BLIND_POOL.jsonl",
+      "sha256": "2f591e2680ac8a99237be56d9c4aebdd61d21aff4f6dace28f906d707a5c7e90",
+      "bytes": 50624164
+    },
+    "source_only_ai_qrel": {
+      "filename": "G3U_AI_QREL_PROVISIONAL.jsonl",
+      "sha256": "d4bc57ea2c04bda119bc088b7bf7046898bddae59bdee00810809ab838695342",
+      "bytes": 16439141
+    },
+    "risk_overlay": {
+      "filename": "G3U_AI_EXACT_RISK_PRIVATE_20261103_V1.json",
+      "sha256": "972808d6756b0913ce5c871feac4703f7039a956bec70315457af06a3a662366",
+      "bytes": 12868
+    },
+    "amd_original_chunk_diagnosis": {
+      "filename": "G3U_AMD_ORIGINAL_CHUNK_DIAGNOSIS_20261103_V2.json",
+      "sha256": "9e4e5acedc3889e4546091267b5d48c7babff37cdff3cfac2936f3b370dbdee1",
+      "bytes": 47945
+    }
+  },
+  "human_events": 0,
+  "final_G2_scores": "NOT_RUN"
+}

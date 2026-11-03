@@ -1,0 +1,13 @@
+{
+  "schema": "g3u_pool_status/v1",
+  "status": "POOL_PARTIAL_ABORTED_PROTOCOL_CONFLICT",
+  "partial_ranked_lines": 16020,
+  "partial_question_arm_index_runs": 801,
+  "expected_full_runs": 1692,
+  "complete_ranked_pool_pairs": 0,
+  "blind_mixed_arm_pool_pairs": 0,
+  "source_only_target_filing_pairs": 17340,
+  "source_only_is_ranked_pool": false,
+  "per_hit_scores_inspected_by_coordinator": false,
+  "final_quality_metrics": "NOT_RUN"
+}

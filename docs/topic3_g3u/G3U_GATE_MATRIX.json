@@ -1,0 +1,22 @@
+{
+  "schema": "g3u_gate_matrix/v1",
+  "overall": "POOL_ACQUIRED_QRELS_PARTIAL_HUMAN_ADJUDICATION_PENDING_FINAL_SCORING_BLOCKED",
+  "gates": {
+    "U0": {"status": "PASS", "evidence": "Draft PR36 starting HEAD 869de21, base PR34, owner worktree preserved"},
+    "U1": {"status": "PASS", "evidence": "G3T handoff 18-entry CRC PASS and 17/17 manifest member hashes plus separate review input verified"},
+    "U2": {"status": "PARTIAL", "evidence": "Two comparative exact labels held out; 8-question/19-cell sample found 13 scales not explicit in same table, requiring context/human check"},
+    "U3": {"status": "PASS", "evidence": "Three AMD sources verified; 68/69 original chunks only Part II, no target values; financial table missing from frozen corpus"},
+    "U4": {"status": "PASS_WITH_DISCLOSED_PROTOCOL_CHANGE", "evidence": "Native Stage2 internal 60 at output20; actual Qdrant RRF default2 versus config60, v1 stopped and owner-approved v2 locked"},
+    "U5": {"status": "PARTIAL", "evidence": "Approved v2 pool generated: 1692 runner-asserted arm executions, 31760 hit lines, 5792 unique blind pairs; 104 zero-hit arm-question runs lack individual run-log rows"},
+    "U6": {"status": "PASS", "evidence": "Blind union set equals ranked hit union; 3946 off-target pairs retained; method/rank/score keys absent"},
+    "U7": {"status": "PARTIAL", "evidence": "Ranked pool 124 AI PARTIAL, 5668 UNJUDGED, 0 EXACT, 0 NONE; source-only queue separate at 182 PARTIAL and 17158 UNJUDGED"},
+    "U8": {"status": "PASS_WITH_HUMAN_PENDING", "evidence": "12-case source queue and two guarded chunk review services operational; invalid POST rejected, 0 actual human decisions"},
+    "U9": {"status": "PARTIAL", "evidence": "Full94 and scoped strata, judged coverage, negative/unknown policy, 104 zero-run provenance limitation disclosed; no quality metric computed"},
+    "U10": {"status": "PASS_NONSCORING", "evidence": "Synthetic V7B paired/bootstrap and bounds dry run, resource log, 763 Python PASS, frontend build PASS; sealed G2 scoring not run"},
+    "U11": {"status": "PASS", "evidence": "Frozen PR35/G2/V6/F10, 8670 corpus and A/B index hashes unchanged; no merge or new PR"},
+    "U12": {"status": "PASS_WITH_LIMITATIONS", "evidence": "Redacted docs, v2 protocol, private SHA manifests, blind handoff, final acceptance and human actions published"}
+  },
+  "tier_A_ai_provisional": "BLOCKED_NO_EXACT_OR_SUFFICIENT_QRELS",
+  "tier_H_human_certified": "BLOCKED_NO_GENUINE_HUMAN_APPROVAL",
+  "final_G2_benchmark": "NOT_RUN"
+}

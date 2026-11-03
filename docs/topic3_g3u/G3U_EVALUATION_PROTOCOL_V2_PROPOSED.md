@@ -1,0 +1,7 @@
+# Proposed v2 protocol: native RRF constant discrepancy
+
+The pinned author YAML specifies `rrf_constant: 60`, but the actual BM25+BGE and SPLADE+BGE retrievers call `FusionQuery(fusion=RRF)` without a constant. The installed local Qdrant implementation applies `DEFAULT_RANKING_CONSTANT_K = 2`. Its Stage-2 also starts from SPLADE+BGE and therefore inherits the same default. The v1 G3T protocol and G3U arm registry incorrectly described the executed RRF constant as 60. These files remain immutable.
+
+This v2 proposal distinguishes the **native executable author track** (Qdrant default 2) from a possible **altered RRF60 controlled track**. Both may contribute 20 outputs per arm; native Stage-2 internally retrieves 60 for output k=20. Adding an RRF60 controlled track is a new comparison condition, not a faithful author replication. A/B index payload differences, filters and sidecar compute remain separate confounds.
+
+The one-shot G2 pool was stopped immediately when the mismatch was confirmed. Its private partial rank log has 16,020 lines and 801 question/arm/index executions; only aggregate counts and SHA-256 were inspected, not per-hit ranking or quality. No blind pool, qrels from that pool or scoring resulted. This is a disclosed protocol exposure. The complete pool may run only after an approved version fixes the method definition and explicitly accepts the exposure/independence downgrade. The owner retains approval authority; this document is a proposal, not approval.

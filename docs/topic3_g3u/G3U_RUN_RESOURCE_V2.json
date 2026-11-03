@@ -1,0 +1,23 @@
+{
+  "schema": "g3u_run_resource/v2",
+  "observed_utc": "2026-11-03T09:42:44.291399+00:00",
+  "cpu_logical": 12,
+  "cpu_physical": 6,
+  "ram_total_gib": 15.23,
+  "ram_available_at_report_gib": 2.98,
+  "disk_free_at_report_gib": 62.26,
+  "index_A_storage_bytes": 99009363,
+  "index_B_storage_bytes": 99038035,
+  "onnx_available_providers": [
+    "AzureExecutionProvider",
+    "CPUExecutionProvider"
+  ],
+  "gpu_vram_peak": "NOT_MEASURED_CPU_ONNX_PATH",
+  "peak_process_rss_mib": 1491.64,
+  "latency_p50_ms": 656.4215,
+  "latency_p95_ms": 1116.832,
+  "arm_runs": 1692,
+  "fastembed_version": "0.9.1",
+  "qdrant_client_version": "1.20.0",
+  "latency_scope": "per arm query, embedding plus local Qdrant; cold and warm mixed; not a comparative quality metric"
+}

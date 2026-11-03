@@ -1,0 +1,21 @@
+{
+  "schema": "g3u_qrel_coverage/v1",
+  "questions": 94,
+  "source_only_original_chunk_pairs": 17340,
+  "source_only_grades": {
+    "PARTIAL": 182,
+    "UNJUDGED": 17158
+  },
+  "ranked_blind_pool_pairs": 0,
+  "ranked_pool_qrel_grades": {
+    "EXACT": 0,
+    "PARTIAL": 0,
+    "NONE": 0,
+    "UNJUDGED": 0
+  },
+  "source_only_exact": 0,
+  "source_only_none": 0,
+  "human_chunk_decisions": 0,
+  "off_target_retrieval_coverage": "NOT_ASSESSED",
+  "retrieval_quality_scoring": "BLOCKED"
+}
