@@ -13,8 +13,8 @@
     "K8": {"status": "PARTIAL", "evidence": "40 bilingual contrasts PASS; 12 paired Vietnamese SEC questions A5 12/12 source-enriched; second pass emits Vietnamese literal 12/12; real PR35 HPG/BIDV paired VI/EN PDF retrieval 12/12 HTTP200 but no new PDF numeric gold"},
     "K9": {"status": "PARTIAL", "evidence": "Six native author methods vs A5 on same B and 12 questions; Stage2 internal60 vs A5 cap60 but different compute/filter; sidecar v1 ineffective and repaired only on dev; G2 explicitly post-exposure"},
     "K10": {"status": "PARTIAL", "evidence": "Full private per-question logs, public scorecards/casebook, RSS and latency measured; fixed method order and warming source cache limit latency comparability"},
-    "K11": {"status": "PASS_LOCAL_CI_PENDING", "evidence": "47 targeted C4R tests and 815 full Python tests PASS, one existing Starlette/httpx warning; final-head GitHub CI to verify after commit"},
-    "K12": {"status": "PASS_LOCAL_PR_UPDATE_PENDING", "evidence": "Live Vietnamese CLI demo and SHA/CRC private handoff V3 ready; commit/update existing Draft PR36 pending"}
+    "K11": {"status": "PASS", "evidence": "47 targeted C4R tests and 815 full Python tests PASS, one existing Starlette/httpx warning; PR36 commit 3611f7f Python/frontend GitHub CI PASS"},
+    "K12": {"status": "PASS", "evidence": "Live Vietnamese CLI and PR35 isolated PDF smoke; SHA/CRC private handoff V4; committed to existing Draft PR36 at 3611f7f without merge/new PR"}
   },
   "operational_parity_new_12_filing_hit_top5": "YES_A5_12_OF_12_VS_STAGE2_11_OF_12_EXPLORATORY",
   "general_superiority": "NOT_ESTABLISHED",
