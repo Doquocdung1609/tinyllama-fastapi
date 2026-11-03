@@ -1,0 +1,22 @@
+{
+  "schema": "g3t_c3_provenance_manifest/v1",
+  "chunks": 8670,
+  "filings": 47,
+  "questions": 94,
+  "index_A_members": 8670,
+  "index_B_members": 8670,
+  "corpus_sha256": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f",
+  "index_A_sha256": "1e8e3c6393e7e59786575ed0228254079639016c7b986d1e9702fa5a3ce32540",
+  "index_B_sha256": "fef99bfa5cde1ec358f460efacd3db4ca540673213491c569d64e313070df663",
+  "provenance_sha256": "73ad3b79c058fd871700772a137ce62816e588c40673cb7baf2cf0fcfe618dd4",
+  "qrels_sha256": "aa233427e69c644acc6eef506106cba3fba2ae2499635d5d8765decebc3d5bd8",
+  "coverage_sha256": "fc0c28825458ab7771bd73dd841e891ae2e39af252b3ddd8715c0a409d6da75f",
+  "qrel_grades": {
+    "UNJUDGED": 17153,
+    "PARTIAL": 187
+  },
+  "exact_judgments": 0,
+  "method": "STATIC_CORPUS_AUDIT_NOT_SEALED_RETRIEVAL",
+  "source_only_html_not_retrieval_credit": true,
+  "policy_sha256": "2a8372f17d0a421879bbca858ae09224b8b91d948e80ff2d239e771ebacc4b59"
+}

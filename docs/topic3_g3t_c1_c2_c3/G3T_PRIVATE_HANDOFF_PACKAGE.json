@@ -1,0 +1,13 @@
+{
+  "schema": "g3t_private_handoff_package/v1",
+  "filename": "G3T_C1_C2_C3_PRIVATE_HANDOFF_20261103_V1.zip",
+  "sha256": "2392027056f713bc465eaf0bba25461dec813ce7e0b080717018ad90c5f3485b",
+  "location": "OWNER_MACHINE_DOWNLOADS_OUTSIDE_GIT",
+  "zip_crc": "PASS",
+  "entries": 18,
+  "manifest_file_entries": 17,
+  "manifest_file_sha256_matches": 17,
+  "review_input_sha256": "694e55134cc20dc204df02c16bb5397af50e2f4a62088ec04213a0ec026de6e2",
+  "no_human_events_in_package": true,
+  "no_final_benchmark_in_package": true
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "g3u_evaluation_protocol_proposal/v2",
+  "status": "PROPOSED_NOT_APPROVED_NOT_EXECUTABLE_FOR_SEALED_SCORING",
+  "prior_g3t_protocol_v1_sha256": "153873bb84a87c72c700c349253e46ddaff15e4536478fa98fdf400d2e2347cc",
+  "prior_g3u_arm_registry_v1_sha256": "5c9e95a81d21548f9fa2166785cbaa5e2a3e604791b65cd7900252171d3a20ca",
+  "reason": "Pinned author config advertises RRF constant 60, but its executable FusionQuery(RRF) does not pass k; Qdrant local runtime uses default 2.",
+  "native_author_track": {
+    "fusion_query": "Qdrant FusionQuery(RRF) without explicit k",
+    "actual_local_qdrant_rrf_constant": 2,
+    "output_pool_depth": 20,
+    "stage2_internal_candidate_count_at_output_20": 60,
+    "label": "NATIVE_PINNED_AUTHOR_EXECUTABLE_PATH"
+  },
+  "controlled_track_if_separately_approved": {
+    "fusion_query": "Explicit RrfQuery(k=60) or equivalent validated implementation",
+    "label": "ALTERED_RRF60_CONTROLLED_CONDITION_NOT_NATIVE_AUTHOR",
+    "included_in_current_pool": false
+  },
+  "partial_exposure_disclosure": {
+    "partial_g2_ranked_log_generated": true,
+    "partial_ranked_log_sha256": "87b6058236045d84be79d0773582e849920114d1657143071ec294a82fcd5bc0",
+    "partial_ranked_lines": 16020,
+    "question_arm_index_runs": 801,
+    "per_hit_rank_or_score_inspected_by_coordinator": false,
+    "quality_metric_computed": false,
+    "blind_pool_created": false,
+    "new_complete_pool_run_authorized": false
+  },
+  "unchanged": ["94 frozen G2 questions", "8670 original chunks", "47 SEC mappings", "source labels", "top20 pool contribution", "no final scoring without separate authorization"],
+  "scientific_impact": "Any later complete pool is an exposed continuation, not a never-before-run sealed evaluation. Independence and protocol approval must be reported prospectively.",
+  "owner_signoff_required_before_full_pool_rerun": true,
+  "human_adjudication_required_before_tier_H": true
+}

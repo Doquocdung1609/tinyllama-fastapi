@@ -23,5 +23,10 @@ docs/search_v3/** -text whitespace=cr-at-eol
 docs/search_v3r/** -text whitespace=cr-at-eol
 docs/search_v3r2/** -text whitespace=cr-at-eol
 
-# V7A G2 frozen question exports and blind packages must retain exact bytes.
+# V7A frozen question exports and source evidence must retain exact bytes.
 docs/topic3_v7a_g2/** -text whitespace=cr-at-eol
+docs/topic3_v7a_g3/** -text whitespace=cr-at-eol
+
+# G3T protocol and detached SHA files must survive Windows checkout byte-for-byte.
+docs/topic3_g3t_c1_c2_c3/** -text whitespace=cr-at-eol
+docs/topic3_g3u/** -text whitespace=cr-at-eol

@@ -1,0 +1,13 @@
+arm,family,index,ranking_definition,prefetch,candidate_pool_depth,top_k,comparison_limit
+BM25,AUTHOR,A and B,Qdrant BM25,50,20,5 and 10,A recovered P3D is not proven historical P3C
+BGE_DENSE,AUTHOR,A and B,BAAI/bge-small-en-v1.5 384d,50,20,5 and 10,Same frozen chunks
+SPLADE,AUTHOR,A and B,prithivida/Splade_PP_en_v1,50,20,5 and 10,Same frozen chunks
+BM25_BGE_RRF,AUTHOR,A and B,RRF constant 60,50,20,5 and 10,No invented three-way RRF
+SPLADE_BGE_RRF,AUTHOR,A and B,RRF constant 60,50,20,5 and 10,Same frozen chunks
+ORIGINAL_HEURISTIC_STAGE2,AUTHOR,A and B,Actual fixed feature reranker not ColBERT inference,50,20,5 and 10,Minimum rerank pool 20
+A0_RECOVERED_BASELINE,FAITH_R,A,Recovered baseline,50,20,5 and 10,Historical identity limitation
+A1_FISCAL_CORRECTED,FAITH_R,B,Fiscal payload correction,50,20,5 and 10,Index change is not ranking-only effect
+A2_ISSUER_FISCAL_QUERY,FAITH_R,B,Issuer and fiscal query constraints,50,20,5 and 10,Hard filter favors target filing proxy
+A3_TABLE_AWARE_CANDIDATE,FAITH_R,B,Same corpus row sidecar candidate recovery,50,20,5 and 10,Extra scan compute must be reported
+A4_EVIDENCE_RERANKER,FAITH_R,B,Six-feature lexicographic reranker,50,20,5 and 10,No verified column-year/unit feature claimed
+A4R_POST_HOC_EXPOSED_DEV,FAITH_R,B,Seven-feature exposed repair,50,20,5 and 10,Not independent held-out development

@@ -1,0 +1,515 @@
+{
+  "schema": "c4_provisional_original_chunk_coverage_at_k/v1",
+  "ranked_pool_sha256": "93c9dcf09112dc106f1d79aa63f232c03752c5d7c4ba0127221f10e300759a21",
+  "qrel_sha256": "ebf9ccbc964be3d908029791591aa516970d9bc7a98ab99391a91dbe7e6c9c0d",
+  "question_denominator": 93,
+  "qrel_scope": "AI_PROVISIONAL_ONLY_NOT_HUMAN_GOLD",
+  "method": "Candidate slots among observed hit-row runs; repeated chunks across arms count once per arm/run; missing runs remain unknown",
+  "arms": [
+    {
+      "index": "A",
+      "arm": "AUTHOR_BM25",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 8,
+        "unjudged": 85,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 23,
+        "unjudged": 442,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 31,
+        "unjudged": 899,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "A",
+      "arm": "AUTHOR_BM25_DENSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 10,
+        "unjudged": 83,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 34,
+        "unjudged": 431,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 49,
+        "unjudged": 881,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "A",
+      "arm": "AUTHOR_DENSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 8,
+        "unjudged": 85,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 36,
+        "unjudged": 429,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 51,
+        "unjudged": 879,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "A",
+      "arm": "AUTHOR_RERANK",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 18,
+        "unjudged": 75,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 51,
+        "unjudged": 414,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 68,
+        "unjudged": 862,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "A",
+      "arm": "AUTHOR_SPARSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 3,
+        "unjudged": 90,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 11,
+        "unjudged": 454,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 19,
+        "unjudged": 911,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "A",
+      "arm": "AUTHOR_SPARSE_DENSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 9,
+        "unjudged": 84,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 28,
+        "unjudged": 437,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 45,
+        "unjudged": 885,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "A",
+      "arm": "FAITH_R_A0",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 10,
+        "unjudged": 83,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 34,
+        "unjudged": 431,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 49,
+        "unjudged": 881,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "AUTHOR_BM25",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 8,
+        "unjudged": 85,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 23,
+        "unjudged": 442,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 31,
+        "unjudged": 899,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "AUTHOR_BM25_DENSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 10,
+        "unjudged": 83,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 34,
+        "unjudged": 431,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 49,
+        "unjudged": 881,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "AUTHOR_DENSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 8,
+        "unjudged": 85,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 36,
+        "unjudged": 429,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 51,
+        "unjudged": 879,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "AUTHOR_RERANK",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 23,
+        "unjudged": 70,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 60,
+        "unjudged": 405,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 82,
+        "unjudged": 848,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "AUTHOR_SPARSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 3,
+        "unjudged": 90,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 11,
+        "unjudged": 454,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 19,
+        "unjudged": 911,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "AUTHOR_SPARSE_DENSE",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 9,
+        "unjudged": 84,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 28,
+        "unjudged": 437,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 45,
+        "unjudged": 885,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "FAITH_R_A1",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 93,
+      "runs_without_hit_rows": 0,
+      "at_1": {
+        "candidate_slots": 93,
+        "ai_provisional_partial": 10,
+        "unjudged": 83,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 465,
+        "ai_provisional_partial": 34,
+        "unjudged": 431,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 930,
+        "ai_provisional_partial": 49,
+        "unjudged": 881,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "FAITH_R_A2",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 67,
+      "runs_without_hit_rows": 26,
+      "at_1": {
+        "candidate_slots": 67,
+        "ai_provisional_partial": 15,
+        "unjudged": 52,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 335,
+        "ai_provisional_partial": 38,
+        "unjudged": 297,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 670,
+        "ai_provisional_partial": 50,
+        "unjudged": 620,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "FAITH_R_A3",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 67,
+      "runs_without_hit_rows": 26,
+      "at_1": {
+        "candidate_slots": 67,
+        "ai_provisional_partial": 15,
+        "unjudged": 52,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 335,
+        "ai_provisional_partial": 38,
+        "unjudged": 297,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 670,
+        "ai_provisional_partial": 50,
+        "unjudged": 620,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "FAITH_R_A4",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 67,
+      "runs_without_hit_rows": 26,
+      "at_1": {
+        "candidate_slots": 67,
+        "ai_provisional_partial": 15,
+        "unjudged": 52,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 335,
+        "ai_provisional_partial": 39,
+        "unjudged": 296,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 670,
+        "ai_provisional_partial": 51,
+        "unjudged": 619,
+        "exact": 0,
+        "human_judged": 0
+      }
+    },
+    {
+      "index": "B",
+      "arm": "FAITH_R_A4R",
+      "eligible_questions": 93,
+      "observed_hit_row_runs": 67,
+      "runs_without_hit_rows": 26,
+      "at_1": {
+        "candidate_slots": 67,
+        "ai_provisional_partial": 14,
+        "unjudged": 53,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_5": {
+        "candidate_slots": 335,
+        "ai_provisional_partial": 40,
+        "unjudged": 295,
+        "exact": 0,
+        "human_judged": 0
+      },
+      "at_10": {
+        "candidate_slots": 670,
+        "ai_provisional_partial": 51,
+        "unjudged": 619,
+        "exact": 0,
+        "human_judged": 0
+      }
+    }
+  ],
+  "exact_relevance_metrics": "NOT_REPORTABLE"
+}

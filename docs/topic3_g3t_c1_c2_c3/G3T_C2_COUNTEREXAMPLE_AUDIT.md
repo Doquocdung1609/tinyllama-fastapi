@@ -1,0 +1,9 @@
+# C2 counterexample and independence audit
+
+The 94 AI records disclose access to prior Agent 1/2 submissions and reconciliation. This coordinator review is source-first but is **not a third blind independent annotator**. The AI ledger includes each prior disagreement and a counterexample/limitation field. Its hash chain makes later byte changes visible but cannot prove independence or human identity.
+
+Specific adverse cases were carried forward rather than silently accepted: cost-of-revenue versus cost-of-sales synonyms (`05_01`, `24_01`), reportable segment versus business-line scope (`09_02`), a bounded absence of an Amazon gross-profit line (`12_01`), three-month versus six-month Amazon comparison (`14_02`), monetary versus percentage gross margin (`21_01`), point-in-time wording applied to year-ended cash flow (`25_02`), interim revenue-policy incompleteness (`30_01`, `32_01`) and a qualitative Tesla policy question demanding a numeric unit (`38_01`).
+
+For `12_02` and `15_01`, the locked prospective rule identifies mandatory current/prior cells and treats extra prior cells as supplemental. C1 still records their broader frozen-question scope for human adjudication. The AI label is a provisional policy application, not a rewrite of the original G2 question. For 52 earlier financial cells, the source row, value and period were rechecked; unit/scale metadata derives partly from the earlier reviewed proposal and must be confirmed by a human. For narratives, locating an excerpt is not a full proposition judgment.
+
+There are eight possible source-cell overlaps across six distinct G2 questions in the earlier agent packets. An overlap is not two independent pieces of evidence. The ledger refers to the same verified SEC bytes and does not double-count overlapping cells or the three cases shared between C1 and the twelve-case priority packet.

@@ -1,0 +1,123 @@
+{
+  "schema": "c4r_private_handoff_public_manifest/v1",
+  "zip_path": "C:\\Users\\Admin\\Downloads\\C4R_PRIVATE_HANDOFF_20261104_V4.zip",
+  "zip_bytes": 358861,
+  "zip_sha256": "82350fd486a6b0617c6169ecb5f3aea90395d17d0180ad37a0cdad7fe8f1ab28",
+  "crc_and_member_sha_verified": true,
+  "member_count_excluding_manifest": 28,
+  "files": {
+    "C4R_DEV_ANSWER_COMPARISON_QUESTION_LEVEL.jsonl": {
+      "bytes": 551610,
+      "sha256": "d452037866d0831bba1e5ee8f90968e51755b773120316fb4c4360c1c38afc4c"
+    },
+    "C4R_DEV_ANSWER_COMPARISON_SUMMARY.csv": {
+      "bytes": 1322,
+      "sha256": "13c8718f97b22859217868e176724fd664c2fb4bea72ff5386aaccc7c4e890ad"
+    },
+    "C4R_G2_POST_EXPOSURE_A5_BASE.jsonl": {
+      "bytes": 327897,
+      "sha256": "33c800564d8dc111ea62772a69940eeda8b1b7671c4a371a7c5a6e036bae82e1"
+    },
+    "C4R_HOLDOUT_ANSWER_COMPARISON_QUESTION_LEVEL.jsonl": {
+      "bytes": 1680467,
+      "sha256": "1e6cee1153e082f2fc705dd9e29e4f196c44b3d6f3ff6815f0bc6a7d444a4835"
+    },
+    "C4R_HOLDOUT_ANSWER_COMPARISON_SUMMARY.csv": {
+      "bytes": 1399,
+      "sha256": "80cd5e3f3557b1d0ad0ed54276106fa5fe320fd66725e0117094077dc2f41a38"
+    },
+    "C4R_HPG_BIDV_PAIRED_PDF_SMOKE.json": {
+      "bytes": 108292,
+      "sha256": "4a6dd53b477befd3662b06e9132673eb66e1137c989bdffb8dbcf16139ac35a3"
+    },
+    "C4R_LIVE_DEMO_VI.json": {
+      "bytes": 3381,
+      "sha256": "3b4f4680a3623825ca5ad861063131aac4cbac4d58db0c741c99548919fad483"
+    },
+    "C4R_NEGATIVE_CONTROLS.json": {
+      "bytes": 1678,
+      "sha256": "4cd5582d6e09ecbe85029bd5ef685b5593939eca79de68d4741c35b3e8033d7a"
+    },
+    "C4R_NEW_DEV_RAW.jsonl": {
+      "bytes": 298333,
+      "sha256": "5e50554e273dc39ca5af0a0eb66ebc9d217212443009e52b769d66790d81719c"
+    },
+    "C4R_NEW_DEV_RAW.manifest.json": {
+      "bytes": 728,
+      "sha256": "6780c12823c01c8d99a558194e7f3e9ad6da48e081642d13cac653d8e29c4f16"
+    },
+    "C4R_NEW_DEV_SIDECAR_REPAIR_V2_RAW.jsonl": {
+      "bytes": 298324,
+      "sha256": "cad758eed335a603b6ef9ec700e5b5c29b4ae13c9e916d75a2d37e934a071db4"
+    },
+    "C4R_NEW_DEV_SIDECAR_REPAIR_V2_RAW.manifest.json": {
+      "bytes": 729,
+      "sha256": "ef002395584a2aa7cb9ccf814c5b4f2c494d0dd2a13d6440da80aef3c29dc1f2"
+    },
+    "C4R_NEW_EVALUATION_PRIVATE.json": {
+      "bytes": 23256,
+      "sha256": "fe192c60300282dd7b55b0e14c2c51db9ba92fca1804b2b12b614b96e938c140"
+    },
+    "C4R_NEW_HOLDOUT_RAW.jsonl": {
+      "bytes": 901748,
+      "sha256": "322de307031b1a1364be64c385e0d9a4c724c181db735cb45e6b3fa15cae6fc3"
+    },
+    "C4R_NEW_HOLDOUT_RAW.manifest.json": {
+      "bytes": 735,
+      "sha256": "0eadb36bcdab8dd3971d53431189a9f1109035391c6a0f3542dbaf5c3d6b24d8"
+    },
+    "C4R_NEW_QUESTIONS_ONLY.json": {
+      "bytes": 3538,
+      "sha256": "cc18c8814e1fe8762efef2ef637b11ead192a43c9924bfacb79b39354b42d478"
+    },
+    "C4R_R0_FAILURE_REGISTER_PRIVATE.json": {
+      "bytes": 254462,
+      "sha256": "cfa17d0b1b1511172a7e218cd50cfc659307e94d1e15e153874ce992504ec19c"
+    },
+    "C4R_SOURCE_ROW_QA.jsonl": {
+      "bytes": 8662,
+      "sha256": "91195af539cfd3ac817d6811b71f6a1d3074867aefa9da2a0967edf07a9c2c28"
+    },
+    "C4R_VN_ANSWER_COMPARISON_QUESTION_LEVEL.jsonl": {
+      "bytes": 1692864,
+      "sha256": "2ccbabf03c6248068541007cdcc96340c90452469c7bcc2fb7bc6008b95f8797"
+    },
+    "C4R_VN_ANSWER_COMPARISON_SUMMARY.csv": {
+      "bytes": 1382,
+      "sha256": "c75cf49c6e564969184d265265d34cf746db512361bacb9aa0f9478441a0b689"
+    },
+    "C4R_VN_FORMAT_V2_ANSWER_COMPARISON_QUESTION_LEVEL.jsonl": {
+      "bytes": 1696734,
+      "sha256": "ed507b561aaea5e7366cf66fc5fea18910225fc5ddd0c7c4e42e036b84ab1513"
+    },
+    "C4R_VN_FORMAT_V2_ANSWER_COMPARISON_SUMMARY.csv": {
+      "bytes": 1384,
+      "sha256": "ce2e8eb4671c79592e9eb7e9e2bbc24dcc8f27430ab06eb65261d8652ab2e0c8"
+    },
+    "C4R_VN_PAIRED_FORMAT_V2_RAW.jsonl": {
+      "bytes": 908327,
+      "sha256": "c86f54f4d62eca70a50ee0eda6db2125e4ef1511a2eae28f0771a67a284ba448"
+    },
+    "C4R_VN_PAIRED_FORMAT_V2_RAW.manifest.json": {
+      "bytes": 737,
+      "sha256": "19ff41fd315808e5cc64332ad22580f579e6522c09281a455d300e53b1b222c1"
+    },
+    "C4R_VN_PAIRED_QUESTIONS_ONLY.json": {
+      "bytes": 3191,
+      "sha256": "6d0fe1ef041bd3f33309b0e3ceee6e0b0b246fac7f22627467fffbfd96d51cc0"
+    },
+    "C4R_VN_PAIRED_RAW.jsonl": {
+      "bytes": 904447,
+      "sha256": "02468692dde3fcdb5c2bd9b0d2f193ae247bcb3f1b69ff0e2b3f31f07c9e6537"
+    },
+    "C4R_VN_PAIRED_RAW.manifest.json": {
+      "bytes": 737,
+      "sha256": "ddbd705ffaef82f2b923c7eaa3afc19eb3bb51b65be906be71daed3a64d93db8"
+    },
+    "C4R_WRONG_ANSWER_CASEBOOK_PRIVATE.md": {
+      "bytes": 135730,
+      "sha256": "add1d80d63ab1a91f4b79def3cd9c0ac147d7ca4ec840ba30b1310f95b54cde9"
+    }
+  },
+  "private_answer_values_in_git": false
+}

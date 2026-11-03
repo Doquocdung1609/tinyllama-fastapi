@@ -1,0 +1,17 @@
+{
+  "schema": "g3u_blind_source_review_handoff/v1",
+  "filename": "G3U_BLIND_SOURCE_REVIEW_HANDOFF_20261103_V1.zip",
+  "sha256": "e5ace848ca25e488a7b637e0c04a922d19564685d040d95a4af093884d09746f",
+  "location": "OWNER_MACHINE_DOWNLOADS_OUTSIDE_GIT",
+  "zip_crc": "PASS",
+  "members": [
+    "G3U_HUMAN_CHUNK_REVIEW_QUEUE.jsonl",
+    "G3U_SOURCE_AUDIT_QUEUE_MANIFEST.json"
+  ],
+  "queue_pairs": 17340,
+  "source_only_target_filing": true,
+  "ranked_mixed_arm_pool": false,
+  "contains_method_rank_score": false,
+  "contains_ai_qrel_suggestions": false,
+  "contains_human_decisions": false
+}

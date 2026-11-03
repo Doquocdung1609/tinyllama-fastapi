@@ -1,0 +1,38 @@
+{
+  "schema": "c4_owner_laptop_resource_snapshot/v1",
+  "observed_utc": "2026-11-03T10:31:43.540416+00:00",
+  "ram_total_gib": 15.23,
+  "ram_available_gib": 1.65,
+  "disk_free_gib": 62.87,
+  "product_owned_processes": [
+    {
+      "pid": 30368,
+      "name": "python.exe",
+      "rss_mib": 4.74
+    },
+    {
+      "pid": 28280,
+      "name": "conhost.exe",
+      "rss_mib": 10.49
+    },
+    {
+      "pid": 37120,
+      "name": "python.exe",
+      "rss_mib": 228.48
+    }
+  ],
+  "ollama_processes": [
+    {
+      "pid": 35044,
+      "rss_mib": 25.22
+    },
+    {
+      "pid": 38736,
+      "rss_mib": 25.16
+    }
+  ],
+  "g3u_ranked_pool_peak_process_rss_mib": 1491.64,
+  "index_A_storage_bytes": 99009363,
+  "index_B_storage_bytes": 99038035,
+  "vram": "NOT_MEASURED_CPU_ONNX_PATH"
+}

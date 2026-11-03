@@ -1,0 +1,30 @@
+{
+  "schema": "g3s_external_hash_attestation/v1",
+  "original_zip_sha256": "5a749bbe8f9002bf24ac98f2518ce82859dd74bf4c7b77950d2c3e07c3419a73",
+  "zip_crc": "PASS",
+  "sha256sums_entries": "PASS",
+  "manifest_data_members": "PASS",
+  "actual_manifest_sha256": "44c1c85246816f6029d635fc033c77c486c390ea15945a5f5ba3dfcc2193f7de",
+  "actual_sha256sums_sha256": "68a5e6186b0a1c18ce311591f29e38f2007f45d7dacea38ea1b0464ef3245b06",
+  "verified_data_member_sha256": {
+    "AGENT2_G3_DECISION_DELTA.csv": "6938ed64afb1e9f6064f069f05ecc18d8f8281429585216fabeae282bd65c5da",
+    "AGENT2_G3_POST_SOURCE_18_VERIFICATION.csv": "fdff674e001a8aa4d8c7cbf4eaf37516fb471250a0323cfc4617664cb19d306b",
+    "AGENT2_G3_POST_SOURCE_CELL_EVIDENCE.jsonl": "642b8a30b719466403d5de147d3b95bef64fd6afec7f8cd20ef97d53459d44ae",
+    "AGENT2_G3_POST_SOURCE_REVIEW_REPORT.md": "4da12a81f0bc8a1cf4b10e49325d5bf087ebfa1f3ae6dd250f19970207c2f753",
+    "AGENT2_G3_SOURCE_HASH_VALIDATION.csv": "4bb2e4af8f456026c40089f4eb68b09e41684bf39460ec928d0018c878eaabcc",
+    "AGENT2_G3_SOURCE_HASH_VALIDATION.json": "a1b673c1816c17999ae6818c7c4135fddf6d87e1daaac4b8459e8b1f1f98718a",
+    "AGENT2_G3_UNRESOLVED_AFTER_SOURCE.csv": "bcf11eecd34795a1a9c87cecc6d5e04c861948e474ba0c9d091dc83161f1af79"
+  },
+  "self_reference_warnings": {
+    "AGENT2_G3_POST_SOURCE_FREEZE_MANIFEST.json": {
+      "declared_in_manifest": "f70c6af881b5f3e11ee3a6844445dcccb1d21e22c76e2868306237adfbbab41a",
+      "actual_sha256": "44c1c85246816f6029d635fc033c77c486c390ea15945a5f5ba3dfcc2193f7de"
+    },
+    "SHA256SUMS.txt": {
+      "declared_in_manifest": "a95d7c711d8b103824e4b220a87c3dce54c5e81d35be4614b9b03069a438d2d0",
+      "actual_sha256": "68a5e6186b0a1c18ce311591f29e38f2007f45d7dacea38ea1b0464ef3245b06"
+    }
+  },
+  "explanation": "The manifest declares stale hashes for itself and SHA256SUMS. A file cannot reliably contain its own final SHA-256. SHA256SUMS contains the actual manifest hash but cannot include its own hash without the same cycle. This detached attestation hashes the original immutable ZIP and reports both actual bytes. It does not repair or rewrite Agent 2 V3.",
+  "verification_code": "scripts/topic3_v7a_g3s_attest.py"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "g3t_frozen_asset_audit/v1",
+  "baseline_commit": "cd8deb96cb8c147ca5c090e9c0a323de511c65bd",
+  "branch_head_before_changes": "8c619753fef9895811504a5f8b2b5ce78f497594",
+  "checked_git_blobs": {
+    "docs/topic3_v7a_g2/V7A_G2_FREEZE_MANIFEST.json": "8ce8cc51041ea056daa704da2e2e85111e233f5a",
+    "docs/topic3_v6/V6_ALGORITHM_FREEZE_MANIFEST.json": "8107b28343045bbd36cb5e60d5bbf2f520bf25e0",
+    "docs/topic3_v5/V5_FINAL_ACCEPTANCE.md": "ab6e33d1cc14c534639293e5756f4bce0dd441b2"
+  },
+  "checked_external_sha256": {
+    "frozen_SEC47_manifest": "46c0d0a0fed423ba373afab075b1952a6a0d3da85041c0f5b0f626585bbebaa6",
+    "FAITH_R_V5_RESTORED_BASELINE_HANDOFF.zip": "3b26f9ddbe84b92f87078b12ff3e0b71f792796e3ac1b12a877bae4f3c65edaf",
+    "V7A_G3_SEC_SOURCE_HANDOFF_20261102.zip": "9ab979c7156b99b1f0ca25747b0ff1ca24771812253f2d1e0cae3deec95c3afb",
+    "V7A_G3R_EIGHT_DISPUTE_SEC_PRIMARY_20261102.zip": "3ed0e945d6dbef95c92e9909080921fd2475c427087d53cd898692961eabb0e2",
+    "V7A_G3S_SEC47_SOURCE_RECOVERY_20261102_SOURCE_HANDOFF.zip": "69060ac21108e4e4cd19524c6ae66ee40ca4702c5a6cb2980c5c402ca30f2887",
+    "frozen_corpus_chunks_jsonl": "7c6852a8c68ed1c64194c2da9339fbb4719482949e5705596499db53114abb1f",
+    "recovered_index_A": "1e8e3c6393e7e59786575ed0228254079639016c7b986d1e9702fa5a3ce32540",
+    "recovered_index_B": "fef99bfa5cde1ec358f460efacd3db4ca540673213491c569d64e313070df663"
+  },
+  "git_diff_from_g2_baseline_in_frozen_paths": [],
+  "unauthorized_frozen_changes": 0,
+  "notes": "External source and index artifacts were read and byte checked; local owner untracked directories were preserved. Blob IDs are Git SHA-1 object IDs, not SHA-256 file digests."
+}

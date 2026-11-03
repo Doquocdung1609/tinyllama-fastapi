@@ -1,0 +1,24 @@
+{
+  "schema": "c4_gate_matrix/v1",
+  "overall": "CLASS_DEMO_READY_WITH_LIMITATIONS_RESEARCH_BENCHMARK_NOT_CERTIFIED",
+  "gates": {
+    "C4-0": {"status": "PASS", "evidence": "PR36 starting HEAD 4f1622e, G3U U0-U12 and frozen assets audited; PR35 separate detached worktree"},
+    "C4-1": {"status": "PASS_WITH_IDENTITY_LIMITATION", "evidence": "102/102 canonical event chain and review-input SHA pass; 94 latest 86/7/1, reviewer identity self-declared"},
+    "C4-2": {"status": "PASS_PROXY_ONLY", "evidence": "93 nonexcluded target-filing proxy IDs frozen before scoring; 67 release-preview, 19 structural block, 7 correction, 1 excluded"},
+    "C4-3": {"status": "PARTIAL", "evidence": "Six author methods each executed on restored A/B; executable native RRF k2, C4 requested explicit k60 variant not rerun after score exposure"},
+    "C4-4": {"status": "PASS_WITH_CONFOUND", "evidence": "A0 on A, A1-A4R on B; 3516 fiscal payload changes, A4R exposed development, sidecar cost disclosed"},
+    "C4-5": {"status": "PASS_WITH_PROVENANCE_LIMITATION", "evidence": "Existing real G3U one-shot 94-question pool scored as objective proxy only; 1588 hit-row runs, 104 without individual zero-result records"},
+    "C4-6": {"status": "PASS_GATE_BLOCKED_METRIC", "evidence": "5792 blind pairs: 124 AI PARTIAL, 5668 UNJUDGED, 0 EXACT/human; original-chunk exact/MRR/nDCG/Recall not reportable"},
+    "C4-7": {"status": "PASS_PROXY_ONLY", "evidence": "All 18 arms have Top1/5/10 numerator and observed denominator, paired W/T/L, p50/p95; no answer-correctness score"},
+    "C4-8": {"status": "PASS", "evidence": "A4 vs author BM25+BGE B on 67 common questions: 9 win/40 tie/18 loss; 46 target fiscal-filter mismatches disclosed"},
+    "C4-9": {"status": "PARTIAL", "evidence": "PR35 local React/API live HPG/BIDV and six screenshots; Apple PDF absent, product SEC root unavailable"},
+    "C4-10": {"status": "PASS", "evidence": "Nine-slide outline, 7-minute Vietnamese script, runbook and 16 instructor Q&A"},
+    "C4-11": {"status": "PASS", "evidence": "5 focused and 768 full Python PASS, one preexisting deprecation warning; PR35 npm build and six local search/API calls PASS; PR36 commit 36eeedf GitHub Python/frontend CI PASS"},
+    "C4-12": {"status": "PASS", "evidence": "Versioned private C4 manifest/hashes and redacted docs/scripts committed to existing Draft PR36 at 36eeedf; no merge/new PR"}
+  },
+  "tier_A_exact_qrel": "BLOCKED",
+  "tier_H_human_certified": "BLOCKED",
+  "class_demo": "READY_HPG_BIDV_AND_OBJECTIVE_PROXY_WITH_DISCLOSED_LIMITS",
+  "apple_pdf_live": "NOT_AVAILABLE_SOURCE_PDF_ABSENT",
+  "final_relevance_benchmark": "NOT_RUN"
+}

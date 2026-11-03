@@ -1,0 +1,8 @@
+{
+  "schema": "g3t_human_events_audit/v1",
+  "human_event_count": 0,
+  "human_approved_count": 0,
+  "hash_chain": "PASS",
+  "identity_assurance": "SELF_DECLARED_NOT_CRYPTOGRAPHICALLY_AUTHENTICATED",
+  "ai_ledger_never_imported": true
+}

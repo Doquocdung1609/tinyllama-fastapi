@@ -1,0 +1,19 @@
+{
+  "schema": "g3t_ai_source_adjudication_manifest/v1",
+  "question_count": 94,
+  "counts": {
+    "AI_SUPPORTED_EXACT": 71,
+    "AI_AMBIGUOUS": 4,
+    "AI_PARTIAL": 16,
+    "AI_NEGATIVE_SUPPORTED": 1,
+    "AI_QUESTION_INVALID": 2
+  },
+  "ledger_sha256": "7a302d0164aae5207a760dd96881ed205b6fac26c8c35fd9898ee7dbfa009dcc",
+  "c1_ledger_sha256": "77fe777af38c52e435c46706262ddbf23099254c94dcea7f7937e57674151631",
+  "review_dataset_sha256": "211336358375445568f168ffa687459a455fa73f1c3349d05af998427e57a44d",
+  "protocol_sha256": "2a8372f17d0a421879bbca858ae09224b8b91d948e80ff2d239e771ebacc4b59",
+  "reviewer_type": "AI_ASSISTED_SOURCE_FIRST",
+  "human_approved_count": 0,
+  "prediction_leakage_rule": "No new model rankings/scores read",
+  "human_ledger_separate": true
+}

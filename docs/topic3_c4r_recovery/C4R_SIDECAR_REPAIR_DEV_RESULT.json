@@ -1,0 +1,11 @@
+{
+  "schema": "c4r_sidecar_reserved_slot_dev_check/v1",
+  "split": "DEV_ONLY_POST_HOLDOUT_FIX",
+  "question_count": 4,
+  "candidate_pool_changed": 1,
+  "new_original_chunk_ids_total": 5,
+  "top5_changed": 0,
+  "old_run_sha256": "5e50554e273dc39ca5af0a0eb66ebc9d217212443009e52b769d66790d81719c",
+  "new_run_sha256": "cad758eed335a603b6ef9ec700e5b5c29b4ae13c9e916d75a2d37e934a071db4",
+  "holdout_post_fix": "NOT_RERUN_AS_INDEPENDENT"
+}

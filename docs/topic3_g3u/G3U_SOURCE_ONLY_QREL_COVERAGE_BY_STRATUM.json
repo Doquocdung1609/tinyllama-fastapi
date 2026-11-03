@@ -1,0 +1,112 @@
+{
+  "schema": "g3u_source_only_qrel_coverage/v1",
+  "questions": 94,
+  "pairs": 17340,
+  "by": {
+    "ticker": {
+      "AAPL": {
+        "questions": 10,
+        "partial": 21,
+        "unjudged": 921
+      },
+      "AMD": {
+        "questions": 10,
+        "partial": 14,
+        "unjudged": 1604
+      },
+      "AMZN": {
+        "questions": 10,
+        "partial": 32,
+        "unjudged": 1378
+      },
+      "GOOGL": {
+        "questions": 8,
+        "partial": 20,
+        "unjudged": 1258
+      },
+      "INTC": {
+        "questions": 10,
+        "partial": 23,
+        "unjudged": 2299
+      },
+      "META": {
+        "questions": 6,
+        "partial": 22,
+        "unjudged": 1388
+      },
+      "MSFT": {
+        "questions": 10,
+        "partial": 15,
+        "unjudged": 1999
+      },
+      "NVDA": {
+        "questions": 10,
+        "partial": 13,
+        "unjudged": 1545
+      },
+      "TSLA": {
+        "questions": 10,
+        "partial": 22,
+        "unjudged": 1826
+      },
+      "TSM": {
+        "questions": 10,
+        "partial": 0,
+        "unjudged": 2940
+      }
+    },
+    "form": {
+      "10-K": {
+        "questions": 48,
+        "partial": 101,
+        "unjudged": 10279
+      },
+      "10-Q": {
+        "questions": 36,
+        "partial": 81,
+        "unjudged": 3939
+      },
+      "20-F": {
+        "questions": 6,
+        "partial": 0,
+        "unjudged": 2930
+      },
+      "6-K": {
+        "questions": 4,
+        "partial": 0,
+        "unjudged": 10
+      }
+    },
+    "answer_type": {
+      "ANSWERABILITY_CHECK": {
+        "questions": 4,
+        "partial": 0,
+        "unjudged": 1631
+      },
+      "DISCLOSURE_OR_ANSWERABILITY": {
+        "questions": 4,
+        "partial": 0,
+        "unjudged": 10
+      },
+      "FINANCIAL_COMPARATIVE": {
+        "questions": 26,
+        "partial": 74,
+        "unjudged": 4009
+      },
+      "FINANCIAL_DISCLOSURE": {
+        "questions": 11,
+        "partial": 0,
+        "unjudged": 3058
+      },
+      "FINANCIAL_NUMERIC": {
+        "questions": 49,
+        "partial": 108,
+        "unjudged": 8450
+      }
+    }
+  },
+  "ranked_arm_coverage": "NOT_APPLICABLE_NO_COMPLETE_POOL",
+  "human_decisions": 0,
+  "exact": 0,
+  "none": 0
+}

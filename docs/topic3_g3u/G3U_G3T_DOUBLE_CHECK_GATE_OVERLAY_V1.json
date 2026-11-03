@@ -1,0 +1,25 @@
+{
+  "schema": "g3u_g3t_double_check_gate_overlay/v1",
+  "relationship_to_g3u_v2": "NEW_EXTERNAL_EXPORT_POST_HANDOFF_NOT_MUTATION",
+  "export_intake": "PASS_INTERNAL_CONSISTENCY",
+  "frozen_question_c1_c2_mapping": "PASS_94_OF_94",
+  "claimed_original_event_chain_98": "UNVERIFIED_ORIGINAL_JSONL_ABSENT",
+  "reported_latest_source_decisions": {
+    "APPROVE": 85,
+    "REQUEST_CORRECTION": 7,
+    "AMBIGUOUS": 1,
+    "EXCLUDE": 1
+  },
+  "reported_active_rationale_errors": [
+    "V7A_G2_12_01",
+    "V7A_G2_14_02",
+    "V7A_G2_25_02"
+  ],
+  "reported_policy_review": ["V7A_G2_11_02"],
+  "reported_historical_correction_to_verify": ["V7A_G2_24_01"],
+  "independently_authenticated_human_approvals_from_new_files": 0,
+  "original_chunk_qrel_change": "NONE",
+  "tier_A": "BLOCKED",
+  "tier_H": "BLOCKED",
+  "final_g2_benchmark": "NOT_RUN"
+}

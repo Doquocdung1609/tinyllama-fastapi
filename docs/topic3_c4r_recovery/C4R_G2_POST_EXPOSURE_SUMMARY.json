@@ -1,0 +1,22 @@
+{
+  "schema": "c4r_g2_post_exposure_diagnostic_summary/v1",
+  "frozen_g2_questions": 94,
+  "eligible_proxy": 93,
+  "old_a4_metadata_mismatch": 46,
+  "a5_filter_target_compatible_in_old_mismatches": 46,
+  "a5_status_counts": {
+    "COMPLETED_WITH_HITS": 94
+  },
+  "a5_target_filing_hit_at_1": 91,
+  "a5_target_filing_hit_at_5": 93,
+  "a5_target_filing_hit_at_10": 93,
+  "a5_target_filing_hit_at_20": 93,
+  "old_a4_hit_rows": 67,
+  "old_a4_unknown_zero_vs_omitted": 26,
+  "old_stage2_author_target_hit_at_5": 90,
+  "strict_label": "POST_EXPOSURE_REGRESSION_DIAGNOSTIC_NOT_INDEPENDENT",
+  "private_register_sha256": "cfa17d0b1b1511172a7e218cd50cfc659307e94d1e15e153874ce992504ec19c",
+  "private_casebook_sha256": "add1d80d63ab1a91f4b79def3cd9c0ac147d7ca4ec840ba30b1310f95b54cde9",
+  "private_g2_run_sha256": "33c800564d8dc111ea62772a69940eeda8b1b7671c4a371a7c5a6e036bae82e1",
+  "holdout_failure_records_all_methods_tracks": 121
+}

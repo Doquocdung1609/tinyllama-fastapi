@@ -1,0 +1,81 @@
+{
+  "schema": "g3t_private_evidence_manifest/v1",
+  "location": "PRIVATE_OWNER_MACHINE_HANDOFF_OUTSIDE_GIT",
+  "contains_value_bearing_answers_or_qrels": true,
+  "files": {
+    "C1": {
+      "G3T_C1_11_CASE_SOURCE_CLOSURE.csv": {
+        "sha256": "ff453214725a6566422eaf6d6f744c126a2124453595ba3f982c2fe5f36abdf8",
+        "bytes": 1848
+      },
+      "G3T_C1_11_CASEBOOK.md": {
+        "sha256": "e9fe75debd0723c40d2486d693143f0f3148b6f095c900b07139ffeb4bbba1c2",
+        "bytes": 23763
+      },
+      "G3T_C1_94_EVIDENCE_LEDGER.jsonl": {
+        "sha256": "77fe777af38c52e435c46706262ddbf23099254c94dcea7f7937e57674151631",
+        "bytes": 120587
+      },
+      "G3T_C1_NARRATIVE_PROPOSITION_AUDIT.csv": {
+        "sha256": "ca74b0e82e1b46fb2db75954b2e718707cf3de633d0900c1c337b823712b68a8",
+        "bytes": 11845
+      },
+      "G3T_C1_SOURCE_CORPUS_GAP_MATRIX.csv": {
+        "sha256": "b808c20c6bd0ac39fa5c8b077305f48d73cac378f920dacf91ff3e5c78720af9",
+        "bytes": 2665
+      },
+      "G3T_C1_SUMMARY.json": {
+        "sha256": "b4acf3998f8824d76a7bb9dd5eefbe0a61b8410aeb457dd05ec1591c6c8f772d",
+        "bytes": 748
+      }
+    },
+    "C2": {
+      "G3T_C2_AI_ADJUDICATION_94.jsonl": {
+        "sha256": "7a302d0164aae5207a760dd96881ed205b6fac26c8c35fd9898ee7dbfa009dcc",
+        "bytes": 229892
+      },
+      "G3T_C2_AI_ADJUDICATION_MANIFEST.json": {
+        "sha256": "2e7f69264d9146b74dca20424df50524d8f250a54ca69abf6e7c00bbf43204cc",
+        "bytes": 791
+      },
+      "G3T_C2_AI_ONLY_RELEASE.json": {
+        "sha256": "e08cc8d0b9de40de6eb55f3d6be7ea91e79f93e722155be8a35d33b461e26a56",
+        "bytes": 1901
+      },
+      "G3T_C2_CONSENSUS_DISAGREEMENT_MATRIX.csv": {
+        "sha256": "c65871f4d407b1ab72c7fa4655f6a8e803b7918a08686ba203f1fcf701e60afa",
+        "bytes": 8036
+      },
+      "G3T_C2_HUMAN_REVIEW_EVENTS_AUDIT.json": {
+        "sha256": "ae8da589ab247e3631b7d5856c9db75551f1b3f6896089a42084f703b963a014",
+        "bytes": 244
+      },
+      "G3T_C2_TWELVE_DISPUTE_CASEBOOK.md": {
+        "sha256": "835a9cfa57dd9ecb21b1a1a4d654d8a70b62be79a0c314d9b9a424ccea046785",
+        "bytes": 20382
+      }
+    },
+    "C3": {
+      "G3T_C3_BENCHMARK_PRECHECK.json": {
+        "sha256": "e5c050326cc64e5a0f04fb3e6a49e46aad0592efd943fcf99dfd06319a9f9dd7",
+        "bytes": 1402
+      },
+      "G3T_C3_ORIGINAL_CHUNK_PROVENANCE.jsonl": {
+        "sha256": "73ad3b79c058fd871700772a137ce62816e588c40673cb7baf2cf0fcfe618dd4",
+        "bytes": 5355901
+      },
+      "G3T_C3_PROVENANCE_MANIFEST.json": {
+        "sha256": "f0a3ba48005aa97fe8bd02ba07f9fe11ffb4f64f87bf157280edf083455ec90d",
+        "bytes": 989
+      },
+      "G3T_C3_QRELS_PROVISIONAL.jsonl": {
+        "sha256": "aa233427e69c644acc6eef506106cba3fba2ae2499635d5d8765decebc3d5bd8",
+        "bytes": 9046301
+      },
+      "G3T_C3_SOURCE_CORPUS_COVERAGE.csv": {
+        "sha256": "fc0c28825458ab7771bd73dd841e891ae2e39af252b3ddd8715c0a409d6da75f",
+        "bytes": 10089
+      }
+    }
+  }
+}
