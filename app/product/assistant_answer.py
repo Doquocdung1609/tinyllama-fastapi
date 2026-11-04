@@ -22,8 +22,8 @@ NUMERIC_TERMS = (
 
 
 def needs_number(question: str) -> bool:
-    value = folded(question)
-    return any(term in value for term in NUMERIC_TERMS)
+    from app.product.financial_understanding import understand
+    return understand(question).intent in {'EXTRACT_VALUE', 'COMPARE_PERIODS'}
 
 
 def selected_period(question: str, facts: list[dict]) -> str | None:
@@ -132,7 +132,10 @@ def contract(question: str, result: dict, profile: str) -> dict:
         'answer_source_chunk_id': support.get('chunk_id') if support and not period_missing else None,
         'statement_scope': first.get('statement_scope') if first else None,
         'unit': first.get('unit') if first else None,
+        'query_understanding':result.get('intent'),
         'retrieval_trace': {'profile': profile, 'generation': result.get('generation'),
+                            'engine_version':result.get('engine_version'),'algorithm_executed':result.get('algorithm_executed'),
+                            'candidate_count':result.get('candidate_count'),
                             'latency_ms': result.get('latency_ms'),
                             'top_ids': [h.get('chunk_id') for h in hits],
                             'evidence_status': result.get('evidence_status')},

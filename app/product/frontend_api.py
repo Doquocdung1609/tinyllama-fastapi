@@ -11,7 +11,7 @@ from threading import BoundedSemaphore, Thread
 from typing import Literal, Annotated
 from uuid import uuid4
 
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException, Response, Query
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 import psutil
@@ -76,23 +76,66 @@ def metadata_update(document_id:str,payload:MetadataUpdate):
 class ChatRequest(BaseModel):
     model_config=ConfigDict(extra='forbid')
     question:str=Field(min_length=2,max_length=2000)
-    document_ids:list[Annotated[str,Field(pattern=r'^[a-f0-9]{32}$')]]=Field(min_length=1,max_length=20)
+    document_ids:list[Annotated[str,Field(pattern=r'^[a-f0-9]{32}$')]]=Field(default_factory=list,max_length=20)
+    source:Literal['USER_UPLOADS','US_SEC']='USER_UPLOADS'
+    ticker:str=Field(default='',max_length=20,pattern=r'^[A-Za-z0-9.-]*$')
     session_id:str|None=Field(default=None,pattern=r'^[a-f0-9]{32}$')
     constraints:dict[str,str]=Field(default_factory=dict,max_length=6)
+
+
+@router.get('/chat/sessions')
+def chat_sessions(q:str=Query(default='',max_length=200),limit:int=20,offset:int=0):
+    from app.product.chat_store import connect,owner,public
+    # Explicit checks also cover direct Python callers.
+    if not isinstance(q,str):q=''
+    if not 1<=limit<=100 or offset<0:raise HTTPException(422,detail={'code':'INVALID_PAGINATION'})
+    w=workspace()
+    with connect(w) as db:
+        rows=db.execute('SELECT * FROM financial_chat_sessions WHERE owner=? AND (title LIKE ? OR payload LIKE ?) ORDER BY updated_at DESC,id LIMIT ? OFFSET ?',
+            (owner(w),'%'+q+'%','%'+q+'%',limit+1,offset)).fetchall()
+    return {'sessions':[public(r) for r in rows[:limit]],'has_more':len(rows)>limit,'offset':offset}
+
+
+@router.get('/chat/{session_id}')
+def chat_session(session_id:str):
+    from app.product.chat_store import connect,owner,public
+    w=workspace()
+    with connect(w) as db:row=db.execute('SELECT * FROM financial_chat_sessions WHERE id=? AND owner=?',(session_id,owner(w))).fetchone()
+    if row is None:raise HTTPException(404,detail={'code':'CHAT_NOT_FOUND'})
+    return public(row,True)
+
+
+class ChatRename(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    title:str=Field(min_length=1,max_length=120)
+
+
+@router.patch('/chat/{session_id}')
+def rename_chat(session_id:str,payload:ChatRename):
+    from app.product.chat_store import connect,owner,now
+    w=workspace()
+    with connect(w) as db:
+        cursor=db.execute('UPDATE financial_chat_sessions SET title=?,updated_at=? WHERE id=? AND owner=?',
+            (payload.title.strip() or 'Hội thoại mới',now(),session_id,owner(w)))
+        if cursor.rowcount!=1:raise HTTPException(404,detail={'code':'CHAT_NOT_FOUND'})
+    return chat_session(session_id)
 
 
 @router.delete('/chat/{session_id}')
 def reset_financial_chat(session_id:str):
     if not re.fullmatch(r'[a-f0-9]{32}',session_id):raise HTTPException(422,detail={'code':'INVALID_CHAT_SESSION'})
-    with closing(workspace()._connect()) as db,db:
-        if db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='financial_chat_sessions'").fetchone():
-            db.execute('DELETE FROM financial_chat_sessions WHERE id=?',(session_id,))
+    from app.product.chat_store import connect,owner
+    w=workspace()
+    with connect(w) as db:
+        db.execute('DELETE FROM financial_chat_sessions WHERE id=? AND owner=?',(session_id,owner(w)))
     return {'reset':True}
 
 
 @router.post('/chat')
 def financial_chat(payload:ChatRequest):
     w=workspace();session=payload.session_id or uuid4().hex
+    if payload.source=='USER_UPLOADS' and not payload.document_ids:raise HTTPException(422,detail={'code':'SELECT_PDF_SOURCE'})
+    if payload.source=='US_SEC' and payload.document_ids:raise HTTPException(422,detail={'code':'SEC_PDF_SOURCE_SCOPE_CONFLICT'})
     for doc_id in payload.document_ids:
         doc=w.document(doc_id)
         if not doc or doc['status']!='READY':raise HTTPException(409,detail={'code':'PDF_DOCUMENT_NOT_READY'})
@@ -100,17 +143,29 @@ def financial_chat(payload:ChatRequest):
         except ValueError as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
     from app.product.query_source_context import source_company_conflict
     conflict=source_company_conflict(w,payload.document_ids,payload.question)
-    if conflict:return {**conflict,'session_id':session,'source_scope':payload.document_ids}
     from app.product.document_metadata import read_metadata
-    fingerprint=sha256(json.dumps(sorted((d,w.document(d)['sha256'],len(read_metadata(w,d)['corrections'])) for d in payload.document_ids)).encode()).hexdigest()
+    source_set=sorted((d,w.document(d)['sha256'],len(read_metadata(w,d)['corrections'])) for d in payload.document_ids)
+    fingerprint=sha256(json.dumps(source_set if payload.source=='USER_UPLOADS' else ['SEC',payload.ticker]).encode()).hexdigest()
     with closing(w._connect()) as db,db:
-        db.execute('CREATE TABLE IF NOT EXISTS financial_chat_sessions(id TEXT PRIMARY KEY,scope TEXT NOT NULL,payload TEXT NOT NULL)')
-        prior=db.execute('SELECT scope,payload FROM financial_chat_sessions WHERE id=?',(session,)).fetchone()
+        from app.product.chat_store import connect as chat_connect
+        with chat_connect(w):pass
+        from app.product.chat_store import owner
+        owned=db.execute('SELECT owner FROM financial_chat_sessions WHERE id=?',(session,)).fetchone()
+        if owned and owned['owner']!=owner(w):raise HTTPException(404,detail={'code':'CHAT_NOT_FOUND'})
+        prior=db.execute('SELECT scope,payload FROM financial_chat_sessions WHERE id=? AND owner=?',(session,owner(w))).fetchone()
         if prior is None and db.execute('SELECT count(*) FROM financial_chat_sessions').fetchone()[0]>=100:
             raise HTTPException(429,detail={'code':'CHAT_SESSION_LIMIT'})
     history=json.loads(prior['payload']) if prior and prior['scope']==fingerprint else []
+    if prior and prior['scope']!=fingerprint:session=uuid4().hex
     question=payload.question
     from app.product.query_intent import metric_matches
+    if history and not metric_matches(question) and re.search(r'con hop nhat|con rieng|trang nao|hai bang|truoc dieu chinh|these tables|what page',folded(question)):
+        from app.product.financial_understanding import understand
+        previous=history[-1].get('resolved_question',history[-1]['question'])
+        slots_before=understand(previous)
+        if slots_before.metric:
+            phrase=slots_before.metric_phrases[0]
+            question=phrase+' '+question+' '+' '.join(slots_before.years)
     if not metric_matches(question) and history and re.search(r'so voi|tang|giam|growth|compare|change|nam truoc|previous|con nam|what about',folded(question)):
         previous=next((h for h in reversed(history) if h['response'].get('status')=='SUPPORTED'),None)
         if previous:
@@ -127,11 +182,27 @@ def financial_chat(payload:ChatRequest):
     allowed={'metric','operation','current_period','previous_period','statement_scope','basis'}
     if set(payload.constraints)-allowed:raise HTTPException(422,detail={'code':'UNKNOWN_ADVANCED_CONSTRAINT'})
     if any(not isinstance(v,str) or len(v)>80 for v in payload.constraints.values()):raise HTTPException(422,detail={'code':'INVALID_ADVANCED_CONSTRAINT'})
-    try:request=AnalysisRequest(question=question,document_ids=payload.document_ids,search_profile='auto',**payload.constraints)
+    if payload.source=='US_SEC' and payload.constraints:raise HTTPException(422,detail={'code':'SEC_ADVANCED_CONSTRAINTS_NOT_SUPPORTED'})
+    try:request=None if payload.source=='US_SEC' else AnalysisRequest(question=question,document_ids=payload.document_ids,search_profile='auto',**payload.constraints)
     except ValidationError:raise HTTPException(422,detail={'code':'INVALID_ADVANCED_CONSTRAINT'}) from None
     if not slots.acquire(blocking=False):raise HTTPException(429,detail={'code':'FINANCIAL_ASSISTANT_BUSY'})
     try:
-        if re.search(r'nghien cuu|tong quan doanh nghiep|company research|company overview',folded(question)):
+        if payload.source=='US_SEC':
+            result=unified_search(UnifiedSearch(query=question,source='US_SEC',issuer=payload.ticker,
+                search_profile='faith_r_product_v1',auto_fallback=True))
+            from app.product.faith_r_product import evidence_answer
+            from app.product.assistant_answer import contract,needs_number
+            answer=evidence_answer(question,result) or contract(question,result,'faith_r_product_v1')
+            if result['source_errors']:
+                answer.update(status='SOURCE_UNAVAILABLE',answer='SEC chưa khả dụng: cần cấu hình snapshot nguồn và chỉ mục tương thích. Bạn vẫn có thể trò chuyện với PDF tải lên.',source_errors=result['source_errors'])
+            elif needs_number(question):
+                try:
+                    verified=sec_analysis(SecQA(question=question,ticker=payload.ticker))
+                    answer['numeric_verification']=verified
+                    if verified['status']=='SUPPORTED':answer={**answer,**verified}
+                except HTTPException as exc:answer['numeric_verification']={'status':'UNAVAILABLE','reason':exc.detail}
+        elif conflict:answer=conflict
+        elif re.search(r'nghien cuu|tong quan doanh nghiep|company research|company overview',folded(question)):
             sections=[];citations=[]
             for label,query in [('Hoạt động','business operations strategy'),('Tài chính','financial condition net sales'),('Rủi ro','risk factors')]:
                 found=unified_search(UnifiedSearch(query=query,document_ids=payload.document_ids,source='USER_UPLOADS',search_profile='auto',top_k=2))
@@ -139,9 +210,14 @@ def financial_chat(payload:ChatRequest):
             answer={'status':'SOURCE_EXCERPTS','answer':'\n\n'.join(sections),'citations':citations,'values':[],
                     'verification_status':'SOURCE_TEXT_UNREVIEWED','warnings':['Tổng hợp trích đoạn tài liệu, chưa chứng nhận số liệu hay tin tức hiện tại.']}
         else:answer=analysis(request)
-        history=(history+[{'question':payload.question,'resolved_question':question,'response':answer}])[-20:]
-        with closing(w._connect()) as db,db:
-            db.execute('INSERT OR REPLACE INTO financial_chat_sessions VALUES(?,?,?)',(session,fingerprint,json.dumps(history,ensure_ascii=False)))
+        from app.product.chat_store import save,now
+        stamp=now()
+        messages=[{'id':uuid4().hex,'role':'user','text':payload.question,'created_at':stamp},
+            {'id':uuid4().hex,'role':'assistant','text':answer.get('answer',''),'created_at':stamp,
+             'evidence_ids':[c.get('citation_id',c.get('evidence_id',c.get('chunk_id'))) for c in answer.get('citations',[])],
+             'status':answer.get('status'),'trace':answer.get('retrieval_trace',{})}]
+        history=history+[{'question':payload.question,'resolved_question':question,'response':answer,'created_at':stamp,'messages':messages}]
+        save(w,session,fingerprint,history,payload.document_ids if payload.source=='USER_UPLOADS' else ['SEC:'+payload.ticker])
         return {**answer,'session_id':session,'resolved_question':question,'source_scope':payload.document_ids,
                 'conversation_reset':bool(prior and prior['scope']!=fingerprint)}
     finally:slots.release()
@@ -157,7 +233,7 @@ class UnifiedSearch(BaseModel):
     issuer:str=Field(default='',max_length=160)
     period:str=Field(default='',max_length=80)
     auto_fallback:bool=False
-    search_profile:Literal['auto','baseline','production_v2','production_v3','production_v3r','production_v3r2','production_v3r3']='baseline'
+    search_profile:Literal['faith_r_product_v1','auto','baseline','production_v2','production_v3','production_v3r','production_v3r2','production_v3r3']='baseline'
 
 
 class EvidenceResponse(BaseModel):
@@ -183,6 +259,11 @@ class SearchResponse(BaseModel):
     evidence_status:str|None=None
     evidence_reason:str|None=None
     search_profile:str='baseline'
+    engine_version:str|None=None
+    algorithm_executed:str|None=None
+    candidate_count:int|None=None
+    scope_availability:list[str]|None=None
+    scope_missing:bool|None=None
     routing_reason:str|None=None
     financial_evidence:dict|None=None
 
@@ -201,8 +282,16 @@ def unified_search(payload:UnifiedSearch):
     reason=None
     is_auto=payload.search_profile=='auto' or payload.auto_fallback
     if payload.search_profile=='auto':
-        profile,reason=automatic_profile(w)
+        profile,reason=('faith_r_product_v1','SHARED_FINANCIAL_PRODUCT_ENGINE') if hasattr(w,'source_file') else automatic_profile(w)
         payload=payload.model_copy(update={'search_profile':profile})
+    if payload.search_profile=='faith_r_product_v1' and payload.source=='USER_UPLOADS':
+        from app.product.query_source_context import source_company_conflict
+        conflict=source_company_conflict(w,payload.document_ids,payload.query)
+        if conflict:
+            return {'status':'READY','generation':sha256(json.dumps(payload.document_ids).encode()).hexdigest(),
+                'source_generations':[],'results':[],'mode':payload.mode,'source_errors':[],
+                'latency_ms':0,'timings_ms':{},'cross_source_order':None,'search_profile':payload.search_profile,
+                'evidence_status':'QUERY_CONTEXT_CONFLICT','financial_evidence':conflict}
     try:
         if hasattr(w,'resources'):
             with w.resources.claim('QUERY_OR_COMPARISON',minimum_mb=256,timeout=10):result=_unified_search(payload)
@@ -215,12 +304,17 @@ def unified_search(payload:UnifiedSearch):
         if not is_auto or payload.mode!='hybrid' or str(exc)!='EMBEDDING_MODEL_DIGEST_MISMATCH':raise
         result=_unified_search(payload.model_copy(update={'mode':'bm25'}))
         reason='COMPATIBLE_DENSE_MODEL_UNAVAILABLE_BM25_FALLBACK'
-    result['routing_reason']=reason
+    result['routing_reason']=reason or result.get('routing_reason')
+    if payload.search_profile=='faith_r_product_v1':
+        from app.product.financial_understanding import understand
+        result['intent']=understand(payload.query).public()
     if payload.source=='USER_UPLOADS' and len(payload.document_ids)==1 and hasattr(w,'source_file'):
         from app.product.assistant_answer import needs_number
         if needs_number(payload.query):
             from app.product.verified_financial import automatic_answer,validate_supported_response
-            result['financial_evidence']=validate_supported_response(w,automatic_answer(w,AnalysisRequest(question=payload.query,document_ids=payload.document_ids),result))
+            from app.product.faith_r_product import evidence_answer
+            grounded=evidence_answer(payload.query,result) if payload.search_profile=='faith_r_product_v1' else None
+            result['financial_evidence']=grounded if grounded and grounded['status']=='SUPPORTED' else validate_supported_response(w,automatic_answer(w,AnalysisRequest(question=payload.query,document_ids=payload.document_ids),result))
     return result
 
 
@@ -236,7 +330,7 @@ def automatic_profile(w):
 
 
 def _unified_search(payload:UnifiedSearch):
-    results=[];scopes=[];errors=[];timings={};intent=None;evidence_status=None;evidence_reason=None
+    results=[];scopes=[];errors=[];timings={};intent=None;evidence_status=None;evidence_reason=None;engine_trace={}
     if payload.source!='US_SEC':
         docs=workspace()._eligible(payload.document_ids)
         if payload.issuer:docs=[d for d in docs if folded(payload.issuer) in folded(d['issuer'])]
@@ -248,7 +342,12 @@ def _unified_search(payload:UnifiedSearch):
                 return any(word in folded(text) for word in ('tai san','bao cao','ngan hang','hoa phat'))
             docs=[d for d in docs if vietnamese(d)]
         if docs:
-            if payload.search_profile in {'production_v2','production_v3','production_v3r','production_v3r2','production_v3r3'}:
+            if payload.search_profile=='faith_r_product_v1':
+                from app.product.faith_r_product import pdf_search
+                found=pdf_search(workspace(),payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
+                intent=found['intent'];evidence_status=found['evidence_status']
+                engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing')}
+            elif payload.search_profile in {'production_v2','production_v3','production_v3r','production_v3r2','production_v3r3'}:
                 from app.product.search_v2 import FinancialSearchV2
                 from pathlib import Path
                 w=workspace();root=Path(os.getenv('STUDIO_SEARCH_V2_ROOT','tmp/studio-runtime/search-v2'))
@@ -278,7 +377,12 @@ def _unified_search(payload:UnifiedSearch):
             scopes.append(('PDF',found.get('generation')));timings['PDF']=found['latency_ms']
     if payload.source in {'US_SEC','ALL'}:
         try:
-            if payload.search_profile in {'production_v3','production_v3r','production_v3r2','production_v3r3'}:
+            if payload.search_profile=='faith_r_product_v1':
+                from app.product.faith_r_product import sec_search
+                found=sec_search(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
+                intent=found['intent'];evidence_status=found['evidence_status']
+                engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing')}
+            elif payload.search_profile in {'production_v3','production_v3r','production_v3r2','production_v3r3'}:
                 from app.product.search_v3 import search_sec_v3
                 found=search_sec_v3(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
                 intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
@@ -292,13 +396,13 @@ def _unified_search(payload:UnifiedSearch):
             results.extend({**r,'source_kind':'SEC'} for r in found['results'])
             scopes.append(('SEC',found.get('generation')));timings['SEC']=found.get('latency_ms',0)
         except Exception as exc:
-            if payload.source=='US_SEC':raise ValueError(_error(exc)) from None
+            if payload.source=='US_SEC' and payload.search_profile!='faith_r_product_v1':raise ValueError(_error(exc)) from None
             errors.append({'source':'US_SEC','reason':_error(exc)})
     # Across stores use ranks, never raw BM25/cosine magnitudes. Per-store retrieval stays unchanged.
     if len(scopes)>1:results.sort(key=lambda r:(r['rank'],r.get('chunk_id',r.get('parent_id',''))))
     generation=sha256(json.dumps(scopes,sort_keys=True).encode()).hexdigest()
     for rank,result in enumerate(results[:payload.top_k],1):result['rank']=rank
-    return {'status':'PARTIAL' if errors else 'READY','generation':generation,'source_generations':scopes,
+    return {**engine_trace,'status':'PARTIAL' if errors else 'READY','generation':generation,'source_generations':scopes,
             'results':results[:payload.top_k],'mode':payload.mode,'source_errors':errors,
             'latency_ms':sum(timings.values()),'timings_ms':timings,
             'intent':intent,'evidence_status':evidence_status,'evidence_reason':evidence_reason,'search_profile':payload.search_profile,
@@ -322,7 +426,7 @@ def compare(payload:UnifiedSearch):
         return {'arms':arms,'generation':arms['bm25']['generation'],
                 'overlap':{'bm25_dense':len(ids['bm25']&ids['dense']),'all_three':len(set.intersection(*ids.values()))},
                   'quality_metrics':None,'quality_reason':'NO_QRELS_FOR_THIS_QUERY',
-                  'candidate':unified_search(payload) if payload.search_profile in {'production_v3','production_v3r','production_v3r2','production_v3r3'} else None}
+                  'candidate':unified_search(payload) if payload.search_profile in {'auto','faith_r_product_v1','production_v3','production_v3r','production_v3r2','production_v3r3'} else None}
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
 
 
@@ -549,13 +653,20 @@ def analysis(payload:AnalysisRequest):
             from app.product.assistant_answer import contract,needs_number,reviewed_plan
             profile=payload.search_profile
             if profile=='auto':
-                profile=automatic_profile(workspace())[0]
-            if profile in {'production_v3','production_v3r3'}:
+                profile='faith_r_product_v1' if hasattr(workspace(),'source_file') else automatic_profile(workspace())[0]
+            if profile in {'faith_r_product_v1','production_v3','production_v3r3'}:
                 result=unified_search(UnifiedSearch(query=payload.question,mode='hybrid',top_k=5,
                     source='USER_UPLOADS',document_ids=payload.document_ids,search_profile=profile,auto_fallback=payload.search_profile=='auto'))
             else:
                 result=workspace().search(payload.question,'hybrid',5,payload.document_ids)
             answer=contract(payload.question,result,profile)
+            if profile=='faith_r_product_v1':
+                from app.product.faith_r_product import evidence_answer
+                grounded=evidence_answer(payload.question,result)
+                if grounded and (grounded['status']=='SUPPORTED' or grounded.get('query_understanding',{}).get('intent')!='COMPARE_PERIODS'):
+                    from app.product.grounded_narrative import compose
+                    return compose(payload.question,grounded)
+                if grounded:answer=grounded
             if needs_number(payload.question):
                 plan=reviewed_plan(payload.question,eligible_facts(workspace(),payload.document_ids),METRICS)
                 if plan:
@@ -582,10 +693,12 @@ def analysis(payload:AnalysisRequest):
                     from app.product.verified_financial import validate_supported_response
                     verified=validate_supported_response(workspace(),verified)
                     if verified['status'] in {'SUPPORTED','QUERY_CONTEXT_CONFLICT'}:
-                        return {**answer,**verified,'warnings':verified.get('warnings',[]),
+                        return {**answer,**verified,'citations':verified.get('citations') or answer.get('citations',[]),
+                                'numeric_verification':verified,'warnings':verified.get('warnings',[]),
                                 'retrieved_excerpt_verification':'SOURCE_TEXT_UNREVIEWED',
                                 'search_profile':profile,'generation':result.get('generation')}
-                    return {**answer,**verified,'related_evidence':answer.get('citations',[]),
+                    return {**answer,'numeric_verification':verified,'reason':verified.get('reason'),
+                            'verification_status':verified.get('verification_status'),'related_evidence':answer.get('citations',[]),
                             'search_profile':profile,'generation':result.get('generation')}
             return answer
         raise ValueError('USE_RESEARCH_JOB_ENDPOINT')

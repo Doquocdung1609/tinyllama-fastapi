@@ -1,0 +1,45 @@
+{
+  "date_utc": "2026-11-04T04:19:34.599Z",
+  "browser": "in-app browser",
+  "url": "http://127.0.0.1:18110/app/#/analysis",
+  "viewports": [
+    {
+      "width": 1366,
+      "height": 768
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "checks": {
+    "bidv_new_chat_q2b": "PASS: native rows PDF4/7, inline citations clicked",
+    "bidv_followup_q3": "PASS: 72012 - 70898 = 1114 million VND with both citations",
+    "rename_reload": "PASS: BIDV · Điều chỉnh FY2024",
+    "api_restart_reopen": "PASS: retained two turns/four messages",
+    "pdf_zoom": "PASS: measured 75/100/125/150 percent on pages4/7",
+    "pdf_rotation": "PASS: measured90 degrees on page4",
+    "hpg_parent_summary": "PASS: cited source excerpts, OCR values remain unverified",
+    "apple_value": "PASS:416161 million USD; citation opened PDF32",
+    "search_chat_handoff": "PASS: source document/page/row preserved into new chat",
+    "research_lab": "PASS: baseline3 arms plus faith_r_product_v1 candidate actually executed",
+    "mobile_drawer": "PASS: open/close; documentWidth375 <= viewport390",
+    "desktop_messages_height_px": 281.2,
+    "error_logs_at_final_inspection": []
+  },
+  "screenshots": [
+    "chat-desktop.jpg",
+    "chat-large-desktop.jpg",
+    "chat-mobile-evidence.jpg",
+    "bidv-page4.jpg",
+    "bidv-page7.jpg",
+    "hpg-chat.jpg",
+    "apple-chat.jpg",
+    "search-shared-engine.jpg",
+    "research-lab-live.jpg"
+  ]
+}

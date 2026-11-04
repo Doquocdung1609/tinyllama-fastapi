@@ -116,7 +116,19 @@ def sec_search(payload: SecSearchRequest):
 
 @router.get("/documents", dependencies=[Depends(require_studio_token)])
 def documents():
-    return {"documents": workspace().list_documents()}
+    from app.product.financial_understanding import document_profile
+    w=workspace();documents=[]
+    for original in w.list_documents():
+        doc=dict(original)
+        if doc['status']=='READY':
+            w.source_file(doc['id'])
+            profile=document_profile(w,doc)
+            doc['display_metadata']=profile
+            if len(profile['identities'])==1:
+                doc['issuer_display_original']=doc.get('issuer','');doc['issuer']=profile['identities'][0]
+            if not doc.get('report_period') and profile['report_year']:doc['report_period']=profile['report_year']
+        documents.append(doc)
+    return {'documents':documents}
 
 
 @router.post("/documents", status_code=202, dependencies=[Depends(require_studio_token)])

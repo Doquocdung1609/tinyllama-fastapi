@@ -177,7 +177,8 @@ def automatic_answer(workspace,request,result):
         return {'status':status,'reason':reason,'answer':'Chưa đủ bằng chứng phù hợp để xác nhận số liệu.',
                 'values':[],'citations':[],'verification_status':reason}
     if len(request.document_ids)!=1:return refuse('SELECT_ONE_DOCUMENT_FOR_VERIFIED_CALCULATION')
-    if re.search(r'\b(?:eur|vnd|cad|aud|hkd|jpy|cny|gbp|euros?|yen|dong)\b|in (?:thousands?|billions?)|percentage points|diem phan tram',q):
+    from app.product.financial_understanding import requested_unit
+    if requested_unit(request.question) in {'VND','TRIEU_VND','TY_VND','NGHIN_VND'} or re.search(r'\b(?:eur|vnd|cad|aud|hkd|jpy|cny|gbp|euros?|yen)\b|in (?:thousands?|billions?)|percentage points|diem phan tram',q):
         return refuse('UNSUPPORTED_REQUESTED_CURRENCY_SCALE_OR_PERCENTAGE_POINTS')
     if re.search(r'\bquarter|\bq[1-4]\b|\bcalendar\b|(?:three|six|nine) months|quy [1-4]',q):return refuse('UNSUPPORTED_DURATION_REQUIRES_TYPED_PERIOD')
     if re.search(r'attributable|per share|eps|capex|capital expenditure|adjusted|restated|non-gaap|dieu chinh|trinh bay lai',q):return refuse('AMBIGUOUS_METRIC_DEFINITION')

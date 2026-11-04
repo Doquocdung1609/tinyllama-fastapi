@@ -1,0 +1,3630 @@
+{
+  "stage": "AFTER_API_RESTART_FINAL_CODE",
+  "records": [
+    {
+      "route": "chat",
+      "request": {
+        "question": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+        "document_ids": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ]
+      },
+      "http": 200,
+      "elapsed_ms": 17894.07,
+      "response": {
+        "status": "SOURCE_EXCERPTS",
+        "answer": "Đã tìm thấy các đoạn nguồn liên quan.\n\n[1] Riêng / công ty mẹ · ô/cột native đã đối chiếu · trang 4: 3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054\n\n[2] Hợp nhất · ô/cột native đã đối chiếu · trang 7: 4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506\n\nCác cột ứng viên: đã công bố | điều chỉnh | trình bày lại. Chỉ dòng ghi ô/cột native đã đối chiếu đủ điều kiện tính; các dòng còn lại cần xác minh.",
+        "citations": [
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "citation_id": "e17800f7f7d5d754b5e8962f",
+            "evidence_id": "e17800f7f7d5d754b5e8962f",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 4,
+            "page_1_based": 4,
+            "page_index_0_based": 3,
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p4-r22",
+            "table_id": "p4-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "row_box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "rectangles": [
+              [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 3
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "34,164,156",
+                "box": [
+                  294.348876953125,
+                  287.5145263671875,
+                  334.12091064453125,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 333.9630485983456
+              },
+              {
+                "column_index": 1,
+                "text": "70,898",
+                "box": [
+                  398.8988037109375,
+                  287.5145263671875,
+                  423.16510009765625,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 423.16192626953125
+              },
+              {
+                "column_index": 2,
+                "text": "34,235,054",
+                "box": [
+                  498.9535217285156,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 538.5679500804227
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "34,164,156",
+                  "value": "34164156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "70,898",
+                  "value": "70898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "34,235,054",
+                  "value": "34235054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 3,
+              "unit_source_page": 3,
+              "header_marker_centers": [
+                290.2500762939453,
+                388.84722900390625,
+                481.05987548828125
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+            "rank": 1
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "citation_id": "fb11c2fe47f2093411b46b85",
+            "evidence_id": "fb11c2fe47f2093411b46b85",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 7,
+            "page_1_based": 7,
+            "page_index_0_based": 6,
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p7-r25",
+            "table_id": "p7-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "row_box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "rectangles": [
+              [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "CONSOLIDATED",
+            "scope": "CONSOLIDATED",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 6
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "36,192,494",
+                "box": [
+                  326.84149169921875,
+                  310.19451904296875,
+                  366.70111083984375,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 366.4551071893601
+              },
+              {
+                "column_index": 1,
+                "text": "72,012",
+                "box": [
+                  429.2282409667969,
+                  310.19451904296875,
+                  453.5821533203125,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 453.56573994954425
+              },
+              {
+                "column_index": 2,
+                "text": "36,264,506",
+                "box": [
+                  505.5731201171875,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 545.1201840355283
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "36,192,494",
+                  "value": "36192494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "72,012",
+                  "value": "72012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "36,264,506",
+                  "value": "36264506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 6,
+              "unit_source_page": 6,
+              "header_marker_centers": [
+                320.2500762939453,
+                420.2871856689453,
+                499.5398712158203
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+            "rank": 2
+          }
+        ],
+        "values": [],
+        "verification_status": "SOURCE_TEXT_UNREVIEWED",
+        "numeric_verification": {
+          "status": "UNVERIFIED",
+          "reason": "SOURCE_CELLS_REQUIRE_VERIFICATION"
+        },
+        "search_profile": "faith_r_product_v1",
+        "query_understanding": {
+          "raw_text": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+          "intent": "FIND_EVIDENCE",
+          "issuer_mentions": [],
+          "metric": "retained_earnings",
+          "metric_phrases": [
+            "loi nhuan sau thue chua phan phoi",
+            "retained earnings"
+          ],
+          "years": [],
+          "period_type": null,
+          "scope": null,
+          "basis": null,
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+          "latency_ms": 17617.5,
+          "candidate_count": 2,
+          "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+        },
+        "warnings": [
+          "Trích đoạn nguồn; giá trị số chưa được xác minh độc lập."
+        ],
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+        "generation_trace": {
+          "method": "SOURCE_EXTRACTIVE",
+          "model_status": "NOT_CONFIGURED"
+        },
+        "session_id": "ed9c75dd63fc42508ec2961e54479144",
+        "resolved_question": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "query",
+      "request": {
+        "query": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+        "document_ids": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "source": "USER_UPLOADS",
+        "search_profile": "auto"
+      },
+      "http": 200,
+      "elapsed_ms": 898.25,
+      "response": {
+        "status": "READY",
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+        "source_generations": [
+          [
+            "PDF",
+            "d45266c549925c713dfeab283196362bd04f2507cfa52dfcaa488d3c5042e09f"
+          ]
+        ],
+        "results": [
+          {
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "rank": 1,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 4,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "citation_id": "e17800f7f7d5d754b5e8962f",
+            "evidence_id": "e17800f7f7d5d754b5e8962f",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page_1_based": 4,
+            "page_index_0_based": 3,
+            "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p4-r22",
+            "table_id": "p4-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "row_box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "rectangles": [
+              [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 3
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "34,164,156",
+                "box": [
+                  294.348876953125,
+                  287.5145263671875,
+                  334.12091064453125,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 333.9630485983456
+              },
+              {
+                "column_index": 1,
+                "text": "70,898",
+                "box": [
+                  398.8988037109375,
+                  287.5145263671875,
+                  423.16510009765625,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 423.16192626953125
+              },
+              {
+                "column_index": 2,
+                "text": "34,235,054",
+                "box": [
+                  498.9535217285156,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 538.5679500804227
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "34,164,156",
+                  "value": "34164156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "70,898",
+                  "value": "70898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "34,235,054",
+                  "value": "34235054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 3,
+              "unit_source_page": 3,
+              "header_marker_centers": [
+                290.2500762939453,
+                388.84722900390625,
+                481.05987548828125
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW"
+          },
+          {
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "rank": 2,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 7,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "citation_id": "fb11c2fe47f2093411b46b85",
+            "evidence_id": "fb11c2fe47f2093411b46b85",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page_1_based": 7,
+            "page_index_0_based": 6,
+            "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p7-r25",
+            "table_id": "p7-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "row_box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "rectangles": [
+              [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "CONSOLIDATED",
+            "scope": "CONSOLIDATED",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 6
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "36,192,494",
+                "box": [
+                  326.84149169921875,
+                  310.19451904296875,
+                  366.70111083984375,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 366.4551071893601
+              },
+              {
+                "column_index": 1,
+                "text": "72,012",
+                "box": [
+                  429.2282409667969,
+                  310.19451904296875,
+                  453.5821533203125,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 453.56573994954425
+              },
+              {
+                "column_index": 2,
+                "text": "36,264,506",
+                "box": [
+                  505.5731201171875,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 545.1201840355283
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "36,192,494",
+                  "value": "36192494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "72,012",
+                  "value": "72012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "36,264,506",
+                  "value": "36264506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 6,
+              "unit_source_page": 6,
+              "header_marker_centers": [
+                320.2500762939453,
+                420.2871856689453,
+                499.5398712158203
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW"
+          }
+        ],
+        "mode": "hybrid",
+        "source_errors": [],
+        "latency_ms": 886.39,
+        "timings_ms": {
+          "PDF": 886.39
+        },
+        "cross_source_order": null,
+        "intent": {
+          "raw_text": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+          "intent": "FIND_EVIDENCE",
+          "issuer_mentions": [],
+          "metric": "retained_earnings",
+          "metric_phrases": [
+            "loi nhuan sau thue chua phan phoi",
+            "retained earnings"
+          ],
+          "years": [],
+          "period_type": null,
+          "scope": null,
+          "basis": null,
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+        "evidence_reason": null,
+        "search_profile": "faith_r_product_v1",
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "candidate_count": 2,
+        "scope_availability": [
+          "CONSOLIDATED",
+          "SEPARATE"
+        ],
+        "scope_missing": false,
+        "routing_reason": "SHARED_FINANCIAL_PRODUCT_ENGINE",
+        "financial_evidence": null
+      }
+    },
+    {
+      "route": "chat",
+      "request": {
+        "question": "Trong hai bảng này, mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu?",
+        "document_ids": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "session_id": "ed9c75dd63fc42508ec2961e54479144"
+      },
+      "http": 200,
+      "elapsed_ms": 1241.33,
+      "response": {
+        "status": "SUPPORTED",
+        "answer": "Mức điều chỉnh hợp nhất là 72,012 triệu đồng [2]; riêng ngân hàng là 70,898 triệu đồng [1]. Chênh lệch (hợp nhất − riêng): 1,114 triệu đồng.",
+        "values": [
+          "1114"
+        ],
+        "unit": "TRIEU_VND",
+        "formula": "72012 - 70898 = 1114",
+        "citations": [
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "citation_id": "e17800f7f7d5d754b5e8962f",
+            "evidence_id": "e17800f7f7d5d754b5e8962f",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 4,
+            "page_1_based": 4,
+            "page_index_0_based": 3,
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p4-r22",
+            "table_id": "p4-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "row_box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "rectangles": [
+              [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 3
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "34,164,156",
+                "box": [
+                  294.348876953125,
+                  287.5145263671875,
+                  334.12091064453125,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 333.9630485983456
+              },
+              {
+                "column_index": 1,
+                "text": "70,898",
+                "box": [
+                  398.8988037109375,
+                  287.5145263671875,
+                  423.16510009765625,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 423.16192626953125
+              },
+              {
+                "column_index": 2,
+                "text": "34,235,054",
+                "box": [
+                  498.9535217285156,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 538.5679500804227
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "34,164,156",
+                  "value": "34164156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "70,898",
+                  "value": "70898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "34,235,054",
+                  "value": "34235054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 3,
+              "unit_source_page": 3,
+              "header_marker_centers": [
+                290.2500762939453,
+                388.84722900390625,
+                481.05987548828125
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+            "rank": 1
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "citation_id": "fb11c2fe47f2093411b46b85",
+            "evidence_id": "fb11c2fe47f2093411b46b85",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 7,
+            "page_1_based": 7,
+            "page_index_0_based": 6,
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p7-r25",
+            "table_id": "p7-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "row_box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "rectangles": [
+              [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "CONSOLIDATED",
+            "scope": "CONSOLIDATED",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 6
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "36,192,494",
+                "box": [
+                  326.84149169921875,
+                  310.19451904296875,
+                  366.70111083984375,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 366.4551071893601
+              },
+              {
+                "column_index": 1,
+                "text": "72,012",
+                "box": [
+                  429.2282409667969,
+                  310.19451904296875,
+                  453.5821533203125,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 453.56573994954425
+              },
+              {
+                "column_index": 2,
+                "text": "36,264,506",
+                "box": [
+                  505.5731201171875,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 545.1201840355283
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "36,192,494",
+                  "value": "36192494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "72,012",
+                  "value": "72012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "36,264,506",
+                  "value": "36264506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 6,
+              "unit_source_page": 6,
+              "header_marker_centers": [
+                320.2500762939453,
+                420.2871856689453,
+                499.5398712158203
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+            "rank": 2
+          }
+        ],
+        "verification_status": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+        "search_profile": "faith_r_product_v1",
+        "operands": [
+          {
+            "value_raw": "72,012",
+            "normalized_value": "72012000000",
+            "normalized_unit": "VND",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "currency": "VND",
+            "scale": "1000000",
+            "period": "2024",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "CONSOLIDATED"
+          },
+          {
+            "value_raw": "70,898",
+            "normalized_value": "70898000000",
+            "normalized_unit": "VND",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "currency": "VND",
+            "scale": "1000000",
+            "period": "2024",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "SEPARATE"
+          }
+        ],
+        "query_understanding": {
+          "raw_text": "loi nhuan sau thue chua phan phoi Trong hai bảng này, mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu? ",
+          "intent": "COMPARE_PERIODS",
+          "issuer_mentions": [],
+          "metric": "retained_earnings",
+          "metric_phrases": [
+            "loi nhuan sau thue chua phan phoi",
+            "retained earnings"
+          ],
+          "years": [],
+          "period_type": null,
+          "scope": null,
+          "basis": "ADJUSTMENT",
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+          "latency_ms": 1161.85,
+          "candidate_count": 2,
+          "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+        },
+        "generation_trace": {
+          "method": "SOURCE_EXTRACTIVE",
+          "model_status": "NOT_CONFIGURED"
+        },
+        "session_id": "ed9c75dd63fc42508ec2961e54479144",
+        "resolved_question": "loi nhuan sau thue chua phan phoi Trong hai bảng này, mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu? ",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "query",
+      "request": {
+        "query": "loi nhuan sau thue chua phan phoi Trong hai bảng này, mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu? ",
+        "document_ids": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "source": "USER_UPLOADS",
+        "search_profile": "auto"
+      },
+      "http": 200,
+      "elapsed_ms": 4290.19,
+      "response": {
+        "status": "READY",
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+        "source_generations": [
+          [
+            "PDF",
+            "d45266c549925c713dfeab283196362bd04f2507cfa52dfcaa488d3c5042e09f"
+          ]
+        ],
+        "results": [
+          {
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "rank": 1,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 4,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "citation_id": "e17800f7f7d5d754b5e8962f",
+            "evidence_id": "e17800f7f7d5d754b5e8962f",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page_1_based": 4,
+            "page_index_0_based": 3,
+            "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p4-r22",
+            "table_id": "p4-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "row_box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "rectangles": [
+              [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 3
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "34,164,156",
+                "box": [
+                  294.348876953125,
+                  287.5145263671875,
+                  334.12091064453125,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 333.9630485983456
+              },
+              {
+                "column_index": 1,
+                "text": "70,898",
+                "box": [
+                  398.8988037109375,
+                  287.5145263671875,
+                  423.16510009765625,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 423.16192626953125
+              },
+              {
+                "column_index": 2,
+                "text": "34,235,054",
+                "box": [
+                  498.9535217285156,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 538.5679500804227
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "34,164,156",
+                  "value": "34164156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "70,898",
+                  "value": "70898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "34,235,054",
+                  "value": "34235054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 3,
+              "unit_source_page": 3,
+              "header_marker_centers": [
+                290.2500762939453,
+                388.84722900390625,
+                481.05987548828125
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW"
+          },
+          {
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "rank": 2,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 7,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "citation_id": "fb11c2fe47f2093411b46b85",
+            "evidence_id": "fb11c2fe47f2093411b46b85",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page_1_based": 7,
+            "page_index_0_based": 6,
+            "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p7-r25",
+            "table_id": "p7-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "row_box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "rectangles": [
+              [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "CONSOLIDATED",
+            "scope": "CONSOLIDATED",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 6
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "36,192,494",
+                "box": [
+                  326.84149169921875,
+                  310.19451904296875,
+                  366.70111083984375,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 366.4551071893601
+              },
+              {
+                "column_index": 1,
+                "text": "72,012",
+                "box": [
+                  429.2282409667969,
+                  310.19451904296875,
+                  453.5821533203125,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 453.56573994954425
+              },
+              {
+                "column_index": 2,
+                "text": "36,264,506",
+                "box": [
+                  505.5731201171875,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 545.1201840355283
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 63,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "36,192,494",
+                  "value": "36192494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "72,012",
+                  "value": "72012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "36,264,506",
+                  "value": "36264506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 6,
+              "unit_source_page": 6,
+              "header_marker_centers": [
+                320.2500762939453,
+                420.2871856689453,
+                499.5398712158203
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW"
+          }
+        ],
+        "mode": "hybrid",
+        "source_errors": [],
+        "latency_ms": 4274.95,
+        "timings_ms": {
+          "PDF": 4274.95
+        },
+        "cross_source_order": null,
+        "intent": {
+          "raw_text": "loi nhuan sau thue chua phan phoi Trong hai bảng này, mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu? ",
+          "intent": "COMPARE_PERIODS",
+          "issuer_mentions": [],
+          "metric": "retained_earnings",
+          "metric_phrases": [
+            "loi nhuan sau thue chua phan phoi",
+            "retained earnings"
+          ],
+          "years": [],
+          "period_type": null,
+          "scope": null,
+          "basis": "ADJUSTMENT",
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+        "evidence_reason": null,
+        "search_profile": "faith_r_product_v1",
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "candidate_count": 2,
+        "scope_availability": [
+          "CONSOLIDATED",
+          "SEPARATE"
+        ],
+        "scope_missing": false,
+        "routing_reason": "SHARED_FINANCIAL_PRODUCT_ENGINE",
+        "financial_evidence": {
+          "status": "SUPPORTED",
+          "answer": "Mức điều chỉnh hợp nhất là 72,012 triệu đồng [2]; riêng ngân hàng là 70,898 triệu đồng [1]. Chênh lệch (hợp nhất − riêng): 1,114 triệu đồng.",
+          "values": [
+            "1114"
+          ],
+          "unit": "TRIEU_VND",
+          "formula": "72012 - 70898 = 1114",
+          "citations": [
+            {
+              "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+              "citation_id": "e17800f7f7d5d754b5e8962f",
+              "evidence_id": "e17800f7f7d5d754b5e8962f",
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_kind": "PDF",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "issuer": "BIDV",
+              "page": 4,
+              "page_1_based": 4,
+              "page_index_0_based": 3,
+              "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+              "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+              "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+              "row_id": "p4-r22",
+              "table_id": "p4-table-candidates",
+              "column_id": null,
+              "char_offsets": null,
+              "word_boxes": null,
+              "box": [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ],
+              "row_box": [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ],
+              "rectangles": [
+                [
+                  53.63999938964844,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ]
+              ],
+              "coordinate_space": "PDF_POINTS_TOP_LEFT",
+              "highlight_status": "EXTRACTED_NATIVE_ROW",
+              "extraction_method": "NATIVE",
+              "extraction_status": "NATIVE_TEXT_EXTRACTED",
+              "verification_status": "NATIVE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED",
+              "retrieval_status": "RETRIEVED",
+              "statement_scope": "SEPARATE",
+              "scope": "SEPARATE",
+              "report_period": "2024",
+              "period": "2024",
+              "scope_provenance": {
+                "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+                "page": 3
+              },
+              "unit": "TRIEU_VND",
+              "metric": "retained_earnings",
+              "source_cells": [
+                {
+                  "column_index": 0,
+                  "text": "34,164,156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 333.9630485983456
+                },
+                {
+                  "column_index": 1,
+                  "text": "70,898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 423.16192626953125
+                },
+                {
+                  "column_index": 2,
+                  "text": "34,235,054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 538.5679500804227
+                }
+              ],
+              "adjustment_columns_candidate": true,
+              "rerank_score": 63,
+              "rank_reasons": {
+                "exact_metric": true,
+                "row_overlap": 7,
+                "adjustment_table": true,
+                "scope_match": null,
+                "period_match": false
+              },
+              "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+              "engine_version": "FAITH_R_PRODUCT_V1",
+              "adjustment_verification": {
+                "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+                "status": "VERIFIED",
+                "cells": [
+                  {
+                    "raw": "34,164,156",
+                    "value": "34164156",
+                    "box": [
+                      294.348876953125,
+                      287.5145263671875,
+                      334.12091064453125,
+                      297.2122497558594
+                    ],
+                    "basis": "ORIGINAL"
+                  },
+                  {
+                    "raw": "70,898",
+                    "value": "70898",
+                    "box": [
+                      398.8988037109375,
+                      287.5145263671875,
+                      423.16510009765625,
+                      297.2122497558594
+                    ],
+                    "basis": "ADJUSTMENT"
+                  },
+                  {
+                    "raw": "34,235,054",
+                    "value": "34235054",
+                    "box": [
+                      498.9535217285156,
+                      287.5145263671875,
+                      538.7257690429688,
+                      297.2122497558594
+                    ],
+                    "basis": "RESTATED"
+                  }
+                ],
+                "period_end": "31/12/2024",
+                "scope_source_page": 3,
+                "unit_source_page": 3,
+                "header_marker_centers": [
+                  290.2500762939453,
+                  388.84722900390625,
+                  481.05987548828125
+                ],
+                "checks": [
+                  "ORIGINAL_NATIVE_CELL_BYTES",
+                  "SEMANTIC_COLUMN_ORDER",
+                  "SOURCE_SCOPE_DATE_UNIT",
+                  "RESTATEMENT_IDENTITY"
+                ]
+              },
+              "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+              "rank": 1
+            },
+            {
+              "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+              "citation_id": "fb11c2fe47f2093411b46b85",
+              "evidence_id": "fb11c2fe47f2093411b46b85",
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_kind": "PDF",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "issuer": "BIDV",
+              "page": 7,
+              "page_1_based": 7,
+              "page_index_0_based": 6,
+              "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+              "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+              "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+              "row_id": "p7-r25",
+              "table_id": "p7-table-candidates",
+              "column_id": null,
+              "char_offsets": null,
+              "word_boxes": null,
+              "box": [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ],
+              "row_box": [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ],
+              "rectangles": [
+                [
+                  59.159996032714844,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ]
+              ],
+              "coordinate_space": "PDF_POINTS_TOP_LEFT",
+              "highlight_status": "EXTRACTED_NATIVE_ROW",
+              "extraction_method": "NATIVE",
+              "extraction_status": "NATIVE_TEXT_EXTRACTED",
+              "verification_status": "NATIVE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED",
+              "retrieval_status": "RETRIEVED",
+              "statement_scope": "CONSOLIDATED",
+              "scope": "CONSOLIDATED",
+              "report_period": "2024",
+              "period": "2024",
+              "scope_provenance": {
+                "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+                "page": 6
+              },
+              "unit": "TRIEU_VND",
+              "metric": "retained_earnings",
+              "source_cells": [
+                {
+                  "column_index": 0,
+                  "text": "36,192,494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 366.4551071893601
+                },
+                {
+                  "column_index": 1,
+                  "text": "72,012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 453.56573994954425
+                },
+                {
+                  "column_index": 2,
+                  "text": "36,264,506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 545.1201840355283
+                }
+              ],
+              "adjustment_columns_candidate": true,
+              "rerank_score": 63,
+              "rank_reasons": {
+                "exact_metric": true,
+                "row_overlap": 7,
+                "adjustment_table": true,
+                "scope_match": null,
+                "period_match": false
+              },
+              "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+              "engine_version": "FAITH_R_PRODUCT_V1",
+              "adjustment_verification": {
+                "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+                "status": "VERIFIED",
+                "cells": [
+                  {
+                    "raw": "36,192,494",
+                    "value": "36192494",
+                    "box": [
+                      326.84149169921875,
+                      310.19451904296875,
+                      366.70111083984375,
+                      319.8922424316406
+                    ],
+                    "basis": "ORIGINAL"
+                  },
+                  {
+                    "raw": "72,012",
+                    "value": "72012",
+                    "box": [
+                      429.2282409667969,
+                      310.19451904296875,
+                      453.5821533203125,
+                      319.8922424316406
+                    ],
+                    "basis": "ADJUSTMENT"
+                  },
+                  {
+                    "raw": "36,264,506",
+                    "value": "36264506",
+                    "box": [
+                      505.5731201171875,
+                      310.19451904296875,
+                      545.3453369140625,
+                      319.8922424316406
+                    ],
+                    "basis": "RESTATED"
+                  }
+                ],
+                "period_end": "31/12/2024",
+                "scope_source_page": 6,
+                "unit_source_page": 6,
+                "header_marker_centers": [
+                  320.2500762939453,
+                  420.2871856689453,
+                  499.5398712158203
+                ],
+                "checks": [
+                  "ORIGINAL_NATIVE_CELL_BYTES",
+                  "SEMANTIC_COLUMN_ORDER",
+                  "SOURCE_SCOPE_DATE_UNIT",
+                  "RESTATEMENT_IDENTITY"
+                ]
+              },
+              "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+              "rank": 2
+            }
+          ],
+          "verification_status": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+          "search_profile": "faith_r_product_v1",
+          "operands": [
+            {
+              "value_raw": "72,012",
+              "normalized_value": "72012000000",
+              "normalized_unit": "VND",
+              "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+              "currency": "VND",
+              "scale": "1000000",
+              "period": "2024",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "CONSOLIDATED"
+            },
+            {
+              "value_raw": "70,898",
+              "normalized_value": "70898000000",
+              "normalized_unit": "VND",
+              "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+              "currency": "VND",
+              "scale": "1000000",
+              "period": "2024",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "SEPARATE"
+            }
+          ],
+          "query_understanding": {
+            "raw_text": "loi nhuan sau thue chua phan phoi Trong hai bảng này, mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu? ",
+            "intent": "COMPARE_PERIODS",
+            "issuer_mentions": [],
+            "metric": "retained_earnings",
+            "metric_phrases": [
+              "loi nhuan sau thue chua phan phoi",
+              "retained earnings"
+            ],
+            "years": [],
+            "period_type": null,
+            "scope": null,
+            "basis": "ADJUSTMENT",
+            "requested_unit": null,
+            "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+          },
+          "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+          "retrieval_trace": {
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "latency_ms": 4274.95,
+            "candidate_count": 2,
+            "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+          }
+        }
+      }
+    },
+    {
+      "route": "chat",
+      "request": {
+        "question": "Doanh thu Hòa Phát năm 2024 là bao nhiêu?",
+        "document_ids": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ]
+      },
+      "http": 200,
+      "elapsed_ms": 1824.6,
+      "response": {
+        "status": "QUERY_CONTEXT_CONFLICT",
+        "reason": "QUESTION_COMPANY_SCOPE_CONFLICT",
+        "conflicting_fields": [
+          "issuer"
+        ],
+        "issuer_mentions": [
+          "HPG"
+        ],
+        "answer": "Doanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+        "values": [],
+        "citations": [],
+        "verification_status": "QUERY_CONTEXT_CONFLICT",
+        "session_id": "e72eb625831f4e7e96f377dc584a1cdb",
+        "resolved_question": "Doanh thu Hòa Phát năm 2024 là bao nhiêu?",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "chat",
+      "request": {
+        "question": "BIDV năm 2024 có những số liệu nào được điều chỉnh sau kiểm toán?",
+        "document_ids": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ]
+      },
+      "http": 200,
+      "elapsed_ms": 1670.82,
+      "response": {
+        "status": "SOURCE_EXCERPTS",
+        "answer": "Các dòng điều chỉnh tìm được (danh sách một phần).\n\n[1] Riêng / công ty mẹ · ô/cột native đã đối chiếu · trang 4: 3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054\n\n[2] Hợp nhất · ô/cột native đã đối chiếu · trang 7: 4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506\n\n[3] Phạm vi chưa xác định · số chưa xác minh · trang 2: 3. Thông tin nay đã được công bồ trên trang thông tin điện tử của Ngân hàng\nvào ngày\n24/10/2025 tại đường dẫn https://www.bidv.com.vn/vn/quan-he-nha-dau-tu/This\ninformation published the Bank’s website ££./10/2025, in the links\nwas on on as\nhttps://www.bidv.com.vn/en/quan-he-nha-dau-tu\nChúng tôi xin kết các thông tin công bố trên đây là đúng thật và hoàn\ncam sự toàn chịu\ntrách nhiệm trước pháp luật về nội dung các thông tin đã công bé/We hereby certify that\nthe information provided is true and correct and bear the full responsibility to the\nwe\nlaw./.\nNGƯỜI ĐƯỢC ỦY QUYÈN CÔNG BÓ THÔNG TIN\nPHO T\n\n[4] Riêng / công ty mẹ · số chưa xác minh · trang 5: XIII. Lợi nhuận sau thuế TNDN | 24,509,019 | 70,898 | 24,579,917\n\n[5] Hợp nhất · số chưa xác minh · trang 8: XIII. Lợi nhuận sau thuế TNDN | 25,604,037 | 73,081 | 25,677,118\n\nCác cột ứng viên: đã công bố | điều chỉnh | trình bày lại. Chỉ dòng ghi ô/cột native đã đối chiếu đủ điều kiện tính; các dòng còn lại cần xác minh.",
+        "citations": [
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "citation_id": "e17800f7f7d5d754b5e8962f",
+            "evidence_id": "e17800f7f7d5d754b5e8962f",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 4,
+            "page_1_based": 4,
+            "page_index_0_based": 3,
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p4-r22",
+            "table_id": "p4-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "row_box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "rectangles": [
+              [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 3
+            },
+            "unit": "TRIEU_VND",
+            "metric": null,
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "34,164,156",
+                "box": [
+                  294.348876953125,
+                  287.5145263671875,
+                  334.12091064453125,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 333.9630485983456
+              },
+              {
+                "column_index": 1,
+                "text": "70,898",
+                "box": [
+                  398.8988037109375,
+                  287.5145263671875,
+                  423.16510009765625,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 423.16192626953125
+              },
+              {
+                "column_index": 2,
+                "text": "34,235,054",
+                "box": [
+                  498.9535217285156,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 538.5679500804227
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 18,
+            "rank_reasons": {
+              "exact_metric": false,
+              "row_overlap": 1,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": true
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "34,164,156",
+                  "value": "34164156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "70,898",
+                  "value": "70898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "34,235,054",
+                  "value": "34235054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 3,
+              "unit_source_page": 3,
+              "header_marker_centers": [
+                290.2500762939453,
+                388.84722900390625,
+                481.05987548828125
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+            "rank": 1
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "citation_id": "fb11c2fe47f2093411b46b85",
+            "evidence_id": "fb11c2fe47f2093411b46b85",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 7,
+            "page_1_based": 7,
+            "page_index_0_based": 6,
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p7-r25",
+            "table_id": "p7-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "row_box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "rectangles": [
+              [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "CONSOLIDATED",
+            "scope": "CONSOLIDATED",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 6
+            },
+            "unit": "TRIEU_VND",
+            "metric": null,
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "36,192,494",
+                "box": [
+                  326.84149169921875,
+                  310.19451904296875,
+                  366.70111083984375,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 366.4551071893601
+              },
+              {
+                "column_index": 1,
+                "text": "72,012",
+                "box": [
+                  429.2282409667969,
+                  310.19451904296875,
+                  453.5821533203125,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 453.56573994954425
+              },
+              {
+                "column_index": 2,
+                "text": "36,264,506",
+                "box": [
+                  505.5731201171875,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 545.1201840355283
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 18,
+            "rank_reasons": {
+              "exact_metric": false,
+              "row_overlap": 1,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": true
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "36,192,494",
+                  "value": "36192494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "72,012",
+                  "value": "72012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "36,264,506",
+                  "value": "36264506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 6,
+              "unit_source_page": 6,
+              "header_marker_centers": [
+                320.2500762939453,
+                420.2871856689453,
+                499.5398712158203
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+            "rank": 2
+          },
+          {
+            "rank": 3,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_2_00003",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "2025",
+            "page": 2,
+            "text": "3. Thông tin nay đã được công bồ trên trang thông tin điện tử của Ngân hàng\nvào ngày\n24/10/2025 tại đường dẫn https://www.bidv.com.vn/vn/quan-he-nha-dau-tu/This\ninformation published the Bank’s website ££./10/2025, in the links\nwas on on as\nhttps://www.bidv.com.vn/en/quan-he-nha-dau-tu\nChúng tôi xin kết các thông tin công bố trên đây là đúng thật và hoàn\ncam sự toàn chịu\ntrách nhiệm trước pháp luật về nội dung các thông tin đã công bé/We hereby certify that\nthe information provided is true and correct and bear the full responsibility to the\nwe\nlaw./.\nNGƯỜI ĐƯỢC ỦY QUYÈN CÔNG BÓ THÔNG TIN\nPHO TONG GIÁM DOC\nPERSON AUTHORIZED TO DISCLOSE\nNoi L2 nhận/Recipent: .\nINFORMATION\nNhu trén/As above;",
+            "score": 0.02857142857142857,
+            "bm25_rank": 10,
+            "dense_rank": 10,
+            "bm25_score": 12.730364563629184,
+            "dense_score": 0.6986325453755264,
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "highlight_status": "EXACT_EXTRACTED_LINE_COORDINATES",
+            "statement_scope": "UNKNOWN",
+            "unit": null,
+            "source_kind": "PDF",
+            "citation_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_2_00003",
+            "text_quote": "3. Thông tin nay đã được công bồ trên trang thông tin điện tử của Ngân hàng\nvào ngày\n24/10/2025 tại đường dẫn https://www.bidv.com.vn/vn/quan-he-nha-dau-tu/This\ninformation published the Bank’s website ££./10/2025, in the links\nwas on on as\nhttps://www.bidv.com.vn/en/quan-he-nha-dau-tu\nChúng tôi xin kết các thông tin công bố trên đây là đúng thật và hoàn\ncam sự toàn chịu\ntrách nhiệm trước pháp luật về nội dung các thông tin đã công bé/We hereby certify that\nthe information provided is true and correct and bear the full responsibility to the\nwe\nlaw./.\nNGƯỜI ĐƯỢC ỦY QUYÈN CÔNG BÓ THÔNG TIN\nPHO TONG GIÁM DOC\nPERSON AUTHORIZED TO DISCLOSE\nNoi L2 nhận/Recipent: .\nINFORMATION\nNhu trén/As above;",
+            "page_1_based": 2,
+            "page_index_0_based": 1,
+            "numeric_status": "UNVERIFIED",
+            "rerank_score": 0.8999999999999999,
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK"
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "citation_id": "64385851519505791ab1394a",
+            "evidence_id": "64385851519505791ab1394a",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 5,
+            "page_1_based": 5,
+            "page_index_0_based": 4,
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 24,509,019 | 70,898 | 24,579,917",
+            "text_quote": "XIII. Lợi nhuận sau thuế TNDN | 24,509,019 | 70,898 | 24,579,917",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "row_id": "p5-r29",
+            "table_id": "p5-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              45.720001220703125,
+              410.2091979980469,
+              536.04248046875,
+              419.2426452636719
+            ],
+            "row_box": [
+              45.720001220703125,
+              410.2091979980469,
+              536.04248046875,
+              419.2426452636719
+            ],
+            "rectangles": [
+              [
+                45.720001220703125,
+                410.2091979980469,
+                536.04248046875,
+                419.2426452636719
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "SOURCE_ROW_UNREVIEWED",
+            "numeric_status": "UNVERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 5
+            },
+            "unit": "TRIEU_VND",
+            "metric": null,
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "24,509,019",
+                "box": [
+                  325.6817932128906,
+                  410.2091979980469,
+                  362.4030456542969,
+                  419.2426452636719
+                ],
+                "confidence": null,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 362.3931655883789
+              },
+              {
+                "column_index": 1,
+                "text": "70,898",
+                "box": [
+                  422.761474609375,
+                  410.2091979980469,
+                  445.20220947265625,
+                  419.2426452636719
+                ],
+                "confidence": null,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 445.19193892045456
+              },
+              {
+                "column_index": 2,
+                "text": "24,579,917",
+                "box": [
+                  499.32122802734375,
+                  410.2091979980469,
+                  536.04248046875,
+                  419.2426452636719
+                ],
+                "confidence": null,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 536.0326110839844
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 18,
+            "rank_reasons": {
+              "exact_metric": false,
+              "row_overlap": 1,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": true
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "rank": 4
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "citation_id": "750b571a126547a1e97b7436",
+            "evidence_id": "750b571a126547a1e97b7436",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page": 8,
+            "page_1_based": 8,
+            "page_index_0_based": 7,
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 25,604,037 | 73,081 | 25,677,118",
+            "text_quote": "XIII. Lợi nhuận sau thuế TNDN | 25,604,037 | 73,081 | 25,677,118",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "row_id": "p8-r29",
+            "table_id": "p8-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              50.87999725341797,
+              414.2214660644531,
+              547.3233032226562,
+              423.7862854003906
+            ],
+            "row_box": [
+              50.87999725341797,
+              414.2214660644531,
+              547.3233032226562,
+              423.7862854003906
+            ],
+            "rectangles": [
+              [
+                50.87999725341797,
+                414.2214660644531,
+                547.3233032226562,
+                423.7862854003906
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "SOURCE_ROW_UNREVIEWED",
+            "numeric_status": "UNVERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "CONSOLIDATED",
+            "scope": "CONSOLIDATED",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 8
+            },
+            "unit": "TRIEU_VND",
+            "metric": null,
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "25,604,037",
+                "box": [
+                  316.8016662597656,
+                  414.2214660644531,
+                  355.6829833984375,
+                  423.7862854003906
+                ],
+                "confidence": null,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 355.6810196586277
+              },
+              {
+                "column_index": 1,
+                "text": "73,081",
+                "box": [
+                  420.8420104980469,
+                  414.2214660644531,
+                  444.60284423828125,
+                  423.7862854003906
+                ],
+                "confidence": null,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 444.59983723958334
+              },
+              {
+                "column_index": 2,
+                "text": "25,677,118",
+                "box": [
+                  508.4420166015625,
+                  414.2214660644531,
+                  547.3233032226562,
+                  423.7862854003906
+                ],
+                "confidence": null,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 547.32140847911
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 18,
+            "rank_reasons": {
+              "exact_metric": false,
+              "row_overlap": 1,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": true
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "rank": 5
+          }
+        ],
+        "values": [],
+        "verification_status": "SOURCE_TEXT_UNREVIEWED",
+        "numeric_verification": {
+          "status": "UNVERIFIED",
+          "reason": "SOURCE_CELLS_REQUIRE_VERIFICATION"
+        },
+        "search_profile": "faith_r_product_v1",
+        "query_understanding": {
+          "raw_text": "BIDV năm 2024 có những số liệu nào được điều chỉnh sau kiểm toán?",
+          "intent": "RESTATEMENT_LIST",
+          "issuer_mentions": [
+            "BIDV"
+          ],
+          "metric": null,
+          "metric_phrases": [],
+          "years": [
+            "2024"
+          ],
+          "period_type": "FY",
+          "scope": null,
+          "basis": "ADJUSTMENT",
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+          "latency_ms": 1284.84,
+          "candidate_count": 79,
+          "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+        },
+        "warnings": [
+          "Trích đoạn nguồn; giá trị số chưa được xác minh độc lập."
+        ],
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+        "generation_trace": {
+          "method": "SOURCE_EXTRACTIVE",
+          "model_status": "NOT_CONFIGURED"
+        },
+        "session_id": "a37746cbe9e043eb8496dd649cd57d9b",
+        "resolved_question": "BIDV năm 2024 có những số liệu nào được điều chỉnh sau kiểm toán?",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "chat",
+      "request": {
+        "question": "Tìm dòng tổng tài sản của công ty mẹ Hòa Phát trong tài liệu.",
+        "document_ids": [
+          "4a92af827aaf1e73e017544d0ff20d0d"
+        ]
+      },
+      "http": 200,
+      "elapsed_ms": 2711.57,
+      "response": {
+        "status": "SOURCE_EXCERPTS",
+        "answer": "Đã tìm thấy các đoạn nguồn liên quan.\n\n[1] Riêng / công ty mẹ · số chưa xác minh · trang 3: TONG CONG TAI SAN | 98.670.778.691.605 | 81.793.076.515.644",
+        "citations": [
+          {
+            "chunk_id": "pdf_4a92af827aaf1e73e017544d0ff20d0d_3_00006",
+            "citation_id": "5a57537bc664ee882737826b",
+            "evidence_id": "5a57537bc664ee882737826b",
+            "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+            "source_kind": "PDF",
+            "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+            "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+            "issuer": "HPG",
+            "page": 3,
+            "page_1_based": 3,
+            "page_index_0_based": 2,
+            "text": "TONG CONG TAI SAN | 98.670.778.691.605 | 81.793.076.515.644",
+            "text_quote": "TONG CONG TAI SAN | 98.670.778.691.605 | 81.793.076.515.644",
+            "row_label": "TONG CONG TAI SAN",
+            "row_id": "p3-r54",
+            "table_id": "p3-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              79.49199025036405,
+              603.000017475878,
+              575.0420577733883,
+              614.7000178149623
+            ],
+            "row_box": [
+              79.49199025036405,
+              603.000017475878,
+              575.0420577733883,
+              614.7000178149623
+            ],
+            "rectangles": [
+              [
+                79.49199025036405,
+                603.000017475878,
+                575.0420577733883,
+                614.7000178149623
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "OCR_GEOMETRY_NOT_VERIFIED",
+            "extraction_method": "OCR",
+            "extraction_status": "OCR_EXTRACTED_NOT_CERTIFIED",
+            "verification_status": "SOURCE_ROW_UNREVIEWED",
+            "numeric_status": "UNVERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "",
+            "period": null,
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 3
+            },
+            "unit": null,
+            "metric": "assets",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "98.670.778.691.605",
+                "box": [
+                  384.56125094704424,
+                  606.0000175628228,
+                  472.15242510970955,
+                  614.7000178149623
+                ],
+                "confidence": 87.0,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 471.39264513555435
+              },
+              {
+                "column_index": 1,
+                "text": "81.793.076.515.644",
+                "box": [
+                  485.65106496354497,
+                  604.5000175193504,
+                  575.0420577733883,
+                  613.5000177801844
+                ],
+                "confidence": 88.0,
+                "verification": "NUMERIC_EVIDENCE_UNVERIFIED",
+                "blank": false,
+                "column_right_anchor": 574.3497102700593
+              }
+            ],
+            "adjustment_columns_candidate": false,
+            "rerank_score": 43,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 3,
+              "adjustment_table": false,
+              "scope_match": true,
+              "period_match": false
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "rank": 1
+          }
+        ],
+        "values": [],
+        "verification_status": "SOURCE_TEXT_UNREVIEWED",
+        "numeric_verification": {
+          "status": "UNVERIFIED",
+          "reason": "SOURCE_CELLS_REQUIRE_VERIFICATION"
+        },
+        "search_profile": "faith_r_product_v1",
+        "query_understanding": {
+          "raw_text": "Tìm dòng tổng tài sản của công ty mẹ Hòa Phát trong tài liệu.",
+          "intent": "FIND_EVIDENCE",
+          "issuer_mentions": [
+            "HPG"
+          ],
+          "metric": "assets",
+          "metric_phrases": [
+            "tong tai san",
+            "tong cong tai san",
+            "total assets"
+          ],
+          "years": [],
+          "period_type": null,
+          "scope": "SEPARATE",
+          "basis": null,
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+          "latency_ms": 2046.51,
+          "candidate_count": 1,
+          "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e"
+        },
+        "warnings": [
+          "Trích đoạn nguồn; giá trị số chưa được xác minh độc lập."
+        ],
+        "generation": "f8872bb70ad5d77f453af4366c15d8b13b4dc31dd900e6894cb900f87f08c76e",
+        "generation_trace": {
+          "method": "SOURCE_EXTRACTIVE",
+          "model_status": "NOT_CONFIGURED"
+        },
+        "session_id": "7d8283344b794a9db02b2352fd334b52",
+        "resolved_question": "Tìm dòng tổng tài sản của công ty mẹ Hòa Phát trong tài liệu.",
+        "source_scope": [
+          "4a92af827aaf1e73e017544d0ff20d0d"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "chat",
+      "request": {
+        "question": "What were Apple total net sales in fiscal 2025?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ]
+      },
+      "http": 200,
+      "elapsed_ms": 7846.11,
+      "response": {
+        "status": "SUPPORTED",
+        "answer": "416.161 triệu USD",
+        "citations": [
+          {
+            "contract_version": "verified-native-operands/v1",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "USER_PDF",
+            "issuer": "Apple Inc.",
+            "filing_type": "10-K",
+            "fiscal_year": 2025,
+            "period_start": null,
+            "period_end": "2025-09-27",
+            "period_type": "FISCAL_YEAR_DURATION",
+            "statement_scope": "CONSOLIDATED",
+            "statement_name": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "table_id": "558b19b8953ef8f08b6c0823",
+            "row_label": "Total net sales",
+            "metric_canonical_name": "net_revenue",
+            "metric_definition": "Total net sales",
+            "column_label": "September 27, 2025",
+            "value_raw": "416,161",
+            "value_decimal": "416161",
+            "currency": "USD",
+            "scale": "1000000",
+            "normalized_value": "416161000000",
+            "normalized_unit": "USD",
+            "page": 32,
+            "row_bbox": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "header_bbox": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "source_excerpt": "Total net sales 416,161 391,035 383,285",
+            "retrieved_chunk_ids": [
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+            ],
+            "semantic_provenance": {
+              "currency": {
+                "page": 30,
+                "text": "net sales and gross margins as expressed in U.S. dollars",
+                "method": "EXPLICIT_NET_SALES_PRESENTATION_SAME_MONETARY_TABLE"
+              },
+              "fiscal_period": {
+                "method": "ANNUAL_COLUMN_AND_SAME_SOURCE_STATEMENT_DATE",
+                "end": "2025-09-27",
+                "supplemental_statement_pages": [
+                  29,
+                  31,
+                  32,
+                  41
+                ],
+                "fiscal_declaration": {
+                  "page": 24,
+                  "years": [
+                    "2025"
+                  ],
+                  "text": "nificant announcements during fiscal year 2025 included the following: First Quarter 2025: • MacBook Pro • Mac mini • iMac • iPad mini Second Quarter 2025: • iPhone 1"
+                }
+              },
+              "scope": {
+                "method": "LOCAL_TABLE_HEADING",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS"
+              },
+              "retrieval_link": {
+                "method": "RETRIEVED_PAGE",
+                "original_chunk_ids": [
+                  "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+                ]
+              },
+              "metric": {
+                "method": "EXACT_ROW_DEFINITION",
+                "text": "Total net sales"
+              },
+              "scale": {
+                "method": "LOCAL_TABLE_UNITS",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 27, September 28, September 30,"
+              }
+            },
+            "verification_status": "CELL_VERIFIED",
+            "extractor_version": "verified-native-operands/v1",
+            "evidence_id": "pdfcell_a5859a69d9556dd45376b251c00cc626",
+            "text": "Total net sales 416,161 391,035 383,285",
+            "box": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "row_box": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "period": "2025-09-27",
+            "unit": "MILLION_USD",
+            "verification": "AUTO_SOURCE_CELL_VERIFIED",
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207",
+            "source_display": "416,161"
+          }
+        ],
+        "evidence_references": [
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 32,
+            "issuer": "AAPL",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": "CONSOLIDATED",
+            "unit": "MILLION_USD",
+            "report_period": "2025"
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_50_00287",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 50,
+            "issuer": "AAPL",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": "SEPARATE",
+            "unit": "MILLION_USD",
+            "report_period": "2025"
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_50_00287",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 50,
+            "issuer": "AAPL",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": "SEPARATE",
+            "unit": "MILLION_USD",
+            "report_period": "2025"
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_25_00177",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 25,
+            "issuer": "AAPL",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": "UNKNOWN",
+            "unit": "MILLION_USD",
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_26_00179",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 26,
+            "issuer": "AAPL",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": "UNKNOWN",
+            "unit": "MILLION_USD",
+            "report_period": ""
+          }
+        ],
+        "values": [
+          "416161"
+        ],
+        "verification_status": "CELL_VERIFIED",
+        "warnings": [],
+        "metric": "net_revenue",
+        "period": "2025-09-27",
+        "answer_source_chunk_id": null,
+        "statement_scope": "CONSOLIDATED",
+        "unit": "MILLION_USD",
+        "query_understanding": {
+          "raw_text": "What were Apple total net sales in fiscal 2025?",
+          "intent": "EXTRACT_VALUE",
+          "issuer_mentions": [
+            "AAPL"
+          ],
+          "metric": "net_revenue",
+          "metric_phrases": [
+            "doanh thu",
+            "net sales",
+            "revenue"
+          ],
+          "years": [
+            "2025"
+          ],
+          "period_type": "FY",
+          "scope": null,
+          "basis": null,
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "retrieval_trace": {
+          "profile": "faith_r_product_v1",
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0",
+          "effective_mode": "hybrid",
+          "original_hit_ids": [
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207",
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_50_00287",
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_25_00177",
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_26_00179"
+          ]
+        },
+        "search_profile": "faith_r_product_v1",
+        "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0",
+        "operation": "EXTRACT",
+        "formula": "Source cell",
+        "source_periods": [
+          "2025-09-27"
+        ],
+        "answer_evidence_ids": [
+          "pdfcell_a5859a69d9556dd45376b251c00cc626"
+        ],
+        "evidence_references_kind": "ORIGINAL_RETRIEVAL_NOT_VERIFIED_CELL_CITATIONS",
+        "winner": null,
+        "operands": [
+          {
+            "contract_version": "verified-native-operands/v1",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "USER_PDF",
+            "issuer": "Apple Inc.",
+            "filing_type": "10-K",
+            "fiscal_year": 2025,
+            "period_start": null,
+            "period_end": "2025-09-27",
+            "period_type": "FISCAL_YEAR_DURATION",
+            "statement_scope": "CONSOLIDATED",
+            "statement_name": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "table_id": "558b19b8953ef8f08b6c0823",
+            "row_label": "Total net sales",
+            "metric_canonical_name": "net_revenue",
+            "metric_definition": "Total net sales",
+            "column_label": "September 27, 2025",
+            "value_raw": "416,161",
+            "value_decimal": "416161",
+            "currency": "USD",
+            "scale": "1000000",
+            "normalized_value": "416161000000",
+            "normalized_unit": "USD",
+            "page": 32,
+            "row_bbox": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "header_bbox": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "source_excerpt": "Total net sales 416,161 391,035 383,285",
+            "retrieved_chunk_ids": [
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+            ],
+            "semantic_provenance": {
+              "currency": {
+                "page": 30,
+                "text": "net sales and gross margins as expressed in U.S. dollars",
+                "method": "EXPLICIT_NET_SALES_PRESENTATION_SAME_MONETARY_TABLE"
+              },
+              "fiscal_period": {
+                "method": "ANNUAL_COLUMN_AND_SAME_SOURCE_STATEMENT_DATE",
+                "end": "2025-09-27",
+                "supplemental_statement_pages": [
+                  29,
+                  31,
+                  32,
+                  41
+                ],
+                "fiscal_declaration": {
+                  "page": 24,
+                  "years": [
+                    "2025"
+                  ],
+                  "text": "nificant announcements during fiscal year 2025 included the following: First Quarter 2025: • MacBook Pro • Mac mini • iMac • iPad mini Second Quarter 2025: • iPhone 1"
+                }
+              },
+              "scope": {
+                "method": "LOCAL_TABLE_HEADING",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS"
+              },
+              "retrieval_link": {
+                "method": "RETRIEVED_PAGE",
+                "original_chunk_ids": [
+                  "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+                ]
+              },
+              "metric": {
+                "method": "EXACT_ROW_DEFINITION",
+                "text": "Total net sales"
+              },
+              "scale": {
+                "method": "LOCAL_TABLE_UNITS",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 27, September 28, September 30,"
+              }
+            },
+            "verification_status": "CELL_VERIFIED",
+            "extractor_version": "verified-native-operands/v1"
+          }
+        ],
+        "verification": "DECIMAL_WITH_AUTOMATIC_SOURCE_CELLS",
+        "effective_mode": "hybrid",
+        "routing_reason": null,
+        "evidence_contract": "verified-native-operands/v1",
+        "numeric_verification": {
+          "status": "SUPPORTED",
+          "operation": "EXTRACT",
+          "values": [
+            "416161"
+          ],
+          "unit": "MILLION_USD",
+          "formula": "Source cell",
+          "metric": "net_revenue",
+          "statement_scope": "CONSOLIDATED",
+          "period": "2025-09-27",
+          "source_periods": [
+            "2025-09-27"
+          ],
+          "answer_source_chunk_id": null,
+          "answer_evidence_ids": [
+            "pdfcell_a5859a69d9556dd45376b251c00cc626"
+          ],
+          "evidence_references_kind": "ORIGINAL_RETRIEVAL_NOT_VERIFIED_CELL_CITATIONS",
+          "answer": "416.161 triệu USD",
+          "winner": null,
+          "citations": [
+            {
+              "contract_version": "verified-native-operands/v1",
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "USER_PDF",
+              "issuer": "Apple Inc.",
+              "filing_type": "10-K",
+              "fiscal_year": 2025,
+              "period_start": null,
+              "period_end": "2025-09-27",
+              "period_type": "FISCAL_YEAR_DURATION",
+              "statement_scope": "CONSOLIDATED",
+              "statement_name": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+              "table_id": "558b19b8953ef8f08b6c0823",
+              "row_label": "Total net sales",
+              "metric_canonical_name": "net_revenue",
+              "metric_definition": "Total net sales",
+              "column_label": "September 27, 2025",
+              "value_raw": "416,161",
+              "value_decimal": "416161",
+              "currency": "USD",
+              "scale": "1000000",
+              "normalized_value": "416161000000",
+              "normalized_unit": "USD",
+              "page": 32,
+              "row_bbox": [
+                70.12999725341797,
+                179.55801391601562,
+                558.7852172851562,
+                188.55801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                179.55801391601562,
+                420.7850341796875,
+                188.55801391601562
+              ],
+              "header_bbox": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "source_excerpt": "Total net sales 416,161 391,035 383,285",
+              "retrieved_chunk_ids": [
+                "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+              ],
+              "semantic_provenance": {
+                "currency": {
+                  "page": 30,
+                  "text": "net sales and gross margins as expressed in U.S. dollars",
+                  "method": "EXPLICIT_NET_SALES_PRESENTATION_SAME_MONETARY_TABLE"
+                },
+                "fiscal_period": {
+                  "method": "ANNUAL_COLUMN_AND_SAME_SOURCE_STATEMENT_DATE",
+                  "end": "2025-09-27",
+                  "supplemental_statement_pages": [
+                    29,
+                    31,
+                    32,
+                    41
+                  ],
+                  "fiscal_declaration": {
+                    "page": 24,
+                    "years": [
+                      "2025"
+                    ],
+                    "text": "nificant announcements during fiscal year 2025 included the following: First Quarter 2025: • MacBook Pro • Mac mini • iMac • iPad mini Second Quarter 2025: • iPhone 1"
+                  }
+                },
+                "scope": {
+                  "method": "LOCAL_TABLE_HEADING",
+                  "text": "CONSOLIDATED STATEMENTS OF OPERATIONS"
+                },
+                "retrieval_link": {
+                  "method": "RETRIEVED_PAGE",
+                  "original_chunk_ids": [
+                    "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+                  ]
+                },
+                "metric": {
+                  "method": "EXACT_ROW_DEFINITION",
+                  "text": "Total net sales"
+                },
+                "scale": {
+                  "method": "LOCAL_TABLE_UNITS",
+                  "text": "CONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 27, September 28, September 30,"
+                }
+              },
+              "verification_status": "CELL_VERIFIED",
+              "extractor_version": "verified-native-operands/v1",
+              "evidence_id": "pdfcell_a5859a69d9556dd45376b251c00cc626",
+              "text": "Total net sales 416,161 391,035 383,285",
+              "box": [
+                388.259033203125,
+                179.55801391601562,
+                420.7850341796875,
+                188.55801391601562
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "row_box": [
+                70.12999725341797,
+                179.55801391601562,
+                558.7852172851562,
+                188.55801391601562
+              ],
+              "period": "2025-09-27",
+              "unit": "MILLION_USD",
+              "verification": "AUTO_SOURCE_CELL_VERIFIED",
+              "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207",
+              "source_display": "416,161"
+            }
+          ],
+          "operands": [
+            {
+              "contract_version": "verified-native-operands/v1",
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "USER_PDF",
+              "issuer": "Apple Inc.",
+              "filing_type": "10-K",
+              "fiscal_year": 2025,
+              "period_start": null,
+              "period_end": "2025-09-27",
+              "period_type": "FISCAL_YEAR_DURATION",
+              "statement_scope": "CONSOLIDATED",
+              "statement_name": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+              "table_id": "558b19b8953ef8f08b6c0823",
+              "row_label": "Total net sales",
+              "metric_canonical_name": "net_revenue",
+              "metric_definition": "Total net sales",
+              "column_label": "September 27, 2025",
+              "value_raw": "416,161",
+              "value_decimal": "416161",
+              "currency": "USD",
+              "scale": "1000000",
+              "normalized_value": "416161000000",
+              "normalized_unit": "USD",
+              "page": 32,
+              "row_bbox": [
+                70.12999725341797,
+                179.55801391601562,
+                558.7852172851562,
+                188.55801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                179.55801391601562,
+                420.7850341796875,
+                188.55801391601562
+              ],
+              "header_bbox": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "source_excerpt": "Total net sales 416,161 391,035 383,285",
+              "retrieved_chunk_ids": [
+                "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+              ],
+              "semantic_provenance": {
+                "currency": {
+                  "page": 30,
+                  "text": "net sales and gross margins as expressed in U.S. dollars",
+                  "method": "EXPLICIT_NET_SALES_PRESENTATION_SAME_MONETARY_TABLE"
+                },
+                "fiscal_period": {
+                  "method": "ANNUAL_COLUMN_AND_SAME_SOURCE_STATEMENT_DATE",
+                  "end": "2025-09-27",
+                  "supplemental_statement_pages": [
+                    29,
+                    31,
+                    32,
+                    41
+                  ],
+                  "fiscal_declaration": {
+                    "page": 24,
+                    "years": [
+                      "2025"
+                    ],
+                    "text": "nificant announcements during fiscal year 2025 included the following: First Quarter 2025: • MacBook Pro • Mac mini • iMac • iPad mini Second Quarter 2025: • iPhone 1"
+                  }
+                },
+                "scope": {
+                  "method": "LOCAL_TABLE_HEADING",
+                  "text": "CONSOLIDATED STATEMENTS OF OPERATIONS"
+                },
+                "retrieval_link": {
+                  "method": "RETRIEVED_PAGE",
+                  "original_chunk_ids": [
+                    "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207"
+                  ]
+                },
+                "metric": {
+                  "method": "EXACT_ROW_DEFINITION",
+                  "text": "Total net sales"
+                },
+                "scale": {
+                  "method": "LOCAL_TABLE_UNITS",
+                  "text": "CONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 27, September 28, September 30,"
+                }
+              },
+              "verification_status": "CELL_VERIFIED",
+              "extractor_version": "verified-native-operands/v1"
+            }
+          ],
+          "verification_status": "CELL_VERIFIED",
+          "verification": "DECIMAL_WITH_AUTOMATIC_SOURCE_CELLS",
+          "effective_mode": "hybrid",
+          "routing_reason": null,
+          "evidence_contract": "verified-native-operands/v1",
+          "retrieval_trace": {
+            "profile": "faith_r_product_v1",
+            "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0",
+            "effective_mode": "hybrid",
+            "original_hit_ids": [
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00207",
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_50_00287",
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_25_00177",
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_26_00179"
+            ]
+          }
+        },
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "session_id": "5140a61b1ab54d5ca942e5191f6a1335",
+        "resolved_question": "What were Apple total net sales in fiscal 2025?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "chat",
+      "request": {
+        "question": "Explain Apple revenue FY2025",
+        "source": "US_SEC",
+        "ticker": "AAPL"
+      },
+      "http": 200,
+      "elapsed_ms": 45.59,
+      "response": {
+        "status": "SOURCE_UNAVAILABLE",
+        "answer": "SEC chưa khả dụng: cần cấu hình snapshot nguồn và chỉ mục tương thích. Bạn vẫn có thể trò chuyện với PDF tải lên.",
+        "citations": [],
+        "evidence_references": [],
+        "values": [],
+        "verification_status": "INSUFFICIENT_EVIDENCE",
+        "warnings": [
+          "Không tìm thấy bằng chứng trong tài liệu đã chọn."
+        ],
+        "metric": "net_revenue",
+        "period": null,
+        "answer_source_chunk_id": null,
+        "statement_scope": null,
+        "unit": null,
+        "query_understanding": {
+          "raw_text": "Explain Apple revenue FY2025",
+          "intent": "EXPLAIN",
+          "issuer_mentions": [
+            "AAPL"
+          ],
+          "metric": "net_revenue",
+          "metric_phrases": [
+            "doanh thu",
+            "net sales",
+            "revenue"
+          ],
+          "years": [],
+          "period_type": null,
+          "scope": null,
+          "basis": null,
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "retrieval_trace": {
+          "profile": "faith_r_product_v1",
+          "generation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "engine_version": null,
+          "algorithm_executed": null,
+          "candidate_count": null,
+          "latency_ms": 0,
+          "top_ids": [],
+          "evidence_status": null
+        },
+        "search_profile": "faith_r_product_v1",
+        "generation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_errors": [
+          {
+            "source": "US_SEC",
+            "reason": "SEC_SHARED_SOURCE_ROOTS_NOT_CONFIGURED"
+          }
+        ],
+        "session_id": "752ff46a5da24420ad8c775dc3329d73",
+        "resolved_question": "Explain Apple revenue FY2025",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    }
+  ],
+  "restart_persistence": {
+    "session_id": "f263a3bb064f4abeba2cac4036a37c80",
+    "turns": 2,
+    "messages": 4,
+    "status": "PASS"
+  },
+  "api_memory_snapshot": [
+    {
+      "pid": 19644,
+      "rss_bytes": 3657728
+    },
+    {
+      "pid": 23660,
+      "rss_bytes": 166690816
+    }
+  ],
+  "documents": [
+    {
+      "id": "3eb270b22acb7d8d8e9c32a43dc221de",
+      "filename": "NASDAQ_AAPL_2025.pdf",
+      "sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+      "issuer": "AAPL",
+      "document_type": "10-K",
+      "report_period": "2025-09-27",
+      "size_bytes": 1858048,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 80,
+      "chunks": 451,
+      "created_at": "2026-11-04T02:40:01.946960+00:00",
+      "updated_at": "2026-11-04T02:41:10.254507+00:00",
+      "display_metadata": {
+        "identities": [
+          "AAPL"
+        ],
+        "identity_method": "SOURCE_TEXT_ALIAS",
+        "report_year": null,
+        "statement_scopes": [
+          "CONSOLIDATED"
+        ]
+      },
+      "issuer_display_original": "Apple Inc."
+    },
+    {
+      "id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+      "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "issuer": "HPG",
+      "document_type": "PDF",
+      "report_period": "2025",
+      "size_bytes": 4897389,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 24,
+      "chunks": 64,
+      "created_at": "2026-11-04T02:37:52.818702+00:00",
+      "updated_at": "2026-11-04T02:39:46.775287+00:00",
+      "display_metadata": {
+        "identities": [
+          "HPG"
+        ],
+        "identity_method": "SOURCE_TEXT_ALIAS",
+        "report_year": "2025",
+        "statement_scopes": [
+          "SEPARATE"
+        ]
+      },
+      "issuer_display_original": ""
+    },
+    {
+      "id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+      "sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+      "issuer": "BIDV",
+      "document_type": "Báo cáo tài chính",
+      "report_period": "2024",
+      "size_bytes": 1760974,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 8,
+      "chunks": 23,
+      "created_at": "2026-11-04T02:35:39.932070+00:00",
+      "updated_at": "2026-11-04T02:36:02.619844+00:00",
+      "display_metadata": {
+        "identities": [
+          "BIDV"
+        ],
+        "identity_method": "SOURCE_TEXT_ALIAS",
+        "report_year": "2024",
+        "statement_scopes": [
+          "CONSOLIDATED",
+          "SEPARATE"
+        ]
+      },
+      "issuer_display_original": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam"
+    }
+  ]
+}

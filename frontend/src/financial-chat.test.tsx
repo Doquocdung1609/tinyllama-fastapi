@@ -30,4 +30,26 @@ describe('financial chat request and source safety',()=>{
   expect(screen.queryByText('STALE_SOURCE_A')).not.toBeInTheDocument()
   expect(sessionStorage.getItem('active-document')).toBe('b'.repeat(32))
  })
+ it('reopens server history after remount and preserves citation destination',async()=>{
+  const open=vi.fn();const sid='c'.repeat(32)
+  vi.mocked(api).mockImplementation(async path=>{
+   if(path==='/documents')return {documents:docs} as never
+   if(path.startsWith('/chat/sessions'))return {sessions:[{id:sid,title:'Saved thread',updated_at:'2026-11-04T00:00:00Z',document_ids:[docs[0].id],message_count:2}],has_more:false} as never
+   if(path==='/chat/'+sid)return {id:sid,title:'Saved thread',document_ids:[docs[0].id],turns:[{question:'Find source row',response:{status:'SOURCE_EXCERPTS',answer:'Source row [1]',citations:[{document_id:docs[0].id,page:7,text:'Exact retained source',box:[1,2,30,40]}]}}]} as never
+   return {filings:[],status:'UNAVAILABLE'} as never
+  })
+  render(<QueryClientProvider client={new QueryClient({defaultOptions:{queries:{retry:false}}})}><FinancialChat selected={null} open={open}/></QueryClientProvider>)
+  fireEvent.click(await screen.findByRole('button',{name:/Saved thread/}))
+  fireEvent.click(await screen.findByRole('button',{name:'Mở nguồn 1 trang 7'}))
+  expect(open).toHaveBeenCalledWith(expect.objectContaining({document_id:docs[0].id,page:7,box:[1,2,30,40]}))
+  expect(sessionStorage.getItem('active-financial-chat')).toBe(sid)
+ })
+ it('renders source markup as text and sends with Enter',async()=>{
+  vi.mocked(post).mockResolvedValue({session_id:'c'.repeat(32),status:'SOURCE_EXCERPTS',answer:'<script>bad()</script> [1]',citations:[{page:4,text:'Fixture source'}]})
+  show();await screen.findByText('a.pdf · a · 2025')
+  const field=screen.getByLabelText('Câu hỏi trợ lý');fireEvent.change(field,{target:{value:'Find source'}});fireEvent.keyDown(field,{key:'Enter'})
+  await screen.findByText('<script>bad()</script>',{exact:false})
+  expect(document.querySelector('.answer-prose script')).toBeNull()
+  expect(vi.mocked(post).mock.calls).toHaveLength(1)
+ })
 })

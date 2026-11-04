@@ -1,0 +1,1386 @@
+{
+  "documents": {
+    "documents": [
+      {
+        "id": "3eb270b22acb7d8d8e9c32a43dc221de",
+        "filename": "NASDAQ_AAPL_2025.pdf",
+        "sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+        "issuer": "Apple Inc.",
+        "document_type": "10-K",
+        "report_period": "2025-09-27",
+        "size_bytes": 1858048,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 80,
+        "chunks": 451,
+        "created_at": "2026-11-04T02:40:01.946960+00:00",
+        "updated_at": "2026-11-04T02:41:10.254507+00:00"
+      },
+      {
+        "id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "issuer": "",
+        "document_type": "PDF",
+        "report_period": "",
+        "size_bytes": 4897389,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 24,
+        "chunks": 64,
+        "created_at": "2026-11-04T02:37:52.818702+00:00",
+        "updated_at": "2026-11-04T02:39:46.775287+00:00"
+      },
+      {
+        "id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+        "sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+        "document_type": "Báo cáo tài chính",
+        "report_period": "",
+        "size_bytes": 1760974,
+        "status": "READY",
+        "stage": "READY",
+        "error_code": null,
+        "pages": 8,
+        "chunks": 23,
+        "created_at": "2026-11-04T02:35:39.932070+00:00",
+        "updated_at": "2026-11-04T02:36:02.619844+00:00"
+      }
+    ]
+  },
+  "records": [
+    {
+      "route": "chat",
+      "question": "BIDV năm 2024 có những số liệu nào được điều chỉnh sau kiểm toán?",
+      "http": 200,
+      "response": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "answer": "Chưa đủ bằng chứng phù hợp để xác nhận số liệu.",
+        "citations": [],
+        "evidence_references": [
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 1,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 1,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 1,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00001",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 1,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 4,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": ""
+          }
+        ],
+        "values": [],
+        "verification_status": "AMBIGUOUS_METRIC_DEFINITION",
+        "warnings": [
+          "Số liệu trong trích đoạn chưa được đối chiếu ô nguồn, kỳ và đơn vị."
+        ],
+        "metric": null,
+        "period": "",
+        "answer_source_chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002",
+        "statement_scope": null,
+        "unit": null,
+        "retrieval_trace": {
+          "profile": "production_v3",
+          "generation": "6347eae14aa0e53dec06fd8d981a80564ea6720e158afd27ba73e305e500a3b2",
+          "latency_ms": 13362.71,
+          "top_ids": [
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00001",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010"
+          ],
+          "evidence_status": "RELATED_UNVERIFIED_EVIDENCE"
+        },
+        "search_profile": "production_v3",
+        "generation": "6347eae14aa0e53dec06fd8d981a80564ea6720e158afd27ba73e305e500a3b2",
+        "reason": "AMBIGUOUS_METRIC_DEFINITION",
+        "related_evidence": [
+          {
+            "rank": 1,
+            "score": 6.016393442622951,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 1,
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "text": "cáo tài chính riêng lẻ hợp nhất 2024 đã được kiểm toán theo kết quả Kiểm toán\nvà năm\nNhà nước như đính kèm.\nJoint Stock Commercial Bank for Investment and Development of Vietnam (BIDY)\nannounced the changes in the Separate and Consolidated audited financial statement of\n2024 according to the results of the State Audit.",
+            "box": null,
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 2,
+            "score": 6.016129032258065,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 1,
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "text": "BIDV® NGÂN HÀNG TMCP ĐÀU TƯ CONG HOA XÃ HOI CHỦ NGHĨA VIỆT\nNAM\nVÀ PHAT TRIEN VIỆT NAM Độc lập Tự do Hạnh phúc\n- -\nBANK FOR INVESTMENT AND THE SOCIALIST REPUBLIC OF VIETNAM\nDEVELOPMENT OF VIETNAM, JSC. Independence Freedom Happiness\n- -\nSé: 9104/BIDV-TK&QHCD Ha Nội, ngày\n23 tháng 10 năm 2025\nCBTT điều chỉnh Báo cáo tài chính riêng lẻ Hanoi, day ÿf month AO 2025\nyear\nvà hợp nhất 2024 đã được kiểm toán\nnăm\nRe: Announcement changes in the\non\nSeparate and Consolidated audited\nfinancial statement of 2024\nCONG BO THONG TIN BAT THUONG\nEXTRAORDINARY INFORMATION DISCLOSURE\nKinh gui:\nNgân hàng Nhà nước Việt Nam;\n-\nỦy ban Chứng khoán Nhà nước;\n-\nSở Giao dịch chứng khoán Việt Nam;\n-\nSở Giao dịch chứng khoán TP HCM;\n-",
+            "box": null,
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 3,
+            "score": 6.016129032258065,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p1-r9",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 1,
+            "row_id": "p1-r9",
+            "row_label": "CBTT điều chỉnh Báo cáo tài chính riêng lẻ Hanoi, day ÿf month AO",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "text": "CBTT điều chỉnh Báo cáo tài chính riêng lẻ Hanoi, day ÿf month AO | 2025",
+            "box": [
+              98.69006593641767,
+              101.98800635150099,
+              554.344200153495,
+              114.58652478315699
+            ],
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 4,
+            "score": 6.015873015873016,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00001",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00001",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 1,
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "text": "Sở Giao dịch chứng khoán Hà Nội.\n-\nTo:\nState Bank of Vietnam;\n-\nState Securities Commission;\n-\nVietnam Stock Exchange;\n-\nHo Chi Minh Stock Exchange;\n-\nHanoi Stock Exchange.\n-\nTên tổ chức/Name of organization: Ngân hàng Thuong mai Cổ phần Đầu và Phat\n1. tư\ntriển Việt Nam/Bank for Investment and Development of Vietnam, JSC. (BIDV)\nMã chứng khoan/Stock code: BID\n-\nDia chi/Address: Tháp BIDV, 194 Tran Quang Khải, Hoàn Kiếm, Hà N6i/B/DV\n-\nTower, 194 Tran Quang Khai road, Hoan Kiem ward, Ha Noi\nĐiện thoại liên hệ/7e!: (84-24) 2220 5544 Fax: (84-24) 2220 0399\n-\nE-mail: nhadautu@bidv.com.vn\n-\n2. Nội dung thông tin công b6/Contents of disclosure:\nNgân hàng TMCP Đầu và Phát triển Việt Nam thông báo về việc điều chỉnh Báo\ntư",
+            "box": null,
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 5,
+            "score": 5.330204405307493,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p4-r22",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 4,
+            "row_id": "p4-r22",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "d6c8e350c918353b52a09d3ef334f58cbf032c761e2be11bde59ab31a1c64c3b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          }
+        ],
+        "session_id": "610fb8337c2e4d9b9cdebace1437fb65",
+        "resolved_question": "BIDV năm 2024 có những số liệu nào được điều chỉnh sau kiểm toán?",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "query",
+      "question": "BIDV năm 2024 có những số liệu nào được điều chỉnh sau kiểm toán?",
+      "http": 200,
+      "response": {
+        "status": "READY",
+        "generation": "6347eae14aa0e53dec06fd8d981a80564ea6720e158afd27ba73e305e500a3b2",
+        "source_generations": [
+          [
+            "PDF",
+            "31d8403cc84b1fde5e327ba245c311ab122ef4b85a584751c987f2f9686fd1c7"
+          ]
+        ],
+        "results": [
+          {
+            "text": "cáo tài chính riêng lẻ hợp nhất 2024 đã được kiểm toán theo kết quả Kiểm toán\nvà năm\nNhà nước như đính kèm.\nJoint Stock Commercial Bank for Investment and Development of Vietnam (BIDY)\nannounced the changes in the Separate and Consolidated audited financial statement of\n2024 according to the results of the State Audit.",
+            "rank": 1,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 1,
+            "score": 6.016393442622951,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00002",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "box": null,
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "BIDV® NGÂN HÀNG TMCP ĐÀU TƯ CONG HOA XÃ HOI CHỦ NGHĨA VIỆT\nNAM\nVÀ PHAT TRIEN VIỆT NAM Độc lập Tự do Hạnh phúc\n- -\nBANK FOR INVESTMENT AND THE SOCIALIST REPUBLIC OF VIETNAM\nDEVELOPMENT OF VIETNAM, JSC. Independence Freedom Happiness\n- -\nSé: 9104/BIDV-TK&QHCD Ha Nội, ngày\n23 tháng 10 năm 2025\nCBTT điều chỉnh Báo cáo tài chính riêng lẻ Hanoi, day ÿf month AO 2025\nyear\nvà hợp nhất 2024 đã được kiểm toán\nnăm\nRe: Announcement changes in the\non\nSeparate and Consolidated audited\nfinancial statement of 2024\nCONG BO THONG TIN BAT THUONG\nEXTRAORDINARY INFORMATION DISCLOSURE\nKinh gui:\nNgân hàng Nhà nước Việt Nam;\n-\nỦy ban Chứng khoán Nhà nước;\n-\nSở Giao dịch chứng khoán Việt Nam;\n-\nSở Giao dịch chứng khoán TP HCM;\n-",
+            "rank": 2,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 1,
+            "score": 6.016129032258065,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "box": null,
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "CBTT điều chỉnh Báo cáo tài chính riêng lẻ Hanoi, day ÿf month AO | 2025",
+            "rank": 3,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 1,
+            "score": 6.016129032258065,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00000",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p1-r9",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p1-r9",
+            "row_label": "CBTT điều chỉnh Báo cáo tài chính riêng lẻ Hanoi, day ÿf month AO",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "box": [
+              98.69006593641767,
+              101.98800635150099,
+              554.344200153495,
+              114.58652478315699
+            ],
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "Sở Giao dịch chứng khoán Hà Nội.\n-\nTo:\nState Bank of Vietnam;\n-\nState Securities Commission;\n-\nVietnam Stock Exchange;\n-\nHo Chi Minh Stock Exchange;\n-\nHanoi Stock Exchange.\n-\nTên tổ chức/Name of organization: Ngân hàng Thuong mai Cổ phần Đầu và Phat\n1. tư\ntriển Việt Nam/Bank for Investment and Development of Vietnam, JSC. (BIDV)\nMã chứng khoan/Stock code: BID\n-\nDia chi/Address: Tháp BIDV, 194 Tran Quang Khải, Hoàn Kiếm, Hà N6i/B/DV\n-\nTower, 194 Tran Quang Khai road, Hoan Kiem ward, Ha Noi\nĐiện thoại liên hệ/7e!: (84-24) 2220 5544 Fax: (84-24) 2220 0399\n-\nE-mail: nhadautu@bidv.com.vn\n-\n2. Nội dung thông tin công b6/Contents of disclosure:\nNgân hàng TMCP Đầu và Phát triển Việt Nam thông báo về việc điều chỉnh Báo\ntư",
+            "rank": 4,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 1,
+            "score": 6.015873015873016,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00001",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_1_00001",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "box": null,
+            "page_evidence_sha256": "558cafc35edb9b2c31f8837690c74c8ae23419fd72665b953f2297c633cdd4a9",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "rank": 5,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 4,
+            "score": 5.330204405307493,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p4-r22",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p4-r22",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "page_evidence_sha256": "d6c8e350c918353b52a09d3ef334f58cbf032c761e2be11bde59ab31a1c64c3b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          }
+        ],
+        "mode": "hybrid",
+        "source_errors": [],
+        "latency_ms": 717.16,
+        "timings_ms": {
+          "PDF": 717.16
+        },
+        "cross_source_order": null,
+        "intent": {
+          "metrics": [],
+          "dates": [],
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "basis": null,
+          "statement": null,
+          "unit": null,
+          "operation": "LOOKUP",
+          "period_reference": null,
+          "statement_explicit": false,
+          "evidence_requirement": "SOURCE_ROW_PERIOD_UNIT_SCOPE; numeric verification is separate",
+          "ontology_version": "financial-intent-v2.1",
+          "quarters": [],
+          "entity_scope": {
+            "resolved_document_ids": [
+              "2bed2b3c312c8149e6a2ff6ab80c694a"
+            ],
+            "unrecognized_name": true
+          }
+        },
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+        "evidence_reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER",
+        "search_profile": "production_v3",
+        "routing_reason": "GENERIC_PDF_V3_NO_COMPATIBLE_READY_DERIVED_INDEX",
+        "financial_evidence": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "reason": "AMBIGUOUS_METRIC_DEFINITION",
+          "answer": "Chưa đủ bằng chứng phù hợp để xác nhận số liệu.",
+          "values": [],
+          "citations": [],
+          "verification_status": "AMBIGUOUS_METRIC_DEFINITION"
+        }
+      }
+    },
+    {
+      "route": "chat",
+      "question": "Tìm dòng lợi nhuận sau thuế chưa phân phối trong bảng điều chỉnh báo cáo tài chính BIDV năm 2024",
+      "http": 200,
+      "response": {
+        "status": "QUERY_CONTEXT_CONFLICT",
+        "reason": "QUESTION_COMPANY_SCOPE_CONFLICT",
+        "conflicting_fields": [
+          "issuer"
+        ],
+        "issuer_mentions": [
+          "chua phan phoi trong bang dieu chinh bao cao tai chinh bidv"
+        ],
+        "answer": "Doanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+        "values": [],
+        "citations": [],
+        "verification_status": "QUERY_CONTEXT_CONFLICT",
+        "session_id": "c30ca7fdda424df988584cf0fed52926",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ]
+      }
+    },
+    {
+      "route": "query",
+      "question": "Tìm dòng lợi nhuận sau thuế chưa phân phối trong bảng điều chỉnh báo cáo tài chính BIDV năm 2024",
+      "http": 200,
+      "response": {
+        "status": "READY",
+        "generation": "6347eae14aa0e53dec06fd8d981a80564ea6720e158afd27ba73e305e500a3b2",
+        "source_generations": [
+          [
+            "PDF",
+            "31d8403cc84b1fde5e327ba245c311ab122ef4b85a584751c987f2f9686fd1c7"
+          ]
+        ],
+        "results": [
+          {
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 25,604,037 | 73,081 | 25,677,118",
+            "rank": 1,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 8,
+            "score": 33.01428571428571,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p8-r29",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p8-r29",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": "CONSOLIDATED",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": [
+              50.87999725341797,
+              414.2214660644531,
+              547.3233032226562,
+              423.7862854003906
+            ],
+            "page_evidence_sha256": "d628c24946c5c03db27fdeed09e645767e8e688998010917f89661a5f91b6b2b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 24,509,019 | 70,898 | 24,579,917",
+            "rank": 2,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 5,
+            "score": 33.013888888888886,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p5-r29",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p5-r29",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": "SEPARATE",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": [
+              45.720001220703125,
+              410.2091979980469,
+              536.04248046875,
+              419.2426452636719
+            ],
+            "page_evidence_sha256": "5012b200eca18a655e38188cb09cf4daa5edbf8212c5681d73e2cbb1fdd65deb",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "XI. Tổng lợi nhuận trước thuế 31,984,869 91,352 32,076,221\n7. Chi phí thuế TNDN hiện hành (6,384,627) (18,271) (6,402,898)\n8 Chi phí thuế TNDN hoãn lại 3,795 - 3,795\nXII. Chi phí thuế TNDN (6,380,832) (18,271) (6,399,103)\nXIII. Lợi nhuận sau thuế TNDN 25,604,037 73,081 25,677,118\nXIV. Lợi ích của cổ đông thiểu số (464,000) (1,069) (465,069)\nXV. Lợi nhuận thuần của cổ đông Ngân hàng 25,140,037 72,012 25,212,049",
+            "rank": 3,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 8,
+            "score": 28.014285714285716,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [
+              "net_income",
+              "pretax_income"
+            ],
+            "statement_scope": "CONSOLIDATED",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": null,
+            "page_evidence_sha256": "d628c24946c5c03db27fdeed09e645767e8e688998010917f89661a5f91b6b2b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "XI. Tổng lợi nhuận trước thuế 30,609,248 88,623 30,697,871\n7. Chi phí thuế TNDN hiện hành (6,100,167) (17,725) (6,117,892)\n8 Chi phí thuế TNDN hoãn lại (62) - (62)\nXII. Chi phí thuế TNDN (6,100,229) (17,725) (6,117,954)\nXIII. Lợi nhuận sau thuế TNDN 24,509,019 70,898 24,579,917",
+            "rank": 4,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 5,
+            "score": 28.01388888888889,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [
+              "net_income",
+              "pretax_income"
+            ],
+            "statement_scope": "SEPARATE",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": null,
+            "page_evidence_sha256": "5012b200eca18a655e38188cb09cf4daa5edbf8212c5681d73e2cbb1fdd65deb",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "rank": 5,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 7,
+            "score": 25.015151515151516,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p7-r25",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p7-r25",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "page_evidence_sha256": "595182bd6d6e85528de96e86db37f5ef7207381be52817ad0135dddb6257f2ef",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          }
+        ],
+        "mode": "hybrid",
+        "source_errors": [],
+        "latency_ms": 1212.67,
+        "timings_ms": {
+          "PDF": 1212.67
+        },
+        "cross_source_order": null,
+        "intent": {
+          "metrics": [
+            "net_income"
+          ],
+          "dates": [],
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "basis": null,
+          "statement": "INCOME_STATEMENT",
+          "unit": null,
+          "operation": "LOOKUP",
+          "period_reference": null,
+          "statement_explicit": false,
+          "evidence_requirement": "SOURCE_ROW_PERIOD_UNIT_SCOPE; numeric verification is separate",
+          "ontology_version": "financial-intent-v2.1",
+          "quarters": [],
+          "entity_scope": {
+            "resolved_document_ids": [
+              "2bed2b3c312c8149e6a2ff6ab80c694a"
+            ],
+            "unrecognized_name": true
+          }
+        },
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+        "evidence_reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER",
+        "search_profile": "production_v3",
+        "routing_reason": "GENERIC_PDF_V3_NO_COMPATIBLE_READY_DERIVED_INDEX",
+        "financial_evidence": {
+          "status": "QUERY_CONTEXT_CONFLICT",
+          "reason": "QUESTION_COMPANY_SCOPE_CONFLICT",
+          "conflicting_fields": [
+            "issuer"
+          ],
+          "issuer_mentions": [
+            "chua phan phoi trong bang dieu chinh bao cao tai chinh bidv"
+          ],
+          "answer": "Doanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+          "values": [],
+          "citations": [],
+          "verification_status": "QUERY_CONTEXT_CONFLICT"
+        }
+      }
+    },
+    {
+      "route": "chat",
+      "question": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+      "http": 200,
+      "response": {
+        "status": "INSUFFICIENT_EVIDENCE",
+        "answer": "Chưa đủ bằng chứng phù hợp để xác nhận số liệu.",
+        "citations": [],
+        "evidence_references": [
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 8,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": "CONSOLIDATED",
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 5,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": "SEPARATE",
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 8,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": "CONSOLIDATED",
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 5,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": "SEPARATE",
+            "unit": null,
+            "report_period": ""
+          },
+          {
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "page": 7,
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": ""
+          }
+        ],
+        "values": [],
+        "verification_status": "UNSUPPORTED_REQUESTED_CURRENCY_SCALE_OR_PERCENTAGE_POINTS",
+        "warnings": [
+          "Số liệu trong trích đoạn chưa được đối chiếu ô nguồn, kỳ và đơn vị."
+        ],
+        "metric": null,
+        "period": "",
+        "answer_source_chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+        "statement_scope": "CONSOLIDATED",
+        "unit": null,
+        "retrieval_trace": {
+          "profile": "production_v3",
+          "generation": "6347eae14aa0e53dec06fd8d981a80564ea6720e158afd27ba73e305e500a3b2",
+          "latency_ms": 639.13,
+          "top_ids": [
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019"
+          ],
+          "evidence_status": "RELATED_UNVERIFIED_EVIDENCE"
+        },
+        "search_profile": "production_v3",
+        "generation": "6347eae14aa0e53dec06fd8d981a80564ea6720e158afd27ba73e305e500a3b2",
+        "reason": "UNSUPPORTED_REQUESTED_CURRENCY_SCALE_OR_PERCENTAGE_POINTS",
+        "related_evidence": [
+          {
+            "rank": 1,
+            "score": 33.01639344262295,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p8-r29",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 8,
+            "row_id": "p8-r29",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": "CONSOLIDATED",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 25,604,037 | 73,081 | 25,677,118",
+            "box": [
+              50.87999725341797,
+              414.2214660644531,
+              547.3233032226562,
+              423.7862854003906
+            ],
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "d628c24946c5c03db27fdeed09e645767e8e688998010917f89661a5f91b6b2b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 2,
+            "score": 33.014925373134325,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p5-r29",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 5,
+            "row_id": "p5-r29",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": "SEPARATE",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 24,509,019 | 70,898 | 24,579,917",
+            "box": [
+              45.720001220703125,
+              410.2091979980469,
+              536.04248046875,
+              419.2426452636719
+            ],
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "5012b200eca18a655e38188cb09cf4daa5edbf8212c5681d73e2cbb1fdd65deb",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 3,
+            "score": 28.016393442622952,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 8,
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [
+              "net_income",
+              "pretax_income"
+            ],
+            "statement_scope": "CONSOLIDATED",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "text": "XI. Tổng lợi nhuận trước thuế 31,984,869 91,352 32,076,221\n7. Chi phí thuế TNDN hiện hành (6,384,627) (18,271) (6,402,898)\n8 Chi phí thuế TNDN hoãn lại 3,795 - 3,795\nXII. Chi phí thuế TNDN (6,380,832) (18,271) (6,399,103)\nXIII. Lợi nhuận sau thuế TNDN 25,604,037 73,081 25,677,118\nXIV. Lợi ích của cổ đông thiểu số (464,000) (1,069) (465,069)\nXV. Lợi nhuận thuần của cổ đông Ngân hàng 25,140,037 72,012 25,212,049",
+            "box": null,
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "d628c24946c5c03db27fdeed09e645767e8e688998010917f89661a5f91b6b2b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 4,
+            "score": 28.01492537313433,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 5,
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [
+              "net_income",
+              "pretax_income"
+            ],
+            "statement_scope": "SEPARATE",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "text": "XI. Tổng lợi nhuận trước thuế 30,609,248 88,623 30,697,871\n7. Chi phí thuế TNDN hiện hành (6,100,167) (17,725) (6,117,892)\n8 Chi phí thuế TNDN hoãn lại (62) - (62)\nXII. Chi phí thuế TNDN (6,100,229) (17,725) (6,117,954)\nXIII. Lợi nhuận sau thuế TNDN 24,509,019 70,898 24,579,917",
+            "box": null,
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "5012b200eca18a655e38188cb09cf4daa5edbf8212c5681d73e2cbb1fdd65deb",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          },
+          {
+            "rank": 5,
+            "score": 25.015151515151516,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p7-r25",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "page": 7,
+            "row_id": "p7-r25",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page_evidence_sha256": "595182bd6d6e85528de96e86db37f5ef7207381be52817ad0135dddb6257f2ef",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES",
+            "source_kind": "PDF"
+          }
+        ],
+        "session_id": "5dc577c1ed7d48999b3b9b76f1232645",
+        "resolved_question": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "route": "query",
+      "question": "Tìm dòng \"Lợi nhuận sau thuế chưa phân phối\" trong tài liệu đang chọn. Cho biết các đoạn nguồn liên quan và trang PDF.",
+      "http": 200,
+      "response": {
+        "status": "READY",
+        "generation": "6347eae14aa0e53dec06fd8d981a80564ea6720e158afd27ba73e305e500a3b2",
+        "source_generations": [
+          [
+            "PDF",
+            "31d8403cc84b1fde5e327ba245c311ab122ef4b85a584751c987f2f9686fd1c7"
+          ]
+        ],
+        "results": [
+          {
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 25,604,037 | 73,081 | 25,677,118",
+            "rank": 1,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 8,
+            "score": 33.01639344262295,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p8-r29",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p8-r29",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": "CONSOLIDATED",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": [
+              50.87999725341797,
+              414.2214660644531,
+              547.3233032226562,
+              423.7862854003906
+            ],
+            "page_evidence_sha256": "d628c24946c5c03db27fdeed09e645767e8e688998010917f89661a5f91b6b2b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "XIII. Lợi nhuận sau thuế TNDN | 24,509,019 | 70,898 | 24,579,917",
+            "rank": 2,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 5,
+            "score": 33.014925373134325,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p5-r29",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p5-r29",
+            "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": "SEPARATE",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": [
+              45.720001220703125,
+              410.2091979980469,
+              536.04248046875,
+              419.2426452636719
+            ],
+            "page_evidence_sha256": "5012b200eca18a655e38188cb09cf4daa5edbf8212c5681d73e2cbb1fdd65deb",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "XI. Tổng lợi nhuận trước thuế 31,984,869 91,352 32,076,221\n7. Chi phí thuế TNDN hiện hành (6,384,627) (18,271) (6,402,898)\n8 Chi phí thuế TNDN hoãn lại 3,795 - 3,795\nXII. Chi phí thuế TNDN (6,380,832) (18,271) (6,399,103)\nXIII. Lợi nhuận sau thuế TNDN 25,604,037 73,081 25,677,118\nXIV. Lợi ích của cổ đông thiểu số (464,000) (1,069) (465,069)\nXV. Lợi nhuận thuần của cổ đông Ngân hàng 25,140,037 72,012 25,212,049",
+            "rank": 3,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 8,
+            "score": 28.016393442622952,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [
+              "net_income",
+              "pretax_income"
+            ],
+            "statement_scope": "CONSOLIDATED",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": null,
+            "page_evidence_sha256": "d628c24946c5c03db27fdeed09e645767e8e688998010917f89661a5f91b6b2b",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "XI. Tổng lợi nhuận trước thuế 30,609,248 88,623 30,697,871\n7. Chi phí thuế TNDN hiện hành (6,100,167) (17,725) (6,117,892)\n8 Chi phí thuế TNDN hoãn lại (62) - (62)\nXII. Chi phí thuế TNDN (6,100,229) (17,725) (6,117,954)\nXIII. Lợi nhuận sau thuế TNDN 24,509,019 70,898 24,579,917",
+            "rank": 4,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 5,
+            "score": 28.01492537313433,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "evidence_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": null,
+            "row_label": "",
+            "metric_ids": [
+              "net_income",
+              "pretax_income"
+            ],
+            "statement_scope": "SEPARATE",
+            "statement_type": "INCOME_STATEMENT",
+            "unit_header": "TRIEU_VND",
+            "box": null,
+            "page_evidence_sha256": "5012b200eca18a655e38188cb09cf4daa5edbf8212c5681d73e2cbb1fdd65deb",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          },
+          {
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "rank": 5,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 7,
+            "score": 25.015151515151516,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "evidence_id": "row:2bed2b3c312c8149e6a2ff6ab80c694a:p7-r25",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "issuer": "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "document_type": "Báo cáo tài chính",
+            "report_period": "",
+            "row_id": "p7-r25",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "metric_ids": [
+              "net_income"
+            ],
+            "statement_scope": null,
+            "statement_type": "UNKNOWN",
+            "unit_header": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "page_evidence_sha256": "595182bd6d6e85528de96e86db37f5ef7207381be52817ad0135dddb6257f2ef",
+            "numeric_answer_eligible": false,
+            "reviewed_facts": [],
+            "conflicts": [
+              "ENTITY_NOT_PROVEN",
+              "CLARIFY_SEPARATE_OR_CONSOLIDATED"
+            ],
+            "verification": null,
+            "evidence_match": "RELATED_PASSAGE",
+            "validation_status": "UNVERIFIED_OR_CONTEXT_INCOMPLETE",
+            "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"
+          }
+        ],
+        "mode": "hybrid",
+        "source_errors": [],
+        "latency_ms": 636.23,
+        "timings_ms": {
+          "PDF": 636.23
+        },
+        "cross_source_order": null,
+        "intent": {
+          "metrics": [
+            "net_income"
+          ],
+          "dates": [],
+          "years": [],
+          "scope": null,
+          "basis": null,
+          "statement": "INCOME_STATEMENT",
+          "unit": null,
+          "operation": "LOOKUP",
+          "period_reference": null,
+          "statement_explicit": false,
+          "evidence_requirement": "SOURCE_ROW_PERIOD_UNIT_SCOPE; numeric verification is separate",
+          "ontology_version": "financial-intent-v2.1",
+          "quarters": [],
+          "entity_scope": {
+            "resolved_document_ids": [
+              "2bed2b3c312c8149e6a2ff6ab80c694a"
+            ],
+            "unrecognized_name": true
+          }
+        },
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+        "evidence_reason": "ENTITY_OR_QUERY_CONTEXT_NOT_PROVEN; RELATED_SOURCES_ARE_NOT_AN_ANSWER",
+        "search_profile": "production_v3",
+        "routing_reason": "GENERIC_PDF_V3_NO_COMPATIBLE_READY_DERIVED_INDEX",
+        "financial_evidence": {
+          "status": "INSUFFICIENT_EVIDENCE",
+          "reason": "UNSUPPORTED_REQUESTED_CURRENCY_SCALE_OR_PERCENTAGE_POINTS",
+          "answer": "Chưa đủ bằng chứng phù hợp để xác nhận số liệu.",
+          "values": [],
+          "citations": [],
+          "verification_status": "UNSUPPORTED_REQUESTED_CURRENCY_SCALE_OR_PERCENTAGE_POINTS"
+        }
+      }
+    }
+  ]
+}
