@@ -153,32 +153,11 @@ def financial_chat(payload:ChatRequest):
         owned=db.execute('SELECT owner FROM financial_chat_sessions WHERE id=?',(session,)).fetchone()
         if owned and owned['owner']!=owner(w):raise HTTPException(404,detail={'code':'CHAT_NOT_FOUND'})
         prior=db.execute('SELECT scope,payload FROM financial_chat_sessions WHERE id=? AND owner=?',(session,owner(w))).fetchone()
-        if prior is None and db.execute('SELECT count(*) FROM financial_chat_sessions').fetchone()[0]>=100:
-            raise HTTPException(429,detail={'code':'CHAT_SESSION_LIMIT'})
     history=json.loads(prior['payload']) if prior and prior['scope']==fingerprint else []
     if prior and prior['scope']!=fingerprint:session=uuid4().hex
     question=payload.question
-    from app.product.query_intent import metric_matches
-    if history and not metric_matches(question) and re.search(r'con hop nhat|con rieng|trang nao|hai bang|truoc dieu chinh|these tables|what page',folded(question)):
-        from app.product.financial_understanding import understand
-        previous=history[-1].get('resolved_question',history[-1]['question'])
-        slots_before=understand(previous)
-        if slots_before.metric:
-            phrase=slots_before.metric_phrases[0]
-            question=phrase+' '+question+' '+' '.join(slots_before.years)
-    if not metric_matches(question) and history and re.search(r'so voi|tang|giam|growth|compare|change|nam truoc|previous|con nam|what about',folded(question)):
-        previous=next((h for h in reversed(history) if h['response'].get('status')=='SUPPORTED'),None)
-        if previous:
-            citations=previous['response'].get('citations',[])
-            metrics={c.get('metric_canonical_name') for c in citations}
-            years={c.get('fiscal_year') for c in citations}
-            names={'net_revenue':'total net sales','net_income':'net income','segment_net_sales':'segment net sales'}
-            comparison=bool(re.search(r'so voi|tang|giam|growth|compare|change|nam truoc|previous',folded(question)))
-            explicit_years=set(re.findall(r'\b20\d{2}\b',question))
-            if len(metrics)==1 and (len(years)==1 or (not comparison and len(explicit_years)==1)) and next(iter(metrics)) in names:
-                year=next(iter(years));question=names[next(iter(metrics))]+' '+question
-                if comparison and str(year) not in question:question+=f' fiscal {year}'
-                if re.search('nam truoc|previous',folded(question)) and str(year-1) not in question:question+=f' compared with fiscal {year-1}'
+    from app.product.answer_planner_v2 import resolve_followup
+    question,conversation_plan=resolve_followup(question,history)
     allowed={'metric','operation','current_period','previous_period','statement_scope','basis'}
     if set(payload.constraints)-allowed:raise HTTPException(422,detail={'code':'UNKNOWN_ADVANCED_CONSTRAINT'})
     if any(not isinstance(v,str) or len(v)>80 for v in payload.constraints.values()):raise HTTPException(422,detail={'code':'INVALID_ADVANCED_CONSTRAINT'})
@@ -266,6 +245,7 @@ class SearchResponse(BaseModel):
     scope_missing:bool|None=None
     routing_reason:str|None=None
     financial_evidence:dict|None=None
+    query_plan:dict|None=None
 
 
 class ComparisonResponse(BaseModel):
@@ -308,13 +288,9 @@ def unified_search(payload:UnifiedSearch):
     if payload.search_profile=='faith_r_product_v1':
         from app.product.financial_understanding import understand
         result['intent']=understand(payload.query).public()
-    if payload.source=='USER_UPLOADS' and len(payload.document_ids)==1 and hasattr(w,'source_file'):
-        from app.product.assistant_answer import needs_number
-        if needs_number(payload.query):
-            from app.product.verified_financial import automatic_answer,validate_supported_response
-            from app.product.faith_r_product import evidence_answer
-            grounded=evidence_answer(payload.query,result) if payload.search_profile=='faith_r_product_v1' else None
-            result['financial_evidence']=grounded if grounded and grounded['status']=='SUPPORTED' else validate_supported_response(w,automatic_answer(w,AnalysisRequest(question=payload.query,document_ids=payload.document_ids),result))
+    if payload.source=='USER_UPLOADS' and payload.document_ids and hasattr(w,'source_file') and payload.search_profile=='faith_r_product_v1':
+        from app.product.answer_composer_v2 import compose_answer
+        result['financial_evidence']=compose_answer(w,payload.query,result,payload.document_ids)
     return result
 
 
@@ -661,12 +637,15 @@ def analysis(payload:AnalysisRequest):
                 result=workspace().search(payload.question,'hybrid',5,payload.document_ids)
             answer=contract(payload.question,result,profile)
             if profile=='faith_r_product_v1':
-                from app.product.faith_r_product import evidence_answer
-                grounded=evidence_answer(payload.question,result)
-                if grounded and (grounded['status']=='SUPPORTED' or grounded.get('query_understanding',{}).get('intent')!='COMPARE_PERIODS'):
-                    from app.product.grounded_narrative import compose
-                    return compose(payload.question,grounded)
-                if grounded:answer=grounded
+                answer=result['financial_evidence']
+                from app.product.answer_planner_v2 import constraint_conflicts
+                conflicts=constraint_conflicts(payload,answer)
+                if conflicts:
+                    return {**answer,'status':'QUERY_CONTEXT_CONFLICT','answer_status':'CONFLICTING_EVIDENCE',
+                        'answer':'Tùy chọn nâng cao mâu thuẫn hoặc chưa được chứng minh bởi câu hỏi và ô nguồn. Hãy bỏ tùy chọn hoặc nêu rõ yêu cầu trong câu hỏi.',
+                        'reason':'EXPLICIT_QUERY_CONTEXT_CONFLICT','conflicting_fields':conflicts,'values':[],'calculation_steps':[],
+                        'verification_status':'QUERY_CONTEXT_CONFLICT'}
+                return answer
             if needs_number(payload.question):
                 plan=reviewed_plan(payload.question,eligible_facts(workspace(),payload.document_ids),METRICS)
                 if plan:

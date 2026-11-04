@@ -63,8 +63,9 @@ def test_abstention_keeps_search_chat_evidence_and_trace(tmp_path,monkeypatch):
         search=frontend_api.unified_search(frontend_api.UnifiedSearch(query=query,document_ids=[d['id']],source='USER_UPLOADS',search_profile='auto'))
         answer=frontend_api.analysis(frontend_api.AnalysisRequest(question=query,document_ids=[d['id']],search_profile='auto'))
         assert answer['values']==[] and answer['citations']
-        assert answer['numeric_verification']['reason']=='UNSUPPORTED_REQUESTED_CURRENCY_SCALE_OR_PERCENTAGE_POINTS'
-        assert [h['chunk_id'] for h in answer['citations']]==[h['chunk_id'] for h in search['results']]
+        assert answer['reason']=='FX_CONVERSION_NOT_AUTHORIZED'
+        assert answer['composer_version']=='VERIFIED_ANSWER_COMPOSER_V2'
+        assert {h['citation_id'] for h in answer['citations']} <= {h['citation_id'] for h in search['results']}
         assert search['engine_version']=='FAITH_R_PRODUCT_V1'
     finally:w.close()
 

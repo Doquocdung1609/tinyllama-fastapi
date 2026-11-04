@@ -4,7 +4,7 @@ from app.product.pdf_extract import folded
 
 
 def company_mentions(question):
-    stop=set('what was were is are the show tell me calculate compare for of in total net sales income revenue assets company document report year this selected please s which geographic segment generated highest largest maximum lowest minimum source sum annual consolidated quarterly fiscal how much many year-over-year yoy'.split())
+    stop=set('what was were is are the show tell me calculate compare for of in total net sales income revenue assets company document report year this selected please s which geographic segment generated highest largest maximum lowest minimum source sum annual consolidated quarterly fiscal how much many year-over-year yoy parent-company parent separate services products percentage percent margin gross fy2025 fy2024 fy2023'.split())
     mentions=[]
     for match in re.finditer(r"\b((?:[\w&.-]+\s+){0,3}[\w&.-]+)['’]s\b",question):
         parts=match[1].split()
@@ -29,7 +29,7 @@ def company_mentions(question):
     for match in re.finditer(r'(?:nghien cuu|tong quan)\s+(?:(?:doanh nghiep|cong ty)\s+)?(.{2,70}?)(?=\s+(?:nam|dua tren|theo tai lieu)|[?.]|$)',q):
         value=match[1].strip()
         if not value.startswith(('dua tren','tai lieu','doanh nghiep','cong ty')):mentions.append(value)
-    return sorted(set(mentions))
+    return sorted({m for m in mentions if not re.fullmatch(r'(?:FY\s*)?20\d{2}|Services|Products',m,re.I)})
 
 
 def source_company_conflict(workspace,document_ids,question):

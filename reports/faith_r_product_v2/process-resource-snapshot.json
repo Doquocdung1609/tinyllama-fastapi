@@ -1,0 +1,90 @@
+{
+  "total_ram_bytes": 8419053568,
+  "available_ram_bytes": 807510016,
+  "relevant_processes": [
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 17498112
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 24141824
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 162365440
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 347807744
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 4280320
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 1515520
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 7462912
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 57950208
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 77139968
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 3829760
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 229904384
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 29556736
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 10690560
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 19857408
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 538251264
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 8843264
+    },
+    {
+      "name": "ollama.exe",
+      "rss_bytes": 10149888
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 58814464
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 125927424
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 51855360
+    },
+    {
+      "name": "chrome.exe",
+      "rss_bytes": 33406976
+    }
+  ]
+}

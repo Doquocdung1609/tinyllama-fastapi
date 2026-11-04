@@ -1,0 +1,20 @@
+{"checks":3,"failures":[{"name":"Browser execution","status":"FAIL","error":"Error: locator.click: Error: strict mode violation: locator('.message-assistant').last().getByRole('button', { name: 'Mở nguồn 2 trang 4', exact: true }) resolved to 2 elements:\n    1) <button class=\"inline-citation\" aria-label=\"Mở nguồn 2 trang 4\">[2]</button> aka getByRole('paragraph').filter({ hasText: 'FY2024, mức điều chỉnh hợp nh' }).getByLabel('Mở nguồn 2 trang')\n    2) <button class=\"inline-citation\" aria-label=\"Mở nguồn 2 trang 4\">[2]</button> aka getByRole('list').getByRole('button', { name: 'Mở nguồn 2 trang' })\n\nCall log:\n\u001b[2m  - waiting for locator('.message-assistant').last().getByRole('button', { name: 'Mở nguồn 2 trang 4', exact: true })\u001b[22m\n"}]}
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+locator.click: Error: strict mode violation: locator('.message-assistant').last().getByRole('button', { name: 'Mở nguồn 2 trang 4', exact: true }) resolved to 2 elements:
+    1) <button class="inline-citation" aria-label="Mở nguồn 2 trang 4">[2]</button> aka getByRole('paragraph').filter({ hasText: 'FY2024, mức điều chỉnh hợp nh' }).getByLabel('Mở nguồn 2 trang')
+    2) <button class="inline-citation" aria-label="Mở nguồn 2 trang 4">[2]</button> aka getByRole('list').getByRole('button', { name: 'Mở nguồn 2 trang' })
+
+Call log:
+  - waiting for locator('.message-assistant').last().getByRole('button', { name: 'Mở nguồn 2 trang 4', exact: true })
+
+    at source (C:\Users\Admin\.codex\worktrees\topic3-v7p\tinyllama-fastapi\frontend\e2e\v2-demo.mjs:21:15)
+    at C:\Users\Admin\.codex\worktrees\topic3-v7p\tinyllama-fastapi\frontend\e2e\v2-demo.mjs:33:8 {
+  log: [
+    "  - waiting for locator('.message-assistant').last().getByRole('button', { name: 'Mở nguồn 2 trang 4', exact: true })"
+  ]
+}
+
+Node.js v22.13.1

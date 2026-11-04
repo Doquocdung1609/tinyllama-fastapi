@@ -144,6 +144,9 @@ def pdf_search(w, question, mode, top_k, document_ids):
         pool=[h for h in pool if h.get('rank_reasons',{}).get('exact_metric')]
     pool.sort(key=lambda h:(-h['rerank_score'],h['page'],h.get('evidence_id',h['chunk_id'])))
     if slots.intent=='RESTATEMENT_LIST':
+        from app.product.native_adjustments import verify_rows
+        pool=verify_rows(w,pool)
+        pool.sort(key=lambda h:(not bool(h.get('adjustment_verification')),-h['rerank_score'],h['page']))
         groups={}
         for h in pool:groups.setdefault((h['document_id'],h.get('statement_scope','UNKNOWN')),[]).append(h)
         pool=[group[i] for i in range(max((len(g) for g in groups.values()),default=0)) for group in groups.values() if i<len(group)]
@@ -159,9 +162,15 @@ def pdf_search(w, question, mode, top_k, document_ids):
         if len(chosen)==top_k:break
     from app.product.native_adjustments import verify_rows
     chosen=verify_rows(w,chosen)
+    from app.product.answer_planner_v2 import plan_question
+    from app.product.source_cells_v2 import section_evidence
+    question_plan=plan_question(question)
+    if question_plan.intent in {'DOCUMENT_IDENTITY','FIND_SECTION'}:
+        headings=section_evidence(w,document_ids,question_plan)
+        chosen=[{**h,'chunk_id':h['citation_id'],'score':1.0,'rank':i} for i,h in enumerate(headings[:top_k],1)] or chosen
     for rank,h in enumerate(chosen,1):h['rank']=rank
     return {**base,'results':chosen,'latency_ms':round((perf_counter()-started)*1000,2),
-        'intent':slots.public(),'evidence_status':'RELATED_UNVERIFIED_EVIDENCE' if chosen else 'NO_SUFFICIENT_EVIDENCE',
+        'intent':slots.public(),'query_plan':question_plan.public(),'evidence_status':'RELATED_UNVERIFIED_EVIDENCE' if chosen else 'NO_SUFFICIENT_EVIDENCE',
         'search_profile':'faith_r_product_v1','engine_version':VERSION,'candidate_count':len(pool),'scope_availability':sorted(observed_scopes),
         'scope_missing':bool(slots.scope and observed_scopes and slots.scope not in observed_scopes),
         'routing_reason':fallback,'algorithm_executed':VERSION+'_PDF_ROW_UNION_RERANK'}

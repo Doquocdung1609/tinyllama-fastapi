@@ -1,0 +1,10 @@
+{
+  "http": 200,
+  "number": 35,
+  "state": "open",
+  "draft": true,
+  "html_url": "https://github.com/Doquocdung1609/tinyllama-fastapi/pull/35",
+  "merged": false,
+  "head_ref": "codex/topic3-v7p-verified-financial-chatbot",
+  "head_sha": "453d43ecdbaf7fe5a59ece5c4026b1bb78276185"
+}

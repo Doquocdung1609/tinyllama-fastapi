@@ -1,0 +1,23 @@
+[
+  {
+    "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+    "filename": "NASDAQ_AAPL_2025.pdf",
+    "before_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+    "after_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+    "unchanged": true
+  },
+  {
+    "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+    "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+    "before_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+    "after_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+    "unchanged": true
+  },
+  {
+    "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+    "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+    "before_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+    "after_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+    "unchanged": true
+  }
+]

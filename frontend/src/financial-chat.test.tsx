@@ -52,4 +52,13 @@ describe('financial chat request and source safety',()=>{
   expect(document.querySelector('.answer-prose script')).toBeNull()
   expect(vi.mocked(post).mock.calls).toHaveLength(1)
  })
+ it('shows audited calculation steps and keeps operand citations clickable',async()=>{
+  vi.mocked(post).mockResolvedValue({session_id:'c'.repeat(32),status:'SUPPORTED',answer:'Growth 25% [1]',answer_explanation:'Exact original operands.',independent_verification:{status:'VERIFIED'},calculation_steps:[{calculation_id:'x',title:'Growth',formula:'(current − previous) / previous × 100',result:'25.00',unit:'%',rounding:'ROUND_HALF_UP',substitution:[{value:'125',period:'2025',scope:'CONSOLIDATED',basis:'AS_REPORTED',unit:'MILLION_USD',citation:'[1]'}]}],citations:[{page:2,text:'Original cell'}]})
+  show();await screen.findByText('a.pdf · a · 2025')
+  fireEvent.change(screen.getByLabelText('Câu hỏi trợ lý'),{target:{value:'Growth?'}});fireEvent.click(screen.getByRole('button',{name:'Gửi câu hỏi'}))
+  expect(await screen.findByText('Các bước tính · Đã kiểm chứng độc lập')).toBeInTheDocument()
+  expect(screen.getByText('Exact original operands.')).toBeInTheDocument()
+  expect(screen.getByText('Kết quả: 25,00 %')).toBeInTheDocument()
+ })
+
 })
