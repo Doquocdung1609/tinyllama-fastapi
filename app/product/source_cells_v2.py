@@ -31,7 +31,7 @@ def metric_for(label,section,percent):
     name=folded(re.sub(r'\s*\(\d+\)\s*$','',label)).strip(' :')
     direct={'total net sales':'net_revenue','net income':'net_income','operating income':'operating_income',
         'gross margin':'gross_profit','total gross margin':'gross_profit','total assets':'assets',
-        'total gross margin percentage':'gross_margin_percentage'}
+        'total gross margin percentage':'gross_margin_percentage','effective tax rate':'effective_tax_rate'}
     if name in direct:return direct[name]
     if name in {'products','services'}:
         suffix='gross_margin_percentage' if percent and 'gross margin' in section else 'gross_margin' if 'gross margin' in section else 'cost_of_sales' if 'cost of sales' in section else 'net_sales' if 'net sales' in section else None
@@ -73,7 +73,7 @@ def _native_catalog(path,source_hash,document_id):
                 if gap<25:continue
                 above=[(ry,rws) for ry,rws in rows[max(0,ri-10):ri] if y-ry<150]
                 header_text=' '.join(w[4] for _,rws in above for w in rws)
-                if not re.search(r'net sales|gross margin|statements|balance sheet',header_text,re.I):continue
+                if not re.search(r'net sales|gross margin|statements|balance sheet|effective tax rate',header_text,re.I):continue
                 if not re.search(r'\bmillions\b',header_text,re.I):continue
                 default_section='net sales' if re.search(r'net sales',header_text,re.I) else ''
                 section=default_section;section_box=union_box([w for _,rws in above for w in rws]) if above else None

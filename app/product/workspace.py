@@ -503,7 +503,8 @@ class PdfWorkspace:
                     "source_sha256": doc["sha256"], "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"}
 
     def search(self, query: str, mode: str = "hybrid", top_k: int = 5,
-               document_ids: list[str] | None = None):
+               document_ids: list[str] | None = None, *, _candidate_limit: int | None = None):
+        if _candidate_limit is not None and not 20 <= _candidate_limit <= 80:raise ValueError("INVALID_INTERNAL_CANDIDATE_LIMIT")
         if mode not in {"bm25", "dense", "hybrid"} or not 1 <= top_k <= 20 or not query.strip() or len(query) > 2000:
             raise ValueError("INVALID_PDF_SEARCH_REQUEST")
         started = perf_counter()
@@ -572,7 +573,7 @@ class PdfWorkspace:
                 results.append((score, cid, entry))
             results.sort(key=lambda item: (-item[0], item[1]))
             output = []
-            for rank, (score, cid, entry) in enumerate(results[:top_k], 1):
+            for rank, (score, cid, entry) in enumerate(results[:(_candidate_limit or top_k)], 1):
                 row = entry["row"]
                 doc = allowed[row["document_id"]]
                 path = self.files / f"{doc['id']}.pdf"
@@ -591,6 +592,7 @@ class PdfWorkspace:
                     "results": output, "latency_ms": round((perf_counter()-started)*1000, 2),
                     "timings_ms": {"bm25": round(bm25_ms, 2), "embedding": round(embed_ms, 2),
                                    "dense": round(dense_ms, 2)},
+                    "candidate_count":len(results), "dedup_count":len(b)+len(d)-len(ranked),
                     "source_scope": "ISOLATED_USER_PDF", "model_digest": DIGEST if mode != "bm25" else None,
                     "fusion": {"method": "RRF", "k": 60} if mode == "hybrid" else None}
 

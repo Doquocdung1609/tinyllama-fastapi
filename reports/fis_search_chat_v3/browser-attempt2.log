@@ -1,0 +1,141 @@
+{"checks":52,"failures":[{"name":"Browser acceptance","status":"FAIL","error":"Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('alert').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('alert').first() with timeout 5000ms\n  - waiting for getByRole('alert').first()\n"}]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toBeVisible() failed
+
+Locator: getByRole('alert').first()
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByRole('alert').first() with timeout 5000ms
+  - waiting for getByRole('alert').first()
+
+    at captureRawStack (C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\frontend\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+    at callMatcherAsStep (C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\frontend\node_modules\playwright\lib\matchers\expect.js:13316:57)
+    at Object.toBeVisible (C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\frontend\node_modules\playwright\lib\matchers\expect.js:13308:23)
+    at C:\Users\Admin\.codex\worktrees\topic3-v7p\tinyllama-fastapi\frontend\e2e\v3-product.mjs:45:323 {
+  matcherResult: {
+    message: 'expect(locator).toBeVisible() failed\n' +
+      '\n' +
+      "Locator: getByRole('alert').first()\n" +
+      'Expected: visible\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toBeVisible" getByRole('alert').first() with timeout 5000ms\n` +
+      "  - waiting for getByRole('alert').first()\n",
+    pass: false,
+    actual: undefined,
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      `  - Expect "toBeVisible" getByRole('alert').first() with timeout 5000ms`,
+      "  - waiting for getByRole('alert').first()"
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- complementary:\n' +
+      '  - button "Mở rộng điều hướng"\n' +
+      '  - navigation "Điều hướng chính":\n' +
+      '    - button "Trợ lý tài chính"\n' +
+      '    - button "Kho tài liệu"\n' +
+      '    - button "Bằng chứng & Nguồn"\n' +
+      '    - button "Research Lab"\n' +
+      '    - button "Cài đặt / Trạng thái"\n' +
+      '- banner:\n' +
+      '  - strong: FIS\n' +
+      '  - text: / Không gian tài chính\n' +
+      '  - button "Bằng chứng & Nguồn"\n' +
+      '  - text: Phiên cục bộ F\n' +
+      '- main:\n' +
+      '  - heading "Bằng chứng & Nguồn" [level=1]\n' +
+      '  - paragraph: Tìm đúng chỉ tiêu, xem ngữ cảnh và đối chiếu tài liệu gốc.\n' +
+      '  - text: Câu hỏi tìm kiếm\n' +
+      '  - textbox "Câu hỏi tìm kiếm":\n' +
+      '    - /placeholder: Tìm chỉ tiêu, bảng số liệu hoặc nội dung trong tài liệu…\n' +
+      '    - text: Actual offline error probe\n' +
+      '  - button "Đang tìm…" [disabled]\n' +
+      '  - text: Nguồn\n' +
+      '  - combobox "Nguồn dữ liệu":\n' +
+      '    - option "PDF tải lên" [selected]\n' +
+      '    - option "SEC · chưa sẵn sàng" [disabled]\n' +
+      '    - option "Tất cả nguồn"\n' +
+      '  - text: Tài liệu\n' +
+      '  - combobox "Tài liệu tìm kiếm":\n' +
+      '    - option "Tất cả PDF sẵn sàng"\n' +
+      '    - option "AAPL · 2025-09-27 · NASDAQ_AAPL_2025.pdf"\n' +
+      '    - option "HPG · 2025 · 20260130-hpg-bao-cao-tai-chinh-rieng-cong-…"\n' +
+      '    - option "BIDV · 2024 · 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024…" [selected]\n' +
+      '  - group "Phương pháp":\n' +
+      '    - button "BM25"\n' +
+      '    - button "Dense"\n' +
+      '    - button "Hybrid RRF"\n' +
+      '    - button "FAITH-R" [pressed]\n' +
+      '  - text: Số kết quả tối đa\n' +
+      '  - combobox "Số kết quả tối đa":\n' +
+      '    - option "Top-5" [selected]\n' +
+      '    - option "Top-10"\n' +
+      '    - option "Top-20"\n' +
+      '  - button "Bộ lọc"\n' +
+      '  - paragraph: FAITH-R truy xuất ứng viên bằng Hybrid RRF, sau đó xếp hạng theo chỉ tiêu và bằng chứng tài chính.\n' +
+      '  - status: Bộ chọn đã thay đổi. Nhấn Tìm kiếm để xem kết quả mới. Kết quả bên dưới thuộc câu hỏi trước.\n' +
+      '  - heading "Kết quả truy xuất 2 / tối đa 5" [level=2]\n' +
+      '  - paragraph: “Tìm dòng lợi nhuận sau thuế chưa phân phối năm 2024.”\n' +
+      '  - text: FAITH-R · 0.56 giây Ứng viên truy xuất 29 Bằng chứng phù hợp 2 Ô nguồn đã xác minh 0\n' +
+      '  - paragraph: Hiển thị 2 kết quả phù hợp / giới hạn 5. Đã lọc theo chỉ tiêu, phạm vi và dòng nguồn trùng lặp. Không thêm đoạn không liên quan để đủ số lượng.\n' +
+      '  - text: Thông tin theo nguồn\n' +
+      '  - paragraph: Dòng lợi nhuận sau thuế chưa phân phối nằm tại trang PDF 4 (riêng / công ty mẹ) [1]; trang PDF 7 (hợp nhất) [2].\n' +
+      '  - button "[1] Trang 4"\n' +
+      '  - button "[2] Trang 7"\n' +
+      '  - region "Danh sách kết quả":\n' +
+      '    - article:\n' +
+      '      - button "#1 BIDV · trang 4 · Riêng / công ty mẹ · 2024 3. Lợi nhuận sau thuế chưa phân phối 3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054":\n' +
+      '        - text: "#1"\n' +
+      '        - paragraph: BIDV · trang 4 · Riêng / công ty mẹ · 2024\n' +
+      '        - heading "3. Lợi nhuận sau thuế chưa phân phối" [level=3]:\n' +
+      '          - text: 3. Lợi\n' +
+      '          - mark: nhuận\n' +
+      '          - text: sau\n' +
+      '          - mark: thuế\n' +
+      '          - mark: chưa\n' +
+      '          - mark: phân\n' +
+      '          - mark: phối\n' +
+      '        - paragraph: 3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054\n' +
+      '      - group: Dòng bảng gốc · cần đối chiếu cột\n' +
+      '      - button "Mở trang nguồn"\n' +
+      '      - button "Hỏi về bằng chứng"\n' +
+      '    - article:\n' +
+      '      - button "#2 BIDV · trang 7 · Hợp nhất · 2024 4. Lợi nhuận sau thuế chưa phân phối 4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506":\n' +
+      '        - text: "#2"\n' +
+      '        - paragraph: BIDV · trang 7 · Hợp nhất · 2024\n' +
+      '        - heading "4. Lợi nhuận sau thuế chưa phân phối" [level=3]:\n' +
+      '          - text: 4. Lợi\n' +
+      '          - mark: nhuận\n' +
+      '          - text: sau\n' +
+      '          - mark: thuế\n' +
+      '          - mark: chưa\n' +
+      '          - mark: phân\n' +
+      '          - mark: phối\n' +
+      '        - paragraph: 4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506\n' +
+      '      - group: Dòng bảng gốc · cần đối chiếu cột\n' +
+      '      - button "Mở trang nguồn"\n' +
+      '      - button "Hỏi về bằng chứng"\n' +
+      '  - complementary:\n' +
+      '    - heading "Xem nhanh nguồn" [level=2]\n' +
+      '    - paragraph: Trang 5 · UNKNOWN\n' +
+      '    - heading "» Tổng lợi nhuận kế toán trước thuế 50" [level=3]\n' +
+      '    - blockquote: » Tổng lợi nhuận kế toán trước thuế 50 | 5.597.856.806.673 | 2.242.977.168.475 | 14.074.174.223.862 | 10.247.400.472.100\n' +
+      '    - paragraph: Kỳ chưa xác định · Chưa xác định\n' +
+      '    - button "Mở trang nguồn"\n' +
+      '    - button "Hỏi về bằng chứng"\n' +
+      '    - group: Nguồn gốc kỹ thuật\n' +
+      '  - group: Phương pháp đã thực thi & chẩn đoán\n' +
+      '  - status: Đang truy xuất và đối chiếu nguồn thật…'
+  }
+}
+
+Node.js v24.22.1

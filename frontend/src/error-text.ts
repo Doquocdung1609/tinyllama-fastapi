@@ -1,4 +1,5 @@
 const reasons:Record<string,string>={
+ 'Failed to fetch':'Không kết nối được API. Kiểm tra kết nối và dịch vụ, rồi thử lại.',
  AMBIGUOUS_UNIT:'Nguồn chưa xác lập rõ tiền tệ hoặc hệ số đơn vị. Hãy đối chiếu bảng nguồn.',
  AMBIGUOUS_PERIOD:'Chưa xác định duy nhất kỳ tài chính cần dùng. Hãy nêu năm hoặc kỳ cụ thể.',
  AMBIGUOUS_METRIC:'Chưa xác định duy nhất chỉ tiêu. Hãy dùng tên dòng tài chính cụ thể.',

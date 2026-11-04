@@ -17,7 +17,8 @@ LABELS={'net_revenue':('doanh thu thuần','total net sales'),'net_income':('l�
     'services_gross_margin_percentage':('biên lợi nhuận gộp Services','Services gross margin'),
     'products_gross_margin_percentage':('biên lợi nhuận gộp Products','Products gross margin'),
     'gross_profit':('lợi nhuận gộp','gross margin'),'retained_earnings':('lợi nhuận sau thuế chưa phân phối','retained earnings'),
-    'operating_income':('lợi nhuận hoạt động','operating income')}
+    'operating_income':('lợi nhuận hoạt động','operating income'),'effective_tax_rate':('thuế suất thực tế','effective tax rate'),
+    **{m:(name+' — doanh thu',name+' net sales') for m,name in {'greater_china_net_sales':'Greater China','americas_net_sales':'Americas','europe_net_sales':'Europe','japan_net_sales':'Japan','rest_of_asia_pacific_net_sales':'Rest of Asia Pacific','us_net_sales':'U.S.'}.items()}}
 UNITS={'MILLION_USD':('triệu USD','million USD'),'USD':('USD','USD'),'TRIEU_VND':('triệu đồng','million VND'),
     'VND':('đồng','VND'),'TY_VND':('tỷ đồng','billion VND'),'%':('%','%'),'PERCENTAGE_POINTS':('điểm phần trăm','percentage points')}
 
@@ -31,14 +32,14 @@ def _calculate(op,operands):
     with localcontext() as ctx:
         ctx.prec=40
         if op=='EXTRACT':r=nums[0]
-        elif op in {'ABS_CHANGE','SCOPE_DIFFERENCE','PERCENTAGE_POINT_DIFFERENCE'}:r=nums[0]-nums[1]
+        elif op in {'ABS_CHANGE','SCOPE_DIFFERENCE','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'}:r=nums[0]-nums[1]
         elif op in {'SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENT_CHANGE'}:
             if not nums[1]:raise ValueError('ZERO_DENOMINATOR')
             r=((nums[0]-nums[1]) if op=='PERCENT_CHANGE' else nums[0])/nums[1]*100
         elif op in {'RESTATEMENT_IDENTITY','PART_WHOLE_CHECK'}:r=nums[0]+nums[1]-nums[2]
         elif op=='SUM':r=nums[0]+nums[1]
         else:raise ValueError('UNSUPPORTED_OPERATION')
-        return str(r.quantize(Decimal('.01'),rounding=ROUND_HALF_UP) if op in {'SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENT_CHANGE','PERCENTAGE_POINT_DIFFERENCE'} else r)
+        return str(r.quantize(Decimal('.01'),rounding=ROUND_HALF_UP) if op in {'SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENT_CHANGE','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} else r)
 
 def adjustment_cells(w,hits,metric=None):
     from app.product.native_adjustments import verify_rows
@@ -71,8 +72,8 @@ def _select(catalog,metric,year,scope=None,basis='AS_REPORTED'):
     found.sort(key=lambda c:(not ('CONSOLIDATED STATEMENTS OF OPERATIONS' in c.get('table_heading','')),c['page']))
     return deepcopy(found[0])
 
-def compose_answer(w,question,result,document_ids):
-    p=plan_question(question);en=p.language=='en';lang=p.language
+def _compose_single_answer(w,question,result,document_ids,plan=None):
+    p=deepcopy(plan) if plan else plan_question(question);en=p.language=='en';lang=p.language
     hits=deepcopy(result.get('results',[]));citations=[];claims=[];operands=[];calculations=[];explanation='';steps=[]
     status='SOURCE_SUPPORTED_NON_NUMERIC';answer='';values=[];reason=None
     def cite(c):
@@ -89,14 +90,14 @@ def compose_answer(w,question,result,document_ids):
             if c['operand_id'] not in {v['operand_id'] for v in operands}:operands.append(c)
             cite(c)
         value=_calculate(op,inputs)
-        unit='%' if op in {'SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENT_CHANGE'} else 'PERCENTAGE_POINTS' if op=='PERCENTAGE_POINT_DIFFERENCE' else inputs[0]['unit']
+        unit='%' if op in {'SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENT_CHANGE'} else 'PERCENTAGE_POINTS' if op in {'PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} else inputs[0]['unit']
         if op=='EXTRACT' and p.requested_unit and p.requested_unit not in {'%',unit}:
             scales={'USD':('USD','1'),'VND':('VND','1'),'TRIEU_VND':('VND','1000000'),'TY_VND':('VND','1000000000'),'MILLION_USD':('USD','1000000')}
             target=scales.get(p.requested_unit)
             if not target or target[0]!=inputs[0]['currency']:raise ValueError('FX_CONVERSION_NOT_AUTHORIZED')
             value=str(Decimal(value)*Decimal(inputs[0]['scale'])/Decimal(target[1]));unit=p.requested_unit
         cid='calculation_'+str(len(calculations)+1)
-        expression={ 'EXTRACT':'source cell','ABS_CHANGE':'current − previous','SCOPE_DIFFERENCE':'consolidated adjustment − separate adjustment',
+        expression={ 'RATE_POINT_CHANGE':'current tax rate − previous tax rate','EXTRACT':'source cell','ABS_CHANGE':'current − previous','SCOPE_DIFFERENCE':'consolidated adjustment − separate adjustment',
             'PERCENT_CHANGE':'(current − previous) / previous × 100','SHARE_PERCENT':'numerator / total net sales × 100',
             'RESTATEMENT_GROWTH':'adjustment / original × 100','PERCENTAGE_POINT_DIFFERENCE':'Services margin % − Products margin %',
             'RESTATEMENT_IDENTITY':'original + adjustment − restated','SUM':'Products + Services','PART_WHOLE_CHECK':'Products + Services − total net sales'}[op]
@@ -189,7 +190,9 @@ def compose_answer(w,question,result,document_ids):
             if p.requested_unit in {'EUR','CAD','AUD','HKD','JPY','CNY','GBP'}:raise ValueError('FX_CONVERSION_NOT_AUTHORIZED')
             catalog=native_catalog(w,document_ids)
             if p.metric=='retained_earnings':catalog+=adjustment_cells(w,hits,'retained_earnings')
-            if not catalog or not any(c['metric'] in p.metrics for c in catalog):raise ValueError('OCR_OR_UNSUPPORTED_CELL_BINDING')
+            if not catalog or not any(c['metric'] in p.metrics for c in catalog):
+                ocr=any(w.page_evidence(d,min(5,w.document(d)['pages'])).get('method') in {'OCR','REGION_FUSION'} for d in document_ids) if hasattr(w,'page_evidence') else False
+                raise ValueError('OCR_OR_UNSUPPORTED_CELL_BINDING' if ocr else 'UNSUPPORTED_METRIC_PARSER' if not p.metric else 'UNSUPPORTED_SOURCE_CELL_LAYOUT')
             if p.period_type and p.period_type not in {'FY','INSTANT'} and any(c['period_type']=='FY' for c in catalog if c['metric'] in p.metrics):raise ValueError('QUARTER_YTD_FY_NOT_INTERCHANGEABLE')
             years=p.years
             if not years:
@@ -212,6 +215,10 @@ def compose_answer(w,question,result,document_ids):
                 amount,v=calc('SCOPE_DIFFERENCE',[a,b]);values=[v]
                 answer=f'FY{years[0]}, '+('the consolidated adjustment exceeds the separate-bank adjustment by ' if en else 'mức điều chỉnh hợp nhất cao hơn riêng ngân hàng ')+amount+'. '+cite(a)+cite(b)
                 explanation=('Consolidated adjustment: ' if en else 'Điều chỉnh hợp nhất: ')+display(a['value'],lang)+'; '+('separate: ' if en else 'riêng: ')+display(b['value'],lang)+' '+UNITS[a['unit']][int(en)]+'.'
+            elif p.operation=='RATE_POINT_CHANGE':
+                inputs=[select(p.metric,years[-1]),select(p.metric,years[0])]
+                amount,v=calc('RATE_POINT_CHANGE',inputs);values=[v]
+                answer=('The effective tax rate changed by ' if en else 'Thuế suất thực tế thay đổi ')+amount+'. '+''.join(cite(c) for c in inputs)
             elif p.operation in {'ABS_CHANGE','PERCENT_CHANGE','CHANGE_AND_GROWTH'}:
                 if len(years)!=2:raise ValueError('TWO_COMPARABLE_PERIODS_REQUIRED')
                 a=select(p.metric,years[-1]);b=select(p.metric,years[0]);amount,v=calc('ABS_CHANGE' if p.operation=='CHANGE_AND_GROWTH' else p.operation,[a,b]);values=[v]
@@ -223,13 +230,13 @@ def compose_answer(w,question,result,document_ids):
                 if len(years)!=1:raise ValueError('SINGLE_PERIOD_REQUIRED')
                 inputs=[select(m,years[0]) for m in p.metrics];amount,v=calc(p.operation,inputs);values=[v]
                 if p.operation=='SHARE_PERCENT':answer=('In ' if en else 'Trong ')+f'FY{years[0]}, '+name+(' accounts for ' if en else ' chiếm ')+amount+(' of total net sales. ' if en else ' doanh thu thuần. ')+''.join(cite(c) for c in inputs)
-                elif p.operation=='PERCENTAGE_POINT_DIFFERENCE':answer=f'FY{years[0]}, Services '+('gross margin is higher than Products by ' if en else 'có biên lợi nhuận gộp cao hơn Products ')+amount+'. '+''.join(cite(c) for c in inputs);explanation='This subtracts the published margin percentages; the result is percentage points, not percent growth.' if en else 'Lấy hiệu hai tỷ lệ đã công bố. Kết quả là điểm phần trăm, không phải phần trăm tăng trưởng.'
+                elif p.operation=='PERCENTAGE_POINT_DIFFERENCE':answer=f'FY{years[0]}: Services '+display(inputs[0]['value'],lang)+'% '+cite(inputs[0])+'; Products '+display(inputs[1]['value'],lang)+'% '+cite(inputs[1])+'. Services '+('gross margin is higher than Products by ' if en else 'có biên lợi nhuận gộp cao hơn Products ')+amount+'. '+''.join(cite(c) for c in inputs);explanation='This subtracts the published margin percentages; the result is percentage points, not percent growth.' if en else 'Lấy hiệu hai tỷ lệ đã công bố. Kết quả là điểm phần trăm, không phải phần trăm tăng trưởng.'
                 else:answer=('The source-bound result is ' if en else 'Kết quả từ các ô nguồn là ')+amount+'. '+''.join(cite(c) for c in inputs)
             elif p.operation=='RESTATEMENT_IDENTITY':
                 if len(years)!=1 or not p.scope:raise ValueError('SELECT_SEPARATE_OR_CONSOLIDATED')
                 inputs=[select(p.metric,years[0],basis) for basis in ('ORIGINAL','ADJUSTMENT','RESTATED')]
                 amount,v=calc('RESTATEMENT_IDENTITY',inputs);values=[v]
-                answer=('Original + adjustment − restated equals ' if en else 'Số đã công bố + điều chỉnh − số trình bày lại = ')+amount+'. '+''.join(cite(c) for c in inputs)
+                answer=('Yes: ' if en and Decimal(v)==0 else 'Đúng: ' if Decimal(v)==0 else '')+display(inputs[0]['value'],lang)+' '+cite(inputs[0])+' + '+display(inputs[1]['value'],lang)+' '+cite(inputs[1])+' = '+display(inputs[2]['value'],lang)+' '+UNITS[inputs[0]['unit']][int(en)]+' '+cite(inputs[2])+'. '+('Reconciliation residual: ' if en else 'Chênh lệch kiểm tra: ')+amount+'.'
                 explanation=('The three source columns reconcile exactly.' if en else 'Ba cột nguồn khớp hoàn toàn vì chênh lệch bằng không.') if Decimal(v)==0 else ('The source columns do not reconcile.' if en else 'Ba cột nguồn còn chênh lệch; cần kiểm tra lại.')
             elif p.operation=='RESTATEMENT_GROWTH':
                 if len(years)!=1 or not p.scope:raise ValueError('SELECT_SEPARATE_OR_CONSOLIDATED')
@@ -251,8 +258,12 @@ def compose_answer(w,question,result,document_ids):
             pages={h['page'] for h in statement}
             sources=([h for h in hits if h.get('page') in pages][:1] or statement[:1] or sources)
             answer=('I located the relevant statement, but cannot certify the amount: OCR has not reliably bound the row to the requested quarter/year column. Open the source for review. ' if en else 'Tôi tìm thấy báo cáo/dòng liên quan, nhưng chưa thể công bố giá trị: OCR chưa xác minh chắc chữ số và cột quý IV so với cả năm. Mở nguồn để đối chiếu. ')
+        elif reason=='REQUESTED_PERIOD_OR_CELL_NOT_AVAILABLE' and p.years:
+            answer=(f'The selected filing does not verify {LABELS.get(p.metric,(p.metric,p.metric))[1]} for FY'+', FY'.join(p.years)+'. No result from another year has been substituted. ' if en else 'Tài liệu đang chọn chưa xác nhận chỉ tiêu này cho kỳ '+', '.join(p.years)+'. Không dùng số năm khác thay thế. ')
         elif reason.startswith(('SELECT_','TWO_','SINGLE_')):answer=('Please specify the financial year and separate/consolidated scope to identify one unambiguous source cell. ' if en else 'Bạn muốn kỳ nào và phạm vi riêng hay hợp nhất? Cần xác định rõ để chọn đúng ô nguồn. ')
         elif reason=='QUARTER_YTD_FY_NOT_INTERCHANGEABLE':answer=('The available cells are fiscal-year values. A quarter/YTD value cannot be substituted. ' if en else 'Các ô hiện có là số cả năm tài chính; không thể dùng thay số quý hoặc lũy kế được hỏi. ')
+        elif reason in {'UNSUPPORTED_METRIC_PARSER','UNSUPPORTED_SOURCE_CELL_LAYOUT'}:
+            answer=('The selected PDF has native text, but this metric or cell layout is not supported yet; this is not an OCR failure. ' if en else 'PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. ')
         elif reason=='FX_CONVERSION_NOT_AUTHORIZED':answer=('No source-backed exchange rate is provided for this currency conversion. ' if en else 'Chưa có tỷ giá kèm thời điểm và nguồn để đổi sang tiền tệ được yêu cầu. ')
         else:answer=('The requested metric/period cannot be verified from the selected source. ' if en else 'Chưa xác minh được chỉ tiêu/kỳ yêu cầu từ tài liệu đang chọn. ')
         answer+=''.join(cite(c) for c in sources)
@@ -279,3 +290,164 @@ def compose_answer(w,question,result,document_ids):
         'retrieved_excerpt_verification':'SOURCE_TEXT_UNREVIEWED','reason':reason,'warnings':[],'search_profile':result.get('search_profile'),'composer_version':VERSION,
         'retrieval_trace':{k:result.get(k) for k in ('engine_version','algorithm_executed','latency_ms','candidate_count','generation')},
         'generation_trace':{'method':'DETERMINISTIC_VERIFIED_CLAIMS','model_status':'NOT_REQUIRED'}}
+
+
+
+def _source_explanation(w,document_ids,metric,years):
+    from app.product.independent_verifier_v2 import verify_paragraph
+    from app.product.answer_planner_v2 import METRIC_NAMES
+    phrase=METRIC_NAMES.get(metric,metric.replace('_',' '))
+    candidates=[]
+    for doc_id in document_ids:
+        doc=w.document(doc_id)
+        with pymupdf.open(w.source_file(doc_id)) as pdf:
+            for no,page in enumerate(pdf,1):
+                for b in page.get_text('blocks'):
+                    text=' '.join(b[4].split());f=folded(text)
+                    if folded(phrase) not in f or not re.search(r'primarily due|due to|because|includes both',f):continue
+                    if years and not all(y in text for y in years):continue
+                    c={'document_id':doc_id,'source_sha256':doc['sha256'],'source_kind':'PDF','page':no,'box':list(b[:4]),'text':text,'filename':doc['filename'],'extraction_method':'NATIVE','statement_scope':'CONSOLIDATED'}
+                    c['citation_id']='paragraph_'+sha256(json.dumps([doc['sha256'],no,c['box'],text]).encode()).hexdigest()[:28];c['evidence_id']=c['citation_id']
+                    if verify_paragraph(w,c):candidates.append(c)
+    candidates.sort(key=lambda c:('compared to' not in c['text'].lower(),c['page'],len(c['text'])))
+    return candidates[:1]
+
+
+def compose_answer(w,question,result,document_ids):
+    """One source/Decimal engine, orchestrated per requested semantic slot."""
+    from app.product.answer_planner_v2 import METRIC_NAMES
+    from app.product.semantic_answer_gate import verify_coverage
+    p=plan_question(question)
+    if not document_ids:
+        coverage=verify_coverage(p.public(),[])
+        return {'status':'SOURCE_UNAVAILABLE','answer_status':'SOURCE_UNAVAILABLE','answer':'Không có tài liệu phù hợp trong phạm vi đã chọn. Hãy kiểm tra tài liệu và bộ lọc.','citations':[],'values':[],'query_plan':p.public(),'semantic_question_coverage':coverage,'unanswered_subquestions':coverage['unanswered_subquestions'],'verification_status':'SOURCE_UNAVAILABLE'}
+    en=p.language=='en';parts=[];outputs=[];responses=[];citations=[];steps=[];values=[]
+    def register(c):
+        cid=c.get('citation_id',c.get('evidence_id',c.get('chunk_id')))
+        if cid not in {v.get('citation_id',v.get('chunk_id')) for v in citations}:citations.append(deepcopy(c))
+        return '['+str(next(i for i,v in enumerate(citations,1) if v.get('citation_id',v.get('chunk_id'))==cid))+']'
+    def attach(r,slot):
+        indices={i:register(c) for i,c in enumerate(r.get('citations',[]),1)}
+        def remap(text):return re.sub(r'\[(\d+)\]',lambda m:indices.get(int(m[1]),m[0]),text or '')
+        for step in deepcopy(r.get('calculation_steps',[])):
+            step['calculation_id']=slot['question_slot_id']+'_'+step['calculation_id']
+            for sub in step['substitution']:sub['citation']=remap(sub['citation'])
+            steps.append(step)
+        values.extend(r.get('values',[]));responses.append(r)
+        return remap(r.get('answer',''))
+    def run(slot,metric=None,operation=None,include=True):
+        metric=metric or slot['metric'];operation=operation or slot['operation']
+        metrics=p.metrics if metric==p.metric and operation==p.operation else [metric]
+        sub=replace(p,metric=metric,metrics=metrics,years=slot['years'],operation=operation,
+            intent=p.intent if slot['kind']=='navigation' else 'EXTRACT_VALUE',
+            requested_unit='%' if metric=='effective_tax_rate' and operation=='EXTRACT' else None if operation=='RATE_POINT_CHANGE' else p.requested_unit,
+            requested_claims=[slot])
+        if sub.intent=='SEGMENT_DECLINES':sub.intent='EXTRACT_VALUE'
+        r=_compose_single_answer(w,question,result,document_ids,sub)
+        text=attach(r,slot) if include else r.get('answer','')
+        verified=r.get('independent_verification',{}).get('status')=='VERIFIED'
+        good=verified or slot['kind']=='navigation' and bool(r.get('citations')) and r['answer_status'] in {'SOURCE_SUPPORTED_NON_NUMERIC','PARTIAL_VERIFIED'}
+        actual_ops={c['operation'] for c in r.get('answer_plan',{}).get('calculations',[])}
+        actual_outputs=['amount','period_values','source_operands','calculation'] if verified else ['source_location']
+        if 'EXTRACT' in actual_ops and metric=='effective_tax_rate':actual_outputs+=['rate']
+        if 'ABS_CHANGE' in actual_ops:actual_outputs+=['absolute_change']
+        if 'PERCENT_CHANGE' in actual_ops:actual_outputs+=['percentage_change']
+        if 'RATE_POINT_CHANGE' in actual_ops:actual_outputs+=['percentage_point_change']
+        if slot['kind']=='navigation':actual_outputs=slot['outputs']
+        # Metrics come from the verified operands, never from the requested slot.
+        operand_metrics={c['metric'] for c in r.get('operands',[])}
+        actual_metric=metric if metric in operand_metrics or slot['kind']=='navigation' else next(iter(operand_metrics),'unknown')
+        if p.proposed_amount and verified:actual_outputs.append('confirmation')
+        source_scopes={c['statement_scope'] for c in r.get('operands',[])}
+        output={'question_slot_id':slot['question_slot_id'],'metric':actual_metric,'years':r.get('query_plan',{}).get('years',[]),'scope':next(iter(source_scopes)) if len(source_scopes)==1 else None,
+            'operation':operation,'outputs':actual_outputs,'status':'VERIFIED' if verified else 'SOURCE_SUPPORTED' if good else 'UNANSWERED',
+            'numeric_verification':r.get('independent_verification',{}).get('status'),'reason':r.get('reason'),'source_refs':[c['citation_id'] for c in r.get('citations',[])],
+            'claims':r.get('answer_plan',{}).get('claims',[]),'operand_metrics':sorted(operand_metrics),'periods_from_operands':sorted({c['period'] for c in r.get('operands',[])}),'calculation_operations':sorted(actual_ops),'calculation_results':r.get('independent_verification',{}).get('stage_b',[]),'issuer':[w.document(d).get('issuer','') for d in document_ids],
+            'confirmation':Decimal(p.proposed_amount)==Decimal(r['values'][0]) if p.proposed_amount and verified and r.get('values') else None}
+        if verified and operation=='CHANGE_AND_GROWTH' and not {'ABS_CHANGE','PERCENT_CHANGE'}<=actual_ops:output['outputs']=[v for v in actual_outputs if v!='percentage_change']
+        for claim in output['claims']:claim['question_slot_id']=slot['question_slot_id']
+        outputs.append(output)
+        return r,text
+    # Keep navigation, list, existing single-purpose math and scope messages
+    # backward compatible, then independently assess their requested coverage.
+    simple=len(p.requested_claims)==1 and p.intent!='SEGMENT_DECLINES' and p.metric!='effective_tax_rate'
+    if p.metric=='geography_definition':
+        r=_compose_single_answer(w,question,result,document_ids);parts.append(attach(r,p.requested_claims[0]));responses=[r]
+        for slot in p.requested_claims:
+            available={c.get('metric') for c in r.get('operands',[])}
+            good=slot['metric'] in available if slot['kind']=='numeric' else any(c['citation_id'].startswith('heading_') for c in r.get('citations',[]))
+            outputs.append({**slot,'years':sorted({c['period'] for c in r.get('operands',[])}) if slot['kind']=='numeric' else slot['years'],
+                'status':'VERIFIED' if good else 'UNANSWERED','numeric_verification':r.get('verification_status'),
+                **({'operand_metrics':sorted(available),'periods_from_operands':sorted({c['period'] for c in r.get('operands',[])}),'calculation_operations':[c['operation'] for c in r.get('answer_plan',{}).get('calculations',[])]} if slot['kind']=='numeric' else {})})
+    else:
+        for slot in p.requested_claims:
+            if slot['kind']=='explanation':
+                target=slot['metric']
+                if target=='reportable_segment_net_sales':target=next((o['selected_metric'] for o in outputs if o.get('selected_metric')),target)
+                sources=_source_explanation(w,document_ids,target,slot['years']) if p.period_type in {None,'FY','INSTANT'} else []
+                if slot.get('scope') and sources and sources[0].get('statement_scope')!=slot['scope']:sources=[]
+                if sources:
+                    text=('The filing explains: ' if en else 'Báo cáo giải thích (nguyên văn): ')+sources[0]['text']+' '+register(sources[0]);parts.append(text)
+                    outputs.append({**slot,'scope':sources[0].get('statement_scope'),'status':'SOURCE_SUPPORTED','source_refs':[sources[0]['citation_id']]})
+                else:outputs.append({**slot,'status':'UNANSWERED','reason':'NO_MATCHING_SOURCE_EXPLANATION'})
+            elif slot['operation']=='FIND_DECLINES':
+                catalog=native_catalog(w,document_ids)
+                regions=sorted({c['metric'] for c in catalog if c['metric'] in {'americas_net_sales','europe_net_sales','greater_china_net_sales','japan_net_sales','rest_of_asia_pacific_net_sales'}})
+                checks=[];declines=[]
+                for metric in regions:
+                    before=len(outputs);r,text=run(slot,metric,'CHANGE_AND_GROWTH',include=False);o=outputs.pop();checks.append({'metric':metric,'numeric_verification':o['numeric_verification'],'absolute_change':r.get('values',['0'])[0] if r.get('values') else '0','source_refs':o['source_refs'],'operands':r.get('operands',[]),'independent_verification':r.get('independent_verification'),'claims':o['claims']})
+                    changes=r.get('values',[])
+                    if o['status']=='VERIFIED' and changes and Decimal(changes[0])<0:declines.append((metric,attach(r,slot)))
+                if declines:
+                    parts.append(('The declining reportable segment was ' if en else 'Khu vực kinh doanh giảm doanh thu là ')+', '.join(METRIC_NAMES[m].removesuffix(' net sales').title() for m,_ in declines)+'.')
+                    parts.extend(text for _,text in declines)
+                else:parts.append('No verified declining segment was found.' if en else 'Chưa xác minh được khu vực giảm doanh thu.')
+                outputs.append({**slot,'status':'VERIFIED' if checks and all(c['numeric_verification']=='VERIFIED' for c in checks) else 'UNANSWERED','numeric_verification':'VERIFIED' if checks and all(c['numeric_verification']=='VERIFIED' for c in checks) else 'REJECTED',
+                    'comparison_claims':checks,'selected_metrics':[m for m,_ in declines],'selected_metric':declines[0][0] if len(declines)==1 else None})
+            else:
+                r,text=run(slot)
+                if p.proposed_amount and r.get('answer_status')=='VERIFIED_ANSWER' and r.get('values'):
+                    agrees=Decimal(p.proposed_amount)==Decimal(r['values'][0]);text=('Yes. ' if agrees and en else 'Đúng. ' if agrees else 'No, that proposed amount is incorrect. ' if en else 'Không, số bạn nêu chưa đúng. ')+text
+                parts.append(text)
+    coverage=verify_coverage(p.public(),outputs)
+    # Preserve legacy single-source contracts, while semantic completeness can
+    # downgrade an otherwise numerically valid answer.
+    base=deepcopy(responses[0]) if responses else {'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW','values':[],
+        'answer':'No matching source explanation for the requested metric and period was verified. No cause has been inferred.' if en else 'Chưa xác minh được đoạn giải thích cho đúng chỉ tiêu và kỳ được hỏi. Chưa suy diễn nguyên nhân.'}
+    if not responses and not citations:
+        for hit in result.get('results',[])[:2]:register(hit)
+    if simple and responses:
+        base=responses[0];p.years=base.get('query_plan',{}).get('years',p.years)
+        # An implicit year resolved from the selected source is valid.
+        for slot in p.requested_claims:
+            if not slot['years']:slot['years']=p.years
+        for o in outputs:
+            if not o['years']:o['years']=p.years
+        coverage=verify_coverage(p.public(),outputs)
+    if base.get('answer_status')=='PARTIAL_VERIFIED' and p.intent=='RESTATEMENT_LIST':
+        limit={'question_slot_id':'coverage','metric':'adjustment_rows','years':p.years,'scope':p.scope,'operation':'EXHAUSTIVE_LIST','outputs':['exhaustive_rows'],'kind':'coverage','expected_source_class':'COMPLETE_ADJUSTMENT_TABLE'}
+        p.requested_claims.append(limit);outputs.append({**limit,'status':'UNANSWERED','reason':'ADJUSTMENT_COVERAGE_NOT_EXHAUSTIVE'})
+        coverage=verify_coverage(p.public(),outputs)
+    missing=coverage['unanswered_subquestions']
+    successful=[r for r in responses if r.get('independent_verification',{}).get('status')=='VERIFIED']
+    if base.get('answer_status')=='PARTIAL_VERIFIED':status='PARTIAL_VERIFIED'
+    elif coverage['status']=='COMPLETE' and successful:status='VERIFIED_ANSWER'
+    elif coverage['status']=='COMPLETE' and citations:status='SOURCE_SUPPORTED_NON_NUMERIC'
+    elif coverage['status']=='PARTIAL' and successful:status='PARTIAL_VERIFIED'
+    elif base.get('answer_status') in {'UNSUPPORTED_SCOPE','CONFLICTING_EVIDENCE'}:status=base['answer_status']
+    else:status=base.get('answer_status','REQUIRES_SOURCE_REVIEW')
+    if coverage['status']=='UNANSWERED' and status=='VERIFIED_ANSWER':status='REQUIRES_SOURCE_REVIEW'
+    if missing and not simple:
+        parts.append(('Not established from the selected source: ' if en else 'Chưa đủ bằng chứng từ tài liệu đang chọn: ')+ '; '.join(METRIC_NAMES.get(s['metric'],s['metric'] or 'yêu cầu')+' — '+('source explanation not found' if s['kind']=='explanation' else 'requested cell/period not verified') for s in missing)+'.')
+    text='\n\n'.join(parts) or base.get('answer','')
+    # Future-year questions explicitly refer to the requested result year, not
+    # the publication/selected filing year mentioned later in the sentence.
+    return {**base,'status':'SUPPORTED' if status=='VERIFIED_ANSWER' else 'SOURCE_EXCERPTS' if status in {'PARTIAL_VERIFIED','SOURCE_SUPPORTED_NON_NUMERIC','REQUIRES_SOURCE_REVIEW'} else base.get('status','CLARIFY'),
+        'answer_status':status,'answer':text,'primary_answer':text.split('\n\n')[0],'answer_explanation':base.get('answer_explanation','') if simple else '',
+        'citations':citations,'calculation_steps':steps,'values':values,'supporting_claims':outputs,'unanswered_subquestions':missing,
+        'semantic_question_coverage':coverage,'source_numeric_verification':'VERIFIED' if successful else base.get('verification_status'),
+        'independent_verification':{'version':'INDEPENDENT_FINANCIAL_GATE_V2','status':'VERIFIED' if successful else base.get('verification_status','SOURCE_SUPPORTED_NON_NUMERIC'),
+            'stage_a':[{'question_slot_id':r.get('query_plan',{}).get('raw_text'),**a} for r in successful for a in r['independent_verification']['stage_a']],
+            'stage_b':[a for r in successful for a in r['independent_verification']['stage_b']]},
+        'query_plan':p.public(),'conversation_slots':{**p.public(),'document_ids':document_ids},'generation_status':'DETERMINISTIC_CLAIMS',
+        'limitations':[s['reason'] for s in missing]}

@@ -4,7 +4,7 @@ from app.product.pdf_extract import folded
 
 
 def company_mentions(question):
-    stop=set('what was were is are the show tell me calculate compare for of in total net sales income revenue assets company document report year this selected please s which geographic segment generated highest largest maximum lowest minimum source sum annual consolidated quarterly fiscal how much many year-over-year yoy parent-company parent separate services products percentage percent margin gross fy2025 fy2024 fy2023'.split())
+    stop=set('and or both versus with what was were is are the show tell me calculate compare for of in total net sales income revenue assets company document report year this selected please s which geographic segment generated highest largest maximum lowest minimum source sum annual consolidated quarterly fiscal how much many year-over-year yoy greater china americas u.s. us europe japan pacific asia effective tax rate parent-company parent separate services products percentage percent margin gross fy2025 fy2024 fy2023'.split())
     mentions=[]
     for match in re.finditer(r"\b((?:[\w&.-]+\s+){0,3}[\w&.-]+)['’]s\b",question):
         parts=match[1].split()

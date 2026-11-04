@@ -1,0 +1,1746 @@
+{
+  "mocked": false,
+  "records": [
+    {
+      "case": "Native Search cell to first followup",
+      "status": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2024, Services net sales was 96,169 million USD [1].",
+        "answer_explanation": "This is the consolidated annual source amount.",
+        "values": [
+          "96169"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "96,169",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "value": "96169",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "96,169",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "value": "96169"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "96,169",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "96169",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "Services net sales And in FY2024?",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "96169",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "Services net sales And in FY2024?",
+            "intent": "EXTRACT_VALUE",
+            "metric": "services_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "services_net_sales"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "services_net_sales",
+                "years": [
+                  "2024"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_9aef27e2c60777264a1decc9e41e"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "96169",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e"
+              ]
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "96,169",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "96,169",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e"
+              ],
+              "proposed_result": "96169",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "Services net sales And in FY2024?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Services net sales And in FY2024?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2024-09-28",
+        "source_periods": [
+          "2024-09-28"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_9aef27e2c60777264a1decc9e41e"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 1860.06,
+          "candidate_count": 57,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2024, Services net sales was 96,169 million USD [1].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_9aef27e2c60777264a1decc9e41e"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "96169",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e"
+                ]
+              }
+            ],
+            "operand_metrics": [
+              "services_net_sales"
+            ],
+            "periods_from_operands": [
+              "2024"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "96169",
+                "status": "VERIFIED"
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": []
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "session_id": "0541774d3c9946efb100e1ba55996ae0",
+        "resolved_question": "Services net sales And in FY2024?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "Incomplete multi-year geography must not be fully verified",
+      "status": "PASS",
+      "response": {
+        "status": "SOURCE_EXCERPTS",
+        "answer_status": "PARTIAL_VERIFIED",
+        "answer": "No. U.S. net sales cover the United States; the Americas segment includes North and South America. [3] FY2024: U.S. 142,196 million USD [1]; Americas 167,045 million USD [2].\n\nNot established from the selected source: U.S. net sales — requested cell/period not verified; americas net sales — requested cell/period not verified.",
+        "answer_explanation": "",
+        "values": [],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 51,
+            "box": [
+              457.259033203125,
+              108.90799713134766,
+              489.7850341796875,
+              117.90799713134766
+            ],
+            "cell_bbox": [
+              457.259033203125,
+              108.90799713134766,
+              489.7850341796875,
+              117.90799713134766
+            ],
+            "row_box": [
+              70.12999725341797,
+              108.89798736572266,
+              558.7852172851562,
+              117.90799713134766
+            ],
+            "header_box": [
+              451.989990234375,
+              81.40602111816406,
+              469.75799560546875,
+              89.40602111816406
+            ],
+            "section_box": [
+              52.130001068115234,
+              94.64798736572266,
+              92.14399719238281,
+              103.64798736572266
+            ],
+            "section_text": "net sales:",
+            "table_heading": "The following tables show net sales for 2025, 2024 and 2023 and long-lived assets as of September 27, 2025 and September 28, 2024 for countries that individually accounted for 10% or more of the respective totals, as well as aggregate amounts for the remaining countries (in millions):",
+            "row_label": "U.S.",
+            "metric": "us_net_sales",
+            "metric_canonical_name": "us_net_sales",
+            "value_raw": "142,196",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "U.S. $ 151,790 $ 142,196 $ 138,573",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+            "evidence_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+            "value": "142196",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 25,
+            "box": [
+              408.51202392578125,
+              297.4580078125,
+              441.03802490234375,
+              306.4580078125
+            ],
+            "cell_bbox": [
+              408.51202392578125,
+              297.4580078125,
+              441.03802490234375,
+              306.4580078125
+            ],
+            "row_box": [
+              52.130001068115234,
+              297.4580078125,
+              558.7881469726562,
+              306.4580078125
+            ],
+            "header_box": [
+              405.8699951171875,
+              284.2060241699219,
+              423.63800048828125,
+              292.2060241699219
+            ],
+            "section_box": [
+              49.5,
+              145.94802856445312,
+              562.9141845703125,
+              276.1479797363281
+            ],
+            "section_text": "net sales",
+            "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+            "row_label": "Americas",
+            "metric": "americas_net_sales",
+            "metric_canonical_name": "americas_net_sales",
+            "value_raw": "167,045",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Americas $ 178,353 7 % $ 167,045 3 % $ 162,560",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+            "evidence_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+            "value": "167045",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "page": 5,
+            "source_kind": "PDF",
+            "text": "Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe",
+            "row_label": "Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "box": [
+              49.5,
+              434.5480041503906,
+              562.8062133789062,
+              443.5480041503906
+            ],
+            "statement_scope": "UNKNOWN",
+            "citation_id": "heading_77ee0ec9f5827cb1800c43c1",
+            "evidence_id": "heading_77ee0ec9f5827cb1800c43c1",
+            "extraction_method": "NATIVE",
+            "numeric_status": "NOT_APPLICABLE",
+            "highlight_status": "NATIVE_GEOMETRY"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 51,
+            "box": [
+              457.259033203125,
+              108.90799713134766,
+              489.7850341796875,
+              117.90799713134766
+            ],
+            "cell_bbox": [
+              457.259033203125,
+              108.90799713134766,
+              489.7850341796875,
+              117.90799713134766
+            ],
+            "row_box": [
+              70.12999725341797,
+              108.89798736572266,
+              558.7852172851562,
+              117.90799713134766
+            ],
+            "header_box": [
+              451.989990234375,
+              81.40602111816406,
+              469.75799560546875,
+              89.40602111816406
+            ],
+            "section_box": [
+              52.130001068115234,
+              94.64798736572266,
+              92.14399719238281,
+              103.64798736572266
+            ],
+            "section_text": "net sales:",
+            "table_heading": "The following tables show net sales for 2025, 2024 and 2023 and long-lived assets as of September 27, 2025 and September 28, 2024 for countries that individually accounted for 10% or more of the respective totals, as well as aggregate amounts for the remaining countries (in millions):",
+            "row_label": "U.S.",
+            "metric": "us_net_sales",
+            "metric_canonical_name": "us_net_sales",
+            "value_raw": "142,196",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "U.S. $ 151,790 $ 142,196 $ 138,573",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+            "evidence_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+            "value": "142196"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 25,
+            "box": [
+              408.51202392578125,
+              297.4580078125,
+              441.03802490234375,
+              306.4580078125
+            ],
+            "cell_bbox": [
+              408.51202392578125,
+              297.4580078125,
+              441.03802490234375,
+              306.4580078125
+            ],
+            "row_box": [
+              52.130001068115234,
+              297.4580078125,
+              558.7881469726562,
+              306.4580078125
+            ],
+            "header_box": [
+              405.8699951171875,
+              284.2060241699219,
+              423.63800048828125,
+              292.2060241699219
+            ],
+            "section_box": [
+              49.5,
+              145.94802856445312,
+              562.9141845703125,
+              276.1479797363281
+            ],
+            "section_text": "net sales",
+            "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+            "row_label": "Americas",
+            "metric": "americas_net_sales",
+            "metric_canonical_name": "americas_net_sales",
+            "value_raw": "167,045",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Americas $ 178,353 7 % $ 167,045 3 % $ 162,560",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+            "evidence_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+            "value": "167045"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "142,196",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "142196",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_2",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "167,045",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "167045",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "Are FY2025 and FY2024 U.S. net sales and Americas segment sales the same? Give both amounts and explain.",
+              "operand_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "citation_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "value": "142196",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Are FY2025 and FY2024 U.S. net sales and Americas segment sales the same? Give both amounts and explain.",
+              "operand_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "citation_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "value": "167045",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "142196",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "EXTRACT",
+              "recomputed_result": "167045",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "Are FY2025 and FY2024 U.S. net sales and Americas segment sales the same? Give both amounts and explain.",
+            "intent": "EXPLAIN",
+            "metric": "geography_definition",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "geography_definition"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "us_net_sales",
+                "years": [
+                  "2024",
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "SOURCE_LOCATION"
+              },
+              {
+                "question_slot_id": "q2",
+                "metric": "americas_net_sales",
+                "years": [
+                  "2024",
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "SOURCE_LOCATION"
+              },
+              {
+                "question_slot_id": "q3",
+                "metric": "geography_definition",
+                "years": [
+                  "2024",
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "EXPLAIN",
+                "outputs": [
+                  "scope_explanation"
+                ],
+                "kind": "explanation",
+                "expected_source_class": "SOURCE_PARAGRAPH"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_915cf75a2d89adbe03b14de9bba5"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "142196",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_915cf75a2d89adbe03b14de9bba5"
+              ]
+            },
+            {
+              "claim_id": "claim_2",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_8e84a86fe5d4990425b5d30f7de3"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "167045",
+              "calculation_id": "calculation_2",
+              "operand_ids": [
+                "cellv2_8e84a86fe5d4990425b5d30f7de3"
+              ]
+            },
+            {
+              "claim_id": "claim_3",
+              "type": "SOURCE_FACT",
+              "source_refs": [
+                "heading_77ee0ec9f5827cb1800c43c1"
+              ],
+              "source_scope": null,
+              "period": [
+                "2024",
+                "2025"
+              ],
+              "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+              "text": "The Americas segment includes both North and South America.",
+              "value": null,
+              "calculation_id": null,
+              "operand_ids": []
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 51,
+              "box": [
+                457.259033203125,
+                108.90799713134766,
+                489.7850341796875,
+                117.90799713134766
+              ],
+              "cell_bbox": [
+                457.259033203125,
+                108.90799713134766,
+                489.7850341796875,
+                117.90799713134766
+              ],
+              "row_box": [
+                70.12999725341797,
+                108.89798736572266,
+                558.7852172851562,
+                117.90799713134766
+              ],
+              "header_box": [
+                451.989990234375,
+                81.40602111816406,
+                469.75799560546875,
+                89.40602111816406
+              ],
+              "section_box": [
+                52.130001068115234,
+                94.64798736572266,
+                92.14399719238281,
+                103.64798736572266
+              ],
+              "section_text": "net sales:",
+              "table_heading": "The following tables show net sales for 2025, 2024 and 2023 and long-lived assets as of September 27, 2025 and September 28, 2024 for countries that individually accounted for 10% or more of the respective totals, as well as aggregate amounts for the remaining countries (in millions):",
+              "row_label": "U.S.",
+              "metric": "us_net_sales",
+              "metric_canonical_name": "us_net_sales",
+              "value_raw": "142,196",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "U.S. $ 151,790 $ 142,196 $ 138,573",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "evidence_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "value": "142196",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 25,
+              "box": [
+                408.51202392578125,
+                297.4580078125,
+                441.03802490234375,
+                306.4580078125
+              ],
+              "cell_bbox": [
+                408.51202392578125,
+                297.4580078125,
+                441.03802490234375,
+                306.4580078125
+              ],
+              "row_box": [
+                52.130001068115234,
+                297.4580078125,
+                558.7881469726562,
+                306.4580078125
+              ],
+              "header_box": [
+                405.8699951171875,
+                284.2060241699219,
+                423.63800048828125,
+                292.2060241699219
+              ],
+              "section_box": [
+                49.5,
+                145.94802856445312,
+                562.9141845703125,
+                276.1479797363281
+              ],
+              "section_text": "net sales",
+              "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+              "row_label": "Americas",
+              "metric": "americas_net_sales",
+              "metric_canonical_name": "americas_net_sales",
+              "value_raw": "167,045",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Americas $ 178,353 7 % $ 167,045 3 % $ 162,560",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "evidence_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "value": "167045",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "page": 5,
+              "source_kind": "PDF",
+              "text": "Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe",
+              "row_label": "Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "box": [
+                49.5,
+                434.5480041503906,
+                562.8062133789062,
+                443.5480041503906
+              ],
+              "statement_scope": "UNKNOWN",
+              "citation_id": "heading_77ee0ec9f5827cb1800c43c1",
+              "evidence_id": "heading_77ee0ec9f5827cb1800c43c1",
+              "extraction_method": "NATIVE",
+              "numeric_status": "NOT_APPLICABLE",
+              "highlight_status": "NATIVE_GEOMETRY"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 51,
+              "box": [
+                457.259033203125,
+                108.90799713134766,
+                489.7850341796875,
+                117.90799713134766
+              ],
+              "cell_bbox": [
+                457.259033203125,
+                108.90799713134766,
+                489.7850341796875,
+                117.90799713134766
+              ],
+              "row_box": [
+                70.12999725341797,
+                108.89798736572266,
+                558.7852172851562,
+                117.90799713134766
+              ],
+              "header_box": [
+                451.989990234375,
+                81.40602111816406,
+                469.75799560546875,
+                89.40602111816406
+              ],
+              "section_box": [
+                52.130001068115234,
+                94.64798736572266,
+                92.14399719238281,
+                103.64798736572266
+              ],
+              "section_text": "net sales:",
+              "table_heading": "The following tables show net sales for 2025, 2024 and 2023 and long-lived assets as of September 27, 2025 and September 28, 2024 for countries that individually accounted for 10% or more of the respective totals, as well as aggregate amounts for the remaining countries (in millions):",
+              "row_label": "U.S.",
+              "metric": "us_net_sales",
+              "metric_canonical_name": "us_net_sales",
+              "value_raw": "142,196",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "U.S. $ 151,790 $ 142,196 $ 138,573",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "evidence_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_915cf75a2d89adbe03b14de9bba5",
+              "value": "142196"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 25,
+              "box": [
+                408.51202392578125,
+                297.4580078125,
+                441.03802490234375,
+                306.4580078125
+              ],
+              "cell_bbox": [
+                408.51202392578125,
+                297.4580078125,
+                441.03802490234375,
+                306.4580078125
+              ],
+              "row_box": [
+                52.130001068115234,
+                297.4580078125,
+                558.7881469726562,
+                306.4580078125
+              ],
+              "header_box": [
+                405.8699951171875,
+                284.2060241699219,
+                423.63800048828125,
+                292.2060241699219
+              ],
+              "section_box": [
+                49.5,
+                145.94802856445312,
+                562.9141845703125,
+                276.1479797363281
+              ],
+              "section_text": "net sales",
+              "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+              "row_label": "Americas",
+              "metric": "americas_net_sales",
+              "metric_canonical_name": "americas_net_sales",
+              "value_raw": "167,045",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Americas $ 178,353 7 % $ 167,045 3 % $ 162,560",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "evidence_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_8e84a86fe5d4990425b5d30f7de3",
+              "value": "167045"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_915cf75a2d89adbe03b14de9bba5"
+              ],
+              "proposed_result": "142196",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_8e84a86fe5d4990425b5d30f7de3"
+              ],
+              "proposed_result": "167045",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "Are FY2025 and FY2024 U.S. net sales and Americas segment sales the same? Give both amounts and explain.",
+          "intent": "EXPLAIN",
+          "metric": "geography_definition",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "geography_definition"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "us_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "SOURCE_LOCATION"
+            },
+            {
+              "question_slot_id": "q2",
+              "metric": "americas_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "SOURCE_LOCATION"
+            },
+            {
+              "question_slot_id": "q3",
+              "metric": "geography_definition",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXPLAIN",
+              "outputs": [
+                "scope_explanation"
+              ],
+              "kind": "explanation",
+              "expected_source_class": "SOURCE_PARAGRAPH"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Are FY2025 and FY2024 U.S. net sales and Americas segment sales the same? Give both amounts and explain.",
+          "intent": "EXPLAIN",
+          "metric": "geography_definition",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "geography_definition"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "us_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "SOURCE_LOCATION"
+            },
+            {
+              "question_slot_id": "q2",
+              "metric": "americas_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "SOURCE_LOCATION"
+            },
+            {
+              "question_slot_id": "q3",
+              "metric": "geography_definition",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXPLAIN",
+              "outputs": [
+                "scope_explanation"
+              ],
+              "kind": "explanation",
+              "expected_source_class": "SOURCE_PARAGRAPH"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2024-09-28",
+        "source_periods": [
+          "2024-09-28"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_915cf75a2d89adbe03b14de9bba5",
+          "cellv2_8e84a86fe5d4990425b5d30f7de3",
+          "heading_77ee0ec9f5827cb1800c43c1"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+          "latency_ms": 2193.09,
+          "candidate_count": 57,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "No. U.S. net sales cover the United States; the Americas segment includes North and South America. [3] FY2024: U.S. 142,196 million USD [1]; Americas 167,045 million USD [2].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "us_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "SOURCE_LOCATION",
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "operand_metrics": [
+              "americas_net_sales",
+              "us_net_sales"
+            ],
+            "periods_from_operands": [
+              "2024"
+            ],
+            "calculation_operations": [
+              "EXTRACT",
+              "EXTRACT"
+            ]
+          },
+          {
+            "question_slot_id": "q2",
+            "metric": "americas_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "SOURCE_LOCATION",
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "operand_metrics": [
+              "americas_net_sales",
+              "us_net_sales"
+            ],
+            "periods_from_operands": [
+              "2024"
+            ],
+            "calculation_operations": [
+              "EXTRACT",
+              "EXTRACT"
+            ]
+          },
+          {
+            "question_slot_id": "q3",
+            "metric": "geography_definition",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "operation": "EXPLAIN",
+            "outputs": [
+              "scope_explanation"
+            ],
+            "kind": "explanation",
+            "expected_source_class": "SOURCE_PARAGRAPH",
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED"
+          }
+        ],
+        "unanswered_subquestions": [
+          {
+            "question_slot_id": "q1",
+            "metric": "us_net_sales",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "SOURCE_LOCATION",
+            "reason": "OPERAND_PERIOD_MISMATCH;WRONG_PERIOD"
+          },
+          {
+            "question_slot_id": "q2",
+            "metric": "americas_net_sales",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "SOURCE_LOCATION",
+            "reason": "OPERAND_PERIOD_MISMATCH;WRONG_PERIOD"
+          }
+        ],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "PARTIAL",
+          "requested_count": 3,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "us_net_sales",
+              "verdict": "UNANSWERED",
+              "reasons": [
+                "OPERAND_PERIOD_MISMATCH",
+                "WRONG_PERIOD"
+              ]
+            },
+            {
+              "question_slot_id": "q2",
+              "metric": "americas_net_sales",
+              "verdict": "UNANSWERED",
+              "reasons": [
+                "OPERAND_PERIOD_MISMATCH",
+                "WRONG_PERIOD"
+              ]
+            },
+            {
+              "question_slot_id": "q3",
+              "metric": "geography_definition",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [
+            {
+              "question_slot_id": "q1",
+              "metric": "us_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "SOURCE_LOCATION",
+              "reason": "OPERAND_PERIOD_MISMATCH;WRONG_PERIOD"
+            },
+            {
+              "question_slot_id": "q2",
+              "metric": "americas_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "SOURCE_LOCATION",
+              "reason": "OPERAND_PERIOD_MISMATCH;WRONG_PERIOD"
+            }
+          ]
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [
+          "OPERAND_PERIOD_MISMATCH;WRONG_PERIOD",
+          "OPERAND_PERIOD_MISMATCH;WRONG_PERIOD"
+        ],
+        "session_id": "2b0f477e2bf3483fa1ae2b9b435adc6c",
+        "resolved_question": "Are FY2025 and FY2024 U.S. net sales and Americas segment sales the same? Give both amounts and explain.",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    }
+  ]
+}

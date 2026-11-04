@@ -11,7 +11,7 @@ afterEach(cleanup)
 describe('financial chat request and source safety',()=>{
  it('sends no dropdown defaults in ordinary auto mode',async()=>{
   vi.mocked(post).mockResolvedValue({session_id:'c'.repeat(32),status:'SOURCE_EXCERPTS',answer:'Synthetic UI fixture',values:[]})
-  show();await screen.findByText('a.pdf · a · 2025')
+  show();await screen.findByText('a · 2025 · a.pdf')
   fireEvent.change(screen.getByLabelText('Câu hỏi trợ lý'),{target:{value:'Net income 2025?'}})
   fireEvent.click(screen.getByRole('button',{name:'Gửi câu hỏi'}))
   await waitFor(()=>expect(post).toHaveBeenCalled())
@@ -21,7 +21,7 @@ describe('financial chat request and source safety',()=>{
  it('discards an old document response after source switch',async()=>{
   let finish:(v:unknown)=>void=()=>{}
   vi.mocked(post).mockImplementation(()=>new Promise(resolve=>{finish=resolve}))
-  show();await screen.findByText('a.pdf · a · 2025')
+  show();await screen.findByText('a · 2025 · a.pdf')
   fireEvent.change(screen.getByLabelText('Câu hỏi trợ lý'),{target:{value:'Question for source A'}})
   fireEvent.click(screen.getByRole('button',{name:'Gửi câu hỏi'}))
   await waitFor(()=>expect(post).toHaveBeenCalled())
@@ -41,12 +41,13 @@ describe('financial chat request and source safety',()=>{
   render(<QueryClientProvider client={new QueryClient({defaultOptions:{queries:{retry:false}}})}><FinancialChat selected={null} open={open}/></QueryClientProvider>)
   fireEvent.click(await screen.findByRole('button',{name:/Saved thread/}))
   fireEvent.click(await screen.findByRole('button',{name:'Mở nguồn 1 trang 7'}))
+  fireEvent.click(await screen.findByRole('button',{name:'Mở trang nguồn 7'}))
   expect(open).toHaveBeenCalledWith(expect.objectContaining({document_id:docs[0].id,page:7,box:[1,2,30,40]}))
   expect(sessionStorage.getItem('active-financial-chat')).toBe(sid)
  })
  it('renders source markup as text and sends with Enter',async()=>{
   vi.mocked(post).mockResolvedValue({session_id:'c'.repeat(32),status:'SOURCE_EXCERPTS',answer:'<script>bad()</script> [1]',citations:[{page:4,text:'Fixture source'}]})
-  show();await screen.findByText('a.pdf · a · 2025')
+  show();await screen.findByText('a · 2025 · a.pdf')
   const field=screen.getByLabelText('Câu hỏi trợ lý');fireEvent.change(field,{target:{value:'Find source'}});fireEvent.keyDown(field,{key:'Enter'})
   await screen.findByText('<script>bad()</script>',{exact:false})
   expect(document.querySelector('.answer-prose script')).toBeNull()
@@ -54,7 +55,7 @@ describe('financial chat request and source safety',()=>{
  })
  it('shows audited calculation steps and keeps operand citations clickable',async()=>{
   vi.mocked(post).mockResolvedValue({session_id:'c'.repeat(32),status:'SUPPORTED',answer:'Growth 25% [1]',answer_explanation:'Exact original operands.',independent_verification:{status:'VERIFIED'},calculation_steps:[{calculation_id:'x',title:'Growth',formula:'(current − previous) / previous × 100',result:'25.00',unit:'%',rounding:'ROUND_HALF_UP',substitution:[{value:'125',period:'2025',scope:'CONSOLIDATED',basis:'AS_REPORTED',unit:'MILLION_USD',citation:'[1]'}]}],citations:[{page:2,text:'Original cell'}]})
-  show();await screen.findByText('a.pdf · a · 2025')
+  show();await screen.findByText('a · 2025 · a.pdf')
   fireEvent.change(screen.getByLabelText('Câu hỏi trợ lý'),{target:{value:'Growth?'}});fireEvent.click(screen.getByRole('button',{name:'Gửi câu hỏi'}))
   expect(await screen.findByText('Các bước tính · Đã kiểm chứng độc lập')).toBeInTheDocument()
   expect(screen.getByText('Exact original operands.')).toBeInTheDocument()

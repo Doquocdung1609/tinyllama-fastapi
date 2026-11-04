@@ -1,0 +1,57 @@
+{
+  "mocked": false,
+  "checks": [
+    {
+      "name": "Final chat layout 1366",
+      "status": "PASS"
+    },
+    {
+      "name": "Final chat layout 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "Final chat layout 1920",
+      "status": "PASS"
+    },
+    {
+      "name": "Final chat layout 768",
+      "status": "PASS"
+    },
+    {
+      "name": "Final chat layout 390",
+      "status": "PASS"
+    },
+    {
+      "name": "125% layout equivalent",
+      "status": "PASS",
+      "css_viewport": "1093x614",
+      "device_scale_factor": 1.25,
+      "limitation": "Rendering-equivalent layout test; not a claim of changing native browser chrome zoom."
+    },
+    {
+      "name": "Legacy preference migration runs actual FAITH-R",
+      "status": "PASS",
+      "returned_count": 2
+    },
+    {
+      "name": "Final search layout 1366",
+      "status": "PASS"
+    },
+    {
+      "name": "Final search layout 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "Final search layout 1920",
+      "status": "PASS"
+    },
+    {
+      "name": "Final search layout 768",
+      "status": "PASS"
+    },
+    {
+      "name": "Final search layout 390",
+      "status": "PASS"
+    }
+  ]
+}

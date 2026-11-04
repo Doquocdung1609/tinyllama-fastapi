@@ -21,6 +21,8 @@ class QuestionPlan:
     section:str|None=None
     language:str='vi'
     inherited_slots:list[str]=field(default_factory=list)
+    requested_claims:list[dict]=field(default_factory=list)
+    proposed_amount:str|None=None
     version:str=VERSION
     def public(self):return asdict(self)
 
@@ -63,12 +65,12 @@ def plan_question(text):
         p.intent='ARITHMETIC';p.operation='PART_WHOLE_CHECK' if re.search(r'equals|equal|bang|total net sales',q) else 'SUM';p.metrics=['products_net_sales','services_net_sales']+(['net_revenue'] if p.operation=='PART_WHOLE_CHECK' else []);p.metric=p.metrics[0]
     elif p.operation=='SHARE_PERCENT':p.intent='ARITHMETIC'
     elif re.search(r'growth|grow|tang truong|tang.*phan tram|tang.*%',q):
-        p.intent='PERIOD_COMPARISON';p.operation='CHANGE_AND_GROWTH' if re.search(r'dollars and percent|tien va|ca.*(?:tuyet doi|phan tram)',q) else 'PERCENT_CHANGE'
+        p.intent='PERIOD_COMPARISON';p.operation='CHANGE_AND_GROWTH' if re.search(r'dollars and percent|absolute.*(?:percentage|percent)|tuyet doi.*(?:ty le|phan tram|%)|trieu usd.*%|tien va|ca.*(?:tuyet doi|phan tram)',q) else 'PERCENT_CHANGE'
     elif re.search(r'difference|delta|chenh lech|tang bao nhieu|so voi|compared with',q) and p.metric:
         p.intent='PERIOD_COMPARISON';p.operation='ABS_CHANGE'
     if p.metric in {'retained_earnings','assets'} and p.period_type in {None,'FY'}:p.period_type='INSTANT'
     if not p.metrics and p.metric:p.metrics=[p.metric]
-    return p
+    return _with_claims(p)
 
 def resolve_followup(text,history):
     """Only caller-approved same-source history may enter this function."""
@@ -78,16 +80,21 @@ def resolve_followup(text,history):
     if response.get('status') in {'QUERY_CONTEXT_CONFLICT','SOURCE_UNAVAILABLE'}:return text,p
     previous=response.get('conversation_slots') or plan_question(last.get('resolved_question',last['question'])).public()
     explicit_metric=p.metric is not None
-    follow=bool(re.search(r'^so voi |^con |^vay |^and |^what about|hai (?:bang|muc)|nguon o dau|don vi gi|tinh tang truong|tai sao khac|how much did it grow',q))
+    follow=bool(re.search(r'^muc dieu chinh|^so da cong bo|^so how |^so voi |^con |^vay |^and |^what about|hai (?:bang|muc)|nguon o dau|don vi gi|tinh tang truong|tai sao khac|how much did it grow',q))
     if not follow:return text,p
     metric=p.metric or previous.get('metric')
     if not metric:return text,p
     parts=[text]
     names={'net_revenue':'total net sales','net_income':'net income','retained_earnings':'lợi nhuận sau thuế chưa phân phối',
-        'assets':'tổng cộng tài sản','services_net_sales':'Services net sales','products_net_sales':'Products net sales'}
-    if not explicit_metric:parts.insert(0,names.get(metric,metric.replace('_',' ')));p.inherited_slots.append('metric')
+        'assets':'tổng cộng tài sản','services_net_sales':'Services net sales','products_net_sales':'Products net sales','greater_china_net_sales':'Greater China net sales','effective_tax_rate':'effective tax rate'}
+    if not explicit_metric:parts.insert(0,names.get(metric,METRIC_NAMES.get(metric,metric.replace('_',' '))));p.inherited_slots.append('metric')
     old_years=previous.get('years') or []
     comparison=bool(re.search(r'grow|growth|tang truong|so voi|chenh lech',q))
+    if comparison and metric==previous.get('metric'):
+        for turn in history[-8:]:
+            prior=turn.get('response',{}).get('conversation_slots',{})
+            if prior.get('metric')==metric:old_years+=prior.get('years',[])
+        old_years=sorted(set(old_years))[-2:]
     if not p.years or comparison:
         years=sorted(set(p.years+old_years))
         parts.append(' FY '+' '.join(years));p.inherited_slots.append('years')
@@ -95,6 +102,8 @@ def resolve_followup(text,history):
         parts.append(' consolidated' if previous['scope']=='CONSOLIDATED' else ' riêng công ty mẹ');p.inherited_slots.append('scope')
     if re.fullmatch(r'(?:and in|what about|con nam)\s*(?:fy\s*)?20\d{2}[?. ]*',q) and previous.get('operation')=='SHARE_PERCENT':
         parts.append('what percentage of total net sales');p.inherited_slots.append('operation')
+    if re.fullmatch(r'(?:and in|what about|con nam)\s*(?:fy\s*)?20\d{2}[?. ]*',q) and previous.get('operation')=='PERCENTAGE_POINT_DIFFERENCE':
+        parts.append('Compare Services and Products gross margin percentages');p.inherited_slots.append('operation')
     resolved=' '.join(parts);updated=plan_question(resolved);updated.inherited_slots=p.inherited_slots
     return resolved,updated
 
@@ -119,3 +128,67 @@ def constraint_conflicts(request,answer):
         if not years or value[:4]!=years[index]:bad.append(field);continue
         if len(value)>4 and not any(c['period']==value[:4] and c['period_end']==value for c in operands):bad.append(field)
     return sorted(set(bad))
+
+
+REGIONS={'greater_china_net_sales':r'greater china|dai trung hoa','americas_net_sales':r'americas',
+    'europe_net_sales':r'\beurope\b|chau au','japan_net_sales':r'\bjapan\b|nhat ban',
+    'rest_of_asia_pacific_net_sales':r'rest of asia pacific','us_net_sales':r'\bu\.s\.|united states|hoa ky'}
+METRIC_NAMES={'net_revenue':'total net sales','net_income':'net income','operating_income':'operating income',
+    'services_net_sales':'Services net sales','products_net_sales':'Products net sales','effective_tax_rate':'effective tax rate',
+    **{k:k.removesuffix('_net_sales').replace('_',' ')+' net sales' for k in REGIONS}}
+METRIC_NAMES['us_net_sales']='U.S. net sales'
+
+def _with_claims(p):
+    q=folded(p.raw_text)
+    if p.intent=='RESTATEMENT_LIST':p.period_type=None
+    if re.search(r'hop nhat.*(?:tu|trong).*bao cao rieng|consolidated.*from.*separate',q) and p.intent!='DOCUMENT_IDENTITY':p.scope='CONSOLIDATED'
+    target=re.split(r'according to|theo (?:bao cao|tai lieu)|from the selected',q)[0]
+    target_years=sorted(set(re.findall(r'(?<!\d)(20\d{2})(?!\d)',target)))
+    if target_years:p.years=target_years
+    regions=[m for m,pattern in REGIONS.items() if re.search(pattern,q)]
+    explain=bool(re.search(r'explain|why|drivers|giai thich|nguyen nhan|ly do|vi sao|tai sao',q))
+    if re.search(r'effective tax rate|thue suat (?:thuc te|hieu dung)',q):p.metric='effective_tax_rate';p.metrics=[p.metric];p.intent='EXTRACT_VALUE';p.requested_unit='%'
+    elif regions and p.metric!='geography_definition':p.metric=regions[0];p.metrics=regions;p.intent='EXTRACT_VALUE' if p.operation=='EXTRACT' else p.intent
+    if re.search(r'(?:khu vuc|segment|region).*(?:giam|declin|decreas)',q) and len(p.years)>=2 and not regions:
+        p.intent='SEGMENT_DECLINES';p.metric='reportable_segment_net_sales';p.metrics=[];p.operation='FIND_DECLINES'
+    if re.search(r'absolute.*(?:percentage|percent)|tuyet doi.*(?:ty le|phan tram|%)|dollars and percent',q) and p.metric and p.operation!='FIND_DECLINES':p.operation='CHANGE_AND_GROWTH';p.intent='PERIOD_COMPARISON'
+    if len(p.years)==2 and re.search(r'compare|so sanh',q) and p.operation=='EXTRACT' and p.metric!='effective_tax_rate':p.operation='ABS_CHANGE';p.intent='PERIOD_COMPARISON'
+    proposal=re.search(r'(?:\$\s*|were\s+|la\s+)(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{4,}(?:\.\d+)?)\s*(?:million|trieu)',q)
+    if proposal and re.search(r'confirm|correct|dung|xac nhan',q):p.proposed_amount=proposal[1].replace(',','');p.requested_unit='MILLION_USD'
+    numeric=p.intent in {'EXTRACT_VALUE','PERIOD_COMPARISON','ARITHMETIC','RESTATEMENT_COMPARE','SEGMENT_DECLINES'}
+    # Independent question slots include output dimensions; an explanation is never
+    # silently satisfied by an unrelated numeric cell.
+    claims=[]
+    def add(metric,operation,years,kind='numeric',outputs=None):
+        claims.append({'question_slot_id':f'q{len(claims)+1}','metric':metric,'years':years,'scope':p.scope,
+            'operation':operation,'outputs':outputs or (['absolute_change','percentage_change','period_values'] if operation=='CHANGE_AND_GROWTH' else ['amount']),
+            'kind':kind,'expected_source_class':'SOURCE_PARAGRAPH' if kind=='explanation' else 'NATIVE_CELL' if numeric else 'SOURCE_LOCATION'})
+    if p.intent=='SEGMENT_DECLINES':
+        add('reportable_segment_net_sales','FIND_DECLINES',p.years,outputs=['declining_segments','period_values','absolute_change','percentage_change'])
+        add('net_revenue','CHANGE_AND_GROWTH',p.years)
+    elif p.metric=='effective_tax_rate':
+        for y in p.years:add(p.metric,'EXTRACT',[y],outputs=['rate'])
+        if len(p.years)==2:add(p.metric,'RATE_POINT_CHANGE',p.years,outputs=['percentage_point_change'])
+    elif p.metric=='geography_definition':
+        add('us_net_sales','EXTRACT',p.years);add('americas_net_sales','EXTRACT',p.years)
+        add('geography_definition','EXPLAIN',p.years,'explanation',['scope_explanation'])
+    else:
+        metrics=regions or (['services_net_sales','products_net_sales'] if re.search(r'services|dich vu',q) and re.search(r'products|san pham',q) and p.operation in {'EXTRACT','ABS_CHANGE','PERCENT_CHANGE','CHANGE_AND_GROWTH'} else [p.metric])
+        if numeric and p.operation in {'EXTRACT','ABS_CHANGE','PERCENT_CHANGE','CHANGE_AND_GROWTH'} and not regions and not re.search(r'services|products|dich vu|san pham',q):
+            metrics=[m for m,pat in {'net_revenue':r'net sales|revenue|doanh thu','net_income':r'net income|loi nhuan sau thue'}.items() if re.search(pat,q)] or metrics
+        for metric in metrics:
+            if numeric and p.operation=='EXTRACT' and len(p.years)>1:
+                for y in p.years:add(metric,'EXTRACT',[y])
+            else:add(metric,p.operation,p.years,'numeric' if numeric else 'navigation')
+    if p.operation in {'SHARE_PERCENT','PERCENTAGE_POINT_DIFFERENCE','CHANGE_AND_GROWTH','RESTATEMENT_IDENTITY','SCOPE_DIFFERENCE'}:
+        for slot in claims:
+            if slot['kind']=='numeric':slot['outputs']+=['source_operands','calculation']
+    if explain and not re.search(r'cach tinh|how.*calculat|show.*calculat',q) and p.metric!='geography_definition':add(p.metric,'EXPLAIN',p.years,'explanation',['explanation'])
+    if explain and p.metric and p.metric!='geography_definition' and p.operation=='EXTRACT' and p.intent=='EXPLAIN':
+        claims=[c for c in claims if c['kind']=='explanation']
+        for i,c in enumerate(claims,1):c['question_slot_id']='q'+str(i)
+    if p.proposed_amount:
+        for slot in claims:
+            if slot['kind']=='numeric':slot['proposed_amount']=p.proposed_amount;slot['outputs'].append('confirmation')
+    p.requested_claims=claims
+    return p

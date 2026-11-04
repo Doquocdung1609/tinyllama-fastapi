@@ -81,6 +81,7 @@ class ChatRequest(BaseModel):
     ticker:str=Field(default='',max_length=20,pattern=r'^[A-Za-z0-9.-]*$')
     session_id:str|None=Field(default=None,pattern=r'^[a-f0-9]{32}$')
     constraints:dict[str,str]=Field(default_factory=dict,max_length=6)
+    evidence_context:dict=Field(default_factory=dict,max_length=20)
 
 
 @router.get('/chat/sessions')
@@ -157,7 +158,32 @@ def financial_chat(payload:ChatRequest):
     if prior and prior['scope']!=fingerprint:session=uuid4().hex
     question=payload.question
     from app.product.answer_planner_v2 import resolve_followup
-    question,conversation_plan=resolve_followup(question,history)
+    context_history=history
+    context=payload.evidence_context
+    if not history and context.get('document_id') in payload.document_ids and context.get('row_id'):
+        doc=w.document(context['document_id'])
+        try:
+            page=w.page_evidence(context['document_id'],int(context['page']))
+            row=next((r for r in page['tables'] if r['id']==context['row_id']),None)
+            expected=sha256(f"{doc['sha256']}:{context['page']}:{context['row_id']}:{page['evidence_sha256']}".encode()).hexdigest()[:24]
+            if row and context.get('citation_id')==expected:
+                from app.product.answer_planner_v2 import plan_question
+                source_years=sorted(set(re.findall(r'\b20\d{2}\b',page.get('text','')[:800])))
+                bound=plan_question(row['row_label']+' '+' '.join(source_years)).public()
+                context_history=[{'question':row['row_label'],'response':{'conversation_slots':bound}}]
+        except (ValueError,KeyError,TypeError):pass
+    if not history and context.get('document_id') in payload.document_ids and str(context.get('citation_id','')).startswith('cellv2_'):
+        from app.product.source_cells_v2 import native_catalog
+        from app.product.independent_verifier_v2 import verify_operand
+        from app.product.answer_planner_v2 import plan_question,METRIC_NAMES
+        cell=next((c for c in native_catalog(w,[context['document_id']]) if c['citation_id']==context['citation_id'] and c['page']==context.get('page')),None)
+        if cell:
+            try:
+                verify_operand(w,cell)
+                bound=plan_question(METRIC_NAMES.get(cell['metric'],cell['metric'].replace('_',' '))+' FY'+cell['period']).public()
+                context_history=[{'question':cell['row_label'],'response':{'conversation_slots':bound}}]
+            except ValueError:pass
+    question,conversation_plan=resolve_followup(question,context_history)
     allowed={'metric','operation','current_period','previous_period','statement_scope','basis'}
     if set(payload.constraints)-allowed:raise HTTPException(422,detail={'code':'UNKNOWN_ADVANCED_CONSTRAINT'})
     if any(not isinstance(v,str) or len(v)>80 for v in payload.constraints.values()):raise HTTPException(422,detail={'code':'INVALID_ADVANCED_CONSTRAINT'})
@@ -189,6 +215,9 @@ def financial_chat(payload:ChatRequest):
             answer={'status':'SOURCE_EXCERPTS','answer':'\n\n'.join(sections),'citations':citations,'values':[],
                     'verification_status':'SOURCE_TEXT_UNREVIEWED','warnings':['Tổng hợp trích đoạn tài liệu, chưa chứng nhận số liệu hay tin tức hiện tại.']}
         else:answer=analysis(request)
+        if conversation_plan.inherited_slots:
+            for key in ('query_plan','conversation_slots'):
+                if isinstance(answer.get(key),dict):answer[key]['inherited_slots']=conversation_plan.inherited_slots
         from app.product.chat_store import save,now
         stamp=now()
         messages=[{'id':uuid4().hex,'role':'user','text':payload.question,'created_at':stamp},
@@ -212,6 +241,7 @@ class UnifiedSearch(BaseModel):
     issuer:str=Field(default='',max_length=160)
     period:str=Field(default='',max_length=80)
     auto_fallback:bool=False
+    statement_scope:Literal['SEPARATE','CONSOLIDATED']|None=None
     search_profile:Literal['faith_r_product_v1','auto','baseline','production_v2','production_v3','production_v3r','production_v3r2','production_v3r3']='baseline'
 
 
@@ -246,6 +276,18 @@ class SearchResponse(BaseModel):
     routing_reason:str|None=None
     financial_evidence:dict|None=None
     query_plan:dict|None=None
+    requested_top_k:int|None=None
+    returned_count:int|None=None
+    mode_requested:str|None=None
+    mode_executed:str|None=None
+    search_profile_requested:str|None=None
+    search_profile_executed:str|None=None
+    filter_reason:str|None=None
+    dedup_count:int|None=None
+    truncation_reason:str|None=None
+    retrieval_status:str|None=None
+    matching_evidence_count:int|None=None
+    verified_value_count:int=0
 
 
 class ComparisonResponse(BaseModel):
@@ -260,6 +302,7 @@ class ComparisonResponse(BaseModel):
 def unified_search(payload:UnifiedSearch):
     w=workspace()
     reason=None
+    requested=payload
     is_auto=payload.search_profile=='auto' or payload.auto_fallback
     if payload.search_profile=='auto':
         profile,reason=('faith_r_product_v1','SHARED_FINANCIAL_PRODUCT_ENGINE') if hasattr(w,'source_file') else automatic_profile(w)
@@ -271,7 +314,9 @@ def unified_search(payload:UnifiedSearch):
             return {'status':'READY','generation':sha256(json.dumps(payload.document_ids).encode()).hexdigest(),
                 'source_generations':[],'results':[],'mode':payload.mode,'source_errors':[],
                 'latency_ms':0,'timings_ms':{},'cross_source_order':None,'search_profile':payload.search_profile,
-                'evidence_status':'QUERY_CONTEXT_CONFLICT','financial_evidence':conflict}
+                'evidence_status':'QUERY_CONTEXT_CONFLICT','financial_evidence':conflict,
+                'requested_top_k':requested.top_k,'returned_count':0,'mode_requested':requested.mode,'mode_executed':None,
+                'search_profile_requested':requested.search_profile,'search_profile_executed':None,'filter_reason':'ISSUER_CONFLICT','dedup_count':0,'retrieval_status':'CLARIFY_SCOPE'}
     try:
         if hasattr(w,'resources'):
             with w.resources.claim('QUERY_OR_COMPARISON',minimum_mb=256,timeout=10):result=_unified_search(payload)
@@ -288,9 +333,17 @@ def unified_search(payload:UnifiedSearch):
     if payload.search_profile=='faith_r_product_v1':
         from app.product.financial_understanding import understand
         result['intent']=understand(payload.query).public()
-    if payload.source=='USER_UPLOADS' and payload.document_ids and hasattr(w,'source_file') and payload.search_profile=='faith_r_product_v1':
+    if payload.source=='USER_UPLOADS' and hasattr(w,'source_file') and payload.search_profile=='faith_r_product_v1':
         from app.product.answer_composer_v2 import compose_answer
-        result['financial_evidence']=compose_answer(w,payload.query,result,payload.document_ids)
+        result['financial_evidence']=compose_answer(w,payload.query,result,sorted({h['document_id'] for h in result['results'] if h.get('document_id')}))
+    evidence=result.get('financial_evidence') or {}
+    result.update(requested_top_k=requested.top_k,returned_count=len(result['results']),mode_requested=requested.mode,
+        mode_executed=result['mode'] if result.get('source_generations') else None,search_profile_requested=requested.search_profile,search_profile_executed=result['search_profile'] if result.get('source_generations') else None,
+        verified_value_count=len({a['citation_id'] for a in evidence.get('independent_verification',{}).get('stage_a',[])}),
+        matching_evidence_count=len(result['results']) if result['search_profile']=='faith_r_product_v1' else None,
+        retrieval_status='SOURCE_UNAVAILABLE' if result['source_errors'] and not result['results'] else 'RESULTS_FOUND' if result['results'] else 'NO_RESULTS')
+    result.setdefault('filter_reason','SOURCE_ISSUER_PERIOD_FILTER' if requested.issuer or requested.period else None)
+    result.setdefault('truncation_reason','TOP_K_LIMIT' if len(result['results'])==requested.top_k else 'FEWER_SOURCE_CANDIDATES')
     return result
 
 
@@ -309,8 +362,13 @@ def _unified_search(payload:UnifiedSearch):
     results=[];scopes=[];errors=[];timings={};intent=None;evidence_status=None;evidence_reason=None;engine_trace={}
     if payload.source!='US_SEC':
         docs=workspace()._eligible(payload.document_ids)
-        if payload.issuer:docs=[d for d in docs if folded(payload.issuer) in folded(d['issuer'])]
-        if payload.period:docs=[d for d in docs if payload.period in d['report_period']]
+        if payload.issuer or payload.period:
+            from app.product.financial_understanding import document_profile,issuers
+            profiles={d['id']:document_profile(workspace(),d) for d in docs}
+            if payload.issuer:
+                aliases=set(issuers(payload.issuer))
+                docs=[d for d in docs if aliases.intersection(profiles[d['id']]['identities'])] if aliases else [d for d in docs if folded(payload.issuer) in folded(d['issuer'])]
+            if payload.period:docs=[d for d in docs if payload.period in (d.get('report_period') or profiles[d['id']].get('report_year') or '')]
         if payload.source=='VIETNAM':
             def vietnamese(doc):
                 try:text=workspace().page_evidence(doc['id'],min(3,doc['pages']))['text']
@@ -322,7 +380,7 @@ def _unified_search(payload:UnifiedSearch):
                 from app.product.faith_r_product import pdf_search
                 found=pdf_search(workspace(),payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
                 intent=found['intent'];evidence_status=found['evidence_status']
-                engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing')}
+                engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing','dedup_count','filter_reason','truncation_reason','query_plan')}
             elif payload.search_profile in {'production_v2','production_v3','production_v3r','production_v3r2','production_v3r3'}:
                 from app.product.search_v2 import FinancialSearchV2
                 from pathlib import Path
@@ -348,7 +406,27 @@ def _unified_search(payload:UnifiedSearch):
                     else:engine=preparation(w).ready_engine()
                 found=engine.search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
                 intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
-            else:found=workspace().search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
+            else:found=workspace().search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs],**({'_candidate_limit':80} if payload.statement_scope else {}))
+            engine_trace.setdefault('candidate_count',found.get('candidate_count'))
+            engine_trace.setdefault('dedup_count',found.get('dedup_count'))
+            executed_mode=found.get('mode',payload.mode)
+            if payload.statement_scope:
+                from app.product.faith_r_product import _scope
+                scoped=[]
+                for hit in found['results']:
+                    actual=None
+                    for page_no in (hit['page'],hit['page']-1):
+                        if page_no<1:continue
+                        text=workspace().page_evidence(hit['document_id'],page_no)['text'][:1600]
+                        normalized=folded(text)
+                        if ('hop nhat' in normalized or 'consolidated' in normalized) and ('rieng' in normalized or 'parent company' in normalized):actual='MIXED';break
+                        explicit=_scope(text)
+                        if explicit:actual=explicit;break
+                    if actual==payload.statement_scope:scoped.append({**hit,'statement_scope':actual})
+                found['results']=scoped[:payload.top_k]
+                for rank,h in enumerate(found['results'],1):h['rank']=rank
+                engine_trace['filter_reason']='STATEMENT_SCOPE_FILTER'
+                engine_trace['truncation_reason']='TOP_K_LIMIT' if len(found['results'])==payload.top_k else 'FEWER_MATCHING_SCOPE_CANDIDATES'
             results.extend({**r,'source_kind':'PDF'} for r in found['results'])
             scopes.append(('PDF',found.get('generation')));timings['PDF']=found['latency_ms']
     if payload.source in {'US_SEC','ALL'}:
@@ -357,7 +435,7 @@ def _unified_search(payload:UnifiedSearch):
                 from app.product.faith_r_product import sec_search
                 found=sec_search(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
                 intent=found['intent'];evidence_status=found['evidence_status']
-                engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing')}
+                engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing','dedup_count','filter_reason','truncation_reason','query_plan')}
             elif payload.search_profile in {'production_v3','production_v3r','production_v3r2','production_v3r3'}:
                 from app.product.search_v3 import search_sec_v3
                 found=search_sec_v3(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
@@ -379,7 +457,7 @@ def _unified_search(payload:UnifiedSearch):
     generation=sha256(json.dumps(scopes,sort_keys=True).encode()).hexdigest()
     for rank,result in enumerate(results[:payload.top_k],1):result['rank']=rank
     return {**engine_trace,'status':'PARTIAL' if errors else 'READY','generation':generation,'source_generations':scopes,
-            'results':results[:payload.top_k],'mode':payload.mode,'source_errors':errors,
+            'results':results[:payload.top_k],'mode':locals().get('executed_mode',payload.mode),'source_errors':errors,
             'latency_ms':sum(timings.values()),'timings_ms':timings,
             'intent':intent,'evidence_status':evidence_status,'evidence_reason':evidence_reason,'search_profile':payload.search_profile,
             'cross_source_order':'PER_STORE_RANK_THEN_SOURCE_ID' if len(scopes)>1 else None}

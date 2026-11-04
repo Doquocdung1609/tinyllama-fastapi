@@ -1,0 +1,36 @@
+{"checks":35,"failures":[{"name":"Browser acceptance","status":"FAIL","error":"Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 3\n+ Received  + 1\n\n- Array [\n-   \"1114\",\n- ]\n+ Array []"}]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 3
++ Received  + 1
+
+- Array [
+-   "1114",
+- ]
++ Array []
+    at captureRawStack (C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\frontend\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+    at callMatcherAsStep (C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\frontend\node_modules\playwright\lib\matchers\expect.js:13316:57)
+    at Object.toEqual (C:\Users\Admin\Desktop\AI_thay_Hieu\tinyllama-fastapi\frontend\node_modules\playwright\lib\matchers\expect.js:13308:23)
+    at C:\Users\Admin\.codex\worktrees\topic3-v7p\tinyllama-fastapi\frontend\e2e\v3-product.mjs:31:128 {
+  matcherResult: {
+    actual: [],
+    expected: [ '1114' ],
+    message: 'expect(received).toEqual(expected) // deep equality\n' +
+      '\n' +
+      '- Expected  - 3\n' +
+      '+ Received  + 1\n' +
+      '\n' +
+      '- Array [\n' +
+      '-   "1114",\n' +
+      '- ]\n' +
+      '+ Array []',
+    name: 'toEqual',
+    pass: false
+  }
+}
+
+Node.js v24.22.1

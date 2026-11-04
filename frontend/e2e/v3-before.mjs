@@ -1,0 +1,15 @@
+import {chromium} from '@playwright/test'
+import fs from 'node:fs/promises'
+import {fileURLToPath} from 'node:url'
+const root=new URL('../../',import.meta.url),out=new URL('reports/fis_search_chat_v3/',root)
+const token=(await fs.readFile(new URL('tmp/studio-runtime/access-token.txt',root),'utf8')).replace(/^\uFEFF/,'').trim()
+const browser=await chromium.launch({headless:true,executablePath:'C:/Users/Admin/AppData/Local/ms-playwright/chromium-1217/chrome-win64/chrome.exe'})
+const page=await browser.newPage({viewport:{width:1366,height:768}});await page.addInitScript(t=>sessionStorage.setItem('studio-token',t),token)
+const traces=[];page.on('response',async r=>{if(/\/studio\/(query|chat)$/.test(r.url()))traces.push({url:r.url(),response:await r.json()})})
+await page.goto('http://127.0.0.1:18110/app/#/search');await page.getByLabel('Tài liệu tìm kiếm',{exact:true}).first().selectOption('2bed2b3c312c8149e6a2ff6ab80c694a');await page.getByLabel('Câu hỏi tìm kiếm',{exact:true}).first().fill('Tìm dòng lợi nhuận sau thuế chưa phân phối năm 2024.');const search=page.waitForResponse(r=>r.url().endsWith('/studio/query'));await page.getByRole('button',{name:'Tìm kiếm',exact:true}).first().click();await search
+await page.getByText('Nâng cao / lựa chọn thuật toán và nguồn SEC',{exact:true}).click()
+const before={search_inputs:await page.getByLabel('Câu hỏi tìm kiếm',{exact:true}).count(),search_text:await page.locator('main').innerText()}
+for(const [w,h] of [[1366,768],[1440,900],[1920,1080],[768,1024],[390,844]]){await page.setViewportSize({width:w,height:h});await page.getByLabel('Câu hỏi tìm kiếm',{exact:true}).first().scrollIntoViewIfNeeded();await page.screenshot({path:fileURLToPath(new URL(`before-search-${w}.png`,out))})}
+await page.setViewportSize({width:1366,height:768});await page.goto('http://127.0.0.1:18110/app/#/analysis');await page.getByLabel('Tài liệu trợ lý',{exact:true}).selectOption('3eb270b22acb7d8d8e9c32a43dc221de');const q='Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.';await page.getByLabel('Câu hỏi trợ lý',{exact:true}).fill(q);const chat=page.waitForResponse(r=>r.url().endsWith('/studio/chat'),{timeout:150000});await page.getByRole('button',{name:'Gửi câu hỏi',exact:true}).click();await chat;await page.getByLabel('Câu hỏi trợ lý',{exact:true}).waitFor();before.chat_question=q;before.chat_text=await page.locator('.message-assistant').last().innerText()
+for(const [w,h] of [[1366,768],[1440,900],[1920,1080],[768,1024],[390,844]]){await page.setViewportSize({width:w,height:h});await page.locator('.message-assistant').last().scrollIntoViewIfNeeded();await page.screenshot({path:fileURLToPath(new URL(`before-chat-${w}.png`,out))})}
+await fs.writeFile(new URL('browser-before.json',out),JSON.stringify({mocked:false,...before,traces},null,2));await browser.close();console.log('Captured real before Search/Chat at five viewport sizes')

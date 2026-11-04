@@ -53,6 +53,14 @@ def _tokens(text):
 
 def pdf_search(w, question, mode, top_k, document_ids):
     started = perf_counter(); slots = understand(question)
+    docs=w._eligible(document_ids)
+    requested_issuers=issuers(question)
+    if requested_issuers:
+        from app.product.financial_understanding import document_profile
+        docs=[d for d in docs if set(document_profile(w,d)['identities'])&set(requested_issuers)]
+    if not docs:
+        return {'results':[],'latency_ms':0,'mode':mode,'generation':sha256(b'NO_MATCHING_SOURCE').hexdigest(),'intent':slots.public(),'candidate_count':0,'search_profile':'faith_r_product_v1','engine_version':VERSION,'evidence_status':'NO_SUFFICIENT_EVIDENCE','filter_reason':'ISSUER_SOURCE_FILTER','dedup_count':0}
+    document_ids=[d['id'] for d in docs]
     # Original BM25/dense/RRF contributes candidates; page-row sidecar fills the
     # bounded row coverage gap. RRF itself remains k=60 in workspace.search.
     fallback = None
@@ -60,7 +68,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
     except (ValueError, OSError, __import__('requests').RequestException) as exc:
         if mode == 'bm25' or (isinstance(exc, ValueError) and str(exc) != 'EMBEDDING_MODEL_DIGEST_MISMATCH'): raise
         base = w.search(question, 'bm25', 20, document_ids); fallback = 'DENSE_UNAVAILABLE_BM25_PLUS_ROW_SIDECAR'
-    pool = []; docs = w._eligible(document_ids); terms = _tokens(question);page_context={};observed_scopes=set()
+    pool = []; terms = _tokens(question);page_context={};observed_scopes=set()
     if slots.intent=='SUMMARIZE':
         vietnamese=False
         if docs:
@@ -140,8 +148,31 @@ def pdf_search(w, question, mode, top_k, document_ids):
         pool.append({**h,'source_kind':'PDF','citation_id':h['chunk_id'],'text_quote':h['text'],
             'page_1_based':h['page'],'page_index_0_based':h['page']-1,'numeric_status':'UNVERIFIED',
             'rerank_score':score,'engine_version':VERSION,'algorithm_executed':VERSION+'_PDF_ROW_UNION_RERANK'})
+    from app.product.answer_planner_v2 import plan_question
+    from app.product.source_cells_v2 import native_catalog
+    semantic_plan=plan_question(question)
+    exact_metrics=set(semantic_plan.metrics)
+    if semantic_plan.metric=='reportable_segment_net_sales':exact_metrics={'americas_net_sales','europe_net_sales','greater_china_net_sales','japan_net_sales','rest_of_asia_pacific_net_sales','net_revenue'}
+    native=[]
+    if exact_metrics and semantic_plan.intent not in {'DOCUMENT_IDENTITY','FIND_SECTION','RESTATEMENT_LIST','SUMMARIZE'}:
+        native=[c for c in native_catalog(w,document_ids) if c['metric'] in exact_metrics and (not semantic_plan.years or c['period'] in semantic_plan.years) and (not semantic_plan.scope or c['statement_scope']==semantic_plan.scope) and (not semantic_plan.period_type or c['period_type']==semantic_plan.period_type)]
+    raw_candidate_count=len(pool)+len(native)
+    native_dedup_count=0
+    if native:
+        # Collapse repeated statements of the same financial cell, retaining the
+        # original statement-of-operations source when available. No synthetic fill.
+        native.sort(key=lambda c:(not ('CONSOLIDATED STATEMENTS OF OPERATIONS' in c.get('table_heading','')),c['page']))
+        selected_native={}
+        for c in native:
+            key=(c['document_id'],c['metric'],c['period'],c['statement_scope'],c['basis'],c['value_raw'])
+            selected_native.setdefault(key,c)
+        native_dedup_count=len(native)-len(selected_native)
+        pool=[{**c,'text_quote':c['text'],'chunk_id':c['citation_id'],'rerank_score':100,'rank_reasons':{'exact_metric':True,'source_bound_native_candidate':True},'report_period':c['period'],'text':c['row_label']+' | '+c['value_raw']+' | '+c['period'],'numeric_status':'UNVERIFIED','highlight_status':'NATIVE_CELL_CANDIDATE'} for c in selected_native.values()]
+
+    metric_filtered_count=0
     if slots.metric and slots.intent in {'FIND_EVIDENCE','COMPARE_PERIODS'} and any(h.get('rank_reasons',{}).get('exact_metric') for h in pool):
         pool=[h for h in pool if h.get('rank_reasons',{}).get('exact_metric')]
+    metric_filtered_count=raw_candidate_count-len(pool)
     pool.sort(key=lambda h:(-h['rerank_score'],h['page'],h.get('evidence_id',h['chunk_id'])))
     if slots.intent=='RESTATEMENT_LIST':
         from app.product.native_adjustments import verify_rows
@@ -157,7 +188,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
         seen.add(key)
         # Diversity is by table/scope, not a page-level dedup that loses rows.
         group=(h['document_id'],h.get('statement_scope'),h['page'])
-        if counts.get(group,0)>=max(2,top_k//2):continue
+        if not native and counts.get(group,0)>=max(2,top_k//2):continue
         counts[group]=counts.get(group,0)+1;chosen.append(h)
         if len(chosen)==top_k:break
     from app.product.native_adjustments import verify_rows
@@ -173,7 +204,10 @@ def pdf_search(w, question, mode, top_k, document_ids):
         'intent':slots.public(),'query_plan':question_plan.public(),'evidence_status':'RELATED_UNVERIFIED_EVIDENCE' if chosen else 'NO_SUFFICIENT_EVIDENCE',
         'search_profile':'faith_r_product_v1','engine_version':VERSION,'candidate_count':len(pool),'scope_availability':sorted(observed_scopes),
         'scope_missing':bool(slots.scope and observed_scopes and slots.scope not in observed_scopes),
-        'routing_reason':fallback,'algorithm_executed':VERSION+'_PDF_ROW_UNION_RERANK'}
+        'routing_reason':fallback,'mode':base.get('mode',mode),'candidate_count':raw_candidate_count,'dedup_count':native_dedup_count+max(0,len(pool)-len({(h['document_id'],h['page'],h.get('row_id',h['chunk_id'])) for h in pool})),
+        'filter_reason':'METRIC_SCOPE_AND_TABLE_DIVERSITY' if native or metric_filtered_count or len(chosen)<min(top_k,len(pool)) else None,
+        'truncation_reason':'TOP_K_LIMIT' if len(chosen)==top_k else 'FEWER_DISTINCT_MATCHING_EVIDENCE',
+        'algorithm_executed':'FAITH_R_NATIVE_CELL_TARGETING_V3' if native else VERSION+'_PDF_ROW_UNION_RERANK'}
 
 def evidence_answer(question, result):
     """Safe extractive narrative; citations survive every numerical abstention."""

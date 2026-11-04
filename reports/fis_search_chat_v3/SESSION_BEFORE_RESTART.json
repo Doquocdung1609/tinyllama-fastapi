@@ -1,0 +1,2044 @@
+{
+  "id": "05310332376545e488873d7a68b37d23",
+  "title": "What were Services net sales in FY2025?",
+  "created_at": "2026-11-04T16:56:52.403083+00:00",
+  "updated_at": "2026-11-04T16:56:57.279282+00:00",
+  "document_ids": [
+    "3eb270b22acb7d8d8e9c32a43dc221de"
+  ],
+  "message_count": 4,
+  "turns": [
+    {
+      "question": "What were Services net sales in FY2025?",
+      "resolved_question": "What were Services net sales in FY2025?",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2025, Services net sales was 109,158 million USD [1].",
+        "answer_explanation": "This is the consolidated annual source amount.",
+        "values": [
+          "109158"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "109,158",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "value": "109158",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "109,158",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "value": "109158"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "109,158",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "109158",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "What were Services net sales in FY2025?",
+              "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "value": "109158",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "109158",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "What were Services net sales in FY2025?",
+            "intent": "EXTRACT_VALUE",
+            "metric": "services_net_sales",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "services_net_sales"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "services_net_sales",
+                "years": [
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_9f570609f2c663fbe4508accfcdd"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "109158",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_9f570609f2c663fbe4508accfcdd"
+              ]
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "109,158",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "value": "109158",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "109,158",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "value": "109158"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_9f570609f2c663fbe4508accfcdd"
+              ],
+              "proposed_result": "109158",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "What were Services net sales in FY2025?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "What were Services net sales in FY2025?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2025-09-27",
+        "source_periods": [
+          "2025-09-27"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_9f570609f2c663fbe4508accfcdd"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 1976.95,
+          "candidate_count": 51,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2025, Services net sales was 109,158 million USD [1].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2025"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_9f570609f2c663fbe4508accfcdd"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_9f570609f2c663fbe4508accfcdd"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2025"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "109158",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_9f570609f2c663fbe4508accfcdd"
+                ]
+              }
+            ],
+            "operand_metrics": [
+              "services_net_sales"
+            ],
+            "periods_from_operands": [
+              "2025"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "109158",
+                "status": "VERIFIED"
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": []
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": []
+      },
+      "created_at": "2026-11-04T16:56:52.389512+00:00",
+      "messages": [
+        {
+          "id": "b7c2569332fc4fc2a40f615a1941a189",
+          "role": "user",
+          "text": "What were Services net sales in FY2025?",
+          "created_at": "2026-11-04T16:56:52.389512+00:00"
+        },
+        {
+          "id": "7499d6ee33f3497da59c2f1c80b773f0",
+          "role": "assistant",
+          "text": "FY2025, Services net sales was 109,158 million USD [1].",
+          "created_at": "2026-11-04T16:56:52.389512+00:00",
+          "evidence_ids": [
+            "cellv2_9f570609f2c663fbe4508accfcdd"
+          ],
+          "status": "SUPPORTED",
+          "trace": {
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+            "latency_ms": 1976.95,
+            "candidate_count": 51,
+            "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+          }
+        }
+      ]
+    },
+    {
+      "question": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+      "resolved_question": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "Khu vực kinh doanh giảm doanh thu là Greater China.\n\nFY2025 Greater China — doanh thu: 64.377 triệu USD [1]; FY2024: 66.952 triệu USD [2]. Mức thay đổi là -2.575 triệu USD, tương đương -3,85 %.\n\nFY2025 doanh thu thuần: 416.161 triệu USD [3]; FY2024: 391.035 triệu USD [4]. Mức thay đổi là 25.126 triệu USD, tương đương 6,43 %.\n\nBáo cáo giải thích (nguyên văn): Greater China net sales decreased during 2025 compared to 2024 primarily due to lower net sales of iPhone, partially offset by higher net sales of Mac. [5]",
+        "answer_explanation": "",
+        "values": [
+          "-2575",
+          "-3.85",
+          "25126",
+          "6.43"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 25,
+            "box": [
+              295.75701904296875,
+              325.9580078125,
+              323.2790222167969,
+              334.9580078125
+            ],
+            "cell_bbox": [
+              295.75701904296875,
+              325.9580078125,
+              323.2790222167969,
+              334.9580078125
+            ],
+            "row_box": [
+              52.130001068115234,
+              325.9580078125,
+              558.7791748046875,
+              334.9580078125
+            ],
+            "header_box": [
+              288.1199951171875,
+              284.2060241699219,
+              305.88800048828125,
+              292.2060241699219
+            ],
+            "section_box": [
+              49.5,
+              145.94802856445312,
+              562.9141845703125,
+              276.1479797363281
+            ],
+            "section_text": "net sales",
+            "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+            "row_label": "Greater China",
+            "metric": "greater_china_net_sales",
+            "metric_canonical_name": "greater_china_net_sales",
+            "value_raw": "64,377",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+            "evidence_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+            "value": "64377",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 25,
+            "box": [
+              413.50701904296875,
+              325.9580078125,
+              441.0290222167969,
+              334.9580078125
+            ],
+            "cell_bbox": [
+              413.50701904296875,
+              325.9580078125,
+              441.0290222167969,
+              334.9580078125
+            ],
+            "row_box": [
+              52.130001068115234,
+              325.9580078125,
+              558.7791748046875,
+              334.9580078125
+            ],
+            "header_box": [
+              405.8699951171875,
+              284.2060241699219,
+              423.63800048828125,
+              292.2060241699219
+            ],
+            "section_box": [
+              49.5,
+              145.94802856445312,
+              562.9141845703125,
+              276.1479797363281
+            ],
+            "section_text": "net sales",
+            "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+            "row_label": "Greater China",
+            "metric": "greater_china_net_sales",
+            "metric_canonical_name": "greater_china_net_sales",
+            "value_raw": "66,952",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+            "evidence_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+            "value": "66952",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "row_box": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Total net sales",
+            "metric": "net_revenue",
+            "metric_canonical_name": "net_revenue",
+            "value_raw": "416,161",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Total net sales 416,161 391,035 383,285",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "evidence_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "value": "416161",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              457.259033203125,
+              179.55801391601562,
+              489.7850341796875,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              457.259033203125,
+              179.55801391601562,
+              489.7850341796875,
+              188.55801391601562
+            ],
+            "row_box": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Total net sales",
+            "metric": "net_revenue",
+            "metric_canonical_name": "net_revenue",
+            "value_raw": "391,035",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Total net sales 416,161 391,035 383,285",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "evidence_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "value": "391035",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 25,
+            "box": [
+              49.5,
+              531.7980346679688,
+              565.0903930664062,
+              551.5980224609375
+            ],
+            "text": "Greater China net sales decreased during 2025 compared to 2024 primarily due to lower net sales of iPhone, partially offset by higher net sales of Mac.",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "extraction_method": "NATIVE",
+            "statement_scope": "CONSOLIDATED",
+            "citation_id": "paragraph_b83be0eb225f57f53675f71c7631",
+            "evidence_id": "paragraph_b83be0eb225f57f53675f71c7631"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 25,
+            "box": [
+              295.75701904296875,
+              325.9580078125,
+              323.2790222167969,
+              334.9580078125
+            ],
+            "cell_bbox": [
+              295.75701904296875,
+              325.9580078125,
+              323.2790222167969,
+              334.9580078125
+            ],
+            "row_box": [
+              52.130001068115234,
+              325.9580078125,
+              558.7791748046875,
+              334.9580078125
+            ],
+            "header_box": [
+              288.1199951171875,
+              284.2060241699219,
+              305.88800048828125,
+              292.2060241699219
+            ],
+            "section_box": [
+              49.5,
+              145.94802856445312,
+              562.9141845703125,
+              276.1479797363281
+            ],
+            "section_text": "net sales",
+            "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+            "row_label": "Greater China",
+            "metric": "greater_china_net_sales",
+            "metric_canonical_name": "greater_china_net_sales",
+            "value_raw": "64,377",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+            "evidence_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+            "value": "64377"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 25,
+            "box": [
+              413.50701904296875,
+              325.9580078125,
+              441.0290222167969,
+              334.9580078125
+            ],
+            "cell_bbox": [
+              413.50701904296875,
+              325.9580078125,
+              441.0290222167969,
+              334.9580078125
+            ],
+            "row_box": [
+              52.130001068115234,
+              325.9580078125,
+              558.7791748046875,
+              334.9580078125
+            ],
+            "header_box": [
+              405.8699951171875,
+              284.2060241699219,
+              423.63800048828125,
+              292.2060241699219
+            ],
+            "section_box": [
+              49.5,
+              145.94802856445312,
+              562.9141845703125,
+              276.1479797363281
+            ],
+            "section_text": "net sales",
+            "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+            "row_label": "Greater China",
+            "metric": "greater_china_net_sales",
+            "metric_canonical_name": "greater_china_net_sales",
+            "value_raw": "66,952",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+            "evidence_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+            "value": "66952"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "current − previous",
+            "operation": "ABS_CHANGE",
+            "formula": "current − previous",
+            "substitution": [
+              {
+                "value": "64,377",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              },
+              {
+                "value": "66,952",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "-2575",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_2",
+            "title": "(current − previous) / previous × 100",
+            "operation": "PERCENT_CHANGE",
+            "formula": "(current − previous) / previous × 100",
+            "substitution": [
+              {
+                "value": "64,377",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              },
+              {
+                "value": "66,952",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "-3.85",
+            "unit": "%",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q2_calculation_1",
+            "title": "current − previous",
+            "operation": "ABS_CHANGE",
+            "formula": "current − previous",
+            "substitution": [
+              {
+                "value": "416,161",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[3]"
+              },
+              {
+                "value": "391,035",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[4]"
+              }
+            ],
+            "result": "25126",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q2_calculation_2",
+            "title": "(current − previous) / previous × 100",
+            "operation": "PERCENT_CHANGE",
+            "formula": "(current − previous) / previous × 100",
+            "substitution": [
+              {
+                "value": "416,161",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[3]"
+              },
+              {
+                "value": "391,035",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[4]"
+              }
+            ],
+            "result": "6.43",
+            "unit": "%",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "current − previous",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+              "operand_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "citation_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "value": "64377",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+              "operand_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "citation_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "value": "66952",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+              "operand_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "citation_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "value": "416161",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+              "operand_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "citation_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "value": "391035",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "recomputed_result": "-2575",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "PERCENT_CHANGE",
+              "recomputed_result": "-3.85",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "recomputed_result": "25126",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "PERCENT_CHANGE",
+              "recomputed_result": "6.43",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+            "intent": "EXTRACT_VALUE",
+            "metric": "greater_china_net_sales",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "CHANGE_AND_GROWTH",
+            "metrics": [
+              "greater_china_net_sales"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "vi",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "reportable_segment_net_sales",
+                "years": [
+                  "2024",
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "FIND_DECLINES",
+                "outputs": [
+                  "declining_segments",
+                  "period_values",
+                  "absolute_change",
+                  "percentage_change"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_10a5b7cfe338a19ae9310c1f7274",
+                "cellv2_6b73b70dbb458cd5f74adeda25ea"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024",
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "-2575",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_10a5b7cfe338a19ae9310c1f7274",
+                "cellv2_6b73b70dbb458cd5f74adeda25ea"
+              ]
+            },
+            {
+              "claim_id": "claim_2",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_10a5b7cfe338a19ae9310c1f7274",
+                "cellv2_6b73b70dbb458cd5f74adeda25ea"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024",
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "-3.85",
+              "calculation_id": "calculation_2",
+              "operand_ids": [
+                "cellv2_10a5b7cfe338a19ae9310c1f7274",
+                "cellv2_6b73b70dbb458cd5f74adeda25ea"
+              ]
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 25,
+              "box": [
+                295.75701904296875,
+                325.9580078125,
+                323.2790222167969,
+                334.9580078125
+              ],
+              "cell_bbox": [
+                295.75701904296875,
+                325.9580078125,
+                323.2790222167969,
+                334.9580078125
+              ],
+              "row_box": [
+                52.130001068115234,
+                325.9580078125,
+                558.7791748046875,
+                334.9580078125
+              ],
+              "header_box": [
+                288.1199951171875,
+                284.2060241699219,
+                305.88800048828125,
+                292.2060241699219
+              ],
+              "section_box": [
+                49.5,
+                145.94802856445312,
+                562.9141845703125,
+                276.1479797363281
+              ],
+              "section_text": "net sales",
+              "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+              "row_label": "Greater China",
+              "metric": "greater_china_net_sales",
+              "metric_canonical_name": "greater_china_net_sales",
+              "value_raw": "64,377",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "evidence_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "value": "64377",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 25,
+              "box": [
+                413.50701904296875,
+                325.9580078125,
+                441.0290222167969,
+                334.9580078125
+              ],
+              "cell_bbox": [
+                413.50701904296875,
+                325.9580078125,
+                441.0290222167969,
+                334.9580078125
+              ],
+              "row_box": [
+                52.130001068115234,
+                325.9580078125,
+                558.7791748046875,
+                334.9580078125
+              ],
+              "header_box": [
+                405.8699951171875,
+                284.2060241699219,
+                423.63800048828125,
+                292.2060241699219
+              ],
+              "section_box": [
+                49.5,
+                145.94802856445312,
+                562.9141845703125,
+                276.1479797363281
+              ],
+              "section_text": "net sales",
+              "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+              "row_label": "Greater China",
+              "metric": "greater_china_net_sales",
+              "metric_canonical_name": "greater_china_net_sales",
+              "value_raw": "66,952",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "evidence_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "value": "66952",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 25,
+              "box": [
+                295.75701904296875,
+                325.9580078125,
+                323.2790222167969,
+                334.9580078125
+              ],
+              "cell_bbox": [
+                295.75701904296875,
+                325.9580078125,
+                323.2790222167969,
+                334.9580078125
+              ],
+              "row_box": [
+                52.130001068115234,
+                325.9580078125,
+                558.7791748046875,
+                334.9580078125
+              ],
+              "header_box": [
+                288.1199951171875,
+                284.2060241699219,
+                305.88800048828125,
+                292.2060241699219
+              ],
+              "section_box": [
+                49.5,
+                145.94802856445312,
+                562.9141845703125,
+                276.1479797363281
+              ],
+              "section_text": "net sales",
+              "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+              "row_label": "Greater China",
+              "metric": "greater_china_net_sales",
+              "metric_canonical_name": "greater_china_net_sales",
+              "value_raw": "64,377",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "evidence_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_10a5b7cfe338a19ae9310c1f7274",
+              "value": "64377"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 25,
+              "box": [
+                413.50701904296875,
+                325.9580078125,
+                441.0290222167969,
+                334.9580078125
+              ],
+              "cell_bbox": [
+                413.50701904296875,
+                325.9580078125,
+                441.0290222167969,
+                334.9580078125
+              ],
+              "row_box": [
+                52.130001068115234,
+                325.9580078125,
+                558.7791748046875,
+                334.9580078125
+              ],
+              "header_box": [
+                405.8699951171875,
+                284.2060241699219,
+                423.63800048828125,
+                292.2060241699219
+              ],
+              "section_box": [
+                49.5,
+                145.94802856445312,
+                562.9141845703125,
+                276.1479797363281
+              ],
+              "section_text": "net sales",
+              "table_heading": "Company’s business, results of operations and financial condition, including impacting the Company’s supply chain, the availability of rare earths and other raw materials and components, pricing and gross margin. The ultimate impact remains uncertain and will depend on several factors, including whether additional or incremental U.S. Tariffs or other measures are announced or imposed, to what extent other countries implement tariffs or other retaliatory measures in response, and the overall magnitude and duration of these measures. Trade and other international disputes can have an adverse impact on the overall macroeconomic environment and result in shifts and reductions in consumer spending and negative consumer sentiment for the Company’s products and services, all of which can further adversely affect the Company’s business and results of operations. Segment Operating Performance The following table shows net sales by reportable segment for 2025, 2024 and 2023 (dollars in millions):",
+              "row_label": "Greater China",
+              "metric": "greater_china_net_sales",
+              "metric_canonical_name": "greater_china_net_sales",
+              "value_raw": "66,952",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Greater China 64,377 (4) % 66,952 (8) % 72,559",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "evidence_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_6b73b70dbb458cd5f74adeda25ea",
+              "value": "66952"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "operand_ids": [
+                "cellv2_10a5b7cfe338a19ae9310c1f7274",
+                "cellv2_6b73b70dbb458cd5f74adeda25ea"
+              ],
+              "proposed_result": "-2575",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "PERCENT_CHANGE",
+              "operand_ids": [
+                "cellv2_10a5b7cfe338a19ae9310c1f7274",
+                "cellv2_6b73b70dbb458cd5f74adeda25ea"
+              ],
+              "proposed_result": "-3.85",
+              "result_unit": "%",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+          "intent": "SEGMENT_DECLINES",
+          "metric": "reportable_segment_net_sales",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "FIND_DECLINES",
+          "metrics": [],
+          "requested_unit": null,
+          "section": null,
+          "language": "vi",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "reportable_segment_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "FIND_DECLINES",
+              "outputs": [
+                "declining_segments",
+                "period_values",
+                "absolute_change",
+                "percentage_change"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            },
+            {
+              "question_slot_id": "q2",
+              "metric": "net_revenue",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "CHANGE_AND_GROWTH",
+              "outputs": [
+                "absolute_change",
+                "percentage_change",
+                "period_values"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            },
+            {
+              "question_slot_id": "q3",
+              "metric": "reportable_segment_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXPLAIN",
+              "outputs": [
+                "explanation"
+              ],
+              "kind": "explanation",
+              "expected_source_class": "SOURCE_PARAGRAPH"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+          "intent": "SEGMENT_DECLINES",
+          "metric": "reportable_segment_net_sales",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "FIND_DECLINES",
+          "metrics": [],
+          "requested_unit": null,
+          "section": null,
+          "language": "vi",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "reportable_segment_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "FIND_DECLINES",
+              "outputs": [
+                "declining_segments",
+                "period_values",
+                "absolute_change",
+                "percentage_change"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            },
+            {
+              "question_slot_id": "q2",
+              "metric": "net_revenue",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "CHANGE_AND_GROWTH",
+              "outputs": [
+                "absolute_change",
+                "percentage_change",
+                "period_values"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            },
+            {
+              "question_slot_id": "q3",
+              "metric": "reportable_segment_net_sales",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXPLAIN",
+              "outputs": [
+                "explanation"
+              ],
+              "kind": "explanation",
+              "expected_source_class": "SOURCE_PARAGRAPH"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": null,
+        "source_periods": [
+          "2024-09-28",
+          "2025-09-27"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_10a5b7cfe338a19ae9310c1f7274",
+          "cellv2_6b73b70dbb458cd5f74adeda25ea"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 2247.48,
+          "candidate_count": 68,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "Khu vực kinh doanh giảm doanh thu là Greater China.",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "reportable_segment_net_sales",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "operation": "FIND_DECLINES",
+            "outputs": [
+              "declining_segments",
+              "period_values",
+              "absolute_change",
+              "percentage_change"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL",
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "comparison_claims": [
+              {
+                "metric": "americas_net_sales",
+                "numeric_verification": "VERIFIED",
+                "absolute_change": "11308"
+              },
+              {
+                "metric": "europe_net_sales",
+                "numeric_verification": "VERIFIED",
+                "absolute_change": "9704"
+              },
+              {
+                "metric": "greater_china_net_sales",
+                "numeric_verification": "VERIFIED",
+                "absolute_change": "-2575"
+              },
+              {
+                "metric": "japan_net_sales",
+                "numeric_verification": "VERIFIED",
+                "absolute_change": "3651"
+              },
+              {
+                "metric": "rest_of_asia_pacific_net_sales",
+                "numeric_verification": "VERIFIED",
+                "absolute_change": "3038"
+              }
+            ],
+            "selected_metrics": [
+              "greater_china_net_sales"
+            ],
+            "selected_metric": "greater_china_net_sales"
+          },
+          {
+            "question_slot_id": "q2",
+            "metric": "net_revenue",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "CHANGE_AND_GROWTH",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation",
+              "absolute_change",
+              "percentage_change"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_cc16f54065bce239f5e0fad95209",
+              "cellv2_7f1fcea611bce77e0db246ae826f"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_cc16f54065bce239f5e0fad95209",
+                  "cellv2_7f1fcea611bce77e0db246ae826f"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024",
+                  "2025"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "25126",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_cc16f54065bce239f5e0fad95209",
+                  "cellv2_7f1fcea611bce77e0db246ae826f"
+                ]
+              },
+              {
+                "claim_id": "claim_2",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_cc16f54065bce239f5e0fad95209",
+                  "cellv2_7f1fcea611bce77e0db246ae826f"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024",
+                  "2025"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "6.43",
+                "calculation_id": "calculation_2",
+                "operand_ids": [
+                  "cellv2_cc16f54065bce239f5e0fad95209",
+                  "cellv2_7f1fcea611bce77e0db246ae826f"
+                ]
+              }
+            ],
+            "operand_metrics": [
+              "net_revenue"
+            ],
+            "periods_from_operands": [
+              "2024",
+              "2025"
+            ],
+            "calculation_operations": [
+              "ABS_CHANGE",
+              "PERCENT_CHANGE"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "ABS_CHANGE",
+                "recomputed_result": "25126",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_2",
+                "operation": "PERCENT_CHANGE",
+                "recomputed_result": "6.43",
+                "status": "VERIFIED"
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          },
+          {
+            "question_slot_id": "q3",
+            "metric": "reportable_segment_net_sales",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "operation": "EXPLAIN",
+            "outputs": [
+              "explanation"
+            ],
+            "kind": "explanation",
+            "expected_source_class": "SOURCE_PARAGRAPH",
+            "status": "SOURCE_SUPPORTED",
+            "source_refs": [
+              "paragraph_b83be0eb225f57f53675f71c7631"
+            ]
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 3,
+          "answered_count": 3,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "reportable_segment_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            },
+            {
+              "question_slot_id": "q2",
+              "metric": "net_revenue",
+              "verdict": "ANSWERED",
+              "reasons": []
+            },
+            {
+              "question_slot_id": "q3",
+              "metric": "reportable_segment_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": []
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": []
+      },
+      "created_at": "2026-11-04T16:56:57.258232+00:00",
+      "messages": [
+        {
+          "id": "efaf594975da44ec8382a3c685392bbb",
+          "role": "user",
+          "text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+          "created_at": "2026-11-04T16:56:57.258232+00:00"
+        },
+        {
+          "id": "12ff11062d834b88a2cd8842b5d944d6",
+          "role": "assistant",
+          "text": "Khu vực kinh doanh giảm doanh thu là Greater China.\n\nFY2025 Greater China — doanh thu: 64.377 triệu USD [1]; FY2024: 66.952 triệu USD [2]. Mức thay đổi là -2.575 triệu USD, tương đương -3,85 %.\n\nFY2025 doanh thu thuần: 416.161 triệu USD [3]; FY2024: 391.035 triệu USD [4]. Mức thay đổi là 25.126 triệu USD, tương đương 6,43 %.\n\nBáo cáo giải thích (nguyên văn): Greater China net sales decreased during 2025 compared to 2024 primarily due to lower net sales of iPhone, partially offset by higher net sales of Mac. [5]",
+          "created_at": "2026-11-04T16:56:57.258232+00:00",
+          "evidence_ids": [
+            "cellv2_10a5b7cfe338a19ae9310c1f7274",
+            "cellv2_6b73b70dbb458cd5f74adeda25ea",
+            "cellv2_cc16f54065bce239f5e0fad95209",
+            "cellv2_7f1fcea611bce77e0db246ae826f",
+            "paragraph_b83be0eb225f57f53675f71c7631"
+          ],
+          "status": "SUPPORTED",
+          "trace": {
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+            "latency_ms": 2247.48,
+            "candidate_count": 68,
+            "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+          }
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "id": "b7c2569332fc4fc2a40f615a1941a189",
+      "role": "user",
+      "text": "What were Services net sales in FY2025?",
+      "created_at": "2026-11-04T16:56:52.389512+00:00"
+    },
+    {
+      "id": "7499d6ee33f3497da59c2f1c80b773f0",
+      "role": "assistant",
+      "text": "FY2025, Services net sales was 109,158 million USD [1].",
+      "created_at": "2026-11-04T16:56:52.389512+00:00",
+      "evidence_ids": [
+        "cellv2_9f570609f2c663fbe4508accfcdd"
+      ],
+      "status": "SUPPORTED",
+      "trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+        "latency_ms": 1976.95,
+        "candidate_count": 51,
+        "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+      }
+    },
+    {
+      "id": "efaf594975da44ec8382a3c685392bbb",
+      "role": "user",
+      "text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+      "created_at": "2026-11-04T16:56:57.258232+00:00"
+    },
+    {
+      "id": "12ff11062d834b88a2cd8842b5d944d6",
+      "role": "assistant",
+      "text": "Khu vực kinh doanh giảm doanh thu là Greater China.\n\nFY2025 Greater China — doanh thu: 64.377 triệu USD [1]; FY2024: 66.952 triệu USD [2]. Mức thay đổi là -2.575 triệu USD, tương đương -3,85 %.\n\nFY2025 doanh thu thuần: 416.161 triệu USD [3]; FY2024: 391.035 triệu USD [4]. Mức thay đổi là 25.126 triệu USD, tương đương 6,43 %.\n\nBáo cáo giải thích (nguyên văn): Greater China net sales decreased during 2025 compared to 2024 primarily due to lower net sales of iPhone, partially offset by higher net sales of Mac. [5]",
+      "created_at": "2026-11-04T16:56:57.258232+00:00",
+      "evidence_ids": [
+        "cellv2_10a5b7cfe338a19ae9310c1f7274",
+        "cellv2_6b73b70dbb458cd5f74adeda25ea",
+        "cellv2_cc16f54065bce239f5e0fad95209",
+        "cellv2_7f1fcea611bce77e0db246ae826f",
+        "paragraph_b83be0eb225f57f53675f71c7631"
+      ],
+      "status": "SUPPORTED",
+      "trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+        "latency_ms": 2247.48,
+        "candidate_count": 68,
+        "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+      }
+    }
+  ]
+}

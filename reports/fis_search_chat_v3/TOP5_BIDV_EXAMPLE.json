@@ -1,0 +1,53 @@
+[
+  {
+    "method": "bm25",
+    "requested_top_k": 5,
+    "returned_count": 5,
+    "candidate_count": 18,
+    "mode_executed": "bm25",
+    "search_profile_executed": "baseline",
+    "filter_reason": null,
+    "dedup_count": 0,
+    "truncation_reason": "TOP_K_LIMIT",
+    "pages": [
+      7,
+      4,
+      8,
+      5,
+      5
+    ]
+  },
+  {
+    "method": "hybrid",
+    "requested_top_k": 5,
+    "returned_count": 5,
+    "candidate_count": 23,
+    "mode_executed": "hybrid",
+    "search_profile_executed": "baseline",
+    "filter_reason": null,
+    "dedup_count": 18,
+    "truncation_reason": "TOP_K_LIMIT",
+    "pages": [
+      8,
+      8,
+      5,
+      5,
+      7
+    ]
+  },
+  {
+    "method": "faith_r_product_v1",
+    "requested_top_k": 5,
+    "returned_count": 2,
+    "candidate_count": 29,
+    "mode_executed": "hybrid",
+    "search_profile_executed": "faith_r_product_v1",
+    "filter_reason": "METRIC_SCOPE_AND_TABLE_DIVERSITY",
+    "dedup_count": 0,
+    "truncation_reason": "FEWER_DISTINCT_MATCHING_EVIDENCE",
+    "pages": [
+      4,
+      7
+    ]
+  }
+]

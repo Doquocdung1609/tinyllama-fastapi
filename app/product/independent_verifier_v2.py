@@ -124,8 +124,11 @@ def verify_operand(w,c):
                 if headings and required!=max(headings)[1].strip(':'):raise ValueError('INTERVENING_ACCOUNTING_SECTION')
             elif metric=='us_net_sales':
                 if label!='u.s.' or 'net sales' not in context or 'long-lived assets' in context:raise ValueError('GEOGRAPHY_METRIC_MISMATCH')
-            elif metric=='americas_net_sales':
-                if label!='americas' or 'net sales' not in context:raise ValueError('SEGMENT_METRIC_MISMATCH')
+            elif metric in {'americas_net_sales','europe_net_sales','greater_china_net_sales','japan_net_sales','rest_of_asia_pacific_net_sales'}:
+                expected=metric.removesuffix('_net_sales').replace('_',' ')
+                if label!=expected or 'net sales' not in context:raise ValueError('SEGMENT_METRIC_MISMATCH')
+            elif metric=='effective_tax_rate':
+                if label!='effective tax rate' or not c['value_raw'].endswith('%'):raise ValueError('EFFECTIVE_TAX_RATE_MISMATCH')
             elif metric in {'net_revenue','net_income','gross_profit','operating_income','assets','gross_margin_percentage'}:
                 allowed={'net_revenue':{'total net sales'},'net_income':{'net income'},'gross_profit':{'gross margin','total gross margin'},
                     'operating_income':{'operating income'},'assets':{'total assets'},'gross_margin_percentage':{'total gross margin percentage'}}
@@ -182,6 +185,7 @@ def recompute(operation,operands,places=2,target_unit=None):
     if operation in {'ABS_CHANGE','PERCENT_CHANGE'} and operands[0]['period']<=operands[1]['period']:raise ValueError('PERIOD_DIRECTION_MISMATCH')
     if operation=='SCOPE_DIFFERENCE' and [c['statement_scope'] for c in operands]!=['CONSOLIDATED','SEPARATE']:raise ValueError('SCOPE_DIRECTION_MISMATCH')
     if operation=='PERCENTAGE_POINT_DIFFERENCE' and [c['metric'] for c in operands]!=['services_gross_margin_percentage','products_gross_margin_percentage']:raise ValueError('MARGIN_DIRECTION_MISMATCH')
+    if operation=='RATE_POINT_CHANGE' and (len(operands)!=2 or metrics!={'effective_tax_rate'} or operands[0]['unit']!='%' or operands[0]['period']<=operands[1]['period']):raise ValueError('RATE_PERIOD_DIMENSION_MISMATCH')
     with localcontext() as ctx:
         ctx.prec=50
         if operation=='EXTRACT' and len(values)==1:
@@ -191,7 +195,7 @@ def recompute(operation,operands,places=2,target_unit=None):
                     'USD':('USD','1'),'MILLION_USD':('USD','1000000')}
                 if target_unit not in units or units[target_unit][0]!=operands[0]['currency']:raise ValueError('FX_CONVERSION_NOT_AUTHORIZED')
                 result=result*Decimal(operands[0]['scale'])/Decimal(units[target_unit][1])
-        elif operation in {'ABS_CHANGE','SCOPE_DIFFERENCE','PERCENTAGE_POINT_DIFFERENCE'} and len(values)==2:result=values[0]-values[1]
+        elif operation in {'ABS_CHANGE','SCOPE_DIFFERENCE','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} and len(values)==2:result=values[0]-values[1]
         elif operation in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH'} and len(values)==2:
             if not values[1]:raise ValueError('ZERO_DENOMINATOR')
             if operands[0]['unit']=='%':raise ValueError('PERCENT_AS_MONETARY_AMOUNT')
@@ -206,7 +210,7 @@ def recompute(operation,operands,places=2,target_unit=None):
             if [c['metric'] for c in operands]!=['products_net_sales','services_net_sales','net_revenue']:raise ValueError('PART_WHOLE_SEMANTICS')
             result=values[0]+values[1]-values[2]
         else:raise ValueError('OPERATION_OR_OPERAND_COUNT')
-        if operation in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE'}:
+        if operation in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'}:
             result=result.quantize(Decimal(1).scaleb(-places),rounding=ROUND_HALF_UP)
         return str(result)
 
@@ -222,6 +226,13 @@ def verify_plan(w,plan):
             w.source_file(citation['document_id'])
             if not 1<=citation['page']<=doc['pages']:raise ValueError('CITATION_PAGE_MISMATCH')
             if citation['citation_id'] in operand_citations:continue
+            if citation['citation_id'].startswith('cellv2_'):
+                if citation['citation_id']!=_identity(citation):raise ValueError('SOURCE_CELL_LOCATOR_FORGED')
+                with pymupdf.open(w.source_file(citation['document_id'])) as original:
+                    source_page=original[citation['page']-1]
+                    if ''.join(_clip(source_page,citation['box']).split())!=''.join(citation['value_raw'].split()):raise ValueError('SOURCE_ONLY_CELL_BYTES_MISMATCH')
+                    if folded(citation['row_label']) not in folded(_clip(source_page,citation['row_box'])):raise ValueError('SOURCE_ONLY_ROW_MISMATCH')
+                continue
             evidence=w.page_evidence(citation['document_id'],citation['page'])
             if citation['citation_id'].startswith('heading_'):
                 expected='heading_'+sha256(json.dumps([doc['sha256'],citation['page'],citation.get('box'),citation['text']]).encode()).hexdigest()[:24]
@@ -242,10 +253,10 @@ def verify_plan(w,plan):
         calculations={}
         calculation_inputs={}
         for calc in plan.calculations:
-            if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE'} and calc.get('round_places',2)!=2:raise ValueError('ROUNDING_POLICY_MISMATCH')
+            if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} and calc.get('round_places',2)!=2:raise ValueError('ROUNDING_POLICY_MISMATCH')
             inputs=[verified[i] for i in calc['operand_ids']]
             result=recompute(calc['operation'],inputs,calc.get('round_places',2),calc.get('result_unit'))
-            expected_unit='%' if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH'} else 'PERCENTAGE_POINTS' if calc['operation']=='PERCENTAGE_POINT_DIFFERENCE' else inputs[0]['unit']
+            expected_unit='%' if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH'} else 'PERCENTAGE_POINTS' if calc['operation'] in {'PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} else inputs[0]['unit']
             if calc['operation']!='EXTRACT' and calc['result_unit']!=expected_unit:raise ValueError('RESULT_UNIT_DIMENSION_MISMATCH')
             if Decimal(result)!=Decimal(calc['proposed_result']):raise ValueError('INDEPENDENT_ARITHMETIC_MISMATCH')
             calculations[calc['calculation_id']]=result
@@ -312,3 +323,15 @@ def verify_rendered_numerals(answer,plan):
             except InvalidOperation:pass
         if not any(v in allowed for v in candidates):return False
     return True
+
+
+
+def verify_paragraph(w,c):
+    """Reopen a literal native paragraph; no producer relevance flag is trusted."""
+    d=w.document(c['document_id']);path=w.source_file(c['document_id'])
+    if d['sha256']!=c['source_sha256'] or sha256(path.read_bytes()).hexdigest()!=d['sha256']:return False
+    expected='paragraph_'+sha256(json.dumps([d['sha256'],c['page'],c['box'],c['text']]).encode()).hexdigest()[:28]
+    if c['citation_id']!=expected:return False
+    with pymupdf.open(path) as pdf:
+        if not 1<=c['page']<=len(pdf):return False
+        return ' '.join(_clip(pdf[c['page']-1],c['box']).split())==c['text']
