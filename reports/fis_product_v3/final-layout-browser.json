@@ -1,0 +1,1106 @@
+{
+  "mocked": false,
+  "layouts": [
+    {
+      "width": 1366,
+      "height": 768,
+      "zoom": 1,
+      "conversation_px": 504.40625,
+      "app_px": 700,
+      "ratio": 0.7205803571428572,
+      "overlap": false,
+      "body_overflow": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "zoom": 1,
+      "conversation_px": 816.40625,
+      "app_px": 1012,
+      "ratio": 0.8067255434782609,
+      "overlap": false,
+      "body_overflow": false
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "zoom": 1,
+      "conversation_px": 456.40625,
+      "app_px": 652,
+      "ratio": 0.7000095858895705,
+      "overlap": false,
+      "body_overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "zoom": 1,
+      "conversation_px": 570,
+      "app_px": 776,
+      "ratio": 0.7345360824742269,
+      "overlap": false,
+      "body_overflow": false
+    }
+  ],
+  "traces": [
+    {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "FY2025: Services 75,4% [1]; Products 36,8% [2]. Services có biên lợi nhuận gộp cao hơn Products 38,60 điểm phần trăm. [1][2]\n\nSo với Products, biên lợi nhuận gộp Services cao hơn tương đối 104,89 %. [1][2] Đây là so sánh tương đối với Products trong cùng năm tài chính, không phải tăng trưởng so với năm trước.",
+      "answer_explanation": "",
+      "values": [
+        "38.60",
+        "104.89"
+      ],
+      "citations": [
+        {
+          "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "source_kind": "PDF",
+          "page": 27,
+          "box": [
+            395.260009765625,
+            186.35800170898438,
+            420.7750244140625,
+            195.35800170898438
+          ],
+          "cell_bbox": [
+            395.260009765625,
+            186.35800170898438,
+            420.7750244140625,
+            195.35800170898438
+          ],
+          "row_box": [
+            70.12999725341797,
+            186.35800170898438,
+            558.7750854492188,
+            195.35800170898438
+          ],
+          "header_box": [
+            382.989990234375,
+            76.60597229003906,
+            400.75799560546875,
+            84.60597229003906
+          ],
+          "section_box": [
+            52.130001068115234,
+            157.85800170898438,
+            156.16998291015625,
+            166.85800170898438
+          ],
+          "section_text": "gross margin percentage:",
+          "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+          "row_label": "Services",
+          "metric": "services_gross_margin_percentage",
+          "metric_canonical_name": "services_gross_margin_percentage",
+          "value_raw": "75.4%",
+          "period": "2025",
+          "fiscal_year": 2025,
+          "period_end": "2025-09-27",
+          "period_type": "FY",
+          "statement_scope": "CONSOLIDATED",
+          "scope_source_page": 32,
+          "currency": "PERCENT",
+          "scale": "1",
+          "unit": "%",
+          "currency_source_page": 30,
+          "basis": "AS_REPORTED",
+          "extraction_method": "NATIVE",
+          "text": "Services 75.4% 73.9% 70.8%",
+          "verification_status": "NATIVE_CANDIDATE",
+          "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+          "citation_id": "cellv2_4f0cb65190a04c47482d27286917",
+          "evidence_id": "cellv2_4f0cb65190a04c47482d27286917",
+          "filename": "NASDAQ_AAPL_2025.pdf",
+          "issuer": "Apple Inc.",
+          "operand_id": "cellv2_4f0cb65190a04c47482d27286917",
+          "value": "75.4",
+          "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+          "numeric_status": "CELL_VERIFIED"
+        },
+        {
+          "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "source_kind": "PDF",
+          "page": 27,
+          "box": [
+            395.260009765625,
+            172.10800170898438,
+            420.7750244140625,
+            181.10800170898438
+          ],
+          "cell_bbox": [
+            395.260009765625,
+            172.10800170898438,
+            420.7750244140625,
+            181.10800170898438
+          ],
+          "row_box": [
+            70.12999725341797,
+            172.10800170898438,
+            558.7750854492188,
+            181.10800170898438
+          ],
+          "header_box": [
+            382.989990234375,
+            76.60597229003906,
+            400.75799560546875,
+            84.60597229003906
+          ],
+          "section_box": [
+            52.130001068115234,
+            157.85800170898438,
+            156.16998291015625,
+            166.85800170898438
+          ],
+          "section_text": "gross margin percentage:",
+          "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+          "row_label": "Products",
+          "metric": "products_gross_margin_percentage",
+          "metric_canonical_name": "products_gross_margin_percentage",
+          "value_raw": "36.8%",
+          "period": "2025",
+          "fiscal_year": 2025,
+          "period_end": "2025-09-27",
+          "period_type": "FY",
+          "statement_scope": "CONSOLIDATED",
+          "scope_source_page": 32,
+          "currency": "PERCENT",
+          "scale": "1",
+          "unit": "%",
+          "currency_source_page": 30,
+          "basis": "AS_REPORTED",
+          "extraction_method": "NATIVE",
+          "text": "Products 36.8% 37.2% 36.5%",
+          "verification_status": "NATIVE_CANDIDATE",
+          "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+          "citation_id": "cellv2_96d358005561642d2b19cb12ddec",
+          "evidence_id": "cellv2_96d358005561642d2b19cb12ddec",
+          "filename": "NASDAQ_AAPL_2025.pdf",
+          "issuer": "Apple Inc.",
+          "operand_id": "cellv2_96d358005561642d2b19cb12ddec",
+          "value": "36.8",
+          "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+          "numeric_status": "CELL_VERIFIED"
+        }
+      ],
+      "operands": [
+        {
+          "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "source_kind": "PDF",
+          "page": 27,
+          "box": [
+            395.260009765625,
+            186.35800170898438,
+            420.7750244140625,
+            195.35800170898438
+          ],
+          "cell_bbox": [
+            395.260009765625,
+            186.35800170898438,
+            420.7750244140625,
+            195.35800170898438
+          ],
+          "row_box": [
+            70.12999725341797,
+            186.35800170898438,
+            558.7750854492188,
+            195.35800170898438
+          ],
+          "header_box": [
+            382.989990234375,
+            76.60597229003906,
+            400.75799560546875,
+            84.60597229003906
+          ],
+          "section_box": [
+            52.130001068115234,
+            157.85800170898438,
+            156.16998291015625,
+            166.85800170898438
+          ],
+          "section_text": "gross margin percentage:",
+          "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+          "row_label": "Services",
+          "metric": "services_gross_margin_percentage",
+          "metric_canonical_name": "services_gross_margin_percentage",
+          "value_raw": "75.4%",
+          "period": "2025",
+          "fiscal_year": 2025,
+          "period_end": "2025-09-27",
+          "period_type": "FY",
+          "statement_scope": "CONSOLIDATED",
+          "scope_source_page": 32,
+          "currency": "PERCENT",
+          "scale": "1",
+          "unit": "%",
+          "currency_source_page": 30,
+          "basis": "AS_REPORTED",
+          "extraction_method": "NATIVE",
+          "text": "Services 75.4% 73.9% 70.8%",
+          "verification_status": "NATIVE_CANDIDATE",
+          "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+          "citation_id": "cellv2_4f0cb65190a04c47482d27286917",
+          "evidence_id": "cellv2_4f0cb65190a04c47482d27286917",
+          "filename": "NASDAQ_AAPL_2025.pdf",
+          "issuer": "Apple Inc.",
+          "operand_id": "cellv2_4f0cb65190a04c47482d27286917",
+          "value": "75.4"
+        },
+        {
+          "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "source_kind": "PDF",
+          "page": 27,
+          "box": [
+            395.260009765625,
+            172.10800170898438,
+            420.7750244140625,
+            181.10800170898438
+          ],
+          "cell_bbox": [
+            395.260009765625,
+            172.10800170898438,
+            420.7750244140625,
+            181.10800170898438
+          ],
+          "row_box": [
+            70.12999725341797,
+            172.10800170898438,
+            558.7750854492188,
+            181.10800170898438
+          ],
+          "header_box": [
+            382.989990234375,
+            76.60597229003906,
+            400.75799560546875,
+            84.60597229003906
+          ],
+          "section_box": [
+            52.130001068115234,
+            157.85800170898438,
+            156.16998291015625,
+            166.85800170898438
+          ],
+          "section_text": "gross margin percentage:",
+          "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+          "row_label": "Products",
+          "metric": "products_gross_margin_percentage",
+          "metric_canonical_name": "products_gross_margin_percentage",
+          "value_raw": "36.8%",
+          "period": "2025",
+          "fiscal_year": 2025,
+          "period_end": "2025-09-27",
+          "period_type": "FY",
+          "statement_scope": "CONSOLIDATED",
+          "scope_source_page": 32,
+          "currency": "PERCENT",
+          "scale": "1",
+          "unit": "%",
+          "currency_source_page": 30,
+          "basis": "AS_REPORTED",
+          "extraction_method": "NATIVE",
+          "text": "Products 36.8% 37.2% 36.5%",
+          "verification_status": "NATIVE_CANDIDATE",
+          "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+          "citation_id": "cellv2_96d358005561642d2b19cb12ddec",
+          "evidence_id": "cellv2_96d358005561642d2b19cb12ddec",
+          "filename": "NASDAQ_AAPL_2025.pdf",
+          "issuer": "Apple Inc.",
+          "operand_id": "cellv2_96d358005561642d2b19cb12ddec",
+          "value": "36.8"
+        }
+      ],
+      "calculation_steps": [
+        {
+          "calculation_id": "q1_calculation_1",
+          "title": "Services margin % − Products margin %",
+          "operation": "PERCENTAGE_POINT_DIFFERENCE",
+          "formula": "Services margin % − Products margin %",
+          "substitution": [
+            {
+              "value": "75.4%",
+              "period": "2025",
+              "scope": "CONSOLIDATED",
+              "basis": "AS_REPORTED",
+              "unit": "%",
+              "citation": "[1]"
+            },
+            {
+              "value": "36.8%",
+              "period": "2025",
+              "scope": "CONSOLIDATED",
+              "basis": "AS_REPORTED",
+              "unit": "%",
+              "citation": "[2]"
+            }
+          ],
+          "result": "38.60",
+          "unit": "PERCENTAGE_POINTS",
+          "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+        },
+        {
+          "calculation_id": "q2_calculation_1",
+          "title": "(Services margin − Products margin) / Products margin × 100",
+          "operation": "RELATIVE_DIFFERENCE",
+          "formula": "(Services margin − Products margin) / Products margin × 100",
+          "substitution": [
+            {
+              "value": "75.4%",
+              "period": "2025",
+              "scope": "CONSOLIDATED",
+              "basis": "AS_REPORTED",
+              "unit": "%",
+              "citation": "[1]"
+            },
+            {
+              "value": "36.8%",
+              "period": "2025",
+              "scope": "CONSOLIDATED",
+              "basis": "AS_REPORTED",
+              "unit": "%",
+              "citation": "[2]"
+            }
+          ],
+          "result": "104.89",
+          "unit": "%",
+          "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+        }
+      ],
+      "formula": "Services margin % − Products margin %",
+      "unit": "PERCENTAGE_POINTS",
+      "verification_status": "VERIFIED",
+      "independent_verification": {
+        "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+        "status": "VERIFIED",
+        "stage_a": [
+          {
+            "question_slot_id": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+            "operand_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "citation_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "value": "75.4",
+            "status": "VERIFIED"
+          },
+          {
+            "question_slot_id": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+            "operand_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "citation_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "value": "36.8",
+            "status": "VERIFIED"
+          },
+          {
+            "question_slot_id": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+            "operand_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "citation_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "value": "75.4",
+            "status": "VERIFIED"
+          },
+          {
+            "question_slot_id": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+            "operand_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "citation_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "value": "36.8",
+            "status": "VERIFIED"
+          }
+        ],
+        "stage_b": [
+          {
+            "calculation_id": "calculation_1",
+            "operation": "PERCENTAGE_POINT_DIFFERENCE",
+            "recomputed_result": "38.60",
+            "status": "VERIFIED"
+          },
+          {
+            "calculation_id": "calculation_1",
+            "operation": "RELATIVE_DIFFERENCE",
+            "recomputed_result": "104.89",
+            "status": "VERIFIED"
+          }
+        ]
+      },
+      "answer_plan": {
+        "question_plan": {
+          "raw_text": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_gross_margin_percentage",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "PERCENTAGE_POINT_DIFFERENCE",
+          "metrics": [
+            "services_gross_margin_percentage",
+            "products_gross_margin_percentage"
+          ],
+          "requested_unit": "%",
+          "section": null,
+          "language": "vi",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_gross_margin_percentage",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "PERCENTAGE_POINT_DIFFERENCE",
+              "outputs": [
+                "amount",
+                "source_operands",
+                "calculation"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "claims": [
+          {
+            "claim_id": "claim_1",
+            "type": "NUMERIC",
+            "source_refs": [
+              "cellv2_4f0cb65190a04c47482d27286917",
+              "cellv2_96d358005561642d2b19cb12ddec"
+            ],
+            "source_scope": "CONSOLIDATED",
+            "period": [
+              "2025"
+            ],
+            "verification_status": "VERIFIED",
+            "text": "",
+            "value": "38.60",
+            "calculation_id": "calculation_1",
+            "operand_ids": [
+              "cellv2_4f0cb65190a04c47482d27286917",
+              "cellv2_96d358005561642d2b19cb12ddec"
+            ],
+            "question_slot_id": "q1"
+          }
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 27,
+            "box": [
+              395.260009765625,
+              186.35800170898438,
+              420.7750244140625,
+              195.35800170898438
+            ],
+            "cell_bbox": [
+              395.260009765625,
+              186.35800170898438,
+              420.7750244140625,
+              195.35800170898438
+            ],
+            "row_box": [
+              70.12999725341797,
+              186.35800170898438,
+              558.7750854492188,
+              195.35800170898438
+            ],
+            "header_box": [
+              382.989990234375,
+              76.60597229003906,
+              400.75799560546875,
+              84.60597229003906
+            ],
+            "section_box": [
+              52.130001068115234,
+              157.85800170898438,
+              156.16998291015625,
+              166.85800170898438
+            ],
+            "section_text": "gross margin percentage:",
+            "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+            "row_label": "Services",
+            "metric": "services_gross_margin_percentage",
+            "metric_canonical_name": "services_gross_margin_percentage",
+            "value_raw": "75.4%",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "PERCENT",
+            "scale": "1",
+            "unit": "%",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 75.4% 73.9% 70.8%",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "evidence_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "value": "75.4",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 27,
+            "box": [
+              395.260009765625,
+              172.10800170898438,
+              420.7750244140625,
+              181.10800170898438
+            ],
+            "cell_bbox": [
+              395.260009765625,
+              172.10800170898438,
+              420.7750244140625,
+              181.10800170898438
+            ],
+            "row_box": [
+              70.12999725341797,
+              172.10800170898438,
+              558.7750854492188,
+              181.10800170898438
+            ],
+            "header_box": [
+              382.989990234375,
+              76.60597229003906,
+              400.75799560546875,
+              84.60597229003906
+            ],
+            "section_box": [
+              52.130001068115234,
+              157.85800170898438,
+              156.16998291015625,
+              166.85800170898438
+            ],
+            "section_text": "gross margin percentage:",
+            "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+            "row_label": "Products",
+            "metric": "products_gross_margin_percentage",
+            "metric_canonical_name": "products_gross_margin_percentage",
+            "value_raw": "36.8%",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "PERCENT",
+            "scale": "1",
+            "unit": "%",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Products 36.8% 37.2% 36.5%",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "evidence_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "value": "36.8",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 27,
+            "box": [
+              395.260009765625,
+              186.35800170898438,
+              420.7750244140625,
+              195.35800170898438
+            ],
+            "cell_bbox": [
+              395.260009765625,
+              186.35800170898438,
+              420.7750244140625,
+              195.35800170898438
+            ],
+            "row_box": [
+              70.12999725341797,
+              186.35800170898438,
+              558.7750854492188,
+              195.35800170898438
+            ],
+            "header_box": [
+              382.989990234375,
+              76.60597229003906,
+              400.75799560546875,
+              84.60597229003906
+            ],
+            "section_box": [
+              52.130001068115234,
+              157.85800170898438,
+              156.16998291015625,
+              166.85800170898438
+            ],
+            "section_text": "gross margin percentage:",
+            "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+            "row_label": "Services",
+            "metric": "services_gross_margin_percentage",
+            "metric_canonical_name": "services_gross_margin_percentage",
+            "value_raw": "75.4%",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "PERCENT",
+            "scale": "1",
+            "unit": "%",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 75.4% 73.9% 70.8%",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "evidence_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_4f0cb65190a04c47482d27286917",
+            "value": "75.4"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 27,
+            "box": [
+              395.260009765625,
+              172.10800170898438,
+              420.7750244140625,
+              181.10800170898438
+            ],
+            "cell_bbox": [
+              395.260009765625,
+              172.10800170898438,
+              420.7750244140625,
+              181.10800170898438
+            ],
+            "row_box": [
+              70.12999725341797,
+              172.10800170898438,
+              558.7750854492188,
+              181.10800170898438
+            ],
+            "header_box": [
+              382.989990234375,
+              76.60597229003906,
+              400.75799560546875,
+              84.60597229003906
+            ],
+            "section_box": [
+              52.130001068115234,
+              157.85800170898438,
+              156.16998291015625,
+              166.85800170898438
+            ],
+            "section_text": "gross margin percentage:",
+            "table_heading": "Gross Margin Products and Services gross margin and gross margin percentage for 2025, 2024 and 2023 were as follows (dollars in millions):",
+            "row_label": "Products",
+            "metric": "products_gross_margin_percentage",
+            "metric_canonical_name": "products_gross_margin_percentage",
+            "value_raw": "36.8%",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "PERCENT",
+            "scale": "1",
+            "unit": "%",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Products 36.8% 37.2% 36.5%",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "evidence_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_96d358005561642d2b19cb12ddec",
+            "value": "36.8"
+          }
+        ],
+        "calculations": [
+          {
+            "calculation_id": "calculation_1",
+            "operation": "PERCENTAGE_POINT_DIFFERENCE",
+            "operand_ids": [
+              "cellv2_4f0cb65190a04c47482d27286917",
+              "cellv2_96d358005561642d2b19cb12ddec"
+            ],
+            "proposed_result": "38.60",
+            "result_unit": "PERCENTAGE_POINTS",
+            "round_places": 2
+          }
+        ],
+        "version": "VERIFIED_ANSWER_PLAN_V2"
+      },
+      "query_plan": {
+        "raw_text": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+        "intent": "ARITHMETIC",
+        "metric": "services_gross_margin_percentage",
+        "years": [
+          "2025"
+        ],
+        "scope": null,
+        "period_type": "FY",
+        "basis": null,
+        "operation": "PERCENTAGE_POINT_DIFFERENCE",
+        "metrics": [
+          "services_gross_margin_percentage",
+          "products_gross_margin_percentage"
+        ],
+        "requested_unit": "%",
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_gross_margin_percentage",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "operation": "PERCENTAGE_POINT_DIFFERENCE",
+            "outputs": [
+              "amount",
+              "source_operands",
+              "calculation"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          },
+          {
+            "question_slot_id": "q2",
+            "metric": "services_gross_margin_percentage",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "operation": "RELATIVE_DIFFERENCE",
+            "outputs": [
+              "amount",
+              "source_operands",
+              "calculation",
+              "source_operands",
+              "calculation"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "conversation_slots": {
+        "raw_text": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+        "intent": "ARITHMETIC",
+        "metric": "services_gross_margin_percentage",
+        "years": [
+          "2025"
+        ],
+        "scope": null,
+        "period_type": "FY",
+        "basis": null,
+        "operation": "PERCENTAGE_POINT_DIFFERENCE",
+        "metrics": [
+          "services_gross_margin_percentage",
+          "products_gross_margin_percentage"
+        ],
+        "requested_unit": "%",
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_gross_margin_percentage",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "operation": "PERCENTAGE_POINT_DIFFERENCE",
+            "outputs": [
+              "amount",
+              "source_operands",
+              "calculation"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          },
+          {
+            "question_slot_id": "q2",
+            "metric": "services_gross_margin_percentage",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "operation": "RELATIVE_DIFFERENCE",
+            "outputs": [
+              "amount",
+              "source_operands",
+              "calculation",
+              "source_operands",
+              "calculation"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ]
+      },
+      "period": "2025-09-27",
+      "source_periods": [
+        "2025-09-27"
+      ],
+      "answer_source_chunk_id": null,
+      "answer_evidence_ids": [
+        "cellv2_4f0cb65190a04c47482d27286917",
+        "cellv2_96d358005561642d2b19cb12ddec"
+      ],
+      "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+      "reason": null,
+      "warnings": [],
+      "search_profile": "faith_r_product_v1",
+      "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+        "latency_ms": 7196.23,
+        "candidate_count": 37,
+        "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+      },
+      "generation_trace": {
+        "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+        "model_status": "NOT_REQUIRED"
+      },
+      "primary_answer": "FY2025: Services 75,4% [1]; Products 36,8% [2]. Services có biên lợi nhuận gộp cao hơn Products 38,60 điểm phần trăm. [1][2]",
+      "supporting_claims": [
+        {
+          "question_slot_id": "q1",
+          "metric": "services_gross_margin_percentage",
+          "years": [
+            "2025"
+          ],
+          "scope": "CONSOLIDATED",
+          "operation": "PERCENTAGE_POINT_DIFFERENCE",
+          "outputs": [
+            "amount",
+            "period_values",
+            "source_operands",
+            "calculation"
+          ],
+          "status": "VERIFIED",
+          "numeric_verification": "VERIFIED",
+          "reason": null,
+          "source_refs": [
+            "cellv2_4f0cb65190a04c47482d27286917",
+            "cellv2_96d358005561642d2b19cb12ddec"
+          ],
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_4f0cb65190a04c47482d27286917",
+                "cellv2_96d358005561642d2b19cb12ddec"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "38.60",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_4f0cb65190a04c47482d27286917",
+                "cellv2_96d358005561642d2b19cb12ddec"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "operand_metrics": [
+            "products_gross_margin_percentage",
+            "services_gross_margin_percentage"
+          ],
+          "periods_from_operands": [
+            "2025"
+          ],
+          "calculation_operations": [
+            "PERCENTAGE_POINT_DIFFERENCE"
+          ],
+          "calculation_results": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "PERCENTAGE_POINT_DIFFERENCE",
+              "recomputed_result": "38.60",
+              "status": "VERIFIED"
+            }
+          ],
+          "issuer": [
+            "Apple Inc."
+          ],
+          "confirmation": null
+        },
+        {
+          "question_slot_id": "q2",
+          "metric": "services_gross_margin_percentage",
+          "years": [
+            "2025"
+          ],
+          "scope": "CONSOLIDATED",
+          "operation": "RELATIVE_DIFFERENCE",
+          "outputs": [
+            "amount",
+            "period_values",
+            "source_operands",
+            "calculation"
+          ],
+          "status": "VERIFIED",
+          "numeric_verification": "VERIFIED",
+          "reason": null,
+          "source_refs": [
+            "cellv2_4f0cb65190a04c47482d27286917",
+            "cellv2_96d358005561642d2b19cb12ddec"
+          ],
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_4f0cb65190a04c47482d27286917",
+                "cellv2_96d358005561642d2b19cb12ddec"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "104.89",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_4f0cb65190a04c47482d27286917",
+                "cellv2_96d358005561642d2b19cb12ddec"
+              ],
+              "question_slot_id": "q2"
+            }
+          ],
+          "operand_metrics": [
+            "products_gross_margin_percentage",
+            "services_gross_margin_percentage"
+          ],
+          "periods_from_operands": [
+            "2025"
+          ],
+          "calculation_operations": [
+            "RELATIVE_DIFFERENCE"
+          ],
+          "calculation_results": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "RELATIVE_DIFFERENCE",
+              "recomputed_result": "104.89",
+              "status": "VERIFIED"
+            }
+          ],
+          "issuer": [
+            "Apple Inc."
+          ],
+          "confirmation": null
+        }
+      ],
+      "unanswered_subquestions": [],
+      "semantic_question_coverage": {
+        "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+        "status": "COMPLETE",
+        "requested_count": 2,
+        "answered_count": 2,
+        "slots": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_gross_margin_percentage",
+            "verdict": "ANSWERED",
+            "reasons": []
+          },
+          {
+            "question_slot_id": "q2",
+            "metric": "services_gross_margin_percentage",
+            "verdict": "ANSWERED",
+            "reasons": []
+          }
+        ],
+        "unanswered_subquestions": [],
+        "original_question_audit": {
+          "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+          "original_question": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+          "DISCOVERED_REQUIREMENTS": [
+            {
+              "id": "RELATIVE_COMPARISON",
+              "operations": [
+                "RELATIVE_DIFFERENCE"
+              ],
+              "render_pattern": "tuong doi|relative",
+              "verdict": "ANSWERED",
+              "reason": null
+            },
+            {
+              "id": "POINT_COMPARISON",
+              "operations": [
+                "PERCENTAGE_POINT_DIFFERENCE",
+                "RATE_POINT_CHANGE"
+              ],
+              "render_pattern": "diem phan tram|percentage points?",
+              "verdict": "ANSWERED",
+              "reason": null
+            }
+          ],
+          "ANSWERED": [
+            "RELATIVE_COMPARISON",
+            "POINT_COMPARISON"
+          ],
+          "MISSING": [],
+          "UNSUPPORTED": []
+        }
+      },
+      "source_numeric_verification": "VERIFIED",
+      "generation_status": "DETERMINISTIC_CLAIMS",
+      "limitations": [],
+      "session_id": "8fb9fbad42774688a1c9c2998fdb8966",
+      "resolved_question": "Biên lợi nhuận gộp Services FY2025 cao hơn Products bao nhiêu điểm phần trăm? Nếu dùng phần trăm tăng tương đối thì có giống nhau không?",
+      "source_scope": [
+        "3eb270b22acb7d8d8e9c32a43dc221de"
+      ],
+      "conversation_reset": false
+    }
+  ]
+}

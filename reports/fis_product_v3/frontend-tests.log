@@ -1,0 +1,12 @@
+
+> frontend@0.0.0 test
+> vitest run --config vitest.config.ts
+
+
+ RUN  v5.0.5 C:/Users/Admin/.codex/worktrees/topic3-v7p/tinyllama-fastapi/frontend
+
+
+ Test Files  4 passed (4)
+      Tests  36 passed (36)
+   Start at  11:36:54
+   Duration  11.77s (environment 49%, setup 18%, import 14%, tests 12%, transform 8%)
