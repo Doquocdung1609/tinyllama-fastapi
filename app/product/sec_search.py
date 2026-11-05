@@ -79,7 +79,8 @@ class SecResearchIndex:
             self.catalog_rows.append({"ticker": m.get("ticker", ""), "cik": m["cik"],
                 "issuer": m.get("company_name", ""), "accession": m["accession_number"],
                 "filing_id": parent.filing_id, "form": m.get("form_type", ""),
-                "report_period": m.get("report_date", ""), "source_url": m["source_url"],
+                "report_period": m.get("report_date", ""), "fiscal_year": m.get("fiscal_year"),
+                "fiscal_period": m.get("fiscal_period"), "source_url": m["source_url"],
                 "raw_sha256": item["raw_hash"], "extraction_status": parent.extraction_status})
         self.catalog_rows.sort(key=lambda row: (row["ticker"], row["accession"]))
         for row in self.catalog_rows:

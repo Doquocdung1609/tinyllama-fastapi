@@ -2,10 +2,20 @@
 import json
 from pathlib import Path
 from threading import RLock
+from typing import Literal
+from pydantic import Field
 from app.research_retrieval.snapshot import FrozenResearchSnapshot
 from app.financial_index.lexical import LexicalIndex
 from app.financial_index.corpus import ProvenanceCache
-from app.financial_query.contracts import CorpusCatalogV1
+from app.financial_query.contracts import CatalogFilingV1,CorpusCatalogV1
+
+class ProductCatalogFiling(CatalogFilingV1):
+    form: Literal['10-K','10-Q','10-K/A','10-Q/A','20-F']
+
+
+class ProductCorpusCatalog(CorpusCatalogV1):
+    filings: list[ProductCatalogFiling] = Field(max_length=50000)
+
 
 class ProductSecSnapshot(FrozenResearchSnapshot):
     def __init__(self,root):
@@ -13,7 +23,7 @@ class ProductSecSnapshot(FrozenResearchSnapshot):
         owner=json.loads((self.root/'ownership.json').read_text(encoding='utf-8'))
         if owner.get('owner')!='FIS_USER_SEC_LIBRARY_V1' or self.root.parent.name!=owner.get('id'):raise ValueError('PRODUCT_SEC_OWNERSHIP_REQUIRED')
         self.freeze=json.loads((self.root/'frozen_v1/freeze.json').read_text(encoding='utf-8'))
-        self.catalog=CorpusCatalogV1.model_validate_json((self.root/'frozen_v1/catalog.json').read_bytes())
+        self.catalog=ProductCorpusCatalog.model_validate_json((self.root/'frozen_v1/catalog.json').read_bytes())
         if self.catalog.manifest_hash!=self.freeze['manifest_hash'] or self.catalog.generation_id!=self.freeze['generation']:raise ValueError('PRODUCT_GENERATION_MISMATCH')
         from app.financial_ingestion.schemas import DatasetManifest
         manifest=DatasetManifest.model_validate_json((self.root/'frozen_v1/manifest.json').read_bytes())

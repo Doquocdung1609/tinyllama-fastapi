@@ -2,7 +2,37 @@
 from hashlib import sha256
 from pathlib import Path
 import json,os,sys
+from contextlib import closing
+from uuid import uuid4
 from app.product.sec_library import rows,paths,update,client
+
+def isolate_interrupted_lexical(root, vectors, lexical, generation, chunks):
+    """Preserve an unpublished index whose metadata predates this generation."""
+    from app.financial_index.lexical import LexicalIndex
+    if (root/'lexical-publication.json').exists():
+        return lexical
+    manifest=vectors/'generation_manifest.json'
+    if manifest.is_file() and json.loads(manifest.read_bytes()).get('state')=='READY':
+        return lexical
+    with closing(lexical.connect()) as connection:
+        old=connection.execute('SELECT generation FROM active').fetchone()
+    if old is None:
+        return lexical
+    if old[0]==generation:
+        expected={chunk.chunk_id:chunk.model_dump(mode='json') for chunk in chunks}
+        if all(expected.get(record['chunk']['chunk_id'])==record['chunk'] for record in lexical.records(generation)):
+            return lexical
+    root=root.resolve(strict=True)
+    archive=root/('interrupted-lexical-'+uuid4().hex)
+    archive.mkdir()
+    for name in ('lexical_v1.sqlite3','lexical_v1.sqlite3-wal','lexical_v1.sqlite3-shm'):
+        path=root/name
+        if path.is_file():
+            if path.resolve().parent!=root:
+                raise ValueError('PRODUCT_SOURCE_PATH_ESCAPE')
+            path.replace(archive/name)
+    return LexicalIndex(root/'lexical_v1.sqlite3')
+
 
 def run(key):
     from app.financial_ingestion import PARSER_VERSION,CHUNKER_VERSION
@@ -68,20 +98,23 @@ def run(key):
     source={'filing_id':m.filing_id,'raw_path':str(raw_path.resolve()),'structured_path':str(structured.resolve()),'chunks_path':str(chunk_file.resolve()),
         'raw_hash':m.raw_content_hash,'normalized_hash':m.normalized_content_hash,'structured_hash':sha256(structured.read_bytes()).hexdigest(),
         'chunks_hash':sha256(chunk_file.read_bytes()).hexdigest(),'manifest_hash':manifest.manifest_hash}
-    catalog=catalog_from_verified_metadata(manifest,[filing],generation_id=generation)
+    from app.product.sec_product_snapshot import ProductCatalogFiling,ProductCorpusCatalog,ProductSecSnapshot
+    catalog=catalog_from_verified_metadata(manifest,[filing],generation_id=generation,
+        filing_model=ProductCatalogFiling,catalog_model=ProductCorpusCatalog,omit_overlong_labels=True)
     for name,data in [('manifest.json',manifest.model_dump(mode='json')),('catalog.json',catalog.model_dump(mode='json')),('sources.json',[source]),
         ('freeze.json',{'generation':generation,'manifest_hash':manifest.manifest_hash,'purpose':'PRODUCT_USER_LIBRARY_SOURCE_ONLY',
             'source_groups':[{'cik':m.cik,'accession':m.accession_number,'url':m.source_url,'raw_hash':m.raw_content_hash}]})]:
         (frozen/name).write_text(json.dumps(data,ensure_ascii=False,sort_keys=True),encoding='utf-8')
     update(key,'INDEXING')
-    lexical=LexicalIndex(root/'lexical_v1.sqlite3');lexical.start(manifest.dataset_id,generation,{'product_only':True})
+    lexical=LexicalIndex(root/'lexical_v1.sqlite3')
+    lexical=isolate_interrupted_lexical(root,vectors,lexical,generation,chunks)
+    lexical.start(manifest.dataset_id,generation,{'product_only':True})
     lexical.add(generation,[{'chunk':c.model_dump(mode='json'),'source':source} for c in chunks]);lexical.seal(generation);lexical.publish(manifest.dataset_id,generation)
     atomic_json(root/'lexical-publication.json',{'state':'LEXICAL_READY','dataset_id':manifest.dataset_id,
         'generation':generation,'manifest_hash':manifest.manifest_hash,'parent_count':len(chunks),'completed_points':0})
     if os.getenv('STUDIO_SEC_IMPORT_LEXICAL_ONLY')=='1':
         update(key,'LEXICAL_READY','DENSE_PENDING')
         return
-    from app.product.sec_product_snapshot import ProductSecSnapshot
     result=build(root,vectors,4,None,snapshot_factory=ProductSecSnapshot)
     if result['state']!='READY':raise ValueError('VECTOR_GENERATION_INCOMPLETE')
     update(key,'READY')

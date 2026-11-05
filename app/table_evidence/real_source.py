@@ -163,6 +163,34 @@ def _source_period(context,headers, *, product_mode=False):
     return kind,start,period_end.isoformat(),months
 
 
+def _physical_product_headers(table, cell):
+    """Bind a styled TD header omitted by the legacy table-header detector."""
+    if table.header_rows:
+        return (), ()
+    contexts={re.sub(r'\s+','',value).casefold() for value in table.context_text}
+    if not contexts & {'incomestatements','consolidatedincomestatements',
+                       'balancesheets','consolidatedbalancesheets'}:
+        return (), ()
+    period_rows=[]
+    for header in table.cells:
+        if header.row>=cell.row or header.column!=0:
+            continue
+        if not re.search(r'\b(?:years? ended|as of)\b|(?:June|December|September|March)\s+\d{1,2}',header.text,re.I):
+            continue
+        years=[candidate.text for candidate in table.cells
+               if candidate.row==header.row and candidate.column<=cell.column<candidate.column+candidate.colspan
+               and not candidate.numeric_facts and re.fullmatch(r'(?:19|20)\d{2}',candidate.text)]
+        if len(years)==1:
+            period_rows.append((header.row,header.text,years[0]))
+    if len(period_rows)!=1:
+        return (), ()
+    row, label, year=period_rows[0]
+    units=tuple(sorted({header.text.strip() for header in table.cells
+                        if header.row<row and header.column==0 and not header.numeric_facts
+                        and re.match(r'^\(?in millions\b',header.text,re.I)}))
+    return (label,year),units
+
+
 def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resources:dict,*,raw_hash:str,generation:str,manifest_hash:str,dataset_id:str='research-sec-v1',product_mode:bool=False):
     """Derive one physical fact; caller must authenticate all inputs first."""
     if parent.kind!='table' or parent.extraction_status!='OK' or table.extraction_status!='OK' or table.extraction_warnings:
@@ -213,6 +241,9 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
             if not any(h.column<len(grid) and grid[h.column]==h.text for grid in table.header_rows):
                 raise ValueError('SOURCE_HEADER_GRID_CONFLICT')
             headers.append(h.text)
+    physical_units=()
+    if not headers and product_mode:
+        headers,physical_units=_physical_product_headers(table,cell)
     if not headers:raise ValueError('SOURCE_HEADER_PATH_MISSING')
     product_sales_scope = (product_mode and row_label=='net sales'
         and context.get('dimensions')==[('srt:ProductOrServiceAxis','us-gaap:ProductMember')]
@@ -224,6 +255,8 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
     if not -12<=exp<=12:raise ValueError('XBRL_SCALE_UNSUPPORTED')
     unit_headers=sorted({h.strip() for grid in table.header_rows for h in grid
                          if re.search(r'\b(?:thousands|millions|billions)\b',h,re.I)})
+    if physical_units:
+        unit_headers=list(physical_units)
     if product_mode and table.unit_context and table.unit_context==m.get('unit_context') and table.unit_context in table.context_text and table.context_locations:
         context_units=set(re.findall(r'\b(?:thousands|millions|billions)\b',table.unit_context.casefold()))
         header_units={u for h in unit_headers for u in re.findall(r'\b(?:thousands|millions|billions)\b',h.casefold())}

@@ -113,6 +113,21 @@ def period_matches(cell, period):
     return period is None or cell.period_months==period
 
 
+def target_matches(cell, filing, target, fiscal):
+    if len(target)!=4 or not fiscal:
+        return cell.period_end.startswith(target)
+    focused_year=filing.get('fiscal_year')
+    report_end=filing['report_period']
+    if focused_year is None or not report_end:
+        return False
+    if cell.period_end==report_end:
+        return str(focused_year)==target
+    if filing['form'] in {'10-K','20-F'} and cell.period_end[5:7]==report_end[5:7]:
+        observed_year=focused_year-int(report_end[:4])+int(cell.period_end[:4])
+        return str(observed_year)==target
+    return False
+
+
 def abstain(reason, text, *, timings=None):
     return {'status':'NEEDS_CLARIFICATION','answer_status':'REQUIRES_SOURCE_REVIEW','answer':text,
             'reason':reason,'values':[],'citations':[],'timings_ms':timings or {}}
@@ -150,6 +165,7 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
         return abstain('SEC_COMPANY_SCOPE_AMBIGUOUS','Hãy nêu tên doanh nghiệp trong câu hỏi hoặc chọn các filing của cùng một doanh nghiệp.')
     if any(row['form'] not in {'10-K','10-Q','20-F'} for row,_ in sources):
         return abstain('SEC_REPORTING_BASIS_UNSUPPORTED','Các filing đang chọn cần đối chiếu riêng về loại báo cáo hoặc trạng thái sửa đổi.')
+    fiscal = bool(re.search(r'\bfy\s*20\d{2}|\b(?:fiscal year|nam tai chinh)\b',q))
     dates = tuple(sorted(set(re.findall(r'\b20\d{2}-\d{2}-\d{2}\b',q))))
     years = tuple(sorted(set(re.findall(r'\b(?:fy\s*)?(20\d{2})\b',re.sub(r'\b20\d{2}-\d{2}-\d{2}\b','',q)))))
     if not dates and plan.period_end:
@@ -186,7 +202,7 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
         return abstain('SEC_COMPARISON_PERIODS_REQUIRED','Hãy chỉ rõ hai năm tài chính hoặc hai ngày kết thúc kỳ cần so sánh.')
     chosen = []
     for target in targets:
-        options = [(cell,filing,part) for cell,filing,part in collected if cell.period_end.startswith(target)]
+        options = [(cell,filing,part) for cell,filing,part in collected if target_matches(cell,filing,target,fiscal)]
         if not options:
             return abstain('SEC_VERIFIED_PERIOD_CELL_UNAVAILABLE','Chưa đối chiếu được ô nguồn cho kỳ '+target+'. Hãy kiểm tra chỉ tiêu, loại kỳ và filing đang chọn.',timings=timings)
         facts = {(cell.period_start,cell.period_end,cell.period_months,cell.unit,cell.multiplier,cell.effective_value)
