@@ -220,6 +220,7 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
                  f'| {c.period_start+" → " if c.period_start else ""}{c.period_end} | {display(str(c.value))} | {c.accession} [{i}] |'
                  for i,c in enumerate(cells,1))]
     result = list(values)
+    checks = [('EXTRACT',values[0])] if len(values)==1 else []
     formula = None
     if len(values)==2 and operation!='COMPARE':
         old,new = values
@@ -228,21 +229,30 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
             delta = new-old
             lines.append(f'Chênh lệch = {display(str(new))} − {display(str(old))} = **{display(str(delta))} triệu USD**. [1][2]')
             result = [delta]
+            checks.append(('ABS_CHANGE',delta))
             formula = 'current - previous'
             if old and operation!='ABS_CHANGE':
                 change = (delta/old*100).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
+                checks.append(('PERCENT_CHANGE',change))
                 lines.append(f'Mức thay đổi = chênh lệch ÷ {display(str(old))} × 100 = **{display(str(change))}%**. [1][2]')
                 if operation=='PERCENT_CHANGE':
                     result = [change]
                     formula = '(current - previous) / previous * 100'
             elif operation=='PERCENT_CHANGE':
                 return abstain('SEC_ZERO_BASE','Kỳ gốc bằng 0 nên không xác định được phần trăm thay đổi.',timings=timings)
+    source_cells = [cell.model_dump(mode='json') for cell in cells]
+    from app.product.sec_answer_contract import verify_comparison
+    try:
+        independent = verify_comparison(source_cells,checks)
+    except (ValueError,ArithmeticError):
+        return {**abstain('SEC_INDEPENDENT_ARITHMETIC_MISMATCH','Các ô nguồn được giữ lại để đối chiếu; phép tính chưa vượt qua kiểm tra độc lập.',timings=timings),
+                'citations':citations}
     timings['compute_and_citations'] = (perf_counter()-begin)*1000
     timings['total'] = (perf_counter()-started)*1000
     return {'status':'SUPPORTED','answer_status':'VERIFIED_ANSWER','answer':'\n\n'.join(lines),
             'values':[str(value) for value in result],'unit':'%' if operation=='PERCENT_CHANGE' else 'MILLION_USD',
-            'citations':citations,'source_cells':[cell.model_dump(mode='json') for cell in cells],
+            'citations':citations,'source_cells':source_cells,'independent_verification':independent,
             'verification_status':'VERIFIED_IXBRL_SOURCE_CELLS_AND_DECIMAL','timings_ms':timings,'formula':formula,
-            'operation':operation,'sec_context':{'metric':metric,'period':period,'targets':targets,
+            'operation':'ABS_CHANGE' if len(values)==2 and operation=='EXTRACT' else operation,'sec_context':{'metric':metric,'period':period,'targets':targets,
                 'ticker':chosen[0][1]['ticker'],'metric_phrase':{'revenue':'net sales','income':'net income','assets':'total assets'}[metric],
                 'question':question}}

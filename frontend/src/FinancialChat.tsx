@@ -38,6 +38,7 @@ export default function FinancialChat({selected,open}:{selected:Evidence|null;op
  const sessions=useQuery({queryKey:['chat-sessions',filter,offset],queryFn:()=>api<{sessions:Session[];has_more:boolean}>(`/chat/sessions?q=${encodeURIComponent(filter)}&offset=${offset}`)})
  const [docId,setDocId]=useState(()=>sessionStorage.getItem('active-document')||'')
  const [additionalSources,setAdditionalSources]=useState<string[]>([])
+ const [pickerOpen,setPickerOpen]=useState(false)
  const [session,setSession]=useState<string|undefined>(()=>sessionStorage.getItem('active-financial-chat')||undefined)
  const [turns,setTurns]=useState<Turn[]>([]),[question,setQuestion]=useState(''),[error,setError]=useState(''),[toast,setToast]=useState('')
  const [inspected,setInspected]=useState<Evidence|null>(selected),[rename,setRename]=useState(false),[title,setTitle]=useState('')
@@ -101,13 +102,13 @@ export default function FinancialChat({selected,open}:{selected:Evidence|null;op
     <label className="chat-source-select">Nguồn chính<select aria-label="Tài liệu trợ lý" value={chosen} onChange={e=>{newChat();setDocId(e.target.value);setAdditionalSources([])}}>
      <option value="">Chọn tài liệu READY</option>{sourceOptions.map(item=><option key={item.id} value={item.id}>{item.label}</option>)}
     </select></label>
-    {chosen&&<details className="chat-source-picker"><summary>Nguồn ({sourceIds.length})</summary>
-     <div className="chat-source-options"><p>Chọn tối đa 20 {isSec?'filing SEC':'tệp PDF'}. Thay đổi bộ nguồn mở hội thoại mới.</p>
+    {chosen&&<details className="chat-source-picker" onToggle={event=>setPickerOpen(event.currentTarget.open)}><summary>Nguồn ({sourceIds.length})</summary>
+     {pickerOpen&&<div className="chat-source-options"><p>Chọn tối đa 20 {isSec?'filing SEC':'tệp PDF'}. Thay đổi bộ nguồn mở hội thoại mới.</p>
       {sourceOptions.filter(item=>item.id.startsWith('SEC:')===isSec).map(item=><label key={item.id}>
        <input type="checkbox" checked={sourceIds.includes(item.id)} disabled={sourceIds.length===1&&sourceIds.includes(item.id)||sourceIds.length===20&&!sourceIds.includes(item.id)} onChange={()=>toggleSource(item.id)}/>
        <span>{item.label}</span>
       </label>)}
-     </div>
+     </div>}
     </details>}
    </div>
    {sourceIds.length>1&&<ul className="chat-selected-sources" aria-label="Nguồn đang sử dụng">{sourceIds.map(id=><li key={id} title={sourceName(id)}>{sourceName(id)}</li>)}</ul>}

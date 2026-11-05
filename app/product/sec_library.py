@@ -130,7 +130,7 @@ class ScopedIndex:
     def __init__(self,base,ids):self.base=base;self.ids=ids
     def __getattr__(self,name):return getattr(self.base,name)
     @property
-    def catalog_rows(self):return [dict(r, generation=self.base.identity['generation']) for r in self.base.catalog_rows if r['filing_id'] in self.ids]
+    def catalog_rows(self):return [r for r in self.base.catalog_rows if r['filing_id'] in self.ids]
     @property
     def parents(self):return [r for r in self.base.parents if r['chunk'].filing_id in self.ids]
     @property

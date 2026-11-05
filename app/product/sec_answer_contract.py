@@ -68,3 +68,35 @@ def annotate(question,result):
         return {**result,'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW','values':[],
             'answer':'Chưa vượt qua kiểm tra độc lập cho câu hỏi này; nguồn được giữ để đối chiếu.','reason':str(e),
             'independent_verification':{'status':'REJECTED','reason':str(e)}}
+
+
+def verify_comparison(cells, calculations):
+    """Recompute the displayed million-USD results from each authenticated cell."""
+    values = []
+    with localcontext() as ctx:
+        ctx.prec = 50
+        for cell in cells:
+            raw = cell['raw_value'].strip()
+            parsed = Decimal(raw.strip('()').replace(',',''))
+            if raw.startswith('('):
+                parsed = -parsed
+            multiplier = Decimal(cell['multiplier'])
+            if (cell['source_status']!='VERIFIED_SOURCE_CELL' or cell['unit']!='USD'
+                    or multiplier!=Decimal(1_000_000) or parsed!=Decimal(cell['value'])
+                    or parsed*multiplier!=Decimal(cell['effective_value'])):
+                raise ValueError('SEC_SOURCE_SCALE_MISMATCH')
+            values.append(parsed*multiplier)
+        proofs = []
+        for operation, proposed in calculations:
+            if operation=='EXTRACT' and len(values)==1:
+                expected = values[0]/1_000_000
+            elif operation=='ABS_CHANGE' and len(values)==2:
+                expected = (values[1]-values[0])/1_000_000
+            elif operation=='PERCENT_CHANGE' and len(values)==2 and values[0]!=0:
+                expected = ((values[1]/values[0]-1)*100).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
+            else:
+                raise ValueError('SEC_UNSUPPORTED_CALCULATION')
+            if expected!=Decimal(proposed):
+                raise ValueError('SEC_INDEPENDENT_ARITHMETIC_MISMATCH')
+            proofs.append({'operation':operation,'recomputed_result':str(expected),'status':'VERIFIED'})
+    return {'status':'VERIFIED','version':'SEC_FEDERATED_DECIMAL_V4','stage_b':proofs}

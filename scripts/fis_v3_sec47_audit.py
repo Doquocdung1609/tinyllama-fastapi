@@ -171,8 +171,9 @@ def install(row, recovered_root):
     m = filing_metadata(row)
     key = sha256(m.filing_id.encode()).hexdigest()[:24]
     present = next((r for r in rows() if r['id']==key), None)
-    if present and present['status']=='READY':
-        return {'product_status':'READY','library_id':key}
+    if present and (present['status']=='READY' or present['status']=='LEXICAL_READY'
+                    and os.getenv('STUDIO_SEC_IMPORT_LEXICAL_ONLY')=='1'):
+        return {'product_status':present['status'],'product_reason':present['reason'],'library_id':key}
     source = paths(key)[0]
     with (root()/'import-worker.lock').open('a+') as stream:
         try:

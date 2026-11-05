@@ -229,10 +229,7 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         header_units={u for h in unit_headers for u in re.findall(r'\b(?:thousands|millions|billions)\b',h.casefold())}
         if context_units and header_units and context_units!=header_units:raise ValueError('CONFLICTING_DISPLAY_UNIT_CAPTIONS')
         if context_units and not unit_headers:unit_headers=[table.unit_context.strip()]
-    if product_mode and not unit_headers and exp==6:
-        unit_headers=['USD × 10^6 (iXBRL scale)']
-    if len(unit_headers)!=1 or exp!=6 or ('millions' not in unit_headers[0].casefold()
-                                         and unit_headers[0]!='USD × 10^6 (iXBRL scale)'):
+    if len(unit_headers)!=1 or 'millions' not in unit_headers[0].casefold() or exp!=6:
         raise ValueError('DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT')
     multiplier=Decimal(10)**exp
     with localcontext() as dec:

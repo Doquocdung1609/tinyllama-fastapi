@@ -46,15 +46,34 @@ def main():
                    'document_ids':[pdf('AAPL'),pdf('BIDV')]},()))
     cases.append(('pdf-apple','chat',{'question':'Trong 100 USD doanh thu Apple năm 2025 có bao nhiêu USD từ Services?',
                    'document_ids':[pdf('AAPL')]},()))
-    for name,ticker,question in [('apple','AAPL','So sánh doanh thu Apple FY2024 và FY2025'),
-                                  ('microsoft','MSFT','So sánh lợi nhuận ròng Microsoft FY2024 và FY2025')]:
-        if len(ids(ticker))>1:
-            case(name,question,ticker)
+    for name,ticker,years,metric in [
+        ('apple','AAPL',('2024','2025'),'doanh thu'),
+        ('apple-income','AAPL',('2023','2024'),'lợi nhuận ròng'),
+        ('apple-assets','AAPL',('2024','2025'),'tổng tài sản'),
+        ('microsoft','MSFT',('2024','2025'),'lợi nhuận ròng'),
+        ('microsoft-revenue','MSFT',('2024','2025'),'doanh thu'),
+        ('microsoft-assets','MSFT',('2023','2025'),'tổng tài sản'),
+    ]:
+        chosen=[f['filing_id'] for f in sec if f['ticker']==ticker and f['form']=='10-K' and f['report_period'][:4] in years]
+        if len(chosen)==2:
+            case(name,f'So sánh {metric} {ticker} FY{years[0]} và FY{years[1]}',ticker,chosen)
+    cases.extend([
+        ('bidv-restatement','chat',{'question':'Lợi nhuận sau thuế chưa phân phối: mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu? Giải thích cách tính.',
+         'document_ids':[pdf('BIDV')]},('1114',)),
+        ('apple-margin','chat',{'question':'So sánh biên lợi nhuận gộp Services và Products FY2025, tính cả chênh lệch điểm phần trăm và phần trăm tương đối.',
+         'document_ids':[pdf('AAPL')]},('38.60','104.89')),
+        ('hpg-separate','chat',{'question':'Đây là báo cáo riêng hay hợp nhất? Dẫn nguồn từ PDF.',
+         'document_ids':[pdf('HPG')]},()),
+    ])
     records=[]
     for name,route,data,expected in cases:
         start=perf_counter()
         try:
-            response=client.post(BASE+'/studio/'+route,json=data,timeout=45)
+            for attempt in range(5):
+                response=client.post(BASE+'/studio/'+route,json=data,timeout=90)
+                if response.status_code!=429 or attempt==4:
+                    break
+                sleep(2)
             body=response.json()
             record={'case':name,'http':response.status_code,'status':body.get('status'),'reason':body.get('reason',body.get('detail')),
                 'answer':body.get('answer'),'values':body.get('values'),'timings_ms':body.get('timings_ms'),
