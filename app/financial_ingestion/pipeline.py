@@ -34,7 +34,7 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def validate_metadata_identity(metadata: FilingMetadata) -> None:
+def validate_metadata_identity(metadata: FilingMetadata, *, additional_forms=()) -> None:
     if not re.fullmatch(r"[0-9]{10}", metadata.cik):
         raise ValueError("Metadata CIK must be exactly 10 canonical ASCII digits")
     if not re.fullmatch(r"[0-9]{10}-[0-9]{2}-[0-9]{6}", metadata.accession_number):
@@ -42,7 +42,7 @@ def validate_metadata_identity(metadata: FilingMetadata) -> None:
     expected_id = f"sec:{metadata.cik}:{metadata.accession_number}"
     if metadata.filing_id != expected_id:
         raise ValueError(f"filing_id must equal {expected_id}")
-    if metadata.form_type not in ALLOWED_FORMS:
+    if metadata.form_type not in ALLOWED_FORMS and metadata.form_type not in additional_forms:
         raise ValueError(f"Unsupported SEC form: {metadata.form_type}")
     expected_url = filing_source_url(
         metadata.cik, metadata.accession_number, metadata.primary_document)

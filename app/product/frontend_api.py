@@ -160,7 +160,7 @@ def financial_chat(payload:ChatRequest):
     if payload.source=='US_SEC':
         try:
             selected_index=sec_index()
-            sec_identities=sorted((f['filing_id'],f.get('raw_sha256',''),selected_index.identity['generation'])
+            sec_identities=sorted((f['filing_id'],f.get('raw_sha256',''),f.get('generation') or selected_index.identity['generation'])
                 for f in selected_index.catalog()['filings'] if (not payload.filing_ids or f['filing_id'] in payload.filing_ids)
                 and (not payload.ticker or f['ticker']==payload.ticker.upper()))
         except Exception:pass
@@ -211,20 +211,44 @@ def financial_chat(payload:ChatRequest):
     if not slots.acquire(blocking=False):raise HTTPException(429,detail={'code':'FINANCIAL_ASSISTANT_BUSY'})
     try:
         if payload.source=='US_SEC':
-            result=unified_search(UnifiedSearch(query=question,source='US_SEC',issuer=payload.ticker,
-                search_profile='faith_r_product_v1',auto_fallback=True))
             from app.product.faith_r_product import evidence_answer
-            from app.product.assistant_answer import contract,needs_number
-            answer=evidence_answer(question,result) or contract(question,result,'faith_r_product_v1')
-            if result['source_errors']:
-                answer.update(status='SOURCE_UNAVAILABLE',answer='SEC chưa khả dụng: cần cấu hình snapshot nguồn và chỉ mục tương thích. Bạn vẫn có thể trò chuyện với PDF tải lên.',source_errors=result['source_errors'])
-            elif needs_number(question):
-                try:
-                    verified=sec_analysis(SecQA(question=question,ticker=payload.ticker))
-                    answer['numeric_verification']=verified
-                    if verified['status']=='SUPPORTED' or verified.get('answer_status')=='PARTIAL_VERIFIED':answer={**answer,**verified}
-                except HTTPException as exc:answer['numeric_verification']={'status':'UNAVAILABLE','reason':exc.detail}
+            from app.product.assistant_answer import contract
+            from app.product.sec_multi_qa import answer as sec_numeric, resolve_followup as resolve_sec_followup
+            from app.product.sec_viewer import server_key
+            if history:
+                question=resolve_sec_followup(payload.question,history[-1]['response'])
+            try:
+                answer = sec_numeric(sec_index(), question, payload.ticker, server_key(w.root))
+            except (ValueError,OSError,RuntimeError):
+                answer={'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW',
+                        'answer':'Chưa đối chiếu được ô tài chính trong nguồn SEC đã chọn. Các đoạn liên quan chỉ dùng để kiểm tra thêm.',
+                        'reason':'SEC_SOURCE_CELL_VERIFICATION_FAILED','values':[],'citations':[]}
+            if not answer or answer['status']!='SUPPORTED':
+                # Numeric QA goes directly to authenticated rows, avoiding an
+                # unrelated dense query on the successful verification path.
+                result=unified_search(UnifiedSearch(query=question,source='US_SEC',issuer=payload.ticker,
+                    mode='bm25',search_profile='faith_r_product_v1',auto_fallback=True))
+                evidence=evidence_answer(question,result) or contract(question,result,'faith_r_product_v1')
+                if answer:
+                    answer={**evidence,**answer,'citations':evidence.get('citations',[])}
+                else:
+                    answer=evidence
+                if result['source_errors']:
+                    answer.update(status='SOURCE_UNAVAILABLE',answer='Không truy cập được chỉ mục hoặc nguồn SEC đang chọn.',
+                                  source_errors=result['source_errors'])
         elif conflict:answer=conflict
+        elif len(set(payload.document_ids))>1:
+            from app.product.pdf_multi_qa import answer as pdf_multi
+            def per_document(doc_id):
+                try:
+                    if payload.constraints:
+                        return analysis(request.model_copy(update={'document_ids':[doc_id]}))
+                    results=unified_search(UnifiedSearch(query=question,mode='bm25',source='USER_UPLOADS',
+                        document_ids=[doc_id],top_k=5,search_profile='faith_r_product_v1'))
+                    return results['financial_evidence']
+                except HTTPException as exc:
+                    return {'answer':'Chưa xác minh được yêu cầu trong PDF này.','reason':exc.detail}
+            answer=pdf_multi(w,question,payload.document_ids,per_document,payload.constraints)
         elif not payload.constraints and (natural := natural_pdf_answer(w, payload.question, payload.document_ids, history)) is not None:
             answer=natural
         elif re.search(r'nghien cuu|tong quan doanh nghiep|company research|company overview',folded(question)):
@@ -414,7 +438,7 @@ def _unified_search(payload:UnifiedSearch):
             if payload.search_profile=='faith_r_product_v1':
                 from app.product.faith_r_product import pdf_search
                 found=pdf_search(workspace(),payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
-                intent=found['intent'];evidence_status=found['evidence_status']
+                intent=found.get('intent');evidence_status=found.get('evidence_status')
                 engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing','dedup_count','filter_reason','truncation_reason','query_plan')}
             elif payload.search_profile in {'production_v2','production_v3','production_v3r','production_v3r2','production_v3r3'}:
                 from app.product.search_v2 import FinancialSearchV2
@@ -440,7 +464,7 @@ def _unified_search(payload:UnifiedSearch):
                         engine=w._legacy_v3r
                     else:engine=preparation(w).ready_engine()
                 found=engine.search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs])
-                intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
+                intent=found.get('intent');evidence_status=found.get('evidence_status');evidence_reason=found.get('reason')
             else:found=workspace().search(payload.query,payload.mode,payload.top_k,[d['id'] for d in docs],**({'_candidate_limit':80} if payload.statement_scope else {}))
             engine_trace.setdefault('candidate_count',found.get('candidate_count'))
             engine_trace.setdefault('dedup_count',found.get('dedup_count'))
@@ -466,24 +490,30 @@ def _unified_search(payload:UnifiedSearch):
             scopes.append(('PDF',found.get('generation')));timings['PDF']=found['latency_ms']
     if payload.source in {'US_SEC','ALL'}:
         try:
+            from app.product.sec_library import FederatedIndex, federated_search, for_hit
+            index = sec_index()
             if payload.search_profile=='faith_r_product_v1':
                 from app.product.faith_r_product import sec_search
-                found=sec_search(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
-                intent=found['intent'];evidence_status=found['evidence_status']
+                def retrieve(part):
+                    return sec_search(part,payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
+                found = federated_search(index, retrieve, payload.top_k) if isinstance(index,FederatedIndex) else retrieve(index)
+                intent=found.get('intent');evidence_status=found.get('evidence_status')
                 engine_trace={k:found.get(k) for k in ('engine_version','algorithm_executed','candidate_count','scope_availability','scope_missing','dedup_count','filter_reason','truncation_reason','query_plan')}
             elif payload.search_profile in {'production_v3','production_v3r','production_v3r2','production_v3r3'}:
                 from app.product.search_v3 import search_sec_v3
-                found=search_sec_v3(sec_index(),payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
-                intent=found['intent'];evidence_status=found['evidence_status'];evidence_reason=found.get('reason')
+                def retrieve(part):
+                    return search_sec_v3(part,payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
+                found = federated_search(index,retrieve,payload.top_k) if isinstance(index,FederatedIndex) else retrieve(index)
+                intent=found.get('intent');evidence_status=found.get('evidence_status');evidence_reason=found.get('reason')
             else:found=sec_index().search(payload.query,payload.mode,payload.top_k,payload.issuer,payload.period)
             # V3 constructs new result dictionaries; sign final canonical
             # parents here as well, without changing ranks or evidence grades.
             from app.product.sec_viewer import reference,server_key
             key=server_key(workspace().root)
             for hit in found['results']:
-                hit['source_reference']=reference(sec_index(),hit['chunk_id'],key)
+                hit['source_reference']=reference(for_hit(index,hit),hit['chunk_id'],key)
             results.extend({**r,'source_kind':'SEC'} for r in found['results'])
-            scopes.append(('SEC',found.get('generation')));timings['SEC']=found.get('latency_ms',0)
+            scopes.extend(('SEC',g) for g in found.get('generations',[found.get('generation')]));timings['SEC']=found.get('latency_ms',0)
         except Exception as exc:
             if payload.source=='US_SEC' and payload.search_profile!='faith_r_product_v1':raise ValueError(_error(exc)) from None
             errors.append({'source':'US_SEC','reason':_error(exc)})
@@ -851,9 +881,11 @@ class SecQA(BaseModel):
     question:str=Field(min_length=2,max_length=2000)
     operation:Literal['EXTRACT','ABS_CHANGE','PERCENT_CHANGE']='EXTRACT'
     ticker:str=Field(default='',max_length=20)
+    filing_ids:list[str]=Field(default_factory=list,max_length=20)
 
 
 @router.post('/sec/analysis')
+@sec_scoped
 def sec_analysis(payload:SecQA):
     def public(value):
         if isinstance(value,dict):return {key:public(item) for key,item in value.items() if (not key.endswith('_path') or key=='structural_path') and key not in {'root','token'}}
@@ -861,6 +893,11 @@ def sec_analysis(payload:SecQA):
         if isinstance(value,str) and (len(value)>2 and value[1:3] in {':\\',':/'}):return '[local path omitted]'
         return value
     try:
+        from app.product.sec_multi_qa import answer as verified_answer
+        from app.product.sec_viewer import server_key
+        verified = verified_answer(sec_index(),payload.question,payload.ticker,server_key(workspace().root),payload.operation)
+        if verified is not None and (payload.filing_ids or verified['status']=='SUPPORTED'):
+            return public(verified)
         filings=sec_index().catalog()['filings']
         filters={'filing_ids':[f['filing_id'] for f in filings]}
         if payload.ticker:

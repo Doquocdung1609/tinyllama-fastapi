@@ -15,7 +15,7 @@ from app.financial_index.corpus import verified_source, _verified_bytes
 from app.financial_ingestion.html_parser import parse_sec_html, normalized_filing_text
 from app.financial_ingestion.schemas import StructuredFiling
 from app.table_evidence.identity import digest
-from app.table_evidence.real_source import derive_cell, parse_resources, MAX_SOURCE_BYTES
+from app.table_evidence.real_source import derive_cell, parse_resources, PRODUCT_SOURCE_BYTES
 
 VERSION='registered-sec-viewer/v1'
 _key_lock=Lock()
@@ -86,8 +86,8 @@ def resolve(index,value,secret):
     for key in ('dataset_id','generation','manifest_hash'):
         if data[key]!=index.identity[key]:raise SourceViewError('SOURCE_GENERATION_MISMATCH')
     fresh=json.loads((index.root/'frozen_v1/freeze.json').read_bytes())
-    vectors=json.loads((index.vector_root/'generation_manifest.json').read_bytes())
-    if vectors.get('state')!='READY' or any(fresh.get(k)!=data[k] or vectors.get(k)!=data[k] for k in ('generation','manifest_hash')):
+    vectors=json.loads(getattr(index,'publication_path',index.vector_root/'generation_manifest.json').read_bytes())
+    if vectors.get('state') not in ({'READY','LEXICAL_READY'} if getattr(index,'lexical_only',False) else {'READY'}) or any(fresh.get(k)!=data[k] or vectors.get(k)!=data[k] for k in ('generation','manifest_hash')):
         raise SourceViewError('SOURCE_GENERATION_MISMATCH')
     record=index.lexical.generation(data['dataset_id'],data['generation'])
     if record is None or record['state']!='READY' or record['n']!=len(index.by_id):raise SourceViewError('SOURCE_GENERATION_MISMATCH')
@@ -98,7 +98,7 @@ def resolve(index,value,secret):
         path=Path(frozen[key]).resolve()
         if not path.is_relative_to(index.root):raise SourceViewError('SOURCE_IDENTITY_MISMATCH')
         if not path.is_file():raise SourceViewError('SOURCE_BYTES_NOT_AVAILABLE')
-        if path.stat().st_size>(MAX_SOURCE_BYTES if key=='raw_path' else 32_000_000):raise SourceViewError('SOURCE_EVIDENCE_BUDGET')
+        if path.stat().st_size>(PRODUCT_SOURCE_BYTES if key=='raw_path' else 32_000_000):raise SourceViewError('SOURCE_EVIDENCE_BUDGET')
     # Reject replacement of lexical identity even when this index object is cached.
     with closing(index.lexical.connect()) as db:
         row=db.execute('SELECT d.payload,d.payload_hash,m.source FROM documents d JOIN members m ON m.cid=d.cid WHERE d.cid=? AND m.generation=?',(data['parent_id'],data['generation'])).fetchone()
@@ -141,7 +141,7 @@ def resolve(index,value,secret):
         if selected_row!=target['row']:raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED')
         cells=[c for c in table.cells if (c.row,c.column)==(target['row'],target['column'])]
         if len(cells)!=1:raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED')
-        try:observation=derive_cell(parent,table,cells[0],parse_resources(raw),raw_hash=frozen['raw_hash'],generation=data['generation'],manifest_hash=data['manifest_hash'],dataset_id=data['dataset_id'],product_mode=True).model_dump(mode='json')
+        try:observation=derive_cell(parent,table,cells[0],parse_resources(raw,product_mode=True),raw_hash=frozen['raw_hash'],generation=data['generation'],manifest_hash=data['manifest_hash'],dataset_id=data['dataset_id'],product_mode=True).model_dump(mode='json')
         except ValueError:raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED') from None
         if any(observation[k]!=target[k] for k in target):raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED')
         result['selected_cell']=observation
@@ -151,7 +151,7 @@ def resolve(index,value,secret):
     selected_row=selected_row if selected_row is not None else 0
     first=min(table.row_indices) if table.row_indices else 0
     wanted=set(range(min(first,10)))|set(range(max(0,selected_row-5),selected_row+6))
-    if len(table.cells)>2000 or len(table.columns)>32:raise SourceViewError('SOURCE_EVIDENCE_BUDGET')
+    if len(table.cells)>2000 or len(table.columns)>128:raise SourceViewError('SOURCE_EVIDENCE_BUDGET')
     rows=[]
     for row_index in sorted(wanted):
         cells=[{'column':c.column,'text':c.text,'colspan':c.colspan,'rowspan':c.rowspan} for c in table.cells if c.row==row_index]

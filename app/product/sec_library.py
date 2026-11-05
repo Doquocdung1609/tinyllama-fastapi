@@ -45,32 +45,97 @@ def paths(key):
     parent=root()/key
     return parent/'p7-isolated-review-user-product',parent/'t3-p10-isolated-vectors-user-product'
 @lru_cache(maxsize=8)
-def index(key):
+def _index(key, state):
     from app.product.sec_search import SecResearchIndex
-    a,b=paths(key);return SecResearchIndex(a,b,a)
+    a,b=paths(key)
+    return SecResearchIndex(a,b,a,lexical_only=state=='LEXICAL_READY')
+
+
+def index(key):
+    return _index(key,indexed_generation(key)['state'])
 def select(filing_ids):
     if not filing_ids:return None
-    matches=[]
-    for row in rows():
-        if row['status']=='READY' and json.loads(row['metadata'])['filing_id'] in filing_ids:matches.append(row)
-    if matches:
-        if len(filing_ids)!=1 or len(matches)!=1:raise HTTPException(409,detail={'code':'CROSS_GENERATION_QUERY_REQUIRES_RECONCILIATION'})
-        return index(matches[0]['id'])
+    wanted = set(filing_ids)
+    partitions = []
     from app.product.api import _sec_cached
-    base=_sec_cached();available={r['filing_id'] for r in base.catalog_rows}
-    if not set(filing_ids)<=available:raise HTTPException(409,detail={'code':'SEC_FILING_NOT_READY'})
-    # Base query adapter supports source selection via its catalog projection.
-    return ScopedIndex(base,filing_ids)
+    try:
+        base = _sec_cached()
+    except (OSError, ValueError, RuntimeError):
+        base = None
+    if base is not None:
+        ids = wanted & {row['filing_id'] for row in base.catalog_rows}
+        if ids:
+            partitions.append(ScopedIndex(base, sorted(ids)))
+            wanted -= ids
+    for row in rows():
+        filing_id = json.loads(row['metadata'])['filing_id']
+        if row['status'] in {'READY','LEXICAL_READY'} and filing_id in wanted:
+            partitions.append(index(row['id']))
+            wanted.remove(filing_id)
+    if wanted:
+        raise HTTPException(409, detail={'code':'SEC_FILING_NOT_READY', 'filing_ids':sorted(wanted)})
+    return partitions[0] if len(partitions) == 1 else FederatedIndex(partitions)
+
+
+class FederatedIndex:
+    def __init__(self, partitions):
+        self.partitions = tuple(partitions)
+        self.catalog_rows = [dict(row, generation=part.identity['generation'])
+                             for part in partitions for row in part.catalog_rows]
+
+    def catalog(self):
+        return {'status':'READY', 'filings':self.catalog_rows}
+
+    def search(self, query, mode, top_k, ticker='', report_period=''):
+        return federated_search(self, lambda part: part.search(query, mode, top_k, ticker, report_period), top_k)
+
+
+def federated_search(index, search, top_k):
+    """Merge local ranks deterministically without comparing cross-index scores."""
+    from time import perf_counter
+    start = perf_counter()
+    responses = []
+    for part in index.partitions:
+        result = search(part)
+        if result.get('status') == 'NO_ELIGIBLE_FILING':
+            continue
+        generation = part.identity['generation']
+        responses.append((generation, result))
+    merged = [(hit['rank'], generation, hit['chunk_id'], hit)
+              for generation, result in responses for hit in result['results']]
+    merged.sort(key=lambda item: item[:3])
+    hits = [dict(hit, rank=rank, generation=generation, partition_rank=local_rank)
+            for rank, (local_rank, generation, _, hit) in enumerate(merged[:top_k], 1)]
+    first = responses[0][1] if responses else {}
+    return {**first, 'results':hits, 'status':'READY',
+            'generation':sha256(json.dumps(sorted(g for g, _ in responses)).encode()).hexdigest(),
+            'generations':[g for g, _ in responses],
+            'candidate_count':sum(r.get('candidate_count', len(r['results'])) for _,r in responses),
+            'latency_ms':(perf_counter()-start)*1000, 'partition_fusion':'LOCAL_RANK_THEN_GENERATION'}
+
+
+def partitions(index):
+    return index.partitions if isinstance(index, FederatedIndex) else (index,)
+
+
+def for_hit(index, hit):
+    matches = [part for part in partitions(index) if hit['chunk_id'] in part.by_id
+               and (not hit.get('generation') or hit['generation'] == part.identity['generation'])]
+    if len(matches) != 1:
+        raise ValueError('SOURCE_GENERATION_NOT_REGISTERED')
+    return matches[0]
+
+
 class ScopedIndex:
     def __init__(self,base,ids):self.base=base;self.ids=ids
     def __getattr__(self,name):return getattr(self.base,name)
     @property
-    def catalog_rows(self):return [r for r in self.base.catalog_rows if r['filing_id'] in self.ids]
+    def catalog_rows(self):return [dict(r, generation=self.base.identity['generation']) for r in self.base.catalog_rows if r['filing_id'] in self.ids]
     @property
     def parents(self):return [r for r in self.base.parents if r['chunk'].filing_id in self.ids]
     @property
     def by_id(self):return {k:v for k,v in self.base.by_id.items() if v['chunk'].filing_id in self.ids}
-    def catalog(self):return {**self.base.catalog(),'filings':[r for r in self.base.catalog_rows if r['filing_id'] in self.ids]}
+    def catalog(self):return {**self.base.catalog(),'filings':self.catalog_rows}
     def search(self,*args,**kwargs):return self.base.search(*args,**kwargs,_filing_ids=self.ids)
 
 def scoped(fn):
@@ -80,6 +145,21 @@ def scoped(fn):
         try:return fn(payload,*args,**kwargs)
         finally:active.reset(token)
     return call
+def indexed_generation(key):
+    """Read the product publication receipt without opening vector handles."""
+    source, vectors = paths(key)
+    freeze = json.loads((source/'frozen_v1/freeze.json').read_text(encoding='utf-8'))
+    vector_path = vectors/'generation_manifest.json'
+    manifest = json.loads(vector_path.read_text(encoding='utf-8')) if vector_path.is_file() else {}
+    if manifest.get('state')!='READY':
+        manifest = json.loads((source/'lexical-publication.json').read_text(encoding='utf-8'))
+        if manifest.get('state')!='LEXICAL_READY':
+            raise ValueError('SEC_LEXICAL_PUBLICATION_MISMATCH')
+    if any(manifest[k]!=freeze[k] for k in ('generation','manifest_hash')):
+        raise ValueError('PRODUCT_GENERATION_MISMATCH')
+    return manifest
+
+
 def catalog():
     from app.product.api import _sec_cached
     try:result=_sec_cached().catalog()
@@ -87,14 +167,24 @@ def catalog():
     generations=[{k:result.get(k) for k in ('dataset_id','generation','manifest_hash','parents','dense_vectors')}] if result['filings'] else []
     result={**result,'filings':[{**f,'generation':result.get('generation'),'ownership':'SHARED_DEMO'} for f in result['filings']]}
     for row in rows():
-        if row['status']=='READY':
+        if row['status'] in {'READY','LEXICAL_READY'}:
             try:
-                imported=index(row['id']);detail=imported.catalog()
-                generations.append({k:detail.get(k) for k in ('dataset_id','generation','manifest_hash','parents','dense_vectors')})
-                result['filings'].extend({**f,'library_id':row['id'],'ownership':'USER_PRODUCT','generation':detail['generation']} for f in imported.catalog_rows)
+                detail=indexed_generation(row['id'])
+                metadata=json.loads(row['metadata'])
+                parents=detail.get('parent_count',detail.get('parents',0))
+                generations.append({**{k:detail.get(k) for k in ('dataset_id','generation','manifest_hash')},
+                                    'parents':parents,'dense_vectors':detail.get('completed_points',0)})
+                result['filings'].append({
+                    'ticker':metadata['ticker'],'cik':metadata['cik'],'issuer':metadata['company_name'],
+                    'accession':metadata['accession_number'],'filing_id':metadata['filing_id'],'form':metadata['form_type'],
+                    'report_period':metadata['report_date'],'source_url':metadata['source_url'],'chunks':parents,
+                    'raw_sha256':next(g['raw_hash'] for g in json.loads((paths(row['id'])[0]/'frozen_v1/freeze.json').read_bytes())['source_groups']
+                                      if g['accession']==metadata['accession_number']),
+                    'library_id':row['id'],'ownership':'USER_PRODUCT','generation':detail['generation'],
+                    'dense_ready':detail['state']=='READY','index_status':detail['state']})
             except Exception:update(row['id'],'RETRYABLE','PRODUCT_INDEX_OR_SOURCE_VALIDATION_FAILED')
     if result['filings']:result['status']='READY'
-    result.update(generations=generations,parents=sum(g.get('parents') or 0 for g in generations),dense_vectors=sum(g.get('dense_vectors') or 0 for g in generations),generation_scope='DEFAULT_DEMO_ONLY_SELECT_IMPORTED_FILING_EXPLICITLY')
+    result.update(generations=generations,parents=sum(g.get('parents') or 0 for g in generations),dense_vectors=sum(g.get('dense_vectors') or 0 for g in generations),generation_scope='DEFAULT_DEMO_OR_EXPLICIT_FEDERATED_SELECTION')
     return result
 def for_reference(reference,secret):
     from app.product.sec_viewer import decode_reference
@@ -104,9 +194,12 @@ def for_reference(reference,secret):
     except Exception:base=None
     if base is not None and data['generation']==base.identity['generation']:return base
     for row in rows():
-        if row['status']=='READY':
-            item=index(row['id'])
-            if data['generation']==item.identity['generation']:return item
+        if row['status'] in {'READY','LEXICAL_READY'}:
+            try:
+                generation=indexed_generation(row['id'])['generation']
+            except (OSError,ValueError,KeyError):
+                continue
+            if data['generation']==generation:return index(row['id'])
     raise ValueError('SOURCE_GENERATION_NOT_REGISTERED')
 def process(key):
     # One worker process at a time on 8 GB machines; crash state is durable.
@@ -137,6 +230,16 @@ def router(require_token):
         path=root()/'private-contact.json'
         return {'contact_configured':path.exists() or bool(get_settings().sec_user_agent),
             'filings':[{**{k:v for k,v in x.items() if k!='metadata'},'metadata':json.loads(x['metadata'])} for x in rows()]}
+    @r.get('/sec47')
+    def recovery_catalog():
+        path=root()/'sec47-status.json'
+        if not path.is_file():
+            return {'filings':[]}
+        audit=json.loads(path.read_text(encoding='utf-8'))
+        ready={f['accession']:f for f in catalog()['filings']}
+        return {'filings':[{**f,'search_ready':f['accession'] in ready,
+                            'dense_ready':ready.get(f['accession'],{}).get('dense_ready',False),
+                            'generation':ready.get(f['accession'],{}).get('generation')} for f in audit]}
     @r.get('/jobs/{key}/events')
     def events(key:str):
         with db() as c:return {'events':[dict(row) for row in c.execute('SELECT status,reason,created FROM job_events WHERE filing_id=? ORDER BY seq',(key,))]}
@@ -148,7 +251,7 @@ def router(require_token):
                  report_end:str=Query(default='',max_length=10,pattern=r'^$|^\d{4}-\d{2}-\d{2}$'),
                  filed_from:str=Query(default='',max_length=10,pattern=r'^$|^\d{4}-\d{2}-\d{2}$'),
                  filed_to:str=Query(default='',max_length=10,pattern=r'^$|^\d{4}-\d{2}-\d{2}$')):
-        if form not in {'10-K','10-Q','10-K/A','10-Q/A'}:raise HTTPException(422,detail={'code':'UNSUPPORTED_FORM'})
+        if form not in {'10-K','10-Q','10-K/A','10-Q/A','20-F','6-K'}:raise HTTPException(422,detail={'code':'UNSUPPORTED_FORM'})
         try:
             sec=client()
             try:
@@ -158,7 +261,7 @@ def router(require_token):
                 matched=exact or [v for v in mapping.values() if q.lower() in v['title'].lower()]
                 matched=list({str(v['cik_str']):v for v in matched}.values())
                 if len(matched)!=1:return {'status':'SELECT_COMPANY','companies':matched[:20],'filings':[]}
-                company=matched[0];filings=sec.discover(str(company['cik_str']),ticker=company['ticker'],forms=[form],limit=50,date_from=filed_from or None,date_to=filed_to or None)
+                company=matched[0];filings=sec.discover(str(company['cik_str']),ticker=company['ticker'],forms=[form],limit=50,date_from=filed_from or None,date_to=filed_to or None,additional_forms={'20-F','6-K'})
                 if report_end:filings=[f for f in filings if f.report_date==report_end]
             finally:sec.session.close()
             items=[]

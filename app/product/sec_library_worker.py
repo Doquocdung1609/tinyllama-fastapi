@@ -1,7 +1,7 @@
 """Isolated product SEC acquisition/parser/index worker; never opens research labels."""
 from hashlib import sha256
 from pathlib import Path
-import json,sys
+import json,os,sys
 from app.product.sec_library import rows,paths,update,client
 
 def run(key):
@@ -15,7 +15,7 @@ def run(key):
     from app.table_evidence.identity import digest
     from scripts.p10_build_isolated_vectors import build,atomic_json
     row=next(r for r in rows() if r['id']==key);m=FilingMetadata.model_validate_json(row['metadata'])
-    validate_metadata_identity(m);root,vectors=paths(key);root.mkdir(parents=True,exist_ok=True)
+    validate_metadata_identity(m,additional_forms={'20-F','6-K'});root,vectors=paths(key);root.mkdir(parents=True,exist_ok=True)
     marker=root/'ownership.json'
     if not marker.exists():
         if any(root.iterdir()):raise ValueError('NONEMPTY_UNOWNED_PRODUCT_ROOT')
@@ -46,7 +46,11 @@ def run(key):
     update(key,'EXTRACTING')
     raw=raw_path.read_bytes()
     from app.product.sec_import_identity import validate
-    validate(raw,m)
+    identity=validate(raw,m)
+    if m.form_type=='6-K':raise ValueError('EXHIBIT_REVIEW_REQUIRED')
+    m.company_name=identity['company_name'] or m.company_name
+    m.fiscal_year=identity['fiscal_year'] or m.fiscal_year
+    m.fiscal_period=identity['fiscal_period'] or m.fiscal_period
     m.raw_content_hash=sha256(raw).hexdigest();m.parser_version=PARSER_VERSION;m.chunker_version=CHUNKER_VERSION
     filing=parse_sec_html(raw,m);m.normalized_content_hash=sha256(normalized_filing_text(filing).encode()).hexdigest()
     chunks=chunk_filing(filing)
@@ -72,6 +76,11 @@ def run(key):
     update(key,'INDEXING')
     lexical=LexicalIndex(root/'lexical_v1.sqlite3');lexical.start(manifest.dataset_id,generation,{'product_only':True})
     lexical.add(generation,[{'chunk':c.model_dump(mode='json'),'source':source} for c in chunks]);lexical.seal(generation);lexical.publish(manifest.dataset_id,generation)
+    atomic_json(root/'lexical-publication.json',{'state':'LEXICAL_READY','dataset_id':manifest.dataset_id,
+        'generation':generation,'manifest_hash':manifest.manifest_hash,'parent_count':len(chunks),'completed_points':0})
+    if os.getenv('STUDIO_SEC_IMPORT_LEXICAL_ONLY')=='1':
+        update(key,'LEXICAL_READY','DENSE_PENDING')
+        return
     from app.product.sec_product_snapshot import ProductSecSnapshot
     result=build(root,vectors,4,None,snapshot_factory=ProductSecSnapshot)
     if result['state']!='READY':raise ValueError('VECTOR_GENERATION_INCOMPLETE')
@@ -90,4 +99,6 @@ if __name__=='__main__':
         # Store bounded codes, never contacts, URLs with secrets, or tracebacks.
         from app.financial_ingestion.sec_client import SECRequestError
         reason='SOURCE_BYTES_BUDGET_EXCEEDED' if isinstance(e,SECRequestError) and 'byte limit' in str(e) else 'SEC_HTTP_'+str(e.status_code) if isinstance(e,SECRequestError) and e.status_code else str(e) if isinstance(e,ValueError) and str(e).replace('_','').isalnum() else type(e).__name__
-        update(key,'RETRYABLE',reason[:120])
+        root_path=paths(key)[0]
+        state='LEXICAL_READY' if (root_path/'lexical-publication.json').is_file() else 'RETRYABLE'
+        update(key,state,reason[:120])

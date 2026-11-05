@@ -20,26 +20,34 @@ from scripts.p10_build_isolated_vectors import COLLECTION, point_id, source_reco
 
 
 class SecResearchIndex:
-    def __init__(self, root: Path, vector_root: Path, qa_root: Path | None = None, embedder=None):
+    def __init__(self, root: Path, vector_root: Path, qa_root: Path | None = None, embedder=None, *, lexical_only=False):
         self.root = Path(root).resolve(strict=True)
-        self.vector_root = Path(vector_root).resolve(strict=True)
+        self.vector_root = Path(vector_root).resolve(strict=not lexical_only)
         from app.product.sec_product_snapshot import snapshot as open_snapshot
         snapshot = open_snapshot(self.root)
         prepared, source_hashes = source_records(snapshot)
-        self.identity = json.loads((self.vector_root / "generation_manifest.json").read_text(encoding="utf-8"))
         freeze = snapshot.freeze
-        if (self.identity.get("state") != "READY"
-            or self.identity.get("generation") != freeze["generation"]
-            or self.identity.get("manifest_hash") != freeze["manifest_hash"]
-            or self.identity.get("completed_points") != len(prepared)
-            or self.identity.get("parent_count") != len(prepared)
-            or self.identity.get("model_digest") != DIGEST
-            or self.identity.get("dimension") != 768
-            or self.identity.get("distance") != "COSINE"
-            or self.identity.get("query_prefix") != "search_query: "
-            or self.identity.get("document_prefix") != "search_document: "
-            or sorted(self.identity.get("source_raw_hashes", [])) != source_hashes):
-            raise ValueError("SEC_SEARCH_QA_GENERATION_MISMATCH")
+        self.lexical_only = lexical_only
+        self.publication_path = self.root/'lexical-publication.json' if lexical_only else self.vector_root/'generation_manifest.json'
+        self.identity = json.loads(self.publication_path.read_text(encoding='utf-8'))
+        if lexical_only:
+            if freeze.get('purpose')!='PRODUCT_USER_LIBRARY_SOURCE_ONLY' or self.identity.get('state')!='LEXICAL_READY' or (
+                    self.identity['generation'],self.identity['manifest_hash'],self.identity['parent_count'])!=(
+                    freeze['generation'],freeze['manifest_hash'],len(prepared)):
+                raise ValueError('SEC_LEXICAL_PUBLICATION_MISMATCH')
+        else:
+            if (self.identity.get("state") != "READY"
+                or self.identity.get("generation") != freeze["generation"]
+                or self.identity.get("manifest_hash") != freeze["manifest_hash"]
+                or self.identity.get("completed_points") != len(prepared)
+                or self.identity.get("parent_count") != len(prepared)
+                or self.identity.get("model_digest") != DIGEST
+                or self.identity.get("dimension") != 768
+                or self.identity.get("distance") != "COSINE"
+                or self.identity.get("query_prefix") != "search_query: "
+                or self.identity.get("document_prefix") != "search_document: "
+                or sorted(self.identity.get("source_raw_hashes", [])) != source_hashes):
+                raise ValueError("SEC_SEARCH_QA_GENERATION_MISMATCH")
         if qa_root:
             qa_freeze = open_snapshot(Path(qa_root).resolve(strict=True)).freeze
             if (qa_freeze["generation"], qa_freeze["manifest_hash"]) != (freeze["generation"], freeze["manifest_hash"]):
@@ -107,13 +115,15 @@ class SecResearchIndex:
                 "generation": self.identity["generation"],
                 "manifest_hash": self.identity["manifest_hash"],
                 "parents": len(self.parents), "dense_vectors": self.identity["completed_points"],
-                "model_digest": DIGEST, "filings": self.catalog_rows,
+                "model_digest": None if self.lexical_only else DIGEST, "filings": self.catalog_rows,
                 "scope_note": "Official SEC development filings shared with Financial AI; not human-adjudicated evaluation"}
 
     def search(self, query: str, mode: str = "hybrid", top_k: int = 5,
                ticker: str = "", report_period: str = "", _filing_ids=None):
         if mode not in {"bm25", "dense", "hybrid"} or not 1 <= top_k <= 20 or not query.strip() or len(query) > 2000:
             raise ValueError("INVALID_SEC_SEARCH_REQUEST")
+        if self.lexical_only and mode!='bm25':
+            raise ValueError('SEC_DENSE_GENERATION_NOT_READY')
         selected = [r for r in self.catalog_rows if (not ticker or r["ticker"] == ticker.upper())
                     and (not report_period or r["report_period"] == report_period)
                     and (_filing_ids is None or r['filing_id'] in _filing_ids)]

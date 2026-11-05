@@ -19,7 +19,7 @@ const decimalDisplay=(value:string)=>{const [whole,fraction]=value.split('.');re
 
 // Source content is escaped by React; HTML from PDFs is never injected.
 function AnswerText({text,citations,open}:{text:string;citations:Evidence[];open:(e:Evidence)=>void}){
- const inline=(text:string)=>text.split(/(\[\d+\]|\*\*[^*]+\*\*)/).map((s,j)=>{const n=/^\[(\d+)\]$/.exec(s);const c=n?citations[Number(n[1])-1]:null;return c?<button className="inline-citation" key={j} onClick={()=>open(c)} aria-label={`Mở nguồn ${n![1]} trang ${c.page}`}>{s}</button>:s.startsWith('**')?<strong key={j}>{s.slice(2,-2)}</strong>:s})
+ const inline=(text:string)=>text.split(/(\[\d+\]|\*\*[^*]+\*\*)/).map((s,j)=>{const n=/^\[(\d+)\]$/.exec(s);const c=n?citations[Number(n[1])-1]:null;return c?<button className="inline-citation" key={j} onClick={()=>open(c)} aria-label={c.source_kind==='SEC'?`Mở nguồn ${n![1]} filing ${c.accession}`:`Mở nguồn ${n![1]} trang ${c.page}`}>{s}</button>:s.startsWith('**')?<strong key={j}>{s.slice(2,-2)}</strong>:s})
  const cells=(line:string)=>line.trim().replace(/^\||\|$/g,'').split('|').map(s=>s.trim())
  return <div className="answer-prose">{text.split(/\n\n/).map((p,i)=>{
   const lines=p.split('\n')
@@ -37,6 +37,7 @@ export default function FinancialChat({selected,open}:{selected:Evidence|null;op
  const [filter,setFilter]=useState(''),[offset,setOffset]=useState(0)
  const sessions=useQuery({queryKey:['chat-sessions',filter,offset],queryFn:()=>api<{sessions:Session[];has_more:boolean}>(`/chat/sessions?q=${encodeURIComponent(filter)}&offset=${offset}`)})
  const [docId,setDocId]=useState(()=>sessionStorage.getItem('active-document')||'')
+ const [additionalSources,setAdditionalSources]=useState<string[]>([])
  const [session,setSession]=useState<string|undefined>(()=>sessionStorage.getItem('active-financial-chat')||undefined)
  const [turns,setTurns]=useState<Turn[]>([]),[question,setQuestion]=useState(''),[error,setError]=useState(''),[toast,setToast]=useState('')
  const [inspected,setInspected]=useState<Evidence|null>(selected),[rename,setRename]=useState(false),[title,setTitle]=useState('')
@@ -49,16 +50,43 @@ export default function FinancialChat({selected,open}:{selected:Evidence|null;op
  useEffect(()=>{const el=composer.current;if(el){el.style.height='auto';el.style.height=Math.min(140,Math.max(38,el.scrollHeight))+'px'}},[question])
  const bottom=useRef<HTMLDivElement>(null),abort=useRef<AbortController|null>(null),epoch=useRef(0)
  const chosen=docId||docs.data?.documents.find(d=>d.status==='READY')?.id||''
- const scopeRef=useRef(chosen)
- useEffect(()=>{scopeRef.current=chosen},[chosen])
+ const isSec=chosen.startsWith('SEC:')
+ const sourceIds=[...new Set([chosen,...additionalSources].filter(id=>id&&id.startsWith('SEC:')===isSec))]
+ const sourceKey=sourceIds.slice().sort().join('|')
+ const scopeRef=useRef(sourceKey)
+ useEffect(()=>{scopeRef.current=sourceKey},[sourceKey])
  useEffect(()=>{if(chosen)sessionStorage.setItem('active-document',chosen)},[chosen])
+ const sourceOptions=[
+  ...(docs.data?.documents.filter(d=>d.status==='READY').map(d=>({id:d.id,label:`${d.issuer||'PDF'} · ${d.report_period||'Kỳ chưa xác định'} · ${d.filename}`}))||[]),
+  ...(sec.data?.filings?.map(f=>({id:'SEC:'+f.filing_id,label:`SEC · ${f.ticker} · ${f.form} · ${f.report_period} · ${f.accession}`}))||[]),
+ ]
+ const sourceName=(id:string)=>sourceOptions.find(item=>item.id===id)?.label||id
  useEffect(()=>{const saved=sessionStorage.getItem('chat-return-scroll');if(saved&&turns.length){requestAnimationFrame(()=>{const node=document.querySelector('.chat-messages');if(node)node.scrollTop=Number(saved)});sessionStorage.removeItem('chat-return-scroll')}else{const box=document.querySelector('.chat-messages'),last=box?.querySelector<HTMLElement>('.chat-exchange:last-of-type .message-assistant');if(box&&last&&following.current)box.scrollTop+=last.getBoundingClientRect().top-box.getBoundingClientRect().top-16}},[turns.length])
  useEffect(()=>{if(selected?.document_id&&!sessionStorage.getItem('active-financial-chat')){setDocId(selected.document_id);setInspected(selected)}},[selected])
- useEffect(()=>{if(!session)return;let active=true;api<Session>(`/chat/${session}`).then(s=>{if(active&&s.turns){setTurns(s.turns);if(s.document_ids?.length)setDocId(s.document_ids[0]);setTitle(s.title)}}).catch(e=>{if(active)setError(reasonText(e.message))});return()=>{active=false}},[session])
+ useEffect(()=>{if(!session)return;let active=true;api<Session>(`/chat/${session}`).then(s=>{if(active&&s.turns){setTurns(s.turns);if(s.document_ids?.length){setDocId(s.document_ids[0]);setAdditionalSources(s.document_ids.slice(1))}setTitle(s.title)}}).catch(e=>{if(active)setError(reasonText(e.message))});return()=>{active=false}},[session])
  function newChat(){epoch.current++;abort.current?.abort();setSession(undefined);sessionStorage.removeItem('active-financial-chat');setTurns([]);setInspected(null);setError('');setQuestion('');setTitle('Hội thoại mới')}
  function selectSession(s:Session){epoch.current++;abort.current?.abort();setSession(s.id);sessionStorage.setItem('active-financial-chat',s.id);setError('')}
- const run=useMutation({networkMode:'always',mutationFn:async(asked:string)=>{const requestEpoch=epoch.current;abort.current=new AbortController();const answer=await post<Reply>('/chat',{question:asked,document_ids:chosen.startsWith('SEC:')?[]:[chosen],...(chosen.startsWith('SEC:')?{source:'US_SEC',...(chosen.slice(4).startsWith('sec:')?{filing_ids:[chosen.slice(4)],ticker:sec.data?.filings.find(f=>f.filing_id===chosen.slice(4))?.ticker||''}:{ticker:chosen.slice(4)})}:{}),session_id:session,...(selected?.document_id===chosen&&!turns.length?{evidence_context:{document_id:selected.document_id,page:selected.page,row_id:selected.row_id,citation_id:selected.citation_id}}:{}),constraints:advanced&&scope&&!chosen.startsWith('SEC:')?{statement_scope:scope}:{}},{signal:abort.current.signal});return {answer,asked,documentId:chosen,requestEpoch}},onSuccess:({answer,asked,documentId,requestEpoch})=>{
-  if(scopeRef.current!==documentId||requestEpoch!==epoch.current)return;setSession(answer.session_id);sessionStorage.setItem('active-financial-chat',answer.session_id);setTurns(t=>[...(answer.conversation_reset?[]:t),{question:asked,response:answer,created_at:new Date().toISOString()}]);setQuestion('');setTitle(t=>!t||t==='Hội thoại mới'?asked.slice(0,100):t);setInspected(answer.citations?.[0]||null);setError('');qc.invalidateQueries({queryKey:['chat-sessions']})
+ function toggleSource(id:string){
+  if(sourceIds.includes(id)){
+   const remaining=sourceIds.filter(item=>item!==id)
+   if(!remaining.length)return
+   newChat();setDocId(remaining[0]);setAdditionalSources(remaining.slice(1))
+  }else if(sourceIds.length<20){
+   newChat();setAdditionalSources([...additionalSources,id])
+  }
+ }
+ const run=useMutation({networkMode:'always',mutationFn:async(asked:string)=>{
+  const requestEpoch=epoch.current
+  abort.current=new AbortController()
+  const secIds=sourceIds.filter(id=>id.startsWith('SEC:sec:')).map(id=>id.slice(4))
+  const source=isSec?{source:'US_SEC',...(secIds.length?{filing_ids:secIds}:{ticker:chosen.slice(4)})}:{}
+  const answer=await post<Reply>('/chat',{question:asked,document_ids:isSec?[]:sourceIds,...source,session_id:session,
+   ...(selected?.document_id===chosen&&!turns.length?{evidence_context:{document_id:selected.document_id,page:selected.page,row_id:selected.row_id,citation_id:selected.citation_id}}:{}),
+   constraints:advanced&&scope&&!isSec?{statement_scope:scope}:{}},{signal:abort.current.signal})
+  return {answer,asked,requestScope:sourceKey,requestEpoch}
+ },onSuccess:({answer,asked,requestScope,requestEpoch})=>{
+  if(scopeRef.current!==requestScope||requestEpoch!==epoch.current)return
+  setSession(answer.session_id);sessionStorage.setItem('active-financial-chat',answer.session_id);setTurns(t=>[...(answer.conversation_reset?[]:t),{question:asked,response:answer,created_at:new Date().toISOString()}]);setQuestion('');setTitle(t=>!t||t==='Hội thoại mới'?asked.slice(0,100):t);setInspected(answer.citations?.[0]||null);setError('');qc.invalidateQueries({queryKey:['chat-sessions']})
  },onError:e=>setError(e.name==='AbortError'?'Đã dừng chờ. Máy chủ có thể vẫn hoàn tất và lưu câu trả lời.':reasonText(e.message))})
  async function copy(text:string){try{await navigator.clipboard.writeText(text);setToast('Đã sao chép')}catch{setToast('Không thể truy cập clipboard')}}
  async function remove(){if(!session||!window.confirm('Xóa vĩnh viễn hội thoại này?'))return;try{await api(`/chat/${session}`,{method:'DELETE'});newChat();qc.invalidateQueries({queryKey:['chat-sessions']})}catch(e){setError(String(e))}}
@@ -69,7 +97,20 @@ export default function FinancialChat({selected,open}:{selected:Evidence|null;op
   </aside>
   <div className="chat-center"><header className="chat-header"><button className="history-toggle" aria-label="Hội thoại đã lưu" aria-expanded={historyOpen} onClick={()=>setHistoryOpen(!historyOpen)}><MessageSquare size={18}/></button><div><small>FINANCIAL INTELLIGENCE STUDIO</small><h2 title={title||'Trợ lý tài chính'}>{title||'Trợ lý tài chính'}</h2></div><div className="row"><button aria-label="Bắt đầu hội thoại mới" onClick={newChat}><Plus size={18}/></button><button aria-label="Mở nguồn đã chọn" onClick={()=>{if(inspected)setShowEvidence(true)}} disabled={!inspected}><BookOpen size={18}/></button>{session&&<><button aria-label="Đổi tên hội thoại" onClick={()=>{setHistoryOpen(false);setRename(!rename)}}><Pencil size={16}/></button><button aria-label="Xóa hội thoại" onClick={remove}><Trash2 size={16}/></button></>}</div></header>
    {rename&&<form className="row" onSubmit={async e=>{e.preventDefault();try{await api(`/chat/${session}`,{method:'PATCH',body:JSON.stringify({title})});setRename(false);qc.invalidateQueries({queryKey:['chat-sessions']})}catch(e){setError(String(e))}}}><input aria-label="Tên hội thoại" value={title} onChange={e=>setTitle(e.target.value)} maxLength={120} required/><Button>Lưu tên</Button></form>}
-   <label className="chat-source-select">Nguồn đang sử dụng<select aria-label="Tài liệu trợ lý" value={chosen} onChange={e=>{newChat();setDocId(e.target.value)}}><option value="">Chọn một tài liệu READY</option>{docs.data?.documents.filter(d=>d.status==='READY').map(d=><option key={d.id} value={d.id}>{d.issuer||'PDF'} · {d.report_period||'Kỳ chưa xác định'} · {d.filename.length>45?d.filename.slice(0,42)+'…':d.filename}</option>)}{sec.data?.filings?.map(f=><option key={f.filing_id} value={'SEC:'+f.filing_id}>SEC · {f.ticker} · {f.form} · {f.report_period} · {f.accession}</option>)}</select></label>
+   <div className="chat-source-bar">
+    <label className="chat-source-select">Nguồn chính<select aria-label="Tài liệu trợ lý" value={chosen} onChange={e=>{newChat();setDocId(e.target.value);setAdditionalSources([])}}>
+     <option value="">Chọn tài liệu READY</option>{sourceOptions.map(item=><option key={item.id} value={item.id}>{item.label}</option>)}
+    </select></label>
+    {chosen&&<details className="chat-source-picker"><summary>Nguồn ({sourceIds.length})</summary>
+     <div className="chat-source-options"><p>Chọn tối đa 20 {isSec?'filing SEC':'tệp PDF'}. Thay đổi bộ nguồn mở hội thoại mới.</p>
+      {sourceOptions.filter(item=>item.id.startsWith('SEC:')===isSec).map(item=><label key={item.id}>
+       <input type="checkbox" checked={sourceIds.includes(item.id)} disabled={sourceIds.length===1&&sourceIds.includes(item.id)||sourceIds.length===20&&!sourceIds.includes(item.id)} onChange={()=>toggleSource(item.id)}/>
+       <span>{item.label}</span>
+      </label>)}
+     </div>
+    </details>}
+   </div>
+   {sourceIds.length>1&&<ul className="chat-selected-sources" aria-label="Nguồn đang sử dụng">{sourceIds.map(id=><li key={id} title={sourceName(id)}>{sourceName(id)}</li>)}</ul>}
 
    {selected?.document_id===chosen&&<details className="handoff-source"><summary>Đoạn đang xem · trang {selected.page}</summary><span>Nguồn đang xem: trang {selected.page} · {selected.text.slice(0,90)}</span><button onClick={()=>setQuestion(`Giải thích đoạn nguồn trên trang ${selected.page}: ${selected.text.slice(0,650)}`)}>Hỏi về đoạn này</button></details>}
    {sec.data?.status==='UNAVAILABLE'&&<details className="sec-availability"><summary>SEC chưa khả dụng · PDF vẫn hoạt động</summary><p>Cần snapshot SEC và chỉ mục tương thích được cấu hình trên máy chủ. Không tải hay thay thế dữ liệu nghiên cứu tự động.</p></details>}

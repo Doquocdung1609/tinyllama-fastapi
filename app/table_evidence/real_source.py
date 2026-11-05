@@ -21,6 +21,7 @@ from app.financial_ingestion.schemas import FinancialChunk,FinancialTable,TableC
 from app.table_evidence.identity import digest
 
 MAX_SOURCE_BYTES=4_000_000
+PRODUCT_SOURCE_BYTES=16_000_000
 CONCEPTS={'net sales':{'us-gaap:revenues'},
           'total assets':{'us-gaap:assets'}}
 MONTHS={name.casefold():n for n,name in enumerate(calendar.month_name) if name}
@@ -77,9 +78,14 @@ class _Resources(HTMLParser):
             if not key or len(key)>100:raise ValueError('INVALID_XBRL_RESOURCE_ID')
             collection=self.contexts if tag=='xbrli:context' else self.units
             if key in collection or len(collection)>=5000:raise ValueError('DUPLICATE_OR_EXCESSIVE_XBRL_RESOURCE')
-            self.current={'type':tag,'id':key,'measures':[],'segment':False}
+            self.current={'type':tag,'id':key,'measures':[],'segment':False,'dimensions':[]}
         elif self.current is not None and tag in {'xbrli:segment','xbrldi:explicitmember','xbrldi:typedmember'}:
             self.current['segment']=True
+            if tag=='xbrldi:typedmember':
+                self.current['dimensions'].append(('typed',''))
+            elif tag=='xbrldi:explicitmember':
+                self.capture=tag;self.parts=[]
+                self.dimension=attrs.get('dimension','')
         if self.current is not None and tag in {'xbrli:identifier','xbrli:startdate','xbrli:enddate','xbrli:instant','xbrli:measure'}:
             self.capture=tag;self.parts=[]
 
@@ -90,7 +96,8 @@ class _Resources(HTMLParser):
         tag=tag.casefold()
         if self.current is not None and tag==self.capture:
             value=''.join(self.parts).strip()
-            if tag=='xbrli:measure':self.current['measures'].append(value)
+            if tag=='xbrldi:explicitmember':self.current['dimensions'].append((self.dimension,value))
+            elif tag=='xbrli:measure':self.current['measures'].append(value)
             elif tag in self.current:raise ValueError('DUPLICATE_XBRL_FIELD')
             else:self.current[tag]=value
             self.capture=None;self.parts=[]
@@ -99,8 +106,8 @@ class _Resources(HTMLParser):
             collection[self.current['id']]=self.current;self.current=None
 
 
-def parse_resources(raw:bytes):
-    if not isinstance(raw,bytes) or len(raw)>MAX_SOURCE_BYTES:raise ValueError('SOURCE_SIZE_BUDGET')
+def parse_resources(raw:bytes, *, product_mode=False):
+    if not isinstance(raw,bytes) or len(raw)>(PRODUCT_SOURCE_BYTES if product_mode else MAX_SOURCE_BYTES):raise ValueError('SOURCE_SIZE_BUDGET')
     try:text=raw.decode('utf-8')
     except UnicodeDecodeError:text=raw.decode('latin-1')
     parser=_Resources();parser.feed(text);parser.close()
@@ -108,18 +115,42 @@ def parse_resources(raw:bytes):
     return {'contexts':parser.contexts,'units':parser.units}
 
 
-def _source_period(context,headers):
+def _source_period(context,headers, *, product_mode=False):
     if context.get('segment'):raise ValueError('XBRL_SEGMENT_CONTEXT_UNSUPPORTED')
     start=context.get('xbrli:startdate');end=context.get('xbrli:enddate');instant=context.get('xbrli:instant')
     if instant and (start or end) or not instant and not (start and end):raise ValueError('XBRL_PERIOD_INCOMPLETE')
+    text=' / '.join(headers)
     if instant:period_end=date.fromisoformat(instant);months=None;kind='INSTANT'
     else:
         first=date.fromisoformat(start);period_end=date.fromisoformat(end)
         months=(period_end.year-first.year)*12+period_end.month-first.month+1
-        if first.day!=1 or period_end.day!=calendar.monthrange(period_end.year,period_end.month)[1] or months not in {3,6,9,12}:
+        if product_mode:
+            days = (period_end-first).days+1
+            week_labels = {int(n) for n in re.findall(r'\b(12|13|14|24|25|26|27|36|37|39|40|52|53)[ -]weeks?\b', text, re.I)}
+            week_labels.update(n for term,n in [('twelve',12),('thirteen',13),('twenty-four',24),('twenty-six',26),
+                                                ('thirty-six',36),('thirty-nine',39),('fifty-two',52),('fifty-three',53)]
+                               if re.search(rf'\b{term}[ -]weeks?\b',text,re.I))
+            month_labels = {n for term, n in [('three',3),('six',6),('nine',9),('twelve',12)]
+                            if re.search(rf'\b{term}[ -]months?\b', text, re.I)}
+            if re.search(r'\b(?:fiscal )?years? ended\b', text, re.I):
+                month_labels.add(12)
+            quarter_months = {12:3,13:3,14:3,24:6,25:6,26:6,27:6,36:9,37:9,39:9,40:9,52:12,53:12}
+            if week_labels:
+                if len(week_labels)!=1 or days!=next(iter(week_labels))*7:
+                    raise ValueError('HEADER_XBRL_WEEK_CONFLICT')
+                months = quarter_months[next(iter(week_labels))]
+                if month_labels and month_labels!={months}:
+                    raise ValueError('HEADER_XBRL_DURATION_CONFLICT')
+            elif len(month_labels)==1:
+                months = next(iter(month_labels))
+                bounds = {3:(80,98),6:(160,190),9:(245,282),12:(350,378)}
+                if not bounds[months][0]<=days<=bounds[months][1]:
+                    raise ValueError('HEADER_XBRL_DURATION_CONFLICT')
+            elif month_labels or first.day!=1 or period_end.day!=calendar.monthrange(period_end.year,period_end.month)[1] or months not in {3,6,9,12}:
+                raise ValueError('XBRL_DURATION_NOT_SUPPORTED')
+        elif first.day!=1 or period_end.day!=calendar.monthrange(period_end.year,period_end.month)[1] or months not in {3,6,9,12}:
             raise ValueError('XBRL_DURATION_NOT_SUPPORTED')
         kind='DURATION'
-    text=' / '.join(headers)
     years={int(y) for y in re.findall(r'\b(?:19|20)\d{2}\b',text)}
     if years!={period_end.year}:raise ValueError('HEADER_XBRL_YEAR_CONFLICT_OR_ABSENT')
     mentions=[]
@@ -146,12 +177,20 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         raise ValueError('SOURCE_CELL_NOT_IN_ROW')
     if m.get('header_rows')!=table.header_rows or m.get('column_labels')!=table.columns:
         raise ValueError('SOURCE_PARENT_HEADER_MISMATCH')
-    if cell.rowspan!=1 or cell.colspan!=1 or len(cell.numeric_facts)!=1:
+    span_matches = cell.colspan==1 or product_mode and all(
+        len(set(grid[cell.column:cell.column+cell.colspan]))==1
+        and len(grid[cell.column:cell.column+cell.colspan])==cell.colspan for grid in table.header_rows)
+    if cell.rowspan!=1 or not span_matches or len(cell.numeric_facts)!=1:
         raise ValueError('AMBIGUOUS_PHYSICAL_VALUE_CELL')
     row_label=m.get('row_label','').strip().casefold()
     fact=cell.numeric_facts[0];name=fact.get('name','').casefold()
     concepts=CONCEPTS.get(row_label,set())
-    if product_mode and row_label=='net sales':concepts=concepts|{'us-gaap:revenuefromcontractwithcustomerexcludingassessedtax'}
+    if product_mode:
+        revenue = {'us-gaap:revenues','us-gaap:salesrevenuenet','us-gaap:revenuefromcontractwithcustomerexcludingassessedtax'}
+        aliases = {'net sales':revenue, 'total net sales':revenue, 'revenue':revenue, 'total revenue':revenue,
+                   'net revenue':revenue, 'net income':{'us-gaap:netincomeloss'},
+                   'net income (loss)':{'us-gaap:netincomeloss'}}
+        concepts = concepts | aliases.get(row_label,set())
     if name not in concepts:raise ValueError('CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED')
     if fact.get('source_text','').strip()!=cell.text.strip() or fact.get('format','').casefold().split(':')[-1] not in {'num-dot-decimal','numdotdecimal'}:
         raise ValueError('INLINE_DISPLAY_OR_FORMAT_UNSUPPORTED')
@@ -175,7 +214,11 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
                 raise ValueError('SOURCE_HEADER_GRID_CONFLICT')
             headers.append(h.text)
     if not headers:raise ValueError('SOURCE_HEADER_PATH_MISSING')
-    kind,start,end,months=_source_period(context,headers)
+    product_sales_scope = (product_mode and row_label=='net sales'
+        and context.get('dimensions')==[('srt:ProductOrServiceAxis','us-gaap:ProductMember')]
+        and re.search(r'\bconsolidated statements? of (?:income|operations|earnings)\b',table.statement_title or '',re.I))
+    period_context={**context,'segment':False} if product_sales_scope else context
+    kind,start,end,months=_source_period(period_context,headers,product_mode=product_mode)
     try:exp=int(fact.get('scale','0'))
     except (TypeError,ValueError):raise ValueError('XBRL_SCALE_UNSUPPORTED') from None
     if not -12<=exp<=12:raise ValueError('XBRL_SCALE_UNSUPPORTED')
@@ -186,7 +229,10 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         header_units={u for h in unit_headers for u in re.findall(r'\b(?:thousands|millions|billions)\b',h.casefold())}
         if context_units and header_units and context_units!=header_units:raise ValueError('CONFLICTING_DISPLAY_UNIT_CAPTIONS')
         if context_units and not unit_headers:unit_headers=[table.unit_context.strip()]
-    if len(unit_headers)!=1 or 'millions' not in unit_headers[0].casefold() or exp!=6:
+    if product_mode and not unit_headers and exp==6:
+        unit_headers=['USD × 10^6 (iXBRL scale)']
+    if len(unit_headers)!=1 or exp!=6 or ('millions' not in unit_headers[0].casefold()
+                                         and unit_headers[0]!='USD × 10^6 (iXBRL scale)'):
         raise ValueError('DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT')
     multiplier=Decimal(10)**exp
     with localcontext() as dec:
@@ -199,7 +245,8 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         period_kind=kind,period_start=start,period_end=end,period_months=months,header_path=tuple(headers),
         fact_name=fact['name'],fact_context_ref=fact['contextref'],fact_unit_ref=fact['unitref'],
         source_url=m['source_url'],structural_path=cell.source_location.structural_path,
-        footnotes=tuple(table.footnotes),warnings=('FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE',) if m.get('document_status')=='PARTIAL_EXTRACTION' else ())
+        footnotes=tuple(table.footnotes),warnings=(('FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE',) if m.get('document_status')=='PARTIAL_EXTRACTION' else ())
+        + (('PRODUCT_SALES_DIMENSION_EXCLUDES_MEMBERSHIPS',) if product_sales_scope else ()))
 
 
 def validate_frozen_parent_membership(frozen:dict,payload:dict):
@@ -238,7 +285,8 @@ def verified_real_cells(snapshot,parent_id:str):
     if len(group)!=1:raise ValueError('SOURCE_NOT_IN_COMMITTED_REGISTRY')
     anchor=group[0]
     raw_path=Path(frozen['raw_path'])
-    if raw_path.stat().st_size>MAX_SOURCE_BYTES:raise ValueError('SOURCE_SIZE_BUDGET')
+    product_mode = getattr(snapshot,'product_verification',False)
+    if raw_path.stat().st_size>(PRODUCT_SOURCE_BYTES if product_mode else MAX_SOURCE_BYTES):raise ValueError('SOURCE_SIZE_BUDGET')
     raw=raw_path.read_bytes()
     if sha256(raw).hexdigest()!=anchor['raw_hash']:raise ValueError('COMMITTED_RAW_BYTES_MISMATCH')
     expected=verified_source(frozen,generation=freeze['generation'],cache=snapshot.cache)
@@ -254,7 +302,7 @@ def verified_real_cells(snapshot,parent_id:str):
     if len(tables)!=1:raise ValueError('SELECTED_TABLE_NOT_UNIQUE')
     table=tables[0]
     if len(table.cells)>2000 or len(table.model_dump_json())>250000:raise ValueError('SELECTED_TABLE_BUDGET')
-    resources=parse_resources(raw)
+    resources=parse_resources(raw,product_mode=product_mode)
     cells=[]
     for cell in table.cells:
         if cell.row!=parent.source_location.row_index or not cell.numeric_facts:continue

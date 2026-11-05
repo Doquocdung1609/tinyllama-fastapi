@@ -164,13 +164,16 @@ def verify_operand(w,c):
         if 'value' in c and value!=Decimal(c['value']):raise ValueError('PROPOSED_OPERAND_VALUE_MISMATCH')
         return {**c,'value':str(value),'verification_status':'INDEPENDENT_SOURCE_CELL_VERIFIED','normalized_value':str(value*Decimal(c['scale']))}
 
-def recompute(operation,operands,places=2,target_unit=None,proposed_amount=None):
+def recompute(operation,operands,places=2,target_unit=None,proposed_amount=None,*,reconciled_documents=False):
     """Stage B: separate implementation; values are Stage-A records only."""
     if not operands:raise ValueError('NO_VERIFIED_OPERANDS')
     values=[Decimal(c['value']) for c in operands]
     if any(not v.is_finite() for v in values):raise ValueError('NONFINITE_OPERAND')
     if len({(c['currency'],c['scale'],c['unit']) for c in operands})!=1:raise ValueError('DIMENSIONAL_UNIT_MISMATCH')
-    if len({c['document_id'] for c in operands})!=1:raise ValueError('CROSS_DOCUMENT_CALCULATION_REQUIRES_RECONCILIATION')
+    if len({c['document_id'] for c in operands})!=1 and not (
+            reconciled_documents and operation in {'ABS_CHANGE','PERCENT_CHANGE'} and
+            all(c.get('verification_status')=='INDEPENDENT_SOURCE_CELL_VERIFIED' for c in operands)):
+        raise ValueError('CROSS_DOCUMENT_CALCULATION_REQUIRES_RECONCILIATION')
     if len({c['period_type'] for c in operands})!=1:raise ValueError('PERIOD_TYPE_MISMATCH')
     metrics={c['metric'] for c in operands};scopes={c['statement_scope'] for c in operands};years={c['period'] for c in operands}
     if operation!='SCOPE_DIFFERENCE' and len(scopes)!=1:raise ValueError('SCOPE_MISMATCH')
