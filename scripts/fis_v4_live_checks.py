@@ -70,6 +70,8 @@ def main():
     records=[]
     selected=set(sys.argv[1:])
     output=RUNTIME/('v4-live-targeted.json' if selected else 'v4-live.json')
+    if selected and output.is_file():
+        records=[r for r in json.loads(output.read_text(encoding='utf-8')) if r['case'] not in selected]
     for name,route,data,expected in cases:
         if selected and name not in selected:
             continue

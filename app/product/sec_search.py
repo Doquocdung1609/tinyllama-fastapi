@@ -176,10 +176,15 @@ class SecResearchIndex:
                 scored.append((score, cid, row))
             scored.sort(key=lambda x: (-x[0], x[1]))
             output = []
+            verified_by_source = {}
             for rank, (score, cid, item) in enumerate(scored[:top_k], 1):
                 parent = self.by_id[cid]
-                canonical = verified_source(parent["frozen"], cache=self._cache,
-                                            generation=self.identity["generation"])
+                frozen = parent["frozen"]
+                source_key = json.dumps(frozen,sort_keys=True)
+                if source_key not in verified_by_source:
+                    verified_by_source[source_key] = verified_source(frozen,cache=self._cache,
+                                                                     generation=self.identity["generation"])
+                canonical = verified_by_source[source_key]
                 if cid not in canonical or canonical[cid].model_dump(mode="json") != parent["chunk"].model_dump(mode="json"):
                     raise ValueError("SEC_PARENT_SOURCE_CHANGED")
                 chunk = parent["chunk"]

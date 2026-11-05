@@ -223,17 +223,24 @@ def financial_chat(payload:ChatRequest):
                 answer={'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW',
                         'answer':'Chưa đối chiếu được ô tài chính trong nguồn SEC đã chọn. Các đoạn liên quan chỉ dùng để kiểm tra thêm.',
                         'reason':'SEC_SOURCE_CELL_VERIFICATION_FAILED','values':[],'citations':[]}
-            if not answer or answer['status']!='SUPPORTED':
+            needs_scope=answer and answer.get('reason') in {
+                'SEC_COMPANY_SCOPE_AMBIGUOUS','SEC_COMPANY_SCOPE_CONFLICT','SEC_PERIOD_DURATION_REQUIRED',
+                'SEC_PERIOD_REQUIRED','SEC_QUARTER_END_REQUIRED','SEC_COMPARISON_PERIODS_REQUIRED'}
+            if not answer or answer['status']!='SUPPORTED' and not needs_scope:
                 # Numeric QA goes directly to authenticated rows, avoiding an
                 # unrelated dense query on the successful verification path.
-                result=unified_search(UnifiedSearch(query=question,source='US_SEC',issuer=payload.ticker,
-                    mode='bm25',search_profile='faith_r_product_v1',auto_fallback=True))
-                evidence=evidence_answer(question,result) or contract(question,result,'faith_r_product_v1')
+                profile='baseline' if answer else 'faith_r_product_v1'
+                try:
+                    result=unified_search(UnifiedSearch(query=question,source='US_SEC',issuer=payload.ticker,
+                        mode='bm25',top_k=2 if answer else 5,search_profile=profile,auto_fallback=True))
+                except ValueError:
+                    result={'results':[],'source_errors':[{'source':'US_SEC','reason':'SEC_RELATED_EVIDENCE_UNAVAILABLE'}]}
+                evidence=evidence_answer(question,result) or contract(question,result,profile)
                 if answer:
-                    answer={**evidence,**answer,'citations':evidence.get('citations',[])}
+                    answer={**evidence,**answer,'citations':answer.get('citations') or evidence.get('citations',[])}
                 else:
                     answer=evidence
-                if result['source_errors']:
+                if result['source_errors'] and not answer.get('reason'):
                     answer.update(status='SOURCE_UNAVAILABLE',answer='Không truy cập được chỉ mục hoặc nguồn SEC đang chọn.',
                                   source_errors=result['source_errors'])
         elif conflict:answer=conflict
