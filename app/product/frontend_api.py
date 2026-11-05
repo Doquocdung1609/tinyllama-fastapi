@@ -22,6 +22,7 @@ from app.product.analysis import AnalysisRequest,FactReview,review_fact,eligible
 from app.product.pdf_extract import ocr_capability,folded
 
 router=APIRouter(prefix='/studio',tags=['react-product'],dependencies=[Depends(require_studio_token)])
+from app.product.sec_library import scoped as sec_scoped
 slots=BoundedSemaphore(1)
 research_slots=BoundedSemaphore(1)
 sec_view_slots=BoundedSemaphore(1)
@@ -37,7 +38,13 @@ def sec_source_evidence(payload:SecSourceRequest,response:Response):
     from app.product.sec_viewer import resolve,SourceViewError,server_key
     if not sec_view_slots.acquire(blocking=False):raise HTTPException(429,detail={'code':'SOURCE_VIEW_BUSY'})
     try:
-        index=sec_index()
+        from app.product.sec_library import for_reference
+        from app.product.sec_viewer import decode_reference
+        data=decode_reference(payload.reference,server_key(workspace().root))
+        try:index=sec_index()
+        except Exception:index=None
+        if index is None or index.identity['generation']!=data['generation']:
+            index=for_reference(payload.reference,server_key(workspace().root))
         with index._lock:result=resolve(index,payload.reference,server_key(workspace().root))
         response.headers['Cache-Control']='no-store'
         response.headers['X-Content-Type-Options']='nosniff'
@@ -79,6 +86,7 @@ class ChatRequest(BaseModel):
     document_ids:list[Annotated[str,Field(pattern=r'^[a-f0-9]{32}$')]]=Field(default_factory=list,max_length=20)
     source:Literal['USER_UPLOADS','US_SEC']='USER_UPLOADS'
     ticker:str=Field(default='',max_length=20,pattern=r'^[A-Za-z0-9.-]*$')
+    filing_ids:list[str]=Field(default_factory=list,max_length=20)
     session_id:str|None=Field(default=None,pattern=r'^[a-f0-9]{32}$')
     constraints:dict[str,str]=Field(default_factory=dict,max_length=6)
     evidence_context:dict=Field(default_factory=dict,max_length=20)
@@ -133,6 +141,7 @@ def reset_financial_chat(session_id:str):
 
 
 @router.post('/chat')
+@sec_scoped
 def financial_chat(payload:ChatRequest):
     w=workspace();session=payload.session_id or uuid4().hex
     if payload.source=='USER_UPLOADS' and not payload.document_ids:raise HTTPException(422,detail={'code':'SELECT_PDF_SOURCE'})
@@ -146,7 +155,15 @@ def financial_chat(payload:ChatRequest):
     conflict=source_company_conflict(w,payload.document_ids,payload.question)
     from app.product.document_metadata import read_metadata
     source_set=sorted((d,w.document(d)['sha256'],len(read_metadata(w,d)['corrections'])) for d in payload.document_ids)
-    fingerprint=sha256(json.dumps(source_set if payload.source=='USER_UPLOADS' else ['SEC',payload.ticker]).encode()).hexdigest()
+    sec_identities=[]
+    if payload.source=='US_SEC':
+        try:
+            selected_index=sec_index()
+            sec_identities=sorted((f['filing_id'],f.get('raw_sha256',''),selected_index.identity['generation'])
+                for f in selected_index.catalog()['filings'] if (not payload.filing_ids or f['filing_id'] in payload.filing_ids)
+                and (not payload.ticker or f['ticker']==payload.ticker.upper()))
+        except Exception:pass
+    fingerprint=sha256(json.dumps(source_set if payload.source=='USER_UPLOADS' else ['SEC_SOURCE_SCOPE_V2',payload.ticker,sorted(payload.filing_ids),sec_identities]).encode()).hexdigest()
     with closing(w._connect()) as db,db:
         from app.product.chat_store import connect as chat_connect
         with chat_connect(w):pass
@@ -204,7 +221,7 @@ def financial_chat(payload:ChatRequest):
                 try:
                     verified=sec_analysis(SecQA(question=question,ticker=payload.ticker))
                     answer['numeric_verification']=verified
-                    if verified['status']=='SUPPORTED':answer={**answer,**verified}
+                    if verified['status']=='SUPPORTED' or verified.get('answer_status')=='PARTIAL_VERIFIED':answer={**answer,**verified}
                 except HTTPException as exc:answer['numeric_verification']={'status':'UNAVAILABLE','reason':exc.detail}
         elif conflict:answer=conflict
         elif re.search(r'nghien cuu|tong quan doanh nghiep|company research|company overview',folded(question)):
@@ -215,6 +232,19 @@ def financial_chat(payload:ChatRequest):
             answer={'status':'SOURCE_EXCERPTS','answer':'\n\n'.join(sections),'citations':citations,'values':[],
                     'verification_status':'SOURCE_TEXT_UNREVIEWED','warnings':['Tổng hợp trích đoạn tài liệu, chưa chứng nhận số liệu hay tin tức hiện tại.']}
         else:answer=analysis(request)
+        if payload.source=='US_SEC':
+            answer['question_contract']={'original_question':payload.question,'resolved_question':question,'source_filing_ids':payload.filing_ids,
+                'source_identities':sec_identities,'raw_obligation_audit':answer.get('semantic_question_coverage',{}).get('original_question_audit')}
+        if answer.get('query_plan') and 'supporting_claims' in answer:
+            from app.product.semantic_answer_gate import verify_coverage
+            raw_plan={**answer['query_plan'],'raw_text':payload.question}
+            coverage=verify_coverage(raw_plan,answer['supporting_claims'],answer.get('answer',''))
+            answer['semantic_question_coverage']=coverage
+            answer['question_contract']={'original_question':payload.question,'resolved_question':question,
+                'source_document_ids':payload.document_ids,'source_filing_ids':payload.filing_ids,
+                'inherited_slots':conversation_plan.inherited_slots,'raw_obligation_audit':coverage['original_question_audit']}
+            if coverage['status']!='COMPLETE' and answer.get('answer_status')=='VERIFIED_ANSWER':
+                answer.update(answer_status='PARTIAL_VERIFIED',status='SOURCE_EXCERPTS',unanswered_subquestions=coverage['unanswered_subquestions'])
         if conversation_plan.inherited_slots:
             for key in ('query_plan','conversation_slots'):
                 if isinstance(answer.get(key),dict):answer[key]['inherited_slots']=conversation_plan.inherited_slots
@@ -225,7 +255,7 @@ def financial_chat(payload:ChatRequest):
              'evidence_ids':[c.get('citation_id',c.get('evidence_id',c.get('chunk_id'))) for c in answer.get('citations',[])],
              'status':answer.get('status'),'trace':answer.get('retrieval_trace',{})}]
         history=history+[{'question':payload.question,'resolved_question':question,'response':answer,'created_at':stamp,'messages':messages}]
-        save(w,session,fingerprint,history,payload.document_ids if payload.source=='USER_UPLOADS' else ['SEC:'+payload.ticker])
+        save(w,session,fingerprint,history,payload.document_ids if payload.source=='USER_UPLOADS' else ['SEC:'+f for f in payload.filing_ids] if payload.filing_ids else ['SEC:'+payload.ticker])
         return {**answer,'session_id':session,'resolved_question':question,'source_scope':payload.document_ids,
                 'conversation_reset':bool(prior and prior['scope']!=fingerprint)}
     finally:slots.release()
@@ -238,6 +268,7 @@ class UnifiedSearch(BaseModel):
     top_k:int=Field(default=5,ge=1,le=20)
     source:Literal['VIETNAM','US_SEC','ALL','USER_UPLOADS']='VIETNAM'
     document_ids:list[str]=Field(default_factory=list,max_length=100)
+    filing_ids:list[str]=Field(default_factory=list,max_length=20)
     issuer:str=Field(default='',max_length=160)
     period:str=Field(default='',max_length=80)
     auto_fallback:bool=False
@@ -299,6 +330,7 @@ class ComparisonResponse(BaseModel):
     candidate:SearchResponse|None=None
 
 
+@sec_scoped
 def unified_search(payload:UnifiedSearch):
     w=workspace()
     reason=None
@@ -643,7 +675,9 @@ def readiness():
         models=requests.get(os.getenv('OLLAMA_BASE_URL','http://127.0.0.1:11434')+'/api/tags',timeout=4)
         models.raise_for_status();ollama={'status':'ONLINE','models':[m['name'] for m in models.json().get('models',[])]}
     except Exception:ollama={'status':'UNAVAILABLE','models':[]}
-    try:sec=sec_index().catalog()
+    try:
+        from app.product.sec_library import catalog
+        sec=catalog()
     except Exception as exc:sec={'status':'UNAVAILABLE','reason':_error(exc),'filings':[]}
     return {'api':'ONLINE','workspace':workspace().health(),'ocr':ocr_capability(),'ollama':ollama,'sec':sec,
             'resources':{'available_ram_bytes':psutil.virtual_memory().available},
@@ -799,12 +833,14 @@ def research_status(job_id:str):
     return json.loads(row['payload'])
 
 
-@lru_cache(maxsize=1)
 def sec_backend():
     from app.research_qa.backend import ResearchBackend
-    root=os.getenv('TOPIC3_RESEARCH_ROOT','')
+    from app.product.local_config import sec_roots
+    from app.product.sec_library import active
+    root=str(active.get().root) if active.get() is not None else sec_roots()['TOPIC3_RESEARCH_ROOT']
     if not root:raise ValueError('SEC_QA_NOT_CONFIGURED')
-    return ResearchBackend(root)
+    from app.product.sec_product_snapshot import snapshot
+    return ResearchBackend(root,snapshot_factory=snapshot)
 
 
 class SecQA(BaseModel):
@@ -823,7 +859,7 @@ def sec_analysis(payload:SecQA):
         return value
     try:
         filings=sec_index().catalog()['filings']
-        filters={}
+        filters={'filing_ids':[f['filing_id'] for f in filings]}
         if payload.ticker:
             selected=[f for f in filings if f['ticker']==payload.ticker.upper()]
             if len(selected)!=1:raise ValueError('SEC_COMPANY_SCOPE_AMBIGUOUS')
@@ -842,9 +878,16 @@ def sec_analysis(payload:SecQA):
                 'row_label':cell['row_label'],'column_label':' / '.join(cell['header_path']),
                 'verification':'VERIFIED_SOURCE_CELL','unit':cell['unit'],
                 'source_location':{'structural_path':cell['structural_path'],'table_id':cell['table_id'],'row_index':cell['row'],'column_index':cell['column']}})
-        return public({'status':answer.get('status','INSUFFICIENT_EVIDENCE'),
-            'answer':'Kết quả từ ô nguồn SEC được xác thực.' if answer.get('status')=='SUPPORTED' else 'KHÔNG ĐỦ BẰNG CHỨNG',
+        from app.product.answer_composer_v2 import display
+        values=[str(v) for v in answer.get('result_values',[])]
+        direct='Chưa đủ bằng chứng để trả lời chỉ tiêu/kỳ đang hỏi.'
+        if answer.get('status')=='SUPPORTED' and values:
+            labels='; '.join(dict.fromkeys(c['row_label']+' · '+c['period_end'] for c in answer.get('source_cells',[])))
+            direct=labels+': '+', '.join(display(v)+' '+str(answer.get('result_unit') or '') for v in values)+'. '+''.join('['+str(i)+']' for i in range(1,len(citations)+1))
+        from app.product.sec_answer_contract import annotate
+        return public(annotate(payload.question,{'status':answer.get('status','INSUFFICIENT_EVIDENCE'),
+            'answer':direct,
             'values':[str(v) for v in answer.get('result_values',[])],'unit':answer.get('result_unit'),
-            'formula':answer.get('formula'),'reason':', '.join(answer.get('reasons',[])),
-            'citations':citations,'source_cells':answer.get('source_cells',[]),'generation':raw.get('generation')})
+            'formula':answer.get('formula'),'operation':answer.get('operation'),'reason':', '.join(answer.get('reasons',[])),
+            'citations':citations,'source_cells':answer.get('source_cells',[]),'generation':raw.get('generation')}))
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None

@@ -59,8 +59,8 @@ def plan_question(text):
     elif p.metric=='retained_earnings' and re.search(r'tang.*%|phan tram|percent|growth',q):p.intent='ARITHMETIC';p.operation='RESTATEMENT_GROWTH'
     elif re.search(r'(?:services|dich vu).*(?:products|san pham)|(?:products|san pham).*(?:services|dich vu)',q) and re.search(r'margin|bien loi nhuan',q):
         p.intent='ARITHMETIC';p.operation='PERCENTAGE_POINT_DIFFERENCE';p.metrics=['services_gross_margin_percentage','products_gross_margin_percentage'];p.metric=p.metrics[0]
-    elif re.search(r'(?:services|dich vu)',q) and re.search(r'what percentage|share|ty trong|chiem.*%|chiem.*phan tram',q):
-        p.intent='ARITHMETIC';p.operation='SHARE_PERCENT';p.metrics=['services_net_sales','net_revenue'];p.metric=p.metrics[0]
+    elif re.search(r'(?:services|dich vu)',q) and re.search(r'what percentage|share|ty trong|chiem.*%|chiem.*phan tram|(?:trong|cu).*100|per 100|out of (?:every )?100|dong gop.*tong|lay .*chia',q):
+        p.intent='ARITHMETIC';p.operation='PER_100' if re.search(r'(?:trong|cu).*100|per 100|out of (?:every )?100',q) else 'SHARE_PERCENT';p.metrics=['services_net_sales','net_revenue'];p.metric=p.metrics[0];p.requested_unit=None
     elif re.search(r'products.*services|services.*products',q) and re.search(r'sum|add|tong|equals|equal|bang',q):
         p.intent='ARITHMETIC';p.operation='PART_WHOLE_CHECK' if re.search(r'equals|equal|bang|total net sales',q) else 'SUM';p.metrics=['products_net_sales','services_net_sales']+(['net_revenue'] if p.operation=='PART_WHOLE_CHECK' else []);p.metric=p.metrics[0]
     elif p.operation=='SHARE_PERCENT':p.intent='ARITHMETIC'
@@ -91,10 +91,14 @@ def resolve_followup(text,history):
     old_years=previous.get('years') or []
     comparison=bool(re.search(r'grow|growth|tang truong|so voi|chenh lech',q))
     if comparison and metric==previous.get('metric'):
-        for turn in history[-8:]:
+        recent_years=[]
+        for turn in reversed(history[-8:]):
             prior=turn.get('response',{}).get('conversation_slots',{})
-            if prior.get('metric')==metric:old_years+=prior.get('years',[])
-        old_years=sorted(set(old_years))[-2:]
+            if prior.get('metric')==metric:
+                for year in reversed(prior.get('years',[])):
+                    if year not in recent_years:recent_years.append(year)
+            if len(recent_years)>=2:break
+        old_years=sorted(recent_years[:2])
     if not p.years or comparison:
         years=sorted(set(p.years+old_years))
         parts.append(' FY '+' '.join(years));p.inherited_slots.append('years')
@@ -153,8 +157,17 @@ def _with_claims(p):
         p.intent='SEGMENT_DECLINES';p.metric='reportable_segment_net_sales';p.metrics=[];p.operation='FIND_DECLINES'
     if re.search(r'absolute.*(?:percentage|percent)|tuyet doi.*(?:ty le|phan tram|%)|dollars and percent',q) and p.metric and p.operation!='FIND_DECLINES':p.operation='CHANGE_AND_GROWTH';p.intent='PERIOD_COMPARISON'
     if len(p.years)==2 and re.search(r'compare|so sanh',q) and p.operation=='EXTRACT' and p.metric!='effective_tax_rate':p.operation='ABS_CHANGE';p.intent='PERIOD_COMPARISON'
-    proposal=re.search(r'(?:\$\s*|were\s+|la\s+)(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{4,}(?:\.\d+)?)\s*(?:million|trieu)',q)
-    if proposal and re.search(r'confirm|correct|dung|xac nhan',q):p.proposed_amount=proposal[1].replace(',','');p.requested_unit='MILLION_USD'
+    proposal=re.search(r'(?:\$\s*|were\s+|la\s+)(\d[\d.,]*\d|\d)\s*(?:million|trieu)',q)
+    if proposal and re.search(r'confirm|correct|dung|xac nhan',q):
+        amount=proposal[1]
+        if ',' in amount and '.' in amount:
+            decimal=',' if amount.rfind(',')>amount.rfind('.') else '.'
+            amount=amount.replace('.' if decimal==',' else ',','').replace(decimal,'.')
+        elif re.fullmatch(r'\d{1,3}(?:[,.]\d{3})+',amount):amount=re.sub(r'[,.]','',amount)
+        else:amount=amount.replace(',','.')
+        p.proposed_amount=amount
+        if p.requested_unit not in {'TRIEU_VND','TY_VND','MILLION_USD'}:
+            p.requested_unit='MILLION_USD' if re.search(r'\$|usd|dollars?',q) else 'TRIEU_VND' if 'trieu dong' in q else None
     numeric=p.intent in {'EXTRACT_VALUE','PERIOD_COMPARISON','ARITHMETIC','RESTATEMENT_COMPARE','SEGMENT_DECLINES'}
     # Independent question slots include output dimensions; an explanation is never
     # silently satisfied by an unrelated numeric cell.
@@ -165,13 +178,14 @@ def _with_claims(p):
             'kind':kind,'expected_source_class':'SOURCE_PARAGRAPH' if kind=='explanation' else 'NATIVE_CELL' if numeric else 'SOURCE_LOCATION'})
     if p.intent=='SEGMENT_DECLINES':
         add('reportable_segment_net_sales','FIND_DECLINES',p.years,outputs=['declining_segments','period_values','absolute_change','percentage_change'])
-        add('net_revenue','CHANGE_AND_GROWTH',p.years)
+        if re.search(r'tong doanh thu|total.*(?:sales|revenue)',q):add('net_revenue','CHANGE_AND_GROWTH',p.years)
     elif p.metric=='effective_tax_rate':
         for y in p.years:add(p.metric,'EXTRACT',[y],outputs=['rate'])
         if len(p.years)==2:add(p.metric,'RATE_POINT_CHANGE',p.years,outputs=['percentage_point_change'])
     elif p.metric=='geography_definition':
         add('us_net_sales','EXTRACT',p.years);add('americas_net_sales','EXTRACT',p.years)
         add('geography_definition','EXPLAIN',p.years,'explanation',['scope_explanation'])
+        add('geography_definition','GEOGRAPHY_DIFFERENCE',p.years,outputs=['amount','calculation','source_operands'])
     else:
         metrics=regions or (['services_net_sales','products_net_sales'] if re.search(r'services|dich vu',q) and re.search(r'products|san pham',q) and p.operation in {'EXTRACT','ABS_CHANGE','PERCENT_CHANGE','CHANGE_AND_GROWTH'} else [p.metric])
         if numeric and p.operation in {'EXTRACT','ABS_CHANGE','PERCENT_CHANGE','CHANGE_AND_GROWTH'} and not regions and not re.search(r'services|products|dich vu|san pham',q):
@@ -180,7 +194,9 @@ def _with_claims(p):
             if numeric and p.operation=='EXTRACT' and len(p.years)>1:
                 for y in p.years:add(metric,'EXTRACT',[y])
             else:add(metric,p.operation,p.years,'numeric' if numeric else 'navigation')
-    if p.operation in {'SHARE_PERCENT','PERCENTAGE_POINT_DIFFERENCE','CHANGE_AND_GROWTH','RESTATEMENT_IDENTITY','SCOPE_DIFFERENCE'}:
+    if p.operation=='PERCENTAGE_POINT_DIFFERENCE' and re.search(r'tuong doi|relative',q):
+        add(p.metric,'RELATIVE_DIFFERENCE',p.years,outputs=['amount','source_operands','calculation'])
+    if p.operation in {'SHARE_PERCENT','PER_100','PERCENTAGE_POINT_DIFFERENCE','CHANGE_AND_GROWTH','RESTATEMENT_IDENTITY','SCOPE_DIFFERENCE'}:
         for slot in claims:
             if slot['kind']=='numeric':slot['outputs']+=['source_operands','calculation']
     if explain and not re.search(r'cach tinh|how.*calculat|show.*calculat',q) and p.metric!='geography_definition':add(p.metric,'EXPLAIN',p.years,'explanation',['explanation'])

@@ -14,7 +14,8 @@ def company_mentions(question):
         if match[1].casefold() in stop|{'fiscal','fy','year'}:continue
         mentions.append(match[1])
     for match in re.finditer(r'\b((?:[A-Z][\w&.-]+\s+){0,2}[A-Z][\w&.-]+)\s+(?:net income|net sales|revenue|total assets)\b',question,re.I):
-        parts=match[1].split()
+        parts=[part for part in match[1].split() if not re.fullmatch(r'(?:FY)?20\d{2}',part,re.I)]
+        if not parts:continue
         if parts[-1].casefold() in stop:continue
         while parts and parts[0].casefold() in stop:parts.pop(0)
         if parts:mentions.append(' '.join(parts))
@@ -29,7 +30,7 @@ def company_mentions(question):
     for match in re.finditer(r'(?:nghien cuu|tong quan)\s+(?:(?:doanh nghiep|cong ty)\s+)?(.{2,70}?)(?=\s+(?:nam|dua tren|theo tai lieu)|[?.]|$)',q):
         value=match[1].strip()
         if not value.startswith(('dua tren','tai lieu','doanh nghiep','cong ty')):mentions.append(value)
-    return sorted({m for m in mentions if not re.fullmatch(r'(?:FY\s*)?20\d{2}|Services|Products',m,re.I)})
+    return sorted({m for m in mentions if not re.fullmatch(r'(?:FY\s*)?20\d{2}|Services|Products|Greater|Greater China|Americas|Europe|Japan',m,re.I)})
 
 
 def source_company_conflict(workspace,document_ids,question):

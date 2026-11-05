@@ -13,6 +13,8 @@ def verified_alias_catalog(snapshot):
     registry=json.loads(registry_path.read_text(encoding='utf-8'))
     from app.table_evidence.product_registry import product_registry
     registry=product_registry(snapshot.freeze) or registry
+    from app.product.sec_product_snapshot import ProductSecSnapshot
+    if isinstance(snapshot,ProductSecSnapshot):registry=snapshot.product_source_registry
     if (registry['manifest_hash'],registry['generation'])!=(snapshot.freeze['manifest_hash'],snapshot.freeze['generation']):
         raise ValueError('ALIAS_SOURCE_REGISTRY_MISMATCH')
     groups={g['raw_hash']:g for g in registry['source_groups']}

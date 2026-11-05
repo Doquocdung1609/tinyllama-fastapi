@@ -1,7 +1,7 @@
 """Independent semantic coverage: source-valid numbers must answer the requested slots."""
 VERSION='SEMANTIC_ANSWER_COVERAGE_V1'
 
-def verify_coverage(question_plan,outputs):
+def verify_coverage(question_plan,outputs,rendered=None):
     audits=[];missing=[]
     for slot in question_plan['requested_claims']:
         selected=[o for o in outputs if o.get('question_slot_id')==slot['question_slot_id']]
@@ -34,6 +34,18 @@ def verify_coverage(question_plan,outputs):
         verdict='ANSWERED' if not reasons else 'UNANSWERED'
         audits.append({'question_slot_id':slot['question_slot_id'],'metric':slot['metric'],'verdict':verdict,'reasons':sorted(set(reasons))})
         if reasons:missing.append({**slot,'reason':';'.join(sorted(set(reasons)))})
+    from app.product.question_obligation_auditor import audit
+    raw_audit=audit(question_plan.get('raw_text',''),outputs,rendered)
+    for requirement in raw_audit['DISCOVERED_REQUIREMENTS']:
+        if requirement['verdict']=='MISSING':
+            planned=next((s for s in question_plan['requested_claims'] if s['operation'] in requirement['operations']),None)
+            if planned:
+                existing=next(a for a in audits if a['question_slot_id']==planned['question_slot_id'])
+                existing['verdict']='UNANSWERED';existing['reasons']=sorted(set(existing['reasons']+[requirement['reason']]))
+                if not any(s['question_slot_id']==planned['question_slot_id'] for s in missing):missing.append({**planned,'reason':requirement['reason']})
+            else:
+                audits.append({'question_slot_id':'raw_'+requirement['id'],'metric':'raw_question_requirement','verdict':'UNANSWERED','reasons':[requirement['reason']]})
+                missing.append({'question_slot_id':'raw_'+requirement['id'],'metric':requirement['id'],'kind':'coverage','reason':requirement['reason']})
     count=sum(a['verdict']=='ANSWERED' for a in audits)
     return {'version':VERSION,'status':'COMPLETE' if count==len(audits) and count else 'PARTIAL' if count else 'UNANSWERED',
-        'requested_count':len(audits),'answered_count':count,'slots':audits,'unanswered_subquestions':missing}
+        'requested_count':len(audits),'answered_count':count,'slots':audits,'unanswered_subquestions':missing,'original_question_audit':raw_audit}

@@ -36,8 +36,8 @@ class DemoAdapter(OwnedLexicalAdapter):
 
 class ResearchBackend:
     source_type='OFFICIAL_SEC_RESEARCH_DIAGNOSTIC'
-    def __init__(self,root):
-        self.adapter=FrozenResearchSnapshot(root);self.catalog=self.adapter.catalog;self.context=None
+    def __init__(self,root,snapshot_factory=FrozenResearchSnapshot):
+        self.adapter=snapshot_factory(root);self.catalog=self.adapter.catalog;self.context=None
         self.p6_catalog=None
 
     def evidence_lookup(self,hit):return None

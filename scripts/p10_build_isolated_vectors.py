@@ -55,6 +55,8 @@ def source_records(snapshot):
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     from app.table_evidence.product_registry import product_registry
     registry = product_registry(snapshot.freeze) or registry
+    from app.product.sec_product_snapshot import ProductSecSnapshot
+    if isinstance(snapshot,ProductSecSnapshot):registry=snapshot.product_source_registry
     if (registry["manifest_hash"], registry["generation"]) != (
         snapshot.freeze["manifest_hash"], generation):
         raise ValueError("COMMITTED_SOURCE_REGISTRY_MISMATCH")
@@ -110,7 +112,7 @@ def resource_guard():
         raise RuntimeError("ACTUAL_AVAILABLE_MEMORY_TOO_LOW")
 
 
-def build(root, vector_root, batch_size, max_batches):
+def build(root, vector_root, batch_size, max_batches, snapshot_factory=FrozenResearchSnapshot):
     root = root.resolve(strict=True)
     vector_root = vector_root.resolve()
     if ("p7-isolated-review" not in root.name or not (root / "ownership.json").is_file()
@@ -121,7 +123,7 @@ def build(root, vector_root, batch_size, max_batches):
     if vector_root.exists() and not (vector_root / "identity.json").is_file():
         raise ValueError("NONEMPTY_UNOWNED_VECTOR_ROOT")
     require_supported_embedded_qdrant()
-    snapshot = FrozenResearchSnapshot(root)
+    snapshot = snapshot_factory(root)
     prepared, source_hashes = source_records(snapshot)
     membership_hash = sha256(json.dumps([(r["cid"], r["payload_hash"], r["raw_hash"])
                                     for r in prepared], separators=(",", ":")).encode()).hexdigest()

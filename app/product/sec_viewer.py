@@ -141,7 +141,7 @@ def resolve(index,value,secret):
         if selected_row!=target['row']:raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED')
         cells=[c for c in table.cells if (c.row,c.column)==(target['row'],target['column'])]
         if len(cells)!=1:raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED')
-        try:observation=derive_cell(parent,table,cells[0],parse_resources(raw),raw_hash=frozen['raw_hash'],generation=data['generation'],manifest_hash=data['manifest_hash'],dataset_id=data['dataset_id']).model_dump(mode='json')
+        try:observation=derive_cell(parent,table,cells[0],parse_resources(raw),raw_hash=frozen['raw_hash'],generation=data['generation'],manifest_hash=data['manifest_hash'],dataset_id=data['dataset_id'],product_mode=True).model_dump(mode='json')
         except ValueError:raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED') from None
         if any(observation[k]!=target[k] for k in target):raise SourceViewError('SOURCE_LOCATOR_UNRESOLVED')
         result['selected_cell']=observation

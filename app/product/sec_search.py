@@ -23,7 +23,8 @@ class SecResearchIndex:
     def __init__(self, root: Path, vector_root: Path, qa_root: Path | None = None, embedder=None):
         self.root = Path(root).resolve(strict=True)
         self.vector_root = Path(vector_root).resolve(strict=True)
-        snapshot = FrozenResearchSnapshot(self.root)
+        from app.product.sec_product_snapshot import snapshot as open_snapshot
+        snapshot = open_snapshot(self.root)
         prepared, source_hashes = source_records(snapshot)
         self.identity = json.loads((self.vector_root / "generation_manifest.json").read_text(encoding="utf-8"))
         freeze = snapshot.freeze
@@ -40,7 +41,7 @@ class SecResearchIndex:
             or sorted(self.identity.get("source_raw_hashes", [])) != source_hashes):
             raise ValueError("SEC_SEARCH_QA_GENERATION_MISMATCH")
         if qa_root:
-            qa_freeze = FrozenResearchSnapshot(Path(qa_root).resolve(strict=True)).freeze
+            qa_freeze = open_snapshot(Path(qa_root).resolve(strict=True)).freeze
             if (qa_freeze["generation"], qa_freeze["manifest_hash"]) != (freeze["generation"], freeze["manifest_hash"]):
                 raise ValueError("SEC_SEARCH_QA_GENERATION_MISMATCH")
         self.lexical = snapshot.lexical
@@ -110,11 +111,12 @@ class SecResearchIndex:
                 "scope_note": "Official SEC development filings shared with Financial AI; not human-adjudicated evaluation"}
 
     def search(self, query: str, mode: str = "hybrid", top_k: int = 5,
-               ticker: str = "", report_period: str = ""):
+               ticker: str = "", report_period: str = "", _filing_ids=None):
         if mode not in {"bm25", "dense", "hybrid"} or not 1 <= top_k <= 20 or not query.strip() or len(query) > 2000:
             raise ValueError("INVALID_SEC_SEARCH_REQUEST")
         selected = [r for r in self.catalog_rows if (not ticker or r["ticker"] == ticker.upper())
-                    and (not report_period or r["report_period"] == report_period)]
+                    and (not report_period or r["report_period"] == report_period)
+                    and (_filing_ids is None or r['filing_id'] in _filing_ids)]
         if not selected:
             return {"status": "NO_ELIGIBLE_FILING", "results": [], "generation": self.identity["generation"]}
         with self._lock:

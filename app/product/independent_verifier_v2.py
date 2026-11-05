@@ -164,7 +164,7 @@ def verify_operand(w,c):
         if 'value' in c and value!=Decimal(c['value']):raise ValueError('PROPOSED_OPERAND_VALUE_MISMATCH')
         return {**c,'value':str(value),'verification_status':'INDEPENDENT_SOURCE_CELL_VERIFIED','normalized_value':str(value*Decimal(c['scale']))}
 
-def recompute(operation,operands,places=2,target_unit=None):
+def recompute(operation,operands,places=2,target_unit=None,proposed_amount=None):
     """Stage B: separate implementation; values are Stage-A records only."""
     if not operands:raise ValueError('NO_VERIFIED_OPERANDS')
     values=[Decimal(c['value']) for c in operands]
@@ -176,30 +176,33 @@ def recompute(operation,operands,places=2,target_unit=None):
     if operation!='SCOPE_DIFFERENCE' and len(scopes)!=1:raise ValueError('SCOPE_MISMATCH')
     if operation=='SCOPE_DIFFERENCE' and (scopes!={'SEPARATE','CONSOLIDATED'} or len(years)!=1 or len(metrics)!=1 or any(c['basis']!='ADJUSTMENT' for c in operands)):raise ValueError('INCOMPATIBLE_SCOPE_DIFFERENCE')
     if operation in {'ABS_CHANGE','PERCENT_CHANGE'} and (len(metrics)!=1 or len(years)!=2):raise ValueError('INCOMPATIBLE_PERIOD_COMPARISON')
-    if operation in {'SHARE_PERCENT','PERCENTAGE_POINT_DIFFERENCE','RESTATEMENT_GROWTH','RESTATEMENT_IDENTITY','SUM','PART_WHOLE_CHECK'} and len(years)!=1:raise ValueError('SAME_PERIOD_REQUIRED')
-    if operation=='SHARE_PERCENT' and (operands[1]['metric']!='net_revenue' or operands[0]['metric'] not in {'services_net_sales','products_net_sales','net_income','gross_profit'}):raise ValueError('DENOMINATOR_SEMANTICS_MISMATCH')
-    if operation=='PERCENTAGE_POINT_DIFFERENCE' and (operands[0]['unit']!='%' or not all('gross_margin_percentage' in c['metric'] for c in operands)):raise ValueError('PERCENTAGE_POINT_DIMENSION_MISMATCH')
+    if operation in {'SHARE_PERCENT','PER_100','RELATIVE_DIFFERENCE','GEOGRAPHY_DIFFERENCE','PERCENTAGE_POINT_DIFFERENCE','RESTATEMENT_GROWTH','RESTATEMENT_IDENTITY','SUM','PART_WHOLE_CHECK'} and len(years)!=1:raise ValueError('SAME_PERIOD_REQUIRED')
+    if operation in {'SHARE_PERCENT','PER_100'} and (operands[1]['metric']!='net_revenue' or operands[0]['metric'] not in {'services_net_sales','products_net_sales','net_income','gross_profit'}):raise ValueError('DENOMINATOR_SEMANTICS_MISMATCH')
+    if operation in {'PERCENTAGE_POINT_DIFFERENCE','RELATIVE_DIFFERENCE'} and (operands[0]['unit']!='%' or not all('gross_margin_percentage' in c['metric'] for c in operands)):raise ValueError('PERCENTAGE_POINT_DIMENSION_MISMATCH')
     if operation in {'ABS_CHANGE','PERCENT_CHANGE'} and len({c['basis'] for c in operands})!=1:raise ValueError('REPORTING_BASIS_MISMATCH')
     if operation=='RESTATEMENT_IDENTITY' and len(metrics)!=1:raise ValueError('RESTATEMENT_METRIC_MISMATCH')
     if operation=='RESTATEMENT_GROWTH' and ([c['basis'] for c in operands]!=['ADJUSTMENT','ORIGINAL'] or len(metrics)!=1):raise ValueError('RESTATEMENT_BASIS_MISMATCH')
     if operation in {'ABS_CHANGE','PERCENT_CHANGE'} and operands[0]['period']<=operands[1]['period']:raise ValueError('PERIOD_DIRECTION_MISMATCH')
     if operation=='SCOPE_DIFFERENCE' and [c['statement_scope'] for c in operands]!=['CONSOLIDATED','SEPARATE']:raise ValueError('SCOPE_DIRECTION_MISMATCH')
-    if operation=='PERCENTAGE_POINT_DIFFERENCE' and [c['metric'] for c in operands]!=['services_gross_margin_percentage','products_gross_margin_percentage']:raise ValueError('MARGIN_DIRECTION_MISMATCH')
+    if operation in {'PERCENTAGE_POINT_DIFFERENCE','RELATIVE_DIFFERENCE'} and [c['metric'] for c in operands]!=['services_gross_margin_percentage','products_gross_margin_percentage']:raise ValueError('MARGIN_DIRECTION_MISMATCH')
+    if operation=='GEOGRAPHY_DIFFERENCE' and [c['metric'] for c in operands]!=['americas_net_sales','us_net_sales']:raise ValueError('GEOGRAPHY_DIRECTION_MISMATCH')
     if operation=='RATE_POINT_CHANGE' and (len(operands)!=2 or metrics!={'effective_tax_rate'} or operands[0]['unit']!='%' or operands[0]['period']<=operands[1]['period']):raise ValueError('RATE_PERIOD_DIMENSION_MISMATCH')
     with localcontext() as ctx:
         ctx.prec=50
-        if operation=='EXTRACT' and len(values)==1:
+        if operation=='PROPOSAL_DIFFERENCE' and len(values)==1 and proposed_amount is not None:
+            result=Decimal(proposed_amount)-values[0]
+        elif operation=='EXTRACT' and len(values)==1:
             result=values[0]
             if target_unit and target_unit!=operands[0]['unit']:
                 units={'VND':('VND','1'),'TRIEU_VND':('VND','1000000'),'TY_VND':('VND','1000000000'),
                     'USD':('USD','1'),'MILLION_USD':('USD','1000000')}
                 if target_unit not in units or units[target_unit][0]!=operands[0]['currency']:raise ValueError('FX_CONVERSION_NOT_AUTHORIZED')
                 result=result*Decimal(operands[0]['scale'])/Decimal(units[target_unit][1])
-        elif operation in {'ABS_CHANGE','SCOPE_DIFFERENCE','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} and len(values)==2:result=values[0]-values[1]
-        elif operation in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH'} and len(values)==2:
+        elif operation in {'ABS_CHANGE','SCOPE_DIFFERENCE','GEOGRAPHY_DIFFERENCE','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} and len(values)==2:result=values[0]-values[1]
+        elif operation in {'PERCENT_CHANGE','SHARE_PERCENT','PER_100','RELATIVE_DIFFERENCE','RESTATEMENT_GROWTH'} and len(values)==2:
             if not values[1]:raise ValueError('ZERO_DENOMINATOR')
-            if operands[0]['unit']=='%':raise ValueError('PERCENT_AS_MONETARY_AMOUNT')
-            result=((values[0]-values[1]) if operation=='PERCENT_CHANGE' else values[0])/values[1]*Decimal(100)
+            if operands[0]['unit']=='%' and operation!='RELATIVE_DIFFERENCE':raise ValueError('PERCENT_AS_MONETARY_AMOUNT')
+            result=((values[0]-values[1]) if operation in {'PERCENT_CHANGE','RELATIVE_DIFFERENCE'} else values[0])/values[1]*Decimal(100)
         elif operation=='RESTATEMENT_IDENTITY' and len(values)==3:
             if [c['basis'] for c in operands]!=['ORIGINAL','ADJUSTMENT','RESTATED']:raise ValueError('RESTATEMENT_COLUMN_ORDER')
             result=values[0]+values[1]-values[2]
@@ -210,7 +213,7 @@ def recompute(operation,operands,places=2,target_unit=None):
             if [c['metric'] for c in operands]!=['products_net_sales','services_net_sales','net_revenue']:raise ValueError('PART_WHOLE_SEMANTICS')
             result=values[0]+values[1]-values[2]
         else:raise ValueError('OPERATION_OR_OPERAND_COUNT')
-        if operation in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'}:
+        if operation in {'PERCENT_CHANGE','SHARE_PERCENT','PER_100','RELATIVE_DIFFERENCE','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'}:
             result=result.quantize(Decimal(1).scaleb(-places),rounding=ROUND_HALF_UP)
         return str(result)
 
@@ -253,15 +256,26 @@ def verify_plan(w,plan):
         calculations={}
         calculation_inputs={}
         for calc in plan.calculations:
-            if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} and calc.get('round_places',2)!=2:raise ValueError('ROUNDING_POLICY_MISMATCH')
+            if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','PER_100','RELATIVE_DIFFERENCE','RESTATEMENT_GROWTH','PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} and calc.get('round_places',2)!=2:raise ValueError('ROUNDING_POLICY_MISMATCH')
             inputs=[verified[i] for i in calc['operand_ids']]
-            result=recompute(calc['operation'],inputs,calc.get('round_places',2),calc.get('result_unit'))
-            expected_unit='%' if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','RESTATEMENT_GROWTH'} else 'PERCENTAGE_POINTS' if calc['operation'] in {'PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} else inputs[0]['unit']
+            proposed=None
+            if calc['operation']=='PROPOSAL_DIFFERENCE':
+                raw=plan.question_plan.get('raw_text','')
+                match=re.search(r'(\d[\d.,]*\d|\d)\s*(?:million|triệu)',raw,re.I)
+                if not match:raise ValueError('USER_PROPOSAL_NOT_IN_QUESTION')
+                number=match[1]
+                if '.' in number and ',' in number:
+                    dec=max(number.rfind('.'),number.rfind(','));proposed=re.sub(r'[.,]','',number[:dec])+'.'+number[dec+1:]
+                elif re.fullmatch(r'\d{1,3}(?:[.,]\d{3})+',number):proposed=re.sub(r'[.,]','',number)
+                else:proposed=number.replace(',','.')
+                if proposed!=plan.question_plan.get('proposed_amount') or inputs[0]['unit']!=plan.question_plan.get('requested_unit'):raise ValueError('USER_PROPOSAL_BINDING_MISMATCH')
+            result=recompute(calc['operation'],inputs,calc.get('round_places',2),calc.get('result_unit'),proposed)
+            expected_unit='%' if calc['operation'] in {'PERCENT_CHANGE','SHARE_PERCENT','PER_100','RELATIVE_DIFFERENCE','RESTATEMENT_GROWTH'} else 'PERCENTAGE_POINTS' if calc['operation'] in {'PERCENTAGE_POINT_DIFFERENCE','RATE_POINT_CHANGE'} else inputs[0]['unit']
             if calc['operation']!='EXTRACT' and calc['result_unit']!=expected_unit:raise ValueError('RESULT_UNIT_DIMENSION_MISMATCH')
             if Decimal(result)!=Decimal(calc['proposed_result']):raise ValueError('INDEPENDENT_ARITHMETIC_MISMATCH')
             calculations[calc['calculation_id']]=result
             calculation_inputs[calc['calculation_id']]=calc['operand_ids']
-            audit['stage_b'].append({'calculation_id':calc['calculation_id'],'operation':calc['operation'],'recomputed_result':result,'status':'VERIFIED'})
+            audit['stage_b'].append({'calculation_id':calc['calculation_id'],'operation':calc['operation'],'recomputed_result':result,'status':'VERIFIED','operand_metrics':[c['metric'] for c in inputs]})
         for claim in plan.claims:
             if not claim.source_refs or not set(claim.source_refs)<=set(ids):raise ValueError('CLAIM_CITATION_OUTSIDE_PLAN')
             if claim.type=='SOURCE_FACT':
@@ -280,7 +294,7 @@ def verify_plan(w,plan):
                 qp=plan.question_plan
                 requested_operation=qp.get('operation')
                 actual_operation=next(c['operation'] for c in plan.calculations if c['calculation_id']==claim.calculation_id)
-                if requested_operation and requested_operation not in {'CHANGE_AND_GROWTH',actual_operation} and qp.get('intent') not in {'RESTATEMENT_LIST','EXPLAIN'}:raise ValueError('QUESTION_OPERATION_MISMATCH')
+                if requested_operation and requested_operation not in {'CHANGE_AND_GROWTH',actual_operation} and not (actual_operation=='PROPOSAL_DIFFERENCE' and qp.get('proposed_amount')) and qp.get('intent') not in {'RESTATEMENT_LIST','EXPLAIN'}:raise ValueError('QUESTION_OPERATION_MISMATCH')
                 if requested_operation=='CHANGE_AND_GROWTH' and actual_operation not in {'ABS_CHANGE','PERCENT_CHANGE'}:raise ValueError('QUESTION_OPERATION_MISMATCH')
                 requested_unit=qp.get('requested_unit')
                 if requested_unit and requested_unit not in {'%','USD','VND','MILLION_USD','TRIEU_VND','TY_VND'}:raise ValueError('UNSUPPORTED_REQUESTED_UNIT')
@@ -312,6 +326,8 @@ def verify_rendered_numerals(answer,plan):
     for c in plan.operands:
         allowed.add(raw_decimal(c['value_raw']));allowed.add(Decimal(c['period']));allowed.add(Decimal(c['page']))
     for c in plan.calculations:allowed.add(Decimal(c['proposed_result']))
+    # A percentage/per-100 formula has an authenticated fixed multiplier.
+    if any(c['operation'] in {'PER_100','RELATIVE_DIFFERENCE'} for c in plan.calculations):allowed.add(Decimal(100))
     for i,c in enumerate(plan.citations,1):
         allowed.add(Decimal(i));allowed.add(Decimal(c['page']))
     for year in plan.question_plan.get('years',[]):allowed.add(Decimal(year))

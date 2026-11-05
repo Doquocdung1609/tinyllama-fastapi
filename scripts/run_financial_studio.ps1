@@ -102,6 +102,14 @@ $env:FINANCIAL_CORPUS_DIR=Join-Path $runtime 'legacy-corpus'
 $env:FINANCIAL_REGISTRY_DB=Join-Path $env:FINANCIAL_CORPUS_DIR 'registry.sqlite3'
 $productSource=Join-Path $runtime 'sec/p7-isolated-review-product-20261028'
 $productVectors=Join-Path $runtime 'sec/t3-p10-isolated-vectors-product-20261028'
+$secConfig=Join-Path $runtime 'sec-config.json'
+if (Test-Path -LiteralPath $secConfig) {
+    $localSec=Get-Content -LiteralPath $secConfig -Raw -Encoding utf8 | ConvertFrom-Json
+    foreach ($key in @('STUDIO_SEC_RESEARCH_ROOT','STUDIO_SEC_VECTOR_ROOT','TOPIC3_RESEARCH_ROOT')) {
+        $value=$localSec.$key
+        if ($value) {[Environment]::SetEnvironmentVariable($key,$value,'Process')}
+    }
+}
 if (-not $env:STUDIO_SEC_RESEARCH_ROOT -and -not $env:STUDIO_SEC_VECTOR_ROOT -and -not $env:TOPIC3_RESEARCH_ROOT -and
     (Test-Path (Join-Path $productSource 'frozen_v1/freeze.json')) -and (Test-Path (Join-Path $productVectors 'generation_manifest.json'))) {
     $env:STUDIO_SEC_RESEARCH_ROOT=$productSource;$env:TOPIC3_RESEARCH_ROOT=$productSource;$env:STUDIO_SEC_VECTOR_ROOT=$productVectors

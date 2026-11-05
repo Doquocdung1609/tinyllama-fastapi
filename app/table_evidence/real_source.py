@@ -132,7 +132,7 @@ def _source_period(context,headers):
     return kind,start,period_end.isoformat(),months
 
 
-def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resources:dict,*,raw_hash:str,generation:str,manifest_hash:str,dataset_id:str='research-sec-v1'):
+def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resources:dict,*,raw_hash:str,generation:str,manifest_hash:str,dataset_id:str='research-sec-v1',product_mode:bool=False):
     """Derive one physical fact; caller must authenticate all inputs first."""
     if parent.kind!='table' or parent.extraction_status!='OK' or table.extraction_status!='OK' or table.extraction_warnings:
         raise ValueError('SELECTED_TABLE_EXTRACTION_INCOMPLETE')
@@ -150,7 +150,9 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         raise ValueError('AMBIGUOUS_PHYSICAL_VALUE_CELL')
     row_label=m.get('row_label','').strip().casefold()
     fact=cell.numeric_facts[0];name=fact.get('name','').casefold()
-    if name not in CONCEPTS.get(row_label,set()):raise ValueError('CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED')
+    concepts=CONCEPTS.get(row_label,set())
+    if product_mode and row_label=='net sales':concepts=concepts|{'us-gaap:revenuefromcontractwithcustomerexcludingassessedtax'}
+    if name not in concepts:raise ValueError('CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED')
     if fact.get('source_text','').strip()!=cell.text.strip() or fact.get('format','').casefold().split(':')[-1] not in {'num-dot-decimal','numdotdecimal'}:
         raise ValueError('INLINE_DISPLAY_OR_FORMAT_UNSUPPORTED')
     from app.table_evidence.interpretation import parse_number
@@ -179,6 +181,11 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
     if not -12<=exp<=12:raise ValueError('XBRL_SCALE_UNSUPPORTED')
     unit_headers=sorted({h.strip() for grid in table.header_rows for h in grid
                          if re.search(r'\b(?:thousands|millions|billions)\b',h,re.I)})
+    if product_mode and table.unit_context and table.unit_context==m.get('unit_context') and table.unit_context in table.context_text and table.context_locations:
+        context_units=set(re.findall(r'\b(?:thousands|millions|billions)\b',table.unit_context.casefold()))
+        header_units={u for h in unit_headers for u in re.findall(r'\b(?:thousands|millions|billions)\b',h.casefold())}
+        if context_units and header_units and context_units!=header_units:raise ValueError('CONFLICTING_DISPLAY_UNIT_CAPTIONS')
+        if context_units and not unit_headers:unit_headers=[table.unit_context.strip()]
     if len(unit_headers)!=1 or 'millions' not in unit_headers[0].casefold() or exp!=6:
         raise ValueError('DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT')
     multiplier=Decimal(10)**exp
@@ -213,6 +220,8 @@ def verified_real_cells(snapshot,parent_id:str):
     registry=json.loads(registry_path.read_text(encoding='utf-8'))
     from app.table_evidence.product_registry import product_registry
     registry=product_registry(freeze) or registry
+    from app.product.sec_product_snapshot import ProductSecSnapshot
+    if isinstance(snapshot,ProductSecSnapshot):registry=snapshot.product_source_registry
     if registry['manifest_hash']!=freeze['manifest_hash'] or registry['generation']!=freeze['generation']:
         raise ValueError('COMMITTED_RESEARCH_REGISTRY_MISMATCH')
     with closing(snapshot.lexical.connect()) as db:
@@ -249,6 +258,6 @@ def verified_real_cells(snapshot,parent_id:str):
     cells=[]
     for cell in table.cells:
         if cell.row!=parent.source_location.row_index or not cell.numeric_facts:continue
-        try:cells.append(derive_cell(parent,table,cell,resources,raw_hash=anchor['raw_hash'],generation=freeze['generation'],manifest_hash=freeze['manifest_hash'],dataset_id=snapshot.catalog.dataset_id))
+        try:cells.append(derive_cell(parent,table,cell,resources,raw_hash=anchor['raw_hash'],generation=freeze['generation'],manifest_hash=freeze['manifest_hash'],dataset_id=snapshot.catalog.dataset_id,product_mode=getattr(snapshot,'product_verification',False)))
         except ValueError:continue
     return tuple(cells)
