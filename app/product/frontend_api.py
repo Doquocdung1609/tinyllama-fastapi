@@ -143,6 +143,7 @@ def reset_financial_chat(session_id:str):
 @router.post('/chat')
 @sec_scoped
 def financial_chat(payload:ChatRequest):
+    from app.product.natural_pdf_dialogue import respond as natural_pdf_answer
     w=workspace();session=payload.session_id or uuid4().hex
     if payload.source=='USER_UPLOADS' and not payload.document_ids:raise HTTPException(422,detail={'code':'SELECT_PDF_SOURCE'})
     if payload.source=='US_SEC' and payload.document_ids:raise HTTPException(422,detail={'code':'SEC_PDF_SOURCE_SCOPE_CONFLICT'})
@@ -224,6 +225,8 @@ def financial_chat(payload:ChatRequest):
                     if verified['status']=='SUPPORTED' or verified.get('answer_status')=='PARTIAL_VERIFIED':answer={**answer,**verified}
                 except HTTPException as exc:answer['numeric_verification']={'status':'UNAVAILABLE','reason':exc.detail}
         elif conflict:answer=conflict
+        elif not payload.constraints and (natural := natural_pdf_answer(w, payload.question, payload.document_ids, history)) is not None:
+            answer=natural
         elif re.search(r'nghien cuu|tong quan doanh nghiep|company research|company overview',folded(question)):
             sections=[];citations=[]
             for label,query in [('Hoạt động','business operations strategy'),('Tài chính','financial condition net sales'),('Rủi ro','risk factors')]:
