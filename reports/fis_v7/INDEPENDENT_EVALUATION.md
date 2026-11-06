@@ -19,7 +19,18 @@ The BIDV regression passes. **V7 has not met the general-purpose acceptance gate
 | FPT annual report 2024 | p. 150, total consolidated assets at 31/12/2024, 71,999,995,678,620 VND | FAIL. Correct page found. No numeric cell or answer. |
 | Toyota Integrated Report 2024 | p. 134, FY2024 total assets, 90,114.2 billion JPY | FAIL. Correct page found. No numeric cell or answer. |
 
-**Excerpt coverage:** 3/3 PDFs READY. Target page present in citations for 3/4 questions. Certified exact cells, bound period/unit, exact numeric answers, complete answers and exact-cell citations each 0/4. Unsupported cases emitted no certified amount in 4/4. Table detection and row identification were not separately certified by independent annotation. The full Techcombank file reached READY with 133 pages and 1,081 chunks. The complete Techcombank total-assets request exceeded the 55 s client budget. The saved server response eventually contained excerpts and zero values. Full-report FPT and Toyota evaluation remained pending at the evaluation snapshot. Measured resource costs and replay logs distinguish these runs from the excerpt subset.
+**Excerpt coverage:** 3/3 PDFs READY. Target page present in citations for 3/4 questions. Certified exact cells, bound period/unit, exact numeric answers, complete answers and exact-cell citations each 0/4. Unsupported cases emitted no certified amount in 4/4. Table detection and row identification were not separately certified by independent annotation. The full Techcombank file reached READY with 133 pages and 1,081 chunks. The complete Techcombank total-assets request exceeded the 55 s client budget. The saved server response eventually contained excerpts and zero values. The complete FPT and Toyota reports also reached READY. The full-report checks are below. Measured resource costs and replay logs distinguish these runs from the excerpt subset.
+
+## Complete PDF follow-up
+
+| Check | Pages and indexed chunks | Ingest to READY | Observed result |
+| --- | ---: | ---: | --- |
+| Techcombank total assets | 133 pages, 1,081 chunks | 503 s | FAIL. Client timed out at 55 s. Persisted response cited p. 99 and p. 125 without a bound amount. |
+| Techcombank net interest income | Same source | — | FAIL. Cited pp. 106 and 31 instead of p. 100, without a value. |
+| FPT total assets | 215 pages, 915 chunks | 516 s | FAIL. Cited pp. 147 and 11 instead of p. 150, without a value. |
+| Toyota total assets | 138 pages, 1,136 chunks | 350 s | FAIL. Retrieved PDF pages 135, 134 without a bound amount. |
+
+READY time includes time waiting behind another import on the same machine. No full-report answer produced an exact, verified cell. These checks do not change the V7 release decision.
 
 The V7 reader handles supported restatement bases, continuation and geometry. These independent examples need broader comparative financial statement and summary table support. They include interleaved notes, date/period headers, different layouts and yen scale. The current evidence shows that recovering a page is insufficient to publish a financial number.
 

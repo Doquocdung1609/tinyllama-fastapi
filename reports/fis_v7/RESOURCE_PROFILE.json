@@ -16,7 +16,8 @@
     "Working set sampled in the V7 API process tree during the separate probe sequence. It excludes Chromium and Ollama.",
     "Latency medians are local wall-clock API times. The V7 and baseline workspaces had different HPG generations and different concurrent load, so this is not a controlled speedup comparison.",
     "Excerpts used the public PDF source pages. Import duration includes API ingestion and polling delay.",
-    "The complete Techcombank PDF exceeded the 450 s polling window at first observation and subsequently reached READY."
+    "The complete Techcombank PDF exceeded the 450 s polling window at first observation and subsequently reached READY.",
+    "Full PDF READY times are measured from the local registration timestamp and include queue time while other reports indexed."
   ],
   "independent_excerpts": {
     "techcombank": {
@@ -42,6 +43,32 @@
       "sampled_api_working_set_bytes": 215130112,
       "query_seconds": [
         3.848
+      ]
+    }
+  },
+  "independent_full_pdfs": {
+    "techcombank": {
+      "pages": 133,
+      "chunks": 1081,
+      "submission_to_ready_seconds": 502.818,
+      "query_seconds": [
+        17.475
+      ]
+    },
+    "fpt": {
+      "pages": 215,
+      "chunks": 915,
+      "submission_to_ready_seconds": 516.264,
+      "query_seconds": [
+        34.231
+      ]
+    },
+    "toyota": {
+      "pages": 138,
+      "chunks": 1136,
+      "submission_to_ready_seconds": 350.42,
+      "query_seconds": [
+        17.405
       ]
     }
   }

@@ -104,7 +104,24 @@
           99,
           125
         ]
-      }
+      },
+      "submission_to_ready_seconds": 502.818,
+      "supplemental_queries": [
+        {
+          "test": "TCB-NII",
+          "id": "fd8537f52dad35c2e34bd81312223035",
+          "question": "Thu nhập lãi thuần hợp nhất cả năm 2024 là bao nhiêu?",
+          "http": 200,
+          "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+          "values": [],
+          "reason": "UNSUPPORTED_METRIC_PARSER",
+          "pages": [
+            106,
+            31
+          ],
+          "seconds": 17.47494949999964
+        }
+      ]
     }
   },
   "fpt": {
@@ -166,10 +183,27 @@
     ],
     "full_pdf": {
       "id": "764c24281433eda90277f5b1c39022ee",
-      "status": "PROCESSING",
-      "stage": "EMBEDDING 644/915",
+      "status": "READY",
+      "stage": "READY",
       "pages": 215,
-      "chunks": 915
+      "chunks": 915,
+      "submission_to_ready_seconds": 516.264,
+      "supplemental_queries": [
+        {
+          "test": "FPT-assets",
+          "id": "764c24281433eda90277f5b1c39022ee",
+          "question": "What were total consolidated assets as at 31 December 2024?",
+          "http": 200,
+          "answer": "The selected PDF has native text, but this metric or cell layout is not supported yet; this is not an OCR failure. [1][2]",
+          "values": [],
+          "reason": "UNSUPPORTED_METRIC_PARSER",
+          "pages": [
+            147,
+            11
+          ],
+          "seconds": 34.23099779999757
+        }
+      ]
     }
   },
   "toyota": {
@@ -216,10 +250,34 @@
     ],
     "full_pdf": {
       "id": "50babcb011bacf1abb22cdfab14bd169",
-      "status": "UPLOADED",
-      "stage": "UPLOAD",
-      "pages": 0,
-      "chunks": 0
+      "status": "READY",
+      "stage": "READY",
+      "pages": 138,
+      "chunks": 1136,
+      "submission_to_ready_seconds": 350.42,
+      "supplemental_queries": [
+        {
+          "test": "Toyota-assets",
+          "id": "50babcb011bacf1abb22cdfab14bd169",
+          "question": "What were total assets in fiscal 2024 in the consolidated financial summary? Give the value in billions of yen.",
+          "ingestion": {
+            "status": "READY",
+            "stage": "READY",
+            "pages": 138,
+            "chunks": 1136,
+            "error_code": null
+          },
+          "http": 200,
+          "answer": "The selected PDF has native text, but this metric or cell layout is not supported yet; this is not an OCR failure. [1][2]",
+          "values": [],
+          "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+          "pages": [
+            135,
+            134
+          ],
+          "seconds": 17.40538799999922
+        }
+      ]
     }
   }
 }
