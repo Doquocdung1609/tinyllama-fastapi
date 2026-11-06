@@ -74,6 +74,8 @@ def test_sec_unavailable_is_persisted_without_breaking_pdf(tmp_path,monkeypatch)
     monkeypatch.setattr(frontend_api,'workspace',lambda:w)
     def unavailable():raise ValueError('SEC_SHARED_SOURCE_ROOTS_NOT_CONFIGURED')
     monkeypatch.setattr(frontend_api,'sec_index',unavailable)
+    def unexpected_search(_):pytest.fail('unavailable selected SEC index must not query another source')
+    monkeypatch.setattr(frontend_api,'unified_search',unexpected_search)
     try:
         r=frontend_api.financial_chat(frontend_api.ChatRequest(question='Explain Apple revenue FY2025',source='US_SEC',ticker='AAPL'))
         assert r['status']=='SOURCE_UNAVAILABLE' and r['citations']==[]

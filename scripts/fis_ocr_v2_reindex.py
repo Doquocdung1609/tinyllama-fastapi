@@ -5,7 +5,7 @@ from hashlib import sha256
 from pathlib import Path
 import sqlite3
 
-from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+from app.product.ocr_financial_workspace import AdaptiveFinancialOcrWorkspace, FinancialOcrWorkspace
 
 
 def main():
@@ -13,6 +13,7 @@ def main():
     parser.add_argument('baseline',type=Path)
     parser.add_argument('target',type=Path)
     parser.add_argument('document_id')
+    parser.add_argument('--adaptive',action='store_true')
     args=parser.parse_args()
     baseline,target=args.baseline.resolve(),args.target.resolve()
     if baseline==target or target.is_relative_to(baseline):
@@ -26,7 +27,7 @@ def main():
     raw=(baseline/'files'/f'{args.document_id}.pdf').read_bytes()
     if sha256(raw).hexdigest()!=expected_hash:
         raise ValueError('BASELINE_SOURCE_HASH_MISMATCH')
-    workspace=FinancialOcrWorkspace(target)
+    workspace=(AdaptiveFinancialOcrWorkspace if args.adaptive else FinancialOcrWorkspace)(target)
     try:
         registered=workspace.add_pdf(filename,raw,issuer,document_type,period)
         result=workspace.process(registered['id'])

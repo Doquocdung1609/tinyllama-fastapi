@@ -1,0 +1,24 @@
+{
+  "filename": "SHS_2023CN_BCTC_KT_24062024095306.pdf",
+  "sha256": "810596ea2977c2d5be9c0b0ff8f4eeddebfabf9ccd66ef919f935047482dd1de",
+  "source": "Visual transcription of scanned audit report before running OCR V3 on SHS. Physical PDF pages 12 and 13.",
+  "pages": {
+    "12": {
+      "periods": ["31/12/2023", "01/01/2023"], "unit": "VND",
+      "rows": [
+        ["221", "Tài sản cố định hữu hình", "7.507.949.662", "13.391.164.569"],
+        ["223a", "Giá trị hao mòn lũy kế", "(33.278.062.736)", "(27.394.847.829)"],
+        ["240", "Chi phí xây dựng cơ bản dở dang", "10.660.476.000", "-"],
+        ["270", "TỔNG CỘNG TÀI SẢN", "11.457.207.540.011", "10.899.625.766.763"]
+      ]
+    },
+    "13": {
+      "periods": ["31/12/2023", "01/01/2023"], "unit": "VND",
+      "rows": [
+        ["300", "NỢ PHẢI TRẢ", "1.193.696.795.393", "1.463.766.337.166"],
+        ["415", "Quỹ dự phòng tài chính và rủi ro nghiệp vụ", "-", "77.136.777.489"],
+        ["440", "TỔNG CỘNG NỢ VÀ VỐN CHỦ SỞ HỮU", "11.457.207.540.011", "10.899.625.766.763"]
+      ]
+    }
+  }
+}

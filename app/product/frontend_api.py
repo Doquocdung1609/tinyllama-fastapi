@@ -156,7 +156,7 @@ def financial_chat(payload:ChatRequest):
     conflict=source_company_conflict(w,payload.document_ids,payload.question)
     from app.product.document_metadata import read_metadata
     source_set=sorted((d,w.document(d)['sha256'],len(read_metadata(w,d)['corrections'])) for d in payload.document_ids)
-    sec_identities=[]
+    sec_identities=[]; selected_index=None
     if payload.source=='US_SEC':
         try:
             selected_index=sec_index()
@@ -218,15 +218,19 @@ def financial_chat(payload:ChatRequest):
             if history:
                 question=resolve_sec_followup(payload.question,history[-1]['response'])
             try:
-                answer = sec_numeric(sec_index(), question, payload.ticker, server_key(w.root))
+                answer = sec_numeric(selected_index, question, payload.ticker, server_key(w.root)) if selected_index is not None else None
             except (ValueError,OSError,RuntimeError):
                 answer={'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW',
                         'answer':'Chưa đối chiếu được ô tài chính trong nguồn SEC đã chọn. Các đoạn liên quan chỉ dùng để kiểm tra thêm.',
                         'reason':'SEC_SOURCE_CELL_VERIFICATION_FAILED','values':[],'citations':[]}
+            if selected_index is None:
+                answer={'status':'SOURCE_UNAVAILABLE','answer_status':'SOURCE_UNAVAILABLE',
+                        'answer':'Không truy cập được chỉ mục hoặc nguồn SEC đang chọn.',
+                        'reason':'SEC_SELECTED_INDEX_UNAVAILABLE','values':[],'citations':[]}
             needs_scope=answer and answer.get('reason') in {
                 'SEC_COMPANY_SCOPE_AMBIGUOUS','SEC_COMPANY_SCOPE_CONFLICT','SEC_PERIOD_DURATION_REQUIRED',
                 'SEC_PERIOD_REQUIRED','SEC_QUARTER_END_REQUIRED','SEC_COMPARISON_PERIODS_REQUIRED'}
-            if not answer or answer['status']!='SUPPORTED' and not needs_scope:
+            if selected_index is not None and (not answer or answer['status']!='SUPPORTED' and not needs_scope):
                 # Numeric QA goes directly to authenticated rows, avoiding an
                 # unrelated dense query on the successful verification path.
                 profile='baseline' if answer else 'faith_r_product_v1'
@@ -817,8 +821,12 @@ def analysis(payload:AnalysisRequest):
                         'answer':'Tùy chọn nâng cao mâu thuẫn hoặc chưa được chứng minh bởi câu hỏi và ô nguồn. Hãy bỏ tùy chọn hoặc nêu rõ yêu cầu trong câu hỏi.',
                         'reason':'EXPLICIT_QUERY_CONTEXT_CONFLICT','conflicting_fields':conflicts,'values':[],'calculation_steps':[],
                         'verification_status':'QUERY_CONTEXT_CONFLICT'}
-                from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+                from app.product.ocr_financial_workspace import AdaptiveFinancialOcrWorkspace, FinancialOcrWorkspace
                 w=workspace()
+                if (isinstance(w,AdaptiveFinancialOcrWorkspace) and not answer.get('values')
+                        and not payload.model_fields_set.intersection({'metric','operation','current_period','previous_period','basis','statement_scope'})):
+                    from app.product.ocr_reviewed_answer import answer as reviewed_ocr
+                    return reviewed_ocr(w,payload) or answer
                 if (isinstance(w,FinancialOcrWorkspace) and len(payload.document_ids)==1 and not answer.get('values')
                         and not payload.model_fields_set.intersection({'metric','operation','current_period','previous_period','basis','statement_scope'})
                         and re.search(r'\b\d{1,2}/\d{1,2}/20\d{2}\b',payload.question)

@@ -265,6 +265,20 @@ def _compose_single_answer(w,question,result,document_ids,plan=None):
             from app.product.ocr_financial_workspace import FinancialOcrWorkspace
             if isinstance(w,FinancialOcrWorkspace):
                 sources=([h for h in hits if h.get('rank_reasons',{}).get('exact_metric')] or sources)[:1]
+                from app.product.ocr_financial_workspace import AdaptiveFinancialOcrWorkspace
+                if isinstance(w,AdaptiveFinancialOcrWorkspace) and sources:
+                    from app.product.ocr_reviewed_answer import requested_periods
+                    wanted=requested_periods(question,p.metric)
+                    parent=sources[0]
+                    if len(wanted)>1 and parent.get('row_id') and not parent.get('column_id'):
+                        cells=[c for period in wanted for c in parent.get('source_cells',[])
+                               if c.get('box') and (c.get('period_end'),c.get('period_type'))==period]
+                        if len(cells)==len(wanted):
+                            sources=[]
+                            for cell in cells:
+                                cid=sha256(f"{parent['citation_id']}:{cell['cell_id']}".encode()).hexdigest()[:24]
+                                sources.append({**parent,'column_id':cell['cell_id'],'citation_id':cid,'evidence_id':cid,
+                                                'box':cell['box'],'rectangles':[cell['box']],'period':cell['period']})
                 answer=('Open the original page to confirm the row, amount and reporting period. The OCR reading is still unverified. ' if en else 'Bạn có thể mở trang nguồn để đối chiếu dòng, chữ số và kỳ báo cáo. Kết quả đọc OCR vẫn chưa được xác minh. ')
             else:
                 statement=section_evidence(w,document_ids,replace(p,intent='FIND_SECTION',section='BALANCE_SHEET' if p.metric=='assets' else 'INCOME_STATEMENT'))

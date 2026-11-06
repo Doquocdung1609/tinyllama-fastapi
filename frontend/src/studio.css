@@ -98,3 +98,15 @@ h1{font-weight:700}h2,h3{font-weight:650}.pill{white-space:nowrap}.nav button.ac
 .ocr-token-list{display:flex;flex-wrap:wrap;gap:6px;max-height:15rem;overflow:auto;margin:8px 0}
 .ocr-token-list button{border:1px solid var(--fis-border);border-radius:6px;background:#f5f8ff;padding:3px 7px;color:#24446b;text-align:left}
 .ocr-token-list button:focus-visible{outline:2px solid #176cff}
+@media(min-width:801px){
+ .adaptive-ocr-layout{grid-template-columns:minmax(0,var(--pdf-width,60%)) minmax(0,1fr)}
+}
+.ocr-review-tools{align-items:end;margin:12px 0}
+.ocr-review-tools input[type=range]{padding:0;min-height:28px}
+.adaptive-ocr-layout .review-form label{min-width:0}
+.adaptive-ocr-layout .review-form :is(select,input:not([type=checkbox])){max-width:100%;min-width:0}
+.adaptive-ocr-layout .review-form .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:800px){
+ .adaptive-ocr-layout,.adaptive-ocr-layout .review-form .grid2{grid-template-columns:minmax(0,1fr)}
+}
+.adaptive-ocr-layout aside select{width:100%;min-width:0;max-width:100%}

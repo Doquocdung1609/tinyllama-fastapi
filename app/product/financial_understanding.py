@@ -19,7 +19,9 @@ METRICS = {
     'net_income': ('loi nhuan sau thue', 'net income', 'net profit'),
     'net_revenue': ('doanh thu', 'net sales', 'revenue'),
     'assets': ('tong tai san', 'tong cong tai san', 'total assets'),
-    'operating_cashflow': ('luu chuyen tien thuan tu cac hoat dong kinh doanh', 'tien thuan tu hoat dong kinh doanh', 'dong tien hoat dong', 'operating cash'),
+    'liabilities': ('no phai tra', 'total liabilities'),
+    'equity': ('von chu so huu', 'total equity'),
+    'operating_cashflow': ('luu chuyen tien thuan tu cac hoat dong kinh doanh', 'tien thuan tu hoat dong kinh doanh', 'tien luu chuyen thuan tu hoat dong kinh doanh', 'dong tien hoat dong', 'operating cash'),
 }
 
 def issuers(text):

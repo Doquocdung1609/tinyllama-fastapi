@@ -68,10 +68,14 @@ def pdf_search(w, question, mode, top_k, document_ids):
     except (ValueError, OSError, __import__('requests').RequestException) as exc:
         if mode == 'bm25' or (isinstance(exc, ValueError) and str(exc) != 'EMBEDDING_MODEL_DIGEST_MISMATCH'): raise
         base = w.search(question, 'bm25', 20, document_ids); fallback = 'DENSE_UNAVAILABLE_BM25_PLUS_ROW_SIDECAR'
-    from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+    from app.product.ocr_financial_workspace import AdaptiveFinancialOcrWorkspace, FinancialOcrWorkspace
     explicit_pages = re.findall(r'\b(?:trang|page)\s+(\d{1,3})\b', folded(question))
     financial_ocr = isinstance(w, FinancialOcrWorkspace)
+    adaptive = isinstance(w, AdaptiveFinancialOcrWorkspace)
     target_page = int(explicit_pages[0]) if financial_ocr and len(explicit_pages) == 1 else None
+    from app.product.ocr_reviewed_answer import requested_note_column, requested_periods
+    target_periods = requested_periods(question, slots.metric) if adaptive else []
+    note_end,note_basis=requested_note_column(question) if target_page and not slots.metric else (None,None)
     pool = []; terms = _tokens(question);page_context={};observed_scopes=set()
     if slots.intent=='SUMMARIZE':
         vietnamese=False
@@ -124,6 +128,10 @@ def pdf_search(w, question, mode, top_k, document_ids):
                         if 'doanh thu chua thuc hien' in label_key: continue
                     if slots.metric == 'net_income' and 'chua phan phoi' in label_key:
                         continue
+                if adaptive and row.get('metric'):
+                    exact = row['metric'] == slots.metric
+                    if slots.metric and not exact:
+                        continue
                 if slots.metric and not exact and overlap < 2: continue
                 if not slots.metric and slots.intent != 'RESTATEMENT_LIST' and overlap < 1: continue
                 adjustment = bool(re.search(r'so lieu da cong bo|so trinh bay lai', f)) and len(cells)==3
@@ -132,19 +140,39 @@ def pdf_search(w, question, mode, top_k, document_ids):
                 if slots.intent == 'RESTATEMENT_LIST' and cells[1]['text'].strip() in {'-', '—', '0', ''}: continue
                 p = next((c for c in parents if folded(label) in folded(c['text'])), parents[0])
                 score = 30*exact + 3*overlap + 8*adjustment + 4*bool(scope) + 3*bool(period and period in slots.years)
+                target_cell = None
+                if adaptive and exact and row.get('metric'):
+                    matched = [c for c in cells if c.get('box') and
+                               (c.get('period_end'),c.get('period_type')) in target_periods]
+                    if len(matched)==1 and len(target_periods)==1:
+                        target_cell=matched[0]
+                        score += 16
+                    score += 70
+                    label = row['row_label_normalized']
+                    quote = label + ' | ' + ' | '.join(c['text'] for c in cells)
+                if note_end and overlap and row.get('structure_status')=='OCR_GEOMETRIC_CANDIDATE':
+                    matched=[c for c in cells if c.get('box') and c.get('period_end')==note_end and
+                             (not note_basis or note_basis in folded(c.get('column_label') or ''))]
+                    if len(matched)==1:
+                        target_cell=matched[0]
                 row_id = row['id']; cid = sha256(f"{d['sha256']}:{page}:{row_id}:{e['evidence_sha256']}".encode()).hexdigest()[:24]
+                locator=target_cell['box'] if target_cell else row.get('box')
+                if target_cell:
+                    cid=sha256(f"{cid}:{target_cell['cell_id']}".encode()).hexdigest()[:24]
                 pool.append({'chunk_id':p['id'], 'citation_id':cid,'evidence_id':cid,'document_id':d['id'],
                     'source_kind':'PDF','source_sha256':d['sha256'],'filename':d['filename'],
                     'issuer':identity[0] if len(identity)==1 else '', 'page':page,'page_1_based':page,'page_index_0_based':page-1,
                     'text':quote,'text_quote':quote,'row_label':label,'row_id':row_id,'table_id':row.get('table_id'),
-                    'column_id':None,'char_offsets':None,'word_boxes':None,'box':row.get('box'),'row_box':row.get('box'),
-                    'rectangles':[row['box']] if row.get('box') else [],'coordinate_space':'PDF_POINTS_TOP_LEFT',
+                    'column_id':target_cell['cell_id'] if target_cell else None,'char_offsets':None,'word_boxes':None,
+                    'box':locator,'row_box':row.get('box'),
+                    'rectangles':[locator] if locator else [],'coordinate_space':'PDF_POINTS_TOP_LEFT',
                     'highlight_status':'EXTRACTED_NATIVE_ROW' if e.get('method')=='NATIVE' else 'OCR_GEOMETRY_NOT_VERIFIED',
                     'extraction_method':e.get('method'),'extraction_status':e.get('quality',{}).get('status'),
                     'verification_status':'SOURCE_ROW_UNREVIEWED','numeric_status':'UNVERIFIED','retrieval_status':'RETRIEVED',
-                    'statement_scope':scope or 'UNKNOWN','scope':scope,'report_period':period or '', 'period':period,
+                    'statement_scope':row.get('statement_scope') or scope or 'UNKNOWN','scope':row.get('statement_scope') or scope,
+                    'report_period':period or '', 'period':target_cell['period'] if target_cell else period,
                     'scope_provenance':{'method':'PAGE_HEADING_OR_CONTINUED_TABLE','page':context_page},
-                    'unit':unit,'metric':slots.metric,'source_cells':cells,'adjustment_columns_candidate':adjustment,
+                    'unit':target_cell['unit'] if target_cell else unit,'metric':row.get('metric') or slots.metric,'source_cells':cells,'adjustment_columns_candidate':adjustment,
                     'rerank_score':score,'rank_reasons':{'exact_metric':exact,'row_overlap':overlap,'adjustment_table':adjustment,
                         'scope_match':scope==slots.scope if slots.scope else None,'period_match':period in slots.years},
                     'algorithm_executed':VERSION+'_PDF_ROW_UNION_RERANK','engine_version':VERSION})

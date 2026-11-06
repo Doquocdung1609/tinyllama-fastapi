@@ -246,7 +246,16 @@ def verify_plan(w,plan):
             elif citation.get('row_id'):
                 row=next((r for r in evidence.get('tables',[]) if r['id']==citation['row_id']),None)
                 expected=sha256(f"{doc['sha256']}:{citation['page']}:{citation['row_id']}:{evidence['evidence_sha256']}".encode()).hexdigest()[:24]
-                if row is None or expected!=citation['citation_id']:raise ValueError('ROW_CITATION_FORGED')
+                if row is None:
+                    raise ValueError('ROW_CITATION_FORGED')
+                if citation.get('column_id') and evidence.get('version')=='studio-vietnamese-financial-ocr-v3':
+                    cell=next((c for c in row['cells'] if c.get('cell_id')==citation['column_id']),None)
+                    expected=sha256(f"{expected}:{citation['column_id']}".encode()).hexdigest()[:24]
+                    if (cell is None or not cell.get('box') or cell['box']!=citation.get('box')
+                            or cell.get('source_sha256')!=doc['sha256'] or citation.get('numeric_status')!='UNVERIFIED'):
+                        raise ValueError('OCR_CANDIDATE_LOCATOR_FORGED')
+                if expected!=citation['citation_id']:
+                    raise ValueError('ROW_CITATION_FORGED')
             elif citation.get('chunk_id') and hasattr(w,'_connect'):
                 with closing(w._connect()) as db:row=db.execute('SELECT document_id,page,text FROM chunks WHERE id=?',(citation['chunk_id'],)).fetchone()
                 if row is None or row['document_id']!=doc['id'] or row['page']!=citation['page'] or not row['text'].startswith(citation['text']):raise ValueError('CHUNK_CITATION_FORGED')
