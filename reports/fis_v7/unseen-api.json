@@ -1,0 +1,225 @@
+{
+  "techcombank": {
+    "source": "https://techcombank.com/content/dam/techcombank/public-site/documents/bao-cao-thuong-nien-nam-2024-vie.pdf",
+    "pages": [
+      1,
+      99,
+      100
+    ],
+    "source_sha256": "fd8537f52dad35c2e34bd81312223035bc4e9d4e0e34ac05f00a21f4d4d1ef34",
+    "excerpt_sha256": "82fa94bf988f0dd8e5dca3b53bba2a13579caedfd05acef204236cf8b0f503bd",
+    "ingestion_seconds": 30.16700669999409,
+    "sampled_api_peak_rss_bytes": 306548736,
+    "ingestion_state": "READY",
+    "cases": [
+      {
+        "question": "Tổng tài sản hợp nhất tại ngày 31/12/2024 là bao nhiêu?",
+        "gold": {
+          "page": 99,
+          "value": "978798549",
+          "unit": "triệu đồng",
+          "excerpt_page": 2
+        },
+        "http": 200,
+        "seconds": 5.201088700006949,
+        "status": "SOURCE_EXCERPTS",
+        "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+        "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+        "values": [],
+        "citations": [
+          {
+            "document_id": "82fa94bf988f0dd8e5dca3b53bba2a13",
+            "page": 2,
+            "row_label": "TỔNG TÀI SẢN",
+            "box": [
+              51.02360153198242,
+              735.6553955078125,
+              555.5910034179688,
+              748.6784057617188
+            ],
+            "unit": "TRIEU_VND"
+          },
+          {
+            "document_id": "82fa94bf988f0dd8e5dca3b53bba2a13",
+            "page": 2,
+            "unit": "TRIEU_VND"
+          }
+        ]
+      },
+      {
+        "question": "Thu nhập lãi thuần hợp nhất cả năm 2024 là bao nhiêu?",
+        "gold": {
+          "page": 100,
+          "value": "35507963",
+          "unit": "triệu đồng",
+          "excerpt_page": 3
+        },
+        "http": 200,
+        "seconds": 3.581861699989531,
+        "status": "SOURCE_EXCERPTS",
+        "reason": "UNSUPPORTED_METRIC_PARSER",
+        "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+        "values": [],
+        "citations": [
+          {
+            "document_id": "82fa94bf988f0dd8e5dca3b53bba2a13",
+            "page": 2,
+            "row_label": "Tài sản thuế thu nhập doanh nghiệp hoãn lại",
+            "box": [
+              55.1515998840332,
+              693.4169921875,
+              555.5904541015625,
+              704.6489868164062
+            ],
+            "unit": "TRIEU_VND"
+          },
+          {
+            "document_id": "82fa94bf988f0dd8e5dca3b53bba2a13",
+            "page": 2,
+            "row_label": "Các khoản lãi, phí phải thu",
+            "box": [
+              55.1515998840332,
+              683.8170166015625,
+              555.59033203125,
+              695.0490112304688
+            ],
+            "unit": "TRIEU_VND"
+          }
+        ]
+      }
+    ],
+    "full_pdf": {
+      "id": "fd8537f52dad35c2e34bd81312223035",
+      "status": "READY",
+      "stage": "READY",
+      "pages": 133,
+      "chunks": 1081,
+      "assets_query": {
+        "client_timeout_seconds": 55,
+        "persisted_status": "SOURCE_EXCERPTS",
+        "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+        "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+        "values": [],
+        "source_pages": [
+          99,
+          125
+        ]
+      }
+    }
+  },
+  "fpt": {
+    "source": "https://file.fpts.com.vn/FileStore2/File/2025/04/03/20250403_FPT_250403_Annual_Report_2024.pdf",
+    "pages": [
+      1,
+      149,
+      150,
+      151,
+      152
+    ],
+    "source_sha256": "764c24281433eda90277f5b1c39022ee879b48fdf363372fed989dda9381c240",
+    "excerpt_sha256": "f5f14b1893e44aac73907249e937cfa56b8b0bbf472749c40ea06e7e7cb29638",
+    "ingestion_seconds": 25.28205790001084,
+    "sampled_api_peak_rss_bytes": 313524224,
+    "ingestion_state": "READY",
+    "cases": [
+      {
+        "question": "What were total consolidated assets as at 31 December 2024?",
+        "gold": {
+          "page": 150,
+          "value": "71999995678620",
+          "unit": "VND",
+          "excerpt_page": 3
+        },
+        "http": 200,
+        "seconds": 3.507604500002344,
+        "status": "SOURCE_EXCERPTS",
+        "reason": "UNSUPPORTED_METRIC_PARSER",
+        "answer": "The selected PDF has native text, but this metric or cell layout is not supported yet; this is not an OCR failure. [1][2]",
+        "values": [],
+        "citations": [
+          {
+            "document_id": "f5f14b1893e44aac73907249e937cfa5",
+            "page": 2,
+            "row_label": "07 CONSOLIDATED FINANCIAL REPORT 224 Finance lease fixed assets",
+            "box": [
+              45.96099853515625,
+              509.23992919921875,
+              1859.4718017578125,
+              538.593994140625
+            ],
+            "unit": null
+          },
+          {
+            "document_id": "f5f14b1893e44aac73907249e937cfa5",
+            "page": 3,
+            "row_label": "270 TOTAL ASSETS",
+            "box": [
+              428.2198486328125,
+              340.9010009765625,
+              1859.4176025390625,
+              367.81097412109375
+            ],
+            "unit": null
+          }
+        ]
+      }
+    ],
+    "full_pdf": {
+      "id": "764c24281433eda90277f5b1c39022ee",
+      "status": "PROCESSING",
+      "stage": "EMBEDDING 644/915",
+      "pages": 215,
+      "chunks": 915
+    }
+  },
+  "toyota": {
+    "source": "https://global.toyota/pages/global_toyota/ir/library/annual/2024_001_integrated_en.pdf",
+    "pages": [
+      1,
+      133,
+      134,
+      135
+    ],
+    "source_sha256": "50babcb011bacf1abb22cdfab14bd169b329d31c71a607c1644b7ad0e740a66b",
+    "excerpt_sha256": "e90ca2de1a6bacc61b68929fd0d649463470abbc473bbaff2dfd3434788f690c",
+    "ingestion_seconds": 21.329749399999855,
+    "sampled_api_peak_rss_bytes": 215130112,
+    "ingestion_state": "READY",
+    "cases": [
+      {
+        "question": "What were total assets in fiscal 2024 in the consolidated financial summary? Give the value in billions of yen.",
+        "gold": {
+          "page": 134,
+          "value": "90114.2",
+          "unit": "billion JPY",
+          "excerpt_page": 3
+        },
+        "http": 200,
+        "seconds": 3.8483917999983532,
+        "status": "SOURCE_EXCERPTS",
+        "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+        "answer": "The selected PDF has native text, but this metric or cell layout is not supported yet; this is not an OCR failure. [1][2]",
+        "values": [],
+        "citations": [
+          {
+            "document_id": "e90ca2de1a6bacc61b68929fd0d64946",
+            "page": 3,
+            "unit": null
+          },
+          {
+            "document_id": "e90ca2de1a6bacc61b68929fd0d64946",
+            "page": 3,
+            "unit": null
+          }
+        ]
+      }
+    ],
+    "full_pdf": {
+      "id": "50babcb011bacf1abb22cdfab14bd169",
+      "status": "UPLOADED",
+      "stage": "UPLOAD",
+      "pages": 0,
+      "chunks": 0
+    }
+  }
+}

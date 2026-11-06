@@ -1,0 +1,2958 @@
+[
+  {
+    "i": 0,
+    "question": "Trong báo cáo riêng BIDV năm 2024, tổng tài sản trước và sau điều chỉnh theo Kiểm toán Nhà nước là bao nhiêu? Mức điều chỉnh bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.4104487000004156,
+    "test": "B01",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**TỔNG TÀI SẢN**: 2.709.287.140 + 110.250 = **2.709.397.390** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Đã công bố | 2.709.287.140 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Điều chỉnh | 110.250 triệu đồng | [2] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [3] |",
+      "values": [
+        "2709287140",
+        "110250",
+        "2709397390"
+      ],
+      "statement_question": {
+        "rows": [
+          "tong tai san"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            283.33355712890625,
+            621.2344970703125,
+            334.1436462402344,
+            630.9321899414062
+          ],
+          "header_box": [
+            285.5999755859375,
+            166.67449951171875,
+            329.2249755859375,
+            176.3722381591797
+          ],
+          "column_id": "3:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "2,709,287,140",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            394.41510009765625,
+            621.2344970703125,
+            423.14923095703125,
+            630.9321899414062
+          ],
+          "header_box": [
+            358.7100830078125,
+            155.99449157714844,
+            399.3421325683594,
+            165.69223022460938
+          ],
+          "column_id": "3:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "110,250",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            487.9383544921875,
+            621.2344970703125,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,709,397,390",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 0,
+    "question": "Trong báo cáo riêng BIDV năm 2024, tổng tài sản trước và sau điều chỉnh theo Kiểm toán Nhà nước là bao nhiêu? Mức điều chỉnh bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.3497132999909809,
+    "test": "B01",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**TỔNG TÀI SẢN**: 2.709.287.140 + 110.250 = **2.709.397.390** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Đã công bố | 2.709.287.140 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Điều chỉnh | 110.250 triệu đồng | [2] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [3] |",
+      "values": [
+        "2709287140",
+        "110250",
+        "2709397390"
+      ],
+      "statement_question": {
+        "rows": [
+          "tong tai san"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            283.33355712890625,
+            621.2344970703125,
+            334.1436462402344,
+            630.9321899414062
+          ],
+          "header_box": [
+            285.5999755859375,
+            166.67449951171875,
+            329.2249755859375,
+            176.3722381591797
+          ],
+          "column_id": "3:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "2,709,287,140",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            394.41510009765625,
+            621.2344970703125,
+            423.14923095703125,
+            630.9321899414062
+          ],
+          "header_box": [
+            358.7100830078125,
+            155.99449157714844,
+            399.3421325683594,
+            165.69223022460938
+          ],
+          "column_id": "3:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "110,250",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            487.9383544921875,
+            621.2344970703125,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,709,397,390",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 1,
+    "question": "Khoản cho vay khách hàng trong bảng cân đối kế toán riêng BIDV thay đổi thế nào sau điều chỉnh? Phân biệt khoản cho vay và dự phòng rủi ro.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 0.8769526000105543,
+    "test": "B02",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Cho vay khách hàng**: 1.976.863.693 + 68.290 = **1.976.931.983** triệu đồng.\n\n**Dự phòng rủi ro cho vay khách hàng**: -36.944.443 + 68.290 = **-36.876.153** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Đã công bố | 1.976.863.693 triệu đồng | [1] |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Điều chỉnh | 68.290 triệu đồng | [2] |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Trình bày lại | 1.976.931.983 triệu đồng | [3] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Đã công bố | -36.944.443 triệu đồng | [4] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Điều chỉnh | 68.290 triệu đồng | [5] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Trình bày lại | -36.876.153 triệu đồng | [6] |",
+      "values": [
+        "1976863693",
+        "68290",
+        "1976931983",
+        "-36944443",
+        "68290",
+        "-36876153"
+      ],
+      "statement_question": {
+        "rows": [
+          "cho vay khach hang",
+          "du phong rui ro cho vay khach hang"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Cho vay khách hàng",
+          "row_id": "3:320.63",
+          "box": [
+            283.33355712890625,
+            320.634521484375,
+            334.1436462402344,
+            330.3322448730469
+          ],
+          "header_box": [
+            285.5999755859375,
+            166.67449951171875,
+            329.2249755859375,
+            176.3722381591797
+          ],
+          "column_id": "3:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "1,976,863,693",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Cho vay khách hàng",
+          "row_id": "3:320.63",
+          "box": [
+            398.8988037109375,
+            320.634521484375,
+            423.16510009765625,
+            330.3322448730469
+          ],
+          "header_box": [
+            358.7100830078125,
+            155.99449157714844,
+            399.3421325683594,
+            165.69223022460938
+          ],
+          "column_id": "3:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "68,290",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Cho vay khách hàng",
+          "row_id": "3:320.63",
+          "box": [
+            487.9383544921875,
+            320.634521484375,
+            538.7487182617188,
+            330.3322448730469
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "1,976,931,983",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "3:342.83",
+          "box": [
+            288.61627197265625,
+            342.8345031738281,
+            334.2227783203125,
+            352.5322265625
+          ],
+          "header_box": [
+            285.5999755859375,
+            166.67449951171875,
+            329.2249755859375,
+            176.3722381591797
+          ],
+          "column_id": "3:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "(36,944,443)",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "3:342.83",
+          "box": [
+            398.8988037109375,
+            342.8345031738281,
+            423.16510009765625,
+            352.5322265625
+          ],
+          "header_box": [
+            358.7100830078125,
+            155.99449157714844,
+            399.3421325683594,
+            165.69223022460938
+          ],
+          "column_id": "3:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "68,290",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "3:342.83",
+          "box": [
+            493.220947265625,
+            342.8345031738281,
+            538.8275756835938,
+            352.5322265625
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "(36,876,153)",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 1,
+    "question": "Khoản cho vay khách hàng trong bảng cân đối kế toán riêng BIDV thay đổi thế nào sau điều chỉnh? Phân biệt khoản cho vay và dự phòng rủi ro.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.950158999999985,
+    "test": "B02",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Cho vay khách hàng**: 1.976.863.693 + 68.290 = **1.976.931.983** triệu đồng.\n\n**Dự phòng rủi ro cho vay khách hàng**: -36.944.443 + 68.290 = **-36.876.153** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Đã công bố | 1.976.863.693 triệu đồng | [1] |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Điều chỉnh | 68.290 triệu đồng | [2] |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Trình bày lại | 1.976.931.983 triệu đồng | [3] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Đã công bố | -36.944.443 triệu đồng | [4] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Điều chỉnh | 68.290 triệu đồng | [5] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Trình bày lại | -36.876.153 triệu đồng | [6] |",
+      "values": [
+        "1976863693",
+        "68290",
+        "1976931983",
+        "-36944443",
+        "68290",
+        "-36876153"
+      ],
+      "statement_question": {
+        "rows": [
+          "cho vay khach hang",
+          "du phong rui ro cho vay khach hang"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Cho vay khách hàng",
+          "row_id": "3:320.63",
+          "box": [
+            283.33355712890625,
+            320.634521484375,
+            334.1436462402344,
+            330.3322448730469
+          ],
+          "header_box": [
+            285.5999755859375,
+            166.67449951171875,
+            329.2249755859375,
+            176.3722381591797
+          ],
+          "column_id": "3:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "1,976,863,693",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Cho vay khách hàng",
+          "row_id": "3:320.63",
+          "box": [
+            398.8988037109375,
+            320.634521484375,
+            423.16510009765625,
+            330.3322448730469
+          ],
+          "header_box": [
+            358.7100830078125,
+            155.99449157714844,
+            399.3421325683594,
+            165.69223022460938
+          ],
+          "column_id": "3:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "68,290",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Cho vay khách hàng",
+          "row_id": "3:320.63",
+          "box": [
+            487.9383544921875,
+            320.634521484375,
+            538.7487182617188,
+            330.3322448730469
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "1,976,931,983",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "3:342.83",
+          "box": [
+            288.61627197265625,
+            342.8345031738281,
+            334.2227783203125,
+            352.5322265625
+          ],
+          "header_box": [
+            285.5999755859375,
+            166.67449951171875,
+            329.2249755859375,
+            176.3722381591797
+          ],
+          "column_id": "3:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "(36,944,443)",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "3:342.83",
+          "box": [
+            398.8988037109375,
+            342.8345031738281,
+            423.16510009765625,
+            352.5322265625
+          ],
+          "header_box": [
+            358.7100830078125,
+            155.99449157714844,
+            399.3421325683594,
+            165.69223022460938
+          ],
+          "column_id": "3:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "68,290",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "3:342.83",
+          "box": [
+            493.220947265625,
+            342.8345031738281,
+            538.8275756835938,
+            352.5322265625
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "(36,876,153)",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 2,
+    "question": "Thu nhập lãi thuần năm 2024 trong báo cáo riêng BIDV đã bị điều chỉnh tăng hay giảm? Hãy tính số sau điều chỉnh.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.493847799996729,
+    "test": "B03",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Thu nhập lãi thuần**: 56.238.101 − 4.598 = **56.233.503** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Thu nhập lãi thuần | Riêng | 2024 | Đã công bố | 56.238.101 triệu đồng | [1] |\n| Thu nhập lãi thuần | Riêng | 2024 | Điều chỉnh | -4.598 triệu đồng | [2] |\n| Thu nhập lãi thuần | Riêng | 2024 | Trình bày lại | 56.233.503 triệu đồng | [3] |",
+      "values": [
+        "56238101",
+        "-4598",
+        "56233503"
+      ],
+      "statement_question": {
+        "rows": [
+          "thu nhap lai thuan"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Thu nhập lãi thuần",
+          "row_id": "5:210.53",
+          "box": [
+            325.6817932128906,
+            210.52915954589844,
+            362.4030456542969,
+            219.56260681152344
+          ],
+          "header_box": [
+            310.77496337890625,
+            158.08917236328125,
+            351.1975402832031,
+            167.12261962890625
+          ],
+          "column_id": "5:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "56,238,101",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Thu nhập lãi thuần",
+          "row_id": "5:210.53",
+          "box": [
+            421.3215637207031,
+            210.52915954589844,
+            445.174072265625,
+            219.56260681152344
+          ],
+          "header_box": [
+            383.6399841308594,
+            148.00917053222656,
+            421.5035400390625,
+            157.04261779785156
+          ],
+          "column_id": "5:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "(4,598)",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Thu nhập lãi thuần",
+          "row_id": "5:210.53",
+          "box": [
+            499.32122802734375,
+            210.52915954589844,
+            536.04248046875,
+            219.56260681152344
+          ],
+          "header_box": [
+            481.3201904296875,
+            158.08917236328125,
+            527.3447265625,
+            167.12261962890625
+          ],
+          "column_id": "5:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "56,233,503",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 2,
+    "question": "Thu nhập lãi thuần năm 2024 trong báo cáo riêng BIDV đã bị điều chỉnh tăng hay giảm? Hãy tính số sau điều chỉnh.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.145961200003512,
+    "test": "B03",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Thu nhập lãi thuần**: 56.238.101 − 4.598 = **56.233.503** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Thu nhập lãi thuần | Riêng | 2024 | Đã công bố | 56.238.101 triệu đồng | [1] |\n| Thu nhập lãi thuần | Riêng | 2024 | Điều chỉnh | -4.598 triệu đồng | [2] |\n| Thu nhập lãi thuần | Riêng | 2024 | Trình bày lại | 56.233.503 triệu đồng | [3] |",
+      "values": [
+        "56238101",
+        "-4598",
+        "56233503"
+      ],
+      "statement_question": {
+        "rows": [
+          "thu nhap lai thuan"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Thu nhập lãi thuần",
+          "row_id": "5:210.53",
+          "box": [
+            325.6817932128906,
+            210.52915954589844,
+            362.4030456542969,
+            219.56260681152344
+          ],
+          "header_box": [
+            310.77496337890625,
+            158.08917236328125,
+            351.1975402832031,
+            167.12261962890625
+          ],
+          "column_id": "5:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "56,238,101",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Thu nhập lãi thuần",
+          "row_id": "5:210.53",
+          "box": [
+            421.3215637207031,
+            210.52915954589844,
+            445.174072265625,
+            219.56260681152344
+          ],
+          "header_box": [
+            383.6399841308594,
+            148.00917053222656,
+            421.5035400390625,
+            157.04261779785156
+          ],
+          "column_id": "5:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "(4,598)",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Thu nhập lãi thuần",
+          "row_id": "5:210.53",
+          "box": [
+            499.32122802734375,
+            210.52915954589844,
+            536.04248046875,
+            219.56260681152344
+          ],
+          "header_box": [
+            481.3201904296875,
+            158.08917236328125,
+            527.3447265625,
+            167.12261962890625
+          ],
+          "column_id": "5:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "56,233,503",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 3,
+    "question": "Trong báo cáo hợp nhất BIDV năm 2024, lãi thuần từ hoạt động dịch vụ được điều chỉnh bao nhiêu và giá trị trình bày lại là bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 0.9213068999961251,
+    "test": "B04",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "“Lãi thuần từ hoạt động dịch vụ”, hợp nhất, cột trình bày lại: **7.076.856 triệu đồng**. [2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lãi thuần từ hoạt động dịch vụ | Hợp nhất | 2024 | Điều chỉnh | 2.411 triệu đồng | [1] |\n| Lãi thuần từ hoạt động dịch vụ | Hợp nhất | 2024 | Trình bày lại | 7.076.856 triệu đồng | [2] |",
+      "values": [
+        "2411",
+        "7076856"
+      ],
+      "statement_question": {
+        "rows": [
+          "lai thuan tu hoat dong dich vu"
+        ],
+        "scopes": [
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lãi thuần từ hoạt động dịch vụ",
+          "row_id": "8:238.54",
+          "box": [
+            425.1622009277344,
+            238.54150390625,
+            444.6028747558594,
+            248.10630798339844
+          ],
+          "header_box": [
+            378.7200012207031,
+            140.02149963378906,
+            418.8108825683594,
+            149.5863037109375
+          ],
+          "column_id": "8:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "2,411",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lãi thuần từ hoạt động dịch vụ",
+          "row_id": "8:238.54",
+          "box": [
+            512.76220703125,
+            238.54150390625,
+            547.3233642578125,
+            248.10630798339844
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "7,076,856",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 3,
+    "question": "Trong báo cáo hợp nhất BIDV năm 2024, lãi thuần từ hoạt động dịch vụ được điều chỉnh bao nhiêu và giá trị trình bày lại là bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.3115438999957405,
+    "test": "B04",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "“Lãi thuần từ hoạt động dịch vụ”, hợp nhất, cột trình bày lại: **7.076.856 triệu đồng**. [2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lãi thuần từ hoạt động dịch vụ | Hợp nhất | 2024 | Điều chỉnh | 2.411 triệu đồng | [1] |\n| Lãi thuần từ hoạt động dịch vụ | Hợp nhất | 2024 | Trình bày lại | 7.076.856 triệu đồng | [2] |",
+      "values": [
+        "2411",
+        "7076856"
+      ],
+      "statement_question": {
+        "rows": [
+          "lai thuan tu hoat dong dich vu"
+        ],
+        "scopes": [
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lãi thuần từ hoạt động dịch vụ",
+          "row_id": "8:238.54",
+          "box": [
+            425.1622009277344,
+            238.54150390625,
+            444.6028747558594,
+            248.10630798339844
+          ],
+          "header_box": [
+            378.7200012207031,
+            140.02149963378906,
+            418.8108825683594,
+            149.5863037109375
+          ],
+          "column_id": "8:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "2,411",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lãi thuần từ hoạt động dịch vụ",
+          "row_id": "8:238.54",
+          "box": [
+            512.76220703125,
+            238.54150390625,
+            547.3233642578125,
+            248.10630798339844
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "7,076,856",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 4,
+    "question": "Lợi nhuận sau thuế hợp nhất BIDV năm 2024 khác lợi nhuận thuần thuộc cổ đông Ngân hàng bao nhiêu sau điều chỉnh?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 0.6393012000044109,
+    "test": "B05",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Chênh lệch: 465.069 triệu đồng.** 25.677.118 − 25.212.049 = 465.069. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế TNDN | Hợp nhất | 2024 | Trình bày lại | 25.677.118 triệu đồng | [1] |\n| Lợi nhuận thuần của cổ đông Ngân hàng | Hợp nhất | 2024 | Trình bày lại | 25.212.049 triệu đồng | [2] |",
+      "values": [
+        "465069"
+      ],
+      "statement_question": {
+        "rows": [
+          "loi nhuan sau thue",
+          "loi nhuan thuan cua co dong ngan hang"
+        ],
+        "scopes": [
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận sau thuế TNDN",
+          "row_id": "8:414.22",
+          "box": [
+            508.4420166015625,
+            414.2214660644531,
+            547.3233032226562,
+            423.7862854003906
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,677,118",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận thuần của cổ đông Ngân hàng",
+          "row_id": "8:436.30",
+          "box": [
+            508.4420166015625,
+            436.3014831542969,
+            547.3233032226562,
+            445.8663024902344
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,212,049",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 4,
+    "question": "Lợi nhuận sau thuế hợp nhất BIDV năm 2024 khác lợi nhuận thuần thuộc cổ đông Ngân hàng bao nhiêu sau điều chỉnh?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.5584940999979153,
+    "test": "B05",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Chênh lệch: 465.069 triệu đồng.** 25.677.118 − 25.212.049 = 465.069. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế TNDN | Hợp nhất | 2024 | Trình bày lại | 25.677.118 triệu đồng | [1] |\n| Lợi nhuận thuần của cổ đông Ngân hàng | Hợp nhất | 2024 | Trình bày lại | 25.212.049 triệu đồng | [2] |",
+      "values": [
+        "465069"
+      ],
+      "statement_question": {
+        "rows": [
+          "loi nhuan sau thue",
+          "loi nhuan thuan cua co dong ngan hang"
+        ],
+        "scopes": [
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận sau thuế TNDN",
+          "row_id": "8:414.22",
+          "box": [
+            508.4420166015625,
+            414.2214660644531,
+            547.3233032226562,
+            423.7862854003906
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,677,118",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận thuần của cổ đông Ngân hàng",
+          "row_id": "8:436.30",
+          "box": [
+            508.4420166015625,
+            436.3014831542969,
+            547.3233032226562,
+            445.8663024902344
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,212,049",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 5,
+    "question": "Tổng tài sản sau điều chỉnh của BIDV trong báo cáo riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.074648800000432,
+    "test": "B06",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Chênh lệch: 51.509.574 triệu đồng.** 2.760.906.964 − 2.709.397.390 = 51.509.574. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Hợp nhất | 2024-12-31 | Trình bày lại | 2.760.906.964 triệu đồng | [2] |",
+      "values": [
+        "51509574"
+      ],
+      "statement_question": {
+        "rows": [
+          "tong tai san"
+        ],
+        "scopes": [
+          "SEPARATE",
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            487.9383544921875,
+            621.2344970703125,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,709,397,390",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 6,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "6:590.75",
+          "box": [
+            494.55792236328125,
+            591.2344970703125,
+            545.3682861328125,
+            600.9321899414062
+          ],
+          "header_box": [
+            490.05029296875,
+            144.71450805664062,
+            539.3102416992188,
+            154.41224670410156
+          ],
+          "column_id": "6:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,760,906,964",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 5,
+    "question": "Tổng tài sản sau điều chỉnh của BIDV trong báo cáo riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.729513499987661,
+    "test": "B06",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Chênh lệch: 51.509.574 triệu đồng.** 2.760.906.964 − 2.709.397.390 = 51.509.574. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Hợp nhất | 2024-12-31 | Trình bày lại | 2.760.906.964 triệu đồng | [2] |",
+      "values": [
+        "51509574"
+      ],
+      "statement_question": {
+        "rows": [
+          "tong tai san"
+        ],
+        "scopes": [
+          "SEPARATE",
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            487.9383544921875,
+            621.2344970703125,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,709,397,390",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 6,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "6:590.75",
+          "box": [
+            494.55792236328125,
+            591.2344970703125,
+            545.3682861328125,
+            600.9321899414062
+          ],
+          "header_box": [
+            490.05029296875,
+            144.71450805664062,
+            539.3102416992188,
+            154.41224670410156
+          ],
+          "column_id": "6:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,760,906,964",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 6,
+    "question": "Lãi thuần từ hoạt động khác trong báo cáo riêng BIDV năm 2024 được điều chỉnh như thế nào?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 0.6140313999931095,
+    "test": "B07",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Lãi thuần từ hoạt động khác**: 4.732.537 + 37.936 = **4.770.473** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Đã công bố | 4.732.537 triệu đồng | [1] |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Điều chỉnh | 37.936 triệu đồng | [2] |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Trình bày lại | 4.770.473 triệu đồng | [3] |",
+      "values": [
+        "4732537",
+        "37936",
+        "4770473"
+      ],
+      "statement_question": {
+        "rows": [
+          "lai thuan tu hoat dong khac"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Lãi thuần từ hoạt động khác",
+          "row_id": "5:305.57",
+          "box": [
+            329.7619323730469,
+            305.5691833496094,
+            362.4030456542969,
+            314.6026306152344
+          ],
+          "header_box": [
+            310.77496337890625,
+            158.08917236328125,
+            351.1975402832031,
+            167.12261962890625
+          ],
+          "column_id": "5:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "4,732,537",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Lãi thuần từ hoạt động khác",
+          "row_id": "5:305.57",
+          "box": [
+            422.761474609375,
+            305.5691833496094,
+            445.20220947265625,
+            314.6026306152344
+          ],
+          "header_box": [
+            383.6399841308594,
+            148.00917053222656,
+            421.5035400390625,
+            157.04261779785156
+          ],
+          "column_id": "5:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "37,936",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Lãi thuần từ hoạt động khác",
+          "row_id": "5:305.57",
+          "box": [
+            503.4013671875,
+            305.5691833496094,
+            536.04248046875,
+            314.6026306152344
+          ],
+          "header_box": [
+            481.3201904296875,
+            158.08917236328125,
+            527.3447265625,
+            167.12261962890625
+          ],
+          "column_id": "5:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "4,770,473",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 6,
+    "question": "Lãi thuần từ hoạt động khác trong báo cáo riêng BIDV năm 2024 được điều chỉnh như thế nào?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.3590961000008974,
+    "test": "B07",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Lãi thuần từ hoạt động khác**: 4.732.537 + 37.936 = **4.770.473** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Đã công bố | 4.732.537 triệu đồng | [1] |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Điều chỉnh | 37.936 triệu đồng | [2] |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Trình bày lại | 4.770.473 triệu đồng | [3] |",
+      "values": [
+        "4732537",
+        "37936",
+        "4770473"
+      ],
+      "statement_question": {
+        "rows": [
+          "lai thuan tu hoat dong khac"
+        ],
+        "scopes": [
+          "SEPARATE"
+        ],
+        "bases": [
+          "ORIGINAL",
+          "ADJUSTMENT",
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Lãi thuần từ hoạt động khác",
+          "row_id": "5:305.57",
+          "box": [
+            329.7619323730469,
+            305.5691833496094,
+            362.4030456542969,
+            314.6026306152344
+          ],
+          "header_box": [
+            310.77496337890625,
+            158.08917236328125,
+            351.1975402832031,
+            167.12261962890625
+          ],
+          "column_id": "5:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "4,732,537",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Lãi thuần từ hoạt động khác",
+          "row_id": "5:305.57",
+          "box": [
+            422.761474609375,
+            305.5691833496094,
+            445.20220947265625,
+            314.6026306152344
+          ],
+          "header_box": [
+            383.6399841308594,
+            148.00917053222656,
+            421.5035400390625,
+            157.04261779785156
+          ],
+          "column_id": "5:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "37,936",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Lãi thuần từ hoạt động khác",
+          "row_id": "5:305.57",
+          "box": [
+            503.4013671875,
+            305.5691833496094,
+            536.04248046875,
+            314.6026306152344
+          ],
+          "header_box": [
+            481.3201904296875,
+            158.08917236328125,
+            527.3447265625,
+            167.12261962890625
+          ],
+          "column_id": "5:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "4,770,473",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 7,
+    "question": "Hãy kiểm kê đủ tám trang PDF BIDV: phân biệt công bố thông tin, bảng cân đối kế toán riêng, kết quả kinh doanh riêng, bảng hợp nhất và kết quả kinh doanh hợp nhất.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.7596563999977661,
+    "test": "B08",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "DOCUMENT_INVENTORY",
+      "answer": "Đã kiểm kê **8/8 trang PDF**.\n\n| Trang PDF | Trang in | Nội dung | Thông tin tiêu biểu | Tình trạng đọc | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| 1 | — | Công bố thông tin | NGAN HÀNG TMCP DAU TƯ CONG HOA XA HOI CHU NGHIA VIET | OCR · chưa chứng nhận | [1] |\n| 2 | — | Công bố thông tin | Thông tin này đã được công bố trên thông tin điện tử của | OCR · chưa chứng nhận | [2] |\n| 3 | — | Bảng cân đối kế toán · riêng | TỔNG TÀI SẢN | Lớp chữ PDF | [3] |\n| 4 | — | Bảng cân đối kế toán · riêng | TỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU | Lớp chữ PDF | [4] |\n| 5 | — | Báo cáo kết quả kinh doanh · riêng | Lợi nhuận sau thuế TNDN | Lớp chữ PDF | [5] |\n| 6 | — | Bảng cân đối kế toán · hợp nhất | TỔNG TÀI SẢN | Lớp chữ PDF | [6] |\n| 7 | — | Bảng cân đối kế toán · hợp nhất | TỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU | Lớp chữ PDF | [7] |\n| 8 | — | Báo cáo kết quả kinh doanh · hợp nhất | Lợi nhuận thuần của cổ đông Ngân hàng | Lớp chữ PDF | [8] |",
+      "values": [],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 1,
+          "box": null,
+          "extraction_method": "OCR"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 2,
+          "box": null,
+          "extraction_method": "OCR"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 6,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "box": null,
+          "extraction_method": "NATIVE"
+        }
+      ]
+    }
+  },
+  {
+    "i": 7,
+    "question": "Hãy kiểm kê đủ tám trang PDF BIDV: phân biệt công bố thông tin, bảng cân đối kế toán riêng, kết quả kinh doanh riêng, bảng hợp nhất và kết quả kinh doanh hợp nhất.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.5347509999992326,
+    "test": "B08",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "DOCUMENT_INVENTORY",
+      "answer": "Đã kiểm kê **8/8 trang PDF**.\n\n| Trang PDF | Trang in | Nội dung | Thông tin tiêu biểu | Tình trạng đọc | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| 1 | — | Công bố thông tin | NGAN HÀNG TMCP DAU TƯ CONG HOA XA HOI CHU NGHIA VIET | OCR · chưa chứng nhận | [1] |\n| 2 | — | Công bố thông tin | Thông tin này đã được công bố trên thông tin điện tử của | OCR · chưa chứng nhận | [2] |\n| 3 | — | Bảng cân đối kế toán · riêng | TỔNG TÀI SẢN | Lớp chữ PDF | [3] |\n| 4 | — | Bảng cân đối kế toán · riêng | TỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU | Lớp chữ PDF | [4] |\n| 5 | — | Báo cáo kết quả kinh doanh · riêng | Lợi nhuận sau thuế TNDN | Lớp chữ PDF | [5] |\n| 6 | — | Bảng cân đối kế toán · hợp nhất | TỔNG TÀI SẢN | Lớp chữ PDF | [6] |\n| 7 | — | Bảng cân đối kế toán · hợp nhất | TỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU | Lớp chữ PDF | [7] |\n| 8 | — | Báo cáo kết quả kinh doanh · hợp nhất | Lợi nhuận thuần của cổ đông Ngân hàng | Lớp chữ PDF | [8] |",
+      "values": [],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 1,
+          "box": null,
+          "extraction_method": "OCR"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 2,
+          "box": null,
+          "extraction_method": "OCR"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 6,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "box": null,
+          "extraction_method": "NATIVE"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "box": null,
+          "extraction_method": "NATIVE"
+        }
+      ]
+    }
+  },
+  {
+    "i": 8,
+    "question": "Mức điều chỉnh lợi nhuận sau thuế chưa phân phối của BIDV riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.0311515999928815,
+    "test": "B09",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Chênh lệch: 1.114 triệu đồng.** 72.012 − 70.898 = 1.114. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế chưa phân phối | Riêng | 2024-12-31 | Điều chỉnh | 70.898 triệu đồng | [1] |\n| Lợi nhuận sau thuế chưa phân phối | Hợp nhất | 2024-12-31 | Điều chỉnh | 72.012 triệu đồng | [2] |",
+      "values": [
+        "1114"
+      ],
+      "statement_question": {
+        "rows": [
+          "loi nhuan sau thue chua phan phoi"
+        ],
+        "scopes": [
+          "SEPARATE",
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "ADJUSTMENT"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "row_label": "Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "4:287.51",
+          "box": [
+            398.8988037109375,
+            287.5145263671875,
+            423.16510009765625,
+            297.2122497558594
+          ],
+          "header_box": [
+            358.7100830078125,
+            55.554508209228516,
+            399.3421325683594,
+            65.25224304199219
+          ],
+          "column_id": "4:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "70,898",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "row_label": "Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "7:310.19",
+          "box": [
+            429.2282409667969,
+            310.19451904296875,
+            453.5821533203125,
+            319.8922424316406
+          ],
+          "header_box": [
+            390.15008544921875,
+            44.75450897216797,
+            430.7820739746094,
+            54.45224380493164
+          ],
+          "column_id": "7:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "72,012",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 8,
+    "question": "Mức điều chỉnh lợi nhuận sau thuế chưa phân phối của BIDV riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.3583319000026677,
+    "test": "B09",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Chênh lệch: 1.114 triệu đồng.** 72.012 − 70.898 = 1.114. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế chưa phân phối | Riêng | 2024-12-31 | Điều chỉnh | 70.898 triệu đồng | [1] |\n| Lợi nhuận sau thuế chưa phân phối | Hợp nhất | 2024-12-31 | Điều chỉnh | 72.012 triệu đồng | [2] |",
+      "values": [
+        "1114"
+      ],
+      "statement_question": {
+        "rows": [
+          "loi nhuan sau thue chua phan phoi"
+        ],
+        "scopes": [
+          "SEPARATE",
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "ADJUSTMENT"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "row_label": "Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "4:287.51",
+          "box": [
+            398.8988037109375,
+            287.5145263671875,
+            423.16510009765625,
+            297.2122497558594
+          ],
+          "header_box": [
+            358.7100830078125,
+            55.554508209228516,
+            399.3421325683594,
+            65.25224304199219
+          ],
+          "column_id": "4:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "70,898",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "row_label": "Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "7:310.19",
+          "box": [
+            429.2282409667969,
+            310.19451904296875,
+            453.5821533203125,
+            319.8922424316406
+          ],
+          "header_box": [
+            390.15008544921875,
+            44.75450897216797,
+            430.7820739746094,
+            54.45224380493164
+          ],
+          "column_id": "7:ADJUSTMENT",
+          "basis": "ADJUSTMENT",
+          "value_raw": "72,012",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 9,
+    "question": "So sánh tổng tài sản của BIDV theo báo cáo riêng năm 2024 sau điều chỉnh và Hòa Phát theo báo cáo riêng cuối năm 2025. Quy đổi về tỷ đồng, tính chênh lệch và cho biết BIDV lớn hơn bao nhiêu lần.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.7575171000062255,
+    "test": "C01",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "CANDIDATE_RECONCILIATION",
+      "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | TỔNG TÀI SẢN | 2024-12-31 | 2,709,397,390 triệu đồng | 2.709.397,39 | Đối chiếu lớp chữ PDF | [1] |\n| HPG | Tổng tài sản | 2025-12-31 | 98.670.778.691.605 đồng | 98.670,7787 | Ứng viên OCR | [2] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\nChênh lệch: 2.709.397,39 − 98.670,7787 = **2.610.726,6113 tỷ đồng**. [1][2]\n\nQuy mô lớn hơn **27,459 lần**, tính bằng giá trị lớn chia giá trị nhỏ. [1][2] Hai số thuộc hai doanh nghiệp, ở các ngày và ngành khác nhau.",
+      "values": [],
+      "candidate_values": [
+        "2610726.611308395",
+        "27.458964304601337917049683036641851182"
+      ],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            487.9383544921875,
+            621.2344970703125,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,709,397,390",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 3,
+          "row_label": "Tổng tài sản",
+          "row_id": "p3-ocr-v2-r20",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "column_id": "p3-ocr-v2-r20-c0",
+          "value_raw": "98.670.778.691.605",
+          "period": "2025-12-31",
+          "period_type": "INSTANT",
+          "unit": "VND",
+          "currency": "VND",
+          "scale": "1",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "OCR",
+          "review_status": "AUTOMATED_EXTRACTION"
+        }
+      ]
+    }
+  },
+  {
+    "i": 10,
+    "question": "So sánh quy mô vốn của BIDV và Hòa Phát. Phân biệt chỉ tiêu “Vốn và các quỹ” của BIDV với “Vốn chủ sở hữu” và “Vốn góp của chủ sở hữu” của Hòa Phát. Những chỉ tiêu nào không nên coi là đồng nhất?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.42420769999444,
+    "test": "C02",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "CANDIDATE_RECONCILIATION",
+      "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | Vốn và các quỹ | 2024-12-31 | 136,350,642 triệu đồng | 136.350,642 | Đối chiếu lớp chữ PDF | [1] |\n| HPG | Tổng vốn chủ sở hữu | 2025-12-31 | 94.430.926.468.210 đồng | 94.430,9265 | Ứng viên OCR | [2] |\n| HPG | Vốn góp của chủ sở hữu | 2025-12-31 | 76.754.658.550.000 đồng | 76.754,6586 | Ứng viên OCR | [3] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\n“Vốn và các quỹ” và “Vốn chủ sở hữu” là các nhóm tổng hợp theo cách trình bày của từng báo cáo. “Vốn góp của chủ sở hữu” là một thành phần của vốn chủ sở hữu. Cần đọc các dòng cấu thành trước khi coi hai nhóm tổng hợp có cùng phạm vi.",
+      "values": [],
+      "candidate_values": [],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "row_label": "Vốn và các quỹ",
+          "row_id": "4:231.83",
+          "box": [
+            494.54095458984375,
+            231.83448791503906,
+            538.781005859375,
+            241.5322265625
+          ],
+          "header_box": [
+            471.5702819824219,
+            66.23450469970703,
+            520.8302612304688,
+            75.93224334716797
+          ],
+          "column_id": "4:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "136,350,642",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 4,
+          "row_label": "Tổng vốn chủ sở hữu",
+          "row_id": "p4-ocr-v2-r12",
+          "box": [
+            383.7600015734819,
+            462.4800134033899,
+            471.1200019316729,
+            471.1200136537905
+          ],
+          "column_id": "p4-ocr-v2-r12-c0",
+          "value_raw": "94.430.926.468.210",
+          "period": "2025-12-31",
+          "period_type": "INSTANT",
+          "unit": "VND",
+          "currency": "VND",
+          "scale": "1",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "OCR",
+          "review_status": "AUTOMATED_EXTRACTION"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 20,
+          "row_label": "Vốn góp của chủ sở hữu",
+          "row_id": "date:31/12/2025",
+          "box": [
+            423.3600017358487,
+            480.2400139181023,
+            430.800001766354,
+            551.5200159839076
+          ],
+          "header_box": [
+            150.00000061502575,
+            487.4400141267695,
+            159.84000065537145,
+            579.3600167907541
+          ],
+          "column_id": "paid_in_capital",
+          "value_raw": "76.754.658.550.000",
+          "period": "2025-12-31",
+          "period_type": "INSTANT",
+          "unit": "VND",
+          "currency": "VND",
+          "scale": "1",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "OCR",
+          "review_status": "AUTOMATED_EXTRACTION"
+        }
+      ]
+    }
+  },
+  {
+    "i": 11,
+    "question": "Tính tỷ lệ nợ phải trả trên tổng tài sản của Hòa Phát và BIDV báo cáo riêng. Với BIDV, nếu không có dòng tổng nợ riêng, hãy suy ra từ phương trình kế toán và ghi rõ đó là giá trị tính toán. Có nên dùng hai tỷ lệ để khẳng định doanh nghiệp nào an toàn hơn không?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.385144700005185,
+    "test": "C03",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "CANDIDATE_RECONCILIATION",
+      "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | TỔNG TÀI SẢN | 2024-12-31 | 2,709,397,390 triệu đồng | 2.709.397,39 | Đối chiếu lớp chữ PDF | [1] |\n| BIDV | Vốn và các quỹ | 2024-12-31 | 136,350,642 triệu đồng | 136.350,642 | Đối chiếu lớp chữ PDF | [2] |\n| HPG | Tổng tài sản | 2025-12-31 | 98.670.778.691.605 đồng | 98.670,7787 | Ứng viên OCR | [3] |\n| HPG | Nợ phải trả | 2025-12-31 | 4.239.852.223.395 đồng | 4.239,8522 | Người duyệt đã đối chiếu | [4] |\n| HPG | Tổng vốn chủ sở hữu | 2025-12-31 | 94.430.926.468.210 đồng | 94.430,9265 | Ứng viên OCR | [5] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\nNợ phải trả BIDV (tính từ phương trình kế toán) = tổng tài sản − vốn và các quỹ = 2.573.046,748 tỷ đồng. [1][2]\n\n**BIDV**: 2.573.046,748 ÷ 2.709.397,39 × 100 = **94,9675%**. [1][2]\n\n**HPG**: 4.239,8522 ÷ 98.670,7787 × 100 = **4,297%**. [4][3]\n\nHai tỷ lệ không đủ để kết luận doanh nghiệp nào an toàn hơn. Cần xét cấu trúc nguồn vốn và chuẩn an toàn phù hợp với từng ngành.",
+      "values": [],
+      "candidate_values": [
+        "94.967491941076978744708984900882332362",
+        "4.2969684435618328619078951981121517204"
+      ],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "3:620.87",
+          "box": [
+            487.9383544921875,
+            621.2344970703125,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "header_box": [
+            471.5702819824219,
+            166.67449951171875,
+            520.8302612304688,
+            176.3722381591797
+          ],
+          "column_id": "3:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "2,709,397,390",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "row_label": "Vốn và các quỹ",
+          "row_id": "4:231.83",
+          "box": [
+            494.54095458984375,
+            231.83448791503906,
+            538.781005859375,
+            241.5322265625
+          ],
+          "header_box": [
+            471.5702819824219,
+            66.23450469970703,
+            520.8302612304688,
+            75.93224334716797
+          ],
+          "column_id": "4:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "136,350,642",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 3,
+          "row_label": "Tổng tài sản",
+          "row_id": "p3-ocr-v2-r20",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "column_id": "p3-ocr-v2-r20-c0",
+          "value_raw": "98.670.778.691.605",
+          "period": "2025-12-31",
+          "period_type": "INSTANT",
+          "unit": "VND",
+          "currency": "VND",
+          "scale": "1",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "OCR",
+          "review_status": "AUTOMATED_EXTRACTION"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 4,
+          "row_label": "Nợ phải trả",
+          "row_id": "p4-ocr-v2-r0",
+          "box": [
+            388.3200015921787,
+            252.72000732421876,
+            470.6400019297048,
+            261.12000756766383
+          ],
+          "column_id": "p4-ocr-v2-r0-c0",
+          "value_raw": "4.239.852.223.395",
+          "period": "2025-12-31",
+          "period_type": "INSTANT",
+          "unit": "VND",
+          "currency": "VND",
+          "scale": "1",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "OCR",
+          "review_status": "HUMAN_SOURCE_VERIFIED"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 4,
+          "row_label": "Tổng vốn chủ sở hữu",
+          "row_id": "p4-ocr-v2-r12",
+          "box": [
+            383.7600015734819,
+            462.4800134033899,
+            471.1200019316729,
+            471.1200136537905
+          ],
+          "column_id": "p4-ocr-v2-r12-c0",
+          "value_raw": "94.430.926.468.210",
+          "period": "2025-12-31",
+          "period_type": "INSTANT",
+          "unit": "VND",
+          "currency": "VND",
+          "scale": "1",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "OCR",
+          "review_status": "AUTOMATED_EXTRACTION"
+        }
+      ]
+    }
+  },
+  {
+    "i": 12,
+    "question": "So sánh lợi nhuận sau thuế năm 2024 sau điều chỉnh của BIDV riêng với lợi nhuận sau thuế quý IV/2025 của Hòa Phát riêng. Đổi về cùng đơn vị nhưng giải thích tại sao không thể gọi chênh lệch này là tăng trưởng.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.434412300004624,
+    "test": "C04",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "CANDIDATE_RECONCILIATION",
+      "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | Lợi nhuận sau thuế TNDN | Năm 2024 | 24,579,917 triệu đồng | 24.579,917 | Đối chiếu lớp chữ PDF | [1] |\n| HPG | Lợi nhuận sau thuế | Quý IV/2025 | 5.597.856.806.673 đồng | 5.597,8568 | Ứng viên OCR | [2] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\nChênh lệch: 24.579,917 − 5.597,8568 = **18.982,0602 tỷ đồng**. [1][2]\n\nChênh lệch này so sánh hai doanh nghiệp và các kỳ được ghi trong bảng. Không thể diễn giải nó như tăng trưởng qua các năm.",
+      "values": [],
+      "candidate_values": [
+        "18982.060193327"
+      ],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "Lợi nhuận sau thuế TNDN",
+          "row_id": "5:410.21",
+          "box": [
+            499.32122802734375,
+            410.2091979980469,
+            536.04248046875,
+            419.2426452636719
+          ],
+          "header_box": [
+            481.3201904296875,
+            158.08917236328125,
+            527.3447265625,
+            167.12261962890625
+          ],
+          "column_id": "5:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "24,579,917",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 5,
+          "row_label": "Lợi nhuận sau thuế",
+          "row_id": "p5-ocr-v2-r16",
+          "box": [
+            428.6400017574976,
+            387.12001121933986,
+            435.36000178505077,
+            453.60001314603363
+          ],
+          "column_id": "p5-ocr-v2-r16-c0",
+          "value_raw": "5.597.856.806.673",
+          "period": "2025-12-31",
+          "period_type": "Q4",
+          "unit": "VND",
+          "currency": "VND",
+          "scale": "1",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "OCR",
+          "review_status": "AUTOMATED_EXTRACTION"
+        }
+      ]
+    }
+  },
+  {
+    "i": 13,
+    "question": "Hãy chỉ ra những điểm khác biệt về phạm vi báo cáo, kỳ kế toán, đơn vị số liệu, loại báo cáo và phương pháp trích xuất dữ liệu giữa BIDV và Hòa Phát trước khi thực hiện bất kỳ phép so sánh nào.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.813179399992805,
+    "test": "C05",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "SOURCE_EXCERPTS",
+      "answer": "| PDF | Loại báo cáo | Phạm vi | Năm trong nguồn | Đơn vị | Trích xuất | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf | Bảng điều chỉnh báo cáo tài chính | riêng và hợp nhất | 2024 | triệu đồng | lớp chữ PDF, OCR | [1] [2] |\n| 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf | Báo cáo tài chính | riêng | 2025 | đồng | OCR | [3] |",
+      "values": [],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 6,
+          "row_label": "Tiền mặt, vàng bạc, đá quý",
+          "row_id": "6:177.83",
+          "box": [
+            326.84149169921875,
+            177.83450317382812,
+            366.70111083984375,
+            187.53224182128906
+          ],
+          "header_box": [
+            315.5999755859375,
+            144.71450805664062,
+            359.2249755859375,
+            154.41224670410156
+          ],
+          "column_id": "6:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "10,772,890",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "Tiền mặt, vàng bạc, đá quý",
+          "row_id": "3:199.79",
+          "box": [
+            294.348876953125,
+            199.79449462890625,
+            334.12091064453125,
+            209.4922332763672
+          ],
+          "header_box": [
+            285.5999755859375,
+            166.67449951171875,
+            329.2249755859375,
+            176.3722381591797
+          ],
+          "column_id": "3:ORIGINAL",
+          "basis": "ORIGINAL",
+          "value_raw": "10,015,748",
+          "period": "2024",
+          "period_end": "2024-12-31",
+          "period_type": "INSTANT",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "page": 1,
+          "box": null,
+          "extraction_method": "OCR"
+        }
+      ]
+    }
+  },
+  {
+    "i": 14,
+    "question": "Tôi chỉ chọn PDF BIDV. Hãy cho biết tổng tài sản của công ty mẹ Hòa Phát tại ngày 31/12/2025.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 0.8011031000060029,
+    "test": "C06",
+    "reply": {
+      "status": "QUERY_CONTEXT_CONFLICT",
+      "answer": "Chưa tìm thấy nguồn cho HPG trong các PDF đang chọn. Hãy thêm tài liệu của doanh nghiệp được hỏi hoặc đổi nguồn trong bộ chọn PDF.",
+      "values": [],
+      "reason": "QUESTION_COMPANY_SCOPE_CONFLICT",
+      "citations": []
+    }
+  },
+  {
+    "i": 14,
+    "question": "Tôi chỉ chọn PDF BIDV. Hãy cho biết tổng tài sản của công ty mẹ Hòa Phát tại ngày 31/12/2025.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 3.2980423999979394,
+    "test": "C06",
+    "reply": {
+      "status": "QUERY_CONTEXT_CONFLICT",
+      "answer": "Câu hỏi nói chỉ dùng một PDF. Bộ chọn hiện có 2 PDF: 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf, 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf. Hãy bỏ chọn file thừa hoặc hỏi lại với cả hai nguồn.",
+      "values": [],
+      "reason": "SELECTED_PDF_COUNT_MISMATCH",
+      "citations": []
+    }
+  },
+  {
+    "i": 15,
+    "question": "Theo PDF điều chỉnh BIDV tôi đang chọn, lợi nhuận sau thuế quý IV/2025 của BIDV là bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 0.9974252999963937,
+    "test": "C07",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "NEEDS_CLARIFICATION",
+      "answer": "PDF đang chọn có bảng điều chỉnh cho năm 2024. Tôi chưa thấy cột theo quý 2025 trong các bảng này.",
+      "values": [],
+      "reason": "REQUESTED_PERIOD_ABSENT",
+      "citations": []
+    }
+  },
+  {
+    "i": 15,
+    "question": "Theo PDF điều chỉnh BIDV tôi đang chọn, lợi nhuận sau thuế quý IV/2025 của BIDV là bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.999714000005042,
+    "test": "C07",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "NEEDS_CLARIFICATION",
+      "answer": "PDF đang chọn có bảng điều chỉnh cho năm 2024. Tôi chưa thấy cột theo quý 2025 trong các bảng này.",
+      "values": [],
+      "reason": "REQUESTED_PERIOD_ABSENT",
+      "citations": []
+    }
+  },
+  {
+    "i": 16,
+    "question": "Có đúng lợi nhuận sau thuế hợp nhất BIDV 2024 trình bày lại là 25.212.049 triệu đồng không? Hãy xác nhận.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.3501375999912852,
+    "test": "C08",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Không**. Báo cáo ghi **25.677.118 triệu đồng** cho dòng “Lợi nhuận sau thuế TNDN”. [1]\n\nSố 25.212.049 thuộc dòng “Lợi nhuận thuần của cổ đông Ngân hàng”. [2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế TNDN | Hợp nhất | 2024 | Trình bày lại | 25.677.118 triệu đồng | [1] |",
+      "values": [
+        "25677118"
+      ],
+      "statement_question": {
+        "rows": [
+          "loi nhuan sau thue"
+        ],
+        "scopes": [
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận sau thuế TNDN",
+          "row_id": "8:414.22",
+          "box": [
+            508.4420166015625,
+            414.2214660644531,
+            547.3233032226562,
+            423.7862854003906
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,677,118",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận thuần của cổ đông Ngân hàng",
+          "row_id": "8:436.30",
+          "box": [
+            508.4420166015625,
+            436.3014831542969,
+            547.3233032226562,
+            445.8663024902344
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,212,049",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 16,
+    "question": "Có đúng lợi nhuận sau thuế hợp nhất BIDV 2024 trình bày lại là 25.212.049 triệu đồng không? Hãy xác nhận.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 2.0870854999957373,
+    "test": "C08",
+    "reply": {
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "answer": "**Không**. Báo cáo ghi **25.677.118 triệu đồng** cho dòng “Lợi nhuận sau thuế TNDN”. [1]\n\nSố 25.212.049 thuộc dòng “Lợi nhuận thuần của cổ đông Ngân hàng”. [2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế TNDN | Hợp nhất | 2024 | Trình bày lại | 25.677.118 triệu đồng | [1] |",
+      "values": [
+        "25677118"
+      ],
+      "statement_question": {
+        "rows": [
+          "loi nhuan sau thue"
+        ],
+        "scopes": [
+          "CONSOLIDATED"
+        ],
+        "bases": [
+          "RESTATED"
+        ]
+      },
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận sau thuế TNDN",
+          "row_id": "8:414.22",
+          "box": [
+            508.4420166015625,
+            414.2214660644531,
+            547.3233032226562,
+            423.7862854003906
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,677,118",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "Lợi nhuận thuần của cổ đông Ngân hàng",
+          "row_id": "8:436.30",
+          "box": [
+            508.4420166015625,
+            436.3014831542969,
+            547.3233032226562,
+            445.8663024902344
+          ],
+          "header_box": [
+            486.000244140625,
+            150.5814971923828,
+            534.597900390625,
+            160.14630126953125
+          ],
+          "column_id": "8:RESTATED",
+          "basis": "RESTATED",
+          "value_raw": "25,212,049",
+          "period": "2024",
+          "period_end": null,
+          "period_type": "FY",
+          "unit": "TRIEU_VND",
+          "currency": "VND",
+          "scale": "1000000",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  }
+]

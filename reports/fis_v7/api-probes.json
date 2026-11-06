@@ -1,0 +1,359 @@
+[
+  {
+    "test": "Reordered-B01",
+    "query": "Năm 2024, tài sản tổng cộng trong bảng riêng BIDV sau điều chỉnh là bao nhiêu?",
+    "selected": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "seconds": 1.052792300004512,
+    "http": 200,
+    "answer": "**TỔNG TÀI SẢN**: 2.709.287.140 + 110.250 = **2.709.397.390** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Đã công bố | 2.709.287.140 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Điều chỉnh | 110.250 triệu đồng | [2] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [3] |",
+    "values": [
+      "2709287140",
+      "110250",
+      "2709397390"
+    ],
+    "candidate_values": null,
+    "status": "VERIFIED_ANSWER",
+    "reason": null,
+    "citations": [
+      {
+        "page": 3,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          283.33355712890625,
+          621.2344970703125,
+          334.1436462402344,
+          630.9321899414062
+        ],
+        "value_raw": "2,709,287,140",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          394.41510009765625,
+          621.2344970703125,
+          423.14923095703125,
+          630.9321899414062
+        ],
+        "value_raw": "110,250",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          487.9383544921875,
+          621.2344970703125,
+          538.7487182617188,
+          630.9321899414062
+        ],
+        "value_raw": "2,709,397,390",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "Reordered-B03",
+    "query": "Trình bày lại thu nhập lãi thuần trong báo cáo riêng BIDV 2024 là bao nhiêu?",
+    "selected": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "seconds": 0.7642238999978872,
+    "http": 200,
+    "answer": "“Thu nhập lãi thuần”, riêng, cột trình bày lại: **56.233.503 triệu đồng**. [1]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Thu nhập lãi thuần | Riêng | 2024 | Trình bày lại | 56.233.503 triệu đồng | [1] |",
+    "values": [
+      "56233503"
+    ],
+    "candidate_values": null,
+    "status": "VERIFIED_ANSWER",
+    "reason": null,
+    "citations": [
+      {
+        "page": 5,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          499.32122802734375,
+          210.52915954589844,
+          536.04248046875,
+          219.56260681152344
+        ],
+        "value_raw": "56,233,503",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "Reordered-B06",
+    "query": "Chênh lệch tổng tài sản trình bày lại của báo cáo hợp nhất với báo cáo riêng BIDV năm 2024 là bao nhiêu?",
+    "selected": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "seconds": 1.8600750000041444,
+    "http": 200,
+    "answer": "**Chênh lệch: 51.509.574 triệu đồng.** 2.760.906.964 − 2.709.397.390 = 51.509.574. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Hợp nhất | 2024-12-31 | Trình bày lại | 2.760.906.964 triệu đồng | [2] |",
+    "values": [
+      "51509574"
+    ],
+    "candidate_values": null,
+    "status": "VERIFIED_ANSWER",
+    "reason": null,
+    "citations": [
+      {
+        "page": 3,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          487.9383544921875,
+          621.2344970703125,
+          538.7487182617188,
+          630.9321899414062
+        ],
+        "value_raw": "2,709,397,390",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 6,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          494.55792236328125,
+          591.2344970703125,
+          545.3682861328125,
+          600.9321899414062
+        ],
+        "value_raw": "2,760,906,964",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "CONSOLIDATED",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "Reordered-B09",
+    "query": "Năm 2024, lợi nhuận sau thuế chưa phân phối: mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu?",
+    "selected": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "seconds": 1.0036996999988332,
+    "http": 200,
+    "answer": "**Chênh lệch: 1.114 triệu đồng.** 72.012 − 70.898 = 1.114. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế chưa phân phối | Riêng | 2024-12-31 | Điều chỉnh | 70.898 triệu đồng | [1] |\n| Lợi nhuận sau thuế chưa phân phối | Hợp nhất | 2024-12-31 | Điều chỉnh | 72.012 triệu đồng | [2] |",
+    "values": [
+      "1114"
+    ],
+    "candidate_values": null,
+    "status": "VERIFIED_ANSWER",
+    "reason": null,
+    "citations": [
+      {
+        "page": 4,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          398.8988037109375,
+          287.5145263671875,
+          423.16510009765625,
+          297.2122497558594
+        ],
+        "value_raw": "70,898",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 7,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          429.2282409667969,
+          310.19451904296875,
+          453.5821533203125,
+          319.8922424316406
+        ],
+        "value_raw": "72,012",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "CONSOLIDATED",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "C03-closure",
+    "query": "Tính tỷ lệ nợ phải trả trên tổng tài sản của Hòa Phát và BIDV báo cáo riêng. Nếu không có dòng tổng nợ, hãy suy ra theo phương trình kế toán.",
+    "selected": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "seconds": 5.185588099993765,
+    "http": 200,
+    "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | TỔNG TÀI SẢN | 2024-12-31 | 2,709,397,390 triệu đồng | 2.709.397,39 | Đối chiếu lớp chữ PDF | [1] |\n| BIDV | Vốn và các quỹ | 2024-12-31 | 136,350,642 triệu đồng | 136.350,642 | Đối chiếu lớp chữ PDF | [2] |\n| HPG | Tổng tài sản | 2025-12-31 | 98.670.778.691.605 đồng | 98.670,7787 | Ứng viên OCR | [3] |\n| HPG | Nợ phải trả | 2025-12-31 | 4.239.852.223.395 đồng | 4.239,8522 | Người duyệt đã đối chiếu | [4] |\n| HPG | Tổng vốn chủ sở hữu | 2025-12-31 | 94.430.926.468.210 đồng | 94.430,9265 | Ứng viên OCR | [5] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\nNợ phải trả BIDV (tính từ phương trình kế toán) = tổng tài sản − vốn và các quỹ = 2.573.046,748 tỷ đồng. [1][2]\n\n**BIDV**: 2.573.046,748 ÷ 2.709.397,39 × 100 = **94,9675%**. [1][2]\n\n**HPG**: 4.239,8522 ÷ 98.670,7787 × 100 = **4,297%**. [4][3]\n\nHai tỷ lệ không đủ để kết luận doanh nghiệp nào an toàn hơn. Cần xét cấu trúc nguồn vốn và chuẩn an toàn phù hợp với từng ngành.",
+    "values": [],
+    "candidate_values": [
+      "94.967491941076978744708984900882332362",
+      "4.2969684435618328619078951981121517204"
+    ],
+    "status": "CANDIDATE_RECONCILIATION",
+    "reason": null,
+    "citations": [
+      {
+        "page": 3,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          487.9383544921875,
+          621.2344970703125,
+          538.7487182617188,
+          630.9321899414062
+        ],
+        "value_raw": "2,709,397,390",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 4,
+        "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "box": [
+          494.54095458984375,
+          231.83448791503906,
+          538.781005859375,
+          241.5322265625
+        ],
+        "value_raw": "136,350,642",
+        "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+        "period": "2024",
+        "statement_scope": "SEPARATE",
+        "verification_status": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "box": [
+          384.480001576434,
+          606.0000175628228,
+          472.08000193560906,
+          614.6400178132234
+        ],
+        "value_raw": "98.670.778.691.605",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "period": "2025-12-31",
+        "statement_scope": "SEPARATE"
+      },
+      {
+        "page": 4,
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "box": [
+          388.3200015921787,
+          252.72000732421876,
+          470.6400019297048,
+          261.12000756766383
+        ],
+        "value_raw": "4.239.852.223.395",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "period": "2025-12-31",
+        "statement_scope": "SEPARATE"
+      },
+      {
+        "page": 4,
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "box": [
+          383.7600015734819,
+          462.4800134033899,
+          471.1200019316729,
+          471.1200136537905
+        ],
+        "value_raw": "94.430.926.468.210",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "period": "2025-12-31",
+        "statement_scope": "SEPARATE"
+      }
+    ]
+  },
+  {
+    "test": "HPG-V5-liability",
+    "query": "Nợ phải trả của công ty mẹ Hòa Phát tại 31/12/2025 là bao nhiêu?",
+    "selected": [
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "seconds": 13.797502999994322,
+    "http": 200,
+    "answer": "Nợ phải trả của công ty mẹ Hòa Phát tại ngày 31/12/2025 là 4.239.852.223.395 đồng. Giá trị đã được người dùng đối chiếu với ảnh gốc, báo cáo riêng, trang 4. [1]",
+    "values": [
+      "4239852223395"
+    ],
+    "candidate_values": null,
+    "status": "VERIFIED_ANSWER",
+    "reason": null,
+    "citations": [
+      {
+        "page": 4,
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "box": [
+          388.3200015921787,
+          252.72000732421876,
+          470.6400019297048,
+          261.12000756766383
+        ],
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "period": "2025-12-31",
+        "statement_scope": "SEPARATE"
+      }
+    ]
+  },
+  {
+    "test": "HPG-V5-discrepancy",
+    "query": "Tiền gửi ngân hàng đầu năm 2025 trong thuyết minh Hòa Phát là bao nhiêu? OCR ban đầu và đọc lại khác nhau thế nào?",
+    "selected": [
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "seconds": 12.830730699992273,
+    "http": 200,
+    "answer": "Ô Tiền gửi ngân hàng tại ngày 01/01/2025, báo cáo riêng, trang 12. Tesseract ban đầu đọc 46.014.571.676 đồng. Tesseract đọc lại thành 46.074.571.676 đồng. Chữ số thay đổi: 1 → 7. Bản đọc lại là giá trị OCR ứng viên, chưa được người duyệt xác nhận. [1]",
+    "values": [],
+    "candidate_values": null,
+    "status": "OCR_CANDIDATE_ANSWER",
+    "reason": null,
+    "citations": [
+      {
+        "page": 12,
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "box": [
+          496.80000203696534,
+          597.8400173263333,
+          565.6800023193852,
+          607.4400176045561
+        ],
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "period": "01/01/2025",
+        "statement_scope": "SEPARATE"
+      }
+    ]
+  },
+  {
+    "test": "Search-B09",
+    "query": "Năm 2024, lợi nhuận sau thuế chưa phân phối: mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu?",
+    "http": 200,
+    "seconds": 7.527779900003225,
+    "values": [
+      "1114"
+    ],
+    "returned_count": 2,
+    "verified_value_count": 2
+  }
+]
