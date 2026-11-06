@@ -11,12 +11,14 @@ from app.product.sec_a5 import plan_query
 from app.product.sec_library import FederatedIndex, ScopedIndex, partitions
 from app.product.sec_multi_qa import abstain, answer as numeric_answer, observations, requested_metrics
 from app.product.sec_ontology_v8 import ISSUERS
+from app.product.sec_task_plan import plan_sec_question
 from app.product.sec_viewer import reference
 
-RISK = re.compile(r'\b(?:rui ro|bat dinh|risks?|risk factors?|uncertaint\w*)\b')
+RISK = re.compile(r'\b(?:rui ro|nguy co|bat dinh|risks?|risk factors?|uncertaint\w*)\b')
 MANAGEMENT = re.compile(r'\b(?:thao luan cua ban quan ly|management.s discussion|md&a|liquidity|thanh khoan)\b')
-MARGIN = re.compile(r'\b(?P<gross>gross (?:profit )?margin|bien loi nhuan gop)\b|'
-                    r'\b(?:operating margin|bien loi nhuan hoat dong)\b')
+MARGIN = re.compile(r'\b(?P<gross>gross (?:profit )?margin|bien loi nhuan gop|ty suat loi nhuan gop)\b|'
+                    r'\b(?:operating margin|bien loi nhuan hoat dong|bien hoat dong|ty suat loi nhuan hoat dong|'
+                    r'phan tram loi nhuan (?:tu )?hoat dong tren (?:tong )?doanh thu)\b')
 PROFILE = re.compile(r'\b(?:do dai ky|don vi tien te|pham vi bao cao|reporting duration|reporting scope|filing profile)\b')
 NO_CHANGE = re.compile(r'\bno (?:material|significant) changes?\b.{0,250}\brisk factors?\b|\brisk factors?\b.{0,240}\b(?:no material changes?|have not materially changed)\b', re.I)
 RISK_TOPIC = re.compile(r'\b(?:tariffs?|inflation|competition|foreign exchange|currency|cybersecurity|supply chain|'
@@ -29,23 +31,12 @@ def _matches(q, name):
 
 
 def resolve_sources(index, question, ticker=None):
-    q = folded(question)
     groups = defaultdict(list)
     for part in partitions(index):
         for filing in part.catalog_rows:
             groups[filing['ticker']].append((filing,part))
-    named = {symbol for symbol,names in ISSUERS.items() if any(_matches(q,n) for n in names)}
-    for symbol, sources in groups.items():
-        issuer = sources[0][0]['issuer']
-        company = re.sub(r'\s+(?:(?:inc|corp|co|company|corporation|ltd|plc|limited)\.?\s*)+$','',issuer.replace(',',''),flags=re.I).strip()
-        if _matches(q,symbol) or _matches(q,issuer) or (len(company)>=4 and _matches(q,company)):
-            named.add(symbol)
-    named.update(x.upper() for x in re.findall(r'\b(?:ticker|ma chung khoan)\s+([a-z]{1,5})\b',q))
-    if ticker and named and ticker.upper() not in named:
-        return groups, [], sorted(named), 'SEC_COMPANY_SCOPE_CONFLICT'
-    missing=sorted(named-groups.keys())
-    chosen=sorted(named & groups.keys()) if named else ([ticker.upper()] if ticker and ticker.upper() in groups else list(groups))
-    return groups,chosen,missing,None
+    plan = plan_sec_question(question, groups, ticker)
+    return groups, plan.eligible_entities, plan.unselected_entities, plan.error
 
 
 def _scoped(sources):
@@ -132,6 +123,63 @@ def narrative(sources, q, key):
             'values':[],'citations':refs}
 
 
+TOPIC_TERMS={
+    'COMPETITION':re.compile(r'\b(?:canh tranh|suc ep doi thu|doi thu canh tranh|competition|competit\w*)\b',re.I),
+    'CYBERSECURITY':re.compile(r'\b(?:an ninh mang|tan cong mang|cybersecurity|cyber.?security|cyber.?attacks?|data breaches?)\b',re.I),
+}
+TOPIC_LABELS={'COMPETITION':'Cạnh tranh','CYBERSECURITY':'An ninh mạng'}
+
+
+def requested_topics(q):
+    return [name for name,pattern in TOPIC_TERMS.items() if pattern.search(q)]
+
+
+def narrative_obligations(sources, topics, key):
+    """One authenticated disclosure per requested topic, with visible gaps."""
+    lines,refs,results=[],[],[]
+    for topic in topics:
+        pattern=TOPIC_TERMS[topic]
+        candidates=[]
+        for filing,part in sources:
+            for item in part.parents:
+                chunk=item['chunk']
+                if chunk.filing_id!=filing['filing_id'] or not _readable(chunk):
+                    continue
+                section=chunk.source_location.section or ''
+                if not (pattern.search(section) or pattern.search(chunk.text)):
+                    continue
+                sentences=re.split(r'(?<=[.!?])\s+(?=[A-Z])',chunk.text)
+                sentence=next((s.strip() for s in sentences if pattern.search(s) and 45<=len(s)<=700),None)
+                if sentence:
+                    score=(3 if pattern.search(section) else 0)+(2 if DISCLOSURE.search(sentence) else 0)
+                    if re.search(r'\b(?:risk|could adversely|may not|could lead to|vulnerabilit\w*)\b',sentence,re.I):
+                        score+=6
+                    if re.search(r'\b(?:risk|adversely)\b',section,re.I):
+                        score+=3
+                    candidates.append((score,filing,part,chunk,sentence))
+        candidates.sort(key=lambda x:(-x[0],x[3].source_location.structural_path))
+        if not candidates:
+            lines.append(f'- **{TOPIC_LABELS[topic]}**: chưa gắn được đoạn công bố phù hợp trong filing đã chọn.')
+            results.append({'topic':topic,'status':'SOURCE_UNAVAILABLE'})
+            continue
+        _,filing,part,chunk,sentence=candidates[0]
+        refs.append(_citation(part,filing,chunk,key,sentence))
+        if topic=='COMPETITION' and re.search(r'\b(?:competit\w*|compete)\b',sentence,re.I) and re.search(r'\badversely affect\b',sentence,re.I):
+            disclosed='Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh.'
+        elif topic=='CYBERSECURITY' and re.search(r'\bcyberattacks?\b',sentence,re.I) and re.search(r'\breduced revenue\b',sentence,re.I):
+            disclosed='Công ty nêu tấn công mạng hoặc lỗ hổng bảo mật có thể làm giảm doanh thu, tăng chi phí, phát sinh yêu cầu bồi thường hoặc ảnh hưởng danh tiếng.'
+        else:
+            disclosed='Báo cáo có công bố về chủ đề này; cần đọc đoạn nguồn để xác định nội dung và mức độ ảnh hưởng cụ thể.'
+        lines.append(f'- **{TOPIC_LABELS[topic]} — công bố của {filing["ticker"]}:** {disclosed} [{len(refs)}]')
+        results.append({'topic':topic,'status':'SOURCE_EXCERPTS','citation':len(refs)})
+    return {'status':'SOURCE_EXCERPTS','answer_status':'SEC_NARRATIVE_EVIDENCE',
+            'answer':'Các công bố liên quan trong filing:\n\n'+'\n'.join(lines)+
+                     '\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm.',
+            'values':[],'citations':refs,'topic_results':results,
+            'answer_completeness':{'completed':sum(x['status']=='SOURCE_EXCERPTS' for x in results),
+                                   'required':len(results)}}
+
+
 def profile(sources,key):
     rows,refs=[],[]
     for filing,part in sources:
@@ -168,15 +216,46 @@ def profile(sources,key):
 def margin(sources, question, ticker, key):
     match=MARGIN.search(folded(question))
     metric='gross_profit' if match['gross'] else 'operating_income'
-    # All other qualifiers remain in the request passed to the source gate.
-    request=re.sub(r'gross (?:profit )?margin|operating margin|biên lợi nhuận (?:gộp|hoạt động)|bien loi nhuan (?:gop|hoat dong)',
-                   ' ',question,count=1,flags=re.I).replace('%',' ')
+    raw_question=folded(question)
+    years=set(re.findall(r'\b20\d{2}\b',re.sub(r'\b20\d{2}-\d{2}-\d{2}\b',' ',raw_question)))
+    available={str(filing['report_period'][:4]) for filing,_ in sources}
+    available.update(str(filing['fiscal_year']) for filing,_ in sources if filing.get('fiscal_year'))
+    if years and not years <= available:
+        return abstain('SEC_FISCAL_PERIOD_ABSENT',
+                       'Bộ filing đang chọn không có kỳ '+', '.join(sorted(years-available))+' cho '+ticker+'.')
+    # Build an issuer-local request: contextual names may never enter the
+    # source-cell binder, and an unspecified 10-Q uses its shortest quarter.
+    filing_dates={filing['report_period'] for filing,_ in sources}
+    if len(filing_dates)!=1:
+        return abstain('SEC_FILING_PERIOD_AMBIGUOUS','Hãy chọn một filing hoặc nêu ngày kết thúc kỳ cho '+ticker+'.')
+    report_end=next(iter(filing_dates))
+    original=[] if re.search(r'\b(?:ky ngan nhat|shortest period)\b',folded(question)) else re.findall(
+        r'\b(12|13|14|24|26|36|39|52|53)\s*(?:tuan|weeks?)\b',folded(question))
+    if len(set(original))>1:
+        return abstain('SEC_MARGIN_DURATION_AMBIGUOUS','Hãy nêu một độ dài kỳ cho phép tính biên lợi nhuận.')
+    duration=(original[0]+' weeks') if original else 'three months'
+    request=f'{ticker} {duration} {report_end}'
     scoped=_scoped(sources)
-    results=[numeric_answer(scoped,request,ticker,key,metric_override=m,default_quarter=True)
-             for m in (metric,'revenue')]
-    if not all(a and a.get('status')=='SUPPORTED' and len(a.get('source_cells',[]))==1 for a in results):
-        return _combine([(m,a) for m,a in zip((metric,'revenue'),results) if a],[]) if any(results) else abstain(
-            'SEC_MARGIN_SOURCE_UNAVAILABLE','Chưa gắn được lợi nhuận và doanh thu của cùng kỳ.')
+    profit_result=numeric_answer(scoped,request,ticker,key,metric_override=metric,default_quarter=True)
+    denominators=[numeric_answer(scoped,request+' '+phrase,ticker,key,metric_override='revenue',default_quarter=True)
+                  for phrase in ('net sales','total revenue')]
+    same=('cik','filing_id','period_start','period_end','scope','unit')
+    profit_cell=profit_result['source_cells'][0] if profit_result and profit_result.get('status')=='SUPPORTED' and len(profit_result.get('source_cells',[]))==1 else None
+    compatible=[a for a in denominators if a and a.get('status')=='SUPPORTED'
+                and len(a.get('source_cells',[]))==1 and profit_cell
+                and all(a['source_cells'][0][k]==profit_cell[k] for k in same)]
+    distinct={a['source_cells'][0]['effective_value'] for a in compatible}
+    revenue_result=compatible[0] if len(distinct)==1 else None
+    results=[profit_result,revenue_result]
+    if not profit_cell or not revenue_result:
+        unavailable=[m for m,a in zip((metric,'revenue'),results) if not a or a.get('status')!='SUPPORTED']
+        reply=abstain('SEC_MARGIN_SOURCE_UNAVAILABLE','Chưa gắn được ô nguồn '+', '.join(unavailable)+' cùng kỳ cho '+ticker+'.')
+        reply['operand_results']=[{'metric':m,'status':a.get('status') if a else 'UNSUPPORTED',
+                                  'reason':a.get('reason') if a else 'SEC_SOURCE_CELL_UNAVAILABLE'}
+                                 for m,a in zip((metric,'revenue'),results)]
+        reply['denominator_candidates']=[{'status':a.get('status') if a else 'UNSUPPORTED',
+                                         'reason':a.get('reason') if a else None} for a in denominators]
+        return reply
     operands=[r['source_cells'][0] for r in results]
     dimensions=('cik','filing_id','period_start','period_end','scope','unit')
     if any(operands[0][k]!=operands[1][k] for k in dimensions):
@@ -191,9 +270,13 @@ def margin(sources, question, ticker, key):
         proof=verify_comparison(operands,[('MARGIN_PERCENT',result)])
     refs=[r['citations'][0] for r in results]
     label='Biên lợi nhuận gộp' if match['gross'] else 'Biên lợi nhuận hoạt động'
+    start,end=operands[0]['period_start'],operands[0]['period_end']
+    days=(date.fromisoformat(end)-date.fromisoformat(start)).days+1
+    duration_label=f'{days//7} tuần' if days%7==0 else f'{operands[0]["period_months"]} tháng ({days} ngày)'
     return {'status':'SUPPORTED','answer_status':'VERIFIED_ANSWER','values':[str(result)],'unit':'%',
-            'answer':f'{label} của {ticker} cho kỳ {operands[0]["period_end"]}: **{result}%**. '
-                     f'Lợi nhuận {profit:,} USD [1] ÷ doanh thu {revenue:,} USD [2] × 100.',
+            'answer':f'{label} của {ticker} cho kỳ {start}–{end} ({duration_label}): **{result}%**. '
+                     f'{operands[0]["row_label"]}: {profit:,} USD [1] ÷ '
+                     f'{operands[1]["row_label"]}: {revenue:,} USD [2] × 100.',
             'citations':refs,'source_cells':operands,'independent_verification':proof}
 
 
@@ -206,37 +289,63 @@ def _combine(tasks,missing):
         blocks.append(f'### {label}\n{answer}')
     if missing:
         blocks.append('Bộ nguồn đang chọn thiếu filing của '+', '.join(missing)+'.')
-    return {'status':'SOURCE_EXCERPTS','answer_status':'SEC_TASK_RESULTS','answer':'\n\n'.join(blocks),'values':[],
+    statuses=[a.get('status') for _,a in tasks]
+    return {'status':'SUPPORTED' if statuses and all(x=='SUPPORTED' for x in statuses) and not missing else 'SOURCE_EXCERPTS',
+            'answer_status':'SEC_TASK_RESULTS','answer':'\n\n'.join(blocks),'values':[],
             'citations':refs,'task_results':[{'label':label,'status':a['status'],'values':a.get('values',[]),
-                         'reason':a.get('reason'),'source_cells':a.get('source_cells',[])} for label,a in tasks]}
+                         'reason':a.get('reason'),'source_cells':a.get('source_cells',[])} for label,a in tasks],
+            'answer_completeness':{'completed':sum(x=='SUPPORTED' for x in statuses),
+                                   'required':len(tasks)+len(missing)}}
 
 
 def answer(index,question,ticker,key):
     started=perf_counter()
     q=folded(question)
-    groups,selected,missing,conflict=resolve_sources(index,question,ticker)
+    groups=defaultdict(list)
+    for part in partitions(index):
+        for filing in part.catalog_rows:
+            groups[filing['ticker']].append((filing,part))
     metrics=requested_metrics(q)
     is_profile=bool(PROFILE.search(q) and re.search(r'\b(?:bang|so sanh|filing|metadata)\b',q))
-    qualitative=bool(RISK.search(q) or MANAGEMENT.search(q)) and not metrics
-    if conflict or not selected:
-        reply=abstain(conflict or 'SEC_ISSUER_NOT_SELECTED','Bộ nguồn đang chọn thiếu filing của '+(', '.join(missing) or 'doanh nghiệp được hỏi')+'.')
-    elif len(selected)>1 and not is_profile and not re.search(r'\b(?:so sanh|ca ba|ca hai|compare|each|tung)\b',q):
-        reply=abstain('SEC_COMPANY_SCOPE_AMBIGUOUS','Bạn muốn hỏi '+', '.join(selected)+'? Hãy nêu doanh nghiệp hoặc yêu cầu đối chiếu từng filing.')
+    margin_match=MARGIN.search(q)
+    topics=requested_topics(q) if RISK.search(q) or MANAGEMENT.search(q) else []
+    qualitative=bool(RISK.search(q) or MANAGEMENT.search(q)) and not metrics and not margin_match
+    plan=plan_sec_question(question,groups,ticker,metrics,margin_match.group(0) if margin_match else None,
+                           topics if qualitative else ())
+    selected,missing,conflict=plan.eligible_entities,plan.unselected_entities,plan.error
+    mismatched=[task for task in plan.tasks if not any(
+        (not task.filing_form or row['form']==task.filing_form)
+        and (not task.accession or row['accession']==task.accession)
+        and (not task.period or row['report_period']==task.period)
+        for row,_ in groups[task.issuer])]
+    if mismatched:
+        reply=abstain('SEC_REQUESTED_FILING_NOT_SELECTED',
+                      'Filing, accession hoặc ngày kết thúc kỳ được hỏi không thuộc nguồn SEC đang chọn.')
+    elif conflict or not selected:
+        label=', '.join(missing) if missing else ', '.join(plan.named_entities) or 'doanh nghiệp được hỏi'
+        reply=abstain(conflict or 'SEC_ISSUER_NOT_SELECTED','Bộ nguồn đang chọn thiếu filing của '+label+
+                      '. Hãy chọn hoặc nhập đúng filing rồi hỏi lại.' if conflict=='SEC_ISSUER_NOT_SELECTED' else
+                      'Hãy nêu rõ doanh nghiệp cần phân tích trong bộ nguồn đang chọn.')
     elif is_profile:
         reply=profile([source for issuer in selected for source in groups[issuer]],key)
     elif qualitative:
-        reply=narrative([source for issuer in selected for source in groups[issuer]],q,key)
-    elif MARGIN.search(q) and len(selected)==1:
-        reply=margin(groups[selected[0]],question,selected[0],key)
+        sources=[source for issuer in selected for source in groups[issuer]]
+        reply=narrative_obligations(sources,topics,key) if topics else narrative(sources,q,key)
+    elif margin_match:
+        tasks=[(issuer+' · biên lợi nhuận hoạt động',margin(groups[issuer],question,issuer,key)) for issuer in selected]
+        reply=tasks[0][1] if len(tasks)==1 and not missing else _combine(tasks,missing)
+        if len(tasks)>1:
+            reply['answer']+='\n\nCác kỳ ngắn nhất được báo cáo có thể là 12 tuần, 13 tuần hoặc ba tháng; '
+            reply['answer']+='không coi chúng là các khoảng thời gian hoàn toàn đồng nhất.'
     elif metrics:
         tasks=[]
-        if len(selected)>1 and len(metrics)>1:
-            # A shared cross-company query can safely compare a single metric.
-            # Separate clauses are needed to assign disjoint metric obligations.
-            return abstain('SEC_ENTITY_METRIC_BINDING_AMBIGUOUS','Hãy ghi chỉ tiêu và kỳ cạnh tên từng doanh nghiệp để tôi gắn đúng ô nguồn.')
         for issuer in selected:
             scope=_scoped(groups[issuer])
-            for metric in metrics[:4]:
+            for metric in metrics:
+                if len(tasks)>=12:
+                    tasks.append((issuer+' · '+metric,abstain('SEC_TASK_BUDGET_REACHED',
+                                  'Chưa chạy tác vụ này vì giới hạn 12 tác vụ mỗi câu hỏi.')))
+                    continue
                 response=numeric_answer(scope,question,issuer,key,metric_override=metric,default_quarter=True,
                                         single_observation=len(selected)>1)
                 if response is None:
@@ -244,8 +353,11 @@ def answer(index,question,ticker,key):
                 tasks.append((issuer+' · '+metric.replace('_',' '),response))
         reply=tasks[0][1] if len(tasks)==1 and not missing else _combine(tasks,missing)
     else:
-        return None
-    if reply.get('reason')=='SEC_FISCAL_PERIOD_ABSENT' and len(selected)==1:
+        if re.search(r'\b(?:bao nhieu|tinh|ty le|phan tram|doanh thu|loi nhuan|net sales|revenue|income|margin|percent)\b',q):
+            reply=abstain('SEC_NUMERIC_INTENT_NOT_PLANNED','Chưa xác định đủ chỉ tiêu hoặc phép tính tài chính từ câu hỏi. Hãy nêu chỉ tiêu và kỳ cần xem.')
+        else:
+            return None
+    if reply.get('reason')=='SEC_FISCAL_PERIOD_ABSENT' and len(selected)==1 and not margin_match:
         evidence=profile(groups[selected[0]],key)
         reply['answer']+='\n\n'+evidence['answer']
         reply['citations']=evidence['citations']
@@ -254,5 +366,16 @@ def answer(index,question,ticker,key):
     eligible=[f['filing_id'] for t in selected for f,_ in groups[t]]
     reply['sec_source_selection']={'eligible_filing_ids':eligible,'excluded_filing_ids':
         [f['filing_id'] for t in groups if t not in selected for f,_ in groups[t]],'unselected_issuers':missing}
+    reply['sec_question_plan']=plan.public()
+    if 'answer_completeness' not in reply:
+        complete=bool(reply.get('status')=='SUPPORTED' and reply.get('citations'))
+        reply['answer_completeness']={'completed':int(complete),'required':max(1,len(plan.tasks)+len(missing))}
+    if reply.get('status')=='NEEDS_CLARIFICATION' and reply.get('reason') in {
+            'SEC_COMPANY_SCOPE_AMBIGUOUS','SEC_PERIOD_DURATION_REQUIRED','SEC_COMPARISON_PERIODS_REQUIRED'}:
+        slot='issuer' if reply['reason']=='SEC_COMPANY_SCOPE_AMBIGUOUS' else 'duration' if reply['reason']=='SEC_PERIOD_DURATION_REQUIRED' else 'period'
+        reply['pending_clarification']={'original_task':question,'missing_slot':slot,
+            'acceptable_type':'selected issuer or comparison set' if slot=='issuer' else 'reporting period or duration',
+            'chosen_issuers':selected,'selected_filing_ids':plan.selected_filing_ids,
+            'metric_constraints':metrics,'time_constraints':re.findall(r'\b20\d{2}(?:-\d{2}-\d{2})?\b',q)}
     reply.setdefault('timings_ms',{})['orchestration_total']=(perf_counter()-started)*1000
     return reply

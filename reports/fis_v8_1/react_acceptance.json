@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "browser": "156.0.8078.4",
+  "api_port": 18110,
+  "records": [
+    {
+      "id": "F01",
+      "status": "SUPPORTED",
+      "answered": 1,
+      "requested": 1,
+      "citations": 2,
+      "selected_filing_ids": [
+        "sec:0000909832:0000909832-26-000051",
+        "sec:0000354950:0001628280-26-058715",
+        "sec:0000080424:0000080424-26-000256",
+        "sec:0000789019:0001193125-25-256321"
+      ],
+      "ui_visible": true,
+      "answer": "Biên lợi nhuận hoạt động của HD cho kỳ 2026-05-04–2026-08-02 (13 tuần): **14.29%**. Operating income: 6,839,000,000 USD [1] ÷ Net sales: 47,861,000,000 USD [2] × 100."
+    },
+    {
+      "id": "F02",
+      "status": "SUPPORTED",
+      "answered": 3,
+      "requested": 3,
+      "citations": 6,
+      "selected_filing_ids": [
+        "sec:0000909832:0000909832-26-000051",
+        "sec:0000354950:0001628280-26-058715",
+        "sec:0000080424:0000080424-26-000256",
+        "sec:0000789019:0001193125-25-256321"
+      ],
+      "ui_visible": true,
+      "answer": "### MSFT · operating income\nLợi nhuận hoạt động của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 30.552 | 0001193125-25-256321 [1] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 37.961 | 0001193125-25-256321 [2] |\n\nChênh lệch = 37.961 − 30.552 = **7.409 triệu USD**. [1][2]\n\nMức thay đổi = chênh lệch ÷ 30.552 × 100 = **24,25%**. [1][2]\n\n### MSFT · income\nLợi nhuận ròng của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 24.667 | 0001193125-25-256321 [3] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 27.747 | 0001193125-25-256321 [4] |\n\nChênh lệch = 27.747 − 24.667 = **3.080 triệu USD**. [3][4]\n\nMức thay đổi = chênh lệch ÷ 24.667 × 100 = **12,49%**. [3][4]\n\n### MSFT · revenue\nDoanh thu của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 65.585 | 0001193125-25-256321 [5] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 77.673 | 0001193125-25-256321 [6] |\n\nChênh lệch = 77.673 − 65.585 = **12.088 triệu USD**. [5][6]\n\nMức thay đổi = chênh lệch ÷ 65.585 × 100 = **18,43%**. [5][6]"
+    },
+    {
+      "id": "F03",
+      "status": "SOURCE_EXCERPTS",
+      "answered": 2,
+      "requested": 2,
+      "citations": 2,
+      "selected_filing_ids": [
+        "sec:0000909832:0000909832-26-000051",
+        "sec:0000354950:0001628280-26-058715",
+        "sec:0000080424:0000080424-26-000256",
+        "sec:0000789019:0001193125-25-256321"
+      ],
+      "ui_visible": true,
+      "answer": "Các công bố liên quan trong filing:\n\n- **Cạnh tranh — công bố của MSFT:** Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh. [1]\n- **An ninh mạng — công bố của MSFT:** Công ty nêu tấn công mạng hoặc lỗ hổng bảo mật có thể làm giảm doanh thu, tăng chi phí, phát sinh yêu cầu bồi thường hoặc ảnh hưởng danh tiếng. [2]\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm."
+    },
+    {
+      "id": "F04",
+      "status": "NEEDS_CLARIFICATION",
+      "answered": 0,
+      "requested": 1,
+      "citations": 0,
+      "selected_filing_ids": [
+        "sec:0000909832:0000909832-26-000051",
+        "sec:0000354950:0001628280-26-058715",
+        "sec:0000080424:0000080424-26-000256",
+        "sec:0000789019:0001193125-25-256321"
+      ],
+      "ui_visible": true,
+      "answer": "Bộ nguồn đang chọn thiếu filing của AMZN. Hãy chọn hoặc nhập đúng filing rồi hỏi lại."
+    },
+    {
+      "id": "F05",
+      "status": "NEEDS_CLARIFICATION",
+      "answered": 0,
+      "requested": 1,
+      "citations": 0,
+      "selected_filing_ids": [
+        "sec:0000909832:0000909832-26-000051",
+        "sec:0000354950:0001628280-26-058715",
+        "sec:0000080424:0000080424-26-000256",
+        "sec:0000789019:0001193125-25-256321"
+      ],
+      "ui_visible": true,
+      "answer": "Bộ nguồn đang chọn thiếu filing của PEP. Hãy chọn hoặc nhập đúng filing rồi hỏi lại."
+    },
+    {
+      "id": "F06",
+      "status": "SUPPORTED",
+      "answered": 3,
+      "requested": 3,
+      "citations": 6,
+      "selected_filing_ids": [
+        "sec:0000909832:0000909832-26-000051",
+        "sec:0000354950:0001628280-26-058715",
+        "sec:0000080424:0000080424-26-000256",
+        "sec:0000789019:0001193125-25-256321"
+      ],
+      "ui_visible": true,
+      "answer": "### COST · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của COST cho kỳ 2026-02-16–2026-05-10 (12 tuần): **3.99%**. Operating income: 2,815,000,000 USD [1] ÷ Total revenue: 70,527,000,000 USD [2] × 100.\n\n### HD · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của HD cho kỳ 2026-05-04–2026-08-02 (13 tuần): **14.29%**. Operating income: 6,839,000,000 USD [3] ÷ Net sales: 47,861,000,000 USD [4] × 100.\n\n### PG · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của PG cho kỳ 2026-07-01–2026-09-30 (3 tháng (92 ngày)): **25.51%**. OPERATING INCOME: 5,937,000,000 USD [5] ÷ NET SALES: 23,276,000,000 USD [6] × 100.\n\nCác kỳ ngắn nhất được báo cáo có thể là 12 tuần, 13 tuần hoặc ba tháng; không coi chúng là các khoảng thời gian hoàn toàn đồng nhất."
+    }
+  ],
+  "page_errors": []
+}

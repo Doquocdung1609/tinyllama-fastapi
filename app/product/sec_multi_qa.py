@@ -35,12 +35,12 @@ METRIC_PATTERNS = {
     'investing_cash': r'cash (?:flow|from|used in) investing activities|luu chuyen tien (?:thuan )?tu hoat dong dau tu',
     'financing_cash': r'cash (?:flow|from|used in) financing activities|luu chuyen tien (?:thuan )?tu hoat dong tai chinh',
     'comprehensive_income': r'(?:total )?comprehensive income|thu nhap toan dien',
-    'operating_income': r'operating (?:income|profit)|loi nhuan (?:tu )?hoat dong kinh doanh',
+    'operating_income': r'operating (?:income|profit)|loi nhuan (?:tu )?hoat dong(?: kinh doanh)?|lai hoat dong',
     'gross_profit': r'gross profit|loi nhuan gop',
     'current_assets': r'(?:total )?current assets|tai san ngan han',
     'current_liabilities': r'(?:total )?current liabilities|no ngan han',
     'liabilities': r'total liabilities|tong no phai tra',
-    'income': r'net income|loi nhuan rong|loi nhuan sau thue',
+    'income': r'net income|loi nhuan rong|thu nhap rong|loi nhuan sau thue',
     'assets': r'total assets|tong tai san',
     'revenue': r'(?:total )?(?:net sales|revenue|net revenue)|(?:tong )?doanh thu(?: thuan)?',
 }
@@ -166,6 +166,28 @@ def abstain(reason, text, *, timings=None):
 
 
 def resolve_followup(question, previous):
+    pending = previous.get('pending_clarification') or {}
+    q = folded(question)
+    short_issuer=re.fullmatch(r'(?:con|the|what about)\s+(COST|HD|PG|MSFT|AMZN|PEP)(?:\s+thi\s+sao)?[?!. ]*',q,re.I)
+    previous_plan=previous.get('sec_question_plan') or {}
+    if short_issuer and previous_plan.get('intent') in {'MARGIN','NUMERIC'}:
+        prior=previous_plan.get('named_entities') or []
+        original=previous_plan.get('original_question') or ''
+        if len(prior)==1 and original:
+            return re.sub(r'(?<!\w)'+re.escape(prior[0])+r'(?!\w)',short_issuer[1].upper(),original,flags=re.I)
+    if pending and pending.get('original_task'):
+        original=pending['original_task']
+        slot=pending.get('missing_slot')
+        if slot=='issuer':
+            from app.product.sec_ontology_v8 import ISSUERS
+            chosen=[symbol for symbol,names in ISSUERS.items() if any(
+                re.search(r'(?<!\w)'+re.escape(folded(name))+r'(?!\w)',q) for name in (*names,symbol))]
+            if len(chosen)==1:
+                return original+'; chỉ sử dụng '+chosen[0]
+            if re.fullmatch(r'(?:ca ba|ca hai|tat ca|all of them|all three)[?!. ]*',q):
+                return original+'; so sánh từng doanh nghiệp'
+        if slot in {'duration','period'} and re.search(r'\b(?:\d+\s*(?:tuan|weeks?|thang|months?)|cung ky nam truoc|same period last year|fy\s*20\d{2})\b',q):
+            return original+'; '+question
     context = previous.get('sec_context') or {}
     if not context:
         return question
@@ -220,7 +242,7 @@ def answer(index, question, ticker, key, operation='EXTRACT', *, metric_override
     period = period_for(q,sources,metric)
     if default_quarter and period is None and len(sources)==1 and sources[0][0]['form']=='10-Q':
         period=3
-    same_period = bool(re.search(r'\b(?:cung ky|same period|prior.year|comparative period)\b',q))
+    same_period = bool(re.search(r'\b(?:cung ky|cung quy nam (?:ngoai|truoc)|same period|prior.year|comparative period)\b',q))
     different_durations = isinstance(period,tuple) and len(period)>1
     if different_durations and len(period)>4:
         return abstain('SEC_TOO_MANY_DURATIONS','Hãy chọn tối đa bốn độ dài kỳ để đối chiếu.')

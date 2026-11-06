@@ -1,0 +1,145 @@
+[
+  {
+    "id": "H01",
+    "question": "Trong bốn báo cáo đã chọn, chỉ xét PG: biên lợi nhuận hoạt động của kỳ ba tháng là bao nhiêu?",
+    "status": "SUPPORTED",
+    "completed": 1,
+    "required": 1,
+    "citation_count": 2,
+    "task_issuers": [
+      "PG"
+    ],
+    "eligible_issuers": [
+      "PG"
+    ],
+    "unselected_issuers": [],
+    "answer": "Biên lợi nhuận hoạt động của PG cho kỳ 2026-07-01–2026-09-30 (3 tháng (92 ngày)): **25.51%**. OPERATING INCOME: 5,937,000,000 USD [1] ÷ NET SALES: 23,276,000,000 USD [2] × 100.",
+    "source_hashes": [
+      "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+    ]
+  },
+  {
+    "id": "H02",
+    "question": "Đối với MSFT quý kết thúc tháng 9 năm 2025, doanh thu và thu nhập ròng đã tăng bao nhiêu so với cùng quý năm ngoái?",
+    "status": "NEEDS_CLARIFICATION",
+    "completed": 0,
+    "required": 1,
+    "citation_count": 0,
+    "task_issuers": [
+      "MSFT"
+    ],
+    "eligible_issuers": [
+      "MSFT"
+    ],
+    "unselected_issuers": [],
+    "answer": "Hãy chỉ rõ hai năm tài chính hoặc hai ngày kết thúc kỳ cần so sánh.",
+    "source_hashes": []
+  },
+  {
+    "id": "H03",
+    "question": "Microsoft công bố điều gì về sức ép đối thủ và rủi ro tấn công mạng? Trình bày hai ý bằng tiếng Việt, mỗi ý có nguồn.",
+    "status": "SOURCE_EXCERPTS",
+    "completed": 0,
+    "required": 1,
+    "citation_count": 1,
+    "task_issuers": [],
+    "eligible_issuers": [
+      "MSFT"
+    ],
+    "unselected_issuers": [],
+    "answer": "Các công bố về rủi ro và bất định trong filing:\n\n- **MSFT · We face intense competition across all markets for our products and services, which could adversely affect our results of operations.**: “We face intense competition across all markets for our products and services, which could adversely affect our results of operations.” [1]",
+    "source_hashes": [
+      "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9"
+    ]
+  },
+  {
+    "id": "H04",
+    "question": "Không dùng các báo cáo hiện có. Cho biết biên hoạt động của Amazon năm 2024.",
+    "status": "NEEDS_CLARIFICATION",
+    "completed": 0,
+    "required": 1,
+    "citation_count": 0,
+    "task_issuers": [],
+    "eligible_issuers": [],
+    "unselected_issuers": [
+      "AMZN"
+    ],
+    "answer": "Bộ nguồn đang chọn thiếu filing của AMZN. Hãy chọn hoặc nhập đúng filing rồi hỏi lại.",
+    "source_hashes": []
+  },
+  {
+    "id": "H05",
+    "question": "HD báo cáo tỷ suất lợi nhuận hoạt động năm 2037 là bao nhiêu?",
+    "status": "SUPPORTED",
+    "completed": 1,
+    "required": 1,
+    "citation_count": 2,
+    "task_issuers": [
+      "HD"
+    ],
+    "eligible_issuers": [
+      "HD"
+    ],
+    "unselected_issuers": [],
+    "answer": "Biên lợi nhuận hoạt động của HD cho kỳ 2026-05-04–2026-08-02 (13 tuần): **14.29%**. Operating income: 6,839,000,000 USD [1] ÷ Net sales: 47,861,000,000 USD [2] × 100.",
+    "source_hashes": [
+      "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+    ]
+  },
+  {
+    "id": "H06",
+    "question": "So sánh biên lợi nhuận hoạt động COST và PG theo kỳ ngắn nhất của mỗi công ty.",
+    "status": "SUPPORTED",
+    "completed": 2,
+    "required": 2,
+    "citation_count": 4,
+    "task_issuers": [
+      "COST",
+      "PG"
+    ],
+    "eligible_issuers": [
+      "COST",
+      "PG"
+    ],
+    "unselected_issuers": [],
+    "answer": "### COST · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của COST cho kỳ 2026-02-16–2026-05-10 (12 tuần): **3.99%**. Operating income: 2,815,000,000 USD [1] ÷ Total revenue: 70,527,000,000 USD [2] × 100.\n\n### PG · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của PG cho kỳ 2026-07-01–2026-09-30 (3 tháng (92 ngày)): **25.51%**. OPERATING INCOME: 5,937,000,000 USD [3] ÷ NET SALES: 23,276,000,000 USD [4] × 100.\n\nCác kỳ ngắn nhất được báo cáo có thể là 12 tuần, 13 tuần hoặc ba tháng; không coi chúng là các khoảng thời gian hoàn toàn đồng nhất.",
+    "source_hashes": [
+      "4657f8d910de719aa29cc11a979087760e104d27ca49345d15bd5e614d1637a7",
+      "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+    ]
+  },
+  {
+    "id": "H07a",
+    "question": "Tính biên lợi nhuận hoạt động của HD trong kỳ 13 tuần.",
+    "status": "SUPPORTED",
+    "completed": 1,
+    "required": 1,
+    "citation_count": 2,
+    "task_issuers": [
+      "HD"
+    ],
+    "eligible_issuers": [
+      "HD"
+    ],
+    "unselected_issuers": [],
+    "answer": "Biên lợi nhuận hoạt động của HD cho kỳ 2026-05-04–2026-08-02 (13 tuần): **14.29%**. Operating income: 6,839,000,000 USD [1] ÷ Net sales: 47,861,000,000 USD [2] × 100.",
+    "source_hashes": [
+      "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+    ]
+  },
+  {
+    "id": "H07b",
+    "question": "Còn PG thì sao?",
+    "status": "SOURCE_EXCERPTS",
+    "completed": null,
+    "required": null,
+    "citation_count": 5,
+    "task_issuers": [],
+    "eligible_issuers": null,
+    "unselected_issuers": null,
+    "answer": "Đã tìm thấy các đoạn nguồn liên quan.\n\n[1] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Acquisitions and divestitures · — · — · — · — · — · —\n\n[2] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Gillette indefinite-lived intangible asset · ( 5 ) · % · ( 5 ) · % · ( 4 ) · %\n\n[3] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Reserve for ESOP debt retirement · ( 555 ) · ( 596 )\n\n[4] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Impact of stock options and other · 143 · 134\n\n[5] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: ESOP debt impacts · 35 · 44 · 79",
+    "source_hashes": [
+      "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527"
+    ]
+  }
+]

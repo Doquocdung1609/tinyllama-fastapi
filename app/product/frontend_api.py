@@ -227,12 +227,22 @@ def financial_chat(payload:ChatRequest):
             from app.product.sec_viewer import server_key
             if history:
                 question=resolve_sec_followup(payload.question,history[-1]['response'])
-            try:
-                answer = sec_answer(selected_index, question, payload.ticker, server_key(w.root)) if selected_index is not None else None
-            except (ValueError,OSError,RuntimeError):
-                answer={'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW',
-                        'answer':'Chưa đối chiếu được ô tài chính trong nguồn SEC đã chọn. Các đoạn liên quan chỉ dùng để kiểm tra thêm.',
-                        'reason':'SEC_SOURCE_CELL_VERIFICATION_FAILED','values':[],'citations':[]}
+            pending=history[-1]['response'].get('pending_clarification') if history else None
+            still_missing=bool(pending and question==payload.question and re.fullmatch(
+                r'(?:dung roi|chinh xac|yes|correct|ok|okay)[?!. ]*',folded(question)))
+            if still_missing:
+                answer={'status':'NEEDS_CLARIFICATION','answer_status':'REQUIRES_SOURCE_REVIEW',
+                        'answer':'Tôi vẫn cần '+('tên doanh nghiệp cần phân tích.' if pending['missing_slot']=='issuer'
+                                           else 'kỳ báo cáo hoặc độ dài kỳ cần so sánh.'),
+                        'reason':'SEC_CLARIFICATION_STILL_MISSING','values':[],'citations':[],
+                        'pending_clarification':pending}
+            else:
+                try:
+                    answer = sec_answer(selected_index, question, payload.ticker, server_key(w.root)) if selected_index is not None else None
+                except (ValueError,OSError,RuntimeError):
+                    answer={'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW',
+                            'answer':'Chưa đối chiếu được ô tài chính trong nguồn SEC đã chọn. Các đoạn liên quan chỉ dùng để kiểm tra thêm.',
+                            'reason':'SEC_SOURCE_CELL_VERIFICATION_FAILED','values':[],'citations':[]}
             if selected_index is None:
                 answer={'status':'SOURCE_UNAVAILABLE','answer_status':'SOURCE_UNAVAILABLE',
                         'answer':'Không truy cập được chỉ mục hoặc nguồn SEC đang chọn.',

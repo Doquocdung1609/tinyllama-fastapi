@@ -94,9 +94,9 @@ def plan_query(question: str) -> A5Plan:
     narrative = bool(re.search(r"\b(?:policy|accounting treatment|describe|explain|disclose|disclosure|corporate changes|corporate action|chính sách|giải thích)\b", q))
     intent = "NARRATIVE_POLICY" if narrative and metric is None else "FINANCIAL_NUMERIC" if metric else "UNKNOWN"
     scope = ("CONSOLIDATED" if re.search(r"\bconsolidated\b|\bhợp nhất\b", q) else
-             "PARENT" if re.search(r"\bparent(?: company| only)?\b|\bcông ty mẹ\b|\briêng\b", q) else None)
+             "PARENT" if re.search(r"\bparent(?: company| only)?\b|\bcông ty mẹ\b|\bbáo cáo riêng\b|\briêng công ty mẹ\b", q) else None)
     currency = "VND" if re.search(r"\bvnd\b|\bđồng\b", q) else "USD" if re.search(r"\busd\b|\bdollars?\b", q) else None
-    unit = ("BILLION" if re.search(r"\bbillions?\b|\btỷ\b", q) else
+    unit = ("BILLION" if re.search(r"\bbillions?\b|\btỷ\s*(?:đồng|usd|dollars?)\b", q) else
             "MILLION" if re.search(r"\bmillions?\b|\btriệu\b", q) else
             "PERCENT" if re.search(r"\bpercent(?:age)?\b|%|\bphần trăm\b", q) else None)
     unresolved = []

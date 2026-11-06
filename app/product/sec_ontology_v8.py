@@ -58,8 +58,12 @@ METRICS = (
     MetricTerm("ACCOUNTS_PAYABLE", "accounts payable", (r"\baccounts payable\b", r"\bphải trả người bán\b"), "BALANCE"),
 )
 
-EXTRA_ISSUERS = {"HPG": ("hòa phát", "hoa phat", "hpg"), "BIDV": ("bidv", "ngân hàng đầu tư và phát triển việt nam")}
-ISSUERS = {**ISSUER_ALIASES, **EXTRA_ISSUERS}
+EXTRA_ISSUERS = {"HPG": ("hòa phát", "hoa phat", "hpg"), "BIDV": ("bidv", "ngân hàng đầu tư và phát triển việt nam"),
+                 "COST": ("costco", "costco wholesale"), "HD": ("home depot", "the home depot"),
+                 "PG": ("procter & gamble", "procter and gamble", "p&g"),
+                 "MSFT": ("microsoft",), "AMZN": ("amazon",), "PEP": ("pepsico", "pepsi co")}
+ISSUERS = {symbol: tuple(dict.fromkeys((*ISSUER_ALIASES.get(symbol, ()), *EXTRA_ISSUERS.get(symbol, ()))))
+           for symbol in ISSUER_ALIASES.keys() | EXTRA_ISSUERS.keys()}
 
 
 def _has(q: str, pattern: str) -> bool:
