@@ -15,6 +15,13 @@ active=ContextVar('product_sec_index',default=None)
 lock=Lock()
 submission_lock=Lock()
 request_limiter=RateLimiter(1)
+IMPORT_STAGES={'DOWNLOADING','SOURCE_VERIFIED','EXTRACTING','EXTRACTED','INDEXING','BUILDING_LEXICAL'}
+STALE_SECONDS=240
+JOB_LIMIT_SECONDS=3600
+
+
+def import_running(row):
+    return row['status'] in IMPORT_STAGES or (row['status']=='LEXICAL_READY' and row['reason']=='BUILDING_DENSE')
 def serialize_submission(fn):
     @wraps(fn)
     def call(*args,**kwargs):
@@ -94,13 +101,22 @@ def federated_search(index, search, top_k):
     """Merge local ranks deterministically without comparing cross-index scores."""
     from time import perf_counter
     start = perf_counter()
-    responses = []
+    responses, unavailable = [], []
     for part in index.partitions:
-        result = search(part)
+        try:
+            result = search(part)
+        except ValueError as exc:
+            if str(exc)!='SEC_DENSE_GENERATION_NOT_READY':
+                raise
+            unavailable.append({'reason':str(exc),'generation':part.identity['generation'],
+                                'filing_ids':[f['filing_id'] for f in part.catalog_rows]})
+            continue
         if result.get('status') == 'NO_ELIGIBLE_FILING':
             continue
         generation = part.identity['generation']
         responses.append((generation, result))
+    if unavailable and not responses:
+        raise ValueError('SEC_DENSE_GENERATION_NOT_READY')
     merged = [(hit['rank'], generation, hit['chunk_id'], hit)
               for generation, result in responses for hit in result['results']]
     merged.sort(key=lambda item: item[:3])
@@ -111,7 +127,7 @@ def federated_search(index, search, top_k):
             'generation':sha256(json.dumps(sorted(g for g, _ in responses)).encode()).hexdigest(),
             'generations':[g for g, _ in responses],
             'candidate_count':sum(r.get('candidate_count', len(r['results'])) for _,r in responses),
-            'latency_ms':(perf_counter()-start)*1000, 'partition_fusion':'LOCAL_RANK_THEN_GENERATION'}
+            'latency_ms':(perf_counter()-start)*1000, 'partition_fusion':'LOCAL_RANK_THEN_GENERATION','unavailable_partitions':unavailable}
 
 
 def partitions(index):
@@ -201,13 +217,59 @@ def for_reference(reference,secret):
                 continue
             if data['generation']==generation:return index(row['id'])
     raise ValueError('SOURCE_GENERATION_NOT_REGISTERED')
+def job_progress(row):
+    source,vectors=paths(row['id'])
+    result={'last_progress_at':row['updated']}
+    # Completed batches are checkpointed only after Qdrant acknowledged the upsert.
+    for path in (source/'extraction-progress.json',source/'lexical-publication.json',
+                 vectors/'progress.json',vectors/'generation_manifest.json'):
+        try:
+            data=json.loads(path.read_bytes())
+            result['last_progress_at']=max(result['last_progress_at'],path.stat().st_mtime)
+        except (OSError,ValueError):
+            continue
+        if path.name=='extraction-progress.json':
+            result.update({k:data[k] for k in ('source_bytes','tables','extracted_chunks') if k in data})
+        elif path.name=='lexical-publication.json':
+            result['published_chunks']=data.get('parent_count')
+        else:
+            result['completed_embeddings']=data.get('completed_points')
+            result['target_embeddings']=data.get('target_points',data.get('parent_count'))
+    return result
+
+
+def recover_job(key, reason):
+    try:
+        state=indexed_generation(key)['state']
+    except (OSError,ValueError,KeyError):
+        state='RETRYABLE'
+    update(key,state,None if state=='READY' else reason)
+
+
 def process(key):
-    # One worker process at a time on 8 GB machines; crash state is durable.
+    # Only supervise the child created by this process. Source and lexical
+    # receipts remain available even after an interrupted embedding batch.
     with lock:
-        result=subprocess.run([sys.executable,'-m','app.product.sec_library_worker',key],cwd=ROOT_DIR,
-            stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
-            creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
-        if result.returncode:update(key,'RETRYABLE','PROCESS_INTERRUPTED_OR_RESOURCE_LIMIT')
+        try:
+            with subprocess.Popen([sys.executable,'-m','app.product.sec_library_worker',key],cwd=ROOT_DIR,
+                    stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,
+                    creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0) as worker:
+                deadline=time.monotonic()+JOB_LIMIT_SECONDS
+                while True:
+                    try:
+                        code=worker.wait(timeout=5)
+                        if code:
+                            recover_job(key,'PROCESS_INTERRUPTED_OR_RESOURCE_LIMIT')
+                        return
+                    except subprocess.TimeoutExpired:
+                        row=next(r for r in rows() if r['id']==key)
+                        if time.monotonic()>=deadline or time.time()-job_progress(row)['last_progress_at']>=STALE_SECONDS:
+                            worker.kill()
+                            worker.wait()
+                            recover_job(key,'WORKER_PROGRESS_TIMEOUT_RETRY')
+                            return
+        except OSError:
+            recover_job(key,'WORKER_START_FAILED_RETRY')
 
 def router(require_token):
     r=APIRouter(prefix='/sec/library',dependencies=[Depends(require_token)])
@@ -223,13 +285,17 @@ def router(require_token):
             try:portalocker.lock(stream,portalocker.LOCK_EX|portalocker.LOCK_NB)
             except portalocker.LockException:return
             try:
-                with db() as c:c.execute("UPDATE filings SET status='RETRYABLE',reason='PROCESS_RESTARTED_RETRY_IMPORT' WHERE status IN ('DOWNLOADING','EXTRACTING','INDEXING')")
+                for row in rows():
+                    if import_running(row):
+                        recover_job(row['id'],'PROCESS_RESTARTED_RETRY_IMPORT')
             finally:portalocker.unlock(stream)
     @r.get('')
     def listing():
         path=root()/'private-contact.json'
         return {'contact_configured':path.exists() or bool(get_settings().sec_user_agent),
-            'filings':[{**{k:v for k,v in x.items() if k!='metadata'},'metadata':json.loads(x['metadata'])} for x in rows()]}
+            'dense_build_enabled':os.getenv('STUDIO_SEC_IMPORT_LEXICAL_ONLY')!='1',
+            'filings':[{**{k:v for k,v in x.items() if k!='metadata'},'metadata':json.loads(x['metadata']),
+                        'progress':job_progress(x)} for x in rows()]}
     @r.get('/sec47')
     def recovery_catalog():
         path=root()/'sec47-status.json'
@@ -285,7 +351,7 @@ def router(require_token):
         except Exception:existing=[]
         if json.loads(row['metadata'])['filing_id'] in {f['filing_id'] for f in existing}:
             return {'id':row['id'],'status':'READY','duplicate':True,'store':'EXISTING_DEMO'}
-        if row['status'] in {'READY','DOWNLOADING','EXTRACTING','INDEXING'}:return {'id':row['id'],'status':row['status'],'duplicate':True}
+        if row['status']=='READY' or import_running(row):return {'id':row['id'],'status':row['status'],'duplicate':True}
         # Removing a library entry never destroys its authenticated generation.
         # Re-add validates that generation instead of rebuilding it with today's date.
         source_root,vector_root=paths(row['id'])
@@ -298,15 +364,19 @@ def router(require_token):
                 if valid:
                     update(row['id'],'READY');return {'id':row['id'],'status':'READY','reused_authenticated_generation':True}
             except Exception:pass
-        if any(r['status'] in {'DOWNLOADING','EXTRACTING','INDEXING'} for r in rows()):raise HTTPException(429,detail={'code':'SEC_IMPORT_BUSY_WAIT_FOR_CURRENT_JOB'})
-        update(row['id'],'DOWNLOADING');Thread(target=process,args=(row['id'],),daemon=True).start()
-        return {'id':row['id'],'status':'DOWNLOADING'}
+        if any(import_running(r) for r in rows()):raise HTTPException(429,detail={'code':'SEC_IMPORT_BUSY_WAIT_FOR_CURRENT_JOB'})
+        if row['status']=='LEXICAL_READY' and os.getenv('STUDIO_SEC_IMPORT_LEXICAL_ONLY')=='1':
+            return {'id':row['id'],'status':'LEXICAL_READY','duplicate':True}
+        state='LEXICAL_READY' if row['status']=='LEXICAL_READY' else 'DOWNLOADING'
+        update(row['id'],state,'BUILDING_DENSE' if state=='LEXICAL_READY' else None)
+        Thread(target=process,args=(row['id'],),daemon=True).start()
+        return {'id':row['id'],'status':state}
     @r.delete('/{key}')
     def remove(key:str):
         with db() as c:
-            row=c.execute('SELECT status FROM filings WHERE id=?',(key,)).fetchone()
+            row=c.execute('SELECT status,reason FROM filings WHERE id=?',(key,)).fetchone()
             if not row:raise HTTPException(404,detail={'code':'USER_FILING_NOT_FOUND'})
-            if row['status'] in {'DOWNLOADING','EXTRACTING','INDEXING'}:raise HTTPException(409,detail={'code':'IMPORT_IN_PROGRESS'})
+            if import_running(row):raise HTTPException(409,detail={'code':'IMPORT_IN_PROGRESS'})
             c.execute('UPDATE filings SET status=?,updated=? WHERE id=?',('CANCELLED',time.time(),key))
         return {'removed_from_library':True,'raw_retained_for_audit':True}
     return r

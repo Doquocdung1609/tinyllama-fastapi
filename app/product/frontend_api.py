@@ -222,12 +222,13 @@ def financial_chat(payload:ChatRequest):
         if payload.source=='US_SEC':
             from app.product.faith_r_product import evidence_answer
             from app.product.assistant_answer import contract
-            from app.product.sec_multi_qa import answer as sec_numeric, resolve_followup as resolve_sec_followup
+            from app.product.sec_multi_qa import resolve_followup as resolve_sec_followup
+            from app.product.sec_question import answer as sec_answer
             from app.product.sec_viewer import server_key
             if history:
                 question=resolve_sec_followup(payload.question,history[-1]['response'])
             try:
-                answer = sec_numeric(selected_index, question, payload.ticker, server_key(w.root)) if selected_index is not None else None
+                answer = sec_answer(selected_index, question, payload.ticker, server_key(w.root)) if selected_index is not None else None
             except (ValueError,OSError,RuntimeError):
                 answer={'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW',
                         'answer':'Chưa đối chiếu được ô tài chính trong nguồn SEC đã chọn. Các đoạn liên quan chỉ dùng để kiểm tra thêm.',
@@ -236,10 +237,7 @@ def financial_chat(payload:ChatRequest):
                 answer={'status':'SOURCE_UNAVAILABLE','answer_status':'SOURCE_UNAVAILABLE',
                         'answer':'Không truy cập được chỉ mục hoặc nguồn SEC đang chọn.',
                         'reason':'SEC_SELECTED_INDEX_UNAVAILABLE','values':[],'citations':[]}
-            needs_scope=answer and answer.get('reason') in {
-                'SEC_COMPANY_SCOPE_AMBIGUOUS','SEC_COMPANY_SCOPE_CONFLICT','SEC_PERIOD_DURATION_REQUIRED',
-                'SEC_PERIOD_REQUIRED','SEC_QUARTER_END_REQUIRED','SEC_COMPARISON_PERIODS_REQUIRED'}
-            if selected_index is not None and (not answer or answer['status']!='SUPPORTED' and not needs_scope):
+            if selected_index is not None and answer is None:
                 # Numeric QA goes directly to authenticated rows, avoiding an
                 # unrelated dense query on the successful verification path.
                 profile='baseline' if answer else 'faith_r_product_v1'
@@ -547,6 +545,7 @@ def _unified_search(payload:UnifiedSearch):
                 hit['source_reference']=reference(for_hit(index,hit),hit['chunk_id'],key)
             results.extend({**r,'source_kind':'SEC'} for r in found['results'])
             scopes.extend(('SEC',g) for g in found.get('generations',[found.get('generation')]));timings['SEC']=found.get('latency_ms',0)
+            errors.extend({'source':'US_SEC',**unavailable} for unavailable in found.get('unavailable_partitions',[]))
         except Exception as exc:
             if payload.source=='US_SEC' and payload.search_profile!='faith_r_product_v1':raise ValueError(_error(exc)) from None
             errors.append({'source':'US_SEC','reason':_error(exc)})

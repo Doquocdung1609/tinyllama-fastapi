@@ -1,0 +1,26 @@
+case,status,obligation,accession,section,actual_reply
+A04,PASS,No material changes,0001628280-26-058715,Item 1A. Risk Factors.,"Các công bố về rủi ro và bất định trong filing:
+
+- **HD** cho biết không có thay đổi trọng yếu đối với các yếu tố rủi ro đã công bố. [1]"
+B07,PASS,Competition affects results of operations,0001193125-25-256321,"We face intense competition across all markets for our products and services, which could adversely affect our results of operations.","Các công bố về rủi ro và bất định trong filing:
+
+- **MSFT · We face intense competition across all markets for our products and services, which could adversely affect our results of operations.**: “We face intense competition across all markets for our products and services, which could adversely affect our results of operations.” [1]"
+D-AMZN-narrative,FAIL,Item 1A substantive risk,0001018724-25-000004,Unrelated exhibit fallback,"Đã tìm thấy các đoạn nguồn liên quan.
+
+[1] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: As permitted by Item 601(b)(4)(iii)(A) of Regulation S-K, the Company has not filed with this Annual Report on Form 10-K certain instruments defining the rights of holders of long-term debt of the Company and its subsidiaries because the total amount of securities authorized thereunder does not exceed 10 percent of the total assets of the Company and its subsidiaries on a consolidated basis. The Company agrees to furnish a copy of such agreements to the Commission upon request.
+
+[2] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: We have a rapidly evolving business model. The trading price of our common stock fluctuates significantly in response to, among other risks, the risks described elsewhere in this Item 1A, as well as:
+
+[3] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: This Annual Report on Form 10-K and the documents incorporated herein by reference contain forward-looking statements based on expectations, estimates, and projections as of the date of this filing. Actual results and outcomes may differ materially from those expressed in forward-looking statements. See Item 1A of Part I — “Risk Factors.” As used herein, “Amazon.com,” “we,” “our,” and similar terms include Amazon.com, Inc. and its subsidiaries, unless the context indicates otherwise.
+
+[4] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: AWS · 24,875 · 24,052
+
+[5] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Total · 648,652 · 56,534"
+D-PEP-narrative,PASS,No material change to risk factors,0000077476-24-000042,Part II Item 1A,"Các công bố về rủi ro và bất định trong filing:
+
+- **PEP** cho biết không có thay đổi trọng yếu đối với các yếu tố rủi ro đã công bố. [1]"
+D-AMZN-narrative-retest,PASS,"Known-case retest, not held-out",0001018724-25-000004,We Face Intense Competition,"Các công bố về rủi ro và bất định trong filing:
+
+- **AMZN · We Face Intense Competition**: “Our businesses are rapidly evolving and intensely competitive, and we have many competitors across geographies, including cross-border competition, and in different industries, including physical, e-commerce, and omnichannel retail, e-commerce services, web and infrastructure computing services, electronic devices, digital content, advertising, grocery, healthcare, communications, and transportation and logistics services.” [1]
+- **AMZN · We Face Intense Competition**: “Competition continues to intensify, including with the development of new business models and the entry of new and well-funded competitors, and as our competitors enter into business combinations or alliances and established companies in other market segments expand to become competitive with our business.” [2]
+- **AMZN · We Face Risks Related to Adequately Protecting Our Intellectual Property Rights and Being Accused of Infringing Intellectual Property Rights of Third Parties**: “We also may not be able to acquire or maintain appropriate domain names in all countries in which we do business.” [3]"

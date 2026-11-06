@@ -82,16 +82,24 @@ def verify_comparison(cells, calculations):
                 parsed = -parsed
             multiplier = Decimal(cell['multiplier'])
             if (cell['source_status']!='VERIFIED_SOURCE_CELL' or cell['unit']!='USD'
-                    or multiplier!=Decimal(1_000_000) or parsed!=Decimal(cell['value'])
+                    or multiplier not in {Decimal(1000),Decimal(1_000_000),Decimal(1_000_000_000)} or parsed!=Decimal(cell['value'])
                     or parsed*multiplier!=Decimal(cell['effective_value'])):
                 raise ValueError('SEC_SOURCE_SCALE_MISMATCH')
             values.append(parsed*multiplier)
         proofs = []
         for operation, proposed in calculations:
+            if operation=='PERIOD_VALUES' and len(values)>1:
+                expected=[v/1_000_000 for v in values]
+                if expected!=list(map(Decimal,proposed)):
+                    raise ValueError('SEC_INDEPENDENT_ARITHMETIC_MISMATCH')
+                proofs.append({'operation':operation,'recomputed_results':[str(v) for v in expected],'status':'VERIFIED'})
+                continue
             if operation=='EXTRACT' and len(values)==1:
                 expected = values[0]/1_000_000
             elif operation=='ABS_CHANGE' and len(values)==2:
                 expected = (values[1]-values[0])/1_000_000
+            elif operation=='MARGIN_PERCENT' and len(values)==2 and values[1]>0:
+                expected=(values[0]*100/values[1]).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
             elif operation=='PERCENT_CHANGE' and len(values)==2 and values[0]!=0:
                 expected = ((values[1]/values[0]-1)*100).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
             else:

@@ -169,7 +169,8 @@ def _physical_product_headers(table, cell):
         return (), ()
     contexts={re.sub(r'\s+','',value).casefold() for value in table.context_text}
     if not contexts & {'incomestatements','consolidatedincomestatements',
-                       'balancesheets','consolidatedbalancesheets'}:
+                       'balancesheets','consolidatedbalancesheets','cashflowstatements',
+                       'cashflowsstatements','statementsofcashflows','consolidatedstatementsofcashflows'}:
         return (), ()
     period_rows=[]
     for header in table.cells:
@@ -187,7 +188,7 @@ def _physical_product_headers(table, cell):
     row, label, year=period_rows[0]
     units=tuple(sorted({header.text.strip() for header in table.cells
                         if header.row<row and header.column==0 and not header.numeric_facts
-                        and re.match(r'^\(?in millions\b',header.text,re.I)}))
+                        and re.match(r'^\(?in (?:thousands|millions|billions)\b',header.text,re.I)}))
     return (label,year),units
 
 
@@ -218,7 +219,8 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         aliases = {'net sales':revenue, 'total net sales':revenue, 'revenue':revenue, 'total revenue':revenue,
                    'net revenue':revenue, 'net income':{'us-gaap:netincomeloss'},
                    'net income (loss)':{'us-gaap:netincomeloss'}}
-        concepts = concepts | aliases.get(row_label,set())
+        from app.table_evidence.product_concepts import concepts_for_label
+        concepts = concepts | aliases.get(row_label,set()) | concepts_for_label(row_label)
     if name not in concepts:raise ValueError('CONCEPT_ROW_CORRESPONDENCE_UNSUPPORTED')
     if fact.get('source_text','').strip()!=cell.text.strip() or fact.get('format','').casefold().split(':')[-1] not in {'num-dot-decimal','numdotdecimal'}:
         raise ValueError('INLINE_DISPLAY_OR_FORMAT_UNSUPPORTED')
@@ -262,7 +264,10 @@ def derive_cell(parent:FinancialChunk,table:FinancialTable,cell:TableCell,resour
         header_units={u for h in unit_headers for u in re.findall(r'\b(?:thousands|millions|billions)\b',h.casefold())}
         if context_units and header_units and context_units!=header_units:raise ValueError('CONFLICTING_DISPLAY_UNIT_CAPTIONS')
         if context_units and not unit_headers:unit_headers=[table.unit_context.strip()]
-    if len(unit_headers)!=1 or 'millions' not in unit_headers[0].casefold() or exp!=6:
+    display_scales={'millions':6,'thousands':3,'billions':9} if product_mode else {'millions':6}
+    scales={scale for label,scale in display_scales.items() if len(unit_headers)==1 and
+            re.search(rf'\b{label}\b',unit_headers[0],re.I)}
+    if scales!={exp}:
         raise ValueError('DISPLAY_UNIT_XBRL_SCALE_CONFLICT_OR_ABSENT')
     multiplier=Decimal(10)**exp
     with localcontext() as dec:

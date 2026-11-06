@@ -20,20 +20,43 @@ def sec_search(index, question, mode, top_k, ticker='', period=''):
     remains the existing HTML/iXBRL verifier. We never transplant research data.
     """
     from app.product.sec_a5 import plan_query, feature_audit, _ordering
+    from app.product.sec_multi_qa import METRICS, metric_for
+    from app.product.sec_question import RISK, _readable
     started=perf_counter();plan=plan_query(question)
     if ticker and plan.issuer and ticker.upper()!=plan.issuer:raise ValueError('SEC_COMPANY_SCOPE_CONFLICT')
     selected=ticker or plan.issuer or ''
+    metric=metric_for(folded(question))
+    labels=METRICS[metric][1] if metric else set()
+    expansion=' '.join(sorted(labels)) if labels else plan.search_query
+    risk=bool(RISK.search(folded(question)) and not metric)
     base=index.search(question,mode,20,selected,period)
-    expanded=index.search(plan.search_query,'bm25',20,selected,period) if plan.metric else {'results':[]}
+    expanded=(index.search('risk factors uncertainty material changes' if risk else expansion,'bm25',20,selected,period)
+              if labels or risk or plan.metric else {'results':[]})
     pool={h['chunk_id']:h for h in base['results']}
     for h in expanded['results']:pool.setdefault(h['chunk_id'],h)
     dates={f['accession']:f['report_period'] for f in index.catalog()['filings']}
     audited=[]
+    registered=index.by_id
     for rank,h in enumerate(pool.values(),1):
+        chunk=registered[h['chunk_id']]['chunk']
+        row_label=chunk.metadata.get('row_label','').strip()
+        if chunk.kind=='table' and (not row_label or not any(c.get('numeric_facts') for c in chunk.metadata.get('cells',[]))
+                                    or metric and row_label.casefold() not in labels):
+            continue
+        if chunk.kind!='table' and not _readable(chunk):
+            continue
+        if risk and (chunk.kind!='text' or not re.search(r'risk|uncertaint',chunk.text,re.I)):
+            continue
+        h={**h,'row_label':row_label or None}
+        if chunk.kind=='table' and row_label:
+            # The signed source opens the full table. Show readable row text,
+            # without embedded namespaces and context records.
+            h['text']=' · '.join(c.get('text','') for c in chunk.metadata.get('cells',[]) if c.get('text')) or row_label
         features=feature_audit({**h,'document_type':h.get('form'),'fiscal_period':h.get('report_period'),
             'accession_number':h.get('accession'),'section':json.dumps(h.get('source_location',{}))},plan,dates)
+        features['exact_source_row']=bool(labels and row_label.casefold() in labels)
         audited.append((h,features,rank))
-    audited.sort(key=lambda v:_ordering(v[1],v[2]))
+    audited.sort(key=lambda v:(-int(v[1]['exact_source_row']),_ordering(v[1],v[2])))
     hits=[{**h,'rank':rank,'rank_reasons':features,'algorithm_executed':'A5_FEATURE_RERANK_PRODUCT_SEC_V1',
         'engine_version':VERSION,'numeric_status':'CANDIDATE_ONLY','citation_id':h['chunk_id'],'text_quote':h['text']}
         for rank,(h,features,_) in enumerate(audited[:top_k],1)]

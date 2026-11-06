@@ -1,0 +1,227 @@
+{
+  "workspaces": {
+    "18110": {
+      "workspace": "react-product-20261028",
+      "status": "LEXICAL_READY",
+      "reason": "DENSE_PENDING",
+      "metadata": {
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "accession_number": "0001193125-25-256321",
+        "form_type": "10-Q",
+        "report_date": "2025-09-30",
+        "filing_date": "2025-10-29",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm"
+      },
+      "source_bytes": 5597567,
+      "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+      "matches_acquisition_receipt": true,
+      "table_count": 59,
+      "lexical_receipt": {
+        "completed_points": 0,
+        "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+        "parent_count": 1425,
+        "state": "LEXICAL_READY"
+      },
+      "dense_receipt": null,
+      "vector_progress": null,
+      "catalog_after_restart": {
+        "dense_ready": false,
+        "index_status": "LEXICAL_READY",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066"
+      },
+      "events": [
+        {
+          "status": "DOWNLOADING",
+          "reason": null,
+          "epoch": 1793893557.7668076
+        },
+        {
+          "status": "EXTRACTING",
+          "reason": null,
+          "epoch": 1793893560.2257147
+        },
+        {
+          "status": "INDEXING",
+          "reason": null,
+          "epoch": 1793893563.7597485
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "epoch": 1793893578.9608915
+        }
+      ],
+      "published_catalog_ids_preserved": true
+    },
+    "18112": {
+      "workspace": "ocr-financial-v3-verified-hpg",
+      "status": "READY",
+      "reason": null,
+      "metadata": {
+        "cik": "0000789019",
+        "ticker": "MSFT",
+        "accession_number": "0001193125-25-256321",
+        "form_type": "10-Q",
+        "report_date": "2025-09-30",
+        "filing_date": "2025-10-29",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm"
+      },
+      "source_bytes": 5597580,
+      "raw_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+      "matches_acquisition_receipt": true,
+      "table_count": 59,
+      "lexical_receipt": {
+        "completed_points": 0,
+        "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+        "generation": "6e153e6fc7d6768e4c9199d66a44f507b6ef2acba06d7a6a2111d20c7c9d67d4",
+        "manifest_hash": "7fa6ffb477c05346952cef4268fff82c4d33d2b53145b388b7b20943229f79d1",
+        "parent_count": 1425,
+        "state": "LEXICAL_READY"
+      },
+      "dense_receipt": {
+        "state": "READY",
+        "completed_points": 1425,
+        "parent_count": 1425,
+        "generation": "6e153e6fc7d6768e4c9199d66a44f507b6ef2acba06d7a6a2111d20c7c9d67d4",
+        "embedding_ms_this_run": 542180.2958001645,
+        "model_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f"
+      },
+      "vector_progress": {
+        "completed_points": 1425,
+        "target_points": 1425,
+        "last_batch_ms": 330.0586999976076
+      },
+      "catalog_after_restart": {
+        "dense_ready": true,
+        "index_status": "READY",
+        "generation": "6e153e6fc7d6768e4c9199d66a44f507b6ef2acba06d7a6a2111d20c7c9d67d4",
+        "raw_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9"
+      },
+      "events": [
+        {
+          "status": "DOWNLOADING",
+          "reason": null,
+          "epoch": 1793955692.5351126
+        },
+        {
+          "status": "EXTRACTING",
+          "reason": null,
+          "epoch": 1793955701.3527615
+        },
+        {
+          "status": "INDEXING",
+          "reason": null,
+          "epoch": 1793955711.9296606
+        },
+        {
+          "status": "READY",
+          "reason": null,
+          "epoch": 1793956404.90741
+        }
+      ]
+    }
+  },
+  "runtime_snapshot": {
+    "processes": [
+      {
+        "pid": 11196,
+        "name": "python.exe",
+        "rss_bytes": 1126400,
+        "cpu_seconds": 0.0
+      },
+      {
+        "pid": 16808,
+        "name": "python.exe",
+        "rss_bytes": 929792,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "pid": 19196,
+        "name": "ollama.exe",
+        "rss_bytes": 16248832,
+        "cpu_seconds": 167.234375
+      },
+      {
+        "pid": 22464,
+        "name": "python.exe",
+        "rss_bytes": 134107136,
+        "cpu_seconds": 120.875
+      },
+      {
+        "pid": 22624,
+        "name": "python.exe",
+        "rss_bytes": 18399232,
+        "cpu_seconds": 28.59375
+      }
+    ],
+    "ollama": {
+      "http": 200,
+      "embedding_models": [
+        "nomic-embed-text:latest"
+      ]
+    },
+    "host_ram_bytes": 8419053568
+  },
+  "interrupted_dense_simulation": {
+    "id": "d4e2c00d79824745b03d2688",
+    "status": "LEXICAL_READY",
+    "reason": "BUILDING_DENSE",
+    "progress": {
+      "last_progress_at": 1793958081.7150328,
+      "published_chunks": 1064
+    },
+    "method": "simulated interruption in isolated test workspace",
+    "events_after_restart": [
+      {
+        "status": "DOWNLOADING",
+        "reason": null,
+        "created": 1793958072.2108402
+      },
+      {
+        "status": "SOURCE_VERIFIED",
+        "reason": null,
+        "created": 1793958076.6533895
+      },
+      {
+        "status": "EXTRACTING",
+        "reason": null,
+        "created": 1793958076.6679661
+      },
+      {
+        "status": "EXTRACTED",
+        "reason": null,
+        "created": 1793958078.7409866
+      },
+      {
+        "status": "BUILDING_LEXICAL",
+        "reason": null,
+        "created": 1793958078.7501004
+      },
+      {
+        "status": "LEXICAL_READY",
+        "reason": "DENSE_PENDING",
+        "created": 1793958081.7083523
+      },
+      {
+        "status": "LEXICAL_READY",
+        "reason": "DENSE_PENDING",
+        "created": 1793958081.7150328
+      },
+      {
+        "status": "LEXICAL_READY",
+        "reason": "BUILDING_DENSE",
+        "created": 1793958403.0505104
+      },
+      {
+        "status": "LEXICAL_READY",
+        "reason": "PROCESS_RESTARTED_RETRY_IMPORT",
+        "created": 1793958420.2340858
+      }
+    ],
+    "catalog_after_restart": "LEXICAL_READY"
+  }
+}

@@ -16,7 +16,10 @@ from app.product.sec_library import partitions
 from app.product.sec_viewer import reference
 from app.table_evidence.real_source import PRODUCT_SOURCE_BYTES, derive_cell, parse_resources
 
+from app.table_evidence.product_concepts import PRODUCT_ROWS
+
 METRICS = {
+    **{code: (label, rows) for code,(label,rows,_) in PRODUCT_ROWS.items()},
     'revenue': ('Doanh thu', {'net sales','total net sales','revenue','total revenue','net revenue'}),
     'income': ('Lợi nhuận ròng', {'net income','net income (loss)'}),
     'assets': ('Tổng tài sản', {'total assets'}),
@@ -25,18 +28,42 @@ WEEK_WORDS = {'twelve':12,'thirteen':13,'twenty-four':24,'twenty-six':26,'thirty
 COMPARISON = r'\b(?:so voi|so sanh|compared|compare|versus|vs|thay doi|tang bao nhieu|giam bao nhieu|chenh lech|year.over.year|yoy)\b'
 
 
+METRIC_PATTERNS = {
+    'deferred_revenue': r'deferred revenue|unearned revenue|doanh thu chua thuc hien|doanh thu tra truoc',
+    'cost_of_revenue': r'cost of (?:sales|revenue|goods sold)|gia von(?: hang ban)?',
+    'operating_cash': r'net cash from operations|(?:net )?cash (?:flow|from|provided by) operating activities|operating cash flow|(?:luu chuyen |dong )tien (?:thuan )?tu hoat dong kinh doanh|dong tien hoat dong',
+    'investing_cash': r'cash (?:flow|from|used in) investing activities|luu chuyen tien (?:thuan )?tu hoat dong dau tu',
+    'financing_cash': r'cash (?:flow|from|used in) financing activities|luu chuyen tien (?:thuan )?tu hoat dong tai chinh',
+    'comprehensive_income': r'(?:total )?comprehensive income|thu nhap toan dien',
+    'operating_income': r'operating (?:income|profit)|loi nhuan (?:tu )?hoat dong kinh doanh',
+    'gross_profit': r'gross profit|loi nhuan gop',
+    'current_assets': r'(?:total )?current assets|tai san ngan han',
+    'current_liabilities': r'(?:total )?current liabilities|no ngan han',
+    'liabilities': r'total liabilities|tong no phai tra',
+    'income': r'net income|loi nhuan rong|loi nhuan sau thue',
+    'assets': r'total assets|tong tai san',
+    'revenue': r'(?:total )?(?:net sales|revenue|net revenue)|(?:tong )?doanh thu(?: thuan)?',
+}
+INSTANT_METRICS = {'assets','current_assets','liabilities','current_liabilities','deferred_revenue'}
+
+
+def requested_metrics(q):
+    matches = []
+    for metric, pattern in METRIC_PATTERNS.items():
+        regex = rf'\b(?:{pattern})\b'
+        if re.search(regex,q):
+            matches.append(metric)
+            q = re.sub(regex,' ',q)
+    return matches
+
+
 def metric_for(q):
-    requested = []
-    for name, pattern in [('revenue',r'\b(?:net sales|revenue|doanh thu)\b'),
-                          ('income',r'\b(?:net income|loi nhuan rong|loi nhuan sau thue)\b'),
-                          ('assets',r'\b(?:total assets|tong tai san)\b')]:
-        if re.search(pattern,q):
-            requested.append(name)
-    return requested[0] if len(requested)==1 else None
+    metrics = requested_metrics(q)
+    return metrics[0] if len(metrics)==1 else None
 
 
 def period_for(q, sources, metric):
-    if metric=='assets':
+    if metric in INSTANT_METRICS:
         return 'INSTANT'
     labels = re.findall(r'\b(12|13|14|24|26|36|39|52|53)\s*(?:tuan|weeks?)\b',q)
     labels.extend(str(count) for word,count in WEEK_WORDS.items() if re.search(rf'\b{word}[ -]weeks?\b',q))
@@ -100,13 +127,18 @@ def observations(part, filing, metric, labels=None):
     return result
 
 
+def duration_days(cell):
+    return ((date.fromisoformat(cell.period_end)-date.fromisoformat(cell.period_start)).days+1
+            if cell.period_start else None)
+
+
 def period_matches(cell, period):
     if period=='INSTANT':
         return cell.period_kind=='INSTANT'
     if cell.period_kind!='DURATION':
         return False
     if isinstance(period,tuple):
-        days = (date.fromisoformat(cell.period_end)-date.fromisoformat(cell.period_start)).days+1
+        days = duration_days(cell)
         return days%7==0 and days//7 in period
     if period=='YTD':
         return cell.period_months in {6,9}
@@ -138,6 +170,17 @@ def resolve_followup(question, previous):
     if not context:
         return question
     q = folded(question)
+    if re.fullmatch(r'(?:the |con |vay )?(?:cung ky nam truoc|same period last year)[?!. ]*',q):
+        period=context['period']
+        if isinstance(period,list):
+            if len(period)!=1:
+                return question
+            duration=f'{period[0]} weeks'
+        else:
+            duration={3:'three months',6:'six months',9:'nine months',12:'full year','YTD':'year to date'}.get(period,'')
+        if duration:
+            target=context['targets'][-1]
+            return f"{context['ticker']} {context['metric_phrase']} {duration} {target} cùng kỳ năm trước, chỉ lấy kỳ trước"
     if re.search(r'^\b(?:the |con |vay )?nam truoc\b',q) and context['period']==12:
         return f"{context['ticker']} {context['metric_phrase']} FY{int(context['targets'][-1][:4])-1}"
     if re.search(r'^(?:hai |cac )?(?:so|gia tri).*(?:filing|nguon|bao cao)|(?:xem|mo).*so goc',q):
@@ -145,12 +188,13 @@ def resolve_followup(question, previous):
     return question
 
 
-def answer(index, question, ticker, key, operation='EXTRACT'):
+def answer(index, question, ticker, key, operation='EXTRACT', *, metric_override=None, default_quarter=False, single_observation=False):
     q = folded(question)
-    metric = metric_for(q)
+    metric = metric_override or metric_for(q)
     if not metric:
         return None
-    if re.search(r'\b(?:vi sao|tai sao|nguyen nhan|why|explain|services|products|segment|geographic|mang|khu vuc|phan khuc|gross|ty trong|margin|adjusted|dieu chinh|restat\w*|trinh bay lai)\b',q):
+    explanation = re.search(r'\b(?:vi sao|tai sao|nguyen nhan|why|explain)\b',q)
+    if re.search(r'\b(?:services|products|segment|geographic|mang|khu vuc|phan khuc|ty trong|margin|adjusted|dieu chinh|restat\w*|trinh bay lai)\b',q):
         return None
     from app.product.sec_a5 import plan_query
     plan = plan_query(question)
@@ -161,6 +205,8 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
                if not (ticker or plan.issuer) or row['ticker']==(ticker or plan.issuer).upper()]
     if ticker and plan.issuer and ticker.upper()!=plan.issuer:
         return abstain('SEC_COMPANY_SCOPE_CONFLICT','Doanh nghiệp trong câu hỏi khác với doanh nghiệp đã chọn.')
+    if not sources:
+        return abstain('SEC_ISSUER_NOT_SELECTED','Filing của doanh nghiệp được hỏi chưa nằm trong bộ nguồn đang chọn.')
     if len({row['cik'] for row,_ in sources})!=1:
         return abstain('SEC_COMPANY_SCOPE_AMBIGUOUS','Hãy nêu tên doanh nghiệp trong câu hỏi hoặc chọn các filing của cùng một doanh nghiệp.')
     if any(row['form'] not in {'10-K','10-Q','20-F'} for row,_ in sources):
@@ -170,9 +216,29 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
     years = tuple(sorted(set(re.findall(r'\b(?:fy\s*)?(20\d{2})\b',re.sub(r'\b20\d{2}-\d{2}-\d{2}\b','',q)))))
     if not dates and plan.period_end:
         dates = (plan.period_end,)
-        years = ()
+        years = tuple(y for y in years if y!=plan.period_end[:4])
     period = period_for(q,sources,metric)
-    compare = bool(re.search(COMPARISON,q) or operation!='EXTRACT' or len(years)>1 or len(dates)>1)
+    if default_quarter and period is None and len(sources)==1 and sources[0][0]['form']=='10-Q':
+        period=3
+    same_period = bool(re.search(r'\b(?:cung ky|same period|prior.year|comparative period)\b',q))
+    different_durations = isinstance(period,tuple) and len(period)>1
+    if different_durations and len(period)>4:
+        return abstain('SEC_TOO_MANY_DURATIONS','Hãy chọn tối đa bốn độ dài kỳ để đối chiếu.')
+    if dates and fiscal and years and all(str(row.get('fiscal_year')) not in years for row,_ in sources):
+        return abstain('SEC_FISCAL_PERIOD_ABSENT','Filing kết thúc '+dates[-1]+' không có kỳ tài chính '+', '.join(years)+' được yêu cầu.')
+    ordinal = re.search(r'\b(?:quy|q|quarter)\s*(iv|iii|ii|i|[1-4])\b',q)
+    if ordinal and fiscal:
+        number={'i':'1','ii':'2','iii':'3','iv':'4'}.get(ordinal[1],ordinal[1])
+        matching=[row for row,_ in sources if row.get('fiscal_period')==f'Q{number}'
+                  and (not years or str(row.get('fiscal_year')) in years)
+                  and (not dates or row['report_period'] in dates)]
+        if not matching:
+            available=', '.join(sorted({f"{row.get('fiscal_period') or row['form']} FY{row['fiscal_year']} kết thúc {row['report_period']}"
+                                        if row.get('fiscal_year') else f"{row['form']} kết thúc {row['report_period']}" for row,_ in sources}))
+            return abstain('SEC_FISCAL_PERIOD_ABSENT',f'Filing đang chọn có {available}. Không tìm thấy quý tài chính {number} được yêu cầu.')
+    if explanation and not different_durations:
+        return None
+    compare = bool((not single_observation and re.search(COMPARISON,q)) or operation!='EXTRACT' or len(years)>1 or len(dates)>1)
     if plan.quarter and not dates:
         return abstain('SEC_QUARTER_END_REQUIRED','Hãy cho biết ngày kết thúc quý để tôi kiểm tra đúng ngữ cảnh iXBRL của kỳ.')
     if not period and len(sources)==1:
@@ -198,11 +264,27 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
         targets = sorted({filing['report_period'] for filing,_ in sources})
     if not compare and not years and not dates and len(targets)>1:
         return abstain('SEC_PERIOD_REQUIRED','Các filing đã chọn thuộc nhiều kỳ. Hãy nêu kỳ cần xem hoặc yêu cầu so sánh các kỳ.')
-    if len(targets) not in {1,2} or compare and len(targets)!=2:
+    if same_period and len(targets)==1:
+        if not period:
+            return abstain('SEC_PERIOD_DURATION_REQUIRED','Hãy cho biết bạn muốn so sánh quý hay kỳ lũy kế.')
+        current=targets[0]
+        prior=str(int(current[:4])-1)
+        matching_dates={c.period_end for c,_,_ in collected if c.period_end.startswith(prior)
+                        and (len(current)==4 or c.period_end[5:7]==current[5:7])}
+        if len(matching_dates)!=1:
+            return abstain('SEC_PRIOR_PERIOD_UNBOUND','Không gắn được một kỳ so sánh duy nhất trong filing đang chọn.')
+        prior_only='chi lay ky truoc' in q
+        targets=[next(iter(matching_dates))] if prior_only else [next(iter(matching_dates)),current]
+        compare=not prior_only
+    if len(targets) not in {1,2} or (compare and len(targets)!=2 and not different_durations):
         return abstain('SEC_COMPARISON_PERIODS_REQUIRED','Hãy chỉ rõ hai năm tài chính hoặc hai ngày kết thúc kỳ cần so sánh.')
     chosen = []
-    for target in targets:
-        options = [(cell,filing,part) for cell,filing,part in collected if target_matches(cell,filing,target,fiscal)]
+    if different_durations and len(targets)!=1:
+        return abstain('SEC_DURATION_END_REQUIRED','Hãy nêu một ngày kết thúc để đối chiếu nhiều độ dài kỳ.')
+    requests=[(targets[0],(weeks,)) for weeks in period] if different_durations else [(target,period) for target in targets]
+    for target, duration in requests:
+        options = [(cell,filing,part) for cell,filing,part in collected if target_matches(cell,filing,target,fiscal)
+                   and period_matches(cell,duration)]
         if not options:
             return abstain('SEC_VERIFIED_PERIOD_CELL_UNAVAILABLE','Chưa đối chiếu được ô nguồn cho kỳ '+target+'. Hãy kiểm tra chỉ tiêu, loại kỳ và filing đang chọn.',timings=timings)
         facts = {(cell.period_start,cell.period_end,cell.period_months,cell.unit,cell.multiplier,cell.effective_value)
@@ -214,9 +296,11 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
     cells = [cell for cell,_,_ in chosen]
     dimensions = {(c.cik,c.unit,c.multiplier,c.period_kind,c.period_months,c.fact_name.casefold(),
                    'PRODUCT_SALES_DIMENSION_EXCLUDES_MEMBERSHIPS' in c.warnings) for c in cells}
+    if different_durations:
+        dimensions={(c.cik,c.unit,c.multiplier,c.period_kind,c.fact_name.casefold()) for c in cells}
     if len(dimensions)!=1:
         return abstain('SEC_COMPARISON_DIMENSION_CONFLICT','Hai ô khác loại kỳ, khái niệm iXBRL hoặc đơn vị. Tôi có thể đối chiếu từng kỳ riêng.',timings=timings)
-    if len(cells)==2 and cells[0].period_start and cells[1].period_start:
+    if not different_durations and len(cells)==2 and cells[0].period_start and cells[1].period_start:
         lengths=[(date.fromisoformat(c.period_end)-date.fromisoformat(c.period_start)).days+1 for c in cells]
         if abs(lengths[1]-lengths[0])>3:
             return abstain('SEC_COMPARISON_DURATION_CONFLICT','Hai kỳ có độ dài khác nhau. Hãy xem từng giá trị riêng để tránh so sánh trực tiếp.',timings=timings)
@@ -229,16 +313,31 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
             'report_period':cell.period_end,'source_url':cell.source_url,'source_sha256':cell.raw_sha256,
             'text':f'{cell.row_label}: {cell.raw_value} · {cell.period_end}','row_label':cell.row_label,
             'column_label':' / '.join(cell.header_path),'verification':'VERIFIED_SOURCE_CELL','unit':cell.unit})
-    values = [c.value for c in cells]
+    with localcontext() as ctx:
+        ctx.prec = 50
+        values = [c.effective_value/Decimal(1_000_000) for c in cells]
+    def describe_duration(cell):
+        days=duration_days(cell)
+        if not days:
+            return 'Tại ngày báo cáo'
+        if isinstance(period,tuple):
+            return f'{days//7} tuần'
+        return f'{cell.period_months} tháng ({days} ngày)'
     label = METRICS[metric][0]
     lines = [f'{label} của {chosen[0][1]["ticker"]} được đối chiếu từ bảng trong filing SEC.',
-             '| Kỳ nguồn | Triệu USD | Filing |\n| --- | ---: | --- |\n'+'\n'.join(
-                 f'| {c.period_start+" → " if c.period_start else ""}{c.period_end} | {display(str(c.value))} | {c.accession} [{i}] |'
-                 for i,c in enumerate(cells,1))]
+             '| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n'+'\n'.join(
+                 f'| {c.period_start+" → " if c.period_start else ""}{c.period_end} | {describe_duration(c)} | {display(str(value))} | {c.accession} [{i}] |'
+                 for i,(c,value) in enumerate(zip(cells,values),1))]
     result = list(values)
     checks = [('EXTRACT',values[0])] if len(values)==1 else []
     formula = None
-    if len(values)==2 and operation!='COMPARE':
+    if any('PRODUCT_SALES_DIMENSION_EXCLUDES_MEMBERSHIPS' in cell.warnings for cell in cells):
+        lines.append('Dòng doanh thu bán hàng này không bao gồm phí thành viên theo phạm vi iXBRL của ô nguồn.')
+    if different_durations:
+        lines.append('Các giá trị có cùng ngày kết thúc nhưng bắt đầu ở những ngày khác nhau. '
+                     'Kỳ dài hơn bao gồm phần hoạt động trước kỳ ngắn hơn, vì vậy hai giá trị đo các khoảng thời gian khác nhau.')
+        checks=[('PERIOD_VALUES', values)]
+    if not different_durations and len(values)==2 and operation!='COMPARE':
         old,new = values
         with localcontext() as ctx:
             ctx.prec = 50
@@ -256,7 +355,11 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
                     formula = '(current - previous) / previous * 100'
             elif operation=='PERCENT_CHANGE':
                 return abstain('SEC_ZERO_BASE','Kỳ gốc bằng 0 nên không xác định được phần trăm thay đổi.',timings=timings)
-    source_cells = [cell.model_dump(mode='json') for cell in cells]
+    source_cells = [{**cell.model_dump(mode='json'),'duration_days':duration_days(cell),
+                     'scope':'CONSOLIDATED_PRODUCTS' if 'PRODUCT_SALES_DIMENSION_EXCLUDES_MEMBERSHIPS' in cell.warnings else 'CONSOLIDATED',
+                     'dimensions':[{'axis':'ProductOrServiceAxis','member':'ProductMember'}]
+                       if 'PRODUCT_SALES_DIMENSION_EXCLUDES_MEMBERSHIPS' in cell.warnings else []}
+                    for cell in cells]
     from app.product.sec_answer_contract import verify_comparison
     try:
         independent = verify_comparison(source_cells,checks)
@@ -269,6 +372,8 @@ def answer(index, question, ticker, key, operation='EXTRACT'):
             'values':[str(value) for value in result],'unit':'%' if operation=='PERCENT_CHANGE' else 'MILLION_USD',
             'citations':citations,'source_cells':source_cells,'independent_verification':independent,
             'verification_status':'VERIFIED_IXBRL_SOURCE_CELLS_AND_DECIMAL','timings_ms':timings,'formula':formula,
-            'operation':'ABS_CHANGE' if len(values)==2 and operation=='EXTRACT' else operation,'sec_context':{'metric':metric,'period':period,'targets':targets,
-                'ticker':chosen[0][1]['ticker'],'metric_phrase':{'revenue':'net sales','income':'net income','assets':'total assets'}[metric],
+            'operation':'COMPARE' if different_durations else 'ABS_CHANGE' if len(values)==2 and operation=='EXTRACT' else operation,'sec_context':{'metric':metric,'period':period,'targets':targets,
+                'ticker':chosen[0][1]['ticker'],'metric_phrase':('net sales' if metric=='revenue' and re.search(r'net sales|doanh thu thuan',q) else
+                                 {'operating_cash':'operating cash flow','revenue':'revenue','income':'net income',
+                                  'assets':'total assets'}.get(metric,metric.replace('_',' '))),
                 'question':question}}

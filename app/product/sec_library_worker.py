@@ -34,6 +34,18 @@ def isolate_interrupted_lexical(root, vectors, lexical, generation, chunks):
     return LexicalIndex(root/'lexical_v1.sqlite3')
 
 
+def publish_dense(key, root, vectors):
+    if os.getenv('STUDIO_SEC_IMPORT_LEXICAL_ONLY')=='1':
+        update(key,'LEXICAL_READY','DENSE_PENDING')
+        return
+    from scripts.p10_build_isolated_vectors import build
+    from app.product.sec_product_snapshot import ProductSecSnapshot
+    update(key,'LEXICAL_READY','BUILDING_DENSE')
+    result=build(root,vectors,4,None,snapshot_factory=ProductSecSnapshot)
+    if result['state']!='READY':raise ValueError('VECTOR_GENERATION_INCOMPLETE')
+    update(key,'READY')
+
+
 def run(key):
     from app.financial_ingestion import PARSER_VERSION,CHUNKER_VERSION
     from app.financial_ingestion.schemas import FilingMetadata,DatasetManifest
@@ -43,7 +55,7 @@ def run(key):
     from app.financial_index.lexical import LexicalIndex
     from app.financial_query.catalog import catalog_from_verified_metadata
     from app.table_evidence.identity import digest
-    from scripts.p10_build_isolated_vectors import build,atomic_json
+    from scripts.p10_build_isolated_vectors import atomic_json
     row=next(r for r in rows() if r['id']==key);m=FilingMetadata.model_validate_json(row['metadata'])
     validate_metadata_identity(m,additional_forms={'20-F','6-K'});root,vectors=paths(key);root.mkdir(parents=True,exist_ok=True)
     marker=root/'ownership.json'
@@ -51,6 +63,15 @@ def run(key):
         if any(root.iterdir()):raise ValueError('NONEMPTY_UNOWNED_PRODUCT_ROOT')
         marker.write_text(json.dumps({'owner':'FIS_USER_SEC_LIBRARY_V1','id':key}),encoding='utf-8')
     if json.loads(marker.read_text(encoding='utf-8'))!={'owner':'FIS_USER_SEC_LIBRARY_V1','id':key}:raise ValueError('UNOWNED_PRODUCT_ROOT')
+    if (root/'lexical-publication.json').is_file():
+        from app.product.sec_search import SecResearchIndex
+        published=SecResearchIndex(root,vectors,root,lexical_only=True)
+        try:
+            if not any(f['filing_id']==m.filing_id for f in published.catalog_rows):
+                raise ValueError('PUBLISHED_FILING_IDENTITY_MISMATCH')
+        finally:
+            published.close()
+        return publish_dense(key,root,vectors)
     raw_path=root/'raw'/m.cik/m.accession_number/m.primary_document
     acquisition=root/'acquisition.json'
     sec=client()
@@ -73,11 +94,12 @@ def run(key):
         receipt=json.loads(acquisition.read_text(encoding='utf-8'))
         if receipt['source_url']!=m.source_url or receipt['raw_sha256']!=sha256(raw_path.read_bytes()).hexdigest():raise ValueError('CACHED_SOURCE_HASH_CHANGED')
     finally:sec.session.close()
-    update(key,'EXTRACTING')
     raw=raw_path.read_bytes()
     from app.product.sec_import_identity import validate
     identity=validate(raw,m)
     if m.form_type=='6-K':raise ValueError('EXHIBIT_REVIEW_REQUIRED')
+    update(key,'SOURCE_VERIFIED')
+    update(key,'EXTRACTING')
     m.company_name=identity['company_name'] or m.company_name
     m.fiscal_year=identity['fiscal_year'] or m.fiscal_year
     m.fiscal_period=identity['fiscal_period'] or m.fiscal_period
@@ -98,26 +120,25 @@ def run(key):
     source={'filing_id':m.filing_id,'raw_path':str(raw_path.resolve()),'structured_path':str(structured.resolve()),'chunks_path':str(chunk_file.resolve()),
         'raw_hash':m.raw_content_hash,'normalized_hash':m.normalized_content_hash,'structured_hash':sha256(structured.read_bytes()).hexdigest(),
         'chunks_hash':sha256(chunk_file.read_bytes()).hexdigest(),'manifest_hash':manifest.manifest_hash}
-    from app.product.sec_product_snapshot import ProductCatalogFiling,ProductCorpusCatalog,ProductSecSnapshot
+    from app.product.sec_product_snapshot import ProductCatalogFiling,ProductCorpusCatalog
     catalog=catalog_from_verified_metadata(manifest,[filing],generation_id=generation,
         filing_model=ProductCatalogFiling,catalog_model=ProductCorpusCatalog,omit_overlong_labels=True)
     for name,data in [('manifest.json',manifest.model_dump(mode='json')),('catalog.json',catalog.model_dump(mode='json')),('sources.json',[source]),
         ('freeze.json',{'generation':generation,'manifest_hash':manifest.manifest_hash,'purpose':'PRODUCT_USER_LIBRARY_SOURCE_ONLY',
             'source_groups':[{'cik':m.cik,'accession':m.accession_number,'url':m.source_url,'raw_hash':m.raw_content_hash}]})]:
         (frozen/name).write_text(json.dumps(data,ensure_ascii=False,sort_keys=True),encoding='utf-8')
-    update(key,'INDEXING')
+    atomic_json(root/'extraction-progress.json',{'source_bytes':len(raw),'tables':len(filing.tables),
+                                                 'extracted_chunks':len(chunks)})
+    update(key,'EXTRACTED')
+    update(key,'BUILDING_LEXICAL')
     lexical=LexicalIndex(root/'lexical_v1.sqlite3')
     lexical=isolate_interrupted_lexical(root,vectors,lexical,generation,chunks)
     lexical.start(manifest.dataset_id,generation,{'product_only':True})
     lexical.add(generation,[{'chunk':c.model_dump(mode='json'),'source':source} for c in chunks]);lexical.seal(generation);lexical.publish(manifest.dataset_id,generation)
     atomic_json(root/'lexical-publication.json',{'state':'LEXICAL_READY','dataset_id':manifest.dataset_id,
         'generation':generation,'manifest_hash':manifest.manifest_hash,'parent_count':len(chunks),'completed_points':0})
-    if os.getenv('STUDIO_SEC_IMPORT_LEXICAL_ONLY')=='1':
-        update(key,'LEXICAL_READY','DENSE_PENDING')
-        return
-    result=build(root,vectors,4,None,snapshot_factory=ProductSecSnapshot)
-    if result['state']!='READY':raise ValueError('VECTOR_GENERATION_INCOMPLETE')
-    update(key,'READY')
+    update(key,'LEXICAL_READY','DENSE_PENDING')
+    return publish_dense(key,root,vectors)
 
 if __name__=='__main__':
     key=sys.argv[1]
