@@ -27,6 +27,7 @@ class SecTask:
     currency: str | None = None
     output_obligations: tuple[str, ...] = ()
     missing_evidence: str | None = None
+    denominator: str | None = None
 
 
 @dataclass
@@ -116,7 +117,9 @@ def plan_sec_question(question, catalog, ticker=None, metrics=(), margin=None, t
         error = 'SEC_ISSUER_NOT_SELECTED' if requested else 'SEC_COMPANY_SCOPE_AMBIGUOUS'
     else:
         error = None
-    operation = ('MARGIN_PERCENT' if margin else 'YEAR_OVER_YEAR' if re.search(
+    from app.product.sec_ratio import PRIOR, ratio_variants
+    margin_prior=bool(margin and PRIOR.search(q))
+    operation = ('MARGIN_YEAR_OVER_YEAR' if margin_prior else 'MARGIN_PERCENT' if margin else 'YEAR_OVER_YEAR' if re.search(
         r'\b(?:cung ky nam truoc|same period last year|year.over.year|yoy)\b', q)
                  else 'EXTRACT')
     intent = 'MARGIN' if margin else 'NARRATIVE' if topics else 'NUMERIC' if metrics else 'UNKNOWN'
@@ -136,17 +139,95 @@ def plan_sec_question(question, catalog, ticker=None, metrics=(), margin=None, t
         for issuer in sorted(eligible):
             filing_ids = tuple(sorted(f['filing_id'] for f, _ in catalog[issuer]))
             for metric in ([margin] if margin else list(topics) if topics else list(metrics)):
-                task_id = f'SEC-{len(tasks) + 1:03d}'
-                tasks.append(SecTask(task_id, issuer, metric, operation if not topics else 'SUMMARIZE',
+                for denominator in (ratio_variants(q) if margin else [None]):
+                    task_id = f'SEC-{len(tasks) + 1:03d}'
+                    tasks.append(SecTask(task_id, issuer, metric, operation if not topics else 'SUMMARIZE',
+                                     denominator=denominator,
                                      period=period, duration=duration, filing_ids=filing_ids,
                                      filing_form=form, accession=accession_match[0] if accession_match else None,
                                      reporting_scope=scope, currency=currency,
-                                     relation='CURRENT_VS_PRIOR' if operation == 'YEAR_OVER_YEAR' else None,
+                                     relation='PRIOR_YEAR' if operation in {'YEAR_OVER_YEAR','MARGIN_YEAR_OVER_YEAR'} else None,
                                      unit='PERCENT' if margin else 'SOURCE_UNIT',
-                                     output_obligations=('source_cells', 'period', 'unit', 'calculation', 'citations')
+                                     output_obligations=('current_margin','prior_year_margin','margin_change','citations') if margin_prior else
+                                     ('source_cells', 'period', 'unit', 'calculation', 'citations')
                                      if not topics else ('disclosure', 'citation', 'interpretation_boundary')))
     return SecQuestionPlan(question,
                            sorted(f['filing_id'] for rows in catalog.values() for f, _ in rows),
                            sorted(named), sorted(named - requested - excluded), sorted(focused),
                            sorted(requested) if comparison else [], sorted(excluded),
                            sorted(unselected), sorted(eligible), tasks, intent, error)
+
+
+FOLLOWUP = re.compile(r'^(?:so voi\b|compared with\b|con\b|the\b|vay\b|what about\b|how about\b|and\b|cung ky\b|(?:ky|quy|nam) (?:truoc|ngan nhat)\b|shortest\b|same (?:quarter|period)\b)')
+
+
+def resolve_typed_followup(index, question, previous):
+    """Apply only explicit slot overrides to a previously executed task."""
+    from app.product.sec_a5 import plan_query
+    from app.product.sec_library import partitions
+    from app.product.sec_multi_qa import period_for, requested_metrics
+    from app.product.sec_ratio import CURRENT, PRIOR, SHORTEST, TOTAL, SALES
+    from app.product.sec_question import MARGIN, RISK
+    q=folded(question).strip()
+    context=previous.get('sec_task_context')
+    prior_plan=previous.get('sec_question_plan') or {}
+    if not context or not FOLLOWUP.search(q) or MARGIN.search(q) or requested_metrics(q) or RISK.search(q):
+        return None
+    catalog={}
+    for part in partitions(index):
+        for row in part.catalog_rows:
+            catalog.setdefault(row['ticker'],[]).append((row,part))
+    issuers=_entity_mentions(q,catalog)
+    if len(issuers)>1:
+        return {'clarification':'Bạn muốn tiếp tục phép tính cho doanh nghiệp nào trong số đã nêu?'}
+    issuer=next(iter(issuers),context['issuer'])
+    period=plan_query(question)
+    if issuer not in catalog:
+        return {'clarification':f'Filing của {issuer} chưa nằm trong bộ nguồn đã chọn.',
+                'reason':'SEC_ISSUER_NOT_SELECTED'}
+    explicit_duration=period_for(q,catalog[issuer],context['metric']) if re.search(
+        r'\b(?:tuan|weeks?|thang|months?|quy|quarter|luy ke|ytd|ca nam|annual)\b',q) and not PRIOR.search(q) else None
+    shortest=bool(SHORTEST.search(q))
+    explicit_prior=bool(PRIOR.search(q))
+    if not (issuers or period.period_end or explicit_duration or shortest or explicit_prior or CURRENT.search(q)):
+        return {'clarification':'Bạn muốn đổi doanh nghiệp hay kỳ nào cho phép tính vừa hỏi?'}
+    overrides={}
+    if issuers:
+        overrides['issuer']=issuer
+    duration=context.get('duration')
+    report_end=context.get('report_end')
+    if issuer!=context['issuer']:
+        report_end=None
+    if shortest:
+        duration='SHORTEST_REPORTED'
+        overrides['duration']=duration
+    elif explicit_duration is not None:
+        duration=explicit_duration
+        overrides['duration']=duration
+    if period.period_end:
+        report_end=period.period_end
+        overrides['report_end']=report_end
+    elif CURRENT.search(q):
+        report_end=None
+        overrides['report_end']='CURRENT'
+    duration_text= ('kỳ ngắn nhất' if duration=='SHORTEST_REPORTED' else
+                    ' và '.join(f'{w} tuần' for w in duration) if isinstance(duration,(list,tuple)) else
+                    {3:'ba tháng',6:'sáu tháng',9:'chín tháng',12:'cả năm','YTD':'lũy kế'}.get(duration,''))
+    metric=context['metric']
+    label={'operating_income':'biên lợi nhuận hoạt động','gross_profit':'biên lợi nhuận gộp',
+           'income':'biên lợi nhuận ròng'}.get(metric,metric.replace('_',' '))
+    variants=context.get('denominators',[])
+    if TOTAL.search(q) or SALES.search(q):
+        from app.product.sec_ratio import ratio_variants
+        variants=ratio_variants(q)
+        overrides['denominators']=variants
+    terms={'TOTAL_REVENUE':'tổng doanh thu','NET_SALES':'doanh thu thuần','PRODUCT_NET_SALES':'doanh thu thuần bán hàng'}
+    denominator_text=' và '.join(terms[k] for k in variants if k in terms)
+    relation='cùng kỳ năm trước' if explicit_prior or context.get('relation')=='PRIOR_YEAR' else ''
+    if explicit_prior:
+        overrides['relation']='PRIOR_YEAR'
+    resolved=' '.join(filter(None,[issuer,label,duration_text,report_end,denominator_text,relation,
+                                    'kỳ hiện tại' if overrides.get('report_end')=='CURRENT' else '']))
+    return {'question':resolved,'inherited':{k:v for k,v in context.items() if k not in overrides
+                                             and (k!='report_end' or report_end)},
+            'overrides':overrides,'previous_intent':prior_plan.get('intent')}

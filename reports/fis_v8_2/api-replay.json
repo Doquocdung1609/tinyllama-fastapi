@@ -1,0 +1,3268 @@
+{
+  "baseline": [
+    {
+      "case": "A01",
+      "request": {
+        "question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 3.443750899998122,
+      "http": 200,
+      "reply": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "values": [
+          "3.99"
+        ],
+        "unit": "%",
+        "answer": "Biên lợi nhuận hoạt động của COST cho kỳ 2026-02-16–2026-05-10 (12 tuần): **3.99%**. Operating income: 2,815,000,000 USD [1] ÷ Total revenue: 70,527,000,000 USD [2] × 100.",
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_2a1957f48c8e6297aec5853f77f59c99",
+            "issuer": "COSTCO WHOLESALE CORP /NEW",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "accession": "0000909832-26-000051",
+            "form": "10-Q",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "report_period": "2026-05-10",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "text": "Operating income: 2,815 · 2026-05-10",
+            "row_label": "Operating income",
+            "column_label": "12 Weeks Ended / May 10, 2026",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          },
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_161c27d72c8f9529617f54db0ba06431",
+            "issuer": "COSTCO WHOLESALE CORP /NEW",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "accession": "0000909832-26-000051",
+            "form": "10-Q",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "report_period": "2026-05-10",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "text": "Total revenue: 70,527 · 2026-05-10",
+            "row_label": "Total revenue",
+            "column_label": "12 Weeks Ended / May 10, 2026",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          }
+        ],
+        "source_cells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "cik": "0000909832",
+            "accession": "0000909832-26-000051",
+            "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "parent_id": "fin_2a1957f48c8e6297aec5853f77f59c99",
+            "parent_payload_hash": "6f34a6d4ba64c492b200d82cbf4e6f5d976b6a337f507cf7cb025253cdda7ad1",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row": 10,
+            "column": 3,
+            "row_label": "Operating income",
+            "raw_value": "2,815",
+            "value": "2815",
+            "unit": "USD",
+            "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "2815000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-02-16",
+            "period_end": "2026-05-10",
+            "period_months": 3,
+            "header_path": [
+              "12 Weeks Ended",
+              "May 10, 2026"
+            ],
+            "fact_name": "us-gaap:OperatingIncomeLoss",
+            "fact_context_ref": "c-11",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[11]/td[2]",
+            "footnotes": [],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 84,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "cik": "0000909832",
+            "accession": "0000909832-26-000051",
+            "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "parent_id": "fin_161c27d72c8f9529617f54db0ba06431",
+            "parent_payload_hash": "9b8b71f3cfc6545b48140c0bfd77bab72c17b0bddc5900eca44b9b7fd3da76f3",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row": 6,
+            "column": 3,
+            "row_label": "Total revenue",
+            "raw_value": "70,527",
+            "value": "70527",
+            "unit": "USD",
+            "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "70527000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-02-16",
+            "period_end": "2026-05-10",
+            "period_months": 3,
+            "header_path": [
+              "12 Weeks Ended",
+              "May 10, 2026"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "c-11",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[7]/td[2]",
+            "footnotes": [],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 84,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "independent_verification": {
+          "status": "VERIFIED",
+          "version": "SEC_FEDERATED_DECIMAL_V4",
+          "stage_b": [
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "3.99",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "COST"
+          ],
+          "context_only_entities": [],
+          "focused_entities": [],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "COST"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "COST",
+              "metric": "bien loi nhuan hoat dong",
+              "operation": "MARGIN_PERCENT",
+              "period": null,
+              "duration": "12W",
+              "relation": null,
+              "unit": "PERCENT",
+              "filing_ids": [
+                "sec:0000909832:0000909832-26-000051"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null
+            }
+          ],
+          "intent": "MARGIN",
+          "error": null
+        },
+        "answer_completeness": {
+          "completed": 1,
+          "required": 1
+        },
+        "timings_ms": {
+          "orchestration_total": 3142.549500000314
+        },
+        "question_contract": {
+          "original_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+          "resolved_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A02",
+      "request": {
+        "question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 10.73244030000933,
+      "http": 200,
+      "reply": {
+        "status": "SUPPORTED",
+        "answer_status": "SEC_TASK_RESULTS",
+        "answer": "### MSFT · operating income\nLợi nhuận hoạt động của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2025-01-01 → 2025-03-31 | 3 tháng (90 ngày) | 32.000 | 0000950170-25-061046 [1] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 37.961 | 0001193125-25-256321 [2] |\n\nChênh lệch = 37.961 − 32.000 = **5.961 triệu USD**. [1][2]\n\nMức thay đổi = chênh lệch ÷ 32.000 × 100 = **18,63%**. [1][2]\n\n### MSFT · revenue\nDoanh thu của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2025-01-01 → 2025-03-31 | 3 tháng (90 ngày) | 70.066 | 0000950170-25-061046 [3] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 77.673 | 0001193125-25-256321 [4] |\n\nChênh lệch = 77.673 − 70.066 = **7.607 triệu USD**. [3][4]\n\nMức thay đổi = chênh lệch ÷ 70.066 × 100 = **10,86%**. [3][4]",
+        "values": [],
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_9f3d4581021fdd5da6f389a93164b8d1",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0000950170-25-061046",
+            "accession": "0000950170-25-061046",
+            "form": "10-Q",
+            "generation": "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09",
+            "report_period": "2025-03-31",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
+            "source_sha256": "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+            "text": "Operating income: 32,000 · 2025-03-31",
+            "row_label": "Operating income",
+            "column_label": "Three Months Ended March 31, / 2025",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          },
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_d08ed230347428d09e891811434d2ee7",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "form": "10-Q",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "report_period": "2025-09-30",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "text": "Operating income: 37,961 · 2025-09-30",
+            "row_label": "Operating income",
+            "column_label": "Three Months Ended September 30, / 2025",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          },
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_e0107db632270b84e79f867191691388",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0000950170-25-061046",
+            "accession": "0000950170-25-061046",
+            "form": "10-Q",
+            "generation": "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09",
+            "report_period": "2025-03-31",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
+            "source_sha256": "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+            "text": "Total revenue: 70,066 · 2025-03-31",
+            "row_label": "Total revenue",
+            "column_label": "Three Months Ended March 31, / 2025",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          },
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_19029350750a268a7fb4ae74c83d9131",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "form": "10-Q",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "report_period": "2025-09-30",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "text": "Total revenue: 77,673 · 2025-09-30",
+            "row_label": "Total revenue",
+            "column_label": "Three Months Ended September 30, / 2025",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          }
+        ],
+        "task_results": [
+          {
+            "label": "MSFT · operating income",
+            "status": "SUPPORTED",
+            "values": [
+              "5961"
+            ],
+            "reason": null,
+            "source_cells": [
+              {
+                "contract_version": "real-sec-cell-observation/v1",
+                "source_status": "VERIFIED_SOURCE_CELL",
+                "dataset_id": "user-sec-99f6a3fafdef38c94ea30e82",
+                "generation": "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09",
+                "manifest_hash": "c8524233fa880427d0625e75d1125e8d0824ba56bddc1ee49b34f4def95efcfa",
+                "filing_id": "sec:0000789019:0000950170-25-061046",
+                "cik": "0000789019",
+                "accession": "0000950170-25-061046",
+                "raw_sha256": "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+                "parent_id": "fin_9f3d4581021fdd5da6f389a93164b8d1",
+                "parent_payload_hash": "33c77525c232808c31cbaa10a5f01699ff4bfae2d0cb8bed45dda6116dfbf851",
+                "table_id": "table_bf223f85c37621b602b91a21",
+                "row": 28,
+                "column": 3,
+                "row_label": "Operating income",
+                "raw_value": "32,000",
+                "value": "32000",
+                "unit": "USD",
+                "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+                "multiplier": "1000000",
+                "effective_value": "32000000000",
+                "period_kind": "DURATION",
+                "period_start": "2025-01-01",
+                "period_end": "2025-03-31",
+                "period_months": 3,
+                "header_path": [
+                  "Three Months Ended March 31,",
+                  "2025"
+                ],
+                "fact_name": "us-gaap:OperatingIncomeLoss",
+                "fact_context_ref": "C_f5d91e16-4fa6-44d0-96d4-472f3551cf38",
+                "fact_unit_ref": "U_USD",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
+                "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[4]",
+                "footnotes": [],
+                "warnings": [],
+                "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+                "duration_days": 90,
+                "scope": "CONSOLIDATED",
+                "dimensions": []
+              },
+              {
+                "contract_version": "real-sec-cell-observation/v1",
+                "source_status": "VERIFIED_SOURCE_CELL",
+                "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+                "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+                "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+                "filing_id": "sec:0000789019:0001193125-25-256321",
+                "cik": "0000789019",
+                "accession": "0001193125-25-256321",
+                "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+                "parent_id": "fin_d08ed230347428d09e891811434d2ee7",
+                "parent_payload_hash": "fb95d9193b26643fa48d6496051c70936825d3e5cc655d7e623ce5bb3a357e04",
+                "table_id": "table_98786a848fee9fa779b9b014",
+                "row": 28,
+                "column": 3,
+                "row_label": "Operating income",
+                "raw_value": "37,961",
+                "value": "37961",
+                "unit": "USD",
+                "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+                "multiplier": "1000000",
+                "effective_value": "37961000000",
+                "period_kind": "DURATION",
+                "period_start": "2025-07-01",
+                "period_end": "2025-09-30",
+                "period_months": 3,
+                "header_path": [
+                  "Three Months Ended September 30,",
+                  "2025"
+                ],
+                "fact_name": "us-gaap:OperatingIncomeLoss",
+                "fact_context_ref": "C_77513f4d-d996-497e-8795-6472b2325bfb",
+                "fact_unit_ref": "U_USD",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+                "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[4]",
+                "footnotes": [],
+                "warnings": [],
+                "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+                "duration_days": 92,
+                "scope": "CONSOLIDATED",
+                "dimensions": []
+              }
+            ]
+          },
+          {
+            "label": "MSFT · revenue",
+            "status": "SUPPORTED",
+            "values": [
+              "7607"
+            ],
+            "reason": null,
+            "source_cells": [
+              {
+                "contract_version": "real-sec-cell-observation/v1",
+                "source_status": "VERIFIED_SOURCE_CELL",
+                "dataset_id": "user-sec-99f6a3fafdef38c94ea30e82",
+                "generation": "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09",
+                "manifest_hash": "c8524233fa880427d0625e75d1125e8d0824ba56bddc1ee49b34f4def95efcfa",
+                "filing_id": "sec:0000789019:0000950170-25-061046",
+                "cik": "0000789019",
+                "accession": "0000950170-25-061046",
+                "raw_sha256": "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+                "parent_id": "fin_e0107db632270b84e79f867191691388",
+                "parent_payload_hash": "530da90193aba1718bd4ec629b9641ddc061467b9694219168d4b1de9404bd41",
+                "table_id": "table_bf223f85c37621b602b91a21",
+                "row": 11,
+                "column": 3,
+                "row_label": "Total revenue",
+                "raw_value": "70,066",
+                "value": "70066",
+                "unit": "USD",
+                "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+                "multiplier": "1000000",
+                "effective_value": "70066000000",
+                "period_kind": "DURATION",
+                "period_start": "2025-01-01",
+                "period_end": "2025-03-31",
+                "period_months": 3,
+                "header_path": [
+                  "Three Months Ended March 31,",
+                  "2025"
+                ],
+                "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+                "fact_context_ref": "C_f5d91e16-4fa6-44d0-96d4-472f3551cf38",
+                "fact_unit_ref": "U_USD",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
+                "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[4]",
+                "footnotes": [],
+                "warnings": [],
+                "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+                "duration_days": 90,
+                "scope": "CONSOLIDATED",
+                "dimensions": []
+              },
+              {
+                "contract_version": "real-sec-cell-observation/v1",
+                "source_status": "VERIFIED_SOURCE_CELL",
+                "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+                "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+                "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+                "filing_id": "sec:0000789019:0001193125-25-256321",
+                "cik": "0000789019",
+                "accession": "0001193125-25-256321",
+                "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+                "parent_id": "fin_19029350750a268a7fb4ae74c83d9131",
+                "parent_payload_hash": "373ae23628000988b5916c06dae6d00e42d7aa5b07282244bdb91f865581e3af",
+                "table_id": "table_98786a848fee9fa779b9b014",
+                "row": 11,
+                "column": 3,
+                "row_label": "Total revenue",
+                "raw_value": "77,673",
+                "value": "77673",
+                "unit": "USD",
+                "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+                "multiplier": "1000000",
+                "effective_value": "77673000000",
+                "period_kind": "DURATION",
+                "period_start": "2025-07-01",
+                "period_end": "2025-09-30",
+                "period_months": 3,
+                "header_path": [
+                  "Three Months Ended September 30,",
+                  "2025"
+                ],
+                "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+                "fact_context_ref": "C_77513f4d-d996-497e-8795-6472b2325bfb",
+                "fact_unit_ref": "U_USD",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+                "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[4]",
+                "footnotes": [],
+                "warnings": [],
+                "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+                "duration_days": 92,
+                "scope": "CONSOLIDATED",
+                "dimensions": []
+              }
+            ]
+          }
+        ],
+        "answer_completeness": {
+          "completed": 2,
+          "required": 2
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "COST",
+            "HD",
+            "MSFT",
+            "PG"
+          ],
+          "context_only_entities": [
+            "COST",
+            "HD",
+            "PG"
+          ],
+          "focused_entities": [
+            "MSFT"
+          ],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "MSFT"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "MSFT",
+              "metric": "operating_income",
+              "operation": "EXTRACT",
+              "period": null,
+              "duration": null,
+              "relation": null,
+              "unit": "SOURCE_UNIT",
+              "filing_ids": [
+                "sec:0000789019:0000950170-25-061046",
+                "sec:0000789019:0001193125-25-256321"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null
+            },
+            {
+              "task_id": "SEC-002",
+              "issuer": "MSFT",
+              "metric": "revenue",
+              "operation": "EXTRACT",
+              "period": null,
+              "duration": null,
+              "relation": null,
+              "unit": "SOURCE_UNIT",
+              "filing_ids": [
+                "sec:0000789019:0000950170-25-061046",
+                "sec:0000789019:0001193125-25-256321"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null
+            }
+          ],
+          "intent": "NUMERIC",
+          "error": null
+        },
+        "timings_ms": {
+          "orchestration_total": 10620.231399996555
+        },
+        "question_contract": {
+          "original_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+          "resolved_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A03a",
+      "request": {
+        "question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 1.4524549000052502,
+      "http": 200,
+      "reply": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "values": [
+          "14.29"
+        ],
+        "unit": "%",
+        "answer": "Biên lợi nhuận hoạt động của HD cho kỳ 2026-05-04–2026-08-02 (13 tuần): **14.29%**. Operating income: 6,839,000,000 USD [1] ÷ Net sales: 47,861,000,000 USD [2] × 100.",
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_0341456be865d1abb9c4be723033b1e5",
+            "issuer": "HOME DEPOT, INC.",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "accession": "0001628280-26-058715",
+            "form": "10-Q",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "report_period": "2026-08-02",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "text": "Operating income: 6,839 · 2026-08-02",
+            "row_label": "Operating income",
+            "column_label": "Three Months Ended / August 2, 2026 / Consolidated",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          },
+          {
+            "source_kind": "SEC",
+            "chunk_id": "fin_28a3e54b5735b1aefc0457c034427de9",
+            "issuer": "HOME DEPOT, INC.",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "accession": "0001628280-26-058715",
+            "form": "10-Q",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "report_period": "2026-08-02",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "text": "Net sales: 47,861 · 2026-08-02",
+            "row_label": "Net sales",
+            "column_label": "Three Months Ended / August 2, 2026 / Consolidated",
+            "verification": "VERIFIED_SOURCE_CELL",
+            "unit": "USD"
+          }
+        ],
+        "source_cells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "cik": "0000354950",
+            "accession": "0001628280-26-058715",
+            "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "parent_id": "fin_0341456be865d1abb9c4be723033b1e5",
+            "parent_payload_hash": "03fcfd3015c5cb6107118e1f87db92480a05428027889e547f065032daf6a706",
+            "table_id": "table_095b5d603845e56eceabeafd",
+            "row": 6,
+            "column": 15,
+            "row_label": "Operating income",
+            "raw_value": "6,839",
+            "value": "6839",
+            "unit": "USD",
+            "display_unit_header": "in millions",
+            "multiplier": "1000000",
+            "effective_value": "6839000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-05-04",
+            "period_end": "2026-08-02",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended",
+              "August 2, 2026",
+              "Consolidated"
+            ],
+            "fact_name": "us-gaap:OperatingIncomeLoss",
+            "fact_context_ref": "c-5",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]/tr[7]/td[8]",
+            "footnotes": [
+              "(1) Net sales presented in Other relate to the sale of products within our SRS non-reportable operating segments, including the HVAC products operating segment beginning in the second quarter of fiscal 2026 upon the acquisition of Mingledorff’s, as well as the interior and construction products operating segment beginning in the third quarter of fiscal 2025 upon the acquisition of GMS. Operating income presented in Other includes cost of sales and operating expenses totaling $ 4.8 billion and $ 8.8 billion for the three and six months ended August 2, 2026, respectively, within these SRS non-reportable operating segments.",
+              "(2) Includes depreciation and finance lease amortization in cost of sales. Also includes intangible asset amortization expense of $ 53 million and $ 105 million for the three and six months ended August 2, 2026, respectively, in our Primary segment, and intangible asset amortization expense of $ 125 million and $ 244 million for the three and six months ended August 2, 2026, respectively, in Other."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 91,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "cik": "0000354950",
+            "accession": "0001628280-26-058715",
+            "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "parent_id": "fin_28a3e54b5735b1aefc0457c034427de9",
+            "parent_payload_hash": "0f2ed8fa7d269b7f3356bc1e149a7f44bd93f22a9098b1d0bfed09a3cb615c07",
+            "table_id": "table_095b5d603845e56eceabeafd",
+            "row": 4,
+            "column": 16,
+            "row_label": "Net sales",
+            "raw_value": "47,861",
+            "value": "47861",
+            "unit": "USD",
+            "display_unit_header": "in millions",
+            "multiplier": "1000000",
+            "effective_value": "47861000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-05-04",
+            "period_end": "2026-08-02",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended",
+              "August 2, 2026",
+              "Consolidated"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "c-5",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]/tr[5]/td[11]",
+            "footnotes": [
+              "(1) Net sales presented in Other relate to the sale of products within our SRS non-reportable operating segments, including the HVAC products operating segment beginning in the second quarter of fiscal 2026 upon the acquisition of Mingledorff’s, as well as the interior and construction products operating segment beginning in the third quarter of fiscal 2025 upon the acquisition of GMS. Operating income presented in Other includes cost of sales and operating expenses totaling $ 4.8 billion and $ 8.8 billion for the three and six months ended August 2, 2026, respectively, within these SRS non-reportable operating segments.",
+              "(2) Includes depreciation and finance lease amortization in cost of sales. Also includes intangible asset amortization expense of $ 53 million and $ 105 million for the three and six months ended August 2, 2026, respectively, in our Primary segment, and intangible asset amortization expense of $ 125 million and $ 244 million for the three and six months ended August 2, 2026, respectively, in Other."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 91,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "independent_verification": {
+          "status": "VERIFIED",
+          "version": "SEC_FEDERATED_DECIMAL_V4",
+          "stage_b": [
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "14.29",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000354950:0001628280-26-058715"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "HD"
+          ],
+          "context_only_entities": [],
+          "focused_entities": [],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "HD"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "HD",
+              "metric": "bien loi nhuan hoat dong",
+              "operation": "MARGIN_PERCENT",
+              "period": null,
+              "duration": "13W",
+              "relation": null,
+              "unit": "PERCENT",
+              "filing_ids": [
+                "sec:0000354950:0001628280-26-058715"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null
+            }
+          ],
+          "intent": "MARGIN",
+          "error": null
+        },
+        "answer_completeness": {
+          "completed": 1,
+          "required": 1
+        },
+        "timings_ms": {
+          "orchestration_total": 1367.8042000101414
+        },
+        "question_contract": {
+          "original_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+          "resolved_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A03b",
+      "request": {
+        "question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 2.066599199999473,
+      "http": 200,
+      "reply": {
+        "status": "SOURCE_EXCERPTS",
+        "answer": "Đã tìm thấy các đoạn nguồn liên quan.\n\n[1] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: • Fabric & Home Care : Fabric Care (Fabric Enhancers, Laundry Additives, Laundry Detergents); Home Care (Air Care, Dish Care, P&G Professional, Surface Care); Habitat Care (Pest Prevention, Outdoor Care); and\n\n[2] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Net earnings attributable to P&G (Diluted) · $ · 4,731 · $ · 4,750\n\n[3] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Net earnings attributable to P&G available to common shareholders (Basic) · $ · 4,658 · $ · 4,677\n\n[4] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Free cash flow productivity. Free cash flow productivity is defined as the ratio of free cash flow to net earnings. We view free cash flow productivity as a useful measure to help investors understand P&G’s ability to generate cash. Free cash flow productivity is used by management in making operating decisions, in allocating financial resources and for budget planning purposes. This measure is also used in assessing the achievement of management goals for at-risk compensation.\n\n[5] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: P&G is a global leader in the fast-moving consumer goods industry, focused on providing branded consumer packaged goods of superior quality and value to our consumers around the world. Our products are sold in about 180 countries and territories, primarily through mass merchandisers, e-commerce (including social commerce) channels, grocery stores, membership club stores, drug stores, department stores, distributors, wholesalers, specialty beauty stores (including airport duty-free stores), high-frequency stores, pharmacies, electronics stores and professional channels. We also sell direct to i",
+        "citations": [
+          {
+            "rank": 1,
+            "chunk_id": "fin_c5a8513fd32cf48f5dc97aa40de4d2ae",
+            "score": 13.182599408620039,
+            "bm25_rank": 5,
+            "dense_rank": null,
+            "bm25_score": 13.182599408620039,
+            "dense_score": null,
+            "ticker": "PG",
+            "cik": "0000080424",
+            "issuer": "PROCTER & GAMBLE Co",
+            "form": "10-Q",
+            "report_period": "2026-09-30",
+            "accession": "0000080424-26-000256",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "text": "• Fabric & Home Care : Fabric Care (Fabric Enhancers, Laundry Additives, Laundry Detergents); Home Care (Air Care, Dish Care, P&G Professional, Surface Care); Habitat Care (Pest Prevention, Outdoor Care); and",
+            "source_location": {
+              "section": "2. Segment Information",
+              "html_anchor": null,
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[2]/div[5]",
+              "table_id": null,
+              "row_index": null,
+              "column_index": null,
+              "text_start": 0,
+              "text_end": 208,
+              "pdf_page": null,
+              "bbox": null
+            },
+            "extraction_status": "OK",
+            "provenance_status": "VERIFIED_LOCAL_SEC_SOURCE_BYTES",
+            "row_label": null,
+            "rank_reasons": {
+              "issuer": true,
+              "form": null,
+              "report_date": "2026-09-30",
+              "period_match": false,
+              "period_conflict": false,
+              "financial_section": false,
+              "administrative_section": false,
+              "metric_term_present": false,
+              "table_like_candidate": false,
+              "verification_status": "CANDIDATE_ONLY",
+              "exact_source_row": false
+            },
+            "algorithm_executed": "A5_FEATURE_RERANK_PRODUCT_SEC_V1",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "numeric_status": "CANDIDATE_ONLY",
+            "citation_id": "fin_c5a8513fd32cf48f5dc97aa40de4d2ae",
+            "text_quote": "• Fabric & Home Care : Fabric Care (Fabric Enhancers, Laundry Additives, Laundry Detergents); Home Care (Air Care, Dish Care, P&G Professional, Surface Care); Habitat Care (Pest Prevention, Outdoor Care); and",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "partition_rank": 1,
+            "source_kind": "SEC"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "fin_ffad41d7aea7221456a33911be307d59",
+            "score": 11.469552990475565,
+            "bm25_rank": 6,
+            "dense_rank": null,
+            "bm25_score": 11.469552990475565,
+            "dense_score": null,
+            "ticker": "PG",
+            "cik": "0000080424",
+            "issuer": "PROCTER & GAMBLE Co",
+            "form": "10-Q",
+            "report_period": "2026-09-30",
+            "accession": "0000080424-26-000256",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "text": "Net earnings attributable to P&G (Diluted) · $ · 4,731 · $ · 4,750",
+            "source_location": {
+              "section": "4. Earnings Per Share",
+              "html_anchor": null,
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[6]/ix:nonnumeric[1]/div[1]/table[1]",
+              "table_id": "table_b36a6b6b7d6cd9547c146a2c",
+              "row_index": 3,
+              "column_index": null,
+              "text_start": null,
+              "text_end": null,
+              "pdf_page": null,
+              "bbox": null
+            },
+            "extraction_status": "OK",
+            "provenance_status": "VERIFIED_LOCAL_SEC_SOURCE_BYTES",
+            "row_label": "Net earnings attributable to P&G (Diluted)",
+            "rank_reasons": {
+              "issuer": true,
+              "form": null,
+              "report_date": "2026-09-30",
+              "period_match": false,
+              "period_conflict": false,
+              "financial_section": false,
+              "administrative_section": false,
+              "metric_term_present": false,
+              "table_like_candidate": false,
+              "verification_status": "CANDIDATE_ONLY",
+              "exact_source_row": false
+            },
+            "algorithm_executed": "A5_FEATURE_RERANK_PRODUCT_SEC_V1",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "numeric_status": "CANDIDATE_ONLY",
+            "citation_id": "fin_ffad41d7aea7221456a33911be307d59",
+            "text_quote": "Net earnings attributable to P&G (Diluted) · $ · 4,731 · $ · 4,750",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "partition_rank": 2,
+            "source_kind": "SEC"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "fin_d18c707e034de673bd603510350959f0",
+            "score": 11.337919828605,
+            "bm25_rank": 7,
+            "dense_rank": null,
+            "bm25_score": 11.337919828605,
+            "dense_score": null,
+            "ticker": "PG",
+            "cik": "0000080424",
+            "issuer": "PROCTER & GAMBLE Co",
+            "form": "10-Q",
+            "report_period": "2026-09-30",
+            "accession": "0000080424-26-000256",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "text": "Net earnings attributable to P&G available to common shareholders (Basic) · $ · 4,658 · $ · 4,677",
+            "source_location": {
+              "section": "4. Earnings Per Share",
+              "html_anchor": null,
+              "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[6]/ix:nonnumeric[1]/div[1]/table[1]",
+              "table_id": "table_b36a6b6b7d6cd9547c146a2c",
+              "row_index": 5,
+              "column_index": null,
+              "text_start": null,
+              "text_end": null,
+              "pdf_page": null,
+              "bbox": null
+            },
+            "extraction_status": "OK",
+            "provenance_status": "VERIFIED_LOCAL_SEC_SOURCE_BYTES",
+            "row_label": "Net earnings attributable to P&G available to common shareholders (Basic)",
+            "rank_reasons": {
+              "issuer": true,
+              "form": null,
+              "report_date": "2026-09-30",
+              "period_match": false,
+              "period_conflict": false,
+              "financial_section": false,
+              "administrative_section": false,
+              "metric_term_present": false,
+              "table_like_candidate": false,
+              "verification_status": "CANDIDATE_ONLY",
+              "exact_source_row": false
+            },
+            "algorithm_executed": "A5_FEATURE_RERANK_PRODUCT_SEC_V1",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "numeric_status": "CANDIDATE_ONLY",
+            "citation_id": "fin_d18c707e034de673bd603510350959f0",
+            "text_quote": "Net earnings attributable to P&G available to common shareholders (Basic) · $ · 4,658 · $ · 4,677",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "partition_rank": 3,
+            "source_kind": "SEC"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "fin_40b4fc0c2c36fc6082c361e0e2aa9384",
+            "score": 11.330473003360293,
+            "bm25_rank": 8,
+            "dense_rank": null,
+            "bm25_score": 11.330473003360293,
+            "dense_score": null,
+            "ticker": "PG",
+            "cik": "0000080424",
+            "issuer": "PROCTER & GAMBLE Co",
+            "form": "10-Q",
+            "report_period": "2026-09-30",
+            "accession": "0000080424-26-000256",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "text": "Free cash flow productivity. Free cash flow productivity is defined as the ratio of free cash flow to net earnings. We view free cash flow productivity as a useful measure to help investors understand P&G’s ability to generate cash. Free cash flow productivity is used by management in making operating decisions, in allocating financial resources and for budget planning purposes. This measure is also used in assessing the achievement of management goals for at-risk compensation.",
+            "source_location": {
+              "section": "MEASURES NOT DEFINED BY U.S. GAAP",
+              "html_anchor": null,
+              "structural_path": "/document[1]/html[1]/body[1]/div[291]",
+              "table_id": null,
+              "row_index": null,
+              "column_index": null,
+              "text_start": 0,
+              "text_end": 482,
+              "pdf_page": null,
+              "bbox": null
+            },
+            "extraction_status": "OK",
+            "provenance_status": "VERIFIED_LOCAL_SEC_SOURCE_BYTES",
+            "row_label": null,
+            "rank_reasons": {
+              "issuer": true,
+              "form": null,
+              "report_date": "2026-09-30",
+              "period_match": false,
+              "period_conflict": false,
+              "financial_section": false,
+              "administrative_section": false,
+              "metric_term_present": false,
+              "table_like_candidate": false,
+              "verification_status": "CANDIDATE_ONLY",
+              "exact_source_row": false
+            },
+            "algorithm_executed": "A5_FEATURE_RERANK_PRODUCT_SEC_V1",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "numeric_status": "CANDIDATE_ONLY",
+            "citation_id": "fin_40b4fc0c2c36fc6082c361e0e2aa9384",
+            "text_quote": "Free cash flow productivity. Free cash flow productivity is defined as the ratio of free cash flow to net earnings. We view free cash flow productivity as a useful measure to help investors understand P&G’s ability to generate cash. Free cash flow productivity is used by management in making operating decisions, in allocating financial resources and for budget planning purposes. This measure is also used in assessing the achievement of management goals for at-risk compensation.",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "partition_rank": 4,
+            "source_kind": "SEC"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "fin_4472cefeddeca466342180a1fa7ad008",
+            "score": 10.7159553286359,
+            "bm25_rank": 9,
+            "dense_rank": null,
+            "bm25_score": 10.7159553286359,
+            "dense_score": null,
+            "ticker": "PG",
+            "cik": "0000080424",
+            "issuer": "PROCTER & GAMBLE Co",
+            "form": "10-Q",
+            "report_period": "2026-09-30",
+            "accession": "0000080424-26-000256",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "text": "P&G is a global leader in the fast-moving consumer goods industry, focused on providing branded consumer packaged goods of superior quality and value to our consumers around the world. Our products are sold in about 180 countries and territories, primarily through mass merchandisers, e-commerce (including social commerce) channels, grocery stores, membership club stores, drug stores, department stores, distributors, wholesalers, specialty beauty stores (including airport duty-free stores), high-frequency stores, pharmacies, electronics stores and professional channels. We also sell direct to individual consumers. We have on-the-ground operations in approximately 65 countries.",
+            "source_location": {
+              "section": "OVERVIEW",
+              "html_anchor": null,
+              "structural_path": "/document[1]/html[1]/body[1]/div[165]",
+              "table_id": null,
+              "row_index": null,
+              "column_index": null,
+              "text_start": 0,
+              "text_end": 684,
+              "pdf_page": null,
+              "bbox": null
+            },
+            "extraction_status": "OK",
+            "provenance_status": "VERIFIED_LOCAL_SEC_SOURCE_BYTES",
+            "row_label": null,
+            "rank_reasons": {
+              "issuer": true,
+              "form": null,
+              "report_date": "2026-09-30",
+              "period_match": false,
+              "period_conflict": false,
+              "financial_section": false,
+              "administrative_section": false,
+              "metric_term_present": false,
+              "table_like_candidate": false,
+              "verification_status": "CANDIDATE_ONLY",
+              "exact_source_row": false
+            },
+            "algorithm_executed": "A5_FEATURE_RERANK_PRODUCT_SEC_V1",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "numeric_status": "CANDIDATE_ONLY",
+            "citation_id": "fin_4472cefeddeca466342180a1fa7ad008",
+            "text_quote": "P&G is a global leader in the fast-moving consumer goods industry, focused on providing branded consumer packaged goods of superior quality and value to our consumers around the world. Our products are sold in about 180 countries and territories, primarily through mass merchandisers, e-commerce (including social commerce) channels, grocery stores, membership club stores, drug stores, department stores, distributors, wholesalers, specialty beauty stores (including airport duty-free stores), high-frequency stores, pharmacies, electronics stores and professional channels. We also sell direct to individual consumers. We have on-the-ground operations in approximately 65 countries.",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "partition_rank": 5,
+            "source_kind": "SEC"
+          }
+        ],
+        "values": [],
+        "verification_status": "SOURCE_TEXT_UNREVIEWED",
+        "numeric_verification": {
+          "status": "UNVERIFIED",
+          "reason": "SOURCE_CELLS_REQUIRE_VERIFICATION"
+        },
+        "search_profile": "faith_r_product_v1",
+        "query_understanding": {
+          "raw_text": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+          "intent": "FIND_EVIDENCE",
+          "issuer_mentions": [],
+          "metric": null,
+          "metric_phrases": [],
+          "years": [],
+          "period_type": null,
+          "scope": null,
+          "basis": null,
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "A5_FEATURE_RERANK_PRODUCT_SEC_V1",
+          "latency_ms": 1949.3215000111377,
+          "candidate_count": 12,
+          "generation": "fd47fe363db70434df0ca131ed08ad9b4f597e4231940c47577940f7d6284a89"
+        },
+        "warnings": [
+          "Trích đoạn nguồn; giá trị số chưa được xác minh độc lập."
+        ],
+        "generation": "fd47fe363db70434df0ca131ed08ad9b4f597e4231940c47577940f7d6284a89",
+        "question_contract": {
+          "original_question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+          "resolved_question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A04",
+      "request": {
+        "question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 0.29303619998972863,
+      "http": 200,
+      "reply": {
+        "status": "SOURCE_EXCERPTS",
+        "answer_status": "SEC_NARRATIVE_EVIDENCE",
+        "answer": "Các công bố liên quan trong filing:\n\n- **Cạnh tranh — công bố của MSFT:** Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh. [1]\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm.",
+        "values": [],
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "report_period": "2025-09-30",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_1dd21d141c5ca5f47898f06e39410167",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "We face intense competition across all markets for our products and services, which could adversely affect our results of operations.",
+            "section": "We face intense competition across all markets for our products and services, which could adversely affect our results of operations.",
+            "verification": "VERIFIED_SOURCE_EXCERPT"
+          }
+        ],
+        "topic_results": [
+          {
+            "topic": "COMPETITION",
+            "status": "SOURCE_EXCERPTS",
+            "citation": 1
+          }
+        ],
+        "answer_completeness": {
+          "completed": 1,
+          "required": 1
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "MSFT"
+          ],
+          "context_only_entities": [],
+          "focused_entities": [],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "MSFT"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "MSFT",
+              "metric": "COMPETITION",
+              "operation": "SUMMARIZE",
+              "period": null,
+              "duration": null,
+              "relation": null,
+              "unit": "SOURCE_UNIT",
+              "filing_ids": [
+                "sec:0000789019:0000950170-25-061046",
+                "sec:0000789019:0001193125-25-256321"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "disclosure",
+                "citation",
+                "interpretation_boundary"
+              ],
+              "missing_evidence": null
+            }
+          ],
+          "intent": "NARRATIVE",
+          "error": null
+        },
+        "timings_ms": {
+          "orchestration_total": 199.23660000495147
+        },
+        "question_contract": {
+          "original_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+          "resolved_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    }
+  ],
+  "repaired": [
+    {
+      "case": "A01",
+      "request": {
+        "question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 23.327409599995008,
+      "http": 200,
+      "reply": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "Biên lợi nhuận hoạt động của **COST** · 10-Q kết thúc 2026-05-10.\n\n### Tổng doanh thu\n\n**Kỳ báo cáo · 2026-02-16 đến 2026-05-10 (12 tuần): 3,99%**. Operating income 2.815 triệu USD [1] ÷ Total revenue 70.527 triệu USD [2] × 100.\n\n### Doanh thu thuần bán hàng\n\n**Kỳ báo cáo · 2026-02-16 đến 2026-05-10 (12 tuần): 4,07%**. Operating income 2.815 triệu USD [1] ÷ Net sales 69.154 triệu USD [3] × 100.\n\nMẫu số là doanh thu bán hàng, không gồm phí thành viên. Tử số là lợi nhuận hoạt động hợp nhất.\n\nCùng tử số, mẫu số “Total revenue” lớn hơn nên cho tỷ lệ thấp hơn. Mỗi tỷ lệ dùng đúng dòng doanh thu ghi trong bảng.",
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "issuer": "COSTCO WHOLESALE CORP /NEW",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "accession": "0000909832-26-000051",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "chunk_id": "fin_2a1957f48c8e6297aec5853f77f59c99",
+            "report_period": "2026-05-10",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "text": "Operating income: 2,815 · 2026-05-10",
+            "row_label": "Operating income",
+            "column_label": "12 Weeks Ended / May 10, 2026",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "COSTCO WHOLESALE CORP /NEW",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "accession": "0000909832-26-000051",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "chunk_id": "fin_161c27d72c8f9529617f54db0ba06431",
+            "report_period": "2026-05-10",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "text": "Total revenue: 70,527 · 2026-05-10",
+            "row_label": "Total revenue",
+            "column_label": "12 Weeks Ended / May 10, 2026",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "COSTCO WHOLESALE CORP /NEW",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "accession": "0000909832-26-000051",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "chunk_id": "fin_6dd3b74521036724dc0b769911f778ab",
+            "report_period": "2026-05-10",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "text": "Net sales: 69,154 · 2026-05-10",
+            "row_label": "Net sales",
+            "column_label": "12 Weeks Ended / May 10, 2026",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          }
+        ],
+        "source_cells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "cik": "0000909832",
+            "accession": "0000909832-26-000051",
+            "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "parent_id": "fin_2a1957f48c8e6297aec5853f77f59c99",
+            "parent_payload_hash": "6f34a6d4ba64c492b200d82cbf4e6f5d976b6a337f507cf7cb025253cdda7ad1",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row": 10,
+            "column": 3,
+            "row_label": "Operating income",
+            "raw_value": "2,815",
+            "value": "2815",
+            "unit": "USD",
+            "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "2815000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-02-16",
+            "period_end": "2026-05-10",
+            "period_months": 3,
+            "header_path": [
+              "12 Weeks Ended",
+              "May 10, 2026"
+            ],
+            "fact_name": "us-gaap:OperatingIncomeLoss",
+            "fact_context_ref": "c-11",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[11]/td[2]",
+            "footnotes": [],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 84,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "cik": "0000909832",
+            "accession": "0000909832-26-000051",
+            "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "parent_id": "fin_161c27d72c8f9529617f54db0ba06431",
+            "parent_payload_hash": "9b8b71f3cfc6545b48140c0bfd77bab72c17b0bddc5900eca44b9b7fd3da76f3",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row": 6,
+            "column": 3,
+            "row_label": "Total revenue",
+            "raw_value": "70,527",
+            "value": "70527",
+            "unit": "USD",
+            "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "70527000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-02-16",
+            "period_end": "2026-05-10",
+            "period_months": 3,
+            "header_path": [
+              "12 Weeks Ended",
+              "May 10, 2026"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "c-11",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[7]/td[2]",
+            "footnotes": [],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 84,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000909832:0000909832-26-000051",
+            "cik": "0000909832",
+            "accession": "0000909832-26-000051",
+            "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+            "parent_id": "fin_6dd3b74521036724dc0b769911f778ab",
+            "parent_payload_hash": "7053bb385d3dafbb21ac81f42dc7a81f606fa66fc8388f3aa6a3358c6133dbc1",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row": 4,
+            "column": 4,
+            "row_label": "Net sales",
+            "raw_value": "69,154",
+            "value": "69154",
+            "unit": "USD",
+            "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "69154000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-02-16",
+            "period_end": "2026-05-10",
+            "period_months": 3,
+            "header_path": [
+              "12 Weeks Ended",
+              "May 10, 2026"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "c-3",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[5]/td[3]",
+            "footnotes": [],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE",
+              "PRODUCT_SALES_DIMENSION_EXCLUDES_MEMBERSHIPS"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 84,
+            "scope": "CONSOLIDATED_PRODUCTS",
+            "dimensions": [
+              {
+                "axis": "ProductOrServiceAxis",
+                "member": "ProductMember"
+              }
+            ]
+          }
+        ],
+        "values": [
+          "3.99",
+          "4.07"
+        ],
+        "unit": "%",
+        "ratio_steps": [
+          {
+            "operation": "MARGIN_PERCENT",
+            "denominator": "TOTAL_REVENUE",
+            "role": "Kỳ báo cáo",
+            "unit": "%",
+            "period_start": "2026-02-16",
+            "period_end": "2026-05-10",
+            "duration_days": 84,
+            "citations": [
+              1,
+              2
+            ],
+            "result": "3.99"
+          },
+          {
+            "operation": "MARGIN_PERCENT",
+            "denominator": "PRODUCT_NET_SALES",
+            "role": "Kỳ báo cáo",
+            "unit": "%",
+            "period_start": "2026-02-16",
+            "period_end": "2026-05-10",
+            "duration_days": 84,
+            "citations": [
+              1,
+              3
+            ],
+            "result": "4.07"
+          }
+        ],
+        "answer_completeness": {
+          "completed": 2,
+          "required": 2
+        },
+        "independent_verification": {
+          "status": "VERIFIED",
+          "stage_b": [
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "3.99",
+              "status": "VERIFIED"
+            },
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "4.07",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "sec_task_context": {
+          "kind": "MARGIN",
+          "metric": "operating_income",
+          "issuer": "COST",
+          "denominators": [
+            "TOTAL_REVENUE",
+            "PRODUCT_NET_SALES"
+          ],
+          "duration": [
+            12
+          ],
+          "report_end": "2026-05-10",
+          "relation": null
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "COST"
+          ],
+          "context_only_entities": [],
+          "focused_entities": [],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "COST"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "COST",
+              "metric": "bien loi nhuan hoat dong",
+              "operation": "MARGIN_PERCENT",
+              "period": null,
+              "duration": "12W",
+              "relation": null,
+              "unit": "PERCENT",
+              "filing_ids": [
+                "sec:0000909832:0000909832-26-000051"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null,
+              "denominator": "TOTAL_REVENUE"
+            },
+            {
+              "task_id": "SEC-002",
+              "issuer": "COST",
+              "metric": "bien loi nhuan hoat dong",
+              "operation": "MARGIN_PERCENT",
+              "period": null,
+              "duration": "12W",
+              "relation": null,
+              "unit": "PERCENT",
+              "filing_ids": [
+                "sec:0000909832:0000909832-26-000051"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null,
+              "denominator": "PRODUCT_NET_SALES"
+            }
+          ],
+          "intent": "MARGIN",
+          "error": null
+        },
+        "timings_ms": {
+          "orchestration_total": 2505.331099993782
+        },
+        "question_contract": {
+          "original_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+          "resolved_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Theo Costco kỳ 12 tuần, tính biên lợi nhuận hoạt động lần lượt trên tổng doanh thu và trên doanh thu thuần bán hàng. Giải thích vì sao hai kết quả khác nhau.",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A02",
+      "request": {
+        "question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 10.087662400008412,
+      "http": 200,
+      "reply": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "Biên lợi nhuận hoạt động của **MSFT** · 10-Q kết thúc 2025-09-30.\n\n### Doanh thu trên báo cáo\n\n**Kỳ hiện tại · 2025-07-01 đến 2025-09-30 (3 tháng (92 ngày)): 48,87%**. Operating income 37.961 triệu USD [1] ÷ Total revenue 77.673 triệu USD [2] × 100.\n\n**Cùng kỳ năm trước · 2024-07-01 đến 2024-09-30 (3 tháng (92 ngày)): 46,58%**. Operating income 30.552 triệu USD [3] ÷ Total revenue 65.585 triệu USD [4] × 100.\n\n**Thay đổi của biên: +2,29 điểm phần trăm**. Lấy biên kỳ hiện tại trừ biên kỳ so sánh, rồi làm tròn kết quả.",
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_d08ed230347428d09e891811434d2ee7",
+            "report_period": "2025-09-30",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "Operating income: 37,961 · 2025-09-30",
+            "row_label": "Operating income",
+            "column_label": "Three Months Ended September 30, / 2025",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_19029350750a268a7fb4ae74c83d9131",
+            "report_period": "2025-09-30",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "Total revenue: 77,673 · 2025-09-30",
+            "row_label": "Total revenue",
+            "column_label": "Three Months Ended September 30, / 2025",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_d08ed230347428d09e891811434d2ee7",
+            "report_period": "2024-09-30",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "Operating income: 30,552 · 2024-09-30",
+            "row_label": "Operating income",
+            "column_label": "Three Months Ended September 30, / 2024",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_19029350750a268a7fb4ae74c83d9131",
+            "report_period": "2024-09-30",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "Total revenue: 65,585 · 2024-09-30",
+            "row_label": "Total revenue",
+            "column_label": "Three Months Ended September 30, / 2024",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          }
+        ],
+        "source_cells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "cik": "0000789019",
+            "accession": "0001193125-25-256321",
+            "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "parent_id": "fin_d08ed230347428d09e891811434d2ee7",
+            "parent_payload_hash": "fb95d9193b26643fa48d6496051c70936825d3e5cc655d7e623ce5bb3a357e04",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row": 28,
+            "column": 3,
+            "row_label": "Operating income",
+            "raw_value": "37,961",
+            "value": "37961",
+            "unit": "USD",
+            "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "37961000000",
+            "period_kind": "DURATION",
+            "period_start": "2025-07-01",
+            "period_end": "2025-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30,",
+              "2025"
+            ],
+            "fact_name": "us-gaap:OperatingIncomeLoss",
+            "fact_context_ref": "C_77513f4d-d996-497e-8795-6472b2325bfb",
+            "fact_unit_ref": "U_USD",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[4]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 92,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "cik": "0000789019",
+            "accession": "0001193125-25-256321",
+            "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "parent_id": "fin_19029350750a268a7fb4ae74c83d9131",
+            "parent_payload_hash": "373ae23628000988b5916c06dae6d00e42d7aa5b07282244bdb91f865581e3af",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row": 11,
+            "column": 3,
+            "row_label": "Total revenue",
+            "raw_value": "77,673",
+            "value": "77673",
+            "unit": "USD",
+            "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "77673000000",
+            "period_kind": "DURATION",
+            "period_start": "2025-07-01",
+            "period_end": "2025-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30,",
+              "2025"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "C_77513f4d-d996-497e-8795-6472b2325bfb",
+            "fact_unit_ref": "U_USD",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[4]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 92,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "cik": "0000789019",
+            "accession": "0001193125-25-256321",
+            "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "parent_id": "fin_d08ed230347428d09e891811434d2ee7",
+            "parent_payload_hash": "fb95d9193b26643fa48d6496051c70936825d3e5cc655d7e623ce5bb3a357e04",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row": 28,
+            "column": 7,
+            "row_label": "Operating income",
+            "raw_value": "30,552",
+            "value": "30552",
+            "unit": "USD",
+            "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "30552000000",
+            "period_kind": "DURATION",
+            "period_start": "2024-07-01",
+            "period_end": "2024-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30,",
+              "2024"
+            ],
+            "fact_name": "us-gaap:OperatingIncomeLoss",
+            "fact_context_ref": "C_118a58e8-5217-4a77-963d-a3ac430dbd19",
+            "fact_unit_ref": "U_USD",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[8]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 92,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "cik": "0000789019",
+            "accession": "0001193125-25-256321",
+            "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "parent_id": "fin_19029350750a268a7fb4ae74c83d9131",
+            "parent_payload_hash": "373ae23628000988b5916c06dae6d00e42d7aa5b07282244bdb91f865581e3af",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row": 11,
+            "column": 7,
+            "row_label": "Total revenue",
+            "raw_value": "65,585",
+            "value": "65585",
+            "unit": "USD",
+            "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "65585000000",
+            "period_kind": "DURATION",
+            "period_start": "2024-07-01",
+            "period_end": "2024-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30,",
+              "2024"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "C_118a58e8-5217-4a77-963d-a3ac430dbd19",
+            "fact_unit_ref": "U_USD",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[8]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 92,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "values": [
+          "48.87",
+          "46.58",
+          "2.29"
+        ],
+        "unit": null,
+        "ratio_steps": [
+          {
+            "operation": "MARGIN_PERCENT",
+            "denominator": "REPORTED_REVENUE",
+            "role": "Kỳ hiện tại",
+            "unit": "%",
+            "period_start": "2025-07-01",
+            "period_end": "2025-09-30",
+            "duration_days": 92,
+            "citations": [
+              1,
+              2
+            ],
+            "result": "48.87"
+          },
+          {
+            "operation": "MARGIN_PERCENT",
+            "denominator": "REPORTED_REVENUE",
+            "role": "Cùng kỳ năm trước",
+            "unit": "%",
+            "period_start": "2024-07-01",
+            "period_end": "2024-09-30",
+            "duration_days": 92,
+            "citations": [
+              3,
+              4
+            ],
+            "result": "46.58"
+          },
+          {
+            "operation": "MARGIN_DELTA_PP",
+            "denominator": "REPORTED_REVENUE",
+            "unit": "điểm phần trăm",
+            "citations": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "result": "2.29"
+          }
+        ],
+        "answer_completeness": {
+          "completed": 3,
+          "required": 3
+        },
+        "independent_verification": {
+          "status": "VERIFIED",
+          "stage_b": [
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "48.87",
+              "status": "VERIFIED"
+            },
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "46.58",
+              "status": "VERIFIED"
+            },
+            {
+              "operation": "MARGIN_DELTA_PP",
+              "recomputed_result": "2.29",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "sec_task_context": {
+          "kind": "MARGIN",
+          "metric": "operating_income",
+          "issuer": "MSFT",
+          "denominators": [
+            "REPORTED_REVENUE"
+          ],
+          "duration": 3,
+          "report_end": "2025-09-30",
+          "relation": "PRIOR_YEAR"
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "COST",
+            "HD",
+            "MSFT",
+            "PG"
+          ],
+          "context_only_entities": [
+            "COST",
+            "HD",
+            "PG"
+          ],
+          "focused_entities": [
+            "MSFT"
+          ],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "MSFT"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "MSFT",
+              "metric": "loi nhuan hoat dong quy hien tai chiem bao nhieu phan tram doanh thu",
+              "operation": "MARGIN_YEAR_OVER_YEAR",
+              "period": null,
+              "duration": null,
+              "relation": "PRIOR_YEAR",
+              "unit": "PERCENT",
+              "filing_ids": [
+                "sec:0000789019:0000950170-25-061046",
+                "sec:0000789019:0001193125-25-256321"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "current_margin",
+                "prior_year_margin",
+                "margin_change",
+                "citations"
+              ],
+              "missing_evidence": null,
+              "denominator": "REPORTED_REVENUE"
+            }
+          ],
+          "intent": "MARGIN",
+          "error": null
+        },
+        "timings_ms": {
+          "orchestration_total": 9951.36019999336
+        },
+        "question_contract": {
+          "original_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+          "resolved_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Tôi đang chọn COST, HD, PG và MSFT. Chỉ phân tích Microsoft: lợi nhuận hoạt động quý hiện tại chiếm bao nhiêu phần trăm doanh thu, và tỷ lệ này đã thay đổi bao nhiêu điểm phần trăm so với cùng kỳ trước?",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A03a",
+      "request": {
+        "question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 2.6444190999900457,
+      "http": 200,
+      "reply": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "Biên lợi nhuận hoạt động của **HD** · 10-Q kết thúc 2026-08-02.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-05-04 đến 2026-08-02 (13 tuần): 14,29%**. Operating income 6.839 triệu USD [1] ÷ Net sales 47.861 triệu USD [2] × 100.",
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "issuer": "HOME DEPOT, INC.",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "accession": "0001628280-26-058715",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "chunk_id": "fin_d0e85edeceb45547b57d0cd67a41d6b9",
+            "report_period": "2026-08-02",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "text": "Operating income: 6,839 · 2026-08-02",
+            "row_label": "Operating income",
+            "column_label": "Three Months Ended / August 2, 2026",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "HOME DEPOT, INC.",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "accession": "0001628280-26-058715",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "chunk_id": "fin_71034f1ffc28bda18cd684f091db40be",
+            "report_period": "2026-08-02",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "text": "Net sales: 47,861 · 2026-08-02",
+            "row_label": "Net sales",
+            "column_label": "Three Months Ended / August 2, 2026",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          }
+        ],
+        "source_cells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "cik": "0000354950",
+            "accession": "0001628280-26-058715",
+            "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "parent_id": "fin_d0e85edeceb45547b57d0cd67a41d6b9",
+            "parent_payload_hash": "727fc18ad0a32e687409b98963037509ee0f9cc1c1a82098b2316a263dd7ee43",
+            "table_id": "table_b57796fdb5375765c05912d5",
+            "row": 10,
+            "column": 3,
+            "row_label": "Operating income",
+            "raw_value": "6,839",
+            "value": "6839",
+            "unit": "USD",
+            "display_unit_header": "in millions, except per share data",
+            "multiplier": "1000000",
+            "effective_value": "6839000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-05-04",
+            "period_end": "2026-08-02",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended",
+              "August 2, 2026"
+            ],
+            "fact_name": "us-gaap:OperatingIncomeLoss",
+            "fact_context_ref": "c-5",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]/tr[11]/td[2]",
+            "footnotes": [
+              "See accompanying notes to consolidated financial statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 91,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000354950:0001628280-26-058715",
+            "cik": "0000354950",
+            "accession": "0001628280-26-058715",
+            "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+            "parent_id": "fin_71034f1ffc28bda18cd684f091db40be",
+            "parent_payload_hash": "8bff311282eda3dddcc9ecee059767ff2720a41e2dc77ddb6f490f7dbcc69c3d",
+            "table_id": "table_b57796fdb5375765c05912d5",
+            "row": 3,
+            "column": 4,
+            "row_label": "Net sales",
+            "raw_value": "47,861",
+            "value": "47861",
+            "unit": "USD",
+            "display_unit_header": "in millions, except per share data",
+            "multiplier": "1000000",
+            "effective_value": "47861000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-05-04",
+            "period_end": "2026-08-02",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended",
+              "August 2, 2026"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "c-5",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]/tr[4]/td[3]",
+            "footnotes": [
+              "See accompanying notes to consolidated financial statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 91,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "values": [
+          "14.29"
+        ],
+        "unit": "%",
+        "ratio_steps": [
+          {
+            "operation": "MARGIN_PERCENT",
+            "denominator": "REPORTED_REVENUE",
+            "role": "Kỳ báo cáo",
+            "unit": "%",
+            "period_start": "2026-05-04",
+            "period_end": "2026-08-02",
+            "duration_days": 91,
+            "citations": [
+              1,
+              2
+            ],
+            "result": "14.29"
+          }
+        ],
+        "answer_completeness": {
+          "completed": 1,
+          "required": 1
+        },
+        "independent_verification": {
+          "status": "VERIFIED",
+          "stage_b": [
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "14.29",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "sec_task_context": {
+          "kind": "MARGIN",
+          "metric": "operating_income",
+          "issuer": "HD",
+          "denominators": [
+            "REPORTED_REVENUE"
+          ],
+          "duration": [
+            13
+          ],
+          "report_end": "2026-08-02",
+          "relation": null
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000354950:0001628280-26-058715"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "HD"
+          ],
+          "context_only_entities": [],
+          "focused_entities": [],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "HD"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "HD",
+              "metric": "bien loi nhuan hoat dong",
+              "operation": "MARGIN_PERCENT",
+              "period": null,
+              "duration": "13W",
+              "relation": null,
+              "unit": "PERCENT",
+              "filing_ids": [
+                "sec:0000354950:0001628280-26-058715"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null,
+              "denominator": "REPORTED_REVENUE"
+            }
+          ],
+          "intent": "MARGIN",
+          "error": null
+        },
+        "timings_ms": {
+          "orchestration_total": 2473.5286999930395
+        },
+        "question_contract": {
+          "original_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+          "resolved_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Biên lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A03b",
+      "request": {
+        "question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 3.185180100001162,
+      "http": 200,
+      "reply": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "Biên lợi nhuận hoạt động của **PG** · 10-Q kết thúc 2026-09-30.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-07-01 đến 2026-09-30 (3 tháng (92 ngày)): 25,51%**. OPERATING INCOME 5.937 triệu USD [1] ÷ NET SALES 23.276 triệu USD [2] × 100.",
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "issuer": "PROCTER & GAMBLE Co",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "accession": "0000080424-26-000256",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "chunk_id": "fin_ac8635e804e40926eee1b3c0ead01e64",
+            "report_period": "2026-09-30",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "text": "OPERATING INCOME: 5,937 · 2026-09-30",
+            "row_label": "OPERATING INCOME",
+            "column_label": "Three Months Ended September 30 / 2026",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "PROCTER & GAMBLE Co",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "accession": "0000080424-26-000256",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "chunk_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "report_period": "2026-09-30",
+            "form": "10-Q",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "text": "NET SALES: 23,276 · 2026-09-30",
+            "row_label": "NET SALES",
+            "column_label": "Three Months Ended September 30 / 2026",
+            "unit": "USD",
+            "verification": "VERIFIED_SOURCE_CELL"
+          }
+        ],
+        "source_cells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_ac8635e804e40926eee1b3c0ead01e64",
+            "parent_payload_hash": "1329623efdc33a460da8ee002e47e579a9d4b359e2eb7057cf35821b8bec25f5",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 6,
+            "column": 3,
+            "row_label": "OPERATING INCOME",
+            "raw_value": "5,937",
+            "value": "5937",
+            "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
+            "multiplier": "1000000",
+            "effective_value": "5937000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2026"
+            ],
+            "fact_name": "us-gaap:OperatingIncomeLoss",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[7]/td[2]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 92,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "research-sec-v1",
+            "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+            "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+            "filing_id": "sec:0000080424:0000080424-26-000256",
+            "cik": "0000080424",
+            "accession": "0000080424-26-000256",
+            "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+            "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+            "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row": 3,
+            "column": 4,
+            "row_label": "NET SALES",
+            "raw_value": "23,276",
+            "value": "23276",
+            "unit": "USD",
+            "display_unit_header": "Amounts in millions except per share amounts",
+            "multiplier": "1000000",
+            "effective_value": "23276000000",
+            "period_kind": "DURATION",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "period_months": 3,
+            "header_path": [
+              "Three Months Ended September 30",
+              "2026"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+            "footnotes": [
+              "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+              "See accompanying Notes to Consolidated Financial Statements."
+            ],
+            "warnings": [
+              "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+            ],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 92,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "values": [
+          "25.51"
+        ],
+        "unit": "%",
+        "ratio_steps": [
+          {
+            "operation": "MARGIN_PERCENT",
+            "denominator": "REPORTED_REVENUE",
+            "role": "Kỳ báo cáo",
+            "unit": "%",
+            "period_start": "2026-07-01",
+            "period_end": "2026-09-30",
+            "duration_days": 92,
+            "citations": [
+              1,
+              2
+            ],
+            "result": "25.51"
+          }
+        ],
+        "answer_completeness": {
+          "completed": 1,
+          "required": 1
+        },
+        "independent_verification": {
+          "status": "VERIFIED",
+          "stage_b": [
+            {
+              "operation": "MARGIN_PERCENT",
+              "recomputed_result": "25.51",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "sec_task_context": {
+          "kind": "MARGIN",
+          "metric": "operating_income",
+          "issuer": "PG",
+          "denominators": [
+            "REPORTED_REVENUE"
+          ],
+          "duration": 3,
+          "report_end": "2026-09-30",
+          "relation": null
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000080424:0000080424-26-000256"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "PG"
+          ],
+          "context_only_entities": [],
+          "focused_entities": [],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "PG"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "PG",
+              "metric": "bien loi nhuan hoat dong",
+              "operation": "MARGIN_PERCENT",
+              "period": null,
+              "duration": "SHORTEST_REPORTED",
+              "relation": null,
+              "unit": "PERCENT",
+              "filing_ids": [
+                "sec:0000080424:0000080424-26-000256"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "source_cells",
+                "period",
+                "unit",
+                "calculation",
+                "citations"
+              ],
+              "missing_evidence": null,
+              "denominator": "REPORTED_REVENUE"
+            }
+          ],
+          "intent": "MARGIN",
+          "error": null,
+          "resolved_question": "PG biên lợi nhuận hoạt động kỳ ngắn nhất"
+        },
+        "timings_ms": {
+          "orchestration_total": 3018.2464999961667
+        },
+        "sec_followup": {
+          "question": "PG biên lợi nhuận hoạt động kỳ ngắn nhất",
+          "inherited": {
+            "kind": "MARGIN",
+            "metric": "operating_income",
+            "denominators": [
+              "REPORTED_REVENUE"
+            ],
+            "relation": null
+          },
+          "overrides": {
+            "issuer": "PG",
+            "duration": "SHORTEST_REPORTED"
+          },
+          "previous_intent": "MARGIN",
+          "original_question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?"
+        },
+        "question_contract": {
+          "original_question": "Còn P&G, dùng kỳ ngắn nhất của P&G thì sao?",
+          "resolved_question": "PG biên lợi nhuận hoạt động kỳ ngắn nhất",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "PG biên lợi nhuận hoạt động kỳ ngắn nhất",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    },
+    {
+      "case": "A04",
+      "request": {
+        "question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+        "source": "US_SEC",
+        "filing_ids": [
+          "sec:0000909832:0000909832-26-000051",
+          "sec:0000354950:0001628280-26-058715",
+          "sec:0000080424:0000080424-26-000256",
+          "sec:0000789019:0001193125-25-256321",
+          "sec:0000789019:0000950170-25-061046"
+        ]
+      },
+      "seconds": 0.8563064000045415,
+      "http": 200,
+      "reply": {
+        "status": "SOURCE_EXCERPTS",
+        "answer_status": "SEC_NARRATIVE_EVIDENCE",
+        "answer": "Các công bố liên quan trong filing:\n\n- **Bảo mật — công bố của MSFT:** Công ty nêu tấn công mạng hoặc lỗ hổng bảo mật có thể làm giảm doanh thu, tăng chi phí, phát sinh yêu cầu bồi thường hoặc ảnh hưởng danh tiếng. [1]\n- **Cạnh tranh — công bố của MSFT:** Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh. [2]\n- **Pháp lý — công bố của MSFT:** Báo cáo đề cập các vụ việc hoặc thủ tục pháp lý. Trích đoạn: “Any failure or perceived failure to meet our sustainability goals, or to meet various sustainability regulatory requirements, could result in claims and lawsuits, regulatory actions, penalties, or damage to our reputation, each of which could adversely affect our business, operations, financial condition, and results of operations.” [3]\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm.",
+        "values": [],
+        "citations": [
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "report_period": "2025-09-30",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_7bd8af95a1e07d80d957576e9a21e4a9",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "Cyberattacks and security vulnerabilities could lead to reduced revenue, increased costs, liability claims, or harm to our reputation or competitive position.",
+            "section": "Cyberattacks and security vulnerabilities could lead to reduced revenue, increased costs, liability claims, or harm to our reputation or competitive position.",
+            "verification": "VERIFIED_SOURCE_EXCERPT"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "report_period": "2025-09-30",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_1dd21d141c5ca5f47898f06e39410167",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "We face intense competition across all markets for our products and services, which could adversely affect our results of operations.",
+            "section": "We face intense competition across all markets for our products and services, which could adversely affect our results of operations.",
+            "verification": "VERIFIED_SOURCE_EXCERPT"
+          },
+          {
+            "source_kind": "SEC",
+            "issuer": "MICROSOFT CORPORATION",
+            "filing_id": "sec:0000789019:0001193125-25-256321",
+            "accession": "0001193125-25-256321",
+            "report_period": "2025-09-30",
+            "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+            "source_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+            "chunk_id": "fin_d21f2416e83248a3b213d4eeb264ec07",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+            "text": "Any failure or perceived failure to meet our sustainability goals, or to meet various sustainability regulatory requirements, could result in claims and lawsuits, regulatory actions, penalties, or damage to our reputation, each of which could adversely affect our business, operations, financial condition, and results of operations.",
+            "section": "Other digital safety abuses",
+            "verification": "VERIFIED_SOURCE_EXCERPT"
+          }
+        ],
+        "topic_results": [
+          {
+            "topic": "SECURITY",
+            "status": "SOURCE_EXCERPTS",
+            "citation": 1,
+            "warnings": []
+          },
+          {
+            "topic": "COMPETITION",
+            "status": "SOURCE_EXCERPTS",
+            "citation": 2,
+            "warnings": []
+          },
+          {
+            "topic": "LEGAL",
+            "status": "SOURCE_EXCERPTS",
+            "citation": 3,
+            "warnings": []
+          }
+        ],
+        "answer_completeness": {
+          "completed": 3,
+          "required": 3
+        },
+        "sec_source_selection": {
+          "eligible_filing_ids": [
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "excluded_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256"
+          ],
+          "unselected_issuers": []
+        },
+        "sec_question_plan": {
+          "original_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+          "selected_filing_ids": [
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000789019:0000950170-25-061046",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000909832:0000909832-26-000051"
+          ],
+          "named_entities": [
+            "MSFT"
+          ],
+          "context_only_entities": [],
+          "focused_entities": [],
+          "comparison_entities": [],
+          "excluded_entities": [],
+          "unselected_entities": [],
+          "eligible_entities": [
+            "MSFT"
+          ],
+          "tasks": [
+            {
+              "task_id": "SEC-001",
+              "issuer": "MSFT",
+              "metric": "SECURITY",
+              "operation": "SUMMARIZE",
+              "period": null,
+              "duration": null,
+              "relation": null,
+              "unit": "SOURCE_UNIT",
+              "filing_ids": [
+                "sec:0000789019:0000950170-25-061046",
+                "sec:0000789019:0001193125-25-256321"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "disclosure",
+                "citation",
+                "interpretation_boundary"
+              ],
+              "missing_evidence": null,
+              "denominator": null
+            },
+            {
+              "task_id": "SEC-002",
+              "issuer": "MSFT",
+              "metric": "COMPETITION",
+              "operation": "SUMMARIZE",
+              "period": null,
+              "duration": null,
+              "relation": null,
+              "unit": "SOURCE_UNIT",
+              "filing_ids": [
+                "sec:0000789019:0000950170-25-061046",
+                "sec:0000789019:0001193125-25-256321"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "disclosure",
+                "citation",
+                "interpretation_boundary"
+              ],
+              "missing_evidence": null,
+              "denominator": null
+            },
+            {
+              "task_id": "SEC-003",
+              "issuer": "MSFT",
+              "metric": "LEGAL",
+              "operation": "SUMMARIZE",
+              "period": null,
+              "duration": null,
+              "relation": null,
+              "unit": "SOURCE_UNIT",
+              "filing_ids": [
+                "sec:0000789019:0000950170-25-061046",
+                "sec:0000789019:0001193125-25-256321"
+              ],
+              "filing_form": null,
+              "accession": null,
+              "reporting_scope": null,
+              "currency": null,
+              "output_obligations": [
+                "disclosure",
+                "citation",
+                "interpretation_boundary"
+              ],
+              "missing_evidence": null,
+              "denominator": null
+            }
+          ],
+          "intent": "NARRATIVE",
+          "error": null
+        },
+        "timings_ms": {
+          "orchestration_total": 696.6424000129336
+        },
+        "question_contract": {
+          "original_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+          "resolved_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+          "source_filing_ids": [
+            "sec:0000909832:0000909832-26-000051",
+            "sec:0000354950:0001628280-26-058715",
+            "sec:0000080424:0000080424-26-000256",
+            "sec:0000789019:0001193125-25-256321",
+            "sec:0000789019:0000950170-25-061046"
+          ],
+          "source_identities": [
+            [
+              "sec:0000080424:0000080424-26-000256",
+              "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000354950:0001628280-26-058715",
+              "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ],
+            [
+              "sec:0000789019:0000950170-25-061046",
+              "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+              "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09"
+            ],
+            [
+              "sec:0000789019:0001193125-25-256321",
+              "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+              "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310"
+            ],
+            [
+              "sec:0000909832:0000909832-26-000051",
+              "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+              "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb"
+            ]
+          ],
+          "raw_obligation_audit": null
+        },
+        "resolved_question": "Trong filing Microsoft, hãy phân tích riêng rủi ro pháp lý, bảo mật và cạnh tranh. Với chủ đề chưa đủ bằng chứng, nêu rõ phần thiếu.",
+        "source_scope": [],
+        "conversation_reset": false
+      }
+    }
+  ]
+}

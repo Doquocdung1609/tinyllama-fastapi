@@ -100,6 +100,12 @@ def verify_comparison(cells, calculations):
                 expected = (values[1]-values[0])/1_000_000
             elif operation=='MARGIN_PERCENT' and len(values)==2 and values[1]>0:
                 expected=(values[0]*100/values[1]).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
+            elif operation in {'MARGIN_DELTA_PP','MARGIN_RELATIVE_CHANGE'} and len(values)==4 and min(values[1],values[3])>0:
+                current,prior=values[0]*100/values[1],values[2]*100/values[3]
+                if operation=='MARGIN_RELATIVE_CHANGE' and prior==0:
+                    raise ValueError('SEC_ZERO_BASE')
+                expected=(current-prior if operation=='MARGIN_DELTA_PP' else
+                          (current/prior-1)*100).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
             elif operation=='PERCENT_CHANGE' and len(values)==2 and values[0]!=0:
                 expected = ((values[1]/values[0]-1)*100).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
             else:

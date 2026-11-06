@@ -79,7 +79,7 @@ def period_for(q, sources, metric):
         return 9
     if re.search(r'\bfy\s*20\d{2}|\b(?:fiscal year|nam tai chinh|ca nam|annual|full.year)\b',q):
         return 12
-    if all(row['form'] in {'10-K','20-F'} for row,_ in sources):
+    if sources and all(row['form'] in {'10-K','20-F'} for row,_ in sources):
         return 12
     return None
 
@@ -240,7 +240,7 @@ def answer(index, question, ticker, key, operation='EXTRACT', *, metric_override
         dates = (plan.period_end,)
         years = tuple(y for y in years if y!=plan.period_end[:4])
     period = period_for(q,sources,metric)
-    if default_quarter and period is None and len(sources)==1 and sources[0][0]['form']=='10-Q':
+    if default_quarter and period is None and all(row['form']=='10-Q' for row,_ in sources):
         period=3
     same_period = bool(re.search(r'\b(?:cung ky|cung quy nam (?:ngoai|truoc)|same period|prior.year|comparative period)\b',q))
     different_durations = isinstance(period,tuple) and len(period)>1
@@ -284,15 +284,30 @@ def answer(index, question, ticker, key, operation='EXTRACT', *, metric_override
         targets = list(years)
     else:
         targets = sorted({filing['report_period'] for filing,_ in sources})
-    if not compare and not years and not dates and len(targets)>1:
+    if not compare and not same_period and not years and not dates and len(targets)>1:
         return abstain('SEC_PERIOD_REQUIRED','Các filing đã chọn thuộc nhiều kỳ. Hãy nêu kỳ cần xem hoặc yêu cầu so sánh các kỳ.')
+    if same_period and len(targets)>1:
+        if dates or years:
+            return abstain('SEC_PRIOR_PERIOD_UNBOUND','Hãy nêu một kỳ hiện tại để xác định đúng cùng kỳ năm trước.')
+        targets=[max(targets)]
     if same_period and len(targets)==1:
         if not period:
             return abstain('SEC_PERIOD_DURATION_REQUIRED','Hãy cho biết bạn muốn so sánh quý hay kỳ lũy kế.')
         current=targets[0]
         prior=str(int(current[:4])-1)
-        matching_dates={c.period_end for c,_,_ in collected if c.period_end.startswith(prior)
-                        and (len(current)==4 or c.period_end[5:7]==current[5:7])}
+        anchors=[(c,f,part) for c,f,part in collected if target_matches(c,f,current,fiscal)
+                 and c.period_end==f['report_period']]
+        anchor_dates={c.period_end for c,_,_ in anchors}
+        if len(anchor_dates)!=1:
+            return abstain('SEC_PRIOR_PERIOD_UNBOUND','Chưa xác định được ngày của kỳ hiện tại trong filing đã chọn.')
+        anchor_end=date.fromisoformat(next(iter(anchor_dates)))
+        # Prefer the comparative column of the very same authenticated filing.
+        anchor_ids={f['filing_id'] for _,f,_ in anchors}
+        matching_dates={c.period_end for c,f,_ in collected if f['filing_id'] in anchor_ids
+                        and c.period_end.startswith(prior)
+                        and abs((anchor_end-date.fromisoformat(c.period_end)).days-365)<=8}
+        if len(matching_dates)==1:
+            collected=[entry for entry in collected if entry[1]['filing_id'] in anchor_ids]
         if len(matching_dates)!=1:
             return abstain('SEC_PRIOR_PERIOD_UNBOUND','Không gắn được một kỳ so sánh duy nhất trong filing đang chọn.')
         prior_only='chi lay ky truoc' in q

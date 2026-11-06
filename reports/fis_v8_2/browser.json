@@ -1,0 +1,207 @@
+[
+  {
+    "id": "A01",
+    "status": "PASS",
+    "answer": "Biên lợi nhuận hoạt động của **COST** · 10-Q kết thúc 2026-05-10.\n\n### Tổng doanh thu\n\n**Kỳ báo cáo · 2026-02-16 đến 2026-05-10 (12 tuần): 3,99%**. Operating income 2.815 triệu USD [1] ÷ Total revenue 70.527 triệu USD [2] × 100.\n\n### Doanh thu thuần bán hàng\n\n**Kỳ báo cáo · 2026-02-16 đến 2026-05-10 (12 tuần): 4,07%**. Operating income 2.815 triệu USD [1] ÷ Net sales 69.154 triệu USD [3] × 100.\n\nMẫu số là doanh thu bán hàng, không gồm phí thành viên. Tử số là lợi nhuận hoạt động hợp nhất.\n\nCùng tử số, mẫu số “Total revenue” lớn hơn nên cho tỷ lệ thấp hơn. Mỗi tỷ lệ dùng đúng dòng doanh thu ghi trong bảng.",
+    "coverage": {
+      "completed": 2,
+      "required": 2
+    },
+    "values": [
+      "3.99",
+      "4.07"
+    ],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321",
+      "sec:0000789019:0000950170-25-061046"
+    ],
+    "citations": 3
+  },
+  {
+    "id": "A02",
+    "status": "PASS",
+    "answer": "Biên lợi nhuận hoạt động của **MSFT** · 10-Q kết thúc 2025-09-30.\n\n### Doanh thu trên báo cáo\n\n**Kỳ hiện tại · 2025-07-01 đến 2025-09-30 (3 tháng (92 ngày)): 48,87%**. Operating income 37.961 triệu USD [1] ÷ Total revenue 77.673 triệu USD [2] × 100.\n\n**Cùng kỳ năm trước · 2024-07-01 đến 2024-09-30 (3 tháng (92 ngày)): 46,58%**. Operating income 30.552 triệu USD [3] ÷ Total revenue 65.585 triệu USD [4] × 100.\n\n**Thay đổi của biên: +2,29 điểm phần trăm**. Lấy biên kỳ hiện tại trừ biên kỳ so sánh, rồi làm tròn kết quả.",
+    "coverage": {
+      "completed": 3,
+      "required": 3
+    },
+    "values": [
+      "48.87",
+      "46.58",
+      "2.29"
+    ],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321",
+      "sec:0000789019:0000950170-25-061046"
+    ],
+    "citations": 4
+  },
+  {
+    "id": "A03a",
+    "status": "PASS",
+    "answer": "Biên lợi nhuận hoạt động của **HD** · 10-Q kết thúc 2026-08-02.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-05-04 đến 2026-08-02 (13 tuần): 14,29%**. Operating income 6.839 triệu USD [1] ÷ Net sales 47.861 triệu USD [2] × 100.",
+    "coverage": {
+      "completed": 1,
+      "required": 1
+    },
+    "values": [
+      "14.29"
+    ],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321",
+      "sec:0000789019:0000950170-25-061046"
+    ],
+    "citations": 2
+  },
+  {
+    "id": "A03b",
+    "status": "PASS",
+    "answer": "Biên lợi nhuận hoạt động của **PG** · 10-Q kết thúc 2026-09-30.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-07-01 đến 2026-09-30 (3 tháng (92 ngày)): 25,51%**. OPERATING INCOME 5.937 triệu USD [1] ÷ NET SALES 23.276 triệu USD [2] × 100.",
+    "coverage": {
+      "completed": 1,
+      "required": 1
+    },
+    "values": [
+      "25.51"
+    ],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321",
+      "sec:0000789019:0000950170-25-061046"
+    ],
+    "citations": 2
+  },
+  {
+    "id": "A04",
+    "status": "PASS",
+    "answer": "Các công bố liên quan trong filing:\n\n- **Cạnh tranh — công bố của MSFT:** Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh. [1]\n- **Bảo mật — công bố của MSFT:** Công ty nêu tấn công mạng hoặc lỗ hổng bảo mật có thể làm giảm doanh thu, tăng chi phí, phát sinh yêu cầu bồi thường hoặc ảnh hưởng danh tiếng. [2]\n- **Pháp lý — công bố của MSFT:** Báo cáo đề cập các vụ việc hoặc thủ tục pháp lý. Trích đoạn: “Any failure or perceived failure to meet our sustainability goals, or to meet various sustainability regulatory requirements, could result in claims and lawsuits, regulatory actions, penalties, or damage to our reputation, each of which could adversely affect our business, operations, financial condition, and results of operations.” [3]\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm.",
+    "coverage": {
+      "completed": 3,
+      "required": 3
+    },
+    "values": [],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321",
+      "sec:0000789019:0000950170-25-061046"
+    ],
+    "citations": 3
+  },
+  {
+    "id": "F01",
+    "status": "PASS",
+    "answer": "Biên lợi nhuận hoạt động của **HD** · 10-Q kết thúc 2026-08-02.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-05-04 đến 2026-08-02 (13 tuần): 14,29%**. Operating income 6.839 triệu USD [1] ÷ Net sales 47.861 triệu USD [2] × 100.",
+    "coverage": {
+      "completed": 1,
+      "required": 1
+    },
+    "values": [
+      "14.29"
+    ],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321"
+    ],
+    "citations": 2
+  },
+  {
+    "id": "F02",
+    "status": "PASS",
+    "answer": "### MSFT · operating income\nLợi nhuận hoạt động của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 30.552 | 0001193125-25-256321 [1] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 37.961 | 0001193125-25-256321 [2] |\n\nChênh lệch = 37.961 − 30.552 = **7.409 triệu USD**. [1][2]\n\nMức thay đổi = chênh lệch ÷ 30.552 × 100 = **24,25%**. [1][2]\n\n### MSFT · income\nLợi nhuận ròng của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 24.667 | 0001193125-25-256321 [3] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 27.747 | 0001193125-25-256321 [4] |\n\nChênh lệch = 27.747 − 24.667 = **3.080 triệu USD**. [3][4]\n\nMức thay đổi = chênh lệch ÷ 24.667 × 100 = **12,49%**. [3][4]\n\n### MSFT · revenue\nDoanh thu của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 65.585 | 0001193125-25-256321 [5] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 77.673 | 0001193125-25-256321 [6] |\n\nChênh lệch = 77.673 − 65.585 = **12.088 triệu USD**. [5][6]\n\nMức thay đổi = chênh lệch ÷ 65.585 × 100 = **18,43%**. [5][6]",
+    "coverage": {
+      "completed": 3,
+      "required": 3
+    },
+    "values": [],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321"
+    ],
+    "citations": 6
+  },
+  {
+    "id": "F03",
+    "status": "PASS",
+    "answer": "Các công bố liên quan trong filing:\n\n- **Cạnh tranh — công bố của MSFT:** Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh. [1]\n- **An ninh mạng — công bố của MSFT:** Công ty nêu tấn công mạng hoặc lỗ hổng bảo mật có thể làm giảm doanh thu, tăng chi phí, phát sinh yêu cầu bồi thường hoặc ảnh hưởng danh tiếng. [2]\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm.",
+    "coverage": {
+      "completed": 2,
+      "required": 2
+    },
+    "values": [],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321"
+    ],
+    "citations": 2
+  },
+  {
+    "id": "F04",
+    "status": "PASS",
+    "answer": "Bộ nguồn đang chọn thiếu filing của AMZN. Hãy chọn hoặc nhập đúng filing rồi hỏi lại.",
+    "coverage": {
+      "completed": 0,
+      "required": 1
+    },
+    "values": [],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321"
+    ],
+    "citations": 0
+  },
+  {
+    "id": "F05",
+    "status": "PASS",
+    "answer": "Bộ nguồn đang chọn thiếu filing của PEP. Hãy chọn hoặc nhập đúng filing rồi hỏi lại.",
+    "coverage": {
+      "completed": 0,
+      "required": 1
+    },
+    "values": [],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321"
+    ],
+    "citations": 0
+  },
+  {
+    "id": "F06",
+    "status": "PASS",
+    "answer": "### COST · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của **COST** · 10-Q kết thúc 2026-05-10.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-02-16 đến 2026-05-10 (12 tuần): 3,99%**. Operating income 2.815 triệu USD [1] ÷ Total revenue 70.527 triệu USD [2] × 100.\n\n### HD · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của **HD** · 10-Q kết thúc 2026-08-02.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-05-04 đến 2026-08-02 (13 tuần): 14,29%**. Operating income 6.839 triệu USD [3] ÷ Net sales 47.861 triệu USD [4] × 100.\n\n### PG · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của **PG** · 10-Q kết thúc 2026-09-30.\n\n### Doanh thu trên báo cáo\n\n**Kỳ báo cáo · 2026-07-01 đến 2026-09-30 (3 tháng (92 ngày)): 25,51%**. OPERATING INCOME 5.937 triệu USD [5] ÷ NET SALES 23.276 triệu USD [6] × 100.\n\nCác kỳ ngắn nhất được báo cáo có thể là 12 tuần, 13 tuần hoặc ba tháng; không coi chúng là các khoảng thời gian hoàn toàn đồng nhất.",
+    "coverage": {
+      "completed": 3,
+      "required": 3
+    },
+    "values": [],
+    "selected": [
+      "sec:0000909832:0000909832-26-000051",
+      "sec:0000354950:0001628280-26-058715",
+      "sec:0000080424:0000080424-26-000256",
+      "sec:0000789019:0001193125-25-256321"
+    ],
+    "citations": 6
+  }
+]

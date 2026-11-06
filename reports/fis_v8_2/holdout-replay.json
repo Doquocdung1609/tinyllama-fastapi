@@ -1,0 +1,716 @@
+[
+  {
+    "issuer": "ADBE",
+    "form": "10-K",
+    "accession": "0000796343-25-000004",
+    "period": "2024-11-29",
+    "prior": "2023-12-01",
+    "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+    "question": "For Adobe FY2024, what was operating margin on total revenue and how did it move year over year in percentage points?",
+    "current_millions": [
+      6741,
+      21505
+    ],
+    "prior_millions": [
+      6650,
+      19409
+    ],
+    "import": {
+      "status": "LEXICAL_READY",
+      "reason": "DENSE_PENDING",
+      "seconds": 1.79097780000302
+    },
+    "expected": [
+      "31.35",
+      "34.26",
+      "-2.92"
+    ],
+    "actual": [
+      "31.35",
+      "34.26",
+      "-2.92"
+    ],
+    "answer": "Biên lợi nhuận hoạt động của **ADBE** · 10-K kết thúc 2024-11-29.\n\n### Tổng doanh thu\n\n**Kỳ hiện tại · 2023-12-02 đến 2024-11-29 (52 tuần): 31,35%**. Operating income 6.741 triệu USD [1] ÷ Total revenue 21.505 triệu USD [2] × 100.\n\n**Cùng kỳ năm trước · 2022-12-03 đến 2023-12-01 (52 tuần): 34,26%**. Operating income 6.650 triệu USD [3] ÷ Total revenue 19.409 triệu USD [4] × 100.\n\n**Thay đổi của biên: -2,92 điểm phần trăm**. Lấy biên kỳ hiện tại trừ biên kỳ so sánh, rồi làm tròn kết quả.",
+    "reason": null,
+    "cells": [
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-da816f71b9ff3ef8adb03f0f",
+        "generation": "38cae57e6823151bd4a4e57945539f72fd6957db63abbf235fc389a504a38b95",
+        "manifest_hash": "968484d5c78ba321269804b1c349b7263ddc6b4d888ddb0f8e3d5c9b4a7de011",
+        "filing_id": "sec:0000796343:0000796343-25-000004",
+        "cik": "0000796343",
+        "accession": "0000796343-25-000004",
+        "raw_sha256": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "parent_id": "fin_c802026decabd07e3a34e382778f6909",
+        "parent_payload_hash": "27c4beb0e9b266668728189aa63e165a423eae224566e9dcfae413be352eb190",
+        "table_id": "table_8a2b807d63a2b204a1349cd0",
+        "row": 22,
+        "column": 3,
+        "row_label": "Operating income",
+        "raw_value": "6,741",
+        "value": "6741",
+        "unit": "USD",
+        "display_unit_header": "(In millions, except per share data)",
+        "multiplier": "1000000",
+        "effective_value": "6741000000",
+        "period_kind": "DURATION",
+        "period_start": "2023-12-02",
+        "period_end": "2024-11-29",
+        "period_months": 12,
+        "header_path": [
+          "Years Ended",
+          "November 29, 2024"
+        ],
+        "fact_name": "us-gaap:OperatingIncomeLoss",
+        "fact_context_ref": "c-1",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[23]/td[2]",
+        "footnotes": [
+          "See accompanying Notes to Consolidated Financial Statements."
+        ],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 364,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      },
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-da816f71b9ff3ef8adb03f0f",
+        "generation": "38cae57e6823151bd4a4e57945539f72fd6957db63abbf235fc389a504a38b95",
+        "manifest_hash": "968484d5c78ba321269804b1c349b7263ddc6b4d888ddb0f8e3d5c9b4a7de011",
+        "filing_id": "sec:0000796343:0000796343-25-000004",
+        "cik": "0000796343",
+        "accession": "0000796343-25-000004",
+        "raw_sha256": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "parent_id": "fin_f6ee88598dbbba853e04a7c70cd62811",
+        "parent_payload_hash": "94dff79839a1d01e260a41c0fbabef859564d59dc68031256d651a60077cdb6f",
+        "table_id": "table_8a2b807d63a2b204a1349cd0",
+        "row": 7,
+        "column": 3,
+        "row_label": "Total revenue",
+        "raw_value": "21,505",
+        "value": "21505",
+        "unit": "USD",
+        "display_unit_header": "(In millions, except per share data)",
+        "multiplier": "1000000",
+        "effective_value": "21505000000",
+        "period_kind": "DURATION",
+        "period_start": "2023-12-02",
+        "period_end": "2024-11-29",
+        "period_months": 12,
+        "header_path": [
+          "Years Ended",
+          "November 29, 2024"
+        ],
+        "fact_name": "us-gaap:Revenues",
+        "fact_context_ref": "c-1",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[8]/td[2]",
+        "footnotes": [
+          "See accompanying Notes to Consolidated Financial Statements."
+        ],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 364,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      },
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-da816f71b9ff3ef8adb03f0f",
+        "generation": "38cae57e6823151bd4a4e57945539f72fd6957db63abbf235fc389a504a38b95",
+        "manifest_hash": "968484d5c78ba321269804b1c349b7263ddc6b4d888ddb0f8e3d5c9b4a7de011",
+        "filing_id": "sec:0000796343:0000796343-25-000004",
+        "cik": "0000796343",
+        "accession": "0000796343-25-000004",
+        "raw_sha256": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "parent_id": "fin_c802026decabd07e3a34e382778f6909",
+        "parent_payload_hash": "27c4beb0e9b266668728189aa63e165a423eae224566e9dcfae413be352eb190",
+        "table_id": "table_8a2b807d63a2b204a1349cd0",
+        "row": 22,
+        "column": 9,
+        "row_label": "Operating income",
+        "raw_value": "6,650",
+        "value": "6650",
+        "unit": "USD",
+        "display_unit_header": "(In millions, except per share data)",
+        "multiplier": "1000000",
+        "effective_value": "6650000000",
+        "period_kind": "DURATION",
+        "period_start": "2022-12-03",
+        "period_end": "2023-12-01",
+        "period_months": 12,
+        "header_path": [
+          "Years Ended",
+          "December 1, 2023"
+        ],
+        "fact_name": "us-gaap:OperatingIncomeLoss",
+        "fact_context_ref": "c-15",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[23]/td[5]",
+        "footnotes": [
+          "See accompanying Notes to Consolidated Financial Statements."
+        ],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 364,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      },
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-da816f71b9ff3ef8adb03f0f",
+        "generation": "38cae57e6823151bd4a4e57945539f72fd6957db63abbf235fc389a504a38b95",
+        "manifest_hash": "968484d5c78ba321269804b1c349b7263ddc6b4d888ddb0f8e3d5c9b4a7de011",
+        "filing_id": "sec:0000796343:0000796343-25-000004",
+        "cik": "0000796343",
+        "accession": "0000796343-25-000004",
+        "raw_sha256": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "parent_id": "fin_f6ee88598dbbba853e04a7c70cd62811",
+        "parent_payload_hash": "94dff79839a1d01e260a41c0fbabef859564d59dc68031256d651a60077cdb6f",
+        "table_id": "table_8a2b807d63a2b204a1349cd0",
+        "row": 7,
+        "column": 9,
+        "row_label": "Total revenue",
+        "raw_value": "19,409",
+        "value": "19409",
+        "unit": "USD",
+        "display_unit_header": "(In millions, except per share data)",
+        "multiplier": "1000000",
+        "effective_value": "19409000000",
+        "period_kind": "DURATION",
+        "period_start": "2022-12-03",
+        "period_end": "2023-12-01",
+        "period_months": 12,
+        "header_path": [
+          "Years Ended",
+          "December 1, 2023"
+        ],
+        "fact_name": "us-gaap:Revenues",
+        "fact_context_ref": "c-15",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[8]/td[5]",
+        "footnotes": [
+          "See accompanying Notes to Consolidated Financial Statements."
+        ],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 364,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      }
+    ],
+    "steps": [
+      {
+        "operation": "MARGIN_PERCENT",
+        "denominator": "TOTAL_REVENUE",
+        "role": "Kỳ hiện tại",
+        "unit": "%",
+        "period_start": "2023-12-02",
+        "period_end": "2024-11-29",
+        "duration_days": 364,
+        "citations": [
+          1,
+          2
+        ],
+        "result": "31.35"
+      },
+      {
+        "operation": "MARGIN_PERCENT",
+        "denominator": "TOTAL_REVENUE",
+        "role": "Cùng kỳ năm trước",
+        "unit": "%",
+        "period_start": "2022-12-03",
+        "period_end": "2023-12-01",
+        "duration_days": 364,
+        "citations": [
+          3,
+          4
+        ],
+        "result": "34.26"
+      },
+      {
+        "operation": "MARGIN_DELTA_PP",
+        "denominator": "TOTAL_REVENUE",
+        "unit": "điểm phần trăm",
+        "citations": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "result": "-2.92"
+      }
+    ],
+    "coverage": {
+      "completed": 3,
+      "required": 3
+    },
+    "views": [
+      {
+        "http": 200,
+        "accession": "0000796343-25-000004",
+        "hash": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[23]/td[2]",
+          "table_id": "table_8a2b807d63a2b204a1349cd0",
+          "row_index": 22,
+          "column_index": 3,
+          "parent_location": {
+            "section": "(In millions, except per share data)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]",
+            "table_id": "table_8a2b807d63a2b204a1349cd0",
+            "row_index": 22,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "6,741",
+        "period_end": "2024-11-29"
+      },
+      {
+        "http": 200,
+        "accession": "0000796343-25-000004",
+        "hash": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[8]/td[2]",
+          "table_id": "table_8a2b807d63a2b204a1349cd0",
+          "row_index": 7,
+          "column_index": 3,
+          "parent_location": {
+            "section": "(In millions, except per share data)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]",
+            "table_id": "table_8a2b807d63a2b204a1349cd0",
+            "row_index": 7,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "21,505",
+        "period_end": "2024-11-29"
+      },
+      {
+        "http": 200,
+        "accession": "0000796343-25-000004",
+        "hash": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[23]/td[5]",
+          "table_id": "table_8a2b807d63a2b204a1349cd0",
+          "row_index": 22,
+          "column_index": 9,
+          "parent_location": {
+            "section": "(In millions, except per share data)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]",
+            "table_id": "table_8a2b807d63a2b204a1349cd0",
+            "row_index": 22,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "6,650",
+        "period_end": "2023-12-01"
+      },
+      {
+        "http": 200,
+        "accession": "0000796343-25-000004",
+        "hash": "1af95a4724e54915e6c6326e846be51e3300d5dc84701addf8e9f2f12c33e3e3",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]/tr[8]/td[5]",
+          "table_id": "table_8a2b807d63a2b204a1349cd0",
+          "row_index": 7,
+          "column_index": 9,
+          "parent_location": {
+            "section": "(In millions, except per share data)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[828]/table[1]",
+            "table_id": "table_8a2b807d63a2b204a1349cd0",
+            "row_index": 7,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "19,409",
+        "period_end": "2023-12-01"
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "issuer": "CSCO",
+    "form": "10-Q",
+    "accession": "0000858877-24-000030",
+    "period": "2024-10-26",
+    "prior": "2023-10-28",
+    "source": "https://www.sec.gov/Archives/edgar/data/858877/000085887724000030/csco-20241026.htm",
+    "question": "For Cisco's quarter ending 2024-10-26, what percent of revenue is operating income, and how has it moved in percentage points versus the same quarter last year?",
+    "current_millions": [
+      2358,
+      13841
+    ],
+    "prior_millions": [
+      4276,
+      14668
+    ],
+    "import": {
+      "status": "LEXICAL_READY",
+      "reason": "DENSE_PENDING",
+      "seconds": 2.0396169000014197
+    },
+    "expected": [
+      "17.04",
+      "29.15",
+      "-12.12"
+    ],
+    "actual": [
+      "17.04",
+      "29.15",
+      "-12.12"
+    ],
+    "answer": "Biên lợi nhuận hoạt động của **CSCO** · 10-Q kết thúc 2024-10-26.\n\n### Doanh thu trên báo cáo\n\n**Kỳ hiện tại · 2024-07-28 đến 2024-10-26 (13 tuần): 17,04%**. OPERATING INCOME 2.358 triệu USD [1] ÷ Total revenue 13.841 triệu USD [2] × 100.\n\n**Cùng kỳ năm trước · 2023-07-30 đến 2023-10-28 (13 tuần): 29,15%**. OPERATING INCOME 4.276 triệu USD [3] ÷ Total revenue 14.668 triệu USD [4] × 100.\n\n**Thay đổi của biên: -12,12 điểm phần trăm**. Lấy biên kỳ hiện tại trừ biên kỳ so sánh, rồi làm tròn kết quả.",
+    "reason": null,
+    "cells": [
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-e6ab208e96925c65344e39af",
+        "generation": "3fe9364fca18078c807e60107d6d4dccdf146620e8a816642a83919ca4251848",
+        "manifest_hash": "9ccf937245e9c61364e3de1568768db547e8230b750634a6a33bfbf8821769f7",
+        "filing_id": "sec:0000858877:0000858877-24-000030",
+        "cik": "0000858877",
+        "accession": "0000858877-24-000030",
+        "raw_sha256": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "parent_id": "fin_2111136271ac0757812f1aa8d19dd95d",
+        "parent_payload_hash": "81fd3c8e7a5fa3afced2cc8cef6957d4e183965a6d2fd19509ff454f3215e403",
+        "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+        "row": 19,
+        "column": 3,
+        "row_label": "OPERATING INCOME",
+        "raw_value": "2,358",
+        "value": "2358",
+        "unit": "USD",
+        "display_unit_header": "(in millions, except per-share amounts)",
+        "multiplier": "1000000",
+        "effective_value": "2358000000",
+        "period_kind": "DURATION",
+        "period_start": "2024-07-28",
+        "period_end": "2024-10-26",
+        "period_months": 3,
+        "header_path": [
+          "Three Months Ended",
+          "October 26, 2024"
+        ],
+        "fact_name": "us-gaap:OperatingIncomeLoss",
+        "fact_context_ref": "c-1",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887724000030/csco-20241026.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[20]/td[2]",
+        "footnotes": [],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 91,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      },
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-e6ab208e96925c65344e39af",
+        "generation": "3fe9364fca18078c807e60107d6d4dccdf146620e8a816642a83919ca4251848",
+        "manifest_hash": "9ccf937245e9c61364e3de1568768db547e8230b750634a6a33bfbf8821769f7",
+        "filing_id": "sec:0000858877:0000858877-24-000030",
+        "cik": "0000858877",
+        "accession": "0000858877-24-000030",
+        "raw_sha256": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "parent_id": "fin_1d81b3f478a6b7ca0b53f542e0b2134e",
+        "parent_payload_hash": "eb2eb4460a2ba4fda33f83f7ce283ce1df2b117a3f2465e2af4996e8d9dd50cb",
+        "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+        "row": 6,
+        "column": 3,
+        "row_label": "Total revenue",
+        "raw_value": "13,841",
+        "value": "13841",
+        "unit": "USD",
+        "display_unit_header": "(in millions, except per-share amounts)",
+        "multiplier": "1000000",
+        "effective_value": "13841000000",
+        "period_kind": "DURATION",
+        "period_start": "2024-07-28",
+        "period_end": "2024-10-26",
+        "period_months": 3,
+        "header_path": [
+          "Three Months Ended",
+          "October 26, 2024"
+        ],
+        "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact_context_ref": "c-1",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887724000030/csco-20241026.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[7]/td[2]",
+        "footnotes": [],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 91,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      },
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-e6ab208e96925c65344e39af",
+        "generation": "3fe9364fca18078c807e60107d6d4dccdf146620e8a816642a83919ca4251848",
+        "manifest_hash": "9ccf937245e9c61364e3de1568768db547e8230b750634a6a33bfbf8821769f7",
+        "filing_id": "sec:0000858877:0000858877-24-000030",
+        "cik": "0000858877",
+        "accession": "0000858877-24-000030",
+        "raw_sha256": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "parent_id": "fin_2111136271ac0757812f1aa8d19dd95d",
+        "parent_payload_hash": "81fd3c8e7a5fa3afced2cc8cef6957d4e183965a6d2fd19509ff454f3215e403",
+        "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+        "row": 19,
+        "column": 9,
+        "row_label": "OPERATING INCOME",
+        "raw_value": "4,276",
+        "value": "4276",
+        "unit": "USD",
+        "display_unit_header": "(in millions, except per-share amounts)",
+        "multiplier": "1000000",
+        "effective_value": "4276000000",
+        "period_kind": "DURATION",
+        "period_start": "2023-07-30",
+        "period_end": "2023-10-28",
+        "period_months": 3,
+        "header_path": [
+          "Three Months Ended",
+          "October 28, 2023"
+        ],
+        "fact_name": "us-gaap:OperatingIncomeLoss",
+        "fact_context_ref": "c-9",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887724000030/csco-20241026.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[20]/td[5]",
+        "footnotes": [],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 91,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      },
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-e6ab208e96925c65344e39af",
+        "generation": "3fe9364fca18078c807e60107d6d4dccdf146620e8a816642a83919ca4251848",
+        "manifest_hash": "9ccf937245e9c61364e3de1568768db547e8230b750634a6a33bfbf8821769f7",
+        "filing_id": "sec:0000858877:0000858877-24-000030",
+        "cik": "0000858877",
+        "accession": "0000858877-24-000030",
+        "raw_sha256": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "parent_id": "fin_1d81b3f478a6b7ca0b53f542e0b2134e",
+        "parent_payload_hash": "eb2eb4460a2ba4fda33f83f7ce283ce1df2b117a3f2465e2af4996e8d9dd50cb",
+        "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+        "row": 6,
+        "column": 9,
+        "row_label": "Total revenue",
+        "raw_value": "14,668",
+        "value": "14668",
+        "unit": "USD",
+        "display_unit_header": "(in millions, except per-share amounts)",
+        "multiplier": "1000000",
+        "effective_value": "14668000000",
+        "period_kind": "DURATION",
+        "period_start": "2023-07-30",
+        "period_end": "2023-10-28",
+        "period_months": 3,
+        "header_path": [
+          "Three Months Ended",
+          "October 28, 2023"
+        ],
+        "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "fact_context_ref": "c-9",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000085887724000030/csco-20241026.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[7]/td[5]",
+        "footnotes": [],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+        "duration_days": 91,
+        "scope": "CONSOLIDATED",
+        "dimensions": []
+      }
+    ],
+    "steps": [
+      {
+        "operation": "MARGIN_PERCENT",
+        "denominator": "REPORTED_REVENUE",
+        "role": "Kỳ hiện tại",
+        "unit": "%",
+        "period_start": "2024-07-28",
+        "period_end": "2024-10-26",
+        "duration_days": 91,
+        "citations": [
+          1,
+          2
+        ],
+        "result": "17.04"
+      },
+      {
+        "operation": "MARGIN_PERCENT",
+        "denominator": "REPORTED_REVENUE",
+        "role": "Cùng kỳ năm trước",
+        "unit": "%",
+        "period_start": "2023-07-30",
+        "period_end": "2023-10-28",
+        "duration_days": 91,
+        "citations": [
+          3,
+          4
+        ],
+        "result": "29.15"
+      },
+      {
+        "operation": "MARGIN_DELTA_PP",
+        "denominator": "REPORTED_REVENUE",
+        "unit": "điểm phần trăm",
+        "citations": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "result": "-12.12"
+      }
+    ],
+    "coverage": {
+      "completed": 3,
+      "required": 3
+    },
+    "views": [
+      {
+        "http": 200,
+        "accession": "0000858877-24-000030",
+        "hash": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[20]/td[2]",
+          "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+          "row_index": 19,
+          "column_index": 3,
+          "parent_location": {
+            "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]",
+            "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+            "row_index": 19,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "2,358",
+        "period_end": "2024-10-26"
+      },
+      {
+        "http": 200,
+        "accession": "0000858877-24-000030",
+        "hash": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[7]/td[2]",
+          "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+          "row_index": 6,
+          "column_index": 3,
+          "parent_location": {
+            "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]",
+            "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "13,841",
+        "period_end": "2024-10-26"
+      },
+      {
+        "http": 200,
+        "accession": "0000858877-24-000030",
+        "hash": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[20]/td[5]",
+          "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+          "row_index": 19,
+          "column_index": 9,
+          "parent_location": {
+            "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]",
+            "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+            "row_index": 19,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "4,276",
+        "period_end": "2023-10-28"
+      },
+      {
+        "http": 200,
+        "accession": "0000858877-24-000030",
+        "hash": "4b9944be147747f0bed5131726224b6af3b20500f985f2bbec9db532f9fdc5bf",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]/tr[7]/td[5]",
+          "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+          "row_index": 6,
+          "column_index": 9,
+          "parent_location": {
+            "section": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[68]/table[1]",
+            "table_id": "table_6b0bb36e8713e2d4a4d4ee8b",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "raw_value": "14,668",
+        "period_end": "2023-10-28"
+      }
+    ],
+    "status": "PASS"
+  }
+]

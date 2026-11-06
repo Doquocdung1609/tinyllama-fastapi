@@ -1,0 +1,45 @@
+[
+  {
+    "case": "Apple",
+    "status": "PASS",
+    "value": "109158",
+    "pages": [
+      32
+    ]
+  },
+  {
+    "case": "BIDV",
+    "status": "PASS",
+    "value": "1114",
+    "pages": [
+      4,
+      7
+    ]
+  },
+  {
+    "case": "pdf-multi",
+    "status": "PASS",
+    "files": [
+      "NASDAQ_AAPL_2025.pdf",
+      "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf"
+    ],
+    "pages": [
+      31,
+      34,
+      3,
+      6
+    ]
+  },
+  {
+    "case": "sec-federation",
+    "status": "PASS",
+    "accessions": [
+      "0000080424-26-000060",
+      "0000080424-26-000256"
+    ]
+  },
+  {
+    "case": "mobile-picker",
+    "status": "PASS"
+  }
+]

@@ -225,12 +225,20 @@ def financial_chat(payload:ChatRequest):
             from app.product.sec_multi_qa import resolve_followup as resolve_sec_followup
             from app.product.sec_question import answer as sec_answer
             from app.product.sec_viewer import server_key
+            from app.product.sec_task_plan import FOLLOWUP, resolve_typed_followup
+            followup=None
             if history:
-                question=resolve_sec_followup(payload.question,history[-1]['response'])
+                previous=history[-1]['response']
+                followup=resolve_typed_followup(selected_index,payload.question,previous) if selected_index is not None else None
+                question=followup.get('question',payload.question) if followup else resolve_sec_followup(payload.question,previous)
             pending=history[-1]['response'].get('pending_clarification') if history else None
             still_missing=bool(pending and question==payload.question and re.fullmatch(
                 r'(?:dung roi|chinh xac|yes|correct|ok|okay)[?!. ]*',folded(question)))
-            if still_missing:
+            if followup and followup.get('clarification'):
+                answer={'status':'NEEDS_CLARIFICATION','answer_status':'REQUIRES_SOURCE_REVIEW',
+                        'answer':followup['clarification'],'reason':followup.get('reason','SEC_FOLLOWUP_SLOT_UNRESOLVED'),
+                        'values':[],'citations':[]}
+            elif still_missing:
                 answer={'status':'NEEDS_CLARIFICATION','answer_status':'REQUIRES_SOURCE_REVIEW',
                         'answer':'Tôi vẫn cần '+('tên doanh nghiệp cần phân tích.' if pending['missing_slot']=='issuer'
                                            else 'kỳ báo cáo hoặc độ dài kỳ cần so sánh.'),
@@ -243,10 +251,20 @@ def financial_chat(payload:ChatRequest):
                     answer={'status':'SOURCE_EXCERPTS','answer_status':'REQUIRES_SOURCE_REVIEW',
                             'answer':'Chưa đối chiếu được ô tài chính trong nguồn SEC đã chọn. Các đoạn liên quan chỉ dùng để kiểm tra thêm.',
                             'reason':'SEC_SOURCE_CELL_VERIFICATION_FAILED','values':[],'citations':[]}
+            if followup and answer is not None:
+                answer['sec_followup']={**followup,'original_question':payload.question}
+                if answer.get('sec_question_plan'):
+                    answer['sec_question_plan']['original_question']=payload.question
+                    answer['sec_question_plan']['resolved_question']=question
             if selected_index is None:
                 answer={'status':'SOURCE_UNAVAILABLE','answer_status':'SOURCE_UNAVAILABLE',
                         'answer':'Không truy cập được chỉ mục hoặc nguồn SEC đang chọn.',
                         'reason':'SEC_SELECTED_INDEX_UNAVAILABLE','values':[],'citations':[]}
+            prior_plan=history[-1]['response'].get('sec_question_plan',{}) if history else {}
+            if answer is None and prior_plan.get('intent') in {'MARGIN','NUMERIC'} and FOLLOWUP.search(folded(payload.question)):
+                answer={'status':'NEEDS_CLARIFICATION','answer_status':'REQUIRES_SOURCE_REVIEW',
+                        'answer':'Bạn muốn giữ phép tính trước đó cho doanh nghiệp và kỳ nào?',
+                        'reason':'SEC_FOLLOWUP_SLOT_UNRESOLVED','values':[],'citations':[]}
             if selected_index is not None and answer is None:
                 # Numeric QA goes directly to authenticated rows, avoiding an
                 # unrelated dense query on the successful verification path.

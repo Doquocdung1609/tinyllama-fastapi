@@ -1,7 +1,6 @@
 """Resolve SEC tasks against the selected, authenticated filing set."""
 from collections import defaultdict
 from datetime import date
-from decimal import Decimal, ROUND_HALF_UP, localcontext
 from time import perf_counter
 import re
 
@@ -16,9 +15,13 @@ from app.product.sec_viewer import reference
 
 RISK = re.compile(r'\b(?:rui ro|nguy co|bat dinh|risks?|risk factors?|uncertaint\w*)\b')
 MANAGEMENT = re.compile(r'\b(?:thao luan cua ban quan ly|management.s discussion|md&a|liquidity|thanh khoan)\b')
-MARGIN = re.compile(r'\b(?P<gross>gross (?:profit )?margin|bien loi nhuan gop|ty suat loi nhuan gop)\b|'
+MARGIN = re.compile(r'\b(?P<net>net (?:profit )?margin|bien loi nhuan rong|ty suat loi nhuan rong)\b|'
+                    r'\b(?P<gross>gross (?:profit )?margin|bien loi nhuan gop|ty suat loi nhuan gop)\b|'
                     r'\b(?:operating margin|bien loi nhuan hoat dong|bien hoat dong|ty suat loi nhuan hoat dong|'
-                    r'phan tram loi nhuan (?:tu )?hoat dong tren (?:tong )?doanh thu)\b')
+                    r'phan tram loi nhuan (?:tu )?hoat dong tren (?:tong )?doanh thu|'
+                    r'loi nhuan (?:tu )?hoat dong.{0,80}chiem.{0,45}phan tram.{0,25}doanh thu|'
+                    r'what percent(?:age)? of revenue is operating (?:income|profit)|'
+                    r'operating (?:income|profit) as a percent(?:age)? of revenue)\b')
 PROFILE = re.compile(r'\b(?:do dai ky|don vi tien te|pham vi bao cao|reporting duration|reporting scope|filing profile)\b')
 NO_CHANGE = re.compile(r'\bno (?:material|significant) changes?\b.{0,250}\brisk factors?\b|\brisk factors?\b.{0,240}\b(?:no material changes?|have not materially changed)\b', re.I)
 RISK_TOPIC = re.compile(r'\b(?:tariffs?|inflation|competition|foreign exchange|currency|cybersecurity|supply chain|'
@@ -124,21 +127,58 @@ def narrative(sources, q, key):
 
 
 TOPIC_TERMS={
+    'LEGAL':re.compile(r'\b(?:phap ly|legal (?:risks?|proceedings?|matters?|exposure|liability)|litigation|lawsuits?|regulatory (?:risks?|scrutiny|actions?))\b',re.I),
+    'REGULATION':re.compile(r'\b(?:quy dinh|giam sat phap ly|regulations?|regulatory (?:risks?|scrutiny|actions?)|compliance)\b',re.I),
+    'LITIGATION':re.compile(r'\b(?:kien tung|tranh chap|to tung|litigation|lawsuits?|legal proceedings?)\b',re.I),
+    'DATA_SECURITY':re.compile(r'\b(?:bao mat du lieu|quyen rieng tu|data (?:security|breaches?|privacy)|privacy breaches?)\b',re.I),
+    'SECURITY':re.compile(r'\b(?:bao mat|security breaches?|security vulnerabilit\w*|unauthori[sz]ed access)\b',re.I),
     'COMPETITION':re.compile(r'\b(?:canh tranh|suc ep doi thu|doi thu canh tranh|competition|competit\w*)\b',re.I),
     'CYBERSECURITY':re.compile(r'\b(?:an ninh mang|tan cong mang|cybersecurity|cyber.?security|cyber.?attacks?|data breaches?)\b',re.I),
+    'CURRENCY':re.compile(r'\b(?:ty gia|ngoai hoi|foreign exchange|currency fluctuations?)\b',re.I),
+    'SUPPLY_CHAIN':re.compile(r'\b(?:chuoi cung ung|supply chain|supplier disruptions?)\b',re.I),
+    'LIQUIDITY':re.compile(r'\b(?:thanh khoan|liquidity|cash constraints?)\b',re.I),
 }
-TOPIC_LABELS={'COMPETITION':'Cạnh tranh','CYBERSECURITY':'An ninh mạng'}
+TOPIC_LABELS={'LEGAL':'Pháp lý','REGULATION':'Quy định','LITIGATION':'Kiện tụng','DATA_SECURITY':'Bảo mật dữ liệu',
+              'SECURITY':'Bảo mật','COMPETITION':'Cạnh tranh','CYBERSECURITY':'An ninh mạng',
+              'CURRENCY':'Tỷ giá','SUPPLY_CHAIN':'Chuỗi cung ứng','LIQUIDITY':'Thanh khoản'}
 
 
 def requested_topics(q):
-    return [name for name,pattern in TOPIC_TERMS.items() if pattern.search(q)]
+    # Specific concepts consume only their own text. A separately requested
+    # broader topic stays visible, and an unfamiliar enumerated item survives.
+    topics=[]
+    remainder=q
+    for topic in ('DATA_SECURITY','COMPETITION','CYBERSECURITY','SECURITY','LITIGATION','REGULATION',
+                  'LEGAL','CURRENCY','SUPPLY_CHAIN','LIQUIDITY'):
+        p=TOPIC_TERMS[topic]
+        ask=p
+        if topic=='LEGAL':
+            ask=re.compile(r'\b(?:phap ly|legal(?: risks?)?)\b')
+        elif topic=='SECURITY':
+            ask=re.compile(r'\b(?:bao mat|security)\b')
+        elif topic=='CYBERSECURITY':
+            ask=re.compile(r'\b(?:an ninh mang|tan cong mang|cybersecurity|cyber.?security|cyber.?attacks?)\b')
+        if ask.search(remainder):
+            topics.append(topic)
+            remainder=ask.sub(' ',remainder)
+    explicit=re.search(r'\b(?:phan tich rieng|tach rieng|separately analy[sz]e)\s+(?:cac\s+)?(?:rui ro|risks?)\s+([^.!?;]+)',q)
+    if explicit and re.search(r',|\b(?:va|and)\b',explicit[1]):
+        for name in re.split(r'\s*,\s*|\s+(?:va|and)\s+',explicit[1]):
+            name=name.strip()
+            if not 1<=len(name.split())<=6 or any(p.search(name) for p in TOPIC_TERMS.values()):
+                continue
+            if not re.fullmatch(r'[a-z][a-z -]{2,60}',name) or 'chu de' in name or 'chung cu' in name:
+                continue
+            topics.append('LOCAL:'+name)
+    return topics
 
 
 def narrative_obligations(sources, topics, key):
     """One authenticated disclosure per requested topic, with visible gaps."""
     lines,refs,results=[],[],[]
     for topic in topics:
-        pattern=TOPIC_TERMS[topic]
+        label=TOPIC_LABELS.get(topic,topic.removeprefix('LOCAL:').capitalize())
+        pattern=TOPIC_TERMS.get(topic) or re.compile(r'(?<!\w)'+re.escape(topic.removeprefix('LOCAL:'))+r'(?!\w)',re.I)
         candidates=[]
         for filing,part in sources:
             for item in part.parents:
@@ -154,24 +194,48 @@ def narrative_obligations(sources, topics, key):
                     score=(3 if pattern.search(section) else 0)+(2 if DISCLOSURE.search(sentence) else 0)
                     if re.search(r'\b(?:risk|could adversely|may not|could lead to|vulnerabilit\w*)\b',sentence,re.I):
                         score+=6
+                    if topic=='LEGAL':
+                        if re.search(r'\b(?:litigation|legal proceedings?|lawsuits?|claims?|contingencies)\b',section+' '+sentence,re.I):
+                            score+=7
+                        if TOPIC_TERMS['SECURITY'].search(section) or TOPIC_TERMS['CYBERSECURITY'].search(sentence):
+                            score-=5
+                    if topic in {'SECURITY','DATA_SECURITY'} and re.search(r'\b(?:unauthori[sz]ed access|breaches?|compromis\w*)\b',sentence,re.I):
+                        score+=3
                     if re.search(r'\b(?:risk|adversely)\b',section,re.I):
                         score+=3
                     candidates.append((score,filing,part,chunk,sentence))
         candidates.sort(key=lambda x:(-x[0],x[3].source_location.structural_path))
         if not candidates:
-            lines.append(f'- **{TOPIC_LABELS[topic]}**: chưa gắn được đoạn công bố phù hợp trong filing đã chọn.')
+            lines.append(f'- **{label}**: chưa gắn được đoạn công bố phù hợp trong filing đã chọn.')
             results.append({'topic':topic,'status':'SOURCE_UNAVAILABLE'})
             continue
         _,filing,part,chunk,sentence=candidates[0]
         refs.append(_citation(part,filing,chunk,key,sentence))
         if topic=='COMPETITION' and re.search(r'\b(?:competit\w*|compete)\b',sentence,re.I) and re.search(r'\badversely affect\b',sentence,re.I):
             disclosed='Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh.'
-        elif topic=='CYBERSECURITY' and re.search(r'\bcyberattacks?\b',sentence,re.I) and re.search(r'\breduced revenue\b',sentence,re.I):
+        elif topic in {'CYBERSECURITY','SECURITY','DATA_SECURITY'} and re.search(r'\bcyberattacks?\b',sentence,re.I) and re.search(r'\breduced revenue\b',sentence,re.I):
             disclosed='Công ty nêu tấn công mạng hoặc lỗ hổng bảo mật có thể làm giảm doanh thu, tăng chi phí, phát sinh yêu cầu bồi thường hoặc ảnh hưởng danh tiếng.'
+        elif topic in {'LEGAL','LITIGATION'} and re.search(r'\b(?:litigation|proceedings?|claims?|lawsuits?)\b',sentence,re.I):
+            disclosed=('Công ty cho biết kết quả các thủ tục pháp lý và khiếu kiện còn bất định.'
+                       if 'uncertainty' in sentence.casefold() else
+                       'Công ty cho biết các khiếu kiện có thể dẫn đến kết quả bất lợi.'
+                       if 'adverse outcomes' in sentence.casefold() else
+                       'Báo cáo đề cập các vụ việc hoặc thủ tục pháp lý.')
+        elif topic=='LEGAL' and re.search(r'\b(?:regulat\w*|laws?|compliance)\b',sentence,re.I):
+            disclosed='Báo cáo đề cập nghĩa vụ tuân thủ hoặc rủi ro từ quy định.'
+        elif topic in {'SECURITY','DATA_SECURITY'}:
+            disclosed='Đoạn công bố liên quan đến bảo mật. Phạm vi sự cố và ảnh hưởng cụ thể nằm trong trích đoạn.'
         else:
-            disclosed='Báo cáo có công bố về chủ đề này; cần đọc đoạn nguồn để xác định nội dung và mức độ ảnh hưởng cụ thể.'
-        lines.append(f'- **{TOPIC_LABELS[topic]} — công bố của {filing["ticker"]}:** {disclosed} [{len(refs)}]')
-        results.append({'topic':topic,'status':'SOURCE_EXCERPTS','citation':len(refs)})
+            disclosed='Đoạn công bố dưới đây nêu căn cứ trực tiếp cho chủ đề.'
+        if topic not in {'COMPETITION','CYBERSECURITY','SECURITY','DATA_SECURITY'} or disclosed.startswith('Đoạn'):
+            disclosed+=f' Trích đoạn: “{sentence}”'
+        lines.append(f'- **{label} — công bố của {filing["ticker"]}:** {disclosed} [{len(refs)}]')
+        item=part.by_id[chunk.chunk_id]
+        warnings=['FILING_PARTIAL_EXTRACTION'] if filing.get('extraction_status')=='PARTIAL_EXTRACTION' or (
+            item['chunk'].metadata.get('document_status')=='PARTIAL_EXTRACTION') else []
+        if warnings:
+            lines.append('  *Nguồn có cảnh báo trích xuất một phần. Mục này chỉ phản ánh đoạn đã đối chiếu.*')
+        results.append({'topic':topic,'status':'SOURCE_EXCERPTS','citation':len(refs),'warnings':warnings})
     return {'status':'SOURCE_EXCERPTS','answer_status':'SEC_NARRATIVE_EVIDENCE',
             'answer':'Các công bố liên quan trong filing:\n\n'+'\n'.join(lines)+
                      '\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm.',
@@ -214,70 +278,10 @@ def profile(sources,key):
 
 
 def margin(sources, question, ticker, key):
+    from app.product.sec_ratio import margin as execute_margin
     match=MARGIN.search(folded(question))
-    metric='gross_profit' if match['gross'] else 'operating_income'
-    raw_question=folded(question)
-    years=set(re.findall(r'\b20\d{2}\b',re.sub(r'\b20\d{2}-\d{2}-\d{2}\b',' ',raw_question)))
-    available={str(filing['report_period'][:4]) for filing,_ in sources}
-    available.update(str(filing['fiscal_year']) for filing,_ in sources if filing.get('fiscal_year'))
-    if years and not years <= available:
-        return abstain('SEC_FISCAL_PERIOD_ABSENT',
-                       'Bộ filing đang chọn không có kỳ '+', '.join(sorted(years-available))+' cho '+ticker+'.')
-    # Build an issuer-local request: contextual names may never enter the
-    # source-cell binder, and an unspecified 10-Q uses its shortest quarter.
-    filing_dates={filing['report_period'] for filing,_ in sources}
-    if len(filing_dates)!=1:
-        return abstain('SEC_FILING_PERIOD_AMBIGUOUS','Hãy chọn một filing hoặc nêu ngày kết thúc kỳ cho '+ticker+'.')
-    report_end=next(iter(filing_dates))
-    original=[] if re.search(r'\b(?:ky ngan nhat|shortest period)\b',folded(question)) else re.findall(
-        r'\b(12|13|14|24|26|36|39|52|53)\s*(?:tuan|weeks?)\b',folded(question))
-    if len(set(original))>1:
-        return abstain('SEC_MARGIN_DURATION_AMBIGUOUS','Hãy nêu một độ dài kỳ cho phép tính biên lợi nhuận.')
-    duration=(original[0]+' weeks') if original else 'three months'
-    request=f'{ticker} {duration} {report_end}'
-    scoped=_scoped(sources)
-    profit_result=numeric_answer(scoped,request,ticker,key,metric_override=metric,default_quarter=True)
-    denominators=[numeric_answer(scoped,request+' '+phrase,ticker,key,metric_override='revenue',default_quarter=True)
-                  for phrase in ('net sales','total revenue')]
-    same=('cik','filing_id','period_start','period_end','scope','unit')
-    profit_cell=profit_result['source_cells'][0] if profit_result and profit_result.get('status')=='SUPPORTED' and len(profit_result.get('source_cells',[]))==1 else None
-    compatible=[a for a in denominators if a and a.get('status')=='SUPPORTED'
-                and len(a.get('source_cells',[]))==1 and profit_cell
-                and all(a['source_cells'][0][k]==profit_cell[k] for k in same)]
-    distinct={a['source_cells'][0]['effective_value'] for a in compatible}
-    revenue_result=compatible[0] if len(distinct)==1 else None
-    results=[profit_result,revenue_result]
-    if not profit_cell or not revenue_result:
-        unavailable=[m for m,a in zip((metric,'revenue'),results) if not a or a.get('status')!='SUPPORTED']
-        reply=abstain('SEC_MARGIN_SOURCE_UNAVAILABLE','Chưa gắn được ô nguồn '+', '.join(unavailable)+' cùng kỳ cho '+ticker+'.')
-        reply['operand_results']=[{'metric':m,'status':a.get('status') if a else 'UNSUPPORTED',
-                                  'reason':a.get('reason') if a else 'SEC_SOURCE_CELL_UNAVAILABLE'}
-                                 for m,a in zip((metric,'revenue'),results)]
-        reply['denominator_candidates']=[{'status':a.get('status') if a else 'UNSUPPORTED',
-                                         'reason':a.get('reason') if a else None} for a in denominators]
-        return reply
-    operands=[r['source_cells'][0] for r in results]
-    dimensions=('cik','filing_id','period_start','period_end','scope','unit')
-    if any(operands[0][k]!=operands[1][k] for k in dimensions):
-        return abstain('SEC_MARGIN_DIMENSION_CONFLICT','Ô doanh thu và lợi nhuận thuộc phạm vi hoặc kỳ khác nhau.')
-    profit,revenue=[Decimal(c['effective_value']) for c in operands]
-    if revenue<=0:
-        return abstain('SEC_ZERO_BASE','Không có doanh thu dương để tính biên lợi nhuận cho kỳ này.')
-    with localcontext() as ctx:
-        ctx.prec=50
-        result=(profit/revenue*100).quantize(Decimal('.01'),rounding=ROUND_HALF_UP)
-        from app.product.sec_answer_contract import verify_comparison
-        proof=verify_comparison(operands,[('MARGIN_PERCENT',result)])
-    refs=[r['citations'][0] for r in results]
-    label='Biên lợi nhuận gộp' if match['gross'] else 'Biên lợi nhuận hoạt động'
-    start,end=operands[0]['period_start'],operands[0]['period_end']
-    days=(date.fromisoformat(end)-date.fromisoformat(start)).days+1
-    duration_label=f'{days//7} tuần' if days%7==0 else f'{operands[0]["period_months"]} tháng ({days} ngày)'
-    return {'status':'SUPPORTED','answer_status':'VERIFIED_ANSWER','values':[str(result)],'unit':'%',
-            'answer':f'{label} của {ticker} cho kỳ {start}–{end} ({duration_label}): **{result}%**. '
-                     f'{operands[0]["row_label"]}: {profit:,} USD [1] ÷ '
-                     f'{operands[1]["row_label"]}: {revenue:,} USD [2] × 100.',
-            'citations':refs,'source_cells':operands,'independent_verification':proof}
+    return execute_margin(sources,question,ticker,key,
+                          'gross_profit' if match['gross'] else 'income' if match['net'] else 'operating_income')
 
 
 def _combine(tasks,missing):
@@ -318,7 +322,7 @@ def answer(index,question,ticker,key):
         and (not task.accession or row['accession']==task.accession)
         and (not task.period or row['report_period']==task.period)
         for row,_ in groups[task.issuer])]
-    if mismatched:
+    if mismatched and not margin_match:
         reply=abstain('SEC_REQUESTED_FILING_NOT_SELECTED',
                       'Filing, accession hoặc ngày kết thúc kỳ được hỏi không thuộc nguồn SEC đang chọn.')
     elif conflict or not selected:
@@ -329,7 +333,17 @@ def answer(index,question,ticker,key):
     elif is_profile:
         reply=profile([source for issuer in selected for source in groups[issuer]],key)
     elif qualitative:
-        sources=[source for issuer in selected for source in groups[issuer]]
+        sources=[]
+        for issuer in selected:
+            local=groups[issuer]
+            hint=next((t for t in plan.tasks if t.issuer==issuer),None)
+            if hint:
+                local=[(row,part) for row,part in local if (not hint.filing_form or row['form']==hint.filing_form)
+                       and (not hint.period or row['report_period']==hint.period)
+                       and (not hint.accession or row['accession']==hint.accession)]
+            if local:
+                latest=max(row['report_period'] for row,_ in local)
+                sources.extend((row,part) for row,part in local if row['report_period']==latest)
         reply=narrative_obligations(sources,topics,key) if topics else narrative(sources,q,key)
     elif margin_match:
         tasks=[(issuer+' · biên lợi nhuận hoạt động',margin(groups[issuer],question,issuer,key)) for issuer in selected]
@@ -361,6 +375,8 @@ def answer(index,question,ticker,key):
         evidence=profile(groups[selected[0]],key)
         reply['answer']+='\n\n'+evidence['answer']
         reply['citations']=evidence['citations']
+    if missing and qualitative and 'answer_completeness' in reply:
+        reply['answer_completeness']['required']+=len(topics)*len(missing)
     if missing and (is_profile or qualitative):
         reply['answer']+='\n\nBộ nguồn đang chọn thiếu filing của '+', '.join(missing)+'.'
     eligible=[f['filing_id'] for t in selected for f,_ in groups[t]]
@@ -371,7 +387,8 @@ def answer(index,question,ticker,key):
         complete=bool(reply.get('status')=='SUPPORTED' and reply.get('citations'))
         reply['answer_completeness']={'completed':int(complete),'required':max(1,len(plan.tasks)+len(missing))}
     if reply.get('status')=='NEEDS_CLARIFICATION' and reply.get('reason') in {
-            'SEC_COMPANY_SCOPE_AMBIGUOUS','SEC_PERIOD_DURATION_REQUIRED','SEC_COMPARISON_PERIODS_REQUIRED'}:
+            'SEC_COMPANY_SCOPE_AMBIGUOUS','SEC_PERIOD_DURATION_REQUIRED','SEC_COMPARISON_PERIODS_REQUIRED',
+            'SEC_MARGIN_COMPARISON_PERIOD_REQUIRED','SEC_FILING_PERIOD_AMBIGUOUS','SEC_MARGIN_DURATION_AMBIGUOUS'}:
         slot='issuer' if reply['reason']=='SEC_COMPANY_SCOPE_AMBIGUOUS' else 'duration' if reply['reason']=='SEC_PERIOD_DURATION_REQUIRED' else 'period'
         reply['pending_clarification']={'original_task':question,'missing_slot':slot,
             'acceptable_type':'selected issuer or comparison set' if slot=='issuer' else 'reporting period or duration',

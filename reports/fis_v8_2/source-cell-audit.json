@@ -1,0 +1,888 @@
+[
+  {
+    "case": "A01",
+    "locators": [
+      {
+        "citation": 1,
+        "pass": true,
+        "accession": "0000909832-26-000051",
+        "filing_id": "sec:0000909832:0000909832-26-000051",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[11]/td[2]",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row_index": 10,
+          "column_index": 3,
+          "parent_location": {
+            "section": "(amounts in millions, except per share data) (unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row_index": 10,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000909832:0000909832-26-000051",
+          "cik": "0000909832",
+          "accession": "0000909832-26-000051",
+          "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+          "parent_id": "fin_2a1957f48c8e6297aec5853f77f59c99",
+          "parent_payload_hash": "6f34a6d4ba64c492b200d82cbf4e6f5d976b6a337f507cf7cb025253cdda7ad1",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row": 10,
+          "column": 3,
+          "row_label": "Operating income",
+          "raw_value": "2,815",
+          "value": "2815",
+          "unit": "USD",
+          "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+          "multiplier": "1000000",
+          "effective_value": "2815000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-02-16",
+          "period_end": "2026-05-10",
+          "period_months": 3,
+          "header_path": [
+            "12 Weeks Ended",
+            "May 10, 2026"
+          ],
+          "fact_name": "us-gaap:OperatingIncomeLoss",
+          "fact_context_ref": "c-11",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[11]/td[2]",
+          "footnotes": [],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      },
+      {
+        "citation": 2,
+        "pass": true,
+        "accession": "0000909832-26-000051",
+        "filing_id": "sec:0000909832:0000909832-26-000051",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[7]/td[2]",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row_index": 6,
+          "column_index": 3,
+          "parent_location": {
+            "section": "(amounts in millions, except per share data) (unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000909832:0000909832-26-000051",
+          "cik": "0000909832",
+          "accession": "0000909832-26-000051",
+          "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+          "parent_id": "fin_161c27d72c8f9529617f54db0ba06431",
+          "parent_payload_hash": "9b8b71f3cfc6545b48140c0bfd77bab72c17b0bddc5900eca44b9b7fd3da76f3",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row": 6,
+          "column": 3,
+          "row_label": "Total revenue",
+          "raw_value": "70,527",
+          "value": "70527",
+          "unit": "USD",
+          "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+          "multiplier": "1000000",
+          "effective_value": "70527000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-02-16",
+          "period_end": "2026-05-10",
+          "period_months": 3,
+          "header_path": [
+            "12 Weeks Ended",
+            "May 10, 2026"
+          ],
+          "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact_context_ref": "c-11",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[7]/td[2]",
+          "footnotes": [],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      },
+      {
+        "citation": 3,
+        "pass": true,
+        "accession": "0000909832-26-000051",
+        "filing_id": "sec:0000909832:0000909832-26-000051",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[5]/td[3]",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row_index": 4,
+          "column_index": 4,
+          "parent_location": {
+            "section": "(amounts in millions, except per share data) (unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row_index": 4,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000909832:0000909832-26-000051",
+          "cik": "0000909832",
+          "accession": "0000909832-26-000051",
+          "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+          "parent_id": "fin_6dd3b74521036724dc0b769911f778ab",
+          "parent_payload_hash": "7053bb385d3dafbb21ac81f42dc7a81f606fa66fc8388f3aa6a3358c6133dbc1",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row": 4,
+          "column": 4,
+          "row_label": "Net sales",
+          "raw_value": "69,154",
+          "value": "69154",
+          "unit": "USD",
+          "display_unit_header": "(amounts in millions, except per share data) (unaudited)",
+          "multiplier": "1000000",
+          "effective_value": "69154000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-02-16",
+          "period_end": "2026-05-10",
+          "period_months": 3,
+          "header_path": [
+            "12 Weeks Ended",
+            "May 10, 2026"
+          ],
+          "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact_context_ref": "c-3",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[5]/td[3]",
+          "footnotes": [],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE",
+            "PRODUCT_SALES_DIMENSION_EXCLUDES_MEMBERSHIPS"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "operation": "MARGIN_PERCENT",
+        "unit": "%",
+        "recomputed": "3.99",
+        "reported": "3.99",
+        "pass": true
+      },
+      {
+        "operation": "MARGIN_PERCENT",
+        "unit": "%",
+        "recomputed": "4.07",
+        "reported": "4.07",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "case": "A02",
+    "locators": [
+      {
+        "citation": 1,
+        "pass": true,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[4]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 28,
+          "column_index": 3,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 28,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+          "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+          "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+          "filing_id": "sec:0000789019:0001193125-25-256321",
+          "cik": "0000789019",
+          "accession": "0001193125-25-256321",
+          "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+          "parent_id": "fin_d08ed230347428d09e891811434d2ee7",
+          "parent_payload_hash": "fb95d9193b26643fa48d6496051c70936825d3e5cc655d7e623ce5bb3a357e04",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row": 28,
+          "column": 3,
+          "row_label": "Operating income",
+          "raw_value": "37,961",
+          "value": "37961",
+          "unit": "USD",
+          "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+          "multiplier": "1000000",
+          "effective_value": "37961000000",
+          "period_kind": "DURATION",
+          "period_start": "2025-07-01",
+          "period_end": "2025-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30,",
+            "2025"
+          ],
+          "fact_name": "us-gaap:OperatingIncomeLoss",
+          "fact_context_ref": "C_77513f4d-d996-497e-8795-6472b2325bfb",
+          "fact_unit_ref": "U_USD",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[4]",
+          "footnotes": [],
+          "warnings": [],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      },
+      {
+        "citation": 2,
+        "pass": true,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[4]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 11,
+          "column_index": 3,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 11,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+          "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+          "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+          "filing_id": "sec:0000789019:0001193125-25-256321",
+          "cik": "0000789019",
+          "accession": "0001193125-25-256321",
+          "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+          "parent_id": "fin_19029350750a268a7fb4ae74c83d9131",
+          "parent_payload_hash": "373ae23628000988b5916c06dae6d00e42d7aa5b07282244bdb91f865581e3af",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row": 11,
+          "column": 3,
+          "row_label": "Total revenue",
+          "raw_value": "77,673",
+          "value": "77673",
+          "unit": "USD",
+          "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+          "multiplier": "1000000",
+          "effective_value": "77673000000",
+          "period_kind": "DURATION",
+          "period_start": "2025-07-01",
+          "period_end": "2025-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30,",
+            "2025"
+          ],
+          "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact_context_ref": "C_77513f4d-d996-497e-8795-6472b2325bfb",
+          "fact_unit_ref": "U_USD",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[4]",
+          "footnotes": [],
+          "warnings": [],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      },
+      {
+        "citation": 3,
+        "pass": true,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[8]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 28,
+          "column_index": 7,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 28,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+          "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+          "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+          "filing_id": "sec:0000789019:0001193125-25-256321",
+          "cik": "0000789019",
+          "accession": "0001193125-25-256321",
+          "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+          "parent_id": "fin_d08ed230347428d09e891811434d2ee7",
+          "parent_payload_hash": "fb95d9193b26643fa48d6496051c70936825d3e5cc655d7e623ce5bb3a357e04",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row": 28,
+          "column": 7,
+          "row_label": "Operating income",
+          "raw_value": "30,552",
+          "value": "30552",
+          "unit": "USD",
+          "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+          "multiplier": "1000000",
+          "effective_value": "30552000000",
+          "period_kind": "DURATION",
+          "period_start": "2024-07-01",
+          "period_end": "2024-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30,",
+            "2024"
+          ],
+          "fact_name": "us-gaap:OperatingIncomeLoss",
+          "fact_context_ref": "C_118a58e8-5217-4a77-963d-a3ac430dbd19",
+          "fact_unit_ref": "U_USD",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[8]",
+          "footnotes": [],
+          "warnings": [],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      },
+      {
+        "citation": 4,
+        "pass": true,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[8]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 11,
+          "column_index": 7,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 11,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "user-sec-bbff5455832e6917d6fcb07e",
+          "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+          "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+          "filing_id": "sec:0000789019:0001193125-25-256321",
+          "cik": "0000789019",
+          "accession": "0001193125-25-256321",
+          "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+          "parent_id": "fin_19029350750a268a7fb4ae74c83d9131",
+          "parent_payload_hash": "373ae23628000988b5916c06dae6d00e42d7aa5b07282244bdb91f865581e3af",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row": 11,
+          "column": 7,
+          "row_label": "Total revenue",
+          "raw_value": "65,585",
+          "value": "65585",
+          "unit": "USD",
+          "display_unit_header": "(In millions, except per share amounts) (Unaudited)",
+          "multiplier": "1000000",
+          "effective_value": "65585000000",
+          "period_kind": "DURATION",
+          "period_start": "2024-07-01",
+          "period_end": "2024-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30,",
+            "2024"
+          ],
+          "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact_context_ref": "C_118a58e8-5217-4a77-963d-a3ac430dbd19",
+          "fact_unit_ref": "U_USD",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[8]",
+          "footnotes": [],
+          "warnings": [],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "operation": "MARGIN_PERCENT",
+        "unit": "%",
+        "recomputed": "48.87",
+        "reported": "48.87",
+        "pass": true
+      },
+      {
+        "operation": "MARGIN_PERCENT",
+        "unit": "%",
+        "recomputed": "46.58",
+        "reported": "46.58",
+        "pass": true
+      },
+      {
+        "operation": "MARGIN_DELTA_PP",
+        "unit": "điểm phần trăm",
+        "recomputed": "2.29",
+        "reported": "2.29",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "case": "A03a",
+    "locators": [
+      {
+        "citation": 1,
+        "pass": true,
+        "accession": "0001628280-26-058715",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]/tr[11]/td[2]",
+          "table_id": "table_b57796fdb5375765c05912d5",
+          "row_index": 10,
+          "column_index": 3,
+          "parent_location": {
+            "section": "(Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]",
+            "table_id": "table_b57796fdb5375765c05912d5",
+            "row_index": 10,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "cik": "0000354950",
+          "accession": "0001628280-26-058715",
+          "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+          "parent_id": "fin_d0e85edeceb45547b57d0cd67a41d6b9",
+          "parent_payload_hash": "727fc18ad0a32e687409b98963037509ee0f9cc1c1a82098b2316a263dd7ee43",
+          "table_id": "table_b57796fdb5375765c05912d5",
+          "row": 10,
+          "column": 3,
+          "row_label": "Operating income",
+          "raw_value": "6,839",
+          "value": "6839",
+          "unit": "USD",
+          "display_unit_header": "in millions, except per share data",
+          "multiplier": "1000000",
+          "effective_value": "6839000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-05-04",
+          "period_end": "2026-08-02",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended",
+            "August 2, 2026"
+          ],
+          "fact_name": "us-gaap:OperatingIncomeLoss",
+          "fact_context_ref": "c-5",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]/tr[11]/td[2]",
+          "footnotes": [
+            "See accompanying notes to consolidated financial statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      },
+      {
+        "citation": 2,
+        "pass": true,
+        "accession": "0001628280-26-058715",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]/tr[4]/td[3]",
+          "table_id": "table_b57796fdb5375765c05912d5",
+          "row_index": 3,
+          "column_index": 4,
+          "parent_location": {
+            "section": "(Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]",
+            "table_id": "table_b57796fdb5375765c05912d5",
+            "row_index": 3,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "cik": "0000354950",
+          "accession": "0001628280-26-058715",
+          "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+          "parent_id": "fin_71034f1ffc28bda18cd684f091db40be",
+          "parent_payload_hash": "8bff311282eda3dddcc9ecee059767ff2720a41e2dc77ddb6f490f7dbcc69c3d",
+          "table_id": "table_b57796fdb5375765c05912d5",
+          "row": 3,
+          "column": 4,
+          "row_label": "Net sales",
+          "raw_value": "47,861",
+          "value": "47861",
+          "unit": "USD",
+          "display_unit_header": "in millions, except per share data",
+          "multiplier": "1000000",
+          "effective_value": "47861000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-05-04",
+          "period_end": "2026-08-02",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended",
+            "August 2, 2026"
+          ],
+          "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact_context_ref": "c-5",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[74]/table[1]/tr[4]/td[3]",
+          "footnotes": [
+            "See accompanying notes to consolidated financial statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "operation": "MARGIN_PERCENT",
+        "unit": "%",
+        "recomputed": "14.29",
+        "reported": "14.29",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "case": "A03b",
+    "locators": [
+      {
+        "citation": 1,
+        "pass": true,
+        "accession": "0000080424-26-000256",
+        "filing_id": "sec:0000080424:0000080424-26-000256",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[7]/td[2]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 6,
+          "column_index": 3,
+          "parent_location": {
+            "section": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+          "parent_id": "fin_ac8635e804e40926eee1b3c0ead01e64",
+          "parent_payload_hash": "1329623efdc33a460da8ee002e47e579a9d4b359e2eb7057cf35821b8bec25f5",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row": 6,
+          "column": 3,
+          "row_label": "OPERATING INCOME",
+          "raw_value": "5,937",
+          "value": "5937",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions except per share amounts",
+          "multiplier": "1000000",
+          "effective_value": "5937000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-07-01",
+          "period_end": "2026-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30",
+            "2026"
+          ],
+          "fact_name": "us-gaap:OperatingIncomeLoss",
+          "fact_context_ref": "c-1",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[7]/td[2]",
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      },
+      {
+        "citation": 2,
+        "pass": true,
+        "accession": "0000080424-26-000256",
+        "filing_id": "sec:0000080424:0000080424-26-000256",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 3,
+          "column_index": 4,
+          "parent_location": {
+            "section": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row_index": 3,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+          "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+          "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row": 3,
+          "column": 4,
+          "row_label": "NET SALES",
+          "raw_value": "23,276",
+          "value": "23276",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions except per share amounts",
+          "multiplier": "1000000",
+          "effective_value": "23276000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-07-01",
+          "period_end": "2026-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30",
+            "2026"
+          ],
+          "fact_name": "us-gaap:Revenues",
+          "fact_context_ref": "c-1",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "operation": "MARGIN_PERCENT",
+        "unit": "%",
+        "recomputed": "25.51",
+        "reported": "25.51",
+        "pass": true
+      }
+    ]
+  },
+  {
+    "case": "A04",
+    "locators": [
+      {
+        "citation": 1,
+        "pass": true,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+        "locator": {
+          "section": "Cyberattacks and security vulnerabilities could lead to reduced revenue, increased costs, liability claims, or harm to our reputation or competitive position.",
+          "html_anchor": null,
+          "structural_path": "/document[1]/html[1]/body[1]/div[138]/p[2]",
+          "table_id": null,
+          "row_index": null,
+          "column_index": null,
+          "text_start": 0,
+          "text_end": 158,
+          "pdf_page": null,
+          "bbox": null
+        },
+        "selected_cell": null
+      },
+      {
+        "citation": 2,
+        "pass": true,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+        "locator": {
+          "section": "We face intense competition across all markets for our products and services, which could adversely affect our results of operations.",
+          "html_anchor": null,
+          "structural_path": "/document[1]/html[1]/body[1]/div[129]/p[7]",
+          "table_id": null,
+          "row_index": null,
+          "column_index": null,
+          "text_start": 0,
+          "text_end": 133,
+          "pdf_page": null,
+          "bbox": null
+        },
+        "selected_cell": null
+      },
+      {
+        "citation": 3,
+        "pass": true,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+        "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+        "locator": {
+          "section": "Other digital safety abuses",
+          "html_anchor": null,
+          "structural_path": "/document[1]/html[1]/body[1]/div[159]/div[2]/div[1]",
+          "table_id": null,
+          "row_index": null,
+          "column_index": null,
+          "text_start": 0,
+          "text_end": 819,
+          "pdf_page": null,
+          "bbox": null
+        },
+        "selected_cell": null
+      }
+    ],
+    "steps": []
+  }
+]
