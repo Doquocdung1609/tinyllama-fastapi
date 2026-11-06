@@ -51,7 +51,8 @@ def source_company_conflict(workspace,document_ids,question):
         doc=workspace.document(doc_id)
         if not doc:continue
         from app.product.financial_understanding import document_profile
-        identities.update(document_profile(workspace,{**doc,'id':doc_id})['identities'])
+        profile=document_profile(workspace,{**doc,'id':doc_id})
+        identities.update(profile['source_identities'] if hasattr(workspace,'source_file') else profile['identities'])
     # A verified legal-entity name can prove mismatch even outside the alias
     # catalog. Statement titles and empty fields cannot establish that proof.
     trusted_names=[v for v in issuers if (not hasattr(workspace,'source_file') or re.search(r'\binc\.?|\bcorp\.?|\bltd\.?|\bcong ty\b|\bngan hang tmcp\b',v)) and v and not re.match(r'bao cao|bang can doi|statements?|balance sheet',v)]
@@ -62,5 +63,6 @@ def source_company_conflict(workspace,document_ids,question):
         (not resolve_issuers(name) and trusted_names and not any(re.search(r'(?<!\w)'+re.escape(folded(name))+r'(?!\w)',issuer) for issuer in trusted_names))]
     return {'status':'QUERY_CONTEXT_CONFLICT','reason':'QUESTION_COMPANY_SCOPE_CONFLICT',
             'conflicting_fields':['issuer'],'issuer_mentions':conflicting,
-            'answer':'Doanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.',
+            'answer':f"Chưa tìm thấy nguồn cho {', '.join(conflicting)} trong các PDF đang chọn. "
+                     "Hãy thêm tài liệu của doanh nghiệp được hỏi hoặc đổi nguồn trong bộ chọn PDF.",
             'values':[],'citations':[],'verification_status':'QUERY_CONTEXT_CONFLICT'} if conflicting else None

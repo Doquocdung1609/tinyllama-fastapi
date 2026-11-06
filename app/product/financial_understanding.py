@@ -41,7 +41,24 @@ def document_profile(w, doc):
     elif hasattr(w,'page_evidence'):
         try:pages=[w.page_evidence(doc['id'],1)]
         except ValueError:pass
-    source_ids=issuers(' '.join(p.get('text','')[:6000] for p in pages[:2]))
+    source_ids=[]
+    for p in pages:
+        header=p.get('text','')[:1800]
+        lines=header.splitlines()
+        heading_ids=set()
+        for i,line in enumerate(lines[:40]):
+            name=folded(line).strip(' .®™')
+            nearby=folded(' '.join(lines[max(0,i-1):i+2]))
+            for candidate in issuers(line):
+                aliases=ALIASES[candidate]
+                legal=r'\b(?:cong ty|tap doan|ngan hang|bank for|inc|corp|corporation|ltd|plc)\b'
+                logo=i<5 and any(name.startswith(a+' ') for a in aliases) and re.search(legal,nearby)
+                if name in aliases or logo or re.search(legal,name) or re.search(
+                        r'\b(?:ma chung khoan|stock code|ten to chuc|name of organization)\b', name):
+                    heading_ids.add(candidate)
+        if len(heading_ids)==1:
+            source_ids=sorted(heading_ids)
+            break
     identity=source_ids or issuers(doc.get('filename',''))
     if not identity and not hasattr(w,'source_file'):identity=issuers(doc.get('issuer',''))
     years=[];scopes=set()
@@ -53,7 +70,7 @@ def document_profile(w, doc):
             if re.search(r'\brieng\b|cong ty me|parent company',q):scopes.add('SEPARATE')
     counts=Counter(years);ranked=counts.most_common()
     year=ranked[0][0] if ranked and (len(ranked)==1 or ranked[0][1]>ranked[1][1]) else None
-    return {'identities':identity,'identity_method':'SOURCE_TEXT_ALIAS' if source_ids else 'FILENAME_ALIAS' if identity else 'UNKNOWN',
+    return {'identities':identity,'source_identities':source_ids,'identity_method':'SOURCE_TEXT_ALIAS' if source_ids else 'FILENAME_ALIAS' if identity else 'UNKNOWN',
         'report_year':year,'statement_scopes':sorted(scopes)}
 
 def requested_unit(text):

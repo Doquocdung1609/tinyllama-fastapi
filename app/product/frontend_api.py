@@ -153,6 +153,7 @@ def reset_financial_chat(session_id:str):
 def financial_chat(payload:ChatRequest):
     from app.product.natural_pdf_dialogue import respond as natural_pdf_answer
     from app.product.document_reasoning import answer as document_reasoning
+    from app.product.statement_question_answer import answer as statement_answer
     w=workspace();session=payload.session_id or uuid4().hex
     if payload.source=='USER_UPLOADS' and not payload.document_ids:raise HTTPException(422,detail={'code':'SELECT_PDF_SOURCE'})
     if payload.source=='US_SEC' and payload.document_ids:raise HTTPException(422,detail={'code':'SEC_PDF_SOURCE_SCOPE_CONFLICT'})
@@ -163,6 +164,19 @@ def financial_chat(payload:ChatRequest):
         except ValueError as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
     from app.product.query_source_context import source_company_conflict
     conflict=source_company_conflict(w,payload.document_ids,payload.question)
+    claim = re.search(r'\b(?:chi (?:dang )?(?:su dung|chon|dung)|only (?:using|selected|use))'
+                      r'\s+(?P<one>(?:mot|one)\s+)?(?:pdf|file)\b(?P<name>[^.!?\n]*)', folded(payload.question))
+    if len(set(payload.document_ids))>1 and claim:
+        from app.product.financial_understanding import issuers
+        single_claim = bool(claim['one']) or len(issuers(claim['name'])) == 1
+    else:
+        single_claim = False
+    if single_claim:
+        filenames=', '.join(w.document(doc_id)['filename'] for doc_id in dict.fromkeys(payload.document_ids))
+        conflict={'status':'QUERY_CONTEXT_CONFLICT','reason':'SELECTED_PDF_COUNT_MISMATCH',
+                  'answer':f"Câu hỏi nói chỉ dùng một PDF. Bộ chọn hiện có {len(set(payload.document_ids))} PDF: {filenames}. "
+                           "Hãy bỏ chọn file thừa hoặc hỏi lại với cả hai nguồn.",
+                  'citations':[],'values':[]}
     from app.product.document_metadata import read_metadata
     source_set=sorted((d,w.document(d)['sha256'],len(read_metadata(w,d)['corrections'])) for d in payload.document_ids)
     sec_identities=[]; selected_index=None
@@ -244,15 +258,20 @@ def financial_chat(payload:ChatRequest):
                                   source_errors=result['source_errors'])
         elif conflict:answer=conflict
         elif focused_reply is not None:answer=focused_reply
+        elif not payload.constraints and selection is None and (statement:=statement_answer(w,question,payload.document_ids)) is not None:
+            answer=statement
         elif not payload.constraints and (reasoned:=_reason_with_progress(w,request,payload.progress_id,document_reasoning)) is not None:
             answer=reasoned
         elif len(set(payload.document_ids))>1:
             from app.product.pdf_multi_qa import answer as pdf_multi
-            def per_document(doc_id):
+            def per_document(doc_id, scoped_question):
                 try:
                     if payload.constraints:
-                        return analysis(request.model_copy(update={'document_ids':[doc_id]}))
-                    results=unified_search(UnifiedSearch(query=question,mode='bm25',source='USER_UPLOADS',
+                        return analysis(request.model_copy(update={'document_ids':[doc_id],'question':scoped_question}))
+                    local=statement_answer(w,scoped_question,[doc_id])
+                    if local is not None:
+                        return local
+                    results=unified_search(UnifiedSearch(query=scoped_question,mode='bm25',source='USER_UPLOADS',
                         document_ids=[doc_id],top_k=5,search_profile='faith_r_product_v1'))
                     return results['financial_evidence']
                 except HTTPException as exc:
@@ -403,11 +422,16 @@ def unified_search(payload:UnifiedSearch):
         result['intent']=understand(payload.query).public()
     if payload.source=='USER_UPLOADS' and hasattr(w,'source_file') and payload.search_profile=='faith_r_product_v1':
         from app.product.answer_composer_v2 import compose_answer
-        result['financial_evidence']=compose_answer(w,payload.query,result,sorted({h['document_id'] for h in result['results'] if h.get('document_id')}))
+        from app.product.statement_question_answer import answer as statement_answer
+        scoped_ids=sorted({h['document_id'] for h in result['results'] if h.get('document_id')})
+        structured=None if payload.issuer or payload.period or not payload.document_ids else statement_answer(w,payload.query,payload.document_ids)
+        result['financial_evidence']=structured or compose_answer(w,payload.query,result,scoped_ids)
     evidence=result.get('financial_evidence') or {}
     result.update(requested_top_k=requested.top_k,returned_count=len(result['results']),mode_requested=requested.mode,
         mode_executed=result['mode'] if result.get('source_generations') else None,search_profile_requested=requested.search_profile,search_profile_executed=result['search_profile'] if result.get('source_generations') else None,
-        verified_value_count=len({a['citation_id'] for a in evidence.get('independent_verification',{}).get('stage_a',[])}),
+        verified_value_count=len({a['citation_id'] for a in evidence.get('independent_verification',{}).get('stage_a',[])} |
+                                 {a['citation_id'] for a in evidence.get('operands',[]) if
+                                  a.get('verification_status')=='NATIVE_CELL_VERIFIED' and a.get('value') is not None}),
         matching_evidence_count=len(result['results']) if result['search_profile']=='faith_r_product_v1' else None,
         retrieval_status='SOURCE_UNAVAILABLE' if result['source_errors'] and not result['results'] else 'RESULTS_FOUND' if result['results'] else 'NO_RESULTS')
     result.setdefault('filter_reason','SOURCE_ISSUER_PERIOD_FILTER' if requested.issuer or requested.period else None)

@@ -3,7 +3,8 @@ import re
 from decimal import Decimal
 from app.product.answer_composer_v2 import LABELS, UNITS, _select, display
 from app.product.answer_planner_v2 import plan_question
-from app.product.financial_understanding import document_profile, issuers
+from app.product.financial_understanding import ALIASES, document_profile, issuers
+from app.product.pdf_extract import folded
 from app.product.independent_verifier_v2 import recompute, verify_operand
 from app.product.source_cells_v2 import native_catalog
 
@@ -13,9 +14,28 @@ def answer(workspace, question, ids, per_document, constraints):
     requested_issuers = set(issuers(question))
     profiles = {doc['id']:document_profile(workspace,doc) for doc in docs}
     if requested_issuers:
-        docs = [doc for doc in docs if requested_issuers.intersection(profiles[doc['id']]['identities'])]
+        docs = [doc for doc in docs if requested_issuers.intersection(profiles[doc['id']]['source_identities'])]
+
+    def scoped_question(doc):
+        owned = set(profiles[doc['id']]['source_identities'])
+        other = [alias for issuer in requested_issuers - owned for alias in ALIASES[issuer]]
+        # Keep accents intact, including Vietnamese unit spelling. Fold only
+        # candidate spans so per-document guards never see a peer's alias.
+        result = question
+        for alias in sorted(other, key=len, reverse=True):
+            size = len(alias.split())
+            for match in reversed(list(re.finditer(r'(?<!\w)\w+(?:\s+\w+){'+str(size-1)+r'}(?!\w)', result))):
+                if folded(match[0]) == alias:
+                    result = result[:match.start()] + result[match.end():]
+        return result
+
     if len(docs)==1:
-        return per_document(docs[0]['id'])
+        return per_document(docs[0]['id'], scoped_question(docs[0]))
+    if not constraints:
+        from app.product.pdf_document_comparison import compare as compare_documents
+        result = compare_documents(workspace, question, docs, profiles, requested_issuers)
+        if result is not None:
+            return result
     p = plan_question(question)
     if not constraints and p.metric and len(p.years)==2 and p.operation in {'ABS_CHANGE','PERCENT_CHANGE','CHANGE_AND_GROWTH'}:
         result = compare(workspace,docs,profiles,p)
@@ -24,7 +44,7 @@ def answer(workspace, question, ids, per_document, constraints):
     blocks, citations, verified_count = [], [], 0
     for doc in docs:
         try:
-            response = per_document(doc['id'])
+            response = per_document(doc['id'], scoped_question(doc))
         except ValueError:
             response = {}
         refs = response.get('citations',[])
