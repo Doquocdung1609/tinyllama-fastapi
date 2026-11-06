@@ -40,6 +40,19 @@ def requested_note_column(question):
     return None,None
 
 
+def period_label(kind, end, column=None):
+    if kind=='3M_Q4':
+        return 'quý IV/'+end[:4]
+    if kind=='FY':
+        return 'cả năm '+end[:4]
+    return 'ngày '+(column or date.fromisoformat(end).strftime('%d/%m/%Y'))
+
+
+UNIT_LABELS={'VND':'đồng','NGHIN_VND':'nghìn đồng','TRIEU_VND':'triệu đồng','TY_VND':'tỷ đồng',
+             'USD':'USD','MILLION_USD':'triệu USD'}
+SCOPE_LABELS={'SEPARATE':'báo cáo riêng','CONSOLIDATED':'báo cáo hợp nhất'}
+
+
 def answer(workspace, request):
     from app.product.analysis import METRICS, eligible_facts
     from app.product.answer_composer_v2 import display
@@ -48,9 +61,9 @@ def answer(workspace, request):
     from app.product.financial_understanding import requested_unit
     from decimal import Decimal
     q=folded(request.question)
-    if len(request.document_ids)!=1 or not re.search(r'bao nhieu|trich gia tri|doc (?:dung|gia tri)',q):
+    if len(request.document_ids)!=1 or not re.search(r'bao nhieu|trich gia tri|doc (?:dung|gia tri)|kiem duyet|da (?:duoc )?xac minh',q):
         return None
-    if re.search(r'so voi|chenh lech|ty le|ty trong|tang|giam|vi sao|giai thich|tong hop|don vi khac|doi sang|\b(?:usd|eur)\b',q):
+    if re.search(r'so voi|chenh lech|ty le|ty trong|ocr ban dau|doc lai|tang|giam|vi sao|giai thich|tong hop|don vi khac|doi sang|\b(?:usd|eur)\b',q):
         return None
     metrics=[m for m,aliases in METRICS.items() if any(a in q for a in aliases)]
     if len(metrics)!=1 or 'chua phan phoi' in q or 'ngan han' in q or 'dai han' in q:
@@ -75,13 +88,90 @@ def answer(workspace, request):
     for i,fact in enumerate(picked,1):
         value=str(calculate('EXTRACT',[Decimal(fact['value'])]))
         citation={**fact,'citation_id':fact['id'],'evidence_id':fact['id'],'text':fact['row_label']+' | '+fact['source_display'],
-                  'source_kind':'PDF','period':fact['period'],'extraction_method':'OCR'}
+                  'source_kind':'PDF','period':fact['period'],'extraction_method':'OCR','column_id':fact.get('cell_id')}
         if validate_supported_response(workspace,{'status':'SUPPORTED','values':[value],'citations':[citation]},'EXTRACT')['status']!='SUPPORTED':
             return None
         citations.append(citation)
         values.append(value)
-        kind={'INSTANT':fact['column_label'],'3M_Q4':'Quý IV '+fact['period'][:4],'FY':'Cả năm '+fact['period'][:4]}
-        parts.append(f"{kind}: {display(value)} {fact['unit']} [{i}]")
-    return {'status':'SUPPORTED','answer_status':'VERIFIED_ANSWER','answer':picked[0]['row_label']+' · '+'; '.join(parts)+'.',
+        kind=period_label(fact['period_type'],fact['period'],fact['column_label'])
+        unit_text=UNIT_LABELS[fact['unit']]
+        if len(picked)==1:
+            from app.product.financial_understanding import issuers
+            document=workspace.document(fact['document_id'])
+            identities=issuers(document.get('filename',''))
+            issuer=fact.get('issuer') or (identities[0] if len(identities)==1 else '')
+            issuer={'HPG':'Hòa Phát'}.get(issuer,issuer)
+            entity=(' của công ty mẹ '+issuer if fact['statement_scope']=='SEPARATE' else ' của '+issuer) if issuer else ''
+            parts.append(f"{fact['row_label']}{entity} tại {kind} là {display(value)} {unit_text}. "
+                         f"Giá trị đã được người dùng đối chiếu với ảnh gốc, {SCOPE_LABELS[fact['statement_scope']]}, trang {fact['page']}. [{i}]")
+        else:
+            parts.append(f"{fact['row_label']} {kind} là {display(value)} {unit_text}. "
+                         f"Người dùng đã đối chiếu ô này trong {SCOPE_LABELS[fact['statement_scope']]}, trang {fact['page']}. [{i}]")
+    return {'status':'SUPPORTED','answer_status':'VERIFIED_ANSWER','answer':' '.join(parts),
             'values':values,'unit':picked[0]['unit'],'citations':citations,'formula':'Đọc giá trị trực tiếp từ ô nguồn',
             'verification_status':HUMAN,'source_numeric_verification':HUMAN}
+
+
+def calculation(workspace, request):
+    from decimal import Decimal, localcontext, ROUND_HALF_UP
+    from app.product.analysis import eligible_facts, numeric_answer
+    from app.product.answer_composer_v2 import display
+    from app.product.verified_financial import validate_supported_response
+
+    q=folded(request.question)
+    if len(request.document_ids)!=1 or not re.search(r'\b(?:ty le|ty trong)\s+no phai tra\s+(?:tren|chia cho)\s+tong (?:cong )?tai san',q):
+        return None
+    if 'so voi' in q or ('hop nhat' in q and ('cong ty me' in q or 'bao cao rieng' in q)):
+        return None
+    wanted=requested_periods(request.question,'assets')
+    if not wanted:
+        return None
+    end,_=wanted[0]
+    scope='CONSOLIDATED' if 'hop nhat' in q else 'SEPARATE' if 'cong ty me' in q or 'bao cao rieng' in q else None
+    facts=[f for f in eligible_facts(workspace,request.document_ids)
+           if f.get('review_status')==HUMAN and f['period']==end and f['period_type']=='INSTANT'
+           and f['basis']=='AS_REPORTED' and f['metric'] in {'liabilities','assets'}
+           and (not scope or f['statement_scope']==scope)]
+    if len(facts)!=2 or {f['metric'] for f in facts}!={'liabilities','assets'} or len({f['statement_scope'] for f in facts})!=1:
+        return None
+    payload=request.model_copy(update={'mode':'numeric','operation':'DEBT_TO_ASSETS','current_period':end,
+                                       'statement_scope':facts[0]['statement_scope']})
+    answer=validate_supported_response(workspace,numeric_answer(workspace,payload),'DEBT_TO_ASSETS')
+    if answer['status']!='SUPPORTED':
+        return None
+    with localcontext() as context:
+        context.prec=40
+        debt,assets=(Decimal(f['base_value']) for f in answer['citations'])
+        if not assets:
+            return None
+        expected=debt/assets*100
+        if abs(expected-Decimal(answer['values'][0]))>Decimal('1e-26'):
+            return None
+        rounded=expected.quantize(Decimal('0.01'),rounding=ROUND_HALF_UP)
+    citations=[]
+    for fact in answer['citations']:
+        citations.append({**fact,'citation_id':fact['id'],'column_id':fact.get('cell_id'),
+                          'source_kind':'PDF','text':fact['row_label']+' | '+fact['source_display']})
+    return {**answer,'answer':f"Tỷ lệ nợ phải trả trên tổng tài sản tại {period_label('INSTANT',end)} "
+            f"là {display(str(rounded))}%. Tôi chia nợ phải trả [1] cho tổng tài sản [2] rồi nhân 100. "
+            "Cả hai ô đã được người dùng đối chiếu trên ảnh gốc.",
+            'citations':citations,'answer_status':'VERIFIED_ANSWER','verification_status':HUMAN}
+
+
+def readable_history(reply):
+    """Project legacy replies without editing the saved conversation."""
+    if reply.get('verification_status')!=HUMAN or "{'INSTANT':" not in (reply.get('answer') or ''):
+        return reply
+    from app.product.answer_composer_v2 import display
+    sentences=[]
+    for index,(fact,value) in enumerate(zip(reply.get('citations',[]),reply.get('values',[])),1):
+        if not all(fact.get(key) for key in ('period','page','unit','row_label')):
+            continue
+        try:
+            period=period_label(fact.get('period_type','INSTANT'),fact['period'],fact.get('column_label'))
+            unit=UNIT_LABELS[fact['unit']]
+        except (KeyError,ValueError):
+            continue
+        sentences.append(f"{fact['row_label']} tại {period} là {display(value)} {unit}. "
+                         f"Người dùng đã đối chiếu ảnh gốc, trang {fact['page']}. [{index}]")
+    return {**reply,'answer':' '.join(sentences) or 'Giá trị đã được đối chiếu. Mở trích dẫn để đọc ô nguồn.'}

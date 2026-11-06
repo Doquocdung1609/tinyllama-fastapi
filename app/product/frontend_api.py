@@ -176,31 +176,17 @@ def financial_chat(payload:ChatRequest):
     if prior and prior['scope']!=fingerprint:session=uuid4().hex
     question=payload.question
     from app.product.answer_planner_v2 import resolve_followup
+    from app.product.chat_source_focus import explain_focus,reference_followup,selected_source
+    selection=selected_source(w,payload)
+    focused_reply=explain_focus(selection or reference_followup(w,payload,history),question)
     context_history=history
-    context=payload.evidence_context
-    if not history and context.get('document_id') in payload.document_ids and context.get('row_id'):
-        doc=w.document(context['document_id'])
-        try:
-            page=w.page_evidence(context['document_id'],int(context['page']))
-            row=next((r for r in page['tables'] if r['id']==context['row_id']),None)
-            expected=sha256(f"{doc['sha256']}:{context['page']}:{context['row_id']}:{page['evidence_sha256']}".encode()).hexdigest()[:24]
-            if row and context.get('citation_id')==expected:
-                from app.product.answer_planner_v2 import plan_question
-                source_years=sorted(set(re.findall(r'\b20\d{2}\b',page.get('text','')[:800])))
-                bound=plan_question(row['row_label']+' '+' '.join(source_years)).public()
-                context_history=[{'question':row['row_label'],'response':{'conversation_slots':bound}}]
-        except (ValueError,KeyError,TypeError):pass
-    if not history and context.get('document_id') in payload.document_ids and str(context.get('citation_id','')).startswith('cellv2_'):
-        from app.product.source_cells_v2 import native_catalog
-        from app.product.independent_verifier_v2 import verify_operand
-        from app.product.answer_planner_v2 import plan_question,METRIC_NAMES
-        cell=next((c for c in native_catalog(w,[context['document_id']]) if c['citation_id']==context['citation_id'] and c['page']==context.get('page')),None)
-        if cell:
-            try:
-                verify_operand(w,cell)
-                bound=plan_question(METRIC_NAMES.get(cell['metric'],cell['metric'].replace('_',' '))+' FY'+cell['period']).public()
-                context_history=[{'question':cell['row_label'],'response':{'conversation_slots':bound}}]
-            except ValueError:pass
+    if selection and selection[1] and not focused_reply:
+        from app.product.answer_planner_v2 import plan_question
+        source,row,cell=selection
+        label=source.get('row_label','')
+        column=cell.get('column_label','') if cell else ''
+        bound=plan_question(f'{label} {column}').public()
+        context_history=[{'question':label,'response':{'conversation_slots':bound}}]
     question,conversation_plan=resolve_followup(question,context_history)
     allowed={'metric','operation','current_period','previous_period','statement_scope','basis'}
     if set(payload.constraints)-allowed:raise HTTPException(422,detail={'code':'UNKNOWN_ADVANCED_CONSTRAINT'})
@@ -248,6 +234,7 @@ def financial_chat(payload:ChatRequest):
                     answer.update(status='SOURCE_UNAVAILABLE',answer='Không truy cập được chỉ mục hoặc nguồn SEC đang chọn.',
                                   source_errors=result['source_errors'])
         elif conflict:answer=conflict
+        elif focused_reply is not None:answer=focused_reply
         elif len(set(payload.document_ids))>1:
             from app.product.pdf_multi_qa import answer as pdf_multi
             def per_document(doc_id):
@@ -825,8 +812,9 @@ def analysis(payload:AnalysisRequest):
                 w=workspace()
                 if (isinstance(w,AdaptiveFinancialOcrWorkspace) and not answer.get('values')
                         and not payload.model_fields_set.intersection({'metric','operation','current_period','previous_period','basis','statement_scope'})):
-                    from app.product.ocr_reviewed_answer import answer as reviewed_ocr
-                    return reviewed_ocr(w,payload) or answer
+                    from app.product.ocr_reviewed_answer import answer as reviewed_ocr, calculation as reviewed_ocr_calculation
+                    from app.product.ocr_candidate_answer import answer as candidate_ocr
+                    return reviewed_ocr(w,payload) or reviewed_ocr_calculation(w,payload) or candidate_ocr(w,payload,result.get('results',[])) or answer
                 if (isinstance(w,FinancialOcrWorkspace) and len(payload.document_ids)==1 and not answer.get('values')
                         and not payload.model_fields_set.intersection({'metric','operation','current_period','previous_period','basis','statement_scope'})
                         and re.search(r'\b\d{1,2}/\d{1,2}/20\d{2}\b',payload.question)

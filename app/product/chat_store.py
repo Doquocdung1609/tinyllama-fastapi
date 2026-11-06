@@ -27,10 +27,19 @@ def public(row,detail=False):
     value.update(document_ids=docs,message_count=len(history)*2)
     if not value['title']:value['title']=(history[0]['question'][:80] if history else 'Hội thoại mới')
     if detail:
-        value['turns']=history
-        value['messages']=[message for i,h in enumerate(history) for message in h.get('messages',[
-            {'id':row['id']+f':{i}:user','role':'user','text':h['question'],'created_at':h.get('created_at')},
-            {'id':row['id']+f':{i}:assistant','role':'assistant','text':h.get('response',{}).get('answer',''),'created_at':h.get('created_at')}])]
+        from app.product.ocr_reviewed_answer import readable_history
+        turns=[];messages=[]
+        for i,turn in enumerate(history):
+            original=turn.get('response',{})
+            response=readable_history(original)
+            turns.append({**turn,'response':response} if response is not original else turn)
+            saved=turn.get('messages',[
+                {'id':row['id']+f':{i}:user','role':'user','text':turn['question'],'created_at':turn.get('created_at')},
+                {'id':row['id']+f':{i}:assistant','role':'assistant','text':response.get('answer',''),'created_at':turn.get('created_at')}])
+            messages.extend({**message,'text':response['answer']}
+                            if response is not original and message.get('role')=='assistant'
+                            else message for message in saved)
+        value.update(turns=turns,messages=messages)
     return value
 
 def save(w,session,scope,history,documents):

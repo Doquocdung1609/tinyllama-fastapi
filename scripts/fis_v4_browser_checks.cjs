@@ -3,14 +3,14 @@ const fs=require('node:fs')
 const path=require('node:path')
 const {chromium}=require('../frontend/node_modules/playwright')
 const runtime=path.resolve(__dirname,'../tmp/studio-runtime')
-const url='http://127.0.0.1:18110'
+const url=process.env.STUDIO_BROWSER_URL||'http://127.0.0.1:18110'
 const token=fs.readFileSync(path.join(runtime,'access-token.txt'),'utf8').trim()
 const chrome=path.join(process.env.LOCALAPPDATA,'ms-playwright/chromium-1217/chrome-win64/chrome.exe')
 
 async function main(){
  const browser=await chromium.launch({headless:true,executablePath:chrome})
  const records=[]
- const output=path.join(runtime,'v4-browser')
+ const output=process.env.STUDIO_BROWSER_OUTPUT||path.join(runtime,'v4-browser')
  fs.mkdirSync(output,{recursive:true})
  try{
   const catalog=await fetch(url+'/studio/sec/catalog',{headers:{Authorization:'Bearer '+token}}).then(r=>r.json())
@@ -33,6 +33,28 @@ async function main(){
    await page.goto(url+'/app/#/analysis',{waitUntil:'domcontentloaded'})
    await page.locator('select[aria-label="Tài liệu trợ lý"] option').filter({hasText:'AAPL'}).first().waitFor({state:'attached',timeout:45000})
    return page
+  }
+  if(process.env.STUDIO_BROWSER_NATIVE_CONTROLS==='1'){
+   for(const [name,doc,question,value,pages] of [
+    ['Apple',apple,'Doanh thu Services Apple FY2025 là bao nhiêu?','109158',[32]],
+    ['BIDV',bidv,'Năm 2024, lợi nhuận sau thuế chưa phân phối: mức điều chỉnh của riêng ngân hàng và hợp nhất khác nhau bao nhiêu?','1114',[4,7]]
+   ]){
+    const page=await openPage({width:1440,height:900})
+    try{
+     await page.getByRole('combobox',{name:'Tài liệu trợ lý'}).selectOption(doc.id)
+     const reply=await send(page,question)
+     assert.equal(reply.status,'SUPPORTED')
+     assert.deepEqual(reply.values,[value])
+     assert.deepEqual(reply.citations.map(c=>c.page).sort((a,b)=>a-b),pages)
+     await page.getByRole('button',{name:/Mở nguồn 1 trang/}).first().click()
+     await page.getByRole('button',{name:/Mở trang nguồn/}).click()
+     await page.locator('[data-rendered="true"] canvas[aria-label="Trang PDF '+reply.citations[0].page+'"]').waitFor()
+     await page.getByTestId('source-highlight').first().scrollIntoViewIfNeeded()
+     await page.screenshot({path:path.join(output,name+'-citation.png')})
+     records.push({case:name,status:'PASS',value,pages})
+    }catch(e){records.push({case:name,status:'FAIL',reason:e.message.slice(0,700)})}
+    await page.close()
+   }
   }
   let page=await openPage({width:1366,height:768})
   try{
@@ -92,6 +114,7 @@ async function main(){
  }finally{
   fs.writeFileSync(path.join(output,'results.json'),JSON.stringify(records,null,2))
   console.log(JSON.stringify(records))
+  if(records.some(record=>record.status==='FAIL'))process.exitCode=1
   await browser.close()
  }
 }
