@@ -3,12 +3,13 @@ param(
     [int]$ApiPort=8110,
     [int]$UiPort=5173,
     [string]$Workspace='',
+    [ValidatePattern('^[a-zA-Z0-9][a-zA-Z0-9-]{0,40}$')][string]$RuntimeName='studio-runtime',
     [switch]$Stop,
     [switch]$OpenBrowser
 )
 $ErrorActionPreference='Stop'
 $repo=(Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$runtime=Join-Path $repo 'tmp/studio-runtime'
+$runtime=Join-Path $repo "tmp/$RuntimeName"
 $statePath=Join-Path $runtime 'processes.json'
 function Stop-Owned($records) {
     foreach ($record in @($records) | Sort-Object depth -Descending) {
@@ -72,7 +73,8 @@ if ($Mode -eq 'Prebuilt' -and -not (Test-Path (Join-Path $repo 'frontend/dist/in
     throw 'Chua co frontend build. Chay: cd frontend; npm ci; npm run build'
 }
 New-Item -ItemType Directory -Force -Path $runtime | Out-Null
-$tokenPath=Join-Path $runtime 'access-token.txt'
+$tokenPath=Join-Path $repo 'tmp/studio-runtime/access-token.txt'
+New-Item -ItemType Directory -Force -Path (Split-Path -Parent $tokenPath) | Out-Null
 if (-not $env:STUDIO_API_TOKEN -or $env:STUDIO_API_TOKEN.Length -lt 16) {
     if (Test-Path -LiteralPath $tokenPath) {$env:STUDIO_API_TOKEN=(Get-Content -LiteralPath $tokenPath -Raw).Trim()}
     else {
@@ -162,7 +164,7 @@ try {
     Write-Host "API: http://127.0.0.1:$ApiPort/docs"
     Write-Host "Khoa dang nhap cuc bo duoc luu tai: $tokenPath (khong chia se/cong khai tep nay)."
     Write-Host "PDF READY: $($readiness.workspace.ready_documents); OCR: $($readiness.ocr.status); SEC: $($readiness.sec.status)"
-    Write-Host 'Dung dich vu cua phien nay: .\scripts\run_financial_studio.ps1 -Stop'
+    Write-Host "Dung dich vu cua phien nay: .\scripts\run_financial_studio.ps1 -RuntimeName $RuntimeName -Stop"
     if ($OpenBrowser) {Start-Process $url | Out-Null}
 } catch {
     Stop-Owned @(Descendants $started)

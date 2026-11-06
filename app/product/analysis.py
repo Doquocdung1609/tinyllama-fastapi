@@ -58,6 +58,8 @@ class FactReview(BaseModel):
     convention:Literal['vi_VN','en_US']
     basis:Literal['AS_REPORTED','ORIGINAL','ADJUSTMENT','RESTATED']='AS_REPORTED'
     source_image_reviewed:bool=False
+    reviewed_display:str|None=Field(default=None,min_length=1,max_length=60)
+    reviewed_label:str|None=Field(default=None,min_length=1,max_length=250)
 
 
 def table_bound_scope(page,row):
@@ -90,7 +92,11 @@ def review_fact(workspace,document_id,request:FactReview):
         if selected_unit['unit']!=request.unit:
             requested_currency='USD' if 'USD' in request.unit else 'VND'
             raise ValueError('SOURCE_UNIT_SCALE_MISMATCH' if selected_unit.get('currency')==requested_currency else 'SOURCE_CURRENCY_MISMATCH')
-    label=folded(row['row_label']);context=folded(page['text'])
+    is_ocr=page.get('method') in {'OCR','REGION_FUSION'}
+    if (request.reviewed_display is not None or request.reviewed_label is not None) and not is_ocr:
+        raise ValueError('SOURCE_TRANSCRIPTION_ONLY_FOR_OCR')
+    source_label=request.reviewed_label.strip() if request.reviewed_label is not None else row['row_label']
+    label=folded(source_label);context=folded(page['text'])
     if not any(alias in label for alias in METRICS[request.metric]):
         raise ValueError('SOURCE_METRIC_MISMATCH')
     if table_bound_scope(page,row)!=request.statement_scope:
@@ -143,6 +149,15 @@ def review_fact(workspace,document_id,request:FactReview):
         raise ValueError('DURATION_METRIC_REQUIRES_SOURCE_START_AND_END')
     cell=row['cells'][request.column_index]
     if not cell.get('box'):raise ValueError('SOURCE_CELL_HAS_NO_COORDINATES')
+    if cell.get('binding_status')=='AMBIGUOUS':
+        raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
+    if cell.get('binding_status')=='GEOMETRIC_CANDIDATE':
+        if cell.get('unit')!=request.unit:
+            raise ValueError('SOURCE_UNIT_COLUMN_AMBIGUOUS')
+        if request.metric in {'assets','liabilities','equity'} and cell.get('period')!=dmy:
+            raise ValueError('SOURCE_PERIOD_MISMATCH')
+    if request.reviewed_label is not None and cell.get('binding_status')!='GEOMETRIC_CANDIDATE':
+        raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
     # Header location must belong to this numerical column, not merely occur elsewhere on the page.
     last_header_word=folded(request.column_label).split()[-1].strip('():')
     header_words=[w for line in page['lines'] for w in line['words']
@@ -157,17 +172,25 @@ def review_fact(workspace,document_id,request:FactReview):
     anchors=[(i,x) for i,x in anchors if x is not None]
     if request.column_index not in {min(anchors,key=lambda pair:abs(pair[1]-word_right(w)))[0] for w in header_words}:
         raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
-    value=parse_number(cell['text'],request.convention)
+    source_display=cell['text']
+    if request.reviewed_display is not None:
+        source_display=request.reviewed_display.strip()
+    value=parse_number(source_display,request.convention)
     doc=workspace.document(document_id)
-    fact={**request.model_dump(),'document_id':document_id,'issuer':doc['issuer'],
+    fact={**request.model_dump(exclude_none=True),'document_id':document_id,'issuer':doc['issuer'],
           'scope_verifier_version':'TABLE_BOUND_SCOPE_V1',
           'source_sha256':doc['sha256'],'page_evidence_sha256':page['evidence_sha256'],
-          'row_label':row['row_label'],'item_code':row.get('item_code'),'table_id':row['table_id'],
-          'source_display':cell['text'],'box':cell['box'],'confidence':cell['confidence'],
+          'row_label':source_label,'item_code':row.get('item_code'),'table_id':row['table_id'],
+          'source_display':source_display,'box':cell['box'],'confidence':cell['confidence'],
           'extraction_method':page['method'],'value':str(value),'base_value':str(normalize_amount(value,SCALES[request.unit])),
           'currency':'USD' if 'USD' in request.unit else 'VND',
           'verification':'VERIFIED_BY_LOCAL_SOURCE_IMAGE_REVIEW',
           'reviewed_at':datetime.now(timezone.utc).isoformat()}
+    fact.setdefault('period_start',None)
+    if request.reviewed_display is not None:
+        fact['machine_display']=cell['text']
+    if request.reviewed_label is not None:
+        fact['machine_label']=row['row_label']
     identity={k:fact[k] for k in ('document_id','page','row_id','column_index','metric','period','period_start','basis')}
     fact['id']=sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()[:32]
     fact['audit_hash']=sha256(json.dumps(fact,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
@@ -204,8 +227,10 @@ def eligible_facts(workspace,document_ids):
             if fact.get('scope_verifier_version')!='TABLE_BOUND_SCOPE_V1':raise ValueError('LEGACY_FACT_REQUIRES_TABLE_SCOPE_REREVIEW')
             if table_bound_scope(evidence,row)!=fact['statement_scope']:raise ValueError('REVIEWED_SCOPE_CHANGED')
             cell=row['cells'][fact['column_index']]
-            if (cell['text']!=fact['source_display'] or cell['box']!=fact['box']
-                or parse_number(cell['text'],fact['convention'])!=Decimal(fact['value'])
+            if row['row_label']!=fact.get('machine_label',fact['row_label']):
+                raise ValueError('REVIEWED_SOURCE_LABEL_CHANGED')
+            if (cell['text']!=fact.get('machine_display',fact['source_display']) or cell['box']!=fact['box']
+                or parse_number(fact['source_display'],fact['convention'])!=Decimal(fact['value'])
                 or normalize_amount(fact['value'],SCALES[fact['unit']])!=Decimal(fact['base_value'])):
                 raise ValueError('REVIEWED_SOURCE_VALUE_CHANGED')
             result.append(fact)

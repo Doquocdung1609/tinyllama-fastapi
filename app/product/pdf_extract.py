@@ -56,15 +56,16 @@ def inverse_box(box, angle, width, height):
     return list(box)
 
 
-def _ocr(page):
+def _ocr(page, *, dpi=DPI, psm=3, grayscale=False):
     from PIL import Image
     import pytesseract
     capability = ocr_capability()
     if capability['status'] != 'READY':
         raise ValueError(capability['status'])
-    scale = min(DPI/72, (12_000_000 / max(1,page.rect.width*page.rect.height))**.5)
-    pix = page.get_pixmap(matrix=pymupdf.Matrix(scale, scale), alpha=False)
-    image = Image.frombytes('RGB', [pix.width,pix.height], pix.samples)
+    scale = min(dpi/72, (12_000_000 / max(1,page.rect.width*page.rect.height))**.5)
+    pix = page.get_pixmap(matrix=pymupdf.Matrix(scale, scale),
+                          colorspace=pymupdf.csGRAY if grayscale else pymupdf.csRGB, alpha=False)
+    image = Image.frombytes('L' if grayscale else 'RGB', [pix.width,pix.height], pix.samples)
     original_width, original_height = image.size
     from app.config import get_settings
     folder = str(get_settings().tessdata_dir)
@@ -80,7 +81,7 @@ def _ocr(page):
         pass
     if angle:
         image = image.rotate(-angle, expand=True)
-    data = pytesseract.image_to_data(image, lang='vie+eng', config=config+'--psm 3',
+    data = pytesseract.image_to_data(image, lang='vie+eng', config=f'--psm {psm}' if dpi==DPI and not grayscale else f'--dpi {dpi} --psm {psm}',
                                      output_type=pytesseract.Output.DICT, timeout=100)
     words=[]
     for i, raw in enumerate(data['text']):
@@ -94,8 +95,9 @@ def _ocr(page):
         # Reading coordinates are in the corrected image; source box is inverse mapped.
         words.append({'text':text,'box':box,'confidence':float(data['conf'][i]),
                       'rx':x/scale,'ry':y/scale,'rh':h/scale,
+                      **({'rw':w/scale} if grayscale else {}),
                       'line':[data[k][i] for k in ('block_num','par_num','line_num')]})
-    return words, {'engine':'Tesseract','language':'vie+eng','dpi':DPI,'psm':3,
+    return words, {'engine':'Tesseract','language':'vie+eng','dpi':dpi,'psm':psm,
                    'correction_clockwise':angle,'orientation_method':orientation}
 
 
@@ -177,7 +179,7 @@ def table_candidates(lines, page_number, correction=0):
     return rows
 
 
-def extract_page(page, number):
+def extract_page(page, number, *, ocr=None):
     native=page.get_text('words')
     text=page.get_text('text')
     image_area=sum(pymupdf.Rect(info['bbox']).get_area() for info in page.get_image_info())
@@ -186,7 +188,7 @@ def extract_page(page, number):
     signature=bool(re.search(r'digitally signed|signature|ky so|signed by',folded(text)))
     use_ocr=(letters < 60 or (ratio > .65 and (letters < 400 or signature)))
     if use_ocr:
-        words,engine=_ocr(page)
+        words,engine=(ocr or _ocr)(page)
         kind='SIGNATURE_ONLY' if signature and letters else 'SCANNED' if letters<60 else 'MIXED'
         method='OCR'
     else:
@@ -205,8 +207,9 @@ def extract_page(page, number):
             'native_page_hash':sha256(text.encode()).hexdigest(),'version':VERSION}
 
 
-def extract_document(path, document_id, checkpoint, save_progress):
+def extract_document(path, document_id, checkpoint, save_progress, *, extractor=None, version=VERSION):
     """Checkpoint callbacks own persistence; only one rendered page lives at a time."""
+    extractor = extractor or extract_page
     chunks=[]
     with pymupdf.open(path) as pdf:
         if pdf.is_encrypted or not 1 <= len(pdf) <= 250:
@@ -216,10 +219,10 @@ def extract_document(path, document_id, checkpoint, save_progress):
             saved=checkpoint(number)
             if not saved:
                 try:
-                    saved=extract_page(page,number)
+                    saved=extractor(page,number)
                 except Exception as exc:
                     code=str(exc)
-                    saved={'page':number,'status':'FAILED','error':code if code.isupper() else 'OCR_PAGE_FAILED','version':VERSION,
+                    saved={'page':number,'status':'FAILED','error':code if code.isupper() else 'OCR_PAGE_FAILED','version':version,
                            'method':'OCR','pdf_type':'SCANNED','lines':[],'tables':[],'text':''}
                 save_progress(number,saved,len(pdf))
             if saved['status']=='FAILED':

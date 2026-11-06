@@ -21,6 +21,9 @@ _factory_lock = RLock()
 @lru_cache(maxsize=1)
 def _workspace_cached():
     root = Path(os.getenv("STUDIO_WORKSPACE_DIR", str(ROOT_DIR / "studio_workspace")))
+    if (root/'ocr-financial-v2.json').is_file():
+        from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+        return FinancialOcrWorkspace(root)
     if (root/'search-v3r2.json').is_file():
         from app.product.controlled_workspace import ControlledPdfWorkspace
         return ControlledPdfWorkspace(root)

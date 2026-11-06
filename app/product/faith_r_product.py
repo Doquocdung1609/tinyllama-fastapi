@@ -68,6 +68,10 @@ def pdf_search(w, question, mode, top_k, document_ids):
     except (ValueError, OSError, __import__('requests').RequestException) as exc:
         if mode == 'bm25' or (isinstance(exc, ValueError) and str(exc) != 'EMBEDDING_MODEL_DIGEST_MISMATCH'): raise
         base = w.search(question, 'bm25', 20, document_ids); fallback = 'DENSE_UNAVAILABLE_BM25_PLUS_ROW_SIDECAR'
+    from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+    explicit_pages = re.findall(r'\b(?:trang|page)\s+(\d{1,3})\b', folded(question))
+    financial_ocr = isinstance(w, FinancialOcrWorkspace)
+    target_page = int(explicit_pages[0]) if financial_ocr and len(explicit_pages) == 1 else None
     pool = []; terms = _tokens(question);page_context={};observed_scopes=set()
     if slots.intent=='SUMMARIZE':
         vietnamese=False
@@ -104,6 +108,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
             if not identity: identity = issuers(text[:1200])
             page_context[(d['id'],page)]={'statement_scope':scope or 'UNKNOWN','report_period':period or '', 'unit':unit}
             if scope:observed_scopes.add(scope)
+            if target_page is not None and page != target_page: continue
             if slots.scope and scope and slots.scope != scope: continue
             parents = parent_by_page.get(page, [])
             if not parents: continue
@@ -111,7 +116,14 @@ def pdf_search(w, question, mode, top_k, document_ids):
                 label = row.get('row_label',''); cells = row.get('cells',[])
                 quote = label + ' | ' + ' | '.join(c['text'] for c in cells)
                 overlap = len(terms & _tokens(label))
-                exact = any(a in folded(label) for a in slots.metric_phrases)
+                label_key = folded(label)
+                exact = any(a in label_key for a in slots.metric_phrases)
+                if financial_ocr and e.get('method') == 'OCR':
+                    if slots.metric == 'net_revenue':
+                        exact = 'doanh thu thuan' in label_key
+                        if 'doanh thu chua thuc hien' in label_key: continue
+                    if slots.metric == 'net_income' and 'chua phan phoi' in label_key:
+                        continue
                 if slots.metric and not exact and overlap < 2: continue
                 if not slots.metric and slots.intent != 'RESTATEMENT_LIST' and overlap < 1: continue
                 adjustment = bool(re.search(r'so lieu da cong bo|so trinh bay lai', f)) and len(cells)==3
@@ -139,6 +151,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
     # Retain narrative candidates for explanations and summaries. Their text is
     # evidence, never a verified numerical answer.
     for h in base.get('results',[]):
+        if target_page is not None and h['page'] != target_page:continue
         context=page_context.get((h['document_id'],h['page']),{})
         if slots.scope and context.get('statement_scope') not in {slots.scope,'UNKNOWN',None}:continue
         h={**h,**context}
@@ -154,7 +167,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
     exact_metrics=set(semantic_plan.metrics)
     if semantic_plan.metric=='reportable_segment_net_sales':exact_metrics={'americas_net_sales','europe_net_sales','greater_china_net_sales','japan_net_sales','rest_of_asia_pacific_net_sales','net_revenue'}
     native=[]
-    if exact_metrics and semantic_plan.intent not in {'DOCUMENT_IDENTITY','FIND_SECTION','RESTATEMENT_LIST','SUMMARIZE'}:
+    if target_page is None and exact_metrics and semantic_plan.intent not in {'DOCUMENT_IDENTITY','FIND_SECTION','RESTATEMENT_LIST','SUMMARIZE'}:
         native=[c for c in native_catalog(w,document_ids) if c['metric'] in exact_metrics and (not semantic_plan.years or c['period'] in semantic_plan.years) and (not semantic_plan.scope or c['statement_scope']==semantic_plan.scope) and (not semantic_plan.period_type or c['period_type']==semantic_plan.period_type)]
     raw_candidate_count=len(pool)+len(native)
     native_dedup_count=0
@@ -196,7 +209,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
     from app.product.answer_planner_v2 import plan_question
     from app.product.source_cells_v2 import section_evidence
     question_plan=plan_question(question)
-    if question_plan.intent in {'DOCUMENT_IDENTITY','FIND_SECTION'}:
+    if target_page is None and question_plan.intent in {'DOCUMENT_IDENTITY','FIND_SECTION'}:
         headings=section_evidence(w,document_ids,question_plan)
         chosen=[{**h,'chunk_id':h['citation_id'],'score':1.0,'rank':i} for i,h in enumerate(headings[:top_k],1)] or chosen
     for rank,h in enumerate(chosen,1):h['rank']=rank

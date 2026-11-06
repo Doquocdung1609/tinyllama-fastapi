@@ -744,6 +744,26 @@ def page_evidence(document_id:str,page:int):
     except ValueError as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
 
 
+@router.get('/documents/{document_id}/pages/{page}/ocr-comparison')
+def ocr_comparison(document_id:str,page:int):
+    if not re.fullmatch(r'[a-f0-9]{32}',document_id) or not 1<=page<=250:
+        raise HTTPException(422,detail={'code':'INVALID_OCR_COMPARISON_SOURCE'})
+    w=workspace()
+    try:
+        evidence=w.page_evidence(document_id,page)
+        root=w.root.resolve()
+        target=(root/'ocr-comparison'/document_id/f'{page}.json').resolve()
+        if not target.is_relative_to(root) or not target.is_file() or target.stat().st_size>512_000:
+            return {'available':False}
+        data=json.loads(target.read_bytes())
+        if (data['source_sha256']!=evidence['source_sha256'] or data['page']!=page
+                or data['checkpoint_sha256']!=evidence['checkpoint_sha256']):
+            return {'available':False}
+        return {'available':True,'engine':data['engine'],'words':data['words'][:600]}
+    except (OSError,ValueError,KeyError,TypeError):
+        return {'available':False}
+
+
 @router.get('/documents/{document_id}/chunks')
 def document_chunks(document_id:str,page:int=1):
     if not 1<=page<=250:raise HTTPException(422,detail='INVALID_PAGE')
@@ -797,6 +817,22 @@ def analysis(payload:AnalysisRequest):
                         'answer':'Tùy chọn nâng cao mâu thuẫn hoặc chưa được chứng minh bởi câu hỏi và ô nguồn. Hãy bỏ tùy chọn hoặc nêu rõ yêu cầu trong câu hỏi.',
                         'reason':'EXPLICIT_QUERY_CONTEXT_CONFLICT','conflicting_fields':conflicts,'values':[],'calculation_steps':[],
                         'verification_status':'QUERY_CONTEXT_CONFLICT'}
+                from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+                w=workspace()
+                if (isinstance(w,FinancialOcrWorkspace) and len(payload.document_ids)==1 and not answer.get('values')
+                        and not payload.model_fields_set.intersection({'metric','operation','current_period','previous_period','basis','statement_scope'})
+                        and re.search(r'\b\d{1,2}/\d{1,2}/20\d{2}\b',payload.question)
+                        and (needs_number(payload.question) or 'trích giá trị' in payload.question.casefold())):
+                    plan=reviewed_plan(payload.question,eligible_facts(w,payload.document_ids),METRICS)
+                    if plan and plan['operation']=='EXTRACT' and plan['metric'] in {'assets','liabilities','equity'}:
+                        from app.product.verified_financial import validate_supported_response
+                        reviewed=numeric_answer(w,payload.model_copy(update={'mode':'numeric',**plan}))
+                        verified=validate_supported_response(w,reviewed,'EXTRACT')
+                        if verified['status']=='SUPPORTED':
+                            from app.product.answer_composer_v2 import display
+                            return {**verified,'answer':f"{verified['citations'][0]['row_label']}: {display(verified['values'][0])} {verified['unit']}. [1]",
+                                    'verification_status':'VERIFIED_BY_LOCAL_SOURCE_IMAGE_REVIEW',
+                                    'answer_status':'VERIFIED_ANSWER'}
                 return answer
             if needs_number(payload.question):
                 plan=reviewed_plan(payload.question,eligible_facts(workspace(),payload.document_ids),METRICS)

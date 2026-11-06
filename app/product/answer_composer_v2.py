@@ -262,10 +262,15 @@ def _compose_single_answer(w,question,result,document_ids,plan=None):
         reason=str(exc);values=[];operands=[];calculations=[];claims=[];steps=[];citations=[]
         sources=hits[:2]
         if reason=='OCR_OR_UNSUPPORTED_CELL_BINDING':
-            statement=section_evidence(w,document_ids,replace(p,intent='FIND_SECTION',section='BALANCE_SHEET' if p.metric=='assets' else 'INCOME_STATEMENT'))
-            pages={h['page'] for h in statement}
-            sources=([h for h in hits if h.get('page') in pages][:1] or statement[:1] or sources)
-            answer=('I located the relevant statement, but cannot certify the amount: OCR has not reliably bound the row to the requested quarter/year column. Open the source for review. ' if en else 'Tôi tìm thấy báo cáo/dòng liên quan, nhưng chưa thể công bố giá trị: OCR chưa xác minh chắc chữ số và cột quý IV so với cả năm. Mở nguồn để đối chiếu. ')
+            from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+            if isinstance(w,FinancialOcrWorkspace):
+                sources=([h for h in hits if h.get('rank_reasons',{}).get('exact_metric')] or sources)[:1]
+                answer=('Open the original page to confirm the row, amount and reporting period. The OCR reading is still unverified. ' if en else 'Bạn có thể mở trang nguồn để đối chiếu dòng, chữ số và kỳ báo cáo. Kết quả đọc OCR vẫn chưa được xác minh. ')
+            else:
+                statement=section_evidence(w,document_ids,replace(p,intent='FIND_SECTION',section='BALANCE_SHEET' if p.metric=='assets' else 'INCOME_STATEMENT'))
+                pages={h['page'] for h in statement}
+                sources=([h for h in hits if h.get('page') in pages][:1] or statement[:1] or sources)
+                answer=('I located the relevant statement, but cannot certify the amount: OCR has not reliably bound the row to the requested quarter/year column. Open the source for review. ' if en else 'Tôi tìm thấy báo cáo/dòng liên quan, nhưng chưa thể công bố giá trị: OCR chưa xác minh chắc chữ số và cột quý IV so với cả năm. Mở nguồn để đối chiếu. ')
         elif reason=='REQUESTED_PERIOD_OR_CELL_NOT_AVAILABLE' and p.years:
             answer=(f'The selected filing does not verify {LABELS.get(p.metric,(p.metric,p.metric))[1]} for FY'+', FY'.join(p.years)+'. No result from another year has been substituted. ' if en else 'Tài liệu đang chọn chưa xác nhận chỉ tiêu này cho kỳ '+', '.join(p.years)+'. Không dùng số năm khác thay thế. ')
         elif reason.startswith(('SELECT_','TWO_','SINGLE_')):answer=('Please specify the financial year and separate/consolidated scope to identify one unambiguous source cell. ' if en else 'Bạn muốn kỳ nào và phạm vi riêng hay hợp nhất? Cần xác định rõ để chọn đúng ô nguồn. ')

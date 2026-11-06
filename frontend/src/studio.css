@@ -93,3 +93,8 @@ h1{font-weight:700}h2,h3{font-weight:650}.pill{white-space:nowrap}.nav button.ac
 .chat-selected-sources{display:flex;gap:6px;list-style:none;margin:0 18px 6px;padding:0;overflow:auto;flex-shrink:0}
 .chat-selected-sources li{max-width:min(340px,75vw);padding:3px 8px;border-radius:8px;background:#edf4f8;color:#314766;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
 @media(max-width:600px){.chat-source-bar{padding-right:6px}.chat-source-picker summary{padding:5px}.chat-selected-sources{margin:0 10px 4px}}
+
+.ocr-inspection{margin:12px 0}
+.ocr-token-list{display:flex;flex-wrap:wrap;gap:6px;max-height:15rem;overflow:auto;margin:8px 0}
+.ocr-token-list button{border:1px solid var(--fis-border);border-radius:6px;background:#f5f8ff;padding:3px 7px;color:#24446b;text-align:left}
+.ocr-token-list button:focus-visible{outline:2px solid #176cff}
