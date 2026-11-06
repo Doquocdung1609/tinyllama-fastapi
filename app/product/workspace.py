@@ -658,6 +658,26 @@ class PdfWorkspace:
         with closing(self._connect()) as db:
             row=db.execute('SELECT payload,payload_hash FROM page_evidence WHERE document_id=? AND page=?',
                            (document_id,page_number)).fetchone()
+        return self._page_evidence_view(row,page_number)
+
+    def iter_document_evidence(self, document_id, count):
+        """Read one checkpoint at a time and authenticate the PDF once."""
+        self.source_file(document_id)
+        with closing(self._connect()) as db:
+            records=iter(db.execute('SELECT page,payload,payload_hash FROM page_evidence WHERE document_id=? ORDER BY page',
+                                    (document_id,)))
+            row=next(records,None)
+            for number in range(1,count+1):
+                if row is None or row['page']!=number:
+                    yield number,None,'PAGE_EVIDENCE_NOT_AVAILABLE'
+                    continue
+                try:
+                    yield number,self._page_evidence_view(row,number),None
+                except ValueError as exc:
+                    yield number,None,str(exc)
+                row=next(records,None)
+
+    def _page_evidence_view(self,row,page_number):
         if row is None:
             raise ValueError('PAGE_EVIDENCE_NOT_AVAILABLE')
         if sha256(row['payload'].encode()).hexdigest()!=row['payload_hash']:

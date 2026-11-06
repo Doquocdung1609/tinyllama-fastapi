@@ -93,14 +93,17 @@ export default function FinancialChat({focus,clearFocus,open}:{focus?:Evidence|n
    newChat();setAdditionalSources([...additionalSources,id])
   }
  }
+ const [progressId,setProgressId]=useState('')
  const run=useMutation({networkMode:'always',mutationFn:async(asked:string)=>{
+  const id=crypto.randomUUID().replace(/-/g,'')
+  setProgressId(id)
   const requestEpoch=epoch.current
   abort.current=new AbortController()
   const secIds=sourceIds.filter(id=>id.startsWith('SEC:sec:')).map(id=>id.slice(4))
   const source=isSec?{source:'US_SEC',...(secIds.length?{filing_ids:secIds}:{ticker:chosen.slice(4)})}:{}
   const answer=await post<Reply>('/chat',{question:asked,document_ids:isSec?[]:sourceIds,...source,session_id:session,
    ...(!isSec&&explicit?.document_id&&sourceIds.includes(explicit.document_id)?{evidence_context:{intent:'USER_SOURCE_FOCUS',document_id:explicit.document_id,page:explicit.page,row_id:explicit.row_id,column_id:explicit.column_id,chunk_id:explicit.chunk_id,citation_id:explicit.citation_id}}:{}),
-   constraints:advanced&&scope&&!isSec?{statement_scope:scope}:{}},{signal:abort.current.signal})
+   progress_id:id, constraints:advanced&&scope&&!isSec?{statement_scope:scope}:{}},{signal:abort.current.signal})
   return {answer,asked,requestScope:sourceKey,requestEpoch}
  },onSuccess:({answer,asked,requestScope,requestEpoch})=>{
   if(scopeRef.current!==requestScope||requestEpoch!==epoch.current)return
@@ -109,6 +112,12 @@ export default function FinancialChat({focus,clearFocus,open}:{focus?:Evidence|n
  async function copy(text:string){try{await navigator.clipboard.writeText(text);setToast('Đã sao chép')}catch{setToast('Không thể truy cập clipboard')}}
  async function remove(){if(!session||!window.confirm('Xóa vĩnh viễn hội thoại này?'))return;try{await api(`/chat/${session}`,{method:'DELETE'});newChat();qc.invalidateQueries({queryKey:['chat-sessions']})}catch(e){setError(String(e))}}
  const busy=run.isPending
+ const progress=useQuery({queryKey:['chat-progress',progressId],enabled:busy&&!!progressId,refetchInterval:350,
+  queryFn:()=>api<{stage?:string;pages_read?:number;pages_total?:number;tasks_done?:number;tasks_total?:number;needs_review?:number}>(`/chat/progress/${progressId}`),retry:false})
+ const work=progress.data
+ const progressLabel=work?.stage==='reading'?`Đã đọc ${work.pages_read}/${work.pages_total} trang`:work?.stage==='checking'?
+  `Đã xử lý ${work.tasks_done}/${work.tasks_total} mục${work.needs_review?' · '+work.needs_review+' mục cần xác minh':''}`:work?.stage==='composing'?'Đang tổng hợp kết quả':work?.stage==='planning'?'Đang phân tích yêu cầu nhiều bước':''
+
  return <section className={'chat-workspace '+(historyOpen?'history-visible':'history-collapsed')} aria-label="Trợ lý tài chính">
   <aside className="chat-history"><div className="chat-history-heading"><MessageSquare size={20}/><strong>Hội thoại</strong><button aria-label="Đóng lịch sử hội thoại" onClick={()=>setHistoryOpen(false)}>×</button></div><Button onClick={()=>{setHistoryOpen(false);newChat()}} variant="outline"><Plus size={16}/> Hội thoại mới</Button><label className="chat-filter"><Search size={15}/><input aria-label="Tìm hội thoại" placeholder="Tìm trong lịch sử…" value={filter} onChange={e=>{setFilter(e.target.value);setOffset(0)}}/></label>
    <div className="session-list">{sessions.data?.sessions?.map(s=><button key={s.id} className={'session-item '+(s.id===session?'active':'')} onClick={()=>{setHistoryOpen(false);selectSession(s)}}><strong>{s.title}</strong><small>{new Date(s.updated_at).toLocaleString('vi-VN')} · {s.message_count} tin nhắn</small><small>{docs.data?.documents.find(d=>d.id===s.document_ids[0])?.filename||'Nguồn đã lưu'}</small></button>)}</div>{!sessions.data?.sessions?.length&&<p className="muted">Hội thoại được lưu tự động trên máy chủ.</p>}<div className="row"><button disabled={!offset} onClick={()=>setOffset(Math.max(0,offset-20))}>Trước</button><button disabled={!sessions.data?.has_more} onClick={()=>setOffset(offset+20)}>Tiếp</button></div>{sessions.error&&<p role="alert">Không tải được lịch sử. {sessions.error.message}</p>}
@@ -141,7 +150,7 @@ export default function FinancialChat({focus,clearFocus,open}:{focus?:Evidence|n
     {busy&&<div className="chat-loading" role="status"><span className="pulse-dot"/> Đang truy xuất nguồn và kiểm tra bằng chứng…<small>Trả lời khi xử lý xong; không phát trực tiếp từng token.</small></div>}<div ref={bottom}/>
    </div>
    {showLatest&&<button className="latest-message" onClick={()=>{following.current=true;bottom.current?.scrollIntoView({block:'end'});setShowLatest(false)}}>Về tin nhắn mới nhất ↓</button>}
-   <form className="chat-composer" onSubmit={e=>{e.preventDefault();if(!busy&&question.trim().length>1)run.mutate(question)}}><textarea ref={composer} rows={1} aria-label="Câu hỏi trợ lý" value={question} onChange={e=>setQuestion(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();if(!busy&&chosen&&question.trim().length>1)run.mutate(question)}}} placeholder="Hỏi về tài liệu đang chọn…" maxLength={2000} required/><div className="composer-toolbar"><small>Enter gửi · Shift + Enter xuống dòng</small><div className="row">{busy&&<Button type="button" variant="outline" onClick={()=>abort.current?.abort()}>Dừng chờ</Button>}<Button disabled={!chosen||busy||question.trim().length<2} type="submit"><Send size={15}/> Gửi câu hỏi</Button></div></div><details><summary>Tùy chọn nâng cao</summary><label><input type="checkbox" checked={advanced} onChange={e=>setAdvanced(e.target.checked)}/> Áp dụng phạm vi thủ công</label>{advanced&&<select aria-label="Phạm vi trợ lý" value={scope} onChange={e=>setScope(e.target.value)}><option value="">Tự động theo nguồn</option><option value="SEPARATE">Riêng / công ty mẹ</option><option value="CONSOLIDATED">Hợp nhất</option></select>}</details>{error&&<div className="error" role="alert">{error}<button type="button" disabled={busy} onClick={()=>run.mutate(question)}>Thử lại</button></div>}{toast&&<button type="button" className="copy-toast" role="status" onClick={()=>setToast('')}>{toast}</button>}</form>
+   <form className="chat-composer" onSubmit={e=>{e.preventDefault();if(!busy&&question.trim().length>1)run.mutate(question)}}><textarea ref={composer} rows={1} aria-label="Câu hỏi trợ lý" value={question} onChange={e=>setQuestion(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.nativeEvent.isComposing){e.preventDefault();if(!busy&&chosen&&question.trim().length>1)run.mutate(question)}}} placeholder="Hỏi về tài liệu đang chọn…" maxLength={2000} required/><div className="composer-toolbar"><small>{busy&&progressLabel?<span role="status">{progressLabel}</span>:"Enter gửi · Shift + Enter xuống dòng"}</small><div className="row">{busy&&<Button type="button" variant="outline" onClick={()=>abort.current?.abort()}>Dừng chờ</Button>}<Button disabled={!chosen||busy||question.trim().length<2} type="submit"><Send size={15}/> Gửi câu hỏi</Button></div></div><details><summary>Tùy chọn nâng cao</summary><label><input type="checkbox" checked={advanced} onChange={e=>setAdvanced(e.target.checked)}/> Áp dụng phạm vi thủ công</label>{advanced&&<select aria-label="Phạm vi trợ lý" value={scope} onChange={e=>setScope(e.target.value)}><option value="">Tự động theo nguồn</option><option value="SEPARATE">Riêng / công ty mẹ</option><option value="CONSOLIDATED">Hợp nhất</option></select>}</details>{error&&<div className="error" role="alert">{error}<button type="button" disabled={busy} onClick={()=>run.mutate(question)}>Thử lại</button></div>}{toast&&<button type="button" className="copy-toast" role="status" onClick={()=>setToast('')}>{toast}</button>}</form>
   </div>
   <EvidencePanel evidence={showEvidence?inspected:null} close={closeEvidence} open={open} ask={askEvidence}/>
  </section>

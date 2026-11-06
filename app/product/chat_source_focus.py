@@ -27,7 +27,15 @@ def selected_source(workspace,payload):
     if focus.get('row_id'):
         row=next((r for r in page['tables'] if r['id']==focus['row_id']),None)
         if row is None:
-            return None
+            if not str(focus['row_id']).startswith('date:'):
+                return None
+            from app.product.document_financial_cells import equity_matrix
+            from app.product.pdf_ocr_financial_v3 import explicit_cover_scope
+            cover=workspace.page_evidence(doc_id,1)
+            candidates=[c for c in equity_matrix(doc,page,explicit_cover_scope(cover['text']))
+                        if c['row_id']==focus['row_id'] and c['column_id']==focus.get('column_id')
+                        and c['citation']['citation_id']==focus.get('citation_id')]
+            return (candidates[0]['citation'],{},None) if len(candidates)==1 else None
         cell=None
         if focus.get('column_id'):
             cell=next((c for c in row['cells'] if c.get('cell_id')==focus['column_id'] and c.get('box')),None)

@@ -90,6 +90,14 @@ class ChatRequest(BaseModel):
     session_id:str|None=Field(default=None,pattern=r'^[a-f0-9]{32}$')
     constraints:dict[str,str]=Field(default_factory=dict,max_length=6)
     evidence_context:dict=Field(default_factory=dict,max_length=20)
+    progress_id:str|None=Field(default=None,pattern=r'^[a-f0-9]{32}$')
+
+
+@router.get('/chat/progress/{request_id}')
+def chat_progress(request_id:str):
+    from app.product.chat_store import owner
+    from app.product.document_progress import get
+    return get(owner(workspace()),request_id)
 
 
 @router.get('/chat/sessions')
@@ -144,6 +152,7 @@ def reset_financial_chat(session_id:str):
 @sec_scoped
 def financial_chat(payload:ChatRequest):
     from app.product.natural_pdf_dialogue import respond as natural_pdf_answer
+    from app.product.document_reasoning import answer as document_reasoning
     w=workspace();session=payload.session_id or uuid4().hex
     if payload.source=='USER_UPLOADS' and not payload.document_ids:raise HTTPException(422,detail={'code':'SELECT_PDF_SOURCE'})
     if payload.source=='US_SEC' and payload.document_ids:raise HTTPException(422,detail={'code':'SEC_PDF_SOURCE_SCOPE_CONFLICT'})
@@ -235,6 +244,8 @@ def financial_chat(payload:ChatRequest):
                                   source_errors=result['source_errors'])
         elif conflict:answer=conflict
         elif focused_reply is not None:answer=focused_reply
+        elif not payload.constraints and (reasoned:=_reason_with_progress(w,request,payload.progress_id,document_reasoning)) is not None:
+            answer=reasoned
         elif len(set(payload.document_ids))>1:
             from app.product.pdf_multi_qa import answer as pdf_multi
             def per_document(doc_id):
@@ -727,6 +738,28 @@ def pdf_file(document_id:str):
 def extraction(document_id:str):
     try:return workspace().extraction_status(document_id)
     except ValueError as exc:raise HTTPException(404,detail={'code':_error(exc)}) from None
+
+
+def _reason_with_progress(w,request,request_id,reason):
+    if not request_id:
+        return reason(w,request)
+    from app.product.chat_store import owner
+    from app.product.document_progress import update
+    scope=owner(w)
+    return reason(w,request,lambda **event:update(scope,request_id,**event))
+
+
+@router.get('/documents/{document_id}/page-map')
+def pdf_page_map(document_id:str):
+    from app.product.document_page_map import document_map
+    w=workspace()
+    doc=w.document(document_id)
+    if not doc:
+        raise HTTPException(404,detail={'code':'DOCUMENT_NOT_FOUND'})
+    try:
+        return document_map(w,doc)
+    except ValueError as exc:
+        raise HTTPException(409,detail={'code':_error(exc)}) from None
 
 
 @router.get('/documents/{document_id}/pages/{page}/evidence')
