@@ -231,7 +231,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
             key=(c['document_id'],c['metric'],c['period'],c['statement_scope'],c['basis'],c['value_raw'])
             selected_native.setdefault(key,c)
         native_dedup_count=len(native)-len(selected_native)
-        pool=[{**c,'text_quote':c['text'],'chunk_id':c['citation_id'],'rerank_score':100,'rank_reasons':{'exact_metric':True,'source_bound_native_candidate':True},'report_period':c['period'],'text':c['row_label']+' | '+c['value_raw']+' | '+c['period'],'numeric_status':'UNVERIFIED','highlight_status':'NATIVE_CELL_CANDIDATE'} for c in selected_native.values()]
+        pool=[{**c,'text_quote':c['text'],'chunk_id':c['citation_id'],'retrieval_origin':'PDF_CELL','rerank_score':100,'rank_reasons':{'exact_metric':True,'source_bound_native_candidate':True},'report_period':c['period'],'text':c['row_label']+' | '+c['value_raw']+' | '+c['period'],'numeric_status':'UNVERIFIED','highlight_status':'NATIVE_CELL_CANDIDATE'} for c in selected_native.values()]
 
     metric_filtered_count=0
     if slots.metric and slots.intent in {'FIND_EVIDENCE','COMPARE_PERIODS'} and any(h.get('rank_reasons',{}).get('exact_metric') for h in pool):
@@ -262,7 +262,7 @@ def pdf_search(w, question, mode, top_k, document_ids):
     question_plan=plan_question(question)
     if target_page is None and question_plan.intent in {'DOCUMENT_IDENTITY','FIND_SECTION'}:
         headings=section_evidence(w,document_ids,question_plan)
-        chosen=[{**h,'chunk_id':h['citation_id'],'score':1.0,'rank':i} for i,h in enumerate(headings[:top_k],1)] or chosen
+        chosen=[{**h,'chunk_id':h['citation_id'],'retrieval_origin':'PDF_SECTION','score':1.0,'rank':i} for i,h in enumerate(headings[:top_k],1)] or chosen
     for rank,h in enumerate(chosen,1):h['rank']=rank
     return {**base,'results':chosen,'latency_ms':round((perf_counter()-started)*1000,2),
         'intent':slots.public(),'query_plan':question_plan.public(),'evidence_status':'RELATED_UNVERIFIED_EVIDENCE' if chosen else 'NO_SUFFICIENT_EVIDENCE',

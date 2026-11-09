@@ -1,7 +1,6 @@
 import {useState,useEffect,useRef,lazy,Suspense} from 'react'
 import type {ReactNode} from 'react'
 import {reasonText} from './error-text'
-import RecordedEvaluation from './RecordedEvaluation'
 import FinancialChat from './FinancialChat'
 import SecLibrary from './SecLibrary'
 import EvidenceSearch from './EvidenceSearch'
@@ -9,12 +8,9 @@ import DocumentMetadataPanel from './DocumentMetadataPanel'
 import SecSourceViewer from './SecSourceViewer'
 import {singleSourceAmount} from './source-display'
 import {analysisResponseScope} from './analysis-scope'
-import Topic3Lab from './Topic3Lab'
-import SearchV2Evaluation from './SearchV2Evaluation'
 import {rotatedBox} from './geometry'
 import {useQuery,useMutation,useQueryClient} from '@tanstack/react-query'
 import {Activity,ArrowLeft,ArrowRight,BarChart3,BookOpen,Check,ChevronLeft,ChevronRight,Copy,Database,ExternalLink,FileSearch,FileText,FolderOpen,Loader2,Menu,Search,Settings,ShieldCheck,Sparkles,UploadCloud,Workflow,ZoomIn,ZoomOut} from 'lucide-react'
-const LatencyChart=lazy(()=>import('./chart'))
 import {Button} from '@/components/ui/button'
 import {api,post,getToken,citation,evidenceId,pdfBytes} from './api'
 import type {Mode,Source,Doc,Evidence,Fact,SearchParams,SearchResult,Ready,PageEvidence,Extraction,Answer,Job,TableRow} from './api'
@@ -25,14 +21,13 @@ function displayValue(value:string,unit?:string){const [integer,fraction]=value.
 function unitName(unit:string){return ({VND:'đồng',NGHIN_VND:'nghìn đồng',TRIEU_VND:'triệu đồng',TY_VND:'tỷ đồng',MILLION_USD:'triệu USD'} as Record<string,string>)[unit]||unit}
 function displayFold(s:string){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d')}
 const pages=[['analysis','Trợ lý tài chính',Sparkles],['library','Kho tài liệu',FolderOpen],['search','Bằng chứng & Nguồn',Search],['compare','Research Lab',BarChart3],['system','Cài đặt / Trạng thái',Settings]] as const
-const titles:Record<string,[string,string,string]>={overview:['Nền tảng phân tích tài chính','Chào mừng đến Financial Intelligence Studio','Tìm kiếm và phân tích tài chính từ bằng chứng bạn có thể đối chiếu.'],search:['Tra cứu tài liệu','Bằng chứng & Nguồn','Tìm đúng chỉ tiêu, xem ngữ cảnh và đối chiếu tài liệu gốc.'],analysis:['Trợ lý theo tài liệu','Hỏi tài liệu, nhận câu trả lời có nguồn','Một hội thoại cho câu hỏi tài liệu, phân tích số liệu và tổng hợp doanh nghiệp.'],library:['Quản lý nguồn / PDF Workspace','Kho tài liệu tài chính','Tải PDF tiếng Việt hoặc tiếng Anh, theo dõi OCR và trạng thái lập chỉ mục.'],compare:['Đánh giá truy xuất','So sánh BM25 · Dense · Hybrid RRF','Chạy cùng câu hỏi trên cùng phạm vi tài liệu, quan sát thứ hạng và độ trễ thực.'],system:['Vận hành cục bộ','Hệ thống & Cài đặt','Trạng thái dịch vụ, OCR, mô hình và chẩn đoán sẵn sàng.'],viewer:['Bằng chứng / PDF Viewer','Trình xem tài liệu & bằng chứng','Mở đúng trang nguồn, kiểm tra tọa độ và ngữ cảnh tài chính.']}
+const titles:Record<string,[string,string,string]>={overview:['Nền tảng phân tích tài chính','Chào mừng đến Financial Intelligence Studio','Tìm kiếm và phân tích tài chính từ bằng chứng bạn có thể đối chiếu.'],search:['Tra cứu tài liệu','Bằng chứng & Nguồn','Tìm đúng chỉ tiêu, xem ngữ cảnh và đối chiếu tài liệu gốc.'],analysis:['Trợ lý theo tài liệu','Hỏi tài liệu, nhận câu trả lời có nguồn','Một hội thoại cho câu hỏi tài liệu, phân tích số liệu và tổng hợp doanh nghiệp.'],library:['Quản lý nguồn / PDF Workspace','Kho tài liệu tài chính','Tải PDF tiếng Việt hoặc tiếng Anh, theo dõi OCR và trạng thái lập chỉ mục.'],compare:['Đánh giá truy xuất','So sánh BM25 · Dense · Hybrid RRF · FAITH-R','Chạy cùng câu hỏi trên cùng phạm vi tài liệu, quan sát thứ hạng và độ trễ thực.'],system:['Vận hành cục bộ','Hệ thống & Cài đặt','Trạng thái dịch vụ, OCR, mô hình và chẩn đoán sẵn sàng.'],viewer:['Bằng chứng / PDF Viewer','Trình xem tài liệu & bằng chứng','Mở đúng trang nguồn, kiểm tra tọa độ và ngữ cảnh tài chính.']}
 export function Pill({children,tone=''}:{children:ReactNode;tone?:string}){return <span className={'pill '+tone}>{children}</span>}
 function Loading(){return <div className="load" role="status"><Loader2 size={16} className="spin"/>Đang xử lý yêu cầu…</div>}
 function ErrorBox({error}:{error:unknown}){if(!error)return null;const code=error instanceof Error?error.message:String(error);return <div className="error" role="alert">{reasonText(code)}<details><summary>Chi tiết chẩn đoán</summary><small>{code}</small></details></div>}
 function Empty({children}:{children:ReactNode}){return <div className="empty"><FileSearch size={35}/>{children}</div>}
 function Stat({label,value,note}:{label:string;value:ReactNode;note:string}){return <div className="card stat"><small>{label}</small><strong>{value}</strong><small>{note}</small></div>}
 export function Highlight({text,query}:{text:string;query:string}){const tokens=query.trim().split(/\s+/).filter(x=>x.length>2).slice(0,15);if(!tokens.length)return <>{text}</>;const escaped=tokens.map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));const re=new RegExp(`(${escaped.join('|')})`,'giu');return <>{text.split(re).map((part,i)=>tokens.some(t=>t.toLocaleLowerCase()===part.toLocaleLowerCase())?<mark key={i}>{part}</mark>:part)}</>}
-function Modes({mode,onChange}:{mode:Mode;onChange:(v:Mode)=>void}){return <div className="modes" aria-label="Phương pháp tìm kiếm">{(['bm25','dense','hybrid'] as const).map(m=><button type="button" className={mode===m?'active':''} onClick={()=>onChange(m)} key={m}>{m==='hybrid'?'Hybrid RRF':m==='bm25'?'BM25':'Dense'}</button>)}</div>}
 function useDocs(){return useQuery({queryKey:['documents'],queryFn:()=>api<{documents:Doc[]}>('/documents'),refetchInterval:3000})}
 function useReady(){return useQuery({queryKey:['readiness'],queryFn:()=>api<Ready>('/readiness'),refetchInterval:15000})}
 function useStored<T>(key:string,initial:T){const [state,setState]=useState<T>(()=>{try{return JSON.parse(sessionStorage.getItem(key)||'null')??initial}catch{return initial}});useEffect(()=>{sessionStorage.setItem(key,JSON.stringify(state))},[state,key]);return [state,setState] as const}
@@ -45,6 +40,7 @@ export default function Studio(){
  const [explicitFocus,setExplicitFocus]=useState<Evidence|null>(null)
  const [params,setParams]=useStored<SearchParams>('search-filters',{query:'',mode:'hybrid',source:'USER_UPLOADS',top_k:5,document_ids:[],issuer:'',period:'',search_profile:'auto'})
  const [searchResult,setSearchResult]=useStored<SearchResult|null>('last-search',null)
+ const [comparison,setComparison]=useState<ComparisonRun>()
  const client=useQueryClient()
  function go(next:string){location.hash='/'+next;setPage(next);setMobile(false);window.scrollTo(0,0)}
  useEffect(()=>{const fn=()=>setPage(location.hash.slice(2)||'analysis');window.addEventListener('hashchange',fn);return()=>window.removeEventListener('hashchange',fn)},[])
@@ -55,11 +51,11 @@ export default function Studio(){
  const title=titles[page]||titles.overview
  return <div className={'app '+(compact?'nav-compact':'')}><aside className={'sidebar '+(mobile?'open':'')}><button className="nav-collapse" aria-label={compact?'Mở rộng điều hướng':'Thu gọn điều hướng'} onClick={()=>setCompact(!compact)}><Menu size={18}/></button><div className="brand"><BarChart3 className="brand-icon" size={36}/><div><strong>Financial<br/>Intelligence<br/>Studio</strong><br/><small>Hybrid Search & Financial AI</small></div></div><nav className="nav" aria-label="Điều hướng chính">{pages.map(([key,label,Icon])=><button key={key} title={label} aria-label={label} className={page===key?'active':''} onClick={()=>go(key)}><Icon size={18}/>{label}</button>)}</nav><div className="sidebar-bottom"><strong>Không gian cục bộ</strong><br/><span className={'dot '+(ready.data?'':'off')}/>FastAPI {ready.data?'đã kết nối':'chưa kết nối'}<br/><span className={'dot '+(ready.data?.ollama.status==='ONLINE'?'':'off')}/>Ollama {ready.data?.ollama.status==='ONLINE'?'hoạt động':'chưa sẵn sàng'}<hr style={{borderColor:'#315075',margin:'12px 0'}}/><small>Bằng chứng có nguồn.<br/>Số liệu phải được kiểm chứng.</small></div></aside><div className="shell"><header className="topbar"><button className="mobile-menu" aria-label="Mở điều hướng" onClick={()=>setMobile(!mobile)}><Menu/></button><span className="muted"><strong style={{color:'#142b54'}}>FIS</strong> / Không gian tài chính</span><button className="topbar-search" onClick={()=>go('search')}><Search size={14}/>Bằng chứng & Nguồn</button><div className="row"><Pill>Phiên cục bộ</Pill><div className="avatar">F</div></div></header><main className={page==='analysis'?'main chat-main':page==='search'?'main search-main':'main'}><div className="page-title"><div><div className="eyebrow">{title[0]}</div><h1>{title[1]}</h1><p>{title[2]}</p></div>{page==='viewer'?<Button variant="outline" onClick={()=>go(sessionStorage.getItem('source-return-page')||'search')}><ArrowLeft size={14}/>Quay lại câu hỏi</Button>:<Pill tone="warn">Nguồn PDF / SEC</Pill>}</div><ErrorBox error={ready.error}/>
  {page==='overview'&&<Overview go={go} ready={ready.data} open={open}/>}
- {page==='search'&&<SearchPage params={params} setParams={setParams} result={searchResult} setResult={setSearchResult} open={open} selected={selected} select={setSelected} askSource={askSource}/>}
- {page==='compare'&&<ComparePage params={params} setParams={setParams} open={open}/>}
+ {page==='search'&&<EvidenceSearch params={params} setParams={setParams} result={searchResult} setResult={setSearchResult} open={open} selected={selected} select={setSelected} askSource={askSource}/>}
+ {page==='compare'&&<ComparePage params={params} setParams={setParams} comparison={comparison} setComparison={setComparison} open={open}/>}
  {page==='library'&&<Library open={open}/>}
  {page==='analysis'&&<Analysis selected={selected} open={open} focus={explicitFocus} clearFocus={()=>setExplicitFocus(null)}/>}
- {page==='system'&&<System ready={ready.data} onLogout={()=>{sessionStorage.clear();setSelected(null);setSearchResult(null);setToken('');client.clear()}}/>}
+ {page==='system'&&<System ready={ready.data} onLogout={()=>{sessionStorage.clear();setSelected(null);setSearchResult(null);setComparison(undefined);setToken('');client.clear()}}/>}
  {page==='viewer'&&<Viewer selected={selected} select={setSelected} toAI={askSource}/>}
  </main></div></div>
 }
@@ -68,10 +64,6 @@ function Overview({go,ready,open}:{go:(p:string)=>void;ready?:Ready;open:(e:Evid
  const docs=useDocs();return <div className="stack"><div className="grid2"><section className="hero"><Search size={22}/><h2>Tìm kiếm tài chính</h2><p>Tìm tài liệu bằng BM25, Dense và Hybrid RRF.<br/>Mở trang PDF và đối chiếu bằng chứng thật.</p><Button onClick={()=>go('search')}>Bắt đầu tìm kiếm <ArrowRight size={14}/></Button></section><section className="hero purple"><Sparkles size={22}/><h2>Phân tích tài chính AI</h2><p>Hỏi đáp tài liệu, so sánh kỳ báo cáo, tính toán Decimal.<br/>Phân biệt nguồn đã trích xuất với số liệu đã xác minh.</p><Button onClick={()=>go('analysis')}>Phân tích tài chính <ArrowRight size={14}/></Button></section></div><div className="stats"><Stat label="Tài liệu của bạn" value={ready?.workspace.total_documents??'—'} note="PDF lưu trong kho riêng"/><Stat label="Đoạn PDF sẵn sàng" value={ready?.workspace.ready_chunks?.toLocaleString('vi-VN')??'—'} note="Đã kiểm tra BM25 và Dense"/><Stat label="Hồ sơ SEC" value={ready?.sec.filings.length??'—'} note={ready?.sec.status==='READY'?'Nguồn đã cấu hình':'Chưa có snapshot SEC phù hợp'}/><Stat label="OCR tiếng Việt" value={ready?.ocr.status==='READY'?'Sẵn sàng':'Cần kiểm tra'} note="Tesseract vie + eng, theo từng trang"/></div><div className="grid2"><section className="card"><div className="row" style={{justifyContent:'space-between'}}><h2>Tài liệu gần đây</h2><button className="source-button" onClick={()=>go('library')}>Xem kho tài liệu →</button></div><DocumentTable docs={docs.data?.documents.slice(0,5)||[]} open={open}/></section><section className="card"><h2>Trạng thái truy xuất</h2>{[['FastAPI',ready?.api],['Ollama',ready?.ollama.status],['OCR tiếng Việt',ready?.ocr.status],['Kho PDF',ready?.workspace.ready_documents?`${ready.workspace.ready_documents} tài liệu READY`:'Chưa có PDF READY'],['SEC',ready?.sec.status]].map(([name,status])=><div className="step" key={name}><ShieldCheck color="#176cff" size={17}/><span style={{flex:1}}>{name}</span><Pill tone={['READY','ONLINE'].includes(status||'')?'good':'warn'}>{status||'Đang kiểm tra'}</Pill></div>)}</section></div><section className="card"><h2>Từ tài liệu gốc đến kết quả có thể kiểm chứng</h2><div className="pipeline">{[[UploadCloud,'Tải PDF'],[FileText,'Trích xuất / OCR'],[Database,'Chia đoạn'],[Search,'BM25 + Dense'],[Workflow,'Hybrid RRF'],[ShieldCheck,'Đối chiếu & QA']].map(([Icon,label])=>{const I=Icon as typeof Search;return <div key={label as string}><I size={24}/>{label as string}</div>})}</div></section><div className="notice">Báo cáo scan có thể tìm kiếm sau OCR, nhưng các số liệu OCR chỉ được dùng để tính toán sau khi đối chiếu ô nguồn, kỳ và đơn vị. Không coi văn bản do AI sinh ra là dữ liệu tài chính đã xác minh.</div></div>
 }
 
-function SearchControls(props:{params:SearchParams;setParams:(p:SearchParams)=>void;onSubmit:()=>void;busy:boolean;compare?:boolean}){return <LegacySearchControls {...props}/>}
-function LegacySearchControls({params,setParams,onSubmit,busy,compare=false}:{params:SearchParams;setParams:(p:SearchParams)=>void;onSubmit:()=>void;busy:boolean;compare?:boolean}){
- const docs=useDocs();return <form className="card" onSubmit={e=>{e.preventDefault();onSubmit()}}><div className="toolbar"><Search color="#7c93b5" size={18}/><input aria-label="Câu hỏi tìm kiếm" placeholder="Ví dụ: Tổng tài sản của công ty mẹ Hòa Phát cuối năm 2025" value={params.query} onChange={e=>setParams({...params,query:e.target.value})} required minLength={2}/><Button type="submit" disabled={busy}>{busy?<Loader2 className="spin" size={16}/>:<Search size={16}/>} {compare?'So sánh 3 phương pháp':'Tìm kiếm'}</Button></div><div className="row" style={{marginTop:16}}>{!compare&&<Modes mode={params.mode} onChange={m=>setParams({...params,mode:m})}/>}<small>Top-k</small><select aria-label="Số kết quả" value={params.top_k} onChange={e=>setParams({...params,top_k:Number(e.target.value)})}><option>5</option><option>10</option><option>20</option></select><small>Cùng phạm vi tài liệu · RRF k=60</small>{<label>Chế độ bằng chứng<select aria-label="Cấu hình tìm kiếm" value={params.search_profile||'production_v2'} onChange={e=>setParams({...params,search_profile:e.target.value as 'auto'|'baseline'|'production_v2'|'production_v3'|'production_v3r'|'production_v3r2'|'production_v3r3'})}><option value="auto">Tự động (khuyến nghị)</option><option value="production_v3r3">Search V3R3 · ưu tiên đúng chỉ tiêu</option><option value="production_v3r2">Search V3R2 · kiểm tra nhãn và đơn vị nguồn</option><option value="production_v3r">Search V3R · bằng chứng theo vùng</option><option value="production_v3">Search V3 · tìm nguồn, xác minh số liệu riêng</option><option value="production_v2">Search V2 · ứng viên có kiểm tra ngữ cảnh</option><option value="baseline">Baseline nguyên bản</option></select></label>}</div><div className="filters"><label>Nguồn / thị trường<select aria-label="Nguồn dữ liệu" value={params.source} onChange={e=>setParams({...params,source:e.target.value as Source,document_ids:[],issuer:''})}><option value="VIETNAM">Tài liệu Việt Nam</option><option value="USER_UPLOADS">PDF tải lên</option><option value="US_SEC">US SEC</option><option value="ALL">Tất cả nguồn đã cấu hình</option></select></label><label>Doanh nghiệp / mã cổ phiếu<input aria-label="Doanh nghiệp" placeholder={params.source==='US_SEC'?'PG, HD…':'Hòa Phát, BIDV…'} value={params.issuer} onChange={e=>setParams({...params,issuer:e.target.value})}/></label><label>Kỳ báo cáo<input aria-label="Kỳ báo cáo tìm kiếm" placeholder="2025 hoặc ngày báo cáo" value={params.period} onChange={e=>setParams({...params,period:e.target.value})}/></label><label>Tài liệu<select aria-label="Tài liệu tìm kiếm" value={params.document_ids[0]||''} onChange={e=>setParams({...params,document_ids:e.target.value?[e.target.value]:[]})}><option value="">Tất cả tài liệu sẵn sàng</option>{docs.data?.documents.filter(d=>d.status==='READY').map(d=><option value={d.id} key={d.id}>{d.issuer||d.filename} · {d.report_period}</option>)}</select></label></div></form>
-}
 export function SourceCellValues({item}:{item:Evidence}){
  const cells=item.source_cells?.filter(c=>c.text?.trim())||[]
  if(!cells.length)return null
@@ -79,13 +71,93 @@ export function SourceCellValues({item}:{item:Evidence}){
  return <details onClick={e=>e.stopPropagation()}><summary>Dòng nguồn · cần đối chiếu cột</summary>{complete?<div className="scroll-table"><table><thead><tr>{cells.map((c,i)=><th key={i}>{c.period_year_candidate!.text}</th>)}</tr></thead><tbody><tr>{cells.map((c,i)=><td key={i}>{c.text} {unitName(c.unit_evidence!.unit!)}</td>)}</tr></tbody></table></div>:<><p>{cells.map((c,i)=><span key={i}>{i?' | ':''}{c.text}</span>)}</p><p>{cells.map(c=>c.unit_evidence?.source_text).filter(Boolean).join(' · ')}</p><small>Cần đối chiếu ảnh nguồn</small></>}</details>
 }
 
-function Hit({item,query,open,select,active=false}:{item:Evidence;query:string;open:(e:Evidence)=>void;select?:(e:Evidence)=>void;active?:boolean}){return <article className={'hit '+(active?'selected':'')} onClick={()=>select?.(item)}><div className="row" style={{justifyContent:'space-between'}}><h3>{item.rank}. {item.issuer||item.filename||'Bằng chứng tài chính'}</h3><Pill>{item.source_kind||'PDF'}</Pill></div><small>{item.report_period||item.period||'Kỳ chưa xác định'} · {item.page?`Trang PDF ${item.page}`:'SEC HTML'} · {item.statement_scope==='CONSOLIDATED'?'Hợp nhất':item.statement_scope==='SEPARATE'?'Riêng / công ty mẹ':item.document_type||'Phạm vi chưa xác định'} · BM25 #{item.bm25_rank??'—'} · Dense #{item.dense_rank??'—'}</small><p><Highlight text={item.text} query={query}/></p><SourceCellValues item={item}/><div className="row" style={{justifyContent:'space-between'}}><small>{item.evidence_match==='REVIEWED_ANSWER_EVIDENCE'?'Bằng chứng ô đã đối chiếu, phù hợp yêu cầu':item.evidence_match==='MATCHED_UNVERIFIED_ROW'?'Dòng chỉ tiêu phù hợp; số liệu chưa xác minh':item.verification?'Ô đã đối chiếu ảnh nguồn':'Đoạn tài liệu liên quan; chưa phải câu trả lời xác minh'}</small>{select&&<Button variant="outline" size="sm" onClick={e=>{e.stopPropagation();sessionStorage.removeItem('active-financial-chat');if(item.document_id)sessionStorage.setItem('active-document',item.document_id);select(item);location.hash='/analysis'}}>Hỏi về nguồn này</Button>}<Button variant="outline" size="sm" onClick={e=>{e.stopPropagation();open(item)}}>Mở bằng chứng <ArrowRight size={13}/></Button></div></article>}
-function SearchPage(props:Parameters<typeof EvidenceSearch>[0]){return <EvidenceSearch {...props}/>}
+const comparisonMethods=[
+ ['bm25','BM25','Khớp từ khóa'],
+ ['dense','Dense','Tìm theo ngữ nghĩa'],
+ ['hybrid','Hybrid RRF','Hợp nhất thứ hạng BM25 và Dense'],
+ ['faith_r','FAITH-R','Ưu tiên bằng chứng tài chính phù hợp'],
+] as const
+type Comparison={arms:Partial<Record<Mode,SearchResult>>;faith_r:SearchResult|null;arm_errors:Record<string,string>}
+type ComparisonRun={sent:SearchParams;result:Comparison}
+type CompareFiling={filing_id:string;ticker:string;form:string;report_period:string;accession:string;ownership?:string}
 
-type Comparison={arms:Record<Mode,SearchResult>;generation:string;overlap:{bm25_dense:number;all_three:number};quality_metrics:null;quality_reason:string;candidate?:SearchResult|null}
-function ComparePage({params,setParams,open}:{params:SearchParams;setParams:(p:SearchParams)=>void;open:(e:Evidence)=>void}){
- const run=useMutation({mutationFn:()=>post<Comparison>('/compare',params)})
- return <div className="stack"><SearchControls params={params} setParams={setParams} onSubmit={()=>run.mutate()} busy={run.isPending} compare/><ErrorBox error={run.error}/>{run.isPending&&<Loading/>}<div className="grid3">{(['bm25','dense','hybrid'] as const).map(mode=><section className="card compare-col" key={mode}><h2>{mode==='bm25'?'BM25 · Từ khóa':mode==='dense'?'Dense · Ngữ nghĩa':'Hybrid · Fixed RRF'}</h2><small>{mode==='hybrid'?'Hợp nhất thứ hạng, không trộn điểm thô.':'Kết quả từ backend trên cùng phạm vi tài liệu.'}</small>{run.data?<><div className="latency">{run.data.arms[mode].latency_ms.toLocaleString('vi-VN')} <small>ms / lượt thực</small></div>{run.data.arms[mode].results.map(item=><Hit item={item} key={evidenceId(item)} query={params.query} open={open}/>)}</>:<Empty>Chưa chạy so sánh.</Empty>}</section>)}</div>{run.data&&<div className="grid2"><section className="card"><h2>Độ trễ đo được</h2><Suspense fallback={<Loading/>}><LatencyChart values={(['bm25','dense','hybrid'] as const).map(m=>({name:m,ms:run.data!.arms[m].latency_ms}))}/></Suspense><small>Một lượt yêu cầu, không phải p50/p95; trạng thái cache có thể khác nhau.</small></section><section className="card"><h2>Giao nhau và phạm vi đánh giá</h2><div className="stats"><Stat label="BM25 ∩ Dense" value={run.data.overlap.bm25_dense} note="Cùng mã bằng chứng"/><Stat label="Cả ba" value={run.data.overlap.all_three} note="Cùng mã bằng chứng"/></div><p className="notice">Không có qrels cho câu hỏi này. Không hiển thị Recall/MRR/nDCG giả. Các báo cáo C/P11 cũ là kết quả development riêng, không áp dụng tự động cho PDF mới.</p></section></div>}{run.data?.candidate&&<section className="card"><h2>{run.data.candidate.search_profile} · cùng câu hỏi và phạm vi</h2><p className="muted">Đoạn liên quan có thể hiển thị khi chưa đủ điều kiện trả lời số.</p>{run.data.candidate.results.map(item=><Hit key={evidenceId(item)} item={item} query={params.query} open={open}/>)}</section>}<Topic3Lab/><SearchV2Evaluation/><RecordedEvaluation/></div>
+function ComparePage({params,setParams,comparison,setComparison,open}:{
+ params:SearchParams;setParams:(p:SearchParams)=>void
+ comparison?:ComparisonRun;setComparison:(run:ComparisonRun|undefined)=>void;open:(e:Evidence)=>void
+}){
+ const docs=useDocs()
+ const showSec=params.source==='US_SEC'||params.source==='ALL'
+ const filings=useQuery({queryKey:['search-sec'],queryFn:()=>api<{filings:CompareFiling[]}>('/sec/catalog'),enabled:showSec})
+ const run=useMutation({
+  mutationFn:async(sent:SearchParams)=>({sent,result:await post<Comparison>('/compare',{...sent,include_faith_r:true})}),
+  onMutate:()=>setComparison(undefined),
+ })
+ const selectedFiling=params.filing_ids?.[0]||''
+ const catalog=filings.data?.filings??[]
+ const secReady=selectedFiling?catalog.some(f=>f.filing_id===selectedFiling):catalog.some(f=>f.ownership!=='USER_PRODUCT')
+ const blocked=(params.source==='US_SEC'||showSec&&!!selectedFiling)&&!secReady
+ const current=comparison&&JSON.stringify(comparison.sent)===JSON.stringify(params)?comparison:undefined
+ return <div className="stack">
+  <form className="card" onSubmit={e=>{e.preventDefault();if(!run.isPending&&!blocked&&params.query.trim().length>=2)run.mutate(params,{onSuccess:setComparison})}}>
+   <div className="toolbar">
+    <input aria-label="Câu hỏi tìm kiếm" placeholder="Nhập câu hỏi hoặc chỉ tiêu tài chính…" value={params.query}
+     onChange={e=>setParams({...params,query:e.target.value})} required minLength={2}/>
+    <Button type="submit" disabled={run.isPending||blocked||params.query.trim().length<2}><Search size={16}/> So sánh 4 phương pháp</Button>
+   </div>
+   <div className="filters compare-filters">
+    <label>Nguồn<select aria-label="Nguồn dữ liệu" value={params.source} onChange={e=>setParams({...params,source:e.target.value as Source,document_ids:[],filing_ids:[],issuer:'',period:'',statement_scope:null})}>
+     <option value="USER_UPLOADS">PDF tải lên</option><option value="US_SEC">Hồ sơ SEC (EDGAR)</option>
+     <option value="ALL">PDF và SEC</option><option value="VIETNAM">Tài liệu Việt Nam</option>
+    </select></label>
+    {params.source!=='US_SEC'&&<label>Tài liệu PDF<select aria-label="Tài liệu tìm kiếm" value={params.document_ids[0]||''}
+     onChange={e=>setParams({...params,document_ids:e.target.value?[e.target.value]:[],issuer:'',period:''})}>
+     <option value="">Tất cả PDF sẵn sàng</option>
+     {docs.data?.documents.filter(d=>d.status==='READY').map(d=><option value={d.id} key={d.id}>{[d.issuer,d.report_period,d.filename].filter(Boolean).join(' · ')}</option>)}
+    </select></label>}
+    {showSec&&<label>Hồ sơ SEC<select aria-label="Tài liệu SEC tìm kiếm" value={selectedFiling}
+     onChange={e=>setParams({...params,filing_ids:e.target.value?[e.target.value]:[],issuer:'',period:''})}>
+     <option value="">{filings.isPending?'Đang tải hồ sơ…':catalog.some(f=>f.ownership!=='USER_PRODUCT')?'Tất cả hồ sơ demo':'Chọn hồ sơ SEC'}</option>
+     {selectedFiling&&!catalog.some(f=>f.filing_id===selectedFiling)&&<option value={selectedFiling} disabled>Hồ sơ đã chọn chưa khả dụng</option>}
+     {catalog.map(f=><option key={f.filing_id} value={f.filing_id}>{f.ticker} · {f.form} · {f.report_period} · {f.accession}</option>)}
+    </select></label>}
+    <label>Số kết quả mỗi phương pháp<select aria-label="Số kết quả" value={params.top_k} onChange={e=>setParams({...params,top_k:Number(e.target.value)})}>
+     <option>5</option><option>10</option><option>20</option>
+    </select></label>
+   </div>
+   <details><summary>Bộ lọc bổ sung</summary><div className="filters compare-filters">
+    <label>Doanh nghiệp / mã cổ phiếu<input value={params.issuer} onChange={e=>setParams({...params,issuer:e.target.value})}/></label>
+    <label>Kỳ báo cáo<input value={params.period} onChange={e=>setParams({...params,period:e.target.value})}/></label>
+    <label>Phạm vi PDF<select value={params.statement_scope||''} onChange={e=>setParams({...params,statement_scope:(e.target.value||null) as SearchParams['statement_scope']})}>
+     <option value="">Mọi phạm vi</option><option value="SEPARATE">Riêng / công ty mẹ</option><option value="CONSOLIDATED">Hợp nhất</option>
+    </select></label>
+   </div></details>
+   {blocked&&!filings.isPending&&<p className="muted">Chọn hồ sơ SEC đã lập chỉ mục để bắt đầu.</p>}
+  </form>
+  <ErrorBox error={run.error}/>
+  {run.isPending?<Loading/>:<div className="compare-grid">
+   {comparisonMethods.map(([method,label,description])=>{
+    const data=method==='faith_r'?current?.result.faith_r:current?.result.arms[method]
+    const error=current?.result.arm_errors[method]||data?.source_errors[0]?.reason
+    const message=error==='SEC_DENSE_GENERATION_NOT_READY'?'Hồ sơ SEC chưa có chỉ mục Dense.':error?reasonText(error):null
+    return <section className="card compare-col" key={method} aria-label={label}>
+     <h2>{label}</h2><small>{description}</small>
+     {data?.mode_executed&&<p className="compare-summary">
+      <strong>{data.results.length}/{current?.sent.top_k} kết quả</strong> · {data.latency_ms.toLocaleString('vi-VN')} ms
+      {method==='faith_r'&&data.mode_executed==='bm25'&&<small> · Ứng viên từ BM25</small>}
+     </p>}
+     {message&&<p className="muted">{data?.results.length?'Kết quả một phần. ':''}{message}</p>}
+     {current&&!message&&!data?.results.length&&<p className="muted">Không tìm thấy bằng chứng trong phạm vi đã chọn.</p>}
+     {!current&&<p className="muted">Chưa chạy so sánh.</p>}
+     {data?.results.map(item=><article className="hit" key={evidenceId(item)}>
+      <h3>#{item.rank} · {item.issuer||item.filename||'Bằng chứng tài chính'}</h3>
+      <small>{[item.report_period||item.period,item.page?`Trang PDF ${item.page}`:'Hồ sơ SEC'].filter(Boolean).join(' · ')}</small>
+      <p><Highlight text={item.text} query={current?.sent.query||''}/></p>
+      <button type="button" className="source-button" onClick={()=>open(item)}>Mở nguồn</button>
+     </article>)}
+    </section>
+   })}
+  </div>}
+ </div>
 }
 
 export function ExtractionCoverage({doc}:{doc:Pick<Doc,'extraction_coverage_status'|'coverage_warnings'|'financial_evidence_status'>}){

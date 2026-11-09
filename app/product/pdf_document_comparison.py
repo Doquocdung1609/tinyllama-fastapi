@@ -2,14 +2,15 @@
 from decimal import Decimal, localcontext
 import re
 
-from app.product.analysis import eligible_facts
+from app.product.analysis import eligible_facts, parse_number
 from app.product.document_financial_cells import LABELS, cached_facts
 from app.product.document_page_map import page_entry
 from app.product.financial_understanding import ALIASES
 from app.product.native_statement_cells import catalog
 from app.product.ocr_candidate_answer import eligible_candidate
 from app.product.pdf_extract import folded
-from app.product.pdf_ocr_financial_v3 import HUMAN, explicit_cover_scope
+from app.product.pdf_ocr_financial_v2 import arithmetic_warnings, reconstruct
+from app.product.pdf_ocr_financial_v3 import AUTOMATED, HUMAN, explicit_cover_scope, metric_for, periods, statement_type
 from app.product.statement_question_answer import UNITS, _display, _key, _rows, _table, _choose
 
 ASSET = {'assets': ('tong tai san', 'tong cong tai san', 'total assets')}
@@ -23,6 +24,43 @@ SCALE = {'VND': Decimal(1), 'TRIEU_VND': Decimal(1000000), 'NGHIN_VND': Decimal(
 BILLION = SCALE['TY_VND']
 
 
+def _legacy_statement_page(page, cover_scope):
+    """Bind cached OCR geometry without changing the stored generation."""
+    if page['method'] != 'OCR' or any(c.get('binding_status') for r in page['tables'] for c in r['cells']):
+        return page
+    kind = statement_type(page['text'])
+    if kind not in {'BALANCE_SHEET', 'INCOME_STATEMENT'}:
+        return page
+    scope = explicit_cover_scope(page['text'][:950]) or cover_scope
+    sideways = page['engine'].get('correction_clockwise') in {90, 270}
+    words = []
+    for line in page['lines']:
+        for word in line['words']:
+            if not all(key in word for key in ('rx', 'ry', 'rh', 'box')) or word.get('confidence') is None:
+                continue
+            x0, y0, x1, y1 = word['box']
+            words.append({**word, 'rw': word.get('rw', y1-y0 if sideways else x1-x0)})
+    rows = arithmetic_warnings(reconstruct(words, page['page'], scope))
+    for row in rows:
+        metric = metric_for(row, kind)
+        label = folded(row['row_label'])
+        if kind == 'BALANCE_SHEET':
+            if row['item_code'] == '400' and 'chu so huu' in label:
+                metric = 'equity'
+            elif row['item_code'] == '411' and re.match(r'von (?:co phan|gop cua chu so huu)\b', label):
+                metric = 'paid_in_capital'
+        row['metric'] = metric
+        for cell in row['cells']:
+            _, end, period_type = periods(cell['period'], kind)
+            cell.update(period_end=end, period_type=period_type, statement_scope=scope, review_status=AUTOMATED)
+            if cell['box'] and cell['binding_status'] == 'GEOMETRIC_CANDIDATE':
+                try:
+                    cell['numeric_value'] = str(parse_number(cell['text'], 'vi_VN'))
+                except ValueError:
+                    pass
+    return {**page, 'tables': rows}
+
+
 def _ocr_cells(workspace, doc, metrics, year, kind):
     chosen = {}
     cover_scope = None
@@ -31,6 +69,7 @@ def _ocr_cells(workspace, doc, metrics, year, kind):
             continue
         if number == 1:
             cover_scope = explicit_cover_scope(folded(page['text']))
+        page = _legacy_statement_page(page, cover_scope)
         observed = cached_facts(doc, page, page_entry(doc, number, page, error), cover_scope, None)
         rows = {r['id']: r for r in page['tables']}
         for cell in observed:
@@ -47,6 +86,7 @@ def _ocr_cells(workspace, doc, metrics, year, kind):
             refs = chosen.setdefault(metric, [])
             refs.append({**cell['citation'], 'value': cell['value'], 'value_raw': cell['raw'],
                          'row_label': LABELS[metric], 'period': cell['period_end'], 'period_type': kind,
+                         'period_start': cell['period_start'], 'period_end': cell['period_end'],
                          'review_status': cell['review_status'], 'currency': 'VND', 'scale': str(SCALE[cell['unit']])})
     try:
         reviews = eligible_facts(workspace, [doc['id']])
@@ -90,13 +130,26 @@ def _profiles(workspace, docs, profiles, catalogs):
         scope = ' và '.join(label for key, label in [('SEPARATE', 'riêng'), ('CONSOLIDATED', 'hợp nhất')] if key in scopes)
         methods = set()
         first_readable = None
+        unit_source = None
+        cover_scope = None
+        quarter = None
         units = {c['unit'] for c in cells}
         for number, page, error in workspace.iter_document_evidence(doc['id'], doc['pages']):
             if page and page['text'].strip():
                 methods.add(page['method'])
                 if not first_readable:
                     first_readable = page_entry(doc, number, page, error)['citation']
-                units.update(c['unit'] for row in page['tables'] for c in row['cells'] if c.get('unit') in SCALE)
+                if number == 1:
+                    cover_scope = explicit_cover_scope(page['text'])
+                    quarter = re.search(r'\bquy\s+(iv|iii|ii|i|[1-4])\s*(?:/|nam\s+)?\s*(20\d{2})\b', folded(page['text']))
+                if not cells:
+                    if unit_source is None:
+                        page = _legacy_statement_page(page, cover_scope)
+                    observed = {c['unit'] for row in page['tables'] for c in row['cells'] if c.get('unit') in SCALE and c.get('period')}
+                    if observed:
+                        units.update(observed)
+                        if unit_source is None:
+                            unit_source = page_entry(doc, number, page, error)['citation']
         examples = []
         if cells:
             for key in sorted(scopes):
@@ -105,15 +158,19 @@ def _profiles(workspace, docs, profiles, catalogs):
                     examples.append(match)
         elif first_readable:
             examples.append(first_readable)
-        refs.extend(examples)
+            if unit_source and unit_source['page'] != first_readable['page']:
+                examples.append(unit_source)
+        identity = next(iter(profile['source_identities']), doc.get('issuer'))
+        refs.extend({**example, 'issuer': identity} for example in examples)
         rows.append((doc['filename'], 'Bảng điều chỉnh báo cáo tài chính' if cells else 'Báo cáo tài chính',
-                     scope or 'Chưa rõ', ', '.join(sorted({c['period'] for c in cells})) or profile['report_year'] or 'Chưa rõ',
+                     scope or 'Chưa rõ', f'Quý {quarter[1].upper()}/{quarter[2]}' if quarter and not cells else
+                     ', '.join(sorted({c['period'] for c in cells})) or profile['report_year'] or 'Chưa rõ',
                      ', '.join(UNITS.get(unit, unit) for unit in sorted(units)) or 'Chưa rõ',
                      ', '.join({'NATIVE': 'lớp chữ PDF', 'OCR': 'OCR', 'REGION_FUSION': 'lớp chữ và OCR'}.get(m, 'chưa rõ')
                                for m in sorted(methods)) or 'Chưa đọc được',
                      ' '.join(f'[{i}]' for i in range(len(refs) - len(examples) + 1, len(refs) + 1))))
     return {'status': 'SOURCE_EXCERPTS', 'answer_status': 'SOURCE_EXCERPTS', 'citations': refs, 'values': [],
-            'answer': _table(('PDF', 'Loại báo cáo', 'Phạm vi', 'Năm trong nguồn', 'Đơn vị', 'Trích xuất', 'Nguồn'), rows)}
+            'answer': _table(('PDF', 'Loại báo cáo', 'Phạm vi', 'Kỳ báo cáo', 'Đơn vị', 'Trích xuất', 'Nguồn'), rows)}
 
 
 def _qualifier(question, issuer, own, other, fallback):
@@ -180,6 +237,8 @@ def compare(workspace, question, docs, profiles, issuers):
             cells = _native_cells(native, metrics, year, kind, 'RESTATED')
         else:
             cells = _ocr_cells(workspace, doc, metrics, year, kind)
+        if ratio and 'liabilities' in cells:
+            cells = {key: cells[key] for key in ('assets', 'liabilities') if key in cells}
         for metric, cell in cells.items():
             cell = {**cell, 'issuer': issuer}
             refs.append(cell)
@@ -245,7 +304,8 @@ def compare(workspace, question, docs, profiles, issuers):
         elif len(operands) == 2:
             metric = 'assets' if assets else 'net_income'
             if all(metric in values for values in operands.values()):
-                a, b = sorted((values[metric] for values in operands.values()), reverse=True)
+                (larger, a), (smaller, b) = sorted(((name, values[metric]) for name, values in operands.items()),
+                                                   key=lambda item: item[1][0], reverse=True)
                 delta = (a[0] - b[0]) / BILLION
                 calculations.append(str(delta))
                 blocks.append(f"Chênh lệch: {_display(a[0]/BILLION)} − {_display(b[0]/BILLION)} = "
@@ -253,11 +313,13 @@ def compare(workspace, question, docs, profiles, issuers):
                 if assets and b[0] > 0:
                     multiple = a[0] / b[0]
                     calculations.append(str(multiple))
-                    blocks.append(f"Quy mô lớn hơn **{_display(multiple)} lần**, tính bằng giá trị lớn chia giá trị nhỏ. "
-                                  f"[{a[1]}][{b[1]}] Hai số thuộc hai doanh nghiệp, ở các ngày và ngành khác nhau.")
-                if income:
-                    blocks.append('Chênh lệch này so sánh hai doanh nghiệp và các kỳ được ghi trong bảng. '
-                                  'Không thể diễn giải nó như tăng trưởng qua các năm.')
+                    blocks.append(f"Tổng tài sản {larger} bằng **{_display(multiple)} lần** tổng tài sản {smaller}. "
+                                  f"[{a[1]}][{b[1]}] Đây là so sánh quy mô tại các ngày ghi trong bảng. "
+                                  'Khi diễn giải cần xét đặc điểm ngành và mô hình kinh doanh của từng doanh nghiệp.')
+        if income:
+            blocks.append('Chênh lệch chỉ mô tả quy mô lợi nhuận của hai doanh nghiệp. '
+                          'Tăng trưởng cần so cùng doanh nghiệp qua các kỳ có độ dài tương đương. '
+                          'Bảng này cần được đọc theo độ dài kỳ và đặc điểm ngành của từng bên.')
     if missing:
         blocks.append('Chưa đủ ô nguồn cho ' + '; '.join(missing) + '.')
     if preliminary:

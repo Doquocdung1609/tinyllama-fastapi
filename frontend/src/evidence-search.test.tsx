@@ -16,3 +16,28 @@ describe('single Search form and honest retrieval choices',()=>{
  it('Dense and Hybrid stay raw; FAITH-R selects its compound pipeline',async()=>{show();fireEvent.click(screen.getByRole('button',{name:'Dense'}));fireEvent.click(screen.getByRole('button',{name:'Tìm kiếm'}));await waitFor(()=>expect(post).toHaveBeenCalledTimes(1));expect(vi.mocked(post).mock.calls[0][1]).toMatchObject({mode:'dense',search_profile:'baseline'});await screen.findByText('Không tìm thấy nguồn trong phạm vi này');fireEvent.click(screen.getByRole('button',{name:'FAITH-R'}));fireEvent.click(screen.getByRole('button',{name:'Tìm kiếm'}));await waitFor(()=>expect(post).toHaveBeenCalledTimes(2));expect(vi.mocked(post).mock.calls[1][1]).toMatchObject({mode:'hybrid',search_profile:'faith_r_product_v1'})})
  it('does not show a no-evidence warning for retrieved unverified rows or an empty numeric table',async()=>{vi.mocked(post).mockResolvedValue({status:'READY',results:[{text:'Retained earnings | 10 | 2 | 12',rank:1,page:4,source_cells:[{text:'10'},{text:'2'},{text:'12'}]}],returned_count:1,requested_top_k:5,candidate_count:20,matching_evidence_count:1,verified_value_count:0,latency_ms:10,source_errors:[],evidence_status:'RELATED_UNVERIFIED_EVIDENCE',retrieval_status:'RESULTS_FOUND'});show();fireEvent.click(screen.getByRole('button',{name:'Tìm kiếm'}));await screen.findByText('1 / tối đa 5');expect(screen.queryByText('Chưa tìm thấy bằng chứng đủ tin cậy')).toBeNull();expect(screen.queryByRole('table')).toBeNull();expect(screen.queryByText(/BM25 #—/)).toBeNull()})
 })
+
+describe('SEC source selection',()=>{
+ it('shows SEC while its catalog is unavailable and prevents an unscoped search',async()=>{
+  show()
+  fireEvent.change(screen.getByLabelText('Nguồn dữ liệu'),{target:{value:'US_SEC'}})
+  await screen.findByText(/Chưa tải được hồ sơ SEC sẵn sàng/)
+  expect(screen.getByRole<HTMLButtonElement>('button',{name:'Tìm kiếm'}).disabled).toBe(true)
+  expect(post).not.toHaveBeenCalled()
+ })
+ it('sends the selected personal SEC filing and uses BM25 for a lexical-only index',async()=>{
+  const filingId='sec:0000789019:0001193125-25-256321'
+  vi.mocked(api).mockImplementation(async p=>p==='/sec/catalog'?{status:'READY',filings:[
+   {filing_id:filingId,ticker:'MSFT',form:'10-Q',report_period:'2025-09-30',accession:'0001193125-25-256321',ownership:'USER_PRODUCT',dense_ready:false}
+  ]} as never:{documents:[]} as never)
+  show()
+  fireEvent.change(screen.getByLabelText('Nguồn dữ liệu'),{target:{value:'US_SEC'}})
+  await screen.findByRole('option',{name:/MSFT.*0001193125-25-256321.*BM25/})
+  fireEvent.change(screen.getByLabelText('Tài liệu SEC tìm kiếm'),{target:{value:filingId}})
+  expect(screen.getByRole<HTMLButtonElement>('button',{name:'Hybrid RRF'}).disabled).toBe(true)
+  fireEvent.click(screen.getByRole('button',{name:'Tìm kiếm'}))
+  await waitFor(()=>expect(post).toHaveBeenCalledWith('/query',expect.objectContaining({
+   source:'US_SEC',filing_ids:[filingId],document_ids:[],mode:'bm25',search_profile:'faith_r_product_v1'
+  })))
+ })
+})

@@ -153,6 +153,7 @@ def reset_financial_chat(session_id:str):
 def financial_chat(payload:ChatRequest):
     from app.product.natural_pdf_dialogue import respond as natural_pdf_answer
     from app.product.document_reasoning import answer as document_reasoning
+    from app.product.pdf_page_context import answer as page_context_answer
     from app.product.statement_question_answer import answer as statement_answer
     w=workspace();session=payload.session_id or uuid4().hex
     if payload.source=='USER_UPLOADS' and not payload.document_ids:raise HTTPException(422,detail={'code':'SELECT_PDF_SOURCE'})
@@ -284,6 +285,8 @@ def financial_chat(payload:ChatRequest):
                                   source_errors=result['source_errors'])
         elif conflict:answer=conflict
         elif focused_reply is not None:answer=focused_reply
+        elif not payload.constraints and selection is None and (context:=page_context_answer(w,question,payload.document_ids)) is not None:
+            answer=context
         elif not payload.constraints and selection is None and (statement:=statement_answer(w,question,payload.document_ids)) is not None:
             answer=statement
         elif not payload.constraints and (reasoned:=_reason_with_progress(w,request,payload.progress_id,document_reasoning)) is not None:
@@ -402,6 +405,10 @@ class SearchResponse(BaseModel):
     verified_value_count:int=0
 
 
+class ComparisonRequest(UnifiedSearch):
+    include_faith_r:bool=False
+
+
 class ComparisonResponse(BaseModel):
     arms:dict[str,SearchResponse]
     generation:str
@@ -409,6 +416,8 @@ class ComparisonResponse(BaseModel):
     quality_metrics:None=None
     quality_reason:str
     candidate:SearchResponse|None=None
+    faith_r:SearchResponse|None=None
+    arm_errors:dict[str,str]=Field(default_factory=dict)
 
 
 @sec_scoped
@@ -595,17 +604,37 @@ def query(payload:UnifiedSearch):
 
 
 @router.post('/compare',response_model=ComparisonResponse)
-def compare(payload:UnifiedSearch):
+def compare(payload:ComparisonRequest):
     try:
-        # Scientific comparison remains B0/B1/B2 independently of the product profile.
-        arms={mode:unified_search(payload.model_copy(update={'mode':mode,'search_profile':'baseline'})) for mode in ('bm25','dense','hybrid')}
-        if len({r['generation'] for r in arms.values()})!=1:
+        arms={}
+        errors={}
+        for mode in ('bm25','dense','hybrid'):
+            try:
+                arms[mode]=unified_search(payload.model_copy(update={
+                    'mode':mode,'search_profile':'baseline',
+                    'auto_fallback':payload.auto_fallback and not payload.include_faith_r,
+                }))
+            except Exception as exc:
+                if not payload.include_faith_r:raise
+                errors[mode]=_error(exc)
+        comparable=all(not r.get('source_errors') for r in arms.values())
+        if (not payload.include_faith_r or comparable) and len({r['generation'] for r in arms.values()})>1:
             raise ValueError('COMPARISON_SNAPSHOT_CHANGED')
+        faith_r=None
+        if payload.include_faith_r:
+            hybrid=arms.get('hybrid')
+            mode='hybrid' if hybrid and hybrid.get('mode_executed') else 'bm25'
+            try:
+                faith_r=unified_search(payload.model_copy(update={'mode':mode,'search_profile':'faith_r_product_v1'}))
+            except Exception as exc:
+                errors['faith_r']=_error(exc)
         ids={mode:{r.get('chunk_id',r.get('parent_id')) for r in result['results']} for mode,result in arms.items()}
-        return {'arms':arms,'generation':arms['bm25']['generation'],
-                'overlap':{'bm25_dense':len(ids['bm25']&ids['dense']),'all_three':len(set.intersection(*ids.values()))},
+        return {'arms':arms,'generation':next((r['generation'] for r in arms.values()),''),
+                'overlap':{'bm25_dense':len(ids.get('bm25',set())&ids.get('dense',set())),
+                           'all_three':len(set.intersection(*ids.values())) if len(ids)==3 else 0},
                   'quality_metrics':None,'quality_reason':'NO_QRELS_FOR_THIS_QUERY',
-                  'candidate':unified_search(payload) if payload.search_profile in {'auto','faith_r_product_v1','production_v3','production_v3r','production_v3r2','production_v3r3'} else None}
+                  'faith_r':faith_r,'arm_errors':errors,
+                  'candidate':unified_search(payload) if not payload.include_faith_r and payload.search_profile in {'auto','faith_r_product_v1','production_v3','production_v3r','production_v3r2','production_v3r3'} else None}
     except Exception as exc:raise HTTPException(409,detail={'code':_error(exc)}) from None
 
 
@@ -840,10 +869,14 @@ def ocr_comparison(document_id:str,page:int):
 
 
 @router.get('/documents/{document_id}/chunks')
-def document_chunks(document_id:str,page:int=1):
+def document_chunks(document_id:str,page:int=1,chunk_id:str|None=Query(default=None,max_length=200)):
     if not 1<=page<=250:raise HTTPException(422,detail='INVALID_PAGE')
     workspace().source_file(document_id)
     with closing(workspace()._connect()) as db:
+        if chunk_id is not None:
+            return {'chunks':[dict(r) for r in db.execute(
+                'SELECT id AS chunk_id,document_id,page,text FROM chunks WHERE document_id=? AND page=? AND id=?',
+                (document_id,page,chunk_id))]}
         return {'chunks':[dict(r) for r in db.execute('SELECT id AS chunk_id,document_id,page,text FROM chunks WHERE document_id=? AND page=? LIMIT 30',(document_id,page))]}
 
 

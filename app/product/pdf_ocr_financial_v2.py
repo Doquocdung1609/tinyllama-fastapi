@@ -54,7 +54,7 @@ def column_headers(words):
         span = min(38, min(distances)*.47)
         nearby = [w for w in words if abs(cx(w)-cx(unit))<=span and 2<cy(unit)-cy(w)<31]
         dates = [w for w in nearby if DATE.fullmatch(w['text'])]
-        years = [w for w in nearby if re.fullmatch(r'20\d{2}',w['text'])]
+        years = [w for w in nearby if re.fullmatch(r'(?:nam\s*)?20\d{2}',base.folded(w['text']))]
         header = None
         period = None
         if len(dates)==1 and (not years or cy(dates[0])>=max(map(cy,years))-3):
@@ -71,11 +71,13 @@ def column_headers(words):
                     break
                 prefix.insert(0,w['text'])
                 left=w['rx']
-            phrase = base.folded(' '.join(prefix))
+            year_text = base.folded(year['text'])
+            year_number = year_text[-4:]
+            phrase = base.folded(' '.join(prefix+[year_text[:-4]]))
             if re.search(r'\bquy\s+(?:iv|4)\b',phrase):
-                period = 'Q4 '+year['text']
+                period = 'Q4 '+year_number
             elif re.search(r'\bnam\b',phrase):
-                period = 'FY '+year['text']
+                period = 'FY '+year_number
             header = ' '.join(prefix+[year['text']])
         headers.append({'index':index,'period':period,'header':header,'unit':'VND',
                         'center':cx(unit),'unit_word':unit})
