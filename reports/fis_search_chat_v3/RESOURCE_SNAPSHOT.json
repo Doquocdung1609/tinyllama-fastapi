@@ -1,0 +1,26 @@
+{
+  "total_ram_bytes": 8419053568,
+  "available_ram_bytes": 1144676352,
+  "processes": [
+    {
+      "name": "python.exe",
+      "rss_bytes": 20836352
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 3735552
+    },
+    {
+      "name": "ollama.exe",
+      "rss_bytes": 18526208
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 193904640
+    },
+    {
+      "name": "python.exe",
+      "rss_bytes": 4272128
+    }
+  ]
+}

@@ -1,0 +1,3716 @@
+{
+  "mocked": false,
+  "records": [
+    {
+      "id": "C14",
+      "request": {
+        "question": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+        "document_ids": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ]
+      },
+      "response": {
+        "status": "SOURCE_EXCERPTS",
+        "answer_status": "PARTIAL_VERIFIED",
+        "answer": "Các dòng dưới đây có ô và cột điều chỉnh đã được đối chiếu với PDF gốc. Đây là danh sách một phần, chưa phải toàn bộ các điều chỉnh.\n\n| Phạm vi / chỉ tiêu | Đã công bố | Điều chỉnh | Trình bày lại |\n|---|---|---|---|\n| Riêng · VII. Các khoản nợ khác | 43.124.242 triệu đồng [1] | 39.352 triệu đồng [2] | 43.163.594 triệu đồng [3] |\n| Hợp nhất · 3. Các khoản phải trả và công nợ khác | 21.740.674 triệu đồng [4] | 42.029 triệu đồng [5] | 21.782.703 triệu đồng [6] |\n| Riêng · 2. Các khoản phải trả và công nợ khác | 14.892.857 triệu đồng [7] | 39.352 triệu đồng [8] | 14.932.209 triệu đồng [9] |\n| Hợp nhất · VII. Các khoản nợ khác | 50.490.598 triệu đồng [10] | 42.029 triệu đồng [11] | 50.532.627 triệu đồng [12] |",
+        "answer_explanation": "Đơn vị trong bảng là triệu đồng. Mỗi cột có citation tới đúng ô; có thể mở các trang còn lại của tài liệu để kiểm tra độ phủ.",
+        "values": [],
+        "citations": [
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              294.348876953125,
+              198.35450744628906,
+              334.12091064453125,
+              208.05224609375
+            ],
+            "row_box": [
+              49.31999969482422,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "header_box": [
+              230.2500762939453,
+              55.434505462646484,
+              339.5486526489258,
+              86.49224853515625
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "43,124,242",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+            "evidence_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+            "operand_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+            "value": "43124242",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              398.8988037109375,
+              198.35450744628906,
+              423.16510009765625,
+              208.05224609375
+            ],
+            "row_box": [
+              49.31999969482422,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "header_box": [
+              339.5486526489258,
+              55.434505462646484,
+              434.95355224609375,
+              86.49224853515625
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "39,352",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+            "evidence_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+            "operand_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+            "value": "39352",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              498.9535217285156,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "row_box": [
+              49.31999969482422,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "header_box": [
+              434.95355224609375,
+              55.434505462646484,
+              561.0598754882812,
+              86.49224853515625
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "43,163,594",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+            "evidence_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+            "operand_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+            "value": "43163594",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              326.84149169921875,
+              220.9145050048828,
+              366.70111083984375,
+              230.61224365234375
+            ],
+            "row_box": [
+              59.159996032714844,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "header_box": [
+              260.2500762939453,
+              44.63450622558594,
+              370.2686309814453,
+              75.69224548339844
+            ],
+            "row_label": "3. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:3. cac khoan phai tra va cong no khac",
+            "value_raw": "21,740,674",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_0cd59876dc59666bfd06d466215e",
+            "evidence_id": "cellv2_0cd59876dc59666bfd06d466215e",
+            "operand_id": "cellv2_0cd59876dc59666bfd06d466215e",
+            "value": "21740674",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              429.2282409667969,
+              220.9145050048828,
+              453.5821533203125,
+              230.61224365234375
+            ],
+            "row_box": [
+              59.159996032714844,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "header_box": [
+              370.2686309814453,
+              44.63450622558594,
+              459.9135284423828,
+              75.69224548339844
+            ],
+            "row_label": "3. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:3. cac khoan phai tra va cong no khac",
+            "value_raw": "42,029",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_1416c93f658733781137198b9330",
+            "evidence_id": "cellv2_1416c93f658733781137198b9330",
+            "operand_id": "cellv2_1416c93f658733781137198b9330",
+            "value": "42029",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              505.5731201171875,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "row_box": [
+              59.159996032714844,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "header_box": [
+              459.9135284423828,
+              44.63450622558594,
+              579.5398712158203,
+              75.69224548339844
+            ],
+            "row_label": "3. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:3. cac khoan phai tra va cong no khac",
+            "value_raw": "21,782,703",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+            "evidence_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+            "operand_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+            "value": "21782703",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              294.348876953125,
+              220.5545196533203,
+              334.12091064453125,
+              230.25225830078125
+            ],
+            "row_box": [
+              53.63999938964844,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "header_box": [
+              230.2500762939453,
+              55.434505462646484,
+              339.5486526489258,
+              86.49224853515625
+            ],
+            "row_label": "2. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:2. cac khoan phai tra va cong no khac",
+            "value_raw": "14,892,857",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+            "evidence_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+            "operand_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+            "value": "14892857",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              398.8988037109375,
+              220.5545196533203,
+              423.16510009765625,
+              230.25225830078125
+            ],
+            "row_box": [
+              53.63999938964844,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "header_box": [
+              339.5486526489258,
+              55.434505462646484,
+              434.95355224609375,
+              86.49224853515625
+            ],
+            "row_label": "2. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:2. cac khoan phai tra va cong no khac",
+            "value_raw": "39,352",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_69be913e72f8500e75455d9206de",
+            "evidence_id": "cellv2_69be913e72f8500e75455d9206de",
+            "operand_id": "cellv2_69be913e72f8500e75455d9206de",
+            "value": "39352",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              498.9535217285156,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "row_box": [
+              53.63999938964844,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "header_box": [
+              434.95355224609375,
+              55.434505462646484,
+              561.0598754882812,
+              86.49224853515625
+            ],
+            "row_label": "2. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:2. cac khoan phai tra va cong no khac",
+            "value_raw": "14,932,209",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+            "evidence_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+            "operand_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+            "value": "14932209",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              326.84149169921875,
+              187.5545196533203,
+              366.70111083984375,
+              197.25225830078125
+            ],
+            "row_box": [
+              54.840003967285156,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "header_box": [
+              260.2500762939453,
+              44.63450622558594,
+              370.2686309814453,
+              75.69224548339844
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "50,490,598",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+            "evidence_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+            "operand_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+            "value": "50490598",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              429.2282409667969,
+              187.5545196533203,
+              453.5821533203125,
+              197.25225830078125
+            ],
+            "row_box": [
+              54.840003967285156,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "header_box": [
+              370.2686309814453,
+              44.63450622558594,
+              459.9135284423828,
+              75.69224548339844
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "42,029",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+            "evidence_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+            "operand_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+            "value": "42029",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              505.5731201171875,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "row_box": [
+              54.840003967285156,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "header_box": [
+              459.9135284423828,
+              44.63450622558594,
+              579.5398712158203,
+              75.69224548339844
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "50,532,627",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+            "evidence_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+            "operand_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+            "value": "50532627",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              294.348876953125,
+              198.35450744628906,
+              334.12091064453125,
+              208.05224609375
+            ],
+            "row_box": [
+              49.31999969482422,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "header_box": [
+              230.2500762939453,
+              55.434505462646484,
+              339.5486526489258,
+              86.49224853515625
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "43,124,242",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+            "evidence_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+            "operand_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+            "value": "43124242"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              398.8988037109375,
+              198.35450744628906,
+              423.16510009765625,
+              208.05224609375
+            ],
+            "row_box": [
+              49.31999969482422,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "header_box": [
+              339.5486526489258,
+              55.434505462646484,
+              434.95355224609375,
+              86.49224853515625
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "39,352",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+            "evidence_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+            "operand_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+            "value": "39352"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              498.9535217285156,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "row_box": [
+              49.31999969482422,
+              198.35450744628906,
+              538.7257690429688,
+              208.05224609375
+            ],
+            "header_box": [
+              434.95355224609375,
+              55.434505462646484,
+              561.0598754882812,
+              86.49224853515625
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "43,163,594",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+            "evidence_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+            "operand_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+            "value": "43163594"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              326.84149169921875,
+              220.9145050048828,
+              366.70111083984375,
+              230.61224365234375
+            ],
+            "row_box": [
+              59.159996032714844,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "header_box": [
+              260.2500762939453,
+              44.63450622558594,
+              370.2686309814453,
+              75.69224548339844
+            ],
+            "row_label": "3. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:3. cac khoan phai tra va cong no khac",
+            "value_raw": "21,740,674",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_0cd59876dc59666bfd06d466215e",
+            "evidence_id": "cellv2_0cd59876dc59666bfd06d466215e",
+            "operand_id": "cellv2_0cd59876dc59666bfd06d466215e",
+            "value": "21740674"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              429.2282409667969,
+              220.9145050048828,
+              453.5821533203125,
+              230.61224365234375
+            ],
+            "row_box": [
+              59.159996032714844,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "header_box": [
+              370.2686309814453,
+              44.63450622558594,
+              459.9135284423828,
+              75.69224548339844
+            ],
+            "row_label": "3. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:3. cac khoan phai tra va cong no khac",
+            "value_raw": "42,029",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_1416c93f658733781137198b9330",
+            "evidence_id": "cellv2_1416c93f658733781137198b9330",
+            "operand_id": "cellv2_1416c93f658733781137198b9330",
+            "value": "42029"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              505.5731201171875,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "row_box": [
+              59.159996032714844,
+              220.9145050048828,
+              545.3453369140625,
+              230.61224365234375
+            ],
+            "header_box": [
+              459.9135284423828,
+              44.63450622558594,
+              579.5398712158203,
+              75.69224548339844
+            ],
+            "row_label": "3. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:3. cac khoan phai tra va cong no khac",
+            "value_raw": "21,782,703",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+            "evidence_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+            "operand_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+            "value": "21782703"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              294.348876953125,
+              220.5545196533203,
+              334.12091064453125,
+              230.25225830078125
+            ],
+            "row_box": [
+              53.63999938964844,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "header_box": [
+              230.2500762939453,
+              55.434505462646484,
+              339.5486526489258,
+              86.49224853515625
+            ],
+            "row_label": "2. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:2. cac khoan phai tra va cong no khac",
+            "value_raw": "14,892,857",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+            "evidence_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+            "operand_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+            "value": "14892857"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              398.8988037109375,
+              220.5545196533203,
+              423.16510009765625,
+              230.25225830078125
+            ],
+            "row_box": [
+              53.63999938964844,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "header_box": [
+              339.5486526489258,
+              55.434505462646484,
+              434.95355224609375,
+              86.49224853515625
+            ],
+            "row_label": "2. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:2. cac khoan phai tra va cong no khac",
+            "value_raw": "39,352",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_69be913e72f8500e75455d9206de",
+            "evidence_id": "cellv2_69be913e72f8500e75455d9206de",
+            "operand_id": "cellv2_69be913e72f8500e75455d9206de",
+            "value": "39352"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 4,
+            "box": [
+              498.9535217285156,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "row_box": [
+              53.63999938964844,
+              220.5545196533203,
+              538.7257690429688,
+              230.25225830078125
+            ],
+            "header_box": [
+              434.95355224609375,
+              55.434505462646484,
+              561.0598754882812,
+              86.49224853515625
+            ],
+            "row_label": "2. Các khoản phải trả và công nợ khác",
+            "metric": "restatement:2. cac khoan phai tra va cong no khac",
+            "value_raw": "14,932,209",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "SEPARATE",
+            "scope_source_page": 3,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+            "evidence_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+            "operand_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+            "value": "14932209"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              326.84149169921875,
+              187.5545196533203,
+              366.70111083984375,
+              197.25225830078125
+            ],
+            "row_box": [
+              54.840003967285156,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "header_box": [
+              260.2500762939453,
+              44.63450622558594,
+              370.2686309814453,
+              75.69224548339844
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "50,490,598",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ORIGINAL",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+            "evidence_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+            "operand_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+            "value": "50490598"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              429.2282409667969,
+              187.5545196533203,
+              453.5821533203125,
+              197.25225830078125
+            ],
+            "row_box": [
+              54.840003967285156,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "header_box": [
+              370.2686309814453,
+              44.63450622558594,
+              459.9135284423828,
+              75.69224548339844
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "42,029",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "ADJUSTMENT",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+            "evidence_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+            "operand_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+            "value": "42029"
+          },
+          {
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "source_kind": "PDF",
+            "page": 7,
+            "box": [
+              505.5731201171875,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "row_box": [
+              54.840003967285156,
+              187.5545196533203,
+              545.3453369140625,
+              197.25225830078125
+            ],
+            "header_box": [
+              459.9135284423828,
+              44.63450622558594,
+              579.5398712158203,
+              75.69224548339844
+            ],
+            "row_label": "VII. Các khoản nợ khác",
+            "metric": "restatement:vii. cac khoan no khac",
+            "value_raw": "50,532,627",
+            "period": "2024",
+            "period_end": "31/12/2024",
+            "period_type": "INSTANT",
+            "basis": "RESTATED",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 6,
+            "currency": "VND",
+            "scale": "1000000",
+            "unit": "TRIEU_VND",
+            "extraction_method": "NATIVE",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+            "issuer": "BIDV",
+            "citation_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+            "evidence_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+            "operand_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+            "value": "50532627"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "43,124,242",
+                "period": "2024",
+                "scope": "SEPARATE",
+                "basis": "ORIGINAL",
+                "unit": "TRIEU_VND",
+                "citation": "[1]"
+              }
+            ],
+            "result": "43124242",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_2",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "39,352",
+                "period": "2024",
+                "scope": "SEPARATE",
+                "basis": "ADJUSTMENT",
+                "unit": "TRIEU_VND",
+                "citation": "[2]"
+              }
+            ],
+            "result": "39352",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_3",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "43,163,594",
+                "period": "2024",
+                "scope": "SEPARATE",
+                "basis": "RESTATED",
+                "unit": "TRIEU_VND",
+                "citation": "[3]"
+              }
+            ],
+            "result": "43163594",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_4",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "21,740,674",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "ORIGINAL",
+                "unit": "TRIEU_VND",
+                "citation": "[4]"
+              }
+            ],
+            "result": "21740674",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_5",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "42,029",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "ADJUSTMENT",
+                "unit": "TRIEU_VND",
+                "citation": "[5]"
+              }
+            ],
+            "result": "42029",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_6",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "21,782,703",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "RESTATED",
+                "unit": "TRIEU_VND",
+                "citation": "[6]"
+              }
+            ],
+            "result": "21782703",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_7",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "14,892,857",
+                "period": "2024",
+                "scope": "SEPARATE",
+                "basis": "ORIGINAL",
+                "unit": "TRIEU_VND",
+                "citation": "[7]"
+              }
+            ],
+            "result": "14892857",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_8",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "39,352",
+                "period": "2024",
+                "scope": "SEPARATE",
+                "basis": "ADJUSTMENT",
+                "unit": "TRIEU_VND",
+                "citation": "[8]"
+              }
+            ],
+            "result": "39352",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_9",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "14,932,209",
+                "period": "2024",
+                "scope": "SEPARATE",
+                "basis": "RESTATED",
+                "unit": "TRIEU_VND",
+                "citation": "[9]"
+              }
+            ],
+            "result": "14932209",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_10",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "50,490,598",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "ORIGINAL",
+                "unit": "TRIEU_VND",
+                "citation": "[10]"
+              }
+            ],
+            "result": "50490598",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_11",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "42,029",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "ADJUSTMENT",
+                "unit": "TRIEU_VND",
+                "citation": "[11]"
+              }
+            ],
+            "result": "42029",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_12",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "50,532,627",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "RESTATED",
+                "unit": "TRIEU_VND",
+                "citation": "[12]"
+              }
+            ],
+            "result": "50532627",
+            "unit": "TRIEU_VND",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "TRIEU_VND",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "citation_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "value": "43124242",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "citation_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "value": "39352",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "citation_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "value": "43163594",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "citation_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "value": "21740674",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_1416c93f658733781137198b9330",
+              "citation_id": "cellv2_1416c93f658733781137198b9330",
+              "value": "42029",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "citation_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "value": "21782703",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "citation_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "value": "14892857",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_69be913e72f8500e75455d9206de",
+              "citation_id": "cellv2_69be913e72f8500e75455d9206de",
+              "value": "39352",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "citation_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "value": "14932209",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "citation_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "value": "50490598",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "citation_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "value": "42029",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+              "operand_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "citation_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "value": "50532627",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "43124242",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "EXTRACT",
+              "recomputed_result": "39352",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_3",
+              "operation": "EXTRACT",
+              "recomputed_result": "43163594",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_4",
+              "operation": "EXTRACT",
+              "recomputed_result": "21740674",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_5",
+              "operation": "EXTRACT",
+              "recomputed_result": "42029",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_6",
+              "operation": "EXTRACT",
+              "recomputed_result": "21782703",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_7",
+              "operation": "EXTRACT",
+              "recomputed_result": "14892857",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_8",
+              "operation": "EXTRACT",
+              "recomputed_result": "39352",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_9",
+              "operation": "EXTRACT",
+              "recomputed_result": "14932209",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_10",
+              "operation": "EXTRACT",
+              "recomputed_result": "50490598",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_11",
+              "operation": "EXTRACT",
+              "recomputed_result": "42029",
+              "status": "VERIFIED"
+            },
+            {
+              "calculation_id": "calculation_12",
+              "operation": "EXTRACT",
+              "recomputed_result": "50532627",
+              "status": "VERIFIED"
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+            "intent": "RESTATEMENT_LIST",
+            "metric": null,
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "period_type": null,
+            "basis": "ADJUSTMENT",
+            "operation": "EXTRACT",
+            "metrics": [],
+            "requested_unit": null,
+            "section": null,
+            "language": "vi",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": null,
+                "years": [
+                  "2024"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "navigation",
+                "expected_source_class": "SOURCE_LOCATION"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_adf37bd6db6a6a2d142c033e5e47"
+              ],
+              "source_scope": "SEPARATE",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "43124242",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_adf37bd6db6a6a2d142c033e5e47"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_2",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_a6b1574e2b15e3d5d2aa94fa344e"
+              ],
+              "source_scope": "SEPARATE",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "39352",
+              "calculation_id": "calculation_2",
+              "operand_ids": [
+                "cellv2_a6b1574e2b15e3d5d2aa94fa344e"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_3",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_746ccd72fa63e150c96040d7fe6b"
+              ],
+              "source_scope": "SEPARATE",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "43163594",
+              "calculation_id": "calculation_3",
+              "operand_ids": [
+                "cellv2_746ccd72fa63e150c96040d7fe6b"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_4",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_0cd59876dc59666bfd06d466215e"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "21740674",
+              "calculation_id": "calculation_4",
+              "operand_ids": [
+                "cellv2_0cd59876dc59666bfd06d466215e"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_5",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_1416c93f658733781137198b9330"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "42029",
+              "calculation_id": "calculation_5",
+              "operand_ids": [
+                "cellv2_1416c93f658733781137198b9330"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_6",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_d1cf141cdfc638a776e5db65c939"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "21782703",
+              "calculation_id": "calculation_6",
+              "operand_ids": [
+                "cellv2_d1cf141cdfc638a776e5db65c939"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_7",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_aecd48dcaf1cc2cbe173494e7e74"
+              ],
+              "source_scope": "SEPARATE",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "14892857",
+              "calculation_id": "calculation_7",
+              "operand_ids": [
+                "cellv2_aecd48dcaf1cc2cbe173494e7e74"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_8",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_69be913e72f8500e75455d9206de"
+              ],
+              "source_scope": "SEPARATE",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "39352",
+              "calculation_id": "calculation_8",
+              "operand_ids": [
+                "cellv2_69be913e72f8500e75455d9206de"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_9",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_fe661f900f8fbfabc685a06494eb"
+              ],
+              "source_scope": "SEPARATE",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "14932209",
+              "calculation_id": "calculation_9",
+              "operand_ids": [
+                "cellv2_fe661f900f8fbfabc685a06494eb"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_10",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_87126d6d6afbbbf83b7d4e9058e0"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "50490598",
+              "calculation_id": "calculation_10",
+              "operand_ids": [
+                "cellv2_87126d6d6afbbbf83b7d4e9058e0"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_11",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_88c5b839a75cb8853242d457a8ef"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "42029",
+              "calculation_id": "calculation_11",
+              "operand_ids": [
+                "cellv2_88c5b839a75cb8853242d457a8ef"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_12",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_eb51245a8ef1db09eac5e2f513fe"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "50532627",
+              "calculation_id": "calculation_12",
+              "operand_ids": [
+                "cellv2_eb51245a8ef1db09eac5e2f513fe"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                294.348876953125,
+                198.35450744628906,
+                334.12091064453125,
+                208.05224609375
+              ],
+              "row_box": [
+                49.31999969482422,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "header_box": [
+                230.2500762939453,
+                55.434505462646484,
+                339.5486526489258,
+                86.49224853515625
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "43,124,242",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "evidence_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "operand_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "value": "43124242",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                398.8988037109375,
+                198.35450744628906,
+                423.16510009765625,
+                208.05224609375
+              ],
+              "row_box": [
+                49.31999969482422,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "header_box": [
+                339.5486526489258,
+                55.434505462646484,
+                434.95355224609375,
+                86.49224853515625
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "39,352",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "evidence_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "operand_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "value": "39352",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                498.9535217285156,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "row_box": [
+                49.31999969482422,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "header_box": [
+                434.95355224609375,
+                55.434505462646484,
+                561.0598754882812,
+                86.49224853515625
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "43,163,594",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "evidence_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "operand_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "value": "43163594",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                326.84149169921875,
+                220.9145050048828,
+                366.70111083984375,
+                230.61224365234375
+              ],
+              "row_box": [
+                59.159996032714844,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "header_box": [
+                260.2500762939453,
+                44.63450622558594,
+                370.2686309814453,
+                75.69224548339844
+              ],
+              "row_label": "3. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:3. cac khoan phai tra va cong no khac",
+              "value_raw": "21,740,674",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "evidence_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "operand_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "value": "21740674",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                429.2282409667969,
+                220.9145050048828,
+                453.5821533203125,
+                230.61224365234375
+              ],
+              "row_box": [
+                59.159996032714844,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "header_box": [
+                370.2686309814453,
+                44.63450622558594,
+                459.9135284423828,
+                75.69224548339844
+              ],
+              "row_label": "3. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:3. cac khoan phai tra va cong no khac",
+              "value_raw": "42,029",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_1416c93f658733781137198b9330",
+              "evidence_id": "cellv2_1416c93f658733781137198b9330",
+              "operand_id": "cellv2_1416c93f658733781137198b9330",
+              "value": "42029",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                505.5731201171875,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "row_box": [
+                59.159996032714844,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "header_box": [
+                459.9135284423828,
+                44.63450622558594,
+                579.5398712158203,
+                75.69224548339844
+              ],
+              "row_label": "3. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:3. cac khoan phai tra va cong no khac",
+              "value_raw": "21,782,703",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "evidence_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "operand_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "value": "21782703",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                294.348876953125,
+                220.5545196533203,
+                334.12091064453125,
+                230.25225830078125
+              ],
+              "row_box": [
+                53.63999938964844,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "header_box": [
+                230.2500762939453,
+                55.434505462646484,
+                339.5486526489258,
+                86.49224853515625
+              ],
+              "row_label": "2. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:2. cac khoan phai tra va cong no khac",
+              "value_raw": "14,892,857",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "evidence_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "operand_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "value": "14892857",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                398.8988037109375,
+                220.5545196533203,
+                423.16510009765625,
+                230.25225830078125
+              ],
+              "row_box": [
+                53.63999938964844,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "header_box": [
+                339.5486526489258,
+                55.434505462646484,
+                434.95355224609375,
+                86.49224853515625
+              ],
+              "row_label": "2. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:2. cac khoan phai tra va cong no khac",
+              "value_raw": "39,352",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_69be913e72f8500e75455d9206de",
+              "evidence_id": "cellv2_69be913e72f8500e75455d9206de",
+              "operand_id": "cellv2_69be913e72f8500e75455d9206de",
+              "value": "39352",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                498.9535217285156,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "row_box": [
+                53.63999938964844,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "header_box": [
+                434.95355224609375,
+                55.434505462646484,
+                561.0598754882812,
+                86.49224853515625
+              ],
+              "row_label": "2. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:2. cac khoan phai tra va cong no khac",
+              "value_raw": "14,932,209",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "evidence_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "operand_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "value": "14932209",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                326.84149169921875,
+                187.5545196533203,
+                366.70111083984375,
+                197.25225830078125
+              ],
+              "row_box": [
+                54.840003967285156,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "header_box": [
+                260.2500762939453,
+                44.63450622558594,
+                370.2686309814453,
+                75.69224548339844
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "50,490,598",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "evidence_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "operand_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "value": "50490598",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                429.2282409667969,
+                187.5545196533203,
+                453.5821533203125,
+                197.25225830078125
+              ],
+              "row_box": [
+                54.840003967285156,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "header_box": [
+                370.2686309814453,
+                44.63450622558594,
+                459.9135284423828,
+                75.69224548339844
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "42,029",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "evidence_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "operand_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "value": "42029",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                505.5731201171875,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "row_box": [
+                54.840003967285156,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "header_box": [
+                459.9135284423828,
+                44.63450622558594,
+                579.5398712158203,
+                75.69224548339844
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "50,532,627",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "evidence_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "operand_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "value": "50532627",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                294.348876953125,
+                198.35450744628906,
+                334.12091064453125,
+                208.05224609375
+              ],
+              "row_box": [
+                49.31999969482422,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "header_box": [
+                230.2500762939453,
+                55.434505462646484,
+                339.5486526489258,
+                86.49224853515625
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "43,124,242",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "evidence_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "operand_id": "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "value": "43124242"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                398.8988037109375,
+                198.35450744628906,
+                423.16510009765625,
+                208.05224609375
+              ],
+              "row_box": [
+                49.31999969482422,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "header_box": [
+                339.5486526489258,
+                55.434505462646484,
+                434.95355224609375,
+                86.49224853515625
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "39,352",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "evidence_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "operand_id": "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "value": "39352"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                498.9535217285156,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "row_box": [
+                49.31999969482422,
+                198.35450744628906,
+                538.7257690429688,
+                208.05224609375
+              ],
+              "header_box": [
+                434.95355224609375,
+                55.434505462646484,
+                561.0598754882812,
+                86.49224853515625
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "43,163,594",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 43,124,242 | 39,352 | 43,163,594",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "evidence_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "operand_id": "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "value": "43163594"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                326.84149169921875,
+                220.9145050048828,
+                366.70111083984375,
+                230.61224365234375
+              ],
+              "row_box": [
+                59.159996032714844,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "header_box": [
+                260.2500762939453,
+                44.63450622558594,
+                370.2686309814453,
+                75.69224548339844
+              ],
+              "row_label": "3. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:3. cac khoan phai tra va cong no khac",
+              "value_raw": "21,740,674",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "evidence_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "operand_id": "cellv2_0cd59876dc59666bfd06d466215e",
+              "value": "21740674"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                429.2282409667969,
+                220.9145050048828,
+                453.5821533203125,
+                230.61224365234375
+              ],
+              "row_box": [
+                59.159996032714844,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "header_box": [
+                370.2686309814453,
+                44.63450622558594,
+                459.9135284423828,
+                75.69224548339844
+              ],
+              "row_label": "3. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:3. cac khoan phai tra va cong no khac",
+              "value_raw": "42,029",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_1416c93f658733781137198b9330",
+              "evidence_id": "cellv2_1416c93f658733781137198b9330",
+              "operand_id": "cellv2_1416c93f658733781137198b9330",
+              "value": "42029"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                505.5731201171875,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "row_box": [
+                59.159996032714844,
+                220.9145050048828,
+                545.3453369140625,
+                230.61224365234375
+              ],
+              "header_box": [
+                459.9135284423828,
+                44.63450622558594,
+                579.5398712158203,
+                75.69224548339844
+              ],
+              "row_label": "3. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:3. cac khoan phai tra va cong no khac",
+              "value_raw": "21,782,703",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "3. Các khoản phải trả và công nợ khác | 21,740,674 | 42,029 | 21,782,703",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "evidence_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "operand_id": "cellv2_d1cf141cdfc638a776e5db65c939",
+              "value": "21782703"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                294.348876953125,
+                220.5545196533203,
+                334.12091064453125,
+                230.25225830078125
+              ],
+              "row_box": [
+                53.63999938964844,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "header_box": [
+                230.2500762939453,
+                55.434505462646484,
+                339.5486526489258,
+                86.49224853515625
+              ],
+              "row_label": "2. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:2. cac khoan phai tra va cong no khac",
+              "value_raw": "14,892,857",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "evidence_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "operand_id": "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "value": "14892857"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                398.8988037109375,
+                220.5545196533203,
+                423.16510009765625,
+                230.25225830078125
+              ],
+              "row_box": [
+                53.63999938964844,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "header_box": [
+                339.5486526489258,
+                55.434505462646484,
+                434.95355224609375,
+                86.49224853515625
+              ],
+              "row_label": "2. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:2. cac khoan phai tra va cong no khac",
+              "value_raw": "39,352",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_69be913e72f8500e75455d9206de",
+              "evidence_id": "cellv2_69be913e72f8500e75455d9206de",
+              "operand_id": "cellv2_69be913e72f8500e75455d9206de",
+              "value": "39352"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 4,
+              "box": [
+                498.9535217285156,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "row_box": [
+                53.63999938964844,
+                220.5545196533203,
+                538.7257690429688,
+                230.25225830078125
+              ],
+              "header_box": [
+                434.95355224609375,
+                55.434505462646484,
+                561.0598754882812,
+                86.49224853515625
+              ],
+              "row_label": "2. Các khoản phải trả và công nợ khác",
+              "metric": "restatement:2. cac khoan phai tra va cong no khac",
+              "value_raw": "14,932,209",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "SEPARATE",
+              "scope_source_page": 3,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "2. Các khoản phải trả và công nợ khác | 14,892,857 | 39,352 | 14,932,209",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "evidence_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "operand_id": "cellv2_fe661f900f8fbfabc685a06494eb",
+              "value": "14932209"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                326.84149169921875,
+                187.5545196533203,
+                366.70111083984375,
+                197.25225830078125
+              ],
+              "row_box": [
+                54.840003967285156,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "header_box": [
+                260.2500762939453,
+                44.63450622558594,
+                370.2686309814453,
+                75.69224548339844
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "50,490,598",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ORIGINAL",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "evidence_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "operand_id": "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "value": "50490598"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                429.2282409667969,
+                187.5545196533203,
+                453.5821533203125,
+                197.25225830078125
+              ],
+              "row_box": [
+                54.840003967285156,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "header_box": [
+                370.2686309814453,
+                44.63450622558594,
+                459.9135284423828,
+                75.69224548339844
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "42,029",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "ADJUSTMENT",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "evidence_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "operand_id": "cellv2_88c5b839a75cb8853242d457a8ef",
+              "value": "42029"
+            },
+            {
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "source_kind": "PDF",
+              "page": 7,
+              "box": [
+                505.5731201171875,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "row_box": [
+                54.840003967285156,
+                187.5545196533203,
+                545.3453369140625,
+                197.25225830078125
+              ],
+              "header_box": [
+                459.9135284423828,
+                44.63450622558594,
+                579.5398712158203,
+                75.69224548339844
+              ],
+              "row_label": "VII. Các khoản nợ khác",
+              "metric": "restatement:vii. cac khoan no khac",
+              "value_raw": "50,532,627",
+              "period": "2024",
+              "period_end": "31/12/2024",
+              "period_type": "INSTANT",
+              "basis": "RESTATED",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 6,
+              "currency": "VND",
+              "scale": "1000000",
+              "unit": "TRIEU_VND",
+              "extraction_method": "NATIVE",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "text": "VII. Các khoản nợ khác | 50,490,598 | 42,029 | 50,532,627",
+              "issuer": "BIDV",
+              "citation_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "evidence_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "operand_id": "cellv2_eb51245a8ef1db09eac5e2f513fe",
+              "value": "50532627"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_adf37bd6db6a6a2d142c033e5e47"
+              ],
+              "proposed_result": "43124242",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_a6b1574e2b15e3d5d2aa94fa344e"
+              ],
+              "proposed_result": "39352",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_3",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_746ccd72fa63e150c96040d7fe6b"
+              ],
+              "proposed_result": "43163594",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_4",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_0cd59876dc59666bfd06d466215e"
+              ],
+              "proposed_result": "21740674",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_5",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_1416c93f658733781137198b9330"
+              ],
+              "proposed_result": "42029",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_6",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_d1cf141cdfc638a776e5db65c939"
+              ],
+              "proposed_result": "21782703",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_7",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_aecd48dcaf1cc2cbe173494e7e74"
+              ],
+              "proposed_result": "14892857",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_8",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_69be913e72f8500e75455d9206de"
+              ],
+              "proposed_result": "39352",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_9",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_fe661f900f8fbfabc685a06494eb"
+              ],
+              "proposed_result": "14932209",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_10",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_87126d6d6afbbbf83b7d4e9058e0"
+              ],
+              "proposed_result": "50490598",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_11",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_88c5b839a75cb8853242d457a8ef"
+              ],
+              "proposed_result": "42029",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_12",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_eb51245a8ef1db09eac5e2f513fe"
+              ],
+              "proposed_result": "50532627",
+              "result_unit": "TRIEU_VND",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+          "intent": "RESTATEMENT_LIST",
+          "metric": null,
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": null,
+          "basis": "ADJUSTMENT",
+          "operation": "EXTRACT",
+          "metrics": [],
+          "requested_unit": null,
+          "section": null,
+          "language": "vi",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": null,
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "navigation",
+              "expected_source_class": "SOURCE_LOCATION"
+            },
+            {
+              "question_slot_id": "coverage",
+              "metric": "adjustment_rows",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXHAUSTIVE_LIST",
+              "outputs": [
+                "exhaustive_rows"
+              ],
+              "kind": "coverage",
+              "expected_source_class": "COMPLETE_ADJUSTMENT_TABLE"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+          "intent": "RESTATEMENT_LIST",
+          "metric": null,
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": null,
+          "basis": "ADJUSTMENT",
+          "operation": "EXTRACT",
+          "metrics": [],
+          "requested_unit": null,
+          "section": null,
+          "language": "vi",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": null,
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "navigation",
+              "expected_source_class": "SOURCE_LOCATION"
+            },
+            {
+              "question_slot_id": "coverage",
+              "metric": "adjustment_rows",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXHAUSTIVE_LIST",
+              "outputs": [
+                "exhaustive_rows"
+              ],
+              "kind": "coverage",
+              "expected_source_class": "COMPLETE_ADJUSTMENT_TABLE"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "2bed2b3c312c8149e6a2ff6ab80c694a"
+          ]
+        },
+        "period": "31/12/2024",
+        "source_periods": [
+          "31/12/2024"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_adf37bd6db6a6a2d142c033e5e47",
+          "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+          "cellv2_746ccd72fa63e150c96040d7fe6b",
+          "cellv2_0cd59876dc59666bfd06d466215e",
+          "cellv2_1416c93f658733781137198b9330",
+          "cellv2_d1cf141cdfc638a776e5db65c939",
+          "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+          "cellv2_69be913e72f8500e75455d9206de",
+          "cellv2_fe661f900f8fbfabc685a06494eb",
+          "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+          "cellv2_88c5b839a75cb8853242d457a8ef",
+          "cellv2_eb51245a8ef1db09eac5e2f513fe"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+          "latency_ms": 1800.59,
+          "candidate_count": 79,
+          "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "Các dòng dưới đây có ô và cột điều chỉnh đã được đối chiếu với PDF gốc. Đây là danh sách một phần, chưa phải toàn bộ các điều chỉnh.",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_adf37bd6db6a6a2d142c033e5e47",
+              "cellv2_a6b1574e2b15e3d5d2aa94fa344e",
+              "cellv2_746ccd72fa63e150c96040d7fe6b",
+              "cellv2_0cd59876dc59666bfd06d466215e",
+              "cellv2_1416c93f658733781137198b9330",
+              "cellv2_d1cf141cdfc638a776e5db65c939",
+              "cellv2_aecd48dcaf1cc2cbe173494e7e74",
+              "cellv2_69be913e72f8500e75455d9206de",
+              "cellv2_fe661f900f8fbfabc685a06494eb",
+              "cellv2_87126d6d6afbbbf83b7d4e9058e0",
+              "cellv2_88c5b839a75cb8853242d457a8ef",
+              "cellv2_eb51245a8ef1db09eac5e2f513fe"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_adf37bd6db6a6a2d142c033e5e47"
+                ],
+                "source_scope": "SEPARATE",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "43124242",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_adf37bd6db6a6a2d142c033e5e47"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_2",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_a6b1574e2b15e3d5d2aa94fa344e"
+                ],
+                "source_scope": "SEPARATE",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "39352",
+                "calculation_id": "calculation_2",
+                "operand_ids": [
+                  "cellv2_a6b1574e2b15e3d5d2aa94fa344e"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_3",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_746ccd72fa63e150c96040d7fe6b"
+                ],
+                "source_scope": "SEPARATE",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "43163594",
+                "calculation_id": "calculation_3",
+                "operand_ids": [
+                  "cellv2_746ccd72fa63e150c96040d7fe6b"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_4",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_0cd59876dc59666bfd06d466215e"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "21740674",
+                "calculation_id": "calculation_4",
+                "operand_ids": [
+                  "cellv2_0cd59876dc59666bfd06d466215e"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_5",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_1416c93f658733781137198b9330"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "42029",
+                "calculation_id": "calculation_5",
+                "operand_ids": [
+                  "cellv2_1416c93f658733781137198b9330"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_6",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_d1cf141cdfc638a776e5db65c939"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "21782703",
+                "calculation_id": "calculation_6",
+                "operand_ids": [
+                  "cellv2_d1cf141cdfc638a776e5db65c939"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_7",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_aecd48dcaf1cc2cbe173494e7e74"
+                ],
+                "source_scope": "SEPARATE",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "14892857",
+                "calculation_id": "calculation_7",
+                "operand_ids": [
+                  "cellv2_aecd48dcaf1cc2cbe173494e7e74"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_8",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_69be913e72f8500e75455d9206de"
+                ],
+                "source_scope": "SEPARATE",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "39352",
+                "calculation_id": "calculation_8",
+                "operand_ids": [
+                  "cellv2_69be913e72f8500e75455d9206de"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_9",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_fe661f900f8fbfabc685a06494eb"
+                ],
+                "source_scope": "SEPARATE",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "14932209",
+                "calculation_id": "calculation_9",
+                "operand_ids": [
+                  "cellv2_fe661f900f8fbfabc685a06494eb"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_10",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_87126d6d6afbbbf83b7d4e9058e0"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "50490598",
+                "calculation_id": "calculation_10",
+                "operand_ids": [
+                  "cellv2_87126d6d6afbbbf83b7d4e9058e0"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_11",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_88c5b839a75cb8853242d457a8ef"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "42029",
+                "calculation_id": "calculation_11",
+                "operand_ids": [
+                  "cellv2_88c5b839a75cb8853242d457a8ef"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_12",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_eb51245a8ef1db09eac5e2f513fe"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "50532627",
+                "calculation_id": "calculation_12",
+                "operand_ids": [
+                  "cellv2_eb51245a8ef1db09eac5e2f513fe"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "restatement:2. cac khoan phai tra va cong no khac",
+              "restatement:3. cac khoan phai tra va cong no khac",
+              "restatement:vii. cac khoan no khac"
+            ],
+            "periods_from_operands": [
+              "2024"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "43124242",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_2",
+                "operation": "EXTRACT",
+                "recomputed_result": "39352",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_3",
+                "operation": "EXTRACT",
+                "recomputed_result": "43163594",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_4",
+                "operation": "EXTRACT",
+                "recomputed_result": "21740674",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_5",
+                "operation": "EXTRACT",
+                "recomputed_result": "42029",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_6",
+                "operation": "EXTRACT",
+                "recomputed_result": "21782703",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_7",
+                "operation": "EXTRACT",
+                "recomputed_result": "14892857",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_8",
+                "operation": "EXTRACT",
+                "recomputed_result": "39352",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_9",
+                "operation": "EXTRACT",
+                "recomputed_result": "14932209",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_10",
+                "operation": "EXTRACT",
+                "recomputed_result": "50490598",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_11",
+                "operation": "EXTRACT",
+                "recomputed_result": "42029",
+                "status": "VERIFIED"
+              },
+              {
+                "calculation_id": "calculation_12",
+                "operation": "EXTRACT",
+                "recomputed_result": "50532627",
+                "status": "VERIFIED"
+              }
+            ],
+            "issuer": [
+              "Báo cáo tài chính riêng ngân hàng theo các Chuẩn mực kế toán Việt Nam và hệ thống kế toán các tổ chức tín dụng Việt Nam"
+            ],
+            "confirmation": null
+          },
+          {
+            "question_slot_id": "coverage",
+            "metric": "adjustment_rows",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "operation": "EXHAUSTIVE_LIST",
+            "outputs": [
+              "exhaustive_rows"
+            ],
+            "kind": "coverage",
+            "expected_source_class": "COMPLETE_ADJUSTMENT_TABLE",
+            "status": "UNANSWERED",
+            "reason": "ADJUSTMENT_COVERAGE_NOT_EXHAUSTIVE"
+          }
+        ],
+        "unanswered_subquestions": [
+          {
+            "question_slot_id": "coverage",
+            "metric": "adjustment_rows",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "operation": "EXHAUSTIVE_LIST",
+            "outputs": [
+              "exhaustive_rows"
+            ],
+            "kind": "coverage",
+            "expected_source_class": "COMPLETE_ADJUSTMENT_TABLE",
+            "reason": "ADJUSTMENT_COVERAGE_NOT_EXHAUSTIVE"
+          }
+        ],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "PARTIAL",
+          "requested_count": 2,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": null,
+              "verdict": "ANSWERED",
+              "reasons": []
+            },
+            {
+              "question_slot_id": "coverage",
+              "metric": "adjustment_rows",
+              "verdict": "UNANSWERED",
+              "reasons": [
+                "ADJUSTMENT_COVERAGE_NOT_EXHAUSTIVE"
+              ]
+            }
+          ],
+          "unanswered_subquestions": [
+            {
+              "question_slot_id": "coverage",
+              "metric": "adjustment_rows",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXHAUSTIVE_LIST",
+              "outputs": [
+                "exhaustive_rows"
+              ],
+              "kind": "coverage",
+              "expected_source_class": "COMPLETE_ADJUSTMENT_TABLE",
+              "reason": "ADJUSTMENT_COVERAGE_NOT_EXHAUSTIVE"
+            }
+          ]
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [
+          "ADJUSTMENT_COVERAGE_NOT_EXHAUSTIVE"
+        ],
+        "session_id": "33370177ed5248c898af3fb6ffacc94e",
+        "resolved_question": "Liệt kê các khoản điều chỉnh của BIDV năm 2024 theo báo cáo riêng và hợp nhất.",
+        "source_scope": [
+          "2bed2b3c312c8149e6a2ff6ab80c694a"
+        ],
+        "conversation_reset": false
+      },
+      "status": "PASS",
+      "endpoint": "chat"
+    },
+    {
+      "id": "WHY",
+      "request": {
+        "question": "Why did Services net sales increase in FY2025?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ]
+      },
+      "response": {
+        "status": "SOURCE_EXCERPTS",
+        "answer_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+        "values": [],
+        "answer": "The filing explains: Services net sales increased during 2025 compared to 2024 primarily due to higher net sales from advertising, the App Store and cloud services. [1]",
+        "primary_answer": "The filing explains: Services net sales increased during 2025 compared to 2024 primarily due to higher net sales from advertising, the App Store and cloud services. [1]",
+        "answer_explanation": "",
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 26,
+            "box": [
+              49.5,
+              436.5480041503906,
+              565.021240234375,
+              456.3479919433594
+            ],
+            "text": "Services net sales increased during 2025 compared to 2024 primarily due to higher net sales from advertising, the App Store and cloud services.",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "extraction_method": "NATIVE",
+            "statement_scope": "CONSOLIDATED",
+            "citation_id": "paragraph_365293f06628486b78d9a52368eb",
+            "evidence_id": "paragraph_365293f06628486b78d9a52368eb"
+          }
+        ],
+        "calculation_steps": [],
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2025"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXPLAIN",
+            "outputs": [
+              "explanation"
+            ],
+            "kind": "explanation",
+            "expected_source_class": "SOURCE_PARAGRAPH",
+            "status": "SOURCE_SUPPORTED",
+            "source_refs": [
+              "paragraph_365293f06628486b78d9a52368eb"
+            ]
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": []
+        },
+        "source_numeric_verification": null,
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "SOURCE_SUPPORTED_NON_NUMERIC",
+          "stage_a": [],
+          "stage_b": []
+        },
+        "query_plan": {
+          "raw_text": "Why did Services net sales increase in FY2025?",
+          "intent": "EXPLAIN",
+          "metric": "services_net_sales",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXPLAIN",
+              "outputs": [
+                "explanation"
+              ],
+              "kind": "explanation",
+              "expected_source_class": "SOURCE_PARAGRAPH"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Why did Services net sales increase in FY2025?",
+          "intent": "EXPLAIN",
+          "metric": "services_net_sales",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXPLAIN",
+              "outputs": [
+                "explanation"
+              ],
+              "kind": "explanation",
+              "expected_source_class": "SOURCE_PARAGRAPH"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "session_id": "d10c86dbb22f44fabd25ff0e4e7f350e",
+        "resolved_question": "Why did Services net sales increase in FY2025?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      },
+      "status": "PASS",
+      "endpoint": "chat"
+    }
+  ]
+}

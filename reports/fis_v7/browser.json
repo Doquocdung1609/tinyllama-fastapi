@@ -1,0 +1,1366 @@
+[
+  {
+    "test": "B01",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**TỔNG TÀI SẢN**: 2.709.287.140 + 110.250 = **2.709.397.390** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Đã công bố | 2.709.287.140 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Điều chỉnh | 110.250 triệu đồng | [2] |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [3] |",
+    "values": [
+      "2709287140",
+      "110250",
+      "2709397390"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 3,
+        "box": [
+          283.33355712890625,
+          621.2344970703125,
+          334.1436462402344,
+          630.9321899414062
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ORIGINAL",
+        "value": "2,709,287,140",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          394.41510009765625,
+          621.2344970703125,
+          423.14923095703125,
+          630.9321899414062
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "110,250",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          487.9383544921875,
+          621.2344970703125,
+          538.7487182617188,
+          630.9321899414062
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "2,709,397,390",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "B02",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**Cho vay khách hàng**: 1.976.863.693 + 68.290 = **1.976.931.983** triệu đồng.\n\n**Dự phòng rủi ro cho vay khách hàng**: -36.944.443 + 68.290 = **-36.876.153** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Đã công bố | 1.976.863.693 triệu đồng | [1] |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Điều chỉnh | 68.290 triệu đồng | [2] |\n| Cho vay khách hàng | Riêng | 2024-12-31 | Trình bày lại | 1.976.931.983 triệu đồng | [3] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Đã công bố | -36.944.443 triệu đồng | [4] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Điều chỉnh | 68.290 triệu đồng | [5] |\n| Dự phòng rủi ro cho vay khách hàng | Riêng | 2024-12-31 | Trình bày lại | -36.876.153 triệu đồng | [6] |",
+    "values": [
+      "1976863693",
+      "68290",
+      "1976931983",
+      "-36944443",
+      "68290",
+      "-36876153"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 3,
+        "box": [
+          283.33355712890625,
+          320.634521484375,
+          334.1436462402344,
+          330.3322448730469
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ORIGINAL",
+        "value": "1,976,863,693",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          398.8988037109375,
+          320.634521484375,
+          423.16510009765625,
+          330.3322448730469
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "68,290",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          487.9383544921875,
+          320.634521484375,
+          538.7487182617188,
+          330.3322448730469
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "1,976,931,983",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          288.61627197265625,
+          342.8345031738281,
+          334.2227783203125,
+          352.5322265625
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ORIGINAL",
+        "value": "(36,944,443)",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          398.8988037109375,
+          342.8345031738281,
+          423.16510009765625,
+          352.5322265625
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "68,290",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          493.220947265625,
+          342.8345031738281,
+          538.8275756835938,
+          352.5322265625
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "(36,876,153)",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "B03",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**Thu nhập lãi thuần**: 56.238.101 − 4.598 = **56.233.503** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Thu nhập lãi thuần | Riêng | 2024 | Đã công bố | 56.238.101 triệu đồng | [1] |\n| Thu nhập lãi thuần | Riêng | 2024 | Điều chỉnh | -4.598 triệu đồng | [2] |\n| Thu nhập lãi thuần | Riêng | 2024 | Trình bày lại | 56.233.503 triệu đồng | [3] |",
+    "values": [
+      "56238101",
+      "-4598",
+      "56233503"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 5,
+        "box": [
+          325.6817932128906,
+          210.52915954589844,
+          362.4030456542969,
+          219.56260681152344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ORIGINAL",
+        "value": "56,238,101",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 5,
+        "box": [
+          421.3215637207031,
+          210.52915954589844,
+          445.174072265625,
+          219.56260681152344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "(4,598)",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 5,
+        "box": [
+          499.32122802734375,
+          210.52915954589844,
+          536.04248046875,
+          219.56260681152344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "56,233,503",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "B04",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "“Lãi thuần từ hoạt động dịch vụ”, hợp nhất, cột trình bày lại: **7.076.856 triệu đồng**. [2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lãi thuần từ hoạt động dịch vụ | Hợp nhất | 2024 | Điều chỉnh | 2.411 triệu đồng | [1] |\n| Lãi thuần từ hoạt động dịch vụ | Hợp nhất | 2024 | Trình bày lại | 7.076.856 triệu đồng | [2] |",
+    "values": [
+      "2411",
+      "7076856"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 8,
+        "box": [
+          425.1622009277344,
+          238.54150390625,
+          444.6028747558594,
+          248.10630798339844
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "2,411",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 8,
+        "box": [
+          512.76220703125,
+          238.54150390625,
+          547.3233642578125,
+          248.10630798339844
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "7,076,856",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "B05",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**Chênh lệch: 465.069 triệu đồng.** 25.677.118 − 25.212.049 = 465.069. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế TNDN | Hợp nhất | 2024 | Trình bày lại | 25.677.118 triệu đồng | [1] |\n| Lợi nhuận thuần của cổ đông Ngân hàng | Hợp nhất | 2024 | Trình bày lại | 25.212.049 triệu đồng | [2] |",
+    "values": [
+      "465069"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 8,
+        "box": [
+          508.4420166015625,
+          414.2214660644531,
+          547.3233032226562,
+          423.7862854003906
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "25,677,118",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 8,
+        "box": [
+          508.4420166015625,
+          436.3014831542969,
+          547.3233032226562,
+          445.8663024902344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "25,212,049",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "B06",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**Chênh lệch: 51.509.574 triệu đồng.** 2.760.906.964 − 2.709.397.390 = 51.509.574. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| TỔNG TÀI SẢN | Riêng | 2024-12-31 | Trình bày lại | 2.709.397.390 triệu đồng | [1] |\n| TỔNG TÀI SẢN | Hợp nhất | 2024-12-31 | Trình bày lại | 2.760.906.964 triệu đồng | [2] |",
+    "values": [
+      "51509574"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 3,
+        "box": [
+          487.9383544921875,
+          621.2344970703125,
+          538.7487182617188,
+          630.9321899414062
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "2,709,397,390",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 6,
+        "box": [
+          494.55792236328125,
+          591.2344970703125,
+          545.3682861328125,
+          600.9321899414062
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "2,760,906,964",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "B07",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**Lãi thuần từ hoạt động khác**: 4.732.537 + 37.936 = **4.770.473** triệu đồng.\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Đã công bố | 4.732.537 triệu đồng | [1] |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Điều chỉnh | 37.936 triệu đồng | [2] |\n| Lãi thuần từ hoạt động khác | Riêng | 2024 | Trình bày lại | 4.770.473 triệu đồng | [3] |",
+    "values": [
+      "4732537",
+      "37936",
+      "4770473"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 5,
+        "box": [
+          329.7619323730469,
+          305.5691833496094,
+          362.4030456542969,
+          314.6026306152344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ORIGINAL",
+        "value": "4,732,537",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 5,
+        "box": [
+          422.761474609375,
+          305.5691833496094,
+          445.20220947265625,
+          314.6026306152344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "37,936",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 5,
+        "box": [
+          503.4013671875,
+          305.5691833496094,
+          536.04248046875,
+          314.6026306152344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "4,770,473",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "B08",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "DOCUMENT_INVENTORY",
+    "answer": "Đã kiểm kê **8/8 trang PDF**.\n\n| Trang PDF | Trang in | Nội dung | Thông tin tiêu biểu | Tình trạng đọc | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| 1 | — | Công bố thông tin | NGAN HÀNG TMCP DAU TƯ CONG HOA XA HOI CHU NGHIA VIET | OCR · chưa chứng nhận | [1] |\n| 2 | — | Công bố thông tin | Thông tin này đã được công bố trên thông tin điện tử của | OCR · chưa chứng nhận | [2] |\n| 3 | — | Bảng cân đối kế toán · riêng | TỔNG TÀI SẢN | Lớp chữ PDF | [3] |\n| 4 | — | Bảng cân đối kế toán · riêng | TỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU | Lớp chữ PDF | [4] |\n| 5 | — | Báo cáo kết quả kinh doanh · riêng | Lợi nhuận sau thuế TNDN | Lớp chữ PDF | [5] |\n| 6 | — | Bảng cân đối kế toán · hợp nhất | TỔNG TÀI SẢN | Lớp chữ PDF | [6] |\n| 7 | — | Bảng cân đối kế toán · hợp nhất | TỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU | Lớp chữ PDF | [7] |\n| 8 | — | Báo cáo kết quả kinh doanh · hợp nhất | Lợi nhuận thuần của cổ đông Ngân hàng | Lớp chữ PDF | [8] |",
+    "values": [],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 1,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      },
+      {
+        "page": 2,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      },
+      {
+        "page": 3,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      },
+      {
+        "page": 4,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      },
+      {
+        "page": 5,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      },
+      {
+        "page": 6,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      },
+      {
+        "page": 7,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      },
+      {
+        "page": 8,
+        "box": null,
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a"
+      }
+    ]
+  },
+  {
+    "test": "B09",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**Chênh lệch: 1.114 triệu đồng.** 72.012 − 70.898 = 1.114. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế chưa phân phối | Riêng | 2024-12-31 | Điều chỉnh | 70.898 triệu đồng | [1] |\n| Lợi nhuận sau thuế chưa phân phối | Hợp nhất | 2024-12-31 | Điều chỉnh | 72.012 triệu đồng | [2] |",
+    "values": [
+      "1114"
+    ],
+    "session": "7c564623119f4d7691e9b81e3db86bda",
+    "citations": [
+      {
+        "page": 4,
+        "box": [
+          398.8988037109375,
+          287.5145263671875,
+          423.16510009765625,
+          297.2122497558594
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "70,898",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 7,
+        "box": [
+          429.2282409667969,
+          310.19451904296875,
+          453.5821533203125,
+          319.8922424316406
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ADJUSTMENT",
+        "value": "72,012",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ],
+    "highlight": {
+      "x": 598.421875,
+      "y": 638.21875,
+      "width": 24.265625,
+      "height": 9.6875
+    }
+  },
+  {
+    "test": "C06",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "status": "QUERY_CONTEXT_CONFLICT",
+    "reason": "QUESTION_COMPANY_SCOPE_CONFLICT",
+    "answer": "Chưa tìm thấy nguồn cho HPG trong các PDF đang chọn. Hãy thêm tài liệu của doanh nghiệp được hỏi hoặc đổi nguồn trong bộ chọn PDF.",
+    "values": [],
+    "session": "af289210b3de4f4794300660f8ffb0ee",
+    "citations": []
+  },
+  {
+    "test": "C01",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "CANDIDATE_RECONCILIATION",
+    "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | TỔNG TÀI SẢN | 2024-12-31 | 2,709,397,390 triệu đồng | 2.709.397,39 | Đối chiếu lớp chữ PDF | [1] |\n| HPG | Tổng tài sản | 2025-12-31 | 98.670.778.691.605 đồng | 98.670,7787 | Ứng viên OCR | [2] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\nChênh lệch: 2.709.397,39 − 98.670,7787 = **2.610.726,6113 tỷ đồng**. [1][2]\n\nQuy mô lớn hơn **27,459 lần**, tính bằng giá trị lớn chia giá trị nhỏ. [1][2] Hai số thuộc hai doanh nghiệp, ở các ngày và ngành khác nhau.",
+    "values": [],
+    "candidateValues": [
+      "2610726.611308395",
+      "27.458964304601337917049683036641851182"
+    ],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": [
+      {
+        "page": 3,
+        "box": [
+          487.9383544921875,
+          621.2344970703125,
+          538.7487182617188,
+          630.9321899414062
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "2,709,397,390",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          384.480001576434,
+          606.0000175628228,
+          472.08000193560906,
+          614.6400178132234
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d",
+        "value": "98.670.778.691.605",
+        "state": "AUTOMATED_EXTRACTION"
+      }
+    ]
+  },
+  {
+    "test": "C09-restored",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "PASS"
+  },
+  {
+    "test": "C02",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "CANDIDATE_RECONCILIATION",
+    "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | Vốn và các quỹ | 2024-12-31 | 136,350,642 triệu đồng | 136.350,642 | Đối chiếu lớp chữ PDF | [1] |\n| HPG | Tổng vốn chủ sở hữu | 2025-12-31 | 94.430.926.468.210 đồng | 94.430,9265 | Ứng viên OCR | [2] |\n| HPG | Vốn góp của chủ sở hữu | 2025-12-31 | 76.754.658.550.000 đồng | 76.754,6586 | Ứng viên OCR | [3] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\n“Vốn và các quỹ” và “Vốn chủ sở hữu” là các nhóm tổng hợp theo cách trình bày của từng báo cáo. “Vốn góp của chủ sở hữu” là một thành phần của vốn chủ sở hữu. Cần đọc các dòng cấu thành trước khi coi hai nhóm tổng hợp có cùng phạm vi.",
+    "values": [],
+    "candidateValues": [],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": [
+      {
+        "page": 4,
+        "box": [
+          494.54095458984375,
+          231.83448791503906,
+          538.781005859375,
+          241.5322265625
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "136,350,642",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 4,
+        "box": [
+          383.7600015734819,
+          462.4800134033899,
+          471.1200019316729,
+          471.1200136537905
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d",
+        "value": "94.430.926.468.210",
+        "state": "AUTOMATED_EXTRACTION"
+      },
+      {
+        "page": 20,
+        "box": [
+          423.3600017358487,
+          480.2400139181023,
+          430.800001766354,
+          551.5200159839076
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d",
+        "value": "76.754.658.550.000",
+        "state": "AUTOMATED_EXTRACTION"
+      }
+    ]
+  },
+  {
+    "test": "C03",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "CANDIDATE_RECONCILIATION",
+    "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | TỔNG TÀI SẢN | 2024-12-31 | 2,709,397,390 triệu đồng | 2.709.397,39 | Đối chiếu lớp chữ PDF | [1] |\n| BIDV | Vốn và các quỹ | 2024-12-31 | 136,350,642 triệu đồng | 136.350,642 | Đối chiếu lớp chữ PDF | [2] |\n| HPG | Tổng tài sản | 2025-12-31 | 98.670.778.691.605 đồng | 98.670,7787 | Ứng viên OCR | [3] |\n| HPG | Nợ phải trả | 2025-12-31 | 4.239.852.223.395 đồng | 4.239,8522 | Người duyệt đã đối chiếu | [4] |\n| HPG | Tổng vốn chủ sở hữu | 2025-12-31 | 94.430.926.468.210 đồng | 94.430,9265 | Ứng viên OCR | [5] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\nNợ phải trả BIDV (tính từ phương trình kế toán) = tổng tài sản − vốn và các quỹ = 2.573.046,748 tỷ đồng. [1][2]\n\n**BIDV**: 2.573.046,748 ÷ 2.709.397,39 × 100 = **94,9675%**. [1][2]\n\n**HPG**: 4.239,8522 ÷ 98.670,7787 × 100 = **4,297%**. [4][3]\n\nHai tỷ lệ không đủ để kết luận doanh nghiệp nào an toàn hơn. Cần xét cấu trúc nguồn vốn và chuẩn an toàn phù hợp với từng ngành.",
+    "values": [],
+    "candidateValues": [
+      "94.967491941076978744708984900882332362",
+      "4.2969684435618328619078951981121517204"
+    ],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": [
+      {
+        "page": 3,
+        "box": [
+          487.9383544921875,
+          621.2344970703125,
+          538.7487182617188,
+          630.9321899414062
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "2,709,397,390",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 4,
+        "box": [
+          494.54095458984375,
+          231.83448791503906,
+          538.781005859375,
+          241.5322265625
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "136,350,642",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          384.480001576434,
+          606.0000175628228,
+          472.08000193560906,
+          614.6400178132234
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d",
+        "value": "98.670.778.691.605",
+        "state": "AUTOMATED_EXTRACTION"
+      },
+      {
+        "page": 4,
+        "box": [
+          388.3200015921787,
+          252.72000732421876,
+          470.6400019297048,
+          261.12000756766383
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d",
+        "value": "4.239.852.223.395",
+        "state": "HUMAN_SOURCE_VERIFIED"
+      },
+      {
+        "page": 4,
+        "box": [
+          383.7600015734819,
+          462.4800134033899,
+          471.1200019316729,
+          471.1200136537905
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d",
+        "value": "94.430.926.468.210",
+        "state": "AUTOMATED_EXTRACTION"
+      }
+    ]
+  },
+  {
+    "test": "C04",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "CANDIDATE_RECONCILIATION",
+    "answer": "**Đối chiếu sơ bộ.** Các phép tính có dùng ô OCR ứng viên được đánh dấu trong bảng.\n\n| Doanh nghiệp | Chỉ tiêu · báo cáo riêng | Kỳ | Giá trị nguồn | Tỷ đồng | Đối chiếu | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| BIDV | Lợi nhuận sau thuế TNDN | Năm 2024 | 24,579,917 triệu đồng | 24.579,917 | Đối chiếu lớp chữ PDF | [1] |\n| HPG | Lợi nhuận sau thuế | Quý IV/2025 | 5.597.856.806.673 đồng | 5.597,8568 | Ứng viên OCR | [2] |\n\nQuy đổi sang tỷ đồng: số gốc × hệ số đơn vị nguồn ÷ 1.000.000.000 (hệ số 1 đối với đồng, 1.000.000 đối với triệu đồng).\n\nChênh lệch: 24.579,917 − 5.597,8568 = **18.982,0602 tỷ đồng**. [1][2]\n\nChênh lệch này so sánh hai doanh nghiệp và các kỳ được ghi trong bảng. Không thể diễn giải nó như tăng trưởng qua các năm.",
+    "values": [],
+    "candidateValues": [
+      "18982.060193327"
+    ],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": [
+      {
+        "page": 5,
+        "box": [
+          499.32122802734375,
+          410.2091979980469,
+          536.04248046875,
+          419.2426452636719
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "24,579,917",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 5,
+        "box": [
+          428.6400017574976,
+          387.12001121933986,
+          435.36000178505077,
+          453.60001314603363
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d",
+        "value": "5.597.856.806.673",
+        "state": "AUTOMATED_EXTRACTION"
+      }
+    ]
+  },
+  {
+    "test": "C05",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "SOURCE_EXCERPTS",
+    "answer": "| PDF | Loại báo cáo | Phạm vi | Năm trong nguồn | Đơn vị | Trích xuất | Nguồn |\n| --- | --- | --- | --- | --- | --- | --- |\n| 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf | Bảng điều chỉnh báo cáo tài chính | riêng và hợp nhất | 2024 | triệu đồng | lớp chữ PDF, OCR | [1] [2] |\n| 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf | Báo cáo tài chính | riêng | 2025 | đồng | OCR | [3] |",
+    "values": [],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": [
+      {
+        "page": 6,
+        "box": [
+          326.84149169921875,
+          177.83450317382812,
+          366.70111083984375,
+          187.53224182128906
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ORIGINAL",
+        "value": "10,772,890",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 3,
+        "box": [
+          294.348876953125,
+          199.79449462890625,
+          334.12091064453125,
+          209.4922332763672
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "ORIGINAL",
+        "value": "10,015,748",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 1,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      }
+    ]
+  },
+  {
+    "test": "C09-mismatch",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "QUERY_CONTEXT_CONFLICT",
+    "reason": "SELECTED_PDF_COUNT_MISMATCH",
+    "answer": "Câu hỏi nói chỉ dùng một PDF. Bộ chọn hiện có 2 PDF: 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf, 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf. Hãy bỏ chọn file thừa hoặc hỏi lại với cả hai nguồn.",
+    "values": [],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": []
+  },
+  {
+    "test": "C07",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "NEEDS_CLARIFICATION",
+    "reason": "REQUESTED_PERIOD_ABSENT",
+    "answer": "PDF đang chọn có bảng điều chỉnh cho năm 2024. Tôi chưa thấy cột theo quý 2025 trong các bảng này.",
+    "values": [],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": []
+  },
+  {
+    "test": "C08",
+    "ids": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SUPPORTED",
+    "answerStatus": "VERIFIED_ANSWER",
+    "answer": "**Không**. Báo cáo ghi **25.677.118 triệu đồng** cho dòng “Lợi nhuận sau thuế TNDN”. [1]\n\nSố 25.212.049 thuộc dòng “Lợi nhuận thuần của cổ đông Ngân hàng”. [2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế TNDN | Hợp nhất | 2024 | Trình bày lại | 25.677.118 triệu đồng | [1] |",
+    "values": [
+      "25677118"
+    ],
+    "session": "ec64c006ce0c4a2dae8d46c949f7ab13",
+    "citations": [
+      {
+        "page": 8,
+        "box": [
+          508.4420166015625,
+          414.2214660644531,
+          547.3233032226562,
+          423.7862854003906
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "25,677,118",
+        "state": "NATIVE_CELL_VERIFIED"
+      },
+      {
+        "page": 8,
+        "box": [
+          508.4420166015625,
+          436.3014831542969,
+          547.3233032226562,
+          445.8663024902344
+        ],
+        "doc": "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "column": "RESTATED",
+        "value": "25,212,049",
+        "state": "NATIVE_CELL_VERIFIED"
+      }
+    ]
+  },
+  {
+    "test": "HPG-inventory",
+    "ids": [
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "DOCUMENT_REASONING",
+    "answer": "Đã kiểm kê **24/24 trang PDF**. Đọc được nội dung ở 24 trang từ dữ liệu đã lưu.\n\n| Trang PDF | Trang in | Nội dung chính | Thông tin tiêu biểu | Tình trạng đọc | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| 1 | — | Bìa báo cáo tài chính | BAO CAO TAI CHINH RIENG · QUY IV/2025 | OCR · chưa chứng nhận | [1] |\n| 2 | — | Bảng cân đối kế toán | Tài san ngắn hạn (100 = 110 + 120 + 130 + 140 + 150) | OCR · chưa chứng nhận | [2] |\n| 3 | — | Bảng cân đối kế toán | Tổng cộng tài sản | OCR · chưa chứng nhận | [3] |\n| 4 | — | Bảng cân đối kế toán | Nợ phải trả | OCR · chưa chứng nhận | [4] |\n| 5 | — | Báo cáo kết quả kinh doanh | Doanh thu thuần | OCR · chưa chứng nhận · hiệu chỉnh 90° | [5] |\n| 6 | — | Báo cáo lưu chuyển tiền tệ | Lưu chuyển tiền thuần từ hoạt động kinh doanh | OCR · chưa chứng nhận | [6] |\n| 7 | — | Báo cáo lưu chuyển tiền tệ | Tiền thu từ đi vay | OCR · chưa chứng nhận | [7] |\n| 8 | — | Thuyết minh báo cáo tài chính · Đặc điểm hoạt động, Hình thức sở hữu vốn | Đặc điểm hoạt động | OCR · chưa chứng nhận | [8] |\n| 9 | — | Chính sách kế toán · Kỳ kế toán và đơn vị tiền tệ | Kỳ kế toán và đơn vị tiền tệ | OCR · chưa chứng nhận | [9] |\n| 10 | — | Chính sách kế toán · Chính sách kế toán, Phải thu khác | Chính sách kế toán | OCR · chưa chứng nhận | [10] |\n| 11 | — | Chính sách kế toán · Kỳ kế toán và đơn vị tiền tệ, Dự phòng phải thu, Bất động sản đầu tư | Kỳ kế toán và đơn vị tiền tệ | OCR · chưa chứng nhận | [11] |\n| 12 | — | Chính sách kế toán · Nguyên tắc ghi nhận vốn chủ sở hữu, Tiền và tiền gửi ngân hàng | Nguyên tắc ghi nhận vốn chủ sở hữu | OCR · chưa chứng nhận | [12] |\n| 13 | — | Thuyết minh báo cáo tài chính · Đầu tư vào công ty con | Đầu tư vào công ty con | OCR · chưa chứng nhận | [13] |\n| 14 | — | Thuyết minh báo cáo tài chính · Phải thu khác | Phải thu khác | OCR · chưa chứng nhận | [14] |\n| 15 | 14 | Thuyết minh báo cáo tài chính · Tài sản cố định hữu hình | Tài sản cố định hữu hình | OCR · chưa chứng nhận · hiệu chỉnh 90° | [15] |\n| 16 | — | Thuyết minh báo cáo tài chính · Tài sản cố định vô hình | Tài sản cố định vô hình | OCR · chưa chứng nhận | [16] |\n| 17 | — | Thuyết minh báo cáo tài chính · Bất động sản đầu tư | Bất động sản đầu tư | OCR · chưa chứng nhận | [17] |\n| 18 | 17 | Thuyết minh báo cáo tài chính · Thuế và các khoản phải nộp | Thuế và các khoản phải nộp | OCR · chưa chứng nhận · hiệu chỉnh 90° | [18] |\n| 19 | — | Thuyết minh báo cáo tài chính · Phải trả khác | Phải trả khác | OCR · chưa chứng nhận | [19] |\n| 20 | 19 | Thuyết minh báo cáo tài chính · Bảng đối chiếu biến động vốn chủ sở hữu | Bảng đối chiếu biến động vốn chủ sở hữu | OCR · chưa chứng nhận · hiệu chỉnh 90° | [20] |\n| 21 | — | Thuyết minh báo cáo tài chính · Cổ phiếu đang lưu hành | Cổ phiếu đang lưu hành | OCR · chưa chứng nhận | [21] |\n| 22 | — | Thuyết minh báo cáo tài chính · Giá vốn hàng bán | Giá vốn hàng bán | OCR · chưa chứng nhận | [22] |\n| 23 | — | Thuyết minh báo cáo tài chính · Chi phí tài chính | Chi phí tài chính | OCR · chưa chứng nhận | [23] |\n| 24 | — | Giải trình biến động kết quả kinh doanh · Chi phí quản lý doanh nghiệp, Giải trình biến động kết quả kinh doanh | Chi phí quản lý doanh nghiệp | OCR · chưa chứng nhận | [24] |\n\nĐã định vị từng ô theo ngày và tên cột. **Vốn góp của chủ sở hữu** ngày 01/01/2024 là **58.147.857.000.000 đồng** theo giá trị OCR ứng viên, chưa được người duyệt xác nhận. Bảng đối chiếu biến động vốn chủ sở hữu, trang PDF 20 (trang in 19). [25]\n\n| Mục | Kết quả | Phép đối chiếu và giới hạn | Giá trị, kỳ và nguồn |\n| --- | --- | --- | --- |\n| Vốn góp của chủ sở hữu | PASS | Đã định vị từng ô theo ngày và tên cột. **Vốn góp của chủ sở hữu** ngày 01/01/2024 là **58.147.857.000.000 đồng** theo giá trị OCR ứng viên, chưa được người duyệt xác nhận. Bảng đối chiếu biến động vốn chủ sở hữu, trang PDF 20 (trang in 19). [25] | Vốn góp của chủ sở hữu · 01/01/2024 · 58.147.857.000.000 đồng (ứng viên OCR) [25] |",
+    "values": [],
+    "pageMap": 24,
+    "tasks": [
+      "PASS"
+    ],
+    "session": "021bbccd0d1e4ef6bdde101838821bb2",
+    "citations": [
+      {
+        "page": 1,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 2,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 3,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 4,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 5,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 6,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 7,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 8,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 9,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 10,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 11,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 12,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 13,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 14,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 15,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 16,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 17,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 18,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 19,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 20,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 21,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 22,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 23,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 24,
+        "box": null,
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 20,
+        "box": [
+          185.7600007616479,
+          485.7600140780805,
+          193.44000079313722,
+          557.0400161438857
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      }
+    ]
+  },
+  {
+    "test": "HPG-checks",
+    "ids": [
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "DOCUMENT_REASONING",
+    "answer": "| Mục | Kết quả | Phép đối chiếu và giới hạn | Giá trị, kỳ và nguồn |\n| --- | --- | --- | --- |\n| Phương trình kế toán | PASS | Tổng tài sản − nợ phải trả − vốn chủ sở hữu. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. | Tổng tài sản · 31/12/2025 · 98.670.778.691.605 đồng (ứng viên OCR) [1] / Nợ phải trả · 31/12/2025 · 4.239.852.223.395 đồng (đã đối chiếu ảnh gốc) [2] / Tổng vốn chủ sở hữu · 31/12/2025 · 94.430.926.468.210 đồng (ứng viên OCR) [3] |\n| Đối chiếu tiền và tương đương tiền | PASS | Bảng cân đối − số dư cuối kỳ trên lưu chuyển tiền. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Bảng cân đối − thuyết minh tiền. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. | Tiền và các khoản tương đương tiền · 31/12/2025 · 481.464.857.088 đồng (ứng viên OCR) [4] / Tiền và tương đương tiền cuối kỳ · FY 2025 · 481.464.857.088 đồng (ứng viên OCR) [5] / Tổng tiền trong thuyết minh · 31/12/2025 · 481.464.857.088 đồng (ứng viên OCR) [6] |\n| Doanh thu, giá vốn và lợi nhuận gộp | PARTIAL | Doanh thu bán hàng/dịch vụ − doanh thu dịch vụ thuyết minh. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Giá vốn báo cáo chính − giá vốn thuyết minh. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Doanh thu thuần − giá vốn − lợi nhuận gộp. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Chưa tính doanh thu bán hàng trừ giảm trừ vì ô giảm trừ là dấu gạch. Dòng giảm trừ in dấu gạch. Có thể đọc riêng doanh thu bán hàng và doanh thu thuần, nhưng chưa coi dấu gạch là số 0 để kiểm lại phép trừ. | Doanh thu bán hàng và cung cấp dịch vụ · Q4 2025 · 125.533.574.301 đồng (ứng viên OCR) [7] / Các khoản giảm trừ doanh thu · Q4 2025 · - đồng (dấu gạch in) [8] / Doanh thu thuần · Q4 2025 · 125.533.574.301 đồng (ứng viên OCR) [9] / Giá vốn hàng bán · Q4 2025 · 116.975.794.845 đồng (ứng viên OCR) [10] / Lợi nhuận gộp · Q4 2025 · 8.557.779.456 đồng (ứng viên OCR) [11] / Doanh thu cung cấp dịch vụ trong thuyết minh · Q4 2025 · 125.533.574.301 đồng (ứng viên OCR) [12] / Giá vốn trong thuyết minh · Q4 2025 · 116.975.794.845 đồng (ứng viên OCR) [13] |\n| Vốn góp, số cổ phiếu và mệnh giá | PASS | Vốn góp cuối kỳ − số cổ phiếu lưu hành × mệnh giá. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Đơn vị tiền tệ theo chính sách kế toán [14]. | Vốn góp của chủ sở hữu · 31/12/2025 · 76.754.658.550.000 đồng (ứng viên OCR) [15] / Số cổ phiếu đang lưu hành · 31/12/2025 · 7.675.465.855 cổ phiếu (ứng viên OCR) [16] / Mệnh giá cổ phiếu · 31/12/2025 · 10.000 đồng/cổ phiếu (ứng viên OCR) [17] / Vốn góp của chủ sở hữu · 01/01/2024 · 58.147.857.000.000 đồng (ứng viên OCR) [18] |\n| Tài sản cố định, thuế và phải trả khác | PASS | Tài sản cố định hữu hình cuối kỳ − dòng thuyết minh tương ứng. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Tài sản cố định vô hình cuối kỳ − dòng thuyết minh tương ứng. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Bất động sản đầu tư cuối kỳ − dòng thuyết minh tương ứng. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Thuế và các khoản phải nộp Nhà nước cuối kỳ − dòng thuyết minh tương ứng. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Phải trả khác cuối kỳ − dòng thuyết minh tương ứng. Khớp theo các ô nguồn. Kiểm tra sơ bộ từ ứng viên OCR, chưa được chứng nhận. Các so sánh trên dùng cột cuối kỳ. Chỉ tiêu phải trả khác là một phần của tổng nợ phải trả. | Tài sản cố định hữu hình · 31/12/2025 · 32.832.232.331 đồng (ứng viên OCR) [19] / Giá trị còn lại của TSCĐ hữu hình trong thuyết minh · 31/12/2025 · 32.832.232.331 đồng (ứng viên OCR) [20] / Tài sản cố định vô hình · 31/12/2025 · 6.102.000.606 đồng (ứng viên OCR) [21] / Giá trị còn lại của TSCĐ vô hình trong thuyết minh · 31/12/2025 · 6.102.000.606 đồng (ứng viên OCR) [22] / Bất động sản đầu tư · 31/12/2025 · 79.481.693.590 đồng (ứng viên OCR) [23] / Giá trị còn lại của bất động sản đầu tư trong thuyết minh · 31/12/2025 · 79.481.693.590 đồng (ứng viên OCR) [24] / Thuế và các khoản phải nộp Nhà nước · 31/12/2025 · 5.336.528.393 đồng (ứng viên OCR) [25] / Tổng các khoản thuế trong thuyết minh · 31/12/2025 · 5.336.528.393 đồng (ứng viên OCR) [26] / Phải trả khác · 31/12/2025 · 38.532.671.975 đồng (ứng viên OCR) [27] / Tổng phải trả khác trong thuyết minh · 31/12/2025 · 38.532.671.975 đồng (ứng viên OCR) [28] |\n| Lợi nhuận và giải trình biến động | PASS | Đối chiếu ô lợi nhuận với phần giải trình cùng quý. Tách số chi tiết trên bảng khỏi mức làm tròn trong văn bản. Theo giải trình của công ty, lợi nhuận sau thuế quý IV tăng chủ yếu do lợi nhuận công ty con chuyển về tăng. [29] Văn bản nêu 5.597 tỷ đồng, bảng nêu 5.597.856.806.673 đồng. Hai cách ghi chênh dưới một tỷ đồng, nên chỉ đối chiếu ở mức tỷ đồng. | Lợi nhuận sau thuế · Q4 2025 · 5.597.856.806.673 đồng (ứng viên OCR) [30] |",
+    "values": [],
+    "tasks": [
+      "PASS",
+      "PASS",
+      "PARTIAL",
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "session": "021bbccd0d1e4ef6bdde101838821bb2",
+    "citations": [
+      {
+        "page": 3,
+        "box": [
+          384.480001576434,
+          606.0000175628228,
+          472.08000193560906,
+          614.6400178132234
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 4,
+        "box": [
+          388.3200015921787,
+          252.72000732421876,
+          470.6400019297048,
+          261.12000756766383
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 4,
+        "box": [
+          383.7600015734819,
+          462.4800134033899,
+          471.1200019316729,
+          471.1200136537905
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 2,
+        "box": [
+          397.68000163055626,
+          319.20000925091256,
+          471.84000193462504,
+          327.8400095013132
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 7,
+        "box": [
+          389.7600015980829,
+          420.96001220007565,
+          460.8000018893591,
+          429.12001243656516
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 12,
+        "box": [
+          382.08000156659364,
+          648.7200188009148,
+          456.24000187066235,
+          658.0800190721822
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 5,
+        "box": [
+          156.24000064061082,
+          390.00001130280674,
+          166.5600006829246,
+          449.28001302083334
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 5,
+        "box": [
+          175.92000072130222,
+          389.28001128194,
+          177.12000072622243,
+          392.1600113654069
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 5,
+        "box": [
+          193.68000079412127,
+          389.52001128889555,
+          204.24000083741907,
+          449.04001301387774
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 5,
+        "box": [
+          214.56000087973285,
+          389.28001128194,
+          221.04000090630197,
+          448.32001299301106
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 5,
+        "box": [
+          226.80000092991895,
+          388.80001126802887,
+          233.28000095648807,
+          440.16001275652155
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 22,
+        "box": [
+          351.60000144162035,
+          217.2000062947939,
+          422.8800017338806,
+          225.60000653823897
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 22,
+        "box": [
+          352.56000144555657,
+          379.6800110037171,
+          424.32000173978486,
+          388.08001124716213
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 9,
+        "box": [
+          213.60000087579667,
+          195.60000566879228,
+          541.680002220981,
+          208.56000604439325
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 20,
+        "box": [
+          423.3600017358487,
+          480.2400139181023,
+          430.800001766354,
+          551.5200159839076
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 21,
+        "box": [
+          369.60000151542346,
+          269.5200078111089,
+          431.28000176832205,
+          278.64000807542067
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 21,
+        "box": [
+          402.2400016492531,
+          285.3600082701767,
+          431.5200017693061,
+          293.7600085136218
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 20,
+        "box": [
+          185.7600007616479,
+          485.7600140780805,
+          193.44000079313722,
+          557.0400161438857
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 3,
+        "box": [
+          403.20000165318925,
+          326.4000094595798,
+          470.16000192773674,
+          334.80000970302484
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 15,
+        "box": [
+          360.72000147901394,
+          99.36000287960738,
+          368.6400015114873,
+          166.80000483412348
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 3,
+        "box": [
+          408.9600016768062,
+          367.4400106489828,
+          471.3600019326569,
+          375.84001089242787
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 16,
+        "box": [
+          498.9600020458217,
+          377.28001093416134,
+          562.8000023075766,
+          385.6800111776064
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 3,
+        "box": [
+          403.20000165318925,
+          421.920012227898,
+          471.600001933641,
+          430.32001247134303
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 17,
+        "box": [
+          493.20000202220467,
+          361.2000104681379,
+          562.0800023046245,
+          370.3200107324497
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 4,
+        "box": [
+          408.2400016738541,
+          312.96000907006766,
+          470.40000192872077,
+          321.3600093135127
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 18,
+        "box": [
+          404.40000165810943,
+          63.360001836271366,
+          412.56000169156687,
+          125.28000363080929
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 4,
+        "box": [
+          402.72000165122114,
+          367.6800106559384,
+          470.6400019297048,
+          376.08001089938347
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 19,
+        "box": [
+          378.24000155084894,
+          304.80000883357815,
+          446.4000018303167,
+          314.1600091048455
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 24,
+        "box": [
+          59.28000024305818,
+          315.600009146579,
+          561.1200023006884,
+          345.60001001602564
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      },
+      {
+        "page": 5,
+        "box": [
+          428.6400017574976,
+          387.12001121933986,
+          435.36000178505077,
+          453.60001314603363
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      }
+    ]
+  },
+  {
+    "test": "HPG-capital",
+    "ids": [
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "DOCUMENT_REASONING",
+    "answer": "Đã định vị từng ô theo ngày và tên cột. **Vốn góp của chủ sở hữu** ngày 01/01/2024 là **58.147.857.000.000 đồng** theo giá trị OCR ứng viên, chưa được người duyệt xác nhận. Bảng đối chiếu biến động vốn chủ sở hữu, trang PDF 20 (trang in 19). [1]\n\n| Mục | Kết quả | Phép đối chiếu và giới hạn | Giá trị, kỳ và nguồn |\n| --- | --- | --- | --- |\n| Vốn góp của chủ sở hữu | PASS | Đã định vị từng ô theo ngày và tên cột. **Vốn góp của chủ sở hữu** ngày 01/01/2024 là **58.147.857.000.000 đồng** theo giá trị OCR ứng viên, chưa được người duyệt xác nhận. Bảng đối chiếu biến động vốn chủ sở hữu, trang PDF 20 (trang in 19). [1] | Vốn góp của chủ sở hữu · 01/01/2024 · 58.147.857.000.000 đồng (ứng viên OCR) [1] |",
+    "values": [],
+    "tasks": [
+      "PASS"
+    ],
+    "session": "021bbccd0d1e4ef6bdde101838821bb2",
+    "citations": [
+      {
+        "page": 20,
+        "box": [
+          185.7600007616479,
+          485.7600140780805,
+          193.44000079313722,
+          557.0400161438857
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      }
+    ],
+    "highlight": {
+      "x": 403.359375,
+      "y": 600.46875,
+      "width": 71.265625,
+      "height": 7.671875
+    }
+  },
+  {
+    "test": "C09-HPG-only-after-reload",
+    "ids": [
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "status": "SOURCE_EXCERPTS",
+    "answerStatus": "OCR_CANDIDATE_ANSWER",
+    "answer": "Tổng cộng tài sản tại ngày 31/12/2025, báo cáo riêng, trang 3, có giá trị OCR ứng viên 98.670.778.691.605 đồng (đọc từ ảnh quét). [1]\n\nCác giá trị ứng viên chưa được người dùng xác nhận. Mở từng ô để đối chiếu chữ số, dấu và cột trên ảnh gốc.",
+    "values": [],
+    "session": "caaa727085884db7849c52eb49032f4a",
+    "citations": [
+      {
+        "page": 3,
+        "box": [
+          384.480001576434,
+          606.0000175628228,
+          472.08000193560906,
+          614.6400178132234
+        ],
+        "doc": "4a92af827aaf1e73e017544d0ff20d0d"
+      }
+    ]
+  }
+]

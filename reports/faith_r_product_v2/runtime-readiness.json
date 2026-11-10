@@ -1,0 +1,54 @@
+{
+  "readiness": {
+    "api": "ONLINE",
+    "workspace": {
+      "workspace": "ISOLATED_USER_PDF",
+      "ready_documents": 3,
+      "total_documents": 3,
+      "ready_chunks": 538,
+      "vector_collection": "studio_user_pdf_v1",
+      "model": "nomic-embed-text:latest",
+      "dimension": 768,
+      "lexical_version": "PDF_VI_FOLDED_FTS5_V2",
+      "disk_free_bytes": 6314168320
+    },
+    "ocr": {
+      "status": "READY",
+      "languages": [
+        "eng",
+        "osd",
+        "vie"
+      ],
+      "engine": "Tesseract",
+      "dpi": 240
+    },
+    "ollama": {
+      "status": "ONLINE",
+      "models": [
+        "qwen2.5:3b",
+        "nomic-embed-text:latest",
+        "llama3:latest"
+      ]
+    },
+    "sec": {
+      "status": "UNAVAILABLE",
+      "reason": "SEC_SHARED_SOURCE_ROOTS_NOT_CONFIGURED",
+      "filings": []
+    },
+    "resources": {
+      "available_ram_bytes": 630951936
+    },
+    "limits": {
+      "pdf_mb": 20,
+      "ocr_concurrency": 1,
+      "embedding_dimension": 768
+    }
+  },
+  "resources": {
+    "profile": "LEGACY",
+    "available_ram_bytes": 640770048
+  },
+  "ram_total_bytes": 8419053568,
+  "ram_available_bytes": 655368192,
+  "python": "3.13.2"
+}

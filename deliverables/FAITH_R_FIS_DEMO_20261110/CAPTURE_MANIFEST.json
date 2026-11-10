@@ -1,0 +1,155 @@
+{
+  "captured_at": "2026-11-10T02:08:48.624447+07:00",
+  "git_head": "d23ab9906353b65913d6b4aa805c3946ee42d7e0",
+  "branch": "codex/topic3-v7p-verified-financial-chatbot",
+  "workspace_id": "react-product-20261028",
+  "runtime_port": 18110,
+  "frontend_index_sha256": "940ef3f7b04c2a1b10239660b1e119a95497580dbfc8f6cdfa23963012274ef3",
+  "capture": "Playwright Chromium real browser video, headless Windows",
+  "source_format": "WebM",
+  "output_codec": "H.264",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "duration_seconds": 1279.233333,
+  "bytes": 25301861,
+  "sha256": "4c0ffe7b9f13b4dc1b37824ef3d7c012b2c3f50b6226b883b534878ff10e5ee1",
+  "scene_count": 14,
+  "scenes": [
+    {
+      "key": "01-introduction",
+      "title": "Tổng quan FIS",
+      "file": "01-introduction.webm",
+      "duration_wall_ms": 65144,
+      "start_seconds": 0,
+      "duration_seconds": 76.2
+    },
+    {
+      "key": "02-library",
+      "title": "Kho tài liệu PDF",
+      "file": "02-library.webm",
+      "duration_wall_ms": 91979,
+      "start_seconds": 76.2,
+      "duration_seconds": 99.533333
+    },
+    {
+      "key": "02b-metadata",
+      "title": "Metadata và thanh điều hướng",
+      "file": "02b-metadata.webm",
+      "start_seconds": 175.73333300000002,
+      "duration_seconds": 35.566667
+    },
+    {
+      "key": "03-evidence",
+      "title": "Tìm kiếm BIDV qua bốn phương pháp",
+      "file": "03-evidence.webm",
+      "duration_wall_ms": 194669,
+      "start_seconds": 211.3,
+      "duration_seconds": 198.0
+    },
+    {
+      "key": "04-comparison",
+      "title": "So sánh bốn phương pháp",
+      "file": "04-comparison.webm",
+      "duration_wall_ms": 90740,
+      "start_seconds": 409.3,
+      "duration_seconds": 89.833333
+    },
+    {
+      "key": "05-apple-en",
+      "title": "Chat Apple bằng tiếng Anh",
+      "file": "05-apple-en.webm",
+      "duration_wall_ms": 144222,
+      "start_seconds": 499.133333,
+      "duration_seconds": 144.166667
+    },
+    {
+      "key": "06-apple-vi",
+      "title": "Chat Apple bằng tiếng Việt và tính toán",
+      "file": "06-apple-vi.webm",
+      "duration_wall_ms": 135815,
+      "start_seconds": 643.3,
+      "duration_seconds": 133.333333
+    },
+    {
+      "key": "06b-formula",
+      "title": "Mở các bước tính Apple",
+      "file": "06b-formula.webm",
+      "start_seconds": 776.633333,
+      "duration_seconds": 30.0
+    },
+    {
+      "key": "07-bidv-chat",
+      "title": "Chat BIDV hai phạm vi",
+      "file": "07-bidv-chat.webm",
+      "duration_wall_ms": 78697,
+      "start_seconds": 806.633333,
+      "duration_seconds": 75.4
+    },
+    {
+      "key": "08-hpg",
+      "title": "PDF scan Hòa Phát và giới hạn OCR",
+      "file": "08-hpg.webm",
+      "duration_wall_ms": 66784,
+      "start_seconds": 882.033333,
+      "duration_seconds": 66.633333
+    },
+    {
+      "key": "09-sec",
+      "title": "Chat SEC Costco",
+      "file": "09-sec.webm",
+      "duration_wall_ms": 109353,
+      "start_seconds": 948.666666,
+      "duration_seconds": 117.133333
+    },
+    {
+      "key": "10-missing-source",
+      "title": "Kiểm soát nguồn chưa chọn",
+      "file": "10-missing-source.webm",
+      "duration_wall_ms": 68652,
+      "start_seconds": 1065.7999989999998,
+      "duration_seconds": 62.133333
+    },
+    {
+      "key": "11-research",
+      "title": "Research Lab",
+      "file": "11-research.webm",
+      "duration_wall_ms": 83317,
+      "start_seconds": 1127.9333319999998,
+      "duration_seconds": 88.733333
+    },
+    {
+      "key": "12-status",
+      "title": "Trạng thái dịch vụ và kết thúc",
+      "file": "12-status.webm",
+      "duration_wall_ms": 57287,
+      "start_seconds": 1216.6666649999997,
+      "duration_seconds": 62.566667
+    }
+  ],
+  "real_application": true,
+  "response_mocking": false,
+  "product_code_modified_for_demo": false,
+  "evaluation": "Disclosed development examples, not independent benchmark",
+  "acceptance_status": "PARTIAL",
+  "known_product_limits": [
+    "APPLE-02 returned company total net sales instead of geographic segment; excluded from main recording.",
+    "HPG-OCR refused numeric publication and cited page 5 instead of requested liability page 4; recorded as a limitation."
+  ],
+  "recording_substitution": "APPLE-GROWTH-EN replaces APPLE-02; both were preflight tested.",
+  "excluded_recordings": [
+    "scenes\\failed\\page@5ecfe728ee4f75d98b46ad37546746c6.webm"
+  ],
+  "formula_supplement": "Authentic saved server conversation restored and calculation details expanded in React.",
+  "video_qc": {
+    "full_decode": true,
+    "black_segments_over_one_second": 0,
+    "actual_playback_verified": true,
+    "sample_times": [
+      26.612406,
+      640.699041,
+      1254.744176
+    ],
+    "sha256_rechecked": true
+  }
+}

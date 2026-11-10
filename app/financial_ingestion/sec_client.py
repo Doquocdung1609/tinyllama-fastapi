@@ -214,12 +214,12 @@ class SECClient:
 
     def discover(self, cik: str, *, ticker: str | None = None,
                  forms: Iterable[str] = ALLOWED_FORMS, date_from: str | None = None,
-                 date_to: str | None = None, limit: int = 20) -> list[FilingMetadata]:
+                 date_to: str | None = None, limit: int = 20, additional_forms=()) -> list[FilingMetadata]:
         if not 1 <= limit <= 200:
             raise ValueError("limit must be between 1 and 200")
         cik = normalize_cik(cik)
         allowed = {form.upper() for form in forms}
-        unsupported = allowed - ALLOWED_FORMS
+        unsupported = allowed - ALLOWED_FORMS - set(additional_forms)
         if unsupported:
             raise ValueError(f"Unsupported SEC forms: {sorted(unsupported)}")
         payload = self.get_json(f"{SEC_DATA_BASE}/submissions/CIK{cik}.json")

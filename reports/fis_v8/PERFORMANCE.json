@@ -1,0 +1,135 @@
+{
+  "method": "API wall clock unless named phase-event or engine timing. p95 is nearest rank. Distinct cohorts. No controlled speedup claim.",
+  "discovery": {
+    "n": 2,
+    "median_s": 3.289,
+    "p95_nearest_rank_s": 4.534,
+    "worst_s": 4.534
+  },
+  "import_to_lexical": {
+    "n": 2,
+    "median_s": 11.435,
+    "p95_nearest_rank_s": 12.721,
+    "worst_s": 12.721
+  },
+  "acquisition_with_identity": {
+    "n": 2,
+    "median_s": 4.8746,
+    "p95_nearest_rank_s": 5.3067,
+    "worst_s": 5.3067
+  },
+  "extraction_and_snapshot_write": {
+    "n": 2,
+    "median_s": 2.231,
+    "p95_nearest_rank_s": 2.3891,
+    "worst_s": 2.3891
+  },
+  "lexical_publication": {
+    "n": 2,
+    "median_s": 3.8061,
+    "p95_nearest_rank_s": 4.6472,
+    "worst_s": 4.6472
+  },
+  "legacy_msft_indexing_interval_includes_dense": {
+    "n": 1,
+    "median_s": 692.9777,
+    "p95_nearest_rank_s": 692.9777,
+    "worst_s": 692.9777
+  },
+  "legacy_msft_embedding_calls_only": {
+    "n": 1,
+    "median_s": 542.1803,
+    "p95_nearest_rank_s": 542.1803,
+    "worst_s": 542.1803
+  },
+  "numeric_development_replay": {
+    "n": 10,
+    "median_s": 1.0015,
+    "p95_nearest_rank_s": 18.0321,
+    "worst_s": 18.0321
+  },
+  "cold_msft_revenue_cell_extraction": {
+    "n": 1,
+    "median_s": 7.9044,
+    "p95_nearest_rank_s": 7.9044,
+    "worst_s": 7.9044
+  },
+  "warm_msft_revenue_cell_extraction": {
+    "n": 3,
+    "median_s": 0.6077,
+    "p95_nearest_rank_s": 1.616,
+    "worst_s": 1.616
+  },
+  "warm_msft_revenue_request": {
+    "n": 3,
+    "median_s": 0.9893,
+    "p95_nearest_rank_s": 6.0552,
+    "worst_s": 6.0552
+  },
+  "narrative": {
+    "n": 2,
+    "median_s": 0.2212,
+    "p95_nearest_rank_s": 0.2973,
+    "worst_s": 0.2973
+  },
+  "multi_filing_profile": {
+    "n": 1,
+    "median_s": 5.7415,
+    "p95_nearest_rank_s": 5.7415,
+    "worst_s": 5.7415
+  },
+  "dense_hybrid_queries_ready_workspace": {
+    "n": 2,
+    "median_s": 13.3063,
+    "p95_nearest_rank_s": 25.9072,
+    "worst_s": 25.9072
+  },
+  "viewer": {
+    "n": 27,
+    "median_s": 4.6901,
+    "p95_nearest_rank_s": 13.5997,
+    "worst_s": 13.5997
+  },
+  "memory_snapshot": {
+    "processes": [
+      {
+        "pid": 11196,
+        "name": "python.exe",
+        "rss_bytes": 1126400,
+        "cpu_seconds": 0.0
+      },
+      {
+        "pid": 16808,
+        "name": "python.exe",
+        "rss_bytes": 929792,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "pid": 19196,
+        "name": "ollama.exe",
+        "rss_bytes": 16248832,
+        "cpu_seconds": 167.234375
+      },
+      {
+        "pid": 22464,
+        "name": "python.exe",
+        "rss_bytes": 134107136,
+        "cpu_seconds": 120.875
+      },
+      {
+        "pid": 22624,
+        "name": "python.exe",
+        "rss_bytes": 18399232,
+        "cpu_seconds": 28.59375
+      }
+    ],
+    "ollama": {
+      "http": 200,
+      "embedding_models": [
+        "nomic-embed-text:latest"
+      ]
+    },
+    "host_ram_bytes": 8419053568
+  },
+  "memory_note": "Snapshot working sets, not sampled peak memory."
+}

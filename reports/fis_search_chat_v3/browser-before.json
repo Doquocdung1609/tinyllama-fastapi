@@ -1,0 +1,1948 @@
+{
+  "mocked": false,
+  "search_inputs": 2,
+  "search_text": "NĂNG LỰC 01 / HYBRID SEARCH\nTìm kiếm bằng chứng tài chính\n\nTìm theo từ khóa hoặc ý nghĩa, đối chiếu đoạn nguồn và mở tài liệu liên quan.\n\nNguồn PDF / SEC\nCâu hỏi tìm kiếm\nTài liệu tìm kiếm\nTất cả PDF trong workspace\nNASDAQ_AAPL_2025.pdf · AAPL\n20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf · HPG\n20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf · BIDV\n\nTự động chọn bộ truy xuất thực sự sẵn sàng. Chi tiết phương pháp nằm trong công cụ nâng cao.\n\nTìm kiếm\nNâng cao / lựa chọn thuật toán và nguồn SEC\nTìm kiếm\nBM25\nDense\nHybrid RRF\nTop-k\n5\n10\n20\nCùng phạm vi tài liệu · RRF k=60\nChế độ bằng chứng\nTự động (khuyến nghị)\nSearch V3R3 · ưu tiên đúng chỉ tiêu\nSearch V3R2 · kiểm tra nhãn và đơn vị nguồn\nSearch V3R · bằng chứng theo vùng\nSearch V3 · tìm nguồn, xác minh số liệu riêng\nSearch V2 · ứng viên có kiểm tra ngữ cảnh\nBaseline nguyên bản\nNguồn / thị trường\nTài liệu Việt Nam\nPDF tải lên\nUS SEC\nTất cả nguồn đã cấu hình\nDoanh nghiệp / mã cổ phiếu\nKỳ báo cáo\nTài liệu\nTất cả tài liệu sẵn sàng\nAAPL · 2025-09-27\nHPG · 2025\nBIDV · 2024\nCâu trả lời theo nguồn\n\nDòng lợi nhuận sau thuế chưa phân phối nằm tại trang PDF 4 (riêng / công ty mẹ) [1]; trang PDF 7 (hợp nhất) [2].\n\n BIDV · trang 4\n BIDV · trang 7\nPhương pháp thực thi\nChưa tìm thấy bằng chứng đủ tin cậy\n\nKiểm tra doanh nghiệp, kỳ, báo cáo riêng/hợp nhất và cơ sở số liệu; chọn rõ nguồn để tiếp tục.\n\nChi tiết kiểm tra\n\nBM25 tìm từ/cụm từ; Dense tìm ngữ nghĩa; Hybrid hợp nhất thứ hạng. Điểm xếp hạng không phải xác suất đúng. Search V3 giữ đoạn liên quan và kiểm tra quyền trả lời số riêng; các baseline nguyên bản luôn có trong So sánh.\n\nKết quả tìm kiếm\n2 kết quả · 6.975,46 ms\n1. BIDV\nPDF\n2024 · Trang PDF 4 · Riêng / công ty mẹ · BM25 #— · Dense #—\n\n3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054\n\nGiá trị và đơn vị gốc · chưa tự xác minh\nÔ đã đối chiếu ảnh nguồn\nHỏi về nguồn này\nMở bằng chứng\n2. BIDV\nPDF\n2024 · Trang PDF 7 · Hợp nhất · BM25 #— · Dense #—\n\n4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506\n\nGiá trị và đơn vị gốc · chưa tự xác minh\nÔ đã đối chiếu ảnh nguồn\nHỏi về nguồn này\nMở bằng chứng\nXem nhanh bằng chứng\nNguồn có thể đối chiếu\n\n3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054\n\nDoanh nghiệp\nBIDV\nKỳ báo cáo\n2024\nĐơn vị nguồn\nTRIEU_VND\nChỉ tiêu nguồn\n3. Lợi nhuận sau thuế chưa phân phối\nVị trí\nTrang PDF 4\nMở trình xem tài liệu\nSao chép trích dẫn\n\nTọa độ được lấy từ lớp chữ PDF hoặc OCR, không tự suy đoán vị trí ô.",
+  "chat_question": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+  "chat_text": "Financial Assistant\n23:08\nĐã xác minh ô nguồn\n\nFY2025 doanh thu thuần: 416.161 triệu USD [1]; FY2024: 391.035 triệu USD [2]. Mức thay đổi là 25.126 triệu USD.\n\nPhép tính dùng giá trị ô gốc; không dùng tỷ lệ tăng trưởng đã làm tròn trong báo cáo.\n\nCác bước tính · Đã kiểm chứng độc lập\n[1] Hợp nhất · trang 32\n[2] Hợp nhất · trang 32\nSao chép\nHỏi lại\nPhạm vi & kỹ thuật",
+  "traces": [
+    {
+      "url": "http://127.0.0.1:18110/studio/query",
+      "response": {
+        "status": "READY",
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d",
+        "source_generations": [
+          [
+            "PDF",
+            "d45266c549925c713dfeab283196362bd04f2507cfa52dfcaa488d3c5042e09f"
+          ]
+        ],
+        "results": [
+          {
+            "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "rank": 1,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 4,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+            "citation_id": "e17800f7f7d5d754b5e8962f",
+            "evidence_id": "e17800f7f7d5d754b5e8962f",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page_1_based": 4,
+            "page_index_0_based": 3,
+            "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+            "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p4-r22",
+            "table_id": "p4-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "row_box": [
+              53.63999938964844,
+              287.5145263671875,
+              538.7257690429688,
+              297.2122497558594
+            ],
+            "rectangles": [
+              [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "SEPARATE",
+            "scope": "SEPARATE",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 3
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "34,164,156",
+                "box": [
+                  294.348876953125,
+                  287.5145263671875,
+                  334.12091064453125,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 333.9630485983456
+              },
+              {
+                "column_index": 1,
+                "text": "70,898",
+                "box": [
+                  398.8988037109375,
+                  287.5145263671875,
+                  423.16510009765625,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 423.16192626953125
+              },
+              {
+                "column_index": 2,
+                "text": "34,235,054",
+                "box": [
+                  498.9535217285156,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 538.5679500804227
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 66,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": true
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "34,164,156",
+                  "value": "34164156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "70,898",
+                  "value": "70898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "34,235,054",
+                  "value": "34235054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 3,
+              "unit_source_page": 3,
+              "header_marker_centers": [
+                290.2500762939453,
+                388.84722900390625,
+                481.05987548828125
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW"
+          },
+          {
+            "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "rank": 2,
+            "source_kind": "PDF",
+            "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+            "page": 7,
+            "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+            "citation_id": "fb11c2fe47f2093411b46b85",
+            "evidence_id": "fb11c2fe47f2093411b46b85",
+            "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+            "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+            "issuer": "BIDV",
+            "page_1_based": 7,
+            "page_index_0_based": 6,
+            "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+            "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+            "row_id": "p7-r25",
+            "table_id": "p7-table-candidates",
+            "column_id": null,
+            "char_offsets": null,
+            "word_boxes": null,
+            "box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "row_box": [
+              59.159996032714844,
+              310.19451904296875,
+              545.3453369140625,
+              319.8922424316406
+            ],
+            "rectangles": [
+              [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ]
+            ],
+            "coordinate_space": "PDF_POINTS_TOP_LEFT",
+            "highlight_status": "EXTRACTED_NATIVE_ROW",
+            "extraction_method": "NATIVE",
+            "extraction_status": "NATIVE_TEXT_EXTRACTED",
+            "verification_status": "NATIVE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED",
+            "retrieval_status": "RETRIEVED",
+            "statement_scope": "CONSOLIDATED",
+            "scope": "CONSOLIDATED",
+            "report_period": "2024",
+            "period": "2024",
+            "scope_provenance": {
+              "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+              "page": 6
+            },
+            "unit": "TRIEU_VND",
+            "metric": "retained_earnings",
+            "source_cells": [
+              {
+                "column_index": 0,
+                "text": "36,192,494",
+                "box": [
+                  326.84149169921875,
+                  310.19451904296875,
+                  366.70111083984375,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 366.4551071893601
+              },
+              {
+                "column_index": 1,
+                "text": "72,012",
+                "box": [
+                  429.2282409667969,
+                  310.19451904296875,
+                  453.5821533203125,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 453.56573994954425
+              },
+              {
+                "column_index": 2,
+                "text": "36,264,506",
+                "box": [
+                  505.5731201171875,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "confidence": null,
+                "verification": "NATIVE_CELL_VERIFIED",
+                "blank": false,
+                "column_right_anchor": 545.1201840355283
+              }
+            ],
+            "adjustment_columns_candidate": true,
+            "rerank_score": 66,
+            "rank_reasons": {
+              "exact_metric": true,
+              "row_overlap": 7,
+              "adjustment_table": true,
+              "scope_match": null,
+              "period_match": true
+            },
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "adjustment_verification": {
+              "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+              "status": "VERIFIED",
+              "cells": [
+                {
+                  "raw": "36,192,494",
+                  "value": "36192494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "basis": "ORIGINAL"
+                },
+                {
+                  "raw": "72,012",
+                  "value": "72012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "basis": "ADJUSTMENT"
+                },
+                {
+                  "raw": "36,264,506",
+                  "value": "36264506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "basis": "RESTATED"
+                }
+              ],
+              "period_end": "31/12/2024",
+              "scope_source_page": 6,
+              "unit_source_page": 6,
+              "header_marker_centers": [
+                320.2500762939453,
+                420.2871856689453,
+                499.5398712158203
+              ],
+              "checks": [
+                "ORIGINAL_NATIVE_CELL_BYTES",
+                "SEMANTIC_COLUMN_ORDER",
+                "SOURCE_SCOPE_DATE_UNIT",
+                "RESTATEMENT_IDENTITY"
+              ]
+            },
+            "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW"
+          }
+        ],
+        "mode": "hybrid",
+        "source_errors": [],
+        "latency_ms": 6975.46,
+        "timings_ms": {
+          "PDF": 6975.46
+        },
+        "cross_source_order": null,
+        "intent": {
+          "raw_text": "Tìm dòng lợi nhuận sau thuế chưa phân phối năm 2024.",
+          "intent": "FIND_EVIDENCE",
+          "issuer_mentions": [],
+          "metric": "retained_earnings",
+          "metric_phrases": [
+            "loi nhuan sau thue chua phan phoi",
+            "retained earnings"
+          ],
+          "years": [
+            "2024"
+          ],
+          "period_type": "FY",
+          "scope": null,
+          "basis": null,
+          "requested_unit": null,
+          "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+        },
+        "evidence_status": "RELATED_UNVERIFIED_EVIDENCE",
+        "evidence_reason": null,
+        "search_profile": "faith_r_product_v1",
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "candidate_count": 2,
+        "scope_availability": [
+          "CONSOLIDATED",
+          "SEPARATE"
+        ],
+        "scope_missing": false,
+        "routing_reason": "SHARED_FINANCIAL_PRODUCT_ENGINE",
+        "financial_evidence": {
+          "status": "SOURCE_EXCERPTS",
+          "answer_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+          "answer": "Dòng lợi nhuận sau thuế chưa phân phối nằm tại trang PDF 4 (riêng / công ty mẹ) [1]; trang PDF 7 (hợp nhất) [2].",
+          "answer_explanation": "Nhấn nguồn để xem đúng dòng. Việc tìm thấy dòng không tự xác minh các chữ số OCR.",
+          "values": [],
+          "citations": [
+            {
+              "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+              "citation_id": "e17800f7f7d5d754b5e8962f",
+              "evidence_id": "e17800f7f7d5d754b5e8962f",
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_kind": "PDF",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "issuer": "BIDV",
+              "page": 4,
+              "page_1_based": 4,
+              "page_index_0_based": 3,
+              "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+              "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+              "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+              "row_id": "p4-r22",
+              "table_id": "p4-table-candidates",
+              "column_id": null,
+              "char_offsets": null,
+              "word_boxes": null,
+              "box": [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ],
+              "row_box": [
+                53.63999938964844,
+                287.5145263671875,
+                538.7257690429688,
+                297.2122497558594
+              ],
+              "rectangles": [
+                [
+                  53.63999938964844,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ]
+              ],
+              "coordinate_space": "PDF_POINTS_TOP_LEFT",
+              "highlight_status": "EXTRACTED_NATIVE_ROW",
+              "extraction_method": "NATIVE",
+              "extraction_status": "NATIVE_TEXT_EXTRACTED",
+              "verification_status": "NATIVE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED",
+              "retrieval_status": "RETRIEVED",
+              "statement_scope": "SEPARATE",
+              "scope": "SEPARATE",
+              "report_period": "2024",
+              "period": "2024",
+              "scope_provenance": {
+                "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+                "page": 3
+              },
+              "unit": "TRIEU_VND",
+              "metric": "retained_earnings",
+              "source_cells": [
+                {
+                  "column_index": 0,
+                  "text": "34,164,156",
+                  "box": [
+                    294.348876953125,
+                    287.5145263671875,
+                    334.12091064453125,
+                    297.2122497558594
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 333.9630485983456
+                },
+                {
+                  "column_index": 1,
+                  "text": "70,898",
+                  "box": [
+                    398.8988037109375,
+                    287.5145263671875,
+                    423.16510009765625,
+                    297.2122497558594
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 423.16192626953125
+                },
+                {
+                  "column_index": 2,
+                  "text": "34,235,054",
+                  "box": [
+                    498.9535217285156,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 538.5679500804227
+                }
+              ],
+              "adjustment_columns_candidate": true,
+              "rerank_score": 66,
+              "rank_reasons": {
+                "exact_metric": true,
+                "row_overlap": 7,
+                "adjustment_table": true,
+                "scope_match": null,
+                "period_match": true
+              },
+              "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+              "engine_version": "FAITH_R_PRODUCT_V1",
+              "adjustment_verification": {
+                "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+                "status": "VERIFIED",
+                "cells": [
+                  {
+                    "raw": "34,164,156",
+                    "value": "34164156",
+                    "box": [
+                      294.348876953125,
+                      287.5145263671875,
+                      334.12091064453125,
+                      297.2122497558594
+                    ],
+                    "basis": "ORIGINAL"
+                  },
+                  {
+                    "raw": "70,898",
+                    "value": "70898",
+                    "box": [
+                      398.8988037109375,
+                      287.5145263671875,
+                      423.16510009765625,
+                      297.2122497558594
+                    ],
+                    "basis": "ADJUSTMENT"
+                  },
+                  {
+                    "raw": "34,235,054",
+                    "value": "34235054",
+                    "box": [
+                      498.9535217285156,
+                      287.5145263671875,
+                      538.7257690429688,
+                      297.2122497558594
+                    ],
+                    "basis": "RESTATED"
+                  }
+                ],
+                "period_end": "31/12/2024",
+                "scope_source_page": 3,
+                "unit_source_page": 3,
+                "header_marker_centers": [
+                  290.2500762939453,
+                  388.84722900390625,
+                  481.05987548828125
+                ],
+                "checks": [
+                  "ORIGINAL_NATIVE_CELL_BYTES",
+                  "SEMANTIC_COLUMN_ORDER",
+                  "SOURCE_SCOPE_DATE_UNIT",
+                  "RESTATEMENT_IDENTITY"
+                ]
+              },
+              "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+              "rank": 1
+            },
+            {
+              "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+              "citation_id": "fb11c2fe47f2093411b46b85",
+              "evidence_id": "fb11c2fe47f2093411b46b85",
+              "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+              "source_kind": "PDF",
+              "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+              "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+              "issuer": "BIDV",
+              "page": 7,
+              "page_1_based": 7,
+              "page_index_0_based": 6,
+              "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+              "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+              "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+              "row_id": "p7-r25",
+              "table_id": "p7-table-candidates",
+              "column_id": null,
+              "char_offsets": null,
+              "word_boxes": null,
+              "box": [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ],
+              "row_box": [
+                59.159996032714844,
+                310.19451904296875,
+                545.3453369140625,
+                319.8922424316406
+              ],
+              "rectangles": [
+                [
+                  59.159996032714844,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ]
+              ],
+              "coordinate_space": "PDF_POINTS_TOP_LEFT",
+              "highlight_status": "EXTRACTED_NATIVE_ROW",
+              "extraction_method": "NATIVE",
+              "extraction_status": "NATIVE_TEXT_EXTRACTED",
+              "verification_status": "NATIVE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED",
+              "retrieval_status": "RETRIEVED",
+              "statement_scope": "CONSOLIDATED",
+              "scope": "CONSOLIDATED",
+              "report_period": "2024",
+              "period": "2024",
+              "scope_provenance": {
+                "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+                "page": 6
+              },
+              "unit": "TRIEU_VND",
+              "metric": "retained_earnings",
+              "source_cells": [
+                {
+                  "column_index": 0,
+                  "text": "36,192,494",
+                  "box": [
+                    326.84149169921875,
+                    310.19451904296875,
+                    366.70111083984375,
+                    319.8922424316406
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 366.4551071893601
+                },
+                {
+                  "column_index": 1,
+                  "text": "72,012",
+                  "box": [
+                    429.2282409667969,
+                    310.19451904296875,
+                    453.5821533203125,
+                    319.8922424316406
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 453.56573994954425
+                },
+                {
+                  "column_index": 2,
+                  "text": "36,264,506",
+                  "box": [
+                    505.5731201171875,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ],
+                  "confidence": null,
+                  "verification": "NATIVE_CELL_VERIFIED",
+                  "blank": false,
+                  "column_right_anchor": 545.1201840355283
+                }
+              ],
+              "adjustment_columns_candidate": true,
+              "rerank_score": 66,
+              "rank_reasons": {
+                "exact_metric": true,
+                "row_overlap": 7,
+                "adjustment_table": true,
+                "scope_match": null,
+                "period_match": true
+              },
+              "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+              "engine_version": "FAITH_R_PRODUCT_V1",
+              "adjustment_verification": {
+                "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+                "status": "VERIFIED",
+                "cells": [
+                  {
+                    "raw": "36,192,494",
+                    "value": "36192494",
+                    "box": [
+                      326.84149169921875,
+                      310.19451904296875,
+                      366.70111083984375,
+                      319.8922424316406
+                    ],
+                    "basis": "ORIGINAL"
+                  },
+                  {
+                    "raw": "72,012",
+                    "value": "72012",
+                    "box": [
+                      429.2282409667969,
+                      310.19451904296875,
+                      453.5821533203125,
+                      319.8922424316406
+                    ],
+                    "basis": "ADJUSTMENT"
+                  },
+                  {
+                    "raw": "36,264,506",
+                    "value": "36264506",
+                    "box": [
+                      505.5731201171875,
+                      310.19451904296875,
+                      545.3453369140625,
+                      319.8922424316406
+                    ],
+                    "basis": "RESTATED"
+                  }
+                ],
+                "period_end": "31/12/2024",
+                "scope_source_page": 6,
+                "unit_source_page": 6,
+                "header_marker_centers": [
+                  320.2500762939453,
+                  420.2871856689453,
+                  499.5398712158203
+                ],
+                "checks": [
+                  "ORIGINAL_NATIVE_CELL_BYTES",
+                  "SEMANTIC_COLUMN_ORDER",
+                  "SOURCE_SCOPE_DATE_UNIT",
+                  "RESTATEMENT_IDENTITY"
+                ]
+              },
+              "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+              "rank": 2
+            }
+          ],
+          "operands": [],
+          "calculation_steps": [],
+          "formula": null,
+          "unit": null,
+          "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+          "independent_verification": {
+            "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+            "stage_a": [],
+            "stage_b": [],
+            "status": "SOURCE_SUPPORTED_NON_NUMERIC"
+          },
+          "answer_plan": {
+            "question_plan": {
+              "raw_text": "Tìm dòng lợi nhuận sau thuế chưa phân phối năm 2024.",
+              "intent": "TABLE_LOOKUP",
+              "metric": "retained_earnings",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "period_type": "INSTANT",
+              "basis": null,
+              "operation": "EXTRACT",
+              "metrics": [
+                "retained_earnings"
+              ],
+              "requested_unit": null,
+              "section": null,
+              "language": "vi",
+              "inherited_slots": [],
+              "version": "FINANCIAL_QUESTION_PLAN_V2"
+            },
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "SOURCE_FACT",
+                "source_refs": [
+                  "e17800f7f7d5d754b5e8962f",
+                  "fb11c2fe47f2093411b46b85"
+                ],
+                "source_scope": null,
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+                "text": "Dòng lợi nhuận sau thuế chưa phân phối nằm tại trang PDF 4 (riêng / công ty mẹ) [1]; trang PDF 7 (hợp nhất) [2].",
+                "value": null,
+                "calculation_id": null,
+                "operand_ids": []
+              }
+            ],
+            "citations": [
+              {
+                "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+                "citation_id": "e17800f7f7d5d754b5e8962f",
+                "evidence_id": "e17800f7f7d5d754b5e8962f",
+                "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+                "source_kind": "PDF",
+                "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+                "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+                "issuer": "BIDV",
+                "page": 4,
+                "page_1_based": 4,
+                "page_index_0_based": 3,
+                "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+                "text_quote": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+                "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+                "row_id": "p4-r22",
+                "table_id": "p4-table-candidates",
+                "column_id": null,
+                "char_offsets": null,
+                "word_boxes": null,
+                "box": [
+                  53.63999938964844,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "row_box": [
+                  53.63999938964844,
+                  287.5145263671875,
+                  538.7257690429688,
+                  297.2122497558594
+                ],
+                "rectangles": [
+                  [
+                    53.63999938964844,
+                    287.5145263671875,
+                    538.7257690429688,
+                    297.2122497558594
+                  ]
+                ],
+                "coordinate_space": "PDF_POINTS_TOP_LEFT",
+                "highlight_status": "EXTRACTED_NATIVE_ROW",
+                "extraction_method": "NATIVE",
+                "extraction_status": "NATIVE_TEXT_EXTRACTED",
+                "verification_status": "NATIVE_CELL_VERIFIED",
+                "numeric_status": "CELL_VERIFIED",
+                "retrieval_status": "RETRIEVED",
+                "statement_scope": "SEPARATE",
+                "scope": "SEPARATE",
+                "report_period": "2024",
+                "period": "2024",
+                "scope_provenance": {
+                  "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+                  "page": 3
+                },
+                "unit": "TRIEU_VND",
+                "metric": "retained_earnings",
+                "source_cells": [
+                  {
+                    "column_index": 0,
+                    "text": "34,164,156",
+                    "box": [
+                      294.348876953125,
+                      287.5145263671875,
+                      334.12091064453125,
+                      297.2122497558594
+                    ],
+                    "confidence": null,
+                    "verification": "NATIVE_CELL_VERIFIED",
+                    "blank": false,
+                    "column_right_anchor": 333.9630485983456
+                  },
+                  {
+                    "column_index": 1,
+                    "text": "70,898",
+                    "box": [
+                      398.8988037109375,
+                      287.5145263671875,
+                      423.16510009765625,
+                      297.2122497558594
+                    ],
+                    "confidence": null,
+                    "verification": "NATIVE_CELL_VERIFIED",
+                    "blank": false,
+                    "column_right_anchor": 423.16192626953125
+                  },
+                  {
+                    "column_index": 2,
+                    "text": "34,235,054",
+                    "box": [
+                      498.9535217285156,
+                      287.5145263671875,
+                      538.7257690429688,
+                      297.2122497558594
+                    ],
+                    "confidence": null,
+                    "verification": "NATIVE_CELL_VERIFIED",
+                    "blank": false,
+                    "column_right_anchor": 538.5679500804227
+                  }
+                ],
+                "adjustment_columns_candidate": true,
+                "rerank_score": 66,
+                "rank_reasons": {
+                  "exact_metric": true,
+                  "row_overlap": 7,
+                  "adjustment_table": true,
+                  "scope_match": null,
+                  "period_match": true
+                },
+                "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+                "engine_version": "FAITH_R_PRODUCT_V1",
+                "adjustment_verification": {
+                  "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+                  "status": "VERIFIED",
+                  "cells": [
+                    {
+                      "raw": "34,164,156",
+                      "value": "34164156",
+                      "box": [
+                        294.348876953125,
+                        287.5145263671875,
+                        334.12091064453125,
+                        297.2122497558594
+                      ],
+                      "basis": "ORIGINAL"
+                    },
+                    {
+                      "raw": "70,898",
+                      "value": "70898",
+                      "box": [
+                        398.8988037109375,
+                        287.5145263671875,
+                        423.16510009765625,
+                        297.2122497558594
+                      ],
+                      "basis": "ADJUSTMENT"
+                    },
+                    {
+                      "raw": "34,235,054",
+                      "value": "34235054",
+                      "box": [
+                        498.9535217285156,
+                        287.5145263671875,
+                        538.7257690429688,
+                        297.2122497558594
+                      ],
+                      "basis": "RESTATED"
+                    }
+                  ],
+                  "period_end": "31/12/2024",
+                  "scope_source_page": 3,
+                  "unit_source_page": 3,
+                  "header_marker_centers": [
+                    290.2500762939453,
+                    388.84722900390625,
+                    481.05987548828125
+                  ],
+                  "checks": [
+                    "ORIGINAL_NATIVE_CELL_BYTES",
+                    "SEMANTIC_COLUMN_ORDER",
+                    "SOURCE_SCOPE_DATE_UNIT",
+                    "RESTATEMENT_IDENTITY"
+                  ]
+                },
+                "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+                "rank": 1
+              },
+              {
+                "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+                "citation_id": "fb11c2fe47f2093411b46b85",
+                "evidence_id": "fb11c2fe47f2093411b46b85",
+                "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+                "source_kind": "PDF",
+                "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+                "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+                "issuer": "BIDV",
+                "page": 7,
+                "page_1_based": 7,
+                "page_index_0_based": 6,
+                "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+                "text_quote": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+                "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+                "row_id": "p7-r25",
+                "table_id": "p7-table-candidates",
+                "column_id": null,
+                "char_offsets": null,
+                "word_boxes": null,
+                "box": [
+                  59.159996032714844,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "row_box": [
+                  59.159996032714844,
+                  310.19451904296875,
+                  545.3453369140625,
+                  319.8922424316406
+                ],
+                "rectangles": [
+                  [
+                    59.159996032714844,
+                    310.19451904296875,
+                    545.3453369140625,
+                    319.8922424316406
+                  ]
+                ],
+                "coordinate_space": "PDF_POINTS_TOP_LEFT",
+                "highlight_status": "EXTRACTED_NATIVE_ROW",
+                "extraction_method": "NATIVE",
+                "extraction_status": "NATIVE_TEXT_EXTRACTED",
+                "verification_status": "NATIVE_CELL_VERIFIED",
+                "numeric_status": "CELL_VERIFIED",
+                "retrieval_status": "RETRIEVED",
+                "statement_scope": "CONSOLIDATED",
+                "scope": "CONSOLIDATED",
+                "report_period": "2024",
+                "period": "2024",
+                "scope_provenance": {
+                  "method": "PAGE_HEADING_OR_CONTINUED_TABLE",
+                  "page": 6
+                },
+                "unit": "TRIEU_VND",
+                "metric": "retained_earnings",
+                "source_cells": [
+                  {
+                    "column_index": 0,
+                    "text": "36,192,494",
+                    "box": [
+                      326.84149169921875,
+                      310.19451904296875,
+                      366.70111083984375,
+                      319.8922424316406
+                    ],
+                    "confidence": null,
+                    "verification": "NATIVE_CELL_VERIFIED",
+                    "blank": false,
+                    "column_right_anchor": 366.4551071893601
+                  },
+                  {
+                    "column_index": 1,
+                    "text": "72,012",
+                    "box": [
+                      429.2282409667969,
+                      310.19451904296875,
+                      453.5821533203125,
+                      319.8922424316406
+                    ],
+                    "confidence": null,
+                    "verification": "NATIVE_CELL_VERIFIED",
+                    "blank": false,
+                    "column_right_anchor": 453.56573994954425
+                  },
+                  {
+                    "column_index": 2,
+                    "text": "36,264,506",
+                    "box": [
+                      505.5731201171875,
+                      310.19451904296875,
+                      545.3453369140625,
+                      319.8922424316406
+                    ],
+                    "confidence": null,
+                    "verification": "NATIVE_CELL_VERIFIED",
+                    "blank": false,
+                    "column_right_anchor": 545.1201840355283
+                  }
+                ],
+                "adjustment_columns_candidate": true,
+                "rerank_score": 66,
+                "rank_reasons": {
+                  "exact_metric": true,
+                  "row_overlap": 7,
+                  "adjustment_table": true,
+                  "scope_match": null,
+                  "period_match": true
+                },
+                "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+                "engine_version": "FAITH_R_PRODUCT_V1",
+                "adjustment_verification": {
+                  "version": "NATIVE_ADJUSTMENT_COLUMNS_V1",
+                  "status": "VERIFIED",
+                  "cells": [
+                    {
+                      "raw": "36,192,494",
+                      "value": "36192494",
+                      "box": [
+                        326.84149169921875,
+                        310.19451904296875,
+                        366.70111083984375,
+                        319.8922424316406
+                      ],
+                      "basis": "ORIGINAL"
+                    },
+                    {
+                      "raw": "72,012",
+                      "value": "72012",
+                      "box": [
+                        429.2282409667969,
+                        310.19451904296875,
+                        453.5821533203125,
+                        319.8922424316406
+                      ],
+                      "basis": "ADJUSTMENT"
+                    },
+                    {
+                      "raw": "36,264,506",
+                      "value": "36264506",
+                      "box": [
+                        505.5731201171875,
+                        310.19451904296875,
+                        545.3453369140625,
+                        319.8922424316406
+                      ],
+                      "basis": "RESTATED"
+                    }
+                  ],
+                  "period_end": "31/12/2024",
+                  "scope_source_page": 6,
+                  "unit_source_page": 6,
+                  "header_marker_centers": [
+                    320.2500762939453,
+                    420.2871856689453,
+                    499.5398712158203
+                  ],
+                  "checks": [
+                    "ORIGINAL_NATIVE_CELL_BYTES",
+                    "SEMANTIC_COLUMN_ORDER",
+                    "SOURCE_SCOPE_DATE_UNIT",
+                    "RESTATEMENT_IDENTITY"
+                  ]
+                },
+                "verification": "VERIFIED_NATIVE_ADJUSTMENT_ROW",
+                "rank": 2
+              }
+            ],
+            "operands": [],
+            "calculations": [],
+            "version": "VERIFIED_ANSWER_PLAN_V2"
+          },
+          "query_plan": {
+            "raw_text": "Tìm dòng lợi nhuận sau thuế chưa phân phối năm 2024.",
+            "intent": "TABLE_LOOKUP",
+            "metric": "retained_earnings",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "period_type": "INSTANT",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "retained_earnings"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "vi",
+            "inherited_slots": [],
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "conversation_slots": {
+            "raw_text": "Tìm dòng lợi nhuận sau thuế chưa phân phối năm 2024.",
+            "intent": "TABLE_LOOKUP",
+            "metric": "retained_earnings",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "period_type": "INSTANT",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "retained_earnings"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "vi",
+            "inherited_slots": [],
+            "version": "FINANCIAL_QUESTION_PLAN_V2",
+            "document_ids": [
+              "2bed2b3c312c8149e6a2ff6ab80c694a"
+            ],
+            "source_hashes": [
+              "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+            ],
+            "citation_ids": [
+              "e17800f7f7d5d754b5e8962f",
+              "fb11c2fe47f2093411b46b85"
+            ],
+            "verified_operand_ids": []
+          },
+          "period": null,
+          "source_periods": [],
+          "answer_source_chunk_id": null,
+          "answer_evidence_ids": [
+            "e17800f7f7d5d754b5e8962f",
+            "fb11c2fe47f2093411b46b85"
+          ],
+          "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+          "reason": null,
+          "warnings": [],
+          "search_profile": "faith_r_product_v1",
+          "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+          "retrieval_trace": {
+            "engine_version": "FAITH_R_PRODUCT_V1",
+            "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+            "latency_ms": 6975.46,
+            "candidate_count": 2,
+            "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+          },
+          "generation_trace": {
+            "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+            "model_status": "NOT_REQUIRED"
+          }
+        },
+        "query_plan": null
+      }
+    },
+    {
+      "url": "http://127.0.0.1:18110/studio/chat",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2025 doanh thu thuần: 416.161 triệu USD [1]; FY2024: 391.035 triệu USD [2]. Mức thay đổi là 25.126 triệu USD.",
+        "answer_explanation": "Phép tính dùng giá trị ô gốc; không dùng tỷ lệ tăng trưởng đã làm tròn trong báo cáo.",
+        "values": [
+          "25126"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "row_box": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Total net sales",
+            "metric": "net_revenue",
+            "metric_canonical_name": "net_revenue",
+            "value_raw": "416,161",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Total net sales 416,161 391,035 383,285",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "evidence_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "value": "416161",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              457.259033203125,
+              179.55801391601562,
+              489.7850341796875,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              457.259033203125,
+              179.55801391601562,
+              489.7850341796875,
+              188.55801391601562
+            ],
+            "row_box": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Total net sales",
+            "metric": "net_revenue",
+            "metric_canonical_name": "net_revenue",
+            "value_raw": "391,035",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Total net sales 416,161 391,035 383,285",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "evidence_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "value": "391035",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              179.55801391601562,
+              420.7850341796875,
+              188.55801391601562
+            ],
+            "row_box": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Total net sales",
+            "metric": "net_revenue",
+            "metric_canonical_name": "net_revenue",
+            "value_raw": "416,161",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Total net sales 416,161 391,035 383,285",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "evidence_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_cc16f54065bce239f5e0fad95209",
+            "value": "416161"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              457.259033203125,
+              179.55801391601562,
+              489.7850341796875,
+              188.55801391601562
+            ],
+            "cell_bbox": [
+              457.259033203125,
+              179.55801391601562,
+              489.7850341796875,
+              188.55801391601562
+            ],
+            "row_box": [
+              70.12999725341797,
+              179.55801391601562,
+              558.7852172851562,
+              188.55801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Total net sales",
+            "metric": "net_revenue",
+            "metric_canonical_name": "net_revenue",
+            "value_raw": "391,035",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Total net sales 416,161 391,035 383,285",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "evidence_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+            "value": "391035"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "calculation_1",
+            "title": "current − previous",
+            "operation": "ABS_CHANGE",
+            "formula": "current − previous",
+            "substitution": [
+              {
+                "value": "416,161",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              },
+              {
+                "value": "391,035",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "25126",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "current − previous",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "stage_a": [
+            {
+              "operand_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "citation_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "value": "416161",
+              "status": "VERIFIED"
+            },
+            {
+              "operand_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "citation_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "value": "391035",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "recomputed_result": "25126",
+              "status": "VERIFIED"
+            }
+          ],
+          "status": "VERIFIED"
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+            "intent": "PERIOD_COMPARISON",
+            "metric": "net_revenue",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "ABS_CHANGE",
+            "metrics": [
+              "net_revenue"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "vi",
+            "inherited_slots": [],
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_cc16f54065bce239f5e0fad95209",
+                "cellv2_7f1fcea611bce77e0db246ae826f"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024",
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "25126",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_cc16f54065bce239f5e0fad95209",
+                "cellv2_7f1fcea611bce77e0db246ae826f"
+              ]
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                179.55801391601562,
+                420.7850341796875,
+                188.55801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                179.55801391601562,
+                420.7850341796875,
+                188.55801391601562
+              ],
+              "row_box": [
+                70.12999725341797,
+                179.55801391601562,
+                558.7852172851562,
+                188.55801391601562
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Total net sales",
+              "metric": "net_revenue",
+              "metric_canonical_name": "net_revenue",
+              "value_raw": "416,161",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Total net sales 416,161 391,035 383,285",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "evidence_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "value": "416161",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                457.259033203125,
+                179.55801391601562,
+                489.7850341796875,
+                188.55801391601562
+              ],
+              "cell_bbox": [
+                457.259033203125,
+                179.55801391601562,
+                489.7850341796875,
+                188.55801391601562
+              ],
+              "row_box": [
+                70.12999725341797,
+                179.55801391601562,
+                558.7852172851562,
+                188.55801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Total net sales",
+              "metric": "net_revenue",
+              "metric_canonical_name": "net_revenue",
+              "value_raw": "391,035",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Total net sales 416,161 391,035 383,285",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "evidence_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "value": "391035",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                179.55801391601562,
+                420.7850341796875,
+                188.55801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                179.55801391601562,
+                420.7850341796875,
+                188.55801391601562
+              ],
+              "row_box": [
+                70.12999725341797,
+                179.55801391601562,
+                558.7852172851562,
+                188.55801391601562
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Total net sales",
+              "metric": "net_revenue",
+              "metric_canonical_name": "net_revenue",
+              "value_raw": "416,161",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Total net sales 416,161 391,035 383,285",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "evidence_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_cc16f54065bce239f5e0fad95209",
+              "value": "416161"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                457.259033203125,
+                179.55801391601562,
+                489.7850341796875,
+                188.55801391601562
+              ],
+              "cell_bbox": [
+                457.259033203125,
+                179.55801391601562,
+                489.7850341796875,
+                188.55801391601562
+              ],
+              "row_box": [
+                70.12999725341797,
+                179.55801391601562,
+                558.7852172851562,
+                188.55801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Total net sales",
+              "metric": "net_revenue",
+              "metric_canonical_name": "net_revenue",
+              "value_raw": "391,035",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Total net sales 416,161 391,035 383,285",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "evidence_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_7f1fcea611bce77e0db246ae826f",
+              "value": "391035"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "operand_ids": [
+                "cellv2_cc16f54065bce239f5e0fad95209",
+                "cellv2_7f1fcea611bce77e0db246ae826f"
+              ],
+              "proposed_result": "25126",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+          "intent": "PERIOD_COMPARISON",
+          "metric": "net_revenue",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "ABS_CHANGE",
+          "metrics": [
+            "net_revenue"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "vi",
+          "inherited_slots": [],
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+          "intent": "PERIOD_COMPARISON",
+          "metric": "net_revenue",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "ABS_CHANGE",
+          "metrics": [
+            "net_revenue"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "vi",
+          "inherited_slots": [],
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_hashes": [
+            "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de"
+          ],
+          "citation_ids": [
+            "cellv2_cc16f54065bce239f5e0fad95209",
+            "cellv2_7f1fcea611bce77e0db246ae826f"
+          ],
+          "verified_operand_ids": [
+            "cellv2_cc16f54065bce239f5e0fad95209",
+            "cellv2_7f1fcea611bce77e0db246ae826f"
+          ]
+        },
+        "period": null,
+        "source_periods": [
+          "2024-09-28",
+          "2025-09-27"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_cc16f54065bce239f5e0fad95209",
+          "cellv2_7f1fcea611bce77e0db246ae826f"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+          "latency_ms": 2224.44,
+          "candidate_count": 28,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "session_id": "be692abcfd154728b6873ebbb86d29fb",
+        "resolved_question": "Trong FY2025, khu vực kinh doanh nào của Apple giảm doanh thu so với FY2024 dù tổng doanh thu tăng? Nêu cả hai giá trị, mức giảm tuyệt đối, tỷ lệ và giải thích từ báo cáo.",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    }
+  ]
+}

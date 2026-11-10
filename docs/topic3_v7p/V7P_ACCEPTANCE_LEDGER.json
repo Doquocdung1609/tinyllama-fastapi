@@ -1,0 +1,70 @@
+{
+  "code_head": "3e85fdba74737f5a94f555424d283126fe84dc0e",
+  "gates": [
+    {
+      "gate": "A0",
+      "status": "PASS",
+      "evidence": "Real Apple-01 SUPPORTED 112010 million USD FY2025 p32; typed source hash/row/header/cell; HTTP and Chromium"
+    },
+    {
+      "gate": "A1",
+      "status": "PASS",
+      "evidence": "Real Apple-02 Americas178353 million USD p25; five source-declared regions, complete-set sum and argmax"
+    },
+    {
+      "gate": "A2",
+      "status": "PASS",
+      "evidence": "Real Apple-03 Decimal6.43%; both source operands416161/391035, p32"
+    },
+    {
+      "gate": "A3",
+      "status": "PASS",
+      "evidence": "FY2037/wrong issuer/explicit scope-period filters refuse; raw tamper409; 3 clearly source-derived controlled negative PDFs refuse unknown currency/scope/comparative context"
+    },
+    {
+      "gate": "A4",
+      "status": "PASS",
+      "evidence": "Zero metadata upload, visible filename, actual READY/reload/corrections persisted; duplicate honestly labeled; Apple80pages451chunks and HPG24pages64chunks"
+    },
+    {
+      "gate": "A5",
+      "status": "PASS",
+      "evidence": "Real nonApple HPG OCR/indexes/search executed; numeric mapping remains unsupported and safely refused, documented capability limitation"
+    },
+    {
+      "gate": "A6",
+      "status": "PASS",
+      "evidence": "One chat: numerical, sourced text, company excerpts, exact/comparative followups; isolated live HTTP Ollama-transport failure falls back to BM25"
+    },
+    {
+      "gate": "A7",
+      "status": "BLOCKED",
+      "evidence": "Search/Chat share source IDs; actual PDF p32 row/value/header highlight passes. HD verified citation/official popup URL passes, but SEC denies filing content to undeclared browser automation. No declared contact configured; external filing/table/row/cell visibility unverified"
+    },
+    {
+      "gate": "A8",
+      "status": "PASS",
+      "evidence": "Actual AUTO genericPDF production_v3/hybrid, conditional READYV3R3 only; explicit advanced constraints retained; actual BM25 fallback recorded"
+    },
+    {
+      "gate": "A9",
+      "status": "PASS",
+      "evidence": "Real Chromium147 run, all UI interactions recorded; external SEC denial recorded separately without claiming content success"
+    },
+    {
+      "gate": "A10",
+      "status": "PASS",
+      "evidence": "796Python/12frontend tests, compilation/build/typecheck, actual Windows launcher restart and authenticatedHTTP; final documentation-head CI checked separately"
+    },
+    {
+      "gate": "A11",
+      "status": "PASS",
+      "evidence": "843 frozen scientific Git blobs unchanged; no G2/F10 scoring, qrel edits, model downloads or owner-source/vector mutation"
+    }
+  ],
+  "verdict": "V7P_NOT_ACCEPTED",
+  "hard_blockers": [
+    "A7: SEC official browser filing content denied; compliant declared contact/access needed"
+  ],
+  "research_complete": false
+}

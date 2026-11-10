@@ -1,0 +1,3383 @@
+{
+  "base": "cd8deb96cb8c147ca5c090e9c0a323de511c65bd",
+  "code_head": "3e85fdba74737f5a94f555424d283126fe84dc0e",
+  "files": [
+    {
+      "path": "checkpoints/pre-final-product-20261011-005111/base-commit.txt",
+      "git_blob": "0a1c6c8ec044796d689b6db916c6669ee6c8f1b2"
+    },
+    {
+      "path": "checkpoints/pre-final-product-20261011-005111/qdrant-status.json",
+      "git_blob": "4d1d7b5d2a2b2a0294be3ed4b8b9e23097c21b58"
+    },
+    {
+      "path": "checkpoints/pre-final-product-20261011-005111/source.zip",
+      "git_blob": "365964316b4c0431ec62223066df3f37657ca275"
+    },
+    {
+      "path": "checkpoints/quality-hardening-20261012-102242/base-commit.txt",
+      "git_blob": "fcaae457d57b90445bddd3a46c4a846ab426e8d2"
+    },
+    {
+      "path": "checkpoints/quality-hardening-20261012-102242/conversation-db-hash.json",
+      "git_blob": "58320a53a3bede1f8a6f6e9caf52d01070890944"
+    },
+    {
+      "path": "checkpoints/quality-hardening-20261012-102242/conversations-backup.sqlite3",
+      "git_blob": "226bf94c8eead1e4eeec2be143f45e958efd65f0"
+    },
+    {
+      "path": "checkpoints/quality-hardening-20261012-102242/documents.json",
+      "git_blob": "a974776dfffd9157d852cfc3310dc99147ba64eb"
+    },
+    {
+      "path": "checkpoints/quality-hardening-20261012-102242/git-status.txt",
+      "git_blob": "45f3c2e141efa2fa8479930475710baee6f77978"
+    },
+    {
+      "path": "checkpoints/quality-hardening-20261012-102242/qdrant-status.json",
+      "git_blob": "4d1d7b5d2a2b2a0294be3ed4b8b9e23097c21b58"
+    },
+    {
+      "path": "checkpoints/quality-hardening-20261012-102242/working-tree.patch",
+      "git_blob": "f630dc489a47c5f66c05a91ca776cc46f7724f6f"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/AUTHOR_EVALUATION_AUDIT.md",
+      "git_blob": "a4bbdeefc1779d0c46e4415cf2f7150e5fc36b57"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/AUTHOR_METRIC_COUNTEREXAMPLE.json",
+      "git_blob": "a8d14ae9751dd4fcb325083594b25506b35044e0"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/BASELINE_INTEGRITY.md",
+      "git_blob": "936bb5456252010f70c6b5b941b32728c43d1127"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/OPEN_GAPS.md",
+      "git_blob": "0545d290ed75a9ce19f3d2658196934c70c2d384"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/PAPER_TO_CODE_TRACEABILITY.md",
+      "git_blob": "f854af23807f441227b036de04e5bc3a93e27728"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/REPOSITORY_INVENTORY.json",
+      "git_blob": "04b9e84183512e21924f6e3d78ffcda80a153a67"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/REPRODUCTION_FEASIBILITY.md",
+      "git_blob": "c1c9c84a40bf183152678490d34001cd047c2a0a"
+    },
+    {
+      "path": "docs/topic3/00_AUDIT/SOURCE_AND_MODEL_LOCK.json",
+      "git_blob": "5c20a6017876e7248937cc6ec28d9f7ef306f8a1"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/BASELINE_BENCHMARK_REPORT.md",
+      "git_blob": "ef2de166043aee4476fb645bf757c37e6eeda675"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/CORPUS_MANIFEST.json",
+      "git_blob": "951366420d783a2e9d179d546344c401c0b8aa90"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/INDEX_MANIFEST.json",
+      "git_blob": "4d861bf0c44b5d255f2674a9aca8b03fc29560be"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/MODEL_CACHE_MANIFEST.json",
+      "git_blob": "d46d72e10533f49441ad8407b3798d0839dff4dd"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/PROVISIONAL_SOURCE_QRELS.jsonl",
+      "git_blob": "eb921005d252f0fcac50295ecc56743cd139d35e"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/REPRODUCTION_COMMANDS.md",
+      "git_blob": "12c68b5a9d9b5c3699abfd0f2f8595f56a075afb"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/RETRIEVAL_RESULTS.json",
+      "git_blob": "0e8fab03c7bbd815856eed3925ff181ae82b24ff"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/author_chunks.jsonl",
+      "git_blob": "ce4fa8dfa8ac6d13a7dae265a69d89c82f106168"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/source/hd-20260802.htm",
+      "git_blob": "fa1dfffe5d968160afc3183d24fa2f21778603e1"
+    },
+    {
+      "path": "docs/topic3/01_REPRODUCTION/source/pg-20260930.htm",
+      "git_blob": "49c311732e0f3445e1e72df938a431bc8b3135ea"
+    },
+    {
+      "path": "docs/topic3/02_FAILURES/FAILURE_CASE_STUDIES.md",
+      "git_blob": "5644dd0ef89f46896b563b2b4251fe26bdec01ac"
+    },
+    {
+      "path": "docs/topic3/02_FAILURES/FAILURE_CATALOG.jsonl",
+      "git_blob": "dbd5f1b043dd13abbcff124e202c1b9b9b313e4f"
+    },
+    {
+      "path": "docs/topic3/02_FAILURES/FAILURE_CATALOG.md",
+      "git_blob": "4c9eb2b5e55612bc6beac52e916b7598ff335c60"
+    },
+    {
+      "path": "docs/topic3/02_FAILURES/ROOT_CAUSE_MAP.md",
+      "git_blob": "0f2d41c12fb26ecf1ce0c7b7bacf92bb480805a0"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/CONSERVATIVE_EVIDENCE_ASSESSMENT.json",
+      "git_blob": "b9d7dfb6b256d86858dc09aafe8731b1448c15e9"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/CONTROLLED_EXPERIMENT_RESULTS.md",
+      "git_blob": "1d35ec2e94b595ac31819f474a39e776cbceb8b6"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/IMPROVEMENT_HYPOTHESES_AND_DESIGN.md",
+      "git_blob": "aa598da4b76b3f83ae10ac8e2db937e6e7e5430a"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/STRUCTURE_BM25_NO_ISSUER_RESULTS.json",
+      "git_blob": "4ee8f6ff59094d5e970d63909a30fde78473f10c"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/STRUCTURE_BM25_NO_PERIOD_RESULTS.json",
+      "git_blob": "ddf40c9bf529941e048f7949029c4a7f1b600629"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/STRUCTURE_BM25_RESULTS.json",
+      "git_blob": "fc7cd56fe460d34d08d2cb4290c381482202df9b"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/STRUCTURE_BM25_ROW_ONLY_RESULTS.json",
+      "git_blob": "b0aee5b2d7e707d9c434c2a785b888f14b7fa71f"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/STRUCTURE_TARGETS.json",
+      "git_blob": "6e8de7d25201618957daeb281bdb9b2a3bc99d50"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/source_chunks/0000080424.jsonl",
+      "git_blob": "21838e23c6f1d5effbd50e83a021aeebe15883e7"
+    },
+    {
+      "path": "docs/topic3/03_IMPROVEMENTS/source_chunks/0000354950.jsonl",
+      "git_blob": "9b7d90a2832cf04bb7122d642a2aa6a15318683f"
+    },
+    {
+      "path": "docs/topic3/04_ABLATION/ABLATION_STUDY.md",
+      "git_blob": "6dc974bc3b613f4fc669c787682106edf1d0a002"
+    },
+    {
+      "path": "docs/topic3/04_ABLATION/MEASURED_SUMMARY.json",
+      "git_blob": "0384416b2589351ad1940c6802d75f574c0c28a0"
+    },
+    {
+      "path": "docs/topic3/04_ABLATION/structure_bm25_ablation.png",
+      "git_blob": "9ac8ed84064dc0891bf3170d8a1ea72e35bb7ccb"
+    },
+    {
+      "path": "docs/topic3/05_INDEPENDENT_EVALUATION/ANNOTATION_TEMPLATE.jsonl",
+      "git_blob": "650274aa09758b28b1ccd64c17ee0b06387ae234"
+    },
+    {
+      "path": "docs/topic3/05_INDEPENDENT_EVALUATION/INDEPENDENT_EVALUATION_REPORT.md",
+      "git_blob": "0dd9ea4d380018360cc261b52ce4e5fac1c0f65b"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/FINANCIAL_QA_VALIDATION.md",
+      "git_blob": "33d8725f6df7546c3c7b7405fc8929ee4e17e128"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/PERFORMANCE_AND_RESOURCE_REPORT.md",
+      "git_blob": "67e73ed3ab5e453cfb21931556abc074825a9db1"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/PRODUCT_END_TO_END_QA.md",
+      "git_blob": "014d0e2855a7ab78918e0d7f81657c5b29cf58ec"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/01-overview.png",
+      "git_blob": "91601553a4e639ce7b0ae263545547ac685f7a43"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/02-search-empty.png",
+      "git_blob": "1c7b8913c4e222f7d47b12a82692336521546b56"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/03-search-sec-result.png",
+      "git_blob": "ab6aa8b73bc8a274120a858b30f5bc8e0fc0c5f5"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/04-analysis-sec-supported.png",
+      "git_blob": "204671cef35684e9379b9f0be2f46a749da605dd"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/05-analysis-sec-abstain.png",
+      "git_blob": "b971f7f5859acf517d5d4c4e34e47140080c7dc0"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/06-library-hpg-ready.png",
+      "git_blob": "e1c90d6fbb0c54d6b1ffa9bb92e76e80d1b19fb2"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/07-hpg-search-result.png",
+      "git_blob": "2a9fa4ab676278aaf63004fa723c9b25a3509e08"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/08-hpg-viewer.png",
+      "git_blob": "8c5457f7ecd7fe106ef4f1d93fb95db4b1151af9"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/09-hpg-highlight.png",
+      "git_blob": "286625fdc8ffde4b7c910865449df01aee3c53ca"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/10-bidv-search-result.png",
+      "git_blob": "6806daae65e2b973177229ce92e9924146a7a6c4"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/11-bidv-comparison.png",
+      "git_blob": "c0ee152e29e4962c9ae782b5f7a2d2a2dfc64d1b"
+    },
+    {
+      "path": "docs/topic3/06_PRODUCT_QA/screenshots/12-system-ready.png",
+      "git_blob": "661e32c9b68911a6d4aa0acb430edc50c0f0a15c"
+    },
+    {
+      "path": "docs/topic3/07_DEMO/LIVE_DEMO_SCRIPT_18_MINUTES.md",
+      "git_blob": "657b2755c55d217c39d263473780ce8b1dd45348"
+    },
+    {
+      "path": "docs/topic3/07_DEMO/WINDOWS_SETUP_AND_DEMO_GUIDE.md",
+      "git_blob": "fd344971e31c218f58966ca170bcfd60ae09e078"
+    },
+    {
+      "path": "docs/topic3/08_REPORT/RESEARCH_LIMITATIONS.md",
+      "git_blob": "0a580a506952c048bc3313a20e50cbb8ed059535"
+    },
+    {
+      "path": "docs/topic3/08_REPORT/TOPIC3_PAPER_REPRODUCTION_REPORT.md",
+      "git_blob": "0b4b548eb9b081217f62a71b7605f27020f3c1c0"
+    },
+    {
+      "path": "docs/topic3/09_RELEASE/FINAL_ACCEPTANCE_REPORT.md",
+      "git_blob": "1c8f16422c82712370da4769b0c31ee5aac3f41f"
+    },
+    {
+      "path": "docs/topic3/09_RELEASE/RELEASE_ARTIFACT_MANIFEST.json",
+      "git_blob": "868999615c84e8b4404ff1d6f62f58dcd1d7290b"
+    },
+    {
+      "path": "docs/topic3/09_RELEASE/RELEASE_ARTIFACT_MANIFEST.md",
+      "git_blob": "b5f8de51fcd1445531050cb63e9f991a198a284f"
+    },
+    {
+      "path": "docs/topic3/COLLABORATOR_ENVIRONMENT_REPORT.md",
+      "git_blob": "c22f9394cefdac5ca4f8b136fb6b25362e51e38b"
+    },
+    {
+      "path": "docs/topic3/DATASET_AND_PROVENANCE.md",
+      "git_blob": "9259d38b0f94915c04ba44596d300ae9657738ce"
+    },
+    {
+      "path": "docs/topic3/FINAL_ACCEPTANCE_REPORT.md",
+      "git_blob": "ab350afcde5c272c5dd684fa1a54e6973f073574"
+    },
+    {
+      "path": "docs/topic3/FINANCIAL_CORPUS_ARCHITECTURE.md",
+      "git_blob": "0b7cadc9153d9fedf7cea9b95fe2d0bd96d447ab"
+    },
+    {
+      "path": "docs/topic3/FINANCIAL_METADATA_SCHEMA.md",
+      "git_blob": "e6d9ea41193d06463f3c19c74581fcaba8fe1030"
+    },
+    {
+      "path": "docs/topic3/INDEX_RETENTION.md",
+      "git_blob": "a45324c1dce100aa4d0cc16343a7e0b077f3cd2c"
+    },
+    {
+      "path": "docs/topic3/INGESTION_STATE_MACHINE.md",
+      "git_blob": "6bfcd90e7ed9b1560ea3b775392478f2df3a5802"
+    },
+    {
+      "path": "docs/topic3/INTEGRATION_TEST_REPORT.md",
+      "git_blob": "434a7f2d56e5c961ea85a7e27f8d5ebb47eb9bf8"
+    },
+    {
+      "path": "docs/topic3/ISSUER_HELDOUT_EVALUATION.md",
+      "git_blob": "c345b0ea3286a6acb9bb01622519754d3dfbc709"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_A_AUDIT.md",
+      "git_blob": "5424042312c9213d996e752d7fe2f3709190f7d0"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_COMPLETION_REPORT.md",
+      "git_blob": "470c1badf5e6507c48a859cfad3b7867e6777614"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_DRAFT_PR.md",
+      "git_blob": "19b9dbaf5f2200bef7d4d677cc15862886987c66"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_FINAL_GAP_AUDIT.md",
+      "git_blob": "932940f860c6b717a5eff3e04a10c3da8abf5589"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_IDEMPOTENCY_RECOVERY.md",
+      "git_blob": "e39f7b683b4dae89183870046f0109c38f326f27"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_INDEPENDENT_VERIFICATION.md",
+      "git_blob": "605cee5de601219ec7d5fae62ce230bb88966b58"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_INTEGRATION_REVIEW.md",
+      "git_blob": "17b53292e2a8184d4b345e0d12722a13003b5574"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_LIVE_SEC_EVIDENCE.md",
+      "git_blob": "d4445ef6682e160b74f1c45495fee53c8230555d"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_PILOT_ACCEPTANCE.md",
+      "git_blob": "b413487f47ff50c4b5a167ccfd1a6bd65e7c6d8a"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_PROVENANCE_AUDIT.md",
+      "git_blob": "da317e179f6b580087b17caac0e9df82f84edd9b"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_TABLE_GAP_CLASSIFICATION.json",
+      "git_blob": "5eb8c7f31404c874802a84c2fe247d74777ed8e2"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_B_TABLE_VALIDATION.md",
+      "git_blob": "238a1828563520663a913eef463de0bb90ad586b"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_ARCHITECTURE.md",
+      "git_blob": "03334faf52ac5965a341e38eae2a95ec86c581de"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_BENCHMARK.md",
+      "git_blob": "d0378284e79ab7fd97177d8b0f81ddfbedc91e9f"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_COMPLETION_REPORT.md",
+      "git_blob": "b8424aae9f0876abff93434ec1eb54a116c9b6f1"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_FINAL_SECURITY_REVIEW.md",
+      "git_blob": "5fb7726fee50434bda1a3c26ef14f8c77142e3ce"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_HARDENING_BASELINE.md",
+      "git_blob": "ff73ec7e8653141b2dcee8f2a72b029e5227be91"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_IMPLEMENTATION_REPORT.md",
+      "git_blob": "a46b9e4d529fc5715065b2213aabcd92a304b728"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_INDEPENDENT_REVIEW.md",
+      "git_blob": "2e033c0fc44af43efcbb413dd37aecb9f0087ecb"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_INTEGRATION_REPORT.md",
+      "git_blob": "4a2da5425d09f85e80d215214ad40371a29ca01d"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_ISSUER_HELDOUT_CORPUS.json",
+      "git_blob": "53fab7efdf97fba26d81fa81f5ab226a34281a32"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_ISSUER_HELDOUT_QUERIES.json",
+      "git_blob": "fec4c89373c3878c86597e064d6e5ee52c695bea"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_LATENCY_DIAGNOSIS.md",
+      "git_blob": "64733ef1bb6613183c9743cad2f8653cefe2f54f"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_LIMITATIONS.md",
+      "git_blob": "9eed8ce57afb0af19623876983603951b93779b0"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_MEASUREMENTS.json",
+      "git_blob": "5c2244ceb94f2d62cad35f0d949ecd82ce5c339b"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_NEXT_EVAL_QUERIES.json",
+      "git_blob": "725762053a6c3720b5d6bceef7b63f14181d912e"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_NEXT_EXPERIMENT_PLAN.md",
+      "git_blob": "6e24dbfa0adb8c5cfd2ca47bdd690416f752fe93"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_OWNER_ACCEPTANCE.md",
+      "git_blob": "fc4ffc13d7f4d3e23defeb02cc7c650de2a9002e"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_PRODUCT_SMOKE_TEST.md",
+      "git_blob": "0af1e3616b544b794afee141fb602b7353838a11"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_QUERIES.json",
+      "git_blob": "6b83033b0332a8a63cc380d3367855bdcc705eff"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_RETRIEVAL_DIAGNOSIS.md",
+      "git_blob": "a0b8c6c377d6b1d24d9b0d225aa7f6bcb98c511f"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_RETRIEVAL_QUALITY.md",
+      "git_blob": "b2e00408d1c15ba5665011375d0492723a751baf"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_SCIENTIFIC_EVIDENCE_FREEZE.md",
+      "git_blob": "91c15f58f1c92abdab4af82c5ffa61f78e0270ac"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_C_SOURCES.json",
+      "git_blob": "a7a43146d2a60776977200b8f3f42cda0d224e6c"
+    },
+    {
+      "path": "docs/topic3/MILESTONE_D_READINESS_NOTE.md",
+      "git_blob": "1dabe4a12e299929988fe1ed9a84ed3869a2b156"
+    },
+    {
+      "path": "docs/topic3/NEXT_MILESTONE_PLAN.md",
+      "git_blob": "f11ea3ddfbc7b717f75c4b61da825feaea279e3b"
+    },
+    {
+      "path": "docs/topic3/PR1_REVIEW.md",
+      "git_blob": "42faf8db41816a9bbeb876f792276c2a22d3578e"
+    },
+    {
+      "path": "docs/topic3/PROJECT_STATE_TOPIC3.md",
+      "git_blob": "0ff919a906ff77b6cc2737e044fb5dfee7ca53d6"
+    },
+    {
+      "path": "docs/topic3/PROVENANCE_CACHE.md",
+      "git_blob": "75e20b8aa0bcc36bc12c5a08bdb4d4086d365752"
+    },
+    {
+      "path": "docs/topic3/QDRANT_OWNERSHIP.md",
+      "git_blob": "137c433fd8a073d9766062de5b5d1e7f5b3a3d57"
+    },
+    {
+      "path": "docs/topic3/REGRESSION_TEST_REPORT.md",
+      "git_blob": "f4bb11cd8804bdbe9d544eb1e8e03c67a72cee28"
+    },
+    {
+      "path": "docs/topic3/REPOSITORY_GAP_ANALYSIS.md",
+      "git_blob": "482ecaf284fbca4226e7e5f91df95323b55754e2"
+    },
+    {
+      "path": "docs/topic3/REPRODUCIBILITY.md",
+      "git_blob": "b8fde14f640ebca93076fd7cf7cee764ec2c8dff"
+    },
+    {
+      "path": "docs/topic3/SECURITY_HARDENING.md",
+      "git_blob": "d5bf1ca8725e4847b42adcfec22965f9e4f8f65e"
+    },
+    {
+      "path": "docs/topic3/SEC_EDGAR_CONNECTOR.md",
+      "git_blob": "e9f6b9dc1fa2ea31c71dfb2a2dab3304fab41ab7"
+    },
+    {
+      "path": "docs/topic3/TABLE_EXTRACTION_CONTRACT.md",
+      "git_blob": "b6ff1fdd53dd4f1328043284d044a31bfdbee832"
+    },
+    {
+      "path": "docs/topic3/final_product/API_FRONTEND_PARITY_REPORT.md",
+      "git_blob": "db35e5e120b7e650f8328d820e91fa24ef9a12d3"
+    },
+    {
+      "path": "docs/topic3/final_product/CHANGE_AND_DEPENDENCY_AUDIT.md",
+      "git_blob": "fd4eb6b801815173385a747dc235940c96fdabf1"
+    },
+    {
+      "path": "docs/topic3/final_product/CHANGE_LEDGER.md",
+      "git_blob": "d4717e6e331e5a2434cfd9a1b47d256ecf45c102"
+    },
+    {
+      "path": "docs/topic3/final_product/DEMO_AND_METHODS.md",
+      "git_blob": "8c381d3316c01ec7d3a27f426896994563769bdb"
+    },
+    {
+      "path": "docs/topic3/final_product/DEMO_SCRIPT_10_MINUTES.md",
+      "git_blob": "8e579a8c3dbc97d4d5841cceef01306b5615f6d6"
+    },
+    {
+      "path": "docs/topic3/final_product/END_TO_END_TEST_REPORT.md",
+      "git_blob": "62845295d69de56ddc707b247d9f914197fa7f0e"
+    },
+    {
+      "path": "docs/topic3/final_product/FINAL_COURSE_REPORT_VI.md",
+      "git_blob": "45a3a61619a133f4e1f5ad33ba9def6002836d60"
+    },
+    {
+      "path": "docs/topic3/final_product/FINAL_PRODUCT_ACCEPTANCE.md",
+      "git_blob": "95291d414cbb1d41155f762a86f9d6b2588c2bff"
+    },
+    {
+      "path": "docs/topic3/final_product/FINAL_PRODUCT_ARCHITECTURE.md",
+      "git_blob": "6e2bb935e5cceee1886c487b2dac12e63631c9ae"
+    },
+    {
+      "path": "docs/topic3/final_product/NUMERIC_EVIDENCE_VERIFICATION.md",
+      "git_blob": "c42d52999fc613e95fa91917db4f6f0213def628"
+    },
+    {
+      "path": "docs/topic3/final_product/PAPER_ALIGNMENT_MATRIX.md",
+      "git_blob": "573f31c2d44b375a26ca912cb5418c0cfa0b5ae2"
+    },
+    {
+      "path": "docs/topic3/final_product/PRODUCT_AND_ARCHITECTURE.md",
+      "git_blob": "e5f01abf47601f0ad5923e788c5c4c8ad7e87057"
+    },
+    {
+      "path": "docs/topic3/final_product/RUNTIME_EVIDENCE.json",
+      "git_blob": "9da98eccd4a975734ee8c87c5f441db75e1205de"
+    },
+    {
+      "path": "docs/topic3/final_product/SEC_PRODUCT_SOURCE_REGISTRY.json",
+      "git_blob": "b8069cd70a08029dd79007e46e7ccab71f5045fb"
+    },
+    {
+      "path": "docs/topic3/final_product/SOURCE_INTEGRITY_AND_LIMITATIONS.md",
+      "git_blob": "0be41ac24e2765bf5b1f06a89457b4b9876d851d"
+    },
+    {
+      "path": "docs/topic3/final_product/SOURCE_REVIEW_FIXTURES.json",
+      "git_blob": "0d017b837bb85356b9c1550270f71b85a1aae27c"
+    },
+    {
+      "path": "docs/topic3/final_product/TOPIC3_FUNCTIONAL_ACCEPTANCE.md",
+      "git_blob": "2bb92b62a512f11dfb7556470b20d713daaaf73a"
+    },
+    {
+      "path": "docs/topic3/final_product/TOPIC5_AGENT_FUNCTIONAL_ACCEPTANCE.md",
+      "git_blob": "d57b258952940b6fde15708c74273b1b0d9339ea"
+    },
+    {
+      "path": "docs/topic3/final_product/UI_REFERENCE_MAPPING.md",
+      "git_blob": "c004bf965c571efb990ca9cfcfcf317f71a06d1c"
+    },
+    {
+      "path": "docs/topic3/final_product/UI_UX_REFERENCE_COMPARISON.md",
+      "git_blob": "3463f13b652c2cd310aba5eaa34a56b99ce06722"
+    },
+    {
+      "path": "docs/topic3/final_product/USER_GUIDE.md",
+      "git_blob": "cd84045a69eabae9f5436b088b7e3a7e4b6c47b9"
+    },
+    {
+      "path": "docs/topic3/final_product/VIETNAMESE_COURSE_REPORT.md",
+      "git_blob": "b486c2972bf891873e0eb95daa35a0d340953004"
+    },
+    {
+      "path": "docs/topic3/final_product/VIETNAMESE_PDF_OCR_ACCEPTANCE.md",
+      "git_blob": "56e6fe9fadc8c168041428ca7f3b4bcfa2ba8a41"
+    },
+    {
+      "path": "docs/topic3/final_product/WINDOWS_QUICKSTART.md",
+      "git_blob": "d1ab2da532241c7979d153d92a1bd68132e01e09"
+    },
+    {
+      "path": "docs/topic3/final_product/WINDOWS_STARTUP.md",
+      "git_blob": "e15bc91d94b80e2712911a892cff4acdad9b6199"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/financial-ai-desktop.jpg",
+      "git_blob": "1117bb7b9029f803418307c2cd70188ea98f03fe"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/library-upload-ready.jpg",
+      "git_blob": "13f4ff04996e96fed8dc6c439ef5e19eb2ce64ca"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/library.jpg",
+      "git_blob": "88924bebdc93af24fb6b8d751c6e459404f796e8"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/overview.jpg",
+      "git_blob": "99dd82046cdec8b7a87046c3524a1ef8daf20c11"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/pdf-highlight-desktop.jpg",
+      "git_blob": "410f60cca95bb8079de97c889871b08ee0a53fbc"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/01-overview.png",
+      "git_blob": "ccd4639fab1c0239edc157489b41b2ac8d9f886f"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/02-search-hpg.png",
+      "git_blob": "bdc6a6b73055e47e8a276f64216388aead76789d"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/03-analysis.png",
+      "git_blob": "6bc8c6f458510b1a40b8d517e8b24dafaa0eceb2"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/04-library-processing.png",
+      "git_blob": "e364e6ee9d5cb1b4bb5e9329d83d7b3ffacc07ec"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/04-library-ready.png",
+      "git_blob": "e9b7d8af04b5785f65d713da8c1e030cc4c344e9"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/05-comparison.png",
+      "git_blob": "ad0b7b9dbdcdc30b8de445e913dfbc4fbfb6ef79"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/06-system.png",
+      "git_blob": "ce9ade67fd7dee47f0f40e415600e49bf6bd05b8"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/07-hpg-source-viewer.png",
+      "git_blob": "b867a0cc052339fb5806853c6b8fe998b948ee28"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/08-mobile.png",
+      "git_blob": "7a37a6c6bed1cc14f490a195480001cea84790b7"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/09-hpg-reviewed-cells.png",
+      "git_blob": "41f48c3b1361cef8df8659c1e21de3cc827996c8"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/10-rotated-income-statement.png",
+      "git_blob": "23844798b4dd9277842521a7343493eb5fcdca76"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/11-hpg-decimal-comparison.png",
+      "git_blob": "39ec196a21e14ff3a348e02f211b1c6861064e98"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/12-safe-abstention.png",
+      "git_blob": "43e230de4d00a3c8224ad294f95d139c6064bf9a"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/13-bidv-restated-consolidated.png",
+      "git_blob": "3eb205965ef188e2c01bb7039a5a1bcd47e17398"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/14-bidv-native-source.png",
+      "git_blob": "4648fec19d4795b2f70439fe802248978ddd9ed6"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/15-company-research.png",
+      "git_blob": "4f409d3b3ebeacb482b3a0389e7da794b8ddd8c8"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/16-sec-search.png",
+      "git_blob": "3cfbab84dde0a7007e57cd9292731327493367d5"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/17-sec-html-source.png",
+      "git_blob": "a79acee2896c9124fbe8a48d3d1af83103d14e3c"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/18-sec-verified-answer.png",
+      "git_blob": "9174c7db07006e2d8117a1ea6cfbc2fef32624ec"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/19-overview-1366.png",
+      "git_blob": "28a186ddfbbd22ab192d2d49302feefc1a089edd"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/react/20-prebuilt-pdf-viewer.png",
+      "git_blob": "0a899907d19fbecc0f6234ddc578ace95f65abb2"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/retrieval-comparison-desktop.jpg",
+      "git_blob": "2330dd901d3f3cf4d85cbbb6f37b2c02c492f9f5"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/search-real-sec.jpg",
+      "git_blob": "79c9571e475fb89c21ec2bf87f30c3054769c1ed"
+    },
+    {
+      "path": "docs/topic3/final_product/screenshots/system.jpg",
+      "git_blob": "257dc639be03cc2f67a8253a213211dff68d37d6"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/00_EXECUTION_MANIFEST.md",
+      "git_blob": "1dca1f1b75efbc736079c72cc309a10d01827e99"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/01_BASELINE_AND_DEPENDENCY_LOCK.md",
+      "git_blob": "3262e9daa3078f3ef86ef00f61f23ac6e6a24d4a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/02_CHECKPOINT_LEDGER.md",
+      "git_blob": "e6c82e5618b2423c7c42c717be7a18ebd8fc5445"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/03_DATASET_AND_EVIDENCE_REGISTRY.md",
+      "git_blob": "2f22ca831ab3dc9217047d7e149d5d992601b59a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/04_SECURITY_AND_DATA_INTEGRITY_LEDGER.md",
+      "git_blob": "dd272ea27dad9f2dc78949ed8ba194b6db403d63"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/05_RESOURCE_AND_COST_LEDGER.md",
+      "git_blob": "69384e3c296594051a1fe304cc20c273a2bbec5a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/06_CLAIM_EVIDENCE_MATRIX.md",
+      "git_blob": "dfbc7a14c0113f71f00ff528a7cbdccf7d646745"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/07_E2E_TEST_MATRIX.md",
+      "git_blob": "b73a0c177cc5e556a0cfcd88d10604a8b9022e1e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/08_OPEN_FINDINGS_AND_LIMITATIONS.md",
+      "git_blob": "d8c31aa0bcca264a979c07a0b94b7ca143c7812e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/09_FINAL_OWNER_REVIEW_PACKAGE.md",
+      "git_blob": "fce06e34d491771c2674c18d312f7ff8cf47acee"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_ABSTENTION_AND_ERROR_ANALYSIS.md",
+      "git_blob": "491d75a584a594dfdaccdd87df5b93e08231ae11"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_ANSWER_EVIDENCE_AND_CITATION_AUDIT.md",
+      "git_blob": "1d12b9aaf2bf2ce279f49eeb8b8b427519ccbe51"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_GROUNDED_QA_TEST_REPORT.md",
+      "git_blob": "1bb5b9ce611ad6de3163ec18ebfba325753d93fe"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_IMPLEMENTATION_REPORT.md",
+      "git_blob": "37b02759f8ef3eef0a5f71bc59ff2e0db574fb06"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_INTEGRATION_READINESS.md",
+      "git_blob": "a4e1d8a34cd5e428a473087dc3cda64e72618f1b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_NUMERIC_VERIFICATION_SPEC.md",
+      "git_blob": "d8cd29c669091ab0321d859c16d2aa90e9e3a1f2"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_RESOURCE_REPORT.md",
+      "git_blob": "3a82e6b1e6922ab1e27d315c08f3b4379b19b10c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_SECURITY_REVIEW.md",
+      "git_blob": "7fbfcab3befca22e5512796024bfdc17dd18d27c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_SYNTHETIC_QA_CASES_v1.json",
+      "git_blob": "3d40f7c75c80fd52186b8ef36df44a857b9c401f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D4_SYNTHETIC_QA_EVALUATION_v1.json",
+      "git_blob": "7f93d16ee4097effbf79bf7906152efe66585b08"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D5_E2E_VALIDATION_REPORT.md",
+      "git_blob": "57fb01a524260dd3b8bf8c4587686934c1b3d1f4"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D5_FROZEN_HELDOUT_RESULT_v1.json",
+      "git_blob": "7ede6f456793010d08ef8e73517af206e299d82b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D5_LIVE_HTTP_MATRIX_v1.json",
+      "git_blob": "2e9cb61af5bc4d561b0d865b60cdb999ccbbf8d3"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D5_PREREGISTRATION_v1.json",
+      "git_blob": "c9aa4c942330e5e01f9180169825676c858b5efb"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D5_REPRODUCIBILITY_AND_LIMITATIONS.md",
+      "git_blob": "9d75ebafe383e0c62591886b9df26cee6af8e041"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D5_SCIENTIFIC_EVALUATION_REPORT.md",
+      "git_blob": "27120d5466e114be185c34e87df0cece46bc5a38"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/D5_VERIFIER_ABLATION_v1.json",
+      "git_blob": "ce8b98fdf2b67d34265571035da22167fd7831a5"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/artifact_hashes.json",
+      "git_blob": "78cf5e5841dbf5fcb0ffe2065bace9aef227804f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/checkpoint_ledger.json",
+      "git_blob": "9f24e4a27e4bf1c58a3c150fe274ebe9cea79cfb"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/execution_manifest.json",
+      "git_blob": "472b6bf0f1c60638ff775d7ec0b1fa943fcaec5e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/stage_dependencies.json",
+      "git_blob": "c984f951e13e3188cf8143806b3fa985285cef40"
+    },
+    {
+      "path": "docs/topic3/milestone_d/autonomous_execution/test_matrix.json",
+      "git_blob": "7ec6aa3b819c5e8c41595ad11f2f44f0652cee18"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_ADVERSARIAL_TEST_REPORT.md",
+      "git_blob": "ca5f44e8b1a0c5aa1231ca6ca3b7b0e4c52b6963"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_COMPATIBILITY_AND_RISK_REPORT.md",
+      "git_blob": "e12b2fc47f75a8267886a0a8b36e2a2a270c73b8"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_IMPLEMENTATION_REPORT.md",
+      "git_blob": "087d746f34a172749dd3796d933034c76cf6e155"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_INDEPENDENT_REVIEW_REPORT.md",
+      "git_blob": "0cbf9df61de0e3b553de570eed1bf4d1fb5a536d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_INTEGRATION_CANDIDATE_REPORT.md",
+      "git_blob": "c2ab594ad5ef1f9649ad036ae06d4ea005beb5ea"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_INTEGRATION_REPORT.md",
+      "git_blob": "5f5604e982010dc305bbf9f687a09a1d7accade2"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_OWNER_ACCEPTANCE.md",
+      "git_blob": "fdb08bc99d0f08cf6186126943b105e129a188ea"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_RESOLVER_BENCHMARK.json",
+      "git_blob": "99f255445481fac0a00c217942ff9737d769ce8b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_SCOPE_RESOLUTION_CASES.md",
+      "git_blob": "76c219eb3e895480e47a30c1c58fa68996a403c2"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d1/D1_TEST_AND_BENCHMARK_REPORT.md",
+      "git_blob": "fe316ffa39bfeb794674af618760f4d08ba71b91"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_AUTONOMOUS_STAGE_LATENCY.json",
+      "git_blob": "92451692c571cccd927a11135e7a87761abbc036"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_D3_INTERFACE_READINESS.md",
+      "git_blob": "b615b82257b4551802944ca6c1ef79a0ac642ab3"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_IMPLEMENTATION_REPORT.md",
+      "git_blob": "fda9fbb11c5bd3fd5acf64c0440d81c08e0e5d66"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_INDEPENDENT_REVIEW_REPORT.md",
+      "git_blob": "2a7b818cdb9971c7f2445511e3283b396f65d8a6"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_INTEGRATION_READINESS.md",
+      "git_blob": "563db63ba13cb35e9d82db4c8d2a50a6dd1fb174"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_PROVENANCE_AND_CONFLICT_REPORT.md",
+      "git_blob": "571a545be839067b966dc342eaebce994a83be4f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_REAL_SEC_VALIDATION_REPORT.md",
+      "git_blob": "3c59a456f3951d110ddbe5ddf0cd00cde086cc64"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_REPRESENTATION_MEASUREMENTS.json",
+      "git_blob": "f9e784216b3cfa08dd2fd00df2f1da939eefd879"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_RETAINED_SOURCE_AUDIT.json",
+      "git_blob": "e79d7625684aa3bd9426fe8e0038adc9915468a9"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_RETAINED_SOURCE_AUDIT_v2.json",
+      "git_blob": "42289dc109c89facef94521ab98f24fa7376dc91"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_SOURCE_EVIDENCE_CASES.md",
+      "git_blob": "09f16eeae180184a0387ad8c59f2ea8911b2d0c9"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_TARGETED_REPAIR_LEDGER.md",
+      "git_blob": "14f38ef100608def46bca7979d18a32fd61a0799"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d2/D2_TEST_AND_BENCHMARK_REPORT.md",
+      "git_blob": "4b5bcb3037614ed6f1d05774d9c95f119050f61c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_ABLATION_REPORT.md",
+      "git_blob": "cea48d3da7af8f2775b07da6e9d0bbc72eb1437b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_ADAPTIVE_POLICY_REPORT.md",
+      "git_blob": "bbbfd3304c40055b85cbf41a92e036dfb7c92c1b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_ARCHITECTURE_AND_IMPLEMENTATION.md",
+      "git_blob": "acf665b56e3366525f89c1694e6da8a22fcbda6e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_BASELINE_COMPARISON.md",
+      "git_blob": "d413e09ce9bcd4bebde89e0d2ae391583b4b70bf"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_COST_AND_RESOURCE_REPORT.md",
+      "git_blob": "70664d4e0a79bb71ee3c28f0e8cd5f0ec2973bf8"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_DATASET_FREEZE_MANIFEST.md",
+      "git_blob": "580dcd8c2996e34d16b5ca556aa14f149e251e99"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_DEV_VALIDATION_DIAGNOSTICS_v1.json",
+      "git_blob": "40a54ce69b142ab381040e76e759a7ace9e95819"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_ERROR_ANALYSIS.md",
+      "git_blob": "4a0f0041174eb7a0ae90cc7e7fc782a3610bf6e9"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_EVALUATION_PROTOCOL_HASH_v1.json",
+      "git_blob": "3352e1bda5664b59273f59ab443a5d86a2b15ae4"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_EXPERIMENT_PREREGISTRATION.md",
+      "git_blob": "103535646a10f0c0ae12e1644a94907ba360bc09"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_FRESH_EXACT_ROW_FREEZE_v1.json",
+      "git_blob": "567d9dd4d6b8799382909dda5f86283a1cfb447e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_PUBLIC_SOURCE_PROBE_v1.json",
+      "git_blob": "fe879d8e27b1ee26dfecfa456a481e66235b5c0e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_PUBLIC_SOURCE_PROBE_v2.json",
+      "git_blob": "f4d5ded8cdb4c06c1ead74415f9a92977e34954c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_REVIEW_AND_INTEGRATION_READINESS.md",
+      "git_blob": "684fe08ead916bc2326f107b89100e945156048c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/d3/D3_SCOPE_AUDIT_v1.json",
+      "git_blob": "f68680a9e91c5f3de688b7a6d8ed7a4a04f9ca50"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/FINAL_OWNER_DECISION_MEMO.md",
+      "git_blob": "84e526175a7d446728dfea0d527abff1cdb5bc83"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/FINAL_SCIENTIFIC_CLAIM_EVIDENCE_MATRIX.md",
+      "git_blob": "d982c59caaff68ead88164f07500fd631a4403e2"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/P0_REAL_SEC_TABLE_RECOVERY.md",
+      "git_blob": "1f0d88d239a30bb319a27301fcaec900f5e7b583"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/P1_DENSE_COMPATIBILITY_REPORT.md",
+      "git_blob": "ae45333f9be1bcbc8740628a9a0a3e164997a59a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/P2_TARGETED_DEFECT_LEDGER.md",
+      "git_blob": "c5c2746300f4feb9fcede297db76c1c4eb9f0cee"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/P3_REAL_FINANCIAL_QA_VALIDATION.md",
+      "git_blob": "0cf74c74cd465f9d58d101f75da5403f40e81469"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/P4_FROZEN_EVALUATION_RESULTS.md",
+      "git_blob": "d526259591c6bbf41217b38782bd179ad14a76af"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/P4_NEW_EVALUATION_PROTOCOL.md",
+      "git_blob": "0c56916c7d0162be98845e0571e00f7c688b113d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/P5_REAL_E2E_VALIDATION.md",
+      "git_blob": "67614470966aa7fc6a3a02d93d175883c0987afc"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/RECOVERY_EXECUTION_MANIFEST.md",
+      "git_blob": "f58306d40f527aa11be56ce94fdc50a9aee527f0"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/RESOURCE_AND_PERFORMANCE_REPORT.md",
+      "git_blob": "059bd8e8bfa6a557937723e65c9a809f3fc1d4ef"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/SEC_SOURCE_AND_PROVENANCE_AUDIT.md",
+      "git_blob": "13f7c233caf8af1410555f530cf7e0edaec74dd9"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/http_smoke_v1.json",
+      "git_blob": "10b52c9fc5a5e5910a9fa1f173bbf57534f18a10"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_BM25_DENSE_RRF_HANDSHAKE.md",
+      "git_blob": "e548e0644e538cd283c60e42c1ef8b035be9b006"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_DEVELOPMENT_EXPERIMENT_REPORT.md",
+      "git_blob": "7e2aaafd15564a4ddfc27496f11868927327e966"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_EMBEDDING_COMPATIBILITY_REPORT.md",
+      "git_blob": "782da0707f7794afc03941ef152f3a02ec53da72"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_EVALUATION_PREREGISTRATION.md",
+      "git_blob": "a37267ef642dcd43663d0c979cc7d0c2d30befd4"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_HARDWARE_AND_STORAGE_AUDIT.md",
+      "git_blob": "4289aec82c121ebbf3606bc9382d4309163af9b5"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_HISTORICAL_INTEGRITY_REPORT.md",
+      "git_blob": "411dd93f9931eebe7d54f14f3f005959d3edd72f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_ISOLATED_VECTOR_GENERATION.md",
+      "git_blob": "afe5eac7e70e2b3de27f92f65c30dbdc28c5762a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_LABELING_AND_REVIEW_PROTOCOL.md",
+      "git_blob": "4b03caafde4c90d67190f457527a14b9ddc57dd8"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_NEW_DATASET_ELIGIBILITY.md",
+      "git_blob": "6fa23f4a96bb868522118cc0eb64e0a89f89433b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_OLLAMA_MODEL_HANDSHAKE.md",
+      "git_blob": "8b531b349da00dc3749e9dac7678bc40c2e1ae13"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_RESOURCE_AND_COST_REPORT.md",
+      "git_blob": "a59c9dfff4639f2f50888b9e707f65b005a49203"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/P10_SCIENTIFIC_READINESS_DECISION.md",
+      "git_blob": "6ca6a53fb4505a485cccaebfa75afd55b3194690"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_dataset_registry.json",
+      "git_blob": "fb8df55e1f509cd56938be9c030585c30ba55c56"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_embedding_identity.json",
+      "git_blob": "de1987098a26f39f2c27956ca084ad13421bba8c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_execution_manifest.json",
+      "git_blob": "b3e3c9a7c9ab0dd5becb4205d22ee759a3d8659c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_gate_ledger.json",
+      "git_blob": "427c31ad891b30a9630429a6ab6945a61dea7e99"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_generation_manifest.json",
+      "git_blob": "863351cb73e2b1743bd097e32fc9bf6cf54e1f9e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_handshake_restart_results.json",
+      "git_blob": "bcedb3fdc41f9edf91104d5fdca50d4bb8b49c85"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_handshake_results.json",
+      "git_blob": "47409ba54e333286df94f49b5ebd7a2f14bd0ae7"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p10/p10_test_results.json",
+      "git_blob": "6e19b09b0612020166bad172f65dbae18a8c38ae"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_ADAPTIVE_POLICY_SELECTION.md",
+      "git_blob": "2fcded56336bae603180854a3d2ce59acd38b585"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_DEVELOPMENT_COMPARISON.md",
+      "git_blob": "e9db238d49e35359cd8a93d895a0dd60511cff99"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_ISOLATED_BM25_DENSE_GENERATIONS.md",
+      "git_blob": "913fb7303911c32c2a66aac3290b3d89fefeb267"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_ISSUER_PARTITION_MANIFEST.md",
+      "git_blob": "15cb4928bf5ab0a60f566328a0c847c165aca560"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_LABEL_QUALITY_REVIEW.md",
+      "git_blob": "ec11be24e5437db7cea11f481651663c75bea026"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_OWNER_DECISION_MEMO.md",
+      "git_blob": "2be013eeb07cd9e7431758e593df981ffb478a92"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_PREREGISTRATION_AND_FREEZE.md",
+      "git_blob": "617d6553a490410a1439e9b33d9aa7fa97050287"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_QUERY_AND_QREL_CONSTRUCTION.md",
+      "git_blob": "156d747a92acb3eecd3d03513a7f33147fe02498"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_REVIEWER_PACKET.md",
+      "git_blob": "1cc693be77e90bf72ff0e3995dd20f851b56cb69"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_SCIENTIFIC_LIMITATIONS.md",
+      "git_blob": "072eed8f3ed0e552af6f758c5588dc09faffc054"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_SEC_ACQUISITION_LEDGER.md",
+      "git_blob": "5a039e4ea3e82ae2fe48a24b9e16133e1085a619"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/P11_SOURCE_SELECTION_PROTOCOL.md",
+      "git_blob": "35689fe3f7402b4d862c077d28f1d86561c2ed45"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_adaptive_policy_v1.json",
+      "git_blob": "0efc389e4dc073404829582b61a373ee5efa4487"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_development_freeze.json",
+      "git_blob": "9b2dc108d8cb36423888ade6c64b2c8c33044270"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_development_metrics.json",
+      "git_blob": "de55a9708455f000f41df53e6ea4bfd6684b3f37"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_embedding_manifest.json",
+      "git_blob": "b33375eab19348d522110b2e68875cd56d3ca6b4"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_execution_manifest.json",
+      "git_blob": "ccf1b3dc38cd7e392eec7f407b97aded107bb6ce"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_gate_ledger.json",
+      "git_blob": "80ed2a7b324fee4b8c9465b488fdf12d292d80cf"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_label_review_queue.json",
+      "git_blob": "144aa98453eb8a32d3325b5bcd22582283b59bfe"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_parsed_sources.json",
+      "git_blob": "b709d312aca70229b6f988f908a47a677fb05c18"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_partition_manifest.json",
+      "git_blob": "e561943df18c48fbec0475be14a258c6529b16c7"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_qrels.json",
+      "git_blob": "a8e9dd8eee8bc15b0f52ac8f69ea481a86e82a59"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_query_registry.json",
+      "git_blob": "7f9f4551cba331871146285cc5e32c3ad6d567c7"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_source_registry.json",
+      "git_blob": "e17408c56caa289f8b20e5e3c1c3f1d26242535b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p11/p11_source_tamper_result.json",
+      "git_blob": "80d7131432d14274111234feb737e342133a7e5f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_ADVERSARIAL_REVIEW.md",
+      "git_blob": "bfabee6b8bc784850a9f25a959b39265ada7a45f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_AUTOMATIC_RETRIEVAL_TRACE.md",
+      "git_blob": "e43ec3bc74d17eb491ae8bec67ec7db243c7f968"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_BASELINE_TEST_ISOLATION.md",
+      "git_blob": "981eb95b5729b9dc58dc821f369c6837d925a592"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_HTTP_AND_UI_E2E_REPORT.md",
+      "git_blob": "a6904d2a6ad4beaeea1805a2902af58e23b0397d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_IMPLEMENTATION_REPORT.md",
+      "git_blob": "2171d6c5ffd22f5d66e245d8361029c99b719eca"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_OWNER_DECISION_MEMO.md",
+      "git_blob": "39205da2d2ea549bbeef457e1c71e99f516e59b9"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_PERFORMANCE_AND_RESOURCE_REPORT.md",
+      "git_blob": "affc2019147d11ec03c31405780548a37593a025"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_REAL_SEC_NUMERIC_QA_REPORT.md",
+      "git_blob": "ced1e0a605ec17267f5ab30a56813536238dab5e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_SCIENTIFIC_LIMITATIONS.md",
+      "git_blob": "61b09ffc79d912d544781c0e0ab20653fffa75c8"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/P6_TYPED_COLUMN_BRIDGE.md",
+      "git_blob": "7ad81db9e606f188451aaf50287e12e127e8d09e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_e2e_matrix.json",
+      "git_blob": "14ac96b80499fed2a81b1abd0898e890552db1c2"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_execution_manifest.json",
+      "git_blob": "af929ad59655c45529e390dd9ef0c327b33e8963"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_http_evidence.json",
+      "git_blob": "cb3dcf47d035b2ba9fb83d6c520e69bdf1dab0ec"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_performance.json",
+      "git_blob": "5cb474aeb925cdd1fe057af136e94e0d3c486ccd"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_real_sec_evidence.json",
+      "git_blob": "17f6517ba5341ba4366c5c52ba7a58c7ae6de11b"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_test_results.json",
+      "git_blob": "3421b021bd3a7ff2ad06da50dd90200165b24fa3"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_ui_evidence.json",
+      "git_blob": "535230aa17741e5fe2d601a30f74278171cca190"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p6/p6_ui_evidence.png",
+      "git_blob": "65640065871c776c50b7d8249883194c73858218"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_CITATION_NAVIGATION_REPORT.md",
+      "git_blob": "13bc50fcc8736660052eeebe5cc391b5234b17b9"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_COMPATIBILITY_AND_INTEGRITY_REPORT.md",
+      "git_blob": "57506687c53fe5d43fe49234ed14330ec57c1de1"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_CONCURRENCY_AND_GENERATION_REPORT.md",
+      "git_blob": "63ab8fdf9753c4921105cb6ecd4e695b0243f983"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_FINDINGS_AND_REPAIRS.md",
+      "git_blob": "3b78b47e0d0afcd4eaa44c699a6d954c4aa22cb4"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_HTTP_UI_E2E_REPORT.md",
+      "git_blob": "860edc6c6d5d38e3c036b5c6ec098138a019f449"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_INDEPENDENT_REVIEW_REPORT.md",
+      "git_blob": "a3ec548123bbe9b23b9918b4b867ef208b27f866"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_OWNER_ACCEPTANCE_RECOMMENDATION.md",
+      "git_blob": "1a08e29766e5e970724cd7ffa58502f223708617"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_REAL_SEC_CROSS_ISSUER_REPORT.md",
+      "git_blob": "54ef88845efd83b22329c50ce2b4fb551044991e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_RETRIEVAL_BUDGET_AND_PERFORMANCE_REPORT.md",
+      "git_blob": "38b11e8e729b4e24cb92ec1231c1512178544c40"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/P7_SOURCE_TAMPER_E2E_REPORT.md",
+      "git_blob": "28ac2eb7cd712422c01746c48bf6792ad5bbef57"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_adversarial_cases.json",
+      "git_blob": "4c163480be8f41de171676d2f463855b80b22c7a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_browser_evidence.json",
+      "git_blob": "5484f61b09137494fa981b329a7950a88360d44a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_browser_evidence.png",
+      "git_blob": "af1f9e2e33a81de7859a7cc677a3edc5fef6c71d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_budget_performance.json",
+      "git_blob": "b7d786252ab0dcd8b4ccff8c934271b08c0ad342"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_concurrency_results.json",
+      "git_blob": "a2d800294ac3f72d8d6ff7158f97012a294cd5ce"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_execution_manifest.json",
+      "git_blob": "80361c5221f32f6fbf92f1b78bd45efcc7495988"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_gate_ledger.json",
+      "git_blob": "95ae31d56523f9b15c4dc7a0df5f342dc75532e8"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_http_semantics.json",
+      "git_blob": "d37facb7348f030cbb7bacea0d7dac527837e507"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_http_smoke.json",
+      "git_blob": "90a091fdb606b2fd5026b0053a83214009002599"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_http_tamper.json",
+      "git_blob": "0500315120814c3243b21623a2b99f2425acd184"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_invalid_generation_after.json",
+      "git_blob": "36ed1219d90227657994a240d5ff7fb68ecdad92"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_invalid_generation_before.json",
+      "git_blob": "ddc5812b2955cee5443f1278e582d696cd16a72d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_real_source_evidence.json",
+      "git_blob": "6eee7072f7b3987a904ad8e507d2075f011f8ab0"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_semantic_after.json",
+      "git_blob": "645c2ade367524ef14df8174fae1f25702d93db7"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_semantic_before.json",
+      "git_blob": "998509fdc0c22fffd7a827b8c15857005c9e2193"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_tamper_results.json",
+      "git_blob": "f65d9db544c4f4a83eac458e51c06b2ba1c56c47"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p7/p7_test_results.json",
+      "git_blob": "5cb7085a53dae1513bbbc6abe08b3964036f3a70"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_CITATION_USABILITY.md",
+      "git_blob": "e138263df4f918287e32c163ceda1d5f8763177f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_DENSE_RESEARCH_PREREQUISITES.md",
+      "git_blob": "a0976cbf3dcebf9f4c8856cdabce03a12dc2c70a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_FINANCIAL_METRIC_COVERAGE_MATRIX.md",
+      "git_blob": "b9ef02a5adf86bc7c65acb9c3f1339cdf0afbc99"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_HTTP_UI_VALIDATION.md",
+      "git_blob": "5fec9e845bbb9590b01b40fe0d246210399b7e6a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_IMPLEMENTATION_AND_ARCHITECTURE.md",
+      "git_blob": "38477f425d5802899c39f48a4ceb331df9ab16a4"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_MULTI_ISSUER_REAL_EVIDENCE.md",
+      "git_blob": "314055c194ad51fb106fe92bbc7ce59eac599fae"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_NUMERICAL_QA_EVALUATION.md",
+      "git_blob": "a171977d4d856874b4a43326bddb0fe11c8d8285"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_OPEN_FINDINGS.md",
+      "git_blob": "77e92e190eafd86d68ed18dd38fd6635defd7726"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_OWNER_DECISION_PACKAGE.md",
+      "git_blob": "29c6748e89ba64bfb38d897381c6a10ac9af8127"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_RETRIEVAL_DISCOVERY_ANALYSIS.md",
+      "git_blob": "d935949857ca1b9084ab9cc02aad44b0a24680b2"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_SECURITY_AND_REGRESSION_REPORT.md",
+      "git_blob": "67388bac23181a4beca4f406709846824486e354"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/P8_STACK_INTEGRATION_AUDIT.md",
+      "git_blob": "db7acd7d933cc68962bdf695b3dc6f974b81ace2"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_browser_results.json",
+      "git_blob": "5fe280f39e86e5619ab9c0d036300bd78623d901"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_browser_results.png",
+      "git_blob": "c4cf24a83587a15f765b6bb44fa9de7e6dc8b57e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_execution_manifest.json",
+      "git_blob": "b647ea040986914e7693ac3444190bfd3712d4ea"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_http_results.json",
+      "git_blob": "e0260079531dd76fe2f3c41bccc67badbf27018f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_integration_gate_ledger.json",
+      "git_blob": "1340394a43aca1f059571efac907140d331c333a"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_metric_coverage.json",
+      "git_blob": "16c44d212ee6b2587361304ebd5f4a937d44f1f7"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_real_qa_results.json",
+      "git_blob": "d1d59ac370aad0a6e835e2ba5c5fa2c130c73e7c"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_source_cases.json",
+      "git_blob": "6e76b440dd008f0717e289032baca5d8506d6bd6"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_source_cases_after.json",
+      "git_blob": "95aeb7d4375aaf74dfeb88e36fb0a585408f964e"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p8/p8_test_results.json",
+      "git_blob": "ee07c6c4e051d1a8934226b2e779cdef55aeed09"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_DENSE_COMPATIBILITY_FEASIBILITY.md",
+      "git_blob": "7120f852270f8dc71b1129019108065ae20429dc"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_HISTORICAL_INTEGRITY_AUDIT.md",
+      "git_blob": "21feaaad85abc7e87c939142733f82c700186f22"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_OWNER_ACCEPTANCE_DECISION.md",
+      "git_blob": "b56ef94942e9c347c26474c95b9c9f2e9d492aad"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_PERFORMANCE_RESOURCE_BUDGET.md",
+      "git_blob": "e10d94fc6ba6b69c5d9633b4fcb80c2568d607ed"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_REAL_HTTP_UI_REPRODUCIBILITY.md",
+      "git_blob": "981512aa4f9c4cafe9119950ed4eab4609f2508d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_RELEASE_CANDIDATE_MANIFEST.md",
+      "git_blob": "58ae09f3875b19b34398c563169facb0eb744ca5"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_SCIENTIFIC_EVALUATION_PREREGISTRATION.md",
+      "git_blob": "3cd820dcfc85e561eafd0c33c76d6756d0761b45"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_SCIENTIFIC_EVIDENCE_GAP_MATRIX.md",
+      "git_blob": "92b1b61ca83c180a694c1b1cca8e864ce26fb4a4"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_STACK_SECURITY_REVIEW.md",
+      "git_blob": "f97d5da9055ace22a9fa0261ab6e84305bc5bf17"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/P9_TECHNICAL_ACCEPTANCE_MATRIX.md",
+      "git_blob": "ff717379af4f9b98037f10db2efee5f29c65314d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_acceptance_matrix.json",
+      "git_blob": "2f5b8a38b624dc732dc16e1c37214b9aa1205e05"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_browser_results.json",
+      "git_blob": "cf2f336b3734ea9a36fac9d4a9bc3ea2cfc10e4d"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_browser_results.png",
+      "git_blob": "eae3d79b63cc571b720cee5e0b2dd2d69d629d07"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_concurrency_results.json",
+      "git_blob": "a2d800294ac3f72d8d6ff7158f97012a294cd5ce"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_execution_manifest.json",
+      "git_blob": "5791838eec2df72f67dc9865cd4cefa65f9766a7"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_gate_ledger.json",
+      "git_blob": "6b5f2ca9c71f75064dafeb51e7d91bc8e8578703"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_http_matrix.json",
+      "git_blob": "e0260079531dd76fe2f3c41bccc67badbf27018f"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_http_tamper_results.json",
+      "git_blob": "0500315120814c3243b21623a2b99f2425acd184"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_live_results.json",
+      "git_blob": "ddfcdc05a1e27da9044b6eda507a7ecee1bf3845"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_resource_measurements.json",
+      "git_blob": "c26d9a1035c3f59ddc0fc7929e70be18321cb2e6"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_semantic_results.json",
+      "git_blob": "d48ac09d3e55cacc0adfd1e403527495ec97a678"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_tamper_results.json",
+      "git_blob": "f65d9db544c4f4a83eac458e51c06b2ba1c56c47"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/p9/p9_test_results.json",
+      "git_blob": "06b81b69ade29b2ba06f5d845e7b4e970acce8ef"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/real_sec_probe_v1.json",
+      "git_blob": "04d0d9ce818e3fb6e45db67b127028cb376c5ff5"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/resource_probe_v1.json",
+      "git_blob": "326a08fa3445d31e77a64f64e0057b2353387e72"
+    },
+    {
+      "path": "docs/topic3/milestone_d/recovery/test_results_v1.json",
+      "git_blob": "51aa4a570829d3fa4a2c93be02a02d46d1b0c04c"
+    },
+    {
+      "path": "docs/topic3/ui_references/01_trang_chu_tong_quan.png",
+      "git_blob": "538b8a4ab10df4d9c66da24094a70e7b73ffca45"
+    },
+    {
+      "path": "docs/topic3/ui_references/02_tim_kiem_tai_chinh.png",
+      "git_blob": "fbe11d0bf8879ea9ca5bc24bfddc7ef6705047d3"
+    },
+    {
+      "path": "docs/topic3/ui_references/03_xem_tai_lieu_highlight.png",
+      "git_blob": "f0c52133b5abfd9606c0c966fca371e4fd156ab3"
+    },
+    {
+      "path": "docs/topic3/ui_references/04_phan_tich_tai_chinh_ai.png",
+      "git_blob": "7f26e2245ab9e2221c3737de72a0db18bcd8c758"
+    },
+    {
+      "path": "docs/topic3/ui_references/05_tai_lieu_len_pipeline.png",
+      "git_blob": "a150f67aba8b1a6d0415b42c61dabc9c0557a332"
+    },
+    {
+      "path": "docs/topic3/ui_references/06_kho_tai_lieu_he_thong.png",
+      "git_blob": "a109d9adb93612cd33ce807fae489d7393fd57cc"
+    },
+    {
+      "path": "docs/topic3/ui_references/07_danh_gia_so_sanh_bm25_dense_hybrid.png",
+      "git_blob": "b3908e62326eb16f449bb2a53bdc2c532a9b5877"
+    },
+    {
+      "path": "docs/topic3/ui_references/README_FOR_CODEX.md",
+      "git_blob": "e80b63760cd0f68a7e2c5c004e53c6c83fabceae"
+    },
+    {
+      "path": "docs/topic3_v4/V4_CONTROLLED_EXPERIMENT.md",
+      "git_blob": "31a23200d57161ff562dc842e15447f96633d0b7"
+    },
+    {
+      "path": "docs/topic3_v4/V4_DEMO_SCRIPT_18_MINUTES.md",
+      "git_blob": "8d87f3ce333a27e5f33fbfbb0d0c8f4a409fef05"
+    },
+    {
+      "path": "docs/topic3_v4/V4_EVIDENCE_VERIFICATION_REPORT.md",
+      "git_blob": "a47ef1925b500e061e793b242e873e795c7fa7cb"
+    },
+    {
+      "path": "docs/topic3_v4/V4_FINAL_ACCEPTANCE.md",
+      "git_blob": "ff73452118e3b4bc2f0d8fe33bc31441cf656aca"
+    },
+    {
+      "path": "docs/topic3_v4/V4_FINANCIAL_ASSISTANT_QA.md",
+      "git_blob": "7b4d4b78faf4e524071351ead5e0e3905ca3d4e3"
+    },
+    {
+      "path": "docs/topic3_v4/V4_IMPLEMENTATION_REPORT.md",
+      "git_blob": "d8a144bd6dd986115f5730d8c2ec6144efe19295"
+    },
+    {
+      "path": "docs/topic3_v4/V4_PROJECT_STATE.md",
+      "git_blob": "899805441c2ec4022669991f3435ebb86159515e"
+    },
+    {
+      "path": "docs/topic3_v4/V4_REAL_BROWSER_DEMO_QA.md",
+      "git_blob": "b8082c236bd8e7473df9ab59d1862a17259bf7ac"
+    },
+    {
+      "path": "docs/topic3_v4/V4_RESEARCH_LAB_REPORT.md",
+      "git_blob": "4e5715ace61e15ac09c4af9a45f3530532d49d9e"
+    },
+    {
+      "path": "docs/topic3_v4/V4_WINDOWS_DEMO_GUIDE.md",
+      "git_blob": "0f9563ef577ab21d91264fd51d8b1d54637a6dd8"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/01-home.png",
+      "git_blob": "fdc5f027ab9cf9b58348dc9dc4627386f1199a5a"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/02-bidv-answer.png",
+      "git_blob": "8404b5c68c5e86dba80accd2dbe4853afa4660b2"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/03-bidv-source.png",
+      "git_blob": "b2d7fb2e1a279bb08e0e1d350f7b12c99f28215f"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/04-research-lab.png",
+      "git_blob": "6d1cf9567444d00738bc0c58cabc8215fd9ef741"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/05-live-compare.png",
+      "git_blob": "6d0298a97c469e41abcaaa8175f2316e145f1369"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/06-absent-year-refusal.png",
+      "git_blob": "5119443f65138d3c393938ad5852e6b8a1e1115d"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/07-sec-verified.png",
+      "git_blob": "5987edaf9750411ffd5a2c843b3f36fbf2958418"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/08-hpg-upload.png",
+      "git_blob": "93303f4b1201e4f1b92a6092f639cc3bb4d4be1b"
+    },
+    {
+      "path": "docs/topic3_v4/screenshots/09-hpg-unit-answer.png",
+      "git_blob": "7b461d2c859dea0e9f67d59fd1a65d6769d9d8aa"
+    },
+    {
+      "path": "docs/topic3_v5/V5_ABLATION_AND_ERROR_ANALYSIS.md",
+      "git_blob": "da21e33303db0fb4096165790ac90313fbca1f0d"
+    },
+    {
+      "path": "docs/topic3_v5/V5_AUTHOR_VS_PROJECT_CODE_AUDIT.md",
+      "git_blob": "0a8fbf400b1c5858fb8684397324550e783e76f9"
+    },
+    {
+      "path": "docs/topic3_v5/V5_BASELINE_REPRODUCTION.md",
+      "git_blob": "c0c3b20a1ce1bbed2fe55c203f581c357b9250b4"
+    },
+    {
+      "path": "docs/topic3_v5/V5_CONTROLLED_EXPERIMENTS.md",
+      "git_blob": "6792fbcaf5caac6a62b50d284fdc0eeccd1f5224"
+    },
+    {
+      "path": "docs/topic3_v5/V5_CORPUS_AND_QREL_PROTOCOL.md",
+      "git_blob": "65be496193ac4fb3de65484694ce824750e2f331"
+    },
+    {
+      "path": "docs/topic3_v5/V5_DEMO_AND_DEFENSE_GUIDE.md",
+      "git_blob": "9c01e5c309517635efb7d62e73baef7941d452df"
+    },
+    {
+      "path": "docs/topic3_v5/V5_EXPERIMENT_PREREGISTRATION.md",
+      "git_blob": "7406c9b6a2b2c478aa0820f4f7b7c5f423b7d477"
+    },
+    {
+      "path": "docs/topic3_v5/V5_FAITH_R_ARCHITECTURE.md",
+      "git_blob": "d58cd500fced9e7007ea5c1de6c145037507258f"
+    },
+    {
+      "path": "docs/topic3_v5/V5_FINAL_ACCEPTANCE.md",
+      "git_blob": "ab6e33d1cc14c534639293e5756f4bce0dd441b2"
+    },
+    {
+      "path": "docs/topic3_v5/V5_HANDOFF_ASSET_AND_CHECKSUM_AUDIT.md",
+      "git_blob": "2354da36436c250e2ca3b53c2b2c70a5c50e4680"
+    },
+    {
+      "path": "docs/topic3_v5/V5_INDEPENDENT_EVALUATION.md",
+      "git_blob": "d044d2757cc7251deb3521408fdf49a161312dac"
+    },
+    {
+      "path": "docs/topic3_v5/V5_PRODUCT_INTEGRATION_QA.md",
+      "git_blob": "5be94d77a7419cf94435a5be89b66f4f4f30d15a"
+    },
+    {
+      "path": "docs/topic3_v5/V5_PROJECT_STATE.md",
+      "git_blob": "1e010dd9368c164c97bf8fe2173d95ed41f8fa8f"
+    },
+    {
+      "path": "docs/topic3_v5/V5_RESEARCH_FAILURE_DIARY.md",
+      "git_blob": "768fda459bc0d99cd8260145279a657eb9651b81"
+    },
+    {
+      "path": "docs/topic3_v5/V5_VERIFIED_FAILURE_CATALOG.md",
+      "git_blob": "719c1ac8c3c8b5d11fba7797359d40198e5336ec"
+    },
+    {
+      "path": "docs/topic3_v5/handoff_audit.json",
+      "git_blob": "e8e5b6debcba69db6eb05026a862cf7a82bf3a20"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/V5R_EXPERIMENT_POLICY.md",
+      "git_blob": "f19b33e74c34e52f4effc1d9e383949d896f5e1b"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/V5R_FINAL_REPORT.md",
+      "git_blob": "d238c19bf57d20c82794184d8ba1acff17293181"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/ablation_summary.json",
+      "git_blob": "46579f3b77dc7d27700161124eab9c3e63a396bb"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/author_live_top10_compact.jsonl",
+      "git_blob": "507a9841e3c1aaa4ef6671c8ec0f3912fdbaf1fa"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/candidate_coverage.json",
+      "git_blob": "d16219a3ff9344612cd5d611bb7c7cde89dd9b6b"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/full_point_audit.json",
+      "git_blob": "975d7c74d292d5739843347c3252142aa3c93089"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/historical_reconciliation.csv",
+      "git_blob": "eb18bdbde1e8a97ce97e1ee4574c7649a4456684"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/historical_reconciliation.json",
+      "git_blob": "001ec8a616ec8b1adebda94fa8d58d8522858a3e"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/holdout_30_manifest.json",
+      "git_blob": "ee6341d25e28e1cddf177a2508f5683b1a5adcb1"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/holdout_30_review_queue.csv",
+      "git_blob": "cd810bb24b5f39978625f17392dabdef0d26ff1e"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/live_faith_r_react.png",
+      "git_blob": "a3b0ae4704c85cd4529c96bfe09b1189becc0e76"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/official_source_manifest.json",
+      "git_blob": "09fff87973b1e10f14cfc0b3748d0711a054ac4e"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/p5_A_manifest.json",
+      "git_blob": "6bcc541c19111193fc917638d7f7d38fb7491ad7"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/p5_B_manifest.json",
+      "git_blob": "e3f8f787e8f5dfc07b8145e304db4d1d90137a10"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/p7l_A_manifest.json",
+      "git_blob": "ad692c70917778627a3eba501e00eac92cae8f8c"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/p7l_B_manifest.json",
+      "git_blob": "4de228e374553ff0f89d5af27ea9513720817ccf"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/point_diff.jsonl",
+      "git_blob": "f7ea65a586f68ddfc8a78e2fb23a127c9cb18e3d"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/posthoc_repair.json",
+      "git_blob": "3cd7a92d5d87738d6bc6c1c0c7e1021f85a56f0d"
+    },
+    {
+      "path": "docs/topic3_v5/recovery_live/restore_manifest.json",
+      "git_blob": "ac8fc004caf8758346a4a896a4263a5b469d36e6"
+    },
+    {
+      "path": "docs/topic3_v5/replay_results.json",
+      "git_blob": "c770f686a4e3f91ef0f386558f5f5018cec0a042"
+    },
+    {
+      "path": "docs/topic3_v5/screenshots/research-lab.png",
+      "git_blob": "5d4f4a816ce713fc4d6fb5d3d111f2068e0b0cfc"
+    },
+    {
+      "path": "docs/topic3_v6/V6_ABLATION_AND_CANDIDATE_COVERAGE.md",
+      "git_blob": "f050f5e4cc329f3b8a22e46da5c2489fc256db34"
+    },
+    {
+      "path": "docs/topic3_v6/V6_ALGORITHM_FREEZE_MANIFEST.json",
+      "git_blob": "8107b28343045bbd36cb5e60d5bbf2f520bf25e0"
+    },
+    {
+      "path": "docs/topic3_v6/V6_CHECKPOINT_AND_CODE_AUDIT.md",
+      "git_blob": "1f52b50fc4756bc4932c433984087fa1379d4185"
+    },
+    {
+      "path": "docs/topic3_v6/V6_EXPOSED_BUDGET_ABLATION.json",
+      "git_blob": "6297a96319a3bd3e87494a28b16c3a957629f79d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_EXPOSED_FEATURE_ABLATION.json",
+      "git_blob": "2cdeaa4c7c9533c68651d36300a7a7181b332810"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FINAL_ACCEPTANCE.md",
+      "git_blob": "61c3e9b5bb8929aee0c61bfbf8e408eec227e65c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FINANCIAL_CELL_ERROR_ANALYSIS.md",
+      "git_blob": "adad58717c92c396f377ad76f85a9cfedb68b2ff"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FINANCIAL_GOLD_REVIEW_PROTOCOL.md",
+      "git_blob": "40b3f7ba3ff6b85ecac8af65bb4e0d09279b2e31"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_30_UNJUDGED.csv",
+      "git_blob": "40997ed1c342659311b35c282d09978c2c83cec3"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_MANIFEST.json",
+      "git_blob": "d9e718791cab70ab12025fd67fb1b44363ee6743"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H001.html",
+      "git_blob": "1f90937e1e6e34c82727a8afc57ac61c67fcede0"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H001.json",
+      "git_blob": "7854401011960159910c9de712554d30bc11aae8"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H002.html",
+      "git_blob": "5ffc82c0f657460b1695586b22c884ad45489798"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H002.json",
+      "git_blob": "458c9c6ac69d6c41ae32823b07c3acb2e0806be1"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H003.html",
+      "git_blob": "57a31ddec3cfcaf5ef8b10a4e34663dfe0f6b8a0"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H003.json",
+      "git_blob": "d9ef12cf269bb982678dcf06812efce07d9daefb"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H004.html",
+      "git_blob": "cbaf63e836a59f0683add834bad3342fd94031e4"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H004.json",
+      "git_blob": "e3c835138536b231ea9678a921ebe89b1981d08b"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H005.html",
+      "git_blob": "af4804fd61595a7c8006da87418bcd334d5a409f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H005.json",
+      "git_blob": "95b84e7707972d7ecd1f70d9f2c095f6743717ce"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H006.html",
+      "git_blob": "eb411e018ce546f00afa4adb1e704584d26ec153"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H006.json",
+      "git_blob": "ffde5e00e7a84169eef477783049c1d19d2a57f0"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H007.html",
+      "git_blob": "46f4d978355ceb520f7dca424112996f82253c9a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H007.json",
+      "git_blob": "cd2f5af9e20866f4f76d88af08a58e241dca20c8"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H008.html",
+      "git_blob": "ce13d80702d1053dc11ba8f667106129abfd1c6f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H008.json",
+      "git_blob": "f65a53b6ef7a4bd27b08c3f4484ba2295d7a9ff0"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H009.html",
+      "git_blob": "2fd2e773361ad21d0cc98fa99793d4d22d698245"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H009.json",
+      "git_blob": "00d5424e3a299024f51f85664719857ecc10858a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H010.html",
+      "git_blob": "eb23b28b53d8097c5ba15d3e87601b6bd523102a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H010.json",
+      "git_blob": "877ac661671306b3ecb1230c7469b4ce9b3b738d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H011.html",
+      "git_blob": "e99d891bd21ba5a71fd04eedb300b27642d96b96"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H011.json",
+      "git_blob": "6309ff7a7a32d5d4f7e050e9f0129034b3e3ca93"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H012.html",
+      "git_blob": "20f630bfdb8071503678a465a4533e7b42a81bf1"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H012.json",
+      "git_blob": "1b84162d4cd02cf46855b892d936e0ac3eb1846d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H013.html",
+      "git_blob": "b62f78a91f81b91dd56da05d147041fbe99fe801"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H013.json",
+      "git_blob": "36b38f889dbde8db4210c3aa86f278b1353c4dc8"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H014.html",
+      "git_blob": "18a17f68bcc4697648b5b49a842f58d84aba73dd"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H014.json",
+      "git_blob": "26a4070169770f5e4894cb859c50b7bb7fc4fb8a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H015.html",
+      "git_blob": "5d7585b7e2658b81bde7d58c0ce98576fbb7d4ee"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H015.json",
+      "git_blob": "b98b065133fdc1ae7b88465fdef6fc8cccb7eca6"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H016.html",
+      "git_blob": "0db6edd9bf0bed406f00c204109f99a8dd1c0c6d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H016.json",
+      "git_blob": "71db4418c68592afc90eea82ea5d6f70111b50cb"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H017.html",
+      "git_blob": "4c0e6dc9e3f1a74e23c1bfa81ab6a48ba0463584"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H017.json",
+      "git_blob": "9a0c8980f14b14b882a473f27b703fd31ca5f63d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H018.html",
+      "git_blob": "a97df610af24c30b6607743249fbe4dce63e645f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H018.json",
+      "git_blob": "42d774a723f7ca68b2c714cba2bd7b827e78362c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H019.html",
+      "git_blob": "83119ea4c067c9e1dac8072c113462e5e4987928"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H019.json",
+      "git_blob": "357885a294a26553f8dd1dc65924876505b29a06"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H020.html",
+      "git_blob": "b0d0f03f4718ee8b266e479cb0efee3bd46469be"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H020.json",
+      "git_blob": "2d21371ec47bbcc55108b3685e952e598622e69a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H021.html",
+      "git_blob": "d3a6ece6c2aa68c0504913e39e1b3f2d5af5e88f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H021.json",
+      "git_blob": "53ca3243afb9d28cf4abda564b5d1dd406e14222"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H022.html",
+      "git_blob": "5f234d8355578ab0465272869a6dd81d9deb68b2"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H022.json",
+      "git_blob": "451e4edce4fa4428c9e109eb12c8092411e96abb"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H023.html",
+      "git_blob": "1223609da105482e3a80caa49c848ea5a77971a3"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H023.json",
+      "git_blob": "27161da35d7325d05c53da0754df818a86168ed8"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H024.html",
+      "git_blob": "f8c3142aca26040487bb79170feb5d3e00cd9454"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H024.json",
+      "git_blob": "7a25c02b209f5ca26719238ef376e2d8fc0dd11f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H025.html",
+      "git_blob": "393ed2430c21a0e579b00daea8aaf560995b424c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H025.json",
+      "git_blob": "8e6fabf1b4f6e9c8fd3a319c67833f74ebc83e04"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H026.html",
+      "git_blob": "023d5ed9559bfe64448df545de58701f77709df4"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H026.json",
+      "git_blob": "021dcf17a881f848a37a22427d036c64898e21a5"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H027.html",
+      "git_blob": "7cf15c6e60eea368a466cc8aa75030bb1d99454b"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H027.json",
+      "git_blob": "bdfc993901f5a25b4c51a219988b2adc40421484"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H028.html",
+      "git_blob": "fb9f5b725334b2145cdfe843d1e4debb07074289"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H028.json",
+      "git_blob": "528bec556379307860613c434977dda49655d820"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H029.html",
+      "git_blob": "da05aeb630369d70116cf1b88576afcca576425b"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H029.json",
+      "git_blob": "d8a34c0d9db3f11c752a40aebc38c1e48d6270ca"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H030.html",
+      "git_blob": "47c1655c131769edf08bd4ab5c4fcbc5c3657366"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/V6_H030.json",
+      "git_blob": "f85a9e703c9ffb15b3bba92b0658f1728623840b"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/index.html",
+      "git_blob": "c6bd1f7e97ddea6730fea6eeedf068a748083c89"
+    },
+    {
+      "path": "docs/topic3_v6/V6_FRESH_HOLDOUT_REVIEW_PACKETS/manifest.json",
+      "git_blob": "e079585910664a521a8b03bba277bfbea14e11ad"
+    },
+    {
+      "path": "docs/topic3_v6/V6_HOLDOUT_SPLIT_AND_LEAKAGE_AUDIT.md",
+      "git_blob": "1a0f9f6c0ac77f8e9b45de0877c5aac0ffc1da96"
+    },
+    {
+      "path": "docs/topic3_v6/V6_INDEPENDENT_EVALUATION_RESULTS.md",
+      "git_blob": "e9b7d9d164c33fea472d14daa300819ca78a99eb"
+    },
+    {
+      "path": "docs/topic3_v6/V6_P7L_DISCREPANCY_DATA.json",
+      "git_blob": "9fb8d77722d9e5351d53a684562f6e85b2505bc4"
+    },
+    {
+      "path": "docs/topic3_v6/V6_P7L_REPRODUCTION_DISCREPANCY.md",
+      "git_blob": "1790efe7e773985edfe28e1469de59a02d1c86d5"
+    },
+    {
+      "path": "docs/topic3_v6/V6_PILOT_RANKS_COMPACT.jsonl",
+      "git_blob": "229b7da76ab0b3fd9d034a50f66d8f1a9a992ccc"
+    },
+    {
+      "path": "docs/topic3_v6/V6_PILOT_SUMMARY.json",
+      "git_blob": "7d624f496166a3b564b5e0183e12cbc178771edd"
+    },
+    {
+      "path": "docs/topic3_v6/V6_RESEARCH_FAILURE_DIARY.md",
+      "git_blob": "da62e754cc74393ff72f3c9af671601ca9a7b71a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_RESEARCH_LAB_QA.md",
+      "git_blob": "8e5c50a13947601d930f002c861ba2622a27c5d4"
+    },
+    {
+      "path": "docs/topic3_v6/V6_RESEARCH_LAB_SCREEN.png",
+      "git_blob": "c203895bb55c2510a9e90ecf2cac6eeb0fc082e1"
+    },
+    {
+      "path": "docs/topic3_v6/V6_RESOURCE_AND_LATENCY_REPORT.md",
+      "git_blob": "ca58e97ef5bae4f417b2fd33cd1fb4466adbd075"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H01.html",
+      "git_blob": "9a89b4d9e265c519d958c99b673e25a4516d370d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H01.json",
+      "git_blob": "db2aa2b9fe1313a96e05dea4671e6122767d587a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H02.html",
+      "git_blob": "c3883c36d4685a12a92e40316a53df666d270cde"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H02.json",
+      "git_blob": "2c640e0d66b5af00a7e81f78d0f0d96a43f9d012"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H03.html",
+      "git_blob": "d30de166c1ba1f1f669991daf82c5cba0e911e6a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H03.json",
+      "git_blob": "1d511fbb8e88c8c26769f2246e6a567f54395c59"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H04.html",
+      "git_blob": "17d1a987269c9a0da61657ee5f284c929aa46c45"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H04.json",
+      "git_blob": "d6fd318eec7e730d2d1c96c0ef6ee042ac26a58b"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H05.html",
+      "git_blob": "ff21aa032e30d41697875b58f7fe76c5e098f728"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H05.json",
+      "git_blob": "36f4a37e5ac921c38bf881d9717bca72fd9dc207"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H06.html",
+      "git_blob": "99bf1c633702ed1b7ddf222d913cfba507787c94"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H06.json",
+      "git_blob": "e47b3f80712f6d164c9360889c6bd0666ea7a89e"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H07.html",
+      "git_blob": "643d30728dc350f05f7848b1fd00c2afda9a85ba"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H07.json",
+      "git_blob": "ca0f42f1a4975b104aca61bea7338bbc1e8eb130"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H08.html",
+      "git_blob": "dd228b5410ea1943a39fa16f59803ec79d9f0606"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H08.json",
+      "git_blob": "27ba3183cae43e1cb1431bf564b6fa670a3c17ff"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H09.html",
+      "git_blob": "e28d4ab2f2f4301e1ae6ff3bc7d0764c9e9aa849"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H09.json",
+      "git_blob": "f4496ccedc6ca9eb93853dec920e55a1193e1082"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H10.html",
+      "git_blob": "fa9db4e5d5fdf78efa025140b03ecd6e94c67711"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H10.json",
+      "git_blob": "348a63bb9f6cf31cc3fad9da777d4afdc792efb3"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H11.html",
+      "git_blob": "c6c83e31ed7c2d830faed1457b75a34d9eb79dae"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H11.json",
+      "git_blob": "d9f7cea2a5c5f39711f481f6413e0b71cdbcf533"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H12.html",
+      "git_blob": "b0613c4e4f4e591bcc957b0621fa9900050e6737"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H12.json",
+      "git_blob": "47c6776ae1deaaa52767fe3d09c870a29bc79f39"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H13.html",
+      "git_blob": "0a90f9a47db50a15251043b600e19fa7d8cd8534"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H13.json",
+      "git_blob": "8040b67e05969a0e5e9988fd85d0e97f45a01708"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H14.html",
+      "git_blob": "57bc5fdfa71026d7a9e87f1798c105b23b1e292d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H14.json",
+      "git_blob": "23e83d6fd549da5c5bfb17ae47980caa2d2b8841"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H15.html",
+      "git_blob": "a545d0060d74d4c99efcfaa74e00f247528844e8"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H15.json",
+      "git_blob": "a7ef84cd98b25e42f96a7ca2cb2cbf0170bcda47"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H16.html",
+      "git_blob": "f2e326bd9cb217a8cc38fed96ba8526bec7b465f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H16.json",
+      "git_blob": "a8e5388775b21f5c3fed0f45539be4fa5ffafb9d"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H17.html",
+      "git_blob": "436feb4c20a5ea5e661f84953c716569956efd71"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H17.json",
+      "git_blob": "0400f2ee89aa5f5994647bcedb4f4ad34921568c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H18.html",
+      "git_blob": "bdaa5f657d330b4a07fd51c0a69df8a61c75008f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H18.json",
+      "git_blob": "65f8fc074a0fc59e746d02cbb3d381e97f829556"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H19.html",
+      "git_blob": "b4c24b09d7319b44830d173478d5ef1ebfddbb82"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H19.json",
+      "git_blob": "9e16198657b043cb774058b459e7039b05bce6fd"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H20.html",
+      "git_blob": "6b2eff4dc2b1afd151e5e4099c2bd52409d20092"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H20.json",
+      "git_blob": "542145abc5a6e44ae20a8c4732e10de8f1d91e7e"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H21.html",
+      "git_blob": "ca983188bcf9b595ce6169387954da26675bffb1"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H21.json",
+      "git_blob": "67d495589a3734d798f9dbcd37e80c0641dee089"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H22.html",
+      "git_blob": "ab55a6b703a94153c9719098ef03af9f711cf0cf"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H22.json",
+      "git_blob": "fa07dc1ed775126ae61b516721bc3c9a533cdeeb"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H23.html",
+      "git_blob": "899ac367a2ce786420fd17c0aa43e5d8ed6c78cf"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H23.json",
+      "git_blob": "2dbe84831bcf9ffde8a56feeff21879195106d5c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H24.html",
+      "git_blob": "b139400a2e2f9cfeb227102c859ce41ef7a2cee8"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H24.json",
+      "git_blob": "ec746c5d01b4f2a50b22a2f7b70d0a2ef49a874c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H25.html",
+      "git_blob": "56496dc0028f64c5c4e897d40fe185b0a2b7121f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H25.json",
+      "git_blob": "98369498d7abb02c849cd378c647f88e4a14037b"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H26.html",
+      "git_blob": "613cc2c3f9b3ee9b6b9943cbccf3770b06606f34"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H26.json",
+      "git_blob": "1a58c6c6a1967e219973d86bd741980828f6537c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H27.html",
+      "git_blob": "185beedf50b8479a6edf46d3e3d391ba0b8803dd"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H27.json",
+      "git_blob": "03d3ae331c375ac5cbf338d1b50db4b6df8c954f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H28.html",
+      "git_blob": "0b8a91315d17eb579040d67cd1d994afc782633c"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H28.json",
+      "git_blob": "284f327d8cad8bd467d03dcb98ad9860331806f2"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H29.html",
+      "git_blob": "b5007dc932bf5923437870772fe480ae94c4a30f"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H29.json",
+      "git_blob": "c86f08b1063b8b37172dfb7a0f4ee478a7b4a52b"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H30.html",
+      "git_blob": "9543b9f96dd0698c70634bf9f242e805c835582a"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/V5R_H30.json",
+      "git_blob": "806a4d20e3205766d8031b7f2a3d2adc3a376185"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/index.html",
+      "git_blob": "22c90afdca52aea7df385bf0b842a1497e815fce"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_FIRST_REVIEW_PACKETS/manifest.json",
+      "git_blob": "81acad30e5f95d5bd337ba2eb91b4428111e1462"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_PACKET_VALIDATION.json",
+      "git_blob": "f36a14062ab70bcbbe7d76628484f7b4d1f52f84"
+    },
+    {
+      "path": "docs/topic3_v6/V6_SOURCE_SNAPSHOT_MANIFEST.json",
+      "git_blob": "ef5f9c24a465be36962a664505fea7f75ebcf629"
+    },
+    {
+      "path": "docs/topic3_v6/V6_THESIS_DEFENSE_REPORT.md",
+      "git_blob": "c439ecffeb014dc86bc3f2d9fb957611503b8f17"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_AGENT1_BLIND_REVIEW_PACKAGE.zip",
+      "git_blob": "3d1fe7d05111450e0fc8ab3f4f34738aac805c50"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_AGENT2_BLIND_REVIEW_PACKAGE.zip",
+      "git_blob": "f5f435881ecbeeee63d4cbcbbe836482dcb8f878"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_G2_ACCEPTANCE.md",
+      "git_blob": "cfd8f64613bedfa380ffb1025d3a0106b86d0649"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_G2_FREEZE_MANIFEST.json",
+      "git_blob": "8ce8cc51041ea056daa704da2e2e85111e233f5a"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_QUESTION_DESIGN_CHANGELOG.md",
+      "git_blob": "baa9fde3a8c3aeb273fa93544e82c67926479df5"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_QUESTION_OVERLAP_AUDIT.csv",
+      "git_blob": "15b12935ba1695070fec47de7365951626bd91ee"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_SEC47_PRIVATE_SOURCE_MANIFEST.csv",
+      "git_blob": "8bedd9bf48e37eaf1185dbc753e454e3209260e5"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_SEC47_QUESTION_DESIGN_V1.csv",
+      "git_blob": "db065b02195a077925bb318b8314509b431bd4f9"
+    },
+    {
+      "path": "docs/topic3_v7a_g2/V7A_SEC47_QUESTION_ONLY.csv",
+      "git_blob": "bb56952cda209cb129ac655742e7bd99b2c66467"
+    },
+    {
+      "path": "reports/active_document_id.txt",
+      "git_blob": "e014cbc597f1dd7d0bf95ae609e8848928df87ce"
+    },
+    {
+      "path": "reports/baseline_results.md",
+      "git_blob": "8c3635564f7fd5a0fd1b04d136129498898055cc"
+    },
+    {
+      "path": "reports/benchmark_evaluator_audit.md",
+      "git_blob": "09ad6de9bafeb0a23daec57fd6fd9f74a2b221eb"
+    },
+    {
+      "path": "reports/chart_hard_cases.csv",
+      "git_blob": "bc004457ca0b3bc85980a00eb2157efcbb9f4076"
+    },
+    {
+      "path": "reports/chart_understanding_benchmark.csv",
+      "git_blob": "305fb8fa66f2b2222a8a443cd3bba2bc000562c5"
+    },
+    {
+      "path": "reports/checkpoint_path.txt",
+      "git_blob": "fd2a440aa28944586b56094c7fe5c144eeadca06"
+    },
+    {
+      "path": "reports/chunks_api_sample.json",
+      "git_blob": "447aca7a68a7b2ccc962e6dc616c1d3d20db7b37"
+    },
+    {
+      "path": "reports/code_audit.md",
+      "git_blob": "43bb0f7c79db27f430746c016fcaa220c582d36c"
+    },
+    {
+      "path": "reports/conversation_api_tests.csv",
+      "git_blob": "cb5b8e737a642cc8cf26148b2ba0168426f2bc3d"
+    },
+    {
+      "path": "reports/conversation_restart_persistence.json",
+      "git_blob": "a4f2e77bbd4898e49ef21b46da4fc28c3beeb3d4"
+    },
+    {
+      "path": "reports/conversational_assertion_tests.csv",
+      "git_blob": "70638bd854c7ac11af74852b183461022a4731bd"
+    },
+    {
+      "path": "reports/conversational_rag_architecture.md",
+      "git_blob": "a775568f0fb31e2cf8053c39ecc2f0f8155cd588"
+    },
+    {
+      "path": "reports/critical_repairs_after.csv",
+      "git_blob": "6070b05f30773cc9434604fefc9012e8a864d857"
+    },
+    {
+      "path": "reports/critical_repairs_after_details.json",
+      "git_blob": "bf04d683be37d09b231017d7b0c113edc0b7b6df"
+    },
+    {
+      "path": "reports/current_ocr_documents.json",
+      "git_blob": "793e99b96ed059931fc6f433633f96f786f4cec9"
+    },
+    {
+      "path": "reports/data_backup_path.txt",
+      "git_blob": "a7f597bca89ecc9892174098862f6a50c74b69a5"
+    },
+    {
+      "path": "reports/dependency_changes.md",
+      "git_blob": "8c1486df347243a0c2b4a460d3dc869b298a752c"
+    },
+    {
+      "path": "reports/document_scope_isolation.md",
+      "git_blob": "2f9a97b2b27accbf4416075664ef36edff257820"
+    },
+    {
+      "path": "reports/duplicate_upload_validation.json",
+      "git_blob": "6110c3625edf2a636e873e6e7e80f2ec66d2818b"
+    },
+    {
+      "path": "reports/environment.json",
+      "git_blob": "1c8e83c9cb387351ddf540682a1ff04b283ec723"
+    },
+    {
+      "path": "reports/environment_audit.md",
+      "git_blob": "b3db4dc89bfc589823f7407fa75ca0c073c58aef"
+    },
+    {
+      "path": "reports/fastapi.stderr.log",
+      "git_blob": "1169476b758e7ae7ada5d3e9c52eca5f8d450c24"
+    },
+    {
+      "path": "reports/fastapi.stdout.log",
+      "git_blob": "688b6c9684782a2a28c276da293c60d65e29dbb2"
+    },
+    {
+      "path": "reports/final_capability_validation.csv",
+      "git_blob": "e7a90fa800248aa2a1dfc56afacb699bb309e217"
+    },
+    {
+      "path": "reports/final_capability_validation_details.json",
+      "git_blob": "3d44c97480e71cf4f01effc93625f52c20a05082"
+    },
+    {
+      "path": "reports/final_product_acceptance.md",
+      "git_blob": "8a1f49c7a7cad214e5b698e1f522bdf3f359f51c"
+    },
+    {
+      "path": "reports/final_product_fixture_documents.json",
+      "git_blob": "16a8ecaddb5e872817d7c88f121c61d999c70921"
+    },
+    {
+      "path": "reports/final_readiness_report.md",
+      "git_blob": "a9d8d358c87a15be7031ac7d2684142fc044ce1d"
+    },
+    {
+      "path": "reports/final_regression.md",
+      "git_blob": "75884bccbc87582e97881d117e1692c426404bd2"
+    },
+    {
+      "path": "reports/final_ui_smoke.json",
+      "git_blob": "aa0a1fb2270889f1638ee8ab75dc0b6b20d9fac8"
+    },
+    {
+      "path": "reports/financial_calculation_benchmark.csv",
+      "git_blob": "290f4adaefaf4805ec8ef93b0871bff94051ec07"
+    },
+    {
+      "path": "reports/financial_table_accuracy.csv",
+      "git_blob": "5edb1f00ee6f6997c2db87cc7ad109fb12ae70e8"
+    },
+    {
+      "path": "reports/fresh_holdout_results.csv",
+      "git_blob": "39d9d4a937b36ba89d384910391552c4ce77b351"
+    },
+    {
+      "path": "reports/internal_holdout_documents.json",
+      "git_blob": "9708f6311d1fcf1a60d4665b0a102c0eaa849a5d"
+    },
+    {
+      "path": "reports/internal_holdout_results.csv",
+      "git_blob": "81ddde190f573b84db4872c4dd17ed7159f5fc4a"
+    },
+    {
+      "path": "reports/known_limitations.md",
+      "git_blob": "95d54a2872953bf7a3a65e8ce43b64c444344761"
+    },
+    {
+      "path": "reports/llm_comparison.csv",
+      "git_blob": "05ca04125425f372c89e918bbdca7235147364e8"
+    },
+    {
+      "path": "reports/llm_comparison.md",
+      "git_blob": "42bc287d2181dd393a2d3700078953ff19a0f57f"
+    },
+    {
+      "path": "reports/local_ocr_setup.md",
+      "git_blob": "44df920acf5aa48e17c77af89d1a8ae2eeb3d0de"
+    },
+    {
+      "path": "reports/milestone_c_acceptance/financial_search_live.png",
+      "git_blob": "c1aa6a30f2f1dbadd3f6c34cb8bf498ba237469c"
+    },
+    {
+      "path": "reports/milestone_c_acceptance/financial_search_postmerge.png",
+      "git_blob": "38cb151a795a972a6acca56a50da015c27d8d2cd"
+    },
+    {
+      "path": "reports/milestone_c_acceptance/latency_recheck.json",
+      "git_blob": "4ed5959201f32e099f62eb1a271c815625afcd35"
+    },
+    {
+      "path": "reports/milestone_c_acceptance/legacy_rag_smoke.json",
+      "git_blob": "8f239e1ccb19b64b3b513ee7b19c1eedbb04a107"
+    },
+    {
+      "path": "reports/milestone_c_acceptance/owner_historical_before.json",
+      "git_blob": "1edfc4e5e1a45c6c919aa749aaeb457fd83fb44a"
+    },
+    {
+      "path": "reports/milestone_c_acceptance/postmerge_smoke.json",
+      "git_blob": "893e4e929f02031c090d576ef935dd15ee10b7ee"
+    },
+    {
+      "path": "reports/milestone_c_acceptance/product_api_smoke.json",
+      "git_blob": "31325d39e0ce3429711fd25a0e206d32c40e87f2"
+    },
+    {
+      "path": "reports/milestone_c_hardening_latency.json",
+      "git_blob": "e0f6ddba316e57107dc485fcce1a78fa1d683b79"
+    },
+    {
+      "path": "reports/milestone_c_issuer_development.json",
+      "git_blob": "0aea415120148a0973816eed87814f9c7118e4b3"
+    },
+    {
+      "path": "reports/milestone_c_issuer_heldout.json",
+      "git_blob": "df1e3e74146e5b993e78411499a8a517ae2b0c4a"
+    },
+    {
+      "path": "reports/milestone_c_ollama_endpoint_latency.json",
+      "git_blob": "d926ce30e4feb423911d7de28c8efe47bf8ee24a"
+    },
+    {
+      "path": "reports/multimodal_architecture.md",
+      "git_blob": "3b530100db60a61a22b9ca79c75cb5dedd316ce6"
+    },
+    {
+      "path": "reports/multimodal_final_acceptance.md",
+      "git_blob": "2386c780831d6d40fe84fc9ad1532a9aa97d722d"
+    },
+    {
+      "path": "reports/multimodal_fixture_documents.json",
+      "git_blob": "2ff610b836dc03b806f6fe01c308aef9377f5c13"
+    },
+    {
+      "path": "reports/multimodal_rag_benchmark.csv",
+      "git_blob": "29d306fea56d3c630996102b23a6c79b33a03a50"
+    },
+    {
+      "path": "reports/multimodal_rag_benchmark_details.json",
+      "git_blob": "46be60ff6299b7c63d05aa26f48b93b1cedbaff6"
+    },
+    {
+      "path": "reports/multiturn_rag_benchmark.csv",
+      "git_blob": "cb5b8e737a642cc8cf26148b2ba0168426f2bc3d"
+    },
+    {
+      "path": "reports/multiturn_rag_benchmark_details.json",
+      "git_blob": "2dd7c8096724ccccb7d423c7152fe2e75d9fdf1c"
+    },
+    {
+      "path": "reports/multiturn_transcripts.md",
+      "git_blob": "8b86d75512813f7e41f8be8831f1744614f80bcc"
+    },
+    {
+      "path": "reports/ocr_accuracy_audit.md",
+      "git_blob": "8ae0c8c89957aa8dd6e669bb2e653f6585f64d72"
+    },
+    {
+      "path": "reports/ocr_accuracy_metrics.csv",
+      "git_blob": "904ba285404418ab0b2a74b943e2e8322f63b604"
+    },
+    {
+      "path": "reports/ocr_preprocessing_experiments.csv",
+      "git_blob": "13911466e0ea86ef876120c203eb855a43b7a4ea"
+    },
+    {
+      "path": "reports/ocr_real_inference.csv",
+      "git_blob": "ddbbbc9dbacabe5bfc9a8421c0a5b32521472eb3"
+    },
+    {
+      "path": "reports/ocr_table_before_after.csv",
+      "git_blob": "b6c16b6f4a8e06e0f7689951f5bb43d94c0dc7a9"
+    },
+    {
+      "path": "reports/pdf_fixture_extraction_raw.json",
+      "git_blob": "240bae1f17620c30929f1c4f984577cf4d0f0af4"
+    },
+    {
+      "path": "reports/pdf_modality_audit.md",
+      "git_blob": "22f2bc21eaa57cc073ecd8e60be36b3e407ced2d"
+    },
+    {
+      "path": "reports/performance_benchmark.csv",
+      "git_blob": "9a3ea1698ae7a6bf62ef0320691c2f48d46595e7"
+    },
+    {
+      "path": "reports/performance_benchmark_before_cache_fix.csv",
+      "git_blob": "f0593aa563f449fc291cd40b96cb1e3d58d27844"
+    },
+    {
+      "path": "reports/performance_resources.md",
+      "git_blob": "9ff5758b85d1890cf69ed89fee68d30743bc51f2"
+    },
+    {
+      "path": "reports/performance_ttft.csv",
+      "git_blob": "429424ac8d36c985f0e448c12f3cadd2b1b0690b"
+    },
+    {
+      "path": "reports/performance_ttft_after_resource_fix.csv",
+      "git_blob": "5b095d2584cc57caabfbb71bfb2bfaa57132b7cf"
+    },
+    {
+      "path": "reports/phase1_baseline.md",
+      "git_blob": "feeae3ae55d0f5b5d195bd38f9da3b66c93b1237"
+    },
+    {
+      "path": "reports/phase1_checkpoint.txt",
+      "git_blob": "7592239c5b901a03bc58fa539cb6737388b0b0f4"
+    },
+    {
+      "path": "reports/phase1_conversation_regression.csv",
+      "git_blob": "cb5b8e737a642cc8cf26148b2ba0168426f2bc3d"
+    },
+    {
+      "path": "reports/phase1_dependencies.txt",
+      "git_blob": "52107dd4898c931d97eaa605ea19e811b15dcd83"
+    },
+    {
+      "path": "reports/phase1_development_holdout1.csv",
+      "git_blob": "24f0160a01b8932ec2992f77b61f47f8a92b9f6d"
+    },
+    {
+      "path": "reports/phase1_development_holdout1_after.csv",
+      "git_blob": "6ab6fe1124ef7926d2bc5fae1bb292dd2a0cf1b7"
+    },
+    {
+      "path": "reports/phase1_development_holdout1_after_details.json",
+      "git_blob": "feb55566fe1e1d90f283e5262ca20d8584f718b5"
+    },
+    {
+      "path": "reports/phase1_failure_resilience.md",
+      "git_blob": "ed2e9fc20b4c1764bf449d6209da693e870c63c5"
+    },
+    {
+      "path": "reports/phase1_financial_calculation_details.json",
+      "git_blob": "b63b88f7aefeea7b106a3ff999efcadf08cf18c6"
+    },
+    {
+      "path": "reports/phase1_financial_calculations.csv",
+      "git_blob": "0d019ceb02b631d7d00dadbc4c815cdc53aaabfc"
+    },
+    {
+      "path": "reports/phase1_fixture_documents.json",
+      "git_blob": "16b433974081cac3523f1b3f22df39706ca8b7a6"
+    },
+    {
+      "path": "reports/phase1_generalization.csv",
+      "git_blob": "9df822a23a5207cf8474b712651a1bff7e7fcec2"
+    },
+    {
+      "path": "reports/phase1_generalization_details.json",
+      "git_blob": "7ef38fb20ffe58de30bee6cc6b0525103149cdb5"
+    },
+    {
+      "path": "reports/phase1_latency_benchmark.csv",
+      "git_blob": "10778d7d51f5a8681b7ae7237d0ea0ed44187e0e"
+    },
+    {
+      "path": "reports/phase1_latency_raw.json",
+      "git_blob": "b527a826d2700247c5af7520b814912df8ec7f87"
+    },
+    {
+      "path": "reports/phase1_ocr_benchmark.csv",
+      "git_blob": "fed4bf55ccdfa2ec7b880a0f5984fa67c2db979a"
+    },
+    {
+      "path": "reports/phase1_pdf_structure_benchmark.csv",
+      "git_blob": "ace23214d6d376fefb02a09dfb35b4c71f42a877"
+    },
+    {
+      "path": "reports/phase1_real03_api_after.json",
+      "git_blob": "7a568d8a87530831b1cfb492b1c0c85da5bcbf98"
+    },
+    {
+      "path": "reports/phase1_real03_layout_dump.json",
+      "git_blob": "8728acbd16f368397c593169f3c1ef86c40a0e69"
+    },
+    {
+      "path": "reports/phase1_real03_queries.json",
+      "git_blob": "f5687670ae149e6ba9c66f2214572dcd4ff343c2"
+    },
+    {
+      "path": "reports/phase1_resource_profile.md",
+      "git_blob": "fbaab98c07e7021690b2658dfbeed4d3d62432fa"
+    },
+    {
+      "path": "reports/phase1_root_cause.md",
+      "git_blob": "4b4b7709fc8464a45b6a7859fa4e52d95a3a51b6"
+    },
+    {
+      "path": "reports/phase1_security_audit.md",
+      "git_blob": "9dcf11eed55c847f43c859b063cc45184f253b6a"
+    },
+    {
+      "path": "reports/pip-check-before.txt",
+      "git_blob": "c688d8ccdad82420475fc31cb40020cccfeeef2b"
+    },
+    {
+      "path": "reports/pip-freeze-after-install.txt",
+      "git_blob": "dfc4b1eb7eaa321826799c9f0ef9a454dc4fdeb6"
+    },
+    {
+      "path": "reports/pip-freeze-before.txt",
+      "git_blob": "8c118683abcd9ba94a9133652d1d277a5a94414c"
+    },
+    {
+      "path": "reports/qdrant_duplicate_audit.md",
+      "git_blob": "3c31855ed8e70bfbf24ffa6e908db50b88aaf88a"
+    },
+    {
+      "path": "reports/qdrant_duplicate_audit_data.json",
+      "git_blob": "dd6d5f036d0b758a82aeea143aff0fe4bd36b919"
+    },
+    {
+      "path": "reports/quality_hardening_c05_c09_after.json",
+      "git_blob": "6c56d465e16e55654b0bb97b3ec86f9342917de9"
+    },
+    {
+      "path": "reports/quality_hardening_c05_c09_before.json",
+      "git_blob": "96ca790f19604786a06be5731214472952ace4ba"
+    },
+    {
+      "path": "reports/quality_hardening_checkpoint.txt",
+      "git_blob": "fd073b8f37d11892bfb46d63ca3d4bd01689384e"
+    },
+    {
+      "path": "reports/quality_hardening_final.md",
+      "git_blob": "c84fb2bc4b48187d49563f9fb733d5e41ffb3b92"
+    },
+    {
+      "path": "reports/quality_hardening_resources.json",
+      "git_blob": "2480e85eb00b88fd18863aa26b866be0b3bd79f3"
+    },
+    {
+      "path": "reports/quality_hardening_root_causes.md",
+      "git_blob": "ff687cb05a467684820ad1feca04826fa419f264"
+    },
+    {
+      "path": "reports/quality_hardening_ui_smoke.json",
+      "git_blob": "231c6c0a25d96667edb0bbe8c47d082e6e4f6d01"
+    },
+    {
+      "path": "reports/r01_review_v2.json",
+      "git_blob": "99bcc4b0d07d7d8d31b371dfd45688ff13daf8f1"
+    },
+    {
+      "path": "reports/rag_ambiguous_after.json",
+      "git_blob": "0c1405258a3448e307163dd3c80c9760995e223c"
+    },
+    {
+      "path": "reports/rag_ambiguous_after_final.json",
+      "git_blob": "ebb02abe0b65e0cc83edf17a5fa2280d22d25ea4"
+    },
+    {
+      "path": "reports/rag_ambiguous_after_retrieval.json",
+      "git_blob": "31a284d6a84c2a80907a316df578030ca7d10c32"
+    },
+    {
+      "path": "reports/rag_ambiguous_after_warm.json",
+      "git_blob": "f1c81523af8e5f270fde05bd445bffbde64f1198"
+    },
+    {
+      "path": "reports/rag_ambiguous_baseline.json",
+      "git_blob": "bd13479624a8c2f4c8265c31ceddf040df22fc64"
+    },
+    {
+      "path": "reports/rag_benchmark.csv",
+      "git_blob": "d54cfb7d11192c65148d12770852238ac428e3fe"
+    },
+    {
+      "path": "reports/rag_benchmark_generated.csv",
+      "git_blob": "e6ce02c9898bdb43ead13482aef7462d09bea7d4"
+    },
+    {
+      "path": "reports/rag_benchmark_neighbors.csv",
+      "git_blob": "fbca8584c786ea94c8cb8523edbe8794a58c74a6"
+    },
+    {
+      "path": "reports/rag_benchmark_priority.csv",
+      "git_blob": "0eae71c5049f62c46c2d56a54e73fa0d3a2eca98"
+    },
+    {
+      "path": "reports/rag_benchmark_retrieval.csv",
+      "git_blob": "06da99539777c388d660ecfdcd47a4cc17ec9efe"
+    },
+    {
+      "path": "reports/rag_context_validation.csv",
+      "git_blob": "5daf172a135af16ef3b7ac2e87aabdec93d41f23"
+    },
+    {
+      "path": "reports/rag_context_validation.summary.json",
+      "git_blob": "b524ba25fc0466caa7f73c4ae31c24dee5b7bddc"
+    },
+    {
+      "path": "reports/rag_context_validation_details.json",
+      "git_blob": "3e757105f27af85eae3a3743e9d4c4c4ceb69844"
+    },
+    {
+      "path": "reports/rag_context_validation_v2.csv",
+      "git_blob": "07550078c0098bd14ed5c67b9152069b12f6ff73"
+    },
+    {
+      "path": "reports/rag_context_validation_v2.summary.json",
+      "git_blob": "4bf97a5ad5e784df118feebaadd3db050fda1d42"
+    },
+    {
+      "path": "reports/rag_context_validation_v2_details.json",
+      "git_blob": "bb8eb434f4e115d6ae44d4883af02f25fa6ade42"
+    },
+    {
+      "path": "reports/rag_critical_qwen.csv",
+      "git_blob": "9ef00357ea848955191f57ae366e042996b1867e"
+    },
+    {
+      "path": "reports/rag_critical_qwen.summary.json",
+      "git_blob": "39a4b9fb97a95166c8a173d6eec53a1f888b8a0b"
+    },
+    {
+      "path": "reports/rag_critical_qwen_details.json",
+      "git_blob": "d0a34ddec4d72d588e16fea319fb95e8cfde64b0"
+    },
+    {
+      "path": "reports/rag_development_cases.json",
+      "git_blob": "e08dd33f6078d4c7330da30f5df63be7d5a689db"
+    },
+    {
+      "path": "reports/rag_development_results.csv",
+      "git_blob": "e524f7abe41f4b437879009201a4b44babc9f153"
+    },
+    {
+      "path": "reports/rag_development_results.summary.json",
+      "git_blob": "0759c208a689efa576190a0621d570ec8be9858e"
+    },
+    {
+      "path": "reports/rag_development_results_details.json",
+      "git_blob": "e018aec9679d285e2259d7b1643dd619085f82de"
+    },
+    {
+      "path": "reports/rag_eval_cases.json",
+      "git_blob": "28813bc73b5de3e2bb472d2a76622433384bc5d2"
+    },
+    {
+      "path": "reports/rag_eval_evidence.json",
+      "git_blob": "bafaf56c17492739ceacb42dc63d736242431d7f"
+    },
+    {
+      "path": "reports/rag_eval_evidence.md",
+      "git_blob": "9d310cba366beb3a0d739942faf74e5696607c40"
+    },
+    {
+      "path": "reports/rag_evaluator_reconciliation.md",
+      "git_blob": "8ff16b742052153dcb857df89870566e838c8cc1"
+    },
+    {
+      "path": "reports/rag_evidence_audit.md",
+      "git_blob": "a9033c80df0b3da3c36ed01a0a90b1518183cdca"
+    },
+    {
+      "path": "reports/rag_final_acceptance.md",
+      "git_blob": "9cce647b08e5d94d60544ad25800589abc2631cc"
+    },
+    {
+      "path": "reports/rag_final_patch.csv",
+      "git_blob": "5cf1d8fc4df164f2fbc03e3f601029789e371e38"
+    },
+    {
+      "path": "reports/rag_final_patch.summary.json",
+      "git_blob": "b846017c3ab2ba421a7094585379e4b00f22015f"
+    },
+    {
+      "path": "reports/rag_final_patch_details.json",
+      "git_blob": "f1623865bbd9b30d1381b01b5ab1c16cd96e431c"
+    },
+    {
+      "path": "reports/rag_general_after_initial.json",
+      "git_blob": "1e32d4cbed25b2087bcfe4fb36c15a2983e716cb"
+    },
+    {
+      "path": "reports/rag_general_baseline.json",
+      "git_blob": "02735cb975ba9da9d0f1e5d18b20cfff952e5c81"
+    },
+    {
+      "path": "reports/rag_holdout_cases.json",
+      "git_blob": "8b6a79a420627772acae6d605cc271313c8d4b69"
+    },
+    {
+      "path": "reports/rag_holdout_h20.csv",
+      "git_blob": "c7c2b07c5efeeee4f93224badd815440479d0716"
+    },
+    {
+      "path": "reports/rag_holdout_h20.summary.json",
+      "git_blob": "bcacf51a5b0d66581a5ec5bdf4e839e7dc8c84fb"
+    },
+    {
+      "path": "reports/rag_holdout_h20_details.json",
+      "git_blob": "4e93bf121e581c7680510dbfa98ff250a4513d2d"
+    },
+    {
+      "path": "reports/rag_holdout_results.csv",
+      "git_blob": "390df5a0b1c1e079383b197b0982a04d0ca945ac"
+    },
+    {
+      "path": "reports/rag_holdout_results_details.json",
+      "git_blob": "4bf4a3637b3ed8847cbd4d18df49fb6220db1c3c"
+    },
+    {
+      "path": "reports/rag_implementation_lock.json",
+      "git_blob": "fa8007d3482d740a462d50d9479b2c2d260544c6"
+    },
+    {
+      "path": "reports/rag_latency_comparison.md",
+      "git_blob": "675a383b61405f34d64a39fe61654b079121abab"
+    },
+    {
+      "path": "reports/rag_live_benchmark.csv",
+      "git_blob": "629a21374860392ff9b1beb18efb73ad2796f16e"
+    },
+    {
+      "path": "reports/rag_live_benchmark.summary.json",
+      "git_blob": "6eff6cc5ff1241484697b02a6b1509bb38819457"
+    },
+    {
+      "path": "reports/rag_live_benchmark_details.json",
+      "git_blob": "e666a407ac1529879bea3a8c9922427d0dbacd9a"
+    },
+    {
+      "path": "reports/rag_live_benchmark_final.csv",
+      "git_blob": "274c74a5a6c503eb0c67412779e2fea9a14e4f0b"
+    },
+    {
+      "path": "reports/rag_live_benchmark_final.summary.json",
+      "git_blob": "8f3438b6f32276d933fa5d740beecf0af420bb98"
+    },
+    {
+      "path": "reports/rag_live_benchmark_final_details.json",
+      "git_blob": "0e90e144619cb675beb575a56f53301daef5b8c9"
+    },
+    {
+      "path": "reports/rag_live_benchmark_v2.csv",
+      "git_blob": "ab75c4ce9f392874faf12d8d7c4818de55520410"
+    },
+    {
+      "path": "reports/rag_live_benchmark_v2.summary.json",
+      "git_blob": "d01736c5cc639393f286d0554728c1f47b516434"
+    },
+    {
+      "path": "reports/rag_live_benchmark_v2_details.json",
+      "git_blob": "5153ca46bdebb0b8f040dff99cdec3d495ccf061"
+    },
+    {
+      "path": "reports/rag_master_retrieval_probe.json",
+      "git_blob": "99f0b8c7ec1e7bb56a2d6d9a68d2e36e26a5bdbf"
+    },
+    {
+      "path": "reports/rag_p0_context_repair.md",
+      "git_blob": "bf4e730c04f24dcbf2996c318303f2a6b056ba36"
+    },
+    {
+      "path": "reports/rag_p0_eval_cases.json",
+      "git_blob": "1f3f1fa706222775c5a2f13a839a2ca2345eed59"
+    },
+    {
+      "path": "reports/rag_p0_final_product.csv",
+      "git_blob": "baa5c2119b21e2ec663aa0566e95c392e80aa354"
+    },
+    {
+      "path": "reports/rag_p0_final_product.summary.json",
+      "git_blob": "50dac75c37aa733119ef408695b42ca390c29f3c"
+    },
+    {
+      "path": "reports/rag_p0_final_product_details.json",
+      "git_blob": "91fb8a2635a958a7a14db53aa84f8d2569df187c"
+    },
+    {
+      "path": "reports/rag_p0_q16.csv",
+      "git_blob": "ee09fe438f1f99153c91c44f33c1b5f4580ea248"
+    },
+    {
+      "path": "reports/rag_p0_q16.json",
+      "git_blob": "1e5d44aef2d32378331b5a444af9255783176d00"
+    },
+    {
+      "path": "reports/rag_p0_q16.summary.json",
+      "git_blob": "55db9d933137077e79619a6c1588bacc98d9b651"
+    },
+    {
+      "path": "reports/rag_p0_regression.csv",
+      "git_blob": "39289a97276ce92d51d0910174b250226a747038"
+    },
+    {
+      "path": "reports/rag_p0_regression.summary.json",
+      "git_blob": "7935f2d56d5162fae7182db09c96c3868198ce54"
+    },
+    {
+      "path": "reports/rag_p0_regression_details.json",
+      "git_blob": "5e40679fce4040c829c526537aa8ba34fe12f00a"
+    },
+    {
+      "path": "reports/rag_post_reindex_check.csv",
+      "git_blob": "b7a59447c36a2c453aab6abfec0b98505c457642"
+    },
+    {
+      "path": "reports/rag_prompt_after_complete.txt",
+      "git_blob": "befbd08fb5ced27e1356b2b00405d5a7c9617c45"
+    },
+    {
+      "path": "reports/rag_prompt_after_final.txt",
+      "git_blob": "270ab902ee8f52fc2a2f55338f3b24d30a64d3cb"
+    },
+    {
+      "path": "reports/rag_prompt_after_initial.txt",
+      "git_blob": "b96ed50a2159da98d59ce538727fef2bc7ea8b9a"
+    },
+    {
+      "path": "reports/rag_prompt_before.txt",
+      "git_blob": "77e7ccb8c225e7ee7e0070bf9341d7cb9786836c"
+    },
+    {
+      "path": "reports/rag_prompt_before_complete.txt",
+      "git_blob": "77e7ccb8c225e7ee7e0070bf9341d7cb9786836c"
+    },
+    {
+      "path": "reports/rag_q01_after_qwen.json",
+      "git_blob": "dfce1662e7e7e2759af14638916fa9d7135719c3"
+    },
+    {
+      "path": "reports/rag_q01_after_retrieval.json",
+      "git_blob": "2d0c0de9e46f2dc14cd4014b1bc9d8aaf83f6ce9"
+    },
+    {
+      "path": "reports/rag_q01_baseline_qwen.json",
+      "git_blob": "dd0a515de3aa70bab100bad3eee8e724c572e3c3"
+    },
+    {
+      "path": "reports/rag_q01_baseline_retrieval.json",
+      "git_blob": "92d5beda5c13f672a11c0af3aeb4afee2e040c23"
+    },
+    {
+      "path": "reports/rag_q02_debug.json",
+      "git_blob": "1238ec71b087ae5d7b816f0891b02ac5749b7367"
+    },
+    {
+      "path": "reports/rag_q04_final.csv",
+      "git_blob": "0d57bd35af043551ad313f7d40d3f53a5f53e4d3"
+    },
+    {
+      "path": "reports/rag_q04_final.summary.json",
+      "git_blob": "9621426129ef82066b3ca6eaaf079e303e640b2d"
+    },
+    {
+      "path": "reports/rag_q04_final_details.json",
+      "git_blob": "5e2d6f3106df7ab851ffa539c019424b59320cd3"
+    },
+    {
+      "path": "reports/rag_r03_final_prompt.txt",
+      "git_blob": "cc9aa7c4de628e981a9a0f58101eb6eb03e81ca2"
+    },
+    {
+      "path": "reports/rag_regression_after_repair.csv",
+      "git_blob": "2d2aed9a7ed39a38cc17fd9f934c3e764c3cf7c3"
+    },
+    {
+      "path": "reports/rag_regression_after_repair.summary.json",
+      "git_blob": "358d85b1e0bfabde6f0131b560067d4bd2138426"
+    },
+    {
+      "path": "reports/rag_regression_after_repair_details.json",
+      "git_blob": "ca66588f4c94a228b66664e44cce702e2d785e06"
+    },
+    {
+      "path": "reports/rag_regression_cases.json",
+      "git_blob": "185cc3793f59a2a78b7d960feb007dbcdf793f95"
+    },
+    {
+      "path": "reports/rag_regression_claim_grounding_v3.json",
+      "git_blob": "0299a52a3966bbb5b9d87f0e3f92d98bb9d744ad"
+    },
+    {
+      "path": "reports/rag_regression_claim_grounding_v4.json",
+      "git_blob": "815f16203bc9237688b86129f3a8553f341517cf"
+    },
+    {
+      "path": "reports/rag_regression_r02_r03_v5.json",
+      "git_blob": "830f4a8a5585535012531514ddd32e86323a96bf"
+    },
+    {
+      "path": "reports/rag_regression_results.csv",
+      "git_blob": "3ebaaa734ae8b249224cbf42146fce4dd48ac8cc"
+    },
+    {
+      "path": "reports/rag_regression_results.summary.json",
+      "git_blob": "c09d374ccacc30a81cd31869c77b900c6658d7e9"
+    },
+    {
+      "path": "reports/rag_regression_results_details.json",
+      "git_blob": "93246f622c8587742084d65faf3e25783671bd97"
+    },
+    {
+      "path": "reports/rag_repair_validation.csv",
+      "git_blob": "c5ee360ab0f34ae4429c48f89d49d4e683b42095"
+    },
+    {
+      "path": "reports/rag_repair_validation.summary.json",
+      "git_blob": "21ff7f28dc4465ef16ea6abd3c12f5708b5c78ef"
+    },
+    {
+      "path": "reports/rag_repair_validation_details.json",
+      "git_blob": "9f3b0985ee5bb06c3d7522ce2d2a5eb9a3d619b0"
+    },
+    {
+      "path": "reports/rag_retrieval_rrf_16.csv",
+      "git_blob": "3e92bc5d23cf3f742697f11bbab36b3f72e5a900"
+    },
+    {
+      "path": "reports/rag_retrieval_rrf_weighted_16.csv",
+      "git_blob": "6a6ceed9d48169d3d4d62c8637cd856962d9fdd0"
+    },
+    {
+      "path": "reports/rag_retrieval_v3.csv",
+      "git_blob": "be57c48f1831ae2d7fd868350c545eccbfe9b059"
+    },
+    {
+      "path": "reports/rag_retrieval_v3.summary.json",
+      "git_blob": "e895c50ab423952ee59709812f29f0860d44dce0"
+    },
+    {
+      "path": "reports/rag_retrieval_v3_details.json",
+      "git_blob": "18a0ea4e7d4eef4a687df0cbecd108e3f413def4"
+    },
+    {
+      "path": "reports/rag_root_cause.md",
+      "git_blob": "43c72e4a038fe97bb2e91a808d19dd1bf274ff75"
+    },
+    {
+      "path": "reports/rag_targeted_generation_v5.csv",
+      "git_blob": "14ee205315a7f789292c56a4bf531eb437358e1e"
+    },
+    {
+      "path": "reports/rag_targeted_generation_v5.summary.json",
+      "git_blob": "c89fb148f742edaffdc275895c122d7143dbbb98"
+    },
+    {
+      "path": "reports/rag_targeted_generation_v5_details.json",
+      "git_blob": "cfb80fd078c26f102e8a77ff0aae47e8f869cf1e"
+    },
+    {
+      "path": "reports/rag_targeted_generation_v6.csv",
+      "git_blob": "ce8efccbedea8a32993ea87b9ea46f3e2dc556ae"
+    },
+    {
+      "path": "reports/rag_targeted_generation_v6.summary.json",
+      "git_blob": "34927618fe7485a706c3b40f3b6857554d990c4a"
+    },
+    {
+      "path": "reports/rag_targeted_generation_v6_details.json",
+      "git_blob": "1087d5e271abfb9e3a6262672924bd58e83109e8"
+    },
+    {
+      "path": "reports/rag_targeted_retrieval_v4.csv",
+      "git_blob": "03838732f696e2d34c97f00deec8c3e7621b26b2"
+    },
+    {
+      "path": "reports/rag_targeted_retrieval_v4.summary.json",
+      "git_blob": "9aa7a6cda87e8e2003f67ff222ed87a4ea388c19"
+    },
+    {
+      "path": "reports/rag_targeted_retrieval_v4_details.json",
+      "git_blob": "d2fec92619a02805caf865e09439dda6892834eb"
+    },
+    {
+      "path": "reports/real_pdf_generalization.csv",
+      "git_blob": "d8562442b896b4b2a34a9d4a8719c07984d305b1"
+    },
+    {
+      "path": "reports/resource_switch_image.json",
+      "git_blob": "5e4b0b0f3ccb7405835088485ccfb717371d0aa9"
+    },
+    {
+      "path": "reports/scanned_pdf_ocr_benchmark.csv",
+      "git_blob": "79f8fa2d19bd078e7e9b27320d26c9901db9d7ee"
+    },
+    {
+      "path": "reports/scanned_pdf_rag_tests.csv",
+      "git_blob": "ddbbbc9dbacabe5bfc9a8421c0a5b32521472eb3"
+    },
+    {
+      "path": "reports/streamlit.stderr.log",
+      "git_blob": "c76129af5a124f69b9238e9d37eb10dee2c078af"
+    },
+    {
+      "path": "reports/streamlit.stdout.log",
+      "git_blob": "3112446ce8c3ac8705d7c7613782005193913c21"
+    },
+    {
+      "path": "reports/table_completeness_tests.csv",
+      "git_blob": "4e0d0848fb76f24767a3aa97b0339c9c8f4ae5b8"
+    },
+    {
+      "path": "reports/table_extraction_benchmark.csv",
+      "git_blob": "211dd300c8b077efda40829b61c8b529aeab62a4"
+    },
+    {
+      "path": "reports/test_results.md",
+      "git_blob": "0c7a64dfdb31d00dc4923e4cb092d58e3a65b614"
+    },
+    {
+      "path": "reports/topic3_bm25_scaling.csv",
+      "git_blob": "a9e5184bfa282dbcce2d05835f6d546e8d6a69ab"
+    },
+    {
+      "path": "reports/video_feasibility.md",
+      "git_blob": "ac61adfd4057c566f2146b200d9297770367b5f1"
+    },
+    {
+      "path": "reports/video_pipeline_explained.md",
+      "git_blob": "a07b892ef2fcd5808e2d0a12e9cf0c4982806a62"
+    }
+  ],
+  "file_count": 843,
+  "manifest_sha256": "739a81d0f54aef534a0744f3709756703ff4c1563a4466bfdd023b712f06ce28",
+  "changed": [],
+  "heldout_scored": false,
+  "method": "Git blob identity and normalized worktree diff, no semantic inspection of sealed labels"
+}

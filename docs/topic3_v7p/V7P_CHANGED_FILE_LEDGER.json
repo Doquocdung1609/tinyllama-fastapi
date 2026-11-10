@@ -1,0 +1,281 @@
+{
+  "starting_head": "f3c3fc320d957a4be418054e179e18800f49e5cf",
+  "code_head": "3e85fdba74737f5a94f555424d283126fe84dc0e",
+  "changes": [
+    {
+      "status": "M",
+      "path": ".gitignore"
+    },
+    {
+      "status": "M",
+      "path": "app/product/analysis.py"
+    },
+    {
+      "status": "A",
+      "path": "app/product/document_metadata.py"
+    },
+    {
+      "status": "A",
+      "path": "app/product/financial_math.py"
+    },
+    {
+      "status": "M",
+      "path": "app/product/frontend_api.py"
+    },
+    {
+      "status": "M",
+      "path": "app/product/native_financial_tables.py"
+    },
+    {
+      "status": "A",
+      "path": "app/product/query_source_context.py"
+    },
+    {
+      "status": "A",
+      "path": "app/product/verified_financial.py"
+    },
+    {
+      "status": "M",
+      "path": "app/product/workspace.py"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_ACCEPTANCE_LEDGER.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_BROWSER_E2E_EVIDENCE.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_BROWSER_RESULT.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_CHATBOT_END_TO_END_QA.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_EXECUTION_MANIFEST.json"
+    },
+    {
+      "status": "M",
+      "path": "docs/topic3_v7p/V7P_FINAL_ACCEPTANCE.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_FINANCIAL_CELL_BINDING_AND_ARITHMETIC.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_FREEZE_BLOB_AUDIT.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_FULL_GAP_AND_ROOT_CAUSE_MATRIX.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_NONAPPLE_HTTP.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_OFFLINE_HTTP.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_PRE_COMPLETION_ACCEPTANCE_CHECKPOINT.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_REAL_APPLE_3_CASES_E2E.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_REGRESSION_PERFORMANCE_AND_SECURITY.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_RESEARCH_FREEZE_HASH_AUDIT.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_RESTART_PERFORMANCE_HTTP.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_SHARED_EVIDENCE_AND_ROUTING.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_SOURCE_BOUNDARY_HTTP.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_UPLOAD_INTERACTIONS.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_UPLOAD_METADATA_UX_QA.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/V7P_WINDOWS_QUICKSTART.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/advanced-conflict.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/apple-1-chat.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/apple-2-chat.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/apple-3-chat.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/followup-2024.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/future-year-refusal.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/metadata-correction-persisted.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/mobile-navigation.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/nonapple-safe-abstention.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/research-lab.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/sec-official-navigation.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/sec-verified-evidence.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/sourced-company-research.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/upload-dragdrop-filechooser.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/upload-processing.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/upload-ready-metadata.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/upload-selected.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/topic3_v7p/screenshots/verified-pdf-page32.png"
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/DocumentMetadataPanel.tsx"
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/FinancialChat.tsx"
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/Studio.tsx"
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/api.ts"
+    },
+    {
+      "status": "M",
+      "path": "frontend/src/error-text.ts"
+    },
+    {
+      "status": "A",
+      "path": "frontend/src/financial-chat.test.tsx"
+    },
+    {
+      "status": "A",
+      "path": "frontend/v7p_browser_acceptance.cjs"
+    },
+    {
+      "status": "A",
+      "path": "frontend/v7p_upload_interactions.cjs"
+    },
+    {
+      "status": "M",
+      "path": "scripts/run_financial_studio.ps1"
+    },
+    {
+      "status": "A",
+      "path": "scripts/v7p_acceptance_http.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/v7p_nonapple_http.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/v7p_runtime_probe.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/v7p_source_boundary_http.py"
+    },
+    {
+      "status": "M",
+      "path": "tests/test_topic3_product_assistant.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_v7p_company_context.py"
+    },
+    {
+      "status": "M",
+      "path": "tests/test_v7p_context_safety.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_v7p_financial_math.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_v7p_metadata_chat.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_v7p_verified_operands.py"
+    }
+  ],
+  "deleted_files": [],
+  "new_dependencies": [],
+  "notes": [
+    "This ledger itself added after inventory",
+    "No media/shared backend modules deleted in this continuation; existing financial UI preserved",
+    "No source PDF/vector database/model weights or token included"
+  ]
+}

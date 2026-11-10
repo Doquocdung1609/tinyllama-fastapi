@@ -3,12 +3,13 @@ param(
     [int]$ApiPort=8110,
     [int]$UiPort=5173,
     [string]$Workspace='',
+    [ValidatePattern('^[a-zA-Z0-9][a-zA-Z0-9-]{0,40}$')][string]$RuntimeName='studio-runtime',
     [switch]$Stop,
     [switch]$OpenBrowser
 )
 $ErrorActionPreference='Stop'
 $repo=(Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$runtime=Join-Path $repo 'tmp/studio-runtime'
+$runtime=Join-Path $repo "tmp/$RuntimeName"
 $statePath=Join-Path $runtime 'processes.json'
 function Stop-Owned($records) {
     foreach ($record in @($records) | Sort-Object depth -Descending) {
@@ -72,7 +73,8 @@ if ($Mode -eq 'Prebuilt' -and -not (Test-Path (Join-Path $repo 'frontend/dist/in
     throw 'Chua co frontend build. Chay: cd frontend; npm ci; npm run build'
 }
 New-Item -ItemType Directory -Force -Path $runtime | Out-Null
-$tokenPath=Join-Path $runtime 'access-token.txt'
+$tokenPath=Join-Path $repo 'tmp/studio-runtime/access-token.txt'
+New-Item -ItemType Directory -Force -Path (Split-Path -Parent $tokenPath) | Out-Null
 if (-not $env:STUDIO_API_TOKEN -or $env:STUDIO_API_TOKEN.Length -lt 16) {
     if (Test-Path -LiteralPath $tokenPath) {$env:STUDIO_API_TOKEN=(Get-Content -LiteralPath $tokenPath -Raw).Trim()}
     else {
@@ -86,6 +88,12 @@ if ($env:STUDIO_API_TOKEN.Length -lt 16) {throw 'Khoa truy cap khong hop le; kie
 if (-not $Workspace) {$Workspace=Join-Path $repo 'studio_workspace/react-user'}
 $env:STUDIO_WORKSPACE_DIR=[IO.Path]::GetFullPath($Workspace)
 $env:OLLAMA_BASE_URL='http://127.0.0.1:11434'
+# Reuse a standard existing Windows OCR installation without changing PATH.
+$existingOcr=Join-Path $env:ProgramFiles 'Tesseract-OCR/tesseract.exe'
+$existingLanguages=Join-Path $env:ProgramFiles 'Tesseract-OCR/tessdata'
+if (-not $env:TESSERACT_CMD -and (Test-Path -LiteralPath $existingOcr)) {$env:TESSERACT_CMD=$existingOcr}
+if (-not $env:TESSDATA_DIR -and (Test-Path (Join-Path $existingLanguages 'vie.traineddata')) -and
+    (Test-Path (Join-Path $existingLanguages 'eng.traineddata'))) {$env:TESSDATA_DIR=$existingLanguages}
 $env:CORS_ORIGINS="http://127.0.0.1:$UiPort"
 $env:STUDIO_API_TARGET="http://127.0.0.1:$ApiPort"
 # Legacy compatibility routes use an isolated store, never the owner's old knowledgebase.
@@ -96,6 +104,14 @@ $env:FINANCIAL_CORPUS_DIR=Join-Path $runtime 'legacy-corpus'
 $env:FINANCIAL_REGISTRY_DB=Join-Path $env:FINANCIAL_CORPUS_DIR 'registry.sqlite3'
 $productSource=Join-Path $runtime 'sec/p7-isolated-review-product-20261028'
 $productVectors=Join-Path $runtime 'sec/t3-p10-isolated-vectors-product-20261028'
+$secConfig=Join-Path $runtime 'sec-config.json'
+if (Test-Path -LiteralPath $secConfig) {
+    $localSec=Get-Content -LiteralPath $secConfig -Raw -Encoding utf8 | ConvertFrom-Json
+    foreach ($key in @('STUDIO_SEC_RESEARCH_ROOT','STUDIO_SEC_VECTOR_ROOT','TOPIC3_RESEARCH_ROOT')) {
+        $value=$localSec.$key
+        if ($value) {[Environment]::SetEnvironmentVariable($key,$value,'Process')}
+    }
+}
 if (-not $env:STUDIO_SEC_RESEARCH_ROOT -and -not $env:STUDIO_SEC_VECTOR_ROOT -and -not $env:TOPIC3_RESEARCH_ROOT -and
     (Test-Path (Join-Path $productSource 'frozen_v1/freeze.json')) -and (Test-Path (Join-Path $productVectors 'generation_manifest.json'))) {
     $env:STUDIO_SEC_RESEARCH_ROOT=$productSource;$env:TOPIC3_RESEARCH_ROOT=$productSource;$env:STUDIO_SEC_VECTOR_ROOT=$productVectors
@@ -110,17 +126,20 @@ try {
     catch {
         $ollama=Get-Command ollama -ErrorAction SilentlyContinue
         $ollamaExe=if ($ollama) {$ollama.Source} else {Join-Path $env:LOCALAPPDATA 'Programs/Ollama/ollama.exe'}
-        if (-not (Test-Path -LiteralPath $ollamaExe)) {throw 'Ollama chua chay/chua cai; script khong tu tai mo hinh.'}
-        $process=Start-Process -FilePath $ollamaExe -ArgumentList 'serve' -PassThru -WindowStyle Hidden
-        $started+=@($process.Id)
-        for ($attempt=0;$attempt -lt 30;$attempt++) {
-            Start-Sleep -Seconds 1
-            try {$tags=Invoke-RestMethod 'http://127.0.0.1:11434/api/tags' -TimeoutSec 2;break}catch{}
+        if (Test-Path -LiteralPath $ollamaExe) {
+            $process=Start-Process -FilePath $ollamaExe -ArgumentList 'serve' -PassThru -WindowStyle Hidden
+            $started+=@($process.Id)
+            for ($attempt=0;$attempt -lt 30;$attempt++) {
+                Start-Sleep -Seconds 1
+                try {$tags=Invoke-RestMethod 'http://127.0.0.1:11434/api/tags' -TimeoutSec 2;break}catch{}
+            }
+        } else {
+            Write-Warning 'Ollama chua kha dung. AUTO chi dung BM25 tren tai lieu da READY; tai lieu moi can retry khi model san sang.'
         }
     }
     $model=$tags.models | Where-Object name -eq 'nomic-embed-text:latest' | Select-Object -First 1
     if (-not $model -or $model.digest -ne '0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f') {
-        throw 'Khong co dung Nomic digest da chap nhan. Khong tu tai/thay mo hinh hoac vector cu.'
+        Write-Warning 'Khong co dung Nomic digest. AUTO se tu choi Dense va dung BM25; khong tai/thay model hoac vector cu.'
     }
     $process=Start-Process -FilePath $python -ArgumentList @('-m','uvicorn','main:app','--host','127.0.0.1','--port',"$ApiPort") -WorkingDirectory $repo -PassThru -WindowStyle Hidden -RedirectStandardOutput (Join-Path $runtime 'api.out') -RedirectStandardError (Join-Path $runtime 'api.err')
     $started+=@($process.Id)
@@ -145,7 +164,7 @@ try {
     Write-Host "API: http://127.0.0.1:$ApiPort/docs"
     Write-Host "Khoa dang nhap cuc bo duoc luu tai: $tokenPath (khong chia se/cong khai tep nay)."
     Write-Host "PDF READY: $($readiness.workspace.ready_documents); OCR: $($readiness.ocr.status); SEC: $($readiness.sec.status)"
-    Write-Host 'Dung dich vu cua phien nay: .\scripts\run_financial_studio.ps1 -Stop'
+    Write-Host "Dung dich vu cua phien nay: .\scripts\run_financial_studio.ps1 -RuntimeName $RuntimeName -Stop"
     if ($OpenBrowser) {Start-Process $url | Out-Null}
 } catch {
     Stop-Owned @(Descendants $started)

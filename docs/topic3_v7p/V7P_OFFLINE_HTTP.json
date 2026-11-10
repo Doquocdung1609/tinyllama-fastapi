@@ -1,0 +1,432 @@
+{
+  "ollama": {
+    "status": "UNAVAILABLE",
+    "models": []
+  },
+  "workspace": {
+    "workspace": "ISOLATED_USER_PDF",
+    "ready_documents": 2,
+    "total_documents": 2,
+    "ready_chunks": 515,
+    "vector_collection": "studio_user_pdf_v1",
+    "model": "nomic-embed-text:latest",
+    "dimension": 768,
+    "lexical_version": "PDF_VI_FOLDED_FTS5_V2",
+    "disk_free_bytes": 8534618112
+  },
+  "documents": [
+    {
+      "id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+      "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+      "issuer": "Apple Inc.",
+      "document_type": "PDF",
+      "report_period": "",
+      "size_bytes": 4897389,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 24,
+      "chunks": 64,
+      "created_at": "2026-11-02T13:01:17.372394+00:00",
+      "updated_at": "2026-11-02T13:03:35.390204+00:00"
+    },
+    {
+      "id": "3eb270b22acb7d8d8e9c32a43dc221de",
+      "filename": "NASDAQ_AAPL_2025.pdf",
+      "sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+      "issuer": "Apple Inc.",
+      "document_type": "10-K",
+      "report_period": "2025-09-27",
+      "size_bytes": 1858048,
+      "status": "READY",
+      "stage": "READY",
+      "error_code": null,
+      "pages": 80,
+      "chunks": 451,
+      "created_at": "2026-11-02T10:32:42.902374+00:00",
+      "updated_at": "2026-11-02T10:33:59.356969+00:00"
+    }
+  ],
+  "metadata": {
+    "version": "source-document-metadata/v1",
+    "fields": {
+      "issuer": {
+        "value": "Apple Inc. ",
+        "status": "AUTO_CONFIRMED",
+        "source_page": 1,
+        "source_snippet": "Apple Inc. (Exact name of Registrant",
+        "method": "source-document-metadata/v1",
+        "review_required": false
+      },
+      "document_type": {
+        "value": "10-K",
+        "status": "AUTO_CONFIRMED",
+        "source_page": 1,
+        "source_snippet": "FORM 10-K",
+        "method": "source-document-metadata/v1",
+        "review_required": false
+      },
+      "report_period": {
+        "value": "2025-09-27",
+        "status": "AUTO_CONFIRMED",
+        "source_page": 1,
+        "source_snippet": "fiscal year ended September 27, 2025",
+        "method": "source-document-metadata/v1",
+        "review_required": false
+      },
+      "period_kind": {
+        "value": "FISCAL_YEAR",
+        "status": "AUTO_CONFIRMED",
+        "source_page": 1,
+        "source_snippet": "fiscal year ended September 27, 2025",
+        "method": "source-document-metadata/v1",
+        "review_required": false
+      },
+      "ticker": {
+        "value": null,
+        "status": "UNKNOWN",
+        "source_page": null,
+        "source_snippet": "",
+        "method": "source-document-metadata/v1",
+        "review_required": true
+      },
+      "currency": {
+        "value": null,
+        "status": "UNKNOWN",
+        "source_page": null,
+        "source_snippet": "",
+        "method": "source-document-metadata/v1",
+        "review_required": true
+      },
+      "reporting_scope": {
+        "value": null,
+        "status": "UNKNOWN",
+        "source_page": null,
+        "source_snippet": "",
+        "method": "source-document-metadata/v1",
+        "review_required": true
+      }
+    },
+    "corrections": []
+  },
+  "queries": [
+    {
+      "http_status": 200,
+      "elapsed_ms": 4960.91,
+      "response": {
+        "status": "SUPPORTED",
+        "answer": "112.010 triệu USD",
+        "citations": [
+          {
+            "contract_version": "verified-native-operands/v1",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "USER_PDF",
+            "issuer": "Apple Inc.",
+            "filing_type": "10-K",
+            "fiscal_year": 2025,
+            "period_start": null,
+            "period_end": "2025-09-27",
+            "period_type": "FISCAL_YEAR_DURATION",
+            "statement_scope": "CONSOLIDATED",
+            "statement_name": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "table_id": "558b19b8953ef8f08b6c0823",
+            "row_label": "Net income",
+            "metric_canonical_name": "net_income",
+            "metric_definition": "Net income",
+            "column_label": "September 27, 2025",
+            "value_raw": "112,010",
+            "value_decimal": "112010",
+            "currency": "USD",
+            "scale": "1000000",
+            "normalized_value": "112010000000",
+            "normalized_unit": "USD",
+            "page": 32,
+            "row_bbox": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "header_bbox": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "source_excerpt": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "retrieved_chunk_ids": [
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208"
+            ],
+            "semantic_provenance": {
+              "currency": {
+                "page": 30,
+                "text": "net sales and gross margins as expressed in U.S. dollars",
+                "method": "EXPLICIT_NET_SALES_PRESENTATION_SAME_MONETARY_TABLE"
+              },
+              "fiscal_period": {
+                "method": "ANNUAL_COLUMN_AND_SAME_SOURCE_STATEMENT_DATE",
+                "end": "2025-09-27",
+                "supplemental_statement_pages": [
+                  29,
+                  31,
+                  32,
+                  41
+                ],
+                "fiscal_declaration": {
+                  "page": 24,
+                  "years": [
+                    "2025"
+                  ],
+                  "text": "nificant announcements during fiscal year 2025 included the following: First Quarter 2025: • MacBook Pro • Mac mini • iMac • iPad mini Second Quarter 2025: • iPhone 1"
+                }
+              },
+              "scope": {
+                "method": "LOCAL_TABLE_HEADING",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS"
+              },
+              "retrieval_link": {
+                "method": "RETRIEVED_PAGE",
+                "original_chunk_ids": [
+                  "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208"
+                ]
+              },
+              "metric": {
+                "method": "EXACT_ROW_DEFINITION",
+                "text": "Net income"
+              },
+              "scale": {
+                "method": "LOCAL_TABLE_UNITS",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 27, September 28, September 30,"
+              }
+            },
+            "verification_status": "CELL_VERIFIED",
+            "extractor_version": "verified-native-operands/v1",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "box": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "period": "2025-09-27",
+            "unit": "MILLION_USD",
+            "verification": "AUTO_SOURCE_CELL_VERIFIED",
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208",
+            "source_display": "112,010"
+          }
+        ],
+        "evidence_references": [
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 32,
+            "issuer": "Apple Inc.",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": "2025-09-27"
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_33_00209",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 33,
+            "issuer": "Apple Inc.",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": "2025-09-27"
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_35_00214",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 35,
+            "issuer": "Apple Inc.",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": "2025-09-27"
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_36_00216",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 36,
+            "issuer": "Apple Inc.",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": "2025-09-27"
+          },
+          {
+            "chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_39_00235",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "page": 39,
+            "issuer": "Apple Inc.",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "statement_scope": null,
+            "unit": null,
+            "report_period": "2025-09-27"
+          }
+        ],
+        "values": [
+          "112010"
+        ],
+        "verification_status": "CELL_VERIFIED",
+        "warnings": [
+          "Số liệu trong trích đoạn chưa được đối chiếu ô nguồn, kỳ và đơn vị."
+        ],
+        "metric": null,
+        "period": "2025-09-27",
+        "answer_source_chunk_id": "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208",
+        "statement_scope": null,
+        "unit": "MILLION_USD",
+        "retrieval_trace": {
+          "profile": "production_v3",
+          "generation": "5b4b3436bf73c03f362d9df4121a1aadd77987033c34aed7508c184b75eff8cd",
+          "effective_mode": "bm25",
+          "original_hit_ids": [
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208",
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_33_00209",
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_35_00214",
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_36_00216",
+            "pdf_3eb270b22acb7d8d8e9c32a43dc221de_39_00235"
+          ]
+        },
+        "search_profile": "production_v3",
+        "generation": "5b4b3436bf73c03f362d9df4121a1aadd77987033c34aed7508c184b75eff8cd",
+        "operation": "EXTRACT",
+        "formula": "Source cell",
+        "winner": null,
+        "operands": [
+          {
+            "contract_version": "verified-native-operands/v1",
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "USER_PDF",
+            "issuer": "Apple Inc.",
+            "filing_type": "10-K",
+            "fiscal_year": 2025,
+            "period_start": null,
+            "period_end": "2025-09-27",
+            "period_type": "FISCAL_YEAR_DURATION",
+            "statement_scope": "CONSOLIDATED",
+            "statement_name": "CONSOLIDATED STATEMENTS OF OPERATIONS",
+            "table_id": "558b19b8953ef8f08b6c0823",
+            "row_label": "Net income",
+            "metric_canonical_name": "net_income",
+            "metric_definition": "Net income",
+            "column_label": "September 27, 2025",
+            "value_raw": "112,010",
+            "value_decimal": "112010",
+            "currency": "USD",
+            "scale": "1000000",
+            "normalized_value": "112010000000",
+            "normalized_unit": "USD",
+            "page": 32,
+            "row_bbox": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "header_bbox": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "source_excerpt": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "retrieved_chunk_ids": [
+              "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208"
+            ],
+            "semantic_provenance": {
+              "currency": {
+                "page": 30,
+                "text": "net sales and gross margins as expressed in U.S. dollars",
+                "method": "EXPLICIT_NET_SALES_PRESENTATION_SAME_MONETARY_TABLE"
+              },
+              "fiscal_period": {
+                "method": "ANNUAL_COLUMN_AND_SAME_SOURCE_STATEMENT_DATE",
+                "end": "2025-09-27",
+                "supplemental_statement_pages": [
+                  29,
+                  31,
+                  32,
+                  41
+                ],
+                "fiscal_declaration": {
+                  "page": 24,
+                  "years": [
+                    "2025"
+                  ],
+                  "text": "nificant announcements during fiscal year 2025 included the following: First Quarter 2025: • MacBook Pro • Mac mini • iMac • iPad mini Second Quarter 2025: • iPhone 1"
+                }
+              },
+              "scope": {
+                "method": "LOCAL_TABLE_HEADING",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS"
+              },
+              "retrieval_link": {
+                "method": "RETRIEVED_PAGE",
+                "original_chunk_ids": [
+                  "pdf_3eb270b22acb7d8d8e9c32a43dc221de_32_00208"
+                ]
+              },
+              "metric": {
+                "method": "EXACT_ROW_DEFINITION",
+                "text": "Net income"
+              },
+              "scale": {
+                "method": "LOCAL_TABLE_UNITS",
+                "text": "CONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 27, September 28, September 30,"
+              }
+            },
+            "verification_status": "CELL_VERIFIED",
+            "extractor_version": "verified-native-operands/v1"
+          }
+        ],
+        "verification": "DECIMAL_WITH_AUTOMATIC_SOURCE_CELLS",
+        "effective_mode": "bm25",
+        "routing_reason": "DENSE_UNAVAILABLE_BM25_FALLBACK",
+        "evidence_contract": "verified-native-operands/v1",
+        "session_id": "bb46aa4c9d9f5c6dada0e6d9cfe1e471",
+        "resolved_question": "What was Apple's net income in fiscal year 2025?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    }
+  ],
+  "fault_method": "Only child API process HTTP_PROXY=127.0.0.1:1 and NO_PROXY empty; real owner Ollama never stopped. API client bypasses proxy. Real HTTP transport-failure injection."
+}

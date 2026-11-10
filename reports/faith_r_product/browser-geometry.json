@@ -1,0 +1,164 @@
+[
+  {
+    "page": 4,
+    "scale": "0.75",
+    "highlights": [
+      {
+        "height": "7.27329px",
+        "left": "40.23px",
+        "top": "215.636px",
+        "width": "363.814px"
+      },
+      {
+        "height": "7.27329px",
+        "left": "40.23px",
+        "top": "215.636px",
+        "width": "363.814px"
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "scale": "1",
+    "highlights": [
+      {
+        "height": "9.69772px",
+        "left": "53.64px",
+        "top": "287.515px",
+        "width": "485.086px"
+      },
+      {
+        "height": "9.69772px",
+        "left": "53.64px",
+        "top": "287.515px",
+        "width": "485.086px"
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "scale": "1.25",
+    "highlights": [
+      {
+        "height": "12.1222px",
+        "left": "67.05px",
+        "top": "359.393px",
+        "width": "606.357px"
+      },
+      {
+        "height": "12.1222px",
+        "left": "67.05px",
+        "top": "359.393px",
+        "width": "606.357px"
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "scale": "1.5",
+    "highlights": [
+      {
+        "height": "14.5466px",
+        "left": "80.46px",
+        "top": "431.272px",
+        "width": "727.629px"
+      },
+      {
+        "height": "14.5466px",
+        "left": "80.46px",
+        "top": "431.272px",
+        "width": "727.629px"
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "rotation": 90,
+    "highlights": [
+      {
+        "height": "485.086px",
+        "left": "544.708px",
+        "top": "53.64px",
+        "width": "9.69772px"
+      },
+      {
+        "height": "485.086px",
+        "left": "544.708px",
+        "top": "53.64px",
+        "width": "9.69772px"
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "scale": "0.75",
+    "highlights": [
+      {
+        "height": "7.27329px",
+        "left": "44.37px",
+        "top": "232.646px",
+        "width": "364.639px"
+      },
+      {
+        "height": "7.27329px",
+        "left": "44.37px",
+        "top": "232.646px",
+        "width": "364.639px"
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "scale": "1",
+    "highlights": [
+      {
+        "height": "9.69772px",
+        "left": "59.16px",
+        "top": "310.195px",
+        "width": "486.185px"
+      },
+      {
+        "height": "9.69772px",
+        "left": "59.16px",
+        "top": "310.195px",
+        "width": "486.185px"
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "scale": "1.25",
+    "highlights": [
+      {
+        "height": "12.1222px",
+        "left": "73.95px",
+        "top": "387.743px",
+        "width": "607.732px"
+      },
+      {
+        "height": "12.1222px",
+        "left": "73.95px",
+        "top": "387.743px",
+        "width": "607.732px"
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "scale": "1.5",
+    "highlights": [
+      {
+        "height": "14.5466px",
+        "left": "88.74px",
+        "top": "465.292px",
+        "width": "729.278px"
+      },
+      {
+        "height": "14.5466px",
+        "left": "88.74px",
+        "top": "465.292px",
+        "width": "729.278px"
+      }
+    ]
+  }
+]

@@ -1,0 +1,608 @@
+[
+  {
+    "id": "F01",
+    "citations": 2,
+    "cells": [
+      {
+        "citation": 1,
+        "accession": "0001628280-26-058715",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]/tr[7]/td[8]",
+          "table_id": "table_095b5d603845e56eceabeafd",
+          "row_index": 6,
+          "column_index": 15,
+          "parent_location": {
+            "section": "Segment Reporting",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]",
+            "table_id": "table_095b5d603845e56eceabeafd",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Operating income",
+        "value": "6839000000",
+        "period_start": "2026-05-04",
+        "period_end": "2026-08-02",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 2,
+        "accession": "0001628280-26-058715",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[4]/ix:nonnumeric[2]/div[2]/table[1]/tr[6]/td[3]",
+          "table_id": "table_bb60ad4ad0bb0f9ca11f0da9",
+          "row_index": 5,
+          "column_index": 4,
+          "parent_location": {
+            "section": "Net Sales",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[4]/ix:nonnumeric[2]/div[2]/table[1]",
+            "table_id": "table_bb60ad4ad0bb0f9ca11f0da9",
+            "row_index": 5,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Net sales",
+        "value": "47861000000",
+        "period_start": "2026-05-04",
+        "period_end": "2026-08-02",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      }
+    ],
+    "calculations": [
+      {
+        "issuer": "sec:0000354950:0001628280-26-058715",
+        "formula": "operating income / revenue * 100",
+        "result_percent": "14.29",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "citations": 6,
+    "cells": [
+      {
+        "citation": 1,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[8]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 28,
+          "column_index": 7,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 28,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Operating income",
+        "value": "30552000000",
+        "period_start": "2024-07-01",
+        "period_end": "2024-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 2,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[29]/td[4]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 28,
+          "column_index": 3,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 28,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Operating income",
+        "value": "37961000000",
+        "period_start": "2025-07-01",
+        "period_end": "2025-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 3,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[37]/td[8]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 36,
+          "column_index": 7,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 36,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Net income",
+        "value": "24667000000",
+        "period_start": "2024-07-01",
+        "period_end": "2024-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 4,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[37]/td[4]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 36,
+          "column_index": 3,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 36,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Net income",
+        "value": "27747000000",
+        "period_start": "2025-07-01",
+        "period_end": "2025-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 5,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[8]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 11,
+          "column_index": 7,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 11,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Total revenue",
+        "value": "65585000000",
+        "period_start": "2024-07-01",
+        "period_end": "2024-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 6,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]/tr[12]/td[4]",
+          "table_id": "table_98786a848fee9fa779b9b014",
+          "row_index": 11,
+          "column_index": 3,
+          "parent_location": {
+            "section": "INDEX",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[9]/table[1]",
+            "table_id": "table_98786a848fee9fa779b9b014",
+            "row_index": 11,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Total revenue",
+        "value": "77673000000",
+        "period_start": "2025-07-01",
+        "period_end": "2025-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      }
+    ],
+    "calculations": [
+      {
+        "metric": "MSFT · operating income",
+        "delta_million_usd": "7409",
+        "verified": true
+      },
+      {
+        "metric": "MSFT · income",
+        "delta_million_usd": "3080",
+        "verified": true
+      },
+      {
+        "metric": "MSFT · revenue",
+        "delta_million_usd": "12088",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "citations": 2,
+    "cells": [
+      {
+        "citation": 1,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "section": "We face intense competition across all markets for our products and services, which could adversely affect our results of operations.",
+          "html_anchor": null,
+          "structural_path": "/document[1]/html[1]/body[1]/div[129]/p[7]",
+          "table_id": null,
+          "row_index": null,
+          "column_index": null,
+          "text_start": 0,
+          "text_end": 133,
+          "pdf_page": null,
+          "bbox": null
+        },
+        "verified": "SOURCE_EVIDENCE_PARTIAL",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ]
+      },
+      {
+        "citation": 2,
+        "accession": "0001193125-25-256321",
+        "filing_id": "sec:0000789019:0001193125-25-256321",
+        "source_sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+        "source_locator": {
+          "section": "Cyberattacks and security vulnerabilities could lead to reduced revenue, increased costs, liability claims, or harm to our reputation or competitive position.",
+          "html_anchor": null,
+          "structural_path": "/document[1]/html[1]/body[1]/div[138]/p[2]",
+          "table_id": null,
+          "row_index": null,
+          "column_index": null,
+          "text_start": 0,
+          "text_end": 158,
+          "pdf_page": null,
+          "bbox": null
+        },
+        "verified": "SOURCE_EVIDENCE_PARTIAL",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ]
+      }
+    ],
+    "calculations": []
+  },
+  {
+    "id": "F06",
+    "citations": 6,
+    "cells": [
+      {
+        "citation": 1,
+        "accession": "0000909832-26-000051",
+        "filing_id": "sec:0000909832:0000909832-26-000051",
+        "source_sha256": "4657f8d910de719aa29cc11a979087760e104d27ca49345d15bd5e614d1637a7",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[11]/td[2]",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row_index": 10,
+          "column_index": 3,
+          "parent_location": {
+            "section": "(amounts in millions, except per share data) (unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row_index": 10,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Operating income",
+        "value": "2815000000",
+        "period_start": "2026-02-16",
+        "period_end": "2026-05-10",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 2,
+        "accession": "0000909832-26-000051",
+        "filing_id": "sec:0000909832:0000909832-26-000051",
+        "source_sha256": "4657f8d910de719aa29cc11a979087760e104d27ca49345d15bd5e614d1637a7",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]/tr[7]/td[2]",
+          "table_id": "table_2d1b764f9329b51d5b62d033",
+          "row_index": 6,
+          "column_index": 3,
+          "parent_location": {
+            "section": "(amounts in millions, except per share data) (unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[47]/table[1]",
+            "table_id": "table_2d1b764f9329b51d5b62d033",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Total revenue",
+        "value": "70527000000",
+        "period_start": "2026-02-16",
+        "period_end": "2026-05-10",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 3,
+        "accession": "0001628280-26-058715",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]/tr[7]/td[8]",
+          "table_id": "table_095b5d603845e56eceabeafd",
+          "row_index": 6,
+          "column_index": 15,
+          "parent_location": {
+            "section": "Segment Reporting",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]",
+            "table_id": "table_095b5d603845e56eceabeafd",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Operating income",
+        "value": "6839000000",
+        "period_start": "2026-05-04",
+        "period_end": "2026-08-02",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 4,
+        "accession": "0001628280-26-058715",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "source_sha256": "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[4]/ix:nonnumeric[2]/div[2]/table[1]/tr[6]/td[3]",
+          "table_id": "table_bb60ad4ad0bb0f9ca11f0da9",
+          "row_index": 5,
+          "column_index": 4,
+          "parent_location": {
+            "section": "Net Sales",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[4]/ix:nonnumeric[2]/div[2]/table[1]",
+            "table_id": "table_bb60ad4ad0bb0f9ca11f0da9",
+            "row_index": 5,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "Net sales",
+        "value": "47861000000",
+        "period_start": "2026-05-04",
+        "period_end": "2026-08-02",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 5,
+        "accession": "0000080424-26-000256",
+        "filing_id": "sec:0000080424:0000080424-26-000256",
+        "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[7]/td[2]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 6,
+          "column_index": 3,
+          "parent_location": {
+            "section": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row_index": 6,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "OPERATING INCOME",
+        "value": "5937000000",
+        "period_start": "2026-07-01",
+        "period_end": "2026-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      },
+      {
+        "citation": 6,
+        "accession": "0000080424-26-000256",
+        "filing_id": "sec:0000080424:0000080424-26-000256",
+        "source_sha256": "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+        "source_locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 3,
+          "column_index": 4,
+          "parent_location": {
+            "section": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row_index": 3,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "verified": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "metric_row": "NET SALES",
+        "value": "23276000000",
+        "period_start": "2026-07-01",
+        "period_end": "2026-09-30",
+        "unit": "USD",
+        "scope": "CONSOLIDATED"
+      }
+    ],
+    "calculations": [
+      {
+        "issuer": "sec:0000909832:0000909832-26-000051",
+        "formula": "operating income / revenue * 100",
+        "result_percent": "3.99",
+        "verified": true
+      },
+      {
+        "issuer": "sec:0000354950:0001628280-26-058715",
+        "formula": "operating income / revenue * 100",
+        "result_percent": "14.29",
+        "verified": true
+      },
+      {
+        "issuer": "sec:0000080424:0000080424-26-000256",
+        "formula": "operating income / revenue * 100",
+        "result_percent": "25.51",
+        "verified": true
+      }
+    ]
+  }
+]

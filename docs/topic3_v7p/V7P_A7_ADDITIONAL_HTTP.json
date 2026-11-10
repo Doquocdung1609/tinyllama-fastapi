@@ -1,0 +1,747 @@
+{
+  "passed": 4,
+  "cases": [
+    {
+      "case": "REFERENCE_VALID_AFTER_REAL_WINDOWS_LAUNCHER_RESTART",
+      "status": 200,
+      "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+      "pass": true
+    },
+    {
+      "case": "SEARCH_baseline",
+      "status": 200,
+      "parent_id": "fin_a754e65b16d530ffceb98a814f0a46d3",
+      "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+      "view_status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+      "no_unrequested_numeric_verification": true,
+      "pass": true
+    },
+    {
+      "case": "SEARCH_production_v3",
+      "status": 200,
+      "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+      "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+      "view_status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+      "no_unrequested_numeric_verification": true,
+      "pass": true
+    },
+    {
+      "case": "PG_NET_SALES_SOURCE_VIEW",
+      "http_status": 200,
+      "pass": true,
+      "response": {
+        "version": "registered-sec-viewer/v1",
+        "status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "dataset_id": "research-sec-v1",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+        "source_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+        "normalized_sha256": "cfaaf6ba4fdfd2a2727910e31caa57f4f617ac9d94555d6fd854b92da37851eb",
+        "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+        "filing_id": "sec:0000080424:0000080424-26-000256",
+        "issuer": "PROCTER & GAMBLE Co",
+        "cik": "0000080424",
+        "accession": "0000080424-26-000256",
+        "form": "10-Q",
+        "report_period": "2026-09-30",
+        "official_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+        "rendering": "DERIVED_TEXT_TABLE_FROM_VERIFIED_ORIGINAL_BYTES_NOT_ORIGINAL_HTML",
+        "external_access": "NOT_CHECKED_BY_LOCAL_VIEWER",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row_index": 3,
+          "column_index": 4,
+          "parent_location": {
+            "section": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]",
+            "table_id": "table_24f0cc566ca5c5871edfcdb7",
+            "row_index": 3,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000080424:0000080424-26-000256",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000256",
+          "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+          "parent_id": "fin_d411518414b61a2eb637d96721c5aaed",
+          "parent_payload_hash": "64425237b815fbed03bf90f756774f202479c8937a69d0b940b38ccabd184c34",
+          "table_id": "table_24f0cc566ca5c5871edfcdb7",
+          "row": 3,
+          "column": 4,
+          "row_label": "NET SALES",
+          "raw_value": "23,276",
+          "value": "23276",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions except per share amounts",
+          "multiplier": "1000000",
+          "effective_value": "23276000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-07-01",
+          "period_end": "2026-09-30",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended September 30",
+            "2026"
+          ],
+          "fact_name": "us-gaap:Revenues",
+          "fact_context_ref": "c-1",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+            "See accompanying Notes to Consolidated Financial Statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        },
+        "table": {
+          "id": "table_24f0cc566ca5c5871edfcdb7",
+          "caption": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "statement": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "section": "THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES",
+          "columns": [
+            "Amounts in millions except per share amounts",
+            "Amounts in millions except per share amounts",
+            "Amounts in millions except per share amounts",
+            "Three Months Ended September 30 / 2026",
+            "Three Months Ended September 30 / 2026",
+            "Three Months Ended September 30 / 2026",
+            "Three Months Ended September 30",
+            "Three Months Ended September 30",
+            "Three Months Ended September 30",
+            "Three Months Ended September 30 / 2025",
+            "Three Months Ended September 30 / 2025",
+            "Three Months Ended September 30 / 2025",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 1,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 2,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 4,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 7,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 8,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 10,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "Three Months Ended September 30",
+                  "colspan": 9,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Amounts in millions except per share amounts",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "2026",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "2025",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "NET SALES",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "$",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 4,
+                  "text": "23,276",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "$",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 10,
+                  "text": "22,386",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Cost of products sold",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "11,678",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "10,887",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Selling, general and administrative expense",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "5,661",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "5,643",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "OPERATING INCOME",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "5,937",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "5,856",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 7,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Interest expense",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "( 223 )",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "( 197 )",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 8,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Interest income",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "102",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "108",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 12,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 15,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 18,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 21,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            }
+          ],
+          "selected_row": 3,
+          "header_row_count": 3,
+          "total_source_rows": 19,
+          "context_is_bounded": true,
+          "warnings": [],
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.",
+            "See accompanying Notes to Consolidated Financial Statements."
+          ]
+        },
+        "excerpt": "TABLE table_24f0cc566ca5c5871edfcdb7\nCompany: PROCTER & GAMBLE Co\nCIK: 0000080424; Accession: 0000080424-26-000256; Form: 10-Q\nStatement: THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES\nSection: THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES\nCaption: THE PROCTER & GAMBLE COMPANY AND SUBSIDIARIES\nColumns: Amounts in millions except per share amounts | Amounts in millions except per share amounts | Amounts in millions except per share amounts | Three Months Ended September 30 / 2026 | Three Months Ended September 30 / 2026 | Three Months Ended September 30 / 2026 | Three Months Ended September 30 | Three Months Ended September 30 | Three Months Ended September 30 | Three Months Ended September 30 / 2025 | Three Months Ended September 30 / 2025 | Three Months Ended September 30 / 2025 |  |  |  |  |  |  |  |  |  |  |  | \nRow 3: NET SALES | NET SALES | NET SALES | $ | 23,276 |  |  |  |  | $ | 22,386 |  |  |  |  |  |  |  |  |  |  |  |  | \nRow period/group: NONE\nUnits: usd, usdPerShare, millions\nReporting periods: Three Months Ended September 30 / 2025, Three Months Ended September 30 / 2026\nUnit context: UNKNOWN\nNumeric attributes: [{\"column\": 4, \"unitref\": \"usd\", \"contextref\": \"c-1\", \"name\": \"us-gaap:Revenues\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"23,276\"}, {\"column\": 10, \"unitref\": \"usd\", \"contextref\": \"c-20\", \"name\": \"us-gaap:Revenues\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"22,386\"}]\nFootnotes: (1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble.; See accompanying Notes to Consolidated Financial Statements.\nContinuation of: NONE\nSource: https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm\nLocator: /document[1]/html[1]/body[1]/div[46]/table[1]; source row 3"
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "inventory": {
+    "rows": 24,
+    "citations": 25,
+    "printedPage": 19
+  },
+  "checks": [
+    {
+      "task": "equation",
+      "status": "PASS",
+      "pages": [
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "task": "cash",
+      "status": "PASS",
+      "pages": [
+        2,
+        7,
+        12
+      ]
+    },
+    {
+      "task": "income",
+      "status": "PARTIAL",
+      "pages": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        22,
+        22
+      ]
+    },
+    {
+      "task": "shares",
+      "status": "PASS",
+      "pages": [
+        20,
+        21,
+        21,
+        20
+      ]
+    },
+    {
+      "task": "notes",
+      "status": "PASS",
+      "pages": [
+        3,
+        15,
+        3,
+        16,
+        3,
+        17,
+        4,
+        18,
+        4,
+        19
+      ]
+    },
+    {
+      "task": "explain",
+      "status": "PASS",
+      "pages": [
+        5
+      ]
+    }
+  ],
+  "capital": {
+    "page": 20,
+    "period": "2024-01-01",
+    "sourceBox": [
+      185.7600007616479,
+      485.7600140780805,
+      193.44000079313722,
+      557.0400161438857
+    ],
+    "highlight": {
+      "x": 474.6875,
+      "y": 638.90625,
+      "width": 89.09375,
+      "height": 9.59375
+    }
+  }
+}

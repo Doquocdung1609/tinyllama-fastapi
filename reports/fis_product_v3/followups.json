@@ -1,0 +1,5287 @@
+{
+  "mocked": false,
+  "records": [
+    {
+      "id": "M1-1",
+      "is_followup": false,
+      "request": {
+        "question": "What were Services net sales in FY2025?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "session_id": null
+      },
+      "elapsed_ms": 2626.45,
+      "checks": {
+        "http": true,
+        "values": true,
+        "coverage": true,
+        "verification": true
+      },
+      "verdict": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2025, Services net sales was 109,158 million USD [1].",
+        "answer_explanation": "This is the consolidated annual source amount.",
+        "values": [
+          "109158"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "109,158",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "value": "109158",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              165.30801391601562,
+              420.7850341796875,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "109,158",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+            "value": "109158"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "109,158",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "109158",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "What were Services net sales in FY2025?",
+              "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "value": "109158",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "109158",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "services_net_sales"
+              ]
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "What were Services net sales in FY2025?",
+            "intent": "EXTRACT_VALUE",
+            "metric": "services_net_sales",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "services_net_sales"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "services_net_sales",
+                "years": [
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_9f570609f2c663fbe4508accfcdd"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "109158",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_9f570609f2c663fbe4508accfcdd"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "109,158",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "value": "109158",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                165.30801391601562,
+                420.7850341796875,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "109,158",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "evidence_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9f570609f2c663fbe4508accfcdd",
+              "value": "109158"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_9f570609f2c663fbe4508accfcdd"
+              ],
+              "proposed_result": "109158",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "What were Services net sales in FY2025?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "What were Services net sales in FY2025?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2025-09-27",
+        "source_periods": [
+          "2025-09-27"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_9f570609f2c663fbe4508accfcdd"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 1867.88,
+          "candidate_count": 51,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2025, Services net sales was 109,158 million USD [1].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2025"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_9f570609f2c663fbe4508accfcdd"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_9f570609f2c663fbe4508accfcdd"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2025"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "109158",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_9f570609f2c663fbe4508accfcdd"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "services_net_sales"
+            ],
+            "periods_from_operands": [
+              "2025"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "109158",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "services_net_sales"
+                ]
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [],
+          "original_question_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "What were Services net sales in FY2025?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "question_contract": {
+          "original_question": "What were Services net sales in FY2025?",
+          "resolved_question": "What were Services net sales in FY2025?",
+          "source_document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_filing_ids": [],
+          "inherited_slots": [],
+          "raw_obligation_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "What were Services net sales in FY2025?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "session_id": "c3178542150c4b77b26d5bfd33f2ce11",
+        "resolved_question": "What were Services net sales in FY2025?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "id": "M1-2",
+      "is_followup": true,
+      "request": {
+        "question": "And in FY2024?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "session_id": "c3178542150c4b77b26d5bfd33f2ce11"
+      },
+      "elapsed_ms": 1961.85,
+      "checks": {
+        "http": true,
+        "values": true,
+        "coverage": true,
+        "verification": true
+      },
+      "verdict": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2024, Services net sales was 96,169 million USD [1].",
+        "answer_explanation": "This is the consolidated annual source amount.",
+        "values": [
+          "96169"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "96,169",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "value": "96169",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "96,169",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "value": "96169"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "96,169",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "96169",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "Services net sales And in FY2024?",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "96169",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "services_net_sales"
+              ]
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "Services net sales And in FY2024?",
+            "intent": "EXTRACT_VALUE",
+            "metric": "services_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "services_net_sales"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "services_net_sales",
+                "years": [
+                  "2024"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_9aef27e2c60777264a1decc9e41e"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "96169",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "96,169",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "96,169",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e"
+              ],
+              "proposed_result": "96169",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "Services net sales And in FY2024?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Services net sales And in FY2024?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2024-09-28",
+        "source_periods": [
+          "2024-09-28"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_9aef27e2c60777264a1decc9e41e"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 1640.05,
+          "candidate_count": 57,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2024, Services net sales was 96,169 million USD [1].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_9aef27e2c60777264a1decc9e41e"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "96169",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "services_net_sales"
+            ],
+            "periods_from_operands": [
+              "2024"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "96169",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "services_net_sales"
+                ]
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [],
+          "original_question_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "And in FY2024?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "question_contract": {
+          "original_question": "And in FY2024?",
+          "resolved_question": "Services net sales And in FY2024?",
+          "source_document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_filing_ids": [],
+          "inherited_slots": [
+            "metric"
+          ],
+          "raw_obligation_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "And in FY2024?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "session_id": "c3178542150c4b77b26d5bfd33f2ce11",
+        "resolved_question": "Services net sales And in FY2024?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "id": "M1-3",
+      "is_followup": true,
+      "request": {
+        "question": "And in FY2023?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "session_id": "c3178542150c4b77b26d5bfd33f2ce11"
+      },
+      "elapsed_ms": 2398.6,
+      "checks": {
+        "http": true,
+        "values": true,
+        "coverage": true,
+        "verification": true
+      },
+      "verdict": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2023, Services net sales was 85,200 million USD [1].",
+        "answer_explanation": "This is the consolidated annual source amount.",
+        "values": [
+          "85200"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              520.989990234375,
+              123.55598449707031,
+              538.7579956054688,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "85,200",
+            "period": "2023",
+            "fiscal_year": 2023,
+            "period_end": "2023-09-30",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "value": "85200",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              520.989990234375,
+              123.55598449707031,
+              538.7579956054688,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "85,200",
+            "period": "2023",
+            "fiscal_year": 2023,
+            "period_end": "2023-09-30",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "value": "85200"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "85,200",
+                "period": "2023",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "85200",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "Services net sales And in FY2023?",
+              "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "value": "85200",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "85200",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "services_net_sales"
+              ]
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "Services net sales And in FY2023?",
+            "intent": "EXTRACT_VALUE",
+            "metric": "services_net_sales",
+            "years": [
+              "2023"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "services_net_sales"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "services_net_sales",
+                "years": [
+                  "2023"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2023"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "85200",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                520.989990234375,
+                123.55598449707031,
+                538.7579956054688,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "85,200",
+              "period": "2023",
+              "fiscal_year": 2023,
+              "period_end": "2023-09-30",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "value": "85200",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                520.989990234375,
+                123.55598449707031,
+                538.7579956054688,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "85,200",
+              "period": "2023",
+              "fiscal_year": 2023,
+              "period_end": "2023-09-30",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "value": "85200"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "proposed_result": "85200",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "Services net sales And in FY2023?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2023"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2023"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "Services net sales And in FY2023?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "services_net_sales",
+          "years": [
+            "2023"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2023"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2023-09-30",
+        "source_periods": [
+          "2023-09-30"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_196a7e7faf626564cf9183a7be05"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 2160.62,
+          "candidate_count": 57,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2023, Services net sales was 85,200 million USD [1].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2023"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_196a7e7faf626564cf9183a7be05"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_196a7e7faf626564cf9183a7be05"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2023"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "85200",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_196a7e7faf626564cf9183a7be05"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "services_net_sales"
+            ],
+            "periods_from_operands": [
+              "2023"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "85200",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "services_net_sales"
+                ]
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [],
+          "original_question_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "And in FY2023?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "question_contract": {
+          "original_question": "And in FY2023?",
+          "resolved_question": "Services net sales And in FY2023?",
+          "source_document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_filing_ids": [],
+          "inherited_slots": [
+            "metric"
+          ],
+          "raw_obligation_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "And in FY2023?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "session_id": "c3178542150c4b77b26d5bfd33f2ce11",
+        "resolved_question": "Services net sales And in FY2023?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "id": "M1-4",
+      "is_followup": true,
+      "request": {
+        "question": "So how much did Services grow in absolute terms and percentage?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "session_id": "c3178542150c4b77b26d5bfd33f2ce11"
+      },
+      "elapsed_ms": 2386.97,
+      "checks": {
+        "http": true,
+        "values": true,
+        "coverage": true,
+        "verification": true
+      },
+      "verdict": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2024 Services net sales: 96,169 million USD [1]; FY2023: 85,200 million USD [2]. The change is 10,969 million USD and 12.87 %.",
+        "answer_explanation": "The calculation uses the exact source amounts, not the rounded growth percentage displayed in the report.",
+        "values": [
+          "10969",
+          "12.87"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "96,169",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "value": "96169",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              520.989990234375,
+              123.55598449707031,
+              538.7579956054688,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "85,200",
+            "period": "2023",
+            "fiscal_year": 2023,
+            "period_end": "2023-09-30",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "value": "85200",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              462.2540283203125,
+              165.30801391601562,
+              489.7760314941406,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "96,169",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+            "value": "96169"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "cell_bbox": [
+              531.2540283203125,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "row_box": [
+              59.6359977722168,
+              165.30801391601562,
+              558.7761840820312,
+              174.30801391601562
+            ],
+            "header_box": [
+              520.989990234375,
+              123.55598449707031,
+              538.7579956054688,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              136.80801391601562,
+              92.14399719238281,
+              145.80801391601562
+            ],
+            "section_text": "net sales:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Services",
+            "metric": "services_net_sales",
+            "metric_canonical_name": "services_net_sales",
+            "value_raw": "85,200",
+            "period": "2023",
+            "fiscal_year": 2023,
+            "period_end": "2023-09-30",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Services 109,158 96,169 85,200",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+            "value": "85200"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "current − previous",
+            "operation": "ABS_CHANGE",
+            "formula": "current − previous",
+            "substitution": [
+              {
+                "value": "96,169",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              },
+              {
+                "value": "85,200",
+                "period": "2023",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "10969",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_2",
+            "title": "(current − previous) / previous × 100",
+            "operation": "PERCENT_CHANGE",
+            "formula": "(current − previous) / previous × 100",
+            "substitution": [
+              {
+                "value": "96,169",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              },
+              {
+                "value": "85,200",
+                "period": "2023",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "12.87",
+            "unit": "%",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "current − previous",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "So how much did Services grow in absolute terms and percentage?  FY 2023 2024",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "So how much did Services grow in absolute terms and percentage?  FY 2023 2024",
+              "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "value": "85200",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "recomputed_result": "10969",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "services_net_sales",
+                "services_net_sales"
+              ]
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "PERCENT_CHANGE",
+              "recomputed_result": "12.87",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "services_net_sales",
+                "services_net_sales"
+              ]
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "So how much did Services grow in absolute terms and percentage?  FY 2023 2024",
+            "intent": "EXTRACT_VALUE",
+            "metric": "services_net_sales",
+            "years": [
+              "2023",
+              "2024"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "CHANGE_AND_GROWTH",
+            "metrics": [
+              "services_net_sales"
+            ],
+            "requested_unit": "%",
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "services_net_sales",
+                "years": [
+                  "2023",
+                  "2024"
+                ],
+                "scope": null,
+                "operation": "CHANGE_AND_GROWTH",
+                "outputs": [
+                  "absolute_change",
+                  "percentage_change",
+                  "period_values",
+                  "source_operands",
+                  "calculation"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_9aef27e2c60777264a1decc9e41e",
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2023",
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "10969",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e",
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_2",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_9aef27e2c60777264a1decc9e41e",
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2023",
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "12.87",
+              "calculation_id": "calculation_2",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e",
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "96,169",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                520.989990234375,
+                123.55598449707031,
+                538.7579956054688,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "85,200",
+              "period": "2023",
+              "fiscal_year": 2023,
+              "period_end": "2023-09-30",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "value": "85200",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                462.2540283203125,
+                165.30801391601562,
+                489.7760314941406,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "96,169",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "evidence_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_9aef27e2c60777264a1decc9e41e",
+              "value": "96169"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "cell_bbox": [
+                531.2540283203125,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "row_box": [
+                59.6359977722168,
+                165.30801391601562,
+                558.7761840820312,
+                174.30801391601562
+              ],
+              "header_box": [
+                520.989990234375,
+                123.55598449707031,
+                538.7579956054688,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                136.80801391601562,
+                92.14399719238281,
+                145.80801391601562
+              ],
+              "section_text": "net sales:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Services",
+              "metric": "services_net_sales",
+              "metric_canonical_name": "services_net_sales",
+              "value_raw": "85,200",
+              "period": "2023",
+              "fiscal_year": 2023,
+              "period_end": "2023-09-30",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Services 109,158 96,169 85,200",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "evidence_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_196a7e7faf626564cf9183a7be05",
+              "value": "85200"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e",
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "proposed_result": "10969",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "PERCENT_CHANGE",
+              "operand_ids": [
+                "cellv2_9aef27e2c60777264a1decc9e41e",
+                "cellv2_196a7e7faf626564cf9183a7be05"
+              ],
+              "proposed_result": "12.87",
+              "result_unit": "%",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "So how much did Services grow in absolute terms and percentage?  FY 2023 2024",
+          "intent": "PERIOD_COMPARISON",
+          "metric": "services_net_sales",
+          "years": [
+            "2023",
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "CHANGE_AND_GROWTH",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": "%",
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "years"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2023",
+                "2024"
+              ],
+              "scope": null,
+              "operation": "CHANGE_AND_GROWTH",
+              "outputs": [
+                "absolute_change",
+                "percentage_change",
+                "period_values",
+                "source_operands",
+                "calculation"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "So how much did Services grow in absolute terms and percentage?  FY 2023 2024",
+          "intent": "PERIOD_COMPARISON",
+          "metric": "services_net_sales",
+          "years": [
+            "2023",
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "CHANGE_AND_GROWTH",
+          "metrics": [
+            "services_net_sales"
+          ],
+          "requested_unit": "%",
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "years"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "years": [
+                "2023",
+                "2024"
+              ],
+              "scope": null,
+              "operation": "CHANGE_AND_GROWTH",
+              "outputs": [
+                "absolute_change",
+                "percentage_change",
+                "period_values",
+                "source_operands",
+                "calculation"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": null,
+        "source_periods": [
+          "2023-09-30",
+          "2024-09-28"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_9aef27e2c60777264a1decc9e41e",
+          "cellv2_196a7e7faf626564cf9183a7be05"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 2093.64,
+          "candidate_count": 154,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2024 Services net sales: 96,169 million USD [1]; FY2023: 85,200 million USD [2]. The change is 10,969 million USD and 12.87 %.",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2023",
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "CHANGE_AND_GROWTH",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation",
+              "absolute_change",
+              "percentage_change"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_9aef27e2c60777264a1decc9e41e",
+              "cellv2_196a7e7faf626564cf9183a7be05"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e",
+                  "cellv2_196a7e7faf626564cf9183a7be05"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2023",
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "10969",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e",
+                  "cellv2_196a7e7faf626564cf9183a7be05"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_2",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e",
+                  "cellv2_196a7e7faf626564cf9183a7be05"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2023",
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "12.87",
+                "calculation_id": "calculation_2",
+                "operand_ids": [
+                  "cellv2_9aef27e2c60777264a1decc9e41e",
+                  "cellv2_196a7e7faf626564cf9183a7be05"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "services_net_sales"
+            ],
+            "periods_from_operands": [
+              "2023",
+              "2024"
+            ],
+            "calculation_operations": [
+              "ABS_CHANGE",
+              "PERCENT_CHANGE"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "ABS_CHANGE",
+                "recomputed_result": "10969",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "services_net_sales",
+                  "services_net_sales"
+                ]
+              },
+              {
+                "calculation_id": "calculation_2",
+                "operation": "PERCENT_CHANGE",
+                "recomputed_result": "12.87",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "services_net_sales",
+                  "services_net_sales"
+                ]
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "services_net_sales",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [],
+          "original_question_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "So how much did Services grow in absolute terms and percentage?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "question_contract": {
+          "original_question": "So how much did Services grow in absolute terms and percentage?",
+          "resolved_question": "So how much did Services grow in absolute terms and percentage?  FY 2023 2024",
+          "source_document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_filing_ids": [],
+          "inherited_slots": [
+            "years"
+          ],
+          "raw_obligation_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "So how much did Services grow in absolute terms and percentage?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "session_id": "c3178542150c4b77b26d5bfd33f2ce11",
+        "resolved_question": "So how much did Services grow in absolute terms and percentage?  FY 2023 2024",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "id": "M2-1",
+      "is_followup": false,
+      "request": {
+        "question": "What was net income FY2025?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "session_id": null
+      },
+      "elapsed_ms": 2215.79,
+      "checks": {
+        "http": true,
+        "values": true,
+        "coverage": true,
+        "verification": true
+      },
+      "verdict": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2025, net income was 112,010 million USD [1].",
+        "answer_explanation": "This is the consolidated annual source amount.",
+        "values": [
+          "112010"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "112,010",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "value": "112010",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "112,010",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "value": "112010"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "112,010",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "112010",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "What was net income FY2025?",
+              "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "value": "112010",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "112010",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "net_income"
+              ]
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "What was net income FY2025?",
+            "intent": "EXTRACT_VALUE",
+            "metric": "net_income",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "net_income"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "net_income",
+                "years": [
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_25f617189ef25e8f66d0435486be"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "112010",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_25f617189ef25e8f66d0435486be"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "112,010",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "value": "112010",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "112,010",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "value": "112010"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_25f617189ef25e8f66d0435486be"
+              ],
+              "proposed_result": "112010",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "What was net income FY2025?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "net_income",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "net_income"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "What was net income FY2025?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "net_income",
+          "years": [
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "net_income"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "years": [
+                "2025"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2025-09-27",
+        "source_periods": [
+          "2025-09-27"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_25f617189ef25e8f66d0435486be"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 1987.71,
+          "candidate_count": 33,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2025, net income was 112,010 million USD [1].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "net_income",
+            "years": [
+              "2025"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_25f617189ef25e8f66d0435486be"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_25f617189ef25e8f66d0435486be"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2025"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "112010",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_25f617189ef25e8f66d0435486be"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "net_income"
+            ],
+            "periods_from_operands": [
+              "2025"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "112010",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "net_income"
+                ]
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [],
+          "original_question_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "What was net income FY2025?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "question_contract": {
+          "original_question": "What was net income FY2025?",
+          "resolved_question": "What was net income FY2025?",
+          "source_document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_filing_ids": [],
+          "inherited_slots": [],
+          "raw_obligation_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "What was net income FY2025?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "session_id": "700b8c9736f247ffabae414dea250341",
+        "resolved_question": "What was net income FY2025?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "id": "M2-2",
+      "is_followup": true,
+      "request": {
+        "question": "And in FY2024?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "session_id": "700b8c9736f247ffabae414dea250341"
+      },
+      "elapsed_ms": 2154.26,
+      "checks": {
+        "http": true,
+        "values": true,
+        "coverage": true,
+        "verification": true
+      },
+      "verdict": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2024, net income was 93,736 million USD [1].",
+        "answer_explanation": "This is the consolidated annual source amount.",
+        "values": [
+          "93736"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "93,736",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+            "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+            "value": "93736",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "93,736",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+            "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+            "value": "93736"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "source cell",
+            "operation": "EXTRACT",
+            "formula": "source cell",
+            "substitution": [
+              {
+                "value": "93,736",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              }
+            ],
+            "result": "93736",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "source cell",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "net income And in FY2024?",
+              "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+              "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+              "value": "93736",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "recomputed_result": "93736",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "net_income"
+              ]
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "net income And in FY2024?",
+            "intent": "EXTRACT_VALUE",
+            "metric": "net_income",
+            "years": [
+              "2024"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "EXTRACT",
+            "metrics": [
+              "net_income"
+            ],
+            "requested_unit": null,
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "net_income",
+                "years": [
+                  "2024"
+                ],
+                "scope": null,
+                "operation": "EXTRACT",
+                "outputs": [
+                  "amount"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "93736",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "93,736",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+              "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+              "value": "93736",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "93,736",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+              "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+              "value": "93736"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "EXTRACT",
+              "operand_ids": [
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "proposed_result": "93736",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "net income And in FY2024?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "net_income",
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "net_income"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "net income And in FY2024?",
+          "intent": "EXTRACT_VALUE",
+          "metric": "net_income",
+          "years": [
+            "2024"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "EXTRACT",
+          "metrics": [
+            "net_income"
+          ],
+          "requested_unit": null,
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "years": [
+                "2024"
+              ],
+              "scope": null,
+              "operation": "EXTRACT",
+              "outputs": [
+                "amount"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": "2024-09-28",
+        "source_periods": [
+          "2024-09-28"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_f0f70c2d89172826a05098382571"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 1917.2,
+          "candidate_count": 39,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2024, net income was 93,736 million USD [1].",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "net_income",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_f0f70c2d89172826a05098382571"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_f0f70c2d89172826a05098382571"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "93736",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_f0f70c2d89172826a05098382571"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "net_income"
+            ],
+            "periods_from_operands": [
+              "2024"
+            ],
+            "calculation_operations": [
+              "EXTRACT"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "EXTRACT",
+                "recomputed_result": "93736",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "net_income"
+                ]
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [],
+          "original_question_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "And in FY2024?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "question_contract": {
+          "original_question": "And in FY2024?",
+          "resolved_question": "net income And in FY2024?",
+          "source_document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_filing_ids": [],
+          "inherited_slots": [
+            "metric"
+          ],
+          "raw_obligation_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "And in FY2024?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "session_id": "700b8c9736f247ffabae414dea250341",
+        "resolved_question": "net income And in FY2024?",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    },
+    {
+      "id": "M2-3",
+      "is_followup": true,
+      "request": {
+        "question": "So how much did it grow in absolute terms and percentage?",
+        "document_ids": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "session_id": "700b8c9736f247ffabae414dea250341"
+      },
+      "elapsed_ms": 2571.68,
+      "checks": {
+        "http": true,
+        "values": true,
+        "coverage": true,
+        "verification": true
+      },
+      "verdict": "PASS",
+      "response": {
+        "status": "SUPPORTED",
+        "answer_status": "VERIFIED_ANSWER",
+        "answer": "FY2025 net income: 112,010 million USD [1]; FY2024: 93,736 million USD [2]. The change is 18,274 million USD and 19.50 %.",
+        "answer_explanation": "The calculation uses the exact source amounts, not the rounded growth percentage displayed in the report.",
+        "values": [
+          "18274",
+          "19.50"
+        ],
+        "citations": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "112,010",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "value": "112010",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "93,736",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+            "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+            "value": "93736",
+            "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+            "numeric_status": "CELL_VERIFIED"
+          }
+        ],
+        "operands": [
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              388.259033203125,
+              421.8079833984375,
+              420.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              382.989990234375,
+              123.55598449707031,
+              400.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "112,010",
+            "period": "2025",
+            "fiscal_year": 2025,
+            "period_end": "2025-09-27",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+            "value": "112010"
+          },
+          {
+            "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+            "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+            "source_kind": "PDF",
+            "page": 32,
+            "box": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "cell_bbox": [
+              462.2630310058594,
+              421.8079833984375,
+              489.7850341796875,
+              430.8079833984375
+            ],
+            "row_box": [
+              52.130001068115234,
+              421.7980041503906,
+              558.78515625,
+              430.8079833984375
+            ],
+            "header_box": [
+              451.989990234375,
+              123.55598449707031,
+              469.75799560546875,
+              131.5559844970703
+            ],
+            "section_box": [
+              52.130001068115234,
+              293.5480041503906,
+              135.17298889160156,
+              302.5480041503906
+            ],
+            "section_text": "operating expenses:",
+            "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+            "row_label": "Net income",
+            "metric": "net_income",
+            "metric_canonical_name": "net_income",
+            "value_raw": "93,736",
+            "period": "2024",
+            "fiscal_year": 2024,
+            "period_end": "2024-09-28",
+            "period_type": "FY",
+            "statement_scope": "CONSOLIDATED",
+            "scope_source_page": 32,
+            "currency": "USD",
+            "scale": "1000000",
+            "unit": "MILLION_USD",
+            "currency_source_page": 30,
+            "basis": "AS_REPORTED",
+            "extraction_method": "NATIVE",
+            "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+            "verification_status": "NATIVE_CANDIDATE",
+            "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+            "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+            "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+            "filename": "NASDAQ_AAPL_2025.pdf",
+            "issuer": "Apple Inc.",
+            "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+            "value": "93736"
+          }
+        ],
+        "calculation_steps": [
+          {
+            "calculation_id": "q1_calculation_1",
+            "title": "current − previous",
+            "operation": "ABS_CHANGE",
+            "formula": "current − previous",
+            "substitution": [
+              {
+                "value": "112,010",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              },
+              {
+                "value": "93,736",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "18274",
+            "unit": "MILLION_USD",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          },
+          {
+            "calculation_id": "q1_calculation_2",
+            "title": "(current − previous) / previous × 100",
+            "operation": "PERCENT_CHANGE",
+            "formula": "(current − previous) / previous × 100",
+            "substitution": [
+              {
+                "value": "112,010",
+                "period": "2025",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[1]"
+              },
+              {
+                "value": "93,736",
+                "period": "2024",
+                "scope": "CONSOLIDATED",
+                "basis": "AS_REPORTED",
+                "unit": "MILLION_USD",
+                "citation": "[2]"
+              }
+            ],
+            "result": "19.50",
+            "unit": "%",
+            "rounding": "ROUND_HALF_UP; 2 decimal places for percentages/percentage points; exact Decimal for amounts"
+          }
+        ],
+        "formula": "current − previous",
+        "unit": "MILLION_USD",
+        "verification_status": "VERIFIED",
+        "independent_verification": {
+          "version": "INDEPENDENT_FINANCIAL_GATE_V2",
+          "status": "VERIFIED",
+          "stage_a": [
+            {
+              "question_slot_id": "net income So how much did it grow in absolute terms and percentage?  FY 2024 2025",
+              "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "value": "112010",
+              "status": "VERIFIED"
+            },
+            {
+              "question_slot_id": "net income So how much did it grow in absolute terms and percentage?  FY 2024 2025",
+              "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+              "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+              "value": "93736",
+              "status": "VERIFIED"
+            }
+          ],
+          "stage_b": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "recomputed_result": "18274",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "net_income",
+                "net_income"
+              ]
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "PERCENT_CHANGE",
+              "recomputed_result": "19.50",
+              "status": "VERIFIED",
+              "operand_metrics": [
+                "net_income",
+                "net_income"
+              ]
+            }
+          ]
+        },
+        "answer_plan": {
+          "question_plan": {
+            "raw_text": "net income So how much did it grow in absolute terms and percentage?  FY 2024 2025",
+            "intent": "EXTRACT_VALUE",
+            "metric": "net_income",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": null,
+            "period_type": "FY",
+            "basis": null,
+            "operation": "CHANGE_AND_GROWTH",
+            "metrics": [
+              "net_income"
+            ],
+            "requested_unit": "%",
+            "section": null,
+            "language": "en",
+            "inherited_slots": [],
+            "requested_claims": [
+              {
+                "question_slot_id": "q1",
+                "metric": "net_income",
+                "years": [
+                  "2024",
+                  "2025"
+                ],
+                "scope": null,
+                "operation": "CHANGE_AND_GROWTH",
+                "outputs": [
+                  "absolute_change",
+                  "percentage_change",
+                  "period_values",
+                  "source_operands",
+                  "calculation"
+                ],
+                "kind": "numeric",
+                "expected_source_class": "NATIVE_CELL"
+              }
+            ],
+            "proposed_amount": null,
+            "version": "FINANCIAL_QUESTION_PLAN_V2"
+          },
+          "claims": [
+            {
+              "claim_id": "claim_1",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_25f617189ef25e8f66d0435486be",
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024",
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "18274",
+              "calculation_id": "calculation_1",
+              "operand_ids": [
+                "cellv2_25f617189ef25e8f66d0435486be",
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "question_slot_id": "q1"
+            },
+            {
+              "claim_id": "claim_2",
+              "type": "NUMERIC",
+              "source_refs": [
+                "cellv2_25f617189ef25e8f66d0435486be",
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "source_scope": "CONSOLIDATED",
+              "period": [
+                "2024",
+                "2025"
+              ],
+              "verification_status": "VERIFIED",
+              "text": "",
+              "value": "19.50",
+              "calculation_id": "calculation_2",
+              "operand_ids": [
+                "cellv2_25f617189ef25e8f66d0435486be",
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "question_slot_id": "q1"
+            }
+          ],
+          "citations": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "112,010",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "value": "112010",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "93,736",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+              "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+              "value": "93736",
+              "verification": "INDEPENDENT_SOURCE_CELL_VERIFIED",
+              "numeric_status": "CELL_VERIFIED"
+            }
+          ],
+          "operands": [
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                388.259033203125,
+                421.8079833984375,
+                420.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                382.989990234375,
+                123.55598449707031,
+                400.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "112,010",
+              "period": "2025",
+              "fiscal_year": 2025,
+              "period_end": "2025-09-27",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "evidence_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_25f617189ef25e8f66d0435486be",
+              "value": "112010"
+            },
+            {
+              "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+              "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+              "source_kind": "PDF",
+              "page": 32,
+              "box": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "cell_bbox": [
+                462.2630310058594,
+                421.8079833984375,
+                489.7850341796875,
+                430.8079833984375
+              ],
+              "row_box": [
+                52.130001068115234,
+                421.7980041503906,
+                558.78515625,
+                430.8079833984375
+              ],
+              "header_box": [
+                451.989990234375,
+                123.55598449707031,
+                469.75799560546875,
+                131.5559844970703
+              ],
+              "section_box": [
+                52.130001068115234,
+                293.5480041503906,
+                135.17298889160156,
+                302.5480041503906
+              ],
+              "section_text": "operating expenses:",
+              "table_heading": "Apple Inc. CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except number of shares, which are reflected in thousands, and per-share amounts) Years ended September 27, September 28, September 30,",
+              "row_label": "Net income",
+              "metric": "net_income",
+              "metric_canonical_name": "net_income",
+              "value_raw": "93,736",
+              "period": "2024",
+              "fiscal_year": 2024,
+              "period_end": "2024-09-28",
+              "period_type": "FY",
+              "statement_scope": "CONSOLIDATED",
+              "scope_source_page": 32,
+              "currency": "USD",
+              "scale": "1000000",
+              "unit": "MILLION_USD",
+              "currency_source_page": 30,
+              "basis": "AS_REPORTED",
+              "extraction_method": "NATIVE",
+              "text": "Net income $ 112,010 $ 93,736 $ 96,995",
+              "verification_status": "NATIVE_CANDIDATE",
+              "extraction_version": "ORIGINAL_NATIVE_CELLS_V2",
+              "citation_id": "cellv2_f0f70c2d89172826a05098382571",
+              "evidence_id": "cellv2_f0f70c2d89172826a05098382571",
+              "filename": "NASDAQ_AAPL_2025.pdf",
+              "issuer": "Apple Inc.",
+              "operand_id": "cellv2_f0f70c2d89172826a05098382571",
+              "value": "93736"
+            }
+          ],
+          "calculations": [
+            {
+              "calculation_id": "calculation_1",
+              "operation": "ABS_CHANGE",
+              "operand_ids": [
+                "cellv2_25f617189ef25e8f66d0435486be",
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "proposed_result": "18274",
+              "result_unit": "MILLION_USD",
+              "round_places": 2
+            },
+            {
+              "calculation_id": "calculation_2",
+              "operation": "PERCENT_CHANGE",
+              "operand_ids": [
+                "cellv2_25f617189ef25e8f66d0435486be",
+                "cellv2_f0f70c2d89172826a05098382571"
+              ],
+              "proposed_result": "19.50",
+              "result_unit": "%",
+              "round_places": 2
+            }
+          ],
+          "version": "VERIFIED_ANSWER_PLAN_V2"
+        },
+        "query_plan": {
+          "raw_text": "net income So how much did it grow in absolute terms and percentage?  FY 2024 2025",
+          "intent": "PERIOD_COMPARISON",
+          "metric": "net_income",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "CHANGE_AND_GROWTH",
+          "metrics": [
+            "net_income"
+          ],
+          "requested_unit": "%",
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric",
+            "years"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "CHANGE_AND_GROWTH",
+              "outputs": [
+                "absolute_change",
+                "percentage_change",
+                "period_values",
+                "source_operands",
+                "calculation"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2"
+        },
+        "conversation_slots": {
+          "raw_text": "net income So how much did it grow in absolute terms and percentage?  FY 2024 2025",
+          "intent": "PERIOD_COMPARISON",
+          "metric": "net_income",
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "scope": null,
+          "period_type": "FY",
+          "basis": null,
+          "operation": "CHANGE_AND_GROWTH",
+          "metrics": [
+            "net_income"
+          ],
+          "requested_unit": "%",
+          "section": null,
+          "language": "en",
+          "inherited_slots": [
+            "metric",
+            "years"
+          ],
+          "requested_claims": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "years": [
+                "2024",
+                "2025"
+              ],
+              "scope": null,
+              "operation": "CHANGE_AND_GROWTH",
+              "outputs": [
+                "absolute_change",
+                "percentage_change",
+                "period_values",
+                "source_operands",
+                "calculation"
+              ],
+              "kind": "numeric",
+              "expected_source_class": "NATIVE_CELL"
+            }
+          ],
+          "proposed_amount": null,
+          "version": "FINANCIAL_QUESTION_PLAN_V2",
+          "document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ]
+        },
+        "period": null,
+        "source_periods": [
+          "2024-09-28",
+          "2025-09-27"
+        ],
+        "answer_source_chunk_id": null,
+        "answer_evidence_ids": [
+          "cellv2_25f617189ef25e8f66d0435486be",
+          "cellv2_f0f70c2d89172826a05098382571"
+        ],
+        "retrieved_excerpt_verification": "SOURCE_TEXT_UNREVIEWED",
+        "reason": null,
+        "warnings": [],
+        "search_profile": "faith_r_product_v1",
+        "composer_version": "VERIFIED_ANSWER_COMPOSER_V2",
+        "retrieval_trace": {
+          "engine_version": "FAITH_R_PRODUCT_V1",
+          "algorithm_executed": "FAITH_R_NATIVE_CELL_TARGETING_V3",
+          "latency_ms": 2255.36,
+          "candidate_count": 56,
+          "generation": "42983c4de6b1aae059e2e01aa73e6f9c10a2d3248ab8669fdb12a67c9f2b8ce0"
+        },
+        "generation_trace": {
+          "method": "DETERMINISTIC_VERIFIED_CLAIMS",
+          "model_status": "NOT_REQUIRED"
+        },
+        "primary_answer": "FY2025 net income: 112,010 million USD [1]; FY2024: 93,736 million USD [2]. The change is 18,274 million USD and 19.50 %.",
+        "supporting_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "net_income",
+            "years": [
+              "2024",
+              "2025"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "CHANGE_AND_GROWTH",
+            "outputs": [
+              "amount",
+              "period_values",
+              "source_operands",
+              "calculation",
+              "absolute_change",
+              "percentage_change"
+            ],
+            "status": "VERIFIED",
+            "numeric_verification": "VERIFIED",
+            "reason": null,
+            "source_refs": [
+              "cellv2_25f617189ef25e8f66d0435486be",
+              "cellv2_f0f70c2d89172826a05098382571"
+            ],
+            "claims": [
+              {
+                "claim_id": "claim_1",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_25f617189ef25e8f66d0435486be",
+                  "cellv2_f0f70c2d89172826a05098382571"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024",
+                  "2025"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "18274",
+                "calculation_id": "calculation_1",
+                "operand_ids": [
+                  "cellv2_25f617189ef25e8f66d0435486be",
+                  "cellv2_f0f70c2d89172826a05098382571"
+                ],
+                "question_slot_id": "q1"
+              },
+              {
+                "claim_id": "claim_2",
+                "type": "NUMERIC",
+                "source_refs": [
+                  "cellv2_25f617189ef25e8f66d0435486be",
+                  "cellv2_f0f70c2d89172826a05098382571"
+                ],
+                "source_scope": "CONSOLIDATED",
+                "period": [
+                  "2024",
+                  "2025"
+                ],
+                "verification_status": "VERIFIED",
+                "text": "",
+                "value": "19.50",
+                "calculation_id": "calculation_2",
+                "operand_ids": [
+                  "cellv2_25f617189ef25e8f66d0435486be",
+                  "cellv2_f0f70c2d89172826a05098382571"
+                ],
+                "question_slot_id": "q1"
+              }
+            ],
+            "operand_metrics": [
+              "net_income"
+            ],
+            "periods_from_operands": [
+              "2024",
+              "2025"
+            ],
+            "calculation_operations": [
+              "ABS_CHANGE",
+              "PERCENT_CHANGE"
+            ],
+            "calculation_results": [
+              {
+                "calculation_id": "calculation_1",
+                "operation": "ABS_CHANGE",
+                "recomputed_result": "18274",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "net_income",
+                  "net_income"
+                ]
+              },
+              {
+                "calculation_id": "calculation_2",
+                "operation": "PERCENT_CHANGE",
+                "recomputed_result": "19.50",
+                "status": "VERIFIED",
+                "operand_metrics": [
+                  "net_income",
+                  "net_income"
+                ]
+              }
+            ],
+            "issuer": [
+              "Apple Inc."
+            ],
+            "confirmation": null
+          }
+        ],
+        "unanswered_subquestions": [],
+        "semantic_question_coverage": {
+          "version": "SEMANTIC_ANSWER_COVERAGE_V1",
+          "status": "COMPLETE",
+          "requested_count": 1,
+          "answered_count": 1,
+          "slots": [
+            {
+              "question_slot_id": "q1",
+              "metric": "net_income",
+              "verdict": "ANSWERED",
+              "reasons": []
+            }
+          ],
+          "unanswered_subquestions": [],
+          "original_question_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "So how much did it grow in absolute terms and percentage?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "source_numeric_verification": "VERIFIED",
+        "generation_status": "DETERMINISTIC_CLAIMS",
+        "limitations": [],
+        "question_contract": {
+          "original_question": "So how much did it grow in absolute terms and percentage?",
+          "resolved_question": "net income So how much did it grow in absolute terms and percentage?  FY 2024 2025",
+          "source_document_ids": [
+            "3eb270b22acb7d8d8e9c32a43dc221de"
+          ],
+          "source_filing_ids": [],
+          "inherited_slots": [
+            "metric",
+            "years"
+          ],
+          "raw_obligation_audit": {
+            "version": "RAW_QUESTION_OBLIGATION_AUDITOR_V3",
+            "original_question": "So how much did it grow in absolute terms and percentage?",
+            "DISCOVERED_REQUIREMENTS": [],
+            "ANSWERED": [],
+            "MISSING": [],
+            "UNSUPPORTED": []
+          }
+        },
+        "session_id": "700b8c9736f247ffabae414dea250341",
+        "resolved_question": "net income So how much did it grow in absolute terms and percentage?  FY 2024 2025",
+        "source_scope": [
+          "3eb270b22acb7d8d8e9c32a43dc221de"
+        ],
+        "conversation_reset": false
+      }
+    }
+  ]
+}

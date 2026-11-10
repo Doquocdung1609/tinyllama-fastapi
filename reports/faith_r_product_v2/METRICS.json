@@ -1,0 +1,97 @@
+{
+  "case_count": 53,
+  "distinct_question_strings": 46,
+  "outcomes": {
+    "PASS": 42,
+    "PARTIAL": 9,
+    "FAIL": 0,
+    "BLOCKED": 2
+  },
+  "arithmetic_queries": 16,
+  "numeric_verified_answers": 28,
+  "exact_numeric_expected_cases": 25,
+  "numeric_expected_mismatches": 0,
+  "expected_page_mismatches": 0,
+  "adversarial_cases": 9,
+  "adversarial_false_numeric_certifications": 0,
+  "scope_period_currency_errors_observed_in_expected_cases": 0,
+  "multi_turn_threads": 7,
+  "source_switch_reset": true,
+  "latency_ms": {
+    "p50": 2107.33,
+    "p95_nearest_rank": 3675.94,
+    "min": 35.33,
+    "max": 4943.28
+  },
+  "comparison": [
+    {
+      "id": "V2-46",
+      "target_pages": [
+        4,
+        7
+      ],
+      "candidate_target_covered": true,
+      "baselines": {
+        "bm25": {
+          "target_covered": true,
+          "candidate_result": "TIE"
+        },
+        "dense": {
+          "target_covered": true,
+          "candidate_result": "TIE"
+        },
+        "hybrid": {
+          "target_covered": false,
+          "candidate_result": "WIN"
+        }
+      }
+    },
+    {
+      "id": "V2-48",
+      "target_pages": [
+        2
+      ],
+      "candidate_target_covered": true,
+      "baselines": {
+        "bm25": {
+          "target_covered": false,
+          "candidate_result": "WIN"
+        },
+        "dense": {
+          "target_covered": true,
+          "candidate_result": "TIE"
+        },
+        "hybrid": {
+          "target_covered": true,
+          "candidate_result": "TIE"
+        }
+      }
+    },
+    {
+      "id": "V2-50",
+      "target_pages": [
+        32
+      ],
+      "candidate_target_covered": true,
+      "baselines": {
+        "bm25": {
+          "target_covered": true,
+          "candidate_result": "TIE"
+        },
+        "dense": {
+          "target_covered": false,
+          "candidate_result": "WIN"
+        },
+        "hybrid": {
+          "target_covered": false,
+          "candidate_result": "WIN"
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Development acceptance, not human gold or held-out accuracy. Unknown financial targets/OCR excluded from numeric denominator.",
+    "Mixed fresh process and warm caches; includes model loading, original source checks and source catalog; sequential local machine.",
+    "Comparison measures target-page inclusion at Top5 for3 questions, not Recall/MRR/nDCG, statistical superiority or cell-level baseline accuracy."
+  ]
+}

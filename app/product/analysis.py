@@ -13,13 +13,14 @@ import re
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 from app.product.pdf_extract import folded
+from app.product.financial_math import calculate,normalize_amount
 
 METRICS={'assets':['tong tai san','tong cong tai san','total assets'],
          'liabilities':['no phai tra','total liabilities'],
          'equity':['von chu so huu','equity'],
          'net_revenue':['doanh thu thuan','net sales','net revenue'],
          'net_income':['loi nhuan sau thue','net income'],
-         'operating_cashflow':['tien tu hoat dong kinh doanh','operating cash']}
+         'operating_cashflow':['tien tu hoat dong kinh doanh','tien thuan tu hoat dong kinh doanh','tien thuan tu cac hoat dong kinh doanh','dong tien hoat dong kinh doanh','operating cash']}
 SCALES={'VND':Decimal(1),'NGHIN_VND':Decimal(1000),'TRIEU_VND':Decimal(1000000),
         'TY_VND':Decimal(1000000000),'USD':Decimal(1),'MILLION_USD':Decimal(1000000)}
 
@@ -57,6 +58,47 @@ class FactReview(BaseModel):
     convention:Literal['vi_VN','en_US']
     basis:Literal['AS_REPORTED','ORIGINAL','ADJUSTMENT','RESTATED']='AS_REPORTED'
     source_image_reviewed:bool=False
+    reviewed_display:str|None=Field(default=None,min_length=1,max_length=60)
+    reviewed_label:str|None=Field(default=None,min_length=1,max_length=250)
+
+
+def table_bound_scope(page,row):
+    top=row.get('reading_y',row.get('box',[0,0])[1])
+    lines=[]
+    for line in page.get('lines',[]):
+        y=min((w.get('ry',w.get('box',[0,0])[1]) for w in line.get('words',[])),default=line.get('box',[0,0])[1])
+        if y<top:lines.append((y,folded(line['text'])))
+    headings=[(y,text) for y,text in lines if re.search(r'statements|balance sheet|bao cao|bang can doi|ket qua kinh doanh',text)]
+    if not headings:return None
+    y,text=max(headings)
+    context=' '.join(t for ly,t in lines if y-20<=ly<=y)
+    scopes=[]
+    if re.search(r'hop nhat|consolidated',context):scopes.append('CONSOLIDATED')
+    if re.search(r'cong ty me|\brieng\b|parent company|separate financial',context):scopes.append('SEPARATE')
+    return scopes[0] if len(scopes)==1 else None
+
+
+def reviewed_scope(workspace, document_id, page, row, adaptive):
+    if not adaptive:
+        return table_bound_scope(page,row)
+    if row.get('scope_origin')=='PAGE_HEADING':
+        return table_bound_scope(page,row)
+    if row.get('scope_origin')=='DOCUMENT_COVER':
+        from app.product.pdf_ocr_financial_v3 import explicit_cover_scope
+        return explicit_cover_scope(workspace.page_evidence(document_id,1)['text'])
+    return None
+
+
+def source_calendar(workspace, document_id, page_number, year):
+    # A column printed as 'Năm YYYY' does not establish fiscal boundaries.
+    # Require a nearby statement that prints the actual accounting interval.
+    doc=workspace.document(document_id)
+    pattern=rf'(?<!\d)0?1/0?1/{year}\s+den(?:\s+ngay)?\s+31/12/{year}(?!\d)'
+    for number in range(max(1,page_number-2),min(doc['pages'],page_number+2)+1):
+        evidence=workspace.page_evidence(document_id,number)
+        if re.search(pattern,folded(evidence['text'][:1500])):
+            return {'page':number,'evidence_sha256':evidence['evidence_sha256']}
+    return None
 
 
 def review_fact(workspace,document_id,request:FactReview):
@@ -66,6 +108,17 @@ def review_fact(workspace,document_id,request:FactReview):
     row=next((x for x in page['tables'] if x['id']==request.row_id),None)
     if row is None or request.column_index>=len(row['cells']):
         raise ValueError('SOURCE_CELL_NOT_FOUND')
+    cell=row['cells'][request.column_index]
+    adaptive=bool(cell.get('review_status'))
+    if adaptive:
+        if row.get('metric')!=request.metric:
+            raise ValueError('SOURCE_METRIC_MISMATCH')
+        if (cell.get('period_start'),cell.get('period_end'))!=(request.period_start,request.period):
+            raise ValueError('SOURCE_PERIOD_MISMATCH')
+        if folded(cell.get('column_label') or '')!=folded(request.column_label):
+            raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
+        if cell.get('printed_marker') not in {None,'PRINTED_ZERO'}:
+            raise ValueError('SOURCE_CELL_NOT_NUMERIC')
     if 'header_word_candidates' in row:
         from app.product.source_units import cell_unit
         selected_unit=cell_unit(row['cells'][request.column_index],row['header_word_candidates'],page['text'][:1600])
@@ -73,12 +126,14 @@ def review_fact(workspace,document_id,request:FactReview):
         if selected_unit['unit']!=request.unit:
             requested_currency='USD' if 'USD' in request.unit else 'VND'
             raise ValueError('SOURCE_UNIT_SCALE_MISMATCH' if selected_unit.get('currency')==requested_currency else 'SOURCE_CURRENCY_MISMATCH')
-    label=folded(row['row_label']);context=folded(page['text'])
+    is_ocr=page.get('method') in {'OCR','REGION_FUSION'}
+    if (request.reviewed_display is not None or request.reviewed_label is not None) and not is_ocr:
+        raise ValueError('SOURCE_TRANSCRIPTION_ONLY_FOR_OCR')
+    source_label=request.reviewed_label.strip() if request.reviewed_label is not None else row.get('row_label_normalized',row['row_label']) if adaptive else row['row_label']
+    label=folded(source_label);context=folded(page['text'])
     if not any(alias in label for alias in METRICS[request.metric]):
         raise ValueError('SOURCE_METRIC_MISMATCH')
-    if request.statement_scope=='CONSOLIDATED' and 'hop nhat' not in context:
-        raise ValueError('SOURCE_SCOPE_MISMATCH')
-    if request.statement_scope=='SEPARATE' and not any(x in context for x in ('cong ty me','rieng')):
+    if reviewed_scope(workspace,document_id,page,row,adaptive)!=request.statement_scope:
         raise ValueError('SOURCE_SCOPE_MISMATCH')
     unit_words={'VND':['vnd','dong'],'NGHIN_VND':['nghin dong'],'TRIEU_VND':['trieu dong'],
                 'TY_VND':['ty dong'],'USD':['usd'],'MILLION_USD':['million','millions']}
@@ -101,7 +156,7 @@ def review_fact(workspace,document_id,request:FactReview):
     if 'USD' in request.unit and 'usd' not in header_context:
         raise ValueError('SOURCE_CURRENCY_MISMATCH')
     # The reviewer confirms the actual image column, not a guessed automatic date.
-    if folded(request.column_label) not in context:
+    if not adaptive and folded(request.column_label) not in context:
         raise ValueError('SOURCE_COLUMN_LABEL_MISSING')
     year=request.period[:4]
     if year not in context:
@@ -126,8 +181,16 @@ def review_fact(workspace,document_id,request:FactReview):
                 raise ValueError('EXACT_SOURCE_PERIOD_REQUIRED')
     elif not start or start>=end:
         raise ValueError('DURATION_METRIC_REQUIRES_SOURCE_START_AND_END')
-    cell=row['cells'][request.column_index]
     if not cell.get('box'):raise ValueError('SOURCE_CELL_HAS_NO_COORDINATES')
+    if cell.get('binding_status')=='AMBIGUOUS':
+        raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
+    if cell.get('binding_status')=='GEOMETRIC_CANDIDATE':
+        if cell.get('unit')!=request.unit:
+            raise ValueError('SOURCE_UNIT_COLUMN_AMBIGUOUS')
+        if request.metric in {'assets','liabilities','equity'} and cell.get('period')!=dmy:
+            raise ValueError('SOURCE_PERIOD_MISMATCH')
+    if request.reviewed_label is not None and cell.get('binding_status')!='GEOMETRIC_CANDIDATE':
+        raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
     # Header location must belong to this numerical column, not merely occur elsewhere on the page.
     last_header_word=folded(request.column_label).split()[-1].strip('():')
     header_words=[w for line in page['lines'] for w in line['words']
@@ -136,22 +199,42 @@ def review_fact(workspace,document_id,request:FactReview):
         b=word['box'];rot=page.get('engine',{}).get('correction_clockwise',0)
         return word['rx']+((b[3]-b[1]) if rot in {90,270} else (b[2]-b[0]))
     anchor=cell.get('column_right_anchor',cell['box'][2])
-    if not header_words or min(abs(word_right(w)-anchor) for w in header_words)>75:
+    if not adaptive and (not header_words or min(abs(word_right(w)-anchor) for w in header_words)>75):
         raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
     anchors=[(i,c.get('column_right_anchor',c['box'][2] if c.get('box') else None)) for i,c in enumerate(row['cells'])]
     anchors=[(i,x) for i,x in anchors if x is not None]
-    if request.column_index not in {min(anchors,key=lambda pair:abs(pair[1]-word_right(w)))[0] for w in header_words}:
+    if not adaptive and request.column_index not in {min(anchors,key=lambda pair:abs(pair[1]-word_right(w)))[0] for w in header_words}:
         raise ValueError('SOURCE_COLUMN_GEOMETRY_MISMATCH')
-    value=parse_number(cell['text'],request.convention)
+    fiscal_calendar=None
+    if adaptive and cell.get('period_type') in {'3M_Q4','FY'}:
+        fiscal_calendar=source_calendar(workspace,document_id,request.page,request.period[:4])
+        if fiscal_calendar is None:
+            raise ValueError('SOURCE_FISCAL_CALENDAR_UNPROVEN')
+    source_display=cell['text']
+    if request.reviewed_display is not None:
+        source_display=request.reviewed_display.strip()
+    value=parse_number(source_display,request.convention)
     doc=workspace.document(document_id)
-    fact={**request.model_dump(),'document_id':document_id,'issuer':doc['issuer'],
+    fact={**request.model_dump(exclude_none=True),'document_id':document_id,'issuer':doc['issuer'],
+          'scope_verifier_version':'TABLE_BOUND_SCOPE_V1',
           'source_sha256':doc['sha256'],'page_evidence_sha256':page['evidence_sha256'],
-          'row_label':row['row_label'],'item_code':row.get('item_code'),'table_id':row['table_id'],
-          'source_display':cell['text'],'box':cell['box'],'confidence':cell['confidence'],
-          'extraction_method':page['method'],'value':str(value),'base_value':str(value*SCALES[request.unit]),
+          'row_label':source_label,'item_code':row.get('item_code'),'table_id':row['table_id'],
+          'source_display':source_display,'box':cell['box'],'confidence':cell['confidence'],
+          'extraction_method':page['method'],'value':str(value),'base_value':str(normalize_amount(value,SCALES[request.unit])),
           'currency':'USD' if 'USD' in request.unit else 'VND',
           'verification':'VERIFIED_BY_LOCAL_SOURCE_IMAGE_REVIEW',
           'reviewed_at':datetime.now(timezone.utc).isoformat()}
+    fact.setdefault('period_start',None)
+    if request.reviewed_display is not None:
+        fact['machine_display']=cell['text']
+    if request.reviewed_label is not None or source_label!=row['row_label']:
+        fact['machine_label']=row['row_label']
+    if adaptive:
+        fact.update(review_status='HUMAN_SOURCE_VERIFIED',period_type=cell['period_type'],
+                    cell_id=cell['cell_id'],scope_origin=row['scope_origin'],
+                    ocr_candidate_display=cell['text'],raw_ocr_display=cell['raw_value'])
+        if fiscal_calendar:
+            fact['fiscal_calendar_source']=fiscal_calendar
     identity={k:fact[k] for k in ('document_id','page','row_id','column_index','metric','period','period_start','basis')}
     fact['id']=sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()[:32]
     fact['audit_hash']=sha256(json.dumps(fact,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
@@ -185,10 +268,22 @@ def eligible_facts(workspace,document_ids):
                 raise ValueError('REVIEWED_SOURCE_EVIDENCE_CHANGED')
             row=next((r for r in evidence['tables'] if r['id']==fact['row_id']),None)
             if row is None or fact['column_index']>=len(row['cells']):raise ValueError('REVIEWED_SOURCE_CELL_CHANGED')
+            if fact.get('scope_verifier_version')!='TABLE_BOUND_SCOPE_V1':raise ValueError('LEGACY_FACT_REQUIRES_TABLE_SCOPE_REREVIEW')
+            adaptive=fact.get('review_status')=='HUMAN_SOURCE_VERIFIED'
+            if reviewed_scope(workspace,document_id,evidence,row,adaptive)!=fact['statement_scope']:raise ValueError('REVIEWED_SCOPE_CHANGED')
             cell=row['cells'][fact['column_index']]
-            if (cell['text']!=fact['source_display'] or cell['box']!=fact['box']
-                or parse_number(cell['text'],fact['convention'])!=Decimal(fact['value'])
-                or Decimal(fact['value'])*SCALES[fact['unit']]!=Decimal(fact['base_value'])):
+            if adaptive and (cell.get('period_end'),cell.get('period_start'),cell.get('period_type'),cell.get('cell_id'),row.get('metric'))!=(
+                    fact['period'],fact['period_start'],fact['period_type'],fact['cell_id'],fact['metric']):
+                raise ValueError('REVIEWED_SOURCE_BINDING_CHANGED')
+            if adaptive and fact['period_type'] in {'3M_Q4','FY'}:
+                calendar=source_calendar(workspace,document_id,fact['page'],fact['period'][:4])
+                if not calendar or calendar!=fact.get('fiscal_calendar_source'):
+                    raise ValueError('REVIEWED_SOURCE_FISCAL_CALENDAR_CHANGED')
+            if row['row_label']!=fact.get('machine_label',fact['row_label']):
+                raise ValueError('REVIEWED_SOURCE_LABEL_CHANGED')
+            if (cell['text']!=fact.get('machine_display',fact['source_display']) or cell['box']!=fact['box']
+                or parse_number(fact['source_display'],fact['convention'])!=Decimal(fact['value'])
+                or normalize_amount(fact['value'],SCALES[fact['unit']])!=Decimal(fact['base_value'])):
                 raise ValueError('REVIEWED_SOURCE_VALUE_CHANGED')
             result.append(fact)
     return result
@@ -206,7 +301,7 @@ class AnalysisRequest(BaseModel):
     statement_scope:Literal['SEPARATE','CONSOLIDATED']='SEPARATE'
     basis:Literal['AS_REPORTED','ORIGINAL','ADJUSTMENT','RESTATED']='AS_REPORTED'
     use_llm:bool=False
-    search_profile:Literal['baseline','production_v3','production_v3r3','auto']='baseline'
+    search_profile:Literal['faith_r_product_v1','baseline','production_v3','production_v3r3','auto']='baseline'
 
 
 def bounded_summary(title,sources):
@@ -292,19 +387,19 @@ def numeric_answer(workspace,request):
         return no('EXPLICIT_ORDERED_PERIODS_REQUIRED')
     numbers=[Decimal(f['base_value']) for f in operands]
     with localcontext() as ctx:
-        ctx.prec=40
-        value=numbers[0];formula='Giá trị ô nguồn';unit=operands[0]['currency']
-        if request.operation=='ABS_CHANGE':value=numbers[0]-numbers[1];formula='Kỳ hiện tại − kỳ trước'
+        ctx.prec=max(40,max(len(n.as_tuple().digits)+abs(n.as_tuple().exponent) for n in numbers)+20)
+        value=calculate('EXTRACT',[numbers[0]]);formula='Giá trị ô nguồn';unit=operands[0]['currency']
+        if request.operation=='ABS_CHANGE':value=calculate('ABS_CHANGE',numbers);formula='Kỳ hiện tại − kỳ trước'
         elif request.operation=='PERCENT_CHANGE':
             if numbers[1]==0:return no('ZERO_BASE_PERIOD')
-            value=(numbers[0]-numbers[1])/numbers[1]*100;formula='(Kỳ hiện tại − kỳ trước) / kỳ trước × 100';unit='%'
+            value=calculate('PERCENT_CHANGE',numbers);formula='(Kỳ hiện tại − kỳ trước) / kỳ trước × 100';unit='%'
         elif request.operation in {'DEBT_TO_ASSETS','NET_MARGIN'}:
             if numbers[1]==0:return no('ZERO_DENOMINATOR')
-            value=numbers[0]/numbers[1]*100;formula='Tử số / mẫu số × 100';unit='%'
+            value=calculate(request.operation,numbers);formula='Tử số / mẫu số × 100';unit='%'
         elif request.operation=='ACCOUNTING_IDENTITY':
-            value=numbers[0]+numbers[1]-numbers[2];formula='Nợ phải trả + vốn chủ sở hữu − tổng tài sản'
+            value=calculate('ACCOUNTING_IDENTITY',numbers);formula='Nợ phải trả + vốn chủ sở hữu − tổng tài sản'
         elif request.operation=='RESTATEMENT_CHECK':
-            value=numbers[0]+numbers[1]-numbers[2];formula='Số đã công bố + điều chỉnh − số trình bày lại'
+            value=calculate('RESTATEMENT_CHECK',numbers);formula='Số đã công bố + điều chỉnh − số trình bày lại'
         if unit!='%' and len({f['unit'] for f in operands})==1:
             unit=operands[0]['unit'];value=value/SCALES[unit]
     return {'status':'SUPPORTED','answer':'Kết quả từ các ô đã được đối chiếu ảnh nguồn.',

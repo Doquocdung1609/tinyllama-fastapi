@@ -1,0 +1,106 @@
+[
+  {
+    "case": "T01",
+    "question": "Trong COST, HD, PG và Microsoft, chỉ phân tích Microsoft: so sánh thu nhập ròng quý tháng 9 năm 2025 với cùng quý năm trước.",
+    "status": "SUPPORTED",
+    "reason": null,
+    "completed": 1,
+    "required": 1,
+    "citation_count": 2,
+    "task_issuers": [
+      "MSFT"
+    ],
+    "answer": "Lợi nhuận ròng của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 24.667 | 0001193125-25-256321 [1] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 27.747 | 0001193125-25-256321 [2] |\n\nChênh lệch = 27.747 − 24.667 = **3.080 triệu USD**. [1][2]\n\nMức thay đổi = chênh lệch ÷ 24.667 × 100 = **12,49%**. [1][2]"
+  },
+  {
+    "case": "T02",
+    "question": "Chỉ dùng Costco: tính biên hoạt động của kỳ ngắn nhất, nêu hai số gốc và phần trăm.",
+    "status": "SUPPORTED",
+    "reason": null,
+    "completed": 1,
+    "required": 1,
+    "citation_count": 2,
+    "task_issuers": [
+      "COST"
+    ],
+    "answer": "Biên lợi nhuận hoạt động của COST cho kỳ 2026-02-16–2026-05-10 (12 tuần): **3.99%**. Operating income: 2,815,000,000 USD [1] ÷ Total revenue: 70,527,000,000 USD [2] × 100."
+  },
+  {
+    "case": "T03",
+    "question": "Microsoft đã mô tả rủi ro về an ninh mạng và áp lực cạnh tranh ra sao? Giải thích từng chủ đề bằng tiếng Việt.",
+    "status": "SOURCE_EXCERPTS",
+    "reason": null,
+    "completed": 2,
+    "required": 2,
+    "citation_count": 2,
+    "task_issuers": [
+      "MSFT",
+      "MSFT"
+    ],
+    "answer": "Các công bố liên quan trong filing:\n\n- **Cạnh tranh — công bố của MSFT:** Công ty nêu áp lực cạnh tranh có thể ảnh hưởng bất lợi đến hoạt động hoặc kết quả kinh doanh. [1]\n- **An ninh mạng — công bố của MSFT:** Công ty nêu tấn công mạng hoặc lỗ hổng bảo mật có thể làm giảm doanh thu, tăng chi phí, phát sinh yêu cầu bồi thường hoặc ảnh hưởng danh tiếng. [2]\n\n**Nhận định của trợ lý:** Chỉ có thể kết luận về các chủ đề có đoạn nguồn nêu trên; các chủ đề thiếu nguồn cần kiểm tra thêm."
+  },
+  {
+    "case": "T04",
+    "question": "Không dùng các nguồn đang chọn; hãy tính tỷ suất lợi nhuận hoạt động Amazon FY2024.",
+    "status": "NEEDS_CLARIFICATION",
+    "reason": "SEC_ISSUER_NOT_SELECTED",
+    "completed": 0,
+    "required": 1,
+    "citation_count": 0,
+    "task_issuers": [],
+    "answer": "Bộ nguồn đang chọn thiếu filing của AMZN. Hãy chọn hoặc nhập đúng filing rồi hỏi lại."
+  },
+  {
+    "case": "T05",
+    "question": "Tỷ suất lợi nhuận hoạt động của Home Depot năm 2039 là bao nhiêu?",
+    "status": "NEEDS_CLARIFICATION",
+    "reason": "SEC_FISCAL_PERIOD_ABSENT",
+    "completed": 0,
+    "required": 1,
+    "citation_count": 0,
+    "task_issuers": [
+      "HD"
+    ],
+    "answer": "Bộ filing đang chọn không có kỳ 2039 cho HD."
+  },
+  {
+    "case": "T06",
+    "question": "Đối chiếu tỷ suất lợi nhuận hoạt động của Costco với Procter & Gamble theo kỳ ngắn nhất.",
+    "status": "SUPPORTED",
+    "reason": null,
+    "completed": 2,
+    "required": 2,
+    "citation_count": 4,
+    "task_issuers": [
+      "COST",
+      "PG"
+    ],
+    "answer": "### COST · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của COST cho kỳ 2026-02-16–2026-05-10 (12 tuần): **3.99%**. Operating income: 2,815,000,000 USD [1] ÷ Total revenue: 70,527,000,000 USD [2] × 100.\n\n### PG · biên lợi nhuận hoạt động\nBiên lợi nhuận hoạt động của PG cho kỳ 2026-07-01–2026-09-30 (3 tháng (92 ngày)): **25.51%**. OPERATING INCOME: 5,937,000,000 USD [3] ÷ NET SALES: 23,276,000,000 USD [4] × 100.\n\nCác kỳ ngắn nhất được báo cáo có thể là 12 tuần, 13 tuần hoặc ba tháng; không coi chúng là các khoảng thời gian hoàn toàn đồng nhất."
+  },
+  {
+    "case": "T07a",
+    "question": "HD có biên lợi nhuận hoạt động kỳ 13 tuần là bao nhiêu?",
+    "status": "SUPPORTED",
+    "reason": null,
+    "completed": 1,
+    "required": 1,
+    "citation_count": 2,
+    "task_issuers": [
+      "HD"
+    ],
+    "answer": "Biên lợi nhuận hoạt động của HD cho kỳ 2026-05-04–2026-08-02 (13 tuần): **14.29%**. Operating income: 6,839,000,000 USD [1] ÷ Net sales: 47,861,000,000 USD [2] × 100."
+  },
+  {
+    "case": "T07b",
+    "question": "Còn PG thì sao?",
+    "status": "NEEDS_CLARIFICATION",
+    "reason": "SEC_MARGIN_SOURCE_UNAVAILABLE",
+    "completed": 0,
+    "required": 1,
+    "citation_count": 0,
+    "task_issuers": [
+      "PG"
+    ],
+    "answer": "Chưa gắn được ô nguồn operating_income, revenue cùng kỳ cho PG."
+  }
+]

@@ -136,6 +136,10 @@ def automatic_real_query(snapshot,question,filters,operation='EXTRACT',use_llm=F
         reason='NO_VERIFIED_CELL_WITHIN_CANDIDATE_BUDGET'
         return _with_refinement(_response('NO_ELIGIBLE_EVIDENCE',reason,resolution=resolution,timings=timings,trace=trace),
                                 scope,ends,'NO_VERIFIED_CELL',reason)
+    if getattr(snapshot,'product_verification',False) and len(eligible)>1:
+        from app.product.sec_verified_rows import collapse_identical
+        previous_count=len(eligible);eligible=collapse_identical(eligible)
+        if len(eligible)<previous_count:trace.append(f'PRODUCT_IDENTICAL_VERIFIED_FACTS_COLLAPSED_{previous_count}')
     if len(eligible)!=1:
         reason='MULTIPLE_VERIFIED_PARENT_ROWS'
         return _with_refinement(_response('NEEDS_CLARIFICATION',reason,resolution=resolution,timings=timings,trace=trace),

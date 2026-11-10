@@ -1,0 +1,155 @@
+{
+  "primary": {
+    "api": "http://127.0.0.1:18110",
+    "workspace": "C:\\Users\\Admin\\.codex\\worktrees\\topic3-v7p\\tinyllama-fastapi\\studio_workspace\\react-product-20261028"
+  },
+  "selected": [
+    {
+      "ticker": "COST",
+      "cik": "0000909832",
+      "issuer": "COSTCO WHOLESALE CORP /NEW",
+      "accession": "0000909832-26-000051",
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "form": "10-Q",
+      "report_period": "2026-05-10",
+      "fiscal_year": 2026,
+      "fiscal_period": "Q3",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+      "raw_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+      "extraction_status": "OK",
+      "chunks": 540,
+      "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+      "ownership": "SHARED_DEMO"
+    },
+    {
+      "ticker": "HD",
+      "cik": "0000354950",
+      "issuer": "HOME DEPOT, INC.",
+      "accession": "0001628280-26-058715",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "form": "10-Q",
+      "report_period": "2026-08-02",
+      "fiscal_year": 2026,
+      "fiscal_period": "Q2",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+      "extraction_status": "OK",
+      "chunks": 608,
+      "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+      "ownership": "SHARED_DEMO"
+    },
+    {
+      "ticker": "PG",
+      "cik": "0000080424",
+      "issuer": "PROCTER & GAMBLE Co",
+      "accession": "0000080424-26-000256",
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "form": "10-Q",
+      "report_period": "2026-09-30",
+      "fiscal_year": 2027,
+      "fiscal_period": "Q1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000256/pg-20260930.htm",
+      "raw_sha256": "30904fac63dc81fec0a524c812bea5109521b9b8063f34adf13f3f50bd2a4b53",
+      "extraction_status": "OK",
+      "chunks": 633,
+      "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+      "ownership": "SHARED_DEMO"
+    },
+    {
+      "ticker": "MSFT",
+      "cik": "0000789019",
+      "issuer": "MICROSOFT CORPORATION",
+      "accession": "0001193125-25-256321",
+      "filing_id": "sec:0000789019:0001193125-25-256321",
+      "form": "10-Q",
+      "report_period": "2025-09-30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+      "chunks": 1425,
+      "raw_sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+      "library_id": "bbff5455832e6917d6fcb07e",
+      "ownership": "USER_PRODUCT",
+      "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+      "dense_ready": false,
+      "index_status": "LEXICAL_READY"
+    },
+    {
+      "ticker": "MSFT",
+      "cik": "0000789019",
+      "issuer": "MICROSOFT CORPORATION",
+      "accession": "0000950170-25-061046",
+      "filing_id": "sec:0000789019:0000950170-25-061046",
+      "form": "10-Q",
+      "report_period": "2025-03-31",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
+      "chunks": 1484,
+      "raw_sha256": "9a9093e538ddaf6b4b4426be1af7743b089be505d27520db7f6cf64f37380636",
+      "library_id": "99f6a3fafdef38c94ea30e82",
+      "ownership": "USER_PRODUCT",
+      "generation": "a6f7d8405ed4dc2ab07336353696e960c395ac7cfc72dcc008379f59a692de09",
+      "dense_ready": false,
+      "index_status": "LEXICAL_READY"
+    }
+  ],
+  "copies": [
+    {
+      "workspace": "C:\\Users\\Admin\\.codex\\worktrees\\topic3-v7p\\tinyllama-fastapi\\studio_workspace\\react-product-20261028",
+      "port": 18110,
+      "filing_id": "sec:0000789019:0001193125-25-256321",
+      "accession": "0001193125-25-256321",
+      "form": "10-Q",
+      "report_period": "2025-09-30",
+      "sha256": "1143bfbc2555c55763c548c928730b37969c91e393b695b4f8a735723ed7e066",
+      "bytes": 5597567,
+      "matches_acquisition_receipt": true,
+      "generation": "bfec66ac27e6ff0f39fed3a9789772ff8ca8541ea8cd47a7fb9e7692ee30c310",
+      "manifest_hash": "ac440d009c8a30c2655bbfb498e0e2524e3466bda4515f4775cf3a399e74fb77",
+      "status": "LEXICAL_READY",
+      "reason": "DENSE_PENDING"
+    },
+    {
+      "workspace": "C:\\Users\\Admin\\.codex\\worktrees\\topic3-v7p\\tinyllama-fastapi\\studio_workspace\\ocr-financial-v3-verified-hpg",
+      "port": 18112,
+      "filing_id": "sec:0000789019:0001193125-25-256321",
+      "accession": "0001193125-25-256321",
+      "form": "10-Q",
+      "report_period": "2025-09-30",
+      "sha256": "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+      "bytes": 5597580,
+      "matches_acquisition_receipt": true,
+      "generation": "6e153e6fc7d6768e4c9199d66a44f507b6ef2acba06d7a6a2111d20c7c9d67d4",
+      "manifest_hash": "7fa6ffb477c05346952cef4268fff82c4d33d2b53145b388b7b20943229f79d1",
+      "status": "READY",
+      "reason": null
+    }
+  ],
+  "bm25": {
+    "http": 200,
+    "results": [
+      {
+        "row_label": "Total revenue",
+        "text": "Total revenue · 77,673 · 65,585",
+        "accession": "0001193125-25-256321"
+      },
+      {
+        "row_label": "Revenue",
+        "text": "Revenue · $ · 77,673 · $ · 65,585",
+        "accession": "0001193125-25-256321"
+      },
+      {
+        "row_label": "Revenue",
+        "text": "Revenue · $ · 33,020 · $ · 28,317",
+        "accession": "0001193125-25-256321"
+      },
+      {
+        "row_label": null,
+        "text": "NOTE 11 — UNEARNED REVENUE Unearned revenue by segment was as follows: (In millions) September 30, 2025 June 30, 2025 Productivity and Business Processes $ 46,357 $ 50,567 Intelligent Cloud 12,659 14,022 More Personal Computing 2,517 2,676 Total $ 61,533 $ 67,265 Changes in unearned revenue were as follows: (In millions) Three Months Ended September 30, 2025 Balance, beginning of period $ 67,265 Deferral of revenue 44,297 Recognition of unearned revenue ( 50,029 ) Balance, end of period $ 61,533 Revenue allocated to remaining performance obligations, which includes unearned revenue and amounts that will be invoiced and recognized as revenue in future periods, was $ 398 billion as of September 30, 2025, of which $ 392 billion is related to the commercial portion of revenue. We expect to recognize approximately 40 % of our total company remaining performance obligation revenue over the next 12 months and the remainder thereafter.",
+        "accession": "0001193125-25-256321"
+      },
+      {
+        "row_label": null,
+        "text": "Segment revenue, cost of revenue, operating expenses, and operating income were as follows during the periods presented: (In millions) Three Months Ended September 30, 2025 2024 Productivity and Business Processes Revenue $ 33,020 $ 28,317 Cost of revenue 5,721 5,294 Operating expenses 6,892 6,507 Operating income $ 20,407 $ 16,516 Intelligent Cloud Revenue $ 30,897 $ 24,092 Cost of revenue 12,314 8,614 Operating expenses 5,192 4,975 Operating income $ 13,391 $ 10,503 More Personal Computing Revenue $ 13,756 $ 13,176 Cost of revenue 6,008 6,191 Operating expenses 3,585 3,452 Operating income $ 4,163 $ 3,533 Total Revenue $ 77,673 $ 65,585 Cost of revenue 24,043 20,099 Operating expenses 15,669 14,934 Operating income $ 37,961 $ 30,552 No sales to an individual customer or country other than the United States accounted for more than 10% of revenue for the three months ended September 30, 2025 or 2024. Revenue, classified by the major geographic areas in which our customers were located, was as follows: (In millions) Three Months Ended September 30, 2025 2024 United States (a) $ 40,077 $ 33,913 Other countries 37,596 31,672 Total $ 77,673 $ 65,585 (a) Includes billings to OEMs and",
+        "accession": "0001193125-25-256321"
+      }
+    ]
+  }
+}

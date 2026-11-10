@@ -1,0 +1,2 @@
+﻿id,doc,endpoint,thread,tag,question,expected,actual,outcome,values,pages,elapsed_ms,checks
+V2-53,BIDV,chat,,ARITHMETIC,Kiểm tra lợi nhuận sau thuế chưa phân phối riêng năm 2024: số đã công bố cộng điều chỉnh có bằng số trình bày lại không?,VERIFIED_ANSWER,VERIFIED_ANSWER,PASS,"[""0""]",[4],1547.88,"{""http"": true, ""status"": true, ""values"": true, ""pages"": true, ""numeric_gate"": true}"

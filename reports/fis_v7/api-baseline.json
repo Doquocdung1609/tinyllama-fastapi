@@ -1,0 +1,2123 @@
+[
+  {
+    "i": 0,
+    "question": "Trong báo cáo riêng BIDV năm 2024, tổng tài sản trước và sau điều chỉnh theo Kiểm toán Nhà nước là bao nhiêu? Mức điều chỉnh bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 6.950342999989516,
+    "test": "B01",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Trong báo cáo riêng BIDV năm 2024, tổng tài sản trước và sau điều chỉnh theo Kiểm toán Nhà nước là bao nhiêu? Mức điều chỉnh bao nhiêu?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "assets",
+        "years": [
+          "2024"
+        ],
+        "scope": "SEPARATE",
+        "period_type": "INSTANT",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "assets"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "assets",
+            "years": [
+              "2024"
+            ],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 6235.78,
+        "candidate_count": 11,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "p3-r50",
+          "box": [
+            113.16000366210938,
+            620.87451171875,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "XI. Tổng lợi nhuận trước thuế",
+          "row_id": "p5-r25",
+          "box": [
+            48.840003967285156,
+            367.96917724609375,
+            536.04248046875,
+            377.00262451171875
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 0,
+    "question": "Trong báo cáo riêng BIDV năm 2024, tổng tài sản trước và sau điều chỉnh theo Kiểm toán Nhà nước là bao nhiêu? Mức điều chỉnh bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.7551971999928355,
+    "test": "B01",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Trong báo cáo riêng BIDV năm 2024, tổng tài sản trước và sau điều chỉnh theo Kiểm toán Nhà nước là bao nhiêu? Mức điều chỉnh bao nhiêu?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "assets",
+        "years": [
+          "2024"
+        ],
+        "scope": "SEPARATE",
+        "period_type": "INSTANT",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "assets"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "assets",
+            "years": [
+              "2024"
+            ],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 303.1,
+        "candidate_count": 12,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "p3-r50",
+          "box": [
+            113.16000366210938,
+            620.87451171875,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "XI. Tổng lợi nhuận trước thuế",
+          "row_id": "p5-r25",
+          "box": [
+            48.840003967285156,
+            367.96917724609375,
+            536.04248046875,
+            377.00262451171875
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 1,
+    "question": "Khoản cho vay khách hàng trong bảng cân đối kế toán riêng BIDV thay đổi thế nào sau điều chỉnh? Phân biệt khoản cho vay và dự phòng rủi ro.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 0.96199969999725,
+    "test": "B02",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Khoản cho vay khách hàng trong bảng cân đối kế toán riêng BIDV thay đổi thế nào sau điều chỉnh? Phân biệt khoản cho vay và dự phòng rủi ro.",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [],
+        "scope": "SEPARATE",
+        "period_type": null,
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 545.16,
+        "candidate_count": 43,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "2. Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "p3-r24",
+          "box": [
+            53.63999938964844,
+            342.8345031738281,
+            538.8275756835938,
+            352.5322265625
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "VI. Cho vay khách hàng",
+          "row_id": "p3-r22",
+          "box": [
+            51.0,
+            320.634521484375,
+            538.7487182617188,
+            330.3322448730469
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 1,
+    "question": "Khoản cho vay khách hàng trong bảng cân đối kế toán riêng BIDV thay đổi thế nào sau điều chỉnh? Phân biệt khoản cho vay và dự phòng rủi ro.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.0659887999936473,
+    "test": "B02",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Khoản cho vay khách hàng trong bảng cân đối kế toán riêng BIDV thay đổi thế nào sau điều chỉnh? Phân biệt khoản cho vay và dự phòng rủi ro.",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [],
+        "scope": "SEPARATE",
+        "period_type": null,
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 438.27,
+        "candidate_count": 44,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "2. Dự phòng rủi ro cho vay khách hàng",
+          "row_id": "p3-r24",
+          "box": [
+            53.63999938964844,
+            342.8345031738281,
+            538.8275756835938,
+            352.5322265625
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "VI. Cho vay khách hàng",
+          "row_id": "p3-r22",
+          "box": [
+            51.0,
+            320.634521484375,
+            538.7487182617188,
+            330.3322448730469
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 2,
+    "question": "Thu nhập lãi thuần năm 2024 trong báo cáo riêng BIDV đã bị điều chỉnh tăng hay giảm? Hãy tính số sau điều chỉnh.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 2.9117237999889767,
+    "test": "B03",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Thu nhập lãi thuần năm 2024 trong báo cáo riêng BIDV đã bị điều chỉnh tăng hay giảm? Hãy tính số sau điều chỉnh.",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [
+          "2024"
+        ],
+        "scope": "SEPARATE",
+        "period_type": "FY",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [
+              "2024"
+            ],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 784.1,
+        "candidate_count": 32,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "I. Thu nhập lãi thuần",
+          "row_id": "p5-r9",
+          "box": [
+            51.840003967285156,
+            210.52915954589844,
+            536.04248046875,
+            219.56260681152344
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "1. Thu nhập lãi và các khoản thu nhập tương tự",
+          "row_id": "p5-r7",
+          "box": [
+            51.36000061035156,
+            189.40916442871094,
+            536.04248046875,
+            198.44261169433594
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 2,
+    "question": "Thu nhập lãi thuần năm 2024 trong báo cáo riêng BIDV đã bị điều chỉnh tăng hay giảm? Hãy tính số sau điều chỉnh.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.9134702000010293,
+    "test": "B03",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Thu nhập lãi thuần năm 2024 trong báo cáo riêng BIDV đã bị điều chỉnh tăng hay giảm? Hãy tính số sau điều chỉnh.",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [
+          "2024"
+        ],
+        "scope": "SEPARATE",
+        "period_type": "FY",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [
+              "2024"
+            ],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 440.13,
+        "candidate_count": 32,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "I. Thu nhập lãi thuần",
+          "row_id": "p5-r9",
+          "box": [
+            51.840003967285156,
+            210.52915954589844,
+            536.04248046875,
+            219.56260681152344
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "1. Thu nhập lãi và các khoản thu nhập tương tự",
+          "row_id": "p5-r7",
+          "box": [
+            51.36000061035156,
+            189.40916442871094,
+            536.04248046875,
+            198.44261169433594
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 3,
+    "question": "Trong báo cáo hợp nhất BIDV năm 2024, lãi thuần từ hoạt động dịch vụ được điều chỉnh bao nhiêu và giá trị trình bày lại là bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.0954224000015529,
+    "test": "B04",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Trong báo cáo hợp nhất BIDV năm 2024, lãi thuần từ hoạt động dịch vụ được điều chỉnh bao nhiêu và giá trị trình bày lại là bao nhiêu?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "services_net_sales",
+        "years": [
+          "2024"
+        ],
+        "scope": "CONSOLIDATED",
+        "period_type": "FY",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "services_net_sales"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 686.59,
+        "candidate_count": 44,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "II. Lãi thuần từ hoạt động dịch vụ",
+          "row_id": "p8-r12",
+          "box": [
+            55.560001373291016,
+            238.54150390625,
+            547.3233642578125,
+            248.10630798339844
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "VI. Lãi thuần từ hoạt động khác",
+          "row_id": "p8-r18",
+          "box": [
+            54.12000274658203,
+            304.781494140625,
+            547.3233642578125,
+            314.3463134765625
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 3,
+    "question": "Trong báo cáo hợp nhất BIDV năm 2024, lãi thuần từ hoạt động dịch vụ được điều chỉnh bao nhiêu và giá trị trình bày lại là bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.861527400003979,
+    "test": "B04",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Trong báo cáo hợp nhất BIDV năm 2024, lãi thuần từ hoạt động dịch vụ được điều chỉnh bao nhiêu và giá trị trình bày lại là bao nhiêu?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "services_net_sales",
+        "years": [
+          "2024"
+        ],
+        "scope": "CONSOLIDATED",
+        "period_type": "FY",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "services_net_sales"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "services_net_sales",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 386.92,
+        "candidate_count": 45,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "II. Lãi thuần từ hoạt động dịch vụ",
+          "row_id": "p8-r12",
+          "box": [
+            55.560001373291016,
+            238.54150390625,
+            547.3233642578125,
+            248.10630798339844
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "VI. Lãi thuần từ hoạt động khác",
+          "row_id": "p8-r18",
+          "box": [
+            54.12000274658203,
+            304.781494140625,
+            547.3233642578125,
+            314.3463134765625
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 4,
+    "question": "Lợi nhuận sau thuế hợp nhất BIDV năm 2024 khác lợi nhuận thuần thuộc cổ đông Ngân hàng bao nhiêu sau điều chỉnh?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.797402800002601,
+    "test": "B05",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Lợi nhuận sau thuế hợp nhất BIDV năm 2024 khác lợi nhuận thuần thuộc cổ đông Ngân hàng bao nhiêu sau điều chỉnh?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "net_income",
+        "years": [
+          "2024"
+        ],
+        "scope": "CONSOLIDATED",
+        "period_type": "FY",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "net_income"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "net_income",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 1065.08,
+        "candidate_count": 20,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p7-r25",
+          "box": [
+            59.159996032714844,
+            310.19451904296875,
+            545.3453369140625,
+            319.8922424316406
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+          "row_id": "p8-r29",
+          "box": [
+            50.87999725341797,
+            414.2214660644531,
+            547.3233032226562,
+            423.7862854003906
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 4,
+    "question": "Lợi nhuận sau thuế hợp nhất BIDV năm 2024 khác lợi nhuận thuần thuộc cổ đông Ngân hàng bao nhiêu sau điều chỉnh?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.4456588000030024,
+    "test": "B05",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Lợi nhuận sau thuế hợp nhất BIDV năm 2024 khác lợi nhuận thuần thuộc cổ đông Ngân hàng bao nhiêu sau điều chỉnh?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "net_income",
+        "years": [
+          "2024"
+        ],
+        "scope": "CONSOLIDATED",
+        "period_type": "FY",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "net_income"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "net_income",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 539.24,
+        "candidate_count": 22,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p7-r25",
+          "box": [
+            59.159996032714844,
+            310.19451904296875,
+            545.3453369140625,
+            319.8922424316406
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+          "row_id": "p8-r29",
+          "box": [
+            50.87999725341797,
+            414.2214660644531,
+            547.3233032226562,
+            423.7862854003906
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 5,
+    "question": "Tổng tài sản sau điều chỉnh của BIDV trong báo cáo riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.3763813999976264,
+    "test": "B06",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Tổng tài sản sau điều chỉnh của BIDV trong báo cáo riêng và hợp nhất khác nhau bao nhiêu?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "assets",
+        "years": [],
+        "scope": null,
+        "period_type": "INSTANT",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "assets"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "assets",
+            "years": [],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 700.5,
+        "candidate_count": 31,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "p3-r50",
+          "box": [
+            113.16000366210938,
+            620.87451171875,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 6,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "p6-r48",
+          "box": [
+            129.47999572753906,
+            590.7545166015625,
+            545.3682861328125,
+            600.9321899414062
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 5,
+    "question": "Tổng tài sản sau điều chỉnh của BIDV trong báo cáo riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.2360362999897916,
+    "test": "B06",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Tổng tài sản sau điều chỉnh của BIDV trong báo cáo riêng và hợp nhất khác nhau bao nhiêu?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "assets",
+        "years": [],
+        "scope": null,
+        "period_type": "INSTANT",
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "assets"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "assets",
+            "years": [],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 505.69,
+        "candidate_count": 31,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 3,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "p3-r50",
+          "box": [
+            113.16000366210938,
+            620.87451171875,
+            538.7487182617188,
+            630.9321899414062
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 6,
+          "row_label": "TỔNG TÀI SẢN",
+          "row_id": "p6-r48",
+          "box": [
+            129.47999572753906,
+            590.7545166015625,
+            545.3682861328125,
+            600.9321899414062
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 6,
+    "question": "Lãi thuần từ hoạt động khác trong báo cáo riêng BIDV năm 2024 được điều chỉnh như thế nào?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.3913882000051672,
+    "test": "B07",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Lãi thuần từ hoạt động khác trong báo cáo riêng BIDV năm 2024 được điều chỉnh như thế nào?",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [
+          "2024"
+        ],
+        "scope": "SEPARATE",
+        "period_type": "FY",
+        "basis": "ADJUSTMENT",
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [
+              "2024"
+            ],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 766.61,
+        "candidate_count": 41,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "VI. Lãi thuần từ hoạt động khác",
+          "row_id": "p5-r18",
+          "box": [
+            48.959999084472656,
+            305.5691833496094,
+            536.04248046875,
+            314.6026306152344
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "III. Lãi thuần từ hoạt động kinh doanh ngoại hối",
+          "row_id": "p5-r13",
+          "box": [
+            48.720001220703125,
+            252.76918029785156,
+            536.04248046875,
+            261.8026428222656
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 6,
+    "question": "Lãi thuần từ hoạt động khác trong báo cáo riêng BIDV năm 2024 được điều chỉnh như thế nào?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.0381751999957487,
+    "test": "B07",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Lãi thuần từ hoạt động khác trong báo cáo riêng BIDV năm 2024 được điều chỉnh như thế nào?",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [
+          "2024"
+        ],
+        "scope": "SEPARATE",
+        "period_type": "FY",
+        "basis": "ADJUSTMENT",
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [
+              "2024"
+            ],
+            "scope": "SEPARATE",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 450.59,
+        "candidate_count": 41,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "VI. Lãi thuần từ hoạt động khác",
+          "row_id": "p5-r18",
+          "box": [
+            48.959999084472656,
+            305.5691833496094,
+            536.04248046875,
+            314.6026306152344
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "III. Lãi thuần từ hoạt động kinh doanh ngoại hối",
+          "row_id": "p5-r13",
+          "box": [
+            48.720001220703125,
+            252.76918029785156,
+            536.04248046875,
+            261.8026428222656
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 7,
+    "question": "Hãy kiểm kê đủ tám trang PDF BIDV: phân biệt công bố thông tin, bảng cân đối kế toán riêng, kết quả kinh doanh riêng, bảng hợp nhất và kết quả kinh doanh hợp nhất.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.6023477999988245,
+    "test": "B08",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Hãy kiểm kê đủ tám trang PDF BIDV: phân biệt công bố thông tin, bảng cân đối kế toán riêng, kết quả kinh doanh riêng, bảng hợp nhất và kết quả kinh doanh hợp nhất.",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [],
+        "scope": null,
+        "period_type": null,
+        "basis": null,
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 1005.4,
+        "candidate_count": 53,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH HỢP NHẤT Năm",
+          "row_id": "p8-r2",
+          "box": [
+            279.4800109863281,
+            95.3814926147461,
+            315.2435607910156,
+            104.94630432128906
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH RIÊNG NGÂN HÀNG Năm",
+          "row_id": "p5-r2",
+          "box": [
+            270.8399963378906,
+            111.47450256347656,
+            307.3443603515625,
+            121.1722412109375
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 7,
+    "question": "Hãy kiểm kê đủ tám trang PDF BIDV: phân biệt công bố thông tin, bảng cân đối kế toán riêng, kết quả kinh doanh riêng, bảng hợp nhất và kết quả kinh doanh hợp nhất.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.9048476000025403,
+    "test": "B08",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_METRIC_PARSER",
+      "query_plan": {
+        "raw_text": "Hãy kiểm kê đủ tám trang PDF BIDV: phân biệt công bố thông tin, bảng cân đối kế toán riêng, kết quả kinh doanh riêng, bảng hợp nhất và kết quả kinh doanh hợp nhất.",
+        "intent": "CLARIFY",
+        "metric": null,
+        "years": [],
+        "scope": null,
+        "period_type": null,
+        "basis": null,
+        "operation": "EXTRACT",
+        "metrics": [],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": null,
+            "years": [],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "navigation",
+            "expected_source_class": "SOURCE_LOCATION"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 376.88,
+        "candidate_count": 53,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH HỢP NHẤT Năm",
+          "row_id": "p8-r2",
+          "box": [
+            279.4800109863281,
+            95.3814926147461,
+            315.2435607910156,
+            104.94630432128906
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH RIÊNG NGÂN HÀNG Năm",
+          "row_id": "p5-r2",
+          "box": [
+            270.8399963378906,
+            111.47450256347656,
+            307.3443603515625,
+            121.1722412109375
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 8,
+    "question": "Mức điều chỉnh lợi nhuận sau thuế chưa phân phối của BIDV riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a"
+    ],
+    "http": 200,
+    "seconds": 1.3475037000025623,
+    "test": "B09",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Bạn muốn kỳ nào và phạm vi riêng hay hợp nhất? Cần xác định rõ để chọn đúng ô nguồn. [1][2]",
+      "values": [],
+      "reason": "SELECT_FINANCIAL_YEAR",
+      "query_plan": {
+        "raw_text": "Mức điều chỉnh lợi nhuận sau thuế chưa phân phối của BIDV riêng và hợp nhất khác nhau bao nhiêu?",
+        "intent": "RESTATEMENT_COMPARE",
+        "metric": "retained_earnings",
+        "years": [],
+        "scope": null,
+        "period_type": "INSTANT",
+        "basis": "ADJUSTMENT",
+        "operation": "SCOPE_DIFFERENCE",
+        "metrics": [
+          "retained_earnings"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "retained_earnings",
+            "years": [],
+            "scope": null,
+            "operation": "SCOPE_DIFFERENCE",
+            "outputs": [
+              "amount",
+              "source_operands",
+              "calculation"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 760.11,
+        "candidate_count": 33,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p4-r22",
+          "box": [
+            53.63999938964844,
+            287.5145263671875,
+            538.7257690429688,
+            297.2122497558594
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p7-r25",
+          "box": [
+            59.159996032714844,
+            310.19451904296875,
+            545.3453369140625,
+            319.8922424316406
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 8,
+    "question": "Mức điều chỉnh lợi nhuận sau thuế chưa phân phối của BIDV riêng và hợp nhất khác nhau bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.9851438000041526,
+    "test": "B09",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Bạn muốn kỳ nào và phạm vi riêng hay hợp nhất? Cần xác định rõ để chọn đúng ô nguồn. [1][2]",
+      "values": [],
+      "reason": "SELECT_FINANCIAL_YEAR",
+      "query_plan": {
+        "raw_text": "Mức điều chỉnh lợi nhuận sau thuế chưa phân phối của BIDV riêng và hợp nhất khác nhau bao nhiêu?",
+        "intent": "RESTATEMENT_COMPARE",
+        "metric": "retained_earnings",
+        "years": [],
+        "scope": null,
+        "period_type": "INSTANT",
+        "basis": "ADJUSTMENT",
+        "operation": "SCOPE_DIFFERENCE",
+        "metrics": [
+          "retained_earnings"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "retained_earnings",
+            "years": [],
+            "scope": null,
+            "operation": "SCOPE_DIFFERENCE",
+            "outputs": [
+              "amount",
+              "source_operands",
+              "calculation"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 370.63,
+        "candidate_count": 33,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p4-r22",
+          "box": [
+            53.63999938964844,
+            287.5145263671875,
+            538.7257690429688,
+            297.2122497558594
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p7-r25",
+          "box": [
+            59.159996032714844,
+            310.19451904296875,
+            545.3453369140625,
+            319.8922424316406
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 9,
+    "question": "So sánh tổng tài sản của BIDV theo báo cáo riêng năm 2024 sau điều chỉnh và Hòa Phát theo báo cáo riêng cuối năm 2025. Quy đổi về tỷ đồng, tính chênh lệch và cho biết BIDV lớn hơn bao nhiêu lần.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.9523933000018587,
+    "test": "C01",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Tôi đối chiếu từng PDF theo kỳ, đơn vị và phạm vi của chính tài liệu. Chỉ tính chênh lệch giữa các file khi xác nhận được các điều kiện so sánh.\n\n### 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.\n\n### 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+      "values": [],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": []
+    }
+  },
+  {
+    "i": 10,
+    "question": "So sánh quy mô vốn của BIDV và Hòa Phát. Phân biệt chỉ tiêu “Vốn và các quỹ” của BIDV với “Vốn chủ sở hữu” và “Vốn góp của chủ sở hữu” của Hòa Phát. Những chỉ tiêu nào không nên coi là đồng nhất?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.8823747999995248,
+    "test": "C02",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Tôi đối chiếu từng PDF theo kỳ, đơn vị và phạm vi của chính tài liệu. Chỉ tính chênh lệch giữa các file khi xác nhận được các điều kiện so sánh.\n\n### 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.\n\n### 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+      "values": [],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": []
+    }
+  },
+  {
+    "i": 11,
+    "question": "Tính tỷ lệ nợ phải trả trên tổng tài sản của Hòa Phát và BIDV báo cáo riêng. Với BIDV, nếu không có dòng tổng nợ riêng, hãy suy ra từ phương trình kế toán và ghi rõ đó là giá trị tính toán. Có nên dùng hai tỷ lệ để khẳng định doanh nghiệp nào an toàn hơn không?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.7167559000081383,
+    "test": "C03",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Tôi đối chiếu từng PDF theo kỳ, đơn vị và phạm vi của chính tài liệu. Chỉ tính chênh lệch giữa các file khi xác nhận được các điều kiện so sánh.\n\n### 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.\n\n### 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+      "values": [],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": []
+    }
+  },
+  {
+    "i": 12,
+    "question": "So sánh lợi nhuận sau thuế năm 2024 sau điều chỉnh của BIDV riêng với lợi nhuận sau thuế quý IV/2025 của Hòa Phát riêng. Đổi về cùng đơn vị nhưng giải thích tại sao không thể gọi chênh lệch này là tăng trưởng.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.6072713999892585,
+    "test": "C04",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Tôi đối chiếu từng PDF theo kỳ, đơn vị và phạm vi của chính tài liệu. Chỉ tính chênh lệch giữa các file khi xác nhận được các điều kiện so sánh.\n\n### 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.\n\n### 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+      "values": [],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": []
+    }
+  },
+  {
+    "i": 13,
+    "question": "Hãy chỉ ra những điểm khác biệt về phạm vi báo cáo, kỳ kế toán, đơn vị số liệu, loại báo cáo và phương pháp trích xuất dữ liệu giữa BIDV và Hòa Phát trước khi thực hiện bất kỳ phép so sánh nào.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.50857299999916,
+    "test": "C05",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Tôi đối chiếu từng PDF theo kỳ, đơn vị và phạm vi của chính tài liệu. Chỉ tính chênh lệch giữa các file khi xác nhận được các điều kiện so sánh.\n\n### 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.\n\n### 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+      "values": [],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": []
+    }
+  },
+  {
+    "i": 14,
+    "question": "Tôi chỉ chọn PDF BIDV. Hãy cho biết tổng tài sản của công ty mẹ Hòa Phát tại ngày 31/12/2025.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.5066141999996034,
+    "test": "C06",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Tôi đối chiếu từng PDF theo kỳ, đơn vị và phạm vi của chính tài liệu. Chỉ tính chênh lệch giữa các file khi xác nhận được các điều kiện so sánh.\n\n### 20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.\n\n### 20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf\nDoanh nghiệp trong câu hỏi chưa khớp danh tính được xác nhận từ nội dung tài liệu.",
+      "values": [],
+      "source_document_ids": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a",
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "citations": []
+    }
+  },
+  {
+    "i": 15,
+    "question": "Theo PDF điều chỉnh BIDV tôi đang chọn, lợi nhuận sau thuế quý IV/2025 của BIDV là bao nhiêu?",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 1.7110875999933342,
+    "test": "C07",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Theo PDF điều chỉnh BIDV tôi đang chọn, lợi nhuận sau thuế quý IV/2025 của BIDV là bao nhiêu?",
+        "intent": "EXTRACT_VALUE",
+        "metric": "net_income",
+        "years": [
+          "2025"
+        ],
+        "scope": null,
+        "period_type": "3M_Q4",
+        "basis": "ADJUSTMENT",
+        "operation": "EXTRACT",
+        "metrics": [
+          "net_income"
+        ],
+        "requested_unit": null,
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "net_income",
+            "years": [
+              "2025"
+            ],
+            "scope": null,
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL"
+          }
+        ],
+        "proposed_amount": null,
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 928.13,
+        "candidate_count": 29,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 4,
+          "row_label": "3. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p4-r22",
+          "box": [
+            53.63999938964844,
+            287.5145263671875,
+            538.7257690429688,
+            297.2122497558594
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 5,
+          "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+          "row_id": "p5-r29",
+          "box": [
+            45.720001220703125,
+            410.2091979980469,
+            536.04248046875,
+            419.2426452636719
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "SEPARATE",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  },
+  {
+    "i": 16,
+    "question": "Có đúng lợi nhuận sau thuế hợp nhất BIDV 2024 trình bày lại là 25.212.049 triệu đồng không? Hãy xác nhận.",
+    "documents": [
+      "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "4a92af827aaf1e73e017544d0ff20d0d"
+    ],
+    "http": 200,
+    "seconds": 0.9975737000058871,
+    "test": "C08",
+    "reply": {
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "PDF có lớp chữ gốc, nhưng bộ phân tích chưa hỗ trợ chỉ tiêu hoặc cấu trúc ô này; đây không phải lỗi OCR. [1][2]",
+      "values": [],
+      "reason": "UNSUPPORTED_SOURCE_CELL_LAYOUT",
+      "query_plan": {
+        "raw_text": "Có đúng lợi nhuận sau thuế hợp nhất BIDV 2024 trình bày lại là 25.212.049 triệu đồng không? Hãy xác nhận.",
+        "intent": "EXTRACT_VALUE",
+        "metric": "net_income",
+        "years": [
+          "2024"
+        ],
+        "scope": "CONSOLIDATED",
+        "period_type": null,
+        "basis": "RESTATED",
+        "operation": "EXTRACT",
+        "metrics": [
+          "net_income"
+        ],
+        "requested_unit": "TRIEU_VND",
+        "section": null,
+        "language": "vi",
+        "inherited_slots": [],
+        "requested_claims": [
+          {
+            "question_slot_id": "q1",
+            "metric": "net_income",
+            "years": [
+              "2024"
+            ],
+            "scope": "CONSOLIDATED",
+            "operation": "EXTRACT",
+            "outputs": [
+              "amount",
+              "confirmation"
+            ],
+            "kind": "numeric",
+            "expected_source_class": "NATIVE_CELL",
+            "proposed_amount": "25212049"
+          }
+        ],
+        "proposed_amount": "25212049",
+        "version": "FINANCIAL_QUESTION_PLAN_V2"
+      },
+      "retrieval_trace": {
+        "engine_version": "FAITH_R_PRODUCT_V1",
+        "algorithm_executed": "FAITH_R_PRODUCT_V1_PDF_ROW_UNION_RERANK",
+        "latency_ms": 421.72,
+        "candidate_count": 24,
+        "generation": "3f4fcddeebb7cf3dba7aa58360faa71719f6f284ed0882f7aca924251adfd84d"
+      },
+      "citations": [
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 7,
+          "row_label": "4. Lợi nhuận sau thuế chưa phân phối",
+          "row_id": "p7-r25",
+          "box": [
+            59.159996032714844,
+            310.19451904296875,
+            545.3453369140625,
+            319.8922424316406
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "NATIVE_CELL_VERIFIED"
+        },
+        {
+          "document_id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "page": 8,
+          "row_label": "XIII. Lợi nhuận sau thuế TNDN",
+          "row_id": "p8-r29",
+          "box": [
+            50.87999725341797,
+            414.2214660644531,
+            547.3233032226562,
+            423.7862854003906
+          ],
+          "column_id": null,
+          "period": "2024",
+          "unit": "TRIEU_VND",
+          "statement_scope": "CONSOLIDATED",
+          "extraction_method": "NATIVE",
+          "verification_status": "SOURCE_ROW_UNREVIEWED"
+        }
+      ]
+    }
+  }
+]

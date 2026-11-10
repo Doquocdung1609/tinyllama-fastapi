@@ -1,0 +1,1441 @@
+{
+  "version": "v7p-a7-live-http/v1",
+  "source": {
+    "issuer": "HOME DEPOT, INC.",
+    "accession": "0001628280-26-058715",
+    "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+    "normalized_sha256": "5ddaba62e6ddf3ddb6a10ca6229322b2d984ef109a074e1540a7c23bdf88a84a",
+    "source_relative_path": "raw\\0000354950\\0001628280-26-058715\\hd-20260802.htm",
+    "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+    "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0"
+  },
+  "control": {
+    "version": "registered-sec-viewer/v1",
+    "status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+    "dataset_id": "research-sec-v1",
+    "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+    "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+    "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+    "normalized_sha256": "5ddaba62e6ddf3ddb6a10ca6229322b2d984ef109a074e1540a7c23bdf88a84a",
+    "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+    "filing_id": "sec:0000354950:0001628280-26-058715",
+    "issuer": "HOME DEPOT, INC.",
+    "cik": "0000354950",
+    "accession": "0001628280-26-058715",
+    "form": "10-Q",
+    "report_period": "2026-08-02",
+    "official_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+    "rendering": "DERIVED_TEXT_TABLE_FROM_VERIFIED_ORIGINAL_BYTES_NOT_ORIGINAL_HTML",
+    "external_access": "NOT_CHECKED_BY_LOCAL_VIEWER",
+    "warnings": [
+      "PARTIAL_TABLE_EXTRACTION"
+    ],
+    "locator": {
+      "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]/tr[15]/td[3]",
+      "table_id": "table_483d3ac2b60916e1e4c8d837",
+      "row_index": 14,
+      "column_index": 4,
+      "parent_location": {
+        "section": "(Unaudited)",
+        "html_anchor": null,
+        "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]",
+        "table_id": "table_483d3ac2b60916e1e4c8d837",
+        "row_index": 14,
+        "column_index": null,
+        "text_start": null,
+        "text_end": null,
+        "pdf_page": null,
+        "bbox": null
+      }
+    },
+    "selected_cell": {
+      "contract_version": "real-sec-cell-observation/v1",
+      "source_status": "VERIFIED_SOURCE_CELL",
+      "dataset_id": "research-sec-v1",
+      "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+      "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "cik": "0000354950",
+      "accession": "0001628280-26-058715",
+      "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+      "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+      "parent_payload_hash": "0ad23aead108f6effd06be7c460523bd14a792cdee808ae1c53b93b9ef3d308a",
+      "table_id": "table_483d3ac2b60916e1e4c8d837",
+      "row": 14,
+      "column": 4,
+      "row_label": "Total assets",
+      "raw_value": "109,384",
+      "value": "109384",
+      "unit": "USD",
+      "display_unit_header": "in millions, except per share data",
+      "multiplier": "1000000",
+      "effective_value": "109384000000",
+      "period_kind": "INSTANT",
+      "period_start": null,
+      "period_end": "2026-08-02",
+      "period_months": null,
+      "header_path": [
+        "August 2, 2026"
+      ],
+      "fact_name": "us-gaap:Assets",
+      "fact_context_ref": "c-3",
+      "fact_unit_ref": "usd",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+      "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]/tr[15]/td[3]",
+      "footnotes": [
+        "See accompanying notes to consolidated financial statements."
+      ],
+      "warnings": [
+        "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+      ],
+      "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+    },
+    "table": {
+      "id": "table_483d3ac2b60916e1e4c8d837",
+      "caption": "CONSOLIDATED BALANCE SHEETS",
+      "statement": "CONSOLIDATED BALANCE SHEETS",
+      "section": "(Unaudited)",
+      "columns": [
+        "in millions, except per share data",
+        "in millions, except per share data",
+        "in millions, except per share data",
+        "August 2, 2026",
+        "August 2, 2026",
+        "August 2, 2026",
+        "",
+        "",
+        "",
+        "February 1, 2026",
+        "February 1, 2026",
+        "February 1, 2026"
+      ],
+      "rows": [
+        {
+          "index": 0,
+          "cells": [
+            {
+              "column": 0,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 1,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 2,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 4,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 7,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 8,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 10,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "cells": [
+            {
+              "column": 0,
+              "text": "in millions, except per share data",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "August 2, 2026",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "February 1, 2026",
+              "colspan": 3,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Net property and equipment",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "28,147",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "28,021",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Operating lease right-of-use assets",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "9,300",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "9,204",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Goodwill",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "22,899",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "22,344",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Intangible assets, net",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "10,482",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "10,329",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Other assets",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "836",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "806",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Total assets",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "$",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 4,
+              "text": "109,384",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "$",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 10,
+              "text": "105,095",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "cells": [
+            {
+              "column": 0,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Liabilities and Stockholders' Equity",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Current liabilities:",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Short-term debt",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "$",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 4,
+              "text": "4,248",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "$",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 10,
+              "text": "4,464",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "cells": [
+            {
+              "column": 0,
+              "text": "Accounts payable",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 3,
+              "text": "13,585",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 5,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "column": 6,
+              "text": "",
+              "colspan": 3,
+              "rowspan": 1
+            },
+            {
+              "column": 9,
+              "text": "11,491",
+              "colspan": 2,
+              "rowspan": 1
+            },
+            {
+              "column": 11,
+              "text": "",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        }
+      ],
+      "selected_row": 14,
+      "header_row_count": 2,
+      "total_source_rows": 41,
+      "context_is_bounded": true,
+      "warnings": [],
+      "footnotes": [
+        "See accompanying notes to consolidated financial statements."
+      ]
+    },
+    "excerpt": "TABLE table_483d3ac2b60916e1e4c8d837\nCompany: HOME DEPOT, INC.\nCIK: 0000354950; Accession: 0001628280-26-058715; Form: 10-Q\nStatement: CONSOLIDATED BALANCE SHEETS\nSection: (Unaudited)\nCaption: CONSOLIDATED BALANCE SHEETS\nColumns: in millions, except per share data | in millions, except per share data | in millions, except per share data | August 2, 2026 | August 2, 2026 | August 2, 2026 |  |  |  | February 1, 2026 | February 1, 2026 | February 1, 2026\nRow 14: Total assets | Total assets | Total assets | $ | 109,384 |  |  |  |  | $ | 105,095 | \nRow period/group: NONE\nUnits: shares, usd, millions\nReporting periods: August 2, 2026, February 1, 2026\nUnit context: UNKNOWN\nNumeric attributes: [{\"column\": 4, \"unitref\": \"usd\", \"contextref\": \"c-3\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"109,384\"}, {\"column\": 10, \"unitref\": \"usd\", \"contextref\": \"c-4\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"105,095\"}]\nFootnotes: See accompanying notes to consolidated financial statements.\nContinuation of: NONE\nSource: https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm\nLocator: /document[1]/html[1]/body[1]/div[65]/table[1]; source row 14"
+  },
+  "cases": [
+    {
+      "case": "SEC-01",
+      "http": 200,
+      "pass": true,
+      "response": {
+        "version": "registered-sec-viewer/v1",
+        "status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "dataset_id": "research-sec-v1",
+        "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+        "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+        "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+        "normalized_sha256": "5ddaba62e6ddf3ddb6a10ca6229322b2d984ef109a074e1540a7c23bdf88a84a",
+        "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+        "filing_id": "sec:0000354950:0001628280-26-058715",
+        "issuer": "HOME DEPOT, INC.",
+        "cik": "0000354950",
+        "accession": "0001628280-26-058715",
+        "form": "10-Q",
+        "report_period": "2026-08-02",
+        "official_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "rendering": "DERIVED_TEXT_TABLE_FROM_VERIFIED_ORIGINAL_BYTES_NOT_ORIGINAL_HTML",
+        "external_access": "NOT_CHECKED_BY_LOCAL_VIEWER",
+        "warnings": [
+          "PARTIAL_TABLE_EXTRACTION"
+        ],
+        "locator": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]/tr[15]/td[3]",
+          "table_id": "table_483d3ac2b60916e1e4c8d837",
+          "row_index": 14,
+          "column_index": 4,
+          "parent_location": {
+            "section": "(Unaudited)",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]",
+            "table_id": "table_483d3ac2b60916e1e4c8d837",
+            "row_index": 14,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "selected_cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "cik": "0000354950",
+          "accession": "0001628280-26-058715",
+          "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+          "parent_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+          "parent_payload_hash": "0ad23aead108f6effd06be7c460523bd14a792cdee808ae1c53b93b9ef3d308a",
+          "table_id": "table_483d3ac2b60916e1e4c8d837",
+          "row": 14,
+          "column": 4,
+          "row_label": "Total assets",
+          "raw_value": "109,384",
+          "value": "109384",
+          "unit": "USD",
+          "display_unit_header": "in millions, except per share data",
+          "multiplier": "1000000",
+          "effective_value": "109384000000",
+          "period_kind": "INSTANT",
+          "period_start": null,
+          "period_end": "2026-08-02",
+          "period_months": null,
+          "header_path": [
+            "August 2, 2026"
+          ],
+          "fact_name": "us-gaap:Assets",
+          "fact_context_ref": "c-3",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[65]/table[1]/tr[15]/td[3]",
+          "footnotes": [
+            "See accompanying notes to consolidated financial statements."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        },
+        "table": {
+          "id": "table_483d3ac2b60916e1e4c8d837",
+          "caption": "CONSOLIDATED BALANCE SHEETS",
+          "statement": "CONSOLIDATED BALANCE SHEETS",
+          "section": "(Unaudited)",
+          "columns": [
+            "in millions, except per share data",
+            "in millions, except per share data",
+            "in millions, except per share data",
+            "August 2, 2026",
+            "August 2, 2026",
+            "August 2, 2026",
+            "",
+            "",
+            "",
+            "February 1, 2026",
+            "February 1, 2026",
+            "February 1, 2026"
+          ],
+          "rows": [
+            {
+              "index": 0,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 1,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 2,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 4,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 7,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 8,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 10,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "in millions, except per share data",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "August 2, 2026",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "February 1, 2026",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 9,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Net property and equipment",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "28,147",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "28,021",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 10,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Operating lease right-of-use assets",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "9,300",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "9,204",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 11,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Goodwill",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "22,899",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "22,344",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 12,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Intangible assets, net",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "10,482",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "10,329",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 13,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Other assets",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "836",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "806",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 14,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Total assets",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "$",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 4,
+                  "text": "109,384",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "$",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 10,
+                  "text": "105,095",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 15,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 16,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Liabilities and Stockholders' Equity",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 17,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Current liabilities:",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 18,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Short-term debt",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "$",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 4,
+                  "text": "4,248",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "$",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 10,
+                  "text": "4,464",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            },
+            {
+              "index": 19,
+              "cells": [
+                {
+                  "column": 0,
+                  "text": "Accounts payable",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 3,
+                  "text": "13,585",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 5,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                },
+                {
+                  "column": 6,
+                  "text": "",
+                  "colspan": 3,
+                  "rowspan": 1
+                },
+                {
+                  "column": 9,
+                  "text": "11,491",
+                  "colspan": 2,
+                  "rowspan": 1
+                },
+                {
+                  "column": 11,
+                  "text": "",
+                  "colspan": 1,
+                  "rowspan": 1
+                }
+              ]
+            }
+          ],
+          "selected_row": 14,
+          "header_row_count": 2,
+          "total_source_rows": 41,
+          "context_is_bounded": true,
+          "warnings": [],
+          "footnotes": [
+            "See accompanying notes to consolidated financial statements."
+          ]
+        },
+        "excerpt": "TABLE table_483d3ac2b60916e1e4c8d837\nCompany: HOME DEPOT, INC.\nCIK: 0000354950; Accession: 0001628280-26-058715; Form: 10-Q\nStatement: CONSOLIDATED BALANCE SHEETS\nSection: (Unaudited)\nCaption: CONSOLIDATED BALANCE SHEETS\nColumns: in millions, except per share data | in millions, except per share data | in millions, except per share data | August 2, 2026 | August 2, 2026 | August 2, 2026 |  |  |  | February 1, 2026 | February 1, 2026 | February 1, 2026\nRow 14: Total assets | Total assets | Total assets | $ | 109,384 |  |  |  |  | $ | 105,095 | \nRow period/group: NONE\nUnits: shares, usd, millions\nReporting periods: August 2, 2026, February 1, 2026\nUnit context: UNKNOWN\nNumeric attributes: [{\"column\": 4, \"unitref\": \"usd\", \"contextref\": \"c-3\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"109,384\"}, {\"column\": 10, \"unitref\": \"usd\", \"contextref\": \"c-4\", \"name\": \"us-gaap:Assets\", \"format\": \"ixt:num-dot-decimal\", \"scale\": \"6\", \"source_text\": \"105,095\"}]\nFootnotes: See accompanying notes to consolidated financial statements.\nContinuation of: NONE\nSource: https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm\nLocator: /document[1]/html[1]/body[1]/div[65]/table[1]; source row 14"
+      }
+    },
+    {
+      "case": "CLONE_UNTAMPERED_CONTROL",
+      "http": 200,
+      "response": {
+        "status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1"
+      },
+      "pass": true
+    },
+    {
+      "case": "SEC-03_RAW_TAMPER",
+      "http": 409,
+      "response": {
+        "detail": {
+          "code": "SOURCE_HASH_MISMATCH"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "RESTORED_CONTROL",
+      "http": 200,
+      "response": {
+        "status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1"
+      },
+      "pass": true
+    },
+    {
+      "case": "SEC-04_WRONG_PERIOD",
+      "http": 409,
+      "response": {
+        "detail": {
+          "code": "SOURCE_LOCATOR_UNRESOLVED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "SEC-05_WRONG_LOCATOR",
+      "http": 409,
+      "response": {
+        "detail": {
+          "code": "SOURCE_LOCATOR_UNRESOLVED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "SEC-04_WRONG_FILING",
+      "http": 409,
+      "response": {
+        "detail": {
+          "code": "SOURCE_LOCATOR_UNRESOLVED"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "SEC-06_SOURCE_MISSING",
+      "http": 409,
+      "response": {
+        "detail": {
+          "code": "SOURCE_BYTES_NOT_AVAILABLE"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "FAILED_GENERATION",
+      "http": 409,
+      "response": {
+        "detail": {
+          "code": "SOURCE_GENERATION_MISMATCH"
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "ARBITRARY_PATH",
+      "http": 422,
+      "pass": true
+    },
+    {
+      "case": "ARBITRARY_URL",
+      "http": 422,
+      "pass": true
+    },
+    {
+      "case": "OVERSIZE",
+      "http": 422,
+      "pass": true
+    },
+    {
+      "case": "FINAL_RESTORED_CONTROL",
+      "http": 200,
+      "response": {
+        "status": "VERIFIED_LOCAL_SEC_SNAPSHOT",
+        "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1"
+      },
+      "pass": true
+    }
+  ],
+  "copied_bytes": 62651474,
+  "fault_environment": "new bounded clone; isolated Uvicorn18112; no original source mutation",
+  "passed": 13,
+  "original_source_unchanged": true
+}

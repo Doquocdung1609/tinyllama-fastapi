@@ -1,0 +1,18 @@
+import {chromium} from '@playwright/test'
+import fs from 'node:fs/promises'
+const root=new URL('../../',import.meta.url)
+const token=(await fs.readFile(new URL('tmp/studio-runtime/access-token.txt',root),'utf8')).replace(/^\uFEFF/,'').trim()
+const out=new URL('reports/faith_r_product_v2/',root);await fs.mkdir(out,{recursive:true})
+const browser=await chromium.launch({headless:true,executablePath:'C:/Users/Admin/AppData/Local/ms-playwright/chromium-1217/chrome-win64/chrome.exe'});const page=await browser.newPage({viewport:{width:1366,height:768}})
+await page.addInitScript(token=>sessionStorage.setItem('studio-token',token),token)
+const errors=[];page.on('pageerror',e=>errors.push(e.message))
+await page.goto('http://127.0.0.1:18110/app/#/analysis')
+await page.getByLabel('Tài liệu trợ lý',{exact:true}).selectOption('4a92af827aaf1e73e017544d0ff20d0d')
+await page.getByLabel('Câu hỏi trợ lý',{exact:true}).fill('Đây là báo cáo tài chính riêng công ty mẹ hay báo cáo hợp nhất? Hãy dẫn trang nguồn.')
+await page.getByRole('button',{name:'Gửi câu hỏi',exact:true}).click()
+await page.locator('.message-assistant').waitFor({timeout:120000})
+await page.screenshot({path:new URL('before-desktop.png',out).pathname.replace(/^\/([A-Za-z]:)/,'$1')})
+const text=await page.locator('.message-assistant').innerText()
+await page.setViewportSize({width:390,height:844});await page.screenshot({path:new URL('before-mobile.png',out).pathname.replace(/^\/([A-Za-z]:)/,'$1')})
+await fs.writeFile(new URL('browser-before.json',out),JSON.stringify({browser:'Chromium via repo Playwright',mocked:false,question:'HPG identity',answer:text,page_errors:errors},null,2))
+await browser.close();console.log('Saved real Chromium before screenshots and answer')

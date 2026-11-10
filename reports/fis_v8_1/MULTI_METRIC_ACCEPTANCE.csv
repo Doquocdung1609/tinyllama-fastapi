@@ -1,0 +1,11 @@
+case,selected_issuers,task,source_period,source_unit,operand_current,operand_prior,calculated_result,completed,required,citations,status
+F01,COST|HD|PG|MSFT,HD operating margin,2026-05-04 to 2026-08-02,USD,6839000000 / 47861000000,,14.29%,1,1,2,PASS
+F02,COST|HD|PG|MSFT,MSFT operating income,2025-07-01 to 2025-09-30 vs 2024-07-01 to 2024-09-30,million USD,37961,30552,delta 7409; growth 24.25%,3,3,6,PASS
+F02,COST|HD|PG|MSFT,MSFT net income,2025-07-01 to 2025-09-30 vs 2024-07-01 to 2024-09-30,million USD,27747,24667,delta 3080; growth 12.49%,3,3,6,PASS
+F02,COST|HD|PG|MSFT,MSFT revenue,2025-07-01 to 2025-09-30 vs 2024-07-01 to 2024-09-30,million USD,77673,65585,delta 12088; growth 18.43%,3,3,6,PASS
+F03,COST|HD|PG|MSFT,MSFT competition and cybersecurity,2025-09-30,source excerpts,,,,2,2,2,PASS_WITH_PARTIAL_TABLE_WARNING
+F04,COST|HD|PG|MSFT,AMZN unselected,,,,,,0,1,0,PASS_ABSTAIN
+F05,COST|HD|PG|MSFT,PEP unselected,,,,,,0,1,0,PASS_ABSTAIN
+F06,COST|HD|PG|MSFT,COST operating margin,2026-02-16 to 2026-05-10,USD,2815000000 / 70527000000,,3.99%,3,3,6,PASS
+F06,COST|HD|PG|MSFT,HD operating margin,2026-05-04 to 2026-08-02,USD,6839000000 / 47861000000,,14.29%,3,3,6,PASS
+F06,COST|HD|PG|MSFT,PG operating margin,2026-07-01 to 2026-09-30,USD,5937000000 / 23276000000,,25.51%,3,3,6,PASS

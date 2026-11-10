@@ -1,0 +1,49 @@
+........................................................................ [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 32%]
+........................................................................ [ 40%]
+........................................................................ [ 48%]
+........................................................................ [ 56%]
+........................................................................ [ 64%]
+........................................................................ [ 72%]
+........................................................................ [ 81%]
+........................................................................ [ 89%]
+..............................................................F......... [ 97%]
+........................                                                 [100%]
+================================== FAILURES ===================================
+_______________ test_http_tamper_refuses_with_no_stale_evidence _______________
+
+tmp_path = WindowsPath('C:/Users/Admin/AppData/Local/Temp/pytest-of-Admin/pytest-483/test_http_tamper_refuses_with_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026097E6A5F0>
+
+    def test_http_tamper_refuses_with_no_stale_evidence(tmp_path,monkeypatch):
+        i,c,path=source_fixture(tmp_path);key=server_key(tmp_path)
+        monkeypatch.setattr(frontend_api,'sec_index',lambda:i);monkeypatch.setattr(frontend_api,'workspace',lambda:SimpleNamespace(root=tmp_path))
+        monkeypatch.setenv('STUDIO_API_TOKEN','synthetic-local-test-token');app=FastAPI();app.include_router(frontend_api.router)
+        with TestClient(app) as client:
+            headers={'Authorization':'Bearer synthetic-local-test-token'};body={'reference':reference(i,c['parent_id'],key,c)}
+>           good=client.post('/studio/sec/evidence',json=body,headers=headers);assert good.status_code==200
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           assert 409 == 200
+E            +  where 409 = <Response [409 Conflict]>.status_code
+
+tests\test_v7p_sec_viewer.py:119: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Admin\.codex\worktrees\topic3-v7p\tinyllama-fastapi\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+app\product\sec_library.py:102
+  C:\Users\Admin\.codex\worktrees\topic3-v7p\tinyllama-fastapi\app\product\sec_library.py:102: DeprecationWarning:
+          on_event is deprecated, use lifespan event handlers instead.
+
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+
+    @r.on_event('startup')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_v7p_sec_viewer.py::test_http_tamper_refuses_with_no_stale_evidence
+1 failed, 887 passed, 2 warnings in 143.74s (0:02:23)

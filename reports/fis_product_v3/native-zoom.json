@@ -1,0 +1,38 @@
+{
+  "method": "Chromium extension chrome.tabs.setZoom(1.25), no CSS zoom or emulation",
+  "requested_zoom": 1.25,
+  "applied": true,
+  "native_tab_zoom": [
+    1.25
+  ],
+  "service_workers": 1,
+  "measurement": {
+    "innerWidth": 1081,
+    "innerHeight": 540,
+    "outerWidth": 1367,
+    "outerHeight": 770,
+    "devicePixelRatio": 1.5625,
+    "visualViewportScale": 1,
+    "bodyOverflow": false,
+    "composer": {
+      "x": 239.63999938964844,
+      "y": 444.6300048828125,
+      "width": 807.3200073242188,
+      "height": 78.87999725341797,
+      "top": 444.6300048828125,
+      "right": 1046.9600067138672,
+      "bottom": 523.5100021362305,
+      "left": 239.63999938964844
+    },
+    "conversation": {
+      "x": 221.63999938964844,
+      "y": 160.63999938964844,
+      "width": 843.3200073242188,
+      "height": 277.989990234375,
+      "top": 160.63999938964844,
+      "right": 1064.9600067138672,
+      "bottom": 438.62998962402344,
+      "left": 221.63999938964844
+    }
+  }
+}

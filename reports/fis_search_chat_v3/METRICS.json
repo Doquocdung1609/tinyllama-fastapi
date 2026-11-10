@@ -1,0 +1,16 @@
+{
+  "total": 71,
+  "search_cases": 45,
+  "chat_cases": 26,
+  "outcomes": {
+    "PASS": 65,
+    "PARTIAL": 5,
+    "FAIL": 0,
+    "BLOCKED": 1
+  },
+  "latency_sample_count": 69,
+  "p50_ms": 523.12,
+  "p95_ms": 4512.04,
+  "max_ms": 4777.11,
+  "conditions": "Real sequential localhost, mixed cold/warm source/model caches; original SHA checks included. Untimed coverage repair and unavailable SEC excluded. Not a production load benchmark."
+}

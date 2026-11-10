@@ -1,0 +1,75 @@
+{
+  "cpu_threads": 8,
+  "host_physical_bytes": 8419053568,
+  "sample_interval_s": 0.08,
+  "api_process_tree_peak_working_set_bytes": 254861312,
+  "rss_samples": 455,
+  "after_requests": 29,
+  "after_median_seconds": 1.5584940999979153,
+  "baseline_median_seconds": 1.0178744500008179,
+  "native_rect_exact_match": {
+    "matched": 57,
+    "observations": 57
+  },
+  "code_commit": "2ef7e694f9d0061da8f338064c8ccd1a2c70de85",
+  "notes": [
+    "Working set sampled in the V7 API process tree during the separate probe sequence. It excludes Chromium and Ollama.",
+    "Latency medians are local wall-clock API times. The V7 and baseline workspaces had different HPG generations and different concurrent load, so this is not a controlled speedup comparison.",
+    "Excerpts used the public PDF source pages. Import duration includes API ingestion and polling delay.",
+    "The complete Techcombank PDF exceeded the 450 s polling window at first observation and subsequently reached READY.",
+    "Full PDF READY times are measured from the local registration timestamp and include queue time while other reports indexed."
+  ],
+  "independent_excerpts": {
+    "techcombank": {
+      "seconds_to_ready": 30.167,
+      "pages": 3,
+      "sampled_api_working_set_bytes": 306548736,
+      "query_seconds": [
+        5.201,
+        3.582
+      ]
+    },
+    "fpt": {
+      "seconds_to_ready": 25.282,
+      "pages": 5,
+      "sampled_api_working_set_bytes": 313524224,
+      "query_seconds": [
+        3.508
+      ]
+    },
+    "toyota": {
+      "seconds_to_ready": 21.33,
+      "pages": 4,
+      "sampled_api_working_set_bytes": 215130112,
+      "query_seconds": [
+        3.848
+      ]
+    }
+  },
+  "independent_full_pdfs": {
+    "techcombank": {
+      "pages": 133,
+      "chunks": 1081,
+      "submission_to_ready_seconds": 502.818,
+      "query_seconds": [
+        17.475
+      ]
+    },
+    "fpt": {
+      "pages": 215,
+      "chunks": 915,
+      "submission_to_ready_seconds": 516.264,
+      "query_seconds": [
+        34.231
+      ]
+    },
+    "toyota": {
+      "pages": 138,
+      "chunks": 1136,
+      "submission_to_ready_seconds": 350.42,
+      "query_seconds": [
+        17.405
+      ]
+    }
+  }
+}

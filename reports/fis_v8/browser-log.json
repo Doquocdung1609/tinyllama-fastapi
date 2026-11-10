@@ -1,0 +1,838 @@
+{
+  "sec_control": [
+    {
+      "case": "A02",
+      "status": "PASS",
+      "answer": "Doanh thu của HD được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2026-05-04 → 2026-08-02 | 13 tuần | 47.861 | 0001628280-26-058715 [1] |\n| 2026-02-02 → 2026-08-02 | 26 tuần | 89.626 | 0001628280-26-058715 [2] |\n\nCác giá trị có cùng ngày kết thúc nhưng bắt đầu ở những ngày khác nhau. Kỳ dài hơn bao gồm phần hoạt động trước kỳ ngắn hơn, vì vậy hai giá trị đo các khoảng thời gian khác nhau.",
+      "view": {
+        "accession": "0001628280-26-058715",
+        "location": {
+          "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]/tr[5]/td[11]",
+          "table_id": "table_095b5d603845e56eceabeafd",
+          "row_index": 4,
+          "column_index": 16,
+          "parent_location": {
+            "section": "Segment Reporting",
+            "html_anchor": null,
+            "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]",
+            "table_id": "table_095b5d603845e56eceabeafd",
+            "row_index": 4,
+            "column_index": null,
+            "text_start": null,
+            "text_end": null,
+            "pdf_page": null,
+            "bbox": null
+          }
+        },
+        "cell": {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "research-sec-v1",
+          "generation": "8f0a7ba5ed851313a9948ddb465753c54012d94f9c36942239f7b2ec15b5e2fb",
+          "manifest_hash": "86ad36365fbfb813e78e14246a48ae5735d7a8a1218f73daa4289caa98b215d0",
+          "filing_id": "sec:0000354950:0001628280-26-058715",
+          "cik": "0000354950",
+          "accession": "0001628280-26-058715",
+          "raw_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+          "parent_id": "fin_28a3e54b5735b1aefc0457c034427de9",
+          "parent_payload_hash": "0f2ed8fa7d269b7f3356bc1e149a7f44bd93f22a9098b1d0bfed09a3cb615c07",
+          "table_id": "table_095b5d603845e56eceabeafd",
+          "row": 4,
+          "column": 16,
+          "row_label": "Net sales",
+          "raw_value": "47,861",
+          "value": "47861",
+          "unit": "USD",
+          "display_unit_header": "in millions",
+          "multiplier": "1000000",
+          "effective_value": "47861000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-05-04",
+          "period_end": "2026-08-02",
+          "period_months": 3,
+          "header_path": [
+            "Three Months Ended",
+            "August 2, 2026",
+            "Consolidated"
+          ],
+          "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fact_context_ref": "c-5",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/ix:continuation[3]/ix:continuation[1]/div[2]/table[1]/tr[5]/td[11]",
+          "footnotes": [
+            "(1) Net sales presented in Other relate to the sale of products within our SRS non-reportable operating segments, including the HVAC products operating segment beginning in the second quarter of fiscal 2026 upon the acquisition of Mingledorff’s, as well as the interior and construction products operating segment beginning in the third quarter of fiscal 2025 upon the acquisition of GMS. Operating income presented in Other includes cost of sales and operating expenses totaling $ 4.8 billion and $ 8.8 billion for the three and six months ended August 2, 2026, respectively, within these SRS non-reportable operating segments.",
+            "(2) Includes depreciation and finance lease amortization in cost of sales. Also includes intangible asset amortization expense of $ 53 million and $ 105 million for the three and six months ended August 2, 2026, respectively, in our Primary segment, and intangible asset amortization expense of $ 125 million and $ 244 million for the three and six months ended August 2, 2026, respectively, in Other."
+          ],
+          "warnings": [
+            "FILING_PARTIAL_EXTRACTION_OUTSIDE_SELECTED_TABLE"
+          ],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        },
+        "excerpt": "TABLE table_095b5d603845e56eceabeafd\nCompany: HOME DEPOT, INC.\nCIK: 0000354950; Accession: 0001628280-26-058715; Form: 10-Q\nStatement: Segment Reporting\nSection: Segment Reporting\nCaption: Segment Reporting\nColumns: in millions | in millions | in millions | Three Months Ended / August 2, 2026 / Primary | Three Months Ended / August 2, 2026 / Primary | Three Months Ended / August 2, 2026 / Primary | Three Months Ended / August 2, 2026 | Three Mont"
+      }
+    },
+    {
+      "case": "A04",
+      "status": "PASS",
+      "answer": "Các công bố về rủi ro và bất định trong filing:\n\n- **HD** cho biết không có thay đổi trọng yếu đối với các yếu tố rủi ro đã công bố. [1]",
+      "view": {
+        "accession": "0001628280-26-058715",
+        "location": {
+          "section": "Item 1A. Risk Factors.",
+          "html_anchor": null,
+          "structural_path": "/document[1]/html[1]/body[1]/div[293]",
+          "table_id": null,
+          "row_index": null,
+          "column_index": null,
+          "text_start": 0,
+          "text_end": 595,
+          "pdf_page": null,
+          "bbox": null
+        },
+        "cell": null,
+        "excerpt": "In addition to the information set forth in this report, you should carefully consider the factors discussed under Part I, Item 1A. “Risk Factors” and elsewhere in the 2025 Form 10-K. These risks and uncertainties could materially and adversely affect our business, consolidated financial condition, results of operations, or cash flows. Our operations could also be affected by additional factors that are not presently known to us or by factors tha"
+      }
+    },
+    {
+      "case": "B04",
+      "status": "PASS",
+      "answer": "Doanh thu của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 77.673 | 0001193125-25-256321 [1] |"
+    }
+  ],
+  "pdf_control": [
+    {
+      "case": "Apple",
+      "status": "PASS",
+      "value": "109158",
+      "pages": [
+        32
+      ]
+    },
+    {
+      "case": "BIDV",
+      "status": "PASS",
+      "value": "1114",
+      "pages": [
+        4,
+        7
+      ]
+    },
+    {
+      "case": "pdf-multi",
+      "status": "PASS",
+      "files": [
+        "NASDAQ_AAPL_2025.pdf",
+        "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf"
+      ],
+      "pages": [
+        31,
+        34,
+        3,
+        6
+      ]
+    },
+    {
+      "case": "sec-federation",
+      "status": "PASS",
+      "accessions": [
+        "0000080424-26-000060",
+        "0000080424-26-000256"
+      ]
+    },
+    {
+      "case": "mobile-picker",
+      "status": "PASS"
+    }
+  ],
+  "independent_first_run": [
+    {
+      "case": "AMZN",
+      "expected": {
+        "ticker": "AMZN",
+        "accession": "0001018724-25-000004",
+        "form": "10-K",
+        "report_end": "2024-12-31",
+        "official_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+        "numeric": "What were Amazon's total net sales for FY2024?",
+        "expected_numeric": [
+          "637959"
+        ],
+        "numeric_location": "Consolidated Statements of Operations, Total net sales, 2024 column, millions USD",
+        "narrative": "What risks does Amazon describe in Item 1A of this 10-K?",
+        "narrative_location": "Item 1A, substantive risk disclosure. Business and Industry Risks includes intense competition across retail, computing services and other industries."
+      },
+      "discovery_ms": 4534,
+      "discovery_status": 200,
+      "import": {
+        "id": "6477189a4c4e16530521adae",
+        "state": "LEXICAL_READY",
+        "reason": "DENSE_PENDING",
+        "progress": {
+          "last_progress_at": 1793958056.9666405,
+          "published_chunks": 1356
+        },
+        "elapsed_ms": 12721
+      },
+      "events": [
+        {
+          "status": "DOWNLOADING",
+          "reason": null,
+          "created": 1793958044.602734
+        },
+        {
+          "status": "SOURCE_VERIFIED",
+          "reason": null,
+          "created": 1793958049.9094057
+        },
+        {
+          "status": "EXTRACTING",
+          "reason": null,
+          "created": 1793958049.9184887
+        },
+        {
+          "status": "EXTRACTED",
+          "reason": null,
+          "created": 1793958052.3075635
+        },
+        {
+          "status": "BUILDING_LEXICAL",
+          "reason": null,
+          "created": 1793958052.3194125
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958056.9565835
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958056.9666405
+        }
+      ],
+      "numeric": {
+        "seconds": 8.346,
+        "answer": "Doanh thu của AMZN được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-01-01 → 2024-12-31 | 12 tháng (366 ngày) | 637.959 | 0001018724-25-000004 [1] |",
+        "status": "VERIFIED_ANSWER",
+        "values": [
+          "637959"
+        ],
+        "sourceCells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-6477189a4c4e16530521adae",
+            "generation": "8341099caf97f0fb468698ed52ebf6d4a07770f785ee251384c2ceaf8c30b36a",
+            "manifest_hash": "5aa90e2dd054943c12fbbe9e06840a705defbe0b97facc4d9ea8a393870eb15c",
+            "filing_id": "sec:0001018724:0001018724-25-000004",
+            "cik": "0001018724",
+            "accession": "0001018724-25-000004",
+            "raw_sha256": "64947485fa784470462a11436242670ff55615ee11119201ca317552e5495747",
+            "parent_id": "fin_18e4806ee940874310ebe84d41df35d0",
+            "parent_payload_hash": "bb587ef4c1ebd74270f73880f386a6a1c8cd4b347e1ac9b272e3adc7bd4be9df",
+            "table_id": "table_365f605ebf953e530b3a02fe",
+            "row": 5,
+            "column": 15,
+            "row_label": "Total net sales",
+            "raw_value": "637,959",
+            "value": "637959",
+            "unit": "USD",
+            "display_unit_header": "(in millions, except per share data)",
+            "multiplier": "1000000",
+            "effective_value": "637959000000",
+            "period_kind": "DURATION",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_months": 12,
+            "header_path": [
+              "Year Ended December 31,",
+              "2024"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[543]/table[1]/tr[6]/td[8]",
+            "footnotes": [
+              "See accompanying notes to consolidated financial statements."
+            ],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 366,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "citations": [
+          {
+            "accession": "0001018724-25-000004",
+            "text": "Total net sales: 637,959 · 2024-12-31"
+          }
+        ]
+      },
+      "narrative": {
+        "seconds": 0.527,
+        "answer": "Đã tìm thấy các đoạn nguồn liên quan.\n\n[1] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: As permitted by Item 601(b)(4)(iii)(A) of Regulation S-K, the Company has not filed with this Annual Report on Form 10-K certain instruments defining the rights of holders of long-term debt of the Company and its subsidiaries because the total amount of securities authorized thereunder does not exceed 10 percent of the total assets of the Company and its subsidiaries on a consolidated basis. The Company agrees to furnish a copy of such agreements to the Commission upon request.\n\n[2] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: We have a rapidly evolving business model. The trading price of our common stock fluctuates significantly in response to, among other risks, the risks described elsewhere in this Item 1A, as well as:\n\n[3] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: This Annual Report on Form 10-K and the documents incorporated herein by reference contain forward-looking statements based on expectations, estimates, and projections as of the date of this filing. Actual results and outcomes may differ materially from those expressed in forward-looking statements. See Item 1A of Part I — “Risk Factors.” As used herein, “Amazon.com,” “we,” “our,” and similar terms include Amazon.com, Inc. and its subsidiaries, unless the context indicates otherwise.\n\n[4] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: AWS · 24,875 · 24,052\n\n[5] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Total · 648,652 · 56,534",
+        "values": [],
+        "citations": [
+          {
+            "accession": "0001018724-25-000004",
+            "text": "As permitted by Item 601(b)(4)(iii)(A) of Regulation S-K, the Company has not filed with this Annual Report on Form 10-K certain instruments defining the rights of holders of long-term debt of the Company and its subsidiaries because the total amount of securities authorized thereunder does not exceed 10 percent of the total assets of the Company and its subsidiaries on a consolidated basis. The Company agrees to furnish a copy of such agreements to the Commission upon request."
+          },
+          {
+            "accession": "0001018724-25-000004",
+            "text": "We have a rapidly evolving business model. The trading price of our common stock fluctuates significantly in response to, among other risks, the risks described elsewhere in this Item 1A, as well as:"
+          },
+          {
+            "accession": "0001018724-25-000004",
+            "text": "This Annual Report on Form 10-K and the documents incorporated herein by reference contain forward-looking statements based on expectations, estimates, and projections as of the date of this filing. Actual results and outcomes may differ materially from those expressed in forward-looking statements. See Item 1A of Part I — “Risk Factors.” As used herein, “Amazon.com,” “we,” “our,” and similar terms include Amazon.com, Inc. and its subsidiaries, unless the context indicates otherwise."
+          },
+          {
+            "accession": "0001018724-25-000004",
+            "text": "AWS · 24,875 · 24,052"
+          },
+          {
+            "accession": "0001018724-25-000004",
+            "text": "Total · 648,652 · 56,534"
+          }
+        ]
+      },
+      "status": "EXECUTED"
+    },
+    {
+      "case": "PEP",
+      "expected": {
+        "ticker": "PEP",
+        "accession": "0000077476-24-000042",
+        "form": "10-Q",
+        "report_end": "2024-06-15",
+        "official_url": "https://www.sec.gov/Archives/edgar/data/77476/000007747624000042/pep-20240615.htm",
+        "numeric": "What was PepsiCo net revenue for 12 weeks and 24 weeks ended June 15, 2024?",
+        "expected_numeric": [
+          "22501",
+          "40751"
+        ],
+        "numeric_location": "Condensed Consolidated Statement of Income, Net Revenue, 12 and 24 weeks ended June 15, 2024, millions USD",
+        "narrative": "Were there material changes to Risk Factors in this PepsiCo 10-Q?",
+        "narrative_location": "Part II Item 1A explicitly says no material changes to the risk factors disclosed in the 2023 Form 10-K."
+      },
+      "discovery_ms": 2044,
+      "discovery_status": 200,
+      "import": {
+        "id": "d4e2c00d79824745b03d2688",
+        "state": "LEXICAL_READY",
+        "reason": "DENSE_PENDING",
+        "progress": {
+          "last_progress_at": 1793958081.7150328,
+          "published_chunks": 1064
+        },
+        "elapsed_ms": 10149
+      },
+      "events": [
+        {
+          "status": "DOWNLOADING",
+          "reason": null,
+          "created": 1793958072.2108402
+        },
+        {
+          "status": "SOURCE_VERIFIED",
+          "reason": null,
+          "created": 1793958076.6533895
+        },
+        {
+          "status": "EXTRACTING",
+          "reason": null,
+          "created": 1793958076.6679661
+        },
+        {
+          "status": "EXTRACTED",
+          "reason": null,
+          "created": 1793958078.7409866
+        },
+        {
+          "status": "BUILDING_LEXICAL",
+          "reason": null,
+          "created": 1793958078.7501004
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958081.7083523
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958081.7150328
+        }
+      ],
+      "numeric": {
+        "seconds": 10.23,
+        "answer": "Doanh thu của PEP được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-03-24 → 2024-06-15 | 12 tuần | 22.501 | 0000077476-24-000042 [1] |\n| 2023-12-31 → 2024-06-15 | 24 tuần | 40.751 | 0000077476-24-000042 [2] |\n\nCác giá trị có cùng ngày kết thúc nhưng bắt đầu ở những ngày khác nhau. Kỳ dài hơn bao gồm phần hoạt động trước kỳ ngắn hơn, vì vậy hai giá trị đo các khoảng thời gian khác nhau.",
+        "status": "VERIFIED_ANSWER",
+        "values": [
+          "22501",
+          "40751"
+        ],
+        "sourceCells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-d4e2c00d79824745b03d2688",
+            "generation": "650f3214489d899322ca29f166cf4d829c39e5ba69d6c6b2165b2b74501e967a",
+            "manifest_hash": "956a2862eef7149c08b5f84d238568cb27cfe6f1af145cfe34e934633055fa05",
+            "filing_id": "sec:0000077476:0000077476-24-000042",
+            "cik": "0000077476",
+            "accession": "0000077476-24-000042",
+            "raw_sha256": "c17bb04c47cc2d96709bb5c228ae22b2cb42a1868c9082d91cfc8bda2447fc4d",
+            "parent_id": "fin_941b966e9253ac1e0074cfeaba3b1b87",
+            "parent_payload_hash": "2fbd82c491342a2738614c85ebaddcb066db8d6ba18d97a22da640347a027883",
+            "table_id": "table_b8ee09b26c147aa41b042ba5",
+            "row": 3,
+            "column": 4,
+            "row_label": "Net Revenue",
+            "raw_value": "22,501",
+            "value": "22501",
+            "unit": "USD",
+            "display_unit_header": "(in millions except per share amounts, unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "22501000000",
+            "period_kind": "DURATION",
+            "period_start": "2024-03-24",
+            "period_end": "2024-06-15",
+            "period_months": 3,
+            "header_path": [
+              "12 Weeks Ended",
+              "6/15/2024"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-15",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/77476/000007747624000042/pep-20240615.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[56]/table[1]/tr[4]/td[3]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 84,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-d4e2c00d79824745b03d2688",
+            "generation": "650f3214489d899322ca29f166cf4d829c39e5ba69d6c6b2165b2b74501e967a",
+            "manifest_hash": "956a2862eef7149c08b5f84d238568cb27cfe6f1af145cfe34e934633055fa05",
+            "filing_id": "sec:0000077476:0000077476-24-000042",
+            "cik": "0000077476",
+            "accession": "0000077476-24-000042",
+            "raw_sha256": "c17bb04c47cc2d96709bb5c228ae22b2cb42a1868c9082d91cfc8bda2447fc4d",
+            "parent_id": "fin_941b966e9253ac1e0074cfeaba3b1b87",
+            "parent_payload_hash": "2fbd82c491342a2738614c85ebaddcb066db8d6ba18d97a22da640347a027883",
+            "table_id": "table_b8ee09b26c147aa41b042ba5",
+            "row": 3,
+            "column": 16,
+            "row_label": "Net Revenue",
+            "raw_value": "40,751",
+            "value": "40751",
+            "unit": "USD",
+            "display_unit_header": "(in millions except per share amounts, unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "40751000000",
+            "period_kind": "DURATION",
+            "period_start": "2023-12-31",
+            "period_end": "2024-06-15",
+            "period_months": 6,
+            "header_path": [
+              "24 Weeks Ended",
+              "6/15/2024"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/77476/000007747624000042/pep-20240615.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[56]/table[1]/tr[4]/td[11]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 168,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "citations": [
+          {
+            "accession": "0000077476-24-000042",
+            "text": "Net Revenue: 22,501 · 2024-06-15"
+          },
+          {
+            "accession": "0000077476-24-000042",
+            "text": "Net Revenue: 40,751 · 2024-06-15"
+          }
+        ]
+      },
+      "narrative": {
+        "seconds": 0.237,
+        "answer": "Các công bố về rủi ro và bất định trong filing:\n\n- **PEP** cho biết không có thay đổi trọng yếu đối với các yếu tố rủi ro đã công bố. [1]",
+        "status": "SEC_NARRATIVE_EVIDENCE",
+        "values": [],
+        "citations": [
+          {
+            "accession": "0000077476-24-000042",
+            "section": "ITEM 1A. Risk Factors.",
+            "text": "There have been no material changes with respect to the risk factors disclosed in our 2023 Form 10-K."
+          }
+        ]
+      },
+      "status": "EXECUTED"
+    }
+  ],
+  "known_case_retest": [
+    {
+      "case": "AMZN",
+      "expected": {
+        "ticker": "AMZN",
+        "accession": "0001018724-25-000004",
+        "form": "10-K",
+        "report_end": "2024-12-31",
+        "official_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+        "numeric": "What were Amazon's total net sales for FY2024?",
+        "expected_numeric": [
+          "637959"
+        ],
+        "numeric_location": "Consolidated Statements of Operations, Total net sales, 2024 column, millions USD",
+        "narrative": "What risks does Amazon describe in Item 1A of this 10-K?",
+        "narrative_location": "Item 1A, substantive risk disclosure. Business and Industry Risks includes intense competition across retail, computing services and other industries."
+      },
+      "discovery_ms": 5149,
+      "discovery_status": 200,
+      "import": {
+        "id": "6477189a4c4e16530521adae",
+        "state": "LEXICAL_READY",
+        "reason": "DENSE_PENDING",
+        "progress": {
+          "last_progress_at": 1793958056.9666405,
+          "published_chunks": 1356
+        },
+        "elapsed_ms": 295
+      },
+      "events": [
+        {
+          "status": "DOWNLOADING",
+          "reason": null,
+          "created": 1793958044.602734
+        },
+        {
+          "status": "SOURCE_VERIFIED",
+          "reason": null,
+          "created": 1793958049.9094057
+        },
+        {
+          "status": "EXTRACTING",
+          "reason": null,
+          "created": 1793958049.9184887
+        },
+        {
+          "status": "EXTRACTED",
+          "reason": null,
+          "created": 1793958052.3075635
+        },
+        {
+          "status": "BUILDING_LEXICAL",
+          "reason": null,
+          "created": 1793958052.3194125
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958056.9565835
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958056.9666405
+        }
+      ],
+      "numeric": {
+        "seconds": 29.563,
+        "answer": "Doanh thu của AMZN được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-01-01 → 2024-12-31 | 12 tháng (366 ngày) | 637.959 | 0001018724-25-000004 [1] |",
+        "status": "VERIFIED_ANSWER",
+        "values": [
+          "637959"
+        ],
+        "sourceCells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-6477189a4c4e16530521adae",
+            "generation": "8341099caf97f0fb468698ed52ebf6d4a07770f785ee251384c2ceaf8c30b36a",
+            "manifest_hash": "5aa90e2dd054943c12fbbe9e06840a705defbe0b97facc4d9ea8a393870eb15c",
+            "filing_id": "sec:0001018724:0001018724-25-000004",
+            "cik": "0001018724",
+            "accession": "0001018724-25-000004",
+            "raw_sha256": "64947485fa784470462a11436242670ff55615ee11119201ca317552e5495747",
+            "parent_id": "fin_18e4806ee940874310ebe84d41df35d0",
+            "parent_payload_hash": "bb587ef4c1ebd74270f73880f386a6a1c8cd4b347e1ac9b272e3adc7bd4be9df",
+            "table_id": "table_365f605ebf953e530b3a02fe",
+            "row": 5,
+            "column": 15,
+            "row_label": "Total net sales",
+            "raw_value": "637,959",
+            "value": "637959",
+            "unit": "USD",
+            "display_unit_header": "(in millions, except per share data)",
+            "multiplier": "1000000",
+            "effective_value": "637959000000",
+            "period_kind": "DURATION",
+            "period_start": "2024-01-01",
+            "period_end": "2024-12-31",
+            "period_months": 12,
+            "header_path": [
+              "Year Ended December 31,",
+              "2024"
+            ],
+            "fact_name": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[543]/table[1]/tr[6]/td[8]",
+            "footnotes": [
+              "See accompanying notes to consolidated financial statements."
+            ],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 366,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "citations": [
+          {
+            "accession": "0001018724-25-000004",
+            "text": "Total net sales: 637,959 · 2024-12-31"
+          }
+        ]
+      },
+      "narrative": {
+        "seconds": 1.045,
+        "answer": "Các công bố về rủi ro và bất định trong filing:\n\n- **AMZN · We Face Intense Competition**: “Our businesses are rapidly evolving and intensely competitive, and we have many competitors across geographies, including cross-border competition, and in different industries, including physical, e-commerce, and omnichannel retail, e-commerce services, web and infrastructure computing services, electronic devices, digital content, advertising, grocery, healthcare, communications, and transportation and logistics services.” [1]\n- **AMZN · We Face Intense Competition**: “Competition continues to intensify, including with the development of new business models and the entry of new and well-funded competitors, and as our competitors enter into business combinations or alliances and established companies in other market segments expand to become competitive with our business.” [2]\n- **AMZN · We Face Risks Related to Adequately Protecting Our Intellectual Property Rights and Being Accused of Infringing Intellectual Property Rights of Third Parties**: “We also may not be able to acquire or maintain appropriate domain names in all countries in which we do business.” [3]",
+        "status": "SEC_NARRATIVE_EVIDENCE",
+        "values": [],
+        "citations": [
+          {
+            "accession": "0001018724-25-000004",
+            "section": "We Face Intense Competition",
+            "text": "Our businesses are rapidly evolving and intensely competitive, and we have many competitors across geographies, including cross-border competition, and in different industries, including physical, e-commerce, and omnichannel retail, e-commerce services, web and infrastructure computing services, electronic devices, digital content, advertising, grocery, healthcare, communications, and transportation and logistics services."
+          },
+          {
+            "accession": "0001018724-25-000004",
+            "section": "We Face Intense Competition",
+            "text": "Competition continues to intensify, including with the development of new business models and the entry of new and well-funded competitors, and as our competitors enter into business combinations or alliances and established companies in other market segments expand to become competitive with our business."
+          },
+          {
+            "accession": "0001018724-25-000004",
+            "section": "We Face Risks Related to Adequately Protecting Our Intellectual Property Rights and Being Accused of Infringing Intellectual Property Rights of Third Parties",
+            "text": "We also may not be able to acquire or maintain appropriate domain names in all countries in which we do business."
+          }
+        ]
+      },
+      "status": "EXECUTED"
+    },
+    {
+      "case": "PEP",
+      "expected": {
+        "ticker": "PEP",
+        "accession": "0000077476-24-000042",
+        "form": "10-Q",
+        "report_end": "2024-06-15",
+        "official_url": "https://www.sec.gov/Archives/edgar/data/77476/000007747624000042/pep-20240615.htm",
+        "numeric": "What was PepsiCo net revenue for 12 weeks and 24 weeks ended June 15, 2024?",
+        "expected_numeric": [
+          "22501",
+          "40751"
+        ],
+        "numeric_location": "Condensed Consolidated Statement of Income, Net Revenue, 12 and 24 weeks ended June 15, 2024, millions USD",
+        "narrative": "Were there material changes to Risk Factors in this PepsiCo 10-Q?",
+        "narrative_location": "Part II Item 1A explicitly says no material changes to the risk factors disclosed in the 2023 Form 10-K."
+      },
+      "discovery_ms": 10009,
+      "discovery_status": 200,
+      "import": {
+        "id": "d4e2c00d79824745b03d2688",
+        "state": "LEXICAL_READY",
+        "reason": "PROCESS_RESTARTED_RETRY_IMPORT",
+        "progress": {
+          "last_progress_at": 1793958420.2340858,
+          "published_chunks": 1064
+        },
+        "elapsed_ms": 1379
+      },
+      "events": [
+        {
+          "status": "DOWNLOADING",
+          "reason": null,
+          "created": 1793958072.2108402
+        },
+        {
+          "status": "SOURCE_VERIFIED",
+          "reason": null,
+          "created": 1793958076.6533895
+        },
+        {
+          "status": "EXTRACTING",
+          "reason": null,
+          "created": 1793958076.6679661
+        },
+        {
+          "status": "EXTRACTED",
+          "reason": null,
+          "created": 1793958078.7409866
+        },
+        {
+          "status": "BUILDING_LEXICAL",
+          "reason": null,
+          "created": 1793958078.7501004
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958081.7083523
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "DENSE_PENDING",
+          "created": 1793958081.7150328
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "BUILDING_DENSE",
+          "created": 1793958403.0505104
+        },
+        {
+          "status": "LEXICAL_READY",
+          "reason": "PROCESS_RESTARTED_RETRY_IMPORT",
+          "created": 1793958420.2340858
+        }
+      ],
+      "numeric": {
+        "seconds": 46.84,
+        "answer": "Doanh thu của PEP được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-03-24 → 2024-06-15 | 12 tuần | 22.501 | 0000077476-24-000042 [1] |\n| 2023-12-31 → 2024-06-15 | 24 tuần | 40.751 | 0000077476-24-000042 [2] |\n\nCác giá trị có cùng ngày kết thúc nhưng bắt đầu ở những ngày khác nhau. Kỳ dài hơn bao gồm phần hoạt động trước kỳ ngắn hơn, vì vậy hai giá trị đo các khoảng thời gian khác nhau.",
+        "status": "VERIFIED_ANSWER",
+        "values": [
+          "22501",
+          "40751"
+        ],
+        "sourceCells": [
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-d4e2c00d79824745b03d2688",
+            "generation": "650f3214489d899322ca29f166cf4d829c39e5ba69d6c6b2165b2b74501e967a",
+            "manifest_hash": "956a2862eef7149c08b5f84d238568cb27cfe6f1af145cfe34e934633055fa05",
+            "filing_id": "sec:0000077476:0000077476-24-000042",
+            "cik": "0000077476",
+            "accession": "0000077476-24-000042",
+            "raw_sha256": "c17bb04c47cc2d96709bb5c228ae22b2cb42a1868c9082d91cfc8bda2447fc4d",
+            "parent_id": "fin_941b966e9253ac1e0074cfeaba3b1b87",
+            "parent_payload_hash": "2fbd82c491342a2738614c85ebaddcb066db8d6ba18d97a22da640347a027883",
+            "table_id": "table_b8ee09b26c147aa41b042ba5",
+            "row": 3,
+            "column": 4,
+            "row_label": "Net Revenue",
+            "raw_value": "22,501",
+            "value": "22501",
+            "unit": "USD",
+            "display_unit_header": "(in millions except per share amounts, unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "22501000000",
+            "period_kind": "DURATION",
+            "period_start": "2024-03-24",
+            "period_end": "2024-06-15",
+            "period_months": 3,
+            "header_path": [
+              "12 Weeks Ended",
+              "6/15/2024"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-15",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/77476/000007747624000042/pep-20240615.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[56]/table[1]/tr[4]/td[3]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 84,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          },
+          {
+            "contract_version": "real-sec-cell-observation/v1",
+            "source_status": "VERIFIED_SOURCE_CELL",
+            "dataset_id": "user-sec-d4e2c00d79824745b03d2688",
+            "generation": "650f3214489d899322ca29f166cf4d829c39e5ba69d6c6b2165b2b74501e967a",
+            "manifest_hash": "956a2862eef7149c08b5f84d238568cb27cfe6f1af145cfe34e934633055fa05",
+            "filing_id": "sec:0000077476:0000077476-24-000042",
+            "cik": "0000077476",
+            "accession": "0000077476-24-000042",
+            "raw_sha256": "c17bb04c47cc2d96709bb5c228ae22b2cb42a1868c9082d91cfc8bda2447fc4d",
+            "parent_id": "fin_941b966e9253ac1e0074cfeaba3b1b87",
+            "parent_payload_hash": "2fbd82c491342a2738614c85ebaddcb066db8d6ba18d97a22da640347a027883",
+            "table_id": "table_b8ee09b26c147aa41b042ba5",
+            "row": 3,
+            "column": 16,
+            "row_label": "Net Revenue",
+            "raw_value": "40,751",
+            "value": "40751",
+            "unit": "USD",
+            "display_unit_header": "(in millions except per share amounts, unaudited)",
+            "multiplier": "1000000",
+            "effective_value": "40751000000",
+            "period_kind": "DURATION",
+            "period_start": "2023-12-31",
+            "period_end": "2024-06-15",
+            "period_months": 6,
+            "header_path": [
+              "24 Weeks Ended",
+              "6/15/2024"
+            ],
+            "fact_name": "us-gaap:Revenues",
+            "fact_context_ref": "c-1",
+            "fact_unit_ref": "usd",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/77476/000007747624000042/pep-20240615.htm",
+            "structural_path": "/document[1]/html[1]/body[1]/div[56]/table[1]/tr[4]/td[11]",
+            "footnotes": [],
+            "warnings": [],
+            "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION",
+            "duration_days": 168,
+            "scope": "CONSOLIDATED",
+            "dimensions": []
+          }
+        ],
+        "citations": [
+          {
+            "accession": "0000077476-24-000042",
+            "text": "Net Revenue: 22,501 · 2024-06-15"
+          },
+          {
+            "accession": "0000077476-24-000042",
+            "text": "Net Revenue: 40,751 · 2024-06-15"
+          }
+        ]
+      },
+      "narrative": {
+        "seconds": 0.911,
+        "answer": "Các công bố về rủi ro và bất định trong filing:\n\n- **PEP** cho biết không có thay đổi trọng yếu đối với các yếu tố rủi ro đã công bố. [1]",
+        "status": "SEC_NARRATIVE_EVIDENCE",
+        "values": [],
+        "citations": [
+          {
+            "accession": "0000077476-24-000042",
+            "section": "ITEM 1A. Risk Factors.",
+            "text": "There have been no material changes with respect to the risk factors disclosed in our 2023 Form 10-K."
+          }
+        ]
+      },
+      "status": "EXECUTED"
+    }
+  ]
+}

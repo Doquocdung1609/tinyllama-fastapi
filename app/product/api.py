@@ -21,6 +21,12 @@ _factory_lock = RLock()
 @lru_cache(maxsize=1)
 def _workspace_cached():
     root = Path(os.getenv("STUDIO_WORKSPACE_DIR", str(ROOT_DIR / "studio_workspace")))
+    if (root/'ocr-financial-v3.json').is_file():
+        from app.product.ocr_financial_workspace import AdaptiveFinancialOcrWorkspace
+        return AdaptiveFinancialOcrWorkspace(root)
+    if (root/'ocr-financial-v2.json').is_file():
+        from app.product.ocr_financial_workspace import FinancialOcrWorkspace
+        return FinancialOcrWorkspace(root)
     if (root/'search-v3r2.json').is_file():
         from app.product.controlled_workspace import ControlledPdfWorkspace
         return ControlledPdfWorkspace(root)
@@ -32,9 +38,11 @@ def _workspace_cached():
 
 @lru_cache(maxsize=1)
 def _sec_cached():
-    root = os.getenv("STUDIO_SEC_RESEARCH_ROOT", "").strip()
-    vector_root = os.getenv("STUDIO_SEC_VECTOR_ROOT", "").strip()
-    qa_root = os.getenv("TOPIC3_RESEARCH_ROOT", "").strip()
+    from app.product.local_config import sec_roots
+    configured=sec_roots()
+    root = configured['STUDIO_SEC_RESEARCH_ROOT']
+    vector_root = configured['STUDIO_SEC_VECTOR_ROOT']
+    qa_root = configured['TOPIC3_RESEARCH_ROOT']
     if not root or not vector_root or not qa_root:
         raise ValueError("SEC_SHARED_SOURCE_ROOTS_NOT_CONFIGURED")
     return SecResearchIndex(Path(root), Path(vector_root), Path(qa_root))
@@ -46,6 +54,8 @@ def workspace():
 
 
 def sec_index():
+    from app.product.sec_library import active
+    if active.get() is not None:return active.get()
     with _factory_lock:
         return _sec_cached()
 
@@ -98,7 +108,8 @@ def health():
 @router.get("/sec/catalog", dependencies=[Depends(require_studio_token)])
 def sec_catalog():
     try:
-        return sec_index().catalog()
+        from app.product.sec_library import catalog
+        return catalog()
     except Exception as exc:
         return {"status": "UNAVAILABLE", "reason": _error(exc), "filings": []}
 
@@ -116,7 +127,19 @@ def sec_search(payload: SecSearchRequest):
 
 @router.get("/documents", dependencies=[Depends(require_studio_token)])
 def documents():
-    return {"documents": workspace().list_documents()}
+    from app.product.financial_understanding import document_profile
+    w=workspace();documents=[]
+    for original in w.list_documents():
+        doc=dict(original)
+        if doc['status']=='READY':
+            w.source_file(doc['id'])
+            profile=document_profile(w,doc)
+            doc['display_metadata']=profile
+            if len(profile['identities'])==1:
+                doc['issuer_display_original']=doc.get('issuer','');doc['issuer']=profile['identities'][0]
+            if not doc.get('report_period') and profile['report_year']:doc['report_period']=profile['report_year']
+        documents.append(doc)
+    return {'documents':documents}
 
 
 @router.post("/documents", status_code=202, dependencies=[Depends(require_studio_token)])
@@ -201,3 +224,7 @@ def highlight(document_id: str, page_number: int, chunk_id: str, phrase: str = "
     except ValueError as exc:
         raise HTTPException(409, detail={"code": _error(exc)}) from exc
     return Response(png, media_type="image/png", headers={"X-Highlight-Status": status})
+
+
+from app.product.sec_library import router as sec_library_router
+router.include_router(sec_library_router(require_studio_token))

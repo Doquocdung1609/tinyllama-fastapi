@@ -8,7 +8,9 @@ from app.financial_query.contracts import CatalogFilingV1, CorpusCatalogV1, Issu
 
 
 def catalog_from_verified_metadata(manifest: DatasetManifest, filings: list[StructuredFiling],
-                                   generation_id: str | None = None) -> CorpusCatalogV1:
+                                   generation_id: str | None = None, *,
+                                   filing_model=CatalogFilingV1, catalog_model=CorpusCatalogV1,
+                                   omit_overlong_labels: bool = False) -> CorpusCatalogV1:
     if manifest.manifest_hash != manifest.content_hash():
         raise ValueError("MANIFEST_HASH_MISMATCH")
     if len(filings) != len(manifest.filing_ids) or {f.metadata.filing_id for f in filings} != set(manifest.filing_ids):
@@ -27,11 +29,14 @@ def catalog_from_verified_metadata(manifest: DatasetManifest, filings: list[Stru
         existing = issuers.get(m.cik)
         tickers = sorted(set((existing.tickers if existing else []) + ([m.ticker] if m.ticker else [])))
         issuers[m.cik] = IssuerV1(cik=m.cik, company_name=m.company_name, tickers=tickers)
-        entries.append(CatalogFilingV1(filing_id=m.filing_id, cik=m.cik, accession=m.accession_number,
+        labels = {p for table in item.tables for p in table.reporting_periods}
+        if omit_overlong_labels:
+            labels = {label for label in labels if len(label)<=4000}
+        entries.append(filing_model(filing_id=m.filing_id, cik=m.cik, accession=m.accession_number,
             form=m.form_type, filing_date=m.filing_date, report_end=m.report_date, fiscal_year=m.fiscal_year,
             fiscal_period=m.fiscal_period, amendment_of=m.amendment_of,
             extraction_status='PARTIAL_EXTRACTION' if m.filing_id in manifest.partial_documents else m.document_status.value,
-            raw_column_labels=sorted({p for t in item.tables for p in t.reporting_periods})))
-    return CorpusCatalogV1(dataset_id=manifest.dataset_id, manifest_hash=manifest.manifest_hash,
+            raw_column_labels=sorted(labels)))
+    return catalog_model(dataset_id=manifest.dataset_id, manifest_hash=manifest.manifest_hash,
         generation_id=generation_id, provenance="Caller-verified SEC metadata; no source-byte verification by D1",
         issuers=sorted(issuers.values(), key=lambda i: i.cik), filings=entries)

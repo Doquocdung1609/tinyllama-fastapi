@@ -1,0 +1,68 @@
+{
+  "code_head": "3e85fdba74737f5a94f555424d283126fe84dc0e",
+  "starting_head": "f3c3fc320d957a4be418054e179e18800f49e5cf",
+  "pr": 35,
+  "branch": "codex/topic3-v7p-verified-financial-chatbot",
+  "python": "3.13.2",
+  "os": "Windows-11-10.0.26300-SP0",
+  "dependencies": {
+    "fastapi": "0.142.2",
+    "pydantic": "2.13.5",
+    "PyMuPDF": "1.28.2",
+    "qdrant-client": "1.20.0",
+    "pytest": "8.4.2",
+    "requests": "2.34.2",
+    "psutil": "7.2.2"
+  },
+  "full_regression": {
+    "passed": 796,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "runtime_s": 41.66
+  },
+  "frontend": {
+    "tests_passed": 12,
+    "files_passed": 2,
+    "typecheck": "PASS",
+    "build": "PASS",
+    "drag_drop_filechooser": "PASS"
+  },
+  "http": {
+    "apple_and_safety_passed": 27,
+    "source_derived_negatives": 3
+  },
+  "ci_code_run": 41452440427,
+  "ci_code_result": "success",
+  "research_complete": false,
+  "tokens_in_artifacts": false,
+  "non_integration_regression": {
+    "passed": 796,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "runtime_s": 63.99
+  },
+  "focused": {
+    "passed": 48,
+    "native_operand_tests": 29
+  },
+  "initial_code_ci": {
+    "head": "f86e2daf415689120f4fbf32c63c83eddce4ad21",
+    "run": 41451182240,
+    "conclusion": "success"
+  },
+  "repair_code_ci": {
+    "head": "3e85fdba74737f5a94f555424d283126fe84dc0e",
+    "run": 41452440427,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "artifact_execution_versions": {
+    "V7P_OFFLINE_HTTP.json": "f86e2daf415689120f4fbf32c63c83eddce4ad21",
+    "V7P_RESTART_PERFORMANCE_HTTP.json": "f86e2daf415689120f4fbf32c63c83eddce4ad21",
+    "V7P_REAL_APPLE_3_CASES_E2E.json": "3e85fdba74737f5a94f555424d283126fe84dc0e",
+    "V7P_BROWSER_RESULT.json": "3e85fdba74737f5a94f555424d283126fe84dc0e",
+    "V7P_UPLOAD_INTERACTIONS.json": "3e85fdba74737f5a94f555424d283126fe84dc0e"
+  }
+}

@@ -25,3 +25,6 @@ docs/search_v3r2/** -text whitespace=cr-at-eol
 
 # V7A G2 frozen question exports and blind packages must retain exact bytes.
 docs/topic3_v7a_g2/** -text whitespace=cr-at-eol
+# Preserve existing scientific Git blobs when checked out on Windows.
+docs/topic3_v6/V6_FRESH_HOLDOUT_30_UNJUDGED.csv -text whitespace=cr-at-eol
+docs/topic3/01_REPRODUCTION/PROVISIONAL_SOURCE_QRELS.jsonl -text whitespace=cr-at-eol

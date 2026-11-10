@@ -158,6 +158,17 @@ def test_new_api_auth_scope_comparison_and_no_local_paths(evidence_workspace,mon
         assert result.status_code==200,result.text
         data=result.json();assert data['quality_metrics'] is None
         assert len({arm['generation'] for arm in data['arms'].values()})==1
+        comparison=client.post('/studio/compare',headers=headers,json={
+            'query':'tong tai san','source':'USER_UPLOADS','document_ids':[d['id']],
+            'include_faith_r':True,'top_k':5,
+        })
+        assert comparison.status_code==200,comparison.text
+        compared=comparison.json()
+        assert set(compared['arms'])=={'bm25','dense','hybrid'}
+        assert not compared['arm_errors']
+        assert compared['faith_r']['search_profile']=='faith_r_product_v1'
+        assert compared['faith_r']['results']
+        assert all(hit['document_id']==d['id'] for hit in compared['faith_r']['results'])
         assert 'raw_path' not in result.text and str(w.root) not in result.text
         assert client.get('/studio/documents/../../secrets/file',headers=headers).status_code in {404,409}
         pdf=client.get(f'/studio/documents/{d["id"]}/file',headers=headers)

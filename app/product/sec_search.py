@@ -8,6 +8,7 @@ from pathlib import Path
 from threading import RLock
 from time import perf_counter
 import json
+import os
 
 from qdrant_client import QdrantClient, models
 
@@ -19,27 +20,36 @@ from scripts.p10_build_isolated_vectors import COLLECTION, point_id, source_reco
 
 
 class SecResearchIndex:
-    def __init__(self, root: Path, vector_root: Path, qa_root: Path | None = None, embedder=None):
+    def __init__(self, root: Path, vector_root: Path, qa_root: Path | None = None, embedder=None, *, lexical_only=False):
         self.root = Path(root).resolve(strict=True)
-        self.vector_root = Path(vector_root).resolve(strict=True)
-        snapshot = FrozenResearchSnapshot(self.root)
+        self.vector_root = Path(vector_root).resolve(strict=not lexical_only)
+        from app.product.sec_product_snapshot import snapshot as open_snapshot
+        snapshot = open_snapshot(self.root)
         prepared, source_hashes = source_records(snapshot)
-        self.identity = json.loads((self.vector_root / "generation_manifest.json").read_text(encoding="utf-8"))
         freeze = snapshot.freeze
-        if (self.identity.get("state") != "READY"
-            or self.identity.get("generation") != freeze["generation"]
-            or self.identity.get("manifest_hash") != freeze["manifest_hash"]
-            or self.identity.get("completed_points") != len(prepared)
-            or self.identity.get("parent_count") != len(prepared)
-            or self.identity.get("model_digest") != DIGEST
-            or self.identity.get("dimension") != 768
-            or self.identity.get("distance") != "COSINE"
-            or self.identity.get("query_prefix") != "search_query: "
-            or self.identity.get("document_prefix") != "search_document: "
-            or sorted(self.identity.get("source_raw_hashes", [])) != source_hashes):
-            raise ValueError("SEC_SEARCH_QA_GENERATION_MISMATCH")
+        self.lexical_only = lexical_only
+        self.publication_path = self.root/'lexical-publication.json' if lexical_only else self.vector_root/'generation_manifest.json'
+        self.identity = json.loads(self.publication_path.read_text(encoding='utf-8'))
+        if lexical_only:
+            if freeze.get('purpose')!='PRODUCT_USER_LIBRARY_SOURCE_ONLY' or self.identity.get('state')!='LEXICAL_READY' or (
+                    self.identity['generation'],self.identity['manifest_hash'],self.identity['parent_count'])!=(
+                    freeze['generation'],freeze['manifest_hash'],len(prepared)):
+                raise ValueError('SEC_LEXICAL_PUBLICATION_MISMATCH')
+        else:
+            if (self.identity.get("state") != "READY"
+                or self.identity.get("generation") != freeze["generation"]
+                or self.identity.get("manifest_hash") != freeze["manifest_hash"]
+                or self.identity.get("completed_points") != len(prepared)
+                or self.identity.get("parent_count") != len(prepared)
+                or self.identity.get("model_digest") != DIGEST
+                or self.identity.get("dimension") != 768
+                or self.identity.get("distance") != "COSINE"
+                or self.identity.get("query_prefix") != "search_query: "
+                or self.identity.get("document_prefix") != "search_document: "
+                or sorted(self.identity.get("source_raw_hashes", [])) != source_hashes):
+                raise ValueError("SEC_SEARCH_QA_GENERATION_MISMATCH")
         if qa_root:
-            qa_freeze = FrozenResearchSnapshot(Path(qa_root).resolve(strict=True)).freeze
+            qa_freeze = open_snapshot(Path(qa_root).resolve(strict=True)).freeze
             if (qa_freeze["generation"], qa_freeze["manifest_hash"]) != (freeze["generation"], freeze["manifest_hash"]):
                 raise ValueError("SEC_SEARCH_QA_GENERATION_MISMATCH")
         self.lexical = snapshot.lexical
@@ -69,7 +79,8 @@ class SecResearchIndex:
             self.catalog_rows.append({"ticker": m.get("ticker", ""), "cik": m["cik"],
                 "issuer": m.get("company_name", ""), "accession": m["accession_number"],
                 "filing_id": parent.filing_id, "form": m.get("form_type", ""),
-                "report_period": m.get("report_date", ""), "source_url": m["source_url"],
+                "report_period": m.get("report_date", ""), "fiscal_year": m.get("fiscal_year"),
+                "fiscal_period": m.get("fiscal_period"), "source_url": m["source_url"],
                 "raw_sha256": item["raw_hash"], "extraction_status": parent.extraction_status})
         self.catalog_rows.sort(key=lambda row: (row["ticker"], row["accession"]))
         for row in self.catalog_rows:
@@ -105,15 +116,18 @@ class SecResearchIndex:
                 "generation": self.identity["generation"],
                 "manifest_hash": self.identity["manifest_hash"],
                 "parents": len(self.parents), "dense_vectors": self.identity["completed_points"],
-                "model_digest": DIGEST, "filings": self.catalog_rows,
+                "model_digest": None if self.lexical_only else DIGEST, "filings": self.catalog_rows,
                 "scope_note": "Official SEC development filings shared with Financial AI; not human-adjudicated evaluation"}
 
     def search(self, query: str, mode: str = "hybrid", top_k: int = 5,
-               ticker: str = "", report_period: str = ""):
+               ticker: str = "", report_period: str = "", _filing_ids=None):
         if mode not in {"bm25", "dense", "hybrid"} or not 1 <= top_k <= 20 or not query.strip() or len(query) > 2000:
             raise ValueError("INVALID_SEC_SEARCH_REQUEST")
+        if self.lexical_only and mode!='bm25':
+            raise ValueError('SEC_DENSE_GENERATION_NOT_READY')
         selected = [r for r in self.catalog_rows if (not ticker or r["ticker"] == ticker.upper())
-                    and (not report_period or r["report_period"] == report_period)]
+                    and (not report_period or r["report_period"] == report_period)
+                    and (_filing_ids is None or r['filing_id'] in _filing_ids)]
         if not selected:
             return {"status": "NO_ELIGIBLE_FILING", "results": [], "generation": self.identity["generation"]}
         with self._lock:
@@ -162,10 +176,15 @@ class SecResearchIndex:
                 scored.append((score, cid, row))
             scored.sort(key=lambda x: (-x[0], x[1]))
             output = []
+            verified_by_source = {}
             for rank, (score, cid, item) in enumerate(scored[:top_k], 1):
                 parent = self.by_id[cid]
-                canonical = verified_source(parent["frozen"], cache=self._cache,
-                                            generation=self.identity["generation"])
+                frozen = parent["frozen"]
+                source_key = json.dumps(frozen,sort_keys=True)
+                if source_key not in verified_by_source:
+                    verified_by_source[source_key] = verified_source(frozen,cache=self._cache,
+                                                                     generation=self.identity["generation"])
+                canonical = verified_by_source[source_key]
                 if cid not in canonical or canonical[cid].model_dump(mode="json") != parent["chunk"].model_dump(mode="json"):
                     raise ValueError("SEC_PARENT_SOURCE_CHANGED")
                 chunk = parent["chunk"]
@@ -181,6 +200,10 @@ class SecResearchIndex:
                     "source_location": chunk.source_location.model_dump(mode="json"),
                     "extraction_status": chunk.extraction_status,
                     "provenance_status": "VERIFIED_LOCAL_SEC_SOURCE_BYTES"})
+                if len(os.getenv('STUDIO_API_TOKEN',''))>=16:
+                    from app.product.sec_viewer import reference,server_key
+                    from app.product.api import workspace
+                    output[-1]['source_reference']=reference(self,cid,server_key(workspace().root))
             return {"status": "READY", "dataset_id": self.identity["dataset_id"], "mode": mode,
                 "generation": self.identity["generation"], "manifest_hash": self.identity["manifest_hash"],
                 "results": output, "latency_ms": round((perf_counter()-started)*1000, 2),

@@ -1,0 +1,121 @@
+[
+  {
+    "case": "S01",
+    "question": "Giữa Microsoft, P&G và Costco trong bộ tài liệu này, chỉ dùng Costco: phần trăm lợi nhuận từ hoạt động trên tổng doanh thu kỳ ngắn nhất là bao nhiêu?",
+    "status": "SUPPORTED",
+    "reason": null,
+    "completed": 2,
+    "required": 2,
+    "citations": 2,
+    "task_issuers": [
+      "COST",
+      "COST"
+    ],
+    "answer": "### COST · operating income\nLợi nhuận hoạt động của COST được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2026-02-16 → 2026-05-10 | 3 tháng (84 ngày) | 2.815 | 0000909832-26-000051 [1] |\n\n### COST · revenue\nDoanh thu của COST được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2026-02-16 → 2026-05-10 | 3 tháng (84 ngày) | 70.527 | 0000909832-26-000051 [2] |",
+    "source_hashes": [
+      "4657f8d910de719aa29cc11a979087760e104d27ca49345d15bd5e614d1637a7"
+    ]
+  },
+  {
+    "case": "S02",
+    "question": "Microsoft: lãi hoạt động và doanh thu của quý tháng 9 năm 2025 biến động thế nào so với cùng quý năm trước?",
+    "status": "SUPPORTED",
+    "reason": null,
+    "completed": 1,
+    "required": 1,
+    "citations": 2,
+    "task_issuers": [
+      "MSFT"
+    ],
+    "answer": "Doanh thu của MSFT được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2024-07-01 → 2024-09-30 | 3 tháng (92 ngày) | 65.585 | 0001193125-25-256321 [1] |\n| 2025-07-01 → 2025-09-30 | 3 tháng (92 ngày) | 77.673 | 0001193125-25-256321 [2] |\n\nChênh lệch = 77.673 − 65.585 = **12.088 triệu USD**. [1][2]\n\nMức thay đổi = chênh lệch ÷ 65.585 × 100 = **18,43%**. [1][2]",
+    "source_hashes": [
+      "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9"
+    ]
+  },
+  {
+    "case": "S03",
+    "question": "Trong báo cáo Microsoft, trình bày riêng nguy cơ cạnh tranh và nguy cơ an ninh mạng, dựa vào công bố cụ thể.",
+    "status": "SOURCE_EXCERPTS",
+    "reason": null,
+    "completed": null,
+    "required": null,
+    "citations": 5,
+    "task_issuers": [],
+    "answer": "Đã tìm thấy các đoạn nguồn liên quan.\n\n[1] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: On October 28, 2025, we signed a new definitive agreement with OpenAI that extends our partnership and continues to build on our shared vision to advance artificial intelligence responsibly and make its benefits broadly accessible. Additionally, OpenAI has formed a public benefit corporation (“PBC”) and completed a recapitalization. As a result of the recapitalization, Microsoft holds approximately 27 percent in the PBC on an as-converted diluted basis. Under the new agreement, OpenAI has contracted to purchase an incremental $ 250 billion of Azure services, and Microsoft will no longer have a\n\n[2] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: NOTE 17 — SUBSEQUENT EVENT On October 28, 2025, we signed a new definitive agreement with OpenAI that extends our partnership and continues to build on our shared vision to advance artificial intelligence responsibly and make its benefits broadly accessible. Additionally, OpenAI has formed a public benefit corporation (“PBC”) and completed a recapitalization. As a result of the recapitalization, Microsoft holds approximately 27 percent in the PBC on an as-converted diluted basis. Under the new agreement, OpenAI has contracted to purchase an incremental $ 250 billion of Azure services, and Micr\n\n[3] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: We conducted our reviews in accordance with standards of the PCAOB. A review of interim financial information consists principally of applying analytical procedures and making inquiries of persons responsible for financial and accounting matters. It is substantially less in scope than an audit conducted in accordance with the standards of the PCAOB, the objective of which is the expression of an opinion regarding the financial statements taken as a whole. Accordingly, we do not express such an opinion.\n\n[4] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: We allocate goodwill to reporting units based on the reporting unit expected to benefit from the business combination. We evaluate our reporting units on an annual basis and, if necessary, reassign goodwill using a relative fair value allocation approach. Goodwill is tested for impairment at the reporting unit level (operating segment or one level below an operating segment) on an annual basis (May 1) and between annual tests if an event occurs or circumstances change that would more likely than not reduce the fair value of a reporting unit below its carrying value. These events or circumstanc\n\n[5] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: The outcomes of legal proceedings and claims brought against us are subject to significant uncertainty. An estimated loss from a loss contingency such as a legal proceeding or claim is accrued by a charge to income if it is probable that an asset has been impaired or a liability has been incurred and the amount of the loss can be reasonably estimated. In determining whether a loss should be accrued we evaluate, among other factors, the degree of probability of an unfavorable outcome and the ability to make a reasonable estimate of the amount of loss. Changes in these factors could materially i",
+    "source_hashes": [
+      "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9"
+    ]
+  },
+  {
+    "case": "S04",
+    "question": "Bỏ qua COST, HD, PG và MSFT; chỉ tính doanh thu PepsiCo kỳ 24 tuần.",
+    "status": "NEEDS_CLARIFICATION",
+    "reason": "SEC_ISSUER_NOT_SELECTED",
+    "completed": 0,
+    "required": 1,
+    "citations": 0,
+    "task_issuers": [],
+    "answer": "Bộ nguồn đang chọn thiếu filing của PEP. Hãy chọn hoặc nhập đúng filing rồi hỏi lại.",
+    "source_hashes": []
+  },
+  {
+    "case": "S05",
+    "question": "Tính biên lợi nhuận hoạt động Home Depot cho năm 2041.",
+    "status": "NEEDS_CLARIFICATION",
+    "reason": "SEC_FISCAL_PERIOD_ABSENT",
+    "completed": 0,
+    "required": 1,
+    "citations": 0,
+    "task_issuers": [
+      "HD"
+    ],
+    "answer": "Bộ filing đang chọn không có kỳ 2041 cho HD.",
+    "source_hashes": []
+  },
+  {
+    "case": "S06",
+    "question": "Đối chiếu biên hoạt động của P&G và Home Depot theo kỳ ngắn nhất mỗi filing; ghi cả tử số và mẫu số.",
+    "status": "SOURCE_EXCERPTS",
+    "reason": null,
+    "completed": null,
+    "required": null,
+    "citations": 5,
+    "task_issuers": [],
+    "answer": "Đã tìm thấy các đoạn nguồn liên quan.\n\n[1] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes ☒ No ☐\n\n[2] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: • Fabric & Home Care : Fabric Care (Fabric Enhancers, Laundry Additives, Laundry Detergents); Home Care (Air Care, Dish Care, P&G Professional, Surface Care); Habitat Care (Pest Prevention, Outdoor Care); and\n\n[3] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Our primary requirements for capital are acquiring land, buildings, and equipment for new and remodeled warehouses, information systems, and manufacturing and distribution facilities. In the first thirty-six weeks of 2026, we spent $4,228 on capital expenditures, and it is our current intention to spend approximately $6,500 during fiscal 2026, as we continue to invest in new warehouse openings, remodel existing locations, expand our depot network, and further develop our digitally-enabled businesses. These expenditures are expected to be financed with cash from operations, cash and cash equiva\n\n[4] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Level 2 – inputs are based upon quoted prices for similar instruments in active markets, quoted prices for identical or similar instruments in markets that are not active, and model-based valuation techniques (e.g. the Black-Scholes model) for which all significant inputs are observable in the market or can be corroborated by observable market data for substantially the full term of the assets or liabilities. Where applicable, these models project future cash flows and discount the future amounts to a present value using market-based observable inputs including interest rate curves, credit spr\n\n[5] Phạm vi chưa xác định · số chưa xác minh · trang SEC HTML: Net earnings attributable to P&G (Diluted) · $ · 4,731 · $ · 4,750",
+    "source_hashes": [
+      "1c60df5705b24abf1141221441e8a5f77e0233a9884a1927b84ce90ac74b7527",
+      "26f4b4397a2d85ff00350f375de34b2f419f111a7e64d4f3855809d55074a0b9",
+      "4657f8d910de719aa29cc11a979087760e104d27ca49345d15bd5e614d1637a7"
+    ]
+  },
+  {
+    "case": "S07a",
+    "question": "Tỷ suất lợi nhuận hoạt động HD kỳ 13 tuần là bao nhiêu?",
+    "status": "SUPPORTED",
+    "reason": null,
+    "completed": 1,
+    "required": 1,
+    "citations": 2,
+    "task_issuers": [
+      "HD"
+    ],
+    "answer": "Biên lợi nhuận hoạt động của HD cho kỳ 2026-05-04–2026-08-02 (13 tuần): **14.29%**. Operating income: 6,839,000,000 USD [1] ÷ Net sales: 47,861,000,000 USD [2] × 100.",
+    "source_hashes": [
+      "301a64049ae9e407c16d6b07b734614a1e64fa969acc3126f9e7a74023c9b614"
+    ]
+  },
+  {
+    "case": "S07b",
+    "question": "Còn COST?",
+    "status": "NEEDS_CLARIFICATION",
+    "reason": "SEC_MARGIN_SOURCE_UNAVAILABLE",
+    "completed": 0,
+    "required": 1,
+    "citations": 0,
+    "task_issuers": [
+      "COST"
+    ],
+    "answer": "Chưa gắn được ô nguồn operating_income, revenue cùng kỳ cho COST.",
+    "source_hashes": []
+  }
+]

@@ -1,0 +1,1124 @@
+{
+  "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+  "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+  "page_count": 24,
+  "pages": [
+    {
+      "page": 1,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Bìa báo cáo tài chính",
+      "kind": "COVER",
+      "sample": "BAO CAO TAI CHINH RIENG · QUY IV/2025",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 86.54285714285714,
+        "low_confidence_words": 1,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 1,
+        "source_kind": "PDF",
+        "text": "Bìa báo cáo tài chính",
+        "box": null,
+        "citation_id": "91aafc98ccdbad6acbcddd12",
+        "evidence_id": "91aafc98ccdbad6acbcddd12",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 2,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Bảng cân đối kế toán",
+      "kind": "BALANCE_SHEET",
+      "sample": "Tài san ngắn hạn (100 = 110 + 120 + 130 + 140 + 150)",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 91.75735294117646,
+        "low_confidence_words": 11,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 2,
+        "source_kind": "PDF",
+        "text": "Bảng cân đối kế toán",
+        "box": null,
+        "citation_id": "d0ff9aeb087ba37d177b31d9",
+        "evidence_id": "d0ff9aeb087ba37d177b31d9",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 3,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Bảng cân đối kế toán",
+      "kind": "BALANCE_SHEET",
+      "sample": "Tổng cộng tài sản",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 92.1541095890411,
+        "low_confidence_words": 10,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [
+        "assets"
+      ],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            79.44000032571765,
+            602.8800174724003,
+            575.0400023577628,
+            614.6400178132234
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 3,
+        "source_kind": "PDF",
+        "text": "Bảng cân đối kế toán",
+        "box": null,
+        "citation_id": "b7ee89b88589369864f29b25",
+        "evidence_id": "b7ee89b88589369864f29b25",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 4,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Bảng cân đối kế toán",
+      "kind": "BALANCE_SHEET",
+      "sample": "Nợ phải trả",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 90.31481481481481,
+        "low_confidence_words": 19,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [
+        "equity",
+        "liabilities"
+      ],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            95.04000038968032,
+            284.64000824931003,
+            572.8800023489064,
+            299.5200086805556
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 4,
+        "source_kind": "PDF",
+        "text": "Bảng cân đối kế toán",
+        "box": null,
+        "citation_id": "44ac063bfc48ff6f6cee330e",
+        "evidence_id": "44ac063bfc48ff6f6cee330e",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 5,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Báo cáo kết quả kinh doanh",
+      "kind": "INCOME_STATEMENT",
+      "sample": "Doanh thu thuần",
+      "reading_status": "OCR · chưa chứng nhận · hiệu chỉnh 90°",
+      "rotation": 90,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 83.97625329815304,
+        "low_confidence_words": 45,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [
+        "net_income",
+        "net_revenue"
+      ],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            104.16000042707388,
+            57.120001655426464,
+            131.76000054023862,
+            794.1600230159922
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            231.8400009505838,
+            654.2400189608929,
+            256.320001050956,
+            793.6800230020812
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            380.16000155872126,
+            648.0000187800481,
+            402.2400016492531,
+            784.3200227308138
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 5,
+        "source_kind": "PDF",
+        "text": "Báo cáo kết quả kinh doanh",
+        "box": null,
+        "citation_id": "89172efe745f00e78dda4784",
+        "evidence_id": "89172efe745f00e78dda4784",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 6,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Báo cáo lưu chuyển tiền tệ",
+      "kind": "CASH_FLOW",
+      "sample": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 93.40845070422536,
+        "low_confidence_words": 6,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [
+        "operating_cashflow"
+      ],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            111.60000045757917,
+            293.7600085136218,
+            568.3200023302096,
+            306.48000888226716
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 6,
+        "source_kind": "PDF",
+        "text": "Báo cáo lưu chuyển tiền tệ",
+        "box": null,
+        "citation_id": "514b33973466b04fe5ef97b9",
+        "evidence_id": "514b33973466b04fe5ef97b9",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 7,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Báo cáo lưu chuyển tiền tệ",
+      "kind": "CASH_FLOW",
+      "sample": "Tiền thu từ đi vay",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 87.32307692307693,
+        "low_confidence_words": 23,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            107.04000043888239,
+            49.44000143284811,
+            159.6000006543874,
+            67.68000196147169
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            122.8800005038291,
+            302.8800087779336,
+            272.88000111885486,
+            312.4800090561565
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 7,
+        "source_kind": "PDF",
+        "text": "Báo cáo lưu chuyển tiền tệ",
+        "box": null,
+        "citation_id": "bfa241dd53bd3184bc17797b",
+        "evidence_id": "bfa241dd53bd3184bc17797b",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 8,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Đặc điểm hoạt động, Hình thức sở hữu vốn",
+      "kind": "NOTES",
+      "sample": "Đặc điểm hoạt động",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 92.0949074074074,
+        "low_confidence_words": 16,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            119.52000049005252,
+            69.12000200320513,
+            160.08000065635548,
+            75.60000219100561
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            452.64000185590174,
+            362.8800105168269,
+            563.0400023085607,
+            373.6800108298277
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 8,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Đặc điểm hoạt động, Hình thức sở hữu vốn",
+        "box": null,
+        "citation_id": "5c2baa9949bbd8555542af90",
+        "evidence_id": "5c2baa9949bbd8555542af90",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 9,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Chính sách kế toán · Kỳ kế toán và đơn vị tiền tệ",
+      "kind": "POLICY",
+      "sample": "Kỳ kế toán và đơn vị tiền tệ",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 92.8625,
+        "low_confidence_words": 6,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 9,
+        "source_kind": "PDF",
+        "text": "Chính sách kế toán · Kỳ kế toán và đơn vị tiền tệ",
+        "box": null,
+        "citation_id": "a40a26af8e4385d3b20bf97f",
+        "evidence_id": "a40a26af8e4385d3b20bf97f",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 10,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Chính sách kế toán · Chính sách kế toán, Phải thu khác",
+      "kind": "POLICY",
+      "sample": "Chính sách kế toán",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 95.28048780487805,
+        "low_confidence_words": 1,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 10,
+        "source_kind": "PDF",
+        "text": "Chính sách kế toán · Chính sách kế toán, Phải thu khác",
+        "box": null,
+        "citation_id": "695ab2a62c41a662d54772a4",
+        "evidence_id": "695ab2a62c41a662d54772a4",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 11,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Chính sách kế toán · Kỳ kế toán và đơn vị tiền tệ, Dự phòng phải thu, Bất động sản đầu tư",
+      "kind": "POLICY",
+      "sample": "Kỳ kế toán và đơn vị tiền tệ",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 94.67376830892144,
+        "low_confidence_words": 3,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 11,
+        "source_kind": "PDF",
+        "text": "Chính sách kế toán · Kỳ kế toán và đơn vị tiền tệ, Dự phòng phải thu, Bất động sản đầu tư",
+        "box": null,
+        "citation_id": "4013761161f0934a03fe4b00",
+        "evidence_id": "4013761161f0934a03fe4b00",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 12,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Chính sách kế toán · Nguyên tắc ghi nhận vốn chủ sở hữu, Tiền và tiền gửi ngân hàng",
+      "kind": "POLICY",
+      "sample": "Nguyên tắc ghi nhận vốn chủ sở hữu",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 93.27225130890052,
+        "low_confidence_words": 6,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 12,
+        "source_kind": "PDF",
+        "text": "Chính sách kế toán · Nguyên tắc ghi nhận vốn chủ sở hữu, Tiền và tiền gửi ngân hàng",
+        "box": null,
+        "citation_id": "01b75eb33b96736516d71c9c",
+        "evidence_id": "01b75eb33b96736516d71c9c",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 13,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Đầu tư vào công ty con",
+      "kind": "NOTES",
+      "sample": "Đầu tư vào công ty con",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 92.27586206896552,
+        "low_confidence_words": 4,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 13,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Đầu tư vào công ty con",
+        "box": null,
+        "citation_id": "82267fcac3b636258ac4dff2",
+        "evidence_id": "82267fcac3b636258ac4dff2",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 14,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Phải thu khác",
+      "kind": "NOTES",
+      "sample": "Phải thu khác",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 90.98113207547169,
+        "low_confidence_words": 10,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            464.40000190411973,
+            104.88000303958556,
+            563.5200023105288,
+            114.4800033178085
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 14,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Phải thu khác",
+        "box": null,
+        "citation_id": "bc55e6b9cca1443bfe8fc047",
+        "evidence_id": "bc55e6b9cca1443bfe8fc047",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 15,
+      "printed_page": 14,
+      "printed_page_box": [
+        544.0800022308214,
+        124.80000361689815,
+        551.5200022613267,
+        134.40000389512107
+      ],
+      "title": "Thuyết minh báo cáo tài chính · Tài sản cố định hữu hình",
+      "kind": "NOTES",
+      "sample": "Tài sản cố định hữu hình",
+      "reading_status": "OCR · chưa chứng nhận · hiệu chỉnh 90°",
+      "rotation": 90,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 76.37610619469027,
+        "low_confidence_words": 57,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            84.24000034539847,
+            131.28000380469862,
+            102.72000042116964,
+            802.5600232594373
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            93.60000038377608,
+            98.88000286569623,
+            112.08000045954725,
+            372.0000107811387
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            130.80000053630246,
+            78.72000228142807,
+            183.12000075082344,
+            802.3200232524817
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            153.12000062781829,
+            756.7200219309228,
+            161.52000066225975,
+            802.0800232455261
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 15,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Tài sản cố định hữu hình",
+        "box": null,
+        "citation_id": "8cf744285adaf635669fbe24",
+        "evidence_id": "8cf744285adaf635669fbe24",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 16,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Tài sản cố định vô hình",
+      "kind": "NOTES",
+      "sample": "Tài sản cố định vô hình",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 92.59116022099448,
+        "low_confidence_words": 3,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 16,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Tài sản cố định vô hình",
+        "box": null,
+        "citation_id": "be3b0a38c9a76fff08e2e906",
+        "evidence_id": "be3b0a38c9a76fff08e2e906",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 17,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Bất động sản đầu tư",
+      "kind": "NOTES",
+      "sample": "Bất động sản đầu tư",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 91.95693779904306,
+        "low_confidence_words": 7,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            316.3200012969663,
+            417.60001210269763,
+            440.40000180571565,
+            421.920012227898
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 17,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Bất động sản đầu tư",
+        "box": null,
+        "citation_id": "1dd6675108f7d23ac524dba2",
+        "evidence_id": "1dd6675108f7d23ac524dba2",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 18,
+      "printed_page": 17,
+      "printed_page_box": [
+        545.2800022357417,
+        97.44000282396279,
+        552.7200022662469,
+        106.56000308827457
+      ],
+      "title": "Thuyết minh báo cáo tài chính · Thuế và các khoản phải nộp",
+      "kind": "NOTES",
+      "sample": "Thuế và các khoản phải nộp",
+      "reading_status": "OCR · chưa chứng nhận · hiệu chỉnh 90°",
+      "rotation": 90,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 77.22413793103448,
+        "low_confidence_words": 53,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            87.12000035720696,
+            736.3200213396991,
+            178.0800007301586,
+            802.5600232594373
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            96.48000039558457,
+            77.76000225360576,
+            114.00000046741958,
+            140.64000407596598
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            122.40000050186102,
+            97.92000283787394,
+            160.56000065832356,
+            791.2800229325254
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            183.84000075377557,
+            273.60000792935364,
+            198.24000081281804,
+            791.0400229255698
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 18,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Thuế và các khoản phải nộp",
+        "box": null,
+        "citation_id": "5565c354c17aa5314241de86",
+        "evidence_id": "5565c354c17aa5314241de86",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 19,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Phải trả khác",
+      "kind": "NOTES",
+      "sample": "Phải trả khác",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 91.27972027972028,
+        "low_confidence_words": 4,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            102.96000042215368,
+            54.24000157195958,
+            155.76000063864274,
+            72.00000208667201
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 19,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Phải trả khác",
+        "box": null,
+        "citation_id": "7d1e4d95bdaeb9212a4ec8f3",
+        "evidence_id": "7d1e4d95bdaeb9212a4ec8f3",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 20,
+      "printed_page": 19,
+      "printed_page_box": [
+        541.680002220981,
+        107.04000310218572,
+        549.6000022534544,
+        116.1600033664975
+      ],
+      "title": "Thuyết minh báo cáo tài chính · Bảng đối chiếu biến động vốn chủ sở hữu",
+      "kind": "NOTES",
+      "sample": "Bảng đối chiếu biến động vốn chủ sở hữu",
+      "reading_status": "OCR · chưa chứng nhận · hiệu chỉnh 90°",
+      "rotation": 90,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 84.16666666666667,
+        "low_confidence_words": 36,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [
+        {
+          "box": [
+            123.84000050776527,
+            74.8800021701389,
+            152.16000062388213,
+            788.8800228629697
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        },
+        {
+          "box": [
+            287.5200011788814,
+            276.96000802673166,
+            301.9200012379238,
+            776.4000225012799
+          ],
+          "status": "LOW_OCR_CONFIDENCE"
+        }
+      ],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 20,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Bảng đối chiếu biến động vốn chủ sở hữu",
+        "box": null,
+        "citation_id": "dd2bd6ce074b06df456438ed",
+        "evidence_id": "dd2bd6ce074b06df456438ed",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 21,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Cổ phiếu đang lưu hành",
+      "kind": "NOTES",
+      "sample": "Cổ phiếu đang lưu hành",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 91.9751552795031,
+        "low_confidence_words": 3,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 21,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Cổ phiếu đang lưu hành",
+        "box": null,
+        "citation_id": "354183e03186a94ac7b587fa",
+        "evidence_id": "354183e03186a94ac7b587fa",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 22,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Giá vốn hàng bán",
+      "kind": "NOTES",
+      "sample": "Giá vốn hàng bán",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 92.67592592592592,
+        "low_confidence_words": 4,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 22,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Giá vốn hàng bán",
+        "box": null,
+        "citation_id": "239e212bc75cb70d89b44b06",
+        "evidence_id": "239e212bc75cb70d89b44b06",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 23,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Thuyết minh báo cáo tài chính · Chi phí tài chính",
+      "kind": "NOTES",
+      "sample": "Chi phí tài chính",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 93.34394904458598,
+        "low_confidence_words": 1,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED",
+        "TABLE_HEADER_OR_GEOMETRY_UNRESOLVED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 23,
+        "source_kind": "PDF",
+        "text": "Thuyết minh báo cáo tài chính · Chi phí tài chính",
+        "box": null,
+        "citation_id": "42853cc77e40a4089b0e984e",
+        "evidence_id": "42853cc77e40a4089b0e984e",
+        "extraction_method": "OCR"
+      }
+    },
+    {
+      "page": 24,
+      "printed_page": null,
+      "printed_page_box": null,
+      "title": "Giải trình biến động kết quả kinh doanh · Chi phí quản lý doanh nghiệp, Giải trình biến động kết quả kinh doanh",
+      "kind": "EXPLANATION",
+      "sample": "Chi phí quản lý doanh nghiệp",
+      "reading_status": "OCR · chưa chứng nhận",
+      "rotation": 0,
+      "method": "OCR",
+      "extraction_status": "EXTRACTED",
+      "ocr_quality": {
+        "engine_mean_word_confidence": 92.43367346938776,
+        "low_confidence_words": 5,
+        "status": "OCR_EXTRACTED_NOT_CERTIFIED"
+      },
+      "tables": 1,
+      "metrics": [],
+      "reading_warnings": [
+        "OCR_UNVERIFIED"
+      ],
+      "weak_ocr_regions": [],
+      "citation": {
+        "document_id": "4a92af827aaf1e73e017544d0ff20d0d",
+        "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+        "issuer": "",
+        "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+        "page": 24,
+        "source_kind": "PDF",
+        "text": "Giải trình biến động kết quả kinh doanh · Chi phí quản lý doanh nghiệp, Giải trình biến động kết quả kinh doanh",
+        "box": null,
+        "citation_id": "a4b18009a827892c1313ed76",
+        "evidence_id": "a4b18009a827892c1313ed76",
+        "extraction_method": "OCR"
+      }
+    }
+  ]
+}

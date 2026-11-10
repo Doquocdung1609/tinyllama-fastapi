@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "browser": "147.0.7727.15",
+  "document_id": "3eb270b22acb7d8d8e9c32a43dc221de",
+  "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+  "apple_cases": 3,
+  "future_year_refusal": true,
+  "source_pdf_page": 32,
+  "followup_2024": true,
+  "narrative": true,
+  "company_research": true,
+  "advanced_conflict": true,
+  "metadata_correction_reload": true,
+  "alternate_source_refusal": true,
+  "sec_control": {
+    "status": "SUPPORTED",
+    "values": [
+      "109384000000"
+    ],
+    "citations": [
+      {
+        "source_kind": "SEC",
+        "chunk_id": "fin_9fadb8b8f3b78592782f972a63a9e7ed",
+        "issuer": "HOME DEPOT, INC.",
+        "report_period": "2026-08-02",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+        "source_sha256": "3d638bc025ef9643317d539f63c3891c8db9b47e35a8edd8040928704d0703f1",
+        "text": "Total assets: 109,384 (in millions, except per share data) · 2026-08-02",
+        "row_label": "Total assets",
+        "column_label": "August 2, 2026",
+        "verification": "VERIFIED_SOURCE_CELL",
+        "unit": "USD",
+        "source_location": {
+          "table_id": "table_483d3ac2b60916e1e4c8d837",
+          "row_index": 14,
+          "column_index": 4
+        }
+      }
+    ]
+  },
+  "sec_navigation": {
+    "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026058715/hd-20260802.htm",
+    "exact_filing_url": true,
+    "filing_text_visible": false,
+    "exact_cell_landing": false
+  },
+  "comparison_modes": [
+    "bm25",
+    "dense",
+    "hybrid"
+  ],
+  "page_errors": []
+}

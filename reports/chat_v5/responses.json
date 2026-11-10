@@ -1,0 +1,684 @@
+[
+  {
+    "case": "liabilities",
+    "question": "Nợ phải trả của công ty mẹ Hòa Phát tại 31/12/2025 là bao nhiêu?",
+    "before": {
+      "answer": "Nợ phải trả · {'INSTANT': '31/12/2025', '3M_Q4': 'Quý IV 2025', 'FY': 'Cả năm 2025'}: 4.239.852.223.395 VND [1].",
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "verification_status": "HUMAN_SOURCE_VERIFIED",
+      "values": [
+        "4239852223395"
+      ],
+      "citations": [
+        {
+          "page": 4,
+          "row_label": "Nợ phải trả",
+          "column_id": null,
+          "period": "2025-12-31",
+          "unit": "VND",
+          "box": [
+            388.3200015921787,
+            252.72000732421876,
+            470.6400019297048,
+            261.12000756766383
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Nợ phải trả của công ty mẹ Hòa Phát tại ngày 31/12/2025 là 4.239.852.223.395 đồng. Giá trị đã được người dùng đối chiếu với ảnh gốc, báo cáo riêng, trang 4. [1]",
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "verification_status": "HUMAN_SOURCE_VERIFIED",
+      "values": [
+        "4239852223395"
+      ],
+      "citations": [
+        {
+          "page": 4,
+          "row_label": "Nợ phải trả",
+          "column_id": "p4-ocr-v2-r0-c0",
+          "period": "2025-12-31",
+          "unit": "VND",
+          "box": [
+            388.3200015921787,
+            252.72000732421876,
+            470.6400019297048,
+            261.12000756766383
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    }
+  },
+  {
+    "case": "assets",
+    "question": "Tổng tài sản công ty mẹ Hòa Phát tại 31/12/2025 là bao nhiêu? Đã được người dùng kiểm duyệt chưa?",
+    "before": {
+      "answer": "Bạn có thể mở trang nguồn để đối chiếu dòng, chữ số và kỳ báo cáo. Kết quả đọc OCR vẫn chưa được xác minh. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 3,
+          "row_label": "Tổng cộng tài sản",
+          "column_id": "p3-ocr-v2-r20-c0",
+          "period": "31/12/2025",
+          "unit": "VND",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Tổng cộng tài sản tại ngày 31/12/2025, báo cáo riêng, trang 3, có giá trị OCR ứng viên 98.670.778.691.605 đồng (đọc từ ảnh quét). [1]\n\nCác giá trị ứng viên chưa được người dùng xác nhận. Mở từng ô để đối chiếu chữ số, dấu và cột trên ảnh gốc.",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_CANDIDATE_ANSWER",
+      "verification_status": "OCR_CANDIDATE_ANSWER",
+      "values": [],
+      "citations": [
+        {
+          "page": 3,
+          "row_label": "Tổng cộng tài sản",
+          "column_id": "p3-ocr-v2-r20-c0",
+          "period": "31/12/2025",
+          "unit": "VND",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "98.670.778.691.605",
+            "text": "98.670.778.691.605",
+            "observations": [],
+            "ocr_engine": "Tesseract",
+            "ocr_warning": null,
+            "review_status": "AUTOMATED_EXTRACTION",
+            "printed_marker": null,
+            "period_type": "INSTANT",
+            "period_start": null,
+            "period_end": "2025-12-31"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "revenue",
+    "question": "Doanh thu thuần quý IV/2025 và cả năm 2025 của Hòa Phát là bao nhiêu?",
+    "before": {
+      "answer": "Bạn có thể mở trang nguồn để đối chiếu dòng, chữ số và kỳ báo cáo. Kết quả đọc OCR vẫn chưa được xác minh. [1][2]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 5,
+          "row_label": "Doanh thu thuần",
+          "column_id": "p5-ocr-v2-r2-c0",
+          "period": "Q4 2025",
+          "unit": null,
+          "box": [
+            193.68000079412127,
+            389.52001128889555,
+            204.24000083741907,
+            449.04001301387774
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        },
+        {
+          "page": 5,
+          "row_label": "Doanh thu thuần",
+          "column_id": "p5-ocr-v2-r2-c2",
+          "period": "FY 2025",
+          "unit": null,
+          "box": [
+            193.68000079412127,
+            202.80000587745948,
+            200.4000008216744,
+            263.0400076233084
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Doanh thu thuần tại quý IV/2025, báo cáo riêng, trang 5, có giá trị OCR ứng viên 125.533.574.301 đồng (đọc từ ảnh quét). [1]\n\nDoanh thu thuần tại cả năm 2025, báo cáo riêng, trang 5, có giá trị OCR ứng viên 343.200.043.936 đồng (đọc từ ảnh quét). [2]\n\nCác giá trị ứng viên chưa được người dùng xác nhận. Mở từng ô để đối chiếu chữ số, dấu và cột trên ảnh gốc.",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_CANDIDATE_ANSWER",
+      "verification_status": "OCR_CANDIDATE_ANSWER",
+      "values": [],
+      "citations": [
+        {
+          "page": 5,
+          "row_label": "Doanh thu thuần",
+          "column_id": "p5-ocr-v2-r2-c0",
+          "period": "Q4 2025",
+          "unit": "VND",
+          "box": [
+            193.68000079412127,
+            389.52001128889555,
+            204.24000083741907,
+            449.04001301387774
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "125.533.574.301",
+            "text": "125.533.574.301",
+            "observations": [],
+            "ocr_engine": "Tesseract",
+            "ocr_warning": null,
+            "review_status": "AUTOMATED_EXTRACTION",
+            "printed_marker": null,
+            "period_type": "3M_Q4",
+            "period_start": "2025-10-01",
+            "period_end": "2025-12-31"
+          }
+        },
+        {
+          "page": 5,
+          "row_label": "Doanh thu thuần",
+          "column_id": "p5-ocr-v2-r2-c2",
+          "period": "FY 2025",
+          "unit": "VND",
+          "box": [
+            193.68000079412127,
+            202.80000587745948,
+            200.4000008216744,
+            263.0400076233084
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "343.200.043.936",
+            "text": "343.200.043.936",
+            "observations": [],
+            "ocr_engine": "Tesseract",
+            "ocr_warning": null,
+            "review_status": "AUTOMATED_EXTRACTION",
+            "printed_marker": null,
+            "period_type": "FY",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "cash",
+    "question": "Lưu chuyển tiền thuần từ hoạt động kinh doanh năm 2025 là bao nhiêu?",
+    "before": {
+      "answer": "Bạn có thể mở trang nguồn để đối chiếu dòng, chữ số và kỳ báo cáo. Kết quả đọc OCR vẫn chưa được xác minh. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 6,
+          "row_label": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+          "column_id": "p6-ocr-v2-r13-c0",
+          "period": "FY 2025",
+          "unit": "VND",
+          "box": [
+            383.2800015715138,
+            524.6400152048834,
+            460.5600018883751,
+            534.9600155039731
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Lưu chuyển tiền thuần từ hoạt động kinh doanh tại cả năm 2025, báo cáo riêng, trang 6, có giá trị OCR ứng viên (737.877.371.011) đồng (đọc từ ảnh quét). [1]\n\nCác giá trị ứng viên chưa được người dùng xác nhận. Mở từng ô để đối chiếu chữ số, dấu và cột trên ảnh gốc.",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_CANDIDATE_ANSWER",
+      "verification_status": "OCR_CANDIDATE_ANSWER",
+      "values": [],
+      "citations": [
+        {
+          "page": 6,
+          "row_label": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+          "column_id": "p6-ocr-v2-r13-c0",
+          "period": "FY 2025",
+          "unit": "VND",
+          "box": [
+            383.2800015715138,
+            524.6400152048834,
+            460.5600018883751,
+            534.9600155039731
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "(737.877.371.011)",
+            "text": "(737.877.371.011)",
+            "observations": [],
+            "ocr_engine": "Tesseract",
+            "ocr_warning": null,
+            "review_status": "AUTOMATED_EXTRACTION",
+            "printed_marker": null,
+            "period_type": "FY",
+            "period_start": "2025-01-01",
+            "period_end": "2025-12-31"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "deposit",
+    "question": "Tiền gửi ngân hàng đầu năm 2025 trong thuyết minh Hòa Phát là bao nhiêu? OCR ban đầu và đọc lại khác nhau thế nào?",
+    "before": {
+      "answer": "Bạn có thể mở trang nguồn để đối chiếu dòng, chữ số và kỳ báo cáo. Kết quả đọc OCR vẫn chưa được xác minh. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 12,
+          "row_label": "Tiền gửi ngân hang",
+          "column_id": null,
+          "period": null,
+          "unit": null,
+          "box": [
+            82.32000033752614,
+            597.8400173263333,
+            565.6800023193852,
+            620.6400179871127
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Ô Tiền gửi ngân hàng tại ngày 01/01/2025, báo cáo riêng, trang 12. Tesseract ban đầu đọc 46.014.571.676 đồng. Tesseract đọc lại thành 46.074.571.676 đồng. Chữ số thay đổi: 1 → 7. Bản đọc lại là giá trị OCR ứng viên, chưa được người duyệt xác nhận. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_CANDIDATE_ANSWER",
+      "verification_status": "OCR_CANDIDATE_ANSWER",
+      "values": [],
+      "citations": [
+        {
+          "page": 12,
+          "row_label": "Tiền gửi ngân hàng",
+          "column_id": "p12-ocr-v2-r1-c1",
+          "period": "01/01/2025",
+          "unit": "VND",
+          "box": [
+            496.80000203696534,
+            597.8400173263333,
+            565.6800023193852,
+            607.4400176045561
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "46.014.571.676",
+            "text": "46.074.571.676",
+            "observations": [
+              {
+                "contrast": false,
+                "dpi": 330,
+                "engine": "Tesseract",
+                "raw": "46.074.571.676"
+              },
+              {
+                "contrast": true,
+                "dpi": 420,
+                "engine": "Tesseract",
+                "raw": "46.074.571.676"
+              }
+            ],
+            "ocr_engine": "LOCAL_CROP_REREAD",
+            "ocr_warning": "REREAD_DIFFERS_FROM_BASELINE",
+            "review_status": "AUTOMATED_CROSSCHECKED_CANDIDATE",
+            "printed_marker": null,
+            "period_type": "INSTANT",
+            "period_start": null,
+            "period_end": "2025-01-01"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "dash",
+    "question": "Dấu gạch trong cột dự phòng ở trang 13 có đồng nghĩa số 0 không?",
+    "before": {
+      "answer": "Bạn có thể mở trang nguồn để đối chiếu dòng, chữ số và kỳ báo cáo. Kết quả đọc OCR vẫn chưa được xác minh. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 13,
+          "row_label": null,
+          "column_id": null,
+          "period": null,
+          "unit": null,
+          "box": null,
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Không thể mặc định dấu gạch bằng số 0. Ô “Công ty CP Gang thép Hòa Phát” ở cột 31/12/2025 Dự phòng hiển thị dấu gạch in trên PDF, trang 13. [1] Số 0 là giá trị được in bằng chữ số. Ô trống và ô OCR chưa đọc được cũng là các trường hợp riêng. Chỉ diễn giải dấu gạch theo quy ước nêu trong báo cáo.",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_SOURCE_EXPLANATION",
+      "verification_status": "OCR_SOURCE_EXPLANATION",
+      "values": [],
+      "citations": [
+        {
+          "page": 13,
+          "row_label": "Công ty CP Gang thép Hòa Phát",
+          "column_id": "p13-ocr-v2-r0-c1",
+          "period": "31/12/2025 Dự phòng",
+          "unit": "VND",
+          "box": [
+            388.87985142857144,
+            219.29142857142855,
+            391.45128,
+            220.31999999999996
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "",
+            "text": "-",
+            "observations": [],
+            "ocr_engine": "IMAGE_STROKE",
+            "ocr_warning": null,
+            "review_status": "AUTOMATED_EXTRACTION",
+            "printed_marker": "PRINTED_DASH",
+            "period_type": "INSTANT",
+            "period_start": null,
+            "period_end": "2025-12-31"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "definition",
+    "question": "Giải thích lưu chuyển tiền thuần từ hoạt động kinh doanh là gì.",
+    "before": {
+      "answer": "Chưa xác minh được đoạn giải thích cho đúng chỉ tiêu và kỳ được hỏi. Chưa suy diễn nguyên nhân.",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": null,
+      "values": [],
+      "citations": [
+        {
+          "page": 6,
+          "row_label": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+          "column_id": null,
+          "period": null,
+          "unit": null,
+          "box": [
+            80.4000003296538,
+            519.8400150657719,
+            569.5200023351298,
+            542.6400157265514
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        },
+        {
+          "page": 6,
+          "row_label": "Lưu chuyển tiền thuần từ các hoạt động tư",
+          "column_id": null,
+          "period": null,
+          "unit": null,
+          "box": [
+            81.84000033555806,
+            729.8400211518986,
+            570.2400023380819,
+            752.4000218057225
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Lưu chuyển tiền thuần từ hoạt động kinh doanh là tiền thực thu trừ tiền thực chi từ hoạt động kinh doanh trong kỳ. Số âm cho biết tiền chi ra lớn hơn tiền thu vào. Báo cáo trình bày chỉ tiêu này tại trang 6. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_SOURCE_EXPLANATION",
+      "verification_status": "OCR_SOURCE_EXPLANATION",
+      "values": [],
+      "citations": [
+        {
+          "page": 6,
+          "row_label": "Lưu chuyển tiền thuần từ hoạt động kinh doanh",
+          "column_id": null,
+          "period": null,
+          "unit": null,
+          "box": [
+            80.4000003296538,
+            519.8400150657719,
+            569.5200023351298,
+            542.6400157265514
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    }
+  },
+  {
+    "case": "locator",
+    "question": "Ô tổng tài sản tại 31/12/2025 ở trang nào?",
+    "before": {
+      "answer": "The assets line is located at PDF page 3 (riêng / công ty mẹ) [1].",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 3,
+          "row_label": "Tổng cộng tài sản",
+          "column_id": "p3-ocr-v2-r20-c0",
+          "period": "31/12/2025",
+          "unit": "VND",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Ô Tổng cộng tài sản tại ngày 31/12/2025, báo cáo riêng, trang 3. Mở trích dẫn để xem đúng hàng và cột. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_SOURCE_EXPLANATION",
+      "verification_status": "OCR_SOURCE_EXPLANATION",
+      "values": [],
+      "citations": [
+        {
+          "page": 3,
+          "row_label": "Tổng cộng tài sản",
+          "column_id": "p3-ocr-v2-r20-c0",
+          "period": "31/12/2025",
+          "unit": "VND",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "98.670.778.691.605",
+            "text": "98.670.778.691.605",
+            "observations": [],
+            "ocr_engine": "Tesseract",
+            "ocr_warning": null,
+            "review_status": "AUTOMATED_EXTRACTION",
+            "printed_marker": null,
+            "period_type": "INSTANT",
+            "period_start": null,
+            "period_end": "2025-12-31"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "case": "review",
+    "question": "Nợ phải trả ngày 31/12/2025 đã được kiểm duyệt chưa?",
+    "before": {
+      "answer": "Open the original page to confirm the row, amount and reporting period. The OCR reading is still unverified. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 4,
+          "row_label": "Nợ phải trả",
+          "column_id": "p4-ocr-v2-r0-c0",
+          "period": "31/12/2025",
+          "unit": "VND",
+          "box": [
+            388.3200015921787,
+            252.72000732421876,
+            470.6400019297048,
+            261.12000756766383
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Nợ phải trả của công ty mẹ Hòa Phát tại ngày 31/12/2025 là 4.239.852.223.395 đồng. Giá trị đã được người dùng đối chiếu với ảnh gốc, báo cáo riêng, trang 4. [1]",
+      "status": "SUPPORTED",
+      "answer_status": "VERIFIED_ANSWER",
+      "verification_status": "HUMAN_SOURCE_VERIFIED",
+      "values": [
+        "4239852223395"
+      ],
+      "citations": [
+        {
+          "page": 4,
+          "row_label": "Nợ phải trả",
+          "column_id": "p4-ocr-v2-r0-c0",
+          "period": "2025-12-31",
+          "unit": "VND",
+          "box": [
+            388.3200015921787,
+            252.72000732421876,
+            470.6400019297048,
+            261.12000756766383
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    }
+  },
+  {
+    "case": "calculation",
+    "question": "Tính tỷ lệ nợ phải trả trên tổng tài sản tại 31/12/2025.",
+    "before": {
+      "answer": "Open the original page to confirm the row, amount and reporting period. The OCR reading is still unverified. [1]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "REQUIRES_SOURCE_REVIEW",
+      "verification_status": "SOURCE_SUPPORTED_NON_NUMERIC",
+      "values": [],
+      "citations": [
+        {
+          "page": 3,
+          "row_label": "Tổng cộng tài sản",
+          "column_id": "p3-ocr-v2-r20-c0",
+          "period": "31/12/2025",
+          "unit": "VND",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    },
+    "after": {
+      "answer": "Chưa đủ căn cứ để tính kết quả đã xác minh. Cần đối chiếu thêm: Tổng cộng tài sản. [1] [2]",
+      "status": "SOURCE_EXCERPTS",
+      "answer_status": "OCR_SOURCE_EXPLANATION",
+      "verification_status": "OCR_SOURCE_EXPLANATION",
+      "values": [],
+      "citations": [
+        {
+          "page": 3,
+          "row_label": "Tổng cộng tài sản",
+          "column_id": "p3-ocr-v2-r20-c0",
+          "period": "31/12/2025",
+          "unit": "VND",
+          "box": [
+            384.480001576434,
+            606.0000175628228,
+            472.08000193560906,
+            614.6400178132234
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": {
+            "raw_value": "98.670.778.691.605",
+            "text": "98.670.778.691.605",
+            "observations": [],
+            "ocr_engine": "Tesseract",
+            "ocr_warning": null,
+            "review_status": "AUTOMATED_EXTRACTION",
+            "printed_marker": null,
+            "period_type": "INSTANT",
+            "period_start": null,
+            "period_end": "2025-12-31"
+          }
+        },
+        {
+          "page": 4,
+          "row_label": "Nợ phải trả",
+          "column_id": "p4-ocr-v2-r0-c0",
+          "period": "2025-12-31",
+          "unit": "VND",
+          "box": [
+            388.3200015921787,
+            252.72000732421876,
+            470.6400019297048,
+            261.12000756766383
+          ],
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "ocr_provenance": null
+        }
+      ]
+    }
+  }
+]

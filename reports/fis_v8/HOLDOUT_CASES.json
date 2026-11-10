@@ -1,0 +1,26 @@
+[
+  {
+    "ticker": "AMZN",
+    "accession": "0001018724-25-000004",
+    "form": "10-K",
+    "report_end": "2024-12-31",
+    "official_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+    "numeric": "What were Amazon's total net sales for FY2024?",
+    "expected_numeric": ["637959"],
+    "numeric_location": "Consolidated Statements of Operations, Total net sales, 2024 column, millions USD",
+    "narrative": "What risks does Amazon describe in Item 1A of this 10-K?",
+    "narrative_location": "Item 1A, substantive risk disclosure. Business and Industry Risks includes intense competition across retail, computing services and other industries."
+  },
+  {
+    "ticker": "PEP",
+    "accession": "0000077476-24-000042",
+    "form": "10-Q",
+    "report_end": "2024-06-15",
+    "official_url": "https://www.sec.gov/Archives/edgar/data/77476/000007747624000042/pep-20240615.htm",
+    "numeric": "What was PepsiCo net revenue for 12 weeks and 24 weeks ended June 15, 2024?",
+    "expected_numeric": ["22501", "40751"],
+    "numeric_location": "Condensed Consolidated Statement of Income, Net Revenue, 12 and 24 weeks ended June 15, 2024, millions USD",
+    "narrative": "Were there material changes to Risk Factors in this PepsiCo 10-Q?",
+    "narrative_location": "Part II Item 1A explicitly says no material changes to the risk factors disclosed in the 2023 Form 10-K."
+  }
+]

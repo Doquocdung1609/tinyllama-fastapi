@@ -1,0 +1,266 @@
+{
+  "request": {
+    "question": "PG net sales for the three months ended March 31, 2026",
+    "source": "US_SEC",
+    "ticker": "PG",
+    "filing_ids": [
+      "sec:0000080424:0000080424-26-000060"
+    ]
+  },
+  "response": {
+    "status": "SUPPORTED",
+    "answer": "NET SALES · 2026-03-31: 21.235.000.000 USD. [1]",
+    "citations": [
+      {
+        "source_kind": "SEC",
+        "chunk_id": "fin_ffb15cafe5f988ccac9e27044e2f51b8",
+        "issuer": "PROCTER & GAMBLE Co",
+        "source_reference": "eyJkYXRhc2V0X2lkIjoidXNlci1zZWMtZTY4NjA5NGZmYjlhMzhhY2NkZGQ2MzNiIiwiZ2VuZXJhdGlvbiI6Ijk1M2U4Y2QwMDdkMzkwNzQzOTRjNTIyMzBiMmZkMmNkODFiMGQ5MmFjYmNiOWFkM2Y4MjRmZjBlYWMxNWI4MTMiLCJtYW5pZmVzdF9oYXNoIjoiZjM3YjQ5Nzc3NzY2MDdjZjVkN2JjZjQ1NDQwMWUyYjVlMjYyOTE2ZGJmMjFiNjhjNGNhOTkwMmViODVjYTJkZiIsInBhcmVudF9pZCI6ImZpbl9mZmIxNWNhZmU1Zjk4OGNjYWM5ZTI3MDQ0ZTJmNTFiOCIsInJhd19oYXNoIjoiN2NlMWQ3MTdhMjNjNDQ4MjJjZmEwNzNiYTM1MWQ1YzE1Y2EyMDU3MjY0YTg4NzJhZjZkNTYxMDYyY2M2ZGQxZiIsInRhcmdldCI6eyJjb2x1bW4iOjQsIm11bHRpcGxpZXIiOiIxMDAwMDAwIiwicGVyaW9kX2VuZCI6IjIwMjYtMDMtMzEiLCJyYXdfdmFsdWUiOiIyMSwyMzUiLCJyb3ciOjMsInN0cnVjdHVyYWxfcGF0aCI6Ii9kb2N1bWVudFsxXS9odG1sWzFdL2JvZHlbMV0vZGl2WzQ2XS90YWJsZVsxXS90cls0XS90ZFszXSIsInRhYmxlX2lkIjoidGFibGVfZGM4YzE0NGRlYzhjYjlmMThjZjhhYTEwIiwidW5pdCI6IlVTRCJ9LCJ2ZXJzaW9uIjoicmVnaXN0ZXJlZC1zZWMtdmlld2VyL3YxIn0.2779d0da71a9766d7dedde56114703c6e3846b04df456e5fb013dd1cdaa9e025",
+        "filing_id": "sec:0000080424:0000080424-26-000060",
+        "accession": "0000080424-26-000060",
+        "form": "10-Q",
+        "report_period": "2026-03-31",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000060/pg-20260331.htm",
+        "source_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+        "text": "NET SALES: 21,235 (Amounts in millions except per share amounts) · 2026-03-31",
+        "row_label": "NET SALES",
+        "column_label": "Three Months Ended March 31 / 2026",
+        "verification": "VERIFIED_SOURCE_CELL",
+        "unit": "USD",
+        "source_location": {
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "table_id": "table_dc8c144dec8cb9f18cf8aa10",
+          "row_index": 3,
+          "column_index": 4
+        }
+      }
+    ],
+    "evidence_references": [
+      {
+        "chunk_id": "fin_8286809df3e5ad1faccddb506cee4864",
+        "document_id": null,
+        "page": null,
+        "issuer": "PROCTER & GAMBLE Co",
+        "filename": null,
+        "source_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+        "statement_scope": null,
+        "unit": null,
+        "report_period": "2026-03-31"
+      },
+      {
+        "chunk_id": "fin_e821e402e47f9f47012ad26b7cff61ff",
+        "document_id": null,
+        "page": null,
+        "issuer": "PROCTER & GAMBLE Co",
+        "filename": null,
+        "source_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+        "statement_scope": null,
+        "unit": null,
+        "report_period": "2026-03-31"
+      },
+      {
+        "chunk_id": "fin_8597254e06885a24fc6e7af9a72d75d9",
+        "document_id": null,
+        "page": null,
+        "issuer": "PROCTER & GAMBLE Co",
+        "filename": null,
+        "source_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+        "statement_scope": null,
+        "unit": null,
+        "report_period": "2026-03-31"
+      },
+      {
+        "chunk_id": "fin_d3f3502b80b7c921cead1dc240b8ee3d",
+        "document_id": null,
+        "page": null,
+        "issuer": "PROCTER & GAMBLE Co",
+        "filename": null,
+        "source_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+        "statement_scope": null,
+        "unit": null,
+        "report_period": "2026-03-31"
+      },
+      {
+        "chunk_id": "fin_7d009764c2ad77b8f771022fbfa93cdf",
+        "document_id": null,
+        "page": null,
+        "issuer": "PROCTER & GAMBLE Co",
+        "filename": null,
+        "source_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+        "statement_scope": null,
+        "unit": null,
+        "report_period": "2026-03-31"
+      }
+    ],
+    "values": [
+      "21235000000"
+    ],
+    "verification_status": "NUMERIC_UNVERIFIED",
+    "warnings": [
+      "Số liệu trong trích đoạn chưa được đối chiếu ô nguồn, kỳ và đơn vị."
+    ],
+    "metric": "net_revenue",
+    "period": "2026-03-31",
+    "answer_source_chunk_id": "fin_8286809df3e5ad1faccddb506cee4864",
+    "statement_scope": null,
+    "unit": "USD",
+    "query_understanding": {
+      "raw_text": "PG net sales for the three months ended March 31, 2026",
+      "intent": "EXTRACT_VALUE",
+      "issuer_mentions": [],
+      "metric": "net_revenue",
+      "metric_phrases": [
+        "doanh thu",
+        "net sales",
+        "revenue"
+      ],
+      "years": [
+        "2026"
+      ],
+      "period_type": null,
+      "scope": null,
+      "basis": null,
+      "requested_unit": null,
+      "version": "FINANCIAL_QUERY_UNDERSTANDING_V1"
+    },
+    "retrieval_trace": {
+      "profile": "faith_r_product_v1",
+      "generation": "8029d69ae3cf342323e623d922229204ee0855bd114e154e37343167ca2127a8",
+      "engine_version": "FAITH_R_PRODUCT_V1",
+      "algorithm_executed": "A5_FEATURE_RERANK_PRODUCT_SEC_V1",
+      "candidate_count": 32,
+      "latency_ms": 3380.51,
+      "top_ids": [
+        "fin_8286809df3e5ad1faccddb506cee4864",
+        "fin_e821e402e47f9f47012ad26b7cff61ff",
+        "fin_8597254e06885a24fc6e7af9a72d75d9",
+        "fin_d3f3502b80b7c921cead1dc240b8ee3d",
+        "fin_7d009764c2ad77b8f771022fbfa93cdf"
+      ],
+      "evidence_status": "RELATED_UNVERIFIED_EVIDENCE"
+    },
+    "search_profile": "faith_r_product_v1",
+    "generation": "953e8cd007d39074394c52230b2fd2cd81b0d92acbcb9ad3f824ff0eac15b813",
+    "numeric_verification": {
+      "status": "SUPPORTED",
+      "answer": "NET SALES · 2026-03-31: 21.235.000.000 USD. [1]",
+      "values": [
+        "21235000000"
+      ],
+      "unit": "USD",
+      "formula": "source[0]",
+      "reason": "",
+      "citations": [
+        {
+          "source_kind": "SEC",
+          "chunk_id": "fin_ffb15cafe5f988ccac9e27044e2f51b8",
+          "issuer": "PROCTER & GAMBLE Co",
+          "source_reference": "eyJkYXRhc2V0X2lkIjoidXNlci1zZWMtZTY4NjA5NGZmYjlhMzhhY2NkZGQ2MzNiIiwiZ2VuZXJhdGlvbiI6Ijk1M2U4Y2QwMDdkMzkwNzQzOTRjNTIyMzBiMmZkMmNkODFiMGQ5MmFjYmNiOWFkM2Y4MjRmZjBlYWMxNWI4MTMiLCJtYW5pZmVzdF9oYXNoIjoiZjM3YjQ5Nzc3NzY2MDdjZjVkN2JjZjQ1NDQwMWUyYjVlMjYyOTE2ZGJmMjFiNjhjNGNhOTkwMmViODVjYTJkZiIsInBhcmVudF9pZCI6ImZpbl9mZmIxNWNhZmU1Zjk4OGNjYWM5ZTI3MDQ0ZTJmNTFiOCIsInJhd19oYXNoIjoiN2NlMWQ3MTdhMjNjNDQ4MjJjZmEwNzNiYTM1MWQ1YzE1Y2EyMDU3MjY0YTg4NzJhZjZkNTYxMDYyY2M2ZGQxZiIsInRhcmdldCI6eyJjb2x1bW4iOjQsIm11bHRpcGxpZXIiOiIxMDAwMDAwIiwicGVyaW9kX2VuZCI6IjIwMjYtMDMtMzEiLCJyYXdfdmFsdWUiOiIyMSwyMzUiLCJyb3ciOjMsInN0cnVjdHVyYWxfcGF0aCI6Ii9kb2N1bWVudFsxXS9odG1sWzFdL2JvZHlbMV0vZGl2WzQ2XS90YWJsZVsxXS90cls0XS90ZFszXSIsInRhYmxlX2lkIjoidGFibGVfZGM4YzE0NGRlYzhjYjlmMThjZjhhYTEwIiwidW5pdCI6IlVTRCJ9LCJ2ZXJzaW9uIjoicmVnaXN0ZXJlZC1zZWMtdmlld2VyL3YxIn0.2779d0da71a9766d7dedde56114703c6e3846b04df456e5fb013dd1cdaa9e025",
+          "filing_id": "sec:0000080424:0000080424-26-000060",
+          "accession": "0000080424-26-000060",
+          "form": "10-Q",
+          "report_period": "2026-03-31",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000060/pg-20260331.htm",
+          "source_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+          "text": "NET SALES: 21,235 (Amounts in millions except per share amounts) · 2026-03-31",
+          "row_label": "NET SALES",
+          "column_label": "Three Months Ended March 31 / 2026",
+          "verification": "VERIFIED_SOURCE_CELL",
+          "unit": "USD",
+          "source_location": {
+            "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+            "table_id": "table_dc8c144dec8cb9f18cf8aa10",
+            "row_index": 3,
+            "column_index": 4
+          }
+        }
+      ],
+      "source_cells": [
+        {
+          "contract_version": "real-sec-cell-observation/v1",
+          "source_status": "VERIFIED_SOURCE_CELL",
+          "dataset_id": "user-sec-e686094ffb9a38accddd633b",
+          "generation": "953e8cd007d39074394c52230b2fd2cd81b0d92acbcb9ad3f824ff0eac15b813",
+          "manifest_hash": "f37b4977776607cf5d7bcf454401e2b5e262916dbf21b68c4ca9902eb85ca2df",
+          "filing_id": "sec:0000080424:0000080424-26-000060",
+          "cik": "0000080424",
+          "accession": "0000080424-26-000060",
+          "raw_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+          "parent_id": "fin_ffb15cafe5f988ccac9e27044e2f51b8",
+          "parent_payload_hash": "bd4f6474f13b88cf3fa1894109234a359570687fc8a0cbaa359b280940bb7c5c",
+          "table_id": "table_dc8c144dec8cb9f18cf8aa10",
+          "row": 3,
+          "column": 4,
+          "row_label": "NET SALES",
+          "raw_value": "21,235",
+          "value": "21235",
+          "unit": "USD",
+          "display_unit_header": "Amounts in millions except per share amounts",
+          "multiplier": "1000000",
+          "effective_value": "21235000000",
+          "period_kind": "DURATION",
+          "period_start": "2026-01-01",
+          "period_end": "2026-03-31",
+          "period_months": 3,
+          "fact_name": "us-gaap:Revenues",
+          "fact_context_ref": "c-21",
+          "fact_unit_ref": "usd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000060/pg-20260331.htm",
+          "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+          "footnotes": [
+            "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble."
+          ],
+          "warnings": [],
+          "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+        }
+      ],
+      "generation": "953e8cd007d39074394c52230b2fd2cd81b0d92acbcb9ad3f824ff0eac15b813"
+    },
+    "formula": "source[0]",
+    "reason": "",
+    "source_cells": [
+      {
+        "contract_version": "real-sec-cell-observation/v1",
+        "source_status": "VERIFIED_SOURCE_CELL",
+        "dataset_id": "user-sec-e686094ffb9a38accddd633b",
+        "generation": "953e8cd007d39074394c52230b2fd2cd81b0d92acbcb9ad3f824ff0eac15b813",
+        "manifest_hash": "f37b4977776607cf5d7bcf454401e2b5e262916dbf21b68c4ca9902eb85ca2df",
+        "filing_id": "sec:0000080424:0000080424-26-000060",
+        "cik": "0000080424",
+        "accession": "0000080424-26-000060",
+        "raw_sha256": "7ce1d717a23c44822cfa073ba351d5c15ca2057264a8872af6d561062cc6dd1f",
+        "parent_id": "fin_ffb15cafe5f988ccac9e27044e2f51b8",
+        "parent_payload_hash": "bd4f6474f13b88cf3fa1894109234a359570687fc8a0cbaa359b280940bb7c5c",
+        "table_id": "table_dc8c144dec8cb9f18cf8aa10",
+        "row": 3,
+        "column": 4,
+        "row_label": "NET SALES",
+        "raw_value": "21,235",
+        "value": "21235",
+        "unit": "USD",
+        "display_unit_header": "Amounts in millions except per share amounts",
+        "multiplier": "1000000",
+        "effective_value": "21235000000",
+        "period_kind": "DURATION",
+        "period_start": "2026-01-01",
+        "period_end": "2026-03-31",
+        "period_months": 3,
+        "fact_name": "us-gaap:Revenues",
+        "fact_context_ref": "c-21",
+        "fact_unit_ref": "usd",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000060/pg-20260331.htm",
+        "structural_path": "/document[1]/html[1]/body[1]/div[46]/table[1]/tr[4]/td[3]",
+        "footnotes": [
+          "(1) Basic net earnings per common share and Diluted net earnings per common share are calculated on Net earnings attributable to Procter & Gamble."
+        ],
+        "warnings": [],
+        "authentication": "COMMITTED_RAW_HASH_AND_C_RECONSTRUCTION"
+      }
+    ],
+    "session_id": "1c37c71834d44f6db83ddb09d98a1d03",
+    "resolved_question": "PG net sales for the three months ended March 31, 2026",
+    "source_scope": [],
+    "conversation_reset": false
+  },
+  "elapsed_ms": 11579.600099939853
+}

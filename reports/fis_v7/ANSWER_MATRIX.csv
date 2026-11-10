@@ -1,0 +1,19 @@
+test,assessment,selected_document_ids,source_pages,verified_values,candidate_values,answer_status,before_seconds,after_seconds,reason
+B01,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,3,"2709287140,110250,2709397390",,VERIFIED_ANSWER,6.9503,1.4104,Source pages and expected value checked
+B02,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,3,"1976863693,68290,1976931983,-36944443,68290,-36876153",,VERIFIED_ANSWER,0.962,0.877,Source pages and expected value checked
+B03,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,5,"56238101,-4598,56233503",,VERIFIED_ANSWER,2.9117,1.4938,Source pages and expected value checked
+B04,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,8,"2411,7076856",,VERIFIED_ANSWER,1.0954,0.9213,Source pages and expected value checked
+B05,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,8,465069,,VERIFIED_ANSWER,1.7974,0.6393,Source pages and expected value checked
+B06,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,3;6,51509574,,VERIFIED_ANSWER,1.3764,1.0746,Source pages and expected value checked
+B07,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,5,"4732537,37936,4770473",,VERIFIED_ANSWER,1.3914,0.614,Source pages and expected value checked
+B08,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,1;2;3;4;5;6;7;8,,,DOCUMENT_INVENTORY,1.6023,1.7597,Eight separate page citations
+B09,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,4;7,1114,,VERIFIED_ANSWER,1.3475,1.0312,Source pages and expected value checked
+C01,PARTIAL,"2bed2b3c312c8149e6a2ff6ab80c694a,4a92af827aaf1e73e017544d0ff20d0d",3,,"2610726.611308395,27.458964304601337917049683036641851182",CANDIDATE_RECONCILIATION,0.9524,1.7575,OCR amounts clearly marked as candidates. Numeric comparisons remain preliminary.
+C02,PARTIAL,"2bed2b3c312c8149e6a2ff6ab80c694a,4a92af827aaf1e73e017544d0ff20d0d",4;20,,,CANDIDATE_RECONCILIATION,0.8824,2.4242,OCR amounts clearly marked as candidates. Numeric comparisons remain preliminary.
+C03,PARTIAL,"2bed2b3c312c8149e6a2ff6ab80c694a,4a92af827aaf1e73e017544d0ff20d0d",3;4,,"94.967491941076978744708984900882332362,4.2969684435618328619078951981121517204",CANDIDATE_RECONCILIATION,0.7168,2.3851,OCR amounts clearly marked as candidates. Numeric comparisons remain preliminary.
+C04,PARTIAL,"2bed2b3c312c8149e6a2ff6ab80c694a,4a92af827aaf1e73e017544d0ff20d0d",5,,18982.060193327,CANDIDATE_RECONCILIATION,0.6073,2.4344,OCR amounts clearly marked as candidates. Numeric comparisons remain preliminary.
+C05,PASS,"2bed2b3c312c8149e6a2ff6ab80c694a,4a92af827aaf1e73e017544d0ff20d0d",1;3;6,,,SOURCE_EXCERPTS,0.5086,1.8132,"Document type, year, scope, unit and extraction side by side"
+C06,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,,,,,0.5066,0.8011,Only BIDV selected. No response value or HPG citation.
+C07,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,,,,NEEDS_CLARIFICATION,1.7111,0.9974,Selected restatement only carries FY2024.
+C08,PASS,2bed2b3c312c8149e6a2ff6ab80c694a,8,25677118,,VERIFIED_ANSWER,0.9976,1.3501,Source pages and expected value checked
+C09,PASS,"2bed2b3c312c8149e6a2ff6ab80c694a,4a92af827aaf1e73e017544d0ff20d0d",,,,,,3.298,Explicit mismatch. Browser also checked switch and reload.

@@ -270,13 +270,22 @@ class PdfWorkspace:
             temporary = self.files / f".{document_id}.tmp"
             temporary.write_bytes(data)
             temporary.replace(target)
+            from app.product.document_metadata import extract_metadata,save_metadata
+            try:metadata=extract_metadata(target)
+            except (RuntimeError,ValueError) as exc:
+                target.unlink(missing_ok=True)
+                raise ValueError('PDF_CONTENT_INVALID_OR_ENCRYPTED') from exc
+            issuer=issuer or metadata['fields']['issuer']['value'] or ''
+            report_period=report_period or metadata['fields']['report_period']['value'] or ''
+            if document_type=='PDF':document_type=metadata['fields']['document_type']['value'] or 'PDF'
             now = _now()
             with closing(self._connect()) as db, db:
                 db.execute("INSERT INTO documents(id,filename,sha256,issuer,document_type,report_period,"
                            "size_bytes,status,stage,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                            (document_id, filename, digest, issuer.strip(), document_type.strip(),
                             report_period.strip(), len(data), "UPLOADED", "UPLOAD", now, now))
-            return {**self.document(document_id), "duplicate": False}
+            save_metadata(self,document_id,metadata)
+            return {**self.document(document_id), "duplicate": False,'metadata':metadata}
 
     def _stage(self, document_id: str, status: str, stage: str, *, error=None, pages=None, chunks=None):
         with closing(self._connect()) as db, db:
@@ -460,6 +469,10 @@ class PdfWorkspace:
                 db.execute("DELETE FROM documents WHERE id=?", (document_id,))
                 db.execute("DELETE FROM page_evidence WHERE document_id=?", (document_id,))
                 db.execute("DELETE FROM reviewed_facts WHERE document_id=?", (document_id,))
+                if db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='document_metadata'").fetchone():
+                    db.execute('DELETE FROM document_metadata WHERE document_id=?',(document_id,))
+                if db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='financial_chat_sessions'").fetchone():
+                    db.execute('DELETE FROM financial_chat_sessions WHERE payload LIKE ?',('%'+document_id+'%',))
             (self.files / f"{document_id}.pdf").unlink(missing_ok=True)
             return True
 
@@ -490,7 +503,8 @@ class PdfWorkspace:
                     "source_sha256": doc["sha256"], "provenance_status": "VERIFIED_LOCAL_PDF_BYTES"}
 
     def search(self, query: str, mode: str = "hybrid", top_k: int = 5,
-               document_ids: list[str] | None = None):
+               document_ids: list[str] | None = None, *, _candidate_limit: int | None = None):
+        if _candidate_limit is not None and not 20 <= _candidate_limit <= 80:raise ValueError("INVALID_INTERNAL_CANDIDATE_LIMIT")
         if mode not in {"bm25", "dense", "hybrid"} or not 1 <= top_k <= 20 or not query.strip() or len(query) > 2000:
             raise ValueError("INVALID_PDF_SEARCH_REQUEST")
         started = perf_counter()
@@ -559,7 +573,7 @@ class PdfWorkspace:
                 results.append((score, cid, entry))
             results.sort(key=lambda item: (-item[0], item[1]))
             output = []
-            for rank, (score, cid, entry) in enumerate(results[:top_k], 1):
+            for rank, (score, cid, entry) in enumerate(results[:(_candidate_limit or top_k)], 1):
                 row = entry["row"]
                 doc = allowed[row["document_id"]]
                 path = self.files / f"{doc['id']}.pdf"
@@ -578,6 +592,7 @@ class PdfWorkspace:
                     "results": output, "latency_ms": round((perf_counter()-started)*1000, 2),
                     "timings_ms": {"bm25": round(bm25_ms, 2), "embedding": round(embed_ms, 2),
                                    "dense": round(dense_ms, 2)},
+                    "candidate_count":len(results), "dedup_count":len(b)+len(d)-len(ranked),
                     "source_scope": "ISOLATED_USER_PDF", "model_digest": DIGEST if mode != "bm25" else None,
                     "fusion": {"method": "RRF", "k": 60} if mode == "hybrid" else None}
 
@@ -643,6 +658,26 @@ class PdfWorkspace:
         with closing(self._connect()) as db:
             row=db.execute('SELECT payload,payload_hash FROM page_evidence WHERE document_id=? AND page=?',
                            (document_id,page_number)).fetchone()
+        return self._page_evidence_view(row,page_number)
+
+    def iter_document_evidence(self, document_id, count):
+        """Read one checkpoint at a time and authenticate the PDF once."""
+        self.source_file(document_id)
+        with closing(self._connect()) as db:
+            records=iter(db.execute('SELECT page,payload,payload_hash FROM page_evidence WHERE document_id=? ORDER BY page',
+                                    (document_id,)))
+            row=next(records,None)
+            for number in range(1,count+1):
+                if row is None or row['page']!=number:
+                    yield number,None,'PAGE_EVIDENCE_NOT_AVAILABLE'
+                    continue
+                try:
+                    yield number,self._page_evidence_view(row,number),None
+                except ValueError as exc:
+                    yield number,None,str(exc)
+                row=next(records,None)
+
+    def _page_evidence_view(self,row,page_number):
         if row is None:
             raise ValueError('PAGE_EVIDENCE_NOT_AVAILABLE')
         if sha256(row['payload'].encode()).hexdigest()!=row['payload_hash']:
