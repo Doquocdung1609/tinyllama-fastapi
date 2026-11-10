@@ -1,0 +1,472 @@
+{
+  "pdfs": [
+    {
+      "id": "3eb270b22acb7d8d8e9c32a43dc221de",
+      "filename": "NASDAQ_AAPL_2025.pdf",
+      "issuer": "AAPL",
+      "status": "READY",
+      "pages": 80,
+      "sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de"
+    },
+    {
+      "id": "4a92af827aaf1e73e017544d0ff20d0d",
+      "filename": "20260130-hpg-bao-cao-tai-chinh-rieng-cong-ty-me-va-giai-trinh-q4-2025.pdf",
+      "issuer": "HPG",
+      "status": "READY",
+      "pages": 24,
+      "sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447"
+    },
+    {
+      "id": "2bed2b3c312c8149e6a2ff6ab80c694a",
+      "filename": "20251023+-+BID+-+CBTT+Dieu+chinh+BCTC+2024+theo+ket+qua+KTNN.pdf",
+      "issuer": "BIDV",
+      "status": "READY",
+      "pages": 8,
+      "sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+    }
+  ],
+  "sec_status": "READY",
+  "filings": [
+    {
+      "filing_id": "sec:0000909832:0000909832-26-000051",
+      "ticker": "COST",
+      "form": "10-Q",
+      "accession": "0000909832-26-000051",
+      "report_period": "2026-05-10",
+      "ownership": "SHARED_DEMO",
+      "dense_ready": null
+    },
+    {
+      "filing_id": "sec:0000354950:0001628280-26-058715",
+      "ticker": "HD",
+      "form": "10-Q",
+      "accession": "0001628280-26-058715",
+      "report_period": "2026-08-02",
+      "ownership": "SHARED_DEMO",
+      "dense_ready": null
+    },
+    {
+      "filing_id": "sec:0000080424:0000080424-26-000256",
+      "ticker": "PG",
+      "form": "10-Q",
+      "accession": "0000080424-26-000256",
+      "report_period": "2026-09-30",
+      "ownership": "SHARED_DEMO",
+      "dense_ready": null
+    },
+    {
+      "filing_id": "sec:0000320193:0000320193-25-000073",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "accession": "0000320193-25-000073",
+      "report_period": "2025-06-28",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000320193:0000320193-25-000057",
+      "ticker": "AAPL",
+      "form": "10-Q",
+      "accession": "0000320193-25-000057",
+      "report_period": "2025-03-29",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001046179:0001193125-25-083423",
+      "ticker": "TSM",
+      "form": "20-F",
+      "accession": "0001193125-25-083423",
+      "report_period": "2024-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001046179:0001193125-24-099840",
+      "ticker": "TSM",
+      "form": "20-F",
+      "accession": "0001193125-24-099840",
+      "report_period": "2023-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001046179:0001193125-23-107214",
+      "ticker": "TSM",
+      "form": "20-F",
+      "accession": "0001193125-23-107214",
+      "report_period": "2022-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000002488:0000002488-25-000012",
+      "ticker": "AMD",
+      "form": "10-K",
+      "accession": "0000002488-25-000012",
+      "report_period": "2024-12-28",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000002488:0000002488-24-000012",
+      "ticker": "AMD",
+      "form": "10-K",
+      "accession": "0000002488-24-000012",
+      "report_period": "2023-12-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000002488:0000002488-23-000047",
+      "ticker": "AMD",
+      "form": "10-K",
+      "accession": "0000002488-23-000047",
+      "report_period": "2022-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001318605:0001628280-25-045968",
+      "ticker": "TSLA",
+      "form": "10-Q",
+      "accession": "0001628280-25-045968",
+      "report_period": "2025-09-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001318605:0001628280-25-035806",
+      "ticker": "TSLA",
+      "form": "10-Q",
+      "accession": "0001628280-25-035806",
+      "report_period": "2025-06-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001045810:0001045810-25-000230",
+      "ticker": "NVDA",
+      "form": "10-Q",
+      "accession": "0001045810-25-000230",
+      "report_period": "2025-10-26",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001045810:0001045810-25-000209",
+      "ticker": "NVDA",
+      "form": "10-Q",
+      "accession": "0001045810-25-000209",
+      "report_period": "2025-07-27",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001326801:0001628280-25-047240",
+      "ticker": "META",
+      "form": "10-Q",
+      "accession": "0001628280-25-047240",
+      "report_period": "2025-09-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001326801:0001628280-25-036791",
+      "ticker": "META",
+      "form": "10-Q",
+      "accession": "0001628280-25-036791",
+      "report_period": "2025-06-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000050863:0000050863-25-000179",
+      "ticker": "INTC",
+      "form": "10-Q",
+      "accession": "0000050863-25-000179",
+      "report_period": "2025-09-27",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000050863:0000050863-25-000109",
+      "ticker": "INTC",
+      "form": "10-Q",
+      "accession": "0000050863-25-000109",
+      "report_period": "2025-06-28",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001652044:0001652044-25-000091",
+      "ticker": "GOOGL",
+      "form": "10-Q",
+      "accession": "0001652044-25-000091",
+      "report_period": "2025-09-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001652044:0001652044-25-000062",
+      "ticker": "GOOGL",
+      "form": "10-Q",
+      "accession": "0001652044-25-000062",
+      "report_period": "2025-06-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001018724:0001018724-25-000123",
+      "ticker": "AMZN",
+      "form": "10-Q",
+      "accession": "0001018724-25-000123",
+      "report_period": "2025-09-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001018724:0001018724-25-000086",
+      "ticker": "AMZN",
+      "form": "10-Q",
+      "accession": "0001018724-25-000086",
+      "report_period": "2025-06-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000002488:0000002488-25-000166",
+      "ticker": "AMD",
+      "form": "10-Q",
+      "accession": "0000002488-25-000166",
+      "report_period": "2025-09-27",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000002488:0000002488-25-000108",
+      "ticker": "AMD",
+      "form": "10-Q",
+      "accession": "0000002488-25-000108",
+      "report_period": "2025-06-28",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001318605:0001628280-25-003063",
+      "ticker": "TSLA",
+      "form": "10-K",
+      "accession": "0001628280-25-003063",
+      "report_period": "2024-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001318605:0001628280-24-002390",
+      "ticker": "TSLA",
+      "form": "10-K",
+      "accession": "0001628280-24-002390",
+      "report_period": "2023-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001318605:0000950170-23-001409",
+      "ticker": "TSLA",
+      "form": "10-K",
+      "accession": "0000950170-23-001409",
+      "report_period": "2022-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001045810:0001045810-25-000023",
+      "ticker": "NVDA",
+      "form": "10-K",
+      "accession": "0001045810-25-000023",
+      "report_period": "2025-01-26",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001045810:0001045810-24-000029",
+      "ticker": "NVDA",
+      "form": "10-K",
+      "accession": "0001045810-24-000029",
+      "report_period": "2024-01-28",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001045810:0001045810-23-000017",
+      "ticker": "NVDA",
+      "form": "10-K",
+      "accession": "0001045810-23-000017",
+      "report_period": "2023-01-29",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001326801:0001326801-25-000017",
+      "ticker": "META",
+      "form": "10-K",
+      "accession": "0001326801-25-000017",
+      "report_period": "2024-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000050863:0000050863-25-000009",
+      "ticker": "INTC",
+      "form": "10-K",
+      "accession": "0000050863-25-000009",
+      "report_period": "2024-12-28",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000050863:0000050863-24-000010",
+      "ticker": "INTC",
+      "form": "10-K",
+      "accession": "0000050863-24-000010",
+      "report_period": "2023-12-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000050863:0000050863-23-000006",
+      "ticker": "INTC",
+      "form": "10-K",
+      "accession": "0000050863-23-000006",
+      "report_period": "2022-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001652044:0001652044-25-000014",
+      "ticker": "GOOGL",
+      "form": "10-K",
+      "accession": "0001652044-25-000014",
+      "report_period": "2024-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001652044:0001652044-24-000022",
+      "ticker": "GOOGL",
+      "form": "10-K",
+      "accession": "0001652044-24-000022",
+      "report_period": "2023-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001018724:0001018724-25-000004",
+      "ticker": "AMZN",
+      "form": "10-K",
+      "accession": "0001018724-25-000004",
+      "report_period": "2024-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001018724:0001018724-24-000008",
+      "ticker": "AMZN",
+      "form": "10-K",
+      "accession": "0001018724-24-000008",
+      "report_period": "2023-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0001018724:0001018724-23-000004",
+      "ticker": "AMZN",
+      "form": "10-K",
+      "accession": "0001018724-23-000004",
+      "report_period": "2022-12-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000789019:0001193125-25-256321",
+      "ticker": "MSFT",
+      "form": "10-Q",
+      "accession": "0001193125-25-256321",
+      "report_period": "2025-09-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000789019:0000950170-25-061046",
+      "ticker": "MSFT",
+      "form": "10-Q",
+      "accession": "0000950170-25-061046",
+      "report_period": "2025-03-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000789019:0000950170-25-100235",
+      "ticker": "MSFT",
+      "form": "10-K",
+      "accession": "0000950170-25-100235",
+      "report_period": "2025-06-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000789019:0000950170-24-087843",
+      "ticker": "MSFT",
+      "form": "10-K",
+      "accession": "0000950170-24-087843",
+      "report_period": "2024-06-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000789019:0000950170-23-035122",
+      "ticker": "MSFT",
+      "form": "10-K",
+      "accession": "0000950170-23-035122",
+      "report_period": "2023-06-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000320193:0000320193-25-000079",
+      "ticker": "AAPL",
+      "form": "10-K",
+      "accession": "0000320193-25-000079",
+      "report_period": "2025-09-27",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000320193:0000320193-24-000123",
+      "ticker": "AAPL",
+      "form": "10-K",
+      "accession": "0000320193-24-000123",
+      "report_period": "2024-09-28",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000320193:0000320193-23-000106",
+      "ticker": "AAPL",
+      "form": "10-K",
+      "accession": "0000320193-23-000106",
+      "report_period": "2023-09-30",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": false
+    },
+    {
+      "filing_id": "sec:0000080424:0000080424-26-000060",
+      "ticker": "PG",
+      "form": "10-Q",
+      "accession": "0000080424-26-000060",
+      "report_period": "2026-03-31",
+      "ownership": "USER_PRODUCT",
+      "dense_ready": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "duration": 1279.233333,
+    "width": 1920,
+    "height": 1080
+  },
+  "checks": [
+    {
+      "time": 26.612406,
+      "error": null,
+      "decoded_frames": 61
+    },
+    {
+      "time": 640.699041,
+      "error": null,
+      "decoded_frames": 249
+    },
+    {
+      "time": 1254.744176,
+      "error": null,
+      "decoded_frames": 326
+    }
+  ]
+}

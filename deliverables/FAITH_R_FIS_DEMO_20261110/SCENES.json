@@ -1,0 +1,84 @@
+[
+  {
+    "key": "01-introduction",
+    "title": "Tổng quan FIS",
+    "file": "01-introduction.webm",
+    "duration_wall_ms": 65144
+  },
+  {
+    "key": "02-library",
+    "title": "Kho tài liệu PDF",
+    "file": "02-library.webm",
+    "duration_wall_ms": 91979
+  },
+  {
+    "key": "02b-metadata",
+    "title": "Metadata và thanh điều hướng",
+    "file": "02b-metadata.webm"
+  },
+  {
+    "key": "03-evidence",
+    "title": "Tìm kiếm BIDV qua bốn phương pháp",
+    "file": "03-evidence.webm",
+    "duration_wall_ms": 194669
+  },
+  {
+    "key": "04-comparison",
+    "title": "So sánh bốn phương pháp",
+    "file": "04-comparison.webm",
+    "duration_wall_ms": 90740
+  },
+  {
+    "key": "05-apple-en",
+    "title": "Chat Apple bằng tiếng Anh",
+    "file": "05-apple-en.webm",
+    "duration_wall_ms": 144222
+  },
+  {
+    "key": "06-apple-vi",
+    "title": "Chat Apple bằng tiếng Việt và tính toán",
+    "file": "06-apple-vi.webm",
+    "duration_wall_ms": 135815
+  },
+  {
+    "key": "06b-formula",
+    "title": "Mở các bước tính Apple",
+    "file": "06b-formula.webm"
+  },
+  {
+    "key": "07-bidv-chat",
+    "title": "Chat BIDV hai phạm vi",
+    "file": "07-bidv-chat.webm",
+    "duration_wall_ms": 78697
+  },
+  {
+    "key": "08-hpg",
+    "title": "PDF scan Hòa Phát và giới hạn OCR",
+    "file": "08-hpg.webm",
+    "duration_wall_ms": 66784
+  },
+  {
+    "key": "09-sec",
+    "title": "Chat SEC Costco",
+    "file": "09-sec.webm",
+    "duration_wall_ms": 109353
+  },
+  {
+    "key": "10-missing-source",
+    "title": "Kiểm soát nguồn chưa chọn",
+    "file": "10-missing-source.webm",
+    "duration_wall_ms": 68652
+  },
+  {
+    "key": "11-research",
+    "title": "Research Lab",
+    "file": "11-research.webm",
+    "duration_wall_ms": 83317
+  },
+  {
+    "key": "12-status",
+    "title": "Trạng thái dịch vụ và kết thúc",
+    "file": "12-status.webm",
+    "duration_wall_ms": 57287
+  }
+]

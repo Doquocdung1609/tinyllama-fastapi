@@ -1,0 +1,659 @@
+{
+  "cases": [
+    {
+      "id": "BIDV-SEARCH-BM25",
+      "scene": 3,
+      "status": "PASS",
+      "elapsed_ms": 263,
+      "http_status": 200,
+      "method": "BM25",
+      "pages": [
+        4,
+        7,
+        5,
+        8,
+        5
+      ],
+      "selected_sources": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "result_count": 5,
+      "verified_value_count": 0,
+      "results": [
+        {
+          "page": 4,
+          "text": "2. Các khoản phải trả và công nợ khác 14,892,857 39,352 14,932,209\nVIII. Vốn và các quỹ 136,279,744 70,898 136,350,642\n1. Vốn của TCTD 83,267,535 - 83,267,535\na. Vốn điều lệ 68,975,153 - 68,975,153\nc. Thặng dư vốn cổ phần 14,292,382 - 14,292,382\n2. Quỹ của TCTD 18,848,053 - 18,848,053\n3. Lợi nhuận sau thuế chưa phân phối 34,164,156 70,898 34,235,054\nTỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU 2,709,287,140 110,250 2,709,397,390",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 7,
+          "text": "2. Thuế TNDN hoãn lại phải trả 79,819 - 79,819\n3. Các khoản phải trả và công nợ khác 21,740,674 42,029 21,782,703\nVIII. Vốn và các quỹ 144,911,113 73,081 144,984,194\n1. Vốn của TCTD 84,788,796 - 84,788,796\na. Vốn điều lệ 68,975,152 - 68,975,152\nc. Thặng dư vốn cổ phần 15,361,020 - 15,361,020\ng. Vốn khác 452,623 - 452,623\n2. Quỹ của TCTD 19,396,820 - 19,396,820\n3. Chênh lệch tỷ giá hối đoái (701,036) - (701,036)\n4. Lợi nhuận sau thuế chưa phân phối 36,192,494 72,012 36,264,506\n5. Lợi ích của cổ đông thiểu số 5,234,039 1,069 5,235,108\nTỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU 2,760,791,854 115,110 2,760,906,964",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "XI. Tổng lợi nhuận trước thuế 30,609,248 88,623 30,697,871\n7. Chi phí thuế TNDN hiện hành (6,100,167) (17,725) (6,117,892)\n8 Chi phí thuế TNDN hoãn lại (62) - (62)\nXII. Chi phí thuế TNDN (6,100,229) (17,725) (6,117,954)\nXIII. Lợi nhuận sau thuế TNDN 24,509,019 70,898 24,579,917",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 8,
+          "text": "XI. Tổng lợi nhuận trước thuế 31,984,869 91,352 32,076,221\n7. Chi phí thuế TNDN hiện hành (6,384,627) (18,271) (6,402,898)\n8 Chi phí thuế TNDN hoãn lại 3,795 - 3,795\nXII. Chi phí thuế TNDN (6,380,832) (18,271) (6,399,103)\nXIII. Lợi nhuận sau thuế TNDN 25,604,037 73,081 25,677,118\nXIV. Lợi ích của cổ đông thiểu số (464,000) (1,069) (465,069)\nXV. Lợi nhuận thuần của cổ đông Ngân hàng 25,140,037 72,012 25,212,049",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "III. Lãi thuần từ hoạt động kinh doanh ngoại hối 5,264,524 - 5,264,524\nIV. Lãi thuần từ mua bán chứng khoán kinh doanh 91,290 - 91,290\nV. Lãi thuần từ mua bán chứng khoán đầu tư 4,850,545 - 4,850,545\n5. Thu nhập từ hoạt động khác 8,905,156 37,936 8,943,092\n6. Chi phí hoạt động khác (4,172,619) - (4,172,619)\nVI. Lãi thuần từ hoạt động khác 4,732,537 37,936 4,770,473\nVII. Thu nhập từ góp vốn, mua cổ phần 205,774 - 205,774\nVIII. Chi phí hoạt động (25,796,413) (12,687) (25,809,100)\nLợi nhuận thuần từhoạt động kinh doanh trước chi phí\nIX. 51,215,420 20,333 51,235,753\ndự phòng rủi ro tín dụng\nX. Chi phí dự phòng rủi ro tín dụng (20,606,172) 68,290 (20,537,882)",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00012",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        }
+      ]
+    },
+    {
+      "id": "BIDV-SEARCH-Dense",
+      "scene": 3,
+      "status": "PASS",
+      "elapsed_ms": 504,
+      "http_status": 200,
+      "method": "Dense",
+      "pages": [
+        8,
+        5,
+        5,
+        8,
+        7
+      ],
+      "selected_sources": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "result_count": 5,
+      "verified_value_count": 0,
+      "results": [
+        {
+          "page": 8,
+          "text": "XI. Tổng lợi nhuận trước thuế 31,984,869 91,352 32,076,221\n7. Chi phí thuế TNDN hiện hành (6,384,627) (18,271) (6,402,898)\n8 Chi phí thuế TNDN hoãn lại 3,795 - 3,795\nXII. Chi phí thuế TNDN (6,380,832) (18,271) (6,399,103)\nXIII. Lợi nhuận sau thuế TNDN 25,604,037 73,081 25,677,118\nXIV. Lợi ích của cổ đông thiểu số (464,000) (1,069) (465,069)\nXV. Lợi nhuận thuần của cổ đông Ngân hàng 25,140,037 72,012 25,212,049",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "XI. Tổng lợi nhuận trước thuế 30,609,248 88,623 30,697,871\n7. Chi phí thuế TNDN hiện hành (6,100,167) (17,725) (6,117,892)\n8 Chi phí thuế TNDN hoãn lại (62) - (62)\nXII. Chi phí thuế TNDN (6,100,229) (17,725) (6,117,954)\nXIII. Lợi nhuận sau thuế TNDN 24,509,019 70,898 24,579,917",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "III. Lãi thuần từ hoạt động kinh doanh ngoại hối 5,264,524 - 5,264,524\nIV. Lãi thuần từ mua bán chứng khoán kinh doanh 91,290 - 91,290\nV. Lãi thuần từ mua bán chứng khoán đầu tư 4,850,545 - 4,850,545\n5. Thu nhập từ hoạt động khác 8,905,156 37,936 8,943,092\n6. Chi phí hoạt động khác (4,172,619) - (4,172,619)\nVI. Lãi thuần từ hoạt động khác 4,732,537 37,936 4,770,473\nVII. Thu nhập từ góp vốn, mua cổ phần 205,774 - 205,774\nVIII. Chi phí hoạt động (25,796,413) (12,687) (25,809,100)\nLợi nhuận thuần từhoạt động kinh doanh trước chi phí\nIX. 51,215,420 20,333 51,235,753\ndự phòng rủi ro tín dụng\nX. Chi phí dự phòng rủi ro tín dụng (20,606,172) 68,290 (20,537,882)",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00012",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 8,
+          "text": "III. Lãi thuần từ hoạt động kinh doanh ngoại hối 5,361,499 - 5,361,499\nIV. Lãi thuần từ mua bán chứng khoán kinh doanh 284,513 - 284,513\nV. Lãi thuần từ mua bán chứng khoán đầu tư 4,900,330 - 4,900,330\n5. Thu nhập từ hoạt động khác 9,191,893 37,936 9,229,829\n6. Chi phí hoạt động khác (4,205,132) - (4,205,132)\nVI. Lãi thuần từ hoạt động khác 4,986,761 37,936 5,024,697\nVII. Thu nhập từ góp vốn, mua cổ phần 445,742 - 445,742\nVIII. Chi phí hoạt động (27,966,817) (12,687) (27,979,504)\nLợi nhuận thuần từhoạt động kinh doanh trước\nIX. 53,094,049 23,062 53,117,111\nchi phí dự phòng rủi ro tín dụng\nX. Chi phí dự phòng rủi ro tín dụng (21,109,180) 68,290 (21,040,890)",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00021",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 7,
+          "text": "2. Thuế TNDN hoãn lại phải trả 79,819 - 79,819\n3. Các khoản phải trả và công nợ khác 21,740,674 42,029 21,782,703\nVIII. Vốn và các quỹ 144,911,113 73,081 144,984,194\n1. Vốn của TCTD 84,788,796 - 84,788,796\na. Vốn điều lệ 68,975,152 - 68,975,152\nc. Thặng dư vốn cổ phần 15,361,020 - 15,361,020\ng. Vốn khác 452,623 - 452,623\n2. Quỹ của TCTD 19,396,820 - 19,396,820\n3. Chênh lệch tỷ giá hối đoái (701,036) - (701,036)\n4. Lợi nhuận sau thuế chưa phân phối 36,192,494 72,012 36,264,506\n5. Lợi ích của cổ đông thiểu số 5,234,039 1,069 5,235,108\nTỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU 2,760,791,854 115,110 2,760,906,964",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        }
+      ]
+    },
+    {
+      "id": "BIDV-SEARCH-Hybrid RRF",
+      "scene": 3,
+      "status": "PASS",
+      "elapsed_ms": 259,
+      "http_status": 200,
+      "method": "Hybrid RRF",
+      "pages": [
+        8,
+        5,
+        4,
+        7,
+        5
+      ],
+      "selected_sources": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "result_count": 5,
+      "verified_value_count": 0,
+      "results": [
+        {
+          "page": 8,
+          "text": "XI. Tổng lợi nhuận trước thuế 31,984,869 91,352 32,076,221\n7. Chi phí thuế TNDN hiện hành (6,384,627) (18,271) (6,402,898)\n8 Chi phí thuế TNDN hoãn lại 3,795 - 3,795\nXII. Chi phí thuế TNDN (6,380,832) (18,271) (6,399,103)\nXIII. Lợi nhuận sau thuế TNDN 25,604,037 73,081 25,677,118\nXIV. Lợi ích của cổ đông thiểu số (464,000) (1,069) (465,069)\nXV. Lợi nhuận thuần của cổ đông Ngân hàng 25,140,037 72,012 25,212,049",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "XI. Tổng lợi nhuận trước thuế 30,609,248 88,623 30,697,871\n7. Chi phí thuế TNDN hiện hành (6,100,167) (17,725) (6,117,892)\n8 Chi phí thuế TNDN hoãn lại (62) - (62)\nXII. Chi phí thuế TNDN (6,100,229) (17,725) (6,117,954)\nXIII. Lợi nhuận sau thuế TNDN 24,509,019 70,898 24,579,917",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 4,
+          "text": "2. Các khoản phải trả và công nợ khác 14,892,857 39,352 14,932,209\nVIII. Vốn và các quỹ 136,279,744 70,898 136,350,642\n1. Vốn của TCTD 83,267,535 - 83,267,535\na. Vốn điều lệ 68,975,153 - 68,975,153\nc. Thặng dư vốn cổ phần 14,292,382 - 14,292,382\n2. Quỹ của TCTD 18,848,053 - 18,848,053\n3. Lợi nhuận sau thuế chưa phân phối 34,164,156 70,898 34,235,054\nTỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU 2,709,287,140 110,250 2,709,397,390",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 7,
+          "text": "2. Thuế TNDN hoãn lại phải trả 79,819 - 79,819\n3. Các khoản phải trả và công nợ khác 21,740,674 42,029 21,782,703\nVIII. Vốn và các quỹ 144,911,113 73,081 144,984,194\n1. Vốn của TCTD 84,788,796 - 84,788,796\na. Vốn điều lệ 68,975,152 - 68,975,152\nc. Thặng dư vốn cổ phần 15,361,020 - 15,361,020\ng. Vốn khác 452,623 - 452,623\n2. Quỹ của TCTD 19,396,820 - 19,396,820\n3. Chênh lệch tỷ giá hối đoái (701,036) - (701,036)\n4. Lợi nhuận sau thuế chưa phân phối 36,192,494 72,012 36,264,506\n5. Lợi ích của cổ đông thiểu số 5,234,039 1,069 5,235,108\nTỔNG NỢ PHẢI TRẢ VÀ VỐN CHỦ SỞ HỮU 2,760,791,854 115,110 2,760,906,964",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "III. Lãi thuần từ hoạt động kinh doanh ngoại hối 5,264,524 - 5,264,524\nIV. Lãi thuần từ mua bán chứng khoán kinh doanh 91,290 - 91,290\nV. Lãi thuần từ mua bán chứng khoán đầu tư 4,850,545 - 4,850,545\n5. Thu nhập từ hoạt động khác 8,905,156 37,936 8,943,092\n6. Chi phí hoạt động khác (4,172,619) - (4,172,619)\nVI. Lãi thuần từ hoạt động khác 4,732,537 37,936 4,770,473\nVII. Thu nhập từ góp vốn, mua cổ phần 205,774 - 205,774\nVIII. Chi phí hoạt động (25,796,413) (12,687) (25,809,100)\nLợi nhuận thuần từhoạt động kinh doanh trước chi phí\nIX. 51,215,420 20,333 51,235,753\ndự phòng rủi ro tín dụng\nX. Chi phí dự phòng rủi ro tín dụng (20,606,172) 68,290 (20,537,882)",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00012",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        }
+      ]
+    },
+    {
+      "id": "BIDV-SEARCH-FAITH-R",
+      "scene": 3,
+      "status": "PASS",
+      "elapsed_ms": 673,
+      "http_status": 200,
+      "method": "FAITH-R",
+      "pages": [
+        4,
+        7,
+        5,
+        8,
+        5
+      ],
+      "selected_sources": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "result_count": 5,
+      "verified_value_count": 0,
+      "results": [
+        {
+          "page": 4,
+          "text": "3. Lợi nhuận sau thuế chưa phân phối | 34,164,156 | 70,898 | 34,235,054",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_4_00010",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 7,
+          "text": "4. Lợi nhuận sau thuế chưa phân phối | 36,192,494 | 72,012 | 36,264,506",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_7_00019",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "XIII. Lợi nhuận sau thuế TNDN | 24,509,019 | 70,898 | 24,579,917",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 8,
+          "text": "XIII. Lợi nhuận sau thuế TNDN | 25,604,037 | 73,081 | 25,677,118",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_8_00022",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        },
+        {
+          "page": 5,
+          "text": "XI. Tổng lợi nhuận trước thuế | 30,609,248 | 88,623 | 30,697,871",
+          "chunk_id": "pdf_2bed2b3c312c8149e6a2ff6ab80c694a_5_00013",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6"
+        }
+      ]
+    },
+    {
+      "id": "BIDV-SEARCH-SOURCE",
+      "scene": 3,
+      "status": "PASS",
+      "elapsed_ms": 482
+    },
+    {
+      "id": "COMPARE-FOUR",
+      "scene": 4,
+      "status": "PASS",
+      "elapsed_ms": 1167,
+      "http_status": 200,
+      "arms": {
+        "bm25": {
+          "count": 5,
+          "latency_ms": 33.66
+        },
+        "dense": {
+          "count": 5,
+          "latency_ms": 202.42
+        },
+        "hybrid": {
+          "count": 5,
+          "latency_ms": 181.42
+        },
+        "faith_r": {
+          "count": 5,
+          "latency_ms": 455.16
+        }
+      },
+      "errors": {}
+    },
+    {
+      "id": "APPLE-01",
+      "scene": 5,
+      "status": "PASS",
+      "elapsed_ms": 2454,
+      "http_status": 200,
+      "question": "What was Apple's net income in fiscal year 2025? Please include the unit and source.",
+      "selected_sources": [
+        "3eb270b22acb7d8d8e9c32a43dc221de"
+      ],
+      "product_status": "VERIFIED_ANSWER",
+      "answer": "FY2025, net income was 112,010 million USD [1].",
+      "values": [
+        "112010"
+      ],
+      "citations": [
+        {
+          "page": 32,
+          "unit": "MILLION_USD",
+          "period": "2025",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            388.259033203125,
+            421.8079833984375,
+            420.7850341796875,
+            430.8079833984375
+          ]
+        }
+      ],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "APPLE-01-SOURCE",
+      "scene": 5,
+      "status": "PASS",
+      "elapsed_ms": 661,
+      "viewer": "Local authenticated source viewer rendered",
+      "expected_page": 32,
+      "returned_page": 32
+    },
+    {
+      "id": "APPLE-02",
+      "scene": 5,
+      "status": "PARTIAL",
+      "elapsed_ms": 2122,
+      "http_status": 200,
+      "question": "Which geographic segment generated the highest net sales in fiscal year 2025, and how much did it generate?",
+      "selected_sources": [
+        "3eb270b22acb7d8d8e9c32a43dc221de"
+      ],
+      "product_status": "VERIFIED_ANSWER",
+      "answer": "FY2025, total net sales was 416,161 million USD [1].",
+      "values": [
+        "416161"
+      ],
+      "citations": [
+        {
+          "page": 32,
+          "unit": "MILLION_USD",
+          "period": "2025",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            388.259033203125,
+            179.55801391601562,
+            420.7850341796875,
+            188.55801391601562
+          ]
+        }
+      ],
+      "reason": "Response did not satisfy all requested evidence checks"
+    },
+    {
+      "id": "APPLE-02-SOURCE",
+      "scene": 5,
+      "status": "PARTIAL",
+      "elapsed_ms": 408,
+      "viewer": "Local authenticated source viewer rendered",
+      "expected_page": 25,
+      "returned_page": 32,
+      "reason": "Viewer opened the returned citation, but its page does not match the requested target."
+    },
+    {
+      "id": "APPLE-GROWTH-EN",
+      "scene": 5,
+      "status": "PASS",
+      "elapsed_ms": 2534,
+      "http_status": 200,
+      "question": "Calculate Apple's year-over-year total net sales growth rate from fiscal 2024 to fiscal 2025. Show the calculation and round to two decimal places.",
+      "selected_sources": [
+        "3eb270b22acb7d8d8e9c32a43dc221de"
+      ],
+      "product_status": "VERIFIED_ANSWER",
+      "answer": "FY2025 total net sales: 416,161 million USD [1]; FY2024: 391,035 million USD [2]. The change is 6.43 %.",
+      "values": [
+        "6.43"
+      ],
+      "citations": [
+        {
+          "page": 32,
+          "unit": "MILLION_USD",
+          "period": "2025",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            388.259033203125,
+            179.55801391601562,
+            420.7850341796875,
+            188.55801391601562
+          ]
+        },
+        {
+          "page": 32,
+          "unit": "MILLION_USD",
+          "period": "2024",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            457.259033203125,
+            179.55801391601562,
+            489.7850341796875,
+            188.55801391601562
+          ]
+        }
+      ],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "APPLE-GROWTH-EN-SOURCE",
+      "scene": 5,
+      "status": "PASS",
+      "elapsed_ms": 547,
+      "viewer": "Local authenticated source viewer rendered"
+    },
+    {
+      "id": "APPLE-03",
+      "scene": 6,
+      "status": "PASS",
+      "elapsed_ms": 2540,
+      "http_status": 200,
+      "question": "Nếu cứ 100 USD doanh thu Apple năm 2025 thì khoảng bao nhiêu USD đến từ dịch vụ?",
+      "selected_sources": [
+        "3eb270b22acb7d8d8e9c32a43dc221de"
+      ],
+      "product_status": "VERIFIED_ANSWER",
+      "answer": "Trong mỗi 100 USD doanh thu thuần, Services đóng góp khoảng 26,23 USD (26,23%). [1][2]",
+      "values": [
+        "26.23"
+      ],
+      "citations": [
+        {
+          "page": 32,
+          "unit": "MILLION_USD",
+          "period": "2025",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            388.259033203125,
+            165.30801391601562,
+            420.7850341796875,
+            174.30801391601562
+          ]
+        },
+        {
+          "page": 32,
+          "unit": "MILLION_USD",
+          "period": "2025",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            388.259033203125,
+            179.55801391601562,
+            420.7850341796875,
+            188.55801391601562
+          ]
+        }
+      ],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "APPLE-CALC-SOURCE",
+      "scene": 6,
+      "status": "PASS",
+      "elapsed_ms": 598,
+      "viewer": "Local authenticated source viewer rendered"
+    },
+    {
+      "id": "APPLE-FUTURE",
+      "scene": 6,
+      "status": "PASS",
+      "elapsed_ms": 2499,
+      "http_status": 200,
+      "question": "What were Apple's FY2026 total net sales according to the FY2025 10-K selected in this conversation?",
+      "selected_sources": [
+        "3eb270b22acb7d8d8e9c32a43dc221de"
+      ],
+      "product_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "The selected filing does not verify total net sales for FY2026. No result from another year has been substituted. [1][2]",
+      "values": [],
+      "citations": [
+        {
+          "page": 32,
+          "unit": "MILLION_USD",
+          "period": "2025",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            70.12999725341797,
+            179.55801391601562,
+            558.7852172851562,
+            188.55801391601562
+          ]
+        },
+        {
+          "page": 50,
+          "unit": "MILLION_USD",
+          "period": "2025",
+          "source_sha256": "3eb270b22acb7d8d8e9c32a43dc221dec3345f8e4bca02755fdbc1ee16c823de",
+          "box": [
+            52.130001068115234,
+            290.5060119628906,
+            559.0980224609375,
+            298.9960021972656
+          ]
+        }
+      ],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "BIDV-CHAT",
+      "scene": 7,
+      "status": "PASS",
+      "elapsed_ms": 400,
+      "http_status": 200,
+      "question": "Mức điều chỉnh lợi nhuận sau thuế chưa phân phối của BIDV trong báo cáo riêng và hợp nhất năm 2024 khác nhau bao nhiêu? Nêu hai số điều chỉnh và dẫn trang nguồn.",
+      "selected_sources": [
+        "2bed2b3c312c8149e6a2ff6ab80c694a"
+      ],
+      "product_status": "VERIFIED_ANSWER",
+      "answer": "**Chênh lệch: 1.114 triệu đồng.** 72.012 − 70.898 = 1.114. [1][2]\n\n| Chỉ tiêu | Phạm vi | Kỳ | Cột nguồn | Giá trị | Nguồn |\n| --- | --- | --- | --- | --- | --- |\n| Lợi nhuận sau thuế chưa phân phối | Riêng | 2024-12-31 | Điều chỉnh | 70.898 triệu đồng | [1] |\n| Lợi nhuận sau thuế chưa phân phối | Hợp nhất | 2024-12-31 | Điều chỉnh | 72.012 triệu đồng | [2] |",
+      "values": [
+        "1114"
+      ],
+      "citations": [
+        {
+          "page": 4,
+          "unit": "TRIEU_VND",
+          "period": "2024",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "box": [
+            398.8988037109375,
+            287.5145263671875,
+            423.16510009765625,
+            297.2122497558594
+          ]
+        },
+        {
+          "page": 7,
+          "unit": "TRIEU_VND",
+          "period": "2024",
+          "source_sha256": "2bed2b3c312c8149e6a2ff6ab80c694a4c710e82f65b1c35a1a943eae4fa32a6",
+          "box": [
+            429.2282409667969,
+            310.19451904296875,
+            453.5821533203125,
+            319.8922424316406
+          ]
+        }
+      ],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "BIDV-CHAT-SOURCE",
+      "scene": 7,
+      "status": "PASS",
+      "elapsed_ms": 625,
+      "viewer": "Local authenticated source viewer rendered"
+    },
+    {
+      "id": "HPG-OCR",
+      "scene": 8,
+      "status": "PARTIAL",
+      "elapsed_ms": 1801,
+      "http_status": 200,
+      "question": "Trong báo cáo tài chính riêng của Hòa Phát tại ngày 31/12/2025, nợ phải trả của công ty mẹ là bao nhiêu? Nêu đơn vị và trang nguồn.",
+      "selected_sources": [
+        "4a92af827aaf1e73e017544d0ff20d0d"
+      ],
+      "product_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Tôi tìm thấy báo cáo/dòng liên quan, nhưng chưa thể công bố giá trị: OCR chưa xác minh chắc chữ số và cột quý IV so với cả năm. Mở nguồn để đối chiếu. [1]",
+      "values": [],
+      "citations": [
+        {
+          "page": 5,
+          "source_sha256": "4a92af827aaf1e73e017544d0ff20d0d14ae4d368bd9c90d5d6d60a28af8b447",
+          "box": [
+            69.89295746541444,
+            80.70000233881154,
+            126.88721462605282,
+            592.2000171628773
+          ]
+        }
+      ],
+      "reason": "Response did not satisfy all requested evidence checks"
+    },
+    {
+      "id": "HPG-OCR-SOURCE",
+      "scene": 8,
+      "status": "PARTIAL",
+      "elapsed_ms": 621,
+      "viewer": "Local authenticated source viewer rendered",
+      "expected_page": 4,
+      "returned_page": 5,
+      "reason": "Viewer opened the returned citation, but its page does not match the requested target."
+    },
+    {
+      "id": "SEC-COST-01",
+      "scene": 9,
+      "status": "PASS",
+      "elapsed_ms": 346,
+      "http_status": 200,
+      "question": "According to Costco's 10-Q ending May 10, 2026, what was total revenue for the 12-week period? Include the unit and source.",
+      "selected_sources": [],
+      "filing_ids": [
+        "sec:0000909832:0000909832-26-000051"
+      ],
+      "product_status": "VERIFIED_ANSWER",
+      "answer": "Doanh thu của COST được đối chiếu từ bảng trong filing SEC.\n\n| Kỳ nguồn | Độ dài | Triệu USD | Filing |\n| --- | --- | ---: | --- |\n| 2026-02-16 → 2026-05-10 | 3 tháng (84 ngày) | 70.527 | 0000909832-26-000051 [1] |",
+      "values": [
+        "70527"
+      ],
+      "citations": [
+        {
+          "unit": "USD",
+          "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+          "filing_id": "sec:0000909832:0000909832-26-000051"
+        }
+      ],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "SEC-COST-02",
+      "scene": 9,
+      "status": "PASS",
+      "elapsed_ms": 362,
+      "http_status": 200,
+      "question": "Trong báo cáo Costco kỳ 12 tuần kết thúc ngày 10/05/2026, hãy tính biên lợi nhuận hoạt động bằng lợi nhuận hoạt động chia cho tổng doanh thu. Nêu hai số và công thức.",
+      "selected_sources": [],
+      "filing_ids": [
+        "sec:0000909832:0000909832-26-000051"
+      ],
+      "product_status": "VERIFIED_ANSWER",
+      "answer": "Biên lợi nhuận hoạt động của **COST** · 10-Q kết thúc 2026-05-10.\n\n### Tổng doanh thu\n\n**Kỳ báo cáo · 2026-02-16 đến 2026-05-10 (12 tuần): 3,99%**. Operating income 2.815 triệu USD [1] ÷ Total revenue 70.527 triệu USD [2] × 100.",
+      "values": [
+        "3.99"
+      ],
+      "citations": [
+        {
+          "unit": "USD",
+          "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+          "filing_id": "sec:0000909832:0000909832-26-000051"
+        },
+        {
+          "unit": "USD",
+          "source_sha256": "8375d1545d28bee4225bb88cb490116ef8aab8de44c4ab8ad99f243c00d6d3c2",
+          "filing_id": "sec:0000909832:0000909832-26-000051"
+        }
+      ],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "SEC-COST-SOURCE",
+      "scene": 9,
+      "status": "PASS",
+      "elapsed_ms": 1025,
+      "viewer": "Local authenticated source viewer rendered"
+    },
+    {
+      "id": "SEC-MISSING-AMAZON",
+      "scene": 10,
+      "status": "PASS",
+      "elapsed_ms": 198,
+      "http_status": 200,
+      "question": "Trong Amazon 10-K FY2024, doanh thu AWS chiếm bao nhiêu phần trăm tổng doanh thu hợp nhất?",
+      "selected_sources": [],
+      "filing_ids": [
+        "sec:0000909832:0000909832-26-000051"
+      ],
+      "product_status": "REQUIRES_SOURCE_REVIEW",
+      "answer": "Bộ nguồn đang chọn thiếu filing của AMZN. Hãy chọn hoặc nhập đúng filing rồi hỏi lại.",
+      "values": [],
+      "citations": [],
+      "reason": "Content checked against the supplied development expectation"
+    },
+    {
+      "id": "RESEARCH-LIVE",
+      "scene": 11,
+      "status": "PASS",
+      "elapsed_ms": 1126,
+      "http_status": 200,
+      "arms": {
+        "bm25": {
+          "count": 5,
+          "latency_ms": 33.83
+        },
+        "dense": {
+          "count": 5,
+          "latency_ms": 287.93
+        },
+        "hybrid": {
+          "count": 5,
+          "latency_ms": 107.64
+        },
+        "faith_r": {
+          "count": 5,
+          "latency_ms": 396
+        }
+      },
+      "errors": {}
+    }
+  ],
+  "page_errors": []
+}
